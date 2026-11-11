@@ -28,28 +28,40 @@ export const MEASURE_ID_PREFIX = 'm-';
 export const SECTION_ID_PREFIX = 's-';
 export const CANDIDACIES_HEADING_ID = 'candidaturas-titulo';
 
+/**
+ * Puts the base path of the site (`base` in astro.config.mjs) before a path that starts with «/».
+ * On GitHub Pages of a repository, the site lives in «/repository/», not in «/».
+ * Other values (an `https://` link, a relative path) stay as they are.
+ */
+export const withBase = (path: string) => {
+  if (!path.startsWith('/') || path.startsWith('//')) return path;
+  return `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`;
+};
+
 export const routes = {
-  home: () => '/',
+  home: () => withBase('/'),
   /** Home page with the candidacies of one province open. */
   provinceCandidacies: (provinceCode: string) =>
-    `/?${HOME_PARAMS.province}=${provinceCode}#${CANDIDACIES_HEADING_ID}`,
-  party: (partyId: string) => `/${partyId}/`,
+    withBase(`/?${HOME_PARAMS.province}=${provinceCode}#${CANDIDACIES_HEADING_ID}`),
+  party: (partyId: string) => withBase(`/${partyId}/`),
   measures: (partyId: string, filters: Partial<Record<MeasureFilter, string | number>> = {}) => {
     const query = Object.entries(filters)
       .map(([key, value]) => `${MEASURE_FILTER_PARAMS[key as MeasureFilter]}=${encodeURIComponent(String(value))}`)
       .join('&');
-    return `/${partyId}/medidas/${query ? `?${query}` : ''}`;
+    return withBase(`/${partyId}/medidas/${query ? `?${query}` : ''}`);
   },
   measure: (partyId: string, measureNumber: number) =>
-    `/${partyId}/medidas/#${MEASURE_ID_PREFIX}${measureNumber}`,
-  block: (partyId: string, blockId: number) => `/${partyId}/bloque/${blockId}/`,
+    withBase(`/${partyId}/medidas/#${MEASURE_ID_PREFIX}${measureNumber}`),
+  block: (partyId: string, blockId: number) => withBase(`/${partyId}/bloque/${blockId}/`),
   section: (partyId: string, blockId: number, sectionId: string) =>
-    `/${partyId}/bloque/${blockId}/#${SECTION_ID_PREFIX}${sectionId}`,
-  search: (query = '') => `/buscar/${query ? `?${SEARCH_PARAMS.query}=${encodeURIComponent(query)}` : ''}`,
+    withBase(`/${partyId}/bloque/${blockId}/#${SECTION_ID_PREFIX}${sectionId}`),
+  search: (query = '') => withBase(`/buscar/${query ? `?${SEARCH_PARAMS.query}=${encodeURIComponent(query)}` : ''}`),
   /** JSON file with the text of every measure. The search page loads it on the first search. */
-  searchIndex: () => '/indice-busqueda.json',
-  categories: () => '/categorias/',
-  category: (categoryId: string) => `/categorias/${categoryId}/`,
-  accessibility: () => '/accesibilidad/',
-  designSystem: () => '/design-system/',
+  searchIndex: () => withBase('/indice-busqueda.json'),
+  categories: () => withBase('/categorias/'),
+  category: (categoryId: string) => withBase(`/categorias/${categoryId}/`),
+  accessibility: () => withBase('/accesibilidad/'),
+  designSystem: () => withBase('/design-system/'),
+  /** A file of the `public/` folder, for example `/datos-electorales/candidaturas.json`. */
+  asset: (path: string) => withBase(path),
 } as const;

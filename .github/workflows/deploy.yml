@@ -18,16 +18,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run build
         env:
-          # Set the repository variable SITE_URL, for example https://example.org
-          SITE_URL: ${{ vars.SITE_URL }}
+          # The repository variables SITE_URL and BASE_PATH replace these defaults.
+          # With a custom domain: SITE_URL=https://example.org and BASE_PATH=/
+          SITE_URL: ${{ vars.SITE_URL || 'https://josanri.github.io' }}
+          BASE_PATH: ${{ vars.BASE_PATH || '/29n2026' }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

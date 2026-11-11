@@ -94,7 +94,7 @@ const { canaryIslands } = geography;
   <p class="presence__credit">
     Mapa derivado de{' '}
     <a href="https://github.com/codeforgermany/click_that_hood" target="_blank" rel="noreferrer">Click That ’Hood</a>
-    {' '}(<a href="/datos-electorales/LICENSE-mapa.txt">licencia MIT</a>).
+    {' '}(<a href={routes.asset('/datos-electorales/LICENSE-mapa.txt')}>licencia MIT</a>).
   </p>
   {listByRegion.length > 0 && (
     <details class="presence__list">

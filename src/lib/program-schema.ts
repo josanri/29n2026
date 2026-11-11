@@ -6,6 +6,7 @@
  * domain model. Code outside this file never sees a Spanish key.
  */
 import { z } from 'astro/zod';
+import { withBase } from '@/lib/routes';
 
 const measureSchema = z
   .object({
@@ -153,7 +154,7 @@ export const programSchema = z
     programName: raw.programa,
     subtitle: raw.subtitulo,
     election: raw.elecciones,
-    documentUrl: raw.pdf,
+    documentUrl: withBase(raw.pdf),
     sourceUrl: raw.fuentePdf,
     pageCount: raw.paginas,
     documentDate: raw.fechaPdf,
@@ -162,7 +163,7 @@ export const programSchema = z
     measureOrigin: raw.origenMedidas ?? 'pdf',
     measureUnit: raw.unidadMedida ?? 'medida',
     measureUnitPlural: raw.unidadMedidas ?? 'medidas',
-    summaryUrl: raw.pdfResumen,
+    summaryUrl: raw.pdfResumen ? withBase(raw.pdfResumen) : raw.pdfResumen,
     introduction: { title: raw.presentacion.titulo, text: raw.presentacion.texto },
     figures: raw.cifras,
     deadlines: raw.plazos,
