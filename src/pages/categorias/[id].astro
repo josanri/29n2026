@@ -1,0 +1,126 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import MeasureCard from '@/components/measures/MeasureCard.astro';
+import BarList from '@/components/charts/BarList.astro';
+import Button from '@/components/ui/Button.astro';
+import Panel from '@/components/ui/Panel.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { programs } from '@/lib/programs';
+import { categories, categoryById, targetGroupById } from '@/lib/taxonomy';
+import { countBy } from '@/lib/collections';
+import { compareText, measureNoun } from '@/lib/format';
+import { routes } from '@/lib/routes';
+
+export function getStaticPaths() {
+  return categories.map((category) => ({ params: { id: category.id } }));
+}
+
+const category = categoryById[Astro.params.id!];
+// Only programs with measures in this category, from the most to the fewest measures.
+const groups = programs
+  .map((program) => ({ program, measures: program.measures.filter((measure) => measure.categoryId === category.id) }))
+  .filter((group) => group.measures.length > 0)
+  .sort((a, b) => b.measures.length - a.measures.length || compareText(a.program.acronym, b.program.acronym));
+const allMeasures = groups.flatMap((group) => group.measures);
+const publishedMeasures = allMeasures.filter((measure) => !measure.isPending);
+const byTargetGroup = countBy(publishedMeasures, (measure) => measure.targetGroupIds).map(([id, count]) => ({
+  id,
+  label: targetGroupById[id].name,
+  count,
+}));
+const nextCategory = categories[(categories.findIndex((item) => item.id === category.id) + 1) % categories.length];
+---
+
+<BaseLayout
+  title={category.name}
+  description={`Medidas sobre ${category.name.toLowerCase()} en los programas electorales del 29N.`}
+>
+  <section class="page-hero">
+    <div class="container page-hero__grid">
+      <div>
+        <p class="breadcrumb mono"><a href={routes.categories()}>Categorías</a> / {category.code}</p>
+        <h1 class="headline">{category.name}</h1>
+        <p class="page-hero__description">{category.description}</p>
+      </div>
+      <div class="total box">
+        <span class="total__label mono">Medidas y propuestas</span>
+        <strong>{allMeasures.length}</strong>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    {groups.length > 0 && (
+      <nav class="party-index" aria-label="Programas con medidas en esta categoría">
+        <span class="party-index__label mono">Ir a</span>
+        {groups.map(({ program, measures }) => (
+          <a class="party-index__link" href={`#programa-${program.id}`} style={`--party-color:${program.color}`}>
+            <i aria-hidden="true"></i>{program.acronym} <span>{measures.length}</span>
+          </a>
+        ))}
+      </nav>
+    )}
+    {byTargetGroup.length > 0 && (
+      <div class="target-groups">
+        <Panel title="Colectivos citados" lead="En las medidas de esta categoría.">
+          <BarList items={byTargetGroup} total={publishedMeasures.length} color="var(--color-block-3)" />
+        </Panel>
+      </div>
+    )}
+
+    {groups.map(({ program, measures }) => (
+      <section class="program-group" id={`programa-${program.id}`}>
+        <SectionHeading index={program.partyName} title={`${program.acronym} · ${measures.length} ${measureNoun(program, measures.length)}`}>
+          <Button href={routes.measures(program.id, { category: category.id })}>Ver en el explorador</Button>
+        </SectionHeading>
+        <div class="measure-list">
+          {measures.map((measure) => (
+            <MeasureCard measure={measure} program={program} showParty={programs.length > 1} />
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <nav class="pager">
+      <Button variant="ink" href={routes.category(nextCategory.id)}>Siguiente: {nextCategory.name}</Button>
+    </nav>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 40px 0; background: var(--color-paper-alt); }
+  .page-hero__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+  .breadcrumb { font-size: 0.8125rem; font-weight: 700; }
+  /* «INFRAESTRUCTURAS» is about 12.5 em wide: 7 cqi keeps it whole */
+  .page-hero__grid > :first-child { min-width: 0; }
+  .page-hero h1 { font-size: clamp(1.5rem, 7cqi, 6.25rem); margin: 14px 0; }
+  .page-hero__description { font-size: var(--text-lg); font-weight: 600; max-width: 56ch; margin: 0; }
+  .total { padding: 14px 22px; display: grid; }
+  .total__label { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; }
+  .total strong { font-family: var(--font-display); font-weight: 400; font-size: 4.5rem; line-height: 1; }
+  .party-index { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-6); }
+  .party-index__label { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; }
+  .party-index__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 9px;
+    border: var(--border-thin) solid var(--color-ink);
+    font: 400 0.8125rem var(--font-display);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .party-index__link i { width: 10px; height: 10px; background: var(--party-color); border: 1px solid var(--color-ink); }
+  .party-index__link span { font: 700 var(--text-xs) var(--font-mono); }
+  .party-index__link:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .program-group { scroll-margin-top: 96px; }
+  .target-groups { margin-top: 40px; }
+  .measure-list { display: grid; gap: 18px; }
+  .pager { margin-top: 56px; display: flex; justify-content: flex-end; }
+</style>

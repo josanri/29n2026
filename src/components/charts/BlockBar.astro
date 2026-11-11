@@ -1,0 +1,108 @@
+---
+/** Segmented bar: the weight of each block in the total of measures. */
+import type { Program } from '@/lib/programs';
+import { measureNoun, padNumber, percentOf } from '@/lib/format';
+import { blockColor } from '@/lib/blocks';
+import { routes } from '@/lib/routes';
+import { tooltip } from '@/lib/tooltip';
+import BlockChip from '@/components/ui/BlockChip.astro';
+
+interface Props {
+  program: Program;
+}
+
+const { program } = Astro.props;
+const total = program.measures.length;
+const segments = program.blocks.map((block) => {
+  const blockMeasures = program.measures.filter((measure) => measure.blockId === block.id);
+  return {
+    block,
+    count: blockMeasures.length,
+    pending: blockMeasures.filter((measure) => measure.isPending).length,
+    sections: program.sections.filter((section) => section.blockId === block.id).length,
+  };
+});
+---
+
+<div>
+  <div class="block-bar" role="group" aria-label={`Distribución de ${program.measureUnitPlural} por bloque`}>
+    {
+      segments.map(({ block, count, pending, sections }) => (
+        <a
+          class="block-bar__segment"
+          href={routes.block(program.id, block.id)}
+          aria-label={`Bloque ${block.id}, ${block.title}: ${count} ${measureNoun(program, count)}`}
+          style={`flex:${count} 1 0; --segment-color: ${blockColor(block.id)}`}
+          data-tooltip={tooltip(
+            `${padNumber(block.id)} · ${block.title}`,
+            `${count} ${measureNoun(program, count)} (${percentOf(count, total)} %)`,
+            `${sections} secciones${pending ? ` · ${pending} por anunciar` : ''}`,
+          )}
+        ></a>
+      ))
+    }
+  </div>
+  <ul class="block-bar__legend">
+    {
+      segments.map(({ block, count }) => (
+        <li>
+          <BlockChip blockId={block.id}>{padNumber(block.id)}</BlockChip>
+          <span class="block-bar__title">{block.title}</span>
+          <span class="mono block-bar__share">
+            {count} {measureNoun(program, count)} · {percentOf(count, total)} %
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .block-bar {
+    display: flex;
+    gap: 0;
+    height: 108px;
+    border: var(--border-thick) solid var(--color-ink);
+    box-shadow: var(--shadow-md);
+    background: var(--color-ink);
+  }
+  .block-bar__segment {
+    background: var(--segment-color);
+    text-decoration: none;
+    border-right: var(--border-thick) solid var(--color-ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-2) var(--space-1);
+    min-width: 0;
+    transition: filter 0.1s;
+  }
+  .block-bar__segment:last-child { border-right: 0; }
+  /* A program with many blocks: the border and padding of the thin segments must not add up to more than the bar */
+  @media (max-width: 560px) {
+    .block-bar { overflow: hidden; }
+    .block-bar__segment { border-right-width: var(--border-thin); padding-inline: 0; }
+  }
+  .block-bar__segment:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .block-bar__legend {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 14px 32px;
+  }
+  .block-bar__legend li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    border-top: var(--border-thin) solid var(--color-ink);
+    padding-top: var(--space-2);
+    padding-right: var(--space-2);
+    min-width: 0;
+  }
+  .block-bar__title { flex: 1; min-width: 0; line-height: 1.2; overflow-wrap: anywhere; }
+  .block-bar__share { font-size: 0.8125rem; font-weight: 700; min-width: 0; line-height: 1.3; }
+</style>

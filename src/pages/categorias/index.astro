@@ -1,0 +1,342 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Panel from '@/components/ui/Panel.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { programs, publishedPrograms } from '@/lib/programs';
+import { categories } from '@/lib/taxonomy';
+import { formatNumber, measureNoun } from '@/lib/format';
+import { routes } from '@/lib/routes';
+import { tooltip } from '@/lib/tooltip';
+
+// Only parties with a program: the others have no measures to compare.
+const comparable = publishedPrograms.filter((program) => program.measures.length > 0);
+const withoutProgram = programs.length - comparable.length;
+
+const rows = categories
+  .map((category) => {
+    const cells = comparable.map((program) => {
+      const count = program.measures.filter((measure) => measure.categoryId === category.id).length;
+      return { program, count, share: (count / program.measures.length) * 100 };
+    });
+    return {
+      category,
+      cells,
+      total: cells.reduce((sum, cell) => sum + cell.count, 0),
+      // Sort by the average weight of the topic in each program (not the total, which long programs dominate).
+      averageShare: cells.reduce((sum, cell) => sum + cell.share, 0) / cells.length,
+    };
+  })
+  .sort((a, b) => b.averageShare - a.averageShare);
+
+// Sequential one-hue scale in steps: the darker, the more weight in the program.
+const steps = [
+  { upTo: 3, label: 'menos de 3 %' },
+  { upTo: 6, label: '3–6 %' },
+  { upTo: 10, label: '6–10 %' },
+  { upTo: 15, label: '10–15 %' },
+  { upTo: Infinity, label: '15 % o más' },
+];
+const stepOf = (share: number) => (share === 0 ? 0 : steps.findIndex((step) => share < step.upTo) + 1);
+const shareLabel = (share: number) => (share === 0 ? '–' : share < 1 ? '<1' : String(Math.round(share)));
+const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumFractionDigits: 1 });
+---
+
+<BaseLayout
+  title="Categorías"
+  description="Las medidas de todos los programas agrupadas por categoría temática, con una tabla que compara el peso de cada tema en cada programa."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Taxonomía común</Tag>
+      <h1 class="headline">{categories.length} categorías</h1>
+      <p class="page-hero__lede">
+        La misma clasificación temática para todos los programas. La tabla muestra qué parte de cada programa dedica a cada
+        tema, para comparar partidos con programas de tamaño muy distinto.
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <SectionHeading index="01 / COMPARAR" title="El peso de cada tema">
+      <p>
+        Porcentaje de las medidas de cada programa que corresponden a cada categoría. Pulsa una casilla para ver esas
+        medidas. {withoutProgram > 0 && `No aparecen los ${withoutProgram} partidos que aún no han publicado su programa.`}
+      </p>
+    </SectionHeading>
+
+    <Panel>
+      <div class="scale" aria-hidden="true">
+        <span class="scale__title">% del programa</span>
+        <span class="scale__step"><i data-step="0"></i>0</span>
+        {steps.map((step, index) => <span class="scale__step"><i data-step={index + 1}></i>{step.label}</span>)}
+      </div>
+      <p class="swipe-hint" aria-hidden="true">Desliza la tabla para ver todos los partidos →</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: peso de cada categoría en cada programa">
+        <table class="heatmap" style={`--cols:${comparable.length}`}>
+          <caption class="sr-only">
+            Porcentaje de las medidas de cada programa en cada categoría. Filas: categorías, de más a menos peso medio.
+            Columnas: programas.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" class="heatmap__corner">Categoría</th>
+              {comparable.map((program) => (
+                <th scope="col" class="heatmap__party">
+                  <a
+                    href={routes.party(program.id)}
+                    data-tooltip={tooltip(
+                      program.partyName,
+                      `${formatNumber(program.measures.length)} ${measureNoun(program, program.measures.length)}`,
+                    )}
+                  >
+                    <span class:list={['heatmap__acronym', { 'heatmap__acronym--long': program.acronym.length > 7 }]}>{program.acronym.replace(/\+/g, '+​')}</span>
+                    <span class="heatmap__total">{formatNumber(program.measures.length)}</span>
+                  </a>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(({ category, cells }) => (
+              <tr>
+                <th scope="row" class="heatmap__category">
+                  <a href={routes.category(category.id)}>
+                    <span class="heatmap__code">{category.code}</span>
+                    {category.name}
+                  </a>
+                </th>
+                {cells.map(({ program, count, share }) => (
+                  <td class="heatmap__cell" data-step={stepOf(share)}>
+                    {count > 0 ? (
+                      <a
+                        href={routes.measures(program.id, { category: category.id })}
+                        aria-label={`${program.acronym}, ${category.name}: ${count} ${measureNoun(program, count)}, ${shareDecimal(share)} % del programa`}
+                        data-tooltip={tooltip(
+                          `${program.acronym} · ${category.name}`,
+                          `${count} de ${formatNumber(program.measures.length)} ${measureNoun(program, program.measures.length)} (${shareDecimal(share)} %)`,
+                        )}
+                      >{shareLabel(share)}</a>
+                    ) : (
+                      <span aria-label={`${program.acronym}, ${category.name}: ninguna medida`}>–</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Panel>
+
+    <SectionHeading index="02 / LEER" title="Las medidas por tema">
+      <p>Cada categoría reúne las medidas de todos los programas sobre ese tema.</p>
+    </SectionHeading>
+    <ul class="category-list">
+      {rows.map(({ category, cells, total }) => {
+        const top = cells.filter((cell) => cell.count > 0).sort((a, b) => b.count - a.count).slice(0, 3);
+        const programCount = cells.filter((cell) => cell.count > 0).length;
+        return (
+          <li>
+            <a class="category-card box box--interactive" href={routes.category(category.id)}>
+              <span class="category-card__code">{category.code}</span>
+              <span class="category-card__body">
+                <h3>{category.name}</h3>
+                <p>{category.description}</p>
+                <span class="category-card__stats mono">
+                  <strong>{formatNumber(total)}</strong> medidas en {programCount} de {comparable.length} programas
+                </span>
+                {top.length > 0 && (
+                  <span class="category-card__top">
+                    Más medidas: {top.map((cell) => `${cell.program.acronym} (${cell.count})`).join(' · ')}
+                  </span>
+                )}
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
+  .page-hero h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
+
+  /* The heat scale tokens flip in the dark theme (see tokens.css). `data-step` picks a step. */
+  .scale {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin-bottom: 14px;
+    font: 700 var(--text-xs) var(--font-mono);
+  }
+  .scale__title { text-transform: uppercase; }
+  .scale__step { display: inline-flex; align-items: center; gap: 6px; }
+  .scale i { display: inline-block; width: 22px; height: 14px; border: 1px solid var(--color-ink-subtle); }
+  .scale i[data-step='0'] { background: var(--color-paper); }
+  .scale i[data-step='1'] { background: var(--color-heat-1); }
+  .scale i[data-step='2'] { background: var(--color-heat-2); }
+  .scale i[data-step='3'] { background: var(--color-heat-3); }
+  .scale i[data-step='4'] { background: var(--color-heat-4); }
+  .scale i[data-step='5'] { background: var(--color-heat-5); }
+
+  .table-wrap { overflow-x: auto; }
+  .table-wrap:focus-visible { outline-offset: 2px; }
+  /* Fixed layout: the category column has one width and the party columns share the rest in equal parts. */
+  .heatmap {
+    --cat-w: 190px;
+    --cell-w: 72px;
+    border-collapse: separate;
+    border-spacing: 2px;
+    table-layout: fixed;
+    width: 100%;
+    min-width: calc(var(--cat-w) + var(--cols) * (var(--cell-w) + 2px));
+  }
+  .heatmap th, .heatmap td { padding: 0; }
+  .heatmap thead th { vertical-align: bottom; }
+  .heatmap__corner {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--color-paper);
+    text-align: left;
+    font: 700 var(--text-xs) var(--font-mono);
+    text-transform: uppercase;
+    padding: 0 var(--space-2) 6px 0;
+    width: var(--cat-w);
+    /* Paper color over the 2px table spacing on every side, and 4px to the right, so scrolled cells never show in the gaps. */
+    box-shadow: 0 0 0 2px var(--color-paper), 4px 0 0 var(--color-paper);
+  }
+  .heatmap__party a {
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    padding: 0 0 6px;
+    min-width: 0;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+  .heatmap__party a:hover .heatmap__acronym {
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    text-decoration-thickness: 3px;
+  }
+  .heatmap__acronym { font-family: var(--font-display); font-size: var(--text-sm); text-transform: uppercase; white-space: nowrap; }
+  /* A long acronym (MUNDO+JUSTO) is smaller and breaks after the "+", so its column is as wide as the others. */
+  .heatmap__acronym--long { font-size: 0.5938rem; letter-spacing: -0.02em; white-space: normal; overflow-wrap: anywhere; max-width: 100%; text-align: center; line-height: 1.1; }
+  .heatmap__total { font: 500 var(--text-2xs) var(--font-mono); color: var(--color-ink-muted); }
+  .heatmap__category {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--color-paper);
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    line-height: 1.2;
+    width: var(--cat-w);
+    /* Paper color over the 2px table spacing on every side, and 4px to the right, so scrolled cells never show in the gaps. */
+    box-shadow: 0 0 0 2px var(--color-paper), 4px 0 0 var(--color-paper);
+    overflow: hidden;
+  }
+  .heatmap__category a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) 10px var(--space-1) 0;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+  .heatmap__category a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    text-decoration-thickness: 3px;
+  }
+  .heatmap__code {
+    flex: none;
+    min-width: 34px;
+    padding: 2px var(--space-1);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font: 400 var(--text-2xs) var(--font-display);
+    text-align: center;
+  }
+  .heatmap__cell { height: 34px; text-align: center; font: 700 0.8125rem var(--font-mono); }
+  .heatmap__cell > * {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 34px;
+    text-decoration: none;
+  }
+  .heatmap__cell[data-step='0'] {
+    color: var(--color-ink-subtle);
+    background: var(--color-paper);
+    outline: 1px dashed var(--color-ink-subtle);
+    outline-offset: -1px;
+  }
+  .heatmap__cell[data-step='1'] { background: var(--color-heat-1); }
+  .heatmap__cell[data-step='1'] a { color: var(--color-on-heat-1); }
+  .heatmap__cell[data-step='2'] { background: var(--color-heat-2); }
+  .heatmap__cell[data-step='2'] a { color: var(--color-on-heat-2); }
+  .heatmap__cell[data-step='3'] { background: var(--color-heat-3); }
+  .heatmap__cell[data-step='3'] a { color: var(--color-on-heat-3); }
+  .heatmap__cell[data-step='4'] { background: var(--color-heat-4); }
+  .heatmap__cell[data-step='4'] a { color: var(--color-on-heat-4); }
+  .heatmap__cell[data-step='5'] { background: var(--color-heat-5); }
+  .heatmap__cell[data-step='5'] a { color: var(--color-on-heat-5); }
+  /* Cell under the pointer or with focus: an ink ring with a gap of the background color. */
+  .heatmap__cell a:hover,
+  .heatmap__cell a:focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: -3px;
+    box-shadow: inset 0 0 0 5px var(--color-paper);
+  }
+
+  .swipe-hint { display: none; margin: 0 0 var(--space-2); font: 700 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
+  @media (max-width: 700px) {
+    .swipe-hint { display: block; }
+    .heatmap { --cat-w: 124px; --cell-w: 62px; }
+    .heatmap__party a { padding-inline: 0; }
+    .heatmap__acronym { font-size: 0.75rem; }
+    .heatmap__acronym--long { font-size: 0.5312rem; letter-spacing: -0.02em; }
+    .heatmap__category { font-size: var(--text-xs); }
+    .heatmap__code { display: none; }
+  }
+
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+    gap: 22px;
+  }
+  .category-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-4);
+    padding: 18px;
+    height: 100%;
+  }
+  .category-card__code {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: var(--space-2) var(--space-2) 6px;
+    height: fit-content;
+  }
+  .category-card__body { display: grid; gap: var(--space-2); align-content: start; }
+  .category-card h3 { font-size: var(--text-xl); margin: 0; overflow-wrap: anywhere; }
+  .category-card p { font-size: var(--text-sm); color: var(--color-ink-muted); margin: 0; }
+  .category-card__stats { font-size: var(--text-xs); }
+  .category-card__stats strong { font-family: var(--font-display); font-weight: 400; font-size: var(--text-lg); }
+  .category-card__top { font-size: 0.8125rem; color: var(--color-ink-muted); }
+</style>

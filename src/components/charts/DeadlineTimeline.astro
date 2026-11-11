@@ -1,0 +1,156 @@
+---
+/** Timeline of the commitments with an explicit deadline, grouped by kind, from the nearest to the farthest. */
+import type { DeadlineEntry, Program } from '@/lib/programs';
+import { compareText } from '@/lib/format';
+import { unique } from '@/lib/collections';
+import { routes } from '@/lib/routes';
+import { deadlineKind, deadlineKindLabel, deadlineKindOrder, deadlineRank } from '@/lib/deadlines';
+
+interface Props {
+  program: Program;
+}
+
+const { program } = Astro.props;
+
+const entries: DeadlineEntry[] =
+  program.deadlines.length > 0
+    ? program.deadlines
+    : program.measures.flatMap((measure) =>
+        measure.deadline
+          ? [{ deadline: measure.deadline, text: measure.phraseTitle, measureNumber: measure.number }]
+          : [],
+      );
+
+// Sorted by time, not by the order in the data file: the file order is not always chronological.
+const order = unique(entries.map((entry) => entry.deadline)).sort(
+  (a, b) => deadlineRank(a) - deadlineRank(b) || compareText(a, b),
+);
+
+const groups = deadlineKindOrder
+  .map((kind) => ({
+    kind,
+    ...deadlineKindLabel[kind],
+    milestones: order
+      .filter((deadline) => deadlineKind(deadline) === kind)
+      .map((deadline) => ({
+        deadline,
+        entries: entries.filter((entry) => entry.deadline === deadline),
+      })),
+  }))
+  .filter((group) => group.milestones.length > 0);
+---
+
+{
+  groups.map((group) => (
+    <section class="timeline-group">
+      <h3 class="timeline-group__title">{group.title}</h3>
+      <p class="timeline-group__lead">{group.lead}</p>
+      <ol class="timeline">
+        {group.milestones.map((milestone, index) => (
+          <li class="timeline__milestone">
+            <div class="timeline__mark">
+              <span class="timeline__dot" aria-hidden="true">{index + 1}</span>
+              <span class="timeline__deadline">{milestone.deadline}</span>
+            </div>
+            <ul class="timeline__entries">
+              {milestone.entries.map((entry) => (
+                <li>
+                  <a href={routes.measure(program.id, entry.measureNumber)}>
+                    <span class="mono">Nº {entry.measureNumber}</span>
+                    {entry.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))
+}
+
+<style>
+  .timeline-group + .timeline-group { margin-top: var(--space-6); }
+  .timeline-group__title { font-size: var(--text-xl); margin: 0; }
+  .timeline-group__lead { font-size: var(--text-sm); margin: var(--space-1) 0 0; max-width: 70ch; }
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: grid;
+    gap: 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 10px;
+    bottom: 10px;
+    width: 6px;
+    background: var(--color-ink);
+  }
+  .timeline__milestone {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 18px;
+    padding: var(--space-3) 0;
+    position: relative;
+  }
+  .timeline__mark {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .timeline__dot {
+    flex: 0 0 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    border: var(--border-thick) solid var(--color-ink);
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    position: relative;
+    z-index: var(--z-raised);
+  }
+  .timeline__deadline {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    line-height: 1;
+    text-transform: uppercase;
+    padding-top: 10px;
+  }
+  .timeline__entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-2);
+  }
+  .timeline__entries a {
+    display: block;
+    text-decoration: none;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    padding: var(--space-2) var(--space-3);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    box-shadow: 3px 3px 0 var(--color-ink);
+  }
+  .timeline__entries a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .timeline__entries .mono {
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    margin-right: var(--space-2);
+    padding: 1px 5px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  @media (max-width: 720px) {
+    .timeline__milestone { grid-template-columns: 1fr; gap: var(--space-2); padding-left: 0; }
+    .timeline__entries { padding-left: 58px; }
+  }
+</style>

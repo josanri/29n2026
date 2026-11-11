@@ -1,0 +1,29 @@
+{
+ "id": "sdp",
+ "partido": "Senado de Progreso",
+ "siglas": "SDP",
+ "color": "#DF0022",
+ "colorClaro": "#F18C9C",
+ "programa": "",
+ "subtitulo": "Programa vacío",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "observaciones": [
+  "Coalición para el Senado formada por PSOE, Izquierda Unida, Movimiento Sumar, Más Madrid, Coalició Compromís, Chunta Aragonesista y Batzarre. Presenta listas senatoriales en 45 circunscripciones; no concurre al Congreso ni en Cataluña, Canarias o Baleares."
+ ],
+ "vacio": true,
+ "pdf": "",
+ "paginas": 0,
+ "unidadMedida": "medida",
+ "unidadMedidas": "medidas",
+ "presentacion": {
+  "titulo": "",
+  "texto": ""
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [],
+ "secciones": [],
+ "medidas": []
+}

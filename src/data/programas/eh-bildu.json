@@ -1,0 +1,27 @@
+{
+ "id": "eh-bildu",
+ "partido": "EH Bildu",
+ "siglas": "EH BILDU",
+ "color": "#00C19F",
+ "colorClaro": "#00C19F",
+ "programa": "",
+ "subtitulo": "Programa vacío",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "vacio": true,
+ "pdf": "",
+ "paginas": 0,
+ "unidadMedida": "medida",
+ "unidadMedidas": "medidas",
+ "presentacion": {
+  "titulo": "",
+  "texto": ""
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [],
+ "secciones": [],
+ "medidas": [],
+ "comunidad": "País Vasco"
+}

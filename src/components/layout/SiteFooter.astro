@@ -1,0 +1,43 @@
+---
+import { routes } from '@/lib/routes';
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__row">
+    <p>
+      <strong>PROGRAMAS 29N</strong> — lectura y análisis de los programas electorales para las elecciones generales del
+      29 de noviembre de 2026. El texto de cada medida es el del documento oficial del partido. Las categorías, los
+      colectivos y las palancas son una clasificación editorial de esta web.
+    </p>
+    <p class="site-footer__legal" role="note">
+      <strong>Aviso legal:</strong> esta web es informativa e independiente. No está vinculada a ningún partido, a la
+      Administración electoral ni a ningún organismo público. No es una fuente oficial ni ofrece asesoramiento de voto.
+      Puede haber errores de extracción o de clasificación: consulta siempre el programa oficial de cada partido antes de
+      citarlo o de tomar una decisión.
+    </p>
+    <p class="site-footer__meta"><a href={routes.accessibility()}>Accesibilidad</a></p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 96px;
+    border-top: var(--border-thick) solid var(--color-brand);
+    background: var(--color-brand);
+    color: var(--color-on-brand);
+  }
+  .site-footer__row {
+    padding-top: 28px;
+    padding-bottom: 36px;
+    font-size: var(--text-sm);
+    max-width: var(--layout-width);
+  }
+  .site-footer p { max-width: 80ch; margin: 0; }
+  .site-footer__legal {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: var(--border-thin) solid currentColor;
+    font-size: var(--text-xs);
+  }
+  .site-footer__meta { margin-top: var(--space-3); font-family: var(--font-mono); font-size: var(--text-xs); }
+</style>

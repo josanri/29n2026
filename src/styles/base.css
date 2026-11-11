@@ -1,0 +1,93 @@
+/* ==========================================================================
+   BASE
+   Reset and bare HTML elements. No classes here.
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 90px; }
+
+/* ---------- Scrollbars (Chromium / Safari) ---------- */
+html::-webkit-scrollbar,
+*::-webkit-scrollbar { width: 16px; height: 16px; }
+html::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: var(--color-paper-alt);
+  border-left: var(--border-thin) solid var(--color-ink);
+}
+html::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border: var(--border-thin) solid var(--color-paper-alt);
+}
+html::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover { background: var(--color-highlight); }
+/* Arrow buttons on the page scrollbar only. Nested scrollers keep a plain thin bar. */
+html::-webkit-scrollbar-button {
+  height: 16px;
+  width: 16px;
+  background: var(--color-paper);
+  border: var(--border-thin) solid var(--color-ink);
+}
+
+/* Firefox: the standard style applies only where ::-webkit-scrollbar is not supported */
+@supports not selector(::-webkit-scrollbar) {
+  html, * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-ink) var(--color-paper-alt);
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  overflow-x: hidden;
+}
+
+/* A very light paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--color-ink) 0.6px, transparent 0.6px);
+  background-size: 4px 4px;
+  z-index: 0;
+}
+
+main, header, footer { position: relative; z-index: var(--z-raised); }
+
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+img, svg { max-width: 100%; }
+
+:focus-visible {
+  outline: 3px solid var(--color-highlight);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--color-ink);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: anywhere; /* a long word breaks instead of widening the page, at a large text size */
+}
+
+p { margin: 0 0 1em; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

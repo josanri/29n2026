@@ -1,0 +1,90 @@
+{
+  "relaciones": [
+    {
+      "id": "eh-bildu-erc-senado",
+      "lista": "eh-bildu-erc",
+      "partidos": ["eh-bildu", "erc"],
+      "camaras": ["senado"],
+      "provincias": ["01", "08", "17", "20", "25", "43", "48"],
+      "nota": "Presentan una lista conjunta al Senado. Al Congreso se presentan por separado."
+    },
+    {
+      "id": "sdp-psoe",
+      "lista": "sdp",
+      "partidos": ["psoe"],
+      "camaras": ["senado"],
+      "nota": "El PSOE forma el Senado de Progreso con otras fuerzas de izquierda. La composición cambia según la provincia."
+    },
+    {
+      "id": "sdp-compromis",
+      "lista": "sdp",
+      "partidos": ["compromis-front-valencia"],
+      "camaras": ["senado"],
+      "provincias": ["03", "12", "46"],
+      "nota": "En la Comunidad Valenciana el Senado de Progreso une al PSOE con Compromís y EUPV."
+    },
+    {
+      "id": "sdp-chunta",
+      "lista": "sdp",
+      "partidos": ["cha-fa"],
+      "camaras": ["senado"],
+      "provincias": ["22", "44", "50"],
+      "nota": "En Aragón el Senado de Progreso une al PSOE con Chunta Aragonesista, IU y Movimiento Sumar."
+    },
+    {
+      "id": "upn-pp",
+      "partidos": ["upn", "pp"],
+      "camaras": ["congreso", "senado"],
+      "provincias": ["31"],
+      "nota": "UPN se presenta en coalición con el PP en Navarra."
+    },
+    {
+      "id": "sa-unio-pp",
+      "lista": "sa-unio",
+      "partidos": ["pp"],
+      "camaras": ["senado"],
+      "provincias": ["07"],
+      "nota": "Sa Unió es la candidatura conjunta del PP y Compromís por Formentera al Senado."
+    },
+    {
+      "id": "baleares-psoe",
+      "lista": "acord-progres-mallorca",
+      "partidos": ["psoe"],
+      "camaras": ["senado"],
+      "provincias": ["07"],
+      "nota": "Acord de Progrés per Mallorca reúne al PSIB-PSOE, Més per Mallorca, Sumar y EUIB."
+    },
+    {
+      "id": "menorca-psoe",
+      "lista": "menorca-al-senat",
+      "partidos": ["psoe", "podemos"],
+      "camaras": ["senado"],
+      "provincias": ["07"],
+      "nota": "Menorca al Senat reúne al PSOE, Més per Menorca, Esquerra de Menorca, EU y Podemos."
+    },
+    {
+      "id": "eivissa-psoe",
+      "lista": "eivissa-al-senat",
+      "partidos": ["psoe", "podemos"],
+      "camaras": ["senado"],
+      "provincias": ["07"],
+      "nota": "Eivissa al Senat reúne al PSOE, Sumar, EUIB, Ara Eivissa y Podem."
+    },
+    {
+      "id": "formentera-psoe",
+      "lista": "formentera-al-senat",
+      "partidos": ["psoe"],
+      "camaras": ["senado"],
+      "provincias": ["07"],
+      "nota": "Formentera al Senat reúne al PSOE, Gent per Formentera y Més-Sumar."
+    },
+    {
+      "id": "upc-podemos",
+      "lista": "upc",
+      "partidos": ["podemos"],
+      "camaras": ["congreso", "senado"],
+      "provincias": ["35", "38"],
+      "nota": "Unidad del Pueblo Canario reúne a Nueva Canarias, Bloque Canarista, Podemos, IU y Sumar."
+    }
+  ]
+}

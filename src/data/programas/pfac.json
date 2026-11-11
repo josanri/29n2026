@@ -1,0 +1,503 @@
+{
+ "id": "pfac",
+ "partido": "Feministas al Congreso",
+ "siglas": "PFAC",
+ "color": "#7368AF",
+ "colorClaro": "#C0BBDB",
+ "programa": "Nuestras propuestas",
+ "subtitulo": "14 propuestas feministas",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "pdf": "/programas/feministas-al-congreso-2026.pdf",
+ "fuentePdf": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf",
+ "paginas": 2,
+ "fechaPdf": "2026-10-20",
+ "unidadMedida": "propuesta",
+ "unidadMedidas": "propuestas",
+ "presentacion": {
+  "titulo": "Juntas hacemos historia",
+  "texto": "El programa oficial reúne 14 propuestas numeradas. La ficha conserva el texto completo y la página del PDF donde aparece cada una."
+ },
+ "cifras": [
+  {
+   "valor": "30 %",
+   "unidad": "sobre el alquiler medio",
+   "texto": "La propuesta formula un SMI un 30 % superior al coste medio de los alquileres y vinculado al IPC; no concreta un importe monetario.",
+   "medida": 7
+  },
+  {
+   "valor": "30",
+   "unidad": "horas semanales",
+   "texto": "Avanzar hacia una jornada de 30 horas sin merma salarial.",
+   "medida": 7
+  }
+ ],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Nuestras propuestas",
+   "lema": "Juntas hacemos historia",
+   "cita": "",
+   "intro": "Catorce propuestas numeradas del programa oficial de Feministas al Congreso.",
+   "pagina": 1
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1.1",
+   "bloque": 1,
+   "titulo": "Propuesta 1 · Compromiso real para acabar con la violencia machista en todas sus formas, con...",
+   "tituloFrase": "Compromiso real para acabar con la violencia machista en todas sus formas, con...",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "1.2",
+   "bloque": 1,
+   "titulo": "Propuesta 2 · Aprobación inmediata de la LOASP (Ley Orgánica Abolicionista del Sistema...",
+   "tituloFrase": "Aprobación inmediata de la LOASP (Ley Orgánica Abolicionista del Sistema...",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "1.3",
+   "bloque": 1,
+   "titulo": "Propuesta 3 · Puesta en marcha con carácter urgente de medidas que impidan el acceso de...",
+   "tituloFrase": "Puesta en marcha con carácter urgente de medidas que impidan el acceso de...",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "1.4",
+   "bloque": 1,
+   "titulo": "Propuesta 4 · Perseguir la explotación reproductiva de las mujeres dentro y fuera del...",
+   "tituloFrase": "Perseguir la explotación reproductiva de las mujeres dentro y fuera del...",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "1.5",
+   "bloque": 1,
+   "titulo": "Propuesta 5 · Derogación de la ley trans que daña irreversiblemente la salud y la vida de...",
+   "tituloFrase": "Derogación de la ley trans que daña irreversiblemente la salud y la vida de...",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "1.6",
+   "bloque": 1,
+   "titulo": "Propuesta 6 · Limitación del precio de los alquileres y prórroga automática de contratos,...",
+   "tituloFrase": "Limitación del precio de los alquileres y prórroga automática de contratos,...",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "1.7",
+   "bloque": 1,
+   "titulo": "Propuesta 7 · Aumento del SMI en un 30% superior al coste medio de los alquileres y de...",
+   "tituloFrase": "Aumento del SMI en un 30% superior al coste medio de los alquileres y de...",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "1.8",
+   "bloque": 1,
+   "titulo": "Propuesta 8 · Ampliación del Ingreso Mínimo Vital y agilización de su tramitación, de manera...",
+   "tituloFrase": "Ampliación del Ingreso Mínimo Vital y agilización de su tramitación, de manera...",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "1.9",
+   "bloque": 1,
+   "titulo": "Propuesta 9 · Financiación adecuada y suficiente de los servicios públicos en sanidad,...",
+   "tituloFrase": "Financiación adecuada y suficiente de los servicios públicos en sanidad,...",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "1.10",
+   "bloque": 1,
+   "titulo": "Propuesta 10 · Apoyo a la creación cultural realizada por mujeres y a la investigación...",
+   "tituloFrase": "Apoyo a la creación cultural realizada por mujeres y a la investigación...",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "1.11",
+   "bloque": 1,
+   "titulo": "Propuesta 11 · Pacto de Estado frente a la Emergencia Climática, revisar al alza nuestros...",
+   "tituloFrase": "Pacto de Estado frente a la Emergencia Climática, revisar al alza nuestros...",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "1.12",
+   "bloque": 1,
+   "titulo": "Propuesta 12 · Avance hacia un Estado republicano, federal y laico.",
+   "tituloFrase": "Avance hacia un Estado republicano, federal y laico.",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "1.13",
+   "bloque": 1,
+   "titulo": "Propuesta 13 · Política migratoria ordenada, responsable y segura.",
+   "tituloFrase": "Política migratoria ordenada, responsable y segura.",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "1.14",
+   "bloque": 1,
+   "titulo": "Propuesta 14 · Política exterior por la paz.",
+   "tituloFrase": "Política exterior por la paz.",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1.1",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Compromiso real para acabar con la violencia machista en todas sus formas, con...",
+   "tituloFrase": "Compromiso real para acabar con la violencia machista en todas sus formas, con...",
+   "texto": "Compromiso real para acabar con la violencia machista en todas sus formas, con recursos suficientes y máxima protección a las víctimas y a sus hijas e hijos, formación contra las prácticas machistas de judicatura y policía, y coeducación real para prevenirla desde la escuela.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=1"
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1.2",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Aprobación inmediata de la LOASP (Ley Orgánica Abolicionista del Sistema...",
+   "tituloFrase": "Aprobación inmediata de la LOASP (Ley Orgánica Abolicionista del Sistema...",
+   "texto": "Aprobación inmediata de la LOASP (Ley Orgánica Abolicionista del Sistema Prostitucional) que ponga fin a la explotación sexual de las mujeres, con protección y ayudas dignas, que persiga penalmente a los proxenetas y multe a los puteros.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=1"
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1.3",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Puesta en marcha con carácter urgente de medidas que impidan el acceso de...",
+   "tituloFrase": "Puesta en marcha con carácter urgente de medidas que impidan el acceso de...",
+   "texto": "Puesta en marcha con carácter urgente de medidas que impidan el acceso de menores a la pornografía, principal causa del aumento de la violencia sexual, mientras se avanza en la prohibición de la producción de contenidos degradantes y violentos contra las mujeres y la infancia.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "mujeres",
+    "infancia",
+    "jovenes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=1"
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1.4",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Perseguir la explotación reproductiva de las mujeres dentro y fuera del...",
+   "tituloFrase": "Perseguir la explotación reproductiva de las mujeres dentro y fuera del...",
+   "texto": "Perseguir la explotación reproductiva de las mujeres dentro y fuera del Estado, prohibiendo el registro de bebés procedentes de la compra en los países que la permiten y el negocio de la mal llamada ovodonación.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=1"
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1.5",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Derogación de la ley trans que daña irreversiblemente la salud y la vida de...",
+   "tituloFrase": "Derogación de la ley trans que daña irreversiblemente la salud y la vida de...",
+   "texto": "Derogación de la ley trans que daña irreversiblemente la salud y la vida de miles de menores con hormonaciones y cirugías basadas en ideas falsas, especialmente en niñas adolescentes, con apoyo especializado a las personas que sufren disforia de género.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "infancia",
+    "jovenes",
+    "pacientes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=1"
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "1.6",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Limitación del precio de los alquileres y prórroga automática de contratos,...",
+   "tituloFrase": "Limitación del precio de los alquileres y prórroga automática de contratos,...",
+   "texto": "Limitación del precio de los alquileres y prórroga automática de contratos, creación de una bolsa de viviendas de alquiler público, prohibición de todas las formas de especulación con la vivienda (fondos buitre), limitando el alquiler turístico, con garantías económicas y de recuperación a la pequeña propiedad en los supuestos habituales en otros países de la UE.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=1"
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "1.7",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Aumento del SMI en un 30% superior al coste medio de los alquileres y de...",
+   "tituloFrase": "Aumento del SMI en un 30% superior al coste medio de los alquileres y de...",
+   "texto": "Aumento del SMI en un 30% superior al coste medio de los alquileres y de acuerdo con el IPC. Avanzar hacia la jornada laboral de 30 horas sin merma salarial. Medidas activas inmediatas de lucha contra la desigualdad salarial que sufren las mujeres.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "30 %",
+    "30 horas"
+   ],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "1.8",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Ampliación del Ingreso Mínimo Vital y agilización de su tramitación, de manera...",
+   "tituloFrase": "Ampliación del Ingreso Mínimo Vital y agilización de su tramitación, de manera...",
+   "texto": "Ampliación del Ingreso Mínimo Vital y agilización de su tramitación, de manera que no quede ninguna perceptora sin ingresos en ningún momento debido a cambios de situación y requisitos para percibirlo. Revisión y ampliación de ayudas a la crianza y la dependencia.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "1.9",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Financiación adecuada y suficiente de los servicios públicos en sanidad,...",
+   "tituloFrase": "Financiación adecuada y suficiente de los servicios públicos en sanidad,...",
+   "texto": "Financiación adecuada y suficiente de los servicios públicos en sanidad, educación, servicios sociales, transporte, etc. Revisión y revocación, en su caso, de su gestión privada y externalizada.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "1.10",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Apoyo a la creación cultural realizada por mujeres y a la investigación...",
+   "tituloFrase": "Apoyo a la creación cultural realizada por mujeres y a la investigación...",
+   "texto": "Apoyo a la creación cultural realizada por mujeres y a la investigación científica con perspectiva feminista, para revertir los sesgos sexistas en la producción de arte y conocimiento en todas las disciplinas.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  },
+  {
+   "n": 11,
+   "bloque": 1,
+   "seccion": "1.11",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Pacto de Estado frente a la Emergencia Climática, revisar al alza nuestros...",
+   "tituloFrase": "Pacto de Estado frente a la Emergencia Climática, revisar al alza nuestros...",
+   "texto": "Pacto de Estado frente a la Emergencia Climática, revisar al alza nuestros compromisos climáticos y apoyar mayores exigencias climáticas en todos los foros, desplegar procesos coordinados de prevención y actuaciones de urgencia frente a sequías, inundaciones y resto de catástrofes.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  },
+  {
+   "n": 12,
+   "bloque": 1,
+   "seccion": "1.12",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Avance hacia un Estado republicano, federal y laico.",
+   "tituloFrase": "Avance hacia un Estado republicano, federal y laico.",
+   "texto": "Avance hacia un Estado republicano, federal y laico. Cancelación de acuerdos con Santa Sede, Comisión Islámica y resto de religiones. Abrir el debate social y político sobre el modelo de Estado sin más dilaciones.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  },
+  {
+   "n": 13,
+   "bloque": 1,
+   "seccion": "1.13",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Política migratoria ordenada, responsable y segura.",
+   "tituloFrase": "Política migratoria ordenada, responsable y segura.",
+   "texto": "Política migratoria ordenada, responsable y segura. Garantizar un control efectivo de las fronteras y crear vías seguras, perseguir la actividad de las mafias, asegurar la integración para mejorar la convivencia, reforzar la cooperación internacional y proteger a las mujeres y las niñas migrantes.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "mujeres",
+    "infancia",
+    "jovenes",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  },
+  {
+   "n": 14,
+   "bloque": 1,
+   "seccion": "1.14",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Política exterior por la paz.",
+   "tituloFrase": "Política exterior por la paz.",
+   "texto": "Política exterior por la paz. Acabar con la política belicista y de incremento del gasto militar, plan progresivo de salida de la OTAN, ruptura de relaciones diplomáticas con el estado de Israel, autodeterminación del pueblo saharaui, negociaciones de paz para acabar con la guerra de Ucrania. Cumplimiento del Derecho Internacional y cese inmediato de todo tipo de apoyo a gobiernos responsables de crímenes de guerra.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.feministasalcongreso.es/wp-content/uploads/2026/10/Programa_1IMP.pdf#page=2"
+  }
+ ]
+}

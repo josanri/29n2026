@@ -1,0 +1,65 @@
+---
+/**
+ * Button. Renders a link when `href` is set, and a <button> when it is not.
+ * - `default`: paper surface.
+ * - `ink`: strong brand surface (ink, or the accent on a party page).
+ */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'a'> {
+  variant?: 'default' | 'ink';
+  size?: 'md' | 'sm';
+  type?: 'button' | 'submit' | 'reset';
+  /** Use `span` for a button that looks the same but sits inside another link. */
+  as?: 'a' | 'button' | 'span';
+}
+
+const { variant = 'default', size = 'md', href, type = 'button', as, class: className, ...attrs } = Astro.props;
+const Element = as ?? (href ? 'a' : 'button');
+---
+
+<Element
+  class:list={['button', `button--${variant}`, `button--${size}`, className]}
+  href={Element === 'a' ? href : undefined}
+  type={Element === 'button' ? type : undefined}
+  {...attrs}
+>
+  <slot />
+</Element>
+
+<style>
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 18px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+  }
+  .button:hover {
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+  }
+  .button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--color-ink);
+  }
+  .button--ink {
+    background: var(--color-brand);
+    color: var(--color-on-brand);
+  }
+  .button--sm {
+    font-size: 0.8125rem;
+    padding: 8px 12px;
+  }
+</style>

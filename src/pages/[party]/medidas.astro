@@ -1,0 +1,378 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import MeasureCard from '@/components/measures/MeasureCard.astro';
+import UnpublishedNotice from '@/components/party/UnpublishedNotice.astro';
+import Button from '@/components/ui/Button.astro';
+import { getProgram, programs } from '@/lib/programs';
+import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
+import { countBy } from '@/lib/collections';
+import { padNumber } from '@/lib/format';
+import { blockColor } from '@/lib/blocks';
+import { MEASURE_FILTER_PARAMS as PARAMS, routes } from '@/lib/routes';
+
+export function getStaticPaths() {
+  return programs.map((program) => ({ params: { party: program.id } }));
+}
+
+const program = getProgram(Astro.params.party!);
+const plural = program.measureUnitPlural;
+const singular = program.measureUnit;
+const categoryCounts = countBy(program.measures, (measure) => measure.categoryId);
+const targetGroupCounts = countBy(program.measures, (measure) => measure.targetGroupIds);
+const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
+---
+
+<BaseLayout
+  title={`${plural} · ${program.acronym}`}
+  description={`Las ${program.measures.length} ${plural} del programa ${program.programName} con filtros.`}
+  accent={program.color}
+  accentLight={program.lightColor}
+>
+  {
+    !program.hasProgram ? (
+      <UnpublishedNotice program={program} />
+    ) : (
+      <>
+        <section class="page-hero">
+          <div class="container">
+            <p class="breadcrumb mono">
+              <a href={routes.party(program.id)}>{program.acronym} · {program.programName}</a> / {plural}
+            </p>
+            <h1 class="headline">Las {program.measures.length} {plural}</h1>
+          </div>
+        </section>
+
+        <div class="container explorer">
+          <aside class="filters box" aria-label="Filtros">
+            <form id="filters-form" onsubmit="return false">
+              <label class="field">
+                <span class="field__label">Buscar</span>
+                <input type="search" name={PARAMS.search} placeholder="vivienda, IRPF, Ceuta…" autocomplete="off" />
+              </label>
+
+              <!-- On narrow screens the other filters fold away, so they do not cover the results. -->
+              <details class="more-filters" id="more-filters" open>
+                <summary class="more-filters__toggle">
+                  Filtros <span class="more-filters__count" id="active-count"></span>
+                </summary>
+                <div class="more-filters__body">
+                  <fieldset>
+                    <legend class="field__label">Bloque</legend>
+                    <div class="block-options">
+                      <label><input type="radio" name={PARAMS.block} value="" checked /> <span>Todos</span></label>
+                      {program.blocks.map((block) => (
+                        <label>
+                          <input type="radio" name={PARAMS.block} value={block.id} />
+                          <span>
+                            <i style={`background: ${blockColor(block.id)}`}></i> {padNumber(block.id)} {block.title}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+
+                  <label class="field">
+                    <span class="field__label">Categoría</span>
+                    <select name={PARAMS.category}>
+                      <option value="">Todas</option>
+                      {categoryCounts.map(([id, count]) => <option value={id}>{categoryById[id].name} ({count})</option>)}
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span class="field__label">Colectivo</span>
+                    <select name={PARAMS.targetGroup}>
+                      <option value="">Todos</option>
+                      {targetGroupCounts.map(([id, count]) => <option value={id}>{targetGroupById[id].name} ({count})</option>)}
+                    </select>
+                  </label>
+
+                  <label class="field">
+                    <span class="field__label">Palanca</span>
+                    <select name={PARAMS.lever}>
+                      <option value="">Todas</option>
+                      {leverCounts.map(([id, count]) => <option value={id}>{leverById[id].name} ({count})</option>)}
+                    </select>
+                  </label>
+
+                  <fieldset class="checks">
+                    <legend class="field__label">Solo</legend>
+                    <label><input type="checkbox" name={PARAMS.withFigures} value="1" /> con cifras</label>
+                    <label><input type="checkbox" name={PARAMS.withDeadline} value="1" /> con plazo</label>
+                    <label><input type="checkbox" name={PARAMS.pendingOnly} value="1" /> por anunciar</label>
+                  </fieldset>
+
+                  <div class="actions">
+                    <Button type="reset" size="sm">Limpiar</Button>
+                    <Button id="toggle-all" size="sm">Abrir todas</Button>
+                  </div>
+                </div>
+              </details>
+            </form>
+          </aside>
+
+          <section class="results" aria-live="polite">
+            <p class="results__count">
+              <strong id="result-count">{program.measures.length}</strong>{' '}
+              <span id="result-label" data-singular={singular} data-plural={plural}>{plural}</span>
+            </p>
+            <div class="results__list">
+              {program.measures.map((measure) => <MeasureCard measure={measure} program={program} />)}
+            </div>
+            <p class="results__empty" hidden>Ninguna medida cumple los filtros. Prueba a quitar alguno.</p>
+          </section>
+        </div>
+      </>
+    )
+  }
+</BaseLayout>
+
+<script>
+  import { MEASURE_FILTER_PARAMS, MEASURE_ID_PREFIX, type MeasureFilter } from '@/lib/routes';
+  import { normalizeForSearch } from '@/lib/format';
+
+  const form = document.getElementById('filters-form') as HTMLFormElement;
+  const cards = [...document.querySelectorAll<HTMLElement>('.measure-card')];
+  const resultCount = document.getElementById('result-count')!;
+  const resultLabel = document.getElementById('result-label')!;
+  const emptyMessage = document.querySelector<HTMLElement>('.results__empty')!;
+  const filterKeys = Object.keys(MEASURE_FILTER_PARAMS) as MeasureFilter[];
+
+  const hasToken = (list: string | undefined, token: string) => (list ?? '').split(' ').includes(token);
+
+  // One test per filter. A card shows when it passes the test of every filter with a value.
+  const tests: Record<MeasureFilter, (card: HTMLElement, value: string) => boolean> = {
+    search: (card, value) => card.dataset.search!.includes(normalizeForSearch(value)),
+    block: (card, value) => card.dataset.block === value,
+    category: (card, value) => card.dataset.category === value,
+    targetGroup: (card, value) => hasToken(card.dataset.targetGroups, value),
+    lever: (card, value) => hasToken(card.dataset.levers, value),
+    withFigures: (card) => card.dataset.hasFigures === '1',
+    withDeadline: (card) => card.dataset.hasDeadline === '1',
+    pendingOnly: (card) => card.dataset.pending === '1',
+  };
+
+  function readFiltersFromUrl() {
+    const query = new URLSearchParams(location.search);
+    for (const key of filterKeys) {
+      const param = MEASURE_FILTER_PARAMS[key];
+      const value = query.get(param);
+      if (value == null) continue;
+      const field = form.elements.namedItem(param);
+      if (field instanceof RadioNodeList) {
+        for (const radio of field as unknown as HTMLInputElement[]) radio.checked = radio.value === value;
+      } else if (field instanceof HTMLInputElement && field.type === 'checkbox') {
+        field.checked = value === '1';
+      } else if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement) {
+        field.value = value;
+      }
+    }
+  }
+
+  function currentValues() {
+    const data = new FormData(form);
+    return Object.fromEntries(filterKeys.map((key) => [key, String(data.get(MEASURE_FILTER_PARAMS[key]) ?? '')])) as Record<
+      MeasureFilter,
+      string
+    >;
+  }
+
+  function applyFilters(updateUrl = true) {
+    const values = currentValues();
+    let visibleCount = 0;
+    for (const card of cards) {
+      const passes = filterKeys.every((key) => !values[key] || tests[key](card, values[key]));
+      card.hidden = !passes;
+      if (passes) visibleCount++;
+    }
+    resultCount.textContent = String(visibleCount);
+    resultLabel.textContent = visibleCount === 1 ? resultLabel.dataset.singular! : resultLabel.dataset.plural!;
+    emptyMessage.hidden = visibleCount > 0;
+    if (updateUrl) {
+      const query = new URLSearchParams();
+      for (const key of filterKeys) if (values[key]) query.set(MEASURE_FILTER_PARAMS[key], values[key]);
+      const text = query.toString();
+      history.replaceState(null, '', `${location.pathname}${text ? `?${text}` : ''}${location.hash}`);
+    }
+  }
+
+  // Folding panel: open on desktop; on mobile it is closed unless a filter is active.
+  const moreFilters = document.getElementById('more-filters') as HTMLDetailsElement;
+  const activeCount = document.getElementById('active-count')!;
+  const narrowScreen = matchMedia('(max-width: 900px)');
+  function countActiveFilters() {
+    const values = currentValues();
+    const count = filterKeys.filter((key) => key !== 'search' && values[key]).length;
+    activeCount.textContent = count ? `(${count})` : '';
+    return count;
+  }
+  function adjustPanel() {
+    moreFilters.open = !narrowScreen.matches || countActiveFilters() > 0;
+  }
+  narrowScreen.addEventListener('change', adjustPanel);
+  form.addEventListener('input', countActiveFilters);
+  form.addEventListener('change', countActiveFilters);
+  form.addEventListener('reset', () => setTimeout(countActiveFilters, 0));
+
+  readFiltersFromUrl();
+  applyFilters(false);
+  adjustPanel();
+  form.addEventListener('input', () => applyFilters());
+  form.addEventListener('change', () => applyFilters());
+  form.addEventListener('reset', () => setTimeout(() => applyFilters(), 0));
+
+  document.getElementById('toggle-all')!.addEventListener('click', (event) => {
+    const openDetails = cards.filter((card) => !card.hidden).map((card) => card.querySelector('details')!);
+    const willOpen = openDetails.some((details) => !details.open);
+    openDetails.forEach((details) => (details.open = willOpen));
+    (event.currentTarget as HTMLElement).textContent = willOpen ? 'Cerrar todas' : 'Abrir todas';
+  });
+
+  // A direct link to a measure (#m-123) opens it and shows it, even when filters hide it.
+  function openAnchoredMeasure() {
+    const id = location.hash.slice(1);
+    if (!id.startsWith(MEASURE_ID_PREFIX)) return;
+    const card = document.getElementById(id);
+    if (!card) return;
+    if (card.hidden) {
+      form.reset();
+      applyFilters();
+    }
+    card.querySelector('details')!.open = true;
+    card.scrollIntoView({ block: 'start' });
+  }
+  window.addEventListener('hashchange', openAnchoredMeasure);
+  openAnchoredMeasure();
+</script>
+
+<style>
+  .page-hero {
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    padding: 36px 0 28px;
+    background: var(--color-accent);
+    color: var(--color-on-accent); /* black or white, whichever reads better on the party color */
+  }
+  .page-hero h1 {
+    font-size: clamp(2.125rem, 8cqi, 6rem);
+    /* A shadow between the text color and the background: it adds depth and never lowers legibility */
+    text-shadow: 0.05em 0.05em 0 color-mix(in srgb, var(--color-on-accent) 45%, var(--color-accent));
+  }
+  .breadcrumb { font-size: 0.8125rem; font-weight: 700; margin-bottom: 10px; }
+  .breadcrumb a { color: var(--color-on-accent); }
+  .breadcrumb a:hover { color: var(--color-on-highlight); }
+
+  .explorer {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: var(--space-6);
+    align-items: start;
+    margin-top: 36px;
+  }
+  .filters {
+    position: sticky;
+    top: 96px;
+    padding: 18px;
+    max-height: calc(100vh - 116px);
+    overflow: auto;
+  }
+  form { display: grid; gap: var(--space-4); }
+  .field { display: grid; gap: var(--space-1); }
+  .field__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  input[type='search'],
+  select {
+    font: inherit;
+    font-size: 0.9375rem;
+    padding: 9px 10px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    border-radius: 0;
+    width: 100%;
+  }
+  input[type='search']:focus,
+  select:focus { outline: 3px solid var(--color-highlight); outline-offset: 0; }
+  fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 6px; }
+  legend { margin-bottom: 6px; padding: 0; }
+  .block-options { display: grid; gap: var(--space-1); }
+  .block-options label { cursor: pointer; }
+  .block-options input { position: absolute; opacity: 0; }
+  .block-options span {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    border: var(--border-thin) solid var(--color-ink);
+    padding: 6px var(--space-2);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  .block-options i {
+    width: 14px;
+    height: 14px;
+    border: var(--border-thin) solid var(--color-ink);
+    flex: 0 0 auto;
+  }
+  .block-options input:checked + span { background: var(--color-ink); color: var(--color-paper); }
+  .block-options input:focus-visible + span { outline: 3px solid var(--color-highlight); }
+  .checks label {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .checks input { width: 18px; height: 18px; accent-color: var(--color-ink); }
+  .actions { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+  .more-filters__body { display: grid; gap: var(--space-4); }
+  .more-filters__toggle { display: none; }
+  .more-filters__toggle::-webkit-details-marker { display: none; }
+  .more-filters__count { font-size: 0.8125rem; }
+
+  .results__count {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-4);
+  }
+  .results__count strong {
+    font-weight: 400;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    padding: 0 var(--space-2);
+    border: var(--border-thin) solid var(--color-ink);
+  }
+  .results__list { display: grid; gap: 18px; }
+  .results__empty { font-weight: 700; padding: var(--space-5); border: var(--border-thick) dashed var(--color-ink); }
+
+  @media (max-width: 900px) {
+    .explorer { grid-template-columns: 1fr; }
+    .filters { position: static; max-height: none; }
+    .more-filters__toggle {
+      display: flex;
+      list-style: none;
+      width: 100%;
+      justify-content: center;
+      gap: var(--space-2);
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      padding: 9px var(--space-3);
+      border: var(--border-thick) solid var(--color-ink);
+      box-shadow: var(--shadow-sm);
+      background: var(--color-paper);
+      cursor: pointer;
+    }
+    .more-filters[open] .more-filters__toggle {
+      margin-bottom: var(--space-4);
+      background: var(--color-ink);
+      color: var(--color-paper);
+    }
+  }
+</style>

@@ -1,0 +1,66 @@
+{
+ "id": "escanos-en-blanco",
+ "partido": "Escaños en Blanco",
+ "siglas": "EB",
+ "color": "#000000",
+ "colorClaro": "#FFFFFF",
+ "programa": "Programa electoral de artículo único",
+ "subtitulo": "No tomar posesión del cargo y dejar el escaño vacío",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "observaciones": [
+  "La web oficial presenta candidaturas a las elecciones del 29N, pero no indica que este programa general de artículo único sea una edición elaborada específicamente para estos comicios."
+ ],
+ "tipoDocumento": "web",
+ "origenMedidas": "web",
+ "pdf": "https://escanos.org/conocenos/programa-electoral-de-escanos-en-blanco/",
+ "paginas": 0,
+ "unidadMedida": "propuesta",
+ "unidadMedidas": "propuestas",
+ "presentacion": {
+  "titulo": "Representar el descontento mediante escaños vacíos",
+  "texto": "Escaños en Blanco propone que sus candidatos elegidos no tomen posesión ni perciban remuneración, y que el partido renuncie a las subvenciones públicas. Su programa oficial consta de un único artículo y plantea los escaños vacíos como forma de dar representación a quienes no se sienten representados."
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Artículo único",
+   "lema": "No tomaremos posesión del cargo",
+   "cita": "",
+   "intro": "El programa vincula la renuncia a ejercer el cargo y a recibir financiación pública con la representación de los escaños vacíos."
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1.1",
+   "bloque": 1,
+   "titulo": "Representación mediante escaños vacíos",
+   "tituloFrase": "Dejar el escaño vacío",
+   "intro": "Renunciar a tomar posesión y a remuneraciones para visibilizar a los votantes que no se sienten representados.",
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1.1",
+   "subapartado": null,
+   "titulo": "No tomar posesión del cargo ni aceptar subvenciones públicas",
+   "tituloFrase": "Dejar el escaño vacío y renunciar a su remuneración",
+   "texto": "Si resultan elegidos, sus candidatos no adquirirán la condición plena de diputado ni percibirán sueldo, dietas o complementos. El partido tampoco solicitará ni aceptará subvenciones públicas, incluidas las vinculadas a escaños, votos y envío de propaganda electoral. El programa explica que así se visibiliza dentro de los parlamentos a quienes no están conformes con el sistema representativo vigente o no se sienten representados.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://escanos.org/conocenos/programa-electoral-de-escanos-en-blanco/"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+---
+/** Parties that run together with this one (joint list or coalition), with links to their pages. */
+import type { Program } from '@/lib/programs';
+import { chamberLabel, provincesLabel, relationsOf } from '@/lib/relations';
+import { routes } from '@/lib/routes';
+
+interface Props {
+  program: Program;
+}
+
+const { program } = Astro.props;
+const relations = relationsOf(program);
+---
+
+{
+  relations.length > 0 && (
+    <section class="related" aria-labelledby="related-title">
+      <h3 id="related-title" class="related__title">Se presenta junto a otros partidos</h3>
+      <ul class="related__list">
+        {relations.map((relation) => (
+          <li class="related__item">
+            <p class="related__line">
+              <span class="related__chamber mono">
+                {chamberLabel(relation.chambers)}
+                {relation.provinceCodes.length > 0 && ` · ${provincesLabel(relation.provinceCodes)}`}
+              </span>
+              {relation.partners.map((partner, index) => (
+                <>
+                  {index > 0 && ' · '}
+                  <a href={routes.party(partner.id)}>{partner.acronym}</a>
+                </>
+              ))}
+            </p>
+            {relation.note && <p class="related__note">{relation.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .related { margin-top: var(--space-5); padding-top: var(--space-4); border-top: var(--border-thin) solid var(--color-ink); }
+  .related__title { font-size: var(--text-xl); margin-bottom: var(--space-3); }
+  .related__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+  .related__item { border-left: var(--border-thick) solid var(--color-highlight); padding-left: var(--space-3); }
+  .related__line { margin: 0; font-weight: 700; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 6px; }
+  .related__chamber { font-size: var(--text-xs); text-transform: uppercase; color: var(--color-ink-muted); margin-right: var(--space-2); }
+  .related__note { margin: 4px 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+</style>

@@ -1,0 +1,227 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { programs, publishedPrograms } from '@/lib/programs';
+import { routes } from '@/lib/routes';
+import { formatNumber } from '@/lib/format';
+
+const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.measures.length, 0);
+---
+
+<BaseLayout
+  title="Buscar medidas"
+  description="Busca una palabra en las medidas de todos los programas electorales del 29N. La búsqueda tolera erratas."
+>
+  <section class="container search">
+    <p class="search__index">Todos los programas</p>
+    <h1 class="headline">Buscar medidas</h1>
+    <p class="search__lede">
+      Busca una palabra o una frase en las {formatNumber(totalMeasures)} medidas de {publishedPrograms.length} programas
+      (hay {programs.length} partidos; los demás aún no han publicado el suyo). La búsqueda tolera erratas.
+    </p>
+
+    <form class="search__form box" role="search" onsubmit="return false">
+      <label for="search-input">Buscar</label>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="vivienda, IRPF, autónomos…"
+        autocomplete="off"
+        data-index-url={routes.searchIndex()}
+      />
+    </form>
+
+    <p class="search__status" id="search-status" aria-live="polite"></p>
+    <ol class="search__results" id="search-results"></ol>
+    <button class="search__more" id="search-more" type="button" hidden>Mostrar más resultados</button>
+
+    <template id="result-template">
+      <li class="result box">
+        <p class="result__meta">
+          <Tag variant="ink" size="sm" data-field="party" />
+          <Tag size="sm" data-field="category" />
+        </p>
+        <a class="result__title" data-field="link"></a>
+        <p class="result__excerpt" data-field="excerpt"></p>
+      </li>
+    </template>
+  </section>
+</BaseLayout>
+
+<script>
+  import Fuse from 'fuse.js';
+  import { fuzzyOptions, MIN_FUZZY_LENGTH } from '@/lib/fuzzy';
+  import { normalizeForSearch } from '@/lib/format';
+  import { routes, SEARCH_PARAMS } from '@/lib/routes';
+
+  interface SearchIndex {
+    parties: { id: string; acronym: string }[];
+    items: { p: number; n: number; c: string; t: string; x: string; k: string; s: string }[];
+  }
+  type Item = SearchIndex['items'][number];
+
+  const PAGE_SIZE = 40;
+
+  const input = document.querySelector<HTMLInputElement>('#search-input')!;
+  const status = document.querySelector<HTMLElement>('#search-status')!;
+  const list = document.querySelector<HTMLOListElement>('#search-results')!;
+  const moreButton = document.querySelector<HTMLButtonElement>('#search-more')!;
+  const template = document.querySelector<HTMLTemplateElement>('#result-template')!;
+
+  let index: SearchIndex | undefined;
+  let fuse: Fuse<Item> | undefined;
+  let loading: Promise<void> | undefined;
+  let results: Item[] = [];
+  let shown = 0;
+
+  // The index is large. It loads on the first search and stays in memory.
+  function loadIndex(): Promise<void> {
+    loading ??= fetch(input.dataset.indexUrl!)
+      .then((response) => {
+        if (!response.ok) throw new Error(String(response.status));
+        return response.json() as Promise<SearchIndex>;
+      })
+      .then((data) => {
+        index = data;
+        fuse = new Fuse(data.items, {
+          ...fuzzyOptions,
+          keys: [
+            { name: 'k', weight: 2 },
+            { name: 's', weight: 1 },
+          ],
+        });
+      })
+      .catch((error) => {
+        loading = undefined; // the next search tries again
+        throw error;
+      });
+    return loading;
+  }
+
+  function showMore() {
+    const fragment = document.createDocumentFragment();
+    for (const item of results.slice(shown, shown + PAGE_SIZE)) {
+      const party = index!.parties[item.p];
+      const node = template.content.cloneNode(true) as DocumentFragment;
+      const field = (name: string) => node.querySelector<HTMLElement>(`[data-field="${name}"]`)!;
+      field('party').textContent = party.acronym;
+      field('category').textContent = item.c;
+      const link = field('link') as HTMLAnchorElement;
+      link.href = routes.measure(party.id, item.n);
+      link.textContent = `${item.n}. ${item.t}`;
+      field('excerpt').textContent = item.x;
+      fragment.append(node);
+    }
+    list.append(fragment);
+    shown = Math.min(shown + PAGE_SIZE, results.length);
+    moreButton.hidden = shown >= results.length;
+  }
+
+  function render(query: string, message?: string) {
+    list.replaceChildren();
+    shown = 0;
+    moreButton.hidden = true;
+    status.textContent = message ?? '';
+    if (results.length) showMore();
+    if (!message && query) {
+      const count = results.length;
+      status.textContent =
+        count === 0 ? `Ninguna medida coincide con «${query}».` : `${count} ${count === 1 ? 'medida' : 'medidas'}`;
+    }
+  }
+
+  let latest = 0;
+  async function search() {
+    const raw = input.value.trim();
+    const query = normalizeForSearch(raw);
+    const url = new URL(location.href);
+    if (raw) url.searchParams.set(SEARCH_PARAMS.query, raw);
+    else url.searchParams.delete(SEARCH_PARAMS.query);
+    history.replaceState(null, '', url);
+
+    const ticket = ++latest;
+    if (query.length < MIN_FUZZY_LENGTH) {
+      results = [];
+      render(raw, raw ? 'Escribe al menos dos letras.' : '');
+      return;
+    }
+    if (!fuse) {
+      status.textContent = 'Cargando medidas…';
+      try {
+        await loadIndex();
+      } catch {
+        results = [];
+        render(raw, 'No se pudo cargar el índice de búsqueda. Recarga la página.');
+        return;
+      }
+    }
+    if (ticket !== latest) return; // the reader typed more while the index loaded
+    results = fuse!.search(query).map((result) => result.item);
+    render(raw);
+  }
+
+  input.addEventListener('input', search);
+  moreButton.addEventListener('click', showMore);
+
+  const initial = new URLSearchParams(location.search).get(SEARCH_PARAMS.query);
+  if (initial) {
+    input.value = initial;
+    search();
+  }
+  input.focus();
+</script>
+
+<style>
+  .search { padding-bottom: var(--space-8); }
+  .search__index {
+    margin: var(--space-6) 0 0;
+    font: 700 var(--text-sm) var(--font-mono);
+    text-transform: uppercase;
+    color: var(--color-ink-subtle);
+  }
+  .search h1 { font-size: clamp(2.5rem, 9cqi, 6rem); margin: var(--space-2) 0 var(--space-4); }
+  .search__lede { max-width: 60ch; font-weight: 600; margin: 0 0 var(--space-5); }
+
+  .search__form {
+    position: sticky;
+    top: 84px;
+    z-index: var(--z-sticky);
+    display: grid;
+    gap: 6px;
+    padding: 14px var(--space-4);
+    background: var(--color-paper);
+  }
+  .search__form label { font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .search__form input {
+    min-height: 48px;
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 0;
+    padding: 8px 12px;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 1.125rem var(--font-body);
+  }
+  @media (max-width: 560px) {
+    .search__form { position: static; }
+  }
+
+  .search__status { margin: var(--space-4) 0; font: 700 0.8125rem var(--font-mono); min-height: 1.4em; }
+  .search__results { display: grid; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
+  .result { padding: var(--space-3) var(--space-4); }
+  .result__meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--space-2); }
+  .result__title { display: block; font-weight: 800; font-size: var(--text-lg); }
+  .result__excerpt { margin: var(--space-2) 0 0; color: var(--color-ink-muted); font-size: 0.9375rem; overflow-wrap: anywhere; }
+  .search__more {
+    display: block;
+    margin: var(--space-5) auto 0;
+    padding: 10px var(--space-4);
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.8125rem var(--font-mono);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .search__more:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .search__more[hidden] { display: none; }
+</style>

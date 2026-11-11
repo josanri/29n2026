@@ -1,0 +1,36 @@
+---
+/**
+ * Block chip: a swatch with the block color, followed by text.
+ * The text is always there, because color alone must never carry the meaning.
+ */
+import { blockColor } from '@/lib/blocks';
+
+interface Props {
+  blockId: number;
+  title?: string;
+}
+
+const { blockId, title } = Astro.props;
+---
+
+<span class="block-chip" title={title}>
+  <i style={`background: ${blockColor(blockId)}`}></i>
+  <slot />
+</span>
+
+<style>
+  .block-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+  .block-chip i {
+    width: 14px;
+    height: 14px;
+    border: var(--border-thin) solid var(--color-ink);
+    display: inline-block;
+  }
+</style>

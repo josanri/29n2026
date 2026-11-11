@@ -1,0 +1,116 @@
+---
+/**
+ * Sorted horizontal bars (one series, so one color).
+ * Each bar has its value as a direct label and a tooltip.
+ */
+import { percentOf } from '@/lib/format';
+import { tooltip } from '@/lib/tooltip';
+
+export interface BarItem {
+  id: string;
+  label: string;
+  count: number;
+  /** Short code shown before the label, for example a category code. */
+  code?: string;
+  href?: string;
+  /** Replaces the default tooltip. Build it with `tooltip()`. */
+  tooltip?: string;
+}
+
+interface Props {
+  items: BarItem[];
+  /** The whole that each bar is a share of. It feeds the tooltip. */
+  total: number;
+  color?: string;
+  max?: number;
+  unit?: string;
+  singularUnit?: string;
+}
+
+const { items, total, color = 'var(--color-accent)', unit = 'medidas', singularUnit } = Astro.props;
+const max = Astro.props.max ?? Math.max(...items.map((item) => item.count));
+---
+
+<ol class="bar-list" style={`--bar-color:${color}`}>
+  {
+    items.map((item) => {
+      const width = (item.count / max) * 100;
+      const itemUnit = item.count === 1 && singularUnit ? singularUnit : unit;
+      const itemTooltip =
+        item.tooltip ?? tooltip(item.label, `${item.count} ${itemUnit} · ${percentOf(item.count, total)} % del total`);
+      const Element = item.href ? 'a' : 'div';
+      return (
+        <li>
+          <Element class="bar-list__row" href={item.href} data-tooltip={itemTooltip}>
+            <span class="bar-list__label">
+              {item.code && <span class="bar-list__code">{item.code}</span>}
+              {item.label}
+            </span>
+            <span class="bar-list__track">
+              <span class="bar-list__bar" style={`width:calc((100% - 44px) * ${Math.max(width, 1.5) / 100})`}></span>
+              <span class="bar-list__value mono">{item.count}</span>
+            </span>
+          </Element>
+        </li>
+      );
+    })
+  }
+</ol>
+
+<style>
+  .bar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .bar-list__row {
+    display: grid;
+    grid-template-columns: minmax(130px, 38%) 1fr;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    padding: 3px 4px;
+    margin: 0 -4px;
+  }
+  a.bar-list__row:hover { background: var(--color-paper-alt); color: var(--color-ink); }
+  a.bar-list__row:hover .bar-list__bar { background: var(--color-highlight); }
+  .bar-list__label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: 1.15;
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+  .bar-list__code {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    color: var(--color-ink-subtle);
+    min-width: 30px;
+  }
+  .bar-list__track {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-width: 0;
+  }
+  .bar-list__bar {
+    height: 20px;
+    background: var(--bar-color);
+    border: var(--border-thin) solid var(--color-ink);
+    box-shadow: 3px 3px 0 var(--color-ink);
+    flex: 0 0 auto;
+    transition: background 0.1s;
+  }
+  .bar-list__value {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    flex: 0 0 auto;
+  }
+  @media (max-width: 520px) {
+    .bar-list__row { grid-template-columns: 1fr; gap: var(--space-1); }
+  }
+</style>

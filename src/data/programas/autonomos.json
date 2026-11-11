@@ -1,0 +1,59 @@
+{
+ "id": "autonomos",
+ "partido": "Partido Autónomos",
+ "siglas": "AUTÓNOMOS",
+ "color": "#00C19F",
+ "colorClaro": "#00C19F",
+ "programa": "Decálogo de propuestas para autónomos",
+ "subtitulo": "10 propuestas de la web oficial",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "observaciones": [
+  "La página oficial publica un decálogo general y no lo identifica como programa electoral del 29N. Las imágenes asociadas a sus propuestas están fechadas en octubre de 2021."
+ ],
+ "tipoDocumento": "web",
+ "origenMedidas": "web",
+ "pdf": "https://www.partidoautonomos.es/decalogo-de-propuestas/",
+ "unidadMedida": "medida",
+ "unidadMedidas": "medidas",
+ "presentacion": {
+  "titulo": "Derechos y oportunidades para el trabajo autónomo",
+  "texto": "La web oficial reúne diez propuestas generales sobre protección social, fiscalidad, reducción de burocracia, formación y emprendimiento, gestión pública y justicia. No las presenta como un programa específico para las elecciones del 29N."
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Decálogo de propuestas",
+   "lema": "Derechos y oportunidades para los autónomos",
+   "cita": "",
+   "intro": "Diez propuestas temáticas transcritas de la página oficial del Partido Autónomos."
+  }
+ ],
+ "secciones": [
+  {"id":"1.1","bloque":1,"titulo":"Derechos sociales de los autónomos","tituloFrase":"Derechos sociales","intro":"Protección social equiparable a la de las personas trabajadoras por cuenta ajena.","subapartados":[]},
+  {"id":"1.2","bloque":1,"titulo":"Fiscalidad justa","tituloFrase":"Fiscalidad justa","intro":"Un marco tributario que tenga en cuenta los ingresos, los gastos deducibles y las deudas públicas.","subapartados":[]},
+  {"id":"1.3","bloque":1,"titulo":"Reducción de la burocracia","tituloFrase":"Menos burocracia","intro":"Simplificar los trámites para iniciar y gestionar actividades por cuenta propia.","subapartados":[]},
+  {"id":"1.4","bloque":1,"titulo":"Acceso a formación","tituloFrase":"Acceso a formación","intro":"Acceso de las personas autónomas a formación bonificada y actualización profesional.","subapartados":[]},
+  {"id":"1.5","bloque":1,"titulo":"Impulso a la iniciativa privada","tituloFrase":"Iniciativa privada","intro":"Impulsar la iniciativa ciudadana en la economía, la cultura, el deporte y la solidaridad.","subapartados":[]},
+  {"id":"1.6","bloque":1,"titulo":"Poner en valor la figura del empresario","tituloFrase":"Poner en valor a empresarios y autónomos","intro":"Reconocimiento social de quienes emprenden y generan actividad económica.","subapartados":[]},
+  {"id":"1.7","bloque":1,"titulo":"Fomento del emprendimiento","tituloFrase":"Fomento del emprendimiento","intro":"Facilitar la puesta en marcha de iniciativas de autoempleo y negocio.","subapartados":[]},
+  {"id":"1.8","bloque":1,"titulo":"Despolitización","tituloFrase":"Despolitización","intro":"Gestión profesional de las administraciones y entidades públicas.","subapartados":[]},
+  {"id":"1.9","bloque":1,"titulo":"Eliminación del despilfarro","tituloFrase":"Eliminar el despilfarro","intro":"Eficiencia en el gasto público y evaluación del desempeño de la función pública.","subapartados":[]},
+  {"id":"1.10","bloque":1,"titulo":"Justicia ágil e independiente","tituloFrase":"Justicia ágil e independiente","intro":"Independencia judicial y medios para una justicia más ágil y eficaz.","subapartados":[]}
+ ],
+ "medidas": [
+  {"n":1,"bloque":1,"seccion":"1.1","subapartado":null,"titulo":"Derechos sociales de los autónomos","tituloFrase":"Derechos sociales de los autónomos","texto":"Parece que nuestros gobernantes se han olvidado de la letra “T” del RETA, ya que no es justo que tengamos menos derechos que los trabajadores por cuenta ajena (bajas médicas, desempleo, jubilación…). La inmensa mayoría somos simples autoempleados o dueños de pequeños negocios, trabajamos más horas y más duro que cualquier empleado, y generamos valor para la sociedad. Debemos estar protegidos, como mínimo, como cualquier empleado.","oculta":false,"categoria":"social","colectivos":["autonomos"],"palancas":["ley","gasto"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":2,"bloque":1,"seccion":"1.2","subapartado":null,"titulo":"Fiscalidad justa","tituloFrase":"Fiscalidad justa","texto":"Soportamos excesivas cargas fiscales, y algunas incluso independientemente de nuestros ingresos; no es lógico tener que pagar el RETA cuando los beneficios ni siquiera dan para tener una renta mínima equivalente a la de un empleado; no es lógica la excesiva limitación de gastos fiscalmente deducibles; no se puede permitir que en la “Ley de Segunda Oportunidad” no se perdonen las deudas con Hacienda o Seguridad Social. Sabemos que hemos de pagar impuestos, pero necesitamos un marco fiscal que sea justo.","oculta":false,"categoria":"fiscalidad","colectivos":["autonomos"],"palancas":["impuestos","ley"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":3,"bloque":1,"seccion":"1.3","subapartado":null,"titulo":"Reducción de la burocracia","tituloFrase":"Reducción de la burocracia","texto":"Tanto para montar un nuevo negocio como para la gestión de los mismos, siempre se ha mirado con desconfianza al Autónomo, imponiendo muchos trámites burocráticos que no favorecen el Emprendimiento ni el desarrollo de negocios. Queremos adoptar el tratamiento de otros países donde se confía en la buena fe del Autónomo y basta una declaración jurada para poder iniciar una actividad empresarial o profesional… que posteriormente será revisada por la Administración.","oculta":false,"categoria":"administracion","colectivos":["autonomos","empresas"],"palancas":["ley","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":4,"bloque":1,"seccion":"1.4","subapartado":null,"titulo":"Acceso a formación","tituloFrase":"Acceso a formación","texto":"De la misma forma que los empleados pueden acceder gratuitamente a una formación bonificada que les permite ampliar conocimientos o actualizarlos, los Autónomos también deberían tener acceso a ella de forma gratuita para potenciar la competitividad de sus negocios.","oculta":false,"categoria":"educacion","colectivos":["autonomos","empresas"],"palancas":["gasto"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":5,"bloque":1,"seccion":"1.5","subapartado":null,"titulo":"Impulso a la iniciativa privada","tituloFrase":"Impulso a la iniciativa privada","texto":"El protagonismo de la sociedad debe estar en manos de los ciudadanos y no de las instituciones. Es por ello que se debe impulsar la Iniciativa Privada, tanto de tipo mercantil, como en otros ámbitos, como la cultura, el deporte, la solidaridad…","oculta":false,"categoria":"empleo","colectivos":["empresas"],"palancas":[],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":6,"bloque":1,"seccion":"1.6","subapartado":null,"titulo":"Poner en valor la figura del empresario","tituloFrase":"Poner en valor la figura del empresario","texto":"Desde las aulas se debe poner en valor la figura de quienes han aportado valor desde el ámbito empresarial, de la misma forma que se hace con los artistas, científicos o políticos. Creemos que la sociedad debe tener un concepto positivo del Autónomo, del Emprendedor y del Empresario.","oculta":false,"categoria":"empleo","colectivos":["autonomos","empresas"],"palancas":[],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":7,"bloque":1,"seccion":"1.7","subapartado":null,"titulo":"Fomento del emprendimiento","tituloFrase":"Fomento del emprendimiento","texto":"Quien decide autoemplearse está renunciando a un sueldo por cuenta ajena, invierte sus ahorros, se endeuda con financiación externa, ha de abrirse hueco entre la competencia, debe esforzarse por captar clientes y mantenerlos, dedica miles de horas y de esfuerzo… Desde la Administración se les debería poner una alfombra de plata para facilitarles todo lo posible la puesta en marcha de sus iniciativas, que ya bastantes obstáculos hay en el camino.","oculta":false,"categoria":"empleo","colectivos":["autonomos","empresas"],"palancas":["gasto","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":8,"bloque":1,"seccion":"1.8","subapartado":null,"titulo":"Despolitización","tituloFrase":"Despolitización","texto":"La Administración y las entidades públicas deberían estar gestionadas por profesionales, que apliquen criterios profesionales totalmente alejados de influencias ideológicas.","oculta":false,"categoria":"administracion","colectivos":["funcionarios"],"palancas":["organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":9,"bloque":1,"seccion":"1.9","subapartado":null,"titulo":"Eliminación del despilfarro","tituloFrase":"Eliminación del despilfarro","texto":"El dinero público es de todos y por ello debería gestionarse con eficiencia, eliminando gastos superfluos y priorizando aquellas inversiones que mayor valor aporten al desarrollo socioeconómico; así mismo, se debe evaluar el desempeño de los trabajadores de la función pública, de modo que se evite y se castigue la ineficiencia, a la vez que se premie la excelencia.","oculta":false,"categoria":"administracion","colectivos":["funcionarios"],"palancas":["gasto","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
+  {"n":10,"bloque":1,"seccion":"1.10","subapartado":null,"titulo":"Justicia ágil e independiente","tituloFrase":"Justicia ágil e independiente","texto":"Se debe preservar la independencia del Poder Judicial, a la vez que se faciliten los medios necesarios para que la Administración de Justicia sea más ágil y eficaz. Así mismo, en muchas ocasiones parece que la Justicia beneficia a los infractores y delincuentes en lugar de proteger a la gente de bien, que en muchas ocasiones se ve desamparada con el actual Sistema Jurídico y Judicial.","oculta":false,"categoria":"justicia","colectivos":[],"palancas":["gasto","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"}
+ ]
+}

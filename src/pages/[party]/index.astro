@@ -1,0 +1,624 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BarList from '@/components/charts/BarList.astro';
+import BlockBar from '@/components/charts/BlockBar.astro';
+import MeasureMap from '@/components/charts/MeasureMap.astro';
+import DeadlineTimeline from '@/components/charts/DeadlineTimeline.astro';
+import PresenceMap from '@/components/candidacies/PresenceMap.astro';
+import UnpublishedNotice from '@/components/party/UnpublishedNotice.astro';
+import RelatedParties from '@/components/party/RelatedParties.astro';
+import Button from '@/components/ui/Button.astro';
+import Panel from '@/components/ui/Panel.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { getProgram, programs } from '@/lib/programs';
+import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
+import { countBy } from '@/lib/collections';
+import { capitalize, measureNoun, padNumber, percentOf, splitParagraphs } from '@/lib/format';
+import { blockColor } from '@/lib/blocks';
+import { readableTextColor } from '@/lib/color';
+import { methodNote } from '@/lib/method-note';
+import { routes } from '@/lib/routes';
+import { tooltip } from '@/lib/tooltip';
+import { keyFindingsByParty, type KeyFinding } from '@/data/analysis';
+import { downloadFileNames, summaryDownloadFileName } from '@/data/download-names';
+
+export function getStaticPaths() {
+  return programs.map((program) => ({ params: { party: program.id } }));
+}
+
+const program = getProgram(Astro.params.party!);
+const total = program.measures.length;
+const plural = program.measureUnitPlural;
+const singular = program.measureUnit;
+const publishedMeasures = program.measures.filter((measure) => !measure.isPending);
+const pendingMeasures = program.measures.filter((measure) => measure.isPending);
+const withFigures = program.measures.filter((measure) => measure.figures.length).length;
+const withDeadline = program.measures.filter((measure) => measure.deadline).length;
+const repealingMeasures = program.measures.filter((measure) => measure.repeals);
+const measureByNumber = Object.fromEntries(program.measures.map((measure) => [measure.number, measure]));
+
+// Editorial findings when they exist. Otherwise the three biggest categories.
+const keyFindings: KeyFinding[] =
+  keyFindingsByParty[program.id] ??
+  countBy(program.measures, (measure) => measure.categoryId)
+    .slice(0, 3)
+    .map(([id, count]) => ({
+      title: `${categoryById[id].name}: ${count} ${measureNoun(program, count)}`,
+      text: `${count} de las ${total} ${plural} (${percentOf(count, total)} %) están clasificadas en esta categoría. Es un recuento basado en la clasificación temática editorial del programa.`,
+      measureNumbers: program.measures
+        .filter((measure) => measure.categoryId === id)
+        .slice(0, 5)
+        .map((measure) => measure.number),
+    }));
+
+const byCategory = countBy(program.measures, (measure) => measure.categoryId).map(([id, count]) => ({
+  id,
+  label: categoryById[id].name,
+  code: categoryById[id].code,
+  count,
+  href: routes.measures(program.id, { category: id }),
+}));
+const byTargetGroup = countBy(publishedMeasures, (measure) => measure.targetGroupIds).map(([id, count]) => ({
+  id,
+  label: targetGroupById[id].name,
+  count,
+  href: routes.measures(program.id, { targetGroup: id }),
+}));
+const byLever = countBy(publishedMeasures, (measure) => measure.leverIds).map(([id, count]) => ({
+  id,
+  label: leverById[id].name,
+  count,
+  href: routes.measures(program.id, { lever: id }),
+  tooltip: tooltip(
+    leverById[id].name,
+    `${count} de ${publishedMeasures.length} ${plural} publicadas`,
+    leverById[id].description,
+  ),
+}));
+const byTerritory = countBy(publishedMeasures, (measure) => measure.territories).map(([id, count]) => ({
+  id,
+  label: id,
+  count,
+  href: routes.measures(program.id, { search: id }),
+}));
+const byVerb = program.verbs.map(({ verb, count }) => ({
+  id: verb,
+  label: capitalize(verb),
+  count,
+  tooltip: tooltip(`«${verb}»`, `aparece ${count} veces en el texto de las ${plural}`),
+}));
+
+const isLocalDocument = program.documentType !== 'web' && program.documentUrl.startsWith('/');
+const isWebProgram = program.documentType === 'web';
+const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Descargar programa completo' : 'PDF original';
+---
+
+<BaseLayout
+  title={`${program.acronym} · ${program.programName || program.partyName}`}
+  description={`Análisis del programa electoral del ${program.partyName}: ${program.programName}.`}
+  accent={program.color}
+  accentLight={program.lightColor}
+>
+  {
+    !program.hasProgram ? (
+      <>
+        <UnpublishedNotice program={program} />
+        <div class="container">
+          <SectionHeading index="CANDIDATURAS" title="Dónde se presenta">
+            <p>Provincias en las que {program.acronym} presenta candidatura al Congreso o al Senado, según la proclamación oficial.</p>
+          </SectionHeading>
+          <Panel>
+            <PresenceMap program={program} />
+            <RelatedParties program={program} />
+          </Panel>
+        </div>
+      </>
+    ) : (
+      <>
+        <section
+          class="hero"
+          style={`--party-color:${program.color}; --party-color-light:${program.lightColor}; --party-on-color:${readableTextColor(program.color)}`}
+        >
+          <div class="container hero__grid">
+            <div class="hero__title">
+              <p class="hero__party"><Tag variant="party" size="lg">{program.acronym}</Tag> {program.partyName}</p>
+              <h1 class="headline">{program.programName}</h1>
+            </div>
+            <div>
+              <p class="hero__subtitle">{program.subtitle}</p>
+              <div class="hero__actions">
+                <Button variant="ink" href={routes.measures(program.id)}>{`Explorar las ${total} ${plural}`}</Button>
+                <Button href={routes.block(program.id, 1)}>Leer por bloques</Button>
+                <Button
+                  href={program.documentUrl}
+                  target={isLocalDocument ? undefined : '_blank'}
+                  rel={isLocalDocument ? undefined : 'noopener'}
+                  download={isWebProgram ? undefined : downloadFileNames[program.id]}
+                >{documentLabel}</Button>
+                {program.summaryUrl && (
+                  <Button href={program.summaryUrl} download={summaryDownloadFileName}>Resumen: las 29 medidas</Button>
+                )}
+                {program.sourceUrl && <Button href={program.sourceUrl} target="_blank" rel="noopener">Fuente oficial</Button>}
+              </div>
+            </div>
+            <dl class={`hero__stats box${pendingMeasures.length === 0 ? ' hero__stats--five' : ''}`}>
+              <div><dt>{plural}</dt><dd>{total}</dd></div>
+              <div><dt>Bloques</dt><dd>{program.blocks.length}</dd></div>
+              <div><dt>Secciones</dt><dd>{program.sections.length}</dd></div>
+              <div><dt>Con cifra</dt><dd>{withFigures}</dd></div>
+              <div><dt>Con plazo</dt><dd>{withDeadline}</dd></div>
+              {pendingMeasures.length > 0 && (
+                <div class="hero__stat-pending"><dt>Por anunciar</dt><dd>{pendingMeasures.length}</dd></div>
+              )}
+            </dl>
+          </div>
+        </section>
+
+        {program.notes.map((note) => (
+          <div class="container notes">
+            <aside class="box notes__body">
+              <strong>Nota sobre el documento</strong>
+              <p>{note}</p>
+            </aside>
+          </div>
+        ))}
+
+        <div class="container">
+          <SectionHeading index="01 / LECTURA RÁPIDA" title="Las claves">
+            <p>
+              Ideas basadas en el análisis editorial o, cuando este aún no está disponible, en la distribución temática. Cada una
+              enlaza con las {plural} en las que se apoya.
+            </p>
+          </SectionHeading>
+          <ol class="findings">
+            {
+              keyFindings.map((finding, index) => (
+                <li class="finding box">
+                  <span class="finding__index">{padNumber(index + 1)}</span>
+                  <h3>{finding.title}</h3>
+                  <p>{finding.text}</p>
+                  <p class="finding__refs">
+                    {finding.measureNumbers.filter((number) => measureByNumber[number]).map((number) => (
+                      <a
+                        href={routes.measure(program.id, number)}
+                        data-tooltip={tooltip(
+                          `Nº ${number}`,
+                          measureByNumber[number].isPending ? 'Pendiente de anunciar' : measureByNumber[number].phraseTitle,
+                        )}
+                      >
+                        {number}
+                      </a>
+                    ))}
+                  </p>
+                </li>
+              ))
+            }
+          </ol>
+
+          <SectionHeading index="02 / CIFRAS" title="Los números del programa">
+            <p>Los compromisos que el programa cuantifica. Pulsa una ficha para leer la {singular} completa.</p>
+          </SectionHeading>
+          {
+            (() => {
+              const FIRST_FIGURES = 12;
+              const shown = program.figures.slice(0, FIRST_FIGURES);
+              const hidden = program.figures.slice(FIRST_FIGURES);
+              const card = (figure: (typeof program.figures)[number], index: number) => (
+                <a class:list={['figure-card', { 'figure-card--large': index < 2 }]} href={routes.measure(program.id, figure.measureNumber)}>
+                  <span class="figure-card__value">{figure.value}</span>
+                  <span class="figure-card__unit">{figure.unit}</span>
+                  <span class="figure-card__text">{figure.text}</span>
+                  {figure.context && <span class="figure-card__context">«{figure.context}»</span>}
+                  <span class="figure-card__number mono">Nº {figure.measureNumber}</span>
+                </a>
+              );
+              return (
+                <>
+                  <div class="figures">{shown.map((figure, index) => card(figure, index))}</div>
+                  {hidden.length > 0 && (
+                    <details class="figures-more">
+                      <summary class="figures-more__toggle">
+                        Ver las {hidden.length} cifras restantes
+                      </summary>
+                      <div class="figures figures--compact">{hidden.map((figure) => card(figure, 99))}</div>
+                    </details>
+                  )}
+                </>
+              );
+            })()
+          }
+
+          <SectionHeading index="03 / ESTRUCTURA" title="Cómo se reparte">
+            <p>Peso de cada bloque en el total y mapa completo: una casilla por {singular}, una fila por sección.</p>
+          </SectionHeading>
+          <BlockBar program={program} />
+          <div class="map-panel">
+            <Panel
+              title={`Mapa de las ${total} ${plural}`}
+              lead={`Pasa el ratón sobre una casilla para ver la ${singular}. Las casillas con trama son las ${pendingMeasures.length} ${plural} que el partido anunciará durante la campaña.`}
+            >
+              <MeasureMap program={program} />
+            </Panel>
+          </div>
+
+          <SectionHeading index="04 / TEMAS" title={`${capitalize(plural)} por categoría`}>
+            <p>
+              Clasificación temática común a todos los programas. Cada {singular} tiene una categoría principal. Pulsa una barra
+              para filtrar.
+            </p>
+          </SectionHeading>
+          <Panel>
+            <BarList items={byCategory} total={total} unit={plural} singularUnit={singular} />
+          </Panel>
+
+          <SectionHeading index="05 / A QUIÉN Y CÓMO" title="Colectivos y palancas">
+            <p>
+              Detección automática por palabras clave sobre el texto de cada {singular}. Una {singular} puede citar varios
+              colectivos y usar varias palancas.
+            </p>
+          </SectionHeading>
+          <div class="grid grid--2">
+            <Panel title="A quién se dirige" lead={`${capitalize(plural)} que citan a cada colectivo (de ${publishedMeasures.length} publicadas).`}>
+              <BarList items={byTargetGroup} total={publishedMeasures.length} color="var(--color-block-3)" unit={plural} singularUnit={singular} />
+            </Panel>
+            <div class="grid">
+              <Panel title="Con qué palanca" lead={`El instrumento que usa cada ${singular}.`}>
+                <BarList items={byLever} total={publishedMeasures.length} color="var(--color-block-2)" unit={plural} singularUnit={singular} />
+              </Panel>
+              <Panel title="Territorios citados" lead={`${capitalize(plural)} que nombran un territorio concreto.`}>
+                <BarList items={byTerritory} total={publishedMeasures.length} color="var(--color-block-4)" unit={plural} singularUnit={singular} />
+              </Panel>
+            </div>
+          </div>
+
+          {withDeadline > 0 && (
+            <>
+              <SectionHeading index="06 / CALENDARIO" title="Lo que tiene fecha">
+                <p>
+                  Solo {withDeadline} de las {total} {plural} fijan un plazo. Se separan en tres tipos: fecha fija, plazo máximo de espera y plazo de implantación. Dentro de cada tipo, van de lo más inmediato a lo más lejano.
+                </p>
+              </SectionHeading>
+              <Panel>
+                <DeadlineTimeline program={program} />
+              </Panel>
+            </>
+          )}
+
+          {(repealingMeasures.length > 0 || pendingMeasures.length > 0 || byVerb.length > 0) && (
+            <>
+              <SectionHeading index="07 / MÁS DATOS" title="Deroga, reserva y repite" />
+              <div class="grid grid--3">
+                {repealingMeasures.length > 0 && (
+                  <Panel title="Leyes que deroga" lead="Derogaciones explícitas.">
+                    <ul class="repeals">
+                      {repealingMeasures.map((measure) => (
+                        <li>
+                          <a href={routes.measure(program.id, measure.number)}>
+                            <s>{measure.repeals}</s>
+                            <span class="mono">Nº {measure.number}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </Panel>
+                )}
+                {pendingMeasures.length > 0 && (
+                  <Panel title="Por anunciar" lead="Números reservados para la campaña, con la sección en la que van.">
+                    <ul class="pending">
+                      {pendingMeasures.map((measure) => {
+                        const section = program.sections.find((candidate) => candidate.id === measure.sectionId)!;
+                        return (
+                          <li>
+                            <span class="pending__swatch" aria-hidden="true"></span>
+                            <a href={routes.measure(program.id, measure.number)}>
+                              <strong>Nº {measure.number}</strong> · {categoryById[measure.categoryId].name}
+                            </a>
+                            <span class="pending__section">{section.id} {section.phraseTitle}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </Panel>
+                )}
+                {byVerb.length > 0 && (
+                  <Panel title="El programa en verbos" lead="Los verbos en futuro más repetidos.">
+                    <BarList items={byVerb} total={total} color="var(--color-ink)" unit="veces" />
+                  </Panel>
+                )}
+              </div>
+            </>
+          )}
+
+          <SectionHeading index="08 / LEER" title={`Los ${program.blocks.length} bloques`}>
+            <p>El programa completo, bloque a bloque, con la introducción y el texto íntegro de cada medida.</p>
+          </SectionHeading>
+          <div class="block-links">
+            {
+              program.blocks.map((block) => {
+                const count = program.measures.filter((measure) => measure.blockId === block.id).length;
+                const sectionCount = program.sections.filter((section) => section.blockId === block.id).length;
+                return (
+                  <a
+                    class="block-card box box--interactive"
+                    href={routes.block(program.id, block.id)}
+                    style={`--block-color: ${blockColor(block.id)}`}
+                  >
+                    <span class="block-card__number">{padNumber(block.id)}</span>
+                    <h3>{block.title}</h3>
+                    <p class="block-card__motto">«{block.motto}»</p>
+                    <p class="block-card__count mono">
+                      {count} {measureNoun(program, count)} · {sectionCount} secciones
+                    </p>
+                  </a>
+                );
+              })
+            }
+          </div>
+
+          <div class="details details--first">
+            <Panel>
+              <details>
+                <summary><h3>Presentación: {program.introduction.title}</h3></summary>
+                <div class="introduction">
+                  {splitParagraphs(program.introduction.text).map((paragraph) => <p>{paragraph}</p>)}
+                </div>
+              </details>
+            </Panel>
+          </div>
+
+          <div class="details">
+            <Panel>
+              <details>
+                <summary><h3>Nota de método</h3></summary>
+                <p>{methodNote(program)}</p>
+                {program.sourceUrl && (
+                  <p><a href={program.sourceUrl} target="_blank" rel="noopener">Consultar la fuente oficial</a>.</p>
+                )}
+              </details>
+            </Panel>
+          </div>
+
+          <SectionHeading index="09 / CANDIDATURAS" title="Dónde se presenta">
+            <p>Provincias en las que {program.acronym} presenta candidatura al Congreso o al Senado, según la proclamación oficial.</p>
+          </SectionHeading>
+          <Panel>
+            <PresenceMap program={program} />
+            <RelatedParties program={program} />
+          </Panel>
+        </div>
+      </>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .hero {
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    padding: clamp(36px, 6vw, 72px) 0;
+    background:
+      repeating-linear-gradient(-45deg, transparent 0 22px, color-mix(in srgb, var(--party-color-light) 22%, transparent) 22px 28px),
+      var(--color-paper);
+  }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+    gap: 28px 40px;
+    align-items: end;
+  }
+  /* The title always takes the full row: it never competes with the stats box */
+  .hero__title { grid-column: 1 / -1; }
+  .hero__party {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+  }
+  .hero h1 {
+    /* «RECONSTRUCCIÓN» is about 10.4 em wide in Archivo Black: 9 cqi keeps the word whole on one line */
+    font-size: clamp(1.625rem, 9cqi, 8rem);
+    line-height: 0.85;
+    margin: 14px 0 0;
+    text-shadow: 0.045em 0.045em 0 var(--party-color-light);
+  }
+  .hero__subtitle { font-size: clamp(1.125rem, 2.4vw, 1.5rem); font-weight: 800; max-width: 30ch; margin: 0; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: 26px; }
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+  }
+  .hero__stats div {
+    padding: 14px var(--space-4);
+    border-right: var(--border-thin) solid var(--color-ink);
+    border-bottom: var(--border-thin) solid var(--color-ink);
+  }
+  .hero__stats div:nth-child(3n) { border-right: 0; }
+  .hero__stats div:nth-child(n + 4) { border-bottom: 0; }
+  .hero__stats dt { font-family: var(--font-mono); font-size: var(--text-2xs); font-weight: 700; text-transform: uppercase; }
+  .hero__stats dd { margin: 0; font-family: var(--font-display); font-size: clamp(2.125rem, 4vw, 3rem); line-height: 1; }
+  /* Five stats (no "Por anunciar"): three cells on top, two wide cells below, no empty slot */
+  .hero__stats--five { grid-template-columns: repeat(6, 1fr); }
+  .hero__stats--five div { grid-column: span 2; }
+  .hero__stats--five div:nth-child(n + 4) {
+    grid-column: span 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-3);
+    border-top: var(--border-thin) solid var(--color-ink);
+    background: color-mix(in srgb, var(--party-color-light) 30%, transparent);
+  }
+  .hero__stats--five div:nth-child(4) { border-right: var(--border-thin) solid var(--color-ink); }
+  .hero__stats--five div:nth-child(5) { border-right: 0; }
+  .hero__stat-pending {
+    background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--color-ink) 14%, transparent) 0 2px, transparent 2px 8px);
+  }
+  .notes { padding-top: 20px; }
+  .notes__body { padding: var(--space-4) 20px; border-left: 8px solid var(--color-highlight); box-shadow: none; }
+  .notes__body p { margin: var(--space-1) 0 0; font-size: var(--text-sm); }
+
+  .findings {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: var(--space-5);
+  }
+  .finding { padding: 22px; position: relative; }
+  .finding__index {
+    position: absolute;
+    top: -18px;
+    right: var(--space-4);
+    font-family: var(--font-display);
+    font-size: 1.625rem;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    border: var(--border-thick) solid var(--color-ink);
+    padding: 2px 10px;
+  }
+  .finding h3 { font-size: var(--text-xl); margin: 6px 0 var(--space-3); max-width: 18ch; }
+  .finding p { font-size: 0.9375rem; }
+  .finding__refs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+  .finding__refs a {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-decoration: none;
+    border: var(--border-thin) solid var(--color-ink);
+    padding: 2px 7px;
+  }
+
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+    gap: 20px;
+  }
+  .figure-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-decoration: none;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-4) 18px;
+    transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+    container-type: inline-size; /* each card is its own container: the figure fits the card width */
+  }
+  .figure-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+  }
+  .figure-card--large { grid-column: span 2; background: var(--color-ink); color: var(--color-paper); }
+  .figure-card__value {
+    max-width: 100%;
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 8cqi, 2.875rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+  .figure-card--large .figure-card__value { font-size: clamp(1.75rem, 12cqi, 5.25rem); }
+  .figure-card__unit { font-family: var(--font-mono); font-weight: 700; font-size: 0.8125rem; text-transform: uppercase; }
+  .figure-card__text { font-size: var(--text-sm); line-height: 1.3; margin-top: var(--space-2); flex: 1; }
+  .figure-card__context { font-size: var(--text-xs); line-height: 1.35; font-style: italic; }
+  .figure-card__number { font-size: var(--text-2xs); font-weight: 700; margin-top: 10px; opacity: 0.75; }
+  @media (max-width: 520px) { .figure-card--large { grid-column: span 1; } }
+  .figures-more { margin-top: 20px; }
+  .figures-more__toggle {
+    cursor: pointer;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    padding: 10px 16px;
+    box-shadow: var(--shadow-sm);
+  }
+  .figures-more__toggle:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .figures-more[open] .figures-more__toggle { margin-bottom: 20px; }
+  .figures--compact { grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 14px; }
+  .figures--compact .figure-card { padding: var(--space-3) 12px; }
+  .figures--compact .figure-card__value { font-size: clamp(1.375rem, 7cqi, 2rem); }
+  .figures--compact .figure-card__text { font-size: var(--text-xs); }
+
+  .map-panel { margin-top: 36px; }
+
+  .repeals, .pending { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .repeals a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    border: var(--border-thin) solid var(--color-ink);
+    padding: 10px var(--space-3);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: var(--text-lg);
+    line-height: 1.05;
+  }
+  .repeals s { text-decoration-thickness: 4px; text-decoration-color: var(--color-block-2); }
+  .repeals .mono { font-family: var(--font-mono); font-size: var(--text-2xs); white-space: nowrap; }
+  .pending li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 2px 10px;
+    font-size: var(--text-sm);
+    align-items: center;
+  }
+  .pending__swatch {
+    width: 22px;
+    height: 22px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 6px);
+    grid-row: span 2;
+  }
+  .pending a { text-decoration: none; font-weight: 600; }
+  .pending__section { font-size: var(--text-xs); color: var(--color-ink-subtle); line-height: 1.2; }
+
+  .block-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: var(--space-5);
+  }
+  .block-card {
+    padding: 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .block-card__number {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    line-height: 1;
+    background: var(--block-color);
+    color: var(--color-on-block);
+    margin: 0 -20px var(--space-2);
+    padding: 14px 20px 6px;
+    border-bottom: var(--border-thick) solid var(--color-ink);
+  }
+  .block-card h3 { font-size: 1.5rem; overflow-wrap: anywhere; }
+  .block-card__motto { font-style: italic; margin: 0; flex: 1; }
+  .block-card__count { font-size: var(--text-xs); font-weight: 700; margin: 0; }
+
+  .details { margin-top: 28px; }
+  .details--first { margin-top: 56px; }
+  .introduction { columns: 2 340px; column-gap: 36px; margin-top: var(--space-3); }
+  .introduction p { font-size: 0.9375rem; margin-top: 0; }
+  .details summary { cursor: pointer; }
+  .details summary h3 { display: inline; }
+  .details p { margin-top: var(--space-3); font-size: 0.9375rem; max-width: 80ch; }
+
+  @media (max-width: 860px) {
+    .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>

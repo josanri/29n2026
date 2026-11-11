@@ -1,0 +1,27 @@
+{
+ "id": "teruel-existe",
+ "partido": "Teruel Existe",
+ "siglas": "TE",
+ "color": "#2b9348",
+ "colorClaro": "#a0cead",
+ "programa": "",
+ "subtitulo": "Programa vacío",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "vacio": true,
+ "pdf": "",
+ "paginas": 0,
+ "unidadMedida": "medida",
+ "unidadMedidas": "medidas",
+ "presentacion": {
+  "titulo": "",
+  "texto": ""
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [],
+ "secciones": [],
+ "medidas": [],
+ "comunidad": "Aragón"
+}

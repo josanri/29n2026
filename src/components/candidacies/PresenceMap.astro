@@ -1,0 +1,235 @@
+---
+/**
+ * Map of the provinces where a party runs lists.
+ * Each province with a list links to «Quién se presenta» on the home page.
+ */
+import type { Program } from '@/lib/programs';
+import { geography } from '@/lib/geography';
+import { presenceOf, provinceRegions, provinces } from '@/lib/presence';
+import { compareText } from '@/lib/format';
+import { PAPER_ALT, shiftForContrast } from '@/lib/color';
+import { routes } from '@/lib/routes';
+import { tooltip } from '@/lib/tooltip';
+
+interface Props {
+  program: Program;
+}
+
+const { program } = Astro.props;
+const presence = presenceOf(program);
+const congress = new Set(presence.congress);
+const senate = new Set(presence.senate);
+const TOTAL_CONSTITUENCIES = 52;
+
+const runsIn = (code: string) => congress.has(code) || senate.has(code);
+const present = geography.provinces.filter((province) => runsIn(province.code));
+const absent = geography.provinces.filter((province) => !runsIn(province.code));
+const chambersOf = (code: string) =>
+  congress.has(code) && senate.has(code) ? 'Congreso y Senado' : congress.has(code) ? 'Solo Congreso' : 'Solo Senado';
+
+// A party color can be very light or very dark. Darken it (light theme) or lighten it (dark theme)
+// until it has at least 3:1 contrast with the provinces where the party does not run.
+const colorForLight = shiftForContrast(program.color, PAPER_ALT.light, 0);
+const colorForDark = shiftForContrast(program.color, PAPER_ALT.dark, 255);
+
+const listByRegion = provinceRegions
+  .map((region) => ({
+    region,
+    provinces: provinces
+      .filter((province) => province.region === region && runsIn(province.code))
+      .sort((a, b) => compareText(a.name, b.name)),
+  }))
+  .filter((group) => group.provinces.length > 0);
+
+const summary =
+  present.length === 0
+    ? 'No presenta candidaturas en ninguna circunscripción.'
+    : `Presenta candidaturas en ${present.length} de las ${TOTAL_CONSTITUENCIES} circunscripciones: al Congreso en ${congress.size} y al Senado en ${senate.size}.`;
+const { canaryIslands } = geography;
+---
+
+<figure class="presence" style={`--presence-light:${colorForLight}; --presence-dark:${colorForDark}`}>
+  <svg
+    class="presence__map"
+    viewBox={`0 0 ${geography.width} ${geography.height}`}
+    role="group"
+    aria-label={`Mapa de España. ${program.acronym}: ${summary}`}
+  >
+    <rect class="presence__frame" x={canaryIslands.x} y={canaryIslands.y} width={canaryIslands.width} height={canaryIslands.height} />
+    <text class="presence__label" x={canaryIslands.x + 10} y={canaryIslands.y + 24} aria-hidden="true">CANARIAS</text>
+    {absent.map((province) => (
+      <g class="presence__absent">
+        <path d={province.path} />
+      </g>
+    ))}
+    {present.map((province) => (
+      <a
+        class="presence__province"
+        href={routes.provinceCandidacies(province.code)}
+        aria-label={`${province.name}: ${chambersOf(province.code).toLowerCase()}. Ver las candidaturas`}
+        data-tooltip={tooltip(province.name, chambersOf(province.code))}
+      >
+        <path d={province.path} />
+      </a>
+    ))}
+    {geography.provinces.filter((province) => province.marker).map((province) => (
+      <text
+        class="presence__label"
+        x={province.marker!.x + (province.marker!.labelSide === 'left' ? -1 : 1) * (province.marker!.radius + 8)}
+        y={province.marker!.y + 6}
+        text-anchor={province.marker!.labelSide === 'left' ? 'end' : 'start'}
+        aria-hidden="true"
+      >{province.name.toUpperCase()}</text>
+    ))}
+    <path class="presence__outline-back" aria-hidden="true" />
+    <path class="presence__outline" aria-hidden="true" />
+  </svg>
+  <figcaption>
+    <p class="presence__legend">
+      <span class="presence__swatch presence__swatch--present" aria-hidden="true"></span> Presenta candidatura
+      <span class="presence__swatch" aria-hidden="true"></span> No se presenta
+    </p>
+    <p>{summary} {present.length > 0 && 'Pulsa una provincia para ver sus candidaturas.'}</p>
+  </figcaption>
+  <p class="presence__credit">
+    Mapa derivado de{' '}
+    <a href="https://github.com/codeforgermany/click_that_hood" target="_blank" rel="noreferrer">Click That ’Hood</a>
+    {' '}(<a href="/datos-electorales/LICENSE-mapa.txt">licencia MIT</a>).
+  </p>
+  {listByRegion.length > 0 && (
+    <details class="presence__list">
+      <summary><span class="presence__summary-text">Lista de provincias</span><span class="presence__icon" aria-hidden="true"></span></summary>
+      <dl>
+        {listByRegion.map((group) => (
+          <div>
+            <dt>{group.region}</dt>
+            <dd>
+              {group.provinces.map((province, index) => (
+                <>
+                  <a href={routes.provinceCandidacies(province.code)}>{province.name}</a>
+                  {chambersOf(province.code) !== 'Congreso y Senado' && (
+                    <span class="presence__chamber"> ({chambersOf(province.code).toLowerCase()})</span>
+                  )}
+                  {index < group.provinces.length - 1 && ' · '}
+                </>
+              ))}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </details>
+  )}
+</figure>
+
+<script>
+  // Outline of the province under the pointer or with focus, drawn above its neighbors.
+  for (const map of document.querySelectorAll<SVGSVGElement>('.presence__map')) {
+    const outlines = [...map.querySelectorAll<SVGPathElement>('.presence__outline-back, .presence__outline')];
+    const mark = (link: Element | null) => {
+      const path = link?.querySelector('path')?.getAttribute('d');
+      for (const outline of outlines) {
+        if (path) outline.setAttribute('d', path);
+        else outline.removeAttribute('d');
+      }
+    };
+    const linkOf = (target: EventTarget | null) => (target as Element | null)?.closest?.('.presence__province') ?? null;
+    map.addEventListener('pointerover', (event) => mark(linkOf(event.target)));
+    map.addEventListener('pointerleave', () => mark(map.querySelector('.presence__province:focus-visible')));
+    map.addEventListener('focusin', (event) => mark(linkOf(event.target)));
+    map.addEventListener('focusout', () => mark(null));
+  }
+</script>
+
+<style>
+  .presence {
+    /* The theme picks the color that has enough contrast on its own background. */
+    --presence: light-dark(var(--presence-light), var(--presence-dark));
+    margin: 0;
+  }
+  .presence__map {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+  }
+  .presence__map path { stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+  .presence__absent path { fill: var(--color-paper-alt); stroke: var(--color-ink-subtle); stroke-width: 0.75; }
+  .presence__province path { fill: var(--presence); stroke: var(--color-paper); stroke-width: 1; }
+  .presence__province { cursor: pointer; }
+  .presence__province:focus-visible { outline: none; box-shadow: none; }
+  .presence__map path.presence__outline-back,
+  .presence__map path.presence__outline { fill: none; pointer-events: none; }
+  .presence__map path.presence__outline-back { stroke: var(--color-ink); stroke-width: 6; }
+  .presence__map path.presence__outline { stroke: var(--color-highlight); stroke-width: 2.5; }
+  .presence__frame { fill: none; stroke: var(--color-ink-subtle); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+  .presence__label { fill: var(--color-ink-muted); font: 700 1.1875rem var(--font-mono); letter-spacing: 0.04em; }
+  figcaption { margin-top: var(--space-4); font-size: 0.9375rem; }
+  figcaption p { margin: 0 0 6px; }
+  .presence__credit { margin: var(--space-3) 0 0; font-size: 0.8125rem; color: var(--color-ink-muted); }
+  .presence__legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    font: 700 var(--text-xs) var(--font-mono);
+    text-transform: uppercase;
+  }
+  .presence__swatch {
+    display: inline-block;
+    width: 18px;
+    height: 14px;
+    border: 1px solid var(--color-ink-subtle);
+    background: var(--color-paper-alt);
+  }
+  .presence__swatch--present { background: var(--presence); border-color: var(--presence); }
+  .presence__swatch:not(:first-child) { margin-left: var(--space-2); }
+  .presence__list { margin-top: 10px; }
+  .presence__list summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    list-style: none;
+    cursor: pointer;
+    font: 700 0.8125rem var(--font-mono);
+    text-transform: uppercase;
+  }
+  .presence__list summary::-webkit-details-marker { display: none; }
+  .presence__list summary:hover .presence__summary-text { text-decoration: underline; text-decoration-thickness: 3px; text-decoration-color: var(--color-highlight); }
+  .presence__icon {
+    position: relative;
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    transition: background-color 0.2s, box-shadow var(--duration-base), transform var(--duration-slow) var(--easing-out);
+  }
+  .presence__icon::before,
+  .presence__icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: var(--color-ink);
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s, transform var(--duration-slow) var(--easing-out);
+  }
+  .presence__icon::before { width: 12px; height: 3px; }
+  .presence__icon::after { width: 3px; height: 12px; }
+  .presence__list summary:hover .presence__icon { box-shadow: 2px 2px 0 var(--color-ink); }
+  .presence__list[open] > summary .presence__icon { background: var(--color-ink); transform: rotate(180deg); }
+  .presence__list[open] > summary .presence__icon::before,
+  .presence__list[open] > summary .presence__icon::after { background: var(--color-paper); }
+  .presence__list[open] > summary .presence__icon::after { transform: translate(-50%, -50%) scaleY(0); }
+  .presence__list dl { display: grid; gap: var(--space-2); margin: var(--space-3) 0 0; }
+  .presence__list dt {
+    font: 700 var(--text-xs) var(--font-mono);
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+  .presence__list dd { margin: 2px 0 0; font-size: 0.9375rem; }
+  .presence__chamber { color: var(--color-ink-muted); font-size: 0.8125rem; }
+</style>

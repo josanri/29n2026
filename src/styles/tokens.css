@@ -1,0 +1,122 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   The single source of truth for color, type, space, borders, shadows, layers
+   and motion. Components read tokens and never write raw values.
+
+   Themes: `light-dark()` picks the value from `color-scheme`.
+   - No `data-theme` attribute: the theme follows the operating system.
+   - `data-theme="light"` or `"dark"` on <html>: the reader chose a theme.
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* ---------- Color: surfaces and ink ---------- */
+  --color-paper: light-dark(#f3efe4, #151515);
+  --color-paper-alt: light-dark(#e8e2d2, #222120);
+  --color-ink: light-dark(#0e0e0e, #f1ece0);
+  --color-ink-muted: light-dark(#3d3b36, #c9c3b5);
+  --color-ink-subtle: light-dark(#6b675d, #9a9487);
+
+  /* ---------- Color: fixed (the same in both themes) ----------
+     For surfaces that sit on a fixed-color background, such as a block color. */
+  --color-fixed-light: #f3efe4;
+  --color-fixed-dark: #0e0e0e;
+
+  /* ---------- Color: highlight (the yellow marker) ---------- */
+  --color-highlight: #ffd23f;
+  --color-on-highlight: var(--color-fixed-dark);
+
+  /* ---------- Color: accent (a party page redefines these three) ---------- */
+  --color-accent: light-dark(#135898, #4f8fd6);
+  --color-accent-light: #4dc1df;
+  --color-on-accent: light-dark(#ffffff, #0e0e0e);
+
+  /* Brand: the strong surface of header, footer and primary buttons.
+     Ink by default; the accent on a party page. */
+  --color-brand: var(--color-ink);
+  --color-on-brand: var(--color-paper);
+
+  /* ---------- Color: block palette (categorical, 11 colors) ---------- */
+  --color-block-1: light-dark(#2a78d6, #3987e5);
+  --color-block-2: light-dark(#eb6834, #d95926);
+  --color-block-3: light-dark(#1baf7a, #199e70);
+  --color-block-4: light-dark(#eda100, #c98500);
+  --color-block-5: #bd8be8;
+  --color-block-6: #ed8c9c;
+  --color-block-7: #55b8c2;
+  --color-block-8: #b7c957;
+  --color-block-9: #65a6e8;
+  --color-block-10: #f08a55;
+  --color-block-11: #7bc598;
+  --color-on-block: var(--color-fixed-dark);
+
+  /* ---------- Color: heat scale (sequential, one hue, five steps) ----------
+     In the dark theme the order flips: the low step is near the background. */
+  --color-heat-1: light-dark(#cde2fb, #184f95);
+  --color-heat-2: light-dark(#9ec5f4, #1c5cab);
+  --color-heat-3: light-dark(#5598e7, #3987e5);
+  --color-heat-4: light-dark(#256abf, #6da7ec);
+  --color-heat-5: light-dark(#104281, #b7d3f6);
+  --color-on-heat-1: light-dark(#0e0e0e, #ffffff);
+  --color-on-heat-2: light-dark(#0e0e0e, #ffffff);
+  --color-on-heat-3: #0e0e0e;
+  --color-on-heat-4: light-dark(#ffffff, #0e0e0e);
+  --color-on-heat-5: light-dark(#ffffff, #0e0e0e);
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Archivo Black', 'Arial Black', Impact, sans-serif;
+  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+
+  --leading-tight: 0.95;
+  --leading-snug: 1.25;
+  --leading-body: 1.55;
+
+  /* ---------- Space (4px grid) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+
+  /* ---------- Borders and shadows (hard, no blur) ---------- */
+  --border-thick: 4px;
+  --border-thin: 2px;
+  --border-hairline: 1px;
+  --shadow-sm: 4px 4px 0 var(--color-ink);
+  --shadow-md: 6px 6px 0 var(--color-ink);
+  --shadow-lg: 9px 9px 0 var(--color-ink);
+
+  /* ---------- Layout ---------- */
+  --layout-width: 100%;
+  --gutter: clamp(16px, 2vw, 32px);
+
+  /* ---------- Layers ---------- */
+  --z-raised: 1;
+  --z-sticky: 20;
+  --z-header: 50;
+  --z-dropdown: 60;
+  --z-tooltip: 100;
+  --z-skip-link: 200;
+
+  /* ---------- Motion ---------- */
+  --duration-fast: 0.08s;
+  --duration-base: 0.15s;
+  --duration-slow: 0.26s;
+  --easing-out: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+:root[data-theme='light'] { color-scheme: light; }
+:root[data-theme='dark'] { color-scheme: dark; }

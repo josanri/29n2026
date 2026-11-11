@@ -1,0 +1,369 @@
+---
+/**
+ * The design system, documented with live components.
+ * Colors and contrast ratios come from `src/styles/tokens.css` at build time.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BarList from '@/components/charts/BarList.astro';
+import BlockChip from '@/components/ui/BlockChip.astro';
+import Button from '@/components/ui/Button.astro';
+import Panel from '@/components/ui/Panel.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { colorToken, contrastBetween } from '@/lib/design-tokens';
+import { blockColor } from '@/lib/blocks';
+import { tooltip } from '@/lib/tooltip';
+
+const swatchGroups = [
+  { title: 'Superficies y tinta', names: ['paper', 'paper-alt', 'ink', 'ink-muted', 'ink-subtle'] },
+  { title: 'Resaltado y acento', names: ['highlight', 'on-highlight', 'accent', 'accent-light', 'on-accent'] },
+  { title: 'Marca (cabecera, pie, botón principal)', names: ['brand', 'on-brand'] },
+  { title: 'Fijos (iguales en los dos temas)', names: ['fixed-light', 'fixed-dark'] },
+  { title: 'Bloques (categórica)', names: Array.from({ length: 11 }, (_, i) => `block-${i + 1}`) },
+  { title: 'Escala de calor (secuencial)', names: [1, 2, 3, 4, 5].map((i) => `heat-${i}`) },
+].map((group) => ({ ...group, tokens: group.names.map(colorToken) }));
+
+// Text and background pairs the site uses. `needs` is the WCAG minimum for that use.
+const pairs = [
+  { use: 'Texto principal', fg: 'ink', bg: 'paper', needs: 4.5 },
+  { use: 'Texto secundario', fg: 'ink-muted', bg: 'paper', needs: 4.5 },
+  { use: 'Texto de apoyo', fg: 'ink-subtle', bg: 'paper', needs: 4.5 },
+  { use: 'Texto secundario sobre papel alterno', fg: 'ink-muted', bg: 'paper-alt', needs: 4.5 },
+  { use: 'Texto invertido (etiqueta tinta, tooltip)', fg: 'paper', bg: 'ink', needs: 4.5 },
+  { use: 'Texto sobre el resaltado (hover, tooltip)', fg: 'on-highlight', bg: 'highlight', needs: 4.5 },
+  { use: 'Texto sobre el acento por defecto', fg: 'on-accent', bg: 'accent', needs: 4.5 },
+  { use: 'Texto sobre la marca', fg: 'on-brand', bg: 'brand', needs: 4.5 },
+  { use: 'Cifras de la escala de calor, paso 1', fg: 'on-heat-1', bg: 'heat-1', needs: 4.5 },
+  { use: 'Cifras de la escala de calor, paso 2', fg: 'on-heat-2', bg: 'heat-2', needs: 4.5 },
+  { use: 'Cifras de la escala de calor, paso 3', fg: 'on-heat-3', bg: 'heat-3', needs: 4.5 },
+  { use: 'Cifras de la escala de calor, paso 4', fg: 'on-heat-4', bg: 'heat-4', needs: 4.5 },
+  { use: 'Cifras de la escala de calor, paso 5', fg: 'on-heat-5', bg: 'heat-5', needs: 4.5 },
+  { use: 'Títulos grandes sobre el color de bloque 1', fg: 'on-block', bg: 'block-1', needs: 3 },
+  { use: 'Títulos grandes sobre el color de bloque 2', fg: 'on-block', bg: 'block-2', needs: 3 },
+  { use: 'Títulos grandes sobre el color de bloque 3', fg: 'on-block', bg: 'block-3', needs: 3 },
+  { use: 'Títulos grandes sobre el color de bloque 4', fg: 'on-block', bg: 'block-4', needs: 3 },
+].map((pair) => ({ ...pair, ratio: contrastBetween(pair.fg, pair.bg) }));
+
+const typeScale = [
+  { token: '--text-2xs', size: '11px', use: 'Etiquetas pequeñas, leyendas' },
+  { token: '--text-xs', size: '12px', use: 'Etiquetas, metadatos en mono' },
+  { token: '--text-sm', size: '14px', use: 'Texto de apoyo, navegación' },
+  { token: '--text-md', size: '16px', use: 'Texto de medidas' },
+  { token: '--text-base', size: '17px', use: 'Texto del cuerpo' },
+  { token: '--text-lg', size: '18px', use: 'Entradillas, títulos de medida' },
+  { token: '--text-xl', size: '22px', use: 'Títulos de panel' },
+];
+
+const spaceScale = ['--space-1', '--space-2', '--space-3', '--space-4', '--space-5', '--space-6', '--space-7', '--space-8'];
+const layers = ['--z-raised', '--z-sticky', '--z-header', '--z-dropdown', '--z-tooltip', '--z-skip-link'];
+
+const sampleBars = [
+  { id: 'a', label: 'Vivienda', count: 24, code: 'VIV' },
+  { id: 'b', label: 'Sanidad y cuidados', count: 17, code: 'SAN' },
+  { id: 'c', label: 'Educación', count: 9, code: 'EDU' },
+];
+const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
+---
+
+<BaseLayout
+  noindex
+  title="Sistema de diseño"
+  description="Tokens, componentes y reglas de uso del diseño de Programas 29N, con ejemplos en vivo en los temas claro y oscuro."
+>
+  <section class="hero">
+    <div class="container">
+      <Tag variant="ink">Sistema de diseño</Tag>
+      <h1 class="headline">Papel, tinta y sombras duras</h1>
+      <p class="hero__lede">
+        Un sistema de tokens CSS y pocos componentes. Todo se lee en los dos temas: el botón de la cabecera cambia entre claro
+        y oscuro para comprobarlo.
+      </p>
+      <ol class="toc">
+        <li><a href="#principles">Principios</a></li>
+        <li><a href="#color">Color</a></li>
+        <li><a href="#contrast">Contraste</a></li>
+        <li><a href="#type">Tipografía</a></li>
+        <li><a href="#space">Espacio, bordes y capas</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#files">Dónde está cada cosa</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="container">
+    <SectionHeading index="01 / PRINCIPIOS" title="Cómo se decide" headingId="principles" />
+    <ul class="principles">
+      <li class="box"><h3>Tokens, no valores</h3><p>Los componentes leen <code>var(--color-*)</code>, <code>--space-*</code> y similares. Un valor escrito a mano es un error de diseño.</p></li>
+      <li class="box"><h3>Dos temas, un valor</h3><p>Cada token de color usa <code>light-dark()</code>. No hay bloques duplicados para el tema oscuro.</p></li>
+      <li class="box"><h3>Nunca solo color</h3><p>El color de un bloque va siempre con su número. El estado «sin programa» usa borde discontinuo y trama.</p></li>
+      <li class="box"><h3>Pares fijos para lo que se invierte</h3><p>Si una pieza invierte tinta y papel, el texto de énfasis no usa un color de acento: usa un par fijo, como negro sobre amarillo.</p></li>
+    </ul>
+
+    <SectionHeading index="02 / COLOR" title="Color" headingId="color">
+      <p>Cada muestra usa el token real: cambia con el tema. Debajo, el valor en claro y en oscuro.</p>
+    </SectionHeading>
+    {swatchGroups.map((group) => (
+      <section class="swatch-group">
+        <h3>{group.title}</h3>
+        <ul class="swatches">
+          {group.tokens.map((token) => (
+            <li class="swatch">
+              <span class="swatch__chip" style={`background: var(${token.name})`}></span>
+              <code class="swatch__name">{token.name}</code>
+              <span class="swatch__values mono">
+                {token.light === token.dark ? token.light : `${token.light} · ${token.dark}`}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <SectionHeading index="03 / CONTRASTE" title="Contraste" headingId="contrast">
+      <p>Razón de contraste WCAG calculada con los tokens. Mínimo 4,5:1 en texto pequeño y 3:1 en texto grande en negrita.</p>
+    </SectionHeading>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de contraste por tema">
+      <table class="contrast-table">
+        <thead>
+          <tr><th scope="col">Uso</th><th scope="col">Mínimo</th><th scope="col">Claro</th><th scope="col">Oscuro</th></tr>
+        </thead>
+        <tbody>
+          {pairs.map((pair) => (
+            <tr>
+              <th scope="row">{pair.use}<small class="mono">{pair.fg} sobre {pair.bg}</small></th>
+              <td class="mono">{ratioLabel(pair.needs)}</td>
+              <td class="mono" data-pass={String(pair.ratio.light >= pair.needs)}>{ratioLabel(pair.ratio.light)} {pair.ratio.light >= pair.needs ? '✓' : '✗'}</td>
+              <td class="mono" data-pass={String(pair.ratio.dark >= pair.needs)}>{ratioLabel(pair.ratio.dark)} {pair.ratio.dark >= pair.needs ? '✓' : '✗'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      Los colores de partido no son tokens: llegan con los datos. Cada superficie de partido calcula su color de texto (negro o
+      blanco) con <code>readableTextColor()</code> en <code>src/lib/color.ts</code>, y el mapa de presencia oscurece o aclara el
+      color hasta 3:1 con <code>shiftForContrast()</code>.
+    </p>
+
+    <SectionHeading index="04 / TIPOGRAFÍA" title="Tipografía" headingId="type" />
+    <div class="grid grid--3">
+      <Panel title="Display" lead="--font-display · Archivo Black">
+        <p class="sample sample--display">Medida a medida</p>
+        <p>Titulares. Siempre en mayúsculas, interlineado 0,95.</p>
+      </Panel>
+      <Panel title="Texto" lead="--font-body · Archivo">
+        <p class="sample sample--body">Cada programa, descompuesto en sus medidas.</p>
+        <p>Cuerpo de texto a 17 px, interlineado 1,55.</p>
+      </Panel>
+      <Panel title="Mono" lead="--font-mono · JetBrains Mono">
+        <p class="sample sample--mono">Nº 144 · 2029 · 43 %</p>
+        <p>Números, etiquetas y metadatos.</p>
+      </Panel>
+    </div>
+    <ul class="type-scale">
+      {typeScale.map((step) => (
+        <li>
+          <code>{step.token}</code>
+          <span class="mono">{step.size}</span>
+          <span style={`font-size: var(${step.token})`}>{step.use}</span>
+        </li>
+      ))}
+    </ul>
+
+    <SectionHeading index="05 / ESPACIO" title="Espacio, bordes y capas" headingId="space" />
+    <div class="grid grid--2">
+      <Panel title="Espacio" lead="Rejilla de 4 px.">
+        <ul class="space-scale">
+          {spaceScale.map((token) => (
+            <li>
+              <code>{token}</code>
+              <span class="space-scale__bar" style={`width: var(${token})`}></span>
+            </li>
+          ))}
+        </ul>
+      </Panel>
+      <Panel title="Bordes y sombras" lead="Duros, sin desenfoque.">
+        <div class="elevation">
+          <div class="elevation__item" style="box-shadow: var(--shadow-sm)"><code>--shadow-sm</code></div>
+          <div class="elevation__item" style="box-shadow: var(--shadow-md)"><code>--shadow-md</code></div>
+          <div class="elevation__item" style="box-shadow: var(--shadow-lg)"><code>--shadow-lg</code></div>
+        </div>
+        <p class="note">Bordes: <code>--border-thick</code> 4 px, <code>--border-thin</code> 2 px, <code>--border-hairline</code> 1 px.</p>
+        <p class="note">Capas: {layers.map((layer, index) => <><code>{layer}</code>{index < layers.length - 1 ? ' · ' : ''}</>)}.</p>
+        <p class="note">Movimiento: <code>--duration-fast</code>, <code>--duration-base</code>, <code>--duration-slow</code> y <code>--easing-out</code>. Se desactiva con <code>prefers-reduced-motion</code>.</p>
+      </Panel>
+    </div>
+
+    <SectionHeading index="06 / COMPONENTES" title="Componentes" headingId="components" />
+
+    <Panel title="Button" lead="src/components/ui/Button.astro · variant: default | ink · size: md | sm">
+      <div class="demo-row">
+        <Button>Por defecto</Button>
+        <Button variant="ink">Principal</Button>
+        <Button size="sm">Pequeño</Button>
+        <Button href="#components">Enlace</Button>
+      </div>
+      <p class="note">Con <code>href</code> es un enlace; sin él, un <code>&lt;button&gt;</code>. Con <code>as="span"</code> se dibuja igual dentro de otro enlace.</p>
+    </Panel>
+
+    <div class="stack">
+      <Panel title="Tag" lead="src/components/ui/Tag.astro · variant: default | ink | highlight | party · size: sm | md | lg">
+        <div class="demo-row">
+          <Tag>Por defecto</Tag>
+          <Tag variant="ink">Tinta</Tag>
+          <Tag variant="highlight">⏱ 100 días</Tag>
+          <Tag size="sm" href="#components">Enlace pequeño</Tag>
+          <span class="demo-party"><Tag variant="party" size="lg">PP</Tag></span>
+        </div>
+      </Panel>
+
+      <Panel title="BlockChip" lead="src/components/ui/BlockChip.astro · muestra de color y texto, siempre juntos">
+        <div class="demo-row">
+          <BlockChip blockId={1}>01</BlockChip>
+          <BlockChip blockId={2}>02 Economía</BlockChip>
+          <BlockChip blockId={12}>12 (repite la paleta)</BlockChip>
+        </div>
+        <div class="demo-row demo-row--blocks">
+          {Array.from({ length: 11 }, (_, i) => <span class="block-swatch" style={`background: ${blockColor(i + 1)}`}>{i + 1}</span>)}
+        </div>
+      </Panel>
+
+      <Panel title="Panel y SectionHeading" lead="src/components/ui/Panel.astro · src/components/ui/SectionHeading.astro">
+        <p>Este recuadro es un <code>Panel</code> con título y línea de apoyo. Los títulos de sección de esta página son <code>SectionHeading</code>.</p>
+      </Panel>
+
+      <Panel title="BarList" lead="src/components/charts/BarList.astro · una serie, un color; pasa el ratón por una barra">
+        <BarList items={sampleBars} total={50} unit="medidas" singularUnit="medida" />
+      </Panel>
+
+      <Panel title="Tooltip" lead="src/components/ui/Tooltip.astro · cualquier elemento con data-tooltip">
+        <p>
+          <a
+            href="#components"
+            data-tooltip={tooltip('Nº 144', 'El texto del tooltip se escapa siempre.')}
+          >Pasa el ratón o enfoca este enlace</a>
+        </p>
+        <p class="note">Se construye con <code>tooltip(titulo, ...lineas)</code> de <code>src/lib/tooltip.ts</code>. El título es negro sobre amarillo en los dos temas.</p>
+      </Panel>
+
+      <Panel title="Superficies de objeto" lead="src/styles/objects.css · .box · .box--interactive · .grid · .hatched · .container · .headline">
+        <div class="demo-row">
+          <div class="box demo-box">.box</div>
+          <a class="box box--interactive demo-box" href="#components">.box--interactive</a>
+          <div class="hatched demo-box demo-box--hatched"><span class="demo-box__label">.hatched</span></div>
+        </div>
+      </Panel>
+    </div>
+
+    <SectionHeading index="07 / ARCHIVOS" title="Dónde está cada cosa" headingId="files" />
+    <ul class="files">
+      <li><code>src/styles/tokens.css</code> <span>Todos los tokens. Único sitio con valores.</span></li>
+      <li><code>src/styles/base.css</code> <span>Reinicio y elementos HTML.</span></li>
+      <li><code>src/styles/objects.css</code> <span>Contenedor, caja, rejillas, trama.</span></li>
+      <li><code>src/components/ui/</code> <span>Piezas reutilizables sin datos: Button, Tag, Panel, SectionHeading, BlockChip, Tooltip.</span></li>
+      <li><code>src/components/charts/</code> <span>Gráficos de un programa.</span></li>
+      <li><code>src/components/layout/</code> <span>Cabecera y pie.</span></li>
+      <li><code>src/lib/</code> <span>Datos, rutas, formato y color. Sin marcado.</span></li>
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: clamp(40px, 8vw, 80px) 0 var(--space-6); }
+  .hero h1 { font-size: clamp(2.25rem, 9cqi, 7rem); line-height: 0.9; margin: var(--space-4) 0 var(--space-5); }
+  .hero__lede { font-size: clamp(1.125rem, 2.2vw, 1.375rem); font-weight: 600; max-width: 56ch; }
+  .toc { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-5) 0 0; padding: 0; }
+  .toc a {
+    display: inline-block;
+    font: 700 var(--text-xs) var(--font-mono);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: var(--border-thin) solid var(--color-ink);
+    padding: 6px 10px;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--color-paper-alt);
+    padding: 1px 5px;
+  }
+
+  .principles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: var(--space-5);
+  }
+  .principles li { padding: 20px; }
+  .principles h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+  .principles p { margin: 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+
+  .swatch-group { margin-top: var(--space-6); }
+  .swatch-group h3 { font: 700 0.8125rem var(--font-mono); margin-bottom: var(--space-3); }
+  .swatches {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+    gap: var(--space-3);
+  }
+  .swatch { display: grid; gap: var(--space-1); align-content: start; }
+  .swatch__chip { display: block; height: 56px; border: var(--border-thin) solid var(--color-ink); }
+  .swatch__name { font-size: var(--text-xs); overflow-wrap: anywhere; }
+  .swatch__values { font-size: var(--text-2xs); color: var(--color-ink-muted); }
+
+  .table-wrap { overflow-x: auto; border: var(--border-thick) solid var(--color-ink); box-shadow: var(--shadow-md); }
+  .contrast-table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: var(--text-sm); }
+  .contrast-table th, .contrast-table td { text-align: left; padding: 10px var(--space-3); border-bottom: var(--border-thin) solid var(--color-ink); }
+  .contrast-table thead th { font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; background: var(--color-paper-alt); }
+  .contrast-table tbody th { font-weight: 600; }
+  .contrast-table small { display: block; font-size: var(--text-2xs); color: var(--color-ink-muted); }
+  .contrast-table td { font-size: 0.8125rem; }
+  .contrast-table td[data-pass='false'] { background: var(--color-ink); color: var(--color-paper); font-weight: 700; }
+  .note { margin: var(--space-3) 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); max-width: 80ch; }
+
+  .sample { margin: 0 0 var(--space-3); }
+  .sample--display { font-family: var(--font-display); font-size: 2rem; line-height: 1; text-transform: uppercase; }
+  .sample--body { font-family: var(--font-body); font-size: var(--text-lg); font-weight: 600; }
+  .sample--mono { font-family: var(--font-mono); font-size: var(--text-md); font-weight: 700; }
+  .type-scale { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-2); }
+  .type-scale li {
+    display: grid;
+    grid-template-columns: 120px 50px 1fr;
+    gap: var(--space-3);
+    align-items: baseline;
+    border-bottom: var(--border-hairline) dashed var(--color-ink-subtle);
+    padding-bottom: var(--space-2);
+  }
+  @media (max-width: 560px) { .type-scale li { grid-template-columns: 1fr; gap: 2px; } }
+
+  .space-scale { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .space-scale li { display: grid; grid-template-columns: 100px 1fr; gap: var(--space-3); align-items: center; }
+  .space-scale__bar { display: block; height: 14px; background: var(--color-ink); }
+  .elevation { display: flex; flex-wrap: wrap; gap: var(--space-5); padding: var(--space-2) var(--space-2) var(--space-4); }
+  .elevation__item { padding: var(--space-4); border: var(--border-thin) solid var(--color-ink); background: var(--color-paper); }
+
+  .stack { display: grid; gap: var(--space-5); margin-top: var(--space-5); }
+  .demo-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+  .demo-row--blocks { gap: var(--space-1); margin-top: var(--space-4); }
+  .demo-party { --party-color: #135898; --party-on-color: #ffffff; }
+  .block-swatch {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: var(--border-thin) solid var(--color-ink);
+    color: var(--color-on-block);
+    font: 700 var(--text-xs) var(--font-mono);
+  }
+  .demo-box { padding: var(--space-4) var(--space-5); font: 700 var(--text-xs) var(--font-mono); }
+  .demo-box--hatched { border: var(--border-thick) solid var(--color-ink); background-color: var(--color-paper); }
+  .demo-box__label { background: var(--color-paper); padding: 0 var(--space-1); }
+
+  .files { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+  .files li { display: grid; grid-template-columns: minmax(180px, 280px) 1fr; gap: var(--space-3); align-items: baseline; border-top: var(--border-thin) solid var(--color-ink); padding-top: var(--space-3); }
+  @media (max-width: 640px) { .files li { grid-template-columns: 1fr; gap: 2px; } }
+</style>

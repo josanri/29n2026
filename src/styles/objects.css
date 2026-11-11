@@ -1,0 +1,132 @@
+/* ==========================================================================
+   OBJECTS
+   Layout and surface classes used across the site. Interactive pieces
+   (Button, Tag, Panel, SectionHeading, BlockChip) are components in
+   src/components/ui/.
+   ========================================================================== */
+
+/* Page container. It is also a size container: headlines scale with `cqi`. */
+.container {
+  width: 100%;
+  max-width: var(--layout-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  container-type: inline-size;
+}
+
+/* Giant headlines scale with the container width (cqi), so the longest word always fits.
+   Only as a last resort the word breaks. */
+.headline { overflow-wrap: break-word; hyphens: manual; }
+@supports not (font-size: 1cqi) {
+  .headline { overflow-wrap: anywhere; }
+}
+
+.mono { font-family: var(--font-mono); }
+.uppercase { text-transform: uppercase; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* The basic surface: paper, thick border, hard shadow */
+.box {
+  background: var(--color-paper);
+  border: var(--border-thick) solid var(--color-ink);
+  box-shadow: var(--shadow-md);
+}
+
+/* A box that lifts when the pointer is over it. Use on links that are cards. */
+.box--interactive {
+  text-decoration: none;
+  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+}
+.box--interactive:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive grids */
+.grid { display: grid; gap: var(--space-5); }
+.grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
+.grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+/* Party cards: as many columns as fit, each at least 340px wide */
+.grid--cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--space-4); }
+
+/* Diagonal hatching for "pending" things */
+.hatched {
+  background-image: repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 7px);
+}
+
+/* Clear button of the search fields: a thick square cross in the site style. Chrome, Edge and
+   Safari draw it; Firefox has no such button. */
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  inline-size: 22px;
+  block-size: 22px;
+  margin-inline-start: var(--space-2);
+  cursor: pointer;
+  background: var(--color-ink);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M3 3l10 10M13 3L3 13'/%3E%3C/svg%3E") center / 14px no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M3 3l10 10M13 3L3 13'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+input[type='search']::-webkit-search-cancel-button:hover { background: var(--color-accent); }
+
+/* Select list in the site design. Browsers that support `appearance: base-select` (Chrome and
+   Edge 135+) draw the open list with these styles. The others keep the system list, which a
+   page cannot style, and the closed select keeps its own border and colors. */
+@supports (appearance: base-select) {
+  select,
+  select::picker(select) {
+    appearance: base-select;
+  }
+  /* A thick square chevron in place of the system triangle. */
+  select::picker-icon {
+    content: '';
+    inline-size: 0.8em;
+    block-size: 0.8em;
+    flex: none;
+    background: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+    transition: rotate 140ms ease;
+  }
+  select:open::picker-icon { rotate: 180deg; }
+  select::picker(select) {
+    margin-top: 4px;
+    padding: 6px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    box-shadow: var(--shadow-md);
+    max-height: min(60vh, 420px);
+  }
+  select option {
+    padding: 8px 10px;
+    border: var(--border-thin) solid transparent;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 0.9375rem var(--font-body);
+    cursor: pointer;
+  }
+  /* Space between the first option ("Todas las provincias") and the first group, and between groups. */
+  select option[value=''] { margin-bottom: var(--space-3); }
+  select optgroup + optgroup { margin-top: var(--space-2); }
+  select option:hover,
+  select option:focus-visible {
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+  }
+  select option:checked { border-color: var(--color-ink); }
+  select option::checkmark { content: '✓'; color: currentColor; font-weight: 800; }
+  select:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
+}
+
+@media (forced-colors: active) {
+  .box { border-color: CanvasText; }
+}

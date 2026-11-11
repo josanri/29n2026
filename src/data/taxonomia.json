@@ -1,0 +1,48 @@
+{
+  "categorias": [
+    { "id": "administracion", "codigo": "ADM", "nombre": "Administración y gasto", "descripcion": "Tamaño del Estado, burocracia, auditoría, deuda, subvenciones y empleo público." },
+    { "id": "territorio", "codigo": "TER", "nombre": "Unidad y territorio", "descripcion": "Modelo autonómico, financiación territorial, Ceuta y Melilla, presencia del Estado y mercado único." },
+    { "id": "seguridad", "codigo": "SEG", "nombre": "Seguridad ciudadana", "descripcion": "Crimen organizado, reincidencia, disturbios, violencia contra las mujeres y Fuerzas de Seguridad." },
+    { "id": "justicia", "codigo": "JUS", "nombre": "Justicia", "descripcion": "Medios de la Justicia, independencia judicial y de la Fiscalía, aforamientos y corrupción." },
+    { "id": "inmigracion", "codigo": "INM", "nombre": "Inmigración y nacionalidad", "descripcion": "Fronteras, asilo, retorno, integración y acceso a la nacionalidad." },
+    { "id": "emergencias", "codigo": "EME", "nombre": "Emergencias", "descripcion": "Protección civil, prevención de catástrofes y ayudas para reconstruir." },
+    { "id": "defensa", "codigo": "DEF", "nombre": "Defensa", "descripcion": "Fuerzas Armadas, compromisos con los aliados e industria de defensa." },
+    { "id": "democracia", "codigo": "DEM", "nombre": "Instituciones y democracia", "descripcion": "Reglas electorales, presupuestos, Tribunal Constitucional, organismos independientes, transparencia y Parlamento." },
+    { "id": "social", "codigo": "SOC", "nombre": "Pensiones y cohesión social", "descripcion": "Pensiones, mayores, discapacidad, dependencia, soledad e igualdad de oportunidades." },
+    { "id": "infraestructuras", "codigo": "INF", "nombre": "Infraestructuras y agua", "descripcion": "Ferrocarril, carreteras, puertos, aeropuertos, conectividad digital y agua." },
+    { "id": "identidad", "codigo": "IDE", "nombre": "Lengua, cultura y memoria", "descripcion": "Lenguas, símbolos, memoria histórica, víctimas del terrorismo, cultura y deporte." },
+    { "id": "vivienda", "codigo": "VIV", "nombre": "Vivienda", "descripcion": "Construcción, suelo, compra, alquiler y ocupación." },
+    { "id": "familia", "codigo": "FAM", "nombre": "Familia e infancia", "descripcion": "Natalidad, permisos, conciliación, escuela infantil, pobreza infantil y menores en redes." },
+    { "id": "empleo", "codigo": "EMP", "nombre": "Empleo y emprendimiento", "descripcion": "Autónomos, contratación, formación, segunda oportunidad y absentismo." },
+    { "id": "fiscalidad", "codigo": "IMP", "nombre": "Impuestos", "descripcion": "IRPF, IVA, Sociedades, ahorro y relación con Hacienda." },
+    { "id": "innovacion", "codigo": "PRO", "nombre": "Productividad e innovación", "descripcion": "Regulación, pymes, I+D, inteligencia artificial, industria y turismo." },
+    { "id": "rural", "codigo": "RUR", "nombre": "Campo, mar y mundo rural", "descripcion": "Agricultura, ganadería, pesca, PAC, despoblación, montes y caza." },
+    { "id": "educacion", "codigo": "EDU", "nombre": "Educación", "descripcion": "Escuela, profesorado, libertad de elección, FP, universidad y becas." },
+    { "id": "sanidad", "codigo": "SAN", "nombre": "Sanidad y cuidados", "descripcion": "Listas de espera, profesionales, salud mental, investigación y paliativos." },
+    { "id": "energia", "codigo": "ENE", "nombre": "Energía y clima", "descripcion": "Nuclear, factura de la luz, red eléctrica, cambio climático y economía circular." },
+    { "id": "exterior", "codigo": "EXT", "nombre": "Exterior y Unión Europea", "descripcion": "Política exterior, UE, Magreb, Gibraltar, Ucrania, Iberoamérica y cooperación." }
+  ],
+  "colectivos": [
+    { "id": "empresas", "nombre": "Empresas e industria" },
+    { "id": "familias", "nombre": "Familias" },
+    { "id": "infancia", "nombre": "Menores y alumnos" },
+    { "id": "inmigrantes", "nombre": "Inmigrantes y solicitantes de asilo" },
+    { "id": "jovenes", "nombre": "Jóvenes" },
+    { "id": "rural", "nombre": "Mundo rural y mar" },
+    { "id": "autonomos", "nombre": "Autónomos, pymes y emprendedores" },
+    { "id": "agentes", "nombre": "Policías, guardias civiles y militares" },
+    { "id": "mayores", "nombre": "Mayores y pensionistas" },
+    { "id": "discapacidad", "nombre": "Discapacidad y dependencia" },
+    { "id": "mujeres", "nombre": "Mujeres" },
+    { "id": "victimas", "nombre": "Víctimas" },
+    { "id": "pacientes", "nombre": "Pacientes" },
+    { "id": "funcionarios", "nombre": "Empleados públicos" }
+  ],
+  "palancas": [
+    { "id": "gasto", "nombre": "Gasto e inversión", "descripcion": "Pide recursos, financiación, ayudas o inversión." },
+    { "id": "organizacion", "nombre": "Reorganizar el Estado", "descripcion": "Crea o reordena organismos, unidades, oficinas o registros." },
+    { "id": "ley", "nombre": "Cambio legal", "descripcion": "Necesita una ley nueva, una reforma o una derogación." },
+    { "id": "impuestos", "nombre": "Impuestos y cotizaciones", "descripcion": "Usa deducciones, rebajas, bonificaciones o tipos." },
+    { "id": "plan", "nombre": "Plan o pacto", "descripcion": "Anuncia un plan, una estrategia o un pacto de Estado." }
+  ]
+}

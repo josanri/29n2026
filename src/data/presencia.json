@@ -1,0 +1,1751 @@
+{
+ "comunidadPorProvincia": {
+  "01": "País Vasco",
+  "20": "País Vasco",
+  "48": "País Vasco",
+  "02": "Castilla-La Mancha",
+  "13": "Castilla-La Mancha",
+  "16": "Castilla-La Mancha",
+  "19": "Castilla-La Mancha",
+  "45": "Castilla-La Mancha",
+  "03": "Comunidad Valenciana",
+  "12": "Comunidad Valenciana",
+  "46": "Comunidad Valenciana",
+  "04": "Andalucía",
+  "11": "Andalucía",
+  "14": "Andalucía",
+  "18": "Andalucía",
+  "21": "Andalucía",
+  "23": "Andalucía",
+  "29": "Andalucía",
+  "41": "Andalucía",
+  "05": "Castilla y León",
+  "09": "Castilla y León",
+  "24": "Castilla y León",
+  "34": "Castilla y León",
+  "37": "Castilla y León",
+  "40": "Castilla y León",
+  "42": "Castilla y León",
+  "47": "Castilla y León",
+  "49": "Castilla y León",
+  "06": "Extremadura",
+  "10": "Extremadura",
+  "07": "Illes Balears",
+  "08": "Cataluña",
+  "17": "Cataluña",
+  "25": "Cataluña",
+  "43": "Cataluña",
+  "15": "Galicia",
+  "27": "Galicia",
+  "32": "Galicia",
+  "36": "Galicia",
+  "22": "Aragón",
+  "44": "Aragón",
+  "50": "Aragón",
+  "26": "La Rioja",
+  "28": "Madrid",
+  "30": "Murcia",
+  "31": "Navarra",
+  "33": "Asturias",
+  "35": "Canarias",
+  "38": "Canarias",
+  "39": "Cantabria",
+  "51": "Ceuta",
+  "52": "Melilla"
+ },
+ "partidos": {
+  "acord-progres-mallorca": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Illes Balears"
+   ],
+   "congreso": [],
+   "senado": [
+    "07"
+   ]
+  },
+  "adelante": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Andalucía"
+   ],
+   "congreso": [
+    "04",
+    "11",
+    "14",
+    "18",
+    "21",
+    "23",
+    "29",
+    "41"
+   ],
+   "senado": [
+    "04",
+    "11",
+    "14",
+    "18",
+    "21",
+    "23",
+    "29",
+    "41"
+   ]
+  },
+  "agenda-valenciana": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Comunidad Valenciana"
+   ],
+   "congreso": [
+    "46"
+   ],
+   "senado": [
+    "46"
+   ]
+  },
+  "ahi": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [],
+   "senado": [
+    "38"
+   ]
+  },
+  "alantre": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Castilla y León"
+   ],
+   "congreso": [
+    "24"
+   ],
+   "senado": []
+  },
+  "alhora": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña"
+   ],
+   "congreso": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ],
+   "senado": []
+  },
+  "alternativa-malaguena": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Andalucía"
+   ],
+   "congreso": [
+    "29"
+   ],
+   "senado": [
+    "29"
+   ]
+  },
+  "arames": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Illes Balears"
+   ],
+   "congreso": [
+    "07"
+   ],
+   "senado": []
+  },
+  "asamblea-herrena": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [],
+   "senado": [
+    "38"
+   ]
+  },
+  "asg": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [],
+   "senado": [
+    "38"
+   ]
+  },
+  "autonomos": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Comunidad Valenciana",
+    "Canarias"
+   ],
+   "congreso": [
+    "03",
+    "12",
+    "38"
+   ],
+   "senado": []
+  },
+  "bng": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Galicia"
+   ],
+   "congreso": [
+    "15",
+    "27",
+    "32",
+    "36"
+   ],
+   "senado": [
+    "15",
+    "27",
+    "32",
+    "36"
+   ]
+  },
+  "cc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [
+    "35",
+    "38"
+   ],
+   "senado": [
+    "35",
+    "38"
+   ]
+  },
+  "cha-fa": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Aragón"
+   ],
+   "congreso": [
+    "22",
+    "50"
+   ],
+   "senado": []
+  },
+  "compromis-front-valencia": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Comunidad Valenciana"
+   ],
+   "congreso": [
+    "03",
+    "12",
+    "46"
+   ],
+   "senado": []
+  },
+  "comuns": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña"
+   ],
+   "congreso": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ],
+   "senado": [
+    "08"
+   ]
+  },
+  "convergents": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña"
+   ],
+   "congreso": [
+    "43"
+   ],
+   "senado": [
+    "43"
+   ]
+  },
+  "d21": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Cataluña",
+    "Madrid"
+   ],
+   "congreso": [
+    "08",
+    "28"
+   ],
+   "senado": []
+  },
+  "drago-canarias": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [
+    "35",
+    "38"
+   ],
+   "senado": []
+  },
+  "eaj-pnv": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "País Vasco"
+   ],
+   "congreso": [
+    "01",
+    "20",
+    "48"
+   ],
+   "senado": [
+    "01",
+    "20",
+    "48"
+   ]
+  },
+  "eguzkilore": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Navarra"
+   ],
+   "congreso": [
+    "31"
+   ],
+   "senado": []
+  },
+  "eh-bildu": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "País Vasco",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "20",
+    "31",
+    "48"
+   ],
+   "senado": [
+    "31"
+   ]
+  },
+  "eh-bildu-erc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña",
+    "País Vasco"
+   ],
+   "congreso": [],
+   "senado": [
+    "01",
+    "08",
+    "17",
+    "20",
+    "25",
+    "43",
+    "48"
+   ]
+  },
+  "eivissa-al-senat": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Illes Balears"
+   ],
+   "congreso": [],
+   "senado": [
+    "07"
+   ]
+  },
+  "elak-pcte": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "País Vasco"
+   ],
+   "congreso": [
+    "01",
+    "20",
+    "48"
+   ],
+   "senado": [
+    "01",
+    "20",
+    "48"
+   ]
+  },
+  "erc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña"
+   ],
+   "congreso": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ],
+   "senado": []
+  },
+  "escanos-en-blanco": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "País Vasco",
+    "Canarias",
+    "Galicia",
+    "La Rioja",
+    "Murcia"
+   ],
+   "congreso": [
+    "01",
+    "04",
+    "14",
+    "20",
+    "24",
+    "26",
+    "30",
+    "34",
+    "35",
+    "36",
+    "42",
+    "47"
+   ],
+   "senado": [
+    "01",
+    "04",
+    "14",
+    "20",
+    "24",
+    "26",
+    "30",
+    "34",
+    "35",
+    "36",
+    "42",
+    "47"
+   ]
+  },
+  "fa": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Galicia",
+    "País Vasco",
+    "Extremadura",
+    "Asturias",
+    "Cantabria",
+    "La Rioja",
+    "Madrid",
+    "Murcia",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "04",
+    "05",
+    "06",
+    "09",
+    "10",
+    "11",
+    "13",
+    "14",
+    "15",
+    "16",
+    "18",
+    "19",
+    "20",
+    "21",
+    "23",
+    "24",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "36",
+    "37",
+    "39",
+    "40",
+    "41",
+    "42",
+    "45",
+    "47",
+    "48",
+    "49"
+   ],
+   "senado": []
+  },
+  "fe-jons": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Castilla-La Mancha",
+    "Comunidad Valenciana",
+    "Andalucía",
+    "Aragón",
+    "Madrid"
+   ],
+   "congreso": [
+    "12",
+    "14",
+    "19",
+    "28",
+    "34",
+    "44",
+    "45",
+    "46",
+    "47"
+   ],
+   "senado": [
+    "12",
+    "14",
+    "19",
+    "28",
+    "34",
+    "44",
+    "45",
+    "46",
+    "47"
+   ]
+  },
+  "fia": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Aragón"
+   ],
+   "congreso": [
+    "22",
+    "50"
+   ],
+   "senado": [
+    "22",
+    "50"
+   ]
+  },
+  "fo": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Cataluña",
+    "Galicia",
+    "Aragón",
+    "Comunidad Valenciana",
+    "País Vasco",
+    "Canarias",
+    "Extremadura",
+    "Asturias",
+    "Cantabria",
+    "Ceuta",
+    "Illes Balears",
+    "La Rioja",
+    "Madrid",
+    "Melilla",
+    "Murcia",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+   ],
+   "senado": []
+  },
+  "formentera-al-senat": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Illes Balears"
+   ],
+   "congreso": [],
+   "senado": [
+    "07"
+   ]
+  },
+  "formentera-viva": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Illes Balears"
+   ],
+   "congreso": [],
+   "senado": [
+    "07"
+   ]
+  },
+  "geroa-bai": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Navarra"
+   ],
+   "congreso": [
+    "31"
+   ],
+   "senado": [
+    "31"
+   ]
+  },
+  "ie": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Madrid"
+   ],
+   "congreso": [
+    "28"
+   ],
+   "senado": [
+    "28"
+   ]
+  },
+  "ixlg": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [],
+   "senado": [
+    "38"
+   ]
+  },
+  "jxcat": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña"
+   ],
+   "congreso": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ],
+   "senado": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ]
+  },
+  "lib": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [
+    "35",
+    "38"
+   ],
+   "senado": []
+  },
+  "menorca-al-senat": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Illes Balears"
+   ],
+   "congreso": [],
+   "senado": [
+    "07"
+   ]
+  },
+  "mundo-mas-justo": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Aragón",
+    "País Vasco",
+    "Asturias",
+    "Canarias",
+    "Cataluña",
+    "Comunidad Valenciana",
+    "Extremadura",
+    "Galicia",
+    "Madrid",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "04",
+    "05",
+    "06",
+    "09",
+    "11",
+    "16",
+    "18",
+    "19",
+    "22",
+    "23",
+    "28",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "40",
+    "41",
+    "42",
+    "43",
+    "46",
+    "47",
+    "48",
+    "50"
+   ],
+   "senado": [
+    "01",
+    "02",
+    "04",
+    "05",
+    "06",
+    "09",
+    "11",
+    "16",
+    "18",
+    "19",
+    "22",
+    "23",
+    "28",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "40",
+    "41",
+    "42",
+    "43",
+    "46",
+    "47",
+    "48",
+    "50"
+   ]
+  },
+  "nex": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Extremadura"
+   ],
+   "congreso": [
+    "06",
+    "10"
+   ],
+   "senado": [
+    "06",
+    "10"
+   ]
+  },
+  "pacma": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Andalucía",
+    "Castilla y León",
+    "Cataluña",
+    "Comunidad Valenciana",
+    "País Vasco",
+    "Aragón",
+    "Canarias",
+    "Castilla-La Mancha",
+    "Asturias",
+    "La Rioja",
+    "Madrid",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "11",
+    "12",
+    "14",
+    "16",
+    "17",
+    "18",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "28",
+    "29",
+    "31",
+    "33",
+    "35",
+    "38",
+    "40",
+    "41",
+    "43",
+    "44",
+    "46",
+    "47",
+    "48"
+   ],
+   "senado": [
+    "11",
+    "20",
+    "22",
+    "23",
+    "24",
+    "29",
+    "35",
+    "38",
+    "41",
+    "47"
+   ]
+  },
+  "pancal": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Castilla y León"
+   ],
+   "congreso": [
+    "47"
+   ],
+   "senado": [
+    "47"
+   ]
+  },
+  "pcpc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [
+    "35"
+   ],
+   "senado": [
+    "35"
+   ]
+  },
+  "pctc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña"
+   ],
+   "congreso": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ],
+   "senado": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ]
+  },
+  "pcte": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Aragón",
+    "Castilla-La Mancha",
+    "Comunidad Valenciana",
+    "Canarias",
+    "Asturias",
+    "Cantabria",
+    "Extremadura",
+    "Illes Balears",
+    "La Rioja",
+    "Madrid",
+    "Murcia",
+    "Navarra"
+   ],
+   "congreso": [
+    "03",
+    "04",
+    "05",
+    "07",
+    "09",
+    "10",
+    "11",
+    "12",
+    "14",
+    "16",
+    "18",
+    "19",
+    "21",
+    "22",
+    "23",
+    "24",
+    "26",
+    "28",
+    "29",
+    "30",
+    "31",
+    "33",
+    "34",
+    "35",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "46",
+    "47",
+    "49",
+    "50"
+   ],
+   "senado": [
+    "03",
+    "04",
+    "07",
+    "09",
+    "11",
+    "12",
+    "14",
+    "18",
+    "19",
+    "21",
+    "22",
+    "23",
+    "24",
+    "26",
+    "28",
+    "29",
+    "31",
+    "33",
+    "37",
+    "39",
+    "41",
+    "44",
+    "45",
+    "46",
+    "47",
+    "50"
+   ]
+  },
+  "pctg": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Galicia"
+   ],
+   "congreso": [
+    "15",
+    "32",
+    "36"
+   ],
+   "senado": [
+    "15",
+    "32",
+    "36"
+   ]
+  },
+  "pdsje": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León"
+   ],
+   "congreso": [
+    "05"
+   ],
+   "senado": [
+    "05"
+   ]
+  },
+  "pfac": {
+   "ambito": "estatal",
+   "comunidades": [
+    "País Vasco"
+   ],
+   "congreso": [
+    "01"
+   ],
+   "senado": []
+  },
+  "ph": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Madrid"
+   ],
+   "congreso": [
+    "28"
+   ],
+   "senado": [
+    "28"
+   ]
+  },
+  "podemos": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Galicia",
+    "Aragón",
+    "País Vasco",
+    "Extremadura",
+    "Asturias",
+    "Cantabria",
+    "Ceuta",
+    "La Rioja",
+    "Madrid",
+    "Murcia",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "04",
+    "05",
+    "06",
+    "09",
+    "10",
+    "11",
+    "13",
+    "14",
+    "15",
+    "16",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "36",
+    "37",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
+   ],
+   "senado": [
+    "01",
+    "02",
+    "04",
+    "05",
+    "06",
+    "09",
+    "10",
+    "11",
+    "13",
+    "14",
+    "15",
+    "16",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "36",
+    "37",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
+   ]
+  },
+  "pp": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Cataluña",
+    "Galicia",
+    "Aragón",
+    "Comunidad Valenciana",
+    "País Vasco",
+    "Canarias",
+    "Extremadura",
+    "Asturias",
+    "Cantabria",
+    "Ceuta",
+    "Illes Balears",
+    "La Rioja",
+    "Madrid",
+    "Melilla",
+    "Murcia"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+   ],
+   "senado": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "18",
+    "19",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+   ]
+  },
+  "prepal": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Castilla y León"
+   ],
+   "congreso": [
+    "24",
+    "37",
+    "49"
+   ],
+   "senado": [
+    "24",
+    "37",
+    "49"
+   ]
+  },
+  "psc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Cataluña"
+   ],
+   "congreso": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ],
+   "senado": [
+    "08",
+    "17",
+    "25",
+    "43"
+   ]
+  },
+  "psoe": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Galicia",
+    "Aragón",
+    "Comunidad Valenciana",
+    "País Vasco",
+    "Canarias",
+    "Extremadura",
+    "Asturias",
+    "Cantabria",
+    "Ceuta",
+    "Illes Balears",
+    "La Rioja",
+    "Madrid",
+    "Melilla",
+    "Murcia",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+   ],
+   "senado": [
+    "35",
+    "38"
+   ]
+  },
+  "puede": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Asturias"
+   ],
+   "congreso": [
+    "33"
+   ],
+   "senado": [
+    "33"
+   ]
+  },
+  "renacer": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Comunidad Valenciana"
+   ],
+   "congreso": [
+    "46"
+   ],
+   "senado": []
+  },
+  "sa-unio": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Illes Balears"
+   ],
+   "congreso": [],
+   "senado": [
+    "07"
+   ]
+  },
+  "salf": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Galicia",
+    "Aragón",
+    "Comunidad Valenciana",
+    "Canarias",
+    "Cataluña",
+    "Extremadura",
+    "Asturias",
+    "Ceuta",
+    "Illes Balears",
+    "La Rioja",
+    "Madrid",
+    "Melilla",
+    "Murcia",
+    "Navarra",
+    "País Vasco"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "14",
+    "15",
+    "16",
+    "18",
+    "19",
+    "21",
+    "22",
+    "23",
+    "24",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "49",
+    "50",
+    "51",
+    "52"
+   ],
+   "senado": []
+  },
+  "sdp": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Galicia",
+    "Aragón",
+    "Comunidad Valenciana",
+    "País Vasco",
+    "Extremadura",
+    "Asturias",
+    "Cantabria",
+    "Ceuta",
+    "La Rioja",
+    "Madrid",
+    "Melilla",
+    "Murcia",
+    "Navarra"
+   ],
+   "congreso": [],
+   "senado": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "36",
+    "37",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+   ]
+  },
+  "soria-ya": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Castilla y León"
+   ],
+   "congreso": [
+    "42"
+   ],
+   "senado": [
+    "42"
+   ]
+  },
+  "tercera-edad": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Murcia"
+   ],
+   "congreso": [
+    "30"
+   ],
+   "senado": [
+    "30"
+   ]
+  },
+  "teruel-existe": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Aragón"
+   ],
+   "congreso": [
+    "44"
+   ],
+   "senado": [
+    "44"
+   ]
+  },
+  "upc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Canarias"
+   ],
+   "congreso": [
+    "35",
+    "38"
+   ],
+   "senado": [
+    "35",
+    "38"
+   ]
+  },
+  "upn": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Navarra"
+   ],
+   "congreso": [
+    "31"
+   ],
+   "senado": [
+    "31"
+   ]
+  },
+  "vlc": {
+   "ambito": "autonomico",
+   "comunidades": [
+    "Comunidad Valenciana"
+   ],
+   "congreso": [
+    "46"
+   ],
+   "senado": []
+  },
+  "vox": {
+   "ambito": "estatal",
+   "comunidades": [
+    "Castilla y León",
+    "Andalucía",
+    "Castilla-La Mancha",
+    "Cataluña",
+    "Galicia",
+    "Aragón",
+    "Comunidad Valenciana",
+    "País Vasco",
+    "Canarias",
+    "Extremadura",
+    "Asturias",
+    "Cantabria",
+    "Ceuta",
+    "Illes Balears",
+    "La Rioja",
+    "Madrid",
+    "Melilla",
+    "Murcia",
+    "Navarra"
+   ],
+   "congreso": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+   ],
+   "senado": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "08",
+    "09",
+    "10",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "36",
+    "37",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52"
+   ]
+  }
+ }
+}

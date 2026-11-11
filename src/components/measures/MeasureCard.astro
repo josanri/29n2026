@@ -1,0 +1,219 @@
+---
+/**
+ * One measure as an expandable card. The `data-*` attributes feed the filters of the
+ * measure explorer (`pages/[party]/medidas.astro`).
+ */
+import type { Measure, Program } from '@/lib/programs';
+import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
+import { normalizeForSearch, splitParagraphs } from '@/lib/format';
+import { blockColor } from '@/lib/blocks';
+import { MEASURE_ID_PREFIX, routes } from '@/lib/routes';
+import Tag from '@/components/ui/Tag.astro';
+import BlockChip from '@/components/ui/BlockChip.astro';
+
+interface Props {
+  measure: Measure;
+  program: Program;
+  open?: boolean;
+  showParty?: boolean;
+}
+
+const { measure, program, open = false, showParty = false } = Astro.props;
+const category = categoryById[measure.categoryId];
+const block = program.blocks.find((candidate) => candidate.id === measure.blockId)!;
+const searchText = normalizeForSearch(`${measure.number} ${measure.title} ${measure.text}`);
+const documentLink = measure.page ? `${program.documentUrl}#page=${measure.page}` : program.documentUrl;
+const documentLabel = measure.page
+  ? `${program.documentType === 'web' ? 'Web oficial' : 'PDF'}, pág. ${measure.page}`
+  : program.documentType === 'web'
+    ? 'Web oficial'
+    : 'PDF';
+---
+
+<article
+  class:list={['measure-card', { 'is-pending': measure.isPending }]}
+  id={`${MEASURE_ID_PREFIX}${measure.number}`}
+  style={`--block-color: ${blockColor(measure.blockId)}`}
+  data-number={measure.number}
+  data-block={measure.blockId}
+  data-category={measure.categoryId}
+  data-target-groups={measure.targetGroupIds.join(' ')}
+  data-levers={measure.leverIds.join(' ')}
+  data-has-figures={measure.figures.length ? '1' : '0'}
+  data-has-deadline={measure.deadline ? '1' : '0'}
+  data-pending={measure.isPending ? '1' : '0'}
+  data-search={searchText}
+>
+  <details open={open}>
+    <summary>
+      <span class="measure-card__number" aria-label={`${program.measureUnit} número ${measure.number}`}>{measure.number}</span>
+      <span class="measure-card__body">
+        <span class="measure-card__meta">
+          {showParty && <Tag variant="ink" size="sm">{program.acronym}</Tag>}
+          <BlockChip blockId={measure.blockId} title={`Bloque ${measure.blockId}: ${block.title}`}>
+            {measure.sectionId}
+          </BlockChip>
+          <Tag size="sm" href={routes.category(category.id)}>{category.name}</Tag>
+          {measure.deadline && <Tag variant="highlight" size="sm">⏱ {measure.deadline}</Tag>}
+          {measure.repeals && <Tag variant="ink" size="sm">Deroga: {measure.repeals}</Tag>}
+        </span>
+        <span class="measure-card__title">
+          {measure.isPending ? 'Medida pendiente de anunciar' : measure.phraseTitle}
+        </span>
+      </span>
+      <span class="measure-card__toggle" aria-hidden="true"></span>
+    </summary>
+    <div class="measure-card__text">
+      {
+        measure.isPending ? (
+          <p class="measure-card__notice">
+            El programa reserva este número para una {program.measureUnit} pendiente de anunciar.
+          </p>
+        ) : (
+          splitParagraphs(measure.text).map((paragraph) => <p>{paragraph}</p>)
+        )
+      }
+      {
+        !measure.isPending && (
+          <dl class="measure-card__facts">
+            {measure.targetGroupIds.length > 0 && (
+              <div>
+                <dt>Colectivos</dt>
+                <dd>{measure.targetGroupIds.map((id) => targetGroupById[id].name).join(' · ')}</dd>
+              </div>
+            )}
+            {measure.leverIds.length > 0 && (
+              <div>
+                <dt>Palancas</dt>
+                <dd>{measure.leverIds.map((id) => leverById[id].name).join(' · ')}</dd>
+              </div>
+            )}
+            {measure.territories.length > 0 && (
+              <div>
+                <dt>Territorios</dt>
+                <dd>{measure.territories.join(' · ')}</dd>
+              </div>
+            )}
+            <div>
+              <dt>Fuente</dt>
+              <dd>
+                {measure.sourceUrl ? (
+                  <a href={measure.sourceUrl} target="_blank" rel="noopener">Ficha oficial</a>
+                ) : (
+                  <a href={documentLink} target="_blank" rel="noopener">{documentLabel}</a>
+                )}
+              </dd>
+            </div>
+          </dl>
+        )
+      }
+    </div>
+  </details>
+</article>
+
+<style>
+  .measure-card {
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+  .measure-card::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    bottom: -4px;
+    width: 12px;
+    background: var(--block-color);
+    border: var(--border-thick) solid var(--color-ink);
+  }
+  .measure-card.is-pending::before {
+    background: var(--color-paper) repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 6px);
+  }
+  .measure-card:target {
+    box-shadow: 8px 8px 0 var(--color-highlight), 8px 8px 0 4px var(--color-ink);
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: var(--space-4);
+    align-items: start;
+    padding: 14px 16px 14px 26px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover .measure-card__title {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--color-highlight);
+  }
+  .measure-card__number {
+    font-family: var(--font-display);
+    font-size: 2.125rem;
+    line-height: 0.9;
+    min-width: 2.2ch;
+    text-align: right;
+  }
+  .measure-card__body { display: grid; gap: var(--space-2); min-width: 0; }
+  .measure-card__meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .measure-card__title {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: var(--text-lg);
+    line-height: 1.22;
+    overflow-wrap: anywhere;
+  }
+  .is-pending .measure-card__title { font-style: italic; color: var(--color-ink-muted); }
+  .measure-card__toggle {
+    width: 30px;
+    height: 30px;
+    border: var(--border-thin) solid var(--color-ink);
+    position: relative;
+    margin-top: 2px;
+  }
+  .measure-card__toggle::before,
+  .measure-card__toggle::after {
+    content: '';
+    position: absolute;
+    background: var(--color-ink);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .measure-card__toggle::before { width: 14px; height: 3px; }
+  .measure-card__toggle::after { width: 3px; height: 14px; transition: transform 0.12s; }
+  details[open] .measure-card__toggle::after { transform: translate(-50%, -50%) scaleY(0); }
+  .measure-card__text {
+    padding: 0 20px 18px 26px;
+    margin-left: calc(2.2ch * 34 / 17 + 16px);
+    font-size: var(--text-md);
+    max-width: 78ch;
+  }
+  .measure-card__notice { font-style: italic; color: var(--color-ink-muted); }
+  .measure-card__facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px 18px;
+    margin: 14px 0 0;
+    padding-top: var(--space-3);
+    border-top: var(--border-thin) solid var(--color-ink);
+    font-size: 0.8125rem;
+  }
+  .measure-card__facts dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-subtle);
+  }
+  .measure-card__facts dd { margin: 0; font-weight: 600; }
+  @media (max-width: 600px) {
+    summary { gap: 10px; padding-left: 22px; }
+    .measure-card__number { font-size: 1.625rem; }
+    .measure-card__title { font-size: var(--text-md); }
+    .measure-card__text { margin-left: 0; padding-left: 22px; }
+  }
+</style>

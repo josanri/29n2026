@@ -1,0 +1,3052 @@
+{
+ "id": "salf",
+ "partido": "Se Acabó La Fiesta",
+ "siglas": "SALF",
+ "color": "#111111",
+ "colorClaro": "#ffd23f",
+ "programa": "Contrato Electoral",
+ "subtitulo": "119 propuestas del contrato electoral simplificado para el 29N",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "pdf": "/programas/salf-contrato-electoral-29n.pdf",
+ "fuentePdf": "https://www.seacabolafiesta.com/SALF_Contrato_Electoral_29N.pdf?v=073425b9522d",
+ "paginas": 40,
+ "presentacion": {
+  "titulo": "Contrato electoral simplificado",
+  "texto": "El documento reúne diez compromisos temáticos y los desarrolla en 119 propuestas numeradas. En la cláusula de penalización, SALF afirma que comparará esas 119 medidas con los votos emitidos en junio de 2030. La numeración se reinicia en cada compromiso; los identificadores de esta web son consecutivos para poder enlazar las 119 propuestas."
+ },
+ "cifras": [
+  {
+   "valor": "0 %",
+   "unidad": "%",
+   "texto": "Tu primera vivienda, un 35 % más barata. Por ley.",
+   "medida": 1
+  },
+  {
+   "valor": "10 %",
+   "unidad": "%",
+   "texto": "El negocio de la casta con tu casa, al descubierto.",
+   "medida": 2
+  },
+  {
+   "valor": "25 %",
+   "unidad": "%",
+   "texto": "Los fondos pagan el 0 %. Se acabó.",
+   "medida": 6
+  },
+  {
+   "valor": "20 %",
+   "unidad": "%",
+   "texto": "Hipoteca joven: el Estado avala tu entrada.",
+   "medida": 7
+  },
+  {
+   "valor": "10 %",
+   "unidad": "%",
+   "texto": "Fin de la subida de impuestos por inflación.",
+   "medida": 27
+  },
+  {
+   "valor": "20 %",
+   "unidad": "%",
+   "texto": "Sociedades: 20 %. 15 % si reinviertes. 10 % startups.",
+   "medida": 29
+  },
+  {
+   "valor": "4 %",
+   "unidad": "%",
+   "texto": "Luz y agua al 4 % de IVA para siempre.",
+   "medida": 31
+  },
+  {
+   "valor": "50 %",
+   "unidad": "%",
+   "texto": "Hacienda demuestra. Tú no pruebas tu inocencia.",
+   "medida": 33
+  }
+ ],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [
+  {
+   "verbo": "batiremos",
+   "n": 1
+  },
+  {
+   "verbo": "defenderemos",
+   "n": 1
+  },
+  {
+   "verbo": "presionaremos",
+   "n": 1
+  },
+  {
+   "verbo": "denunciaremos",
+   "n": 1
+  },
+  {
+   "verbo": "indultaremos",
+   "n": 1
+  },
+  {
+   "verbo": "concederemos",
+   "n": 1
+  }
+ ],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Vivienda",
+   "tituloMayus": "VIVIENDA",
+   "lema": "Tu primera casa, un 35 % más barata. Y el okupa, fuera en 48 horas.",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  },
+  {
+   "id": 2,
+   "titulo": "Seguridad",
+   "tituloMayus": "SEGURIDAD",
+   "lema": "El que viola, mata o trafica cumple entero. El que entra en tu casa asume el riesgo.",
+   "cita": "",
+   "intro": "",
+   "pagina": 8
+  },
+  {
+   "id": 3,
+   "titulo": "Impuestos",
+   "tituloMayus": "IMPUESTOS",
+   "lema": "Libertad económica, sin dejar a nadie atrás.",
+   "cita": "",
+   "intro": "",
+   "pagina": 12
+  },
+  {
+   "id": 4,
+   "titulo": "Inmigración",
+   "tituloMayus": "INMIGRACIÓN",
+   "lema": "Solo legal. Expulsión en 48 horas. Paralización total de inmigración de países no colaboradores contra las mafias de trata de personas.",
+   "cita": "",
+   "intro": "",
+   "pagina": 17
+  },
+  {
+   "id": 5,
+   "titulo": "Pensiones",
+   "tituloMayus": "PENSIONES",
+   "lema": "Las de hoy, blindadas. Las de mañana, a tu nombre.",
+   "cita": "",
+   "intro": "",
+   "pagina": 20
+  },
+  {
+   "id": 6,
+   "titulo": "Sanidad",
+   "tituloMayus": "SANIDAD",
+   "lema": "Una central de compras. 60 días para operarte. Profesionales pagados como en Europa.",
+   "cita": "",
+   "intro": "",
+   "pagina": 22
+  },
+  {
+   "id": 7,
+   "titulo": "Corrupción",
+   "tituloMayus": "CORRUPCIÓN",
+   "lema": "Imprescriptible. Sin tercer grado. Devuelves el triple. El que denuncia cobra el 15 %.",
+   "cita": "",
+   "intro": "",
+   "pagina": 25
+  },
+  {
+   "id": 8,
+   "titulo": "Empleo",
+   "tituloMayus": "EMPLEO",
+   "lema": "Trabajar tiene que salir a cuenta.",
+   "cita": "",
+   "intro": "",
+   "pagina": 30
+  },
+  {
+   "id": 9,
+   "titulo": "Educación",
+   "tituloMayus": "EDUCACIÓN",
+   "lema": "El Estado no es dueño de tus hijos.",
+   "cita": "",
+   "intro": "",
+   "pagina": 33
+  },
+  {
+   "id": 10,
+   "titulo": "Geopolítica",
+   "tituloMayus": "GEOPOLÍTICA",
+   "lema": "España primero. Ni Bruselas, ni Rabat, ni los Hermanos Musulmanes deciden por los españoles.",
+   "cita": "",
+   "intro": "",
+   "pagina": 35
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Vivienda",
+   "tituloFrase": "Tu primera casa, un 35 % más barata. Y el okupa, fuera en 48 horas.",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 2,
+   "titulo": "Seguridad",
+   "tituloFrase": "El que viola, mata o trafica cumple entero. El que entra en tu casa asume el riesgo.",
+   "intro": "",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 3,
+   "titulo": "Impuestos",
+   "tituloFrase": "Libertad económica, sin dejar a nadie atrás.",
+   "intro": "",
+   "pagina": 12,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 4,
+   "titulo": "Inmigración",
+   "tituloFrase": "Solo legal. Expulsión en 48 horas. Paralización total de inmigración de países no colaboradores contra las mafias de trata de personas.",
+   "intro": "",
+   "pagina": 17,
+   "subapartados": []
+  },
+  {
+   "id": "5",
+   "bloque": 5,
+   "titulo": "Pensiones",
+   "tituloFrase": "Las de hoy, blindadas. Las de mañana, a tu nombre.",
+   "intro": "",
+   "pagina": 20,
+   "subapartados": []
+  },
+  {
+   "id": "6",
+   "bloque": 6,
+   "titulo": "Sanidad",
+   "tituloFrase": "Una central de compras. 60 días para operarte. Profesionales pagados como en Europa.",
+   "intro": "",
+   "pagina": 22,
+   "subapartados": []
+  },
+  {
+   "id": "7",
+   "bloque": 7,
+   "titulo": "Corrupción",
+   "tituloFrase": "Imprescriptible. Sin tercer grado. Devuelves el triple. El que denuncia cobra el 15 %.",
+   "intro": "",
+   "pagina": 25,
+   "subapartados": []
+  },
+  {
+   "id": "8",
+   "bloque": 8,
+   "titulo": "Empleo",
+   "tituloFrase": "Trabajar tiene que salir a cuenta.",
+   "intro": "",
+   "pagina": 30,
+   "subapartados": []
+  },
+  {
+   "id": "9",
+   "bloque": 9,
+   "titulo": "Educación",
+   "tituloFrase": "El Estado no es dueño de tus hijos.",
+   "intro": "",
+   "pagina": 33,
+   "subapartados": []
+  },
+  {
+   "id": "10",
+   "bloque": 10,
+   "titulo": "Geopolítica",
+   "tituloFrase": "España primero. Ni Bruselas, ni Rabat, ni los Hermanos Musulmanes deciden por los españoles.",
+   "intro": "",
+   "pagina": 35,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Tu primera vivienda, un 35 % más barata. Por ley.",
+   "tituloFrase": "Tu primera vivienda, un 35 % más barata. Por ley.",
+   "texto": "Cero impuestos (ITP y AJD al 0 %; IVA al 4 % devuelto íntegro en la renta), licencia en plazo y suelo público sin coste. Resultado garantizado por ley: el comprador de primera vivienda paga, como mínimo, un 35 % menos que hoy. Coste: ≈ 5.000 M€/año. Lo paga el sobrecoste autonómico.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Cero impuestos (ITP y AJD al 0 %; IVA al 4 % devuelto íntegro en la renta), licencia en plazo y suelo público sin coste.",
+    "Resultado garantizado por ley: el comprador de primera vivienda paga, como mínimo, un 35 % menos que hoy.",
+    "Coste: ≈ 5.000 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "El negocio de la casta con tu casa, al descubierto.",
+   "tituloFrase": "El negocio de la casta con tu casa, al descubierto.",
+   "texto": "La vivienda deja 52.000 millones al año a las administraciones; cada subida del 10 % del precio son 1.200 millones más para ellos. Ley de neutralidad: la recaudación por vivienda no puede crecer más que el IPC y el exceso se devuelve bajando tipos. Y nadie legisla sobre vivienda sin publicar sus pisos: 19 miembros del Gobierno suman 39 viviendas.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "La vivienda deja 52.000 millones al año a las administraciones; cada subida del 10 % del precio son 1.200 millones más para ellos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Okupa fuera en 48 horas. Inquiokupa, en 30 días.",
+   "tituloFrase": "Okupa fuera en 48 horas. Inquiokupa, en 30 días.",
+   "texto": "Con denuncia y título de propiedad, la Policía desaloja en 48 horas. Al que deja de pagar, juicio verbal y lanzamiento en 30 días, sin excusas de 'vulnerabilidad': a los vulnerables los atiende el Estado, no tu casa.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Al que deja de pagar, juicio verbal y lanzamiento en 30 días, sin excusas de 'vulnerabilidad': a los vulnerables los atiende el Estado, no tu casa."
+   ],
+   "plazo": "48 horas",
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Suelo público gratis y vivienda en propiedad.",
+   "tituloFrase": "Suelo público gratis y vivienda en propiedad.",
+   "texto": "Todo el suelo de la Sareb y del Estado, en 12 meses, a concurso para construir vivienda protegida en propiedad a precio tasado. El joven que compra es dueño, no inquilino del Ayuntamiento.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Todo el suelo de la Sareb y del Estado, en 12 meses, a concurso para construir vivienda protegida en propiedad a precio tasado."
+   ],
+   "plazo": "12 meses",
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Licencia en un mes o silencio positivo.",
+   "tituloFrase": "Licencia en un mes o silencio positivo.",
+   "texto": "Un mes obra menor, dos obra mayor, tres grandes desarrollos. Pasado el plazo, licencia concedida y el ayuntamiento paga el retraso. Las reformas no requerirán declaración responsable.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Los fondos pagan el 0 %. Se acabó.",
+   "tituloFrase": "Los fondos pagan el 0 %. Se acabó.",
+   "texto": "Las SOCIMI con más de 100 viviendas en alquiler tributan al 25 %, como cualquier empresa. Y el Estado deja de contratar a los fondos que dice combatir.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Las SOCIMI con más de 100 viviendas en alquiler tributan al 25 %, como cualquier empresa."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Hipoteca joven: el Estado avala tu entrada.",
+   "tituloFrase": "Hipoteca joven: el Estado avala tu entrada.",
+   "texto": "Aval público del 20 % de entrada para menores de 40 en su primera vivienda. Con un 35 % de ahorro y la entrada avalada, comprar vuelve a ser posible con un sueldo normal. Garantía de 2.000 M€; no es gasto.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes",
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Aval público del 20 % de entrada para menores de 40 en su primera vivienda.",
+    "Con un 35 % de ahorro y la entrada avalada, comprar vuelve a ser posible con un sueldo normal.",
+    "Garantía de 2.000 M€; no es gasto."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Aval del Estado para que el casero no tenga miedo.",
+   "tituloFrase": "Aval del Estado para que el casero no tenga miedo.",
+   "texto": "Seguro público de impago: doce meses de renta y daños garantizados; después, el Estado persigue al moroso. A cambio, se alquila sin exigir tres nóminas y un aval bancario. Prioridad a menores de 45 y familias con hijos. Coste: ≈ 150 M€/año.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "jovenes",
+    "familias",
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 150 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Construir rápido: licencia automática en 15 días.",
+   "tituloFrase": "Construir rápido: licencia automática en 15 días.",
+   "texto": "Vivienda industrializada en suelo público y urbano consolidado con licencia automática y estándar técnico único: lo que vale en Sevilla vale en Bilbao. Registro único de alquiler turístico con cumplimiento fiscal, sin prohibiciones.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "15 días",
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Eliminación total del IBI.",
+   "tituloFrase": "Eliminación total del IBI.",
+   "texto": "El IBI se elimina por completo, para todos. Sin compensaciones a nadie: el impuesto desaparece y punto. Un tributo aberrante no se parchea, se quita. Menos ingresos municipales: ≈ 13.400 M€/año; los ayuntamientos lo absorben con ahorro, no con otros impuestos.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Menos ingresos municipales: ≈ 13.400 M€/año; los ayuntamientos lo absorben con ahorro, no con otros impuestos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Macrocárcel para asesinos, violadores, narcos y corruptos.",
+   "tituloFrase": "Macrocárcel para asesinos, violadores, narcos y corruptos.",
+   "texto": "Máxima seguridad para asesinos, agresores sexuales, narcotraficantes, crimen organizado, terroristas, multirreincidentes violentos y políticos corruptos. Sin permisos, sin tercer grado, sin teléfono. Donde se ha hecho, los homicidios cayeron de 105 a 1 por 100.000 habitantes. Coste de obra: ≈ 3.000 M€, pagados con lo decomisado al narco y al crimen organizado.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste de obra: ≈ 3.000 M€, pagados con lo decomisado al narco y al crimen organizado."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Cumplimiento íntegro.",
+   "tituloFrase": "Cumplimiento íntegro.",
+   "texto": "Violadores, asesinos, narcos y corruptos: cumplimiento íntegro, sin reducción ninguna ni permisos. Prisión permanente revisable por violación a menores o con lesiones graves. Tres condenas: prisión sin suspensión.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Agresores sexuales: registro público y castración química.",
+   "tituloFrase": "Agresores sexuales: registro público y castración química.",
+   "texto": "Registro público de reincidentes, pulsera telemática de por vida y castración química voluntaria como condición de cualquier beneficio penitenciario.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Extranjero condenado: cumple la pena fuera.",
+   "tituloFrase": "Extranjero condenado: cumple la pena fuera.",
+   "texto": "Convenios con terceros países para que los extranjeros condenados cumplan la pena allí, en prisiones de máxima dureza, no en una celda con televisión y permisos. Después, veto de por vida del acceso a España. Ahorro: ≈ 500 M€/año. Una plaza aquí cuesta ≈ 80 € al día.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Ahorro: ≈ 500 M€/año.",
+    "Una plaza aquí cuesta ≈ 80 € al día."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Guardia Civil y Policía: el mismo sueldo que un mosso.",
+   "tituloFrase": "Guardia Civil y Policía: el mismo sueldo que un mosso.",
+   "texto": "Equiparación salarial real en dos años, jubilación a los 60 sin penalización y reconocimiento de profesión de riesgo. Hoy cobran 7.500 euros menos al año y trabajan 130 horas más.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "País Vasco"
+   ],
+   "cifras": [
+    "Equiparación salarial real en dos años, jubilación a los 60 sin penalización y reconocimiento de profesión de riesgo.",
+    "Hoy cobran 7.500 euros menos al año y trabajan 130 horas más."
+   ],
+   "plazo": "dos años",
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Plan Estrecho: la Armada contra el narco.",
+   "tituloFrase": "Plan Estrecho: la Armada contra el narco.",
+   "texto": "Apoyo permanente de la Armada y el Ejército del Aire, 180 millones en lanchas, drones y medios aéreos, y decomiso civil de todo bien del narcotráfico. Cuatro guardias civiles muertos por narcolanchas desde 2024.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Apoyo permanente de la Armada y el Ejército del Aire, 180 millones en lanchas, drones y medios aéreos, y decomiso civil de todo bien del narcotráfico.",
+    "Cuatro guardias civiles muertos por narcolanchas desde 2024."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "La mili voluntaria: 1.600 euros al mes.",
+   "tituloFrase": "La mili voluntaria: 1.600 euros al mes.",
+   "texto": "De seis a doce meses, militar o civil, entre 18 y 30 años: 1.600 euros netos, formación oficial, puntos en todas las oposiciones, vivienda protegida preferente y 5.000 euros al terminar. Coste: ≈ 1.200 M€/año.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "De seis a doce meses, militar o civil, entre 18 y 30 años: 1.600 euros netos, formación oficial, puntos en todas las oposiciones, vivienda protegida preferente y 5.000 euros al terminar.",
+    "Coste: ≈ 1.200 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "La mili: quien sirve a España paga menos impuestos.",
+   "tituloFrase": "La mili: quien sirve a España paga menos impuestos.",
+   "texto": "Quien complete la mili voluntaria tendrá un mínimo exento de IRPF de 50.000 euros durante diez años (15.000 más que el resto), cero cotización del trabajador en sus tres primeros años de contrato y matrícula gratuita en universidad y FP. Servir a España tiene que notarse en la nómina. Coste: ≈ 250 M€/año con 30.000 plazas anuales.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Quien complete la mili voluntaria tendrá un mínimo exento de IRPF de 50.000 euros durante diez años (15.000 más que el resto), cero cotización del trabajador en sus tres primeros años de contrato y matrícula gratuita en universidad y FP.",
+    "Coste: ≈ 250 M€/año con 30.000 plazas anuales."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Justicia en 72 horas.",
+   "tituloFrase": "Justicia en 72 horas.",
+   "texto": "2.000 jueces y 1.500 fiscales más. Juicios rápidos en 72 horas para multirreincidentes y delitos flagrantes. Expediente digital único en toda España. Coste: ≈ 400 M€/año.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Coste: ≈ 400 M€/año."
+   ],
+   "plazo": "72 horas",
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Legítima defensa: el que entra en tu casa asume el riesgo.",
+   "tituloFrase": "Legítima defensa: el que entra en tu casa asume el riesgo.",
+   "texto": "Presunción legal de legítima defensa en tu vivienda o negocio, incluido el uso de armas de fuego legalmente tenidas: quien irrumpe por la fuerza o de noche asume las consecuencias. La acusación tiene que probar el exceso, no la víctima. Licencia de arma para defensa del domicilio sin trabas para ciudadanos sin antecedentes.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Policía judicial blindada.",
+   "tituloFrase": "Policía judicial blindada.",
+   "texto": "El agente que investiga a un político obedece al juez, no al ministro. La injerencia política es delito. Ningún policía vuelve a fichar periodistas por encargo.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Triplicar la UCO, la UDEF y la UDYCO: 3.000 investigadores más.",
+   "tituloFrase": "Triplicar la UCO, la UDEF y la UDYCO: 3.000 investigadores más.",
+   "texto": "La UCO tiene 580 plazas y 3,5 millones de presupuesto propio; la UDEF ha perdido la mitad de sus agentes desde 2022. Resultado: 600 cuentas bancarias y 300 móviles sin analizar, informes con meses de retraso y causas que prescriben por falta de manos. Plan 2027-2029: UCO de 580 a 1.800 agentes, UDEF de 320 a 1.000, 1.200 más en UDYCO y Vigilancia Aduanera, peritos contables y laboratorio forense propio. Partida finalista blindada por ley: ningún ministro puede recortarla ni apartar a un investigador. Coste: ≈ 400 M€/año. Lo paga el decomiso al narco y al corrupto.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "La UCO tiene 580 plazas y 3,5 millones de presupuesto propio; la UDEF ha perdido la mitad de sus agentes desde 2022.",
+    "Resultado: 600 cuentas bancarias y 300 móviles sin analizar, informes con meses de retraso y causas que prescriben por falta de manos.",
+    "Coste: ≈ 400 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Vigilantes de seguridad: protección penal reforzada, como bomberos y sanitarios.",
+   "tituloFrase": "Vigilantes de seguridad: protección penal reforzada, como bomberos y sanitarios.",
+   "texto": "94.400 vigilantes cobran 1.161 euros de salario base y 24 euros de plus de peligrosidad, y seis de cada diez han sido agredidos. Reforma de la Ley de Seguridad Privada: estatuto de colaborador de la seguridad pública, con la misma protección penal que bomberos y personal sanitario: agredirlos es atentado, sin ser agentes de la autoridad ni invadir una sola competencia de la Policía y la Guardia Civil. Chaleco, guantes anticorte y defensa a cargo de la empresa; binomio obligatorio en transporte, hospitales y centros de menores; TIP en 30 días, no en nueve meses; título oficial de FP y reglamento nuevo en seis meses: el vigente es de 1994.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "infancia",
+    "empresas",
+    "pacientes",
+    "agentes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "94.400 vigilantes cobran 1.161 euros de salario base y 24 euros de plus de peligrosidad, y seis de cada diez han sido agredidos.",
+    "Chaleco, guantes anticorte y defensa a cargo de la empresa; binomio obligatorio en transporte, hospitales y centros de menores; TIP en 30 días, no en nueve meses; título oficial de FP y reglamento nuevo en seis meses: el vigente es de 1994."
+   ],
+   "plazo": "30 días",
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Ningún contrato público por debajo del convenio. Jubilación a los 60.",
+   "tituloFrase": "Ningún contrato público por debajo del convenio. Jubilación a los 60.",
+   "texto": "El Estado no vuelve a adjudicar vigilancia a precio de nómina impagada: precio mínimo de licitación igual al coste del convenio más estructura, pago directo al trabajador si la empresa no paga y exclusión de la contratación pública a quien incumpla. Plus de peligrosidad de 150 euros en todo contrato público. Coeficientes reductores para jubilarse a los 60 con 35 años cotizados, financiados con cotización adicional, como la policía local. Coste para el Estado: 0. Lo financia la cotización adicional, como en la policía local.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "empresas",
+    "agentes"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Plus de peligrosidad de 150 euros en todo contrato público.",
+    "Coeficientes reductores para jubilarse a los 60 con 35 años cotizados, financiados con cotización adicional, como la policía local."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "35.000 euros libres de IRPF para todos.",
+   "tituloFrase": "35.000 euros libres de IRPF para todos.",
+   "texto": "Mínimo exento de 35.000 euros (hoy, 5.550), con reducción gradual hasta 50.000 para que ganar un euro más nunca cueste dinero. Calendario: 15.000 en 2027, 22.000 en 2028, 28.000 en 2029 y 35.000 en 2030. Coste: ≈ 43.000 M€/año en 2030. Ver 'Cómo se paga'.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Mínimo exento de 35.000 euros (hoy, 5.550), con reducción gradual hasta 50.000 para que ganar un euro más nunca cueste dinero.",
+    "Coste: ≈ 43.000 M€/año en 2030."
+   ],
+   "plazo": "en 2027",
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "5.000 euros más por cada hijo, para el padre y para la madre.",
+   "tituloFrase": "5.000 euros más por cada hijo, para el padre y para la madre.",
+   "texto": "Cada hijo suma 5.000 euros al mínimo exento de cada progenitor: ni el padre ni la madre pagan IRPF por esa parte. Una pareja con dos hijos no paga hasta 45.000 euros cada uno. El Estado que cobra por tener hijos no puede hablar de natalidad. Coste: ≈ 5.500 M€/año.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Cada hijo suma 5.000 euros al mínimo exento de cada progenitor: ni el padre ni la madre pagan IRPF por esa parte.",
+    "Una pareja con dos hijos no paga hasta 45.000 euros cada uno.",
+    "Coste: ≈ 5.500 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Fin de la subida de impuestos por inflación.",
+   "tituloFrase": "Fin de la subida de impuestos por inflación.",
+   "texto": "Tarifa, mínimos y deducciones del IRPF actualizados cada año con el IPC, por ley. La recaudación subió un 10 % en 2025 sin tocar un tipo: eso es una subida encubierta y se acaba.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "La recaudación subió un 10 % en 2025 sin tocar un tipo: eso es una subida encubierta y se acaba."
+   ],
+   "plazo": "cada año",
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Autónomos: eliminación total de la cuota.",
+   "tituloFrase": "Autónomos: eliminación total de la cuota.",
+   "texto": "Cuota cero, total y para siempre: ningún autónomo vuelve a pagar cuota. IVA de caja: si no cobras, no adelantas. Coste: ≈ 12.000 M€/año, lo que hoy recauda el RETA.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 12.000 M€/año, lo que hoy recauda el RETA."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Sociedades: 20 %. 15 % si reinviertes. 10 % startups.",
+   "tituloFrase": "Sociedades: 20 %. 15 % si reinviertes. 10 % startups.",
+   "texto": "Del 25 al 20 % en dos años; 15 % sobre el beneficio reinvertido; 10 % los tres primeros años de una empresa nueva. Coste: ≈ 6.000 M€/año.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Del 25 al 20 % en dos años; 15 % sobre el beneficio reinvertido; 10 % los tres primeros años de una empresa nueva.",
+    "Coste: ≈ 6.000 M€/año."
+   ],
+   "plazo": "dos años",
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Sucesiones, Donaciones y Patrimonio: suprimidos.",
+   "tituloFrase": "Sucesiones, Donaciones y Patrimonio: suprimidos.",
+   "texto": "Heredar la casa de tus padres no es un hecho imponible. Es un duelo. Fuera también el impuesto a las grandes fortunas. Coste: ≈ 3.500 M€/año.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 3.500 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Luz y agua al 4 % de IVA para siempre.",
+   "tituloFrase": "Luz y agua al 4 % de IVA para siempre.",
+   "texto": "La luz, del 21 al 4 %; el agua, del 10 al 4 %. Y fuera el impuesto a la producción eléctrica que va directo a tu factura. Coste: ≈ 2.600 M€/año.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "La luz, del 21 al 4 %; el agua, del 10 al 4 %.",
+    "Coste: ≈ 2.600 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Regla de oro: un euro de rebaja, un euro de ahorro certificado.",
+   "tituloFrase": "Regla de oro: un euro de rebaja, un euro de ahorro certificado.",
+   "texto": "Ninguna bajada entra en vigor sin ahorro estructural certificado por la AIReF. Techo de gasto real. Déficit cero en 2030.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "en 2030",
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Hacienda demuestra. Tú no pruebas tu inocencia.",
+   "tituloFrase": "Hacienda demuestra. Tú no pruebas tu inocencia.",
+   "texto": "Renta en una página, liquidación en 30 días, carga de la prueba para la Administración e intereses de demora simétricos: Hacienda devuelve con el mismo interés con el que cobra. Eliminación inmediata de incentivos a la persecución fiscal; el 50 % de los inspectores fiscales se dedicarán en exclusiva a la investigación de políticos, cargos públicos y empresas subvencionadas directa o indirectamente.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas",
+    "agentes"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Renta en una página, liquidación en 30 días, carga de la prueba para la Administración e intereses de demora simétricos: Hacienda devuelve con el mismo interés con el que cobra.",
+    "Eliminación inmediata de incentivos a la persecución fiscal; el 50 % de los inspectores fiscales se dedicarán en exclusiva a la investigación de políticos, cargos públicos y empresas subvencionadas directa o indirectamente."
+   ],
+   "plazo": "30 días",
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Tres quintos para subir impuestos. Y tu factura fiscal cada año.",
+   "tituloFrase": "Tres quintos para subir impuestos. Y tu factura fiscal cada año.",
+   "texto": "Toda subida de impuestos exigirá tres quintos del Congreso (reforma constitucional). Cada contribuyente recibirá cada año cuánto pagó en total y en qué se gastó, euro a euro.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "cada año",
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Financiación autonómica justa, solidaria y responsable. Ni condonaciones ni moneda de cambio.",
+   "tituloFrase": "Financiación autonómica justa, solidaria y responsable. Ni condonaciones ni moneda de cambio.",
+   "texto": "Nos batiremos por una financiación interterritorial justa, solidaria y responsable. Frente a modelos de financiación improvisados ad hoc por el sanchismo para contentar a sus socios separatistas y mantenerse un día más en el poder, defenderemos un sistema justo, solidario y responsable, regido por criterios objetivos y transparentes, iguales para todas las Comunidades Autónomas. Presionaremos con firmeza en esta dirección y denunciaremos incansablemente la utilización de la financiación autonómica, y por tanto de la riqueza, las necesidades y el futuro de los españoles, como moneda de cambio al servicio de intereses políticos. Nos opondremos a las condonaciones de deuda entre administraciones, salvo en caso de catástrofe.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Encadenar a los políticos: techo constitucional a los impuestos y a la deuda.",
+   "tituloFrase": "Encadenar a los políticos: techo constitucional a los impuestos y a la deuda.",
+   "texto": "Reforma constitucional para establecer límites claramente definidos a la presión fiscal y al endeudamiento. Creación de tipos penales constitucionalmente blindados para castigar su vulneración. El umbral de confiscatoriedad será individualmente invocable por cualquier persona física o jurídica ante la Administración tributaria, los Tribunales Económico-Administrativos y la jurisdicción competente. C O M P R O M I S O S A L F · 2 9 N € EN SALF SOMOS EL ÚNICO PARTIDO FIRME EN LA DEFENSA DEL DERECHO AL DINERO EN EFECTIVO",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "C O M P R O M I S O S A L F · 2 9 N € EN SALF SOMOS EL ÚNICO PARTIDO FIRME EN LA DEFENSA DEL DERECHO AL DINERO EN EFECTIVO"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "El efectivo, derecho constitucional.",
+   "tituloFrase": "El efectivo, derecho constitucional.",
+   "texto": "Derecho a pagar y cobrar en efectivo sin límite de importe: se deroga el tope de 1.000 euros y España vetará el de 10.000 que impone Bruselas desde 2027. Comercios, bancos y administraciones estarán obligados a aceptarlo. El euro digital nunca sustituirá ni condicionará al efectivo: tu dinero no es un permiso que alguien pueda apagar. Negarse a aceptar u obstaculizar el pago en efectivo será penado por ley.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "España",
+    "Unión Europea"
+   ],
+   "cifras": [
+    "Derecho a pagar y cobrar en efectivo sin límite de importe: se deroga el tope de 1.000 euros y España vetará el de 10.000 que impone Bruselas desde 2027."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "La banca devuelve el rescate: 70.000 millones en 15 años.",
+   "tituloFrase": "La banca devuelve el rescate: 70.000 millones en 15 años.",
+   "texto": "El rescate de las cajas ha costado 66.617 millones según el Tribunal de Cuentas; sumando lo que falta por recuperar, los intereses y el agujero de la Sareb, la factura real del contribuyente ronda los 70.000. La banca ha devuelto el 11 %. Ley de Devolución del Rescate: las entidades que se quedaron con las cajas rescatadas (CaixaBank, BBVA, Sabadell, Unicaja y Abanca) pagan 4.700 millones al año durante 15 años, en proporción a las ayudas que absorbieron, con tope del 40 % de su beneficio anual y el exceso aplazado con interés. No deducible, prohibido repercutirlo al cliente (multa del triple) y heredable por quien compre la entidad. Ganan 20.000 millones al año: pueden. Ingreso: ≈ 4.700 M€/año, contado en 'Cómo se paga'.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "El rescate de las cajas ha costado 66.617 millones según el Tribunal de Cuentas; sumando lo que falta por recuperar, los intereses y el agujero de la Sareb, la factura real del contribuyente ronda los 70.000.",
+    "La banca ha devuelto el 11 %.",
+    "Ley de Devolución del Rescate: las entidades que se quedaron con las cajas rescatadas (CaixaBank, BBVA, Sabadell, Unicaja y Abanca) pagan 4.700 millones al año durante 15 años, en proporción a las ayudas que absorbieron, con tope del 40 % de su beneficio anual y el exceso aplazado con interés."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Orden de expulsión = expulsión. En 48 horas.",
+   "tituloFrase": "Orden de expulsión = expulsión. En 48 horas.",
+   "texto": "Identificación, orden y salida en 48 horas. El 100 % de las órdenes ejecutadas en 90 días. Internamiento hasta la expulsión. Coste: ≈ 300 M€/año; se recupera en acogida.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "El 100 % de las órdenes ejecutadas en 90 días.",
+    "Coste: ≈ 300 M€/año; se recupera en acogida."
+   ],
+   "plazo": "48 horas",
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Fin de las regularizaciones.",
+   "tituloFrase": "Fin de las regularizaciones.",
+   "texto": "Derogación de la regularización de 2026, revisión una por una de las concesiones y prohibición por ley orgánica de cualquier regularización masiva. Cada regularización es una invitación.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Readmisión o nada.",
+   "tituloFrase": "Readmisión o nada.",
+   "texto": "Ni un euro, ni un visado, ni una preferencia comercial a Marruecos, Argelia, Senegal o Mauritania si no readmiten a sus nacionales en 72 horas. Veto español a cualquier acuerdo europeo que no lo exija.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "España",
+    "Marruecos"
+   ],
+   "cifras": [
+    "Ni un euro, ni un visado, ni una preferencia comercial a Marruecos, Argelia, Senegal o Mauritania si no readmiten a sus nacionales en 72 horas."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Paralización total de inmigración de países no colaboradores contra las mafias de trata de personas.",
+   "tituloFrase": "Paralización total de inmigración de países no colaboradores contra las mafias de trata de personas.",
+   "texto": "Moratoria total, durante toda la legislatura, a la inmigración procedente de países que no colaboran contra las mafias de trata de personas ni readmiten a sus nacionales. Para el resto, solo visados con contrato previo y cupo anual votado en el Congreso. Primero integramos a los que ya están.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Prioridad hispanoamericana. Nacionalidad que se gana.",
+   "tituloFrase": "Prioridad hispanoamericana. Nacionalidad que se gana.",
+   "texto": "Cupos preferentes para Hispanoamérica. Nacionalidad: diez años de residencia legal, examen de cultura y Constitución, sin antecedentes y sin depender de ayudas. Revisión de todas las obtenidas con fraude.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Hispanoamérica"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Residencia y nacionalidad revocables.",
+   "tituloFrase": "Residencia y nacionalidad revocables.",
+   "texto": "Condena de más de un año: pérdida de la residencia. Terrorismo, crimen organizado o delitos sexuales graves: pérdida de la nacionalidad para dobles nacionales.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Menores: prueba de edad antes, no después.",
+   "tituloFrase": "Menores: prueba de edad antes, no después.",
+   "texto": "Prueba radiológica y dental obligatoria antes de entrar en un centro de menores. Repatriación con la familia como primera opción. Ni un adulto en un centro con niños.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "familias",
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Hermanos Musulmanes: ilegalizados. Mezquitas sin dinero extranjero.",
+   "tituloFrase": "Hermanos Musulmanes: ilegalizados. Mezquitas sin dinero extranjero.",
+   "texto": "Ilegalización e inclusión en la lista terrorista: Hamás, su rama, ya está. Prohibición de la financiación extranjera del culto, registro público de donaciones y cierre de quien no cumpla. Imanes que prediquen contra la Constitución, expulsados.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Velo integral prohibido.",
+   "tituloFrase": "Velo integral prohibido.",
+   "texto": "Burka y niqab fuera del espacio público, como en Francia, Bélgica, Austria, Dinamarca, Países Bajos y Suiza. Una mujer sin rostro no es diversidad: es sumisión.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Sin papeles, sin ayudas.",
+   "tituloFrase": "Sin papeles, sin ayudas.",
+   "texto": "Ninguna prestación no contributiva, ayuda al alquiler ni vivienda pública sin cinco años de residencia legal y cotización. Tasa del 2 % a las remesas hacia países que no readmiten. Ahorro: ≈ 1.000 M€/año.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Tasa del 2 % a las remesas hacia países que no readmiten.",
+    "Ahorro: ≈ 1.000 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Las pensiones de hoy, blindadas en la Constitución.",
+   "tituloFrase": "Las pensiones de hoy, blindadas en la Constitución.",
+   "texto": "Revalorización con el IPC y prohibición de recortes, con rango constitucional. A quien ya cobra no se le toca un euro.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "El sobre naranja: la verdad por ley.",
+   "tituloFrase": "El sobre naranja: la verdad por ley.",
+   "texto": "Cada año recibes tu pensión estimada y el saldo de tu cuenta individual. Fin de la mentira institucional: sabrás lo que vas a cobrar y quién se lo está gastando.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "Cada año",
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Sistema mixto: tu cuenta, a tu nombre, heredable.",
+   "tituloFrase": "Sistema mixto: tu cuenta, a tu nombre, heredable.",
+   "texto": "Menores de 45 años: el 2 % del salario a una cuenta individual obligatoria, tuya, heredable, con comisión máxima del 0,3 %. El 0,9 % ya lo pagas y hoy va a una hucha común. Coste de transición: ≈ 6.000 M€/año hasta 2030.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "jovenes",
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Menores de 45 años: el 2 % del salario a una cuenta individual obligatoria, tuya, heredable, con comisión máxima del 0,3 %.",
+    "El 0,9 % ya lo pagas y hoy va a una hucha común.",
+    "Coste de transición: ≈ 6.000 M€/año hasta 2030."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Mochila austriaca.",
+   "tituloFrase": "Mochila austriaca.",
+   "texto": "El 1,53 % del salario, a cargo de la empresa, a tu cuenta desde el primer día. Te la llevas al cambiar de trabajo y la cobras al jubilarte si no la usas.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "El 1,53 % del salario, a cargo de la empresa, a tu cuenta desde el primer día."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Jubilación activa total.",
+   "tituloFrase": "Jubilación activa total.",
+   "texto": "Cobra el 100 % de la pensión y sigue trabajando sin recortes ni cotizaciones extra. Con 40 años cotizados te jubilas cuando quieras, sin penalización.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Cobra el 100 % de la pensión y sigue trabajando sin recortes ni cotizaciones extra.",
+    "Con 40 años cotizados te jubilas cuando quieras, sin penalización."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Pensión mínima de 1.000 euros con 35 años cotizados.",
+   "tituloFrase": "Pensión mínima de 1.000 euros con 35 años cotizados.",
+   "texto": "Nadie que haya cotizado 35 años cobrará menos de 1.000 euros en 14 pagas. Coste: ≈ 2.000 M€/año.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Nadie que haya cotizado 35 años cobrará menos de 1.000 euros en 14 pagas.",
+    "Coste: ≈ 2.000 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Pensiones de políticos: fuera.",
+   "tituloFrase": "Pensiones de políticos: fuera.",
+   "texto": "Sin complemento parlamentario (la pensión máxima con siete años de escaño), sin cesantías, sin oficinas, coches y escoltas vitalicios para expresidentes.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Fondo de Reserva fuera del Gobierno.",
+   "tituloFrase": "Fondo de Reserva fuera del Gobierno.",
+   "texto": "Fondo soberano con gestión profesional independiente y mandato de rentabilidad. Ningún ministro vuelve a usar la hucha para cuadrar un presupuesto.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Autónomos: cotiza por lo que ganas, elige lo que cobrarás.",
+   "tituloFrase": "Autónomos: cotiza por lo que ganas, elige lo que cobrarás.",
+   "texto": "Libertad de base de cotización. Quien quiera más pensión, cotiza más, sin tramos impuestos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Cuentas claras cada mes.",
+   "tituloFrase": "Cuentas claras cada mes.",
+   "texto": "Cotizaciones por un lado, transferencias del Estado por otro, publicadas con cada nómina. La deuda de la Seguridad Social, reconocida y con calendario de pago.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Una sola central de compras, no diecisiete.",
+   "tituloFrase": "Una sola central de compras, no diecisiete.",
+   "texto": "El 40 % del gasto sanitario son compras: 41.000 millones. Diecisiete servicios compran lo mismo a precios distintos. Central única obligatoria con precios netos públicos: 15 % de ahorro, íntegro para sueldos y plazas.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "El 40 % del gasto sanitario son compras: 41.000 millones.",
+    "Central única obligatoria con precios netos públicos: 15 % de ahorro, íntegro para sueldos y plazas."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "60 días para operarte. Si no, donde tú elijas y paga el Sistema.",
+   "tituloFrase": "60 días para operarte. Si no, donde tú elijas y paga el Sistema.",
+   "texto": "60 días para cirugía, 30 para especialista, 7 para pruebas prioritarias. Superado el plazo, eliges centro, público o privado, y lo paga la sanidad pública. Coste: ≈ 1.500 M€/año.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "60 días para cirugía, 30 para especialista, 7 para pruebas prioritarias.",
+    "Coste: ≈ 1.500 M€/año."
+   ],
+   "plazo": "60 días",
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Médicos y profesionales de la salud pagados como en Europa.",
+   "tituloFrase": "Médicos y profesionales de la salud pagados como en Europa.",
+   "texto": "Un médico de familia cobra aquí 79.000 euros; en Países Bajos, 135.000. Subida del 20 % a médicos y del 10 % a enfermería y al resto de profesionales sanitarios en cuatro años, 30.000 euros de complemento en plazas rurales y contratos estables desde el primer día. Coste: ≈ 5.500 M€/año; lo paga la central de compras.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "familias",
+    "rural"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Un médico de familia cobra aquí 79.000 euros; en Países Bajos, 135.000.",
+    "Subida del 20 % a médicos y del 10 % a enfermería y al resto de profesionales sanitarios en cuatro años, 30.000 euros de complemento en plazas rurales y contratos estables desde el primer día.",
+    "Coste: ≈ 5.500 M€/año; lo paga la central de compras."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Una tarjeta, una historia clínica, una receta.",
+   "tituloFrase": "Una tarjeta, una historia clínica, una receta.",
+   "texto": "Válidas en toda España. Tu analítica de Sevilla se ve en Bilbao. Coste: 300 M€, una sola vez.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Coste: 300 M€, una sola vez."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "10.000 camas y 1.500 UCI más.",
+   "tituloFrase": "10.000 camas y 1.500 UCI más.",
+   "texto": "España tiene 2,8 camas por cada 1.000 habitantes; Europa, 5,1. Inversión: ≈ 3.000 M€ en la legislatura.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "España tiene 2,8 camas por cada 1.000 habitantes; Europa, 5,1.",
+    "Inversión: ≈ 3.000 M€ en la legislatura."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Cita con tu médico en 48 horas.",
+   "tituloFrase": "Cita con tu médico en 48 horas.",
+   "texto": "Si no la hay, consulta privada pagada por el Sistema. Telemedicina para crónicos, enfermería que prescribe y administrativos para que el médico no rellene papeles. Coste: ≈ 800 M€/año.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 800 M€/año."
+   ],
+   "plazo": "48 horas",
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "La sanidad española es para los españoles.",
+   "tituloFrase": "La sanidad española es para los españoles.",
+   "texto": "Tarjeta para españoles y residentes legales con cotización o cobertura. Urgencias para todos, siempre. Facturación real a los países y aseguradoras de terceros.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Medicamentos: precios netos públicos y copago cero para quien no puede.",
+   "tituloFrase": "Medicamentos: precios netos públicos y copago cero para quien no puede.",
+   "texto": "Subasta nacional de genéricos y biosimilares. Copago cero para pensiones mínimas y enfermos crónicos. Coste: ≈ 200 M€/año.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 200 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Medicamentos gratis para los niños menores de 3 años.",
+   "tituloFrase": "Medicamentos gratis para los niños menores de 3 años.",
+   "texto": "Copago cero en farmacia para todos los menores de 3 años, en toda España. Hoy, en muchas comunidades, la gratuidad se acaba al cumplir un año. Un niño enfermo no es un hecho imponible. Coste: ≈ 30 M€/año.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "jovenes",
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Copago cero en farmacia para todos los menores de 3 años, en toda España.",
+    "Coste: ≈ 30 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "Salud mental sin lista de espera.",
+   "tituloFrase": "Salud mental sin lista de espera.",
+   "texto": "Un psicólogo clínico por cada 10.000 habitantes en los centros de salud y atención en 15 días. Coste: ≈ 500 M€/año.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Un psicólogo clínico por cada 10.000 habitantes en los centros de salud y atención en 15 días.",
+    "Coste: ≈ 500 M€/año."
+   ],
+   "plazo": "15 días",
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "Gerentes por concurso, no por carné.",
+   "tituloFrase": "Gerentes por concurso, no por carné.",
+   "texto": "Dirección de hospitales por méritos con mandato de cinco años. Cuentas, listas de espera y resultados de cada hospital, públicos en tiempo real.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "Test de paternidad gratuito e inmediato en el hospital.",
+   "tituloFrase": "Test de paternidad gratuito e inmediato en el hospital.",
+   "texto": "Derecho a una prueba de paternidad gratuita e inmediata en el propio hospital, al nacer, salvo renuncia expresa de ambos progenitores. Coste: ≈ 30 M€/año.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 30 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "La corrupción no prescribe.",
+   "tituloFrase": "La corrupción no prescribe.",
+   "texto": "Cohecho, malversación, prevaricación, tráfico de influencias y financiación ilegal cometidos por cargos públicos: imprescriptibles. Hoy prescriben entre 5 y 15 años: el ladrón solo tiene que esperar.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Hoy prescriben entre 5 y 15 años: el ladrón solo tiene que esperar."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Sin tercer grado, sin indulto, sin permisos.",
+   "tituloFrase": "Sin tercer grado, sin indulto, sin permisos.",
+   "texto": "Cumplimiento íntegro para condenados por corrupción y prohibición legal de indulto. El poder no puede perdonar a los que robaron para el poder.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Amnistías prohibidas en la Constitución. Indultos, nunca por política.",
+   "tituloFrase": "Amnistías prohibidas en la Constitución. Indultos, nunca por política.",
+   "texto": "Reforma de la Constitución para prohibir expresamente las amnistías y condicionar los indultos a requisitos que impidan su utilización política: solicitud por el órgano jurisdiccional en la misma sentencia condenatoria e informe favorable del CGPJ o de un órgano ad hoc sin influencia política en su composición. Prohibición, en todo caso, de los indultos a políticos corruptos, sin excepciones. La propia Constitución exigirá tipos penales que castiguen la aprobación de amnistías o indultos generales y la utilización política del indulto, con pena mínima de prisión. Antes de esta reforma, una única excepción: indultaremos a José Manuel Lomas, el librero de 82 años condenado por defender su finca, y le concederemos la Orden del Mérito Civil.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Antes de esta reforma, una única excepción: indultaremos a José Manuel Lomas, el librero de 82 años condenado por defender su finca, y le concederemos la Orden del Mérito Civil."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Devuelves el triple o no sales.",
+   "tituloFrase": "Devuelves el triple o no sales.",
+   "texto": "Responsabilidad civil del triple, decomiso de todo patrimonio no justificado y ningún beneficio hasta restituir. El funcionario condenado pierde la plaza para siempre; la empresa corruptora, quince años sin contratar con el Estado.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [
+    "empresas",
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "El que denuncia cobra el 15 %.",
+   "tituloFrase": "El que denuncia cobra el 15 %.",
+   "texto": "El 15 % de lo recuperado, libre de impuestos, con anonimato, protección laboral y una autoridad independiente con capacidad de sancionar.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "El 15 % de lo recuperado, libre de impuestos, con anonimato, protección laboral y una autoridad independiente con capacidad de sancionar."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Fiscal General independiente.",
+   "tituloFrase": "Fiscal General independiente.",
+   "texto": "Elegido por tres quintos del Congreso entre fiscales con 25 años de carrera, mandato de seis años no coincidente con la legislatura. El último nombrado por el Gobierno acabó condenado por el Supremo.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Elegido por tres quintos del Congreso entre fiscales con 25 años de carrera, mandato de seis años no coincidente con la legislatura."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Anticorrupción con 100 fiscales. Vigilancia Aduanera y SEPBLAC al completo.",
+   "tituloFrase": "Anticorrupción con 100 fiscales. Vigilancia Aduanera y SEPBLAC al completo.",
+   "texto": "La Fiscalía Anticorrupción tiene 29 fiscales y 31 funcionarios para toda España; la Antidroga, 15; Vigilancia Aduanera tiene el 54 % de sus plazas sin cubrir y el SEPBLAC recibió un 76 % más de alertas con la misma plantilla. Anticorrupción pasa a 100 fiscales con unidad propia de peritos y auditores; Antidroga, a 40; Vigilancia Aduanera cubre todas sus vacantes en dos años y el SEPBLAC duplica su plantilla. Presupuesto propio por ley, fuera del alcance del ministro. Coste: ≈ 120 M€/año, dentro del fondo de 400 M€ de la UCO, la UDEF y la UDYCO.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "funcionarios",
+    "agentes"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "La Fiscalía Anticorrupción tiene 29 fiscales y 31 funcionarios para toda España; la Antidroga, 15; Vigilancia Aduanera tiene el 54 % de sus plazas sin cubrir y el SEPBLAC recibió un 76 % más de alertas con la misma plantilla.",
+    "Anticorrupción pasa a 100 fiscales con unidad propia de peritos y auditores; Antidroga, a 40; Vigilancia Aduanera cubre todas sus vacantes en dos años y el SEPBLAC duplica su plantilla.",
+    "Coste: ≈ 120 M€/año, dentro del fondo de 400 M€ de la UCO, la UDEF y la UDYCO."
+   ],
+   "plazo": "dos años",
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Fuera el Tribunal Constitucional: el control pasa a una sala del Supremo elegida por los jueces.",
+   "tituloFrase": "Fuera el Tribunal Constitucional: el control pasa a una sala del Supremo elegida por los jueces.",
+   "texto": "Reforma de la Constitución para suprimir el Tribunal Constitucional y atribuir la potestad de control de constitucionalidad de las leyes y de las actuaciones de los poderes públicos a una sala especial del Tribunal Supremo. Su composición vendrá determinada por criterios estrictamente excluyentes de cualquier influencia política: elección por jueces y magistrados, antigüedad y/o sorteo.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Jueces independientes: CGPJ sin políticos y cárcel para quien dé instrucciones a un juez.",
+   "tituloFrase": "Jueces independientes: CGPJ sin políticos y cárcel para quien dé instrucciones a un juez.",
+   "texto": "Reforma de la Constitución para garantizar la independencia del Consejo General del Poder Judicial, con composición determinada por criterios excluyentes de cualquier influencia política: elección por jueces y magistrados, antigüedad y/o sorteo. Tipos penales específicos, y endurecimiento de los existentes, para cualquier actuación política o judicial que comprometa la independencia judicial, como transmitir o recibir instrucciones. Las becas públicas para preparar oposiciones se concederán únicamente por mérito y capacidad.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "discapacidad",
+    "agentes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Acción popular blindada en la Constitución.",
+   "tituloFrase": "Acción popular blindada en la Constitución.",
+   "texto": "La ley no podrá vetar ni restringir el ejercicio de la acción popular a ninguna persona física o jurídica, y podrá extender la posibilidad de ejercerla a entes sin personalidad. Nadie volverá a cerrar la puerta de los tribunales a quien denuncia a un corrupto.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Fin de los aforamientos.",
+   "tituloFrase": "Fin de los aforamientos.",
+   "texto": "Los 17.621 aforados, juzgados por el mismo juez que tú. Reforma constitucional presentada el primer día.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 82,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Puertas giratorias cerradas, también hacia los órganos de control.",
+   "tituloFrase": "Puertas giratorias cerradas, también hacia los órganos de control.",
+   "texto": "Cinco años de incompatibilidad para pasar a empresas reguladas y cinco para que un exministro o dirigente de partido presida el Poder Judicial, la sala constitucional del Supremo, el Banco de España, la CNMC o el Defensor del Pueblo.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 83,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Contratación pública: todo electrónico, todo público.",
+   "tituloFrase": "Contratación pública: todo electrónico, todo público.",
+   "texto": "Plataforma única, subasta inversa y precios de referencia en tiempo real. Toda emergencia auditada en 30 días y publicada íntegra en 24 horas con los beneficiarios reales.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Toda emergencia auditada en 30 días y publicada íntegra en 24 horas con los beneficiarios reales."
+   ],
+   "plazo": "30 días",
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Todo gasto mayor de 1.000 euros, publicado en 24 horas.",
+   "tituloFrase": "Todo gasto mayor de 1.000 euros, publicado en 24 horas.",
+   "texto": "Portal único de todas las administraciones: pagos, contratos, subvenciones, nóminas de altos cargos y asesores, agendas y regalos. Hoy: 1.255 puestos de confianza en el Gobierno.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "15 años y a casa.",
+   "tituloFrase": "15 años y a casa.",
+   "texto": "Límite de 15 años en cargos públicos remunerados. Fuera el Senado, el Consejo de Estado, los Consejos Económicos y Sociales, la publicidad institucional y las subvenciones a sindicatos y patronal. Partidos: 50 % menos. Asesores: de 1.255 a 400.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Límite de 15 años en cargos públicos remunerados.",
+    "Partidos: 50 % menos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Cuña fiscal del 41 al 29 %.",
+   "tituloFrase": "Cuña fiscal del 41 al 29 %.",
+   "texto": "Mínimo exento de 35.000, deflactación, el 0,9 % a tu cuenta y cero cotización del trabajador en el salario mínimo. La diferencia entre lo que cuestas y lo que cobras, doce puntos menos. Coste: ≈ 2.600 M€/año.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Mínimo exento de 35.000, deflactación, el 0,9 % a tu cuenta y cero cotización del trabajador en el salario mínimo.",
+    "Coste: ≈ 2.600 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Contrato único con mochila.",
+   "tituloFrase": "Contrato único con mochila.",
+   "texto": "Un solo contrato indefinido con indemnización creciente de 12 a 33 días, más la mochila del 1,53 %. Fin de la dualidad y del miedo a cambiar de trabajo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Un solo contrato indefinido con indemnización creciente de 12 a 33 días, más la mochila del 1,53 %."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 88,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Autónomos: cuota cero, IVA de caja, una ventanilla.",
+   "tituloFrase": "Autónomos: cuota cero, IVA de caja, una ventanilla.",
+   "texto": "Cuota cero, total y para siempre. Licencia de actividad en 24 horas por declaración responsable.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Absentismo: se acabó el escaqueo.",
+   "tituloFrase": "Absentismo: se acabó el escaqueo.",
+   "texto": "Las mutuas dan el alta en contingencias comunes a los 15 días, con revisión del INSS en 72 horas. Protección total al enfermo de verdad, que es la primera víctima del que finge. Ahorro: ≈ 2.000 M€/año.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Las mutuas dan el alta en contingencias comunes a los 15 días, con revisión del INSS en 72 horas.",
+    "Ahorro: ≈ 2.000 M€/año."
+   ],
+   "plazo": "15 días",
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Aprendiz pagado, no becario gratis.",
+   "tituloFrase": "Aprendiz pagado, no becario gratis.",
+   "texto": "FP dual con contrato y salario del 50 % del convenio, pagado a medias por empresa y Estado. Cotización cero durante dos años por contratar a menores de 30 y mayores de 50. Coste: ≈ 1.500 M€/año.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "jovenes",
+    "infancia",
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "FP dual con contrato y salario del 50 % del convenio, pagado a medias por empresa y Estado.",
+    "Cotización cero durante dos años por contratar a menores de 30 y mayores de 50.",
+    "Coste: ≈ 1.500 M€/año."
+   ],
+   "plazo": "dos años",
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Una norma entra, dos salen.",
+   "tituloFrase": "Una norma entra, dos salen.",
+   "texto": "Por cada regulación nueva que afecte a empresas, dos derogadas. Unidad de mercado real: lo que vale en una comunidad vale en todas.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Protección al trabajador sin encarecer su contratación.",
+   "tituloFrase": "Protección al trabajador sin encarecer su contratación.",
+   "texto": "Las bajas por enfermedad las paga la Seguridad Social desde el primer día, no la empresa, que hoy carga con los quince primeros. Indemnización garantizada por la mochila aunque la empresa quiebre, salario asegurado por un fondo público de impago y persecución real de los falsos autónomos. Proteger al trabajador no puede ser un impuesto a contratarlo. Coste: ≈ 3.000 M€/año; lo compensa la reducción del absentismo.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "autonomos",
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 3.000 M€/año; lo compensa la reducción del absentismo."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "El paro de verdad: el fijo discontinuo cuenta como parado cuando no trabaja.",
+   "tituloFrase": "El paro de verdad: el fijo discontinuo cuenta como parado cuando no trabaja.",
+   "texto": "Los fijos discontinuos se usan para reducir falsamente las cifras del paro: 640.900 personas sin actividad que no aparecen como paradas. Un fijo discontinuo cuenta como trabajador solo cuando trabaja; el resto del tiempo, como lo que es: un parado. Se acabó la trampa estadística.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Oposiciones a ciegas.",
+   "tituloFrase": "Oposiciones a ciegas.",
+   "texto": "Todas las oposiciones y concursos 100 % anónimos y digitales, con tribunales sorteados y grabados. Mérito, no carné.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Todas las oposiciones y concursos 100 % anónimos y digitales, con tribunales sorteados y grabados."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Trabajar siempre deja más que la ayuda.",
+   "tituloFrase": "Trabajar siempre deja más que la ayuda.",
+   "texto": "Rechazar dos ofertas adecuadas: fin de la prestación. Y complemento salarial para que el Ingreso Mínimo baje 50 céntimos por cada euro ganado, no uno a uno. Sin dejar a nadie atrás, sin dejar a nadie en el sofá. Coste neto: ≈ 0.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Y complemento salarial para que el Ingreso Mínimo baje 50 céntimos por cada euro ganado, no uno a uno."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 96,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "Una ley para 20 años.",
+   "tituloFrase": "Una ley para 20 años.",
+   "texto": "Aprobada por dos tercios y blindada: no se cambia sin la misma mayoría. Contenidos mínimos comunes al 100 %, evaluaciones externas al final de cada etapa y selectividad única y en castellano en toda España.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Contenidos mínimos comunes al 100 %, evaluaciones externas al final de cada etapa y selectividad única y en castellano en toda España."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 97,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "Castellano garantizado, sin ir a juicio.",
+   "tituloFrase": "Castellano garantizado, sin ir a juicio.",
+   "texto": "Derecho a la enseñanza en castellano en toda España, exigible por la familia, con Alta Inspección estatal que sanciona.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 98,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "MIR docente.",
+   "tituloFrase": "MIR docente.",
+   "texto": "Dos años de prácticas remuneradas con tutor y examen nacional de acceso. El mejor profesor de España enseña donde quiera. Coste: ≈ 400 M€/año.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Coste: ≈ 400 M€/año."
+   ],
+   "plazo": "Dos años",
+   "deroga": null
+  },
+  {
+   "n": 99,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "El profesor es autoridad pública. Y cobra como tal.",
+   "tituloFrase": "El profesor es autoridad pública. Y cobra como tal.",
+   "texto": "Autoridad pública en toda España, 10 % más de sueldo en la legislatura y menos burocracia: un profesor está para enseñar. Coste: ≈ 2.500 M€/año.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Autoridad pública en toda España, 10 % más de sueldo en la legislatura y menos burocracia: un profesor está para enseñar.",
+    "Coste: ≈ 2.500 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 100,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "FP desde los 15 y un tutor para cada alumno en riesgo.",
+   "tituloFrase": "FP desde los 15 y un tutor para cada alumno en riesgo.",
+   "texto": "Aprendizaje remunerado desde los 15, tutor individual y fin del aprobado automático: se titula cuando se ha aprendido.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 101,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 34,
+   "subapartado": null,
+   "titulo": "El dinero sigue al alumno.",
+   "tituloFrase": "El dinero sigue al alumno.",
+   "texto": "Cheque escolar válido en pública, concertada y privada, con el mismo importe por alumno y resultados públicos de cada centro. Elegir colegio no puede ser un lujo.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 102,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 34,
+   "subapartado": null,
+   "titulo": "Despolitización de la educación.",
+   "tituloFrase": "Despolitización de la educación.",
+   "texto": "Los contenidos los fija un Consejo Académico independiente, no el Gobierno de turno. Neutralidad ideológica obligatoria en el aula, prohibición de propaganda de partidos y sindicatos en horario lectivo, libros de texto revisados por académicos, inspección y sanción. El aula es para enseñar, no para reclutar.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 103,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 34,
+   "subapartado": null,
+   "titulo": "Historia de España común y educación económica.",
+   "tituloFrase": "Historia de España común y educación económica.",
+   "texto": "El mismo temario de Historia en toda España. Economía y Constitución obligatorias en Secundaria: qué es un impuesto, una hipoteca, una pensión.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 104,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 34,
+   "subapartado": null,
+   "titulo": "Beca-salario de 2.000 euros para FP superior con déficit.",
+   "tituloFrase": "Beca-salario de 2.000 euros para FP superior con déficit.",
+   "texto": "Industria, construcción, energía, sanidad, digital. Universidades financiadas en parte por la inserción laboral de sus titulados. Coste: ≈ 400 M€/año.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 400 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 105,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 34,
+   "subapartado": null,
+   "titulo": "Inglés real.",
+   "tituloFrase": "Inglés real.",
+   "texto": "5.000 auxiliares nativos más, certificación B2 al terminar Bachillerato pagada por el Estado y versión original en la televisión pública infantil. Coste: ≈ 250 M€/año.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Coste: ≈ 250 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 106,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Referéndum de renegociación europea; y de salida, si Bruselas se niega.",
+   "tituloFrase": "Referéndum de renegociación europea; y de salida, si Bruselas se niega.",
+   "texto": "Que el eje franco-alemán quiera arruinar nuestro sector primario, bloquear medidas contra la inmigración ilegal, use el endeudamiento español para extorsionar el legítimo interés nacional o coarte derechos fundamentales como la libertad de expresión o la no injerencia política extranjera justifica un referéndum de renegociación. Si Bruselas rechaza renegociar, segundo referéndum: la salida.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "España",
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 107,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Veto a Mercosur, al recorte de la PAC y al Pacto Verde.",
+   "tituloFrase": "Veto a Mercosur, al recorte de la PAC y al Pacto Verde.",
+   "texto": "Mercosur se aplica desde mayo de 2026 contra el voto de Francia; el recorte del 20 % de la PAC quita 877 millones al año al campo español; la Ley de Restauración deja improductivo hasta el 40 % de la Red Natura. España lo veta en el Consejo: lo que se come en España se produce en España.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "Mercosur se aplica desde mayo de 2026 contra el voto de Francia; el recorte del 20 % de la PAC quita 877 millones al año al campo español; la Ley de Restauración deja improductivo hasta el 40 % de la Red Natura."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 108,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Guerra a los Hermanos Musulmanes: ley antiterrorista con penas máximas.",
+   "tituloFrase": "Guerra a los Hermanos Musulmanes: ley antiterrorista con penas máximas.",
+   "texto": "Son la organización responsable del terrorismo en Europa. Persecución total contra sus miembros, bloqueo económico total y aplicación de la ley del terrorismo, con sus penas máximas, por la mera pertenencia a esta y otras redes de radicalización islámica. Egipto, Arabia Saudí, Emiratos y Jordania ya los prohíben; Estados Unidos los designa terroristas y el Parlamento Europeo pidió en octubre estudiar su inclusión en la lista terrorista.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 109,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Marruecos: bloqueo comercial total si bloquea un solo puerto español.",
+   "tituloFrase": "Marruecos: bloqueo comercial total si bloquea un solo puerto español.",
+   "texto": "Bloqueo comercial total a todo puerto marroquí si el país alauí sigue bloqueando un solo puerto español. Reivindicación de los territorios del Rif si el Parlamento marroquí no rechaza la exigencia de soberanía sobre Ceuta, Melilla, las Islas Canarias y cualquier otro territorio español. Bloqueo comercial total si Marruecos utiliza la inmigración como ataque híbrido en nuestra frontera sur. Denuncia internacional del soporte marroquí a las estructuras del narcotráfico activas en España.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "España",
+    "Canarias",
+    "Ceuta",
+    "Melilla",
+    "Marruecos"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 110,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Ceuta y Melilla, plaza franca: 0 % de IRPF, 0 % de Sociedades y 0 % de cotizaciones. Para siempre.",
+   "tituloFrase": "Ceuta y Melilla, plaza franca: 0 % de IRPF, 0 % de Sociedades y 0 % de cotizaciones. Para siempre.",
+   "texto": "Hoy la bonificación es del 60 % en IRPF y Sociedades y del 75 % en cotizaciones; aun así, Melilla y Ceuta tienen el PIB por habitante más bajo de España (un 35 % y un 28 % por debajo de la media) y un paro del 18,5 %. Con SALF, el residente no paga IRPF, la empresa que crea empleo allí no paga Sociedades durante diez años y la cotización empresarial queda al 0 %. Puerto franco y aduana comercial abierta por España, con o sin Marruecos. Quien invierta en las dos ciudades más castigadas de España no paga por hacerlo. Coste: ≈ 280 M€/año (156 de IRPF, 44 de Sociedades, 73 de cotizaciones): menos de lo que España regala en ayuda exterior en un mes.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "España",
+    "Ceuta",
+    "Melilla",
+    "Marruecos"
+   ],
+   "cifras": [
+    "Hoy la bonificación es del 60 % en IRPF y Sociedades y del 75 % en cotizaciones; aun así, Melilla y Ceuta tienen el PIB por habitante más bajo de España (un 35 % y un 28 % por debajo de la media) y un paro del 18,5 %.",
+    "Con SALF, el residente no paga IRPF, la empresa que crea empleo allí no paga Sociedades durante diez años y la cotización empresarial queda al 0 %.",
+    "Coste: ≈ 280 M€/año (156 de IRPF, 44 de Sociedades, 73 de cotizaciones): menos de lo que España regala en ayuda exterior en un mes."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 111,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Canarias: 1.000 euros menos de IRPF por vivir en las islas. Y la ZEC al 0 %.",
+   "tituloFrase": "Canarias: 1.000 euros menos de IRPF por vivir en las islas. Y la ZEC al 0 %.",
+   "texto": "Deducción de 1.000 euros en la cuota del IRPF para cada contribuyente residente en Canarias desde la renta de 2027: 1,09 millones de canarios. Zona Especial Canaria al 0 % de Sociedades (hoy, 4 %) para la empresa que cree cinco empleos en las islas. Y el 75 % de residente en avión y barco, pagado a las compañías en 30 días: el Estado debe hoy 810 millones y pone en riesgo las rutas. La distancia a la Península no puede ser también una factura fiscal. Coste: ≈ 880 M€/año (870 de IRPF, 11 de la ZEC).",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "Deducción de 1.000 euros en la cuota del IRPF para cada contribuyente residente en Canarias desde la renta de 2027: 1,09 millones de canarios.",
+    "Zona Especial Canaria al 0 % de Sociedades (hoy, 4 %) para la empresa que cree cinco empleos en las islas.",
+    "Y el 75 % de residente en avión y barco, pagado a las compañías en 30 días: el Estado debe hoy 810 millones y pone en riesgo las rutas."
+   ],
+   "plazo": "30 días",
+   "deroga": null
+  },
+  {
+   "n": 112,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Escudo del Estrecho y del Atlántico: 5.000 militares más en Ceuta y Melilla; antiaérea y antidrón en cada isla.",
+   "tituloFrase": "Escudo del Estrecho y del Atlántico: 5.000 militares más en Ceuta y Melilla; antiaérea y antidrón en cada isla.",
+   "texto": "El 30 de julio de 2026 había 243 guardias civiles en Ceuta frente a 27.550 entradas en un solo día. Se acabó: brigada completa en cada ciudad, con la V Bandera de la Legión recuperada, 5.000 militares y 1.000 guardias civiles más en las dos plazas; baterías NASAMS y red antidrón en Ceuta, Melilla y cada isla canaria (hoy, una sola batería en Gran Canaria); dos buques más en Las Palmas y escuadrón de drones en Lanzarote. Doctrina pública y escrita: toda agresión a Ceuta, Melilla o Canarias se responde con toda la fuerza del Estado. Coste: ≈ 500 M€/año, dentro del 2 % del PIB de Defensa.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias",
+    "Ceuta",
+    "Melilla"
+   ],
+   "cifras": [
+    "El 30 de julio de 2026 había 243 guardias civiles en Ceuta frente a 27.550 entradas en un solo día.",
+    "Se acabó: brigada completa en cada ciudad, con la V Bandera de la Legión recuperada, 5.000 militares y 1.000 guardias civiles más en las dos plazas; baterías NASAMS y red antidrón en Ceuta, Melilla y cada isla canaria (hoy, una sola batería en Gran Canaria); dos buques más en Las Palmas y escuadrón de drones en Lanzarote.",
+    "Coste: ≈ 500 M€/año, dentro del 2 % del PIB de Defensa."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 113,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Quien defiende Canarias, Ceuta y Melilla cobra el doble de plus de residencia, libre de IRPF.",
+   "tituloFrase": "Quien defiende Canarias, Ceuta y Melilla cobra el doble de plus de residencia, libre de IRPF.",
+   "texto": "La indemnización por residencia no se revisa de fondo desde 2007: 435 euros al mes para un soldado en Ceuta, 117 en Gran Canaria. Baleares la subió en 2026; a Canarias, Ceuta y Melilla las dejaron fuera. Se duplica para militares, guardias civiles, policías y funcionarios del Estado destinados en los tres territorios, exenta de IRPF y con vivienda militar o alquiler pagado en Ceuta y Melilla. El destino más duro de España no puede ser el peor pagado. Coste: ≈ 150 M€/año.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "funcionarios",
+    "agentes"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "España",
+    "Canarias",
+    "Ceuta",
+    "Melilla"
+   ],
+   "cifras": [
+    "La indemnización por residencia no se revisa de fondo desde 2007: 435 euros al mes para un soldado en Ceuta, 117 en Gran Canaria.",
+    "Coste: ≈ 150 M€/año."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 114,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Gibraltar: la soberanía, sobre la mesa.",
+   "tituloFrase": "Gibraltar: la soberanía, sobre la mesa.",
+   "texto": "El tratado de 2026 abre la Verja sin tocar la soberanía ni el privilegio fiscal: sociedades al 15 % y contrabando de tabaco a diario. 15.509 trabajadores cruzan cada día, 10.859 españoles. Negociación bilateral con Londres con la cosoberanía como primer paso y fin del paraíso fiscal, como pide la ONU desde 1965.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "El tratado de 2026 abre la Verja sin tocar la soberanía ni el privilegio fiscal: sociedades al 15 % y contrabando de tabaco a diario.",
+    "15.509 trabajadores cruzan cada día, 10.859 españoles."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 115,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 38,
+   "subapartado": null,
+   "titulo": "Sáhara: se retira la carta de Sánchez. Argelia: socio recuperado.",
+   "tituloFrase": "Sáhara: se retira la carta de Sánchez. Argelia: socio recuperado.",
+   "texto": "El giro unilateral de 2022 a favor de Rabat costó 32 meses de bloqueo argelino: las exportaciones cayeron de 2.900 a 332 millones. Vuelta a la posición de la ONU, tratado de amistad con Argelia y contratos de gas a largo plazo: Argelia aporta el 38,5 % del gas que importamos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Marruecos"
+   ],
+   "cifras": [
+    "El giro unilateral de 2022 a favor de Rabat costó 32 meses de bloqueo argelino: las exportaciones cayeron de 2.900 a 332 millones.",
+    "Vuelta a la posición de la ONU, tratado de amistad con Argelia y contratos de gas a largo plazo: Argelia aporta el 38,5 % del gas que importamos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 116,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 38,
+   "subapartado": null,
+   "titulo": "Hispanoamérica, primero: Comunidad Hispánica de naciones.",
+   "tituloFrase": "Hispanoamérica, primero: Comunidad Hispánica de naciones.",
+   "texto": "Libre comercio, reconocimiento de títulos y cupos preferentes con las naciones hispanas que lo quieran; cumbre anual en Madrid; cámaras y embajadas reforzadas donde invierte España, segundo inversor del continente. 2,4 millones de hispanoamericanos viven aquí: un activo, no un problema.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "España",
+    "Hispanoamérica"
+   ],
+   "cifras": [
+    "2,4 millones de hispanoamericanos viven aquí: un activo, no un problema."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 117,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 38,
+   "subapartado": null,
+   "titulo": "Defensa: el 2 % se gasta en España y en sus militares.",
+   "tituloFrase": "Defensa: el 2 % se gasta en España y en sus militares.",
+   "texto": "33.123 millones en 2025, con prioridad a la industria nacional: 260.050 empleos. Y para quien viste el uniforme: retribuciones equiparadas a la Guardia Civil (un soldado cobra hoy 1.300 euros netos); profesión de riesgo para todos los militares, también los de Clases Pasivas, con jubilación anticipada; nueva Ley de derechos y deberes, con libertad de expresión y asociaciones profesionales con capacidad de negociar; y nueva Ley de la carrera militar: nadie es expulsado a los 45 años con 600 euros al mes, carrera hasta la jubilación y ascensos por mérito. Coste: ≈ 1.200 M€/año en retribuciones, dentro del 2 % del PIB.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [
+    "33.123 millones en 2025, con prioridad a la industria nacional: 260.050 empleos.",
+    "Y para quien viste el uniforme: retribuciones equiparadas a la Guardia Civil (un soldado cobra hoy 1.300 euros netos); profesión de riesgo para todos los militares, también los de Clases Pasivas, con jubilación anticipada; nueva Ley de derechos y deberes, con libertad de expresión y asociaciones profesionales con capacidad de negociar; y nueva Ley de la carrera militar: nadie es expulsado a los 45 años con 600 euros al mes, carrera hasta la jubilación y ascensos por mérito.",
+    "Coste: ≈ 1.200 M€/año en retribuciones, dentro del 2 % del PIB."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 118,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 39,
+   "subapartado": null,
+   "titulo": "Registro de agentes extranjeros y cero dinero foráneo en política.",
+   "tituloFrase": "Registro de agentes extranjeros y cero dinero foráneo en política.",
+   "texto": "Ley de agentes extranjeros: quien trabaje para un gobierno, fundación o empresa extranjera se inscribe o comete delito. Prohibida la financiación extranjera de partidos, fundaciones políticas, medios y ONG que hagan política. El CNI contabilizó 108 actuaciones de espionaje extranjero en 2025 y España no tiene registro: lo tendrá.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "empresas",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 119,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 39,
+   "subapartado": null,
+   "titulo": "Ayuda exterior: ni un euro sin readmisión ni respeto a España.",
+   "tituloFrase": "Ayuda exterior: ni un euro sin readmisión ni respeto a España.",
+   "texto": "4.550 millones al año de ayuda oficial al desarrollo. Se cortan salvo emergencias humanitarias y programas con retorno para España: readmisión de nacionales en 72 horas, respeto a la soberanía (quien reclame Ceuta, Melilla o Canarias no cobra) y cooperación contra el narcotráfico y el yihadismo. La ayuda es una herramienta, no una limosna. Ahorro: ≈ 4.500 M€/año, ya contado en 'Cómo se paga'.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "España",
+    "Canarias",
+    "Ceuta",
+    "Melilla"
+   ],
+   "cifras": [
+    "4.550 millones al año de ayuda oficial al desarrollo.",
+    "Ahorro: ≈ 4.500 M€/año, ya contado en 'Cómo se paga'."
+   ],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
+}

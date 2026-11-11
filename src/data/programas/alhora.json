@@ -1,0 +1,27 @@
+{
+ "id": "alhora",
+ "partido": "Alhora",
+ "siglas": "ALHORA",
+ "color": "#e82040",
+ "colorClaro": "#f8bcc6",
+ "programa": "",
+ "subtitulo": "Programa vacío",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "vacio": true,
+ "pdf": "",
+ "paginas": 0,
+ "unidadMedida": "medida",
+ "unidadMedidas": "medidas",
+ "presentacion": {
+  "titulo": "",
+  "texto": ""
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [],
+ "secciones": [],
+ "medidas": [],
+ "comunidad": "Cataluña"
+}

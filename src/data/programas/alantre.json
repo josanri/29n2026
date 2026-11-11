@@ -1,0 +1,27 @@
+{
+ "id": "alantre",
+ "partido": "Proyecto Alantre",
+ "siglas": "ALANTRE",
+ "color": "#FFCC02",
+ "colorClaro": "#FFE88D",
+ "programa": "",
+ "subtitulo": "Programa vacío",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "vacio": true,
+ "pdf": "",
+ "paginas": 0,
+ "unidadMedida": "medida",
+ "unidadMedidas": "medidas",
+ "presentacion": {
+  "titulo": "",
+  "texto": ""
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [],
+ "secciones": [],
+ "medidas": [],
+ "comunidad": "Castilla y León"
+}

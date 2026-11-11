@@ -1,0 +1,50 @@
+---
+/**
+ * Section heading: an index line, a big <h2>, and (in the default slot)
+ * a description paragraph or an action on the right.
+ */
+interface Props {
+  title: string;
+  /** Small mono label above the title, for example "02 / PROGRAMS". */
+  index?: string;
+  headingId?: string;
+}
+
+const { title, index, headingId } = Astro.props;
+---
+
+<div class="section-heading">
+  <div>
+    {index && <span class="section-heading__index">{index}</span>}
+    <h2 id={headingId}>{title}</h2>
+  </div>
+  <slot />
+</div>
+
+<style>
+  .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    padding-bottom: var(--space-3);
+    margin: var(--space-8) 0 28px;
+  }
+  .section-heading h2 { font-size: clamp(1.875rem, 5vw, 3.5rem); }
+  .section-heading__index {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--color-ink-subtle);
+  }
+  .section-heading :global(p) {
+    margin: 0;
+    max-width: 46ch;
+    color: var(--color-ink-muted);
+    font-size: 0.9375rem;
+  }
+</style>

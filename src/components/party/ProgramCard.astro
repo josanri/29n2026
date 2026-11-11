@@ -1,0 +1,208 @@
+---
+/** Card of one party on the home page: acronym, program name, key numbers and where it runs. */
+import { categoryById } from '@/lib/taxonomy';
+import { countBy } from '@/lib/collections';
+import { measureNoun } from '@/lib/format';
+import { presenceOf, provinceByCode, provincesOf } from '@/lib/presence';
+import { relationSummary, relationsOf } from '@/lib/relations';
+import { routes } from '@/lib/routes';
+import { readableTextColor } from '@/lib/color';
+import type { Program } from '@/lib/programs';
+import Button from '@/components/ui/Button.astro';
+
+interface Props {
+  program: Program;
+}
+
+const { program } = Astro.props;
+
+const topCategories = countBy(program.measures, (measure) => measure.categoryId)
+  .slice(0, 3)
+  .map(([id]) => categoryById[id]?.name ?? id);
+
+const presence = presenceOf(program);
+const provinceCodes = provincesOf(program);
+const TOTAL_CONSTITUENCIES = 52;
+const MAX_PROVINCES_LISTED = 3;
+
+// Where it runs: the province names when there are few; otherwise a count.
+const whereItRuns =
+  provinceCodes.length === 0
+    ? null
+    : provinceCodes.length <= MAX_PROVINCES_LISTED
+      ? provinceCodes.map((code) => provinceByCode[code]?.name ?? code).join(', ')
+      : presence.scope === 'regional'
+        ? `${provinceCodes.length} provincias de ${presence.regions.join(' y ')}`
+        : `${provinceCodes.length} de ${TOTAL_CONSTITUENCIES} circunscripciones`;
+const senateOnly = presence.congress.length === 0 && presence.senate.length > 0;
+const relations = relationsOf(program);
+
+// Cards without a program show smaller acronyms: they have less content.
+const scale = program.hasProgram ? 1 : 0.64;
+const acronymLength = program.acronym.length;
+const acronymMax = Math.round(88 * scale);
+// An acronym of more than 5 letters gets the full width of the header: the badge moves below it.
+const longAcronym = acronymLength > 5;
+// The size of the headline follows the longest word, so that no word breaks in the middle.
+const longestWord = Math.max(1, ...program.programName.split(/\s+/).map((word) => word.length));
+
+const documentLabel = !program.hasProgram
+  ? 'Sin programa'
+  : program.pageCount
+    ? `${program.pageCount} págs.`
+    : 'Programa web';
+---
+
+<a
+  class:list={['program-card', 'box', 'box--interactive', { 'is-unpublished': !program.hasProgram, 'is-long-acronym': longAcronym }]}
+  href={routes.party(program.id)}
+  style={`--party-color:${program.color}; --party-color-light:${program.lightColor}; --party-on-color:${readableTextColor(program.color)}; --acronym-length:${acronymLength}; --acronym-max:${acronymMax}px; --word-length:${longestWord}`}
+>
+  <div class="program-card__head">
+    <span class="program-card__acronym">{program.acronym}</span>
+    <span class="program-card__badge mono">{documentLabel}</span>
+  </div>
+  <div class="program-card__body">
+    <p class="program-card__party">{program.partyName}</p>
+    {
+      program.hasProgram ? (
+        <>
+          <h3>{program.programName}</h3>
+          <p class="program-card__subtitle">{program.subtitle}</p>
+          <p class="program-card__note"><strong>Temas principales:</strong> {topCategories.join(' · ')}</p>
+          <ul class="program-card__stats">
+            <li><strong>{program.measures.length}</strong> {measureNoun(program, program.measures.length)}</li>
+            <li><strong>{program.blocks.length}</strong> bloques</li>
+            <li><strong>{program.sections.length}</strong> secciones</li>
+          </ul>
+        </>
+      ) : (
+        <p class="program-card__subtitle">Aún no ha publicado su programa electoral.</p>
+      )
+    }
+    {
+      whereItRuns && (
+        <p class="program-card__note">
+          <strong>Se presenta {senateOnly ? 'al Senado ' : ''}en:</strong> {whereItRuns}
+        </p>
+      )
+    }
+    {
+      relations.length > 0 && (
+        <p class="program-card__note">
+          <strong>Va junto a otros partidos:</strong>
+          {relations.map((relation) => <span class="program-card__relation">{relationSummary(relation)}</span>)}
+        </p>
+      )
+    }
+    {program.notes[0] && <p class="program-card__warning">{program.notes[0]}</p>}
+    <Button as="span" variant="ink">{program.hasProgram ? 'Ver el análisis' : 'Ver la ficha'}</Button>
+  </div>
+</a>
+
+<style>
+  /* The card is a size container: the acronym and the headline scale with its width (cqi). */
+  .program-card {
+    display: block;
+    height: 100%;
+    container-type: inline-size;
+    --head-room: 150px; /* padding, border, gap and the page badge, beside the acronym */
+  }
+  .program-card.is-long-acronym { --head-room: 44px; }
+  .program-card__head {
+    flex-wrap: wrap;
+    background: var(--party-color);
+    color: var(--party-on-color); /* black or white, whichever reads better on the party color */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-3);
+    padding: 14px 18px;
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent 0 14px,
+      color-mix(in srgb, var(--party-color-light) 45%, transparent) 14px 18px
+    );
+  }
+  .program-card__acronym {
+    font-family: var(--font-display);
+    /* Archivo Black capitals are about 0.85em wide. */
+    font-size: clamp(20px, calc((100cqi - var(--head-room)) / (var(--acronym-length) * 0.85)), var(--acronym-max));
+    line-height: 0.8;
+    white-space: nowrap;
+  }
+  .is-long-acronym .program-card__acronym { flex: 1 1 100%; }
+  /* No program: a paper header with the party color as hatching. The text keeps its contrast. */
+  .program-card.is-unpublished { border-style: dashed; }
+  .program-card.is-unpublished .program-card__head {
+    background-color: var(--color-paper-alt);
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent 0 14px,
+      color-mix(in srgb, var(--party-color) 35%, transparent) 14px 16px
+    );
+    color: var(--color-ink);
+  }
+  .program-card__badge {
+    font-weight: 700;
+    font-size: 0.8125rem;
+    background: #0e0e0e;
+    color: #fff;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+  .program-card__body { padding: 18px; }
+  .program-card__party {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+  .program-card h3 {
+    font-size: clamp(18px, calc((100cqi - 44px) / (var(--word-length) * 0.85)), 44px);
+    overflow-wrap: break-word;
+  }
+  .program-card__subtitle { margin: 10px 0 var(--space-4); color: var(--color-ink-muted); }
+  .program-card__note {
+    margin: 0 0 var(--space-4);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--color-ink-muted);
+  }
+  .program-card__note strong { color: var(--color-ink); }
+  .program-card__relation { display: block; }
+  .program-card__stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 0.9375rem;
+  }
+  .program-card__stats strong { font-family: var(--font-display); font-size: 1.625rem; font-weight: 400; }
+  /* Phone: less padding, and the three numbers share one row, each with its label below. */
+  @media (max-width: 560px) {
+    .program-card__head { padding: 12px 14px; }
+    .program-card__body { padding: 14px; }
+    .program-card__subtitle { margin-bottom: var(--space-3); }
+    .program-card__stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+      font-size: 0.8125rem;
+      line-height: 1.2;
+    }
+    .program-card__stats li { display: flex; flex-direction: column; gap: 2px; }
+    .program-card__note { margin-bottom: var(--space-3); }
+  }
+  .program-card__warning {
+    border-left: var(--border-thick) solid var(--color-highlight);
+    padding-left: var(--space-3);
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+</style>

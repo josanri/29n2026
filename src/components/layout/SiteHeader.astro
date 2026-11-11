@@ -1,0 +1,304 @@
+---
+import { publishedFirst, type Program } from '@/lib/programs';
+import { nationalPrograms, regionalPrograms, regionalRegions, regionalProgramsIn } from '@/lib/presence';
+import { routes } from '@/lib/routes';
+import { SITE_NAME } from '@/lib/site';
+
+const path = Astro.url.pathname;
+const isCurrent = (program: Program) => path.startsWith(routes.party(program.id));
+
+const nationalSorted = publishedFirst(nationalPrograms);
+const menus = [
+  {
+    id: 'national',
+    label: 'Estatales',
+    isCurrent: nationalPrograms.some(isCurrent),
+    groups: [
+      { title: 'Con programa analizado', parties: nationalSorted.filter((party) => party.hasProgram) },
+      { title: 'Sin programa publicado', parties: nationalSorted.filter((party) => !party.hasProgram) },
+    ],
+  },
+  {
+    id: 'regional',
+    label: 'Autonómicos',
+    isCurrent: regionalPrograms.some(isCurrent),
+    groups: regionalRegions.map((region) => ({
+      title: region,
+      parties: publishedFirst(regionalProgramsIn(region)),
+    })),
+  },
+];
+---
+
+<header class="site-header">
+  <div class="container site-header__row">
+    <a class="logo" href={routes.home()} aria-label={`${SITE_NAME}, inicio`}>
+      <span class="logo__mark">29N</span>
+      <span class="logo__text">Programas<br />electorales</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      {menus.map((menu) => (
+        <details class:list={['nav-dropdown', `nav-dropdown--${menu.id}`]}>
+          <summary aria-current={menu.isCurrent ? 'page' : undefined}>
+            {menu.label}
+            <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
+              <path d="m1 1 5 5 5-5"></path>
+            </svg>
+          </summary>
+          <div class="nav-dropdown__panel">
+            <div class="nav-dropdown__groups">
+              {menu.groups.filter((group) => group.parties.length > 0).map((group) => (
+                <section>
+                  <h2>{group.title}</h2>
+                  <div class="nav-dropdown__list">
+                    {group.parties.map((party) => (
+                      <a
+                        href={routes.party(party.id)}
+                        class:list={{ 'is-unpublished': !party.hasProgram }}
+                        aria-current={isCurrent(party) ? 'page' : undefined}
+                      >
+                        <b>{party.acronym}</b>
+                        <span>{party.partyName}</span>
+                        {!party.hasProgram && menu.id === 'regional' && <small>Sin programa</small>}
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </div>
+        </details>
+      ))}
+      <a href={routes.categories()} aria-current={path.startsWith(routes.categories()) ? 'page' : undefined}>Categorías</a>
+      <a href={routes.search()} aria-current={path.startsWith(routes.search()) ? 'page' : undefined}>Buscar</a>
+      <button class="theme-toggle" type="button" aria-label="Cambiar tema claro u oscuro" title="Tema claro / oscuro">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script>
+  import { THEME_STORAGE_KEY } from '@/lib/site';
+
+  // Party menus: only one open at a time. They close on an outside click or on Escape.
+  const dropdowns = [...document.querySelectorAll<HTMLDetailsElement>('.nav-dropdown')];
+  for (const dropdown of dropdowns) {
+    dropdown.addEventListener('toggle', () => {
+      if (!dropdown.open) return;
+      for (const other of dropdowns) if (other !== dropdown) other.open = false;
+    });
+  }
+  document.addEventListener('click', (event) => {
+    for (const dropdown of dropdowns) {
+      if (dropdown.open && !dropdown.contains(event.target as Node)) dropdown.open = false;
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const openDropdown = dropdowns.find((dropdown) => dropdown.open);
+    if (!openDropdown) return;
+    openDropdown.open = false;
+    openDropdown.querySelector('summary')?.focus();
+  });
+
+  // Light / dark theme
+  document.querySelector('.theme-toggle')?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const isDarkNow =
+      root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+    const next = isDarkNow ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, next);
+    } catch {
+      // Storage can be blocked. The theme still changes for this visit.
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    background: var(--color-paper);
+    border-bottom: var(--border-thick) solid var(--color-brand);
+  }
+  .site-header__row {
+    position: relative; /* the dropdown panels position against this row, not against their button */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    min-height: 72px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+  }
+  .logo:hover { background: none; color: inherit; }
+  /* Marker mark: a highlighter stroke behind the wordmark. It uses the brand surface:
+     ink and paper by default, the party color and its readable text on a party page. */
+  .logo__mark {
+    position: relative;
+    isolation: isolate;
+    font-family: var(--font-display);
+    font-size: 2.125rem;
+    line-height: 1;
+    padding: 0 6px;
+    color: var(--color-on-brand);
+  }
+  .logo__mark::before {
+    content: '';
+    position: absolute;
+    inset: 8% -2px 0 -2px;
+    background: var(--color-brand);
+    z-index: -1;
+    transform: skew(-8deg);
+  }
+  .logo__text {
+    font-family: var(--font-display);
+    font-size: 0.8125rem;
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  /* One look for every control of the nav: links, menu buttons and the theme button */
+  .nav a,
+  .theme-toggle,
+  .nav-dropdown > summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 7px 12px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  .nav a[aria-current='page'],
+  .nav-dropdown > summary[aria-current='page'] {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-on-brand);
+  }
+  .nav-dropdown { position: static; }
+  .nav-dropdown > summary { list-style: none; cursor: pointer; }
+  .nav-dropdown > summary::-webkit-details-marker { display: none; }
+  .nav-dropdown__chevron {
+    width: 10px;
+    height: 7px;
+    margin-left: 7px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: square;
+    transition: transform 140ms ease;
+  }
+  .nav-dropdown[open] .nav-dropdown__chevron { transform: rotate(180deg); }
+  .nav-dropdown[open] > summary,
+  .nav-dropdown > summary:hover,
+  .theme-toggle:hover {
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+  }
+  .theme-toggle { cursor: pointer; }
+
+  .nav-dropdown__panel {
+    position: absolute;
+    z-index: var(--z-dropdown);
+    top: calc(100% + 4px);
+    right: var(--gutter);
+    display: grid;
+    gap: 20px;
+    width: min(820px, calc(100vw - 2 * var(--gutter)));
+    max-height: min(75vh, 640px);
+    overflow: auto;
+    padding: 18px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-md);
+  }
+  .nav-dropdown__groups { display: grid; gap: 20px; }
+  /* Text columns: a long region (Canarias) leaves no gaps in the others. The columns sit in
+     a wrapper with no maximum height, so the panel scrolls vertically and never sideways. */
+  .nav-dropdown--regional .nav-dropdown__groups {
+    display: block;
+    columns: 3 220px;
+    column-gap: 20px;
+  }
+  .nav-dropdown--regional .nav-dropdown__groups section {
+    break-inside: avoid;
+    padding-bottom: 20px;
+  }
+  .nav-dropdown__panel h2 {
+    margin: 0 0 var(--space-2);
+    padding-bottom: var(--space-1);
+    border-bottom: var(--border-thin) solid var(--color-ink);
+    font: 700 var(--text-xs) var(--font-mono);
+    text-transform: uppercase;
+  }
+  .nav-dropdown__list { display: grid; gap: 6px; }
+  .nav-dropdown--national .nav-dropdown__list {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  }
+  .nav .nav-dropdown__panel a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    justify-content: stretch;
+    gap: 2px 8px;
+    width: 100%;
+    height: auto;
+    padding: 7px 9px;
+    font-size: 0.8125rem;
+    text-align: left;
+  }
+  .nav-dropdown__panel a span {
+    font: 500 var(--text-xs) var(--font-body);
+    text-transform: none;
+    overflow-wrap: anywhere;
+  }
+  .nav-dropdown__panel a small {
+    grid-column: 1 / -1;
+    font: 700 0.625rem var(--font-mono);
+    color: var(--color-ink-subtle);
+  }
+  /* No program: a dashed border. The text keeps its full contrast. */
+  .nav .nav-dropdown__panel a.is-unpublished { border-style: dashed; }
+  .nav .nav-dropdown__panel a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .nav .nav-dropdown__panel a:hover small { color: var(--color-on-highlight); }
+  .nav .nav-dropdown__panel a[aria-current='page'] small { color: inherit; }
+
+  @media (max-width: 560px) {
+    .site-header__row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-2);
+      min-height: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .logo__text { display: block; font-size: var(--text-xs); }
+    .nav { justify-content: stretch; gap: 6px; }
+    .nav > a, .nav > .nav-dropdown { flex: 1 1 auto; }
+    .nav > .theme-toggle { flex: 0 0 36px; padding: 0; }
+    .nav-dropdown > summary { width: 100%; }
+    .nav > a, .theme-toggle, .nav-dropdown > summary { height: 34px; padding: 6px 8px; font-size: var(--text-xs); }
+    .nav-dropdown__panel { left: var(--gutter); right: var(--gutter); width: auto; }
+  }
+</style>

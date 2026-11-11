@@ -1,0 +1,560 @@
+---
+/**
+ * «Quién se presenta»: a selectable map of the provinces and the proclaimed lists
+ * for the Congress and the Senate. The lists load from `/datos-electorales/candidaturas.json`
+ * when the page opens, because they are large.
+ */
+import { geography } from '@/lib/geography';
+import { CANDIDACIES_HEADING_ID } from '@/lib/routes';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+
+/** Extra radius of the clickable area around Ceuta and Melilla. */
+const MARKER_HIT_MARGIN = 12;
+const { provinces, canaryIslands } = geography;
+const firstProvince = provinces[0];
+---
+
+<section class="container candidacies" aria-labelledby={CANDIDACIES_HEADING_ID}>
+  <SectionHeading index="01 / CANDIDATURAS" title="Quién se presenta" headingId={CANDIDACIES_HEADING_ID}>
+    <p>Selecciona una provincia para consultar todas las candidaturas proclamadas al Congreso y al Senado, incluidas sus suplencias.</p>
+  </SectionHeading>
+
+  <div class="candidacies__panel">
+    <div class="candidacies__map-column">
+      <label class="candidacies__select" for="province-select">
+        Provincia
+        <select id="province-select">
+          {provinces.map((province) => <option value={province.code}>{province.name}</option>)}
+        </select>
+      </label>
+
+      <svg
+        class="province-map"
+        viewBox={`0 0 ${geography.width} ${geography.height}`}
+        role="group"
+        aria-label="Mapa de España por provincias. Elige una provincia para ver las candidaturas."
+      >
+        <rect
+          class="province-map__frame"
+          x={canaryIslands.x}
+          y={canaryIslands.y}
+          width={canaryIslands.width}
+          height={canaryIslands.height}
+        />
+        <text class="province-map__label" x={canaryIslands.x + 10} y={canaryIslands.y + 24} aria-hidden="true">CANARIAS</text>
+        {provinces.map((province) => (
+          <a
+            href="#candidacies-list"
+            class:list={['province-map__province', { 'is-city': Boolean(province.marker) }]}
+            data-province={province.code}
+            aria-label={`Ver candidaturas de ${province.name}`}
+          >
+            <title>{province.name}</title>
+            {province.marker && (
+              <circle
+                class="province-map__hit-area"
+                cx={province.marker.x}
+                cy={province.marker.y}
+                r={province.marker.radius + MARKER_HIT_MARGIN}
+              />
+            )}
+            <path d={province.path} />
+            {province.marker && (
+              <text
+                class="province-map__label"
+                x={province.marker.x + (province.marker.labelSide === 'left' ? -1 : 1) * (province.marker.radius + 8)}
+                y={province.marker.y + 6}
+                text-anchor={province.marker.labelSide === 'left' ? 'end' : 'start'}
+                aria-hidden="true"
+              >{province.name.toUpperCase()}</text>
+            )}
+          </a>
+        ))}
+        <path class="province-map__selection" d={firstProvince.path} aria-hidden="true" />
+        <path class="province-map__focus-back" aria-hidden="true" />
+        <path class="province-map__focus" aria-hidden="true" />
+      </svg>
+      <p class="candidacies__note">
+        Mapa derivado de{' '}
+        <a href="https://github.com/codeforgermany/click_that_hood" target="_blank" rel="noreferrer">Click That ’Hood</a>
+        {' '}(<a href="/datos-electorales/LICENSE-mapa.txt">licencia MIT</a>).
+      </p>
+    </div>
+
+    <div class="candidacies__results">
+      <p id="candidacies-summary" class="candidacies__summary" aria-live="polite">Cargando candidaturas…</p>
+      <!-- The lists are long, so they stay closed until the reader asks for them. -->
+      <button
+        type="button"
+        id="candidacies-toggle"
+        class="candidacies__toggle"
+        aria-expanded="false"
+        aria-controls="candidacies-body"
+      >
+        <span id="candidacies-toggle-label">Ver candidaturas</span>
+        <span class="candidacies__toggle-icon" aria-hidden="true"></span>
+      </button>
+      <div id="candidacies-body" class="candidacies__body" hidden>
+        <div class="candidacies__toolbar">
+          <div class="candidacies__chambers" role="group" aria-label="Cámara">
+            <button type="button" data-chamber="Congreso" aria-pressed="true">Congreso</button>
+            <button type="button" data-chamber="Senado" aria-pressed="false">Senado</button>
+          </div>
+        </div>
+        <div id="candidacies-list" class="candidacies__list" aria-live="polite"></div>
+        <p class="candidacies__note">
+          Fuente:{' '}
+          <a href="/datos-electorales/candidaturas-proclamadas-2026.pdf">proclamación oficial (3 de noviembre)</a>
+          {' '}y <a href="/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf">corrección oficial (7 de noviembre)</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Shapes of `candidaturas.json`. Its keys are Spanish because a Python script writes the file.
+  type Chamber = 'Congreso' | 'Senado';
+  type RawPerson = { numero: number; nombre: string; suplentes?: RawPerson[] };
+  type RawCandidacy = {
+    camara: Chamber;
+    circunscripcion: string;
+    orden: number;
+    partido: string;
+    titulares: RawPerson[];
+    suplentes: RawPerson[];
+  };
+  type RawProvince = { codigo: string; nombre: string; candidaturas: RawCandidacy[] };
+  type RawData = { provincias: RawProvince[] };
+
+  const provinceSelect = document.querySelector<HTMLSelectElement>('#province-select')!;
+  const map = document.querySelector<SVGSVGElement>('.province-map')!;
+  const mapLinks = [...map.querySelectorAll<SVGAElement>('a[data-province]')];
+  const selectionPath = map.querySelector<SVGPathElement>('.province-map__selection')!;
+  const focusPaths = [...map.querySelectorAll<SVGPathElement>('.province-map__focus-back, .province-map__focus')];
+  const summary = document.querySelector<HTMLElement>('#candidacies-summary')!;
+  const list = document.querySelector<HTMLElement>('#candidacies-list')!;
+  const chamberButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-chamber]')];
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const ANIMATION_MS = 260;
+
+  let data: RawData | undefined;
+  let activeChamber: Chamber = 'Congreso';
+  let renderId = 0;
+
+  const loadData = async () => {
+    if (data) return data;
+    const response = await fetch('/datos-electorales/candidaturas.json');
+    if (!response.ok) throw new Error(`No se pudieron cargar las candidaturas (${response.status}).`);
+    data = (await response.json()) as RawData;
+    return data;
+  };
+
+  const createPeopleList = (people: RawPerson[]) => {
+    const ol = document.createElement('ol');
+    for (const person of people) {
+      const li = document.createElement('li');
+      li.value = person.numero;
+      li.append(document.createTextNode(person.nombre));
+      ol.append(li);
+    }
+    return ol;
+  };
+
+  const animations = new WeakMap<HTMLElement, Animation>();
+
+  // Open or close a disclosure by animating the height of its body. If the reader clicks
+  // during the animation, the new animation starts from the height it had reached.
+  const toggleDisclosure = (disclosure: HTMLDetailsElement, body: HTMLElement) => {
+    const willOpen = !disclosure.open || disclosure.classList.contains('is-closing');
+    const startHeight = disclosure.open ? body.getBoundingClientRect().height : 0;
+    animations.get(body)?.cancel();
+    if (reducedMotion.matches) {
+      disclosure.classList.remove('is-closing');
+      disclosure.open = willOpen;
+      return;
+    }
+    disclosure.classList.toggle('is-closing', !willOpen);
+    disclosure.open = true;
+    body.style.overflow = 'hidden';
+    const animation = body.animate(
+      [
+        { height: `${startHeight}px`, opacity: startHeight ? 1 : 0 },
+        { height: `${willOpen ? body.scrollHeight : 0}px`, opacity: willOpen ? 1 : 0 },
+      ],
+      { duration: ANIMATION_MS, easing: 'cubic-bezier(0.2, 0.7, 0.3, 1)' },
+    );
+    animations.set(body, animation);
+    animation.onfinish = () => {
+      animations.delete(body);
+      body.style.overflow = '';
+      if (!willOpen) {
+        disclosure.open = false;
+        disclosure.classList.remove('is-closing');
+      }
+    };
+  };
+
+  const createDisclosure = (className: string, label: string, content: Node[]) => {
+    const disclosure = document.createElement('details');
+    disclosure.className = `disclosure ${className}`;
+    const summaryElement = document.createElement('summary');
+    const text = document.createElement('span');
+    text.className = 'disclosure__text';
+    text.textContent = label;
+    const icon = document.createElement('span');
+    icon.className = 'disclosure__icon';
+    icon.setAttribute('aria-hidden', 'true');
+    summaryElement.append(text, icon);
+    const body = document.createElement('div');
+    body.className = 'disclosure__body';
+    body.append(...content);
+    disclosure.append(summaryElement, body);
+    summaryElement.addEventListener('click', (event) => {
+      event.preventDefault();
+      toggleDisclosure(disclosure, body);
+    });
+    return disclosure;
+  };
+
+  const countPeople = (candidacies: RawCandidacy[]) =>
+    candidacies.reduce(
+      (total, candidacy) =>
+        total +
+        candidacy.titulares.length +
+        candidacy.suplentes.length +
+        candidacy.titulares.reduce((sum, holder) => sum + (holder.suplentes?.length ?? 0), 0),
+      0,
+    );
+
+  const renderCandidacy = (candidacy: RawCandidacy) => {
+    const content: Node[] = [];
+    if (candidacy.titulares.length) {
+      content.push(createPeopleList(candidacy.titulares));
+    } else {
+      const empty = document.createElement('p');
+      empty.className = 'candidacy__empty';
+      empty.textContent = 'La proclamación no incluye personas candidatas nominales en esta lista.';
+      content.push(empty);
+    }
+
+    if (activeChamber === 'Congreso' && candidacy.suplentes.length) {
+      content.push(
+        createDisclosure('candidacy__substitutes', `Suplentes (${candidacy.suplentes.length})`, [
+          createPeopleList(candidacy.suplentes),
+        ]),
+      );
+    }
+
+    if (activeChamber === 'Senado') {
+      for (const holder of candidacy.titulares) {
+        if (!holder.suplentes?.length) continue;
+        content.push(
+          createDisclosure('candidacy__substitutes', `Suplentes de ${holder.nombre}`, [
+            createPeopleList(holder.suplentes),
+          ]),
+        );
+      }
+    }
+    return createDisclosure('candidacy', `${candidacy.orden}. ${candidacy.partido}`, content);
+  };
+
+  const render = async () => {
+    const currentRender = ++renderId;
+    list.replaceChildren();
+    summary.textContent = 'Cargando candidaturas…';
+    try {
+      const loaded = await loadData();
+      if (currentRender !== renderId) return;
+      const province = loaded.provincias.find((item) => item.codigo === provinceSelect.value);
+      if (!province) throw new Error('No hay datos de candidaturas para la provincia seleccionada.');
+      const candidacies = province.candidaturas.filter((item) => item.camara === activeChamber);
+      summary.textContent = `${province.nombre} · ${activeChamber}: ${candidacies.length} candidaturas · ${countPeople(candidacies)} personas`;
+
+      const byConstituency = new Map<string, RawCandidacy[]>();
+      for (const candidacy of candidacies) {
+        const group = byConstituency.get(candidacy.circunscripcion) ?? [];
+        group.push(candidacy);
+        byConstituency.set(candidacy.circunscripcion, group);
+      }
+
+      for (const [constituency, group] of byConstituency) {
+        const section = document.createElement('section');
+        section.className = 'candidacies__group';
+        const heading = document.createElement('h3');
+        heading.textContent = constituency;
+        section.append(heading, ...group.map(renderCandidacy));
+        list.append(section);
+      }
+
+      if (!candidacies.length) {
+        summary.textContent = `No hay candidaturas al ${activeChamber} en esta provincia.`;
+      }
+    } catch (error) {
+      if (currentRender !== renderId) return;
+      summary.textContent = error instanceof Error ? error.message : 'Error al cargar las candidaturas.';
+    }
+  };
+
+  const pathOf = (link: Element) => link.querySelector('path')?.getAttribute('d') ?? '';
+
+  const selectProvince = (code: string) => {
+    if (provinceSelect.value !== code) provinceSelect.value = code;
+    for (const link of mapLinks) {
+      const isSelected = link.dataset.province === code;
+      link.classList.toggle('is-selected', isSelected);
+      if (isSelected) {
+        link.setAttribute('aria-current', 'location');
+        selectionPath.setAttribute('d', pathOf(link));
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    }
+    render();
+  };
+
+  provinceSelect.addEventListener('change', () => selectProvince(provinceSelect.value));
+  map.addEventListener('click', (event) => {
+    const link = (event.target as Element).closest<SVGAElement>('a[data-province]');
+    if (!link?.dataset.province) return;
+    event.preventDefault();
+    selectProvince(link.dataset.province);
+  });
+  // The focus outline is drawn above all provinces, so the neighbors do not cover it.
+  map.addEventListener('focusin', (event) => {
+    const link = (event.target as Element).closest('a[data-province]');
+    const isVisible = link?.matches(':focus-visible');
+    for (const path of focusPaths) {
+      if (link && isVisible) path.setAttribute('d', pathOf(link));
+      else path.removeAttribute('d');
+    }
+  });
+  map.addEventListener('focusout', () => {
+    for (const path of focusPaths) path.removeAttribute('d');
+  });
+  for (const button of chamberButtons) {
+    button.addEventListener('click', () => {
+      activeChamber = button.dataset.chamber as Chamber;
+      for (const other of chamberButtons) other.setAttribute('aria-pressed', String(other === button));
+      render();
+    });
+  }
+  const toggle = document.querySelector<HTMLButtonElement>('#candidacies-toggle')!;
+  const toggleLabel = document.querySelector<HTMLElement>('#candidacies-toggle-label')!;
+  const body = document.querySelector<HTMLElement>('#candidacies-body')!;
+  const setExpanded = (expanded: boolean) => {
+    body.hidden = !expanded;
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggleLabel.textContent = expanded ? 'Ocultar candidaturas' : 'Ver candidaturas';
+  };
+  toggle.addEventListener('click', () => setExpanded(body.hasAttribute('hidden')));
+
+  // «?provincia=28» (for example from a party map) opens that province, with its lists open.
+  const requested = new URLSearchParams(location.search).get('provincia');
+  const isValid = [...provinceSelect.options].some((option) => option.value === requested);
+  if (isValid) setExpanded(true);
+  selectProvince(isValid && requested ? requested : provinceSelect.value);
+</script>
+
+<style>
+  .candidacies { margin-top: 40px; }
+  .candidacies__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    border: var(--border-thick) solid var(--color-ink);
+    box-shadow: var(--shadow-md);
+    background: var(--color-paper);
+  }
+  .candidacies__map-column {
+    min-width: 0;
+    padding: 18px;
+    border-right: var(--border-thick) solid var(--color-ink);
+  }
+  .candidacies__select {
+    display: grid;
+    gap: 6px;
+    font: 700 var(--text-xs) var(--font-mono);
+    text-transform: uppercase;
+  }
+  .candidacies__select select {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48px;
+    /* The text sits at the left, the chevron at the right edge, both centered in the height. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 0;
+    padding: 0 12px;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 1rem var(--font-body);
+  }
+
+  /* The map. Strokes do not scale with the SVG: they always measure the same on screen. */
+  .province-map {
+    --province-hover: color-mix(in srgb, var(--color-highlight) 55%, var(--color-paper-alt));
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: var(--space-4);
+    overflow: visible;
+  }
+  .province-map path {
+    fill: var(--color-paper-alt);
+    stroke: var(--color-ink);
+    stroke-width: 1;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .province-map__province { cursor: pointer; }
+  .province-map__province:focus-visible { outline: none; box-shadow: none; }
+  .province-map__province:hover path,
+  .province-map__province:focus-visible path { fill: var(--province-hover); }
+  .province-map__province.is-selected path { fill: var(--color-highlight); }
+  .province-map__hit-area { fill: transparent; }
+  .province-map__label {
+    fill: var(--color-ink-muted);
+    font: 700 1.1875rem var(--font-mono);
+    letter-spacing: 0.04em;
+  }
+  .province-map__province.is-city .province-map__label { fill: var(--color-ink); }
+  .province-map__frame {
+    fill: none;
+    stroke: var(--color-ink-subtle);
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .province-map path.province-map__selection,
+  .province-map path.province-map__focus-back,
+  .province-map path.province-map__focus { fill: none; pointer-events: none; }
+  .province-map path.province-map__selection { stroke: var(--color-on-highlight); stroke-width: 2.5; }
+  .province-map path.province-map__focus-back { stroke: var(--color-ink); stroke-width: 7; }
+  .province-map path.province-map__focus { stroke: var(--color-highlight); stroke-width: 3; }
+
+  .candidacies__note { margin: 10px 0 0; color: var(--color-ink-muted); font-size: var(--text-xs); }
+  .candidacies__results { min-width: 0; padding: 18px; }
+  .candidacies__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .candidacies__summary { margin: 0 0 var(--space-3); font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .candidacies__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-height: 48px;
+    padding: 0 var(--space-4);
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    box-shadow: var(--shadow-sm);
+    font: 700 0.875rem var(--font-mono);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .candidacies__toggle:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .candidacies__toggle:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 3px; }
+  /* A thick chevron: it points down when closed and up when open. */
+  .candidacies__toggle-icon {
+    inline-size: 0.9em;
+    block-size: 0.9em;
+    background: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+    transition: rotate 140ms ease;
+  }
+  .candidacies__toggle[aria-expanded='true'] .candidacies__toggle-icon { rotate: 180deg; }
+  .candidacies__body { margin-top: var(--space-5); }
+  .candidacies__body[hidden] { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .candidacies__toggle-icon { transition: none; }
+  }
+  .candidacies__chambers { display: flex; border: var(--border-thin) solid var(--color-ink); }
+  .candidacies__chambers button {
+    border: 0;
+    padding: var(--space-2) 11px;
+    background: transparent;
+    color: var(--color-ink);
+    font: 700 var(--text-xs) var(--font-mono);
+    cursor: pointer;
+  }
+  .candidacies__chambers button + button { border-left: var(--border-thin) solid var(--color-ink); }
+  .candidacies__chambers button[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .candidacies__list { margin-top: 18px; }
+  .candidacies__group + .candidacies__group { margin-top: var(--space-5); }
+  .candidacies__group > h3 { margin-bottom: var(--space-2); font: 700 0.8125rem var(--font-mono); }
+
+  /* Disclosures of lists and substitutes (the script creates them). */
+  .candidacies__list :global(.disclosure > summary) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    list-style: none;
+    cursor: pointer;
+  }
+  .candidacies__list :global(.disclosure > summary::-webkit-details-marker) { display: none; }
+  .candidacies__list :global(.disclosure > summary:hover > .disclosure__text) {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--color-highlight);
+  }
+  .candidacies__list :global(.disclosure__body) { display: flow-root; }
+  .candidacies__list :global(.disclosure__icon) {
+    flex: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    transition:
+      background-color 0.2s,
+      box-shadow var(--duration-base),
+      transform var(--duration-slow) var(--easing-out);
+  }
+  .candidacies__list :global(.disclosure__icon::before),
+  .candidacies__list :global(.disclosure__icon::after) {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: var(--color-ink);
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s, transform var(--duration-slow) var(--easing-out);
+  }
+  .candidacies__list :global(.disclosure__icon::before) { width: 12px; height: 3px; }
+  .candidacies__list :global(.disclosure__icon::after) { width: 3px; height: 12px; }
+  .candidacies__list :global(.disclosure > summary:hover > .disclosure__icon) { box-shadow: 2px 2px 0 var(--color-ink); }
+  .candidacies__list :global(.disclosure[open]:not(.is-closing) > summary > .disclosure__icon) {
+    background: var(--color-ink);
+    transform: rotate(180deg);
+  }
+  .candidacies__list :global(.disclosure[open]:not(.is-closing) > summary > .disclosure__icon::before),
+  .candidacies__list :global(.disclosure[open]:not(.is-closing) > summary > .disclosure__icon::after) {
+    background: var(--color-paper);
+  }
+  .candidacies__list :global(.disclosure[open]:not(.is-closing) > summary > .disclosure__icon::after) {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+  .candidacies__list :global(.candidacy) { border-top: 1px solid var(--color-ink-subtle); padding: var(--space-2) 0; }
+  .candidacies__list :global(.candidacy > summary) { font-weight: 700; }
+  .candidacies__list :global(.candidacy ol) { margin: var(--space-2) 0 0; padding-left: 30px; }
+  .candidacies__list :global(.candidacy li) { padding-left: var(--space-1); margin: 2px 0; }
+  .candidacies__list :global(.candidacy__substitutes) { margin: 10px 0 0 var(--space-4); font-size: var(--text-sm); }
+  .candidacies__list :global(.candidacy__substitutes > summary) { font-weight: 600; }
+  .candidacies__list :global(.candidacy__substitutes .disclosure__icon) { width: 20px; height: 20px; }
+  .candidacies__list :global(.candidacy__substitutes .disclosure__icon::before) { width: 10px; }
+  .candidacies__list :global(.candidacy__substitutes .disclosure__icon::after) { height: 10px; }
+  .candidacies__list :global(.candidacy__empty) { margin: var(--space-2) 0 0; color: var(--color-ink-muted); font-size: var(--text-sm); }
+
+  @media (max-width: 820px) {
+    .candidacies__panel { grid-template-columns: 1fr; }
+    .candidacies__map-column { border-right: 0; border-bottom: var(--border-thick) solid var(--color-ink); }
+    .province-map { max-height: 70vh; }
+  }
+</style>

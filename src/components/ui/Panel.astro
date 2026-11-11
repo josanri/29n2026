@@ -1,0 +1,27 @@
+---
+/** Panel: a box with an optional title and lead line, then free content. */
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  title?: string;
+  lead?: string;
+}
+
+const { title, lead, class: className, ...attrs } = Astro.props;
+---
+
+<div class:list={['box', 'panel', className]} {...attrs}>
+  {title && <h3 class="panel__title">{title}</h3>}
+  {lead && <p class="panel__lead">{lead}</p>}
+  <slot />
+</div>
+
+<style>
+  .panel { padding: 22px; }
+  .panel__title { font-size: var(--text-xl); margin-bottom: 6px; }
+  .panel__lead {
+    font-size: var(--text-sm);
+    color: var(--color-ink-muted);
+    margin-bottom: 18px;
+  }
+</style>

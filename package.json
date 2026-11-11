@@ -1,0 +1,32 @@
+{
+  "name": "programas-29n",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "data:pp": "python scripts/extract_pp.py public/programas/pp-reconstruccion-nacional.pdf scripts/pp_raw.json && python scripts/enrich_pp.py scripts/pp_raw.json src/data/programas/pp.json",
+    "data:bng": "python scripts/extract_bng.py public/programas/bng-xerais-2026.pdf scripts/bng_raw.json && python scripts/enrich_bng.py scripts/bng_raw.json src/data/programas/bng.json",
+    "data:cc": "python scripts/extract_cc.py public/programas/cc-defiende-canarias-2026.pdf src/data/programas/cc.json",
+    "data:erc": "python scripts/extract_erc.py public/programas/erc-programa-electoral-2026.pdf src/data/programas/erc.json",
+    "data:salf": "python scripts/extract_salf.py public/programas/salf-contrato-electoral-29n.pdf src/data/programas/salf.json",
+    "data:pfac": "python scripts/extract_pfac.py public/programas/feministas-al-congreso-2026.pdf src/data/programas/pfac.json",
+    "data:mundo-mas-justo": "python scripts/extract_mundo_mas_justo.py public/programas/mundo-mas-justo-29n-2026.pdf src/data/programas/mundo-mas-justo.json",
+    "data:tercera-edad": "python scripts/extract_tercera_edad.py public/programas/en-accion-3e-2026.pdf src/data/programas/tercera-edad.json",
+    "data:adelante": "python scripts/extract_adelante.py",
+    "data:candidaturas": "python scripts/extract_candidaturas.py"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.4.10",
+    "fuse.js": "^7.5.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+ "id": "fe-jons",
+ "partido": "Falange Española de las J.O.N.S.",
+ "siglas": "FE de las JONS",
+ "color": "#DA141C",
+ "colorClaro": "#EE9599",
+ "programa": "",
+ "subtitulo": "Programa vacío",
+ "elecciones": "Elecciones generales · 29 de noviembre de 2026",
+ "vacio": true,
+ "pdf": "",
+ "paginas": 0,
+ "unidadMedida": "medida",
+ "unidadMedidas": "medidas",
+ "presentacion": {
+  "titulo": "",
+  "texto": ""
+ },
+ "cifras": [],
+ "plazos": [],
+ "ordenPlazos": [],
+ "verbos": [],
+ "bloques": [],
+ "secciones": [],
+ "medidas": []
+}
