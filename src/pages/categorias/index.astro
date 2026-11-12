@@ -171,7 +171,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
 
       <!-- Phones: a table with this many columns does not fit, so each category is a list of parties, from more to less weight. -->
       <div class="heatlist">
-        {rows.map(({ category, cells }) => {
+        {rows.map(({ category, cells, total }) => {
           const ranked = cells.filter((cell) => cell.count > 0).sort((a, b) => b.share - a.share);
           const maxShare = Math.max(1, ...ranked.map((cell) => cell.share));
           const lead = ranked[0];
@@ -183,6 +183,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
                   {lead ? `Más peso: ${lead.program.acronym} ${shareDecimal(lead.share)} %` : 'Ningún programa'}
                 </span>
               </summary>
+              <p class="heatlist__about">{category.description}</p>
               <ol class="heatlist__items">
                 {ranked.map(({ program, count, share }) => (
                   <li data-party={program.id}>
@@ -199,12 +200,16 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
                   </li>
                 ))}
               </ol>
+              <a class="heatlist__all" href={routes.category(category.id)}>
+                Ver las {formatNumber(total)} medidas de {category.name.toLowerCase()} →
+              </a>
             </details>
           );
         })}
       </div>
     </Panel>
 
+    <div class="read-section">
     <SectionHeading index="02 / LEER" title="Las medidas por tema">
       <p>Cada categoría reúne las medidas de todos los programas sobre ese tema.</p>
     </SectionHeading>
@@ -233,6 +238,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
         );
       })}
     </ul>
+    </div>
   </div>
 </BaseLayout>
 
@@ -699,6 +705,8 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   .heatlist__category[open] summary::after { content: '–'; }
   .heatlist__name { font-weight: 800; font-size: 1.0625rem; line-height: 1.2; }
   .heatlist__lead { grid-column: 1; font: 500 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
+  .heatlist__about { margin: 0 0 var(--space-3); font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .heatlist__all { display: block; margin: 0 0 var(--space-4); padding: var(--space-3) 0; font-weight: 700; font-size: var(--text-sm); }
   .heatlist__items { list-style: none; margin: 0; padding: 0 0 var(--space-3); }
   .heatlist__items li[hidden] { display: none; }
   .heatlist__items a {
@@ -724,6 +732,8 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   @media (max-width: 700px) {
     .table-wrap, .swipe-hint { display: none; }
     .heatlist { display: block; }
+    /* The list already has each category, its text and its link: the second section would say the same. */
+    .read-section { display: none; }
   }
 
   .category-list {
