@@ -5,6 +5,9 @@ import rawGeography from '../data/provincias.json';
 /** Island provinces: Illes Balears, Las Palmas and Santa Cruz de Tenerife. */
 const ISLAND_PROVINCES = new Set(['07', '35', '38']);
 
+/** The provinces drawn in the inset of the Canary Islands: Las Palmas and Santa Cruz de Tenerife. */
+const CANARY_PROVINCES = new Set(['35', '38']);
+
 /**
  * Extra width, in map units, around the small shapes that react to the pointer: the circle around each city,
  * and an invisible border around each island. The nearest islands of two provinces are 28 units apart.
@@ -45,6 +48,8 @@ const geographySchema = z
       marker: marcador && { x: marcador.x, y: marcador.y, radius: marcador.r, labelY: marcador.rotuloY },
       /** Islands get an invisible border that reacts to the pointer, because some islands are very small. */
       isIsland: ISLAND_PROVINCES.has(codigo),
+      /** The reader can pick these provinces from anywhere in the inset: the page picks the nearest one. */
+      isCanarian: CANARY_PROVINCES.has(codigo),
     })),
   }));
 

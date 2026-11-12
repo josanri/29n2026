@@ -4,6 +4,7 @@
  * Each province is a link. The page connects the map with `setupProvinceMap` (src/lib/province-map.ts),
  * which marks the selected province and draws the focus outline.
  * Ceuta, Melilla and the islands have an invisible halo that also reacts to the pointer.
+ * In the inset of the Canary Islands the whole frame is a halo: a click or a tap picks the nearest province (see `setupProvinceMap`).
  */
 import { geography, MAP_HIT_MARGIN } from '@/lib/geography';
 
@@ -22,7 +23,7 @@ const { provinces, canaryIslands, cityInset } = geography;
 ---
 
 <svg class="province-map" {id} viewBox={`0 0 ${geography.width} ${geography.height}`} role="group" aria-label={label}>
-  <rect class="province-map__frame" x={canaryIslands.x} y={canaryIslands.y} width={canaryIslands.width} height={canaryIslands.height} />
+  <rect class="province-map__frame province-map__frame--canarias" x={canaryIslands.x} y={canaryIslands.y} width={canaryIslands.width} height={canaryIslands.height} />
   <text class="province-map__label" x={canaryIslands.x + 10} y={canaryIslands.y + 24} aria-hidden="true">CANARIAS</text>
   <rect class="province-map__frame" x={cityInset.x} y={cityInset.y} width={cityInset.width} height={cityInset.height} />
   {provinces.map((province) => (
@@ -30,6 +31,7 @@ const { provinces, canaryIslands, cityInset } = geography;
       href={href(province.code)}
       class:list={['province-map__province', { 'is-city': Boolean(province.marker) }]}
       data-province={province.code}
+      data-canarian={province.isCanarian ? '' : undefined}
       aria-label={linkLabel(province.name)}
     >
       <title>{province.name}</title>
@@ -72,7 +74,10 @@ const { provinces, canaryIslands, cityInset } = geography;
   .province-map__province { cursor: pointer; }
   .province-map__province:focus-visible { outline: none; box-shadow: none; }
   .province-map__province:hover path,
-  .province-map__province:focus-visible path { fill: var(--province-hover); }
+  .province-map__province:focus-visible path,
+  .province-map__province.is-near path { fill: var(--province-hover); }
+  /* The pointer is in the inset of the Canary Islands: a click picks the nearest province. */
+  .province-map.is-near-canary { cursor: pointer; }
   .province-map__province.is-selected path { fill: var(--color-highlight); }
   /* The halo that reacts to the pointer: a circle around each city, and a wide border in map units around each island.
      It stays invisible, also on hover. */
