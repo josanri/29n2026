@@ -31,6 +31,9 @@ const bySection = sections.map((section) => ({
   count: blockMeasures.filter((measure) => measure.sectionId === section.id).length,
   href: `#${SECTION_ID_PREFIX}${section.id}`,
 }));
+const introParagraphs = splitParagraphs(block.intro);
+// A block with a single section: its bar says the same as the total, so the panel is not shown.
+const showSections = sections.length > 1;
 const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map(([id, count]) => ({
   id,
   label: categoryById[id].name,
@@ -81,21 +84,33 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
       }
     </nav>
 
-    <div class="intro-grid">
-      <div class="intro">
-        {splitParagraphs(block.intro).map((paragraph, index) => <p class:list={{ 'drop-cap': index === 0 }}>{paragraph}</p>)}
-      </div>
-      <aside class="grid">
-        <Panel title={`${blockMeasures.length} ${measureNoun(program, blockMeasures.length)}`} lead="Por sección. Pulsa para saltar.">
-          <BarList
-            items={bySection}
-            total={blockMeasures.length}
-            color={blockColor(blockId)}
-            unit={program.measureUnitPlural}
-            singularUnit={program.measureUnit}
-          />
-        </Panel>
-        <Panel title="Categorías" lead="Temas del bloque.">
+    <!-- Without an intro text there is no left column: the panels use the full width, side by side. -->
+    <div class:list={['intro-grid', { 'intro-grid--summary': introParagraphs.length === 0 }]}>
+      {
+        introParagraphs.length > 0 && (
+          <div class="intro">
+            {introParagraphs.map((paragraph, index) => <p class:list={{ 'drop-cap': index === 0 }}>{paragraph}</p>)}
+          </div>
+        )
+      }
+      <aside class="grid summary">
+        {
+          showSections && (
+            <Panel title={`${blockMeasures.length} ${measureNoun(program, blockMeasures.length)}`} lead="Por sección. Pulsa para saltar.">
+              <BarList
+                items={bySection}
+                total={blockMeasures.length}
+                color={blockColor(blockId)}
+                unit={program.measureUnitPlural}
+                singularUnit={program.measureUnit}
+              />
+            </Panel>
+          )
+        }
+        <Panel
+          title={showSections ? 'Categorías' : `${blockMeasures.length} ${measureNoun(program, blockMeasures.length)}`}
+          lead={showSections ? 'Temas del bloque.' : 'Por categoría: los temas del bloque.'}
+        >
           <BarList
             items={byCategory}
             total={blockMeasures.length}
@@ -241,6 +256,9 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
     align-items: start;
   }
   .intro { font-size: var(--text-lg); max-width: 64ch; }
+  /* No intro: one column, and the panels sit side by side when there is room. */
+  .intro-grid--summary { grid-template-columns: minmax(0, 1fr); }
+  .intro-grid--summary .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: var(--space-5); align-items: start; }
   .drop-cap::first-letter {
     font-family: var(--font-display);
     float: left;
