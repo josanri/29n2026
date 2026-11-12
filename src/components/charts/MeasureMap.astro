@@ -1,12 +1,15 @@
 ---
 /**
- * Structure diagram: one row per section, one cell per measure.
+ * Structure diagram: one block per row group, one cell per measure.
+ * Each block shows its number, its title, its total and its weight in the program.
+ * A block with one section does not repeat it: its cells sit right under the title.
+ * A block with several sections lists them, each with its count and cells.
  * The color identifies the block (with the block number beside it, never color alone).
  * Pending measures have diagonal hatching.
  */
-import type { Program } from '@/lib/programs';
+import type { Program, Measure } from '@/lib/programs';
 import { categoryById } from '@/lib/taxonomy';
-import { padNumber } from '@/lib/format';
+import { measureNoun, padNumber, percentOf } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { routes } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
@@ -16,105 +19,149 @@ interface Props {
 }
 
 const { program } = Astro.props;
+
+const groups = program.blocks.map((block) => {
+  const sections = program.sections
+    .filter((section) => section.blockId === block.id)
+    .map((section) => ({
+      section,
+      measures: program.measures.filter((measure) => measure.sectionId === section.id),
+    }));
+  const total = sections.reduce((sum, { measures }) => sum + measures.length, 0);
+  return { block, sections, total };
+});
+// The bar of a block is its share of the biggest block, so the differences are easy to see.
+const maxTotal = Math.max(1, ...groups.map((group) => group.total));
+
+const cellLabel = (measure: Measure) =>
+  measure.isPending ? `Medida ${measure.number}: pendiente de anunciar` : `Medida ${measure.number}: ${measure.phraseTitle}`;
+const cellTooltip = (measure: Measure) =>
+  measure.isPending
+    ? tooltip(`Nº ${measure.number}`, `${program.measureUnit} pendiente de anunciar`)
+    : tooltip(`Nº ${measure.number} · ${categoryById[measure.categoryId].code}`, measure.phraseTitle);
 ---
 
 <div class="measure-map">
   {
-    program.blocks.map((block) => (
+    groups.map(({ block, sections, total }) => (
       <section class="measure-map__block" style={`--block-color: ${blockColor(block.id)}`}>
-        <h4 class="measure-map__block-title">
-          <a href={routes.block(program.id, block.id)}>
-            <span class="mono">{padNumber(block.id)}</span> {block.title}
-          </a>
-        </h4>
-        {program.sections
-          .filter((section) => section.blockId === block.id)
-          .map((section) => {
-            const sectionMeasures = program.measures.filter((measure) => measure.sectionId === section.id);
-            return (
-              <div class="measure-map__row">
-                <a class="measure-map__section" href={routes.section(program.id, block.id, section.id)} title={section.title}>
-                  <span class="mono">{section.id}</span>
-                  <span class="measure-map__section-title">{section.phraseTitle}</span>
-                </a>
-                <div class="measure-map__cells">
-                  {sectionMeasures.map((measure) => (
-                    <a
-                      class:list={['measure-map__cell', { 'is-pending': measure.isPending }]}
-                      href={routes.measure(program.id, measure.number)}
-                      aria-label={
-                        measure.isPending
-                          ? `Medida ${measure.number}: pendiente de anunciar`
-                          : `Medida ${measure.number}: ${measure.phraseTitle}`
-                      }
-                      data-tooltip={
-                        measure.isPending
-                          ? tooltip(`Nº ${measure.number}`, `${program.measureUnit} pendiente de anunciar`)
-                          : tooltip(`Nº ${measure.number} · ${categoryById[measure.categoryId].code}`, measure.phraseTitle)
-                      }
-                    />
-                  ))}
-                  <span class="measure-map__count mono">{sectionMeasures.length}</span>
+        <a class="measure-map__number" href={routes.block(program.id, block.id)} aria-label={`Bloque ${block.id}: ${block.title}`}>
+          {padNumber(block.id)}
+        </a>
+        <div class="measure-map__body">
+          <div class="measure-map__head">
+            <h4 class="measure-map__title">
+              <a href={routes.block(program.id, block.id)}>{block.title}</a>
+            </h4>
+            <span class="measure-map__total mono">
+              {total} {measureNoun(program, total)}
+            </span>
+          </div>
+          <div
+            class="measure-map__share"
+            role="img"
+            aria-label={`${percentOf(total, program.measures.length)} % de las ${program.measureUnitPlural} del programa`}
+          >
+            <span class="measure-map__track"><span class="measure-map__fill" style={`width: ${(total / maxTotal) * 100}%`}></span></span>
+            <span class="measure-map__percent mono">{percentOf(total, program.measures.length)} %</span>
+          </div>
+
+          {sections.length === 1 ? (
+            <div class="measure-map__cells measure-map__cells--alone">
+              {sections[0].measures.map((measure) => (
+                <a
+                  class:list={['measure-map__cell', { 'is-pending': measure.isPending }]}
+                  href={routes.measure(program.id, measure.number)}
+                  aria-label={cellLabel(measure)}
+                  data-tooltip={cellTooltip(measure)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div class="measure-map__sections">
+              {sections.map(({ section, measures }) => (
+                <div class="measure-map__row">
+                  <span class="measure-map__id mono">{section.id}</span>
+                  <a class="measure-map__section" href={routes.section(program.id, block.id, section.id)}>
+                    {section.phraseTitle}
+                  </a>
+                  <span class="measure-map__count mono">{measures.length}</span>
+                  <div class="measure-map__cells">
+                    {measures.map((measure) => (
+                      <a
+                        class:list={['measure-map__cell', { 'is-pending': measure.isPending }]}
+                        href={routes.measure(program.id, measure.number)}
+                        aria-label={cellLabel(measure)}
+                        data-tooltip={cellTooltip(measure)}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+          )}
+        </div>
       </section>
     ))
   }
 </div>
 
 <style>
-  .measure-map {
+  .measure-map { display: block; }
+  .measure-map__block {
     display: grid;
-    gap: 22px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: var(--space-5);
+    padding: var(--space-5) 0;
+    border-top: var(--border-thick) solid var(--color-ink);
   }
-  .measure-map__block-title {
-    font-size: 1.25rem; /* large bold text: 3:1 is enough on the block color */
-    margin-bottom: 10px;
+  .measure-map__block:first-child { border-top: 0; padding-top: 0; }
+  .measure-map__block:last-child { padding-bottom: 0; }
+  /* Large bold text on the block color: 3:1 is enough. */
+  .measure-map__number {
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
     display: flex;
-  }
-  .measure-map__block-title a {
-    text-decoration: none;
+    align-items: center;
+    justify-content: center;
     background: var(--block-color);
     color: var(--color-on-block);
-    border: var(--border-thick) solid var(--color-ink);
-    padding: 6px 10px 4px;
+    border: 3px solid var(--color-ink);
     box-shadow: var(--shadow-sm);
-  }
-  .measure-map__block-title a:hover { background: var(--color-highlight); }
-  .measure-map__row {
-    display: grid;
-    grid-template-columns: minmax(170px, 300px) 1fr;
-    gap: 14px;
-    align-items: center;
-    padding: 5px 0;
-    border-bottom: 1px dashed color-mix(in srgb, var(--color-ink) 30%, transparent);
-  }
-  .measure-map__section {
-    display: flex;
-    gap: var(--space-2);
-    font-size: 0.8125rem;
-    line-height: 1.2;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
     text-decoration: none;
-    min-width: 0;
   }
-  .measure-map__section .mono { font-weight: 700; flex: 0 0 34px; }
-  .measure-map__section-title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .measure-map__section-title::first-letter { text-transform: uppercase; }
-  .measure-map__cells {
+  .measure-map__number:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .measure-map__body { min-width: 0; }
+  .measure-map__head {
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-1);
-    align-items: center;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-4);
   }
+  .measure-map__title { margin: 0; font-family: var(--font-body); font-weight: 800; font-size: 1.3125rem; line-height: 1.15; }
+  .measure-map__title a { text-decoration: none; }
+  .measure-map__title a:hover { text-decoration: underline; text-decoration-color: var(--color-highlight); text-decoration-thickness: 3px; }
+  .measure-map__total { flex: none; font-size: var(--text-sm); font-weight: 700; }
+  .measure-map__share { display: flex; align-items: center; gap: var(--space-3); margin-top: 10px; }
+  .measure-map__track {
+    flex: 1 1 auto;
+    height: 10px;
+    box-sizing: border-box;
+    background: var(--color-paper-alt);
+    border: var(--border-thin) solid var(--color-ink);
+  }
+  .measure-map__fill { display: block; height: 100%; background: var(--block-color); }
+  .measure-map__percent { flex: none; width: 44px; text-align: right; font-size: var(--text-xs); font-weight: 700; color: var(--color-ink-muted); }
+
+  .measure-map__cells { display: flex; flex-wrap: wrap; gap: 3px; align-items: center; }
+  .measure-map__cells--alone { margin-top: var(--space-4); }
   .measure-map__cell {
-    width: 22px;
-    height: 22px;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
     background: var(--block-color);
     border: var(--border-thin) solid var(--color-ink);
     display: block;
@@ -129,14 +176,29 @@ const { program } = Astro.props;
   .measure-map__cell.is-pending {
     background: var(--color-paper) repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 6px);
   }
-  .measure-map__count {
-    font-size: var(--text-xs);
-    font-weight: 700;
-    margin-left: 6px;
-    color: var(--color-ink-subtle);
+
+  .measure-map__sections { margin-top: var(--space-3); }
+  .measure-map__row {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 320px) 28px minmax(0, 1fr);
+    column-gap: var(--space-3);
+    align-items: center;
+    padding: 7px 0;
+    border-top: 1px dashed var(--color-ink-subtle);
   }
-  @media (max-width: 640px) {
-    .measure-map__row { grid-template-columns: 1fr; gap: 6px; }
-    .measure-map__cell { width: 18px; height: 18px; }
+  .measure-map__id { font-size: var(--text-xs); font-weight: 700; color: var(--color-ink-muted); }
+  .measure-map__section { font-size: 0.875rem; font-weight: 600; line-height: 1.25; text-decoration: none; }
+  .measure-map__section::first-letter { text-transform: uppercase; }
+  .measure-map__section:hover { text-decoration: underline; text-decoration-color: var(--color-highlight); text-decoration-thickness: 3px; }
+  .measure-map__count { text-align: right; font-size: 0.8125rem; font-weight: 700; }
+
+  @media (max-width: 760px) {
+    .measure-map__block { grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--space-3); }
+    .measure-map__number { width: 48px; height: 48px; font-size: 1.25rem; border-width: 2px; box-shadow: 3px 3px 0 var(--color-ink); }
+    .measure-map__title { font-size: 1.0625rem; }
+    .measure-map__head { flex-direction: column; gap: 2px; }
+    /* A row: the number, the title and the count on one line, the cells under them. */
+    .measure-map__row { grid-template-columns: 30px minmax(0, 1fr) auto; row-gap: 6px; }
+    .measure-map__cells { grid-column: 1 / -1; }
   }
 </style>

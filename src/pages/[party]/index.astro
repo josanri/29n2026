@@ -14,7 +14,7 @@ import Tag from '@/components/ui/Tag.astro';
 import { getProgram, programs } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
-import { capitalize, measureNoun, padNumber, percentOf, splitParagraphs } from '@/lib/format';
+import { allOf, capitalize, measureNoun, padNumber, percentOf, splitParagraphs } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { readableTextColor } from '@/lib/color';
 import { methodNote } from '@/lib/method-note';
@@ -45,7 +45,7 @@ const keyFindings: KeyFinding[] =
     .slice(0, 3)
     .map(([id, count]) => ({
       title: `${categoryById[id].name}: ${count} ${measureNoun(program, count)}`,
-      text: `${count} de las ${total} ${plural} (${percentOf(count, total)} %) están clasificadas en esta categoría. Es un recuento basado en la clasificación temática editorial del programa.`,
+      text: `${count === total ? `${capitalize(allOf(program, total))} está clasificada` : `${count} de ${allOf(program, total)} (${percentOf(count, total)} %) están clasificadas`} en esta categoría. Es un recuento basado en la clasificación temática editorial del programa.`,
       measureNumbers: program.measures
         .filter((measure) => measure.categoryId === id)
         .slice(0, 5)
@@ -86,11 +86,31 @@ const byVerb = program.verbs.map(({ verb, count }) => ({
   id: verb,
   label: capitalize(verb),
   count,
-  tooltip: tooltip(`«${verb}»`, `aparece ${count} veces en el texto de las ${plural}`),
+  tooltip: tooltip(`«${verb}»`, `aparece ${count} veces en el texto de ${allOf(program, total)}`),
 }));
 
 const isLocalDocument = program.documentType !== 'web' && program.documentUrl.startsWith('/');
 const isWebProgram = program.documentType === 'web';
+// The numbered sections of the page. A section with no data is not shown, and the numbers
+// of the next ones move up, so the index never skips a number.
+const hasFigures = program.figures.length > 0;
+const hasMoreData = repealingMeasures.length > 0 || pendingMeasures.length > 0 || program.verbs.length > 0;
+const sectionLabels = [
+  ['keys', 'LECTURA RÁPIDA', true],
+  ['figures', 'CIFRAS', hasFigures],
+  ['structure', 'ESTRUCTURA', true],
+  ['topics', 'TEMAS', true],
+  ['groups', 'A QUIÉN Y CÓMO', true],
+  ['calendar', 'CALENDARIO', withDeadline > 0],
+  ['more', 'MÁS DATOS', hasMoreData],
+  ['read', 'LEER', true],
+  ['presence', 'CANDIDATURAS', true],
+] as const;
+const sectionIndex = Object.fromEntries(
+  sectionLabels
+    .filter(([, , shown]) => shown)
+    .map(([id, label], position) => [id, `${padNumber(position + 1)} / ${label}`]),
+) as Record<(typeof sectionLabels)[number][0], string>;
 const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Descargar programa completo' : 'PDF original';
 ---
 
@@ -128,7 +148,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             <div>
               <p class="hero__subtitle">{program.subtitle}</p>
               <div class="hero__actions">
-                <Button variant="ink" href={routes.measures(program.id)}>{`Explorar las ${total} ${plural}`}</Button>
+                <Button variant="ink" href={routes.measures(program.id)}>{`Explorar ${allOf(program, total)}`}</Button>
                 <Button href={routes.block(program.id, 1)}>Leer por bloques</Button>
                 <Button
                   href={program.documentUrl}
@@ -165,7 +185,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
         ))}
 
         <div class="container">
-          <SectionHeading index="01 / LECTURA RÁPIDA" title="Las claves">
+          <SectionHeading index={sectionIndex.keys} title="Las claves">
             <p>
               Ideas basadas en el análisis editorial o, cuando este aún no está disponible, en la distribución temática. Cada una
               enlaza con las {plural} en las que se apoya.
@@ -196,53 +216,57 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             }
           </ol>
 
-          <SectionHeading index="02 / CIFRAS" title="Los números del programa">
-            <p>Los compromisos que el programa cuantifica. Pulsa una ficha para leer la {singular} completa.</p>
-          </SectionHeading>
-          {
-            (() => {
-              const FIRST_FIGURES = 12;
-              const shown = program.figures.slice(0, FIRST_FIGURES);
-              const hidden = program.figures.slice(FIRST_FIGURES);
-              const card = (figure: (typeof program.figures)[number], index: number) => (
-                <a class:list={['figure-card', { 'figure-card--large': index < 2 }]} href={routes.measure(program.id, figure.measureNumber)}>
-                  <span class="figure-card__value">{figure.value}</span>
-                  <span class="figure-card__unit">{figure.unit}</span>
-                  <span class="figure-card__text">{figure.text}</span>
-                  {figure.context && <span class="figure-card__context">«{figure.context}»</span>}
-                  <span class="figure-card__number mono">Nº {figure.measureNumber}</span>
-                </a>
-              );
-              return (
-                <>
-                  <div class="figures">{shown.map((figure, index) => card(figure, index))}</div>
-                  {hidden.length > 0 && (
-                    <details class="figures-more">
-                      <summary class="figures-more__toggle">
-                        Ver las {hidden.length} cifras restantes
-                      </summary>
-                      <div class="figures figures--compact">{hidden.map((figure) => card(figure, 99))}</div>
-                    </details>
-                  )}
-                </>
-              );
-            })()
-          }
+          {hasFigures && (
+            <>
+            <SectionHeading index={sectionIndex.figures} title="Los números del programa">
+              <p>Los compromisos que el programa cuantifica. Pulsa una ficha para leer la {singular} completa.</p>
+            </SectionHeading>
+            {
+              (() => {
+                const FIRST_FIGURES = 12;
+                const shown = program.figures.slice(0, FIRST_FIGURES);
+                const hidden = program.figures.slice(FIRST_FIGURES);
+                const card = (figure: (typeof program.figures)[number], index: number) => (
+                  <a class:list={['figure-card', { 'figure-card--large': index < 2 }]} href={routes.measure(program.id, figure.measureNumber)}>
+                    <span class="figure-card__value">{figure.value}</span>
+                    <span class="figure-card__unit">{figure.unit}</span>
+                    <span class="figure-card__text">{figure.text}</span>
+                    {figure.context && <span class="figure-card__context">«{figure.context}»</span>}
+                    <span class="figure-card__number mono">Nº {figure.measureNumber}</span>
+                  </a>
+                );
+                return (
+                  <>
+                    <div class="figures">{shown.map((figure, index) => card(figure, index))}</div>
+                    {hidden.length > 0 && (
+                      <details class="figures-more">
+                        <summary class="figures-more__toggle">
+                          Ver las {hidden.length} cifras restantes
+                        </summary>
+                        <div class="figures figures--compact">{hidden.map((figure) => card(figure, 99))}</div>
+                      </details>
+                    )}
+                  </>
+                );
+              })()
+            }
+            </>
+          )}
 
-          <SectionHeading index="03 / ESTRUCTURA" title="Cómo se reparte">
+          <SectionHeading index={sectionIndex.structure} title="Cómo se reparte">
             <p>Peso de cada bloque en el total y mapa completo: una casilla por {singular}, una fila por sección.</p>
           </SectionHeading>
           <BlockBar program={program} />
           <div class="map-panel">
             <Panel
-              title={`Mapa de las ${total} ${plural}`}
-              lead={`Pasa el ratón sobre una casilla para ver la ${singular}. Las casillas con trama son las ${pendingMeasures.length} ${plural} que el partido anunciará durante la campaña.`}
+              title={`Mapa de ${allOf(program, total)}`}
+              lead={`Pasa el ratón sobre una casilla para ver la ${singular}.${pendingMeasures.length > 0 ? ` Las casillas con trama son las ${pendingMeasures.length} ${plural} que el partido anunciará durante la campaña.` : ''}`}
             >
               <MeasureMap program={program} />
             </Panel>
           </div>
 
-          <SectionHeading index="04 / TEMAS" title={`${capitalize(plural)} por categoría`}>
+          <SectionHeading index={sectionIndex.topics} title={`${capitalize(plural)} por categoría`}>
             <p>
               Clasificación temática común a todos los programas. Cada {singular} tiene una categoría principal. Pulsa una barra
               para filtrar.
@@ -252,13 +276,13 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             <BarList items={byCategory} total={total} unit={plural} singularUnit={singular} />
           </Panel>
 
-          <SectionHeading index="05 / A QUIÉN Y CÓMO" title="Colectivos y palancas">
+          <SectionHeading index={sectionIndex.groups} title="Colectivos y palancas">
             <p>
               Detección automática por palabras clave sobre el texto de cada {singular}. Una {singular} puede citar varios
               colectivos y usar varias palancas.
             </p>
           </SectionHeading>
-          <div class="grid grid--2">
+          <div class="grid grid--2 grid--top">
             <Panel title="A quién se dirige" lead={`${capitalize(plural)} que citan a cada colectivo (de ${publishedMeasures.length} publicadas).`}>
               <BarList items={byTargetGroup} total={publishedMeasures.length} color="var(--color-block-3)" unit={plural} singularUnit={singular} />
             </Panel>
@@ -274,9 +298,9 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
 
           {withDeadline > 0 && (
             <>
-              <SectionHeading index="06 / CALENDARIO" title="Lo que tiene fecha">
+              <SectionHeading index={sectionIndex.calendar} title="Lo que tiene fecha">
                 <p>
-                  Solo {withDeadline} de las {total} {plural} fijan un plazo. Se separan en tres tipos: fecha fija, plazo máximo de espera y plazo de implantación. Dentro de cada tipo, van de lo más inmediato a lo más lejano.
+                  {total === 1 ? `${capitalize(allOf(program, total))} fija un plazo.` : `Solo ${withDeadline} de ${allOf(program, total)} fijan un plazo.`} Se separan en tres tipos: fecha fija, plazo máximo de espera y plazo de implantación. Dentro de cada tipo, van de lo más inmediato a lo más lejano.
                 </p>
               </SectionHeading>
               <Panel>
@@ -285,9 +309,9 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             </>
           )}
 
-          {(repealingMeasures.length > 0 || pendingMeasures.length > 0 || byVerb.length > 0) && (
+          {hasMoreData && (
             <>
-              <SectionHeading index="07 / MÁS DATOS" title="Deroga, reserva y repite" />
+              <SectionHeading index={sectionIndex.more} title="Deroga, reserva y repite" />
               <div class="grid grid--3">
                 {repealingMeasures.length > 0 && (
                   <Panel title="Leyes que deroga" lead="Derogaciones explícitas.">
@@ -330,7 +354,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             </>
           )}
 
-          <SectionHeading index="08 / LEER" title={`Los ${program.blocks.length} bloques`}>
+          <SectionHeading index={sectionIndex.read} title={`Los ${program.blocks.length} bloques`}>
             <p>El programa completo, bloque a bloque, con la introducción y el texto íntegro de cada medida.</p>
           </SectionHeading>
           <div class="block-links">
@@ -379,7 +403,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             </Panel>
           </div>
 
-          <SectionHeading index="09 / CANDIDATURAS" title="Dónde se presenta">
+          <SectionHeading index={sectionIndex.presence} title="Dónde se presenta">
             <p>Provincias en las que {program.acronym} presenta candidatura al Congreso o al Senado, según la proclamación oficial.</p>
           </SectionHeading>
           <Panel>
@@ -566,7 +590,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
     font-size: var(--text-lg);
     line-height: 1.05;
   }
-  .repeals s { text-decoration-thickness: 4px; text-decoration-color: var(--color-block-2); }
+  .repeals s { text-decoration-thickness: 2px; text-decoration-color: var(--color-block-2); }
   .repeals .mono { font-family: var(--font-mono); font-size: var(--text-2xs); white-space: nowrap; }
   .pending li {
     display: grid;

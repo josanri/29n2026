@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button.astro';
 import { getProgram, programs } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
-import { padNumber } from '@/lib/format';
+import { allOf, capitalize, padNumber } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { MEASURE_FILTER_PARAMS as PARAMS, routes } from '@/lib/routes';
 
@@ -24,7 +24,7 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
 
 <BaseLayout
   title={`${plural} · ${program.acronym}`}
-  description={`Las ${program.measures.length} ${plural} del programa ${program.programName} con filtros.`}
+  description={`${capitalize(allOf(program, program.measures.length))} del programa ${program.programName} con filtros.`}
   accent={program.color}
   accentLight={program.lightColor}
 >
@@ -38,7 +38,7 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
             <p class="breadcrumb mono">
               <a href={routes.party(program.id)}>{program.acronym} · {program.programName}</a> / {plural}
             </p>
-            <h1 class="headline">Las {program.measures.length} {plural}</h1>
+            <h1 class="headline">{capitalize(allOf(program, program.measures.length))}</h1>
           </div>
         </section>
 

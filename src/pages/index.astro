@@ -8,33 +8,16 @@ import Tag from '@/components/ui/Tag.astro';
 import { programs, publishedFirst, publishedPrograms } from '@/lib/programs';
 import {
   nationalPrograms,
-  presenceOf,
   provinceRegions,
   provinces,
   provincesOf,
   regionalProgramsIn,
   regionalRegions,
 } from '@/lib/presence';
-import { relationsOf } from '@/lib/relations';
+import { partySearchText } from '@/lib/party-search';
 import { routes, SEARCH_PARAMS } from '@/lib/routes';
 import { categories } from '@/lib/taxonomy';
-import { compareText, formatNumber, normalizeForSearch } from '@/lib/format';
-import type { Program } from '@/lib/programs';
-
-/**
- * Text the party search looks in: names, acronym, the regions where the party runs
- * and the names of the parties that run with it. A search for ERC also finds EH Bildu.
- */
-const partySearchText = (program: Program) =>
-  normalizeForSearch(
-    [
-      program.acronym,
-      program.partyName,
-      program.programName,
-      ...presenceOf(program).regions,
-      ...relationsOf(program).flatMap((relation) => relation.partners.flatMap((party) => [party.acronym, party.partyName])),
-    ].join(' '),
-  );
+import { compareText, formatNumber } from '@/lib/format';
 
 const totalMeasures = programs.reduce((sum, program) => sum + program.measures.length, 0);
 const nationalSorted = publishedFirst(nationalPrograms);
@@ -303,7 +286,17 @@ const searchTopics = ['Vivienda', 'IRPF', 'Pensiones', 'Sanidad', 'Alquiler', 'E
   // The example parties follow the filters: the province and the switch of published programs.
   const updateExamples = () =>
     showExamples(searchInput, provinceSelect.value, publishedSwitch.getAttribute('aria-pressed') === 'true');
+  // The map of candidacies shares the province with this filter, in both directions.
+  const PROVINCE_EVENT = 'province:select';
   provinceSelect.addEventListener('change', () => {
+    updateExamples();
+    applyFilters();
+    document.dispatchEvent(new CustomEvent(PROVINCE_EVENT, { detail: { code: provinceSelect.value, source: 'filter' } }));
+  });
+  document.addEventListener(PROVINCE_EVENT, (event) => {
+    const { code, source } = (event as CustomEvent<{ code: string; source: string }>).detail;
+    if (source === 'filter' || provinceSelect.value === code) return;
+    provinceSelect.value = code;
     updateExamples();
     applyFilters();
   });
@@ -319,6 +312,7 @@ const searchTopics = ['Vivienda', 'IRPF', 'Pensiones', 'Sanidad', 'Alquiler', 'E
     publishedSwitch.setAttribute('aria-pressed', 'false');
     updateExamples();
     applyFilters();
+    document.dispatchEvent(new CustomEvent(PROVINCE_EVENT, { detail: { code: '', source: 'filter' } }));
   });
   applyFilters();
 </script>
@@ -427,6 +421,19 @@ const searchTopics = ['Vivienda', 'IRPF', 'Pensiones', 'Sanidad', 'Alquiler', 'E
     padding: 14px var(--space-4);
     background: var(--color-paper);
   }
+  /* The filters stick 8px below the header. This strip of paper covers that gap (and goes under the header),
+     so the cards that scroll behind the filters do not show through it. */
+  .filters::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--border-thick));
+    /* On the right it goes past the box: the hard shadows of the cards stick out there. */
+    right: calc(-1 * var(--border-thick) - 14px);
+    bottom: calc(100% + var(--border-thick));
+    height: 16px;
+    background: var(--color-paper);
+    pointer-events: none;
+  }
   .filters__field { display: grid; gap: 6px; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
   .filters__field select,
   .filters__field input {
@@ -496,6 +503,7 @@ const searchTopics = ['Vivienda', 'IRPF', 'Pensiones', 'Sanidad', 'Alquiler', 'E
   .filters__empty[hidden], .card[hidden], [data-group][hidden] { display: none; }
   /* Phone: one column. The fields and the switch fill the width and the summary comes last. */
   @media (max-width: 560px) {
+    .filters::before { display: none; } /* on a phone the filters do not stick */
     .filters {
       position: static;
       display: grid;

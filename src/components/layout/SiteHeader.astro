@@ -28,6 +28,39 @@ const menus = [
     })),
   },
 ];
+
+// Plain links of the nav. Each icon is the inner markup of a 16×16 stroke SVG.
+const links = [
+  {
+    href: routes.categories(),
+    label: 'Categorías',
+    icon: '<rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/>',
+  },
+  {
+    href: routes.calendar(),
+    label: 'Calendario',
+    icon: '<rect x="2" y="3" width="12" height="11"/><path d="M2 7h12M5 1v4M11 1v4"/>',
+  },
+  {
+    href: routes.simulator(),
+    label: 'Simulador',
+    icon: '<path d="M1 13a7 7 0 0 1 14 0M4.5 13a3.5 3.5 0 0 1 7 0M1 13h14"/>',
+  },
+  {
+    href: routes.partyQuiz(),
+    label: 'Sin siglas',
+    // A label with its text covered by a bar: the acronym is there, but hidden.
+    icon: '<rect x="1.5" y="3.5" width="13" height="9"/><path d="M5 8h6" stroke-width="3"/>',
+  },
+  {
+    href: routes.search(),
+    label: 'Buscar',
+    // In the compact menu the search takes the first row, with a hint of what it finds.
+    hint: 'partidos y medidas',
+    className: 'nav__link--search',
+    icon: '<circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 4.5 4.5"/>',
+  },
+];
 ---
 
 <header class="site-header">
@@ -36,7 +69,7 @@ const menus = [
       <span class="logo__mark">29N</span>
       <span class="logo__text">Programas<br />electorales</span>
     </a>
-    <nav class="nav" aria-label="Principal">
+    <nav class="nav" id="site-nav" aria-label="Principal">
       {menus.map((menu) => (
         <details class:list={['nav-dropdown', `nav-dropdown--${menu.id}`]}>
           <summary aria-current={menu.isCurrent ? 'page' : undefined}>
@@ -69,12 +102,27 @@ const menus = [
           </div>
         </details>
       ))}
-      <a href={routes.categories()} aria-current={path.startsWith(routes.categories()) ? 'page' : undefined}>Categorías</a>
-      <a href={routes.search()} aria-current={path.startsWith(routes.search()) ? 'page' : undefined}>Buscar</a>
+      {links.map((link) => (
+        <a href={link.href} class={link.className} aria-current={path.startsWith(link.href) ? 'page' : undefined}>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={link.icon} />
+          {link.label}
+          {link.hint && <span class="nav__hint">{link.hint}</span>}
+        </a>
+      ))}
+      <!-- The visible label shows only in the phone menu. The accessible name contains it. -->
       <button class="theme-toggle" type="button" aria-label="Cambiar tema claro u oscuro" title="Tema claro / oscuro">
-        <span aria-hidden="true">◐</span>
+        <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle__label">Cambiar tema</span>
       </button>
     </nav>
+    <!-- Only on a phone: it opens and closes the nav. -->
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true">
+        <path class="menu-toggle__bars" d="M2 4h12M2 8h12M2 12h12"></path>
+        <path class="menu-toggle__close" d="m3 3 10 10M13 3 3 13"></path>
+      </svg>
+      <span class="menu-toggle__label">Menú</span>
+    </button>
   </div>
 </header>
 
@@ -89,17 +137,35 @@ const menus = [
       for (const other of dropdowns) if (other !== dropdown) other.open = false;
     });
   }
+  // Phone menu: the button opens and closes the nav. The CSS shows the button only on a narrow screen.
+  const header = document.querySelector<HTMLElement>('.site-header')!;
+  const menuToggle = header.querySelector<HTMLButtonElement>('.menu-toggle')!;
+  const setMenuOpen = (open: boolean) => {
+    header.classList.toggle('is-menu-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    if (!open) for (const dropdown of dropdowns) dropdown.open = false;
+  };
+  menuToggle.addEventListener('click', () => setMenuOpen(!header.classList.contains('is-menu-open')));
+
   document.addEventListener('click', (event) => {
     for (const dropdown of dropdowns) {
       if (dropdown.open && !dropdown.contains(event.target as Node)) dropdown.open = false;
     }
+    if (header.classList.contains('is-menu-open') && !header.contains(event.target as Node)) setMenuOpen(false);
   });
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
+    // Escape first closes an open party menu, and then the phone menu.
     const openDropdown = dropdowns.find((dropdown) => dropdown.open);
-    if (!openDropdown) return;
-    openDropdown.open = false;
-    openDropdown.querySelector('summary')?.focus();
+    if (openDropdown) {
+      openDropdown.open = false;
+      openDropdown.querySelector('summary')?.focus();
+      return;
+    }
+    if (header.classList.contains('is-menu-open')) {
+      setMenuOpen(false);
+      menuToggle.focus();
+    }
   });
 
   // Light / dark theme
@@ -129,10 +195,11 @@ const menus = [
     position: relative; /* the dropdown panels position against this row, not against their button */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
+    gap: 6px;
     min-height: 72px;
   }
+  /* The logo goes to the left. The nav (and, on a phone, the menu button) go to the right. */
+  .logo { margin-right: auto; padding-right: 10px; }
   .logo {
     display: flex;
     align-items: center;
@@ -176,6 +243,7 @@ const menus = [
   /* One look for every control of the nav: links, menu buttons and the theme button */
   .nav a,
   .theme-toggle,
+  .menu-toggle,
   .nav-dropdown > summary {
     display: inline-flex;
     align-items: center;
@@ -189,6 +257,17 @@ const menus = [
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-paper);
     color: var(--color-ink);
+  }
+  /* Same stroke as the chevron of the menus. It takes the text color, also in hover and current states. */
+  .nav__icon {
+    flex: none;
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: square;
   }
   .nav a[aria-current='page'],
   .nav-dropdown > summary[aria-current='page'] {
@@ -212,11 +291,19 @@ const menus = [
   .nav-dropdown[open] .nav-dropdown__chevron { transform: rotate(180deg); }
   .nav-dropdown[open] > summary,
   .nav-dropdown > summary:hover,
-  .theme-toggle:hover {
+  .theme-toggle:hover,
+  .menu-toggle:hover {
     background: var(--color-highlight);
     color: var(--color-on-highlight);
   }
-  .theme-toggle { cursor: pointer; }
+  .theme-toggle, .menu-toggle { cursor: pointer; }
+  .menu-toggle { display: none; }
+  .theme-toggle__label { display: none; }
+  .menu-toggle__close { display: none; }
+  .nav__hint { display: none; }
+  .menu-toggle[aria-expanded='true'] { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
+  .menu-toggle[aria-expanded='true'] .menu-toggle__bars { display: none; }
+  .menu-toggle[aria-expanded='true'] .menu-toggle__close { display: inline; }
 
   .nav-dropdown__panel {
     position: absolute;
@@ -284,21 +371,81 @@ const menus = [
   .nav .nav-dropdown__panel a:hover small { color: var(--color-on-highlight); }
   .nav .nav-dropdown__panel a[aria-current='page'] small { color: inherit; }
 
-  @media (max-width: 560px) {
-    .site-header__row {
-      flex-direction: column;
-      align-items: stretch;
-      gap: var(--space-2);
-      min-height: 0;
-      padding-top: 10px;
-      padding-bottom: 10px;
+  /* Compact header: below 1360px the full nav does not fit on one line next to the logo (it needs about
+     1355px with its 7 items). The header keeps one row (logo and menu button) and a fixed height, so the sticky filter bars
+     of the pages stay under it. The nav opens as a sheet over the page, under the header:
+     - the party menus take a full row each and open in place;
+     - the four sections fill a 2 × 2 grid, or one row of 4 from 720px (fixed columns: with `auto-fit`,
+       the full-width rows kept 6 columns and the sections left 2 empty cells at the right).
+     Without JavaScript (no `js` class), the nav stays open in the header and the menu button stays hidden. */
+  @media (max-width: 1359px) {
+    .site-header__row { flex-wrap: wrap; }
+    :global(.js) .menu-toggle { display: inline-flex; }
+    .menu-toggle { padding: 7px 14px; }
+
+    .nav {
+      order: 1;
+      flex-basis: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      padding: 4px 0 12px;
     }
+    .nav > a, .nav > .theme-toggle { justify-content: flex-start; height: 44px; padding: 7px 12px; white-space: nowrap; }
+    /* The theme button is a setting, not a page: it takes the last row on its own. */
+    .nav > .theme-toggle { grid-column: 1 / -1; gap: 7px; }
+    .theme-toggle__icon { width: 14px; text-align: center; }
+    .theme-toggle__label { display: inline; }
+    .nav-dropdown { grid-column: 1 / -1; }
+    /* The search goes first, across the full width, like a search field: the party menus follow, then the
+       four sections in two columns (or one row), then the theme. No item stays alone in a half row. */
+    .nav > .nav__link--search { order: -1; grid-column: 1 / -1; margin-bottom: 6px; }
+    .nav__hint { display: inline; margin-left: 6px; font: 500 var(--text-sm) var(--font-body); text-transform: none; }
+    .nav-dropdown > summary { width: 100%; height: 44px; justify-content: space-between; padding: 7px 12px; }
+    .nav-dropdown__panel {
+      position: static;
+      width: auto;
+      max-height: none;
+      margin-top: 6px;
+      padding: 12px;
+      border-width: var(--border-thin);
+      box-shadow: none;
+    }
+
+    /* The sheet: it starts under the border of the header and scrolls if it is taller than the screen. */
+    :global(.js) .nav {
+      position: absolute;
+      top: calc(100% + var(--border-thick));
+      left: 0;
+      right: 0;
+      max-height: calc(100dvh - 100px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 12px var(--gutter) 16px;
+      background: var(--color-paper);
+      border-bottom: var(--border-thick) solid var(--color-brand);
+    }
+    :global(.js) .site-header:not(.is-menu-open) .nav { display: none; }
+  }
+
+  /* Folding phone or tablet: the four sections in one row. */
+  @media (min-width: 720px) and (max-width: 1359px) {
+    .nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  /* Phone: a smaller logo and 44px controls. */
+  @media (max-width: 560px) {
+    .site-header__row { min-height: 0; padding-top: 8px; padding-bottom: 8px; }
+    .logo__mark { font-size: 1.75rem; }
     .logo__text { display: block; font-size: var(--text-xs); }
-    .nav { justify-content: stretch; gap: 6px; }
-    .nav > a, .nav > .nav-dropdown { flex: 1 1 auto; }
-    .nav > .theme-toggle { flex: 0 0 36px; padding: 0; }
-    .nav-dropdown > summary { width: 100%; }
-    .nav > a, .theme-toggle, .nav-dropdown > summary { height: 34px; padding: 6px 8px; font-size: var(--text-xs); }
-    .nav-dropdown__panel { left: var(--gutter); right: var(--gutter); width: auto; }
+    .menu-toggle { height: 44px; }
+    .nav a, .theme-toggle, .menu-toggle, .nav-dropdown > summary { font-size: var(--text-xs); }
+    .nav-dropdown--regional .nav-dropdown__groups { columns: 1; }
+  }
+  /* Very narrow phone: a smaller logo, so the logo and the menu button stay on one line. */
+  @media (max-width: 374px) {
+    .logo { gap: var(--space-2); padding-right: 0; }
+    .logo__mark { font-size: 1.5rem; }
+    .logo__text { font-size: 0.6875rem; }
   }
 </style>

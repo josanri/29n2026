@@ -54,6 +54,7 @@
 /* Responsive grids */
 .grid { display: grid; gap: var(--space-5); }
 .grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
+.grid--top { align-items: start; } /* each box keeps its own height */
 .grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
 /* Party cards: as many columns as fit, each at least 340px wide */
 .grid--cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--space-4); }

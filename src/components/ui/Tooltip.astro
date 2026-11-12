@@ -2,9 +2,10 @@
 /**
  * The one tooltip of the page. Any element with a `data-tooltip` attribute shows
  * its HTML on hover or focus. Build the attribute value with `tooltip()` from `@/lib/tooltip`.
+ * Text that the CSS cuts with an ellipsis shows its full text in the same bubble.
  *
- * Contrast: the bubble uses the ink on paper pair (inverted in each theme).
- * The bold title is black on yellow in both themes, so it never inverts with the theme.
+ * Contrast: the bubble uses fixed colors (light on near-black, about 17:1) in both themes.
+ * The bold title is black on yellow (about 13:1) and sits on the dark bubble (yellow on dark about 13:1).
  */
 ---
 
@@ -14,8 +15,37 @@
   const bubble = document.getElementById('tooltip')!;
   let currentTarget: Element | null = null;
 
-  const show = (target: Element, x: number, y: number) => {
+  const escapeHtml = (text: string) =>
+    text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  // Text that the CSS cuts with an ellipsis (one line or a line clamp) shows in full on hover.
+  // Only an element that is really cut gets the tooltip.
+  const isCut = (element: Element) => {
+    const style = getComputedStyle(element);
+    if (style.textOverflow === 'ellipsis' && element.scrollWidth > element.clientWidth) return true;
+    const clamp = style.getPropertyValue('-webkit-line-clamp');
+    return clamp !== '' && clamp !== 'none' && element.scrollHeight > element.clientHeight + 1;
+  };
+  const MAX_DEPTH = 4;
+  const findCut = (start: Element) => {
+    let node: Element | null = start;
+    for (let depth = 0; node && depth < MAX_DEPTH && node !== document.body; depth += 1, node = node.parentElement) {
+      if (isCut(node)) return node;
+    }
+    return null;
+  };
+
+  // The element that owns a tooltip: one with `data-tooltip`, or a text that is cut.
+  const htmlOf = (target: Element) => {
     const html = target.getAttribute('data-tooltip');
+    if (html) return html;
+    const text = target.textContent?.replace(/\s+/g, ' ').trim();
+    return text ? escapeHtml(text) : null;
+  };
+  const targetOf = (start: Element | null) => start?.closest?.('[data-tooltip]') ?? (start ? findCut(start) : null);
+
+  const show = (target: Element, x: number, y: number) => {
+    const html = htmlOf(target);
     if (!html) return;
     if (currentTarget !== target) {
       bubble.innerHTML = html;
@@ -39,12 +69,12 @@
   };
 
   document.addEventListener('pointermove', (event) => {
-    const target = (event.target as Element).closest?.('[data-tooltip]');
+    const target = targetOf(event.target as Element);
     if (target) show(target, event.clientX, event.clientY);
     else if (currentTarget) hide();
   });
   document.addEventListener('focusin', (event) => {
-    const target = (event.target as Element).closest?.('[data-tooltip]');
+    const target = targetOf(event.target as Element);
     if (!target) return;
     const box = target.getBoundingClientRect();
     show(target, box.left + box.width / 2, box.bottom);
@@ -59,20 +89,21 @@
     z-index: var(--z-tooltip);
     pointer-events: none;
     max-width: 300px;
-    background: var(--color-ink);
-    color: var(--color-paper);
+    /* Fixed colors, the same in both themes: the yellow label always sits on a dark bubble. */
+    background: var(--color-fixed-dark);
+    color: var(--color-fixed-light);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     line-height: 1.4;
     padding: 8px 10px;
-    border: var(--border-thin) solid var(--color-paper);
+    border: var(--border-thin) solid var(--color-fixed-light);
     box-shadow: 4px 4px 0 var(--color-highlight);
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.1s, transform 0.1s;
   }
   .tooltip.visible { opacity: 1; transform: none; }
-  /* Emphasis as a yellow label with black ink: the same contrast (about 14:1) in both themes */
+  /* Emphasis as a yellow label with black ink, on the dark bubble */
   .tooltip :global(b) {
     display: inline-block;
     background: var(--color-highlight);

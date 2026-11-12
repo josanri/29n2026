@@ -14,6 +14,16 @@ export const compareText = (a: string, b: string) => a.localeCompare(b, LOCALE);
 export const measureNoun = (program: Program, count: number) =>
   count === 1 ? program.measureUnit : program.measureUnitPlural;
 
+/**
+ * "las 12 propuestas" or, when there is one, "la única propuesta".
+ * A unit that ends in "o" ("compromiso") is masculine.
+ */
+export const allOf = (program: Program, count: number) => {
+  const masculine = program.measureUnit.endsWith('o');
+  if (count === 1) return `${masculine ? 'el único' : 'la única'} ${program.measureUnit}`;
+  return `${masculine ? 'los' : 'las'} ${count} ${program.measureUnitPlural}`;
+};
+
 export const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
 /** Split a text into paragraphs (separated by a blank line). */

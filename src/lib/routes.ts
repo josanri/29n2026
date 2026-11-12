@@ -60,6 +60,14 @@ export const routes = {
   searchIndex: () => withBase('/indice-busqueda.json'),
   categories: () => withBase('/categorias/'),
   category: (categoryId: string) => withBase(`/categorias/${categoryId}/`),
+  calendar: () => withBase('/calendario/'),
+  /** The `.ics` file of one event, or of the whole calendar when there is no id. */
+  calendarIcs: (eventId?: string) => withBase(eventId ? `/calendario/${eventId}.ics` : '/calendario.ics'),
+  simulator: () => withBase('/simulador/'),
+  /** «Sin siglas»: vote on measures without the party, then see the parties. */
+  partyQuiz: () => withBase('/sin-siglas/'),
+  /** JSON file with the measures of one party for «Sin siglas». The page loads the parties of one province. */
+  partyQuizData: (partyId: string) => withBase(`/sin-siglas/datos/${partyId}.json`),
   accessibility: () => withBase('/accesibilidad/'),
   designSystem: () => withBase('/design-system/'),
   /** A file of the `public/` folder, for example `/datos-electorales/candidaturas.json`. */

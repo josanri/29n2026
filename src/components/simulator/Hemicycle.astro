@@ -1,0 +1,43 @@
+---
+/**
+ * The hemicycle of the Congress: one circle for each of the 350 seats, from the left to the right.
+ * The page script gives each circle its color and its tooltip (`data-seat` is the index of the seat).
+ * Color is never the only sign: the legend and the tooltip name the group of each seat.
+ */
+import { HEMICYCLE, hemicyclePositions } from '@/lib/simulator';
+
+interface Props {
+  /** Accessible name of the figure. The script updates it with the numbers. */
+  label: string;
+  id?: string;
+}
+
+const { label, id } = Astro.props;
+const { positions, seatRadius } = hemicyclePositions();
+---
+
+<svg
+  {id}
+  class="hemicycle"
+  viewBox={`0 0 ${HEMICYCLE.width} ${HEMICYCLE.height}`}
+  role="img"
+  aria-label={label}
+>
+  {positions.map((position, index) => <circle data-seat={index} cx={position.x} cy={position.y} r={seatRadius} />)}
+  <!-- The page puts its own text in the middle of the hemicycle. -->
+  <slot />
+</svg>
+
+<style>
+  .hemicycle { display: block; width: 100%; height: auto; overflow: visible; }
+  .hemicycle circle {
+    fill: var(--color-paper-alt);
+    stroke: var(--color-ink);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+    transition: fill var(--duration-fast);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hemicycle circle { transition: none; }
+  }
+</style>

@@ -75,8 +75,10 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
         rel="stylesheet"
       />
     </noscript>
-    <!-- Apply the saved theme before the first paint, so the page does not flash. -->
+    <!-- Apply the saved theme before the first paint, so the page does not flash. The `js` class lets the CSS
+         fold the phone menu only when the script that opens it can run. -->
     <script is:inline define:vars={{ storageKey: THEME_STORAGE_KEY }}>
+      document.documentElement.classList.add('js');
       try {
         const saved = localStorage.getItem(storageKey);
         if (saved) document.documentElement.dataset.theme = saved;

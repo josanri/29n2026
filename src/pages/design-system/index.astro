@@ -29,7 +29,9 @@ const pairs = [
   { use: 'Texto secundario', fg: 'ink-muted', bg: 'paper', needs: 4.5 },
   { use: 'Texto de apoyo', fg: 'ink-subtle', bg: 'paper', needs: 4.5 },
   { use: 'Texto secundario sobre papel alterno', fg: 'ink-muted', bg: 'paper-alt', needs: 4.5 },
-  { use: 'Texto invertido (etiqueta tinta, tooltip)', fg: 'paper', bg: 'ink', needs: 4.5 },
+  { use: 'Texto invertido (etiqueta tinta)', fg: 'paper', bg: 'ink', needs: 4.5 },
+  { use: 'Texto del tooltip (fijo en los dos temas)', fg: 'fixed-light', bg: 'fixed-dark', needs: 4.5 },
+  { use: 'Título amarillo del tooltip', fg: 'highlight', bg: 'fixed-dark', needs: 4.5 },
   { use: 'Texto sobre el resaltado (hover, tooltip)', fg: 'on-highlight', bg: 'highlight', needs: 4.5 },
   { use: 'Texto sobre el acento por defecto', fg: 'on-accent', bg: 'accent', needs: 4.5 },
   { use: 'Texto sobre la marca', fg: 'on-brand', bg: 'brand', needs: 4.5 },
@@ -243,10 +245,10 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
             data-tooltip={tooltip('Nº 144', 'El texto del tooltip se escapa siempre.')}
           >Pasa el ratón o enfoca este enlace</a>
         </p>
-        <p class="note">Se construye con <code>tooltip(titulo, ...lineas)</code> de <code>src/lib/tooltip.ts</code>. El título es negro sobre amarillo en los dos temas.</p>
+        <p class="note">Se construye con <code>tooltip(titulo, ...lineas)</code> de <code>src/lib/tooltip.ts</code>. El globo usa colores fijos (<code>--color-fixed-light</code> sobre <code>--color-fixed-dark</code>), iguales en los dos temas, y el título es negro sobre amarillo. Si un texto se corta con puntos suspensivos, el tooltip muestra el texto completo sin <code>data-tooltip</code>.</p>
       </Panel>
 
-      <Panel title="Superficies de objeto" lead="src/styles/objects.css · .box · .box--interactive · .grid · .hatched · .container · .headline">
+      <Panel title="Superficies de objeto" lead="src/styles/objects.css · .box · .box--interactive · .grid · .grid--top · .hatched · .container · .headline">
         <div class="demo-row">
           <div class="box demo-box">.box</div>
           <a class="box box--interactive demo-box" href="#components">.box--interactive</a>
@@ -262,6 +264,8 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
       <li><code>src/styles/objects.css</code> <span>Contenedor, caja, rejillas, trama.</span></li>
       <li><code>src/components/ui/</code> <span>Piezas reutilizables sin datos: Button, Tag, Panel, SectionHeading, BlockChip, Tooltip.</span></li>
       <li><code>src/components/charts/</code> <span>Gráficos de un programa.</span></li>
+      <li><code>src/components/candidacies/</code> <span>Mapas de provincias y candidaturas.</span></li>
+      <li><code>src/components/simulator/</code> <span>Piezas del simulador de escaños: hemiciclo e iconos.</span></li>
       <li><code>src/components/layout/</code> <span>Cabecera y pie.</span></li>
       <li><code>src/lib/</code> <span>Datos, rutas, formato y color. Sin marcado.</span></li>
     </ul>

@@ -30,6 +30,8 @@ Sin `SITE_URL`, las URL apuntan a `http://localhost:4321`.
 | `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
 | `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
+| `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
+| `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
 
 ## Datos
 
@@ -88,7 +90,7 @@ Para regenerar los datos de Por un Mundo Más Justo: `npm run data:mundo-mas-jus
 Para regenerar los datos de Feministas al Congreso: `npm run data:pfac` (necesita Python con PyMuPDF).
 Para regenerar los datos de En Acción 3e: `npm run data:tercera-edad` (necesita Python con PyMuPDF).
 Para regenerar los datos de Adelante Andalucía: `npm run data:adelante` (consulta las páginas oficiales por área; procesa 637 propuestas temáticas y 82 territoriales, numeradas del 1 al 719. Las 29 prioridades del resumen no se cuentan de nuevo).
-Para regenerar candidaturas y mapa: `npm run data:candidaturas` (necesita Python con PyMuPDF y conexión para obtener el GeoJSON de provincias). Se usan las proclamaciones del BOE del 3 de noviembre y todas las correcciones de la resolución del 7 de noviembre; las circunscripciones insulares se muestran separadas. El mapa emplea áreas HTML (`<map>`) y se deriva de Click That ’Hood, bajo licencia MIT; véase `public/datos-electorales/LICENSE-mapa.txt`.
+Para regenerar candidaturas y mapa: `npm run data:candidaturas` (necesita Python con PyMuPDF y conexión para obtener el GeoJSON de provincias). Se usan las proclamaciones del BOE del 3 de noviembre y todas las correcciones de la resolución del 7 de noviembre; las circunscripciones insulares se muestran separadas. El mapa emplea áreas HTML (`<map>`) y se deriva de la capa de provincias del Ministerio de Transportes y Movilidad Sostenible (Sistema de Información Urbana, servicio `SIU/ENTIDADES_TERRITORIALES_EGRN`). En Ceuta y Melilla, el script quita los diques del puerto, que a esa escala son picos finos.
 La portada agrupa los partidos autonómicos por comunidad y muestra los tres temas más frecuentes de cada programa. El PDF aportado de ERC salta de la propuesta 167 a la 198 y de la 250 a la 252; el análisis incluye solo las 227 propuestas presentes en el documento.
 
 ## Estructura del código

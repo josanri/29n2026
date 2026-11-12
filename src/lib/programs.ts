@@ -2,12 +2,14 @@
 import { getCollection } from 'astro:content';
 import { compareText } from './format';
 import type { Program } from './program-schema';
+import { withReview } from './review';
 
 export type { Program, Measure, Block, Section, KeyFigure, DeadlineEntry } from './program-schema';
 
 const entries = await getCollection('programs');
 
-export const programs: Program[] = entries.map((entry) => entry.data).sort((a, b) => compareText(a.acronym, b.acronym));
+// Each program goes through the review: corrected categories and repeals.
+export const programs: Program[] = entries.map((entry) => withReview(entry.data)).sort((a, b) => compareText(a.acronym, b.acronym));
 
 export function getProgram(id: string): Program {
   const program = programs.find((candidate) => candidate.id === id);

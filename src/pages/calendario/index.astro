@@ -1,0 +1,543 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/ui/Button.astro';
+import Panel from '@/components/ui/Panel.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { calendarEvents, ELECTION_DATE } from '@/data/calendario';
+import { googleCalendarUrl } from '@/lib/ics';
+import { routes } from '@/lib/routes';
+import { capitalize, padNumber } from '@/lib/format';
+import { tooltip } from '@/lib/tooltip';
+
+// The dates are local dates of Spain. They are shown as they are, with no time zone shift.
+const dateFormat = (options: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('es-ES', { ...options, timeZone: 'UTC' });
+const weekdayFormat = dateFormat({ weekday: 'long' });
+const dayFormat = dateFormat({ day: 'numeric' });
+const monthFormat = dateFormat({ month: 'short' });
+const longFormat = dateFormat({ day: 'numeric', month: 'long' });
+const asDate = (date: string) => new Date(`${date}T00:00:00Z`);
+
+const siteUrl = new URL(routes.calendar(), Astro.site ?? 'http://localhost:4321').href;
+const events = calendarEvents.map((event) => ({
+  ...event,
+  weekday: capitalize(weekdayFormat.format(asDate(event.date))),
+  day: dayFormat.format(asDate(event.date)),
+  month: monthFormat.format(asDate(event.date)).replace('.', ''),
+  range: event.endDate ? `Del ${longFormat.format(asDate(event.date))} al ${longFormat.format(asDate(event.endDate))}` : undefined,
+  google: googleCalendarUrl(event, siteUrl),
+  ics: routes.calendarIcs(event.id),
+}));
+
+// ---- The month grids: one table for each month with events, Monday first ----
+const WEEKDAYS = [
+  { short: 'L', long: 'lunes' }, { short: 'M', long: 'martes' }, { short: 'X', long: 'miércoles' }, { short: 'J', long: 'jueves' },
+  { short: 'V', long: 'viernes' }, { short: 'S', long: 'sábado' }, { short: 'D', long: 'domingo' },
+];
+const monthTitleFormat = dateFormat({ month: 'long', year: 'numeric' });
+const monthNameFormat = dateFormat({ month: 'long' });
+const firstMonth = calendarEvents[0].date.slice(0, 7);
+const lastMonth = calendarEvents[calendarEvents.length - 1].date.slice(0, 7);
+const monthKeys: string[] = [];
+{
+  let [year, month] = firstMonth.split('-').map(Number);
+  while (`${year}-${padNumber(month)}` <= lastMonth) {
+    monthKeys.push(`${year}-${padNumber(month)}`);
+    if (month === 12) {
+      year += 1;
+      month = 1;
+    } else {
+      month += 1;
+    }
+  }
+}
+
+/** The event of a day: the one that starts on it, or the one of several days that includes it. */
+const eventOn = (iso: string) =>
+  calendarEvents.find((event) => event.date === iso) ??
+  calendarEvents.find((event) => event.endDate && iso >= event.date && iso <= event.endDate);
+
+const months = monthKeys.map((key) => {
+  const [year, month] = key.split('-').map(Number);
+  const offset = (new Date(Date.UTC(year, month - 1, 1)).getUTCDay() + 6) % 7;
+  const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();
+  const cells = [
+    ...Array.from({ length: offset }, () => null),
+    ...Array.from({ length: daysInMonth }, (_, index) => {
+      const iso = `${key}-${padNumber(index + 1)}`;
+      const event = eventOn(iso);
+      return {
+        iso,
+        day: index + 1,
+        event,
+        isElection: iso === ELECTION_DATE,
+        isRange: Boolean(event?.endDate),
+        label: `${longFormat.format(asDate(iso))}${event ? `: ${event.title}` : ''}`,
+      };
+    }),
+  ];
+  while (cells.length % 7 !== 0) cells.push(null);
+  const weeks = Array.from({ length: cells.length / 7 }, (_, week) => cells.slice(week * 7, week * 7 + 7));
+  return {
+    key,
+    title: capitalize(monthTitleFormat.format(asDate(`${key}-01`))),
+    name: capitalize(monthNameFormat.format(asDate(`${key}-01`))),
+    year,
+    weeks,
+  };
+});
+---
+
+<BaseLayout
+  title="Calendario electoral"
+  description="Las fechas clave de las elecciones generales del 29 de noviembre de 2026, con la opción de añadirlas a tu calendario."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Elecciones generales · 29 de noviembre de 2026</Tag>
+      <h1 class="headline">Calendario electoral</h1>
+      <p class="page-hero__lede">
+        De la convocatoria a la constitución de las Cortes. Añade cada fecha a tu calendario o descarga todas a la vez.
+      </p>
+      <p class="countdown" id="countdown" data-election={ELECTION_DATE} aria-live="polite"></p>
+      <div class="page-hero__actions">
+        <Button variant="ink" href={routes.calendarIcs()} download="elecciones-29n-2026.ics">Añadir todo a mi calendario (.ics)</Button>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <SectionHeading index="CALENDARIO" title="El calendario" />
+    <Panel>
+      <!-- The script shows this button when some months are over. Without the script, all the months show. -->
+      <div class="past-toolbar">
+        <Button size="sm" class="past-toggle" id="past-months-toggle" aria-controls="calendar-months" aria-expanded="true" hidden></Button>
+      </div>
+      <div class="month-pager" hidden>
+        <button type="button" class="month-pager__button" data-step="-1" aria-label="Mes anterior" aria-controls="calendar-months">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 4 8l6 6"></path></svg>
+        </button>
+        <p class="month-pager__status" aria-live="polite">
+          <span class="month-pager__title"></span>
+          <span class="month-pager__count"></span>
+        </p>
+        <button type="button" class="month-pager__button" data-step="1" aria-label="Mes siguiente" aria-controls="calendar-months">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 2 6 6-6 6"></path></svg>
+        </button>
+      </div>
+      <div class="months" id="calendar-months">
+        {
+          months.map((month) => (
+            <table class="month" data-name={month.name} data-year={month.year}>
+              <caption>{month.title}</caption>
+              <thead>
+                <tr>
+                  {WEEKDAYS.map((weekday) => (
+                    <th scope="col" abbr={weekday.long}>{weekday.short}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {month.weeks.map((week) => (
+                  <tr>
+                    {week.map((cell) => (
+                      <td
+                        class:list={[
+                          'day',
+                          { 'day--event': cell?.event, 'day--election': cell?.isElection, 'day--range': cell?.isRange },
+                        ]}
+                        data-date={cell?.iso}
+                      >
+                        {cell && cell.event ? (
+                          <a
+                            href={`#evento-${cell.event.id}`}
+                            aria-label={cell.label}
+                            data-tooltip={tooltip(cell.event.title, longFormat.format(asDate(cell.iso)))}
+                          >{cell.day}</a>
+                        ) : (
+                          cell && <span>{cell.day}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ))
+        }
+      </div>
+      <ul class="legend" aria-label="Leyenda del calendario">
+        <li><span class="legend__swatch legend__swatch--event" aria-hidden="true"></span> Fecha clave</li>
+        <li><span class="legend__swatch legend__swatch--election" aria-hidden="true"></span> Día de las elecciones</li>
+        <li><span class="legend__swatch legend__swatch--range" aria-hidden="true"></span> Campaña electoral</li>
+        <li><span class="legend__swatch legend__swatch--today" aria-hidden="true"></span> Hoy</li>
+        <li><span class="legend__swatch legend__swatch--past" aria-hidden="true"></span> Ya pasó</li>
+      </ul>
+    </Panel>
+
+    <SectionHeading index="FECHAS" title="Las fechas clave">
+      <p>
+        «Oficial» es una fecha publicada en un documento del sitio. «Calculada» sale de la ley a partir del día de las elecciones.
+        Confirma las fechas calculadas en el decreto del BOE.
+      </p>
+    </SectionHeading>
+
+    <div class="past-toolbar">
+      <Button size="sm" class="past-toggle" id="past-events-toggle" aria-controls="timeline" aria-expanded="true" hidden></Button>
+    </div>
+    <ol class="timeline" id="timeline">
+      {
+        events.map((event) => (
+          <li class="event box" id={`evento-${event.id}`} data-date={event.date} data-end={event.endDate ?? event.date}>
+            <div class="event__date" aria-hidden="true">
+              <span class="event__month">{event.month}</span>
+              <span class="event__day">{event.day}</span>
+            </div>
+            <div class="event__body">
+              <p class="event__meta">
+                <time datetime={event.date}>{event.range ?? `${event.weekday}, ${longFormat.format(asDate(event.date))}`}</time>
+                {event.time && <span> · {event.time.from} a {event.time.to}</span>}
+                <Tag size="sm" variant={event.source === 'official' ? 'highlight' : 'default'}>
+                  {event.source === 'official' ? 'Oficial' : 'Calculada'}
+                </Tag>
+                <Tag size="sm" variant="ink" class="event__state" hidden></Tag>
+              </p>
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+              {event.basis && <p class="event__basis">{event.basis}</p>}
+              {event.documentPath && (
+                <p class="event__basis">
+                  <a href={routes.asset(event.documentPath)}>Ver el documento oficial (PDF)</a>
+                </p>
+              )}
+              <div class="event__actions">
+                <Button size="sm" href={event.google} target="_blank" rel="noopener noreferrer">
+                  Google Calendar
+                </Button>
+                <Button size="sm" href={event.ics} download={`${event.id}.ics`}>
+                  Apple, Outlook y otros (.ics)
+                </Button>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <Panel title="Después de las elecciones" lead="Estas etapas no tienen una fecha fija: dependen de los resultados.">
+      <ul class="after">
+        <li>
+          <strong>Consultas del Rey.</strong> El Rey consulta a los grupos y propone un candidato a la investidura.
+        </li>
+        <li>
+          <strong>Investidura.</strong> El candidato necesita la mayoría absoluta (176 votos) en la primera votación. Si no la
+          logra, a las 48 horas basta una mayoría simple: más votos a favor que en contra.
+        </li>
+        <li>
+          <strong>Nuevas elecciones.</strong> Si pasan dos meses desde la primera votación sin investir a nadie, se disuelven las Cortes.
+        </li>
+      </ul>
+      <p>
+        Prueba los pactos posibles con el <a href={routes.simulator()}>simulador de Congreso y pactos</a>.
+      </p>
+    </Panel>
+  </div>
+</BaseLayout>
+
+<script>
+  // The state of each date compares it with today's date of the reader. The page is static, so it runs in the browser.
+  const toDayNumber = (date: string) => {
+    const [year, month, day] = date.split('-').map(Number);
+    return Date.UTC(year, month - 1, day) / 86_400_000;
+  };
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86_400_000;
+
+  const events = [...document.querySelectorAll<HTMLElement>('.event')];
+  const firstUpcoming = events.find((event) => toDayNumber(event.dataset.end!) >= today);
+  for (const event of events) {
+    const start = toDayNumber(event.dataset.date!);
+    const end = toDayNumber(event.dataset.end!);
+    const label = event.querySelector<HTMLElement>('.event__state')!;
+    let state = '';
+    if (end < today) state = 'Pasado';
+    else if (start <= today) state = 'Hoy';
+    else if (event === firstUpcoming) state = 'Próxima';
+    event.dataset.state = state ? state.toLowerCase() : '';
+    label.textContent = state;
+    label.hidden = !state;
+  }
+
+  // Today in the month grid.
+  const pad = (value: number) => String(value).padStart(2, '0');
+  // A day that is over, and a month that is over, get the disabled color.
+  const todayIso = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  for (const cell of document.querySelectorAll<HTMLElement>('td[data-date]')) {
+    if (cell.dataset.date! < todayIso) cell.classList.add('day--past');
+  }
+  for (const month of document.querySelectorAll<HTMLElement>('.month')) {
+    const days = [...month.querySelectorAll<HTMLElement>('td[data-date]')];
+    month.classList.toggle('month--past', days.length > 0 && days.every((cell) => cell.dataset.date! < todayIso));
+  }
+  const todayCell = document.querySelector<HTMLElement>(`td[data-date="${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}"]`);
+  if (todayCell) {
+    todayCell.classList.add('day--today');
+    todayCell.querySelector('a, span')?.setAttribute('aria-current', 'date');
+  }
+
+  // Month pager. On a narrow screen, the CSS shows only the active month, and these buttons move between
+  // the visible months. Without this script, the pager stays hidden and all the months show.
+  const monthsBox = document.querySelector<HTMLElement>('.months')!;
+  const monthTables = [...monthsBox.querySelectorAll<HTMLElement>('.month')];
+  const pager = document.querySelector<HTMLElement>('.month-pager')!;
+  const pagerTitle = pager.querySelector<HTMLElement>('.month-pager__title')!;
+  const pagerCount = pager.querySelector<HTMLElement>('.month-pager__count')!;
+  const pagerButtons = [...pager.querySelectorAll<HTMLButtonElement>('[data-step]')];
+  const todayMonth = todayIso.slice(0, 7);
+  const monthKeyOf = (table: HTMLElement) => table.querySelector<HTMLElement>('td[data-date]')!.dataset.date!.slice(0, 7);
+  // First show the month of today. If today is out of the calendar, show the nearest month.
+  let activeTable =
+    monthTables.find((table) => monthKeyOf(table) >= todayMonth) ?? monthTables[monthTables.length - 1];
+
+  const renderPager = () => {
+    const visible = monthTables.filter((table) => !table.hidden);
+    if (!visible.includes(activeTable)) activeTable = visible[0];
+    const index = visible.indexOf(activeTable);
+    for (const table of monthTables) table.classList.toggle('is-active', table === activeTable);
+    // The month on the first line, the year and the position on the second: the title fits on one line.
+    pagerTitle.textContent = activeTable.dataset.name ?? '';
+    // The first space does not show (it starts a line), but it separates the month and the year for screen readers.
+    pagerCount.textContent = ` ${activeTable.dataset.year} · ${index + 1} de ${visible.length}`;
+    pagerButtons[0].disabled = index === 0;
+    pagerButtons[1].disabled = index === visible.length - 1;
+    pager.hidden = visible.length < 2;
+    monthsBox.classList.toggle('is-paged', visible.length > 1);
+  };
+  for (const button of pagerButtons) {
+    button.addEventListener('click', () => {
+      const visible = monthTables.filter((table) => !table.hidden);
+      const next = visible[visible.indexOf(activeTable) + Number(button.dataset.step)];
+      if (next) activeTable = next;
+      renderPager();
+    });
+  }
+
+  // Past months and past dates: hidden by default, with a button that shows them again.
+  // The button tells how many items it shows, and `aria-expanded` tells its state. The hidden items use the
+  // `hidden` attribute, so screen readers and the keyboard skip them too. If every item is over (after the
+  // election calendar), nothing is hidden.
+  const plural = (count: number, one: string, many: string) => `${count} ${count === 1 ? one : many}`;
+  const setupPastToggle = (
+    button: HTMLButtonElement,
+    items: HTMLElement[],
+    total: number,
+    labels: { show: string; hide: string },
+    onChange?: () => void,
+  ) => {
+    if (items.length === 0 || items.length === total) return () => {};
+    const setExpanded = (expanded: boolean) => {
+      for (const item of items) item.hidden = !expanded;
+      button.setAttribute('aria-expanded', String(expanded));
+      button.textContent = expanded ? labels.hide : labels.show;
+      onChange?.();
+    };
+    button.addEventListener('click', () => setExpanded(button.getAttribute('aria-expanded') !== 'true'));
+    button.hidden = false;
+    setExpanded(false);
+    return () => setExpanded(true);
+  };
+
+  const pastMonths = monthTables.filter((table) => table.classList.contains('month--past'));
+  setupPastToggle(
+    document.querySelector<HTMLButtonElement>('#past-months-toggle')!,
+    pastMonths,
+    monthTables.length,
+    { show: `Mostrar ${plural(pastMonths.length, 'mes pasado', 'meses pasados')}`, hide: 'Ocultar los meses pasados' },
+    renderPager,
+  );
+  renderPager();
+
+  const pastEvents = events.filter((event) => event.dataset.state === 'pasado');
+  const showPastEvents = setupPastToggle(
+    document.querySelector<HTMLButtonElement>('#past-events-toggle')!,
+    pastEvents,
+    events.length,
+    { show: `Mostrar ${plural(pastEvents.length, 'fecha pasada', 'fechas pasadas')}`, hide: 'Ocultar las fechas pasadas' },
+  );
+  // A link to a hidden date (a past day of the grid, or a shared link) shows the past dates first.
+  const revealTarget = (hash: string) => {
+    const target = hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target?.hidden && pastEvents.includes(target)) showPastEvents();
+    return target;
+  };
+  document.addEventListener('click', (event) => {
+    const link = (event.target as Element).closest<HTMLAnchorElement>('a[href^="#evento-"]');
+    if (link) revealTarget(link.hash);
+  });
+  if (location.hash) revealTarget(location.hash)?.scrollIntoView();
+
+  const countdown = document.querySelector<HTMLElement>('#countdown')!;
+  const days = toDayNumber(countdown.dataset.election!) - today;
+  countdown.textContent =
+    days > 1 ? `Faltan ${days} días para las elecciones.` :
+    days === 1 ? 'Las elecciones son mañana.' :
+    days === 0 ? 'Hoy es el día de las elecciones.' :
+    'Las elecciones ya se celebraron.';
+</script>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
+  .page-hero h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
+  .countdown { margin: var(--space-4) 0; font: 700 1.125rem var(--font-mono); }
+  .page-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+  /* The button that shows or hides the past months, or the past dates. */
+  .past-toolbar { display: flex; justify-content: flex-end; margin-bottom: var(--space-4); }
+  .past-toolbar:has(> :global(.past-toggle[hidden])) { display: none; }
+  .past-toolbar :global(.past-toggle[hidden]) { display: none; }
+
+  /* The month pager shows only on a narrow screen (see the media query at the end):
+     two square arrow buttons and, between them, the month and its position. */
+  .month-pager { display: none; }
+  .month-pager__button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+  }
+  .month-pager__button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: square; }
+  .month-pager__button:hover:not(:disabled) { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .month-pager__button:disabled {
+    border-style: dashed;
+    border-color: var(--color-ink-subtle);
+    color: var(--color-ink-subtle);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  .month-pager__status { display: grid; justify-items: center; gap: 2px; margin: 0; text-align: center; }
+  .month-pager__title { font: 400 var(--text-xl) / 1.1 var(--font-display); }
+  .month-pager__count { font: 700 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
+  .months { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: var(--space-6); }
+  .month { width: 100%; border-collapse: separate; border-spacing: 3px; table-layout: fixed; }
+  .month caption { margin-bottom: var(--space-2); text-align: left; font: 400 var(--text-xl) var(--font-display); }
+  .month th { padding: 0 0 var(--space-1); font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; color: var(--color-ink-muted); }
+  .day { height: 48px; padding: 0; text-align: center; font: 700 var(--text-sm) var(--font-mono); }
+  .day > a, .day > span { display: grid; place-items: center; width: 100%; height: 100%; box-sizing: border-box; text-decoration: none; }
+  .day > span { color: var(--color-ink); }
+  /* A key date: a filled square. The election day: yellow, with a thick border. A campaign day: a band under the number. */
+  .day--event > a { background: var(--color-ink); color: var(--color-paper); }
+  .day--range > a { background: var(--color-paper-alt); color: var(--color-ink); border-bottom: 4px solid var(--color-ink); }
+  .day--election > a { background: var(--color-highlight); color: var(--color-on-highlight); border: 3px solid var(--color-ink); }
+  /* Disabled color for the days and the months that are over: dashed outline, muted text, no fill. */
+  .day--past > span { color: var(--color-ink-subtle); }
+  .day--past.day--event > a, .day--past.day--range > a, .day--past.day--election > a {
+    background: transparent;
+    color: var(--color-ink-subtle);
+    border: var(--border-thin) dashed var(--color-ink-subtle);
+  }
+  .month--past caption, .month--past th { color: var(--color-ink-subtle); }
+  .day--event > a:hover, .day--event > a:focus-visible { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .day--today { outline: 3px dashed var(--color-ink); outline-offset: -3px; }
+  .legend { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); list-style: none; margin: var(--space-5) 0 0; padding: 0; font: 700 var(--text-xs) var(--font-mono); }
+  .legend li { display: inline-flex; align-items: center; gap: var(--space-2); }
+  .legend__swatch { width: 18px; height: 18px; box-sizing: border-box; border: var(--border-thin) solid var(--color-ink); }
+  .legend__swatch--event { background: var(--color-ink); }
+  .legend__swatch--election { background: var(--color-highlight); border-width: 3px; }
+  .legend__swatch--range { background: var(--color-paper-alt); border-bottom-width: 4px; }
+  .legend__swatch--today { border-style: dashed; border-width: 3px; }
+  .legend__swatch--past { border: var(--border-thin) dashed var(--color-ink-subtle); }
+  .event:target { outline: 4px solid var(--color-highlight); outline-offset: 4px; }
+
+  .timeline { list-style: none; margin: 0 0 var(--space-8); padding: 0; display: grid; gap: var(--space-5); }
+  .event { display: grid; grid-template-columns: 96px minmax(0, 1fr); }
+  /* `display: grid` would override the `hidden` attribute of a past date. */
+  .event[hidden] { display: none; }
+  .event[data-state='pasado'] { border-style: dashed; box-shadow: none; }
+  /* A past event is muted, like a past day of the grid: dashed lines and muted text, no filled date block. */
+  .event[data-state='pasado'] { border-color: var(--color-ink-subtle); }
+  .event[data-state='pasado'] .event__date {
+    background: transparent;
+    color: var(--color-ink-subtle);
+    border-right: var(--border-thin) dashed var(--color-ink-subtle);
+  }
+  .event[data-state='pasado'] h3,
+  .event[data-state='pasado'] .event__body p,
+  .event[data-state='pasado'] .event__meta,
+  .event[data-state='pasado'] .event__basis { color: var(--color-ink-subtle); }
+  /* The labels and the buttons of a past event are muted too. The buttons recover their normal look on hover. */
+  .event[data-state='pasado'] .event__meta :global(.tag) {
+    background: transparent;
+    color: var(--color-ink-subtle);
+    border-color: var(--color-ink-subtle);
+  }
+  .event[data-state='pasado'] :global(.button) {
+    background: transparent;
+    color: var(--color-ink-subtle);
+    border-color: var(--color-ink-subtle);
+    box-shadow: none;
+  }
+  .event[data-state='pasado'] :global(.button:hover),
+  .event[data-state='pasado'] :global(.button:focus-visible) {
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    border-color: var(--color-ink);
+    box-shadow: var(--shadow-sm);
+  }
+  .event[data-state='pasado'] .event__basis :global(a) { color: var(--color-ink-subtle); }
+  @media (max-width: 560px) {
+    .event[data-state='pasado'] .event__date { border-right: 0; border-bottom: var(--border-thin) dashed var(--color-ink-subtle); }
+  }
+  .event[data-state='próxima'], .event[data-state='hoy'] { box-shadow: var(--shadow-lg); }
+  .event__date {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    padding: var(--space-3);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    text-transform: uppercase;
+  }
+  .event__month { font: 700 var(--text-sm) var(--font-mono); }
+  .event__day { font: 400 2.75rem/1 var(--font-display); }
+  .event__body { padding: var(--space-4) var(--space-5); min-width: 0; }
+  .event__body h3 { font-size: var(--text-xl); margin: var(--space-2) 0; }
+  .event__body p { margin: 0 0 var(--space-2); }
+  .event__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font: 700 var(--text-sm) var(--font-mono); }
+  .event__meta :global([hidden]) { display: none; }
+  .event__basis { font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .event__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+  .after { margin: 0 0 var(--space-3); padding-left: var(--space-5); display: grid; gap: var(--space-2); }
+
+  @media (max-width: 560px) {
+    .month-pager:not([hidden]) {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) 44px;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .months.is-paged .month:not(.is-active) { display: none; }
+    /* The pager already shows the month: the caption stays only for screen readers. */
+    .months.is-paged caption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .past-toolbar { justify-content: stretch; }
+    .past-toolbar :global(.past-toggle) { flex: 1; justify-content: center; }
+    .event { grid-template-columns: 1fr; }
+    .event__date { grid-auto-flow: column; justify-content: start; gap: var(--space-3); align-items: baseline; padding: var(--space-2) var(--space-4); }
+    .event__day { font-size: 1.5rem; }
+    .event__body { padding: var(--space-4); }
+  }
+</style>

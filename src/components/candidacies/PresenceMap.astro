@@ -4,7 +4,7 @@
  * Each province with a list links to «Quién se presenta» on the home page.
  */
 import type { Program } from '@/lib/programs';
-import { geography } from '@/lib/geography';
+import { geography, MAP_HIT_MARGIN } from '@/lib/geography';
 import { presenceOf, provinceRegions, provinces } from '@/lib/presence';
 import { compareText } from '@/lib/format';
 import { PAPER_ALT, shiftForContrast } from '@/lib/color';
@@ -45,7 +45,7 @@ const summary =
   present.length === 0
     ? 'No presenta candidaturas en ninguna circunscripción.'
     : `Presenta candidaturas en ${present.length} de las ${TOTAL_CONSTITUENCIES} circunscripciones: al Congreso en ${congress.size} y al Senado en ${senate.size}.`;
-const { canaryIslands } = geography;
+const { canaryIslands, cityInset } = geography;
 ---
 
 <figure class="presence" style={`--presence-light:${colorForLight}; --presence-dark:${colorForDark}`}>
@@ -57,6 +57,7 @@ const { canaryIslands } = geography;
   >
     <rect class="presence__frame" x={canaryIslands.x} y={canaryIslands.y} width={canaryIslands.width} height={canaryIslands.height} />
     <text class="presence__label" x={canaryIslands.x + 10} y={canaryIslands.y + 24} aria-hidden="true">CANARIAS</text>
+    <rect class="presence__frame" x={cityInset.x} y={cityInset.y} width={cityInset.width} height={cityInset.height} />
     {absent.map((province) => (
       <g class="presence__absent">
         <path d={province.path} />
@@ -69,15 +70,21 @@ const { canaryIslands } = geography;
         aria-label={`${province.name}: ${chambersOf(province.code).toLowerCase()}. Ver las candidaturas`}
         data-tooltip={tooltip(province.name, chambersOf(province.code))}
       >
+        {province.marker && (
+          <circle class="presence__hit-area" cx={province.marker.x} cy={province.marker.y} r={province.marker.radius + MAP_HIT_MARGIN} />
+        )}
+        {province.isIsland && (
+          <path class="presence__hit-area" d={province.path} style={`stroke-width:${MAP_HIT_MARGIN * 2}`} />
+        )}
         <path d={province.path} />
       </a>
     ))}
     {geography.provinces.filter((province) => province.marker).map((province) => (
       <text
         class="presence__label"
-        x={province.marker!.x + (province.marker!.labelSide === 'left' ? -1 : 1) * (province.marker!.radius + 8)}
-        y={province.marker!.y + 6}
-        text-anchor={province.marker!.labelSide === 'left' ? 'end' : 'start'}
+        x={province.marker!.x}
+        y={province.marker!.labelY}
+        text-anchor="middle"
         aria-hidden="true"
       >{province.name.toUpperCase()}</text>
     ))}
@@ -92,9 +99,9 @@ const { canaryIslands } = geography;
     <p>{summary} {present.length > 0 && 'Pulsa una provincia para ver sus candidaturas.'}</p>
   </figcaption>
   <p class="presence__credit">
-    Mapa derivado de{' '}
-    <a href="https://github.com/codeforgermany/click_that_hood" target="_blank" rel="noreferrer">Click That ’Hood</a>
-    {' '}(<a href={routes.asset('/datos-electorales/LICENSE-mapa.txt')}>licencia MIT</a>).
+    Mapa derivado de los límites provinciales del{' '}
+    <a href="https://mapas.fomento.gob.es/arcgis/rest/services/SIU/ENTIDADES_TERRITORIALES_EGRN/MapServer/2" target="_blank" rel="noreferrer">Ministerio de Transportes y Movilidad Sostenible</a>
+    {' '}(Sistema de Información Urbana).
   </p>
   {listByRegion.length > 0 && (
     <details class="presence__list">
@@ -126,7 +133,7 @@ const { canaryIslands } = geography;
   for (const map of document.querySelectorAll<SVGSVGElement>('.presence__map')) {
     const outlines = [...map.querySelectorAll<SVGPathElement>('.presence__outline-back, .presence__outline')];
     const mark = (link: Element | null) => {
-      const path = link?.querySelector('path')?.getAttribute('d');
+      const path = link?.querySelector('path:not(.presence__hit-area)')?.getAttribute('d');
       for (const outline of outlines) {
         if (path) outline.setAttribute('d', path);
         else outline.removeAttribute('d');
@@ -158,6 +165,9 @@ const { canaryIslands } = geography;
   .presence__absent path { fill: var(--color-paper-alt); stroke: var(--color-ink-subtle); stroke-width: 0.75; }
   .presence__province path { fill: var(--presence); stroke: var(--color-paper); stroke-width: 1; }
   .presence__province { cursor: pointer; }
+  /* The halo that reacts to the pointer: a circle around each city, and a wide border in map units around each island. */
+  .presence__map .presence__hit-area { fill: transparent; stroke: transparent; vector-effect: none; }
+  .presence__map circle.presence__hit-area { stroke: none; }
   .presence__province:focus-visible { outline: none; box-shadow: none; }
   .presence__map path.presence__outline-back,
   .presence__map path.presence__outline { fill: none; pointer-events: none; }

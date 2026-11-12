@@ -4,19 +4,35 @@ import Tag from '@/components/ui/Tag.astro';
 import { programs, publishedPrograms } from '@/lib/programs';
 import { routes } from '@/lib/routes';
 import { formatNumber } from '@/lib/format';
+import { presenceOf } from '@/lib/presence';
+import { partySearchText } from '@/lib/party-search';
 
 const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.measures.length, 0);
+
+// Every party, also the ones with no program: the search finds a party by its name, its acronym or its region.
+const partyData = programs.map((program) => ({
+  id: program.id,
+  a: program.acronym,
+  n: program.partyName,
+  g: program.programName,
+  h: program.hasProgram,
+  m: program.measures.length,
+  // A long list of regions (a national party) is shortened to its number.
+  r: ((regions) => (regions.length > 3 ? `${regions.length} comunidades` : regions.join(', ')))(presenceOf(program).regions),
+  s: partySearchText(program),
+  u: routes.party(program.id),
+}));
 ---
 
 <BaseLayout
-  title="Buscar medidas"
-  description="Busca una palabra en las medidas de todos los programas electorales del 29N. La búsqueda tolera erratas."
+  title="Buscar"
+  description="Busca un partido o una palabra en las medidas de todos los programas electorales del 29N. La búsqueda tolera erratas."
 >
   <section class="container search">
     <p class="search__index">Todos los programas</p>
-    <h1 class="headline">Buscar medidas</h1>
+    <h1 class="headline">Buscar</h1>
     <p class="search__lede">
-      Busca una palabra o una frase en las {formatNumber(totalMeasures)} medidas de {publishedPrograms.length} programas
+      Busca un partido o una palabra en las {formatNumber(totalMeasures)} medidas de {publishedPrograms.length} programas
       (hay {programs.length} partidos; los demás aún no han publicado el suyo). La búsqueda tolera erratas.
     </p>
 
@@ -25,15 +41,30 @@ const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.m
       <input
         id="search-input"
         type="search"
-        placeholder="vivienda, IRPF, autónomos…"
+        placeholder="PP, ERC, vivienda, IRPF…"
         autocomplete="off"
         data-index-url={routes.searchIndex()}
+        data-parties={JSON.stringify(partyData)}
       />
     </form>
 
     <p class="search__status" id="search-status" aria-live="polite"></p>
+    <h2 class="search__heading" id="party-heading" hidden>Partidos</h2>
+    <ol class="search__results" id="party-results"></ol>
+    <h2 class="search__heading" id="measure-heading" hidden>Medidas</h2>
     <ol class="search__results" id="search-results"></ol>
     <button class="search__more" id="search-more" type="button" hidden>Mostrar más resultados</button>
+
+    <template id="party-template">
+      <li class="result result--party box">
+        <p class="result__meta">
+          <Tag variant="ink" size="sm" data-field="acronym" />
+          <Tag size="sm" data-field="state" />
+        </p>
+        <a class="result__title" data-field="link"></a>
+        <p class="result__excerpt" data-field="detail"></p>
+      </li>
+    </template>
 
     <template id="result-template">
       <li class="result box">
@@ -60,13 +91,62 @@ const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.m
   }
   type Item = SearchIndex['items'][number];
 
+  interface PartyEntry {
+    id: string;
+    a: string;
+    n: string;
+    g: string;
+    h: boolean;
+    m: number;
+    r: string;
+    s: string;
+    u: string;
+  }
+
   const PAGE_SIZE = 40;
+  const MAX_PARTIES = 12;
 
   const input = document.querySelector<HTMLInputElement>('#search-input')!;
   const status = document.querySelector<HTMLElement>('#search-status')!;
   const list = document.querySelector<HTMLOListElement>('#search-results')!;
   const moreButton = document.querySelector<HTMLButtonElement>('#search-more')!;
   const template = document.querySelector<HTMLTemplateElement>('#result-template')!;
+  const partyTemplate = document.querySelector<HTMLTemplateElement>('#party-template')!;
+  const partyList = document.querySelector<HTMLOListElement>('#party-results')!;
+  const partyHeading = document.querySelector<HTMLElement>('#party-heading')!;
+  const measureHeading = document.querySelector<HTMLElement>('#measure-heading')!;
+
+  // The parties are in the page, so they appear at once. The measures need the index.
+  const parties: PartyEntry[] = JSON.parse(input.dataset.parties ?? '[]');
+  const partyFuse = new Fuse(parties, {
+    ...fuzzyOptions,
+    keys: [
+      { name: 'a', weight: 3 },
+      { name: 's', weight: 1 },
+    ],
+  });
+  /** The parties of a query. An acronym that is the same as the query comes first. */
+  const partiesMatching = (query: string): PartyEntry[] => {
+    const found = partyFuse.search(query).map((result) => result.item);
+    const exact = found.filter((party) => normalizeForSearch(party.a) === query);
+    return [...exact, ...found.filter((party) => !exact.includes(party))].slice(0, MAX_PARTIES);
+  };
+
+  function showParties(matches: PartyEntry[]) {
+    partyList.replaceChildren();
+    for (const party of matches) {
+      const node = partyTemplate.content.cloneNode(true) as DocumentFragment;
+      const field = (name: string) => node.querySelector<HTMLElement>(`[data-field="${name}"]`)!;
+      field('acronym').textContent = party.a;
+      field('state').textContent = party.h ? `${party.m} medidas` : 'Sin programa publicado';
+      const link = field('link') as HTMLAnchorElement;
+      link.href = party.u;
+      link.textContent = party.n;
+      field('detail').textContent = [party.g, party.r].filter(Boolean).join(' · ');
+      partyList.append(node);
+    }
+    partyHeading.hidden = matches.length === 0;
+  }
 
   let index: SearchIndex | undefined;
   let fuse: Fuse<Item> | undefined;
@@ -117,16 +197,21 @@ const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.m
     moreButton.hidden = shown >= results.length;
   }
 
-  function render(query: string, message?: string) {
+  function render(query: string, message?: string, partyMatches: PartyEntry[] = []) {
     list.replaceChildren();
     shown = 0;
     moreButton.hidden = true;
+    showParties(partyMatches);
     status.textContent = message ?? '';
     if (results.length) showMore();
+    measureHeading.hidden = results.length === 0;
     if (!message && query) {
       const count = results.length;
+      const partyText = partyMatches.length ? `${partyMatches.length} ${partyMatches.length === 1 ? 'partido' : 'partidos'} · ` : '';
       status.textContent =
-        count === 0 ? `Ninguna medida coincide con «${query}».` : `${count} ${count === 1 ? 'medida' : 'medidas'}`;
+        count === 0 && partyMatches.length === 0
+          ? `Ningún partido ni medida coincide con «${query}».`
+          : `${partyText}${count} ${count === 1 ? 'medida' : 'medidas'}`;
     }
   }
 
@@ -145,19 +230,21 @@ const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.m
       render(raw, raw ? 'Escribe al menos dos letras.' : '');
       return;
     }
+    const partyMatches = partiesMatching(query);
     if (!fuse) {
-      status.textContent = 'Cargando medidas…';
+      // The parties show at once, while the measures load.
+      results = [];
+      render(raw, 'Cargando medidas…', partyMatches);
       try {
         await loadIndex();
       } catch {
-        results = [];
-        render(raw, 'No se pudo cargar el índice de búsqueda. Recarga la página.');
+        render(raw, 'No se pudo cargar el índice de medidas. Recarga la página.', partyMatches);
         return;
       }
     }
     if (ticket !== latest) return; // the reader typed more while the index loaded
     results = fuse!.search(query).map((result) => result.item);
-    render(raw);
+    render(raw, undefined, partyMatches);
   }
 
   input.addEventListener('input', search);
@@ -206,6 +293,8 @@ const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.m
   }
 
   .search__status { margin: var(--space-4) 0; font: 700 0.8125rem var(--font-mono); min-height: 1.4em; }
+  .search__heading { margin: var(--space-5) 0 var(--space-3); font-size: var(--text-xl); }
+  .search__heading[hidden] { display: none; }
   .search__results { display: grid; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
   .result { padding: var(--space-3) var(--space-4); }
   .result__meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--space-2); }

@@ -3,6 +3,7 @@ import re
 import sys
 import unicodedata
 from pathlib import Path
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 import fitz
@@ -13,7 +14,8 @@ SOURCE = ROOT / "public/datos-electorales/candidaturas-proclamadas-2026.pdf"
 CORRECTION_SOURCE = ROOT / "public/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf"
 OUTPUT = ROOT / "public/datos-electorales/candidaturas.json"
 MAP_OUTPUT = ROOT / "src/data/provincias.json"
-MAP_URL = "https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/spain-provinces.geojson"
+# Provinces layer of the Ministerio de Transportes (SIU, territorial entities). `CodINE` is the INE province code.
+MAP_URL = "https://mapas.fomento.gob.es/arcgis/rest/services/SIU/ENTIDADES_TERRITORIALES_EGRN/MapServer/2/query"
 
 PROVINCES = {
     "01": ("Araba/Álava", ["ALAVA", "ARABA", "ARABA ALAVA"]),
@@ -371,21 +373,62 @@ def simplify(points, tolerance):
     return left[:-1] + right
 
 
-def ring_points(ring, project):
+def ring_points(ring, project, tolerance=0.75):
     points = [project(point) for point in ring]
     if points[0] == points[-1]:
         points = points[:-1]
+    return simplify_closed(points, tolerance)
+
+
+def simplify_closed(points, tolerance):
+    """Simplifies a closed ring: it cuts the ring at the point farthest from the first one and simplifies each half."""
     if len(points) > 4:
         farthest = max(range(1, len(points)), key=lambda index: (points[index][0] - points[0][0]) ** 2 + (points[index][1] - points[0][1]) ** 2)
-        first = simplify(points[: farthest + 1], 0.75)
-        second = simplify(points[farthest:] + points[:1], 0.75)
+        first = simplify(points[: farthest + 1], tolerance)
+        second = simplify(points[farthest:] + points[:1], tolerance)
         points = first[:-1] + second[:-1]
     return points
 
 
-def ring_path(ring, project):
-    points = ring_points(ring, project)
+def remove_thin_spikes(points, gap, half_width, window=400):
+    """Removes the thin parts that go out of an outline and come back, such as the breakwaters of a port.
+
+    The part between two points is cut if the two points are nearer than `gap` and the part is thin: its area
+    divided by the length of its outline is less than `half_width` (a strip of width w and length L has an
+    area of w·L and an outline of about 2·L). A wide part, such as a peninsula, has a larger ratio and stays.
+    """
+    result, index, count = [], 0, len(points)
+    while index < count:
+        result.append(points[index])
+        cut = None
+        length = 0.0
+        for end in range(index + 1, min(index + window, count)):
+            previous, point = points[end - 1], points[end]
+            length += ((point[0] - previous[0]) ** 2 + (point[1] - previous[1]) ** 2) ** 0.5
+            start = points[index]
+            if end == index + 1 or ((point[0] - start[0]) ** 2 + (point[1] - start[1]) ** 2) ** 0.5 >= gap:
+                continue
+            if polygon_area(points[index : end + 1]) / length < half_width:
+                cut = end
+        index = cut if cut is not None else index + 1
+    return result
+
+
+def points_path(points):
     return "M" + "L".join(f"{x:.1f},{y:.1f}" for x, y in points) + "Z"
+
+
+# Islets smaller than this area (in square map units) are not visible on the map: they are not drawn.
+MIN_RING_AREA = 0.4
+
+
+def rings_path(rings, project):
+    paths = []
+    for ring in rings:
+        points = ring_points(ring, project)
+        if len(points) >= 3 and polygon_area(points) >= MIN_RING_AREA:
+            paths.append(points_path(points))
+    return " ".join(paths)
 
 
 def get_polygons(geometry):
@@ -418,28 +461,48 @@ def polygon_area(points):
 
 
 # Layout of the 1000×680 map. The Canary Islands share one inset frame so that
-# both provinces keep their real relative position. The source geometry of
-# Ceuta and Melilla has only a few points, so each one is drawn as a circle at
-# its geographic position.
+# both provinces keep their real relative position. Ceuta and Melilla share a second
+# inset frame, at the same scale between them. Each city has an invisible circle
+# around its outline: it is the area that reacts to the pointer.
 MAP_WIDTH, MAP_HEIGHT = 1000, 680
 X_FACTOR = 0.766
 CANARIAS_FRAME = {"x": 12, "y": 548, "ancho": 250, "alto": 124}
 CANARIAS_PADDING = 10
-CITY_RADIUS = 15
-# Ceuta is very near the coast of Cádiz; move it down so that the circles do not touch.
-CITY_OFFSETS = {"51": (0, 20), "52": (0, 0)}
-CITY_LABEL_SIDE = {"51": "izquierda", "52": "derecha"}
+CITIES_FRAME = {"x": 738, "y": 548, "ancho": 250, "alto": 124}
+# Width of Ceuta (the biggest city) on the map, in map units, and where each city sits in the frame.
+CITY_BASE_WIDTH = 100
+CITY_CENTER_X = {"51": 0.32, "52": 0.76}
+CITY_CENTER_Y = 0.40
+CITY_LABEL_BOTTOM = 12
+# The city outlines are drawn at a much larger scale than the provinces, so they keep more detail.
+CITY_TOLERANCE = 0.35
+# The breakwaters of the ports make thin spikes at this scale: parts narrower than about 190 m are removed.
+# 1 map unit is about 90 m in the inset of the cities.
+CITY_SPIKE_GAP = 2.5
+CITY_SPIKE_HALF_WIDTH = 1.0
+# Simplification on the server for the provinces, in degrees. It is finer than the 0.75 map units of the local
+# simplification (about 0.011°), so the local step decides the final shape. The cities come at full resolution.
+SERVER_OFFSET = 0.003
 
 
-def circle_path(x, y, r):
-    return f"M{x - r:.1f},{y:.1f}A{r},{r} 0 1 0 {x + r:.1f},{y:.1f}A{r},{r} 0 1 0 {x - r:.1f},{y:.1f}Z"
+def fetch_provinces(where, offset=None):
+    params = {"where": where, "outFields": "CodINE", "outSR": "4326", "geometryPrecision": "6", "f": "geojson"}
+    if offset:
+        params["maxAllowableOffset"] = str(offset)
+    request = Request(f"{MAP_URL}?{urlencode(params)}", headers={"User-Agent": "Programas29N/1.0"})
+    with urlopen(request, timeout=120) as response:
+        geojson = json.load(response)
+    # Code 54 is the territory with no province (Peñones, Chafarinas, Alborán): it is not a constituency.
+    return {
+        str(feature["properties"]["CodINE"]).zfill(2): feature
+        for feature in geojson["features"]
+        if str(feature["properties"]["CodINE"]).zfill(2) in PROVINCES
+    }
 
 
 def make_map():
-    request = Request(MAP_URL, headers={"User-Agent": "Programas29N/1.0"})
-    with urlopen(request, timeout=30) as response:
-        geojson = json.load(response)
-    features = {str(feature["properties"]["cod_prov"]).zfill(2): feature for feature in geojson["features"]}
+    features = fetch_provinces("CodINE NOT IN ('51','52','54')", SERVER_OFFSET)
+    features.update(fetch_provinces("CodINE IN ('51','52')"))
     if set(features) != set(PROVINCES):
         raise ValueError(f"Expected the 52 Spanish province geometries, found {len(features)}")
 
@@ -463,36 +526,54 @@ def make_map():
     def canarias_project(point):
         return can_offset_x + (point[0] - can_min_lon) * X_FACTOR * can_scale, can_offset_y + (can_max_lat - point[1]) * can_scale
 
-    def city_marker(code):
-        # The largest ring is the city; the others are small islets far away.
-        main_ring = max(feature_rings(features[code]), key=lambda ring: polygon_area(ring))
-        city_min_lon, city_min_lat, city_max_lon, city_max_lat = bounds(main_ring)
-        x, y = main_project(((city_min_lon + city_max_lon) / 2, (city_min_lat + city_max_lat) / 2))
-        x, y = x + CITY_OFFSETS[code][0], y + CITY_OFFSETS[code][1]
-        return {"x": round(x, 1), "y": round(y, 1), "r": CITY_RADIUS, "rotulo": CITY_LABEL_SIDE[code]}
+    # Ceuta and Melilla: one scale for both, so their real sizes stay comparable.
+    # Only the main ring of each city is drawn: small rocks near the coast are not visible at this size.
+    city_rings = {code: max(feature_rings(features[code]), key=polygon_area) for code in ("51", "52")}
+    city_bounds = {code: bounds(ring) for code, ring in city_rings.items()}
+    ceuta_min_lon, _, ceuta_max_lon, _ = city_bounds["51"]
+    city_scale = CITY_BASE_WIDTH / ((ceuta_max_lon - ceuta_min_lon) * X_FACTOR)
+
+    def city_projector(code):
+        min_lon_c, min_lat_c, max_lon_c, max_lat_c = city_bounds[code]
+        width = (max_lon_c - min_lon_c) * X_FACTOR * city_scale
+        height = (max_lat_c - min_lat_c) * city_scale
+        left = CITIES_FRAME["x"] + CITIES_FRAME["ancho"] * CITY_CENTER_X[code] - width / 2
+        top = CITIES_FRAME["y"] + CITIES_FRAME["alto"] * CITY_CENTER_Y - height / 2
+        project = lambda point: (left + (point[0] - min_lon_c) * X_FACTOR * city_scale, top + (max_lat_c - point[1]) * city_scale)
+        marker = {
+            "x": round(left + width / 2, 1),
+            "y": round(top + height / 2, 1),
+            # The circle that holds the whole outline.
+            "r": round((width**2 + height**2) ** 0.5 / 2, 1),
+            "rotuloY": CITIES_FRAME["y"] + CITIES_FRAME["alto"] - CITY_LABEL_BOTTOM,
+        }
+        return project, marker
 
     provinces = []
     for code, (name, _) in PROVINCES.items():
         if code in {"51", "52"}:
-            marker = city_marker(code)
+            project, marker = city_projector(code)
             provinces.append({
                 "codigo": code,
                 "nombre": name,
-                "d": circle_path(marker["x"], marker["y"], marker["r"]),
+                "d": points_path(simplify_closed(
+                    remove_thin_spikes([project(point) for point in city_rings[code][:-1]], CITY_SPIKE_GAP, CITY_SPIKE_HALF_WIDTH),
+                    CITY_TOLERANCE,
+                )),
                 "marcador": marker,
             })
             continue
         project = canarias_project if code in {"35", "38"} else main_project
-        province = {
+        provinces.append({
             "codigo": code,
             "nombre": name,
-            "d": " ".join(ring_path(ring, project) for ring in feature_rings(features[code])),
-        }
-        provinces.append(province)
+            "d": rings_path(feature_rings(features[code]), project),
+        })
     return {
         "ancho": MAP_WIDTH,
         "alto": MAP_HEIGHT,
         "canarias": CANARIAS_FRAME,
+        "ciudades": CITIES_FRAME,
         "provincias": provinces,
     }
 

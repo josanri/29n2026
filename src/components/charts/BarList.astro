@@ -58,18 +58,24 @@ const max = Astro.props.max ?? Math.max(...items.map((item) => item.count));
 </ol>
 
 <style>
+  /* One shared label column, as wide as the longest label (at most 45%): no empty space between the text and the bars. */
   .bar-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 6px;
+    grid-template-columns: fit-content(45%) minmax(0, 1fr);
+    column-gap: var(--space-3);
+    row-gap: 6px;
   }
+  .bar-list li,
   .bar-list__row {
     display: grid;
-    grid-template-columns: minmax(130px, 38%) 1fr;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+  }
+  .bar-list__row {
     align-items: center;
-    gap: var(--space-3);
     text-decoration: none;
     padding: 3px 4px;
     margin: 0 -4px;
@@ -111,6 +117,7 @@ const max = Astro.props.max ?? Math.max(...items.map((item) => item.count));
     flex: 0 0 auto;
   }
   @media (max-width: 520px) {
-    .bar-list__row { grid-template-columns: 1fr; gap: var(--space-1); }
+    .bar-list, .bar-list li, .bar-list__row { grid-template-columns: minmax(0, 1fr); }
+    .bar-list__row { row-gap: var(--space-1); }
   }
 </style>

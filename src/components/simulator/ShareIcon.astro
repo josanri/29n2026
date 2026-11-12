@@ -1,0 +1,60 @@
+---
+/**
+ * Icons of the share buttons. They use `currentColor`, so they follow the theme and the hover of the button.
+ * The icons of the platforms are filled marks; the icons of the actions are 2 px lines.
+ */
+interface Props {
+  name: 'copy' | 'share' | 'download' | 'mail' | 'whatsapp' | 'telegram' | 'x' | 'facebook' | 'linkedin';
+}
+
+const { name } = Astro.props;
+
+const lines: Record<string, string[]> = {
+  copy: ['M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1', 'M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1'],
+  share: [
+    'M18 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z',
+    'M6 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6z',
+    'M18 16a3 3 0 1 0 0 6a3 3 0 0 0 0-6z',
+    'M8.6 10.5l6.8-4',
+    'M8.6 13.5l6.8 4',
+  ],
+  download: ['M12 3v12', 'M7 10l5 5l5-5', 'M4 20h16'],
+  mail: ['M3 5h18v14H3z', 'M3 7l9 6l9-6'],
+  // A speech bubble with a handset.
+  whatsapp: [
+    'M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z',
+    'M9.3 8.4c-.4.8-.2 1.7.5 2.8c1 1.6 2.4 2.7 4.2 3.4c.9.3 1.7-.1 2-.9l-1.6-1.2l-.9.7c-1-.4-1.8-1.1-2.3-2l.6-.9l-1.1-2z',
+  ],
+};
+
+const marks: Record<string, string> = {
+  x: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+  facebook: 'M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z',
+  linkedin:
+    'M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zM5 8H0v16h5V8zm7.982 0H8.014v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0V24H24V13.869C24 5.989 15.078 6.276 12.982 10.155V8z',
+  telegram:
+    'M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z',
+};
+
+const isMark = name in marks;
+---
+
+<svg
+  class="share-icon"
+  viewBox="0 0 24 24"
+  width="20"
+  height="20"
+  aria-hidden="true"
+  focusable="false"
+  fill={isMark ? 'currentColor' : 'none'}
+  stroke={isMark ? undefined : 'currentColor'}
+  stroke-width={isMark ? undefined : '2'}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  {isMark ? <path d={marks[name]} /> : lines[name].map((d) => <path d={d} />)}
+</svg>
+
+<style>
+  .share-icon { flex: none; display: block; }
+</style>

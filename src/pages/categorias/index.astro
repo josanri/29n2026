@@ -5,7 +5,7 @@ import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
 import { programs, publishedPrograms } from '@/lib/programs';
 import { categories } from '@/lib/taxonomy';
-import { formatNumber, measureNoun } from '@/lib/format';
+import { formatNumber, measureNoun, normalizeForSearch } from '@/lib/format';
 import { routes } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
 
@@ -71,6 +71,47 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
         <span class="scale__step"><i data-step="0"></i>0</span>
         {steps.map((step, index) => <span class="scale__step"><i data-step={index + 1}></i>{step.label}</span>)}
       </div>
+      <div class="heat-filters" role="group" aria-label="Filtrar la tabla">
+        <label class="heat-filters__field" for="heat-category">
+          Categoría
+          <input id="heat-category" type="search" placeholder="Vivienda, Sanidad…" autocomplete="off" />
+        </label>
+        <div class="heat-filters__field multi" id="heat-multi">
+          <label for="heat-party">Partidos</label>
+          <div class="multi__box">
+            <span class="multi__chips" id="heat-chips"></span>
+            <input
+              id="heat-party"
+              type="text"
+              role="combobox"
+              aria-expanded="false"
+              aria-controls="heat-options"
+              aria-autocomplete="list"
+              placeholder="Busca y elige: PP, PSOE, ERC…"
+              autocomplete="off"
+            />
+          </div>
+          <ul class="multi__list" id="heat-options" role="listbox" aria-label="Partidos" aria-multiselectable="true" hidden>
+            {comparable.map((program) => (
+              <li
+                role="option"
+                id={`heat-option-${program.id}`}
+                aria-selected="false"
+                data-party={program.id}
+                data-acronym={program.acronym}
+                data-search={normalizeForSearch(`${program.acronym} ${program.partyName}`)}
+              >
+                <span class="multi__check" aria-hidden="true"></span>
+                <b>{program.acronym}</b>
+                <span class="multi__name">{program.partyName}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <button type="button" class="heat-filters__reset" id="heat-reset" hidden>Quitar filtros</button>
+        <p class="heat-filters__summary" id="heat-summary" aria-live="polite"></p>
+      </div>
+      <p class="heat-empty" id="heat-empty" hidden>Ninguna categoría o partido coincide con los filtros.</p>
       <p class="swipe-hint" aria-hidden="true">Desliza la tabla para ver todos los partidos →</p>
       <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: peso de cada categoría en cada programa">
         <table class="heatmap" style={`--cols:${comparable.length}`}>
@@ -82,7 +123,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
             <tr>
               <th scope="col" class="heatmap__corner">Categoría</th>
               {comparable.map((program) => (
-                <th scope="col" class="heatmap__party">
+                <th scope="col" class="heatmap__party" data-party={program.id}>
                   <a
                     href={routes.party(program.id)}
                     data-tooltip={tooltip(
@@ -99,7 +140,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
           </thead>
           <tbody>
             {rows.map(({ category, cells }) => (
-              <tr>
+              <tr data-category-search={normalizeForSearch(`${category.code} ${category.name}`)}>
                 <th scope="row" class="heatmap__category">
                   <a href={routes.category(category.id)}>
                     <span class="heatmap__code">{category.code}</span>
@@ -107,7 +148,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
                   </a>
                 </th>
                 {cells.map(({ program, count, share }) => (
-                  <td class="heatmap__cell" data-step={stepOf(share)}>
+                  <td class="heatmap__cell" data-step={stepOf(share)} data-party={program.id}>
                     {count > 0 ? (
                       <a
                         href={routes.measures(program.id, { category: category.id })}
@@ -160,6 +201,157 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   </div>
 </BaseLayout>
 
+<script>
+  import { normalizeForSearch } from '@/lib/format';
+
+  const categoryInput = document.querySelector<HTMLInputElement>('#heat-category')!;
+  const partyInput = document.querySelector<HTMLInputElement>('#heat-party')!;
+  const multi = document.querySelector<HTMLElement>('#heat-multi')!;
+  const chips = document.querySelector<HTMLElement>('#heat-chips')!;
+  const listbox = document.querySelector<HTMLElement>('#heat-options')!;
+  const options = [...listbox.querySelectorAll<HTMLElement>('[role="option"]')];
+  const resetButton = document.querySelector<HTMLButtonElement>('#heat-reset')!;
+  const summary = document.querySelector<HTMLElement>('#heat-summary')!;
+  const emptyMessage = document.querySelector<HTMLElement>('#heat-empty')!;
+  const table = document.querySelector<HTMLTableElement>('.heatmap')!;
+  const wrap = table.closest<HTMLElement>('.table-wrap')!;
+  const rows = [...table.querySelectorAll<HTMLElement>('tbody tr')];
+  const partyCells = [...table.querySelectorAll<HTMLElement>('[data-party]')];
+  const totalParties = partyCells.filter((cell) => cell.tagName === 'TH').length;
+
+  // Parties picked in the combobox, in the order of the pick. No pick = all the parties.
+  const selected = new Set<string>();
+  let activeIndex = -1;
+
+  const visibleOptions = () => options.filter((option) => !option.hidden);
+
+  const setActive = (index: number) => {
+    const list = visibleOptions();
+    activeIndex = list.length ? (index + list.length) % list.length : -1;
+    for (const option of options) option.classList.remove('is-active');
+    const active = list[activeIndex];
+    if (active) {
+      active.classList.add('is-active');
+      active.scrollIntoView({ block: 'nearest' });
+      partyInput.setAttribute('aria-activedescendant', active.id);
+    } else {
+      partyInput.removeAttribute('aria-activedescendant');
+    }
+  };
+
+  const filterOptions = () => {
+    const query = normalizeForSearch(partyInput.value);
+    for (const option of options) option.hidden = !option.dataset.search!.includes(query);
+    setActive(0);
+  };
+
+  const setOpen = (open: boolean) => {
+    listbox.hidden = !open;
+    partyInput.setAttribute('aria-expanded', String(open));
+    if (open) filterOptions();
+  };
+
+  const renderChips = () => {
+    chips.replaceChildren(
+      ...[...selected].map((id) => {
+        const option = options.find((item) => item.dataset.party === id)!;
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'multi__chip';
+        chip.dataset.party = id;
+        chip.setAttribute('aria-label', `Quitar ${option.dataset.acronym}`);
+        const label = document.createElement('span');
+        label.className = 'multi__chip-label';
+        label.textContent = option.dataset.acronym!;
+        const cross = document.createElement('span');
+        cross.className = 'multi__chip-remove';
+        cross.setAttribute('aria-hidden', 'true');
+        chip.append(label, cross);
+        return chip;
+      }),
+    );
+    for (const option of options) option.setAttribute('aria-selected', String(selected.has(option.dataset.party!)));
+  };
+
+  const apply = () => {
+    const categoryQuery = normalizeForSearch(categoryInput.value);
+    let visibleRows = 0;
+    for (const row of rows) {
+      row.hidden = !row.dataset.categorySearch!.includes(categoryQuery);
+      if (!row.hidden) visibleRows += 1;
+    }
+    const visibleParties = selected.size || totalParties;
+    for (const cell of partyCells) cell.hidden = selected.size > 0 && !selected.has(cell.dataset.party!);
+    // The table width follows the columns that remain.
+    table.style.setProperty('--cols', String(visibleParties));
+    const filtered = Boolean(categoryQuery || selected.size);
+    const isEmpty = visibleRows === 0;
+    wrap.hidden = isEmpty;
+    emptyMessage.hidden = !isEmpty;
+    resetButton.hidden = !filtered;
+    summary.textContent = filtered
+      ? `${visibleRows} de ${rows.length} categorías · ${visibleParties} de ${totalParties} partidos`
+      : '';
+  };
+
+  const toggleParty = (id: string) => {
+    if (!selected.delete(id)) selected.add(id);
+    renderChips();
+    apply();
+  };
+
+  categoryInput.addEventListener('input', apply);
+  partyInput.addEventListener('input', () => setOpen(true));
+  partyInput.addEventListener('focus', () => setOpen(true));
+  partyInput.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (listbox.hidden) setOpen(true);
+      else setActive(activeIndex + (event.key === 'ArrowDown' ? 1 : -1));
+    } else if (event.key === 'Enter') {
+      event.preventDefault();
+      const active = visibleOptions()[activeIndex];
+      if (!listbox.hidden && active) toggleParty(active.dataset.party!);
+    } else if (event.key === 'Escape') {
+      if (!listbox.hidden) {
+        event.preventDefault();
+        setOpen(false);
+      }
+    } else if (event.key === 'Backspace' && !partyInput.value && selected.size) {
+      toggleParty([...selected].pop()!);
+    }
+  });
+  // The mouse down keeps the focus in the field, so the list stays open after a pick.
+  listbox.addEventListener('mousedown', (event) => event.preventDefault());
+  listbox.addEventListener('click', (event) => {
+    const option = (event.target as Element).closest<HTMLElement>('[role="option"]');
+    if (!option) return;
+    toggleParty(option.dataset.party!);
+    partyInput.focus();
+  });
+  chips.addEventListener('click', (event) => {
+    const chip = (event.target as Element).closest<HTMLElement>('[data-party]');
+    if (!chip) return;
+    toggleParty(chip.dataset.party!);
+    partyInput.focus();
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!multi.contains(event.target as Node)) setOpen(false);
+  });
+  multi.addEventListener('focusout', (event) => {
+    if (!multi.contains(event.relatedTarget as Node | null)) setOpen(false);
+  });
+  resetButton.addEventListener('click', () => {
+    categoryInput.value = '';
+    partyInput.value = '';
+    selected.clear();
+    renderChips();
+    apply();
+    setOpen(false);
+    categoryInput.focus();
+  });
+</script>
+
 <style>
   .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
   .page-hero h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
@@ -184,6 +376,148 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   .scale i[data-step='4'] { background: var(--color-heat-4); }
   .scale i[data-step='5'] { background: var(--color-heat-5); }
 
+  .heat-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px 20px;
+    margin-bottom: var(--space-4);
+  }
+  .heat-filters__field { display: grid; gap: 6px; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .heat-filters__field input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: min(100%, 220px);
+    min-height: 42px;
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 0;
+    padding: 7px 10px;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 0.9375rem var(--font-body);
+  }
+  .heat-filters__field.multi { position: relative; flex: 1 1 320px; max-width: 560px; }
+  .multi__box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    min-height: 42px;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+  }
+  .multi__box:focus-within { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
+  .heat-filters__field .multi__box input {
+    flex: 1 1 140px;
+    width: auto;
+    min-width: 0;
+    min-height: 32px;
+    border: 0;
+    padding: 0 4px;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    color: var(--color-ink);
+    font: 600 0.9375rem var(--font-body);
+  }
+  .multi__chips { display: contents; }
+  /* The script makes the chips, so their rules are global, under the scoped box.
+     A chip: the acronym, and a square with a cross that removes it, apart by a thin line. */
+  .multi__box :global(.multi__chip) {
+    display: inline-flex;
+    align-items: stretch;
+    height: 30px;
+    padding: 0;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font: 700 0.75rem / 1 var(--font-mono);
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .multi__box :global(.multi__chip-label) { display: flex; align-items: center; padding: 0 8px 0 9px; }
+  .multi__box :global(.multi__chip-remove) {
+    position: relative;
+    width: 26px;
+    border-left: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  }
+  /* The cross: two thin bars, drawn in the text color. */
+  .multi__box :global(.multi__chip-remove)::before,
+  .multi__box :global(.multi__chip-remove)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .multi__box :global(.multi__chip-remove)::after { transform: translate(-50%, -50%) rotate(-45deg); }
+  .multi__box :global(.multi__chip:hover),
+  .multi__box :global(.multi__chip:focus-visible) { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .multi__box :global(.multi__chip:focus-visible) { outline: 3px solid var(--color-ink); outline-offset: 1px; }
+  .multi__list {
+    position: absolute;
+    z-index: var(--z-sticky);
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin: 4px 0 0;
+    padding: 0;
+    max-height: 280px;
+    overflow-y: auto;
+    list-style: none;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-sm);
+    text-transform: none;
+    font-family: var(--font-body);
+  }
+  .multi__list[hidden] { display: none; }
+  .multi__list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 40px;
+    padding: 4px 10px;
+    color: var(--color-ink);
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  .multi__list li[hidden] { display: none; }
+  .multi__list li b { font: 700 0.8125rem var(--font-mono); flex: none; }
+  .multi__name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+  .multi__list li.is-active, .multi__list li:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .multi__check { flex: none; width: 16px; height: 16px; border: var(--border-thin) solid currentColor; }
+  .multi__list li[aria-selected='true'] .multi__check {
+    background: currentColor;
+    box-shadow: inset 0 0 0 3px var(--color-paper);
+  }
+  .multi__list li.is-active[aria-selected='true'] .multi__check,
+  .multi__list li:hover[aria-selected='true'] .multi__check { box-shadow: inset 0 0 0 3px var(--color-highlight); }
+  .heat-filters__reset {
+    min-height: 42px;
+    padding: 7px var(--space-3);
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.8125rem var(--font-mono);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .heat-filters__reset:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .heat-filters__reset[hidden], .heat-empty[hidden], .table-wrap[hidden], .heatmap [hidden] { display: none; }
+  .heat-filters__summary { margin: 0 0 10px auto; font: 700 0.8125rem var(--font-mono); }
+  .heat-empty { margin: 0; font-weight: 600; }
+  @media (max-width: 560px) {
+    .heat-filters { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .heat-filters__field input { min-width: 0; min-height: 48px; }
+    .heat-filters__summary { margin: 0; text-align: right; }
+  }
+
   .table-wrap { overflow-x: auto; }
   .table-wrap:focus-visible { outline-offset: 2px; }
   /* Fixed layout: the category column has one width and the party columns share the rest in equal parts. */
@@ -197,6 +531,10 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     min-width: calc(var(--cat-w) + var(--cols) * (var(--cell-w) + 2px));
   }
   .heatmap th, .heatmap td { padding: 0; }
+  /* A rule on the right of the fixed column. When the table scrolls, the cells slide under this column:
+     the rule is the edge where they are cut, so a cut cell does not look as if it had no border. */
+  .heatmap__corner,
+  .heatmap__category { border-right: var(--border-thin) solid var(--color-ink); }
   .heatmap thead th { vertical-align: bottom; }
   .heatmap__corner {
     position: sticky;
@@ -208,8 +546,8 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     text-transform: uppercase;
     padding: 0 var(--space-2) 6px 0;
     width: var(--cat-w);
-    /* Paper color over the 2px table spacing on every side, and 4px to the right, so scrolled cells never show in the gaps. */
-    box-shadow: 0 0 0 2px var(--color-paper), 4px 0 0 var(--color-paper);
+    /* Paper color over the 2px table spacing on every side, and 2px to the right, so scrolled cells never show in the gaps. */
+    box-shadow: 0 0 0 2px var(--color-paper), 2px 0 0 var(--color-paper);
   }
   .heatmap__party a {
     display: grid;
@@ -221,11 +559,10 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     text-decoration: none;
     color: var(--color-ink);
   }
-  .heatmap__party a:hover .heatmap__acronym {
-    text-decoration: underline;
-    text-decoration-color: var(--color-highlight);
-    text-decoration-thickness: 3px;
-  }
+  /* The global link hover paints a yellow background: the text must be dark on it, in both themes. */
+  .heatmap__party a:hover,
+  .heatmap__party a:hover .heatmap__total,
+  .heatmap__category a:hover { color: var(--color-on-highlight); }
   .heatmap__acronym { font-family: var(--font-display); font-size: var(--text-sm); text-transform: uppercase; white-space: nowrap; }
   /* A long acronym (MUNDO+JUSTO) is smaller and breaks after the "+", so its column is as wide as the others. */
   .heatmap__acronym--long { font-size: 0.5938rem; letter-spacing: -0.02em; white-space: normal; overflow-wrap: anywhere; max-width: 100%; text-align: center; line-height: 1.1; }
@@ -240,8 +577,8 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     font-size: var(--text-sm);
     line-height: 1.2;
     width: var(--cat-w);
-    /* Paper color over the 2px table spacing on every side, and 4px to the right, so scrolled cells never show in the gaps. */
-    box-shadow: 0 0 0 2px var(--color-paper), 4px 0 0 var(--color-paper);
+    /* Paper color over the 2px table spacing on every side, and 2px to the right, so scrolled cells never show in the gaps. */
+    box-shadow: 0 0 0 2px var(--color-paper), 2px 0 0 var(--color-paper);
     overflow: hidden;
   }
   .heatmap__category a {
@@ -252,11 +589,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     text-decoration: none;
     color: var(--color-ink);
   }
-  .heatmap__category a:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--color-highlight);
-    text-decoration-thickness: 3px;
-  }
+
   .heatmap__code {
     flex: none;
     min-width: 34px;
@@ -292,6 +625,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   .heatmap__cell[data-step='5'] { background: var(--color-heat-5); }
   .heatmap__cell[data-step='5'] a { color: var(--color-on-heat-5); }
   /* Cell under the pointer or with focus: an ink ring with a gap of the background color. */
+  .heatmap__cell a:hover { background: transparent; } /* keeps the color of the step, not the yellow of links */
   .heatmap__cell a:hover,
   .heatmap__cell a:focus-visible {
     outline: 3px solid var(--color-ink);

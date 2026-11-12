@@ -1,0 +1,947 @@
+---
+/**
+ * «Sin siglas»: the reader picks a province and votes on 10 measures without the party.
+ * At the end the cards turn over and show the party of each measure, and a summary
+ * lists every party of the province with its number of proposals.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/ui/Button.astro';
+import Tag from '@/components/ui/Tag.astro';
+import ProvinceMap from '@/components/candidacies/ProvinceMap.astro';
+import ShareIcon from '@/components/simulator/ShareIcon.astro';
+import { programs } from '@/lib/programs';
+import { provinces, provincesOf } from '@/lib/presence';
+import { PAPER_ALT, readableTextColor, shiftForContrast } from '@/lib/color';
+import { compareText } from '@/lib/format';
+import { routes } from '@/lib/routes';
+import { ROUND_SIZE } from '@/lib/party-quiz';
+
+// The parties go to the script as data: it chooses the measures in the browser, so each round is new.
+// The party color has 3:1 contrast with the surface in each theme, and the text on it is black or white.
+const partyData = programs
+  .map((program) => {
+    const light = shiftForContrast(program.color, PAPER_ALT.light, 0);
+    const dark = shiftForContrast(program.color, PAPER_ALT.dark, 255);
+    const toHex = (rgb: string) =>
+      rgb.startsWith('#') ? rgb : `#${rgb.match(/\d+/g)!.map((value) => Number(value).toString(16).padStart(2, '0')).join('')}`;
+    const count = program.measures.filter((measure) => !measure.isPending).length;
+    return {
+      id: program.id,
+      acronym: program.acronym,
+      name: program.partyName,
+      hasProgram: program.hasProgram && count > 0,
+      count,
+      unit: [program.measureUnit, program.measureUnitPlural],
+      color: `light-dark(${light}, ${dark})`,
+      text: `light-dark(${readableTextColor(toHex(light))}, ${readableTextColor(toHex(dark))})`,
+      href: routes.party(program.id),
+      data: program.hasProgram ? routes.partyQuizData(program.id) : undefined,
+      provinces: provincesOf(program),
+    };
+  })
+  .filter((party) => party.provinces.length > 0);
+
+const provinceOptions = [...provinces].sort((a, b) => compareText(a.name, b.name));
+// The script puts the party and the number in this link.
+const measureUrl = routes.measure('PARTIDO', 0);
+const ANSWERS = [
+  { id: 'yes', label: 'A favor', symbol: '✓' },
+  { id: 'neutral', label: 'Me da igual', symbol: '–' },
+  { id: 'no', label: 'En contra', symbol: '✗' },
+] as const;
+// The networks of the share buttons. The script gives each link its address.
+const networks = [
+  { id: 'whatsapp', label: 'WhatsApp' },
+  { id: 'telegram', label: 'Telegram' },
+  { id: 'x', label: 'X' },
+  { id: 'facebook', label: 'Facebook' },
+  { id: 'linkedin', label: 'LinkedIn' },
+  { id: 'email', label: 'Correo', icon: 'mail' },
+] as const;
+---
+
+<BaseLayout
+  title="Sin siglas"
+  description="Vota diez medidas de los programas de tu provincia sin saber de qué partido son. Al final descubres quién propone cada una."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Juego · No es una recomendación de voto</Tag>
+      <h1 class="headline">Sin siglas</h1>
+      <p class="page-hero__lede">
+        Diez medidas de los programas que se presentan en tu provincia, sin decir de qué partido son. Di si estás a favor, en contra o si te da igual. Al
+        final descubres de qué partido es cada una.
+      </p>
+    </div>
+  </section>
+
+  <div class="container game" id="game" data-parties={JSON.stringify(partyData)} data-measure-url={measureUrl}>
+    <!-- 1. The province -->
+    <section class="game-step box start" id="step-start" aria-labelledby="start-title">
+      <div class="start__controls">
+        <h2 id="start-title" class="game-step__title">Elige tu provincia</h2>
+        <p class="challenge" id="challenge" hidden>
+          Te han retado: juega las mismas medidas que la persona que te ha enviado el enlace.
+        </p>
+        <form class="start-form" id="start-form">
+          <label class="start-form__field" for="province">
+            Provincia
+            <select id="province" required>
+              <option value="">Elige una provincia</option>
+              {provinceOptions.map((province) => <option value={province.code}>{province.name}</option>)}
+            </select>
+          </label>
+          <Button type="submit" variant="ink" id="start-button">Empezar</Button>
+        </form>
+        <div class="preview" id="preview" hidden>
+          <p class="preview__lead" id="preview-lead"></p>
+          <ul class="preview__list" id="preview-list"></ul>
+        </div>
+        <p class="game-note">
+          Todos los partidos con programa pesan lo mismo, tengan 10 o 700 propuestas: las medidas se reparten por turnos entre ellos.
+          Solo salen medidas que afectan a tu provincia, a tu comunidad o a todo el Estado. Las medidas están en la lengua del programa.
+        </p>
+        <p class="game-status" id="start-status" role="status"></p>
+      </div>
+      <div class="start__map">
+        <ProvinceMap
+          id="game-map"
+          label="Mapa de España por provincias. Elige tu provincia."
+          linkLabel={(name) => `Elegir ${name}`}
+          href={(code) => `?provincia=${code}`}
+        />
+      </div>
+    </section>
+
+    <!-- 2. The measures, one by one -->
+    <section class="game-step quiz" id="step-quiz" aria-label="Las medidas" hidden>
+      <div class="quiz__progress">
+        <button type="button" class="quiz__back" id="quiz-back" hidden>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 4 8l6 6"></path></svg>
+          Anterior
+        </button>
+        <p class="quiz__count" id="quiz-count" aria-hidden="true"></p>
+        <ol class="quiz__dots" id="quiz-dots" aria-hidden="true">
+          {Array.from({ length: ROUND_SIZE }, () => <li></li>)}
+        </ol>
+      </div>
+      <div class="quiz__stage">
+        <article class="quiz-card box" id="quiz-card" tabindex="-1" aria-labelledby="quiz-card-label quiz-card-heading">
+          <p class="quiz-card__meta">
+            <!-- The count shows above the card. Here it only names the card for screen readers. -->
+            <span class="sr-only" id="quiz-card-label"></span>
+            <span class="quiz-card__category" id="quiz-card-category"></span>
+          </p>
+          <h2 class="quiz-card__heading" id="quiz-card-heading"></h2>
+          <p class="quiz-card__text" id="quiz-card-text"></p>
+          <details class="quiz-card__more" id="quiz-card-more">
+            <summary>Leer el texto completo</summary>
+            <p id="quiz-card-full"></p>
+          </details>
+          <span class="quiz-card__stamp" id="quiz-card-stamp" aria-hidden="true" hidden></span>
+        </article>
+      </div>
+      <div class="quiz__answers" role="group" aria-label="Tu opinión sobre esta medida">
+        {
+          ANSWERS.map((answer) => (
+            <button type="button" class="answer" data-answer={answer.id} aria-pressed="false">
+              <span class="answer__symbol" aria-hidden="true">{answer.symbol}</span>
+              {answer.label}
+            </button>
+          ))
+        }
+      </div>
+      <p class="sr-only" id="quiz-status" role="status"></p>
+    </section>
+
+    <!-- 3. The parties -->
+    <section class="game-step results" id="step-result" aria-labelledby="result-title" hidden>
+      <h2 class="game-step__title" id="result-title" tabindex="-1">Así has votado sin ver las siglas</h2>
+      <p class="results__lead" id="result-lead"></p>
+      <ol class="reveal-list" id="reveal-list"></ol>
+
+      <!-- The legend sits at the right of the heading, above the column of squares that it explains. -->
+      <div class="affinity__head">
+        <h2 class="game-step__title" id="affinity-title"></h2>
+        <div class="answer-legend">
+          <p class="answer-legend__title">Cada cuadro, una medida</p>
+          <ul aria-label="Leyenda de los cuadros">
+            {
+              ANSWERS.map((answer) => (
+                <li>
+                  <span class="vote-square" data-answer={answer.id} aria-hidden="true">{answer.symbol}</span>
+                  {answer.label}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <ul class="affinity" id="affinity"></ul>
+
+      <div class="results__actions">
+        <Button variant="ink" id="again">Otra ronda</Button>
+        <Button id="change-province">Cambiar de provincia</Button>
+      </div>
+      <p class="game-note">
+        Diez medidas al azar no resumen un programa, y un partido puede proponer cosas con las que coincides y otras con las que no. Lee
+        los programas completos antes de decidir tu voto.
+      </p>
+
+      <!-- Share: the link opens the same 10 measures in the same province, so others can play the same round. -->
+      <div class="share box" aria-labelledby="share-title">
+        <h2 class="game-step__title" id="share-title">Comparte y reta a alguien</h2>
+        <p>El enlace abre las mismas diez medidas. No incluye tus respuestas.</p>
+        <p class="share__preview" id="share-preview"></p>
+        <div class="share__actions">
+          <Button variant="ink" id="share-copy"><ShareIcon name="copy" />Copiar enlace</Button>
+          <Button id="share-native" hidden><ShareIcon name="share" />Compartir…</Button>
+        </div>
+        <ul class="share__networks" aria-label="Compartir en">
+          {
+            networks.map((network) => (
+              <li>
+                <Button size="sm" class="share__network" data-network={network.id} href="#" target="_blank" rel="noopener noreferrer">
+                  <ShareIcon name={'icon' in network ? network.icon : network.id} />
+                  {network.label}
+                </Button>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="share__status" id="share-status" role="status"></p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  import { allocateMeasures, shuffle, type QuizMeasure } from '@/lib/party-quiz';
+  import { setupProvinceMap } from '@/lib/province-map';
+  import { HOME_PARAMS } from '@/lib/routes';
+
+  type Answer = 'yes' | 'neutral' | 'no';
+  type Party = {
+    id: string;
+    acronym: string;
+    name: string;
+    hasProgram: boolean;
+    count: number;
+    unit: [string, string];
+    color: string;
+    text: string;
+    href: string;
+    data?: string;
+    provinces: string[];
+  };
+  type Item = QuizMeasure & { party: string };
+
+  const ANSWER_TEXT: Record<Answer, { label: string; symbol: string }> = {
+    yes: { label: 'A favor', symbol: '✓' },
+    neutral: { label: 'Me da igual', symbol: '–' },
+    no: { label: 'En contra', symbol: '✗' },
+  };
+  /** Longest text that shows whole on the card. A longer text shows its start and a «Leer el texto completo». */
+  const EXCERPT = 300;
+
+  const $ = <T extends Element>(selector: string) => document.querySelector<T>(selector)!;
+  const root = $<HTMLElement>('#game');
+  const parties: Party[] = JSON.parse(root.dataset.parties!);
+  const partyById = Object.fromEntries(parties.map((party) => [party.id, party]));
+  const measureUrl = (party: string, number: number) => root.dataset.measureUrl!.replace('PARTIDO', party).replace(/0$/, String(number));
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  const stepStart = $<HTMLElement>('#step-start');
+  const stepQuiz = $<HTMLElement>('#step-quiz');
+  const stepResult = $<HTMLElement>('#step-result');
+  const select = $<HTMLSelectElement>('#province');
+  const startStatus = $<HTMLElement>('#start-status');
+  const card = $<HTMLElement>('#quiz-card');
+  const stamp = $<HTMLElement>('#quiz-card-stamp');
+  const dots = [...document.querySelectorAll<HTMLElement>('#quiz-dots li')];
+  const answerButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-answer]')].filter((el) => el.classList.contains('answer'));
+
+  const plural = (count: number, [one, many]: readonly [string, string]) => `${count} ${count === 1 ? one : many}`;
+  const provinceName = (code: string) => select.querySelector<HTMLOptionElement>(`option[value="${code}"]`)?.textContent ?? '';
+  const partiesIn = (code: string) =>
+    parties
+      .filter((party) => party.provinces.includes(code))
+      .sort((a, b) => Number(b.hasProgram) - Number(a.hasProgram) || b.count - a.count || a.acronym.localeCompare(b.acronym, 'es'));
+  const el = <K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text !== undefined) element.textContent = text;
+    return element;
+  };
+  const partyTag = (party: Party) => {
+    const tag = el('span', 'party-tag', party.acronym);
+    tag.style.setProperty('--party', party.color);
+    tag.style.setProperty('--party-text', party.text);
+    return tag;
+  };
+  const shorten = (text: string, length: number) =>
+    text.length <= length ? text : `${text.slice(0, text.lastIndexOf(' ', length - 1) > 0 ? text.lastIndexOf(' ', length - 1) : length)}…`;
+  const bullets = (text: string) => text.replace(/\s•\s/g, '\n• ');
+
+  // ---- 1. The province and its parties ----
+  const renderPreview = () => {
+    const code = select.value;
+    const preview = $<HTMLElement>('#preview');
+    preview.hidden = !code;
+    if (!code) return;
+    const list = partiesIn(code);
+    const withProgram = list.filter((party) => party.hasProgram);
+    $('#preview-lead').textContent =
+      `En ${provinceName(code)} se presentan ${list.length} partidos. Las medidas salen de los ${withProgram.length} que han publicado programa:`;
+    $('#preview-list').replaceChildren(
+      ...list.map((party) => {
+        const item = el('li', party.hasProgram ? '' : 'is-empty');
+        item.append(partyTag(party), el('span', 'preview__count', party.hasProgram ? plural(party.count, party.unit) : 'sin programa'));
+        item.title = party.name;
+        return item;
+      }),
+    );
+  };
+  // The map and the list choose the same province.
+  const provinceMap = setupProvinceMap($<SVGSVGElement>('#game-map'), (code) => {
+    select.value = code;
+    onProvince();
+  });
+  const onProvince = () => {
+    provinceMap.select(select.value);
+    renderPreview();
+    $<HTMLElement>('#challenge').hidden = !challenge || challenge.province !== select.value;
+  };
+  select.addEventListener('change', onProvince);
+
+  // A shared link brings the same round: `?provincia=28&r=pp.12,fo.3,…` (party and measure number).
+  const ROUND_PARAM = 'r';
+  let challenge: { province: string; items: { party: string; n: number }[] } | null = null;
+  {
+    const params = new URLSearchParams(location.search);
+    const code = params.get(HOME_PARAMS.province) ?? '';
+    const items = (params.get(ROUND_PARAM) ?? '')
+      .split(',')
+      .map((entry) => entry.split('.'))
+      .filter(([party, n]) => partyById[party] && /^\d+$/.test(n ?? ''))
+      .map(([party, n]) => ({ party, n: Number(n) }));
+    if (code && items.length) challenge = { province: code, items };
+  }
+
+  // ---- 2. One round ----
+  const cache = new Map<string, Promise<QuizMeasure[]>>();
+  const load = (party: Party) => {
+    if (!cache.has(party.id)) {
+      cache.set(
+        party.id,
+        fetch(party.data!)
+          .then((response) => {
+            if (!response.ok) throw new Error(String(response.status));
+            return response.json();
+          })
+          .then((data: { measures: QuizMeasure[] }) => data.measures),
+      );
+    }
+    return cache.get(party.id)!;
+  };
+
+  let province = '';
+  let round: Item[] = [];
+  let answers: Answer[] = [];
+  let index = 0;
+  let busy = false;
+
+  const showStep = (step: HTMLElement) => {
+    for (const other of [stepStart, stepQuiz, stepResult]) other.hidden = other !== step;
+  };
+
+  const startRound = async () => {
+    province = select.value;
+    if (!province) return;
+    const url = new URL(location.href);
+    url.searchParams.set(HOME_PARAMS.province, province);
+    url.searchParams.delete(ROUND_PARAM);
+    history.replaceState(null, '', url);
+    startStatus.textContent = 'Preparando las medidas…';
+    try {
+      const eligible = partiesIn(province).filter((party) => party.hasProgram && party.data);
+      const lists = await Promise.all(
+        eligible.map(async (party) => [party.id, (await load(party)).filter((measure) => !measure.a || measure.a.includes(province))] as const),
+      );
+      // A challenge plays the measures of the link, in its order, if they all exist for this province.
+      const byParty = Object.fromEntries(lists);
+      const challenged =
+        challenge?.province === province
+          ? challenge.items.map(({ party, n }) => {
+              const measure = byParty[party]?.find((item) => item.n === n);
+              return measure ? { ...measure, party } : null;
+            })
+          : [];
+      challenge = null;
+      $<HTMLElement>('#challenge').hidden = true;
+      if (challenged.length && challenged.every(Boolean)) {
+        round = challenged as Item[];
+      } else {
+        const quota = allocateMeasures(Object.fromEntries(lists.map(([id, measures]) => [id, measures.length])));
+        round = shuffle(lists.flatMap(([id, measures]) => shuffle(measures).slice(0, quota[id] ?? 0).map((measure) => ({ ...measure, party: id }))));
+      }
+    } catch {
+      startStatus.textContent = 'No se pudieron cargar las medidas. Comprueba la conexión y vuelve a intentarlo.';
+      return;
+    }
+    if (!round.length) {
+      startStatus.textContent = 'No hay medidas de esta provincia todavía.';
+      return;
+    }
+    startStatus.textContent = '';
+    answers = [];
+    index = 0;
+    dots.forEach((dot, dotIndex) => {
+      dot.hidden = dotIndex >= round.length;
+      dot.removeAttribute('data-answer');
+      dot.textContent = '';
+    });
+    renderCard();
+    showStep(stepQuiz);
+    stepQuiz.scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    card.focus({ preventScroll: true });
+  };
+  $('#start-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    startRound();
+  });
+
+  const renderCard = () => {
+    const item = round[index];
+    $('#quiz-count').textContent = `Medida ${index + 1} de ${round.length}`;
+    $('#quiz-card-label').textContent = `Medida ${index + 1} de ${round.length}`;
+    $('#quiz-card-category').textContent = item.c;
+    const heading = $<HTMLElement>('#quiz-card-heading');
+    const text = $<HTMLElement>('#quiz-card-text');
+    const more = $<HTMLDetailsElement>('#quiz-card-more');
+    // Without a heading, the text is the statement: it takes the large type, and its start goes in the heading.
+    const statement = item.h || shorten(item.x, EXCERPT);
+    heading.textContent = statement;
+    heading.classList.toggle('is-long', statement.length > 140);
+    const body = item.h ? item.x : '';
+    text.hidden = !body;
+    text.textContent = bullets(shorten(body, EXCERPT));
+    more.hidden = item.x.length <= EXCERPT;
+    more.open = false;
+    $('#quiz-card-full').textContent = bullets(item.x);
+    dots.forEach((dot, dotIndex) => dot.toggleAttribute('data-current', dotIndex === index));
+    // After «Anterior», the button of the answer that the reader gave shows as pressed.
+    for (const button of answerButtons) button.setAttribute('aria-pressed', String(answers[index] === button.dataset.answer));
+    backButton.hidden = index === 0;
+  };
+
+  // «Anterior»: back to the previous measure. Its answer stays until the reader gives another one.
+  const backButton = $<HTMLButtonElement>('#quiz-back');
+  backButton.addEventListener('click', async () => {
+    if (busy || index === 0) return;
+    busy = true;
+    index -= 1;
+    renderCard();
+    $('#quiz-status').textContent = `Vuelves a la medida ${index + 1}.`;
+    const frames = reducedMotion.matches
+      ? [{ opacity: 0 }, { opacity: 1 }]
+      : [{ opacity: 0, transform: 'translateX(-40px) rotate(-2deg)' }, { opacity: 1, transform: 'none' }];
+    const entering = card.animate(frames, { duration: reducedMotion.matches ? 150 : 300, easing: 'cubic-bezier(.2, .7, .3, 1)' }).finished;
+    // The button can disappear (on the first measure): the focus goes to the card.
+    card.focus({ preventScroll: true });
+    await entering;
+    busy = false;
+  });
+
+  const animateOut = async (answer: Answer) => {
+    stamp.textContent = `${ANSWER_TEXT[answer].symbol} ${ANSWER_TEXT[answer].label}`;
+    stamp.dataset.answer = answer;
+    stamp.hidden = false;
+    if (reducedMotion.matches) {
+      await card.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 150, fill: 'forwards' }).finished;
+      return;
+    }
+    // A stamp falls on the card, then the card goes: to the right (a favor), to the left (en contra) or down.
+    await stamp.animate(
+      [
+        { opacity: 0, transform: 'translate(-50%, -50%) rotate(-10deg) scale(1.8)' },
+        { opacity: 1, transform: 'translate(-50%, -50%) rotate(-10deg) scale(1)' },
+      ],
+      { duration: 200, easing: 'cubic-bezier(.2, .8, .3, 1.3)', fill: 'forwards' },
+    ).finished;
+    const away = { yes: 'translateX(110%) rotate(7deg)', no: 'translateX(-110%) rotate(-7deg)', neutral: 'translateY(35%) scale(.92)' }[answer];
+    await card.animate([{ transform: 'none', opacity: 1 }, { transform: away, opacity: 0 }], {
+      duration: 340,
+      delay: 120,
+      easing: 'cubic-bezier(.5, 0, .75, 0)',
+      fill: 'forwards',
+    }).finished;
+  };
+
+  const animateIn = async () => {
+    for (const animation of [...card.getAnimations(), ...stamp.getAnimations()]) animation.cancel();
+    stamp.hidden = true;
+    const frames = reducedMotion.matches
+      ? [{ opacity: 0 }, { opacity: 1 }]
+      : [{ opacity: 0, transform: 'translateY(28px) scale(.96)' }, { opacity: 1, transform: 'none' }];
+    await card.animate(frames, { duration: reducedMotion.matches ? 150 : 300, easing: 'cubic-bezier(.2, .7, .3, 1)' }).finished;
+  };
+
+  const answerWith = async (answer: Answer) => {
+    if (busy || !round.length) return;
+    busy = true;
+    answers[index] = answer;
+    const dot = dots[index];
+    dot.dataset.answer = answer;
+    dot.textContent = ANSWER_TEXT[answer].symbol;
+    $('#quiz-status').textContent = `${ANSWER_TEXT[answer].label}.`;
+    await animateOut(answer);
+    index += 1;
+    if (index < round.length) {
+      renderCard();
+      const entering = animateIn();
+      card.focus({ preventScroll: true });
+      await entering;
+    } else {
+      for (const animation of [...card.getAnimations(), ...stamp.getAnimations()]) animation.cancel();
+      stamp.hidden = true;
+      showResults();
+    }
+    busy = false;
+  };
+  for (const button of answerButtons) button.addEventListener('click', () => answerWith(button.dataset.answer as Answer));
+
+  // ---- 3. The parties ----
+  const showResults = () => {
+    const name = provinceName(province);
+    $('#result-lead').textContent = `Las ${round.length} medidas de ${name}, con el partido que propone cada una.`;
+    $('#reveal-list').replaceChildren(
+      ...round.map((item, itemIndex) => {
+        const party = partyById[item.party];
+        const answer = answers[itemIndex];
+        const row = el('li', 'reveal');
+        row.style.setProperty('--i', String(itemIndex));
+
+        // The tile turns over: a «?» in front, the party behind. Screen readers only read the party.
+        const tile = el('div', 'reveal__tile');
+        const front = el('span', 'reveal__face reveal__face--front', '?');
+        front.setAttribute('aria-hidden', 'true');
+        const back = el('span', 'reveal__face reveal__face--back', party.acronym);
+        back.style.setProperty('--party', party.color);
+        back.style.setProperty('--party-text', party.text);
+        tile.append(front, back);
+
+        const body = el('div', 'reveal__body');
+        body.append(el('p', 'reveal__statement', shorten(item.h || item.x, 160)));
+        const who = el('p', 'reveal__party');
+        const link = el('a', '', `${party.name} · ver la medida`) as HTMLAnchorElement;
+        link.href = measureUrl(party.id, item.n);
+        who.append(link);
+        body.append(who);
+
+        const vote = el('span', 'vote-chip', `${ANSWER_TEXT[answer].symbol} ${ANSWER_TEXT[answer].label}`);
+        vote.dataset.answer = answer;
+        row.append(tile, body, vote);
+        return row;
+      }),
+    );
+
+    // Every party of the province: the ones in the round, by agreement, then the others.
+    const list = partiesIn(province);
+    const scored = list.map((party) => {
+      const mine = round.map((item, itemIndex) => ({ item, answer: answers[itemIndex] })).filter(({ item }) => item.party === party.id);
+      const yes = mine.filter(({ answer }) => answer === 'yes').length;
+      const no = mine.filter(({ answer }) => answer === 'no').length;
+      return { party, mine, yes, no, score: mine.length ? (yes - no) / mine.length : -Infinity };
+    });
+    scored.sort((a, b) => b.score - a.score || b.yes - a.yes || Number(b.party.hasProgram) - Number(a.party.hasProgram) || b.party.count - a.party.count);
+    const best = scored.filter((entry) => entry.mine.length && entry.score > 0 && entry.score === scored[0].score);
+    // When every party of the round ties, a list of all of them says nothing: one sentence says it.
+    const inRound = scored.filter((entry) => entry.mine.length).length;
+    const allTie = inRound > 2 && best.length === inRound;
+    const bestList = new Intl.ListFormat('es', { type: 'conjunction' }).format(best.map((entry) => entry.party.acronym));
+    $('#affinity-title').textContent = allTie
+      ? 'En esta ronda coincides por igual con todos los partidos'
+      : best.length
+        ? `En esta ronda coincides más con ${bestList}`
+        : 'En esta ronda no coincides con ningún partido';
+    $('#affinity').replaceChildren(
+      ...scored.map(({ party, mine, yes, no }) => {
+        const row = el('li', `affinity__row${party.hasProgram ? '' : ' is-empty'}`);
+        const title = el('p', 'affinity__party');
+        const link = el('a', '') as HTMLAnchorElement;
+        link.href = party.href;
+        link.append(partyTag(party), el('span', 'affinity__name', party.name));
+        title.append(link);
+        const facts = el(
+          'p',
+          'affinity__facts',
+          !party.hasProgram
+            ? 'Sin programa publicado'
+            : `${plural(party.count, party.unit)} en su programa · ${
+                mine.length ? `${mine.length} en esta ronda: ${yes} a favor, ${no} en contra` : 'ninguna en esta ronda'
+              }`,
+        );
+        const squares = el('span', 'affinity__squares');
+        squares.setAttribute('aria-hidden', 'true');
+        for (const { answer } of mine) {
+          const square = el('span', 'vote-square', ANSWER_TEXT[answer].symbol);
+          square.dataset.answer = answer;
+          squares.append(square);
+        }
+        row.append(title, squares, facts);
+        return row;
+      }),
+    );
+
+    showStep(stepResult);
+    $<HTMLElement>('#result-title').focus({ preventScroll: true });
+    stepResult.scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+    // The tiles turn one after the other (see `.reveal-list.is-revealed`).
+    const revealList = $<HTMLElement>('#reveal-list');
+    revealList.classList.remove('is-revealed');
+    requestAnimationFrame(() => requestAnimationFrame(() => revealList.classList.add('is-revealed')));
+
+    renderShare(
+      `He jugado a «Sin siglas» con ${round.length} medidas de los programas de ${name}` +
+        (allTie ? ' y coincido por igual con todos los partidos.' : best.length ? ` y coincido más con ${bestList}.` : '.') +
+        ' ¿Con quién coincides tú?',
+    );
+  };
+
+  // ---- Share ----
+  const CALL_TO_ACTION = 'Juega las mismas medidas:';
+  const TITLE = 'Sin siglas · Programas 29N';
+  /** The address that each network gives to a shared page. The text and the link are encoded. */
+  const shareUrls: Record<string, (text: string, href: string) => string> = {
+    whatsapp: (text, href) => `https://wa.me/?text=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION} ${href}`)}`,
+    telegram: (text, href) => `https://t.me/share/url?url=${encodeURIComponent(href)}&text=${encodeURIComponent(`${text}\n${CALL_TO_ACTION}`)}`,
+    x: (text, href) => `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${text} ${CALL_TO_ACTION}`)}&url=${encodeURIComponent(href)}`,
+    facebook: (_text, href) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(href)}`,
+    linkedin: (_text, href) => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(href)}`,
+    email: (text, href) => `mailto:?subject=${encodeURIComponent(TITLE)}&body=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION}\n${href}`)}`,
+  };
+  const shareStatus = $<HTMLElement>('#share-status');
+  const nativeButton = $<HTMLButtonElement>('#share-native');
+  let shared = { text: '', href: '' };
+
+  /** The link of the round: the province and the 10 measures, without the answers. */
+  const roundLink = () => {
+    const url = new URL(location.pathname, location.origin);
+    url.searchParams.set(HOME_PARAMS.province, province);
+    url.searchParams.set(ROUND_PARAM, round.map((item) => `${item.party}.${item.n}`).join(','));
+    return url.href;
+  };
+  const renderShare = (text: string) => {
+    shared = { text, href: roundLink() };
+    $('#share-preview').textContent = text;
+    shareStatus.textContent = '';
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-network]')) {
+      link.href = shareUrls[link.dataset.network!](shared.text, shared.href);
+    }
+    nativeButton.hidden = typeof navigator.share !== 'function';
+  };
+  $('#share-copy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(`${shared.text} ${CALL_TO_ACTION} ${shared.href}`);
+      shareStatus.textContent = 'Enlace copiado.';
+    } catch {
+      shareStatus.textContent = `No se pudo copiar. Copia este enlace: ${shared.href}`;
+    }
+  });
+  nativeButton.addEventListener('click', async () => {
+    try {
+      await navigator.share({ title: TITLE, text: `${shared.text} ${CALL_TO_ACTION}`, url: shared.href });
+    } catch {
+      // The reader closed the share sheet: nothing to do.
+    }
+  });
+
+  $('#again').addEventListener('click', () => startRound());
+  $('#change-province').addEventListener('click', () => {
+    showStep(stepStart);
+    select.focus();
+  });
+
+  // A link with `?provincia=28` chooses the province (and, with `r`, brings a challenge).
+  const requested = new URLSearchParams(location.search).get(HOME_PARAMS.province);
+  if (requested && select.querySelector(`option[value="${requested}"]`)) {
+    select.value = requested;
+    onProvince();
+  }
+</script>
+
+<!-- The script builds the cards and the rows, so these rules are global. Every selector starts with `.game`. -->
+<style is:global>
+  /* The page head, the same as in the other pages of the site (each page has its own copy). */
+  .page-hero:has(+ .game) { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
+  .page-hero:has(+ .game) h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
+  .page-hero:has(+ .game) .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
+
+  .game { padding-block: var(--space-6) var(--space-8); }
+  /* The page scrolls to each step: the margin keeps its top out from under the sticky header. */
+  .game-step { padding: var(--space-5); scroll-margin-top: 100px; }
+  /* `.game .quiz` sets `display: grid`: this rule is more specific, so a hidden step stays hidden. */
+  .game .game-step[hidden] { display: none; }
+  .game-step__title { margin: 0 0 var(--space-4); font-size: var(--text-2xl); }
+  .game-step__title:focus { outline: none; }
+  .game .game-note { max-width: 70ch; margin: var(--space-5) 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .game .game-status:empty { display: none; }
+  .game .game-status { margin: var(--space-3) 0 0; font: 700 var(--text-sm) var(--font-mono); }
+
+  /* 1. The province: the controls at the left, the map at the right (one column on a narrow screen). */
+  .game .start { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: var(--space-6); align-items: start; }
+  .game .start__map .province-map { margin-top: 0; }
+  .game .challenge { margin: 0 0 var(--space-4); padding: var(--space-2) var(--space-3); background: var(--color-highlight); color: var(--color-on-highlight); font-weight: 600; }
+  .game .challenge[hidden] { display: none; }
+  .game .start-form { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-3); }
+  .game .start-form__field { display: grid; gap: 6px; flex: 0 1 340px; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .game .start-form__field select {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    width: 100%;
+    height: 52px;
+    padding: 0 12px;
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 1rem var(--font-body);
+    text-transform: none;
+  }
+  .game .preview { margin-top: var(--space-5); }
+  .game .preview__lead { margin: 0 0 var(--space-3); }
+  .game .preview__list { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+  .game .preview__list li { display: inline-flex; align-items: stretch; border: var(--border-thin) solid var(--color-ink); }
+  .game .preview__list li.is-empty { border-style: dashed; }
+  .game .preview__count { display: flex; align-items: center; padding: 0 8px; font: 700 var(--text-xs) var(--font-mono); }
+  .game .preview__list li.is-empty .preview__count { color: var(--color-ink-muted); }
+
+  /* A party: its acronym on its color. */
+  .game .party-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    background: var(--party);
+    color: var(--party-text);
+    font: 700 var(--text-xs) var(--font-mono);
+    white-space: nowrap;
+  }
+
+  /* 2. The measures */
+  .game .quiz { display: grid; gap: var(--space-5); max-width: 760px; margin-inline: auto; padding: 0; border: 0; }
+  .game .quiz__progress { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); }
+  .game .quiz__count { margin: 0 auto 0 0; font: 700 var(--text-sm) var(--font-mono); text-transform: uppercase; }
+  .game .quiz__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 36px;
+    padding: 0 12px 0 8px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 var(--text-xs) var(--font-mono);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .game .quiz__back[hidden] { display: none; }
+  .game .quiz__back svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: square; }
+  .game .quiz__back:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .game .quiz__dots { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+  .game .quiz__dots li {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
+    border: var(--border-thin) solid var(--color-ink);
+    font: 700 var(--text-xs) var(--font-mono);
+    transition: transform var(--duration-fast);
+  }
+  .game .quiz__dots li[data-current] { outline: 3px solid var(--color-highlight); outline-offset: 1px; }
+  .game .quiz__dots li[hidden] { display: none; }
+  /* The stage hides the card when it goes to a side. The cards behind it make a pile. */
+  .game .quiz__stage { position: relative; overflow: hidden; padding: 6px 14px 22px 6px; margin: -6px -14px -22px -6px; }
+  .game .quiz__stage::before,
+  .game .quiz__stage::after {
+    content: '';
+    position: absolute;
+    inset: 6px 14px 22px 6px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper-alt);
+  }
+  .game .quiz__stage::before { transform: translate(10px, 14px); }
+  .game .quiz__stage::after { transform: translate(5px, 7px); }
+  .game .quiz-card {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-content: start;
+    gap: var(--space-3);
+    min-height: 300px;
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-paper);
+  }
+  .game .quiz-card:focus { outline: none; }
+  .game .quiz-card:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 3px; }
+  .game .quiz-card__meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2); margin: 0; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; color: var(--color-ink-muted); }
+  .game .quiz-card__category { padding: 2px 8px; border: var(--border-thin) solid currentColor; }
+  .game .quiz-card__heading { margin: var(--space-2) 0 0; font-size: clamp(1.375rem, 3.2vw, 2rem); line-height: 1.15; text-transform: none; overflow-wrap: anywhere; }
+  .game .quiz-card__heading.is-long { font-size: clamp(1.125rem, 2.4vw, 1.4rem); line-height: 1.3; }
+  .game .quiz-card__text { margin: 0; font-size: var(--text-md); white-space: pre-line; }
+  .game .quiz-card__more[hidden] { display: none; }
+  .game .quiz-card__more summary { cursor: pointer; font: 700 var(--text-sm) var(--font-mono); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  .game .quiz-card__more summary:hover { text-decoration-color: var(--color-highlight); }
+  .game .quiz-card__more p { margin: var(--space-3) 0 0; white-space: pre-line; }
+  /* The stamp of the answer, over the card. */
+  .game .quiz-card__stamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    padding: 8px 18px;
+    border: 4px solid currentColor;
+    background: var(--color-paper);
+    font: 400 clamp(1.5rem, 5vw, 2.5rem) var(--font-display);
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .game .quiz-card__stamp[data-answer='yes'] { color: var(--color-block-3); }
+  .game .quiz-card__stamp[data-answer='no'] { color: var(--color-block-2); }
+  .game .quiz-card__stamp[data-answer='neutral'] { color: var(--color-ink); }
+
+  .game .quiz__answers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+  .game .answer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 76px;
+    padding: var(--space-2);
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    box-shadow: var(--shadow-sm);
+    font: 400 var(--text-md) var(--font-display);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+  }
+  .game .answer__symbol { font: 700 1.5rem / 1 var(--font-mono); }
+  .game .answer[data-answer='yes']:hover { background: var(--color-block-3); color: var(--color-on-block); }
+  .game .answer[data-answer='no']:hover { background: var(--color-block-2); color: var(--color-on-block); }
+  .game .answer[data-answer='neutral']:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .game .answer:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-md); }
+  .game .answer:active { transform: translate(3px, 3px); box-shadow: none; }
+  /* The answer that the reader gave, when the reader goes back to a measure: a thick inner frame. */
+  .game .answer[aria-pressed='true'] { box-shadow: inset 0 0 0 4px var(--color-highlight), var(--shadow-sm); }
+
+  /* The answer in a dot, a chip or a square: a symbol and a color. */
+  .game [data-answer='yes']:is(li, .vote-chip, .vote-square) { background: var(--color-block-3); color: var(--color-on-block); border-color: var(--color-block-3); }
+  .game [data-answer='no']:is(li, .vote-chip, .vote-square) { background: var(--color-block-2); color: var(--color-on-block); border-color: var(--color-block-2); }
+  .game [data-answer='neutral']:is(li, .vote-chip, .vote-square) { background: var(--color-paper-alt); color: var(--color-ink); }
+
+  /* 3. The parties */
+  .game .results__lead { margin: 0 0 var(--space-4); }
+  .game .vote-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border: var(--border-thin) solid var(--color-ink);
+    font: 700 var(--text-xs) var(--font-mono);
+    white-space: nowrap;
+  }
+  .game .reveal-list { display: grid; gap: var(--space-3); list-style: none; margin: 0 0 var(--space-8); padding: 0; }
+  .game .reveal {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3);
+    border: var(--border-thin) solid var(--color-ink);
+  }
+  .game .reveal__tile { position: relative; height: 56px; perspective: 600px; }
+  .game .reveal__face {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 0 6px;
+    border: var(--border-thin) solid var(--color-ink);
+    font: 700 var(--text-sm) var(--font-mono);
+    text-align: center;
+    overflow-wrap: anywhere;
+    backface-visibility: hidden;
+    transition: transform 520ms cubic-bezier(.3, .7, .3, 1);
+    transition-delay: calc(var(--i) * 160ms + 200ms);
+  }
+  .game .reveal__face--front { background: var(--color-ink); color: var(--color-paper); font: 400 1.75rem var(--font-display); }
+  .game .reveal__face--back { background: var(--party); color: var(--party-text); transform: rotateY(180deg); }
+  .game .reveal-list.is-revealed .reveal__face--front { transform: rotateY(-180deg); }
+  .game .reveal-list.is-revealed .reveal__face--back { transform: rotateY(0); }
+  .game .reveal__body { min-width: 0; }
+  .game .reveal__statement { margin: 0; font-weight: 600; }
+  .game .reveal__party { margin: 4px 0 0; font-size: var(--text-sm); opacity: 0; transition: opacity 300ms; transition-delay: calc(var(--i) * 160ms + 520ms); }
+  .game .reveal-list.is-revealed .reveal__party { opacity: 1; }
+
+  /* The heading of the summary, with the legend at its right, above the column of squares. */
+  .game .affinity__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-3) var(--space-6); margin-bottom: var(--space-2); }
+  .game .affinity__head .game-step__title { margin: 0; flex: 1 1 320px; }
+  .game .answer-legend { display: grid; justify-items: end; gap: 6px; }
+  .game .answer-legend__title { margin: 0; font: 700 var(--text-2xs) var(--font-mono); text-transform: uppercase; color: var(--color-ink-muted); }
+  .game .answer-legend ul { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); list-style: none; margin: 0; padding: 0; }
+  .game .answer-legend li { display: inline-flex; align-items: center; gap: 6px; font: 700 var(--text-xs) var(--font-mono); }
+  .game .affinity { display: grid; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+  .game .affinity__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 6px var(--space-4);
+    padding: var(--space-3) 0;
+    border-top: 1px dashed var(--color-ink-subtle);
+  }
+  .game .affinity__party { margin: 0; }
+  .game .affinity__party a { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); text-decoration: none; }
+  .game .affinity__party a:hover .affinity__name { text-decoration: underline; text-decoration-color: var(--color-highlight); text-decoration-thickness: 3px; }
+  .game .affinity__name { font-weight: 600; }
+  .game .affinity__squares { display: flex; gap: 4px; }
+  .game .vote-square { display: grid; place-items: center; width: 24px; height: 24px; box-sizing: border-box; border: var(--border-thin) solid var(--color-ink); font: 700 var(--text-xs) var(--font-mono); }
+  .game .affinity__facts { grid-column: 1 / -1; margin: 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .game .affinity__row.is-empty .party-tag { background: transparent; color: var(--color-ink-muted); border: var(--border-thin) dashed var(--color-ink-muted); }
+  .game .results__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+
+  /* Share */
+  .game .share { margin-top: var(--space-8); padding: var(--space-5); }
+  .game .share p { margin: 0 0 var(--space-3); }
+  .game .share__preview { padding: var(--space-3) var(--space-4); border-left: 4px solid var(--color-highlight); background: var(--color-paper-alt); font-weight: 600; }
+  .game .share__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4); }
+  .game .share__actions [hidden] { display: none; }
+  .game .share__networks { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+  .game .share__status:empty { display: none; }
+  /* `.game .share p` sets no top margin: this rule is more specific, so the message keeps its space. */
+  .game .share .share__status { margin: var(--space-5) 0 0; padding-top: var(--space-3); border-top: 1px dashed var(--color-ink-subtle); font: 700 var(--text-sm) var(--font-mono); }
+
+  @media (max-width: 900px) {
+    .game .start { grid-template-columns: minmax(0, 1fr); }
+    .game .start__map .province-map { max-height: 60vh; }
+  }
+  @media (max-width: 560px) {
+    .game-step { padding: var(--space-4); }
+    .game .answer-legend { justify-items: start; }
+    .game .quiz-card { min-height: 260px; padding: var(--space-4); }
+    .game .answer { min-height: 64px; font-size: var(--text-sm); }
+    .game .quiz__dots li { width: 22px; height: 22px; }
+    .game .reveal { grid-template-columns: 84px minmax(0, 1fr); }
+    .game .reveal .vote-chip { grid-column: 2; justify-self: start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .game .reveal__face, .game .reveal__party, .game .answer { transition: none; }
+  }
+</style>
