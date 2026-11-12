@@ -60,7 +60,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   <div class="container">
     <SectionHeading index="01 / COMPARAR" title="El peso de cada tema">
       <p>
-        Porcentaje de las medidas de cada programa que corresponden a cada categoría. Pulsa una casilla para ver esas
+        Porcentaje de las medidas de cada programa que corresponden a cada categoría. Pulsa una casilla (o un partido, en el móvil) para ver esas
         medidas. {withoutProgram > 0 && `No aparecen los ${withoutProgram} partidos que aún no han publicado su programa.`}
       </p>
     </SectionHeading>
@@ -168,6 +168,41 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
           </tbody>
         </table>
       </div>
+
+      <!-- Phones: a table with this many columns does not fit, so each category is a list of parties, from more to less weight. -->
+      <div class="heatlist">
+        {rows.map(({ category, cells }) => {
+          const ranked = cells.filter((cell) => cell.count > 0).sort((a, b) => b.share - a.share);
+          const maxShare = Math.max(1, ...ranked.map((cell) => cell.share));
+          const lead = ranked[0];
+          return (
+            <details class="heatlist__category" data-category-search={normalizeForSearch(`${category.code} ${category.name}`)}>
+              <summary>
+                <span class="heatlist__name">{category.name}</span>
+                <span class="heatlist__lead">
+                  {lead ? `Más peso: ${lead.program.acronym} ${shareDecimal(lead.share)} %` : 'Ningún programa'}
+                </span>
+              </summary>
+              <ol class="heatlist__items">
+                {ranked.map(({ program, count, share }) => (
+                  <li data-party={program.id}>
+                    <a
+                      href={routes.measures(program.id, { category: category.id })}
+                      aria-label={`${program.acronym}, ${category.name}: ${count} ${measureNoun(program, count)}, ${shareDecimal(share)} % del programa`}
+                    >
+                      <span class="heatlist__acronym">{program.acronym}</span>
+                      <span class="heatlist__bar" aria-hidden="true">
+                        <span data-step={stepOf(share)} style={`width: ${(share / maxShare) * 100}%`}></span>
+                      </span>
+                      <span class="heatlist__value mono">{shareDecimal(share)} %</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          );
+        })}
+      </div>
     </Panel>
 
     <SectionHeading index="02 / LEER" title="Las medidas por tema">
@@ -218,6 +253,8 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   const rows = [...table.querySelectorAll<HTMLElement>('tbody tr')];
   const partyCells = [...table.querySelectorAll<HTMLElement>('[data-party]')];
   const totalParties = partyCells.filter((cell) => cell.tagName === 'TH').length;
+  const listCategories = [...document.querySelectorAll<HTMLElement>('.heatlist__category')];
+  const listItems = [...document.querySelectorAll<HTMLElement>('.heatlist__items [data-party]')];
 
   // Parties picked in the combobox, in the order of the pick. No pick = all the parties.
   const selected = new Set<string>();
@@ -280,6 +317,8 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
       row.hidden = !row.dataset.categorySearch!.includes(categoryQuery);
       if (!row.hidden) visibleRows += 1;
     }
+    for (const item of listCategories) item.hidden = !item.dataset.categorySearch!.includes(categoryQuery);
+    for (const item of listItems) item.hidden = selected.size > 0 && !selected.has(item.dataset.party!);
     const visibleParties = selected.size || totalParties;
     for (const cell of partyCells) cell.hidden = selected.size > 0 && !selected.has(cell.dataset.party!);
     // The table width follows the columns that remain.
@@ -634,22 +673,57 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   }
 
   .swipe-hint { display: none; margin: 0 0 var(--space-2); font: 700 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
+
+  /* The list of the phones. On a wide screen the table is shown, and the list is not. */
+  .heatlist { display: none; }
+  .heatlist__category { border-top: var(--border-thin) solid var(--color-ink); }
+  .heatlist__category:last-child { border-bottom: var(--border-thin) solid var(--color-ink); }
+  .heatlist__category[hidden] { display: none; }
+  .heatlist__category summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: var(--space-3);
+    min-height: 56px;
+    padding: var(--space-2) 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  .heatlist__category summary::-webkit-details-marker { display: none; }
+  .heatlist__category summary::after {
+    content: '+';
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    font: 700 1.25rem var(--font-mono);
+  }
+  .heatlist__category[open] summary::after { content: '–'; }
+  .heatlist__name { font-weight: 800; font-size: 1.0625rem; line-height: 1.2; }
+  .heatlist__lead { grid-column: 1; font: 500 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
+  .heatlist__items { list-style: none; margin: 0; padding: 0 0 var(--space-3); }
+  .heatlist__items li[hidden] { display: none; }
+  .heatlist__items a {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr) 3.5rem;
+    align-items: center;
+    column-gap: var(--space-2);
+    min-height: 40px;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+  .heatlist__items a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .heatlist__acronym { font: 400 var(--text-sm) var(--font-display); text-transform: uppercase; overflow-wrap: anywhere; line-height: 1.1; }
+  .heatlist__bar { height: 14px; box-sizing: border-box; border: var(--border-thin) solid var(--color-ink); background: var(--color-paper); }
+  .heatlist__bar > span { display: block; height: 100%; }
+  .heatlist__bar > span[data-step='1'] { background: var(--color-heat-1); }
+  .heatlist__bar > span[data-step='2'] { background: var(--color-heat-2); }
+  .heatlist__bar > span[data-step='3'] { background: var(--color-heat-3); }
+  .heatlist__bar > span[data-step='4'] { background: var(--color-heat-4); }
+  .heatlist__bar > span[data-step='5'] { background: var(--color-heat-5); }
+  .heatlist__value { text-align: right; font-size: var(--text-xs); font-weight: 700; }
+
   @media (max-width: 700px) {
-    .swipe-hint { display: block; }
-    /* The table scrolls in both directions in its own box, so the party names stay visible while the reader goes down. */
-    .table-wrap { max-height: 72vh; overflow: auto; overscroll-behavior: contain; border: var(--border-thin) solid var(--color-ink); }
-    .heatmap { --cat-w: 100px; --cell-w: 50px; border-spacing: 1px; }
-    .heatmap thead th { position: sticky; top: 0; z-index: 2; background: var(--color-paper); box-shadow: 0 2px 0 var(--color-ink); }
-    .heatmap thead .heatmap__corner { z-index: 4; }
-    .heatmap__category { z-index: 3; line-height: 1.15; }
-    .heatmap__cell { height: 30px; }
-    .heatmap__cell > * { min-height: 30px; }
-    .heatmap__cell { font-size: 0.75rem; }
-    .heatmap__party a { padding-inline: 0; }
-    .heatmap__acronym { font-size: 0.75rem; }
-    .heatmap__acronym--long { font-size: 0.5312rem; letter-spacing: -0.02em; }
-    .heatmap__category { font-size: var(--text-xs); }
-    .heatmap__code { display: none; }
+    .table-wrap, .swipe-hint { display: none; }
+    .heatlist { display: block; }
   }
 
   .category-list {
