@@ -636,7 +636,15 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   .swipe-hint { display: none; margin: 0 0 var(--space-2); font: 700 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
   @media (max-width: 700px) {
     .swipe-hint { display: block; }
-    .heatmap { --cat-w: 124px; --cell-w: 62px; }
+    /* The table scrolls in both directions in its own box, so the party names stay visible while the reader goes down. */
+    .table-wrap { max-height: 72vh; overflow: auto; overscroll-behavior: contain; border: var(--border-thin) solid var(--color-ink); }
+    .heatmap { --cat-w: 100px; --cell-w: 50px; border-spacing: 1px; }
+    .heatmap thead th { position: sticky; top: 0; z-index: 2; background: var(--color-paper); box-shadow: 0 2px 0 var(--color-ink); }
+    .heatmap thead .heatmap__corner { z-index: 4; }
+    .heatmap__category { z-index: 3; line-height: 1.15; }
+    .heatmap__cell { height: 30px; }
+    .heatmap__cell > * { min-height: 30px; }
+    .heatmap__cell { font-size: 0.75rem; }
     .heatmap__party a { padding-inline: 0; }
     .heatmap__acronym { font-size: 0.75rem; }
     .heatmap__acronym--long { font-size: 0.5312rem; letter-spacing: -0.02em; }

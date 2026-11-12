@@ -183,9 +183,9 @@ const groupData = congressGroups.map((group) => ({
         {
           networks.map((network) => (
             <li>
-              <Button size="sm" class="share__network" data-network={network.id} href="#" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" class="share__network" data-network={network.id} href="#" target="_blank" rel="noopener noreferrer" aria-label={`Compartir en ${network.label}`}>
                 <ShareIcon name={network.icon} />
-                {network.label}
+                <span class="share__label">{network.label}</span>
               </Button>
             </li>
           ))
@@ -1425,6 +1425,14 @@ const groupData = congressGroups.map((group) => ({
     /* The panel has no fixed height here: the list takes the height of its content, up to the maximum. */
     .vote-scroll { flex: 0 1 auto; min-height: 0; max-height: min(560px, 70vh); }
     .coalitions-box .coalitions { overflow: visible; }
+  }
+  @media (max-width: 560px) {
+    /* Share: the three actions fill the width, and the networks are icons in one row. */
+    .share__actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .share__actions :global(.button) { justify-content: center; }
+    .share__networks { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-2); }
+    .share__networks :global(.share__network) { width: 100%; box-sizing: border-box; justify-content: center; padding: 10px 0; min-height: 44px; }
+    .share__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   }
   @media (max-width: 480px) {
     /* The stepper stays in the same row as the name: one row for each party. */

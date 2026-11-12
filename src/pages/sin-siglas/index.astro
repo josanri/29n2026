@@ -201,9 +201,9 @@ const networks = [
           {
             networks.map((network) => (
               <li>
-                <Button size="sm" class="share__network" data-network={network.id} href="#" target="_blank" rel="noopener noreferrer">
+                <Button size="sm" class="share__network" data-network={network.id} href="#" target="_blank" rel="noopener noreferrer" aria-label={`Compartir en ${network.label}`}>
                   <ShareIcon name={'icon' in network ? network.icon : network.id} />
-                  {network.label}
+                  <span class="share__label">{network.label}</span>
                 </Button>
               </li>
             ))
@@ -940,6 +940,15 @@ const networks = [
     .game .quiz__dots li { width: 22px; height: 22px; }
     .game .reveal { grid-template-columns: 84px minmax(0, 1fr); }
     .game .reveal .vote-chip { grid-column: 2; justify-self: start; }
+    /* The two actions of the results and the share actions fill the width. The networks are icons in one row. */
+    .game .results__actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .game .share { padding: var(--space-4); }
+    .game .share__actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .game .results__actions .button,
+    .game .share__actions .button { justify-content: center; }
+    .game .share__networks { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .game .share__network { width: 100%; box-sizing: border-box; justify-content: center; padding: 10px 0; min-height: 44px; }
+    .game .share__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   }
   @media (prefers-reduced-motion: reduce) {
     .game .reveal__face, .game .reveal__party, .game .answer { transition: none; }
