@@ -1,5 +1,10 @@
 ---
 import '@/styles/global.css';
+import '@fontsource/archivo-black/400.css';
+import '@fontsource-variable/archivo/wght.css';
+import '@fontsource-variable/archivo/wght-italic.css';
+import '@fontsource/jetbrains-mono/500.css';
+import '@fontsource/jetbrains-mono/700.css';
 import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import Tooltip from '@/components/ui/Tooltip.astro';
@@ -60,21 +65,6 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta name="theme-color" content={accentLight ?? '#f3efe4'} media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content={accent ?? '#151515'} media="(prefers-color-scheme: dark)" />
     <link rel="icon" href={faviconHref} type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- The font stylesheet does not block the first paint: it loads as "print" and then applies to all media. -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,600;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,600;0,800;1,400&family=JetBrains+Mono:wght@500;700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
     <!-- Apply the saved theme before the first paint, so the page does not flash. The `js` class lets the CSS
          fold the phone menu only when the script that opens it can run. -->
     <script is:inline define:vars={{ storageKey: THEME_STORAGE_KEY }}>
