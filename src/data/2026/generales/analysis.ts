@@ -45,7 +45,7 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
     {
       title: 'Pocas fechas y ocho huecos en blanco',
       text:
-        'Solo 14 medidas tienen un plazo explícito (100 días, 6 meses, 2029…), y 27 incluyen una cifra concreta. Ocho números del programa están reservados con el texto «Permanezca atento a la campaña para conocer esta nueva medida».',
+        'Solo 13 medidas tienen un plazo explícito (100 días, 6 meses, 2029…), y 27 incluyen una cifra concreta. Ocho números del programa están reservados con el texto «Permanezca atento a la campaña para conocer esta nueva medida».',
       measureNumbers: [1, 228, 83, 109, 132],
     },
   ],

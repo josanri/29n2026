@@ -95,6 +95,10 @@ NOT_DEADLINE_RE = re.compile(
     re.I,
 )
 
+# Deadlines read in the proposal when the first year is not the right one: the 180 judges of
+# proposal 242 are incorporated «entre 2026 i 2027», so the deadline is the end of the range.
+DEADLINE_OVERRIDE = {242: '2027'}
+
 
 def find_deadline(text):
     """Return the first deadline the party promises in the text, or None."""
@@ -294,7 +298,7 @@ def build_program(document, blocks_raw, sections_raw, raw_measures):
             if re.search(r'\d', sentence)
             and re.search(r'%|€|euros?|milions?|km\b|dies|anys|mesos|hores', sentence, re.I)
         ][:3]
-        deadline = find_deadline(complete)
+        deadline = DEADLINE_OVERRIDE.get(number) or find_deadline(complete)
         measures.append({
             'n': number,
             'bloque': section['block'],

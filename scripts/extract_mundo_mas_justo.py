@@ -20,6 +20,10 @@ PAST_RE = re.compile(
     re.I,
 )
 
+# Deadlines read in the measure when the regex finds the wrong one: measure 100 backs the EU target of
+# cutting emissions 55 % «para el año 2030»; carbon neutrality in 2050 is the later goal it also cites.
+DEADLINE_OVERRIDE = {100: "en 2030"}
+
 
 def find_deadline(text):
     """Return the first deadline the party promises in the text, or None.
@@ -338,7 +342,7 @@ def create_program(document, extracted):
                 if re.search(r"\d", sentence)
                 and re.search(r"%|€|euros?|mill[oó]nes?|d[ií]as?|años?|meses?|personas?", sentence, re.I)
             ][:3]
-            deadline = find_deadline(full_text)
+            deadline = DEADLINE_OVERRIDE.get(global_number) or find_deadline(full_text)
             measures.append({
                 "n": global_number,
                 "bloque": axis_index,

@@ -14,6 +14,7 @@ import Tag from '@/components/ui/Tag.astro';
 import { getProgram, programs } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
+import { deadlineKind, deadlineKindLabel, deadlineKindOrder } from '@/lib/deadlines';
 import { allOf, capitalize, measureNoun, padNumber, percentOf, splitParagraphs } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { readableTextColor } from '@/lib/color';
@@ -35,6 +36,18 @@ const publishedMeasures = program.measures.filter((measure) => !measure.isPendin
 const pendingMeasures = program.measures.filter((measure) => measure.isPending);
 const withFigures = program.measures.filter((measure) => measure.figures.length).length;
 const withDeadline = program.measures.filter((measure) => measure.deadline).length;
+// The kinds of deadline this program has, for the lead of «Lo que tiene fecha» (same source as the timeline).
+const deadlineValues =
+  program.deadlines.length > 0
+    ? program.deadlines.map((entry) => entry.deadline)
+    : program.measures.flatMap((measure) => (measure.deadline ? [measure.deadline] : []));
+const deadlineKindNames = deadlineKindOrder
+  .filter((kind) => deadlineValues.some((deadline) => deadlineKind(deadline) === kind))
+  .map((kind) => deadlineKindLabel[kind].title.toLowerCase());
+const deadlineKindsText =
+  deadlineKindNames.length > 1
+    ? `Se separan en ${deadlineKindNames.length === 2 ? 'dos' : 'tres'} tipos: ${deadlineKindNames.slice(0, -1).join(', ')} y ${deadlineKindNames.at(-1)}. Dentro de cada tipo, van de lo más inmediato a lo más lejano.`
+    : 'Van de lo más inmediato a lo más lejano.';
 const repealingMeasures = program.measures.filter((measure) => measure.repeals);
 const measureByNumber = Object.fromEntries(program.measures.map((measure) => [measure.number, measure]));
 
@@ -300,7 +313,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             <>
               <SectionHeading index={sectionIndex.calendar} title="Lo que tiene fecha">
                 <p>
-                  {total === 1 ? `${capitalize(allOf(program, total))} fija un plazo.` : `Solo ${withDeadline} de ${allOf(program, total)} fijan un plazo.`} Se separan en tres tipos: fecha fija, plazo máximo de espera y plazo de implantación. Dentro de cada tipo, van de lo más inmediato a lo más lejano.
+                  {total === 1 ? `${capitalize(allOf(program, total))} fija un plazo.` : `Solo ${withDeadline} de ${allOf(program, total)} fijan un plazo.`} {deadlineKindsText}
                 </p>
               </SectionHeading>
               <Panel>

@@ -73,7 +73,7 @@
    "medida": 1
   },
   {
-   "plazo": "en 2050",
+   "plazo": "en 2030",
    "texto": "Respaldar el compromiso de la Unión Europea de reducir al menos un 55% las emisiones",
    "medida": 100
   },
@@ -84,8 +84,7 @@
   }
  ],
  "ordenPlazos": [
-  "en 2030",
-  "en 2050"
+  "en 2030"
  ],
  "verbos": [
   {
@@ -2936,7 +2935,7 @@
    "cifras": [
     "de gases efecto invernadero para el año 2030 con respecto a 1990, así como el alcanzar la neutralidad de carbono en 2050."
    ],
-   "plazo": "en 2050",
+   "plazo": "en 2030",
    "deroga": null
   },
   {
