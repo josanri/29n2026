@@ -815,7 +815,7 @@
     "Canarias"
    ],
    "cifras": [],
-   "plazo": "plurianual",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1364,7 +1364,7 @@
    "cifras": [
     "Reclamaremos la aportación estatal al plan cuatrienal de empleo para menores de 35 años previsto en la propuesta de Decreto Canarias."
    ],
-   "plazo": "cuatrienal",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1427,7 +1427,7 @@
     "Canarias"
    ],
    "cifras": [],
-   "plazo": "plurianual",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1779,7 +1779,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "plurianual",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2393,7 +2393,7 @@
     "Unión Europea"
    ],
    "cifras": [],
-   "plazo": "plurianual",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2638,7 +2638,7 @@
     "Canarias"
    ],
    "cifras": [],
-   "plazo": "anual",
+   "plazo": null,
    "deroga": null
   }
  ]

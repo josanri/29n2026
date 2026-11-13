@@ -344,7 +344,7 @@
    "cifras": [
     "Al que deja de pagar, juicio verbal y lanzamiento en 30 días, sin excusas de 'vulnerabilidad': a los vulnerables los atiende el Estado, no tu casa."
    ],
-   "plazo": "48 horas",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -483,7 +483,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "15 días",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -718,7 +718,7 @@
    "cifras": [
     "Coste: ≈ 400 M€/año."
    ],
-   "plazo": "72 horas",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -812,7 +812,7 @@
     "94.400 vigilantes cobran 1.161 euros de salario base y 24 euros de plus de peligrosidad, y seis de cada diez han sido agredidos.",
     "Chaleco, guantes anticorte y defensa a cargo de la empresa; binomio obligatorio en transporte, hospitales y centros de menores; TIP en 30 días, no en nueve meses; título oficial de FP y reglamento nuevo en seis meses: el vigente es de 1994."
    ],
-   "plazo": "30 días",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -912,7 +912,7 @@
    "cifras": [
     "La recaudación subió un 10 % en 2025 sin tocar un tipo: eso es una subida encubierta y se acaba."
    ],
-   "plazo": "cada año",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1053,7 +1053,7 @@
     "Renta en una página, liquidación en 30 días, carga de la prueba para la Administración e intereses de demora simétricos: Hacienda devuelve con el mismo interés con el que cobra.",
     "Eliminación inmediata de incentivos a la persecución fiscal; el 50 % de los inspectores fiscales se dedicarán en exclusiva a la investigación de políticos, cargos públicos y empresas subvencionadas directa o indirectamente."
    ],
-   "plazo": "30 días",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1074,7 +1074,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "cada año",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1195,7 +1195,7 @@
     "El 100 % de las órdenes ejecutadas en 90 días.",
     "Coste: ≈ 300 M€/año; se recupera en acogida."
    ],
-   "plazo": "48 horas",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1430,7 +1430,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "Cada año",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1657,7 +1657,7 @@
     "60 días para cirugía, 30 para especialista, 7 para pruebas prioritarias.",
     "Coste: ≈ 1.500 M€/año."
    ],
-   "plazo": "60 días",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1756,7 +1756,7 @@
    "cifras": [
     "Coste: ≈ 800 M€/año."
    ],
-   "plazo": "48 horas",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -1855,7 +1855,7 @@
     "Un psicólogo clínico por cada 10.000 habitantes en los centros de salud y atención en 15 días.",
     "Coste: ≈ 500 M€/año."
    ],
-   "plazo": "15 días",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2186,7 +2186,7 @@
    "cifras": [
     "Toda emergencia auditada en 30 días y publicada íntegra en 24 horas con los beneficiarios reales."
    ],
-   "plazo": "30 días",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2316,7 +2316,7 @@
     "Las mutuas dan el alta en contingencias comunes a los 15 días, con revisión del INSS en 72 horas.",
     "Ahorro: ≈ 2.000 M€/año."
    ],
-   "plazo": "15 días",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2346,7 +2346,7 @@
     "Cotización cero durante dos años por contratar a menores de 30 y mayores de 50.",
     "Coste: ≈ 1.500 M€/año."
    ],
-   "plazo": "dos años",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2524,7 +2524,7 @@
    "cifras": [
     "Coste: ≈ 400 M€/año."
    ],
-   "plazo": "Dos años",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2827,7 +2827,7 @@
     "Zona Especial Canaria al 0 % de Sociedades (hoy, 4 %) para la empresa que cree cinco empleos en las islas.",
     "Y el 75 % de residente en avión y barco, pagado a las compañías en 30 días: el Estado debe hoy 810 millones y pone en riesgo las rutas."
    ],
-   "plazo": "30 días",
+   "plazo": null,
    "deroga": null
   },
   {

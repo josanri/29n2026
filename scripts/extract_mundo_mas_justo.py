@@ -10,12 +10,10 @@ import fitz
 
 SOURCE_URL = "https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf"
 EXPECTED_PAGES = 95
-# A time phrase counts as a deadline only when the party promises it (see find_deadline).
-DEADLINE_RE = re.compile(
-    r"\b(48 horas?|72 horas?|15 d[ií]as?|30 d[ií]as?|60 d[ií]as?|"
-    r"\d+ meses?|dos años|en \d{4}|anual|cada año)\b",
-    re.I,
-)
+# A time phrase counts as a deadline only when the party promises it (see find_deadline), and only
+# when it says when the measure is carried out. A service time («en 48 horas») or a period («anual»,
+# «cada año») is a figure of the measure, not a deadline.
+DEADLINE_RE = re.compile(r"\b(\d+ meses?|dos años|en \d{4})\b", re.I)
 # Past tense and «fue»/«había» mark a fact, not a promise. «sólo» and «cómo» end in «ó» but are not past tense.
 PAST_RE = re.compile(
     r"\b(?!s[oó]lo\b|c[oó]mo\b)(\w+(?:aron|ieron|eron|ió|ó)|fue|fueron|hab[ií]a|hab[ií]an|tuvo|tuvieron)\b",

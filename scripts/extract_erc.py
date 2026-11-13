@@ -88,7 +88,10 @@ DEADLINE_RE = re.compile(r'\b(?:202[6-9]|2030|primer any|primers \d+ anys)\b', r
 NOT_DEADLINE_RE = re.compile(
     r'\bLlei \d+/\d{4}\b'
     r'|\b(?:gener|febrer|mar[çc]|abril|maig|juny|juliol|agost|setembre|octubre|novembre|desembre) de 20\d{2}\b'
-    r'|\baquest 2026\b|\bes va\b|\bva (?:acordar|aprovar|signar|anunciar)\b',
+    r'|\baquest 2026\b|\bes va\b|\bva (?:acordar|aprovar|signar|anunciar)\b'
+    # A period in a name («Pla de Rodalies 2026-2030», «Marc Financer Pluriennal 2028-2034») and the
+    # budget of a year («2.018 MEUR per al 2026») are figures, not the date the measure is carried out.
+    r'|\b20\d{2}-20\d{2}\b|\bper al 20\d{2}\b',
     re.I,
 )
 
