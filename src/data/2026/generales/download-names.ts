@@ -6,6 +6,7 @@ export const downloadFileNames: Record<string, string> = {
   adelante: 'programa-adelante-andalucia-29n.pdf',
   ph: 'programa-partido-humanista-2026.pdf',
   fo: 'programa-frente-obrero-recuperar-espana.pdf',
+  vox: 'programa-vox-es-sentido-comun-2026.pdf',
 };
 
 /** File name of the summary PDF of Adelante Andalucía (the 29 main measures). */

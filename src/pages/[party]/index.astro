@@ -370,9 +370,10 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
                   >
                     <span class="block-card__number">{padNumber(block.id)}</span>
                     <h3>{block.title}</h3>
-                    <p class="block-card__motto">«{block.motto}»</p>
+                    {block.motto && <p class="block-card__motto">«{block.motto}»</p>}
                     <p class="block-card__count mono">
-                      {count} {measureNoun(program, count)} · {sectionCount} secciones
+                      {count} {measureNoun(program, count)}
+                      {sectionCount > 1 && ` · ${sectionCount} secciones`}
                     </p>
                   </a>
                 );

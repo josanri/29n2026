@@ -17,6 +17,7 @@
     "data:pfac": "python scripts/extract_pfac.py public/2026/generales/programas/feministas-al-congreso-2026.pdf src/data/2026/generales/programas/pfac.json",
     "data:mundo-mas-justo": "python scripts/extract_mundo_mas_justo.py public/2026/generales/programas/mundo-mas-justo-29n-2026.pdf src/data/2026/generales/programas/mundo-mas-justo.json",
     "data:tercera-edad": "python scripts/extract_tercera_edad.py public/2026/generales/programas/en-accion-3e-2026.pdf src/data/2026/generales/programas/tercera-edad.json",
+    "data:vox": "python scripts/extract_vox.py public/2026/generales/programas/vox-es-sentido-comun-2026.pdf src/data/2026/generales/programas/vox.json",
     "data:adelante": "python scripts/extract_adelante.py",
     "data:candidaturas": "python scripts/extract_candidaturas.py"
   },

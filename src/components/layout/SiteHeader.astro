@@ -305,8 +305,11 @@ const links = [
     transition: transform 140ms ease;
   }
   .nav-dropdown[open] .nav-dropdown__chevron { transform: rotate(180deg); }
+  /* The links need their own hover: the base `a:hover` loses against `.nav a` above, which is scoped
+     and so more specific. */
   .nav-dropdown[open] > summary,
   .nav-dropdown > summary:hover,
+  .nav a:hover,
   .theme-toggle:hover,
   .menu-toggle:hover {
     background: var(--color-highlight);

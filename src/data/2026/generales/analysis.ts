@@ -221,4 +221,42 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [1],
     },
   ],
+  vox: [
+    {
+      title: 'Tres ejes: prioridad nacional, desregulación y remigración',
+      text:
+        'Los tres lemas de campaña tienen bloque propio: «Inmigración» (9 medidas), «Prioridad nacional» (8) y «Desregulación» (12). Suman 29 de las 115 medidas. Incluyen prohibir las regularizaciones masivas, un plan de retorno para los extranjeros que no contribuyan o vivan de subsidios y derogar tres normas por cada una que se apruebe.',
+      measureNumbers: [9, 13, 14, 18, 40],
+    },
+    {
+      title: 'La preferencia por los españoles llega a varios servicios',
+      text:
+        'El criterio de prioridad nacional aparece también fuera de su bloque: vivienda protegida y ayudas al alquiler, plazas de guardería y becas, el Ingreso Mínimo Vital y la atención sanitaria, que excluiría a los extranjeros en situación ilegal salvo urgencia grave.',
+      measureNumbers: [18, 20, 22, 27, 74],
+    },
+    {
+      title: 'Seguridad y Defensa es el bloque más largo',
+      text:
+        'Tiene 15 medidas: rebajar la edad de responsabilidad penal, ampliar la prisión permanente revisable, proteger las fronteras con participación de las Fuerzas Armadas, aumentar la inversión en Defensa y presionar para recuperar Gibraltar.',
+      measureNumbers: [80, 81, 88, 89, 93],
+    },
+    {
+      title: 'Bajar impuestos y recortar normas y gasto',
+      text:
+        'El programa propone rebajar el IRPF, el IVA y el Impuesto de Sociedades, IVA del 0 % en la compra de la primera vivienda nueva, silencio administrativo positivo como regla general y una auditoría de las administraciones para recortar el gasto superfluo.',
+      measureNumbers: [2, 34, 41, 43],
+    },
+    {
+      title: 'Cuatro medidas piden derogar leyes',
+      text:
+        'El texto pide derogar la Ley de Vivienda, las leyes de género, la LOMLOE y la legislación laboral del Gobierno, además del calendario de cierre de las centrales nucleares. Otras medidas hablan de «superar» o modificar leyes, como la de Memoria Democrática, sin nombrar su derogación.',
+      measureNumbers: [8, 30, 46, 47, 69],
+    },
+    {
+      title: 'Diez medidas sin desarrollo',
+      text:
+        'Diez de las 115 medidas son solo un enunciado, sin texto que las desarrolle. Entre ellas, suprimir el arraigo, prohibir el burka y el niqab, acabar con los menús halal en los comedores escolares y defender la tauromaquia.',
+      measureNumbers: [11, 19, 23, 54, 57, 71, 72, 73, 77, 111],
+    },
+  ],
 };
