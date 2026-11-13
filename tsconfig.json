@@ -6,7 +6,9 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      // The election that astro.config.mjs compiles (ELECTION). Here, the default one, for the editor types.
+      "@eleccion/*": ["src/data/2026/generales/*"]
     }
   }
 }

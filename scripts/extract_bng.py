@@ -8,7 +8,7 @@
 #   - x≥215                → subviñeta: se añade a la propuesta que la introduce
 #   - x≈189 resto          → texto de introducción
 # Uso: python scripts/extract_bng.py <pdf> <salida.json>
-import fitz, sys, json, re
+import fitz, sys, json, re, os
 
 SECCION = re.compile(r'^(\d+\.\d+)\s*\.?\s+(\S.*)$')
 SUBAP = re.compile(r'^(\d+\.\d+\.\d+\.?|\d\)|[a-z]\))\s+(\S.*)$')
@@ -209,6 +209,8 @@ def main():
                                             group=m['group'], hidden=False))
             ob['sections'].append(os_)
         out['blocks'].append(ob)
+    # the intermediate file goes to an ignored folder (.cache/<año>/<tipo>/), which may not exist yet
+    os.makedirs(os.path.dirname(sys.argv[2]) or '.', exist_ok=True)
     json.dump(out, open(sys.argv[2], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('capítulos', len(bloques), 'secciones', sum(len(b['sections']) for b in bloques), 'propuestas', n)
 

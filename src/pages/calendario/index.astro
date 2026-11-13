@@ -4,7 +4,8 @@ import Button from '@/components/ui/Button.astro';
 import Panel from '@/components/ui/Panel.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
-import { calendarEvents, ELECTION_DATE } from '@/data/calendario';
+import { calendarEvents, ELECTION_DATE } from '@eleccion/calendario';
+import { election, electionLabel } from '@eleccion/eleccion';
 import { googleCalendarUrl } from '@/lib/ics';
 import { routes } from '@/lib/routes';
 import { capitalize, padNumber } from '@/lib/format';
@@ -90,11 +91,11 @@ const months = monthKeys.map((key) => {
 
 <BaseLayout
   title="Calendario electoral"
-  description="Las fechas clave de las elecciones generales del 29 de noviembre de 2026, con la opción de añadirlas a tu calendario."
+  description={`Las fechas clave de las ${election.name.toLowerCase()} del ${election.longDate}, con la opción de añadirlas a tu calendario.`}
 >
   <section class="page-hero">
     <div class="container">
-      <Tag variant="ink">Elecciones generales · 29 de noviembre de 2026</Tag>
+      <Tag variant="ink">{electionLabel}</Tag>
       <h1 class="headline">Calendario electoral</h1>
       <p class="page-hero__lede">
         De la convocatoria a la constitución de las Cortes. Añade cada fecha a tu calendario o descarga todas a la vez.

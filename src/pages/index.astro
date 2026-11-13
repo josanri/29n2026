@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { electionLabel } from '@eleccion/eleccion';
 import ProgramCard from '@/components/party/ProgramCard.astro';
 import CandidacyMap from '@/components/candidacies/CandidacyMap.astro';
 import Button from '@/components/ui/Button.astro';
@@ -43,7 +44,7 @@ const searchTopics = ['Vivienda', 'IRPF', 'Pensiones', 'Sanidad', 'Alquiler', 'E
 <BaseLayout title="Inicio">
   <section class="hero">
     <div class="container">
-      <Tag variant="ink" size="md">Elecciones generales · 29 de noviembre de 2026</Tag>
+      <Tag variant="ink" size="md">{electionLabel}</Tag>
       <h1 class="headline">
         Los <span class="hero__mark">programas</span> medida a medida
       </h1>

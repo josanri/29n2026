@@ -2,7 +2,7 @@
  * Pure functions of the Congress and pacts simulator: the hemicycle, the vote of investiture
  * and the coalitions that reach the absolute majority. They have no DOM, so they are easy to test.
  */
-import { ABSOLUTE_MAJORITY, CONGRESS_SEATS } from '@/data/congreso';
+import { ABSOLUTE_MAJORITY, CONGRESS_SEATS } from '@eleccion/congreso';
 
 export type Vote = 'yes' | 'abstain' | 'no';
 

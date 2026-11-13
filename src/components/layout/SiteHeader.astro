@@ -3,6 +3,7 @@ import { publishedFirst, type Program } from '@/lib/programs';
 import { nationalPrograms, regionalPrograms, regionalRegions, regionalProgramsIn } from '@/lib/presence';
 import { routes } from '@/lib/routes';
 import { SITE_NAME } from '@/lib/site';
+import { election } from '@eleccion/eleccion';
 
 const path = Astro.url.pathname;
 const isCurrent = (program: Program) => path.startsWith(routes.party(program.id));
@@ -66,8 +67,11 @@ const links = [
 <header class="site-header">
   <div class="container site-header__row">
     <a class="logo" href={routes.home()} aria-label={`${SITE_NAME}, inicio`}>
-      <span class="logo__mark">29N</span>
-      <span class="logo__text">Programas<br />electorales</span>
+      <span class="logo__mark">{election.shortName}</span>
+      <span class="logo__text">
+        <span class="logo__title">Programas</span>
+        <span class="logo__subtitle">electorales</span>
+      </span>
     </a>
     <nav class="nav" id="site-nav" aria-label="Principal">
       {menus.map((menu) => (
@@ -226,11 +230,23 @@ const links = [
     z-index: -1;
     transform: skew(-8deg);
   }
+  /* «PROGRAMAS» in the display font, «ELECTORALES» under it in small mono capitals. */
   .logo__text {
-    font-family: var(--font-display);
-    font-size: 0.8125rem;
-    line-height: 1.05;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1;
     text-transform: uppercase;
+  }
+  .logo__title {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+  }
+  .logo__subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    color: var(--color-ink-muted);
   }
   .nav {
     display: flex;
@@ -437,7 +453,9 @@ const links = [
   @media (max-width: 560px) {
     .site-header__row { min-height: 0; padding-top: 8px; padding-bottom: 8px; }
     .logo__mark { font-size: 1.75rem; }
-    .logo__text { display: block; font-size: var(--text-xs); }
+    .logo__text { gap: 3px; }
+    .logo__title { font-size: 0.875rem; }
+    .logo__subtitle { font-size: 0.625rem; }
     .menu-toggle { height: 44px; }
     .nav a, .theme-toggle, .menu-toggle, .nav-dropdown > summary { font-size: var(--text-xs); }
     .nav-dropdown--regional .nav-dropdown__groups { columns: 1; }
@@ -446,6 +464,7 @@ const links = [
   @media (max-width: 374px) {
     .logo { gap: var(--space-2); padding-right: 0; }
     .logo__mark { font-size: 1.5rem; }
-    .logo__text { font-size: 0.6875rem; }
+    .logo__title { font-size: 0.8125rem; }
+    .logo__subtitle { font-size: 0.5625rem; letter-spacing: 0.08em; }
   }
 </style>

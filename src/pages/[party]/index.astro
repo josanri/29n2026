@@ -18,10 +18,10 @@ import { allOf, capitalize, measureNoun, padNumber, percentOf, splitParagraphs }
 import { blockColor } from '@/lib/blocks';
 import { readableTextColor } from '@/lib/color';
 import { methodNote } from '@/lib/method-note';
-import { routes } from '@/lib/routes';
+import { routes, withBase } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
-import { keyFindingsByParty, type KeyFinding } from '@/data/analysis';
-import { downloadFileNames, summaryDownloadFileName } from '@/data/download-names';
+import { keyFindingsByParty, type KeyFinding } from '@eleccion/analysis';
+import { downloadFileNames, summaryDownloadFileName } from '@eleccion/download-names';
 
 export function getStaticPaths() {
   return programs.map((program) => ({ params: { party: program.id } }));
@@ -159,7 +159,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
                 {program.summaryUrl && (
                   <Button href={program.summaryUrl} download={summaryDownloadFileName}>Resumen: las 29 medidas</Button>
                 )}
-                {program.sourceUrl && <Button href={program.sourceUrl} target="_blank" rel="noopener">Fuente oficial</Button>}
+                {program.sourceUrl && <Button href={withBase(program.sourceUrl)} target="_blank" rel="noopener">Fuente oficial</Button>}
               </div>
             </div>
             <dl class={`hero__stats box${pendingMeasures.length === 0 ? ' hero__stats--five' : ''}`}>
@@ -397,7 +397,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
                 <summary><h3>Nota de método</h3></summary>
                 <p>{methodNote(program)}</p>
                 {program.sourceUrl && (
-                  <p><a href={program.sourceUrl} target="_blank" rel="noopener">Consultar la fuente oficial</a>.</p>
+                  <p><a href={withBase(program.sourceUrl)} target="_blank" rel="noopener">Consultar la fuente oficial</a>.</p>
                 )}
               </details>
             </Panel>

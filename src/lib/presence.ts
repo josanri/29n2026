@@ -3,7 +3,7 @@
  * and how parties split into national and regional.
  */
 import { z } from 'astro/zod';
-import rawPresence from '../data/presencia.json';
+import rawPresence from '@eleccion/presencia.json';
 import { compareText } from './format';
 import { unique } from './collections';
 import { geography } from './geography';

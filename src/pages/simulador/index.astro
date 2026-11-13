@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button.astro';
 import Panel from '@/components/ui/Panel.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
-import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, congressGroups } from '@/data/congreso';
+import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, congressGroups } from '@eleccion/congreso';
 import { programs } from '@/lib/programs';
 import { routes } from '@/lib/routes';
 
@@ -247,7 +247,9 @@ const groupData = congressGroups.map((group) => ({
 </BaseLayout>
 
 <script>
-  import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, type CongressGroup } from '@/data/congreso';
+  import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, type CongressGroup } from '@eleccion/congreso';
+  import { election } from '@eleccion/eleccion';
+  import { SITE_NAME } from '@/lib/site';
   import { investiture, minimalCoalitions, type Vote } from '@/lib/simulator';
   import { tooltip } from '@/lib/tooltip';
 
@@ -847,8 +849,8 @@ const groupData = congressGroups.map((group) => ({
   const sharePreview = $<HTMLElement>('#share-preview');
   const nativeButton = $<HTMLButtonElement>('#share-native');
   const networkLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-network]')];
-  const CALL_TO_ACTION = 'Prueba otros pactos en el simulador de Programas 29N:';
-  const TITLE = 'Congreso y pactos · Programas 29N';
+  const CALL_TO_ACTION = `Prueba otros pactos en el simulador de ${SITE_NAME}:`;
+  const TITLE = `Congreso y pactos · ${SITE_NAME}`;
   /** The address that each network gives to a shared page. The text and the link are encoded. */
   const shareUrls: Record<string, (text: string, href: string) => string> = {
     whatsapp: (text, href) => `https://wa.me/?text=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION} ${href}`)}`,
@@ -951,7 +953,7 @@ const groupData = congressGroups.map((group) => ({
     ctx.fillText('CONGRESO Y PACTOS', 48, 88);
     ctx.fillStyle = muted;
     ctx.font = '700 20px "JetBrains Mono", monospace';
-    ctx.fillText(`Elecciones generales · 29N · Candidato: ${candidate ? byId(candidate).acronym : 'sin elegir'}`, 48, 122);
+    ctx.fillText(`${election.name} · ${election.shortName} · Candidato: ${candidate ? byId(candidate).acronym : 'sin elegir'}`, 48, 122);
 
     // The hemicycle of the votes, scaled from the 400 × 210 of the page.
     const scale = 1.85;
@@ -1005,7 +1007,7 @@ const groupData = congressGroups.map((group) => ({
 
     ctx.fillStyle = ink;
     ctx.font = '700 20px "JetBrains Mono", monospace';
-    ctx.fillText('Programas 29N · Simulador de Congreso y pactos', 48, height - 36);
+    ctx.fillText(`${SITE_NAME} · Simulador de Congreso y pactos`, 48, height - 36);
     return new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'));
   };
 

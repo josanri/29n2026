@@ -2,9 +2,10 @@
  * iCalendar (.ics) and Google Calendar links for the events of the electoral calendar.
  * The functions are pure: they run at build time and in the browser.
  */
-import type { CalendarEvent } from '@/data/calendario';
+import type { CalendarEvent } from '@eleccion/calendario';
+import { SITE_NAME } from '@/lib/site';
 
-const PRODUCT_ID = '-//Programas 29N//Calendario electoral//ES';
+const PRODUCT_ID = `-//${SITE_NAME}//Calendario electoral//ES`;
 
 /** Local time of Spain in winter (CET, UTC+1): valid for the dates of the election (November and December). */
 const SPAIN_WINTER_OFFSET_HOURS = 1;

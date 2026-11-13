@@ -1,12 +1,14 @@
 ---
+import { election } from '@eleccion/eleccion';
 import { routes } from '@/lib/routes';
+import { SITE_NAME } from '@/lib/site';
 ---
 
 <footer class="site-footer">
   <div class="container site-footer__row">
     <p>
-      <strong>PROGRAMAS 29N</strong> — lectura y análisis de los programas electorales para las elecciones generales del
-      29 de noviembre de 2026. El texto de cada medida es el del documento oficial del partido. Las categorías, los
+      <strong>{SITE_NAME.toUpperCase()}</strong> — lectura y análisis de los programas electorales para las
+      {election.name.toLowerCase()} del {election.longDate}. El texto de cada medida es el del documento oficial del partido. Las categorías, los
       colectivos y las palancas son una clasificación editorial de esta web.
     </p>
     <p class="site-footer__legal" role="note">

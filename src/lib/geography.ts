@@ -1,6 +1,6 @@
-/** Province outlines and map geometry (`src/data/provincias.json`). */
+/** Province outlines and map geometry (`src/data/<año>/<tipo>/provincias.json`). */
 import { z } from 'astro/zod';
-import rawGeography from '../data/provincias.json';
+import rawGeography from '@eleccion/provincias.json';
 
 /** Island provinces: Illes Balears, Las Palmas and Santa Cruz de Tenerife. */
 const ISLAND_PROVINCES = new Set(['07', '35', '38']);

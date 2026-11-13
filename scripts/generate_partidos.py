@@ -1,9 +1,9 @@
 """Crea una ficha de programa para cada partido o coalición de «Quién se presenta».
 
-Lee public/datos-electorales/candidaturas.json y agrupa las denominaciones por partido.
+Lee public/2026/generales/datos-electorales/candidaturas.json y agrupa las denominaciones por partido.
 Si un partido ya tiene su JSON (extraído de un PDF), no lo toca.
 Si no tiene programa, crea una ficha con «vacio: true».
-Escribe también src/data/presencia.json: dónde presenta candidaturas cada partido
+Escribe también src/data/2026/generales/presencia.json: dónde presenta candidaturas cada partido
 (provincias por cámara), en qué comunidades y si es de ámbito estatal o autonómico.
 Uso: python scripts/generate_partidos.py
 """
@@ -13,9 +13,9 @@ import unicodedata
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-CANDIDATURAS = RAIZ / 'public' / 'datos-electorales' / 'candidaturas.json'
-PROGRAMAS = RAIZ / 'src' / 'data' / 'programas'
-PRESENCIA = RAIZ / 'src' / 'data' / 'presencia.json'
+CANDIDATURAS = RAIZ / 'public' / '2026' / 'generales' / 'datos-electorales' / 'candidaturas.json'
+PROGRAMAS = RAIZ / 'src' / 'data' / '2026' / 'generales' / 'programas'
+PRESENCIA = RAIZ / 'src' / 'data' / '2026' / 'generales' / 'presencia.json'
 
 # Ámbito: por defecto, un partido es autonómico si solo presenta candidaturas en una
 # comunidad. Estas excepciones corrigen los casos en los que esa regla falla.

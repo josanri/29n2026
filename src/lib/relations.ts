@@ -1,9 +1,9 @@
 /**
  * Relations between parties that run together: a joint list or a coalition.
- * The data is in `src/data/relaciones.json`. The build fails if a party id does not exist.
+ * The data is in `src/data/<año>/<tipo>/relaciones.json`. The build fails if a party id does not exist.
  */
 import { z } from 'astro/zod';
-import rawRelations from '../data/relaciones.json';
+import rawRelations from '@eleccion/relaciones.json';
 import { unique } from './collections';
 import { getProgram, type Program } from './programs';
 import { provinceByCode } from './presence';

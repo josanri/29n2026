@@ -10,10 +10,10 @@ import fitz
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "public/datos-electorales/candidaturas-proclamadas-2026.pdf"
-CORRECTION_SOURCE = ROOT / "public/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf"
-OUTPUT = ROOT / "public/datos-electorales/candidaturas.json"
-MAP_OUTPUT = ROOT / "src/data/provincias.json"
+SOURCE = ROOT / "public/2026/generales/datos-electorales/candidaturas-proclamadas-2026.pdf"
+CORRECTION_SOURCE = ROOT / "public/2026/generales/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf"
+OUTPUT = ROOT / "public/2026/generales/datos-electorales/candidaturas.json"
+MAP_OUTPUT = ROOT / "src/data/2026/generales/provincias.json"
 # Provinces layer of the Ministerio de Transportes (SIU, territorial entities). `CodINE` is the INE province code.
 MAP_URL = "https://mapas.fomento.gob.es/arcgis/rest/services/SIU/ENTIDADES_TERRITORIALES_EGRN/MapServer/2/query"
 

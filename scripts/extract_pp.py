@@ -1,7 +1,7 @@
 # Extrae la estructura del programa del PP («Reconstrucción Nacional») usando
 # las fuentes tipográficas del PDF: bloques, secciones, subapartados y medidas.
 # Uso: python scripts/extract_pp.py <pdf> <salida.json>
-import fitz, sys, json, re
+import fitz, sys, json, re, os
 
 PARA = '¶'  # marca interna de salto de párrafo
 
@@ -157,6 +157,8 @@ def main():
                         a['body'] = head
                         g = s['groups'][nx['group']]
                         g['intro'] = tail.strip() + ' ' + g['intro']
+    # the intermediate file goes to an ignored folder (.cache/<año>/<tipo>/), which may not exist yet
+    os.makedirs(os.path.dirname(sys.argv[2]) or '.', exist_ok=True)
     json.dump(out, open(sys.argv[2], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
 

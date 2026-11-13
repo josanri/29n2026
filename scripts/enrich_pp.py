@@ -1,6 +1,6 @@
 # Enriquece la extracción del programa del PP con el análisis editorial:
 # categoría temática de cada medida, colectivos, palancas, plazos y cifras.
-# Uso: python scripts/enrich_pp.py scripts/pp_raw.json src/data/programas/pp.json
+# Uso: python scripts/enrich_pp.py .cache/2026/generales/pp_raw.json src/data/2026/generales/programas/pp.json
 import json, re, sys
 from collections import Counter
 
@@ -11,7 +11,7 @@ def rng(a, b):
     return list(range(a, b + 1))
 
 
-# --- Categoría principal (taxonomía común en src/data/categorias.json) ----------
+# --- Categoría principal (taxonomía común en src/data/taxonomia.json) ----------
 CATEGORIA = {}
 def asigna(cat, nums):
     for n in nums:

@@ -1,13 +1,13 @@
 /**
  * Review of the data of the programs, on top of the files that the scripts write.
  *
- * `src/data/revisiones.json` keeps, for each program, the measures whose category was corrected and the
+ * `src/data/<año>/<tipo>/revisiones.json` keeps, for each program, the measures whose category was corrected and the
  * explicit repeals that the review found. It is a separate file so that running an extraction script again
  * does not undo the corrections. The format is:
  *   { "<program id>": { "categorias": { "<measure number>": "<category id>" }, "deroga": { "<number>": "<law>" } } }
  */
 import { z } from 'astro/zod';
-import rawReview from '../data/revisiones.json';
+import rawReview from '@eleccion/revisiones.json';
 import { categoryById } from './taxonomy';
 import type { Program } from './program-schema';
 

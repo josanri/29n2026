@@ -1,5 +1,5 @@
 import type { APIRoute, GetStaticPaths } from 'astro';
-import { calendarEvents } from '@/data/calendario';
+import { calendarEvents } from '@eleccion/calendario';
 import { buildIcs } from '@/lib/ics';
 import { routes } from '@/lib/routes';
 

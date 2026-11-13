@@ -1,9 +1,9 @@
-"""Build src/data/programas/d21.json for Democracia 21 (democracia21.es/#soluciones).
+"""Build src/data/2026/generales/programas/d21.json for Democracia 21 (democracia21.es/#soluciones).
 
 The four source PDFs have no shared layout, so the measures are listed here by hand.
 Each measure text is a short summary of its PDF section. Each measure links to its PDF.
 
-Usage: python scripts/build_d21.py src/data/programas/d21.json
+Usage: python scripts/build_d21.py src/data/2026/generales/programas/d21.json
 """
 import json
 import sys

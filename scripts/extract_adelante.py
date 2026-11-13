@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 
 
 BASE_URL = "https://programa.adelanteandalucia.org"
-OUTPUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("src/data/programas/adelante.json")
+OUTPUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("src/data/2026/generales/programas/adelante.json")
 EXPECTED_PROPOSALS = 719
 EXPECTED_AREA_PROPOSALS = 637
 EXPECTED_TERRITORIAL_PROPOSALS = 82

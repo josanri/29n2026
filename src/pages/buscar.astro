@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { election } from '@eleccion/eleccion';
 import Tag from '@/components/ui/Tag.astro';
 import { programs, publishedPrograms } from '@/lib/programs';
 import { routes } from '@/lib/routes';
@@ -26,7 +27,7 @@ const partyData = programs.map((program) => ({
 
 <BaseLayout
   title="Buscar"
-  description="Busca un partido o una palabra en las medidas de todos los programas electorales del 29N. La búsqueda tolera erratas."
+  description={`Busca un partido o una palabra en las medidas de todos los programas electorales del ${election.shortName}. La búsqueda tolera erratas.`}
 >
   <section class="container search">
     <p class="search__index">Todos los programas</p>

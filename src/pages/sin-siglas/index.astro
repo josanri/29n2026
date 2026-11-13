@@ -219,6 +219,7 @@ const networks = [
   import { allocateMeasures, shuffle, type QuizMeasure } from '@/lib/party-quiz';
   import { setupProvinceMap } from '@/lib/province-map';
   import { HOME_PARAMS } from '@/lib/routes';
+  import { SITE_NAME } from '@/lib/site';
 
   type Answer = 'yes' | 'neutral' | 'no';
   type Party = {
@@ -611,7 +612,7 @@ const networks = [
 
   // ---- Share ----
   const CALL_TO_ACTION = 'Juega las mismas medidas:';
-  const TITLE = 'Sin siglas · Programas 29N';
+  const TITLE = `Sin siglas · ${SITE_NAME}`;
   /** The address that each network gives to a shared page. The text and the link are encoded. */
   const shareUrls: Record<string, (text: string, href: string) => string> = {
     whatsapp: (text, href) => `https://wa.me/?text=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION} ${href}`)}`,

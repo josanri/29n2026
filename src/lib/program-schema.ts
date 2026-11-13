@@ -1,5 +1,5 @@
 /**
- * Schema of one program file in `src/data/programas/*.json`.
+ * Schema of one program file in `src/data/<año>/<tipo>/programas/*.json`.
  *
  * The JSON files use Spanish keys because the Python scripts in `scripts/` write them.
  * This schema validates each file at build time and maps the keys to the English

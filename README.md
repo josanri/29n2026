@@ -21,6 +21,46 @@ SITE_URL=https://tu-dominio.es npm run build
 
 Sin `SITE_URL`, las URL apuntan a `http://localhost:4321`.
 
+### Publicación en Cloudflare (una ruta por elección)
+
+Cada elección puede vivir en su ruta: `tu-dominio.es/<año>/<tipo>/`, por ejemplo `tu-dominio.es/2026/generales/`. Si hay dos elecciones del mismo tipo en un año, la primera conserva su ruta y la segunda añade la fecha (`/2019/generales-10n/`). Una ruta publicada no cambia.
+
+Variables de compilación del Worker (Settings → Build → Variables):
+
+| Variable | Valor |
+|---|---|
+| `SITE_URL` | `https://tu-dominio.es` |
+| `BASE_PATH` | `/2026/generales` |
+| `NESTED_OUTPUT` | `1` |
+
+Con `NESTED_OUTPUT=1`, la web se compila en `dist/2026/generales/`, porque Cloudflare sirve `dist/` desde la raíz del dominio. La compilación también escribe en la raíz de `dist/`:
+
+- `_headers`, con la ruta base delante de cada ruta;
+- `_redirects`: `/`, `/2026` y `/2026/` llevan a `/2026/generales/` (302, temporal: más adelante serán portadas con la lista de elecciones);
+- `robots.txt`, porque los buscadores solo lo buscan en la raíz.
+
+En GitHub Pages no se usa `NESTED_OUTPUT`: allí la ruta del repositorio ya es el prefijo.
+
+### Una carpeta por elección
+
+Los datos y los archivos públicos de cada elección están en su carpeta, `<año>/<tipo>`:
+
+```
+election.config.mjs           elección que se compila (ELECTION, por defecto «2026/generales»)
+src/data/2026/generales/      datos de la elección: programas/, calendario, Congreso, mapa, presencia…
+  eleccion.ts                 nombre corto (29N), nombre, fecha: la interfaz toma los textos de aquí
+src/data/taxonomia.json       taxonomía común a todas las elecciones
+public/2026/generales/        archivos públicos de la elección: programas/, datos-electorales/, favicon.svg
+public/comun/                 archivos públicos comunes: _headers, sw.js
+scripts/                      solo código: extracción y análisis de los PDF
+.cache/2026/generales/        resultados intermedios de la extracción (pp_raw.json…); no está en git
+```
+
+- El código importa los datos de la elección con el alias `@eleccion/` (por ejemplo `@eleccion/calendario`). `astro.config.mjs` lo apunta a `src/data/<ELECTION>/`; `tsconfig.json` repite el alias con la elección por defecto, para los tipos del editor.
+- La carpeta pública de Astro es `public/<ELECTION>/`. Una integración de `astro.config.mjs` añade `public/comun/`: la sirve en desarrollo y la copia en la compilación. Un archivo de la elección con el mismo nombre tiene prioridad.
+- Las URL no incluyen la carpeta: `public/2026/generales/programas/pp.pdf` se publica en `<BASE_PATH>/programas/pp.pdf`. La ruta pública la decide `BASE_PATH`.
+- Otra elección: crea `src/data/<año>/<tipo>/` (con su `eleccion.ts`) y `public/<año>/<tipo>/`, y compila con `ELECTION=<año>/<tipo>`.
+
 ## Páginas
 
 | Ruta | Contenido |
@@ -36,49 +76,49 @@ Sin `SITE_URL`, las URL apuntan a `http://localhost:4321`.
 ## Datos
 
 ```
-public/programas/pp-reconstruccion-nacional.pdf PDF original del PP
+public/2026/generales/programas/pp-reconstruccion-nacional.pdf PDF original del PP
 scripts/extract_pp.py                PDF → estructura (bloques, secciones, medidas) a partir de las fuentes
 scripts/enrich_pp.py                 análisis: categoría, colectivos, palancas, plazos, cifras
-src/data/programas/pp.json           resultado que consume la web
-public/programas/bng-xerais-2026.pdf PDF oficial del BNG (91 páginas, publicado el 3 de noviembre de 2026)
+src/data/2026/generales/programas/pp.json           resultado que consume la web
+public/2026/generales/programas/bng-xerais-2026.pdf PDF oficial del BNG (91 páginas, publicado el 3 de noviembre de 2026)
 scripts/extract_bng.py               PDF del BNG → estructura (bloques, secciones y medidas)
 scripts/enrich_bng.py                análisis y adaptación del BNG al formato común
-src/data/programas/bng.json          resultado que consume la web
-public/programas/cc-defiende-canarias-2026.pdf PDF de la coalición Primero Canarias–Coalición Canaria (23 páginas, 9 de noviembre de 2026)
+src/data/2026/generales/programas/bng.json          resultado que consume la web
+public/2026/generales/programas/cc-defiende-canarias-2026.pdf PDF de la coalición Primero Canarias–Coalición Canaria (23 páginas, 9 de noviembre de 2026)
 scripts/extract_cc.py                extracción y análisis de las 100 medidas del programa
-src/data/programas/cc.json           resultado que consume la web
-public/programas/erc-programa-electoral-2026.pdf PDF aportado del programa de ERC (48 páginas)
+src/data/2026/generales/programas/cc.json           resultado que consume la web
+public/2026/generales/programas/erc-programa-electoral-2026.pdf PDF aportado del programa de ERC (48 páginas)
 scripts/extract_erc.py               extracción de ERC; clasifica las propuestas en la taxonomía común
-src/data/programas/erc.json          resultado que consume la web
-public/programas/salf-contrato-electoral-29n.pdf PDF oficial simplificado de SALF (40 páginas)
+src/data/2026/generales/programas/erc.json          resultado que consume la web
+public/2026/generales/programas/salf-contrato-electoral-29n.pdf PDF oficial simplificado de SALF (40 páginas)
 scripts/extract_salf.py              extracción y análisis de las 119 propuestas en diez compromisos
-src/data/programas/salf.json        resultado que consume la web; los identificadores son consecutivos porque el PDF reinicia la numeración en cada compromiso
-public/programas/iustitia-europa-contrato-2026.pdf PDF oficial de Iustitia Europa (28 páginas)
-src/data/programas/ie.json          15 compromisos resumidos editorialmente y enlazados a su texto completo
+src/data/2026/generales/programas/salf.json        resultado que consume la web; los identificadores son consecutivos porque el PDF reinicia la numeración en cada compromiso
+public/2026/generales/programas/iustitia-europa-contrato-2026.pdf PDF oficial de Iustitia Europa (28 páginas)
+src/data/2026/generales/programas/ie.json          15 compromisos resumidos editorialmente y enlazados a su texto completo
 programa.adelanteandalucia.org       programa oficial de Adelante Andalucía (29 medidas principales y desarrollo completo)
-public/programas/programa-adelante-andalucia-29n.pdf PDF oficial completo de Adelante Andalucía (134 páginas)
-public/programas/las-29-del-29n-adelante-andalucia.pdf PDF resumen de las 29 medidas principales (34 páginas)
+public/2026/generales/programas/programa-adelante-andalucia-29n.pdf PDF oficial completo de Adelante Andalucía (134 páginas)
+public/2026/generales/programas/las-29-del-29n-adelante-andalucia.pdf PDF resumen de las 29 medidas principales (34 páginas)
 scripts/extract_adelante.py          extracción de las 719 propuestas numeradas desde las 12 áreas oficiales
-src/data/programas/adelante.json     resultado que consume la web
-public/programas/mundo-mas-justo-29n-2026.pdf PDF oficial de M+J (95 páginas)
+src/data/2026/generales/programas/adelante.json     resultado que consume la web
+public/2026/generales/programas/mundo-mas-justo-29n-2026.pdf PDF oficial de M+J (95 páginas)
 scripts/extract_mundo_mas_justo.py   extracción y análisis de 191 propuestas en 32 ejes
-src/data/programas/mundo-mas-justo.json resultado que consume la web
-public/programas/feministas-al-congreso-2026.pdf PDF oficial de Feministas al Congreso (2 páginas)
+src/data/2026/generales/programas/mundo-mas-justo.json resultado que consume la web
+public/2026/generales/programas/feministas-al-congreso-2026.pdf PDF oficial de Feministas al Congreso (2 páginas)
 scripts/extract_pfac.py               extracción de las 14 propuestas numeradas
-src/data/programas/pfac.json          resultado que consume la web; color tomado del degradado de la web oficial
-src/data/programas/autonomos.json     [decálogo oficial](https://www.partidoautonomos.es/decalogo-de-propuestas/) de 10 propuestas; la ficha advierte que no se identifica como programa del 29N
-public/programas/en-accion-3e-2026.pdf PDF oficial de En Acción 3e (6 páginas)
+src/data/2026/generales/programas/pfac.json          resultado que consume la web; color tomado del degradado de la web oficial
+src/data/2026/generales/programas/autonomos.json     [decálogo oficial](https://www.partidoautonomos.es/decalogo-de-propuestas/) de 10 propuestas; la ficha advierte que no se identifica como programa del 29N
+public/2026/generales/programas/en-accion-3e-2026.pdf PDF oficial de En Acción 3e (6 páginas)
 scripts/extract_tercera_edad.py      extracción de 63 medidas en 13 áreas
-src/data/programas/tercera-edad.json resultado que consume la web; el documento no se identifica expresamente como programa del 29N
-src/data/programas/eaj-pnv.json      30 propuestas transcritas de la [página oficial del PNV](https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/)
-public/datos-electorales/candidaturas-proclamadas-2026.pdf BOE, candidaturas proclamadas el 3 de noviembre
-public/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf BOE, corrección oficial del 7 de noviembre
+src/data/2026/generales/programas/tercera-edad.json resultado que consume la web; el documento no se identifica expresamente como programa del 29N
+src/data/2026/generales/programas/eaj-pnv.json      30 propuestas transcritas de la [página oficial del PNV](https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/)
+public/2026/generales/datos-electorales/candidaturas-proclamadas-2026.pdf BOE, candidaturas proclamadas el 3 de noviembre
+public/2026/generales/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf BOE, corrección oficial del 7 de noviembre
 scripts/extract_candidaturas.py      extrae las listas, aplica las correcciones y genera la geometría del mapa
-public/datos-electorales/candidaturas.json listas oficiales por provincia, circunscripción y cámara
-src/data/provincias.json             geometrías simplificadas de las 52 provincias
-public/datos-electorales/mapa-provincias.svg imagen base del mapa con áreas HTML interactivas
+public/2026/generales/datos-electorales/candidaturas.json listas oficiales por provincia, circunscripción y cámara
+src/data/2026/generales/provincias.json             geometrías simplificadas de las 52 provincias
+public/2026/generales/datos-electorales/mapa-provincias.svg imagen base del mapa con áreas HTML interactivas
 src/data/taxonomia.json              21 categorías, colectivos y palancas comunes
-src/data/analysis.ts                 lectura editorial («Las claves») por programa
+src/data/2026/generales/analysis.ts                 lectura editorial («Las claves») por programa
 ```
 
 Para regenerar los datos del PP: `npm run data:pp` (necesita Python con PyMuPDF).
@@ -136,8 +176,8 @@ La documentación viva está en `/design-system/`: color, contraste en los dos t
 
 ## Añadir otro programa
 
-1. Copia el PDF a `public/programas/`.
+1. Copia el PDF a `public/2026/generales/programas/`.
 2. Escribe un extractor para su maquetación (el de PP usa las fuentes Anth/Montserrat del documento).
 3. Asigna las categorías con los mismos `id` de `src/data/taxonomia.json`.
-4. Guarda el JSON en `src/data/programas/<id>.json`. La web lo detecta sola y crea sus páginas.
-5. Añade sus claves en `src/data/analysis.ts`.
+4. Guarda el JSON en `src/data/2026/generales/programas/<id>.json`. La web lo detecta sola y crea sus páginas.
+5. Añade sus claves en `src/data/2026/generales/analysis.ts`.

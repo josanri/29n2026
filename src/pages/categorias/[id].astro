@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { election } from '@eleccion/eleccion';
 import MeasureCard from '@/components/measures/MeasureCard.astro';
 import BarList from '@/components/charts/BarList.astro';
 import Button from '@/components/ui/Button.astro';
@@ -33,7 +34,7 @@ const nextCategory = categories[(categories.findIndex((item) => item.id === cate
 
 <BaseLayout
   title={category.name}
-  description={`Medidas sobre ${category.name.toLowerCase()} en los programas electorales del 29N.`}
+  description={`Medidas sobre ${category.name.toLowerCase()} en los programas electorales del ${election.shortName}.`}
 >
   <section class="page-hero">
     <div class="container page-hero__grid">

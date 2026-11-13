@@ -4,6 +4,7 @@
  * Colors and contrast ratios come from `src/styles/tokens.css` at build time.
  */
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE_NAME } from '@/lib/site';
 import BarList from '@/components/charts/BarList.astro';
 import BlockChip from '@/components/ui/BlockChip.astro';
 import Button from '@/components/ui/Button.astro';
@@ -70,7 +71,7 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
 <BaseLayout
   noindex
   title="Sistema de diseño"
-  description="Tokens, componentes y reglas de uso del diseño de Programas 29N, con ejemplos en vivo en los temas claro y oscuro."
+  description={`Tokens, componentes y reglas de uso del diseño de ${SITE_NAME}, con ejemplos en vivo en los temas claro y oscuro.`}
 >
   <section class="hero">
     <div class="container">

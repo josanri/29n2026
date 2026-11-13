@@ -7,7 +7,7 @@ import type { Measure, Program } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { normalizeForSearch, splitParagraphs } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
-import { MEASURE_ID_PREFIX, routes } from '@/lib/routes';
+import { MEASURE_ID_PREFIX, routes, withBase } from '@/lib/routes';
 import Tag from '@/components/ui/Tag.astro';
 import BlockChip from '@/components/ui/BlockChip.astro';
 
@@ -98,7 +98,7 @@ const documentLabel = measure.page
               <dt>Fuente</dt>
               <dd>
                 {measure.sourceUrl ? (
-                  <a href={measure.sourceUrl} target="_blank" rel="noopener">Ficha oficial</a>
+                  <a href={withBase(measure.sourceUrl)} target="_blank" rel="noopener">Ficha oficial</a>
                 ) : (
                   <a href={documentLink} target="_blank" rel="noopener">{documentLabel}</a>
                 )}
