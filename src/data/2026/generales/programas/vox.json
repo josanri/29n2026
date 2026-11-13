@@ -4,23 +4,2837 @@
  "siglas": "VOX",
  "color": "#7cbd2a",
  "colorClaro": "#c4e19f",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Es sentido común",
+ "subtitulo": "115 medidas en 13 áreas para las elecciones generales",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "/programas/vox-es-sentido-comun-2026.pdf",
+ "fuentePdf": "https://votasentidocomun.es/general/files/programa-elecct-vox.pdf",
+ "paginas": 55,
+ "fechaPdf": "2026-11-12",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
   "titulo": "",
   "texto": ""
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
- "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": []
+ "cifras": [
+  {
+   "valor": "50 euros",
+   "unidad": "euros",
+   "texto": "Rebaja masiva de impuestos para proteger a los españoles del infierno fiscal y burocrático que impide la prosperidad de los españoles",
+   "medida": 2
+  },
+  {
+   "valor": "24 horas",
+   "unidad": "horas",
+   "texto": "Mano dura contra la okupación y la inquiocupación",
+   "medida": 31
+  },
+  {
+   "valor": "0%",
+   "unidad": "%",
+   "texto": "La primera vivienda habitual de una familia española no paga impuestos",
+   "medida": 34
+  },
+  {
+   "valor": "100%",
+   "unidad": "%",
+   "texto": "Plan nacional de natalidad y apoyo a las familias españolas",
+   "medida": 94
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "24 horas",
+   "texto": "Mano dura contra la okupación y la inquiocupación",
+   "medida": 31
+  }
+ ],
+ "ordenPlazos": [
+  "24 horas"
+ ],
+ "verbos": [
+  {
+   "verbo": "garantizar",
+   "n": 11
+  },
+  {
+   "verbo": "poner",
+   "n": 3
+  },
+  {
+   "verbo": "recuperar",
+   "n": 2
+  },
+  {
+   "verbo": "defender",
+   "n": 2
+  },
+  {
+   "verbo": "eliminar",
+   "n": 2
+  },
+  {
+   "verbo": "derogar",
+   "n": 2
+  },
+  {
+   "verbo": "promover",
+   "n": 2
+  },
+  {
+   "verbo": "dotar",
+   "n": 2
+  },
+  {
+   "verbo": "adoptar",
+   "n": 1
+  },
+  {
+   "verbo": "suprimir",
+   "n": 1
+  },
+  {
+   "verbo": "incrementar",
+   "n": 1
+  },
+  {
+   "verbo": "simplificar",
+   "n": 1
+  },
+  {
+   "verbo": "sumar",
+   "n": 1
+  },
+  {
+   "verbo": "facilitar",
+   "n": 1
+  },
+  {
+   "verbo": "reducir",
+   "n": 1
+  }
+ ],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Ceuta y Melilla",
+   "tituloMayus": "CEUTA Y MELILLA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  },
+  {
+   "id": 2,
+   "titulo": "Economía, industria y energía",
+   "tituloMayus": "ECONOMÍA, INDUSTRIA Y ENERGÍA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 7
+  },
+  {
+   "id": 3,
+   "titulo": "Inmigración",
+   "tituloMayus": "INMIGRACIÓN",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 13
+  },
+  {
+   "id": 4,
+   "titulo": "Prioridad nacional",
+   "tituloMayus": "PRIORIDAD NACIONAL",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 16
+  },
+  {
+   "id": 5,
+   "titulo": "Vivienda",
+   "tituloMayus": "VIVIENDA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 19
+  },
+  {
+   "id": 6,
+   "titulo": "Desregulación",
+   "tituloMayus": "DESREGULACIÓN",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 23
+  },
+  {
+   "id": 7,
+   "titulo": "Sector primario y Mundo rural",
+   "tituloMayus": "SECTOR PRIMARIO Y MUNDO RURAL",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 28
+  },
+  {
+   "id": 8,
+   "titulo": "Sanidad",
+   "tituloMayus": "SANIDAD",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 32
+  },
+  {
+   "id": 9,
+   "titulo": "Educación, Cultura y Deporte",
+   "tituloMayus": "EDUCACIÓN, CULTURA Y DEPORTE",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 35
+  },
+  {
+   "id": 10,
+   "titulo": "Seguridad y Defensa",
+   "tituloMayus": "SEGURIDAD Y DEFENSA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 39
+  },
+  {
+   "id": 11,
+   "titulo": "Familia y Vida",
+   "tituloMayus": "FAMILIA Y VIDA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 44
+  },
+  {
+   "id": 12,
+   "titulo": "Independencia de la Justicia y lucha contra la corrupción",
+   "tituloMayus": "INDEPENDENCIA DE LA JUSTICIA Y LUCHA CONTRA LA CORRUPCIÓN",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 48
+  },
+  {
+   "id": 13,
+   "titulo": "Infraestructuras y Transportes",
+   "tituloMayus": "INFRAESTRUCTURAS Y TRANSPORTES",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 53
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Ceuta y Melilla",
+   "tituloFrase": "Ceuta y Melilla",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 2,
+   "titulo": "Economía, industria y energía",
+   "tituloFrase": "Economía, industria y energía",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 3,
+   "titulo": "Inmigración",
+   "tituloFrase": "Inmigración",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 4,
+   "titulo": "Prioridad nacional",
+   "tituloFrase": "Prioridad nacional",
+   "intro": "",
+   "pagina": 16,
+   "subapartados": []
+  },
+  {
+   "id": "5",
+   "bloque": 5,
+   "titulo": "Vivienda",
+   "tituloFrase": "Vivienda",
+   "intro": "",
+   "pagina": 19,
+   "subapartados": []
+  },
+  {
+   "id": "6",
+   "bloque": 6,
+   "titulo": "Desregulación",
+   "tituloFrase": "Desregulación",
+   "intro": "",
+   "pagina": 23,
+   "subapartados": []
+  },
+  {
+   "id": "7",
+   "bloque": 7,
+   "titulo": "Sector primario y Mundo rural",
+   "tituloFrase": "Sector primario y Mundo rural",
+   "intro": "",
+   "pagina": 28,
+   "subapartados": []
+  },
+  {
+   "id": "8",
+   "bloque": 8,
+   "titulo": "Sanidad",
+   "tituloFrase": "Sanidad",
+   "intro": "",
+   "pagina": 32,
+   "subapartados": []
+  },
+  {
+   "id": "9",
+   "bloque": 9,
+   "titulo": "Educación, Cultura y Deporte",
+   "tituloFrase": "Educación, Cultura y Deporte",
+   "intro": "",
+   "pagina": 35,
+   "subapartados": []
+  },
+  {
+   "id": "10",
+   "bloque": 10,
+   "titulo": "Seguridad y Defensa",
+   "tituloFrase": "Seguridad y Defensa",
+   "intro": "",
+   "pagina": 39,
+   "subapartados": []
+  },
+  {
+   "id": "11",
+   "bloque": 11,
+   "titulo": "Familia y Vida",
+   "tituloFrase": "Familia y Vida",
+   "intro": "",
+   "pagina": 44,
+   "subapartados": []
+  },
+  {
+   "id": "12",
+   "bloque": 12,
+   "titulo": "Independencia de la Justicia y lucha contra la corrupción",
+   "tituloFrase": "Independencia de la Justicia y lucha contra la corrupción",
+   "intro": "",
+   "pagina": 48,
+   "subapartados": []
+  },
+  {
+   "id": "13",
+   "bloque": 13,
+   "titulo": "Infraestructuras y Transportes",
+   "tituloFrase": "Infraestructuras y Transportes",
+   "intro": "",
+   "pagina": 53,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Recuperar Ceuta para los ceutíes",
+   "tituloFrase": "Recuperar Ceuta para los ceutíes",
+   "texto": "• Expulsión de todos los invasores con carácter inmediato. Defender la españolidad de Ceuta y Melilla, y a los trabajadores, familias y empresas de estas dos ciudades españolas.\n\n• Militarización de la frontera para repeler cualquier intento futuro de invasión o ataque híbrido. Refuerzo de la protección de las fronteras terrestres de Ceuta y Melilla, sus aguas bajo soberanía española y su espacio aéreo.\n\n• Realizar un plan de inversiones que garantice el futuro y la prosperidad de ambas ciudades y su protección. Garantizar la libertad y seguridad de las familias españolas residentes en territorio nacional atacado y establecer medidas para evitar futuras invasiones así como reparar las consecuencias sociales, económicas y psicológicas de la producida en Ceuta.\n\n• Promover ante la Justicia el procesamiento a Pedro Sánchez y su gobierno por traición y delitos contra la seguridad del Estado por su actuación durante la invasión sufrida en Ceuta.\n\n• Impulsar sanciones, suspender acuerdos internacionales y revisar las relaciones diplomáticas hasta que Marruecos respete las fronteras y la soberanía de España.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "familias",
+    "empresas"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Ceuta",
+    "Melilla",
+    "Marruecos"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Rebaja masiva de impuestos para proteger a los españoles del infierno fiscal y burocrático que impide la prosperidad de los españoles",
+   "tituloFrase": "Rebaja masiva de impuestos para proteger a los españoles del infierno fiscal y burocrático que impide la prosperidad de los españoles",
+   "texto": "• Reforma del sistema de tributación sobre la renta (IRPF). Simplificación y bajada del IRPF. Reducción del tipo aplicable del IRPF para cada contribuyente o familia en función del número de hijos.\n\n• Rebaja del tipo reducido y del tipo general del IVA atendiendo prioritariamente a productos esenciales y de primera necesidad.\n\n• Reducir el tipo del Impuesto de Sociedades con el fin de promover la dinamización de nuestra economía, el crecimiento de nuestras empresas y la creación efectiva de empleo.\n\n• Apoyo a los trabajadores autónomos. Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional y, superado dicho umbral, una cuota progresiva desde los 50 euros en función de sus ingresos.\n\n• Revisión y reducción sistemática de todos los impuestos y tasas que lastran la prosperidad de los trabajadores, familias y empresas españolas.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "familias",
+    "infancia",
+    "autonomos",
+    "empresas"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional y, superado dicho umbral, una cuota progresiva desde los 50 euros en función de sus ingresos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reducción de la deuda pública",
+   "tituloFrase": "Reducción de la deuda pública",
+   "texto": "Compatibilizar la rebaja de impuestos con la financiación de los servicios públicos esenciales, mediante el control del déficit, la eliminación del gasto superfluo e ideológico y el impulso del crecimiento económico.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Alivio del esfuerzo fiscal extra soportado en las Islas Baleares y las Islas Canarias",
+   "tituloFrase": "Alivio del esfuerzo fiscal extra soportado en las Islas Baleares y las Islas Canarias",
+   "texto": "Actualizar el complemento de insularidad para el personal en activo del sector público estatal en los territorios insulares con el fin de adaptarlo al coste de vida real. Rebaja general del Impuesto General Indirecto Canario y supresión del Arbitrio sobre Importaciones y Entregas de Mercancías en las Islas Canarias. Mejora de las ayudas al transporte a la Península.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias",
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Impulso nacional de la investigación, el desarrollo y la innovación",
+   "tituloFrase": "Impulso nacional de la investigación, el desarrollo y la innovación",
+   "texto": "Reforzar la inversión en I+D+i, los incentivos fiscales a la innovación empresarial, la colaboración entre centros de investigación y empresas e industrias y la transferencia de conocimiento a nuestro tejido productivo, especialmente a las pymes. Plan para recuperar el talento que se ha tenido que marchar ante la falta de oportunidades.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "autonomos",
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Fiscalidad mínima y diferenciada en las zonas en riesgo de despoblación",
+   "tituloFrase": "Fiscalidad mínima y diferenciada en las zonas en riesgo de despoblación",
+   "texto": "Tipos mínimos y bonificaciones y deducciones reforzadas para los residentes españoles de estas zonas y para todos aquellos españoles que decidan trasladar su residencia a las mismas.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Garantizar la sostenibilidad del sistema de pensiones",
+   "tituloFrase": "Garantizar la sostenibilidad del sistema de pensiones",
+   "texto": "Revitalizar la economía, impulsar el empleo, mejorar los salarios y aumentar la riqueza. Una economía más productiva es la garantía de sostenibilidad de las pensiones y de mejores servicios públicos. Además, es necesario impulsar medidas de apoyo a las familias, fomento de la natalidad y ayuda a la crianza, contribuyendo a revertir el envejecimiento demográfico y el descenso de la natalidad en España.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores",
+    "familias"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Reindustrialización radical de la economía española",
+   "tituloFrase": "Reindustrialización radical de la economía española",
+   "texto": "Revolucionar la política energética: segura, cierta y asequible. Un futuro para la España Abandonada.\n\n• Bajada masiva de los impuestos de la energía eléctrica a familias, empresas e industrias españolas. Fin de la doble imposición. Aprovechamiento de nuestros recursos energéticos, la mejora de las redes y la reducción de cargas fiscales y regulatorias. Plan Nacional de Soberanía Energética.\n\n• Fin del tope regulatorio a la inversión en redes eléctricas. Eliminar el tope a la inversión en redes para que España tenga la red eléctrica que necesita para crecer, contratar y construir vivienda. Además, las autorizaciones para construir líneas, subestaciones y puntos de conexión a la red se resolverán en plazos máximos cerrados y con silencio administrativo positivo.\n\n• Suspender la aplicación en España de acuerdos internacionales que impiden nuestro desarrollo productivo y la prosperidad de trabajadores, familias, empresas e industrias españolas.\n\n• Revertir las normativas que atacan frontalmente a la industria nacional (prohibición de motores de combustión, impuestos a las emisiones de CO2) inspiradas en el Pacto Verde Europeo, la Agenda 2030 y otros acuerdos no sometidos a votación por los españoles.\n\n• Fin a las restricciones para poder explorar, investigar y explotar nuestros recursos naturales y yacimientos minerales. Protección de España frente a la dependencia excesiva de materias primas, componentes y tecnologías críticas. Mayor peso a consideraciones sobre seguridad económica, soberanía industrial y seguridad nacional.\n\n• Recuperar urgentemente el plan nuclear nacional. Se garantizará la supervivencia de las centrales nucleares actuales, derogando el calendario de cierre. Se promoverán estudios urgentes para instalar centrales nucleares en los emplazamientos disponibles adyacentes a las actuales. Se llevarán a cabo aquellos proyectos que sean viables con la mayor brevedad posible.\n\n• Aprobación de un Plan Nacional de Reindustrialización enfocado a contrarrestar las deslocalizaciones, la competencia desleal, la pérdida de empleo industrial y la baja participación de la industria en el PIB. Atracción de inversiones estratégicas que favorezcan la economía nacional y el empleo.\n\n• Trabajo estable y salarios dignos para los españoles. Poner fin a la situación de desempleo, precariedad laboral y bajos salarios provocada por el Gobierno de Sánchez, que hacen prácticamente imposible que los jóvenes españoles puedan acceder a un empleo estable, desarrollar un proyecto de vida independiente, emanciparse y formar una familia.\n\n• Derogar la legislación laboral de Sánchez que ha agravado la precariedad, desincentivado la contratación y empeorado una situación ya de por sí insostenible, que ha maquillado las cifras de temporalidad y que beneficia al duopolio sindical que ha traicionado a los trabajadores.\n\n• Fomentar la industria turística mediante empleos de calidad y garantizando la convivencia y la preservación de la identidad de nuestros barrios. Adoptar medidas fiscales y de promoción interior y exterior de esta industria para crear empleo y riqueza, y para vertebrar esa España abandonada por los sucesivos gobiernos. Fomento del turismo rural, de montaña o interior, y apoyo a la conservación y difusión de nuestro patrimonio natural, cultural y artístico.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "jovenes",
+    "familias",
+    "empresas",
+    "rural",
+    "discapacidad"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Revertir las normativas que atacan frontalmente a la industria nacional (prohibición de motores de combustión, impuestos a las emisiones de CO2) inspiradas en el Pacto Verde Europeo, la Agenda 2030 y otros acuerdos no sometidos a votación por los españoles."
+   ],
+   "plazo": null,
+   "deroga": "Legislación laboral de Sánchez y calendario de cierre nuclear"
+  },
+  {
+   "n": 9,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Ni uno más",
+   "tituloFrase": "Ni uno más",
+   "texto": "Después de recibir a 5 millones de personas en 5 años España no puede acoger a más inmigrantes. Prohibición de las regularizaciones masivas. Quien entra de forma ilegal jamás podrá regularizar su situación.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Después de recibir a 5 millones de personas en 5 años España no puede acoger a más inmigrantes."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Endurecimiento de los requisitos de adquisición de la nacionalidad española",
+   "tituloFrase": "Endurecimiento de los requisitos de adquisición de la nacionalidad española",
+   "texto": "Revisión de las concesiones fraudulentas de la nacionalidad. Aumento de los supuestos de pérdida de nacionalidad española para los españoles no de origen en casos de delitos graves o reiterados.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Supresión de la institución del arraigo como forma de atajar la inmigración ilegal y revocación de las pasarelas rápidas para adquirir la nacionalidad española",
+   "tituloFrase": "Supresión de la institución del arraigo como forma de atajar la inmigración ilegal y revocación de las pasarelas rápidas para adquirir la nacionalidad española",
+   "texto": "",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Repatriación",
+   "tituloFrase": "Repatriación",
+   "texto": "Repatriación de quienes permanezcan en situación ilegal en nuestra nación.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Remigración",
+   "tituloFrase": "Remigración",
+   "texto": "Plan para facilitar el retorno a sus países de los extranjeros que no contribuyan o vivan de subsidios públicos que no alcanzan a los españoles.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Deportación",
+   "tituloFrase": "Deportación",
+   "texto": "Deportación de quienes cometan delitos graves o hagan del delito leve su forma de vida, así como de quienes traten de imponer costumbres, hábitos o culturas ajenas a nuestro modo de vida o incompatibles con el respeto a la dignidad de las mujeres.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Los MENAS, con sus familias",
+   "tituloFrase": "Los MENAS, con sus familias",
+   "texto": "Devolución de menores extranjeros no acompañados a sus padres o a las instituciones de tutela de sus países de origen, atendiendo al interés superior del menor. Persecución de ONG’s o redes criminales que participen o colaboren en la sustracción o secuestro de menores.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "familias",
+    "infancia",
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Ni un euro a ONGs que colaboren con el efecto llamada",
+   "tituloFrase": "Ni un euro a ONGs que colaboren con el efecto llamada",
+   "texto": "Eliminación de todas las subvenciones, ayudas, convenios y conciertos con ONG u otras entidades que participen directa o indirectamente en la promoción, facilitación o sostenimiento de la inmigración ilegal, o que actúen como cooperadores necesarios de las mafias de tráfico de personas.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Fin de la cooperación al desarrollo con los países que no colaboren en la gestión de los flujos migratorios",
+   "tituloFrase": "Fin de la cooperación al desarrollo con los países que no colaboren en la gestión de los flujos migratorios",
+   "texto": "Retirar ayudas y fondos de cooperación y promover sanciones a aquellos Estados que fomenten la inmigración ilegal o la utilicen como arma de presión política.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "En España, los españoles primero",
+   "tituloFrase": "En España, los españoles primero",
+   "texto": "Acceso preferente de los españoles a vivienda pública, plazas de guardería, bonos de comedor o transporte, ayudas, prestaciones y servicios sociales. Modificación o derogación de cuantas normativas pudieran dificultar la consecución plena y efectiva del principio de prioridad nacional.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Suprimir toda ayuda y beneficio social a los inmigrantes ilegales",
+   "tituloFrase": "Suprimir toda ayuda y beneficio social a los inmigrantes ilegales",
+   "texto": "",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Garantizar la sostenibilidad del sistema sanitario dotándolo de los medios necesarios para atender las necesidades de los españoles",
+   "tituloFrase": "Garantizar la sostenibilidad del sistema sanitario dotándolo de los medios necesarios para atender las necesidades de los españoles",
+   "texto": "Garantizar la sostenibilidad del sistema sanitario dotándolo de los medios necesarios para atender las necesidades de los españoles, excluyendo a los extranjeros en situación ilegal salvo casos de urgencia grave. Auditoría del coste de la inmigración masiva en la sanidad pública.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "inmigrantes",
+    "pacientes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Gravamen sobre las remesas al extranjero",
+   "tituloFrase": "Gravamen sobre las remesas al extranjero",
+   "texto": "El dinero generado aquí ha de mejorar la economía y los servicios de quienes viven en España.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "El Ingreso Mínimo Vital atenderá únicamente las necesidades de los españoles con menos recursos",
+   "tituloFrase": "El Ingreso Mínimo Vital atenderá únicamente las necesidades de los españoles con menos recursos",
+   "texto": "Se promoverá el retorno de aquellos inmigrantes que estén cobrando el IMV o sus complementos autonómicos.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Plan de retorno a nuestra Nación para los españoles que tuvieron que abandonar España en los últimos años por falta de oportunidades y deseen volver",
+   "tituloFrase": "Plan de retorno a nuestra Nación para los españoles que tuvieron que abandonar España en los últimos años por falta de oportunidades y deseen volver",
+   "texto": "",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Garantizar la atención a los españoles más desfavorecidos",
+   "tituloFrase": "Garantizar la atención a los españoles más desfavorecidos",
+   "texto": "Plan de inversiones para recuperar y revitalizar barrios, municipios y provincias abandonadas durante décadas por los poderes públicos.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Poner en marcha todas las medidas necesarias para garantizar la calidad de los servicios públicos, la igualdad y los derechos de todos los españoles con independencia del lugar de España en el que residan",
+   "tituloFrase": "Poner en marcha todas las medidas necesarias para garantizar la calidad de los servicios públicos, la igualdad y los derechos de todos los españoles con independencia del lugar de España en el que residan",
+   "texto": "Poner en marcha todas las medidas necesarias para garantizar la calidad de los servicios públicos, la igualdad y los derechos de todos los españoles con independencia del lugar de España en el que residan, especialmente en los ámbitos de Educación, Sanidad, Seguridad y Justicia.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Todos los españoles tienen derecho a disfrutar de una vivienda digna y adecuada para satisfacer sus necesidades y las de su familia",
+   "tituloFrase": "Todos los españoles tienen derecho a disfrutar de una vivienda digna y adecuada para satisfacer sus necesidades y las de su familia",
+   "texto": "El punto de partida de todo programa de vivienda es el control férreo de las fronteras.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Las casas, en España, para los españoles",
+   "tituloFrase": "Las casas, en España, para los españoles",
+   "texto": "Las casas, en España, para los españoles. Prioridad nacional para acceder a una vivienda protegida, social o a una ayuda al alquiler. Modificación o derogación de cuantas normativas pudieran dificultar la consecución plena y efectiva del principio de prioridad nacional.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Reforma de la Ley del Suelo",
+   "tituloFrase": "Reforma de la Ley del Suelo",
+   "texto": "Volver a ver grúas en los cielos. Incrementar de manera sustancial y sostenida en el tiempo la construcción de vivienda nueva: ampliación de suelo disponible, agilización de procedimientos, supresión de trabas regulatorias innecesarias, simplificación administrativa.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Ampliación de la inversión pública en vivienda por habitante",
+   "tituloFrase": "Ampliación de la inversión pública en vivienda por habitante",
+   "texto": "Aumentar con urgencia la construcción de vivienda protegida para las familias españolas mediante su promoción y colaboración público-privada: cesiones de suelo, subvenciones, descuentos, avales a financiación y créditos blandos. Ningún español vulnerable quedará sin hogar.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Recuperar la seguridad jurídica y una oferta de alquileres estable, abundante y asequible",
+   "tituloFrase": "Recuperar la seguridad jurídica y una oferta de alquileres estable, abundante y asequible",
+   "texto": "Derogación de la Ley de Vivienda. Incentivos fiscales al alquiler de larga duración y deducciones para inquilinos españoles. Regulación de la proliferación masiva de VUT y refuerzo del servicio de inspección de pisos turísticos ilegales.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley de Vivienda"
+  },
+  {
+   "n": 31,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Mano dura contra la okupación y la inquiocupación",
+   "tituloFrase": "Mano dura contra la okupación y la inquiocupación",
+   "texto": "Desalojo de la vivienda okupada en menos de 24 horas y recuperación inmediata de la posesión por su legítimo titular, el propietario. Asistencia jurídica gratuita para los afectados y exención de impuestos y de las cargas fiscales y de suministros del inmueble mientras dure la okupación. Endurecimiento del Código penal. Tipificación de la inquiocupación como delito de estafa.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Desalojo de la vivienda okupada en menos de 24 horas y recuperación inmediata de la posesión por su legítimo titular, el propietario."
+   ],
+   "plazo": "24 horas",
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Prohibición del arrendamiento a inmigrantes ilegales",
+   "tituloFrase": "Prohibición del arrendamiento a inmigrantes ilegales",
+   "texto": "Exigir la verificación previa de la residencia legal como requisito obligatorio para la formalización de contratos de alquiler, control del fraude en el empadronamiento por parte de okupas e inmigrantes ilegales, impidiendo que disfruten de los derechos que ello concede y fin de los pisos patera, domicilios ficticios y alojamientos ilegales.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Reducción drástica de los impuestos que gravan todo el proceso edificatorio",
+   "tituloFrase": "Reducción drástica de los impuestos que gravan todo el proceso edificatorio",
+   "texto": "Reducción drástica de los impuestos que gravan todo el proceso edificatorio y mejora de los instrumentos de financiación para promotores y constructores.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "La primera vivienda habitual de una familia española no paga impuestos",
+   "tituloFrase": "La primera vivienda habitual de una familia española no paga impuestos",
+   "texto": "Tipo 0% de IVA para la compra de tu primera vivienda habitual -de nueva construcción- y bonificación 100% del ITP para la compra de tu primera vivienda habitual -de segunda mano-. Recuperación de la deducción por inversión en vivienda habitual.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Tipo 0% de IVA para la compra de tu primera vivienda habitual -de nueva construcción- y bonificación 100% del ITP para la compra de tu primera vivienda habitual -de segunda mano-."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Fiscalidad diferenciada para el resto de adquisiciones",
+   "tituloFrase": "Fiscalidad diferenciada para el resto de adquisiciones",
+   "texto": "Fiscalidad media para operaciones de personas físicas o jurídicas destinadas a incrementar la oferta en alquiler residencial de larga duración. Fiscalidad agravada y disuasoria para compradores no comunitarios y operaciones especulativas de fondos o sociedades. La recaudación resultante se destinará a bonificaciones para la compra de vivienda y a la construcción de vivienda protegida.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Simplificar al mínimo la burocracia que soporta el ciudadano",
+   "tituloFrase": "Simplificar al mínimo la burocracia que soporta el ciudadano",
+   "texto": "Toda actuación administrativa deberá justificar su existencia, su utilidad y su proporcionalidad. Lo que no sea estrictamente necesario, se suprime. Lo que sea necesario, se simplifica al máximo. Esta revisión será permanente, transversal y afectará a todos los niveles administrativos, sin excepción y sin sectores blindados.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Sumar a España a la carrera de la Inteligencia Artificial",
+   "tituloFrase": "Sumar a España a la carrera de la Inteligencia Artificial",
+   "texto": "Impulsar la investigación, el desarrollo y la aplicación de la inteligencia artificial como motor de desarrollo de la economía nacional, que aumente la productividad, contribuya a crear empleos de calidad y a mejorar la vida de los españoles. Facilitar su implantación en nuestras empresas, especialmente pymes y autónomos, y promover la formación de trabajadores y jóvenes para aprovechar las nuevas oportunidades presentes y futuras. Implantarla en las administraciones para reducir la burocracia y mejorar los servicios públicos, garantizando siempre la atención presencial.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "jovenes",
+    "autonomos",
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Instauración de la ventanilla y dato único en la Administración",
+   "tituloFrase": "Instauración de la ventanilla y dato único en la Administración",
+   "texto": "Creación de un expediente digital único y centralizado que unifique la gestión de trámites para ciudadanos y empresas, obligando a las diferentes administraciones a compartir los datos entre sí.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Fin de la cita previa",
+   "tituloFrase": "Fin de la cita previa",
+   "texto": "Derecho a ser atendido presencialmente en cualquier oficina pública de forma inmediata sin necesidad de solicitar turno por internet.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "Derogar tres normas por cada una que se apruebe",
+   "tituloFrase": "Derogar tres normas por cada una que se apruebe",
+   "texto": "Cada ley nueva tendrá que identificar, en su propio texto, qué tres normas vigentes deroga. Sin esa identificación, no se tramita ni se aprueba. Basta ya de legislaturas que añaden miles de normas y no retiran ninguna. Los españoles no pueden seguir cargando con un Boletín Oficial que crece sin parar mientras su libertad mengua.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "Silencio administrativo positivo y declaración responsable como regla general",
+   "tituloFrase": "Silencio administrativo positivo y declaración responsable como regla general",
+   "texto": "Si la Administración no contesta en plazo, el ciudadano ha de poder seguir adelante con su proyecto. Y si una actividad no entraña riesgo, basta con declararla para empezar a ejercerla. Quedan fuera, como excepción tasada, algunas materias que afectan a la soberanía nacional y al control de quién entra y se queda en España: nacionalidad, residencia, permisos de trabajo a extranjeros y, en general, inmigración. Ahí el silencio jamás jugará a favor de quien pretenda burlar nuestras leyes.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "España es un solo mercado y una sola Nación",
+   "tituloFrase": "España es un solo mercado y una sola Nación",
+   "texto": "Ley de Unidad de Mercado. Lo que es legal en una región de España, lo es en toda España. Una misma actividad económica no debe quedar sometida a requisitos administrativos diferentes e injustificados por razón del territorio en el que se ejerza. Cualquier empresa, profesional o producto que ya opere legalmente en una Comunidad Autónoma podrá hacerlo en el resto del territorio nacional sin trámites, licencias ni registros adicionales. Garantizar la unidad del mercado nacional mediante la eliminación de trabas administrativas y duplicidades regulatorias: no puede ser que un autónomo, un comerciante o un fabricante tenga que pedir diecisiete permisos distintos para vender lo mismo.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Auditoría integral de las administraciones y reducción radical de los gastos de la Administración Pública",
+   "tituloFrase": "Auditoría integral de las administraciones y reducción radical de los gastos de la Administración Pública",
+   "texto": "Para compensar la bajada masiva de impuestos, se recortarán todos los gastos superfluos de la Administración hasta el mínimo imprescindible.\n\n• Promover una auditoría sistemática de todos los gastos no imprescindibles de las administraciones públicas que serán susceptibles de supresión. Los análisis de esta auditoría se irán haciendo públicos.\n\n• Reducir al mínimo estrictamente necesario el tamaño de la Administración Pública. Reducir progresivamente hasta su eliminación total las subvenciones a partidos, sindicatos, patronales, ONGs, observatorios y otros organismos ideológicos.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Derogación o modificación de todas las leyes que dificultan la prosperidad y la libertad de trabajadores, familias y empresas españolas",
+   "tituloFrase": "Derogación o modificación de todas las leyes que dificultan la prosperidad y la libertad de trabajadores, familias y empresas españolas",
+   "texto": "Acabar con todas las imposiciones climáticas como el Pacto Verde que castigan nuestra industria, nuestro campo o que coartan la libertad de circulación de los españoles, como la imposición de ZBE.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "familias",
+    "empresas",
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Limitar el importe de las multas de tráfico y estacionamiento por infracciones que no comprometan gravemente la seguridad vial",
+   "tituloFrase": "Limitar el importe de las multas de tráfico y estacionamiento por infracciones que no comprometan gravemente la seguridad vial",
+   "texto": "Revisar y reducir las sanciones económicas desproporcionadas, garantizando que su cuantía responda a la gravedad de la infracción y no a criterios recaudatorios.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Superación de las divisivas leyes ideológicas que enfrentan a los españoles",
+   "tituloFrase": "Superación de las divisivas leyes ideológicas que enfrentan a los españoles",
+   "texto": "Superación de las divisivas leyes ideológicas que enfrentan a los españoles, tales como la de Memoria Democrática, que dañan la convivencia y dividen y enfrentan a los españoles tratando de imponer una verdad oficial.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Derogar las leyes que han criminalizado a los hombres y desprotegido a las mujeres",
+   "tituloFrase": "Derogar las leyes que han criminalizado a los hombres y desprotegido a las mujeres",
+   "texto": "Las leyes de género no han contribuido a proteger a las mujeres o reducir el número de víctimas, sino a disparar el despilfarro y han terminado beneficiando y soltando a violadores y criminales sexuales y desprotegiendo con pulseras defectuosas a mujeres maltratadas. Hay que revertir las consecuencias nefastas de todas las normas que han abandonado a las verdaderas víctimas, y añadido otras nuevas. Poner fin a la criminalización de la mitad de la población y al desamparo que sufren familias enteras expuestas a ser perjudicadas por el fenómeno creciente de denuncias falsas. En su lugar, impulsar la aprobación de leyes y normas que protejan de verdad a las mujeres víctimas de violencia, en especial a aquellas que sufran maltrato, y que no dejen a ninguna víctima desamparada.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres",
+    "familias",
+    "victimas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Leyes de género"
+  },
+  {
+   "n": 48,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Blindaje del sector primario frente a la Agenda 2030 y lucha contra la competencia desleal",
+   "tituloFrase": "Blindaje del sector primario frente a la Agenda 2030 y lucha contra la competencia desleal",
+   "texto": "VOX en el Gobierno será el representante del sector primario en Bruselas, y no el representante de Bruselas ante los españoles. Oposición a todas las medidas que perjudiquen objetivamente al sector primario y proteger a los nuestros activamente -económica, política y jurídicamente- de las imposiciones de Bruselas y del Pacto Verde. Rechazo explícito al acuerdo UE-Mercosur y de todo acuerdo comercial que obligue a nuestros productores a competir en desigualdad de condiciones. Inclusión de cláusulas espejo. Recuperación del principio de preferencia comunitaria. Aumento de los controles en frontera y lucha contra el fraude en el etiquetado.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Protección total de nuestros agricultores, ganaderos y pescadores",
+   "tituloFrase": "Protección total de nuestros agricultores, ganaderos y pescadores",
+   "texto": "Será derogada cualquier normativa que perjudique, imponga cargas o sobrecostes que perjudiquen estos oficios que garantizan nuestra soberanía alimentaria y llevan a los hogares productos de una calidad insuperable.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Fondo de compensación frente a imposiciones de Bruselas",
+   "tituloFrase": "Fondo de compensación frente a imposiciones de Bruselas",
+   "texto": "Creación de un fondo de compensación destinado a mitigar el impacto negativo de las imposiciones normativas de Bruselas, desastres naturales o circunstancias adversas sobrevenidas, para proteger a nuestros sectores productivos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Ni un euro más para financiar el sector primario de fuera",
+   "tituloFrase": "Ni un euro más para financiar el sector primario de fuera",
+   "texto": "Fin de cualquier transferencia de fondos públicos destinados a financiar proyectos en cualquier país extracomunitario que haga competencia desleal a nuestros productos y a nuestra industria agroalimentaria.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Rechazo frontal a la propuesta de reducción del presupuesto de la PAC",
+   "tituloFrase": "Rechazo frontal a la propuesta de reducción del presupuesto de la PAC",
+   "texto": "Vinculación del reparto de fondos de la PAC a una nueva variable que prime la despoblación. Garantizar su autonomía presupuestaria y el fin de las exigencias burocráticas y medioambientales derivadas del fanatismo climático.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Defensa del sector pesquero español",
+   "tituloFrase": "Defensa del sector pesquero español",
+   "texto": "Promover la revisión de la Política Pesquera Común y de las cuotas y restricciones que perjudican injustificadamente a nuestros pescadores, reforzando la competitividad, la modernización de la flota, el relevo generacional y la continuidad de las explotaciones pesqueras familiares y la rentabilidad de la pesca española.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Impedir la destrucción de la riqueza agrícola y el patrimonio natural para la instalación descontrolada de macro plantas de energías renovables, solar y eólica",
+   "tituloFrase": "Impedir la destrucción de la riqueza agrícola y el patrimonio natural para la instalación descontrolada de macro plantas de energías renovables, solar y eólica",
+   "texto": "",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Lucha contra los incendios",
+   "tituloFrase": "Lucha contra los incendios",
+   "texto": "Limpieza y aprovechamiento de los montes. Revisión de las restricciones ambientales que obstaculizan las labores de prevención y aprovechamiento forestal. Prevención y lucha contra los incendios: protocolos comunes, coordinación de bomberos y protección civil de distintas administraciones y aumento de los medios humanos, materiales y tecnológicos. Endurecimiento de las penas a los incendiarios.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Fin a las trabas interminables que arruinan nuestro campo y nuestro mar",
+   "tituloFrase": "Fin a las trabas interminables que arruinan nuestro campo y nuestro mar",
+   "texto": "Aplicación, con carácter general, del principio de declaración responsable y el silencio administrativo positivo en todos aquellos procedimientos administrativos vinculados al medio rural, con el objetivo de simplificar trámites, reducir cargas burocráticas y agilizar la actividad económica en el entorno rural, asegurando el relevo generacional. Revisión y refuerzo del Sistema Español de Seguros Agrarios ante las necesidades del campo español.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Aumentar la inversión destinada a situaciones sobrevenidas, como inundaciones o granizadas, así como plagas que afecten a la sanidad animal y vegetal",
+   "tituloFrase": "Aumentar la inversión destinada a situaciones sobrevenidas, como inundaciones o granizadas, así como plagas que afecten a la sanidad animal y vegetal",
+   "texto": "",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Favorecer el relevo generacional y la continuidad de las explotaciones familiares en el mundo rural",
+   "tituloFrase": "Favorecer el relevo generacional y la continuidad de las explotaciones familiares en el mundo rural",
+   "texto": "Favorecer el relevo generacional y la continuidad de las explotaciones familiares en el mundo rural apoyando la incorporación de los jóvenes al sector primario y a las cooperativas agroalimentarias. Impulso de la Formación Profesional en el sector primario a través de programas públicos y concertados.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "jovenes",
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Defensa de la caza como actividad esencial",
+   "tituloFrase": "Defensa de la caza como actividad esencial",
+   "texto": "Defensa de la caza como actividad esencial para el control de las poblaciones y para la protección de las explotaciones agrícolas y ganaderas, así como por su valor medioambiental y económico.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Misma atención de calidad para todos los españoles: tarjeta sanitaria única con historia clínica compartida en todo el territorio nacional",
+   "tituloFrase": "Misma atención de calidad para todos los españoles: tarjeta sanitaria única con historia clínica compartida en todo el territorio nacional",
+   "texto": "Garantizar que el desconocimiento de las lenguas regionales no sea en ningún caso impedimento para el acceso por oposición a plazas de personal sanitario ni un perjuicio para los pacientes.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Refuerzo de la atención primaria y pediátrica en todo el territorio nacional",
+   "tituloFrase": "Refuerzo de la atención primaria y pediátrica en todo el territorio nacional",
+   "texto": "Mejorar su accesibilidad y capacidad asistencial, con especial atención a las zonas rurales y de difícil cobertura y a la continuidad de la atención entre centros de salud, especialistas y hospitales.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "rural",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Plan nacional de reducción de listas de espera y mejora de la atención sanitaria",
+   "tituloFrase": "Plan nacional de reducción de listas de espera y mejora de la atención sanitaria",
+   "texto": "Reorganizar circuitos asistenciales, mejorar la capacidad diagnóstica y la actividad quirúrgica y facilitar derivaciones entre centros y territorios. Fomento de la colaboración público-privada cuando ayude efectivamente a reducir demoras, con transparencia, evaluación de calidad y control del gasto. Publicación de indicadores comparables y periódicos de listas de espera, actividad y resultados.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Mejorar las condiciones laborales y retributivas de todos los profesionales",
+   "tituloFrase": "Mejorar las condiciones laborales y retributivas de todos los profesionales",
+   "texto": "Mejora progresiva de retribuciones, reconocimiento de guardias y turnos, conciliación efectiva y carrera profesional basada en formación, experiencia y méritos. Incentivos económicos y profesionales para plazas rurales o de difícil cobertura; impulso de contratos estables y contratos puente tras la residencia, y un programa de retorno de sanitarios españoles que trabajan en el extranjero. Refuerzo de plantillas médicas, de enfermería y personal administrativo. Plan para promover el retorno de los profesionales sanitarios que se han marchado al extranjero en busca de las oportunidades que no han tenido en España. Fin del turismo sanitario.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "familias",
+    "rural",
+    "inmigrantes",
+    "pacientes"
+   ],
+   "palancas": [
+    "impuestos",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "Atención específica a la salud de las mujeres",
+   "tituloFrase": "Atención específica a la salud de las mujeres",
+   "texto": "Reforzar la prevención y el diagnóstico precoz del cáncer de mama y de los cánceres ginecológicos, mejorar el diagnóstico y tratamiento de las enfermedades que afectan especialmente a las mujeres y garantizar una atención adecuada durante el embarazo, parto y posparto, con especial atención a las necesidades de las madres que afrontan la maternidad a edades más avanzadas.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "mujeres",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "Mapa de infraestructuras sanitarias urgentes y refuerzo de la cartera de servicios sanitarios",
+   "tituloFrase": "Mapa de infraestructuras sanitarias urgentes y refuerzo de la cartera de servicios sanitarios",
+   "texto": "Impulso de un mapa de infraestructuras sanitarias urgentes y necesarias y establecimiento de un plan de inversiones directas. Promover la investigación médica con independencia de la rentabilidad comercial (enfermedades raras, enfermedades crónicas, y neurodegenerativas). Refuerzo de la Estrategia Nacional del Cáncer y creación de una Red de Centros Nacionales de Oncología. Refuerzo de la Estrategia Nacional de Salud Mental.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "discapacidad",
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Igualar las oportunidades para todos los alumnos españoles: unificar currículo, evaluaciones nacionales e inspección",
+   "tituloFrase": "Igualar las oportunidades para todos los alumnos españoles: unificar currículo, evaluaciones nacionales e inspección",
+   "texto": "Reválidas y EVAU única. Se garantizará la educación en español en todo el territorio nacional. Fin a las diferencias en los contenidos curriculares e impulso de la exigencia académica. Revisión de las homologaciones de títulos extranjeros.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "infancia",
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Garantizar los derechos de las familias en la educación de sus hijos",
+   "tituloFrase": "Garantizar los derechos de las familias en la educación de sus hijos",
+   "texto": "Garantizar la libre elección de centro educativo en todos los niveles para que las familias elijan libremente el modelo educativo que desean, sin que su situación económica o social sea un impedimento para ello.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "familias",
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Ningún español debe quedarse sin poder estudiar por falta de recursos económicos",
+   "tituloFrase": "Ningún español debe quedarse sin poder estudiar por falta de recursos económicos",
+   "texto": "Mejorar el sistema de becas en las etapas universitaria y preuniversitaria para que la educación sea un verdadero ascensor social en el que la situación económica no sea un obstáculo para el esfuerzo, el mérito y la capacidad.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Eliminación de contenidos ideológicos ajenos a las materias académicas",
+   "tituloFrase": "Eliminación de contenidos ideológicos ajenos a las materias académicas",
+   "texto": "Derogación de la LOMLOE y recuperación de una enseñanza basada en el esfuerzo, el saber, el mérito, la exigencia, la disciplina y la responsabilidad personal. Potenciación de las matemáticas, la lectura, las humanidades y las ciencias. Respeto en las aulas. Fin de los móviles en clase, refuerzo de la autoridad del profesor y plan nacional contra el acoso escolar y el ciberacoso.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "LOMLOE"
+  },
+  {
+   "n": 70,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Establecimiento de un número máximo por aula de alumnos procedentes de otras culturas o con dominio insuficiente del español",
+   "tituloFrase": "Establecimiento de un número máximo por aula de alumnos procedentes de otras culturas o con dominio insuficiente del español",
+   "texto": "Establecimiento de un número máximo por aula de alumnos procedentes de otras culturas o con dominio insuficiente del español. Creación de aulas específicas de nivelación, donde los alumnos que se incorporen tarde al sistema español alcancen el nivel requerido antes de integrarse en su clase, sin ralentizar a sus compañeros y con más posibilidades de éxito para ellos mismos.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Prohibición del burka y el niqab en todos los espacios públicos y lugares donde se presten servicios públicos, con particular atención a centros educativos o entornos donde se vea comprometida la seguridad",
+   "tituloFrase": "Prohibición del burka y el niqab en todos los espacios públicos y lugares donde se presten servicios públicos, con particular atención a centros educativos o entornos donde se vea comprometida la seguridad",
+   "texto": "",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Fin de los menús halal en los comedores escolares",
+   "tituloFrase": "Fin de los menús halal en los comedores escolares",
+   "texto": "",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Eliminación del programa educativo de Lengua Árabe y Cultura Marroquí",
+   "tituloFrase": "Eliminación del programa educativo de Lengua Árabe y Cultura Marroquí",
+   "texto": "",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Prioridad nacional para escoger centro para los hijos, en la concesión de ayudas y subvenciones educativas y para el acceso a plazas de guardería, becas comedor, becas transporte, etc.",
+   "tituloFrase": "Prioridad nacional para escoger centro para los hijos, en la concesión de ayudas y subvenciones educativas y para el acceso a plazas de guardería, becas comedor, becas transporte, etc.",
+   "texto": "Distrito único y libre elección de centro escolar para los padres. Apuesta decidida por la Formación Profesional.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Recuperación de la vocación de la Universidad como espacio de libertad y búsqueda de la verdad y la belleza",
+   "tituloFrase": "Recuperación de la vocación de la Universidad como espacio de libertad y búsqueda de la verdad y la belleza",
+   "texto": "Garantizar la libertad de cátedra de los profesores en las aulas frente a las imposiciones de la corrección política.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 36,
+   "subapartado": null,
+   "titulo": "Promoción de la cultura nacional",
+   "tituloFrase": "Promoción de la cultura nacional",
+   "texto": "Afirmación y difusión de la historia común española. Conservación y rehabilitación del patrimonio nacional, con especial atención al medio rural, sus iglesias y monumentos. Protección de nuestro patrimonio histórico frente al vandalismo. Reducción de impuestos para el arte y los espectáculos en vivo. Nueva Ley de Mecenazgo para elevar las deducciones del IRPF.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Defensa de la Tauromaquia y promoción de la difusión del arte taurino y potenciación del conjunto de actividades alrededor de esta tradición",
+   "tituloFrase": "Defensa de la Tauromaquia y promoción de la difusión del arte taurino y potenciación del conjunto de actividades alrededor de esta tradición",
+   "texto": "",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Fomento del deporte como motor de desarrollo y cohesión nacional",
+   "tituloFrase": "Fomento del deporte como motor de desarrollo y cohesión nacional",
+   "texto": "Despolitizar el deporte y garantizar que las selecciones nacionales representen a España en las competiciones internacionales, reforzando la Unidad Nacional frente a las cesiones al separatismo. Compromiso con la defensa del deporte femenino, que debe regirse por criterios biológicos y deportivos objetivos para garantizar la igualdad real en la competición. Impulso de becas a deportistas, rebajas fiscales y apoyo a clubes y federaciones deportivas.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 39,
+   "subapartado": null,
+   "titulo": "Instituciones de Seguridad y Defensa al servicio de los españoles y sus familias",
+   "tituloFrase": "Instituciones de Seguridad y Defensa al servicio de los españoles y sus familias",
+   "texto": "Instituciones de Seguridad y Defensa al servicio de los españoles y sus familias, con unas Fuerzas Armadas profesionales y unas Fuerzas y Cuerpos de Seguridad del Estado bien dimensionadas con todos los recursos necesarios para defender nuestra soberanía y garantizar nuestra seguridad y libertad.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [
+    "familias",
+    "agentes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 39,
+   "subapartado": null,
+   "titulo": "Reducción de la edad de responsabilidad penal del menor",
+   "tituloFrase": "Reducción de la edad de responsabilidad penal del menor",
+   "texto": "Reducción de la edad de responsabilidad penal del menor y plantear la eliminación de inimputabilidad para ciertos delitos violentos como los homicidios o las agresiones sexuales.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 39,
+   "subapartado": null,
+   "titulo": "Ampliación de la prisión permanente revisable",
+   "tituloFrase": "Ampliación de la prisión permanente revisable",
+   "texto": "Los que cometen los peores delitos deben tener las máximas condenas.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 82,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 39,
+   "subapartado": null,
+   "titulo": "Asegurar que los directores generales de la Guardia Civil y del Cuerpo Nacional de Policía",
+   "tituloFrase": "Asegurar que los directores generales de la Guardia Civil y del Cuerpo Nacional de Policía",
+   "texto": "Asegurar que los directores generales de la Guardia Civil y del Cuerpo Nacional de Policía sean personas con amplia experiencia en el ámbito de la seguridad, y no políticos con carné del partido.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 83,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 39,
+   "subapartado": null,
+   "titulo": "Dotar de suficientes medios humanos y recursos materiales, técnicos, tecnológicos, jurídicos, organizativos y presupuestarios",
+   "tituloFrase": "Dotar de suficientes medios humanos y recursos materiales, técnicos, tecnológicos, jurídicos, organizativos y presupuestarios",
+   "texto": "Dotar de suficientes medios humanos y recursos materiales, técnicos, tecnológicos, jurídicos, organizativos y presupuestarios, así como de las infraestructuras, instalaciones y demás capacidades a las Fuerzas Armadas, Ejército de Tierra, la Armada y el Ejército del Aire; al Centro Nacional de Inteligencia (CNI); a las Fuerzas y Cuerpos de Seguridad del Estado, Guardia Civil (GC) y Cuerpo Nacional de Policía (CNP); así como al Servicio de Vigilancia Aduanera (SVA) e Instituciones Penitenciarias (IIPP).",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 40,
+   "subapartado": null,
+   "titulo": "Dignificación de las Fuerzas y Cuerpos de Seguridad del Estado",
+   "tituloFrase": "Dignificación de las Fuerzas y Cuerpos de Seguridad del Estado",
+   "texto": "Aumento de la inversión, equiparación salarial y sueldos dignos, dignificación de la profesión y programas de modernización y actualización formativa y tecnológica. Reconocimiento de la profesión y servicio en la Guardia Civil y el Cuerpo Nacional de Policía como profesión de riesgo.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 40,
+   "subapartado": null,
+   "titulo": "Protección integral para los funcionarios de prisiones",
+   "tituloFrase": "Protección integral para los funcionarios de prisiones",
+   "texto": "Plantillas adecuadamente dimensionadas, equiparación salarial y sueldos dignos, medios materiales y formación frente a los módulos conflictivos y reconocimiento como profesión de riesgo.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 40,
+   "subapartado": null,
+   "titulo": "Combate total al narcotráfico",
+   "tituloFrase": "Combate total al narcotráfico",
+   "texto": "Refuerzo urgente de los medios humanos y recursos materiales, técnicos y operativos dedicados a la lucha contra el narcotráfico y la criminalidad organizada que operan en el territorio y costas españolas. Restablecimiento inmediato del Organismo de Coordinación del Narcotráfico (OCON) Sur.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 40,
+   "subapartado": null,
+   "titulo": "Protección efectiva de las mujeres frente a la violencia y las agresiones sexuales",
+   "tituloFrase": "Protección efectiva de las mujeres frente a la violencia y las agresiones sexuales",
+   "texto": "Reforzar la prevención, la protección policial y judicial y la asistencia integral a las víctimas, evitando que ninguna mujer quede desamparada.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres",
+    "agentes",
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 88,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 40,
+   "subapartado": null,
+   "titulo": "Protección y defensa de las fronteras españolas",
+   "tituloFrase": "Protección y defensa de las fronteras españolas",
+   "texto": "Establecer un nuevo modelo de protección permanente de las fronteras terrestres, marítimas y aéreas, con participación de las Fuerzas Armadas, en apoyo a la Guardia Civil y el Cuerpo Nacional de Policía, reforzando la lucha contra la inmigración ilegal, las mafias de tráfico de personas y las amenazas híbridas, especialmente en Ceuta y Melilla. Lucha incesante contra el terrorismo islámico.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "agentes",
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Ceuta",
+    "Melilla"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 41,
+   "subapartado": null,
+   "titulo": "Aumento de la inversión en Defensa, sueldos dignos y ayudas a la movilidad geográfica y a la vivienda y alojamiento",
+   "tituloFrase": "Aumento de la inversión en Defensa, sueldos dignos y ayudas a la movilidad geográfica y a la vivienda y alojamiento",
+   "texto": "Dignificación de la vocación profesional militar. Reconocimiento de la profesión y servicio en las Fuerzas Armadas como profesión de riesgo. Difusión de la Cultura de Seguridad y Defensa.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 41,
+   "subapartado": null,
+   "titulo": "Refuerzo del Sistema Nacional de Protección Civil",
+   "tituloFrase": "Refuerzo del Sistema Nacional de Protección Civil",
+   "texto": "Mejorar la prevención, preparación, coordinación y respuesta ante incendios, inundaciones, catástrofes naturales y emergencias de especial gravedad, garantizando la protección de la población y la recuperación de las zonas afectadas.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 41,
+   "subapartado": null,
+   "titulo": "Refuerzo de la ciberseguridad y protección de las infraestructuras críticas",
+   "tituloFrase": "Refuerzo de la ciberseguridad y protección de las infraestructuras críticas",
+   "texto": "Mejorar las capacidades nacionales de prevención y respuesta frente a ciberataques, espionaje, sabotajes y amenazas contra los servicios esenciales, las redes de comunicaciones y las infraestructuras estratégicas.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 41,
+   "subapartado": null,
+   "titulo": "Defender nuestra soberanía ante injerencias extranjeras y recuperar una posición internacional que priorice la defensa de los intereses reales de los españoles y de la Unidad Nacional",
+   "tituloFrase": "Defender nuestra soberanía ante injerencias extranjeras y recuperar una posición internacional que priorice la defensa de los intereses reales de los españoles y de la Unidad Nacional",
+   "texto": "Uno de los legados más siniestros de Pedro Sánchez es la sumisión constante del interés nacional a los planes de organizaciones y potencias extranjeras, ajenas a la realidad y necesidades de nuestros compatriotas.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 42,
+   "subapartado": null,
+   "titulo": "Aplicación de toda la presión internacional necesaria para la recuperación de la soberanía española sobre el Peñón de Gibraltar",
+   "tituloFrase": "Aplicación de toda la presión internacional necesaria para la recuperación de la soberanía española sobre el Peñón de Gibraltar",
+   "texto": "Desmantelamiento de las redes de piratería, narcotráfico, contrabando y blanqueo de capitales que se originan en la colonia y afectan a España. Recuperación del control de las aguas españolas. Plan de inversiones para recuperar la prosperidad del Campo de Gibraltar.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Gibraltar"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 44,
+   "subapartado": null,
+   "titulo": "Plan nacional de natalidad y apoyo a las familias españolas",
+   "tituloFrase": "Plan nacional de natalidad y apoyo a las familias españolas",
+   "texto": "Las familias españolas, en el centro de las políticas públicas.\n\n• Todos los beneficios que ahora existen para las familias numerosas se aumentarán y se extenderán a todas las familias de manera progresiva desde el primer hijo, intensificando las ayudas y bonificaciones en función del número de hijos.\n\n• Bonificaciones fiscales a empresas que fomenten la conciliación y hagan descuentos a las familias. Bonificación del 100% de la ayuda en el hogar. Impulso de los servicios de apoyo a las familias en los centros educativos.\n\n• Cotización a la Seguridad Social financiada por el Estado para los españoles dedicados al cuidado de sus hijos. Formar una familia y criar a los hijos es una contribución esencial al futuro de España y no puede ser motivo de penalización en la jubilación.\n\n• El plan incluirá todo tipo medidas en apoyo a la familia: para facilitar el acceso a la vivienda, la compra de vehículos por necesidades familiares, la reducción de la carga fiscal de los productos de primera necesidad infantil, deducciones por material escolar o clases extraescolares. y la gratuidad real de la educación infantil de 0 a 3 años.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "mayores",
+    "familias",
+    "infancia",
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Bonificación del 100% de la ayuda en el hogar.",
+    "y la gratuidad real de la educación infantil de 0 a 3 años."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 45,
+   "subapartado": null,
+   "titulo": "Cuidado de nuestros mayores y dependientes",
+   "tituloFrase": "Cuidado de nuestros mayores y dependientes",
+   "texto": "Reforzar el presupuesto en dependencia, las ayudas para el cuidado en el hogar, el apoyo a familiares a cargo. Aumento de los programas de atención a la soledad no deseada y de las plazas en residencias.\n\n• Refuerzo de las bonificaciones y deducciones para personas con discapacidad, poner fin a las barreras arquitectónicas que dificultan su movilidad y desburocratizar los procedimientos de reconocimiento de la discapacidad o dependencia, así como otros trámites relacionados.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores",
+    "discapacidad"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 96,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 45,
+   "subapartado": null,
+   "titulo": "Eliminar todas aquellas trabas",
+   "tituloFrase": "Eliminar todas aquellas trabas",
+   "texto": "Eliminar todas aquellas trabas que impiden que las ayudas a la dependencia lleguen de manera rápida e íntegra a los beneficiarios.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 97,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 45,
+   "subapartado": null,
+   "titulo": "Protección de los menores y la infancia",
+   "tituloFrase": "Protección de los menores y la infancia",
+   "texto": "Preservar la inocencia de los menores y protegerlos frente a los riesgos presentes en los entornos digitales, tales como la adicción al juego o la pornografía o la mayor vulnerabilidad ante ciertos delitos.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 98,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 45,
+   "subapartado": null,
+   "titulo": "Defensa del derecho a la vida desde su concepción hasta la muerte natural y fin de la cultura de la muerte",
+   "tituloFrase": "Defensa del derecho a la vida desde su concepción hasta la muerte natural y fin de la cultura de la muerte",
+   "texto": "Garantizar la objeción de conciencia de los profesionales sanitarios y farmacéuticos y potenciar los cuidados paliativos.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 99,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 45,
+   "subapartado": null,
+   "titulo": "Combatir la brecha maternal",
+   "tituloFrase": "Combatir la brecha maternal",
+   "texto": "Combatir la brecha maternal facilitando la formación, permanencia, promoción y reincorporación al trabajo de las madres que han interrumpido sus carreras por la maternidad o cuidado de familiares y desean retomarla. Reforzar los derechos de conciliación de la vida personal, familiar y profesional de todos los trabajadores y la asunción equilibrada de las responsabilidades familiares. Incentivos para las empresas que favorezcan la conciliación familiar y laboral. Aumento del presupuesto en conciliación familiar con ampliación de los servicios complementarios de aula en los centros educativos.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "mujeres",
+    "familias",
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 100,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 48,
+   "subapartado": null,
+   "titulo": "Independencia y despolitización de la Justicia",
+   "tituloFrase": "Independencia y despolitización de la Justicia",
+   "texto": "Modificar la Ley Orgánica del Poder Judicial para que los doce vocales de procedencia judicial del Consejo General del Poder Judicial sean elegidos mediante voto personal, directo y secreto por y entre los propios jueces y magistrados, terminando con el sistema de cuotas partidistas. Acabar con la colonización partidista de cualquier institución judicial. Garantizar la idoneidad, imparcialidad, competencia profesional e independencia del Fiscal General del Estado.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 101,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 48,
+   "subapartado": null,
+   "titulo": "Liberar el Tribunal Constitucional de las manos de los políticos",
+   "tituloFrase": "Liberar el Tribunal Constitucional de las manos de los políticos",
+   "texto": "El control de la constitucionalidad de las leyes no puede depender de un órgano político. Velar por el respeto del papel funcional del Tribunal Supremo y evitar que el Tribunal Constitucional actúe como un tribunal extraordinario por encima del mismo.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 102,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 48,
+   "subapartado": null,
+   "titulo": "Administración de Justicia rápida, eficiente para los españoles",
+   "tituloFrase": "Administración de Justicia rápida, eficiente para los españoles",
+   "texto": "Reforma integral del sistema judicial que deje atrás los desvaríos ideológicos de este Gobierno y permita que los españoles puedan contar con una Administración de Justicia rápida y eficiente. Aumento de las inversiones en sedes judiciales y profesionales de la justicia.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 103,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 48,
+   "subapartado": null,
+   "titulo": "Respuesta contundente frente a los ataques contra la Unidad Nacional",
+   "tituloFrase": "Respuesta contundente frente a los ataques contra la Unidad Nacional",
+   "texto": "Recuperar el delito de sedición, agravar el tipo delictivo de la malversación de caudales públicos y prohibir los indultos para delitos relacionados con la corrupción política, la forma política del Estado o la integridad territorial. Ilegalización de los partidos políticos, asociaciones u organizaciones de cualquier tipo que atenten contra la soberanía e independencia de España, su unidad e integridad territorial.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 104,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 49,
+   "subapartado": null,
+   "titulo": "Defensa y protección de nuestra identidad, tradiciones, usos y costumbres",
+   "tituloFrase": "Defensa y protección de nuestra identidad, tradiciones, usos y costumbres",
+   "texto": "España es el quehacer común de los españoles de ayer, hoy y mañana y nuestra Nación merece que se garantice la promoción, conservación y transmisión de nuestro rico patrimonio material y espiritual. Protección de nuestros usos y costumbres y de las tradiciones religiosas y populares de España, frente a cualquier intento de imposición ideológica o de oposición extranjera.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 105,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 49,
+   "subapartado": null,
+   "titulo": "Dotar de la máxima protección jurídica a los símbolos de la Nación",
+   "tituloFrase": "Dotar de la máxima protección jurídica a los símbolos de la Nación",
+   "texto": "Dotar de la máxima protección jurídica a los símbolos de la Nación, especialmente la Bandera, el Escudo y el Himno o la Corona. Las penas por las ofensas y ultrajes a España y sus símbolos o emblemas deben agravarse para que ninguna afrenta a ellos quede impune.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 106,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 49,
+   "subapartado": null,
+   "titulo": "Revertir y poner fin a la gravísima degradación institucional promovida desde el Gobierno de Sánchez, la cual amenaza con romper la unidad y la igualdad de los españoles y quebrar nuestro Estado de Derecho",
+   "tituloFrase": "Revertir y poner fin a la gravísima degradación institucional promovida desde el Gobierno de Sánchez, la cual amenaza con romper la unidad y la igualdad de los españoles y quebrar nuestro Estado de Derecho",
+   "texto": "Máximo respeto por la actuación de todos los servidores públicos en su lucha contra la corrupción. Mayores medios y recursos a los juzgados y las unidades de la Guardia Civil y del Cuerpo Nacional de Policía especializadas en la lucha contra la corrupción.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [
+    "mayores",
+    "agentes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 107,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 50,
+   "subapartado": null,
+   "titulo": "Lucha contra la corrupción",
+   "tituloFrase": "Lucha contra la corrupción",
+   "texto": "Auditoría integral de todas las Administraciones con el fin destapar cualquier indicio de corrupción y llevarlo ante la Justicia. Reforzaremos la responsabilidad patrimonial personal de los cargos públicos condenados por delitos de corrupción, garantizando que respondan con todos sus bienes presentes y futuros por la totalidad del perjuicio económico causado a las arcas públicas, hasta su completa recuperación de los fondos públicos desviados.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 108,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 50,
+   "subapartado": null,
+   "titulo": "Auditoría del patrimonio inmobiliario del Estado",
+   "tituloFrase": "Auditoría del patrimonio inmobiliario del Estado",
+   "texto": "Los bienes inmuebles del Estado han de estar al servicio de las necesidades de la vivienda o de la mejor y más eficiente prestación de los servicios públicos de los españoles. No se ha de permitir por más tiempo que se conviertan en saunas de corrupción, se cedan gratuitamente para la ubicación de inmigrantes ilegales o se mantengan en estado de ruina. Plan Nacional de Rehabilitación del Patrimonio Inmobiliario para la revitalización y creación de empleo.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 109,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 50,
+   "subapartado": null,
+   "titulo": "Memoria, dignidad y justicia para las víctimas del terrorismo",
+   "tituloFrase": "Memoria, dignidad y justicia para las víctimas del terrorismo",
+   "texto": "Aprobación de una ley que impida de forma efectiva el enaltecimiento del terrorismo, homenajes a terroristas, actos de humillación de las víctimas o ataques a instituciones y símbolos de España. Promover la investigación de todos los crímenes de ETA aún no resueltos e impulsar la consideración de todos y cada uno de los delitos cometidos por la organización terrorista ETA como crímenes de lesa humanidad, para que no prescriban nunca. Garantizar la efectiva imprescriptibilidad de todos los delitos de terrorismo. Fin de los privilegios penitenciarios de los condenados por terrorismo.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 110,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 51,
+   "subapartado": null,
+   "titulo": "Limpiar RTVE de comisarios políticos, acabar con el despilfarro y ponerla al servicio de los españoles",
+   "tituloFrase": "Limpiar RTVE de comisarios políticos, acabar con el despilfarro y ponerla al servicio de los españoles",
+   "texto": "Reforma integral de la Radio y la Televisión pública para que preste un verdadero servicio público informando con objetividad y pluralidad. Garantizar el derecho a comunicar o recibir libremente información veraz.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 111,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 51,
+   "subapartado": null,
+   "titulo": "Garantizar la libertad de expresión de todos los españoles frente a la deriva censora del Gobierno de Sánchez",
+   "tituloFrase": "Garantizar la libertad de expresión de todos los españoles frente a la deriva censora del Gobierno de Sánchez",
+   "texto": "",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 112,
+   "bloque": 13,
+   "seccion": "13",
+   "pagina": 53,
+   "subapartado": null,
+   "titulo": "Plan nacional de infraestructuras",
+   "tituloFrase": "Plan nacional de infraestructuras",
+   "texto": "Las infraestructuras deben dejar de ser un negocio para políticos corruptos. Todas las inversiones en infraestructuras deben diseñarse pensando en el interés del conjunto de los españoles y con el fin de conectar los distintos territorios que conforman España. Aumento de la inversión en infraestructuras que incluya, al menos, red de carreteras, red ferroviaria, infraestructuras hidráulicas y de contención de inundaciones, telecomunicaciones, nodos logísticos, transporte y puertos.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 113,
+   "bloque": 13,
+   "seccion": "13",
+   "pagina": 53,
+   "subapartado": null,
+   "titulo": "Trenes rápidos, seguros y una España rural conectada",
+   "tituloFrase": "Trenes rápidos, seguros y una España rural conectada",
+   "texto": "Prioridad a la seguridad ferroviaria, al mantenimiento de una red abandonada e infradotada y a los servicios de Cercanías y Media Distancia. Auditoría del estado de la red. Modernización y electrificación de las líneas convencionales para conectar también las ciudades pequeñas y la España rural.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 114,
+   "bloque": 13,
+   "seccion": "13",
+   "pagina": 53,
+   "subapartado": null,
+   "titulo": "Obras contra las inundaciones para proteger vidas y hogares",
+   "tituloFrase": "Obras contra las inundaciones para proteger vidas y hogares",
+   "texto": "Poner fin al planeamiento y abandono ideológico de las infraestructuras esenciales contra las inundaciones. Conclusión de las obras pendientes, conservación de cauces, adecuación de barrancos y desarrollo de las infraestructuras hidráulicas necesarias para garantizar la seguridad y el bienestar de los españoles.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 115,
+   "bloque": 13,
+   "seccion": "13",
+   "pagina": 53,
+   "subapartado": null,
+   "titulo": "Plan Nacional del Agua",
+   "tituloFrase": "Plan Nacional del Agua",
+   "texto": "Interconexión de todas las cuencas que permita una gestión más eficiente del agua y pueda servir para reactivar económicamente a nuestro sector primario, así como para impulsar y modernizar los regadíos y la producción de energía. Al mismo tiempo, conclusión de las obras pendientes y desarrollo de las infraestructuras hidráulicas necesarias para garantizar la seguridad de los españoles ante las inundaciones.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }
