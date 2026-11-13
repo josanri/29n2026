@@ -247,7 +247,7 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [2, 34, 41, 43],
     },
     {
-      title: 'Cuatro derogaciones expresas',
+      title: 'Cuatro medidas piden derogar leyes',
       text:
         'El texto pide derogar la Ley de Vivienda, las leyes de género, la LOMLOE y la legislación laboral del Gobierno, además del calendario de cierre de las centrales nucleares. Otras medidas hablan de «superar» o modificar leyes, como la de Memoria Democrática, sin nombrar su derogación.',
       measureNumbers: [8, 30, 46, 47, 69],

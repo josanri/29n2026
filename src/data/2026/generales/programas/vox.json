@@ -14,33 +14,63 @@
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Es sentido común",
+  "texto": "El PDF oficial no tiene texto de presentación: tras el índice, entra directamente en las medidas. Reúne 115 medidas numeradas en 13 áreas, desde «Ceuta y Melilla» hasta «Infraestructuras y Transportes». El lema de la campaña resume sus tres ejes: prioridad nacional, desregulación y remigración."
  },
  "cifras": [
   {
-   "valor": "50 euros",
-   "unidad": "euros",
-   "texto": "Rebaja masiva de impuestos para proteger a los españoles del infierno fiscal y burocrático que impide la prosperidad de los españoles",
-   "medida": 2
+   "valor": "5 millones",
+   "unidad": "personas",
+   "texto": "recibidas en cinco años, según el programa, que propone no acoger a más inmigrantes",
+   "medida": 9
   },
   {
-   "valor": "24 horas",
+   "valor": "24",
    "unidad": "horas",
-   "texto": "Mano dura contra la okupación y la inquiocupación",
+   "texto": "plazo máximo para desalojar una vivienda okupada",
    "medida": 31
   },
   {
-   "valor": "0%",
-   "unidad": "%",
-   "texto": "La primera vivienda habitual de una familia española no paga impuestos",
+   "valor": "0 %",
+   "unidad": "IVA",
+   "texto": "en la compra de la primera vivienda habitual de nueva construcción",
    "medida": 34
   },
   {
-   "valor": "100%",
-   "unidad": "%",
-   "texto": "Plan nacional de natalidad y apoyo a las familias españolas",
+   "valor": "100 %",
+   "unidad": "bonificación del ITP",
+   "texto": "en la compra de la primera vivienda habitual de segunda mano",
+   "medida": 34
+  },
+  {
+   "valor": "0 €",
+   "unidad": "cuota de autónomos",
+   "texto": "si los ingresos no llegan al Salario Mínimo Interprofesional",
+   "medida": 2
+  },
+  {
+   "valor": "50 €",
+   "unidad": "cuota mínima",
+   "texto": "cuota progresiva de autónomos desde 50 euros, superado el SMI",
+   "medida": 2
+  },
+  {
+   "valor": "3",
+   "unidad": "normas derogadas",
+   "texto": "por cada ley nueva que se apruebe",
+   "medida": 40
+  },
+  {
+   "valor": "0-3",
+   "unidad": "años",
+   "texto": "gratuidad real de la educación infantil",
    "medida": 94
+  },
+  {
+   "valor": "12",
+   "unidad": "vocales del CGPJ",
+   "texto": "de procedencia judicial, elegidos por y entre los jueces",
+   "medida": 100
   }
  ],
  "plazos": [
@@ -56,63 +86,63 @@
  "verbos": [
   {
    "verbo": "garantizar",
+   "n": 24
+  },
+  {
+   "verbo": "mejorar",
    "n": 11
   },
   {
-   "verbo": "poner",
-   "n": 3
+   "verbo": "promover",
+   "n": 9
   },
   {
    "verbo": "recuperar",
-   "n": 2
-  },
-  {
-   "verbo": "defender",
-   "n": 2
-  },
-  {
-   "verbo": "eliminar",
-   "n": 2
-  },
-  {
-   "verbo": "derogar",
-   "n": 2
-  },
-  {
-   "verbo": "promover",
-   "n": 2
-  },
-  {
-   "verbo": "dotar",
-   "n": 2
-  },
-  {
-   "verbo": "adoptar",
-   "n": 1
-  },
-  {
-   "verbo": "suprimir",
-   "n": 1
-  },
-  {
-   "verbo": "incrementar",
-   "n": 1
-  },
-  {
-   "verbo": "simplificar",
-   "n": 1
-  },
-  {
-   "verbo": "sumar",
-   "n": 1
-  },
-  {
-   "verbo": "facilitar",
-   "n": 1
+   "n": 8
   },
   {
    "verbo": "reducir",
-   "n": 1
+   "n": 8
+  },
+  {
+   "verbo": "impulsar",
+   "n": 7
+  },
+  {
+   "verbo": "proteger",
+   "n": 5
+  },
+  {
+   "verbo": "reforzar",
+   "n": 5
+  },
+  {
+   "verbo": "revertir",
+   "n": 4
+  },
+  {
+   "verbo": "facilitar",
+   "n": 4
+  },
+  {
+   "verbo": "defender",
+   "n": 3
+  },
+  {
+   "verbo": "aumentar",
+   "n": 3
+  },
+  {
+   "verbo": "eliminar",
+   "n": 3
+  },
+  {
+   "verbo": "derogar",
+   "n": 3
+  },
+  {
+   "verbo": "acabar",
+   "n": 3
   }
  ],
  "bloques": [
@@ -553,9 +583,7 @@
     "plan"
    ],
    "territorios": [],
-   "cifras": [
-    "Revertir las normativas que atacan frontalmente a la industria nacional (prohibición de motores de combustión, impuestos a las emisiones de CO2) inspiradas en el Pacto Verde Europeo, la Agenda 2030 y otros acuerdos no sometidos a votación por los españoles."
-   ],
+   "cifras": [],
    "plazo": null,
    "deroga": "Legislación laboral de Sánchez y calendario de cierre nuclear"
   },
@@ -1241,7 +1269,9 @@
     "ley"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Cada ley nueva tendrá que identificar, en su propio texto, qué tres normas vigentes deroga."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -2250,10 +2280,7 @@
     "inmigrantes"
    ],
    "palancas": [],
-   "territorios": [
-    "Ceuta",
-    "Melilla"
-   ],
+   "territorios": [],
    "cifras": [],
    "plazo": null,
    "deroga": null
@@ -2523,7 +2550,9 @@
     "impuestos"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Modificar la Ley Orgánica del Poder Judicial para que los doce vocales de procedencia judicial del Consejo General del Poder Judicial sean elegidos mediante voto personal, directo y secreto por y entre los propios jueces y magistrados, terminando con el sistema de cuotas partidistas."
+   ],
    "plazo": null,
    "deroga": null
   },

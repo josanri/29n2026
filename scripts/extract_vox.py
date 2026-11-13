@@ -91,7 +91,39 @@ TERRITORIOS = {
     'Unión Europea': r'\bUni[oó]n Europea\b|\bBruselas\b|\beurope[oa]s?\b',
 }
 
-NO_VERBOS = {'cualquier', 'mujer', 'menor', 'mayor', 'lugar', 'hogar', 'poder', 'mar', 'bienestar', 'ser'}
+# Words ending in -ar, -er or -ir that are not infinitives.
+NO_VERBOS = {
+    'cualquier', 'alquiler', 'escolar', 'familiar', 'carácter', 'cáncer', 'gibraltar', 'nuclear', 'mujer',
+    'lugar', 'hogar', 'bienestar', 'militar', 'particular', 'popular', 'similar', 'exterior', 'interior',
+    'superior', 'anterior', 'posterior', 'menor', 'mayor', 'sector', 'valor', 'labor', 'titular', 'singular',
+    'auxiliar', 'pilar', 'mar', 'escolar', 'regular', 'celular', 'vascular', 'circular', 'solar', 'polar',
+    'nivel', 'primer', 'tercer', 'parlamentar', 'ejemplar',
+}
+
+# Key figures, chosen by reading the program. Each value must appear in the text of its measure.
+CIFRAS = [
+    ('5 millones', 'personas', 'recibidas en cinco años, según el programa, que propone no acoger a más inmigrantes', 9, '5 millones'),
+    ('24', 'horas', 'plazo máximo para desalojar una vivienda okupada', 31, '24 horas'),
+    ('0 %', 'IVA', 'en la compra de la primera vivienda habitual de nueva construcción', 34, '0%'),
+    ('100 %', 'bonificación del ITP', 'en la compra de la primera vivienda habitual de segunda mano', 34, '100%'),
+    ('0 €', 'cuota de autónomos', 'si los ingresos no llegan al Salario Mínimo Interprofesional', 2, 'cero euros'),
+    ('50 €', 'cuota mínima', 'cuota progresiva de autónomos desde 50 euros, superado el SMI', 2, '50 euros'),
+    ('3', 'normas derogadas', 'por cada ley nueva que se apruebe', 40, 'tres normas'),
+    ('0-3', 'años', 'gratuidad real de la educación infantil', 94, '0 a 3 años'),
+    ('12', 'vocales del CGPJ', 'de procedencia judicial, elegidos por y entre los jueces', 100, 'doce vocales'),
+]
+
+PRESENTACION = {
+    'titulo': 'Es sentido común',
+    'texto': (
+        'El PDF oficial no tiene texto de presentación: tras el índice, entra directamente en las medidas. '
+        'Reúne 115 medidas numeradas en 13 áreas, desde «Ceuta y Melilla» hasta «Infraestructuras y Transportes». '
+        'El lema de la campaña resume sus tres ejes: prioridad nacional, desregulación y remigración.'
+    ),
+}
+
+# Figures written in words that count as data («tres normas», «doce vocales», «cero euros»).
+NUMEROS_ESCRITOS = r'\b(?:cero|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|doce|veinte|cien|mil)\s+(?:euros|normas|vocales)\b'
 NUMERO_RE = re.compile(r'^\s*(\d{1,3})\.\t')  # InDesign sets a tab after the number
 CABECERA = 'ES SENTIDO COMÚN'
 GUIONES = '­'
@@ -275,6 +307,19 @@ def componer_texto(negrita, resto, parrafos):
     return '\n\n'.join(salida)
 
 
+ESPAÑOLES = {'Ceuta', 'Melilla', 'Canarias', 'Baleares', 'Cataluña', 'País Vasco', 'Navarra'}
+
+
+def territorios_de(titulo, texto):
+    """A Spanish territory counts only when the title (or the block title) names it: «Alivio fiscal en Baleares y Canarias»
+    is for those islands, but the border plan of measure 88 names Ceuta and Melilla as an example and
+    applies to all of Spain («Sin siglas» would show it only to readers in those cities)."""
+    return [
+        nombre for nombre, patron in TERRITORIOS.items()
+        if re.search(patron, titulo) or (nombre not in ESPAÑOLES and re.search(patron, texto))
+    ]
+
+
 def frase(titulo):
     return titulo[:1].upper() + titulo[1:]
 
@@ -311,7 +356,8 @@ def crear_programa(documento, bloques_vistos, extraidas):
         frases_cifra = [
             parte.strip().lstrip('• ')
             for parte in re.split(r'(?<=[.!?])\s+|\n\n', texto)
-            if re.search(r'\d', parte) and re.search(r'%|€|euros?|mill[oó]n|horas|d[ií]as|años|meses', parte, re.I)
+            if (re.search(r'\d', parte) and re.search(r'%|€|\b(?:euros?|millones|horas|d[ií]as|años|meses)\b', parte, re.I))
+            or re.search(NUMEROS_ESCRITOS, parte, re.I)
         ][:3]
         plazo = re.search(r'\ben menos de (\d+ (?:horas|d[ií]as|meses))\b', completo, re.I)
         medidas.append({
@@ -327,29 +373,27 @@ def crear_programa(documento, bloques_vistos, extraidas):
             'categoria': categoria,
             'colectivos': [n for n, p in COLECTIVOS.items() if re.search(p, completo, re.I)],
             'palancas': [n for n, p in PALANCAS.items() if re.search(p, completo, re.I)],
-            'territorios': [n for n, p in TERRITORIOS.items() if re.search(p, completo)],
+            'territorios': territorios_de(f"{BLOQUES[extraida['bloque'] - 1][0]}. {titulo}", texto),
             'cifras': frases_cifra,
             'plazo': plazo.group(1) if plazo else None,
             'deroga': DEROGA.get(numero),
         })
 
+    # VOX writes its measures in infinitives and nouns («Reducción», «Garantizar»), not in the future
+    # tense of other programs, so the count looks for infinitives anywhere in the text.
     verbos = Counter()
     for medida in medidas:
-        cuerpo = f"{medida['titulo']} {medida['texto']}".replace('• ', '')
-        for verbo in re.findall(r'(?:^|(?<=[.•]\s))([A-ZÁÉÍÓÚ][a-záéíóúñ]+(?:ar|er|ir))\b', cuerpo):
-            if verbo.lower() not in NO_VERBOS:
-                verbos[verbo.lower()] += 1
+        cuerpo = f"{medida['titulo']} {medida['texto']}".lower()
+        for verbo in re.findall(r'\b([a-záéíóúñ]{4,}(?:ar|er|ir))\b', cuerpo):
+            if verbo not in NO_VERBOS:
+                verbos[verbo] += 1
 
+    textos = {m['n']: f"{m['titulo']}. {m['texto']}" for m in medidas}
     cifras = []
-    for medida in medidas:
-        match = re.search(r'\b\d+(?:[.,]\d+)?\s*(?:%|euros|horas)', medida['texto'])
-        if match:
-            cifras.append({
-                'valor': match.group(0),
-                'unidad': re.sub(r'[\d.,\s]', '', match.group(0)),
-                'texto': medida['tituloFrase'],
-                'medida': medida['n'],
-            })
+    for valor, unidad, texto, numero, prueba in CIFRAS:
+        if prueba not in textos[numero]:
+            raise ValueError(f'La cifra «{valor}» no aparece en la medida {numero}')
+        cifras.append({'valor': valor, 'unidad': unidad, 'texto': texto, 'medida': numero})
 
     return {
         'id': 'vox',
@@ -366,8 +410,8 @@ def crear_programa(documento, bloques_vistos, extraidas):
         'fechaPdf': '2026-11-12',
         'unidadMedida': 'medida',
         'unidadMedidas': 'medidas',
-        'presentacion': {'titulo': '', 'texto': ''},
-        'cifras': cifras[:8],
+        'presentacion': PRESENTACION,
+        'cifras': cifras,
         'plazos': [{'plazo': m['plazo'], 'texto': m['tituloFrase'], 'medida': m['n']} for m in medidas if m['plazo']],
         'ordenPlazos': sorted({m['plazo'] for m in medidas if m['plazo']}),
         'verbos': [{'verbo': v, 'n': n} for v, n in verbos.most_common(15)],
