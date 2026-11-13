@@ -88,9 +88,16 @@ DEADLINE_RE = re.compile(r'\b(?:202[6-9]|2030|primer any|primers \d+ anys)\b', r
 NOT_DEADLINE_RE = re.compile(
     r'\bLlei \d+/\d{4}\b'
     r'|\b(?:gener|febrer|mar[çc]|abril|maig|juny|juliol|agost|setembre|octubre|novembre|desembre) de 20\d{2}\b'
-    r'|\baquest 2026\b|\bes va\b|\bva (?:acordar|aprovar|signar|anunciar)\b',
+    r'|\baquest 2026\b|\bes va\b|\bva (?:acordar|aprovar|signar|anunciar)\b'
+    # A period in a name («Pla de Rodalies 2026-2030», «Marc Financer Pluriennal 2028-2034») and the
+    # budget of a year («2.018 MEUR per al 2026») are figures, not the date the measure is carried out.
+    r'|\b20\d{2}-20\d{2}\b|\bper al 20\d{2}\b',
     re.I,
 )
+
+# Deadlines read in the proposal when the first year is not the right one: the 180 judges of
+# proposal 242 are incorporated «entre 2026 i 2027», so the deadline is the end of the range.
+DEADLINE_OVERRIDE = {242: '2027'}
 
 
 def find_deadline(text):
@@ -291,7 +298,7 @@ def build_program(document, blocks_raw, sections_raw, raw_measures):
             if re.search(r'\d', sentence)
             and re.search(r'%|€|euros?|milions?|km\b|dies|anys|mesos|hores', sentence, re.I)
         ][:3]
-        deadline = find_deadline(complete)
+        deadline = DEADLINE_OVERRIDE.get(number) or find_deadline(complete)
         measures.append({
             'n': number,
             'bloque': section['block'],

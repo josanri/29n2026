@@ -10,17 +10,19 @@ import fitz
 
 SOURCE_URL = "https://www.porunmundomasjusto.es/wp-content/uploads/2026/11/Castellano.pdf"
 EXPECTED_PAGES = 95
-# A time phrase counts as a deadline only when the party promises it (see find_deadline).
-DEADLINE_RE = re.compile(
-    r"\b(48 horas?|72 horas?|15 d[ií]as?|30 d[ií]as?|60 d[ií]as?|"
-    r"\d+ meses?|dos años|en \d{4}|anual|cada año)\b",
-    re.I,
-)
+# A time phrase counts as a deadline only when the party promises it (see find_deadline), and only
+# when it says when the measure is carried out. A service time («en 48 horas») or a period («anual»,
+# «cada año») is a figure of the measure, not a deadline.
+DEADLINE_RE = re.compile(r"\b(\d+ meses?|dos años|en \d{4})\b", re.I)
 # Past tense and «fue»/«había» mark a fact, not a promise. «sólo» and «cómo» end in «ó» but are not past tense.
 PAST_RE = re.compile(
     r"\b(?!s[oó]lo\b|c[oó]mo\b)(\w+(?:aron|ieron|eron|ió|ó)|fue|fueron|hab[ií]a|hab[ií]an|tuvo|tuvieron)\b",
     re.I,
 )
+
+# Deadlines read in the measure when the regex finds the wrong one: measure 100 backs the EU target of
+# cutting emissions 55 % «para el año 2030»; carbon neutrality in 2050 is the later goal it also cites.
+DEADLINE_OVERRIDE = {100: "en 2030"}
 
 
 def find_deadline(text):
@@ -340,7 +342,7 @@ def create_program(document, extracted):
                 if re.search(r"\d", sentence)
                 and re.search(r"%|€|euros?|mill[oó]nes?|d[ií]as?|años?|meses?|personas?", sentence, re.I)
             ][:3]
-            deadline = find_deadline(full_text)
+            deadline = DEADLINE_OVERRIDE.get(global_number) or find_deadline(full_text)
             measures.append({
                 "n": global_number,
                 "bloque": axis_index,

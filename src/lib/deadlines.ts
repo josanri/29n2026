@@ -46,8 +46,5 @@ export const deadlineRank = (deadline: string): number => {
   // The start of a four-year term comes first, the end comes last.
   if (normalized.includes('inicio de la legislatura') || normalized.includes('inicio de legislatura')) return 1;
   if (normalized.includes('fin de la legislatura') || normalized.includes('fin de legislatura')) return 4 * DAYS_PER_YEAR;
-  if (normalized.includes('cuatrienal')) return 1460;
-  if (normalized.includes('plurianual')) return 1825;
-  if (normalized === 'anual') return DAYS_PER_YEAR;
   return Number.MAX_SAFE_INTEGER;
 };

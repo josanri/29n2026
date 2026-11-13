@@ -68,13 +68,14 @@ PALANCAS = {
 }
 
 # --- Plazos explícitos (diagrama de calendario) --------------------------------
+# Only when a measure will be carried out. The «seis meses» of measure 192 is how long each strategic
+# project waits for its electrical connection, a figure of the measure, so it is not listed.
 PLAZOS = {
     1: ('100 días', 'Auditoría de todo el gasto y de la Administración'),
     76: ('100 días', 'Reforma de RTVE y EFE'),
     228: ('100 días', 'Prórroga de la vida útil de las nucleares'),
     15: ('6 meses', 'Auditoría de la presencia del Estado y Plan Nacional'),
     68: ('6 meses', 'Código ético del Tribunal Constitucional'),
-    192: ('6 meses', 'Conexión eléctrica de las grandes inversiones industriales'),
     231: ('6 meses', 'Nuevas reglas del sistema eléctrico'),
     230: ('18 meses', 'Plan de choque de acceso a la red eléctrica'),
     100: ('Inicio de legislatura', 'Conferencia de Presidentes sobre financiación autonómica'),

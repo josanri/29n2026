@@ -26,6 +26,9 @@ SECTIONS = {
 }
 
 # (título, categoría, sección, página, texto, plazo)
+# «plazo» is when the measure will be carried out. A condition («si el bloqueo dura más de tres meses»),
+# a service time («licencias en 30 días», «mediación en 30 días») or how long a window lasts
+# («firmas en 12 meses») is a figure of the measure, so it has no plazo.
 MEASURES = [
     # España Limpia
     ("Punto y final al tsunami de asesores", "administracion", "limpieza", 3,
@@ -51,17 +54,17 @@ MEASURES = [
     ("Una fiscalía independiente", "justicia", "limpieza", 8,
      "El Congreso elegirá una terna por mayoría de tres quintos. El Gobierno elegirá al Fiscal General entre esa terna, previo informe del CGPJ.", None),
     ("Unos organismos de control independientes", "democracia", "limpieza", 8,
-     "Los organismos independientes se nombrarán con comparecencia pública y mayoría de tres quintos. Si el Congreso bloquea un nombramiento más de tres meses, se elegirá por sorteo entre los candidatos.", "3 meses"),
+     "Los organismos independientes se nombrarán con comparecencia pública y mayoría de tres quintos. Si el Congreso bloquea un nombramiento más de tres meses, se elegirá por sorteo entre los candidatos.", None),
     ("Todos fuera", "justicia", "limpieza", 9,
      "Se eliminarán los aforamientos no previstos en la Constitución. Se reformará la Constitución para quitar el aforamiento de diputados y senadores, y limitarlo para el Gobierno a las acciones penales por funciones del cargo.", None),
     ("Escuchar será obligatorio", "democracia", "limpieza", 10,
      "Diputados y senadores deberán dedicar una jornada cada dos semanas a reuniones abiertas con ciudadanos. El Presidente del Gobierno se someterá cada año a una asamblea ciudadana elegida por sorteo.", None),
     ("No más bloqueos", "democracia", "limpieza", 10,
-     "Si los partidos bloquean de forma reiterada asuntos de orden mayor, la ciudadanía podrá activar una Asamblea Ciudadana con firmas del 1 % del censo. Sus propuestas se someterán a referéndum consultivo.", "12 meses"),
+     "Si los partidos bloquean de forma reiterada asuntos de orden mayor, la ciudadanía podrá activar una Asamblea Ciudadana con firmas del 1 % del censo. Sus propuestas se someterán a referéndum consultivo.", None),
     ("Si no trabajan, no cobran", "democracia", "limpieza", 10,
      "Diputados y senadores no cobrarán su sueldo mensual si no asisten a las sesiones plenarias y de comisión, salvo por enfermedad o fuerza mayor. Las ausencias se publicarán cada mes.", None),
     ("No habrá gobierno sin presupuestos", "administracion", "limpieza", 11,
-     "Si el Gobierno no presenta los Presupuestos Generales del Estado, se suspenderá el sueldo de todo el Gobierno. Si el incumplimiento dura más de un año, el Gobierno cesará.", "1 año"),
+     "Si el Gobierno no presenta los Presupuestos Generales del Estado, se suspenderá el sueldo de todo el Gobierno. Si el incumplimiento dura más de un año, el Gobierno cesará.", None),
     ("Menos promesas, más resultados", "administracion", "limpieza", 11,
      "Los programas de gasto se evaluarán. Cada Ministerio explicará qué prometió, qué recursos usó y qué resultados obtuvo. Un Portal de Evaluación será accesible para toda la ciudadanía.", None),
     ("Código ético de Gobierno obligatorio", "administracion", "limpieza", 12,
@@ -74,7 +77,7 @@ MEASURES = [
     ("Pacto de reconciliación del alquiler: limitación temporal de precios", "vivienda", "vivienda", 4,
      "Se limitarán de forma general y temporal los alquileres en zonas tensionadas, con el índice estatal SERPAVI. La medida se levantará de forma gradual cuando aumente la oferta de vivienda.", None),
     ("Justicia especializada en 90 días y fin a la inquiokupación", "justicia", "vivienda", 4,
-     "Se creará un servicio de mediación de arrendamientos gratuito y vinculante, con resolución máxima en 30 días. Los juzgados de arrendamientos resolverán en 60 días más. Firmar un contrato con intención de impago será estafa.", "30 días"),
+     "Se creará un servicio de mediación de arrendamientos gratuito y vinculante, con resolución máxima en 30 días. Los juzgados de arrendamientos resolverán en 60 días más. Firmar un contrato con intención de impago será estafa.", None),
     ("Garantía pública de alquiler", "vivienda", "vivienda", 4,
      "El Servicio Social de Garantía de Arrendamientos asegurará el cobro del alquiler al propietario si un inquilino vulnerable no tiene alternativa habitacional de la Administración.", None),
     ("Vigilancia del alquiler por habitaciones y falsos contratos temporales", "vivienda", "vivienda", 5,
@@ -100,11 +103,11 @@ MEASURES = [
     ("Responsabilidad municipal vinculante", "administracion", "vivienda", 8,
      "Si un Ayuntamiento retiene suelo público, paraliza proyectos o bloquea licencias, su competencia urbanística pasará a la Comunidad Autónoma de forma automática.", None),
     ("Licencias de obra mayor en 30 días", "administracion", "vivienda", 8,
-     "Los Ayuntamientos tendrán 30 días para revisar las licencias de obra mayor. Si no cumplen el plazo, la solicitud pasará a una Oficina Central Autonómica de Urbanismo.", "30 días"),
+     "Los Ayuntamientos tendrán 30 días para revisar las licencias de obra mayor. Si no cumplen el plazo, la solicitud pasará a una Oficina Central Autonómica de Urbanismo.", None),
     ("Supresión de licencias para obra menor", "administracion", "vivienda", 8,
      "Las obras menores que no requieran proyecto arquitectónico no necesitarán licencia previa. Bastará una declaración responsable digital.", None),
     ("Ley urgente de desbloqueo urbanístico", "administracion", "vivienda", 9,
-     "Un defecto formal no anulará un Plan General de Ordenación Urbana. Habrá silencio administrativo positivo de tres meses para autorizaciones sectoriales.", "3 meses"),
+     "Un defecto formal no anulará un Plan General de Ordenación Urbana. Habrá silencio administrativo positivo de tres meses para autorizaciones sectoriales.", None),
     ("Desbloqueo de suelo público retenido e incentivos al sector privado", "vivienda", "vivienda", 9,
      "Las Administraciones y empresas públicas deberán auditar y liberar su suelo parado. Los propietarios que activen parcelas para vivienda asequible tendrán bonificaciones en la plusvalía y el IBI.", None),
     ("Portal Nacional de Trazabilidad Urbanística", "democracia", "vivienda", 9,

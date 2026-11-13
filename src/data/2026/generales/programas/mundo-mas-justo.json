@@ -73,12 +73,7 @@
    "medida": 1
   },
   {
-   "plazo": "anual",
-   "texto": "Que nadie pida morir por falta de cuidados.",
-   "medida": 83
-  },
-  {
-   "plazo": "en 2050",
+   "plazo": "en 2030",
    "texto": "Respaldar el compromiso de la Unión Europea de reducir al menos un 55% las emisiones",
    "medida": 100
   },
@@ -86,22 +81,10 @@
    "plazo": "en 2030",
    "texto": "Impulsar un Plan Nacional de Agricultura Ecológica y Regenerativa.",
    "medida": 104
-  },
-  {
-   "plazo": "anual",
-   "texto": "Promover la coherencia de políticas para el desarrollo sostenible y la paz en los diferentes",
-   "medida": 129
-  },
-  {
-   "plazo": "anual",
-   "texto": "Exigir el reporte anual de los partidos en el gobierno sobre el nivel de cumplimiento",
-   "medida": 141
   }
  ],
  "ordenPlazos": [
-  "en 2030",
-  "anual",
-  "en 2050"
+  "en 2030"
  ],
  "verbos": [
   {
@@ -2578,7 +2561,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "anual",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -2952,7 +2935,7 @@
    "cifras": [
     "de gases efecto invernadero para el año 2030 con respecto a 1990, así como el alcanzar la neutralidad de carbono en 2050."
    ],
-   "plazo": "en 2050",
+   "plazo": "en 2030",
    "deroga": null
   },
   {
@@ -3595,7 +3578,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "anual",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -3849,7 +3832,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "anual",
+   "plazo": null,
    "deroga": null
   },
   {

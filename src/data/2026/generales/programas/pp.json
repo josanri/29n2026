@@ -104,11 +104,6 @@
   },
   {
    "plazo": "6 meses",
-   "texto": "Conexión eléctrica de las grandes inversiones industriales",
-   "medida": 192
-  },
-  {
-   "plazo": "6 meses",
    "texto": "Nuevas reglas del sistema eléctrico",
    "medida": 231
   },
@@ -4714,7 +4709,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "6 meses",
+   "plazo": null,
    "deroga": null
   },
   {

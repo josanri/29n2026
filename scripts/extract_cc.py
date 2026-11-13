@@ -189,7 +189,9 @@ def crear_programa(documento, extraidas):
                 for parte in re.split(r'(?<=[.!?])\s+', texto)
                 if re.search(r'\d', parte) and re.search(r'%|€|euros?|mill[oó]ns?|km\b|d[ií]as?|años?|meses?', parte, re.I)
             ][:3]
-            match_plazo = re.search(r'\b(cuatrienal|plurianual|anual|en \d{4}|hasta \d{4})\b', completo, re.I)
+            # «plurianual», «cuatrienal» or «anual» say how a fund or a report is organized, not when the
+            # measure is carried out, so only a year counts as a deadline.
+            match_plazo = re.search(r'\b(en \d{4}|hasta \d{4})\b', completo, re.I)
             medidas.append({
                 'n': numero,
                 'bloque': bloque_id,

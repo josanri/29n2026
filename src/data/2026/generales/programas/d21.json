@@ -71,39 +71,9 @@
    "medida": 2
   },
   {
-   "plazo": "3 meses",
-   "texto": "Unos organismos de control independientes",
-   "medida": 12
-  },
-  {
-   "plazo": "12 meses",
-   "texto": "No más bloqueos",
-   "medida": 15
-  },
-  {
-   "plazo": "1 año",
-   "texto": "No habrá gobierno sin presupuestos",
-   "medida": 17
-  },
-  {
-   "plazo": "30 días",
-   "texto": "Justicia especializada en 90 días y fin a la inquiokupación",
-   "medida": 23
-  },
-  {
    "plazo": "10 años",
    "texto": "Barrios completos y política industrial a 10 años",
    "medida": 33
-  },
-  {
-   "plazo": "30 días",
-   "texto": "Licencias de obra mayor en 30 días",
-   "medida": 36
-  },
-  {
-   "plazo": "3 meses",
-   "texto": "Ley urgente de desbloqueo urbanístico",
-   "medida": 38
   },
   {
    "plazo": "8 años",
@@ -118,10 +88,6 @@
  ],
  "ordenPlazos": [
   "6 meses",
-  "3 meses",
-  "12 meses",
-  "1 año",
-  "30 días",
   "10 años",
   "8 años",
   "1 legislatura"
@@ -406,7 +372,7 @@
    "palancas": [],
    "territorios": [],
    "cifras": [],
-   "plazo": "3 meses",
+   "plazo": null,
    "deroga": null,
    "fuente": "/programas/d21-espana-limpia-2026.pdf"
   },
@@ -463,7 +429,7 @@
    "palancas": [],
    "territorios": [],
    "cifras": [],
-   "plazo": "12 meses",
+   "plazo": null,
    "deroga": null,
    "fuente": "/programas/d21-espana-limpia-2026.pdf"
   },
@@ -501,7 +467,7 @@
    "palancas": [],
    "territorios": [],
    "cifras": [],
-   "plazo": "1 año",
+   "plazo": null,
    "deroga": null,
    "fuente": "/programas/d21-espana-limpia-2026.pdf"
   },
@@ -615,7 +581,7 @@
    "palancas": [],
    "territorios": [],
    "cifras": [],
-   "plazo": "30 días",
+   "plazo": null,
    "deroga": null,
    "fuente": "/programas/d21-vivienda-2026.pdf"
   },
@@ -862,7 +828,7 @@
    "palancas": [],
    "territorios": [],
    "cifras": [],
-   "plazo": "30 días",
+   "plazo": null,
    "deroga": null,
    "fuente": "/programas/d21-vivienda-2026.pdf"
   },
@@ -900,7 +866,7 @@
    "palancas": [],
    "territorios": [],
    "cifras": [],
-   "plazo": "3 meses",
+   "plazo": null,
    "deroga": null,
    "fuente": "/programas/d21-vivienda-2026.pdf"
   },

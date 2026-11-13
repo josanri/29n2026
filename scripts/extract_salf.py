@@ -9,12 +9,22 @@ import fitz
 
 
 EXPECTED_PAGES = 40
-# A time phrase counts as a deadline only when the party promises it (see find_deadline).
+# A time phrase counts as a deadline only when the party promises it (see find_deadline), and only
+# when it says when the measure is carried out. A service time («cita con tu médico en 48 horas»,
+# «okupa fuera en 48 horas») or a period («cada año») is a figure of the measure, not a deadline.
 DEADLINE_RE = re.compile(
-    r'\b(48 horas?|72 horas?|15 d[ií]as?|30 d[ií]as?|60 d[ií]as?|'
-    r'\d+ meses?|dos años|en \d{4}|cada año)\b',
+    r'\b((?:\d+|dos|tres|cuatro|seis|doce|dieciocho) meses?|(?:dos|tres|cuatro) años|en la legislatura|en \d{4})\b',
     re.I,
 )
+# Time phrases that are how long something lasts or what it costs, not when it arrives: a rent guarantee
+# of twelve months (8), a service of six to twelve months (17), the cost over the term (63), zero
+# contributions for two years (90) and two years of paid internship (98).
+NOT_DEADLINE = {8, 17, 63, 90, 98}
+NUMBER_WORDS = {'dos': '2', 'tres': '3', 'cuatro': '4', 'seis': '6', 'doce': '12', 'dieciocho': '18'}
+# Deadlines read in the measure when the first time phrase is not the right one: the IRPF calendar of
+# measure 25 ends in 2030 (15.000 euros in 2027 … 35.000 in 2030), and the deduction of measure 111
+# applies «desde la renta de 2027».
+DEADLINE_OVERRIDE = {25: 'en 2030', 111: 'en 2027'}
 # Past tense and «fue»/«había» mark a fact, not a promise. «sólo» and «cómo» end in «ó» but are not past tense.
 PAST_RE = re.compile(
     r'\b(?!s[oó]lo\b|c[oó]mo\b)(\w+(?:aron|ieron|eron|ió|ó)|fue|fueron|hab[ií]a|hab[ií]an|tuvo|tuvieron)\b',
@@ -22,6 +32,15 @@ PAST_RE = re.compile(
 )
 # A time phrase inside a condition («si no…») or in a demand on another state («readmisión…») is a figure, not a promise.
 CONDITION_RE = re.compile(r'\bsi no\b|\breadmi\w*', re.I)
+
+
+def normalize_deadline(deadline):
+    """Write the number in digits («seis meses» → «6 meses») so the timeline can order it, and the
+    term as the other programs do («en la legislatura» → «Fin de legislatura»)."""
+    if deadline.lower() == 'en la legislatura':
+        return 'Fin de legislatura'
+    number, _, unit = deadline.partition(' ')
+    return f"{NUMBER_WORDS.get(number.lower(), number)} {unit}" if unit else deadline
 
 
 def find_deadline(text):
@@ -39,7 +58,7 @@ def find_deadline(text):
         year = re.fullmatch(r'en (\d{4})', match.group(1), re.I)
         if year and int(year.group(1)) < 2026:
             continue
-        return match.group(1)
+        return normalize_deadline(match.group(1))
     return None
 SECCIONES = [
     {
@@ -294,7 +313,7 @@ def crear_programa(documento, extraidas):
                 if re.search(r'\d', parte)
                 and re.search(r'%|€|euros?|mill[oó]nes?|d[ií]as?|años?|meses?', parte, re.I)
             ][:3]
-            plazo = find_deadline(completo)
+            plazo = None if global_id in NOT_DEADLINE else DEADLINE_OVERRIDE.get(global_id) or find_deadline(completo)
             medidas.append({
                 'n': global_id,
                 'bloque': bloque_id,
