@@ -27,7 +27,7 @@
   {
    "valor": "24",
    "unidad": "horas",
-   "texto": "plazo máximo para desalojar una vivienda okupada",
+   "texto": "como máximo para desalojar una vivienda okupada",
    "medida": 31
   },
   {
@@ -73,16 +73,8 @@
    "medida": 100
   }
  ],
- "plazos": [
-  {
-   "plazo": "24 horas",
-   "texto": "Mano dura contra la okupación y la inquiocupación",
-   "medida": 31
-  }
- ],
- "ordenPlazos": [
-  "24 horas"
- ],
+ "plazos": [],
+ "ordenPlazos": [],
  "verbos": [
   {
    "verbo": "garantizar",
@@ -1077,7 +1069,7 @@
    "cifras": [
     "Desalojo de la vivienda okupada en menos de 24 horas y recuperación inmediata de la posesión por su legítimo titular, el propietario."
    ],
-   "plazo": "24 horas",
+   "plazo": null,
    "deroga": null
   },
   {

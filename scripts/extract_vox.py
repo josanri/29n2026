@@ -103,7 +103,7 @@ NO_VERBOS = {
 # Key figures, chosen by reading the program. Each value must appear in the text of its measure.
 CIFRAS = [
     ('5 millones', 'personas', 'recibidas en cinco años, según el programa, que propone no acoger a más inmigrantes', 9, '5 millones'),
-    ('24', 'horas', 'plazo máximo para desalojar una vivienda okupada', 31, '24 horas'),
+    ('24', 'horas', 'como máximo para desalojar una vivienda okupada', 31, '24 horas'),
     ('0 %', 'IVA', 'en la compra de la primera vivienda habitual de nueva construcción', 34, '0%'),
     ('100 %', 'bonificación del ITP', 'en la compra de la primera vivienda habitual de segunda mano', 34, '100%'),
     ('0 €', 'cuota de autónomos', 'si los ingresos no llegan al Salario Mínimo Interprofesional', 2, 'cero euros'),
@@ -359,7 +359,6 @@ def crear_programa(documento, bloques_vistos, extraidas):
             if (re.search(r'\d', parte) and re.search(r'%|€|\b(?:euros?|millones|horas|d[ií]as|años|meses)\b', parte, re.I))
             or re.search(NUMEROS_ESCRITOS, parte, re.I)
         ][:3]
-        plazo = re.search(r'\ben menos de (\d+ (?:horas|d[ií]as|meses))\b', completo, re.I)
         medidas.append({
             'n': numero,
             'bloque': extraida['bloque'],
@@ -375,7 +374,9 @@ def crear_programa(documento, bloques_vistos, extraidas):
             'palancas': [n for n, p in PALANCAS.items() if re.search(p, completo, re.I)],
             'territorios': territorios_de(f"{BLOQUES[extraida['bloque'] - 1][0]}. {titulo}", texto),
             'cifras': frases_cifra,
-            'plazo': plazo.group(1) if plazo else None,
+            # No measure sets a date or a time to carry it out. The «24 horas» of measure 31 is how fast
+            # a squatted home would be cleared: a figure of the measure, listed in CIFRAS, not a deadline.
+            'plazo': None,
             'deroga': DEROGA.get(numero),
         })
 
@@ -412,8 +413,8 @@ def crear_programa(documento, bloques_vistos, extraidas):
         'unidadMedidas': 'medidas',
         'presentacion': PRESENTACION,
         'cifras': cifras,
-        'plazos': [{'plazo': m['plazo'], 'texto': m['tituloFrase'], 'medida': m['n']} for m in medidas if m['plazo']],
-        'ordenPlazos': sorted({m['plazo'] for m in medidas if m['plazo']}),
+        'plazos': [],
+        'ordenPlazos': [],
         'verbos': [{'verbo': v, 'n': n} for v, n in verbos.most_common(15)],
         'bloques': bloques,
         'secciones': secciones,
