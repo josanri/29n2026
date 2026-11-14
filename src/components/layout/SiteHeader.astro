@@ -169,12 +169,30 @@ const testsCurrent = path.startsWith(routes.tests());
 
   // Party menus: only one open at a time. They close on an outside click or on Escape.
   const dropdowns = [...document.querySelectorAll<HTMLDetailsElement>('.nav-dropdown')];
+  // On a wide screen the panel opens under its own button: it starts at the left edge of the button and moves left
+  // only as far as it must to stay on the screen. (The panel is placed against the header row, see the CSS.)
+  const placePanel = (dropdown: HTMLDetailsElement) => {
+    const panel = dropdown.querySelector<HTMLElement>('.nav-dropdown__panel');
+    if (!panel || getComputedStyle(panel).position !== 'absolute') return;
+    const row = dropdown.closest<HTMLElement>('.site-header__row')!;
+    const rowBox = row.getBoundingClientRect();
+    const button = dropdown.querySelector('summary')!.getBoundingClientRect();
+    const gutter = parseFloat(getComputedStyle(row).paddingLeft) || 16;
+    const width = panel.offsetWidth;
+    const left = Math.max(gutter, Math.min(button.left - rowBox.left, rowBox.width - gutter - width));
+    panel.style.left = `${left}px`;
+    panel.style.right = 'auto';
+  };
   for (const dropdown of dropdowns) {
     dropdown.addEventListener('toggle', () => {
       if (!dropdown.open) return;
       for (const other of dropdowns) if (other !== dropdown) other.open = false;
+      placePanel(dropdown);
     });
   }
+  addEventListener('resize', () => {
+    for (const dropdown of dropdowns) if (dropdown.open) placePanel(dropdown);
+  });
   // Phone menu: the button opens and closes the nav. The CSS shows the button only on a narrow screen.
   const header = document.querySelector<HTMLElement>('.site-header')!;
   const menuToggle = header.querySelector<HTMLButtonElement>('.menu-toggle')!;
