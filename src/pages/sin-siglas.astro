@@ -1,0 +1,27 @@
+---
+/**
+ * The old address of «Sin siglas». The test lives in `/tests/sin-siglas/` now, and this page sends
+ * the reader there, so that a link shared before the change still works (with its query string).
+ */
+import { routes } from '@/lib/routes';
+
+const target = routes.partyQuiz();
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={new URL(target, Astro.site).href} />
+    <title>Sin siglas</title>
+    <!-- The script keeps the query string of a shared round. Without JavaScript, the meta refresh does the move. -->
+    <script is:inline define:vars={{ target }}>
+      location.replace(target + location.search + location.hash);
+    </script>
+  </head>
+  <body>
+    <p><a href={target}>Sin siglas está ahora en esta dirección.</a></p>
+  </body>
+</html>

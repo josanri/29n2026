@@ -7,8 +7,10 @@
 import type { Measure } from './program-schema';
 import { normalizeForSearch } from './format';
 
-/** Number of measures in one round. */
+/** Number of measures in one round, when the reader does not choose another. */
 export const ROUND_SIZE = 10;
+/** The round sizes that the reader can choose. */
+export const ROUND_SIZES = [5, 10, 20, 30] as const;
 
 /** One measure as the game shows it. The keys are short because the files go to the browser. */
 export interface QuizMeasure {

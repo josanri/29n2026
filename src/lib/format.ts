@@ -3,7 +3,8 @@ import type { Program } from './program-schema';
 
 export const LOCALE = 'es';
 
-export const formatNumber = (value: number) => value.toLocaleString('es-ES');
+/** «2.773»: Spanish groups thousands of four digits too (the default of the locale does not). */
+export const formatNumber = (value: number) => value.toLocaleString('es-ES', { useGrouping: 'always' });
 
 /** Share of `total` as a rounded integer percentage. */
 export const percentOf = (value: number, total: number) => Math.round((value / total) * 100);
@@ -34,3 +35,7 @@ export const normalizeForSearch = (text: string) =>
   text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
 
 export const padNumber = (value: number) => String(value).padStart(2, '0');
+
+/** «9 de noviembre de 2026», from an ISO date (`2026-11-09`). */
+export const formatLongDate = (isoDate: string) =>
+  new Date(`${isoDate}T12:00:00`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });

@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Panel from '@/components/ui/Panel.astro';
-import Tag from '@/components/ui/Tag.astro';
 import { routes } from '@/lib/routes';
 ---
 
@@ -11,7 +10,6 @@ import { routes } from '@/lib/routes';
 >
   <section class="intro">
     <div class="container">
-      <Tag variant="ink">Accesibilidad</Tag>
       <h1 class="headline">Accesibilidad</h1>
       <p class="intro__lede">
         Queremos que cualquier persona pueda leer los programas. Esta página explica qué se ha hecho y qué límites tiene la web.
@@ -23,8 +21,8 @@ import { routes } from '@/lib/routes';
    <div class="stack">
     <Panel title="Qué se ha hecho">
       <ul>
-        <li>Tema claro y oscuro. El botón ◐ de la cabecera lo cambia, y la web respeta la preferencia de tu sistema.</li>
-        <li>Contraste de color calculado según WCAG 2.1 en los dos temas, también en los textos de ayuda y al pasar el ratón.</li>
+        <li>Tema claro y oscuro. El botón cuadrado de la cabecera, mitad blanco y mitad negro, lo cambia, y la web respeta la preferencia de tu sistema.</li>
+        <li>Blanco y negro con contraste de color calculado según WCAG 2.1 en los dos temas, también en los textos de ayuda y al pasar el ratón. El amarillo siempre lleva texto negro.</li>
         <li>Navegación completa con teclado. Los menús se cierran con Escape.</li>
         <li>Las tablas anchas se pueden desplazar con teclado y tienen una etiqueta que las describe.</li>
       </ul>
@@ -56,7 +54,8 @@ import { routes } from '@/lib/routes';
 </BaseLayout>
 
 <style>
-  .intro { padding: var(--space-8) 0 var(--space-6); }
+  .intro { padding: var(--space-7) 0 var(--space-6); }
+  .intro h1 { font-size: clamp(3.5rem, 14cqi, 8.5rem); }
   .intro__lede { max-width: 62ch; font-size: var(--text-lg); margin-top: var(--space-3); }
   .stack { display: grid; gap: var(--space-5); max-width: 78ch; }
   li + li { margin-top: var(--space-2); }

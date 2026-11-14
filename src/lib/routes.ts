@@ -21,7 +21,7 @@ export type MeasureFilter = keyof typeof MEASURE_FILTER_PARAMS;
 export const HOME_PARAMS = { province: 'provincia', showAll: 'todos', search: 'q' } as const;
 
 /** Query parameter of the search page. */
-export const SEARCH_PARAMS = { query: 'q' } as const;
+export const SEARCH_PARAMS = { query: 'q', parties: 'partidos', categories: 'categorias' } as const;
 
 /** Prefix of the HTML id of each measure: `m-123`. */
 export const MEASURE_ID_PREFIX = 'm-';
@@ -64,10 +64,16 @@ export const routes = {
   /** The `.ics` file of one event, or of the whole calendar when there is no id. */
   calendarIcs: (eventId?: string) => withBase(eventId ? `/calendario/${eventId}.ics` : '/calendario.ics'),
   simulator: () => withBase('/simulador/'),
+  /** The page that lists the tests. */
+  tests: () => withBase('/tests/'),
+  /** «Temas que dividen»: the reader takes a side on each polarizing topic and compares the parties. */
+  topicQuiz: () => withBase('/tests/temas/'),
+  /** The tracking of the polls. */
+  polls: () => withBase('/encuestas/'),
   /** «Sin siglas»: vote on measures without the party, then see the parties. */
-  partyQuiz: () => withBase('/sin-siglas/'),
+  partyQuiz: () => withBase('/tests/sin-siglas/'),
   /** JSON file with the measures of one party for «Sin siglas». The page loads the parties of one province. */
-  partyQuizData: (partyId: string) => withBase(`/sin-siglas/datos/${partyId}.json`),
+  partyQuizData: (partyId: string) => withBase(`/tests/sin-siglas/datos/${partyId}.json`),
   accessibility: () => withBase('/accesibilidad/'),
   designSystem: () => withBase('/design-system/'),
   /** A file of the `public/` folder, for example `/datos-electorales/candidaturas.json`. */

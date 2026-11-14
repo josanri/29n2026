@@ -2,6 +2,7 @@
 /** Shown on the pages of a party that has not published a program yet. */
 import type { Program } from '@/lib/programs';
 import Tag from '@/components/ui/Tag.astro';
+import { readableTextColor } from '@/lib/color';
 
 interface Props {
   program: Program;
@@ -11,7 +12,10 @@ const { program } = Astro.props;
 ---
 
 <section class="container notice">
-  <p class="notice__party"><Tag variant="ink" size="lg">{program.acronym}</Tag> {program.partyName}</p>
+  <p class="notice__party">
+    <Tag variant="party" size="lg" style={`--party-color:${program.color};--party-on-color:${readableTextColor(program.color)}`}>{program.acronym}</Tag>
+    {program.partyName}
+  </p>
   <h1 class="headline">Programa vacío</h1>
   <p>Este partido aún no ha publicado su programa electoral.</p>
   {program.notes.map((note) => <p class="notice__note">{note}</p>)}
@@ -20,14 +24,13 @@ const { program } = Astro.props;
 <style>
   /* Vertical padding only: the .container class already sets the side gutter. */
   .notice { padding-block: var(--space-7); }
-  .notice h1 { margin: var(--space-3) 0 var(--space-4); font-size: clamp(2.125rem, 8cqi, 6rem); }
-  .notice__note { max-width: 70ch; padding-left: 12px; border-left: 4px solid var(--color-highlight); }
+  .notice h1 { margin: var(--space-3) 0 var(--space-4); font-size: clamp(3.5rem, 12cqi, 7.5rem); }
+  .notice__note { max-width: 70ch; padding-left: 12px; border-left: var(--border-thick) solid var(--color-ink); }
   .notice__party {
     display: flex;
     gap: 10px;
     align-items: center;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: var(--text-sm);
+    font-weight: 600;
+    font-size: 1.1875rem;
   }
 </style>

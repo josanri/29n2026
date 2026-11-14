@@ -1,16 +1,19 @@
 ---
 import { election } from '@eleccion/eleccion';
 import { routes } from '@/lib/routes';
-import { SITE_NAME } from '@/lib/site';
+import Wordmark from './Wordmark.astro';
 ---
 
 <footer class="site-footer">
   <div class="container site-footer__row">
-    <p>
-      <strong>{SITE_NAME.toUpperCase()}</strong> — lectura y análisis de los programas electorales para las
-      {election.name.toLowerCase()} del {election.longDate}. El texto de cada medida es el del documento oficial del partido. Las categorías, los
-      colectivos y las palancas son una clasificación editorial de esta web.
-    </p>
+    <div class="site-footer__top">
+      <Wordmark class="site-footer__mark" />
+      <p>
+        Lectura y análisis de los programas electorales para las {election.name.toLowerCase()} del {election.longDate}. El
+        texto de cada medida es el del documento oficial del partido. Las categorías, los colectivos y las palancas son una
+        clasificación editorial de esta web.
+      </p>
+    </div>
     <p class="site-footer__legal" role="note">
       <strong>Aviso legal:</strong> esta web es informativa e independiente. No está vinculada a ningún partido, a la
       Administración electoral ni a ningún organismo público. No es una fuente oficial ni ofrece asesoramiento de voto.
@@ -24,22 +27,44 @@ import { SITE_NAME } from '@/lib/site';
 <style>
   .site-footer {
     margin-top: 96px;
-    border-top: var(--border-thick) solid var(--color-brand);
-    background: var(--color-brand);
-    color: var(--color-on-brand);
+    border-top: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
   }
   .site-footer__row {
-    padding-top: 28px;
+    padding-top: 32px;
     padding-bottom: 36px;
-    font-size: var(--text-sm);
+    font-size: 1rem;
     max-width: var(--layout-width);
   }
-  .site-footer p { max-width: 80ch; margin: 0; }
-  .site-footer__legal {
-    margin-top: var(--space-3);
-    padding-top: var(--space-3);
-    border-top: var(--border-thin) solid currentColor;
-    font-size: var(--text-xs);
+  .site-footer__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 32px;
   }
-  .site-footer__meta { margin-top: var(--space-3); font-family: var(--font-mono); font-size: var(--text-xs); }
+  .site-footer :global(.site-footer__mark) { font-size: 2rem; }
+  .site-footer p { max-width: 60ch; margin: 0; }
+  .site-footer__legal {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: var(--border-fine) solid var(--color-ink);
+    font-size: 0.9375rem;
+  }
+  .site-footer__meta { margin-top: var(--space-3); font-weight: 700; }
+  .site-footer__meta a { display: inline-flex; align-items: center; min-height: 44px; }
+
+  /* Phone: the mark and the text go in one column, the text uses the full width, and the page ends
+     above the bars of the phone (safe area), so the last line is not cut. */
+  @media (max-width: 560px) {
+    .site-footer { margin-top: var(--space-8); }
+    .site-footer__row {
+      padding-top: var(--space-5);
+      padding-bottom: calc(var(--space-6) + env(safe-area-inset-bottom, 0px));
+    }
+    .site-footer__top { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+    .site-footer p { max-width: none; overflow-wrap: anywhere; }
+    .site-footer__legal { font-size: 1rem; }
+  }
 </style>

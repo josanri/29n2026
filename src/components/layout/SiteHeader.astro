@@ -3,7 +3,8 @@ import { publishedFirst, type Program } from '@/lib/programs';
 import { nationalPrograms, regionalPrograms, regionalRegions, regionalProgramsIn } from '@/lib/presence';
 import { routes } from '@/lib/routes';
 import { SITE_NAME } from '@/lib/site';
-import { election } from '@eleccion/eleccion';
+import Wordmark from './Wordmark.astro';
+import { siteTests } from '@/lib/tests';
 
 const path = Astro.url.pathname;
 const isCurrent = (program: Program) => path.startsWith(routes.party(program.id));
@@ -38,6 +39,12 @@ const links = [
     icon: '<rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/>',
   },
   {
+    href: routes.polls(),
+    label: 'Encuestas',
+    // A line that goes up and down over an axis.
+    icon: '<path d="M1.5 1.5v13h13"/><path d="m4 10 3-4 3 2 4-5"/>',
+  },
+  {
     href: routes.calendar(),
     label: 'Calendario',
     icon: '<rect x="2" y="3" width="12" height="11"/><path d="M2 7h12M5 1v4M11 1v4"/>',
@@ -48,12 +55,6 @@ const links = [
     icon: '<path d="M1 13a7 7 0 0 1 14 0M4.5 13a3.5 3.5 0 0 1 7 0M1 13h14"/>',
   },
   {
-    href: routes.partyQuiz(),
-    label: 'Sin siglas',
-    // A label with its text covered by a bar: the acronym is there, but hidden.
-    icon: '<rect x="1.5" y="3.5" width="13" height="9"/><path d="M5 8h6" stroke-width="3"/>',
-  },
-  {
     href: routes.search(),
     label: 'Buscar',
     // In the compact menu the search takes the first row, with a hint of what it finds.
@@ -62,16 +63,16 @@ const links = [
     icon: '<circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 4.5 4.5"/>',
   },
 ];
+// The «Tests» menu goes between the sections and the search. It opens a short list of the tests.
+const sectionLinks = links.filter((link) => link.href !== routes.search());
+const searchLinks = links.filter((link) => link.href === routes.search());
+const testsCurrent = path.startsWith(routes.tests());
 ---
 
 <header class="site-header">
   <div class="container site-header__row">
     <a class="logo" href={routes.home()} aria-label={`${SITE_NAME}, inicio`}>
-      <span class="logo__mark">{election.shortName}</span>
-      <span class="logo__text">
-        <span class="logo__title">Programas</span>
-        <span class="logo__subtitle">electorales</span>
-      </span>
+      <Wordmark />
     </a>
     <nav class="nav" id="site-nav" aria-label="Principal">
       {menus.map((menu) => (
@@ -93,6 +94,7 @@ const links = [
                         href={routes.party(party.id)}
                         class:list={{ 'is-unpublished': !party.hasProgram }}
                         aria-current={isCurrent(party) ? 'page' : undefined}
+                        style={`--party-color:${party.color}`}
                       >
                         <b>{party.acronym}</b>
                         <span>{party.partyName}</span>
@@ -106,7 +108,32 @@ const links = [
           </div>
         </details>
       ))}
-      {links.map((link) => (
+      {sectionLinks.map((link) => (
+        <a href={link.href} class={link.className} aria-current={path.startsWith(link.href) ? 'page' : undefined}>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={link.icon} />
+          {link.label}
+        </a>
+      ))}
+      <details class="nav-dropdown nav-dropdown--tests">
+        <summary aria-current={testsCurrent ? 'page' : undefined}>
+          Tests
+          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
+            <path d="m1 1 5 5 5-5"></path>
+          </svg>
+        </summary>
+        <div class="nav-dropdown__panel">
+          <div class="nav-tests">
+            {siteTests.map((test) => (
+              <a href={test.href} aria-current={path.startsWith(test.href) ? 'page' : undefined}>
+                <b>{test.name}</b>
+                <span>{test.text}</span>
+              </a>
+            ))}
+            <a class="nav-tests__all" href={routes.tests()}>Todos los tests</a>
+          </div>
+        </div>
+      </details>
+      {searchLinks.map((link) => (
         <a href={link.href} class={link.className} aria-current={path.startsWith(link.href) ? 'page' : undefined}>
           <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={link.icon} />
           {link.label}
@@ -115,7 +142,7 @@ const links = [
       ))}
       <!-- The visible label shows only in the phone menu. The accessible name contains it. -->
       <button class="theme-toggle" type="button" aria-label="Cambiar tema claro u oscuro" title="Tema claro / oscuro">
-        <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle__icon" aria-hidden="true"></span>
         <span class="theme-toggle__label">Cambiar tema</span>
       </button>
     </nav>
@@ -193,7 +220,7 @@ const links = [
     top: 0;
     z-index: var(--z-header);
     background: var(--color-paper);
-    border-bottom: var(--border-thick) solid var(--color-brand);
+    border-bottom: var(--border-thick) solid var(--color-ink);
   }
   .site-header__row {
     position: relative; /* the dropdown panels position against this row, not against their button */
@@ -203,78 +230,35 @@ const links = [
     min-height: 72px;
   }
   /* The logo goes to the left. The nav (and, on a phone, the menu button) go to the right. */
-  .logo { margin-right: auto; padding-right: 10px; }
   .logo {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    min-height: 48px;
+    margin-right: auto;
+    padding-right: 10px;
     text-decoration: none;
   }
   .logo:hover { background: none; color: inherit; }
-  /* Marker mark: a highlighter stroke behind the wordmark. It uses the brand surface:
-     ink and paper by default, the party color and its readable text on a party page. */
-  .logo__mark {
-    position: relative;
-    isolation: isolate;
-    font-family: var(--font-display);
-    font-size: 2.125rem;
-    line-height: 1;
-    padding: 0 6px;
-    color: var(--color-on-brand);
-  }
-  .logo__mark::before {
-    content: '';
-    position: absolute;
-    inset: 8% -2px 0 -2px;
-    background: var(--color-brand);
-    z-index: -1;
-    transform: skew(-8deg);
-  }
-  /* «PROGRAMAS» in the display font, «ELECTORALES» under it in small mono capitals. */
-  .logo__text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-  .logo__title {
-    font-family: var(--font-display);
-    font-size: 0.9375rem;
-  }
-  .logo__subtitle {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.12em;
-    color: var(--color-ink-muted);
-  }
   .nav {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px 26px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
 
-  /* One look for every control of the nav: links, menu buttons and the theme button */
+  /* The links of the nav are plain bold text, 44px tall. The current page is underlined. */
   .nav a,
-  .theme-toggle,
-  .menu-toggle,
   .nav-dropdown > summary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    height: 36px;
-    font-family: var(--font-display);
-    font-size: var(--text-sm);
-    text-transform: uppercase;
+    min-height: 44px;
+    font-weight: 700;
+    font-size: 1.0625rem;
     text-decoration: none;
-    padding: 7px 12px;
-    border: var(--border-thin) solid var(--color-ink);
-    background: var(--color-paper);
+    background: transparent;
     color: var(--color-ink);
   }
-  /* Same stroke as the chevron of the menus. It takes the text color, also in hover and current states. */
   .nav__icon {
     flex: none;
     width: 14px;
@@ -282,14 +266,17 @@ const links = [
     margin-right: 7px;
     fill: none;
     stroke: currentColor;
-    stroke-width: 1.75;
+    stroke-width: 2.5;
     stroke-linecap: square;
   }
+  /* The icons of the links show only in the phone menu. The search keeps its magnifier on every screen. */
+  .nav > a .nav__icon { display: none; }
+  .nav > a.nav__link--search .nav__icon { display: inline; }
   .nav a[aria-current='page'],
   .nav-dropdown > summary[aria-current='page'] {
-    background: var(--color-brand);
-    border-color: var(--color-brand);
-    color: var(--color-on-brand);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
   }
   .nav-dropdown { position: static; }
   .nav-dropdown > summary { list-style: none; cursor: pointer; }
@@ -300,29 +287,54 @@ const links = [
     margin-left: 7px;
     fill: none;
     stroke: currentColor;
-    stroke-width: 2;
+    stroke-width: 2.5;
     stroke-linecap: square;
-    transition: transform 140ms ease;
   }
   .nav-dropdown[open] .nav-dropdown__chevron { transform: rotate(180deg); }
-  /* The links need their own hover: the base `a:hover` loses against `.nav a` above, which is scoped
-     and so more specific. */
+  /* Hover and open: the yellow marker with black text. The links need their own rule: `.nav a` is scoped
+     and so more specific than the base `a:hover`. */
   .nav-dropdown[open] > summary,
   .nav-dropdown > summary:hover,
-  .nav a:hover,
-  .theme-toggle:hover,
-  .menu-toggle:hover {
+  .nav a:hover {
     background: var(--color-highlight);
     color: var(--color-on-highlight);
   }
-  .theme-toggle, .menu-toggle { cursor: pointer; }
-  .menu-toggle { display: none; }
+
+  /* The theme button: a 44px square split in paper and ink, like the two themes. */
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: linear-gradient(90deg, var(--color-paper) 50%, var(--color-ink) 50%);
+    color: var(--color-ink);
+    font: inherit;
+    cursor: pointer;
+  }
+  .theme-toggle:hover { outline: 3px solid var(--color-highlight); outline-offset: -3px; }
+  .theme-toggle__icon { display: none; }
   .theme-toggle__label { display: none; }
-  .menu-toggle__close { display: none; }
+
+  .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 0;
+    background: var(--color-brand);
+    color: var(--color-on-brand);
+    font: 700 1.0625rem var(--font-body);
+    cursor: pointer;
+  }
+  .menu-toggle .nav__icon { display: none; }
+  .menu-toggle:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
   .nav__hint { display: none; }
-  .menu-toggle[aria-expanded='true'] { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-paper); }
-  .menu-toggle[aria-expanded='true'] .menu-toggle__bars { display: none; }
-  .menu-toggle[aria-expanded='true'] .menu-toggle__close { display: inline; }
 
   .nav-dropdown__panel {
     position: absolute;
@@ -337,9 +349,24 @@ const links = [
     padding: 18px;
     border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
-    box-shadow: var(--shadow-md);
   }
   .nav-dropdown__groups { display: grid; gap: 20px; }
+  /* The tests: a short panel, one row per test with its name and what it does. */
+  .nav-dropdown--tests .nav-dropdown__panel { width: min(440px, calc(100vw - 2 * var(--gutter))); }
+  .nav-tests { display: grid; }
+  .nav .nav-dropdown__panel .nav-tests a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    min-height: 44px;
+    padding: 10px 6px;
+    border-top: var(--border-fine) solid var(--color-ink);
+    font-size: 0.9375rem;
+    font-weight: 400;
+  }
+  .nav-tests b { font: 900 1.5rem / 1 var(--font-display); text-transform: uppercase; }
+  .nav .nav-tests a.nav-tests__all { font-weight: 700; border-top-width: var(--border-thick); }
+  .nav .nav-tests a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
   /* Text columns: a long region (Canarias) leaves no gaps in the others. The columns sit in
      a wrapper with no maximum height, so the panel scrolls vertically and never sideways. */
   .nav-dropdown--regional .nav-dropdown__groups {
@@ -354,53 +381,54 @@ const links = [
   .nav-dropdown__panel h2 {
     margin: 0 0 var(--space-2);
     padding-bottom: var(--space-1);
-    border-bottom: var(--border-thin) solid var(--color-ink);
-    font: 700 var(--text-xs) var(--font-mono);
-    text-transform: uppercase;
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    font-size: 1.5rem;
   }
-  .nav-dropdown__list { display: grid; gap: 6px; }
+  .nav-dropdown__list { display: grid; gap: 0; }
   .nav-dropdown--national .nav-dropdown__list {
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+    column-gap: 20px;
   }
   .nav .nav-dropdown__panel a {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: baseline;
-    justify-content: stretch;
     gap: 2px 8px;
     width: 100%;
-    height: auto;
-    padding: 7px 9px;
-    font-size: 0.8125rem;
+    min-height: 44px;
+    padding: 7px 4px;
+    border-top: var(--border-fine) solid var(--color-ink);
+    font-size: 0.9375rem;
+    font-weight: 400;
     text-align: left;
   }
-  .nav-dropdown__panel a span {
-    font: 500 var(--text-xs) var(--font-body);
-    text-transform: none;
-    overflow-wrap: anywhere;
+  /* The acronym has a fine underline in the party color, so the parties are easy to tell apart. */
+  .nav-dropdown__panel a b {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 1;
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-color: var(--party-color);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+    text-decoration-skip-ink: none;
   }
-  .nav-dropdown__panel a small {
-    grid-column: 1 / -1;
-    font: 700 0.625rem var(--font-mono);
-    color: var(--color-ink-subtle);
-  }
-  /* No program: a dashed border. The text keeps its full contrast. */
-  .nav .nav-dropdown__panel a.is-unpublished { border-style: dashed; }
-  .nav .nav-dropdown__panel a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .nav .nav-dropdown__panel a:hover small { color: var(--color-on-highlight); }
-  .nav .nav-dropdown__panel a[aria-current='page'] small { color: inherit; }
+  .nav-dropdown__panel a span { overflow-wrap: anywhere; }
+  .nav-dropdown__panel a small { grid-column: 1 / -1; font-size: 0.8125rem; }
+  /* No program: quieter. The text keeps its full contrast. */
+  .nav .nav-dropdown__panel a.is-unpublished { font-style: italic; }
+  .nav .nav-dropdown__panel a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
 
-  /* Compact header: below 1360px the full nav does not fit on one line next to the logo (it needs about
-     1355px with its 7 items). The header keeps one row (logo and menu button) and a fixed height, so the sticky filter bars
-     of the pages stay under it. The nav opens as a sheet over the page, under the header:
+  /* Compact header: below 1180px the nav does not fit on one line next to the logo. The header keeps
+     one row (logo and menu button) and a fixed height, so the sticky filter bars of the pages stay
+     under it. The nav opens as a sheet over the page, under the header:
      - the party menus take a full row each and open in place;
-     - the four sections fill a 2 × 2 grid, or one row of 4 from 720px (fixed columns: with `auto-fit`,
-       the full-width rows kept 6 columns and the sections left 2 empty cells at the right).
+     - the sections fill a grid of two columns, or four from 720px.
      Without JavaScript (no `js` class), the nav stays open in the header and the menu button stays hidden. */
-  @media (max-width: 1359px) {
+  @media (max-width: 1179px) {
     .site-header__row { flex-wrap: wrap; }
     :global(.js) .menu-toggle { display: inline-flex; }
-    .menu-toggle { padding: 7px 14px; }
 
     .nav {
       order: 1;
@@ -410,25 +438,48 @@ const links = [
       gap: 6px;
       padding: 4px 0 12px;
     }
-    .nav > a, .nav > .theme-toggle { justify-content: flex-start; height: 44px; padding: 7px 12px; white-space: nowrap; }
+    .nav > a, .nav > .theme-toggle { height: 48px; }
+    .nav > a {
+      justify-content: flex-start;
+      padding: 0 12px;
+      border: var(--border-thick) solid var(--color-ink);
+      white-space: nowrap;
+    }
+    .nav > a .nav__icon { display: inline; }
     /* The theme button is a setting, not a page: it takes the last row on its own. */
-    .nav > .theme-toggle { grid-column: 1 / -1; gap: 7px; }
-    .theme-toggle__icon { width: 14px; text-align: center; }
-    .theme-toggle__label { display: inline; }
+    .nav > .theme-toggle {
+      grid-column: 1 / -1;
+      width: 100%;
+      gap: 7px;
+      background: var(--color-paper);
+      justify-content: flex-start;
+      padding: 0 12px;
+    }
+    .theme-toggle__icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: var(--border-thick) solid var(--color-ink);
+      background: linear-gradient(90deg, var(--color-paper) 50%, var(--color-ink) 50%);
+    }
+    .theme-toggle__label { display: inline; font-weight: 700; font-size: 1.0625rem; }
     .nav-dropdown { grid-column: 1 / -1; }
-    /* The search goes first, across the full width, like a search field: the party menus follow, then the
-       four sections in two columns (or one row), then the theme. No item stays alone in a half row. */
+    /* The search goes first, across the full width. The party menus follow, then the sections, then the theme. */
     .nav > .nav__link--search { order: -1; grid-column: 1 / -1; margin-bottom: 6px; }
-    .nav__hint { display: inline; margin-left: 6px; font: 500 var(--text-sm) var(--font-body); text-transform: none; }
-    .nav-dropdown > summary { width: 100%; height: 44px; justify-content: space-between; padding: 7px 12px; }
+    .nav__hint { display: inline; margin-left: 6px; font-weight: 400; font-size: 0.9375rem; }
+    .nav-dropdown > summary {
+      width: 100%;
+      min-height: 48px;
+      justify-content: space-between;
+      padding: 0 12px;
+      border: var(--border-thick) solid var(--color-ink);
+    }
     .nav-dropdown__panel {
       position: static;
       width: auto;
       max-height: none;
       margin-top: 6px;
       padding: 12px;
-      border-width: var(--border-thin);
-      box-shadow: none;
     }
 
     /* The sheet: it starts under the border of the header and scrolls if it is taller than the screen. */
@@ -442,32 +493,25 @@ const links = [
       overscroll-behavior: contain;
       padding: 12px var(--gutter) 16px;
       background: var(--color-paper);
-      border-bottom: var(--border-thick) solid var(--color-brand);
+      border-bottom: var(--border-thick) solid var(--color-ink);
     }
     :global(.js) .site-header:not(.is-menu-open) .nav { display: none; }
   }
 
-  /* Folding phone or tablet: the four sections in one row. */
-  @media (min-width: 720px) and (max-width: 1359px) {
+  /* Folding phone or tablet: the sections in one row. */
+  @media (min-width: 720px) and (max-width: 1179px) {
     .nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
 
-  /* Phone: a smaller logo and 44px controls. */
+  /* Phone: a smaller logo. */
   @media (max-width: 560px) {
     .site-header__row { min-height: 0; padding-top: 8px; padding-bottom: 8px; }
-    .logo__mark { font-size: 1.75rem; }
-    .logo__text { gap: 3px; }
-    .logo__title { font-size: 0.875rem; }
-    .logo__subtitle { font-size: 0.625rem; }
-    .menu-toggle { height: 44px; }
-    .nav a, .theme-toggle, .menu-toggle, .nav-dropdown > summary { font-size: var(--text-xs); }
+    .logo { min-height: 44px; }
+    .logo :global(.wordmark) { font-size: 2rem; }
     .nav-dropdown--regional .nav-dropdown__groups { columns: 1; }
   }
-  /* Very narrow phone: a smaller logo, so the logo and the menu button stay on one line. */
   @media (max-width: 374px) {
-    .logo { gap: var(--space-2); padding-right: 0; }
-    .logo__mark { font-size: 1.5rem; }
-    .logo__title { font-size: 0.8125rem; }
-    .logo__subtitle { font-size: 0.5625rem; letter-spacing: 0.08em; }
+    .logo { padding-right: 0; }
+    .logo :global(.wordmark) { font-size: 1.75rem; }
   }
 </style>

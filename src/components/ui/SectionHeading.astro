@@ -1,50 +1,36 @@
 ---
 /**
- * Section heading: an index line, a big <h2>, and (in the default slot)
- * a description paragraph or an action on the right.
+ * Section heading: a big <h2>, and (in the default slot)
+ * a description paragraph or an action at the right.
  */
 interface Props {
   title: string;
-  /** Small mono label above the title, for example "02 / PROGRAMS". */
-  index?: string;
   headingId?: string;
 }
 
-const { title, index, headingId } = Astro.props;
+const { title, headingId } = Astro.props;
 ---
 
 <div class="section-heading">
-  <div>
-    {index && <span class="section-heading__index">{index}</span>}
-    <h2 id={headingId}>{title}</h2>
-  </div>
+  <h2 id={headingId}>{title}</h2>
   <slot />
 </div>
 
 <style>
   .section-heading {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-    border-bottom: var(--border-thick) solid var(--color-ink);
-    padding-bottom: var(--space-3);
-    margin: var(--space-8) 0 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    max-width: 44em;
+    margin: var(--space-8) 0 var(--space-5);
   }
-  .section-heading h2 { font-size: clamp(1.875rem, 5vw, 3.5rem); }
-  .section-heading__index {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    display: block;
-    margin-bottom: var(--space-2);
-    color: var(--color-ink-subtle);
-  }
+  .section-heading h2 { font-size: clamp(2.75rem, 8vw, 4.75rem); line-height: 0.9; }
   .section-heading :global(p) {
     margin: 0;
-    max-width: 46ch;
-    color: var(--color-ink-muted);
-    font-size: 0.9375rem;
+    max-width: 46em;
+    font-size: 1.0625rem;
   }
+  /* An action in the slot (a button) sits under the title. */
+  .section-heading :global(.button) { margin-top: var(--space-2); }
 </style>

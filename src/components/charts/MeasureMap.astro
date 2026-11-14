@@ -4,8 +4,8 @@
  * Each block shows its number, its title, its total and its weight in the program.
  * A block with one section does not repeat it: its cells sit right under the title.
  * A block with several sections lists them, each with its count and cells.
- * The color identifies the block (with the block number beside it, never color alone).
- * Pending measures have diagonal hatching.
+ * The number, the bar and the cells of a block have the color of the block (a step of the party scale).
+ * Pending measures have a light trama.
  */
 import type { Program, Measure } from '@/lib/programs';
 import { categoryById } from '@/lib/taxonomy';
@@ -32,6 +32,14 @@ const groups = program.blocks.map((block) => {
 });
 // The bar of a block is its share of the biggest block, so the differences are easy to see.
 const maxTotal = Math.max(1, ...groups.map((group) => group.total));
+// The summary of the closed map: the counts of the whole program in one line.
+const pendingCount = program.measures.filter((measure) => measure.isPending).length;
+const summaryFacts = [
+  `${program.measures.length} ${measureNoun(program, program.measures.length)}`,
+  `${program.blocks.length} ${program.blocks.length === 1 ? 'bloque' : 'bloques'}`,
+  `${program.sections.length} ${program.sections.length === 1 ? 'sección' : 'secciones'}`,
+  pendingCount > 0 ? `${pendingCount} por anunciar` : null,
+].filter(Boolean);
 
 const cellLabel = (measure: Measure) =>
   measure.isPending ? `Medida ${measure.number}: pendiente de anunciar` : `Medida ${measure.number}: ${measure.phraseTitle}`;
@@ -41,10 +49,37 @@ const cellTooltip = (measure: Measure) =>
     : tooltip(`Nº ${measure.number} · ${categoryById[measure.categoryId].code}`, measure.phraseTitle);
 ---
 
-<div class="measure-map">
+<div class="measure-map" data-measure-map>
+  <!-- The closed map: a short summary. One row per block, with a small dot per measure, in the color of the block. -->
+  <div class="measure-map__summary">
+    <p class="measure-map__facts">{summaryFacts.join(' · ')}</p>
+    <ol class="measure-map__mini">
+      {groups.map(({ block, sections, total }) => (
+        <li style={`--block-color:${blockColor(block.id).color};--block-on:${blockColor(block.id).on}`}>
+          <a href={routes.block(program.id, block.id)}>
+            <span class="measure-map__mini-number">{padNumber(block.id)}</span>
+            <span class="measure-map__mini-title">{block.title}</span>
+            <span class="measure-map__mini-count">{total}</span>
+            <span class="measure-map__mini-dots" aria-hidden="true">
+              {sections.flatMap(({ measures }) => measures).map((measure) => <i class:list={{ 'is-pending': measure.isPending }} />)}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+  <!-- Without the script the map is open. The script hides it and this button opens it, large, with the number of each measure. -->
+  <button type="button" class="measure-map__zoom" aria-expanded="true" aria-controls="measure-map-canvas" hidden>
+    <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+      <path class="measure-map__icon-open" d="M2 6V2h4M14 6V2h-4M2 10v4h4M14 10v4h-4"></path>
+      <path class="measure-map__icon-close" d="M6 2v4H2M10 2v4h4M6 14v-4H2M10 14v-4h4"></path>
+    </svg>
+    <span data-label>Ampliar el mapa</span>
+  </button>
+  <div class="measure-map__canvas" id="measure-map-canvas">
   {
     groups.map(({ block, sections, total }) => (
-      <section class="measure-map__block" style={`--block-color: ${blockColor(block.id)}`}>
+      <section class="measure-map__block" style={`--block-color:${blockColor(block.id).color};--block-on:${blockColor(block.id).on}`}>
         <a class="measure-map__number" href={routes.block(program.id, block.id)} aria-label={`Bloque ${block.id}: ${block.title}`}>
           {padNumber(block.id)}
         </a>
@@ -53,7 +88,7 @@ const cellTooltip = (measure: Measure) =>
             <h4 class="measure-map__title">
               <a href={routes.block(program.id, block.id)}>{block.title}</a>
             </h4>
-            <span class="measure-map__total mono">
+            <span class="measure-map__total">
               {total} {measureNoun(program, total)}
             </span>
           </div>
@@ -63,7 +98,7 @@ const cellTooltip = (measure: Measure) =>
             aria-label={`${percentOf(total, program.measures.length)} % de las ${program.measureUnitPlural} del programa`}
           >
             <span class="measure-map__track"><span class="measure-map__fill" style={`width: ${(total / maxTotal) * 100}%`}></span></span>
-            <span class="measure-map__percent mono">{percentOf(total, program.measures.length)} %</span>
+            <span class="measure-map__percent">{percentOf(total, program.measures.length)} %</span>
           </div>
 
           {sections.length === 1 ? (
@@ -71,6 +106,7 @@ const cellTooltip = (measure: Measure) =>
               {sections[0].measures.map((measure) => (
                 <a
                   class:list={['measure-map__cell', { 'is-pending': measure.isPending }]}
+                  data-number={measure.number}
                   href={routes.measure(program.id, measure.number)}
                   aria-label={cellLabel(measure)}
                   data-tooltip={cellTooltip(measure)}
@@ -80,16 +116,17 @@ const cellTooltip = (measure: Measure) =>
           ) : (
             <div class="measure-map__sections">
               {sections.map(({ section, measures }) => (
-                <div class="measure-map__row">
-                  <span class="measure-map__id mono">{section.id}</span>
+                <div class:list={['measure-map__row', { 'measure-map__row--tag': section.id.length > 4 }]}>
+                  <span class="measure-map__id">{section.id}</span>
                   <a class="measure-map__section" href={routes.section(program.id, block.id, section.id)}>
                     {section.phraseTitle}
                   </a>
-                  <span class="measure-map__count mono">{measures.length}</span>
+                  <span class="measure-map__count">{measures.length}</span>
                   <div class="measure-map__cells">
                     {measures.map((measure) => (
                       <a
                         class:list={['measure-map__cell', { 'is-pending': measure.isPending }]}
+                        data-number={measure.number}
                         href={routes.measure(program.id, measure.number)}
                         aria-label={cellLabel(measure)}
                         data-tooltip={cellTooltip(measure)}
@@ -104,10 +141,110 @@ const cellTooltip = (measure: Measure) =>
       </section>
     ))
   }
+  </div>
 </div>
+
+<script>
+  // The map starts closed. Opening it also makes the cells large, with the number of each measure.
+  for (const map of document.querySelectorAll<HTMLElement>('[data-measure-map]')) {
+    const button = map.querySelector<HTMLButtonElement>('.measure-map__zoom')!;
+    const label = button.querySelector<HTMLElement>('[data-label]')!;
+    const setOpen = (open: boolean) => {
+      map.classList.toggle('is-open', open);
+      map.classList.toggle('is-large', open);
+      button.setAttribute('aria-expanded', String(open));
+      label.textContent = open ? 'Ocultar el mapa' : 'Ampliar el mapa';
+    };
+    map.classList.add('is-collapsible');
+    button.hidden = false;
+    setOpen(false);
+    button.addEventListener('click', () => setOpen(!map.classList.contains('is-open')));
+  }
+</script>
 
 <style>
   .measure-map { display: block; }
+  /* The summary shows only while the map is closed (the script makes the map closable). */
+  .measure-map__summary { display: none; }
+  .measure-map.is-collapsible:not(.is-open) .measure-map__summary { display: grid; gap: var(--space-3); margin-bottom: var(--space-4); }
+  .measure-map__facts { margin: 0; font-weight: 700; }
+  .measure-map__mini { list-style: none; margin: 0; padding: 0; display: grid; border-top: var(--border-fine) solid var(--color-ink); }
+  .measure-map__mini a {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    grid-template-areas: 'number title count' 'number dots dots';
+    align-items: center;
+    gap: 4px 12px;
+    min-height: 44px;
+    padding: 8px 4px;
+    border-bottom: var(--border-fine) solid var(--color-ink);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .measure-map__mini a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .measure-map__mini-number {
+    grid-area: number;
+    display: grid;
+    place-items: center;
+    height: 36px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--block-color);
+    color: var(--block-on);
+    font: 900 1.25rem / 1 var(--font-display);
+  }
+  .measure-map__mini-title { grid-area: title; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+  .measure-map__mini-count { grid-area: count; font-weight: 700; font-variant-numeric: tabular-nums; }
+  /* One dot per measure, in a line that wraps: the size of each block is easy to compare. */
+  .measure-map__mini-dots { grid-area: dots; display: flex; flex-wrap: wrap; gap: 2px; }
+  .measure-map__mini-dots i {
+    width: 7px;
+    height: 7px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-ink);
+    background: var(--block-color);
+  }
+  .measure-map__mini-dots i.is-pending { background: var(--color-paper); }
+  .measure-map__zoom {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    margin-bottom: var(--space-5);
+    padding: 0 var(--space-3);
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .measure-map__zoom[hidden] { display: none; }
+  .measure-map__zoom:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .measure-map__zoom[aria-expanded='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .measure-map__icon-close { display: none; }
+  .measure-map__zoom[aria-expanded='true'] .measure-map__icon-open { display: none; }
+  .measure-map__zoom[aria-expanded='true'] .measure-map__icon-close { display: block; }
+  .measure-map.is-collapsible:not(.is-open) .measure-map__canvas { display: none; }
+  .measure-map.is-collapsible:not(.is-open) .measure-map__zoom { margin-bottom: 0; }
+  /* The large map: each cell is a square with the number of the measure, in the text color of its block. */
+  .measure-map.is-large .measure-map__cells { gap: 4px; }
+  .measure-map.is-large .measure-map__cell {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    color: var(--block-on);
+    font: 700 0.875rem var(--font-body);
+    text-decoration: none;
+  }
+  .measure-map.is-large .measure-map__cell::after { content: attr(data-number); }
+  /* A pending measure has no trama here, because text must not sit on a trama: paper, with the number in ink. */
+  .measure-map.is-large .measure-map__cell.is-pending { background-image: none; color: var(--color-ink); border-width: var(--border-thick); }
+  .measure-map.is-large .measure-map__cell:hover,
+  .measure-map.is-large .measure-map__cell:focus-visible { color: var(--color-paper); }
+  /* The cells take the whole row under the title of the section. */
+  .measure-map.is-large .measure-map__row { grid-template-columns: 34px minmax(0, 1fr) auto; row-gap: 8px; }
+  .measure-map.is-large .measure-map__row .measure-map__cells { grid-column: 1 / -1; }
   .measure-map__block {
     display: grid;
     grid-template-columns: 64px minmax(0, 1fr);
@@ -117,7 +254,6 @@ const cellTooltip = (measure: Measure) =>
   }
   .measure-map__block:first-child { border-top: 0; padding-top: 0; }
   .measure-map__block:last-child { padding-bottom: 0; }
-  /* Large bold text on the block color: 3:1 is enough. */
   .measure-map__number {
     box-sizing: border-box;
     width: 64px;
@@ -126,11 +262,12 @@ const cellTooltip = (measure: Measure) =>
     align-items: center;
     justify-content: center;
     background: var(--block-color);
-    color: var(--color-on-block);
-    border: 3px solid var(--color-ink);
-    box-shadow: var(--shadow-sm);
+    color: var(--block-on);
+    border: var(--border-thick) solid var(--color-ink);
     font-family: var(--font-display);
-    font-size: 1.75rem;
+    font-weight: 900;
+    font-size: 2.25rem;
+    line-height: 1;
     text-decoration: none;
   }
   .measure-map__number:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
@@ -141,20 +278,23 @@ const cellTooltip = (measure: Measure) =>
     justify-content: space-between;
     gap: var(--space-4);
   }
-  .measure-map__title { margin: 0; font-family: var(--font-body); font-weight: 800; font-size: 1.3125rem; line-height: 1.15; }
+  .measure-map__title { margin: 0; font-family: var(--font-body); font-weight: 700; font-size: 1.3125rem; line-height: 1.15; text-transform: none; letter-spacing: 0; }
   .measure-map__title a { text-decoration: none; }
-  .measure-map__title a:hover { text-decoration: underline; text-decoration-color: var(--color-highlight); text-decoration-thickness: 3px; }
-  .measure-map__total { flex: none; font-size: var(--text-sm); font-weight: 700; }
+  .measure-map__title a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .measure-map__total { flex: none; font-size: 1rem; font-weight: 700; }
   .measure-map__share { display: flex; align-items: center; gap: var(--space-3); margin-top: 10px; }
   .measure-map__track {
     flex: 1 1 auto;
-    height: 10px;
+    height: 16px;
     box-sizing: border-box;
-    background: var(--color-paper-alt);
-    border: var(--border-thin) solid var(--color-ink);
+    border: var(--border-fine) solid var(--color-ink);
   }
-  .measure-map__fill { display: block; height: 100%; background: var(--block-color); }
-  .measure-map__percent { flex: none; width: 44px; text-align: right; font-size: var(--text-xs); font-weight: 700; color: var(--color-ink-muted); }
+  .measure-map__fill {
+    display: block;
+    height: 100%;
+    background: var(--block-color);
+  }
+  .measure-map__percent { flex: none; width: 52px; text-align: right; font-size: 0.9375rem; font-weight: 700; }
 
   .measure-map__cells { display: flex; flex-wrap: wrap; gap: 3px; align-items: center; }
   .measure-map__cells--alone { margin-top: var(--space-4); }
@@ -163,18 +303,25 @@ const cellTooltip = (measure: Measure) =>
     width: 14px;
     height: 14px;
     background: var(--block-color);
-    border: var(--border-thin) solid var(--color-ink);
+    border: var(--border-fine) solid var(--color-ink);
     display: block;
-    transition: transform var(--duration-fast);
   }
+  /* Hover and focus: the cell turns to solid ink and gets an ink ring, so it is easy to find in both themes. */
   .measure-map__cell:hover,
-  .measure-map__cell:focus-visible {
-    background: var(--color-highlight);
-    transform: translate(-2px, -2px);
-    box-shadow: 3px 3px 0 var(--color-ink);
+  .measure-map__cell:focus-visible,
+  .measure-map__cell.is-pending:hover,
+  .measure-map__cell.is-pending:focus-visible {
+    background: var(--color-ink);
+    outline: var(--border-thick) solid var(--color-ink);
+    outline-offset: 2px;
+    position: relative;
+    z-index: var(--z-raised);
   }
   .measure-map__cell.is-pending {
-    background: var(--color-paper) repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 6px);
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    background-image: var(--trama-light);
+    background-size: 5px 5px;
   }
 
   .measure-map__sections { margin-top: var(--space-3); }
@@ -184,17 +331,31 @@ const cellTooltip = (measure: Measure) =>
     column-gap: var(--space-3);
     align-items: center;
     padding: 7px 0;
-    border-top: 1px dashed var(--color-ink-subtle);
+    border-top: var(--border-fine) solid var(--color-ink);
   }
-  .measure-map__id { font-size: var(--text-xs); font-weight: 700; color: var(--color-ink-muted); }
-  .measure-map__section { font-size: 0.875rem; font-weight: 600; line-height: 1.25; text-decoration: none; }
+  .measure-map__id { font-size: 0.875rem; font-weight: 700; }
+  .measure-map__section { font-size: 0.9375rem; font-weight: 600; line-height: 1.25; text-decoration: none; }
   .measure-map__section::first-letter { text-transform: uppercase; }
-  .measure-map__section:hover { text-decoration: underline; text-decoration-color: var(--color-highlight); text-decoration-thickness: 3px; }
-  .measure-map__count { text-align: right; font-size: 0.8125rem; font-weight: 700; }
+  .measure-map__section:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .measure-map__count { text-align: right; font-size: 0.9375rem; font-weight: 700; }
+
+  /* A section whose id is a word («vivienda», «educación») and not a short number: it does not fit the
+     narrow column of the id. It goes above the title, as a small label, and the count and the cells stay at the right. */
+  .measure-map__row--tag { grid-template-columns: minmax(0, 320px) 28px minmax(0, 1fr); row-gap: 2px; align-items: center; }
+  .measure-map__row--tag .measure-map__id { grid-column: 1; grid-row: 1; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.04em; overflow-wrap: anywhere; }
+  .measure-map__row--tag .measure-map__section { grid-column: 1; grid-row: 2; }
+  .measure-map__row--tag .measure-map__count { grid-column: 2; grid-row: 1 / span 2; }
+  .measure-map__row--tag .measure-map__cells { grid-column: 3; grid-row: 1 / span 2; }
+  /* On a phone and in the large map, the cells go in a row of their own under the label and the title. */
+  .measure-map.is-large .measure-map__row--tag { grid-template-columns: minmax(0, 1fr) auto; }
+  .measure-map.is-large .measure-map__row--tag .measure-map__count { grid-column: 2; }
+  .measure-map.is-large .measure-map__row--tag .measure-map__cells { grid-column: 1 / -1; grid-row: 3; margin-top: 6px; }
 
   @media (max-width: 760px) {
+    .measure-map__row--tag { grid-template-columns: minmax(0, 1fr) auto; }
+    .measure-map__row--tag .measure-map__cells { grid-column: 1 / -1; grid-row: 3; margin-top: 6px; }
     .measure-map__block { grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--space-3); }
-    .measure-map__number { width: 48px; height: 48px; font-size: 1.25rem; border-width: 2px; box-shadow: 3px 3px 0 var(--color-ink); }
+    .measure-map__number { width: 48px; height: 48px; font-size: 1.75rem; }
     .measure-map__title { font-size: 1.0625rem; }
     .measure-map__head { flex-direction: column; gap: 2px; }
     /* A row: the number, the title and the count on one line, the cells under them. */

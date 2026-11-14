@@ -1,0 +1,521 @@
+---
+/**
+ * Seguimiento de encuestas. Una gráfica de líneas con la estimación de voto de cinco encuestadoras.
+ * - «Todas»: cada punto es una encuesta y la línea es la media de la última encuesta de cada encuestadora
+ *   en las tres semanas anteriores, para que una encuestadora que publica a diario no pese más.
+ * - Una encuestadora: solo sus puntos, unidos por su línea.
+ * La gráfica la dibuja `src/lib/poll-chart.ts`: al compilar (la primera vista) y en el navegador, cuando el lector cambia
+ * la medida, la escala, la encuestadora, los partidos o el ancho.
+ * Los datos y sus fuentes están en `@eleccion/encuestas`.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Panel from '@/components/ui/Panel.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { election } from '@eleccion/eleccion';
+import { DEFAULT_SAMPLE, FRENTE_AMPLIO_FROM, pollAggregator, pollParties, polls, pollsters, type Poll, type PollPartyId } from '@eleccion/encuestas';
+import { ABSOLUTE_MAJORITY } from '@eleccion/congreso';
+import { formatLongDate } from '@/lib/format';
+import { renderPollChart, type PollChartData } from '@/lib/poll-chart';
+
+const DAY = 86_400_000;
+const time = (date: string) => new Date(`${date}T12:00:00Z`).getTime();
+const sorted = [...polls].sort((a, b) => time(a.date) - time(b.date));
+const pollsterById = Object.fromEntries(pollsters.map((pollster) => [pollster.id, pollster]));
+const percent = (value: number | null | undefined) => (value == null ? '–' : value.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
+const shortDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+
+// The election day closes the axis: the reader sees how much time is left.
+const electionDate = '2026-11-29';
+const start = time('2026-06-01');
+const end = time(electionDate);
+
+/**
+ * Two views of the same polls:
+ * - `pct`: the vote share. The halo is the margin of error at 95 % (±1,96·√(p·(1−p)/n)) of a poll of that sample.
+ * - `seats`: the seats. The halo is the range (horquilla) that the pollster publishes.
+ */
+type Metric = 'pct' | 'seats';
+type Estimate = { mid: number; lo: number; hi: number };
+const marginOfError = (share: number, sample: number) => 196 * Math.sqrt(((share / 100) * (1 - share / 100)) / sample);
+const estimateOf = (poll: Poll, party: PollPartyId, metric: Metric): Estimate | null => {
+  if (metric === 'pct') {
+    const value = poll.values[party] ?? null;
+    if (value === null) return null;
+    const margin = marginOfError(value, poll.sample ?? DEFAULT_SAMPLE);
+    return { mid: value, lo: Math.max(0, value - margin), hi: value + margin };
+  }
+  const seats = poll.seats?.[party];
+  if (seats == null) return null;
+  const [lo, hi] = Array.isArray(seats) ? seats : [seats, seats];
+  return { mid: (lo + hi) / 2, lo, hi };
+};
+
+// The average of «Todas»: on each date with a poll, the last poll of each pollster in the 21 days before.
+// Its halo is the average of the halos of those polls.
+const WINDOW = 21 * DAY;
+const averageOn = (date: string, party: PollPartyId, metric: Metric): Estimate | null => {
+  const latest = new Map<string, Estimate>();
+  for (const poll of sorted) {
+    const age = time(date) - time(poll.date);
+    const estimate = estimateOf(poll, party, metric);
+    if (age < 0 || age > WINDOW || !estimate) continue;
+    latest.set(poll.pollster, estimate);
+  }
+  const list = [...latest.values()];
+  if (!list.length) return null;
+  const mean = (key: keyof Estimate) => list.reduce((sum, item) => sum + item[key], 0) / list.length;
+  return { mid: mean('mid'), lo: mean('lo'), hi: mean('hi') };
+};
+const dates = [...new Set(sorted.map((poll) => poll.date))];
+
+type Line = { party: (typeof pollParties)[number]; points: [string, Estimate][] };
+const linesFor = (filter: string, metric: Metric): Line[] =>
+  pollParties.map((party) => ({
+    party,
+    points:
+      filter === 'all'
+        ? dates.flatMap((date) => {
+            // Sumar ends and Frente Amplio starts on the day of the change: the average does not mix them.
+            if (party.id === 'sumar' && date >= FRENTE_AMPLIO_FROM) return [];
+            if (party.id === 'fa' && date < FRENTE_AMPLIO_FROM) return [];
+            const estimate = averageOn(date, party.id, metric);
+            return estimate ? [[date, estimate] as [string, Estimate]] : [];
+          })
+        : sorted
+            .filter((poll) => poll.pollster === filter)
+            .flatMap((poll) => {
+              const estimate = estimateOf(poll, party.id, metric);
+              return estimate ? [[poll.date, estimate] as [string, Estimate]] : [];
+            }),
+  }));
+
+const formatValue = (metric: Metric, estimate: Estimate) =>
+  metric === 'pct'
+    ? percent(estimate.mid)
+    : Math.round(estimate.lo) === Math.round(estimate.hi)
+      ? String(Math.round(estimate.mid))
+      : `${Math.round(estimate.lo)}–${Math.round(estimate.hi)}`;
+const isShown = (party: (typeof pollParties)[number]) => party.shown !== false;
+
+const filters = [{ id: 'all', label: 'Todas' }, ...pollsters.map((pollster) => ({ id: pollster.id, label: pollster.name }))];
+// The data of the chart, for the build and for the script. The values have two decimals: the page stays light.
+const round2 = (value: number) => Math.round(value * 100) / 100;
+const partyIndex = new Map(pollParties.map((party, index) => [party.id, index]));
+const chartData: PollChartData = {
+  start,
+  end,
+  election: end,
+  lastDate: time(sorted.at(-1)!.date),
+  majority: ABSOLUTE_MAJORITY,
+  parties: pollParties.map((party) => ({ id: party.id, acronym: party.acronym, label: party.short ?? party.acronym, color: party.color })),
+  polls: sorted.map((poll) => ({
+    t: time(poll.date),
+    pollster: poll.pollster,
+    source: `${pollsterById[poll.pollster].name} (${pollsterById[poll.pollster].media})`,
+    date: formatLongDate(poll.date),
+  })),
+  metrics: Object.fromEntries(
+    (['pct', 'seats'] as Metric[]).map((metric) => [
+      metric,
+      {
+        series: filters.map((filter) => {
+          const lines = linesFor(filter.id, metric);
+          return {
+            id: filter.id,
+            empty: lines.every((line) => line.points.length === 0),
+            lines: lines.map((line) => ({
+              party: partyIndex.get(line.party.id)!,
+              points: line.points.map(([date, e]) => [time(date), round2(e.mid), round2(e.lo), round2(e.hi)] as [number, number, number, number]),
+            })),
+          };
+        }),
+        dots: sorted.flatMap((poll, pollIndex) =>
+          pollParties.flatMap((party) => {
+            const e = estimateOf(poll, party.id, metric);
+            return e ? [[pollIndex, partyIndex.get(party.id)!, round2(e.mid), round2(e.lo), round2(e.hi)] as [number, number, number, number, number]] : [];
+          }),
+        ),
+      },
+    ]),
+  ) as PollChartData['metrics'],
+};
+// The first view: percentages, linear scale, «Todas», the box of a desktop page. The script draws it again at the real width.
+const firstChart = renderPollChart(chartData, {
+  metric: 'pct',
+  scale: 'linear',
+  filter: 'all',
+  hidden: new Set(pollParties.filter((party) => !isShown(party)).map((party) => party.id)),
+  width: 1240,
+  zoom: 1,
+});
+const hasSeats = polls.some((poll) => poll.seats);
+// The tables only have a column for the parties that at least one poll publishes.
+const tableParties = pollParties.filter((party) => polls.some((poll) => poll.values[party.id] != null));
+const knownSamples = polls.filter((poll) => poll.sample).length;
+
+// The table: the last poll of each pollster.
+const latestByPollster = pollsters.map((pollster) => ({
+  pollster,
+  poll: sorted.filter((poll) => poll.pollster === pollster.id).at(-1),
+}));
+const lastUpdate = sorted.at(-1)!.date;
+---
+
+<BaseLayout
+  title="Encuestas"
+  description={`Seguimiento de las encuestas de las ${election.name.toLowerCase()} del ${election.longDate}: CIS, 40dB., Sigma Dos, SocioMétrica y GAD3, con su evolución y sus fuentes.`}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Seguimiento</Tag>
+      <h1 class="headline">Encuestas</h1>
+      <p class="page-hero__lede">
+        La estimación de voto de cinco encuestadoras, desde junio hasta el día de la votación. Cada punto es una encuesta y enlaza
+        con su publicación original. Última encuesta: {formatLongDate(lastUpdate)}.
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <SectionHeading title="La evolución">
+      <p>
+        Con «Todas», la línea es la media de la última encuesta de cada encuestadora en las tres semanas anteriores. Elige una
+        encuestadora para ver solo sus datos. Una encuesta no es un resultado: cada una tiene su método y su margen de error.
+      </p>
+    </SectionHeading>
+
+    <Panel>
+      <div class="poll-filters" role="group" aria-label="Encuestadora">
+        {filters.map((filter, index) => (
+          <button type="button" data-filter={filter.id} aria-pressed={index === 0 ? 'true' : 'false'}>{filter.label}</button>
+        ))}
+      </div>
+      <!-- The legend shows or hides each party. The regional parties start hidden. -->
+      <ul class="poll-legend" aria-label="Partidos: pulsa uno para mostrarlo u ocultarlo">
+        {pollParties.map((party) => (
+          <li>
+            <button type="button" data-party-toggle={party.id} aria-pressed={isShown(party) ? 'true' : 'false'}>
+              <span class="poll-legend__swatch" style={`background:${party.color}`} aria-hidden="true"></span>{party.acronym}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div class="poll-view">
+        {hasSeats && (
+          <div class="poll-metric" role="group" aria-label="Medida">
+            <button type="button" data-metric="pct" aria-pressed="true">Porcentaje de voto</button>
+            <button type="button" data-metric="seats" aria-pressed="false">Escaños</button>
+          </div>
+        )}
+        <div class="poll-metric" role="group" aria-label="Escala vertical">
+          <button type="button" data-scale="linear" aria-pressed="true">Escala lineal</button>
+          <button type="button" data-scale="log" aria-pressed="false">Logarítmica</button>
+        </div>
+        <label class="poll-zoom">
+          <span>Ancho</span>
+          <input type="range" min="1" max="4" step="0.25" value="1" data-zoom aria-valuetext="100 %" />
+          <output data-zoom-value>100 %</output>
+        </label>
+      </div>
+      <p class="poll-chart__hint" data-zoom-hint hidden aria-hidden="true">Desliza la gráfica para ver todas las fechas →</p>
+      <div class="poll-frame">
+        <div class="poll-chart" data-poll-chart data-filter="all" data-chart-data={JSON.stringify(chartData)} tabindex="0" role="region" aria-label="Gráfica de la evolución de las encuestas" set:html={firstChart}></div>
+        <!-- The values of the vertical axis, fixed at the left while the chart scrolls. -->
+        <div class="poll-axis" data-poll-axis hidden></div>
+      </div>
+      <p class="poll-note" data-note="log" hidden>
+        En la escala logarítmica, cada línea de la cuadrícula es el doble o algo más que la de abajo: los partidos pequeños se
+        separan y se leen mejor. Un valor por debajo del 0,1 % (o de 1 escaño) se dibuja sobre esa línea.
+      </p>
+      <p class="poll-note" data-note="pct">
+        El halo de cada línea es el margen de error al 95 %: con {DEFAULT_SAMPLE.toLocaleString('es-ES')} entrevistas, un partido con
+        el 30 % puede estar entre el 27,2 % y el 32,8 %.
+        {knownSamples < polls.length && ` Cuando la publicación no da la muestra (${polls.length - knownSamples} de ${polls.length} encuestas), se supone una de ${DEFAULT_SAMPLE.toLocaleString('es-ES')} entrevistas: ese margen es orientativo.`}
+        {' '}«Frente Amplio» (antes Sumar) es la suma que publica cada encuestadora para Frente Amplio y sus socios, Compromís incluido. Sigma Dos no publica a SALF por separado. Los partidos de ámbito autonómico empiezan ocultos: pulsa su nombre en la leyenda para verlos. Sus cifras salen de la tabla de encuestas de Wikipedia en inglés, y 40dB. solo publica sus escaños.
+      </p>
+      <p class="poll-note" data-note="seats" hidden>
+        Escaños que publica cada encuestadora. El halo es su horquilla (por ejemplo, de 130 a 136) y la línea va por el centro.
+        La línea discontinua marca la mayoría absoluta de {ABSOLUTE_MAJORITY} escaños.
+      </p>
+    </Panel>
+
+    <SectionHeading title="La última de cada una">
+      <p>La encuesta más reciente de cada encuestadora: el porcentaje de voto y, debajo, los escaños que publica. Cada una enlaza con su publicación original.</p>
+    </SectionHeading>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Última encuesta de cada encuestadora">
+      <table class="poll-table">
+        <thead>
+          <tr>
+            <th scope="col">Encuestadora</th>
+            <th scope="col">Fecha</th>
+            {tableParties.map((party) => (
+              <th scope="col" class="num"><span class="poll-table__party" style={`--party-color:${party.color}`}>{party.acronym}</span></th>
+            ))}
+            <th scope="col">Fuente</th>
+          </tr>
+        </thead>
+        <tbody>
+          {latestByPollster.map(({ pollster, poll }) => (
+            <tr>
+              <th scope="row">
+                <a href={pollster.url} target="_blank" rel="noopener">{pollster.name}</a>
+                <span class="poll-table__media">{pollster.media}</span>
+              </th>
+              <td>{poll ? shortDate(poll.date) : '–'}</td>
+              {tableParties.map((party) => {
+                const seats = poll ? estimateOf(poll, party.id, 'seats') : null;
+                return (
+                  <td class="num">
+                    {poll ? `${percent(poll.values[party.id])} %` : '–'}
+                    {seats && <span class="poll-table__seats">{formatValue('seats', seats)} esc.</span>}
+                  </td>
+                );
+              })}
+              <td>{poll && <a href={poll.url} target="_blank" rel="noopener">Ver la encuesta</a>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <details class="all-polls">
+      <summary>Ver las {polls.length} encuestas</summary>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Todas las encuestas">
+        <table class="poll-table">
+          <thead>
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Encuestadora</th>
+              {tableParties.map((party) => <th scope="col" class="num">{party.acronym}</th>)}
+              <th scope="col">Fuente</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...sorted].reverse().map((poll) => (
+              <tr>
+                <td>{shortDate(poll.date)}</td>
+                <th scope="row">{pollsterById[poll.pollster].name}</th>
+                {tableParties.map((party) => <td class="num">{percent(poll.values[party.id])}</td>)}
+                <td>
+                  <a href={poll.url} target="_blank" rel="noopener">Publicación</a>
+                  {!poll.checked && <span class="poll-table__via" title={`Cifra tomada de ${pollAggregator.name}`}> · vía {pollAggregator.name}</span>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <SectionHeading title="Fuentes">
+      <p>
+        Cada encuesta enlaza con su publicación original. Las cifras marcadas «vía {pollAggregator.name}» vienen de la tabla de{' '}
+        <a href={pollAggregator.url} target="_blank" rel="noopener">{pollAggregator.name}</a> y no se han leído aún en la
+        publicación original. Páginas oficiales de cada encuestadora:
+      </p>
+    </SectionHeading>
+    <ul class="sources">
+      {pollsters.map((pollster) => (
+        <li>
+          <a href={pollster.url} target="_blank" rel="noopener"><b>{pollster.name}</b></a>
+          <span>{pollster.media}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
+
+<script>
+  import { renderPollChart, renderYAxis, type Metric, type PollChartData, type Scale } from '@/lib/poll-chart';
+
+  // The chart is drawn again when the reader changes an option or the box changes its width.
+  for (const chart of document.querySelectorAll<HTMLElement>('[data-poll-chart]')) {
+    const data: PollChartData = JSON.parse(chart.dataset.chartData!);
+    const hidden = new Set(
+      [...document.querySelectorAll<HTMLButtonElement>('[data-party-toggle]')]
+        .filter((toggle) => toggle.getAttribute('aria-pressed') !== 'true')
+        .map((toggle) => toggle.dataset.partyToggle!),
+    );
+    const state = { metric: 'pct' as Metric, scale: 'linear' as Scale, filter: 'all', zoom: 1 };
+    const zoomInput = document.querySelector<HTMLInputElement>('[data-zoom]')!;
+    const zoomValue = document.querySelector<HTMLOutputElement>('[data-zoom-value]')!;
+    const zoomHint = document.querySelector<HTMLElement>('[data-zoom-hint]')!;
+    const notes = [...document.querySelectorAll<HTMLElement>('[data-note]')];
+    const yAxis = chart.parentElement!.querySelector<HTMLElement>('[data-poll-axis]')!;
+    // The fixed axis shows only when the left edge of the chart is out of view.
+    const showAxis = () => (yAxis.hidden = chart.scrollLeft < 2);
+    chart.addEventListener('scroll', showAxis, { passive: true });
+
+    let width = 0;
+    const draw = () => {
+      // The middle of the visible part stays in the middle when the width changes.
+      const before = chart.scrollWidth > chart.clientWidth + 1 ? (chart.scrollLeft + chart.clientWidth / 2) / chart.scrollWidth : null;
+      chart.dataset.filter = state.filter;
+      const options = { ...state, hidden, width: chart.clientWidth };
+      chart.innerHTML = renderPollChart(data, options);
+      yAxis.innerHTML = renderYAxis(options);
+      zoomHint.hidden = chart.scrollWidth <= chart.clientWidth + 1;
+      // A new zoom from 100 % shows the most recent polls first.
+      chart.scrollLeft = before === null ? chart.scrollWidth : before * chart.scrollWidth - chart.clientWidth / 2;
+      showAxis();
+      for (const note of notes) note.hidden = note.dataset.note === 'log' ? state.scale !== 'log' : note.dataset.note !== state.metric;
+    };
+    new ResizeObserver(() => {
+      if (Math.abs(chart.clientWidth - width) < 1) return;
+      width = chart.clientWidth;
+      draw();
+    }).observe(chart);
+
+    // The pollster, the measure and the scale: groups of buttons, one pressed in each group.
+    const group = (attribute: 'filter' | 'metric' | 'scale') => {
+      const buttons = [...document.querySelectorAll<HTMLButtonElement>(`button[data-${attribute}]`)];
+      for (const button of buttons) {
+        button.addEventListener('click', () => {
+          for (const other of buttons) other.setAttribute('aria-pressed', String(other === button));
+          (state as Record<string, unknown>)[attribute] = button.dataset[attribute];
+          draw();
+        });
+      }
+    };
+    group('filter');
+    group('metric');
+    group('scale');
+
+    for (const toggle of document.querySelectorAll<HTMLButtonElement>('[data-party-toggle]')) {
+      toggle.addEventListener('click', () => {
+        const shown = toggle.getAttribute('aria-pressed') !== 'true';
+        toggle.setAttribute('aria-pressed', String(shown));
+        if (shown) hidden.delete(toggle.dataset.partyToggle!);
+        else hidden.add(toggle.dataset.partyToggle!);
+        draw();
+      });
+    }
+
+    zoomInput.addEventListener('input', () => {
+      state.zoom = zoomInput.valueAsNumber;
+      const text = `${Math.round(state.zoom * 100)} %`;
+      zoomValue.textContent = text;
+      zoomInput.setAttribute('aria-valuetext', text);
+      draw();
+    });
+  }
+</script>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12vw, 8.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; margin: 0; }
+
+  .poll-filters { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: var(--space-3); }
+  .poll-filters button {
+    min-height: 44px;
+    margin: 0 -3px -3px 0;
+    padding: 0 16px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .poll-filters button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .poll-filters button[aria-pressed='true'] { position: relative; background: var(--color-ink); color: var(--color-paper); }
+
+  .poll-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; margin: var(--space-3) 0; padding: 0; font-weight: 700; }
+  .poll-legend { gap: 6px; }
+  .poll-legend button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 12px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    cursor: pointer;
+  }
+  .poll-legend button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  /* A hidden party: the swatch becomes an empty square and the name is struck through. */
+  .poll-legend button[aria-pressed='false'] { text-decoration: line-through; text-decoration-thickness: 2px; }
+  .poll-legend button[aria-pressed='false'] .poll-legend__swatch { background: transparent !important; }
+  .poll-legend__swatch { width: 14px; height: 14px; border: var(--border-fine) solid var(--color-ink); }
+
+  /* The chart fills the width of its box. A zoom makes it wider and the box scrolls sideways. The script draws the
+     SVG (innerHTML), so its parts take global rules inside `.poll-chart`. */
+  .poll-chart { overflow-x: auto; overscroll-behavior-x: contain; }
+  .poll-frame { position: relative; }
+  .poll-axis { position: absolute; top: 0; left: 0; background: var(--color-paper); pointer-events: none; }
+  .poll-axis[hidden] { display: none; }
+  .poll-axis :global(text) { fill: var(--color-ink); font: 600 12px var(--font-body); }
+  /* In the logarithmic scale the margin of a small party is very tall: its halo is fainter, so the lines stay clear. */
+  .poll-chart :global(.poll-chart__svg--log .poll-chart__band) { fill-opacity: 0.06; }
+  .poll-chart :global(svg) { display: block; max-width: none; overflow: visible; }
+  .poll-chart__hint { margin: 0 0 var(--space-2); font-weight: 700; }
+  .poll-chart__hint[hidden] { display: none; }
+  .poll-chart :global(.poll-chart__grid line) { stroke: var(--color-ink); stroke-opacity: 0.18; stroke-width: 1; }
+  .poll-chart :global(.poll-chart__grid .poll-chart__day) { stroke-opacity: 0.08; }
+  .poll-chart :global(.poll-chart__grid text) { fill: var(--color-ink); font: 600 12px var(--font-body); }
+  .poll-chart :global(.poll-chart__grid .poll-chart__election) { stroke-opacity: 1; stroke-dasharray: 4 4; stroke-width: 1.5; }
+  .poll-chart :global(.poll-chart__election-label) { font-weight: 800; }
+  .poll-chart :global(.poll-chart__line) { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  /* A thin, faint edge: it separates the lines that cross and keeps the light colors visible on the paper. */
+  .poll-chart :global(.poll-chart__casing) { fill: none; stroke: var(--color-ink); stroke-opacity: 0.35; stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; }
+  .poll-chart :global(.poll-chart__label) { fill: var(--color-ink); font: 600 12.5px var(--font-body); font-variant-numeric: tabular-nums; }
+  .poll-chart :global(.poll-chart__label-name) { font-weight: 800; }
+  /* The halo: a faint fill in the party color, under the lines. */
+  .poll-chart :global(.poll-chart__band) { fill-opacity: 0.16; stroke: none; }
+  .poll-chart :global(.poll-chart__grid .poll-chart__majority) { stroke-opacity: 0.9; stroke-dasharray: 8 5; stroke-width: 1.5; }
+  .poll-chart :global(.poll-chart__majority-label) { font-weight: 800; }
+  .poll-chart :global(.poll-chart__empty) { fill: var(--color-ink); font: 700 16px var(--font-body); }
+  /* The options of the view: the measure, the scale and the width, in one row. */
+  .poll-view { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-bottom: var(--space-3); }
+  .poll-zoom { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+  .poll-zoom input { width: 160px; accent-color: var(--color-ink); }
+  .poll-zoom output { min-width: 4ch; font-variant-numeric: tabular-nums; }
+  .poll-metric { display: flex; flex-wrap: wrap; }
+  .poll-metric button {
+    min-height: 44px;
+    padding: 0 16px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .poll-metric button + button { border-left: 0; }
+  .poll-metric button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .poll-metric button[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  /* The dots: an ink ring, so that a light party color stands apart from the paper. With «Todas» they are faint behind the average. */
+  .poll-chart :global(.poll-chart__dots circle) { stroke: var(--color-ink); stroke-width: 1; cursor: pointer; }
+  .poll-chart[data-filter='all'] :global(.poll-chart__dots circle) { opacity: 0.45; }
+  .poll-chart :global(.poll-chart__dots circle:hover) { opacity: 1; stroke-width: 2; }
+  .poll-note { margin: var(--space-3) 0 0; font-size: 0.9375rem; }
+
+  .table-wrap { overflow-x: auto; border: var(--border-thick) solid var(--color-ink); }
+  .poll-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .poll-table th, .poll-table td { padding: 10px 12px; border-bottom: var(--border-fine) solid var(--color-ink); text-align: left; white-space: nowrap; }
+  .poll-table thead th { background: var(--color-ink); color: var(--color-paper); font-weight: 700; }
+  .poll-table .num { text-align: right; }
+  .poll-table tbody th { font-weight: 700; }
+  .poll-table__media { display: block; font-weight: 400; font-size: 0.875rem; }
+  .poll-table__party { border-bottom: 4px solid var(--party-color); }
+  .poll-table__via { font-size: 0.875rem; }
+  .poll-table__seats { display: block; font-size: 0.875rem; font-weight: 700; }
+  .all-polls { margin-top: var(--space-5); }
+  .all-polls summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 20px;
+    border: var(--border-thick) solid var(--color-ink);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .all-polls summary:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .all-polls[open] summary { margin-bottom: var(--space-3); background: var(--color-ink); color: var(--color-paper); }
+
+  .sources { list-style: none; margin: 0 0 var(--space-8); padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); border-top: var(--border-thick) solid var(--color-ink); border-left: var(--border-thick) solid var(--color-ink); }
+  .sources li { display: grid; gap: 4px; padding: 16px; border-right: var(--border-thick) solid var(--color-ink); border-bottom: var(--border-thick) solid var(--color-ink); }
+  .sources b { font: 900 1.75rem / 1 var(--font-display); }
+</style>

@@ -6,7 +6,7 @@
  * PP 137, PSOE 121, Vox 32, Sumar 26, Junts 7, ERC 7, EH Bildu 6, EAJ-PNV 5 and Grupo Mixto 9
  * (Podemos 4, BNG 1, CC 1, UPN 1, Compromís 1 and one more deputy). The page gives no date for the figures.
  * `seats2023` are the results of the general election of 2023 by candidacy
- * (PSOE includes the PSC; Sumar includes its coalition parties).
+ * (PSOE includes the PSC; Sumar includes its coalition parties). Sumar runs on 29N as Frente Amplio (FA).
  *
  * The order is only visual: it goes from the left to the right of the hemicycle.
  * It is an approximation: no source that was read gives the real seating order.
@@ -30,10 +30,25 @@ export interface CongressGroup {
   color: string;
   /** The id of its program on this site, when it has one. */
   programId?: string;
+  /**
+   * The name it takes for the new election, when it changes. The presets of the old Congress (now, 2023) use the
+   * old name and color; a Congress built from zero uses this one.
+   */
+  next?: { acronym: string; name: string; color: string; programId?: string };
 }
 
 export const congressGroups: CongressGroup[] = [
-  { id: 'sumar', acronym: 'SUMAR', name: 'Sumar', seatsNow: 26, seats2023: 31, color: '#e6007e' },
+  // Sumar en el Congreso disuelto y en 2023; el 29N se presenta como Frente Amplio (registrado el 16 de octubre de 2026),
+  // con otro color: el bermellón de su logotipo, el mismo de su ficha (programas/fa.json).
+  {
+    id: 'sumar',
+    acronym: 'SUMAR',
+    name: 'Sumar',
+    seatsNow: 26,
+    seats2023: 31,
+    color: '#e6007e',
+    next: { acronym: 'FA', name: 'Frente Amplio (antes Sumar)', color: '#f03c00', programId: 'fa' },
+  },
   { id: 'podemos', acronym: 'PODEMOS', name: 'Podemos', seatsNow: 4, seats2023: 0, color: '#6b2d8f', programId: 'podemos' },
   { id: 'compromis', acronym: 'Compromís', name: 'Més-Compromís', seatsNow: 1, seats2023: 0, color: '#f0861e' },
   { id: 'psoe', acronym: 'PSOE', name: 'Partido Socialista Obrero Español', seatsNow: 121, seats2023: 121, color: '#e30613', programId: 'psoe' },

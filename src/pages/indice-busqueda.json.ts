@@ -3,9 +3,10 @@
  * The texts are normalized once here, so the browser does not do it for each measure.
  */
 import type { APIRoute } from 'astro';
-import { publishedPrograms } from '@/lib/programs';
+import { announcedMeasures, publishedPrograms } from '@/lib/programs';
 import { categoryById } from '@/lib/taxonomy';
 import { normalizeForSearch } from '@/lib/format';
+import { readableTextColor } from '@/lib/color';
 
 const EXCERPT_LENGTH = 200;
 
@@ -16,10 +17,15 @@ const excerptOf = (text: string) => {
 };
 
 export const GET: APIRoute = () => {
-  const parties = publishedPrograms.map((program) => ({ id: program.id, acronym: program.acronym }));
+  // `color` is the party color and `on` is the text color that is readable on it: the pill of each result uses them.
+  const parties = publishedPrograms.map((program) => ({
+    id: program.id,
+    acronym: program.acronym,
+    color: program.color,
+    on: readableTextColor(program.color),
+  }));
   const items = publishedPrograms.flatMap((program, partyIndex) =>
-    program.measures
-      .filter((measure) => !measure.isPending)
+    announcedMeasures(program)
       .map((measure) => ({
         /** Index in `parties`. */
         p: partyIndex,
@@ -27,6 +33,8 @@ export const GET: APIRoute = () => {
         n: measure.number,
         /** Category name. */
         c: categoryById[measure.categoryId]?.name ?? measure.categoryId,
+        /** Category id, for the filter of the search page. */
+        d: measure.categoryId,
         /** Title, as shown. */
         t: measure.phraseTitle,
         /** Start of the text, as shown. */

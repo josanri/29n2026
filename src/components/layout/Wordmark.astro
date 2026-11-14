@@ -1,0 +1,42 @@
+---
+/**
+ * The wordmark: ELECTOSFERA in the display font, where the letter O is a solid dot.
+ * The text is read as one word by a screen reader; the dot is a drawing.
+ * On a party page the dot is the sphere of the party: it takes the light color of the party, with an ink ring.
+ */
+import { SITE_NAME } from '@/lib/site';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={['wordmark', className]}>
+  <span class="wordmark__text" aria-hidden="true">ELECT</span><span class="wordmark__dot" aria-hidden="true"></span><span class="wordmark__text" aria-hidden="true">SFERA</span>
+  <span class="sr-only">{SITE_NAME}</span>
+</span>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 2.5rem; /* the parent can change it: the dot follows the size in `em` */
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  .wordmark__dot {
+    flex: none;
+    width: 0.675em;
+    height: 0.675em;
+    margin: 0 0.075em;
+    box-sizing: border-box;
+    border: 0.07em solid currentColor;
+    border-radius: 50%;
+    background: var(--sphere-disc, currentColor);
+  }
+</style>

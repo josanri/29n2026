@@ -3,7 +3,7 @@
  * where each measure applies. The page loads only the parties that run in the province of the reader.
  */
 import type { APIRoute, GetStaticPaths } from 'astro';
-import { publishedPrograms, type Program } from '@/lib/programs';
+import { announcedMeasures, publishedPrograms, type Program } from '@/lib/programs';
 import { provinces } from '@/lib/presence';
 import { categoryById } from '@/lib/taxonomy';
 import { applicableProvinces, quizStatement, territoryProvinces, type QuizMeasure } from '@/lib/party-quiz';
@@ -15,8 +15,7 @@ export const getStaticPaths: GetStaticPaths = () =>
 
 export const GET: APIRoute = ({ props }) => {
   const { program } = props as { program: Program };
-  const measures: QuizMeasure[] = program.measures
-    .filter((measure) => !measure.isPending)
+  const measures: QuizMeasure[] = announcedMeasures(program)
     .flatMap((measure) => {
       const statement = quizStatement(measure);
       if (!statement) return [];

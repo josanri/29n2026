@@ -7,6 +7,7 @@ import type { Measure, Program } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { normalizeForSearch, splitParagraphs } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
+import { partyScaleStyle, readableTextColor } from '@/lib/color';
 import { MEASURE_ID_PREFIX, routes, withBase } from '@/lib/routes';
 import Tag from '@/components/ui/Tag.astro';
 import BlockChip from '@/components/ui/BlockChip.astro';
@@ -16,11 +17,15 @@ interface Props {
   program: Program;
   open?: boolean;
   showParty?: boolean;
+  /** False on the page of a category: every card there has the same category. */
+  showCategory?: boolean;
 }
 
-const { measure, program, open = false, showParty = false } = Astro.props;
+const { measure, program, open = false, showParty = false, showCategory = true } = Astro.props;
 const category = categoryById[measure.categoryId];
 const block = program.blocks.find((candidate) => candidate.id === measure.blockId)!;
+// On a page with measures of several parties, each card carries the color scale of its party.
+const stripeStyle = `--stripe-color: ${blockColor(measure.blockId).color}${showParty ? `;${partyScaleStyle(program.color, program.lightColor)}` : ''}`;
 const searchText = normalizeForSearch(`${measure.number} ${measure.title} ${measure.text}`);
 const documentLink = measure.page ? `${program.documentUrl}#page=${measure.page}` : program.documentUrl;
 const documentLabel = measure.page
@@ -33,7 +38,7 @@ const documentLabel = measure.page
 <article
   class:list={['measure-card', { 'is-pending': measure.isPending }]}
   id={`${MEASURE_ID_PREFIX}${measure.number}`}
-  style={`--block-color: ${blockColor(measure.blockId)}`}
+  style={stripeStyle}
   data-number={measure.number}
   data-block={measure.blockId}
   data-category={measure.categoryId}
@@ -49,13 +54,17 @@ const documentLabel = measure.page
       <span class="measure-card__number" aria-label={`${program.measureUnit} número ${measure.number}`}>{measure.number}</span>
       <span class="measure-card__body">
         <span class="measure-card__meta">
-          {showParty && <Tag variant="ink" size="sm">{program.acronym}</Tag>}
+          {showParty && (
+            <Tag variant="party" size="sm" style={`--party-color:${program.color};--party-on-color:${readableTextColor(program.color)}`}>
+              {program.acronym}
+            </Tag>
+          )}
           <BlockChip blockId={measure.blockId} title={`Bloque ${measure.blockId}: ${block.title}`}>
             {measure.sectionId}
           </BlockChip>
-          <Tag size="sm" href={routes.category(category.id)}>{category.name}</Tag>
-          {measure.deadline && <Tag variant="highlight" size="sm">⏱ {measure.deadline}</Tag>}
-          {measure.repeals && <Tag variant="ink" size="sm">Deroga: {measure.repeals}</Tag>}
+          {showCategory && <Tag variant="ink" size="sm" href={routes.category(category.id)}>{category.name}</Tag>}
+          {measure.deadline && <Tag variant="bold" size="sm">Plazo: {measure.deadline}</Tag>}
+          {measure.repeals && <Tag variant="bold" size="sm">Deroga: {measure.repeals}</Tag>}
         </span>
         <span class="measure-card__title">
           {measure.isPending ? 'Medida pendiente de anunciar' : measure.phraseTitle}
@@ -79,19 +88,19 @@ const documentLabel = measure.page
             {measure.targetGroupIds.length > 0 && (
               <div>
                 <dt>Colectivos</dt>
-                <dd>{measure.targetGroupIds.map((id) => targetGroupById[id].name).join(' · ')}</dd>
+                <dd class="measure-card__tags">{measure.targetGroupIds.map((id) => <Tag size="sm">{targetGroupById[id].name}</Tag>)}</dd>
               </div>
             )}
             {measure.leverIds.length > 0 && (
               <div>
                 <dt>Palancas</dt>
-                <dd>{measure.leverIds.map((id) => leverById[id].name).join(' · ')}</dd>
+                <dd class="measure-card__tags">{measure.leverIds.map((id) => <Tag size="sm">{leverById[id].name}</Tag>)}</dd>
               </div>
             )}
             {measure.territories.length > 0 && (
               <div>
                 <dt>Territorios</dt>
-                <dd>{measure.territories.join(' · ')}</dd>
+                <dd class="measure-card__tags">{measure.territories.map((territory) => <Tag size="sm">{territory}</Tag>)}</dd>
               </div>
             )}
             <div>
@@ -115,25 +124,23 @@ const documentLabel = measure.page
   .measure-card {
     border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
-    box-shadow: var(--shadow-sm);
     position: relative;
   }
+  /* The block of the measure, as a stripe with the color of the block. */
   .measure-card::before {
     content: '';
     position: absolute;
-    left: -4px;
-    top: -4px;
-    bottom: -4px;
-    width: 12px;
-    background: var(--block-color);
+    left: -3px;
+    top: -3px;
+    bottom: -3px;
+    width: 14px;
+    color: var(--color-ink);
+    background-color: var(--stripe-color);
     border: var(--border-thick) solid var(--color-ink);
   }
-  .measure-card.is-pending::before {
-    background: var(--color-paper) repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 6px);
-  }
-  .measure-card:target {
-    box-shadow: 8px 8px 0 var(--color-highlight), 8px 8px 0 4px var(--color-ink);
-  }
+  .measure-card.is-pending::before { background-color: var(--color-paper); background-image: var(--trama-light); background-size: var(--trama-size); }
+  /* The measure that the address points to: a yellow band and a thicker outline. */
+  .measure-card:target { outline: 6px solid var(--color-ink); outline-offset: 0; background: var(--color-highlight); color: var(--color-on-highlight); }
   summary {
     list-style: none;
     cursor: pointer;
@@ -141,37 +148,37 @@ const documentLabel = measure.page
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: var(--space-4);
     align-items: start;
-    padding: 14px 16px 14px 26px;
+    padding: 14px 16px 14px 28px;
   }
   summary::-webkit-details-marker { display: none; }
   summary:hover .measure-card__title {
     text-decoration: underline;
     text-decoration-thickness: 3px;
-    text-decoration-color: var(--color-highlight);
+    text-underline-offset: 4px;
   }
   .measure-card__number {
     font-family: var(--font-display);
-    font-size: 2.125rem;
+    font-size: 2.5rem;
     line-height: 0.9;
     min-width: 2.2ch;
     text-align: right;
+    font-weight: 900;
   }
   .measure-card__body { display: grid; gap: var(--space-2); min-width: 0; }
   .measure-card__meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
   .measure-card__title {
     font-family: var(--font-body);
-    font-weight: 800;
+    font-weight: 700;
     font-size: var(--text-lg);
     line-height: 1.22;
     overflow-wrap: anywhere;
   }
-  .is-pending .measure-card__title { font-style: italic; color: var(--color-ink-muted); }
+  .is-pending .measure-card__title { font-style: italic; }
   .measure-card__toggle {
-    width: 30px;
-    height: 30px;
-    border: var(--border-thin) solid var(--color-ink);
+    width: 44px;
+    height: 44px;
+    border: var(--border-thick) solid var(--color-ink);
     position: relative;
-    margin-top: 2px;
   }
   .measure-card__toggle::before,
   .measure-card__toggle::after {
@@ -182,38 +189,32 @@ const documentLabel = measure.page
     top: 50%;
     transform: translate(-50%, -50%);
   }
-  .measure-card__toggle::before { width: 14px; height: 3px; }
-  .measure-card__toggle::after { width: 3px; height: 14px; transition: transform 0.12s; }
+  .measure-card__toggle::before { width: 16px; height: 3px; }
+  .measure-card__toggle::after { width: 3px; height: 16px; transition: transform 0.12s; }
   details[open] .measure-card__toggle::after { transform: translate(-50%, -50%) scaleY(0); }
   .measure-card__text {
-    padding: 0 20px 18px 26px;
-    margin-left: calc(2.2ch * 34 / 17 + 16px);
+    padding: 0 20px 18px 28px;
+    margin-left: calc(2.2ch * 40 / 17 + 16px);
     font-size: var(--text-md);
     max-width: 78ch;
   }
-  .measure-card__notice { font-style: italic; color: var(--color-ink-muted); }
+  .measure-card__notice { font-style: italic; }
   .measure-card__facts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 10px 18px;
     margin: 14px 0 0;
     padding-top: var(--space-3);
-    border-top: var(--border-thin) solid var(--color-ink);
-    font-size: 0.8125rem;
+    border-top: var(--border-fine) solid var(--color-ink);
+    font-size: 1rem;
   }
-  .measure-card__facts dt {
-    font-family: var(--font-mono);
-    font-size: var(--text-2xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-ink-subtle);
-  }
+  .measure-card__facts dt { font-weight: 700; margin-bottom: 4px; }
   .measure-card__facts dd { margin: 0; font-weight: 600; }
+  .measure-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
   @media (max-width: 600px) {
-    summary { gap: 10px; padding-left: 22px; }
-    .measure-card__number { font-size: 1.625rem; }
+    summary { gap: 10px; padding-left: 24px; }
+    .measure-card__number { font-size: 2rem; }
     .measure-card__title { font-size: var(--text-md); }
-    .measure-card__text { margin-left: 0; padding-left: 22px; }
+    .measure-card__text { margin-left: 0; padding-left: 24px; }
   }
 </style>

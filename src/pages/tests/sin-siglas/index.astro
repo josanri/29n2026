@@ -1,6 +1,7 @@
 ---
 /**
- * «Sin siglas»: the reader picks a province and votes on 10 measures without the party.
+ * «Sin siglas»: the reader picks a province, the number of measures and the parties, and votes on the
+ * measures without the party.
  * At the end the cards turn over and show the party of each measure, and a summary
  * lists every party of the province with its number of proposals.
  */
@@ -9,22 +10,23 @@ import Button from '@/components/ui/Button.astro';
 import Tag from '@/components/ui/Tag.astro';
 import ProvinceMap from '@/components/candidacies/ProvinceMap.astro';
 import ShareIcon from '@/components/simulator/ShareIcon.astro';
-import { programs } from '@/lib/programs';
+import { announcedMeasures, programs } from '@/lib/programs';
 import { provinces, provincesOf } from '@/lib/presence';
-import { PAPER_ALT, readableTextColor, shiftForContrast } from '@/lib/color';
+import { PAPER, readableTextColor, shiftForContrast } from '@/lib/color';
 import { compareText } from '@/lib/format';
+import { categories } from '@/lib/taxonomy';
 import { routes } from '@/lib/routes';
-import { ROUND_SIZE } from '@/lib/party-quiz';
+import { ROUND_SIZE, ROUND_SIZES } from '@/lib/party-quiz';
 
 // The parties go to the script as data: it chooses the measures in the browser, so each round is new.
 // The party color has 3:1 contrast with the surface in each theme, and the text on it is black or white.
 const partyData = programs
   .map((program) => {
-    const light = shiftForContrast(program.color, PAPER_ALT.light, 0);
-    const dark = shiftForContrast(program.color, PAPER_ALT.dark, 255);
+    const light = shiftForContrast(program.color, PAPER.light, 0);
+    const dark = shiftForContrast(program.color, PAPER.dark, 255);
     const toHex = (rgb: string) =>
       rgb.startsWith('#') ? rgb : `#${rgb.match(/\d+/g)!.map((value) => Number(value).toString(16).padStart(2, '0')).join('')}`;
-    const count = program.measures.filter((measure) => !measure.isPending).length;
+    const count = announcedMeasures(program).length;
     return {
       id: program.id,
       acronym: program.acronym,
@@ -44,9 +46,13 @@ const partyData = programs
 const provinceOptions = [...provinces].sort((a, b) => compareText(a.name, b.name));
 // The script puts the party and the number in this link.
 const measureUrl = routes.measure('PARTIDO', 0);
+// Five answers, from «a favor» to «en contra». Each one has a symbol, so the color is never the only sign.
+// The script repeats them in `ANSWER_TEXT`.
 const ANSWERS = [
   { id: 'yes', label: 'A favor', symbol: '✓' },
-  { id: 'neutral', label: 'Me da igual', symbol: '–' },
+  { id: 'yes-matiz', label: 'A favor, con matices', symbol: '+' },
+  { id: 'neutral', label: 'Neutral', symbol: '○' },
+  { id: 'no-matiz', label: 'En contra, con matices', symbol: '−' },
   { id: 'no', label: 'En contra', symbol: '✗' },
 ] as const;
 // The networks of the share buttons. The script gives each link its address.
@@ -62,14 +68,14 @@ const networks = [
 
 <BaseLayout
   title="Sin siglas"
-  description="Vota diez medidas de los programas de tu provincia sin saber de qué partido son. Al final descubres quién propone cada una."
+  description="Vota medidas de los programas de tu provincia sin saber de qué partido son. Al final descubres quién propone cada una."
 >
   <section class="page-hero">
     <div class="container">
-      <Tag variant="ink">Juego · No es una recomendación de voto</Tag>
+      <Tag variant="ink">Juego: no es una recomendación de voto</Tag>
       <h1 class="headline">Sin siglas</h1>
       <p class="page-hero__lede">
-        Diez medidas de los programas que se presentan en tu provincia, sin decir de qué partido son. Di si estás a favor, en contra o si te da igual. Al
+        Medidas de los programas que se presentan en tu provincia, sin decir de qué partido son. Di si estás a favor, en contra o si te da igual. Al
         final descubres de qué partido es cada una.
       </p>
     </div>
@@ -91,12 +97,43 @@ const networks = [
               {provinceOptions.map((province) => <option value={province.code}>{province.name}</option>)}
             </select>
           </label>
+          <fieldset class="start-form__sizes">
+            <legend>Número de medidas</legend>
+            {
+              ROUND_SIZES.map((size) => (
+                <label>
+                  <input type="radio" name="size" value={size} checked={size === ROUND_SIZE} />
+                  <span>{size}</span>
+                </label>
+              ))
+            }
+          </fieldset>
+          <!-- The categories are optional: with none picked, the measures come from all of them. -->
+          <fieldset class="start-form__categories">
+            <legend>Categorías <span class="start-form__optional">(opcional)</span></legend>
+            <p class="start-form__hint" id="categories-hint">Sin elegir ninguna, salen medidas de todas.</p>
+            <div class="cat-chips">
+              {
+                categories.map((category) => (
+                  <label class="cat-chip">
+                    <input type="checkbox" name="category" value={category.name} />
+                    <span>{category.name}</span>
+                  </label>
+                ))
+              }
+            </div>
+          </fieldset>
+          <!-- The parties of the province. The reader can leave some out. -->
+          <fieldset class="preview" id="preview" hidden>
+            <legend class="preview__lead" id="preview-lead"></legend>
+            <div class="preview__actions">
+              <button type="button" id="parties-all">Marcar todos</button>
+              <button type="button" id="parties-none">Quitar todos</button>
+            </div>
+            <ul class="preview__list" id="preview-list"></ul>
+          </fieldset>
           <Button type="submit" variant="ink" id="start-button">Empezar</Button>
         </form>
-        <div class="preview" id="preview" hidden>
-          <p class="preview__lead" id="preview-lead"></p>
-          <ul class="preview__list" id="preview-list"></ul>
-        </div>
         <p class="game-note">
           Todos los partidos con programa pesan lo mismo, tengan 10 o 700 propuestas: las medidas se reparten por turnos entre ellos.
           Solo salen medidas que afectan a tu provincia, a tu comunidad o a todo el Estado. Las medidas están en la lengua del programa.
@@ -122,7 +159,7 @@ const networks = [
         </button>
         <p class="quiz__count" id="quiz-count" aria-hidden="true"></p>
         <ol class="quiz__dots" id="quiz-dots" aria-hidden="true">
-          {Array.from({ length: ROUND_SIZE }, () => <li></li>)}
+          {Array.from({ length: Math.max(...ROUND_SIZES) }, () => <li></li>)}
         </ol>
       </div>
       <div class="quiz__stage">
@@ -184,14 +221,14 @@ const networks = [
         <Button id="change-province">Cambiar de provincia</Button>
       </div>
       <p class="game-note">
-        Diez medidas al azar no resumen un programa, y un partido puede proponer cosas con las que coincides y otras con las que no. Lee
+        Unas pocas medidas al azar no resumen un programa, y un partido puede proponer cosas con las que coincides y otras con las que no. Lee
         los programas completos antes de decidir tu voto.
       </p>
 
-      <!-- Share: the link opens the same 10 measures in the same province, so others can play the same round. -->
+      <!-- Share: the link opens the same measures in the same province, so others can play the same round. -->
       <div class="share box" aria-labelledby="share-title">
         <h2 class="game-step__title" id="share-title">Comparte y reta a alguien</h2>
-        <p>El enlace abre las mismas diez medidas. No incluye tus respuestas.</p>
+        <p>El enlace abre las mismas medidas. No incluye tus respuestas.</p>
         <p class="share__preview" id="share-preview"></p>
         <div class="share__actions">
           <Button variant="ink" id="share-copy"><ShareIcon name="copy" />Copiar enlace</Button>
@@ -216,12 +253,14 @@ const networks = [
 </BaseLayout>
 
 <script>
-  import { allocateMeasures, shuffle, type QuizMeasure } from '@/lib/party-quiz';
+  import { allocateMeasures, ROUND_SIZE, shuffle, type QuizMeasure } from '@/lib/party-quiz';
   import { setupProvinceMap } from '@/lib/province-map';
   import { HOME_PARAMS } from '@/lib/routes';
   import { SITE_NAME } from '@/lib/site';
 
-  type Answer = 'yes' | 'neutral' | 'no';
+  type Answer = 'yes' | 'yes-matiz' | 'neutral' | 'no-matiz' | 'no';
+  /** The value of each answer for the agreement with a party: «con matices» is half. */
+  const ANSWER_VALUE: Record<Answer, number> = { yes: 1, 'yes-matiz': 0.5, neutral: 0, 'no-matiz': -0.5, no: -1 };
   type Party = {
     id: string;
     acronym: string;
@@ -239,7 +278,9 @@ const networks = [
 
   const ANSWER_TEXT: Record<Answer, { label: string; symbol: string }> = {
     yes: { label: 'A favor', symbol: '✓' },
-    neutral: { label: 'Me da igual', symbol: '–' },
+    'yes-matiz': { label: 'A favor, con matices', symbol: '+' },
+    neutral: { label: 'Neutral', symbol: '○' },
+    'no-matiz': { label: 'En contra, con matices', symbol: '−' },
     no: { label: 'En contra', symbol: '✗' },
   };
   /** Longest text that shows whole on the card. A longer text shows its start and a «Leer el texto completo». */
@@ -293,16 +334,32 @@ const networks = [
     const list = partiesIn(code);
     const withProgram = list.filter((party) => party.hasProgram);
     $('#preview-lead').textContent =
-      `En ${provinceName(code)} se presentan ${list.length} partidos. Las medidas salen de los ${withProgram.length} que han publicado programa:`;
+      `En ${provinceName(code)} se presentan ${list.length} partidos. Las medidas salen de los ${withProgram.length} que han publicado programa. Quita los que no quieras incluir:`;
+    // A party with a program is a checkbox, checked at the start. A party without a program is only a label.
     $('#preview-list').replaceChildren(
       ...list.map((party) => {
         const item = el('li', party.hasProgram ? '' : 'is-empty');
-        item.append(partyTag(party), el('span', 'preview__count', party.hasProgram ? plural(party.count, party.unit) : 'sin programa'));
+        const count = el('span', 'preview__count', party.hasProgram ? plural(party.count, party.unit) : 'sin programa');
+        if (party.hasProgram) {
+          const label = el('label', 'party-option');
+          const box = el('input');
+          box.type = 'checkbox';
+          box.name = 'party';
+          box.value = party.id;
+          box.checked = true;
+          label.append(box, partyTag(party), count);
+          item.append(label);
+        } else {
+          item.append(partyTag(party), count);
+        }
         item.title = party.name;
         return item;
       }),
     );
   };
+  const partyBoxes = () => [...document.querySelectorAll<HTMLInputElement>('#preview-list input[type="checkbox"]')];
+  $('#parties-all').addEventListener('click', () => partyBoxes().forEach((box) => (box.checked = true)));
+  $('#parties-none').addEventListener('click', () => partyBoxes().forEach((box) => (box.checked = false)));
   // The map and the list choose the same province.
   const provinceMap = setupProvinceMap($<SVGSVGElement>('#game-map'), (code) => {
     select.value = code;
@@ -363,9 +420,22 @@ const networks = [
     url.searchParams.set(HOME_PARAMS.province, province);
     url.searchParams.delete(ROUND_PARAM);
     history.replaceState(null, '', url);
+    // The round takes the parties that the reader left checked. A challenge plays the parties of its link.
+    const size = Number(document.querySelector<HTMLInputElement>('input[name="size"]:checked')?.value) || ROUND_SIZE;
+    const chosen = new Set(partyBoxes().filter((box) => box.checked).map((box) => box.value));
+    // The categories that the reader picked. None picked: all of them. A challenge keeps the measures of its link.
+    const pickedCategories = new Set(
+      [...document.querySelectorAll<HTMLInputElement>('input[name="category"]:checked')].map((box) => box.value),
+    );
+    const inCategories = (measure: QuizMeasure) => !pickedCategories.size || pickedCategories.has(measure.c);
+    const inProvince = partiesIn(province).filter((party) => party.hasProgram && party.data);
+    const eligible = challenge?.province === province ? inProvince : inProvince.filter((party) => chosen.has(party.id));
+    if (inProvince.length && !eligible.length) {
+      startStatus.textContent = 'Elige al menos un partido.';
+      return;
+    }
     startStatus.textContent = 'Preparando las medidas…';
     try {
-      const eligible = partiesIn(province).filter((party) => party.hasProgram && party.data);
       const lists = await Promise.all(
         eligible.map(async (party) => [party.id, (await load(party)).filter((measure) => !measure.a || measure.a.includes(province))] as const),
       );
@@ -383,15 +453,19 @@ const networks = [
       if (challenged.length && challenged.every(Boolean)) {
         round = challenged as Item[];
       } else {
-        const quota = allocateMeasures(Object.fromEntries(lists.map(([id, measures]) => [id, measures.length])));
-        round = shuffle(lists.flatMap(([id, measures]) => shuffle(measures).slice(0, quota[id] ?? 0).map((measure) => ({ ...measure, party: id }))));
+        // A new round only uses the measures of the categories that the reader picked.
+        const pool = lists.map(([id, measures]) => [id, measures.filter(inCategories)] as const);
+        const quota = allocateMeasures(Object.fromEntries(pool.map(([id, measures]) => [id, measures.length])), size);
+        round = shuffle(pool.flatMap(([id, measures]) => shuffle(measures).slice(0, quota[id] ?? 0).map((measure) => ({ ...measure, party: id }))));
       }
     } catch {
       startStatus.textContent = 'No se pudieron cargar las medidas. Comprueba la conexión y vuelve a intentarlo.';
       return;
     }
     if (!round.length) {
-      startStatus.textContent = 'No hay medidas de esta provincia todavía.';
+      startStatus.textContent = pickedCategories.size
+        ? 'No hay medidas de esas categorías en esta provincia con los partidos elegidos. Prueba con otras categorías.'
+        : 'No hay medidas de esta provincia todavía.';
       return;
     }
     startStatus.textContent = '';
@@ -462,7 +536,8 @@ const networks = [
       await card.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 150, fill: 'forwards' }).finished;
       return;
     }
-    // A stamp falls on the card, then the card goes: to the right (a favor), to the left (en contra) or down.
+    // A stamp falls on the card, then the card goes to the side of its button: to the left (a favor), to the
+    // right (en contra) or down (neutral). «Con matices» goes less far.
     await stamp.animate(
       [
         { opacity: 0, transform: 'translate(-50%, -50%) rotate(-10deg) scale(1.8)' },
@@ -470,7 +545,13 @@ const networks = [
       ],
       { duration: 200, easing: 'cubic-bezier(.2, .8, .3, 1.3)', fill: 'forwards' },
     ).finished;
-    const away = { yes: 'translateX(110%) rotate(7deg)', no: 'translateX(-110%) rotate(-7deg)', neutral: 'translateY(35%) scale(.92)' }[answer];
+    const away = {
+      yes: 'translateX(-110%) rotate(-7deg)',
+      'yes-matiz': 'translateX(-60%) translateY(15%) rotate(-4deg)',
+      neutral: 'translateY(35%) scale(.92)',
+      'no-matiz': 'translateX(60%) translateY(15%) rotate(4deg)',
+      no: 'translateX(110%) rotate(7deg)',
+    }[answer];
     await card.animate([{ transform: 'none', opacity: 1 }, { transform: away, opacity: 0 }], {
       duration: 340,
       delay: 120,
@@ -535,7 +616,7 @@ const networks = [
         const body = el('div', 'reveal__body');
         body.append(el('p', 'reveal__statement', shorten(item.h || item.x, 160)));
         const who = el('p', 'reveal__party');
-        const link = el('a', '', `${party.name} · ver la medida`) as HTMLAnchorElement;
+        const link = el('a', '', `${party.name}: ver la medida`) as HTMLAnchorElement;
         link.href = measureUrl(party.id, item.n);
         who.append(link);
         body.append(who);
@@ -551,9 +632,11 @@ const networks = [
     const list = partiesIn(province);
     const scored = list.map((party) => {
       const mine = round.map((item, itemIndex) => ({ item, answer: answers[itemIndex] })).filter(({ item }) => item.party === party.id);
-      const yes = mine.filter(({ answer }) => answer === 'yes').length;
-      const no = mine.filter(({ answer }) => answer === 'no').length;
-      return { party, mine, yes, no, score: mine.length ? (yes - no) / mine.length : -Infinity };
+      // «A favor» and «en contra» count with or without «con matices»; the score gives «con matices» half.
+      const yes = mine.filter(({ answer }) => ANSWER_VALUE[answer] > 0).length;
+      const no = mine.filter(({ answer }) => ANSWER_VALUE[answer] < 0).length;
+      const total = mine.reduce((sum, { answer }) => sum + ANSWER_VALUE[answer], 0);
+      return { party, mine, yes, no, score: mine.length ? total / mine.length : -Infinity };
     });
     scored.sort((a, b) => b.score - a.score || b.yes - a.yes || Number(b.party.hasProgram) - Number(a.party.hasProgram) || b.party.count - a.party.count);
     const best = scored.filter((entry) => entry.mine.length && entry.score > 0 && entry.score === scored[0].score);
@@ -579,7 +662,7 @@ const networks = [
           'affinity__facts',
           !party.hasProgram
             ? 'Sin programa publicado'
-            : `${plural(party.count, party.unit)} en su programa · ${
+            : `${plural(party.count, party.unit)} en su programa; ${
                 mine.length ? `${mine.length} en esta ronda: ${yes} a favor, ${no} en contra` : 'ninguna en esta ronda'
               }`,
         );
@@ -612,7 +695,7 @@ const networks = [
 
   // ---- Share ----
   const CALL_TO_ACTION = 'Juega las mismas medidas:';
-  const TITLE = `Sin siglas · ${SITE_NAME}`;
+  const TITLE = `Sin siglas (${SITE_NAME})`;
   /** The address that each network gives to a shared page. The text and the link are encoded. */
   const shareUrls: Record<string, (text: string, href: string) => string> = {
     whatsapp: (text, href) => `https://wa.me/?text=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION} ${href}`)}`,
@@ -626,7 +709,7 @@ const networks = [
   const nativeButton = $<HTMLButtonElement>('#share-native');
   let shared = { text: '', href: '' };
 
-  /** The link of the round: the province and the 10 measures, without the answers. */
+  /** The link of the round: the province and its measures, without the answers. */
   const roundLink = () => {
     const url = new URL(location.pathname, location.origin);
     url.searchParams.set(HOME_PARAMS.province, province);
@@ -676,7 +759,7 @@ const networks = [
 <style is:global>
   /* The page head, the same as in the other pages of the site (each page has its own copy). */
   .page-hero:has(+ .game) { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
-  .page-hero:has(+ .game) h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
+  .page-hero:has(+ .game) h1 { font-size: clamp(3.25rem, 12cqi, 8.5rem); margin: var(--space-4) 0; }
   .page-hero:has(+ .game) .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
 
   .game { padding-block: var(--space-6) var(--space-8); }
@@ -684,11 +767,11 @@ const networks = [
   .game-step { padding: var(--space-5); scroll-margin-top: 100px; }
   /* `.game .quiz` sets `display: grid`: this rule is more specific, so a hidden step stays hidden. */
   .game .game-step[hidden] { display: none; }
-  .game-step__title { margin: 0 0 var(--space-4); font-size: var(--text-2xl); }
+  .game-step__title { margin: 0 0 var(--space-4); font-size: clamp(2.25rem, 5vw, 3rem); }
   .game-step__title:focus { outline: none; }
-  .game .game-note { max-width: 70ch; margin: var(--space-5) 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .game .game-note { max-width: 70ch; margin: var(--space-5) 0 0; font-size: 1rem; }
   .game .game-status:empty { display: none; }
-  .game .game-status { margin: var(--space-3) 0 0; font: 700 var(--text-sm) var(--font-mono); }
+  .game .game-status { margin: var(--space-3) 0 0; font: 700 var(--text-sm) var(--font-body); }
 
   /* 1. The province: the controls at the left, the map at the right (one column on a narrow screen). */
   .game .start { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: var(--space-6); align-items: start; }
@@ -696,7 +779,7 @@ const networks = [
   .game .challenge { margin: 0 0 var(--space-4); padding: var(--space-2) var(--space-3); background: var(--color-highlight); color: var(--color-on-highlight); font-weight: 600; }
   .game .challenge[hidden] { display: none; }
   .game .start-form { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-3); }
-  .game .start-form__field { display: grid; gap: 6px; flex: 0 1 340px; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .game .start-form__field { display: grid; gap: 6px; flex: 0 1 340px; font: 700 1rem var(--font-body); }
   .game .start-form__field select {
     box-sizing: border-box;
     display: flex;
@@ -713,12 +796,80 @@ const networks = [
     font: 600 1rem var(--font-body);
     text-transform: none;
   }
-  .game .preview { margin-top: var(--space-5); }
-  .game .preview__lead { margin: 0 0 var(--space-3); }
+  /* The number of measures: a row of radio buttons that look like chips. */
+  .game .start-form__sizes { flex: 1 1 100%; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin: 0; padding: 0; border: 0; }
+  .game .start-form__sizes legend { float: left; margin-right: var(--space-2); padding: 0; font: 700 1rem var(--font-body); }
+  .game .start-form__sizes label { display: inline-flex; cursor: pointer; }
+  .game .start-form__sizes input { position: absolute; opacity: 0; pointer-events: none; }
+  .game .start-form__sizes span {
+    display: grid;
+    place-items: center;
+    min-width: 48px;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: 0 var(--space-3);
+    border: var(--border-thick) solid var(--color-ink);
+    font: 700 1rem var(--font-body);
+  }
+  .game .start-form__sizes span:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .game .start-form__sizes input:checked + span { background: var(--color-ink); color: var(--color-paper); }
+  .game .start-form__sizes input:focus-visible + span { outline: 3px solid var(--color-ink); outline-offset: 2px; }
+
+  .game .preview { flex: 1 1 100%; min-width: 0; margin: 0; padding: 0; border: 0; }
+  .game .preview[hidden] { display: none; }
+  .game .preview__lead { margin: 0 0 var(--space-3); padding: 0; }
+  .game .preview__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-3); }
+  .game .preview__actions button {
+    min-height: 44px;
+    padding: 0 var(--space-3);
+    border: var(--border-fine) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    cursor: pointer;
+  }
+  .game .preview__actions button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  /* The categories: chips that work as checkboxes. The checkbox covers the chip and is invisible. */
+  .game .start-form__categories { display: grid; gap: var(--space-2); margin: 0; padding: 0; border: 0; min-width: 0; }
+  .game .start-form__categories legend { padding: 0; margin-bottom: var(--space-1); font: 700 1rem var(--font-body); }
+  .game .start-form__optional { font-weight: 500; }
+  .game .start-form__hint { margin: 0; font-size: var(--text-sm); }
+  .game .cat-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .game .cat-chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 12px;
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    cursor: pointer;
+  }
+  .game .cat-chip input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+  .game .cat-chip:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .game .cat-chip:has(input:checked) { background: var(--color-ink); color: var(--color-paper); }
+  .game .cat-chip:has(input:checked) span::before { content: '✓ '; }
+  .game .cat-chip:has(input:focus-visible) { outline: 3px solid var(--color-ink); outline-offset: 2px; }
+  .game .party-option { display: inline-flex; align-items: stretch; min-height: 44px; cursor: pointer; }
+  .game .party-option input { width: 20px; height: 20px; margin: auto var(--space-2); accent-color: var(--color-ink); }
+  .game .party-option .party-tag { padding-inline: 10px; }
+  /* A party that the reader left out: its tag loses the color. */
+  .game .party-option:has(input:not(:checked)) .party-tag { background: transparent; color: var(--color-ink); }
+  .game .party-option:has(input:focus-visible) { outline: 3px solid var(--color-ink); outline-offset: 2px; }
   .game .preview__list { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
-  .game .preview__list li { display: inline-flex; align-items: stretch; border: var(--border-thin) solid var(--color-ink); }
-  .game .preview__list li.is-empty { border-style: dashed; }
-  .game .preview__count { display: flex; align-items: center; padding: 0 8px; font: 700 var(--text-xs) var(--font-mono); }
+  /* Every party has the same height, with or without a program: the 44 px of the option and the thin border. */
+  .game .preview__list li {
+    display: inline-flex;
+    align-items: stretch;
+    box-sizing: border-box;
+    min-height: calc(44px + 2 * var(--border-thin));
+    border: var(--border-thin) solid var(--color-ink);
+  }
+  .game .preview__list li.is-empty { border-width: var(--border-fine); }
+  .game .preview__count { display: flex; align-items: center; padding: 0 8px; font: 700 var(--text-xs) var(--font-body); }
   .game .preview__list li.is-empty .preview__count { color: var(--color-ink-muted); }
 
   /* A party: its acronym on its color. */
@@ -728,55 +879,43 @@ const networks = [
     padding: 4px 8px;
     background: var(--party);
     color: var(--party-text);
-    font: 700 var(--text-xs) var(--font-mono);
+    font: 700 var(--text-xs) var(--font-body);
     white-space: nowrap;
   }
 
   /* 2. The measures */
   .game .quiz { display: grid; gap: var(--space-5); max-width: 760px; margin-inline: auto; padding: 0; border: 0; }
   .game .quiz__progress { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); }
-  .game .quiz__count { margin: 0 auto 0 0; font: 700 var(--text-sm) var(--font-mono); text-transform: uppercase; }
+  .game .quiz__count { margin: 0 auto 0 0; font: 700 1.0625rem var(--font-body); }
   .game .quiz__back {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    height: 36px;
-    padding: 0 12px 0 8px;
+    height: 44px;
+    padding: 0 14px 0 10px;
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-paper);
     color: var(--color-ink);
-    font: 700 var(--text-xs) var(--font-mono);
-    text-transform: uppercase;
+    font: 700 var(--text-xs) var(--font-body);
     cursor: pointer;
   }
   .game .quiz__back[hidden] { display: none; }
   .game .quiz__back svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: square; }
   .game .quiz__back:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .game .quiz__dots { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+  .game .quiz__dots { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
   .game .quiz__dots li {
     display: grid;
     place-items: center;
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     box-sizing: border-box;
-    border: var(--border-thin) solid var(--color-ink);
-    font: 700 var(--text-xs) var(--font-mono);
-    transition: transform var(--duration-fast);
+    border: var(--border-fine) solid var(--color-ink);
+    font: 700 var(--text-xs) var(--font-body);
   }
-  .game .quiz__dots li[data-current] { outline: 3px solid var(--color-highlight); outline-offset: 1px; }
+  .game .quiz__dots li[data-current] { outline: 3px solid var(--color-ink); outline-offset: 1px; }
   .game .quiz__dots li[hidden] { display: none; }
   /* The stage hides the card when it goes to a side. The cards behind it make a pile. */
   .game .quiz__stage { position: relative; overflow: hidden; padding: 6px 14px 22px 6px; margin: -6px -14px -22px -6px; }
-  .game .quiz__stage::before,
-  .game .quiz__stage::after {
-    content: '';
-    position: absolute;
-    inset: 6px 14px 22px 6px;
-    border: var(--border-thin) solid var(--color-ink);
-    background: var(--color-paper-alt);
-  }
-  .game .quiz__stage::before { transform: translate(10px, 14px); }
-  .game .quiz__stage::after { transform: translate(5px, 7px); }
   .game .quiz-card {
     position: relative;
     z-index: 1;
@@ -788,15 +927,14 @@ const networks = [
     background: var(--color-paper);
   }
   .game .quiz-card:focus { outline: none; }
-  .game .quiz-card:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 3px; }
-  .game .quiz-card__meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2); margin: 0; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; color: var(--color-ink-muted); }
-  .game .quiz-card__category { padding: 2px 8px; border: var(--border-thin) solid currentColor; }
+  .game .quiz-card:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 3px; }
+  .game .quiz-card__meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2); margin: 0; font: 700 1rem var(--font-body); }
+  .game .quiz-card__category { padding: 2px 8px; border: var(--border-fine) solid currentColor; }
   .game .quiz-card__heading { margin: var(--space-2) 0 0; font-size: clamp(1.375rem, 3.2vw, 2rem); line-height: 1.15; text-transform: none; overflow-wrap: anywhere; }
   .game .quiz-card__heading.is-long { font-size: clamp(1.125rem, 2.4vw, 1.4rem); line-height: 1.3; }
   .game .quiz-card__text { margin: 0; font-size: var(--text-md); white-space: pre-line; }
   .game .quiz-card__more[hidden] { display: none; }
-  .game .quiz-card__more summary { cursor: pointer; font: 700 var(--text-sm) var(--font-mono); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-  .game .quiz-card__more summary:hover { text-decoration-color: var(--color-highlight); }
+  .game .quiz-card__more summary { cursor: pointer; font: 700 var(--text-sm) var(--font-body); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
   .game .quiz-card__more p { margin: var(--space-3) 0 0; white-space: pre-line; }
   /* The stamp of the answer, over the card. */
   .game .quiz-card__stamp {
@@ -805,18 +943,28 @@ const networks = [
     left: 50%;
     transform: translate(-50%, -50%) rotate(-10deg);
     padding: 8px 18px;
-    border: 4px solid currentColor;
+    border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
-    font: 400 clamp(1.5rem, 5vw, 2.5rem) var(--font-display);
+    color: var(--color-ink);
+    font: 900 clamp(2rem, 6vw, 3.25rem) var(--font-display);
     text-transform: uppercase;
     white-space: nowrap;
     pointer-events: none;
   }
-  .game .quiz-card__stamp[data-answer='yes'] { color: var(--color-block-3); }
-  .game .quiz-card__stamp[data-answer='no'] { color: var(--color-block-2); }
-  .game .quiz-card__stamp[data-answer='neutral'] { color: var(--color-ink); }
+  /* The stamp keeps the yes and no colors as a fill with black text, so its text reads in both themes. */
+  .game .quiz-card__stamp[data-answer] { background: var(--answer-fill); color: var(--color-on-answer); }
 
-  .game .quiz__answers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+  /* The color of each answer: strong for «a favor» and «en contra», a pale tint for «con matices», grey for
+     «neutral». Every element with `data-answer` takes it from `--answer-fill`. */
+  .game [data-answer='yes'] { --answer-fill: var(--color-answer-yes); }
+  .game [data-answer='yes-matiz'] { --answer-fill: var(--color-answer-yes-soft); }
+  .game [data-answer='neutral'] { --answer-fill: var(--color-answer-neutral); }
+  .game [data-answer='no-matiz'] { --answer-fill: var(--color-answer-no-soft); }
+  .game [data-answer='no'] { --answer-fill: var(--color-answer-no); }
+
+  /* The scale: «a favor» and «en contra» at the ends and wider, «con matices» beside them, «neutral» in the
+     middle. */
+  .game .quiz__answers { display: grid; grid-template-columns: 1.25fr 1fr 0.9fr 1fr 1.25fr; gap: var(--space-2); }
   .game .answer {
     display: flex;
     flex-direction: column;
@@ -825,28 +973,36 @@ const networks = [
     gap: 4px;
     min-height: 76px;
     padding: var(--space-2);
+    padding-top: calc(var(--space-2) + 10px);
     border: var(--border-thick) solid var(--color-ink);
+    /* A band of the color of the answer at the top: the scale reads before the labels. */
+    box-shadow: inset 0 10px 0 var(--answer-fill);
     background: var(--color-paper);
     color: var(--color-ink);
-    box-shadow: var(--shadow-sm);
-    font: 400 var(--text-md) var(--font-display);
-    text-transform: uppercase;
+    font: 700 1.125rem / 1.2 var(--font-body);
+    text-align: center;
     cursor: pointer;
-    transition: transform var(--duration-fast), box-shadow var(--duration-fast);
   }
-  .game .answer__symbol { font: 700 1.5rem / 1 var(--font-mono); }
-  .game .answer[data-answer='yes']:hover { background: var(--color-block-3); color: var(--color-on-block); }
-  .game .answer[data-answer='no']:hover { background: var(--color-block-2); color: var(--color-on-block); }
-  .game .answer[data-answer='neutral']:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .game .answer:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-md); }
-  .game .answer:active { transform: translate(3px, 3px); box-shadow: none; }
-  /* The answer that the reader gave, when the reader goes back to a measure: a thick inner frame. */
-  .game .answer[aria-pressed='true'] { box-shadow: inset 0 0 0 4px var(--color-highlight), var(--shadow-sm); }
+  .game .answer__symbol {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--answer-fill);
+    color: var(--color-on-answer);
+    font: 700 1.375rem / 1 var(--font-body);
+  }
+  /* «Con matices» and «neutral» are quieter: a smaller label, so the two ends lead. */
+  .game .answer:is([data-answer$='-matiz'], [data-answer='neutral']) { font-weight: 600; font-size: 1rem; }
+  .game .answer:hover { background: var(--answer-fill); color: var(--color-on-answer); }
+  /* The answer that the reader gave, when the reader goes back to a measure: ink with paper text. */
+  .game .answer[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .game .answer[aria-pressed='true']:focus-visible { outline-color: var(--color-paper); outline-offset: -8px; }
 
   /* The answer in a dot, a chip or a square: a symbol and a color. */
-  .game [data-answer='yes']:is(li, .vote-chip, .vote-square) { background: var(--color-block-3); color: var(--color-on-block); border-color: var(--color-block-3); }
-  .game [data-answer='no']:is(li, .vote-chip, .vote-square) { background: var(--color-block-2); color: var(--color-on-block); border-color: var(--color-block-2); }
-  .game [data-answer='neutral']:is(li, .vote-chip, .vote-square) { background: var(--color-paper-alt); color: var(--color-ink); }
+  .game [data-answer]:is(li, .vote-chip, .vote-square) { background: var(--answer-fill); color: var(--color-on-answer); }
+  .game :is([data-answer='yes'], [data-answer='no']):is(li, .vote-chip, .vote-square) { border-color: var(--answer-fill); }
 
   /* 3. The parties */
   .game .results__lead { margin: 0 0 var(--space-4); }
@@ -855,8 +1011,8 @@ const networks = [
     align-items: center;
     gap: 4px;
     padding: 3px 8px;
-    border: var(--border-thin) solid var(--color-ink);
-    font: 700 var(--text-xs) var(--font-mono);
+    border: var(--border-fine) solid var(--color-ink);
+    font: 700 1rem var(--font-body);
     white-space: nowrap;
   }
   .game .reveal-list { display: grid; gap: var(--space-3); list-style: none; margin: 0 0 var(--space-8); padding: 0; }
@@ -876,14 +1032,14 @@ const networks = [
     place-items: center;
     padding: 0 6px;
     border: var(--border-thin) solid var(--color-ink);
-    font: 700 var(--text-sm) var(--font-mono);
+    font: 700 var(--text-sm) var(--font-body);
     text-align: center;
     overflow-wrap: anywhere;
     backface-visibility: hidden;
     transition: transform 520ms cubic-bezier(.3, .7, .3, 1);
     transition-delay: calc(var(--i) * 160ms + 200ms);
   }
-  .game .reveal__face--front { background: var(--color-ink); color: var(--color-paper); font: 400 1.75rem var(--font-display); }
+  .game .reveal__face--front { background: var(--color-ink); color: var(--color-paper); font: 900 2.25rem var(--font-display); }
   .game .reveal__face--back { background: var(--party); color: var(--party-text); transform: rotateY(180deg); }
   .game .reveal-list.is-revealed .reveal__face--front { transform: rotateY(-180deg); }
   .game .reveal-list.is-revealed .reveal__face--back { transform: rotateY(0); }
@@ -896,9 +1052,9 @@ const networks = [
   .game .affinity__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-3) var(--space-6); margin-bottom: var(--space-2); }
   .game .affinity__head .game-step__title { margin: 0; flex: 1 1 320px; }
   .game .answer-legend { display: grid; justify-items: end; gap: 6px; }
-  .game .answer-legend__title { margin: 0; font: 700 var(--text-2xs) var(--font-mono); text-transform: uppercase; color: var(--color-ink-muted); }
+  .game .answer-legend__title { margin: 0; font: 700 1rem var(--font-body); }
   .game .answer-legend ul { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); list-style: none; margin: 0; padding: 0; }
-  .game .answer-legend li { display: inline-flex; align-items: center; gap: 6px; font: 700 var(--text-xs) var(--font-mono); }
+  .game .answer-legend li { display: inline-flex; align-items: center; gap: 6px; font: 700 1rem var(--font-body); }
   .game .affinity { display: grid; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
   .game .affinity__row {
     display: grid;
@@ -906,28 +1062,28 @@ const networks = [
     align-items: center;
     gap: 6px var(--space-4);
     padding: var(--space-3) 0;
-    border-top: 1px dashed var(--color-ink-subtle);
+    border-top: var(--border-fine) solid var(--color-ink);
   }
   .game .affinity__party { margin: 0; }
   .game .affinity__party a { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); text-decoration: none; }
-  .game .affinity__party a:hover .affinity__name { text-decoration: underline; text-decoration-color: var(--color-highlight); text-decoration-thickness: 3px; }
+  .game .affinity__party a:hover .affinity__name { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
   .game .affinity__name { font-weight: 600; }
   .game .affinity__squares { display: flex; gap: 4px; }
-  .game .vote-square { display: grid; place-items: center; width: 24px; height: 24px; box-sizing: border-box; border: var(--border-thin) solid var(--color-ink); font: 700 var(--text-xs) var(--font-mono); }
-  .game .affinity__facts { grid-column: 1 / -1; margin: 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
-  .game .affinity__row.is-empty .party-tag { background: transparent; color: var(--color-ink-muted); border: var(--border-thin) dashed var(--color-ink-muted); }
+  .game .vote-square { display: grid; place-items: center; width: 26px; height: 26px; box-sizing: border-box; border: var(--border-fine) solid var(--color-ink); font: 700 0.9375rem var(--font-body); }
+  .game .affinity__facts { grid-column: 1 / -1; margin: 0; font-size: 1rem; }
+  .game .affinity__row.is-empty .party-tag { background: transparent; color: var(--color-ink-muted); border: var(--border-fine) solid var(--color-ink-muted); }
   .game .results__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
 
   /* Share */
   .game .share { margin-top: var(--space-8); padding: var(--space-5); }
   .game .share p { margin: 0 0 var(--space-3); }
-  .game .share__preview { padding: var(--space-3) var(--space-4); border-left: 4px solid var(--color-highlight); background: var(--color-paper-alt); font-weight: 600; }
+  .game .share__preview { padding: var(--space-3) var(--space-4); border-left: var(--border-thick) solid var(--color-ink); font-weight: 600; }
   .game .share__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4); }
   .game .share__actions [hidden] { display: none; }
   .game .share__networks { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
   .game .share__status:empty { display: none; }
   /* `.game .share p` sets no top margin: this rule is more specific, so the message keeps its space. */
-  .game .share .share__status { margin: var(--space-5) 0 0; padding-top: var(--space-3); border-top: 1px dashed var(--color-ink-subtle); font: 700 var(--text-sm) var(--font-mono); }
+  .game .share .share__status { margin: var(--space-5) 0 0; padding-top: var(--space-3); border-top: var(--border-fine) solid var(--color-ink); font: 700 1rem var(--font-body); }
 
   @media (max-width: 900px) {
     .game .start { grid-template-columns: minmax(0, 1fr); }
@@ -938,6 +1094,13 @@ const networks = [
     .game .answer-legend { justify-items: start; }
     .game .quiz-card { min-height: 260px; padding: var(--space-4); }
     .game .answer { min-height: 64px; font-size: var(--text-sm); }
+    /* A phone: «a favor» and «en contra» side by side, «con matices» under each one, and «neutral» in a row. */
+    .game .quiz__answers { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: 'yes no' 'yes-m no-m' 'neutral neutral'; }
+    .game .answer[data-answer='yes'] { grid-area: yes; }
+    .game .answer[data-answer='no'] { grid-area: no; }
+    .game .answer[data-answer='yes-matiz'] { grid-area: yes-m; }
+    .game .answer[data-answer='no-matiz'] { grid-area: no-m; }
+    .game .answer[data-answer='neutral'] { grid-area: neutral; min-height: 48px; flex-direction: row; }
     .game .quiz__dots li { width: 22px; height: 22px; }
     .game .reveal { grid-template-columns: 84px minmax(0, 1fr); }
     .game .reveal .vote-chip { grid-column: 2; justify-self: start; }

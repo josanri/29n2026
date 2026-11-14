@@ -205,6 +205,7 @@ out = dict(
     subtitulo='El programa del cambio necesario para España',
     elecciones='Elecciones generales · 29 de noviembre de 2026',
     pdf='/programas/pp-reconstruccion-nacional.pdf',
+    fuentePdf='https://www.pp.es/wp-content/uploads/2026/11/LA-RECONSTRUCCION-NACIONAL.pdf',
     paginas=82,
     fechaPdf='2026-11-09',
     presentacion=dict(titulo='La España que haremos entre todos', texto=presentacion['intro']),

@@ -4,8 +4,9 @@
  * its HTML on hover or focus. Build the attribute value with `tooltip()` from `@/lib/tooltip`.
  * Text that the CSS cuts with an ellipsis shows its full text in the same bubble.
  *
- * Contrast: the bubble uses fixed colors (light on near-black, about 17:1) in both themes.
- * The bold title is black on yellow (about 13:1) and sits on the dark bubble (yellow on dark about 13:1).
+ * Contrast: the bubble uses fixed colors (white on black, 21:1) in both themes.
+ * The bold title is black on yellow (13:1). In the light theme the white border sets the bubble apart;
+ * in the dark theme the bubble is black on black and the white border outlines it.
  */
 ---
 
@@ -92,12 +93,11 @@
     /* Fixed colors, the same in both themes: the yellow label always sits on a dark bubble. */
     background: var(--color-fixed-dark);
     color: var(--color-fixed-light);
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
     line-height: 1.4;
     padding: 8px 10px;
-    border: var(--border-thin) solid var(--color-fixed-light);
-    box-shadow: 4px 4px 0 var(--color-highlight);
+    border: var(--border-fine) solid var(--color-fixed-light);
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.1s, transform 0.1s;

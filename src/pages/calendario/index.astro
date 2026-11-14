@@ -108,7 +108,7 @@ const months = monthKeys.map((key) => {
   </section>
 
   <div class="container">
-    <SectionHeading index="CALENDARIO" title="El calendario" />
+    <SectionHeading title="El calendario" />
     <Panel>
       <!-- The script shows this button when some months are over. Without the script, all the months show. -->
       <div class="past-toolbar">
@@ -176,7 +176,7 @@ const months = monthKeys.map((key) => {
       </ul>
     </Panel>
 
-    <SectionHeading index="FECHAS" title="Las fechas clave">
+    <SectionHeading title="Las fechas clave">
       <p>
         «Oficial» es una fecha publicada en un documento del sitio. «Calculada» sale de la ley a partir del día de las elecciones.
         Confirma las fechas calculadas en el decreto del BOE.
@@ -197,7 +197,7 @@ const months = monthKeys.map((key) => {
             <div class="event__body">
               <p class="event__meta">
                 <time datetime={event.date}>{event.range ?? `${event.weekday}, ${longFormat.format(asDate(event.date))}`}</time>
-                {event.time && <span> · {event.time.from} a {event.time.to}</span>}
+                {event.time && <span>, de {event.time.from} a {event.time.to}</span>}
                 <Tag size="sm" variant={event.source === 'official' ? 'highlight' : 'default'}>
                   {event.source === 'official' ? 'Oficial' : 'Calculada'}
                 </Tag>
@@ -308,7 +308,7 @@ const months = monthKeys.map((key) => {
     // The month on the first line, the year and the position on the second: the title fits on one line.
     pagerTitle.textContent = activeTable.dataset.name ?? '';
     // The first space does not show (it starts a line), but it separates the month and the year for screen readers.
-    pagerCount.textContent = ` ${activeTable.dataset.year} · ${index + 1} de ${visible.length}`;
+    pagerCount.textContent = ` ${activeTable.dataset.year}, ${index + 1} de ${visible.length}`;
     pagerButtons[0].disabled = index === 0;
     pagerButtons[1].disabled = index === visible.length - 1;
     pager.hidden = visible.length < 2;
@@ -388,9 +388,9 @@ const months = monthKeys.map((key) => {
 
 <style>
   .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
-  .page-hero h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12cqi, 8.5rem); margin: var(--space-4) 0; }
   .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
-  .countdown { margin: var(--space-4) 0; font: 700 1.125rem var(--font-mono); }
+  .countdown { margin: var(--space-4) 0; font: 700 1.25rem var(--font-body); }
   .page-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
   /* The button that shows or hides the past months, or the past dates. */
@@ -404,69 +404,67 @@ const months = monthKeys.map((key) => {
   .month-pager__button {
     display: grid;
     place-items: center;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     padding: 0;
-    border: var(--border-thin) solid var(--color-ink);
+    border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
     color: var(--color-ink);
-    box-shadow: var(--shadow-sm);
     cursor: pointer;
   }
   .month-pager__button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: square; }
   .month-pager__button:hover:not(:disabled) { background: var(--color-highlight); color: var(--color-on-highlight); }
   .month-pager__button:disabled {
-    border-style: dashed;
-    border-color: var(--color-ink-subtle);
+    border-width: var(--border-fine);
     color: var(--color-ink-subtle);
-    box-shadow: none;
     cursor: not-allowed;
   }
   .month-pager__status { display: grid; justify-items: center; gap: 2px; margin: 0; text-align: center; }
-  .month-pager__title { font: 400 var(--text-xl) / 1.1 var(--font-display); }
-  .month-pager__count { font: 700 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
+  .month-pager__title { font: 900 2rem / 1 var(--font-display); text-transform: uppercase; }
+  .month-pager__count { font: 700 1rem var(--font-body); }
   .months { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: var(--space-6); }
   .month { width: 100%; border-collapse: separate; border-spacing: 3px; table-layout: fixed; }
-  .month caption { margin-bottom: var(--space-2); text-align: left; font: 400 var(--text-xl) var(--font-display); }
-  .month th { padding: 0 0 var(--space-1); font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; color: var(--color-ink-muted); }
-  .day { height: 48px; padding: 0; text-align: center; font: 700 var(--text-sm) var(--font-mono); }
+  .month caption { margin-bottom: var(--space-2); text-align: left; font: 900 2rem / 1 var(--font-display); text-transform: uppercase; }
+  .month th { padding: 0 0 var(--space-1); font: 700 1rem var(--font-body); }
+  .day { height: 48px; padding: 0; text-align: center; font: 700 1rem var(--font-body); }
   .day > a, .day > span { display: grid; place-items: center; width: 100%; height: 100%; box-sizing: border-box; text-decoration: none; }
   .day > span { color: var(--color-ink); }
-  /* A key date: a filled square. The election day: yellow, with a thick border. A campaign day: a band under the number. */
+  /* A key date: a filled square. The election day: yellow, with a thick border. A campaign day: a thick bar under the number. */
   .day--event > a { background: var(--color-ink); color: var(--color-paper); }
-  .day--range > a { background: var(--color-paper-alt); color: var(--color-ink); border-bottom: 4px solid var(--color-ink); }
-  .day--election > a { background: var(--color-highlight); color: var(--color-on-highlight); border: 3px solid var(--color-ink); }
-  /* Disabled color for the days and the months that are over: dashed outline, muted text, no fill. */
+  .day--range > a { background: var(--color-paper); color: var(--color-ink); border: var(--border-fine) solid var(--color-ink); border-bottom: 6px solid var(--color-ink); }
+  .day--election > a { background: var(--color-highlight); color: var(--color-on-highlight); border: var(--border-thick) solid var(--color-ink); }
+  /* Disabled color for the days and the months that are over: a fine outline, muted text, no fill. */
   .day--past > span { color: var(--color-ink-subtle); }
   .day--past.day--event > a, .day--past.day--range > a, .day--past.day--election > a {
     background: transparent;
     color: var(--color-ink-subtle);
-    border: var(--border-thin) dashed var(--color-ink-subtle);
+    border: var(--border-fine) solid var(--color-ink-subtle);
   }
   .month--past caption, .month--past th { color: var(--color-ink-subtle); }
   .day--event > a:hover, .day--event > a:focus-visible { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .day--today { outline: 3px dashed var(--color-ink); outline-offset: -3px; }
-  .legend { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); list-style: none; margin: var(--space-5) 0 0; padding: 0; font: 700 var(--text-xs) var(--font-mono); }
+  .day--past.day--event > a:hover, .day--past.day--event > a:focus-visible { border-color: var(--color-ink); }
+  /* Today: a thick ring inside the square. */
+  .day--today { outline: 3px solid var(--color-ink); outline-offset: -3px; }
+  .legend { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); list-style: none; margin: var(--space-5) 0 0; padding: 0; font: 700 1rem var(--font-body); }
   .legend li { display: inline-flex; align-items: center; gap: var(--space-2); }
-  .legend__swatch { width: 18px; height: 18px; box-sizing: border-box; border: var(--border-thin) solid var(--color-ink); }
+  .legend__swatch { width: 20px; height: 20px; box-sizing: border-box; border: var(--border-fine) solid var(--color-ink); }
   .legend__swatch--event { background: var(--color-ink); }
   .legend__swatch--election { background: var(--color-highlight); border-width: 3px; }
-  .legend__swatch--range { background: var(--color-paper-alt); border-bottom-width: 4px; }
-  .legend__swatch--today { border-style: dashed; border-width: 3px; }
-  .legend__swatch--past { border: var(--border-thin) dashed var(--color-ink-subtle); }
-  .event:target { outline: 4px solid var(--color-highlight); outline-offset: 4px; }
+  .legend__swatch--range { border-bottom-width: 6px; }
+  .legend__swatch--today { border-width: 3px; }
+  .legend__swatch--past { border-color: var(--color-ink-subtle); }
+  .event:target { outline: 6px solid var(--color-ink); outline-offset: 3px; }
 
   .timeline { list-style: none; margin: 0 0 var(--space-8); padding: 0; display: grid; gap: var(--space-5); }
   .event { display: grid; grid-template-columns: 96px minmax(0, 1fr); }
   /* `display: grid` would override the `hidden` attribute of a past date. */
   .event[hidden] { display: none; }
-  .event[data-state='pasado'] { border-style: dashed; box-shadow: none; }
-  /* A past event is muted, like a past day of the grid: dashed lines and muted text, no filled date block. */
-  .event[data-state='pasado'] { border-color: var(--color-ink-subtle); }
+  /* A past event is muted, like a past day of the grid: thin lines and muted text, no filled date block. */
+  .event[data-state='pasado'] { border-color: var(--color-ink-subtle); border-width: var(--border-fine); }
   .event[data-state='pasado'] .event__date {
     background: transparent;
     color: var(--color-ink-subtle);
-    border-right: var(--border-thin) dashed var(--color-ink-subtle);
+    border-right: var(--border-fine) solid var(--color-ink-subtle);
   }
   .event[data-state='pasado'] h3,
   .event[data-state='pasado'] .event__body p,
@@ -482,20 +480,23 @@ const months = monthKeys.map((key) => {
     background: transparent;
     color: var(--color-ink-subtle);
     border-color: var(--color-ink-subtle);
-    box-shadow: none;
   }
   .event[data-state='pasado'] :global(.button:hover),
   .event[data-state='pasado'] :global(.button:focus-visible) {
     background: var(--color-highlight);
     color: var(--color-on-highlight);
     border-color: var(--color-ink);
-    box-shadow: var(--shadow-sm);
   }
   .event[data-state='pasado'] .event__basis :global(a) { color: var(--color-ink-subtle); }
   @media (max-width: 560px) {
-    .event[data-state='pasado'] .event__date { border-right: 0; border-bottom: var(--border-thin) dashed var(--color-ink-subtle); }
+    .event[data-state='pasado'] .event__date { border-right: 0; border-bottom: var(--border-fine) solid var(--color-ink-subtle); }
   }
-  .event[data-state='próxima'], .event[data-state='hoy'] { box-shadow: var(--shadow-lg); }
+  /* The next date, and today: the date block is yellow. */
+  .event[data-state='próxima'] .event__date, .event[data-state='hoy'] .event__date {
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    border-right: var(--border-thick) solid var(--color-ink);
+  }
   .event__date {
     display: grid;
     align-content: center;
@@ -503,23 +504,22 @@ const months = monthKeys.map((key) => {
     padding: var(--space-3);
     background: var(--color-ink);
     color: var(--color-paper);
-    text-transform: uppercase;
   }
-  .event__month { font: 700 var(--text-sm) var(--font-mono); }
-  .event__day { font: 400 2.75rem/1 var(--font-display); }
+  .event__month { font: 700 1rem var(--font-body); }
+  .event__day { font: 900 3.5rem / 0.9 var(--font-display); }
   .event__body { padding: var(--space-4) var(--space-5); min-width: 0; }
-  .event__body h3 { font-size: var(--text-xl); margin: var(--space-2) 0; }
+  .event__body h3 { font-size: 2.25rem; margin: var(--space-2) 0; }
   .event__body p { margin: 0 0 var(--space-2); }
-  .event__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font: 700 var(--text-sm) var(--font-mono); }
+  .event__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font: 700 1rem var(--font-body); }
   .event__meta :global([hidden]) { display: none; }
-  .event__basis { font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .event__basis { font-size: 1rem; }
   .event__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
   .after { margin: 0 0 var(--space-3); padding-left: var(--space-5); display: grid; gap: var(--space-2); }
 
   @media (max-width: 560px) {
     .month-pager:not([hidden]) {
       display: grid;
-      grid-template-columns: 44px minmax(0, 1fr) 44px;
+      grid-template-columns: 48px minmax(0, 1fr) 48px;
       align-items: center;
       gap: var(--space-3);
       margin-bottom: var(--space-4);
@@ -538,7 +538,8 @@ const months = monthKeys.map((key) => {
     .past-toolbar :global(.past-toggle) { flex: 1; justify-content: center; }
     .event { grid-template-columns: 1fr; }
     .event__date { grid-auto-flow: column; justify-content: start; gap: var(--space-3); align-items: baseline; padding: var(--space-2) var(--space-4); }
-    .event__day { font-size: 1.5rem; }
+    .event[data-state='próxima'] .event__date, .event[data-state='hoy'] .event__date { border-right: 0; border-bottom: var(--border-thick) solid var(--color-ink); }
+    .event__day { font-size: 2rem; }
     .event__body { padding: var(--space-4); }
   }
 </style>

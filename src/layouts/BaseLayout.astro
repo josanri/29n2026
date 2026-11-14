@@ -1,15 +1,12 @@
 ---
 import '@/styles/global.css';
-import '@fontsource/archivo-black/400.css';
+import '@fontsource/big-shoulders-display/900';
 import '@fontsource-variable/archivo/wght.css';
 import '@fontsource-variable/archivo/wght-italic.css';
-import '@fontsource/jetbrains-mono/500.css';
-import '@fontsource/jetbrains-mono/700.css';
-import { election } from '@eleccion/eleccion';
 import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import Tooltip from '@/components/ui/Tooltip.astro';
-import { readableTextColor, BLACK } from '@/lib/color';
+import { partyHighlightStyle, partyScaleStyle, readableTextColor, sphereStyle } from '@/lib/color';
 import { DEFAULT_DESCRIPTION, SITE_NAME, THEME_STORAGE_KEY } from '@/lib/site';
 import { routes } from '@/lib/routes';
 
@@ -25,25 +22,30 @@ interface Props {
 
 const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-const fullTitle = `${title} · ${SITE_NAME}`;
+const fullTitle = `${title} | ${SITE_NAME}`;
 
-// Party theme: the accent colors, and the brand surface (header line, footer, primary buttons).
+// Party theme: the accent takes the party color (and its readable text). The brand stays black and white,
+// and the yellow highlight is the same on every page.
 const onAccent = accent ? readableTextColor(accent) : undefined;
+// Every page has a color scale for blocks and bars (`--party-1` to `--party-4`). A party page builds it
+// from the party color, and its bars and hovers take that color too. Other pages get a neutral scale.
 const partyTheme =
   accent && accentLight
     ? [
         `--color-accent:${accent}`,
         `--color-accent-light:${accentLight}`,
         `--color-on-accent:${onAccent}`,
-        `--color-highlight:${accentLight}`,
-        `--color-on-highlight:${BLACK}`,
-        `--color-brand:${accent}`,
-        `--color-on-brand:${onAccent}`,
+        partyScaleStyle(accent, accentLight),
+        partyHighlightStyle(accentLight),
+        // The sphere of the party page and the dot of the wordmark take the two colors of the party.
+        sphereStyle(accent, accentLight),
       ].join(';')
-    : undefined;
+    : partyScaleStyle().replace(/;--color-bar:.*$/, '');
 
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="${accent}"/><text x="32" y="43" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="30" text-anchor="middle" textLength="54" lengthAdjust="spacingAndGlyphs" fill="${onAccent}">${election.shortName}</text><rect x="6" y="50" width="52" height="5" fill="${onAccent}"/></svg>`;
-const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURIComponent(faviconSvg)}` : routes.asset('/favicon.svg');
+// Favicon: a black dot on a white square. A party page keeps the square and puts a dot in the party color (the same as the sphere),
+// with a black ring so that a light color still shows on the white.
+const partyFavicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#fff"/><circle cx="32" cy="32" r="19" fill="${accent}" stroke="#000" stroke-width="5"/></svg>`;
+const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURIComponent(partyFavicon)}` : routes.asset('/favicon.svg');
 ---
 
 <!doctype html>
@@ -63,8 +65,8 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary" />
-    <meta name="theme-color" content={accentLight ?? '#f3efe4'} media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content={accent ?? '#151515'} media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href={faviconHref} type="image/svg+xml" />
     <!-- Apply the saved theme before the first paint, so the page does not flash. The `js` class lets the CSS
          fold the phone menu only when the script that opens it can run. -->
@@ -95,8 +97,9 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     z-index: var(--z-skip-link);
     background: var(--color-highlight);
     color: var(--color-on-highlight);
-    padding: 8px 12px;
+    padding: 12px 16px;
     border: var(--border-thick) solid var(--color-ink);
+    font-weight: 700;
   }
   .skip-link:focus { left: 8px; }
 </style>

@@ -44,15 +44,15 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
 ---
 
 <BaseLayout
-  title={`${padNumber(blockId)} ${block.title} · ${program.acronym}`}
+  title={`Bloque ${blockId}: ${block.title} (${program.acronym})`}
   accent={program.color}
   accentLight={program.lightColor}
 >
-  <section class="block-hero" style={`--block-color: ${blockColor(blockId)}`}>
+  <section class="block-hero">
     <div class="container block-hero__grid" style={!block.quote ? 'grid-template-columns: 1fr' : undefined}>
       <div>
-        <p class="breadcrumb mono">
-          <a href={routes.party(program.id)}>{program.acronym} · {program.programName}</a> / bloque {blockId}
+        <p class="breadcrumb">
+          <a href={routes.party(program.id)}>{program.acronym}: {program.programName}</a> / bloque {blockId}
         </p>
         <span class="block-hero__number">{padNumber(blockId)}</span>
         <h1 class="headline">{block.title}</h1>
@@ -62,7 +62,7 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
         block.quote && (
           <blockquote class="quote box">
             <p>{block.quote}</p>
-            <footer class="mono">Compromiso del candidato · pág. {block.page}</footer>
+            <footer>Compromiso del candidato, pág. {block.page}</footer>
           </blockquote>
         )
       }
@@ -76,9 +76,10 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
           <a
             href={routes.block(program.id, item.id)}
             aria-current={item.id === blockId ? 'page' : undefined}
-            style={`--block-color: ${blockColor(item.id)}`}
+            style={`--stripe-color: ${blockColor(item.id).color}`}
           >
-            <span class="mono">{padNumber(item.id)}</span> {item.title}
+            <span class="block-nav__stripe" aria-hidden="true"></span>
+            <span>{padNumber(item.id)}</span> {item.title}
           </a>
         ))
       }
@@ -100,7 +101,6 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
               <BarList
                 items={bySection}
                 total={blockMeasures.length}
-                color={blockColor(blockId)}
                 unit={program.measureUnitPlural}
                 singularUnit={program.measureUnit}
               />
@@ -129,9 +129,9 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
             <header class="section__head">
               <span class="section__number">{section.id}</span>
               <h2>{section.title}</h2>
-              <span class="mono section__count">
+              <span class="section__count">
                 {sectionMeasures.length} {measureNoun(program, sectionMeasures.length)}
-                {section.page ? ` · pág. ${section.page}` : ''}
+                {section.page ? `, pág. ${section.page}` : ''}
               </span>
             </header>
             {section.intro && <p class="section__intro">{section.intro}</p>}
@@ -181,10 +181,7 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
 </BaseLayout>
 
 <style>
-  /* The hero sits on the block color: its text and surfaces use the fixed colors, never the theme ones. */
   .block-hero {
-    background: var(--block-color);
-    color: var(--color-fixed-dark);
     border-bottom: var(--border-thick) solid var(--color-ink);
     padding: 36px 0 44px;
   }
@@ -194,59 +191,51 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
     gap: 36px;
     align-items: end;
   }
-  .breadcrumb {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    display: inline-block;
-    background: var(--color-fixed-light);
-    color: var(--color-fixed-dark);
-    border: var(--border-thin) solid var(--color-fixed-dark);
-    padding: 2px var(--space-2);
-  }
-  .breadcrumb a { color: var(--color-fixed-dark); }
+  .breadcrumb { font-size: 1rem; font-weight: 700; margin: 0; }
   .block-hero__number {
     display: block;
     font-family: var(--font-display);
+    font-weight: 900;
     font-size: clamp(5.625rem, 16vw, 12.5rem);
     line-height: 0.8;
     margin-top: 18px;
-    -webkit-text-stroke: 4px var(--color-fixed-dark);
-    color: transparent;
   }
-  /* The column is about 58 % wide, and «DEMOCRACIA» / «AUTOESTIMA» are about 8 em: 6.6 cqi */
-  .block-hero h1 { font-size: clamp(1.75rem, 6.6cqi, 5.5rem); margin-top: var(--space-2); }
-  .block-hero__motto { font-size: clamp(1.25rem, 2.6vw, 1.75rem); font-weight: 800; font-style: italic; margin: 14px 0 0; }
+  /* The column is about 58 % wide, and «DEMOCRACIA» / «AUTOESTIMA» are about 5 em: 9 cqi */
+  .block-hero h1 { font-size: clamp(2.75rem, 9cqi, 7rem); margin-top: var(--space-2); }
+  .block-hero__motto { font-size: clamp(1.25rem, 2.6vw, 1.75rem); font-weight: 600; font-style: italic; margin: 14px 0 0; }
   .quote {
     margin: 0;
     padding: 22px;
-    background: var(--color-fixed-light);
-    color: var(--color-fixed-dark);
-    border-color: var(--color-fixed-dark);
-    box-shadow: 6px 6px 0 var(--color-fixed-dark);
     position: relative;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
   }
-  .quote::before {
-    content: '“';
-    position: absolute;
-    top: -38px;
-    left: var(--space-3);
-    font-family: var(--font-display);
-    font-size: 6rem;
-    line-height: 1;
-  }
-  .quote p { font-size: 1.1875rem; font-weight: 800; line-height: 1.3; }
-  .quote footer { font-size: var(--text-2xs); font-weight: 700; text-transform: uppercase; }
+  .quote p { font-size: 1.1875rem; font-weight: 600; line-height: 1.3; }
+  .quote footer { font-size: 1rem; font-weight: 700; }
 
   .block-nav { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 28px 0 0; }
   .block-nav a {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 10px;
+    min-height: 44px;
     text-decoration: none;
-    font-weight: 800;
-    font-size: 0.8125rem;
-    border: var(--border-thin) solid var(--color-ink);
-    padding: 6px 10px;
-    border-left: 12px solid var(--block-color);
+    font-weight: 700;
+    font-size: 1rem;
+    border: var(--border-thick) solid var(--color-ink);
+    padding: 0 12px 0 0;
+    line-height: 1.2;
   }
+  .block-nav a > span:last-child { align-self: center; }
+  .block-nav__stripe {
+    width: 14px;
+    color: var(--color-ink);
+    background-color: var(--stripe-color);
+    border-right: var(--border-thick) solid var(--color-ink);
+  }
+  .block-nav a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
   .block-nav a[aria-current='page'] { background: var(--color-ink); color: var(--color-paper); }
+  .block-nav a[aria-current='page'] .block-nav__stripe { border-color: var(--color-paper); }
 
   .intro-grid {
     display: grid;
@@ -261,8 +250,9 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
   .intro-grid--summary .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: var(--space-5); align-items: start; }
   .drop-cap::first-letter {
     font-family: var(--font-display);
+    font-weight: 900;
     float: left;
-    font-size: 4.875rem;
+    font-size: 5.5rem;
     line-height: 0.8;
     padding: 6px 10px 0 0;
   }
@@ -279,6 +269,7 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
   }
   .section__number {
     font-family: var(--font-display);
+    font-weight: 900;
     font-size: clamp(2.75rem, 6vw, 4.5rem);
     line-height: 0.85;
     background: var(--color-ink);
@@ -286,20 +277,20 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
     padding: var(--space-2) var(--space-3) var(--space-1);
     grid-row: span 2;
   }
-  .section__head h2 { font-size: clamp(1.375rem, 3.2vw, 2.25rem); overflow-wrap: anywhere; }
-  .section__count { font-size: var(--text-xs); font-weight: 700; }
+  .section__head h2 { font-size: clamp(2rem, 4.2vw, 3rem); overflow-wrap: anywhere; }
+  .section__count { font-size: 1rem; font-weight: 700; }
   .section__intro { font-size: var(--text-base); max-width: 70ch; }
   .subsection { margin-top: var(--space-6); }
   .subsection__title {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     display: inline-block;
     background: var(--color-highlight);
     color: var(--color-on-highlight);
-    border: var(--border-thin) solid var(--color-ink);
+    border: var(--border-thick) solid var(--color-ink);
     padding: 6px 10px 4px;
   }
   .subsection__intro { font-size: var(--text-md); max-width: 70ch; margin: var(--space-3) 0 18px; font-style: italic; }
-  .measure-list { display: grid; gap: 18px; }
+  .measure-list { display: grid; gap: 18px; padding-left: 4px; }
 
   .pager {
     display: flex;
@@ -312,6 +303,6 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
   @media (max-width: 900px) {
     .block-hero__grid,
     .intro-grid { grid-template-columns: minmax(0, 1fr); }
-    .block-hero h1 { font-size: clamp(1.75rem, 10cqi, 5.5rem); }
+    .block-hero h1 { font-size: clamp(2.75rem, 14cqi, 7rem); }
   }
 </style>
