@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  Electosfera se publica en https://electosfera.es/2026/generales/. GitHub Pages ya no publica una copia del sitio:
+  solo esta página, como index.html y como 404.html, para que los enlaces antiguos a josanri.github.io/29n2026/...
+  lleven a la misma página del sitio oficial. GitHub Pages no permite redirecciones 301 en el servidor; el script
+  conserva la ruta, y la etiqueta meta (sin script) lleva a la portada.
+  - noindex y el enlace canónico: los buscadores pasan al dominio oficial y no indexan esta dirección.
+  - No hay robots.txt que bloquee esta página: el buscador tiene que leer el noindex y la redirección.
+-->
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://electosfera.es/2026/generales/">
+<meta http-equiv="refresh" content="0; url=https://electosfera.es/2026/generales/">
+<title>Electosfera</title>
+<script>
+  (function () {
+    var OLD_BASE = '/29n2026';
+    var NEW_BASE = 'https://electosfera.es/2026/generales';
+    var path = location.pathname;
+    if (path === OLD_BASE || path.indexOf(OLD_BASE + '/') === 0) path = path.slice(OLD_BASE.length);
+    if (path.charAt(0) !== '/') path = '/' + path;
+    location.replace(NEW_BASE + path + location.search + location.hash);
+  })();
+</script>
+<style>
+  body { margin: 0; padding: 32px 16px; font: 16px/1.5 system-ui, sans-serif; background: #fff; color: #000; }
+  @media (prefers-color-scheme: dark) { body { background: #000; color: #fff; } a { color: #ffd23f; } }
+</style>
+</head>
+<body>
+  <p>Electosfera se ha mudado a <a href="https://electosfera.es/2026/generales/">electosfera.es</a>.</p>
+</body>
+</html>

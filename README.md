@@ -39,7 +39,7 @@ Con `NESTED_OUTPUT=1`, la web se compila en `dist/2026/generales/`, porque Cloud
 - `_redirects`: `/`, `/2026` y `/2026/` llevan a `/2026/generales/` (302, temporal: más adelante serán portadas con la lista de elecciones);
 - `robots.txt`, porque los buscadores solo lo buscan en la raíz.
 
-En GitHub Pages no se usa `NESTED_OUTPUT`: allí la ruta del repositorio ya es el prefijo.
+GitHub Pages ya no publica el sitio: solo una página que redirige a electosfera.es (ver «Dominio propio», paso 9).
 
 ### Dominio propio: electosfera.es y electosfera.com
 
@@ -75,9 +75,11 @@ está en Cloudflare.
    `concat("https://electosfera.es", http.request.uri.path)`, 301, «Preserve query string».
 8. **HTTPS**: en las dos zonas, SSL/TLS → Edge Certificates → «Always Use HTTPS». Cuando todo funcione unas
    semanas, activa HSTS.
-9. **GitHub Pages**: `.github/workflows/deploy.yml` sigue publicando una copia en `josanri.github.io/29n2026`. Cuando
-   electosfera.es funcione, desactiva GitHub Pages (Settings → Pages) o deja el flujo solo con `workflow_dispatch`.
-   Dos copias públicas compiten en los buscadores.
+9. **GitHub Pages**: `.github/workflows/deploy.yml` ya no publica una copia del sitio, que competiría con el oficial en
+   los buscadores. Publica solo `github-pages/redirect.html` como `index.html` y `404.html`: cada enlace antiguo
+   (`josanri.github.io/29n2026/pp/`) lleva a la misma página de `electosfera.es/2026/generales/pp/`. La página dice
+   `noindex` y su enlace canónico apunta al dominio oficial. El flujo se ejecuta solo cuando cambia esa página o el
+   propio flujo.
 10. **Buscadores**: en Google Search Console, añade la propiedad de dominio `electosfera.es` (verificación con un
     registro `TXT` en Cloudflare) y envía `https://electosfera.es/2026/generales/sitemap-index.xml`. Haz lo mismo en
     Bing Webmaster Tools.
