@@ -21,10 +21,13 @@ import { methodNote } from '@/lib/method-note';
 import { routes, withBase } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
 import { programVerbs } from '@/lib/verbs';
+import { checkPrograms } from '@/lib/program-checks';
 import { keyFindingsByParty, type KeyFinding } from '@eleccion/analysis';
 import { downloadFileNames, summaryDownloadFileName } from '@eleccion/download-names';
 
 export function getStaticPaths() {
+  // The data of every program is checked once, before any page is built (`src/lib/program-checks.ts`).
+  checkPrograms();
   return programs.map((program) => ({ params: { party: program.id } }));
 }
 

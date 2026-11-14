@@ -149,6 +149,37 @@ Usa los `id` de `src/data/taxonomia.json`. No inventes ninguno.
 5. **README**: añade el PDF, el script y el JSON a la lista de «Datos», el comando `npm run data:<id>` y la ruta a la
    tabla de «Páginas».
 
+## 4b. Cada sección de la ficha, para todos los partidos
+
+Una sección de la ficha nunca puede faltar en unos partidos y no en otros porque un extractor no haya escrito su
+dato (así faltaron los verbos en 11 de 19 programas). La regla:
+
+1. **Si el dato se puede calcular de las medidas, se calcula para todos en `src/lib/`**, no en el extractor. Una
+   función nueva de este tipo va en `src/lib/` y la usan todas las fichas.
+2. **Si lo tiene que escribir el extractor o la redacción, lo comprueba `src/lib/program-checks.ts`** al compilar:
+   un error para lo que rompería la ficha y un aviso para lo que tiene sustituto.
+3. **Si un dato puede faltar (la fecha de un PDF sin metadatos), la ficha lo omite**: nunca escribe «undefined» ni
+   un hueco. Busca en la compilación el texto «undefined».
+
+| Sección de la ficha | De dónde sale | Si falta |
+| --- | --- | --- |
+| Totales de medidas (portada, esfera, búsqueda, categorías) | `allMeasures`, `totalMeasures`, `announcedMeasures()` en `programs.ts` | Se calcula siempre |
+| El programa en verbos | `programVerbs()` en `verbs.ts` (o `verbos` del extractor, si escribe en futuro) | No se muestra si el programa no da una lista fiable |
+| Las claves | `keyFindingsByParty` en `analysis.ts` | Aviso; la ficha usa la versión automática por categorías |
+| Los números del programa | `cifras` del JSON (solo compromisos) | El panel no aparece |
+| Lo que tiene fecha | `plazos` y `ordenPlazos` del JSON | El panel no aparece |
+| Leyes que deroga | `deroga` de cada medida (o `revisiones.json`) | El panel no aparece |
+| Por anunciar | medidas con `oculta: true` | El panel no aparece |
+| Descargar programa completo | `download-names.ts` | **Error**: la compilación para |
+| PDF original del partido | `fuentePdf` del JSON | **Error** en un programa en PDF |
+| PDF de este sitio | `public/<e>/programas/…` | **Error** si no existe el archivo |
+| Fecha del PDF | `fechaPdf` (AAAA-MM-DD) | Aviso; la ficha y la nota de método la omiten |
+| Medidas | `titulo` o `texto` de cada medida | **Error** si una medida no tiene ninguno |
+| Nota de método | `method-note.ts` | Texto general; un caso especial se añade ahí |
+
+Al terminar un programa nuevo, `npm run build` no debe dar errores, y los avisos de ese programa deben estar
+resueltos o explicados en el informe al usuario.
+
 ## 5. Enlaces y secciones que deben funcionar
 
 Compila y abre la web (`npm run build` y `npx astro preview`, o `npm run dev`) y revisa en `/<id>/`:
@@ -175,7 +206,8 @@ npm run check
 npm run build
 ```
 
-- Los dos deben terminar sin errores.
+- Los dos deben terminar sin errores. La compilación imprime «[programas] N avisos» y, si hay, «[programas] N
+  errores en los datos» (`src/lib/program-checks.ts`): resuelve los errores y revisa los avisos del programa nuevo.
 - Compara 5 medidas al azar con el PDF: número, título, texto y página.
 - Busca palabras pegadas (`[a-z][A-Z]` dentro de una palabra) y viñetas sueltas («•», «-») en los textos.
 - Los totales salen de una sola fuente: `allMeasures`, `totalMeasures` y `announcedMeasures(program)` en

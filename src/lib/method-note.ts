@@ -1,5 +1,9 @@
 import type { Program } from './program-schema';
 
+/** «82 páginas, fecha 2026-11-12», or only the pages when the PDF has no date (some PDFs do not say it). */
+const pdfFacts = (program: Program) =>
+  program.documentDate ? `${program.pageCount} páginas, fecha ${program.documentDate}` : `${program.pageCount} páginas`;
+
 /** The "Nota de método" paragraph of a party page: how the measures were obtained. */
 export function methodNote(program: Program): string {
   if (program.measureOrigin === 'web') {
@@ -11,7 +15,7 @@ export function methodNote(program: Program): string {
   }
   // PACMA numbers its sections in up to four levels («1.1.8.1») and has no numbered measures.
   if (program.id === 'pacma') {
-    return `El texto se extrae del PDF oficial (${program.pageCount} páginas, fecha ${program.documentDate}). El programa numera sus apartados en varios niveles (por ejemplo, 1.1.8.1) y no tiene medidas numeradas: cada apartado de último nivel es aquí una propuesta, con un número correlativo del 1 al ${program.measures.length}, y conserva el título y el texto completos del PDF. La taxonomía común no tiene una categoría de protección animal, así que cada propuesta va a la categoría más cercana (el marco legal a Justicia; la caza, la ganadería y la fauna a Campo, mar y mundo rural; la tauromaquia a Lengua, cultura y memoria). Los colectivos, las palancas y los territorios se detectan con palabras clave. El número de página enlaza con el PDF original.`;
+    return `El texto se extrae del PDF oficial (${pdfFacts(program)}). El programa numera sus apartados en varios niveles (por ejemplo, 1.1.8.1) y no tiene medidas numeradas: cada apartado de último nivel es aquí una propuesta, con un número correlativo del 1 al ${program.measures.length}, y conserva el título y el texto completos del PDF. La taxonomía común no tiene una categoría de protección animal, así que cada propuesta va a la categoría más cercana (el marco legal a Justicia; la caza, la ganadería y la fauna a Campo, mar y mundo rural; la tauromaquia a Lengua, cultura y memoria). Los colectivos, las palancas y los territorios se detectan con palabras clave. El número de página enlaza con el PDF original.`;
   }
-  return `El texto se extrae del PDF oficial (${program.pageCount} páginas, fecha ${program.documentDate}) a partir de la tipografía del documento: bloque, sección, número de medida, título y texto. La categoría principal de cada medida es una asignación editorial. Los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
+  return `El texto se extrae del PDF oficial (${pdfFacts(program)}) a partir de la tipografía del documento: bloque, sección, número de medida, título y texto. La categoría principal de cada medida es una asignación editorial. Los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
 }
