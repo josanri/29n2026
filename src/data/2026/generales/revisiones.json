@@ -120,9 +120,6 @@
    "9": [
     "25 % para primaria y 2 % para salud pública"
    ],
-   "10": [
-    "Centro de especialidades en cada municipio de más de 20.000 habitantes, cofinanciado por el Estado, para descargar los hospitales de referencia."
-   ],
    "11": [
     "En todo el Estado: 30 días para la primera consulta con especialista, 15 para una prueba diagnóstica y 120 para operarse"
    ],
@@ -180,9 +177,6 @@
    "161": [
     "para que ningún alquiler supere el 20 % de la renta media de la zona"
    ],
-   "165": [
-    "Gran tenedor desde cinco viviendas"
-   ],
    "167": [
     "hasta el 20 % en las zonas de más demanda, con un gasto del 1,5 % del PIB"
    ],
@@ -192,9 +186,6 @@
    "171": [
     "Al menos la mitad de cada nueva promoción, y de ella un 60 % en alquiler social."
    ],
-   "174": [
-    "Obligatorio en edificios de más de dos plantas"
-   ],
    "193": [
     "El Estado financia el 50 % del sistema hasta llegar al 1,7 % del PIB"
    ],
@@ -203,9 +194,6 @@
    ],
    "195": [
     "empezando por una andaluza 100 % pública"
-   ],
-   "201": [
-    "De 0 a 6 años y con continuidad después"
    ],
    "202": [
     "cuota de reserva del 10 % en el empleo público"
@@ -218,9 +206,6 @@
    ],
    "212": [
     "Entre 100 y 200 euros al mes por hijo o hija hasta los 18 años"
-   ],
-   "215": [
-    "título de familia numerosa desde dos hijas o hijos"
    ],
    "217": [
     "tomando como referencia el neto del salario mínimo de 2026 (1.221 euros brutos en 14 pagas)"
@@ -258,14 +243,8 @@
    "279": [
     "Presunción de relación laboral cuando el 70 % de la facturación venga de un solo cliente"
    ],
-   "288": [
-    "reducción de jornada hasta los 14 años del menor"
-   ],
    "290": [
     "con la cotización mantenida al 100 % para que no merme la pensión"
-   ],
-   "297": [
-    "Representación de las personas trabajadoras en los consejos de administración de las empresas de más de 250 personas"
    ],
    "302": [
     "Incapacidad temporal pagada al 100 % desde el primer día"
@@ -285,12 +264,6 @@
    "341": [
     "quita del FLA e intereses hacia el 0 %"
    ],
-   "369": [
-    "para los pueblos de menos de 20.000 habitantes"
-   ],
-   "374": [
-    "Cercanías o media distancia en todas las localidades de más de 20.000 habitantes en diez años."
-   ],
    "375": [
     "la mitad de los fondos previstos para nuevas líneas de alta velocidad",
     "con Cercanías cada 15 minutos en hora punta"
@@ -300,12 +273,6 @@
    ],
    "385": [
     "con trenes de hasta 200 km/h"
-   ],
-   "391": [
-    "Gratuidad para menores, personas desempleadas, mayores de 65 años y hogares con rentas bajas."
-   ],
-   "393": [
-    "Alternativa ferroviaria en trayectos de menos de 600 kilómetros"
    ],
    "397": [
     "un mínimo del 2 % del PIB para políticas ambientales"
@@ -319,9 +286,6 @@
    "420": [
     "Estatuto marco con contratos públicos de 12 meses."
    ],
-   "439": [
-    "con exención en el IRPF para las personas jubiladas que cedan sus tierras a menores de 40 años"
-   ],
    "465": [
     "Inhabilitación de 15 años para condenados por corrupción"
    ],
@@ -334,9 +298,6 @@
    "523": [
     "Iguales, intransferibles y pagados al 100 %: primero seis meses y después un año."
    ],
-   "525": [
-    "Obligatorias en empresas y administraciones de más de 50 personas"
-   ],
    "536": [
     "Reserva del 1 % de las plazas de la Administración General del Estado"
    ],
@@ -346,9 +307,6 @@
    "587": [
     "Ayuda oficial al desarrollo del 0,7 % de la renta nacional en la legislatura",
     "al menos un 10 % para construcción de paz"
-   ],
-   "604": [
-    "Monumentos gratis para menores de 26 años"
    ],
    "634": [
     "Prohibido que las personas menores de 16 años participen o asistan a festejos taurinos"
@@ -384,31 +342,31 @@
     "medida": 1
    },
    {
+    "valor": "1.500 pacientes",
+    "unidad": "por profesional de familia",
+    "texto": "Máximo de pacientes por médica o médico y enfermera de familia",
+    "contexto": "1.500 pacientes como máximo por profesional de medicina y de enfermería de familia",
+    "medida": 8
+   },
+   {
     "valor": "48 horas",
     "unidad": "horas",
-    "texto": "Ley de garantías de atención primaria",
-    "contexto": "Cita en un máximo de 48 horas, presencial si se pide; al menos 10 minutos por consulta; 1.500 pacientes como máximo por profesional de medicina y de enfermería de familia; y urgencias de primaria 24 horas, bien dimensionadas y accesibles en el medio rural.",
+    "texto": "Cita en 48 horas como máximo, presencial si se pide",
+    "contexto": "Cita en un máximo de 48 horas, presencial si se pide",
     "medida": 8
    },
    {
     "valor": "10 minutos",
-    "unidad": "minutos",
-    "texto": "Ley de garantías de atención primaria",
-    "contexto": "Cita en un máximo de 48 horas, presencial si se pide; al menos 10 minutos por consulta; 1.500 pacientes como máximo por profesional de medicina y de enfermería de familia; y urgencias de primaria 24 horas, bien dimensionadas y accesibles en el medio rural.",
+    "unidad": "por consulta",
+    "texto": "Al menos 10 minutos por consulta",
+    "contexto": "al menos 10 minutos por consulta",
     "medida": 8
    },
    {
     "valor": "24 horas",
     "unidad": "horas",
-    "texto": "Ley de garantías de atención primaria",
-    "contexto": "Cita en un máximo de 48 horas, presencial si se pide; al menos 10 minutos por consulta; 1.500 pacientes como máximo por profesional de medicina y de enfermería de familia; y urgencias de primaria 24 horas, bien dimensionadas y accesibles en el medio rural.",
-    "medida": 8
-   },
-   {
-    "valor": "1.500 pacientes",
-    "unidad": "por profesional de familia",
-    "texto": "Máximo de pacientes por médica o médico y enfermera de familia",
-    "contexto": "1.500 pacientes como máximo por profesional de medicina y de enfermería de familia",
+    "texto": "Urgencias de primaria abiertas 24 horas",
+    "contexto": "urgencias de primaria 24 horas",
     "medida": 8
    },
    {
@@ -424,13 +382,6 @@
     "texto": "25 % para primaria y 2 % para salud pública",
     "contexto": "Suelos de inversión fijados por ley sobre el presupuesto sanitario total. Porque la atención primaria y la prevención son lo más eficaz y lo que menos dinero recibe.",
     "medida": 9
-   },
-   {
-    "valor": "20.000 habitantes",
-    "unidad": "habitantes",
-    "texto": "Plan 20.000",
-    "contexto": "Centro de especialidades en cada municipio de más de 20.000 habitantes, cofinanciado por el Estado, para descargar los hospitales de referencia.",
-    "medida": 10
    },
    {
     "valor": "30 días",
@@ -480,6 +431,13 @@
     "texto": "Paliativos y muerte digna",
     "contexto": "Nuevo plan con una red pública de cuidados paliativos, también pediátricos, y hospitalización a domicilio las 24 horas, con atención especial al medio rural; cumplimiento del testamento vital y plazos más ágiles por ley para la eutanasia, sin recurso de familiares o allegados.",
     "medida": 33
+   },
+   {
+    "valor": "18 psicólogos",
+    "unidad": "por 100.000 habitantes",
+    "texto": "Psicólogos en salud hasta la media europea",
+    "contexto": "Hasta la media europea de 18 psicólogos en el ámbito de la salud por 100.000 habitantes",
+    "medida": 36
    },
    {
     "valor": "15 días",
@@ -560,23 +518,23 @@
    },
    {
     "valor": "20 %",
-    "unidad": "%",
-    "texto": "Alquiler al 20 % del salario",
-    "contexto": "Índice estatal de referencia por barrio o municipio para que ningún alquiler supere el 20 % de la renta media de la zona.",
+    "unidad": "de la renta media de la zona",
+    "texto": "Ningún alquiler por encima del 20 % de la renta media",
+    "contexto": "ningún alquiler supere el 20 % de la renta media de la zona",
     "medida": 161
    },
    {
     "valor": "20 %",
-    "unidad": "%",
-    "texto": "Parque público al 9 %",
-    "contexto": "Llevar el parque público en alquiler a la media europea, hasta el 20 % en las zonas de más demanda, con un gasto del 1,5 % del PIB.",
+    "unidad": "en zonas de más demanda",
+    "texto": "Parque público de alquiler hasta el 20 % en zonas de más demanda",
+    "contexto": "hasta el 20 % en las zonas de más demanda, con un gasto del 1,5 % del PIB",
     "medida": 167
    },
    {
     "valor": "1,5 %",
-    "unidad": "%",
-    "texto": "Parque público al 9 %",
-    "contexto": "Llevar el parque público en alquiler a la media europea, hasta el 20 % en las zonas de más demanda, con un gasto del 1,5 % del PIB.",
+    "unidad": "del PIB",
+    "texto": "Gasto de la vivienda pública de alquiler: 1,5 % del PIB",
+    "contexto": "con un gasto del 1,5 % del PIB",
     "medida": 167
    },
    {
@@ -595,9 +553,9 @@
    },
    {
     "valor": "60 %",
-    "unidad": "%",
-    "texto": "50 % protegida en toda promoción",
-    "contexto": "Al menos la mitad de cada nueva promoción, y de ella un 60 % en alquiler social.",
+    "unidad": "de la parte protegida",
+    "texto": "De la parte protegida, un 60 % en alquiler social",
+    "contexto": "y de ella un 60 % en alquiler social",
     "medida": 171
    },
    {
@@ -629,13 +587,6 @@
     "medida": 195
    },
    {
-    "valor": "6 años",
-    "unidad": "años",
-    "texto": "Atención temprana como derecho",
-    "contexto": "De 0 a 6 años y con continuidad después, con condiciones dignas para sus profesionales.",
-    "medida": 201
-   },
-   {
     "valor": "10 %",
     "unidad": "%",
     "texto": "Empleo adaptado de verdad",
@@ -659,13 +610,6 @@
    {
     "valor": "200 euros",
     "unidad": "euros",
-    "texto": "Prestación universal por crianza",
-    "contexto": "Entre 100 y 200 euros al mes por hijo o hija hasta los 18 años, para todas las familias.",
-    "medida": 212
-   },
-   {
-    "valor": "18 años",
-    "unidad": "años",
     "texto": "Prestación universal por crianza",
     "contexto": "Entre 100 y 200 euros al mes por hijo o hija hasta los 18 años, para todas las familias.",
     "medida": 212
@@ -741,25 +685,11 @@
     "medida": 279
    },
    {
-    "valor": "14 años",
-    "unidad": "años",
-    "texto": "Derecho a adaptar el turno",
-    "contexto": "Por cuidado de menores, sin perder salario ni categoría, y reducción de jornada hasta los 14 años del menor.",
-    "medida": 288
-   },
-   {
     "valor": "100 %",
     "unidad": "%",
     "texto": "Cuidar sin perder ingresos",
     "contexto": "Compensación pública de parte del salario perdido en las reducciones de jornada y excedencias por cuidados, con la cotización mantenida al 100 % para que no merme la pensión.",
     "medida": 290
-   },
-   {
-    "valor": "250 personas",
-    "unidad": "personas",
-    "texto": "La plantilla, en los consejos",
-    "contexto": "Representación de las personas trabajadoras en los consejos de administración de las empresas de más de 250 personas, como prevé el artículo 129.2 de la Constitución.",
-    "medida": 297
    },
    {
     "valor": "100 %",
@@ -797,39 +727,11 @@
     "medida": 341
    },
    {
-    "valor": "20.000 habitantes",
-    "unidad": "habitantes",
-    "texto": "Compensación por suelo protegido",
-    "contexto": "Más financiación y personal fuera de la tasa de reposición para los pueblos de menos de 20.000 habitantes con gran parte de su suelo protegido por patrimonio o espacios naturales.",
-    "medida": 369
-   },
-   {
-    "valor": "20.000 habitantes",
-    "unidad": "habitantes",
-    "texto": "Tren para toda Andalucía",
-    "contexto": "Cercanías o media distancia en todas las localidades de más de 20.000 habitantes en diez años.",
-    "medida": 374
-   },
-   {
     "valor": "15 minutos",
     "unidad": "minutos",
     "texto": "Prioridad al tren convencional",
     "contexto": "Recuperar las líneas en desuso antes que abrir nuevas líneas radiales de alta velocidad, con conexión de calidad para Almería y Huelva; la mitad de los fondos previstos para nuevas líneas de alta velocidad, a Cercanías, media distancia y mantenimiento, con Cercanías cada 15 minutos en hora punta.",
     "medida": 375
-   },
-   {
-    "valor": "65 años",
-    "unidad": "años",
-    "texto": "Transporte gratis para quien más lo necesita",
-    "contexto": "Gratuidad para menores, personas desempleadas, mayores de 65 años y hogares con rentas bajas.",
-    "medida": 391
-   },
-   {
-    "valor": "600 kilómetros",
-    "unidad": "kilómetros",
-    "texto": "Tren antes que avión",
-    "contexto": "Alternativa ferroviaria en trayectos de menos de 600 kilómetros y ecotasas al transporte aéreo.",
-    "medida": 393
    },
    {
     "valor": "2 %",
@@ -860,13 +762,6 @@
     "medida": 420
    },
    {
-    "valor": "40 años",
-    "unidad": "años",
-    "texto": "Banco público de tierras",
-    "contexto": "Acceso a la tierra para jóvenes y mujeres y uso social de las tierras infrautilizadas, con exención en el IRPF para las personas jubiladas que cedan sus tierras a menores de 40 años a través del banco.",
-    "medida": 439
-   },
-   {
     "valor": "15 años",
     "unidad": "años",
     "texto": "Quien roba, fuera",
@@ -895,13 +790,6 @@
     "medida": 523
    },
    {
-    "valor": "50 personas",
-    "unidad": "personas",
-    "texto": "Ludotecas en el trabajo",
-    "contexto": "Obligatorias en empresas y administraciones de más de 50 personas, y canguro público para familias monoparentales con pocos recursos.",
-    "medida": 525
-   },
-   {
     "valor": "1 %",
     "unidad": "%",
     "texto": "Empleo trans",
@@ -924,17 +812,10 @@
    },
    {
     "valor": "10 %",
-    "unidad": "%",
-    "texto": "El 0,7 %",
-    "contexto": "Ayuda oficial al desarrollo del 0,7 % de la renta nacional en la legislatura, con prioridad para el Mediterráneo, el Sahel y América Latina, al menos un 10 % para construcción de paz y presupuesto para el plan Mujeres, Paz y Seguridad.",
+    "unidad": "para construcción de paz",
+    "texto": "Al menos un 10 % de la ayuda para construcción de paz",
+    "contexto": "al menos un 10 % para construcción de paz",
     "medida": 587
-   },
-   {
-    "valor": "26 años",
-    "unidad": "años",
-    "texto": "Monumentos gratis para menores de 26 años",
-    "contexto": "Entrada gratuita a los museos y monumentos de titularidad estatal. Porque la juventud debe poder conocer su patrimonio sin pagar.",
-    "medida": 604
    },
    {
     "valor": "16 años",
