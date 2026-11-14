@@ -14,6 +14,8 @@ const menus = [
   {
     id: 'national',
     label: 'Estatales',
+    // A building with columns, like the Congress: the parties of the whole country.
+    icon: '<path d="M2 6 8 2.5 14 6"/><path d="M2.5 6.5h11M4.5 7.5v5M8 7.5v5M11.5 7.5v5M1.5 13.5h13"/>',
     isCurrent: nationalPrograms.some(isCurrent),
     groups: [
       { title: 'Con programa analizado', parties: nationalSorted.filter((party) => party.hasProgram) },
@@ -23,6 +25,8 @@ const menus = [
   {
     id: 'regional',
     label: 'Autonómicos',
+    // A map pin: the parties of one territory.
+    icon: '<path d="M8 15s5-4.6 5-8.5a5 5 0 0 0-10 0C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.8"/>',
     isCurrent: regionalPrograms.some(isCurrent),
     groups: regionalRegions.map((region) => ({
       title: region,
@@ -78,6 +82,7 @@ const testsCurrent = path.startsWith(routes.tests());
       {menus.map((menu) => (
         <details class:list={['nav-dropdown', `nav-dropdown--${menu.id}`]}>
           <summary aria-current={menu.isCurrent ? 'page' : undefined}>
+            <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={menu.icon} />
             {menu.label}
             <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
               <path d="m1 1 5 5 5-5"></path>
@@ -116,6 +121,8 @@ const testsCurrent = path.startsWith(routes.tests());
       ))}
       <details class="nav-dropdown nav-dropdown--tests">
         <summary aria-current={testsCurrent ? 'page' : undefined}>
+          <!-- A box with a check mark: a test. -->
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="12" height="12"></rect><path d="m5 8.2 2.2 2.2L11.2 6"></path></svg>
           Tests
           <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
             <path d="m1 1 5 5 5-5"></path>
@@ -242,7 +249,7 @@ const testsCurrent = path.startsWith(routes.tests());
   .nav {
     display: flex;
     align-items: center;
-    gap: 4px 26px;
+    gap: 4px 20px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
@@ -263,15 +270,19 @@ const testsCurrent = path.startsWith(routes.tests());
     flex: none;
     width: 14px;
     height: 14px;
-    margin-right: 7px;
+    margin-right: 6px;
     fill: none;
     stroke: currentColor;
     stroke-width: 2.5;
     stroke-linecap: square;
   }
-  /* The icons of the links show only in the phone menu. The search keeps its magnifier on every screen. */
-  .nav > a .nav__icon { display: none; }
-  .nav > a.nav__link--search .nav__icon { display: inline; }
+  /* Every item of the nav has its icon: it helps to find a section at a glance. Between 1180 and 1379px the row is
+     full: only the search keeps its magnifier there. The phone menu (under 1180px) shows them all. */
+  @media (min-width: 1180px) and (max-width: 1379px) {
+    .nav { column-gap: 12px; }
+    .nav > a:not(.nav__link--search) .nav__icon,
+    .nav-dropdown > summary .nav__icon { display: none; }
+  }
   .nav a[aria-current='page'],
   .nav-dropdown > summary[aria-current='page'] {
     text-decoration: underline;
@@ -467,13 +478,15 @@ const testsCurrent = path.startsWith(routes.tests());
     /* The search goes first, across the full width. The party menus follow, then the sections, then the theme. */
     .nav > .nav__link--search { order: -1; grid-column: 1 / -1; margin-bottom: 6px; }
     .nav__hint { display: inline; margin-left: 6px; font-weight: 400; font-size: 0.9375rem; }
+    /* The icon and the label at the left, like the other rows; the arrow at the right. */
     .nav-dropdown > summary {
       width: 100%;
       min-height: 48px;
-      justify-content: space-between;
+      justify-content: flex-start;
       padding: 0 12px;
       border: var(--border-thick) solid var(--color-ink);
     }
+    .nav-dropdown > summary .nav-dropdown__chevron { margin-left: auto; }
     .nav-dropdown__panel {
       position: static;
       width: auto;
