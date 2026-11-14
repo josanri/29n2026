@@ -113,6 +113,9 @@ Usa los `id` de `src/data/taxonomia.json`. No inventes ninguno.
   de una medida son solo las frases de esos compromisos: la ficha dice «N tienen una cifra», y un dato de contexto
   («300.000 animales abandonados al año», «el alquiler ha subido un 94 %») no es un compromiso. No uses una regla
   automática del tipo «toda frase con un número y un %».
+  Una revisión posterior de las cifras va a `revisiones.json` (`cifras`: `{ "<n>": ["frase literal"] }`, que
+  sustituye las de todas las medidas del programa, y `cifrasPrograma`, que sustituye las de cabecera). La
+  compilación para si una frase o un `contexto` no está literal en su medida.
 - **Plazos**: solo **cuándo se aplica la medida** («en los primeros 100 días», «antes de 2030», «retirada
   inmediata»). Un dato con tiempo no es un plazo («desalojo en 24 horas», «licencia en 15 días»), ni lo es un plazo
   que el programa reprocha a otros («la Comisión prometió… antes de 2027»). Cada plazo lleva `plazo`, `texto` y

@@ -107,13 +107,872 @@
    "547": "Ley de Extranjería",
    "567": "Ley de Amnistía de 1977",
    "631": "Ley 18/2013"
-  }
+  },
+  "cifras": {
+   "1": [
+    "Al menos el 8 % del PIB, y gasto por habitante en cada comunidad nunca por debajo de la media de los países de la Unión Europea."
+   ],
+   "8": [
+    "Cita en un máximo de 48 horas, presencial si se pide; al menos 10 minutos por consulta",
+    "1.500 pacientes como máximo por profesional de medicina y de enfermería de familia",
+    "urgencias de primaria 24 horas"
+   ],
+   "9": [
+    "25 % para primaria y 2 % para salud pública"
+   ],
+   "10": [
+    "Centro de especialidades en cada municipio de más de 20.000 habitantes, cofinanciado por el Estado, para descargar los hospitales de referencia."
+   ],
+   "11": [
+    "En todo el Estado: 30 días para la primera consulta con especialista, 15 para una prueba diagnóstica y 120 para operarse"
+   ],
+   "15": [
+    "Jornada ordinaria y guardia sumadas, nunca más de 12 horas"
+   ],
+   "17": [
+    "Grado universitario para el personal Técnico Superior Sanitario de Imagen y Radioterapia y de Laboratorio y Anatomía Patológica, de 4 años y 240 créditos"
+   ],
+   "18": [
+    "con al menos el 100 % de reposición garantizado por ley"
+   ],
+   "19": [
+    "Jubilación anticipada a los 60"
+   ],
+   "26": [
+    "Tratamiento en 21 días como máximo, reconstrucción mamaria en 90 días"
+   ],
+   "33": [
+    "hospitalización a domicilio las 24 horas"
+   ],
+   "36": [
+    "Hasta la media europea de 18 psicólogos en el ámbito de la salud por 100.000 habitantes"
+   ],
+   "37": [
+    "Cita en salud mental comunitaria en un máximo de 15 días desde la derivación"
+   ],
+   "53": [
+    "Mastectomía y cirugía genital con plazos máximos garantizados de uno y dos años"
+   ],
+   "70": [
+    "Hasta alcanzar al final de la legislatura la inversión media por estudiante de la Unión Europea y la OCDE: de 6.687 a 8.246 euros."
+   ],
+   "77": [
+    "15 escolares por aula en Infantil y Primaria, 20 en ESO, 25 en Bachillerato y 12 en FP"
+   ],
+   "78": [
+    "con al menos el 100 % de reposición garantizado, sustituciones en 48 horas y un docente más en los centros con más de tres unidades de Infantil"
+   ],
+   "79": [
+    "Hasta 18 horas semanales"
+   ],
+   "87": [
+    "Como máximo 10 estudiantes con necesidades específicas por maestra de PT y de AL, 250 por orientadora y 4 por PTIS"
+   ],
+   "90": [
+    "El alumnado NEAE cuenta doble"
+   ],
+   "96": [
+    "atención psicológica en 15 días"
+   ],
+   "133": [
+    "2 % del PIB para las universidades públicas y 3 % para I+D+i, con al menos un 90 % ejecutado"
+   ],
+   "161": [
+    "para que ningún alquiler supere el 20 % de la renta media de la zona"
+   ],
+   "165": [
+    "Gran tenedor desde cinco viviendas"
+   ],
+   "167": [
+    "hasta el 20 % en las zonas de más demanda, con un gasto del 1,5 % del PIB"
+   ],
+   "168": [
+    "El 100 % de sus viviendas y suelos al alquiler asequible"
+   ],
+   "171": [
+    "Al menos la mitad de cada nueva promoción, y de ella un 60 % en alquiler social."
+   ],
+   "174": [
+    "Obligatorio en edificios de más de dos plantas"
+   ],
+   "193": [
+    "El Estado financia el 50 % del sistema hasta llegar al 1,7 % del PIB"
+   ],
+   "194": [
+    "Valoración en 150 días"
+   ],
+   "195": [
+    "empezando por una andaluza 100 % pública"
+   ],
+   "201": [
+    "De 0 a 6 años y con continuidad después"
+   ],
+   "202": [
+    "cuota de reserva del 10 % en el empleo público"
+   ],
+   "209": [
+    "Una trabajadora o un trabajador social por cada 1.700 habitantes"
+   ],
+   "211": [
+    "Objetivo de reducirla un 40 %"
+   ],
+   "212": [
+    "Entre 100 y 200 euros al mes por hijo o hija hasta los 18 años"
+   ],
+   "215": [
+    "título de familia numerosa desde dos hijas o hijos"
+   ],
+   "217": [
+    "tomando como referencia el neto del salario mínimo de 2026 (1.221 euros brutos en 14 pagas)"
+   ],
+   "218": [
+    "Sin coeficientes reductores para quien acredite 40 años cotizados."
+   ],
+   "220": [
+    "Edad ordinaria de jubilación a los 64 años y jubilación anticipada desde los 55 con contrato de relevo."
+   ],
+   "221": [
+    "Personal sanitario desde los 60, conducción profesional y las que se reconozcan."
+   ],
+   "227": [
+    "con al menos el 100 % de reposición garantizado en los servicios esenciales"
+   ],
+   "232": [
+    "tipos mucho más altos a partir de 100.000 euros al año"
+   ],
+   "241": [
+    "IVA del 21 % para el alquiler turístico"
+   ],
+   "245": [
+    "Quien gane menos de 22.000 euros con dos empleos"
+   ],
+   "268": [
+    "Sin rebaja de sueldo, en dos años en las grandes empresas y en cuatro en las pymes"
+   ],
+   "272": [
+    "50 días por año en el indefinido y 60 en el temporal"
+   ],
+   "275": [
+    "Nadie cobrará en una empresa más de cinco veces el salario más bajo."
+   ],
+   "279": [
+    "Presunción de relación laboral cuando el 70 % de la facturación venga de un solo cliente"
+   ],
+   "288": [
+    "reducción de jornada hasta los 14 años del menor"
+   ],
+   "290": [
+    "con la cotización mantenida al 100 % para que no merme la pensión"
+   ],
+   "297": [
+    "Representación de las personas trabajadoras en los consejos de administración de las empresas de más de 250 personas"
+   ],
+   "302": [
+    "Incapacidad temporal pagada al 100 % desde el primer día"
+   ],
+   "303": [
+    "el grado de discapacidad resuelto en seis meses"
+   ],
+   "305": [
+    "hiperreducida para quien factura poco y cero cuando no hay rendimientos netos"
+   ],
+   "306": [
+    "Cuota bonificada durante el descanso y al 100 % durante el permiso por nacimiento."
+   ],
+   "339": [
+    "Al menos el 55 % del IRPF y el 70 % del IVA y de los impuestos especiales para las comunidades"
+   ],
+   "341": [
+    "quita del FLA e intereses hacia el 0 %"
+   ],
+   "369": [
+    "para los pueblos de menos de 20.000 habitantes"
+   ],
+   "374": [
+    "Cercanías o media distancia en todas las localidades de más de 20.000 habitantes en diez años."
+   ],
+   "375": [
+    "la mitad de los fondos previstos para nuevas líneas de alta velocidad",
+    "con Cercanías cada 15 minutos en hora punta"
+   ],
+   "376": [
+    "Cercanías en las ocho provincias"
+   ],
+   "385": [
+    "con trenes de hasta 200 km/h"
+   ],
+   "391": [
+    "Gratuidad para menores, personas desempleadas, mayores de 65 años y hogares con rentas bajas."
+   ],
+   "393": [
+    "Alternativa ferroviaria en trayectos de menos de 600 kilómetros"
+   ],
+   "397": [
+    "un mínimo del 2 % del PIB para políticas ambientales"
+   ],
+   "400": [
+    "bono social de luz y agua aplicado de oficio y al 100 %"
+   ],
+   "411": [
+    "Plantas de menos de 25.000 toneladas al año, solo con residuos de la zona, a no menos de 15 km de los núcleos de población"
+   ],
+   "420": [
+    "Estatuto marco con contratos públicos de 12 meses."
+   ],
+   "439": [
+    "con exención en el IRPF para las personas jubiladas que cedan sus tierras a menores de 40 años"
+   ],
+   "465": [
+    "Inhabilitación de 15 años para condenados por corrupción"
+   ],
+   "477": [
+    "Reforma de la ley electoral para que la juventud pueda votar desde los 16 años."
+   ],
+   "514": [
+    "Ayudas de hasta el 100 % del alquiler y viviendas transitorias."
+   ],
+   "523": [
+    "Iguales, intransferibles y pagados al 100 %: primero seis meses y después un año."
+   ],
+   "525": [
+    "Obligatorias en empresas y administraciones de más de 50 personas"
+   ],
+   "536": [
+    "Reserva del 1 % de las plazas de la Administración General del Estado"
+   ],
+   "556": [
+    "permiso de residencia y trabajo, vivienda y acompañamiento al cumplir los 18 años"
+   ],
+   "587": [
+    "Ayuda oficial al desarrollo del 0,7 % de la renta nacional en la legislatura",
+    "al menos un 10 % para construcción de paz"
+   ],
+   "604": [
+    "Monumentos gratis para menores de 26 años"
+   ],
+   "634": [
+    "Prohibido que las personas menores de 16 años participen o asistan a festejos taurinos"
+   ],
+   "649": [
+    "Duplicar las plazas en hora punta de la media distancia por San Fernando, Puerto Real, El Puerto y Jerez"
+   ],
+   "664": [
+    "Tres líneas: Almodóvar–Posadas–Palma del Río; Alcolea–El Carpio–Montoro–Villa del Río; Montilla–Aguilar–Puente Genil."
+   ],
+   "672": [
+    "Duplicar las plazas en hora punta."
+   ],
+   "676": [
+    "Duplicar las plazas en hora punta de la media distancia por Niebla y La Palma del Condado."
+   ],
+   "691": [
+    "y en la C-2 un tren cada 30 minutos"
+   ],
+   "710": [
+    "Con urgencias 24 horas, hospitalización y quirófanos"
+   ],
+   "713": [
+    "Trenes de más capacidad en la C-1 y la C-3 cada 30 minutos"
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "8 %",
+    "unidad": "%",
+    "texto": "Suelo de gasto sanitario por ley",
+    "contexto": "Al menos el 8 % del PIB, y gasto por habitante en cada comunidad nunca por debajo de la media de los países de la Unión Europea.",
+    "medida": 1
+   },
+   {
+    "valor": "48 horas",
+    "unidad": "horas",
+    "texto": "Ley de garantías de atención primaria",
+    "contexto": "Cita en un máximo de 48 horas, presencial si se pide; al menos 10 minutos por consulta; 1.500 pacientes como máximo por profesional de medicina y de enfermería de familia; y urgencias de primaria 24 horas, bien dimensionadas y accesibles en el medio rural.",
+    "medida": 8
+   },
+   {
+    "valor": "10 minutos",
+    "unidad": "minutos",
+    "texto": "Ley de garantías de atención primaria",
+    "contexto": "Cita en un máximo de 48 horas, presencial si se pide; al menos 10 minutos por consulta; 1.500 pacientes como máximo por profesional de medicina y de enfermería de familia; y urgencias de primaria 24 horas, bien dimensionadas y accesibles en el medio rural.",
+    "medida": 8
+   },
+   {
+    "valor": "24 horas",
+    "unidad": "horas",
+    "texto": "Ley de garantías de atención primaria",
+    "contexto": "Cita en un máximo de 48 horas, presencial si se pide; al menos 10 minutos por consulta; 1.500 pacientes como máximo por profesional de medicina y de enfermería de familia; y urgencias de primaria 24 horas, bien dimensionadas y accesibles en el medio rural.",
+    "medida": 8
+   },
+   {
+    "valor": "1.500 pacientes",
+    "unidad": "por profesional de familia",
+    "texto": "Máximo de pacientes por médica o médico y enfermera de familia",
+    "contexto": "1.500 pacientes como máximo por profesional de medicina y de enfermería de familia",
+    "medida": 8
+   },
+   {
+    "valor": "25 %",
+    "unidad": "%",
+    "texto": "25 % para primaria y 2 % para salud pública",
+    "contexto": "Suelos de inversión fijados por ley sobre el presupuesto sanitario total. Porque la atención primaria y la prevención son lo más eficaz y lo que menos dinero recibe.",
+    "medida": 9
+   },
+   {
+    "valor": "2 %",
+    "unidad": "%",
+    "texto": "25 % para primaria y 2 % para salud pública",
+    "contexto": "Suelos de inversión fijados por ley sobre el presupuesto sanitario total. Porque la atención primaria y la prevención son lo más eficaz y lo que menos dinero recibe.",
+    "medida": 9
+   },
+   {
+    "valor": "20.000 habitantes",
+    "unidad": "habitantes",
+    "texto": "Plan 20.000",
+    "contexto": "Centro de especialidades en cada municipio de más de 20.000 habitantes, cofinanciado por el Estado, para descargar los hospitales de referencia.",
+    "medida": 10
+   },
+   {
+    "valor": "30 días",
+    "unidad": "días",
+    "texto": "Tiempos máximos garantizados",
+    "contexto": "En todo el Estado: 30 días para la primera consulta con especialista, 15 para una prueba diagnóstica y 120 para operarse, con listas publicadas cada mes y un plan de choque que use al máximo los medios públicos y dimensione las plantillas según la evidencia.",
+    "medida": 11
+   },
+   {
+    "valor": "12 horas",
+    "unidad": "horas",
+    "texto": "Fin de las guardias de 24 horas",
+    "contexto": "Jornada ordinaria y guardia sumadas, nunca más de 12 horas; la hora de guardia, nunca por debajo de la ordinaria y computable para la jubilación.",
+    "medida": 15
+   },
+   {
+    "valor": "4 años",
+    "unidad": "años",
+    "texto": "Personal técnico superior sanitario al grupo B",
+    "contexto": "Grado universitario para el personal Técnico Superior Sanitario de Imagen y Radioterapia y de Laboratorio y Anatomía Patológica, de 4 años y 240 créditos como en la mayoría de la UE.",
+    "medida": 17
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Estabilidad",
+    "contexto": "Un hueco, un contrato de larga duración; supresión de la tasa de reposición, con al menos el 100 % de reposición garantizado por ley y todas las ausencias cubiertas.",
+    "medida": 18
+   },
+   {
+    "valor": "21 días",
+    "unidad": "días",
+    "texto": "Ley estatal contra el cáncer",
+    "contexto": "Tratamiento en 21 días como máximo, reconstrucción mamaria en 90 días y apoyo social, laboral y psicológico hasta la recuperación completa.",
+    "medida": 26
+   },
+   {
+    "valor": "90 días",
+    "unidad": "días",
+    "texto": "Ley estatal contra el cáncer",
+    "contexto": "Tratamiento en 21 días como máximo, reconstrucción mamaria en 90 días y apoyo social, laboral y psicológico hasta la recuperación completa.",
+    "medida": 26
+   },
+   {
+    "valor": "24 horas",
+    "unidad": "horas",
+    "texto": "Paliativos y muerte digna",
+    "contexto": "Nuevo plan con una red pública de cuidados paliativos, también pediátricos, y hospitalización a domicilio las 24 horas, con atención especial al medio rural; cumplimiento del testamento vital y plazos más ágiles por ley para la eutanasia, sin recurso de familiares o allegados.",
+    "medida": 33
+   },
+   {
+    "valor": "15 días",
+    "unidad": "días",
+    "texto": "Salud mental en 15 días",
+    "contexto": "Cita en salud mental comunitaria en un máximo de 15 días desde la derivación, con vía urgente cuando lo requiera la clínica.",
+    "medida": 37
+   },
+   {
+    "valor": "8.246 euros",
+    "unidad": "euros",
+    "texto": "La inversión por estudiante de la media europea",
+    "contexto": "Hasta alcanzar al final de la legislatura la inversión media por estudiante de la Unión Europea y la OCDE: de 6.687 a 8.246 euros.",
+    "medida": 70
+   },
+   {
+    "valor": "15 escolares",
+    "unidad": "por aula",
+    "texto": "Ratio máxima por aula en Infantil y Primaria",
+    "contexto": "15 escolares por aula en Infantil y Primaria",
+    "medida": 77
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Plantillas suficientes",
+    "contexto": "Supresión de la tasa de reposición, con al menos el 100 % de reposición garantizado, sustituciones en 48 horas y un docente más en los centros con más de tres unidades de Infantil, con «pareja educativa».",
+    "medida": 78
+   },
+   {
+    "valor": "48 horas",
+    "unidad": "horas",
+    "texto": "Plantillas suficientes",
+    "contexto": "Supresión de la tasa de reposición, con al menos el 100 % de reposición garantizado, sustituciones en 48 horas y un docente más en los centros con más de tres unidades de Infantil, con «pareja educativa».",
+    "medida": 78
+   },
+   {
+    "valor": "18 horas",
+    "unidad": "horas",
+    "texto": "Menos horas lectivas y menos burocracia",
+    "contexto": "Hasta 18 horas semanales, para dejar tiempo a la coordinación, la tutoría, la formación y la atención a las familias.",
+    "medida": 79
+   },
+   {
+    "valor": "10 estudiantes",
+    "unidad": "por maestra de PT o AL",
+    "texto": "Máximo de alumnado con necesidades específicas por docente de apoyo",
+    "contexto": "Como máximo 10 estudiantes con necesidades específicas por maestra de PT y de AL",
+    "medida": 87
+   },
+   {
+    "valor": "15 días",
+    "unidad": "días",
+    "texto": "Salud mental en los centros",
+    "contexto": "Derivación directa a salud mental, atención psicológica en 15 días y un plan contra la conducta suicida y las autolesiones adolescentes.",
+    "medida": 96
+   },
+   {
+    "valor": "2 %",
+    "unidad": "%",
+    "texto": "Suelo de financiación universitaria",
+    "contexto": "2 % del PIB para las universidades públicas y 3 % para I+D+i, con al menos un 90 % ejecutado, un plan estatal de infraestructuras universitarias, más plazas públicas y residencias públicas para estudiantes a precio asequible.",
+    "medida": 133
+   },
+   {
+    "valor": "3 %",
+    "unidad": "%",
+    "texto": "Suelo de financiación universitaria",
+    "contexto": "2 % del PIB para las universidades públicas y 3 % para I+D+i, con al menos un 90 % ejecutado, un plan estatal de infraestructuras universitarias, más plazas públicas y residencias públicas para estudiantes a precio asequible.",
+    "medida": 133
+   },
+   {
+    "valor": "90 %",
+    "unidad": "%",
+    "texto": "Suelo de financiación universitaria",
+    "contexto": "2 % del PIB para las universidades públicas y 3 % para I+D+i, con al menos un 90 % ejecutado, un plan estatal de infraestructuras universitarias, más plazas públicas y residencias públicas para estudiantes a precio asequible.",
+    "medida": 133
+   },
+   {
+    "valor": "20 %",
+    "unidad": "%",
+    "texto": "Alquiler al 20 % del salario",
+    "contexto": "Índice estatal de referencia por barrio o municipio para que ningún alquiler supere el 20 % de la renta media de la zona.",
+    "medida": 161
+   },
+   {
+    "valor": "20 %",
+    "unidad": "%",
+    "texto": "Parque público al 9 %",
+    "contexto": "Llevar el parque público en alquiler a la media europea, hasta el 20 % en las zonas de más demanda, con un gasto del 1,5 % del PIB.",
+    "medida": 167
+   },
+   {
+    "valor": "1,5 %",
+    "unidad": "%",
+    "texto": "Parque público al 9 %",
+    "contexto": "Llevar el parque público en alquiler a la media europea, hasta el 20 % en las zonas de más demanda, con un gasto del 1,5 % del PIB.",
+    "medida": 167
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "La Sareb, al parque público",
+    "contexto": "El 100 % de sus viviendas y suelos al alquiler asequible, con gestión pública.",
+    "medida": 168
+   },
+   {
+    "valor": "50 %",
+    "unidad": "%",
+    "texto": "50 % protegida en toda promoción",
+    "contexto": "Al menos la mitad de cada nueva promoción, y de ella un 60 % en alquiler social. Porque sin vivienda protegida en cada promoción solo se construye para quien puede pagar.",
+    "medida": 171
+   },
+   {
+    "valor": "60 %",
+    "unidad": "%",
+    "texto": "50 % protegida en toda promoción",
+    "contexto": "Al menos la mitad de cada nueva promoción, y de ella un 60 % en alquiler social.",
+    "medida": 171
+   },
+   {
+    "valor": "50 %",
+    "unidad": "%",
+    "texto": "Pacto de Estado por la dependencia",
+    "contexto": "El Estado financia el 50 % del sistema hasta llegar al 1,7 % del PIB y compensa a las comunidades por lo que no ha aportado.",
+    "medida": 193
+   },
+   {
+    "valor": "1,7 %",
+    "unidad": "%",
+    "texto": "Pacto de Estado por la dependencia",
+    "contexto": "El Estado financia el 50 % del sistema hasta llegar al 1,7 % del PIB y compensa a las comunidades por lo que no ha aportado.",
+    "medida": 193
+   },
+   {
+    "valor": "150 días",
+    "unidad": "días",
+    "texto": "Valoración en 150 días",
+    "contexto": "Plazo máximo común, atención por orden de solicitud, valoraciones colegiadas con el diagnóstico social a cargo de profesionales del Trabajo Social, silencio positivo cuando se supere y un observatorio público que publique tiempos de resolución y listas de espera. Porque hay personas que mueren esperando a que les reconozcan la dependencia.",
+    "medida": 194
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Ayuda a domicilio pública",
+    "contexto": "Gestión directa, horas según la necesidad real y fin del minutaje, con empresas públicas autonómicas de ayuda a domicilio y dependencia, empezando por una andaluza 100 % pública.",
+    "medida": 195
+   },
+   {
+    "valor": "6 años",
+    "unidad": "años",
+    "texto": "Atención temprana como derecho",
+    "contexto": "De 0 a 6 años y con continuidad después, con condiciones dignas para sus profesionales.",
+    "medida": 201
+   },
+   {
+    "valor": "10 %",
+    "unidad": "%",
+    "texto": "Empleo adaptado de verdad",
+    "contexto": "Ajustes de puesto obligatorios, empleo con apoyo y cuota de reserva del 10 % en el empleo público.",
+    "medida": 202
+   },
+   {
+    "valor": "1.700 habitantes",
+    "unidad": "habitantes",
+    "texto": "Ley estatal de servicios sociales",
+    "contexto": "Una trabajadora o un trabajador social por cada 1.700 habitantes, ajustado a la dispersión y la complejidad social; financiación estatal estable y finalista, separada para prestaciones y para personal y equipamientos; plantillas estables, menos burocracia y más intervención; Trabajo Social en el subgrupo A1, y equipos públicos de emergencias sociales integrados en el 112 y en los planes de protección civil.",
+    "medida": 209
+   },
+   {
+    "valor": "40 %",
+    "unidad": "%",
+    "texto": "Plan contra la pobreza infantil",
+    "contexto": "Objetivo de reducirla un 40 %, con protección especial a la infancia migrante, gitana o con discapacidad.",
+    "medida": 211
+   },
+   {
+    "valor": "200 euros",
+    "unidad": "euros",
+    "texto": "Prestación universal por crianza",
+    "contexto": "Entre 100 y 200 euros al mes por hijo o hija hasta los 18 años, para todas las familias.",
+    "medida": 212
+   },
+   {
+    "valor": "18 años",
+    "unidad": "años",
+    "texto": "Prestación universal por crianza",
+    "contexto": "Entre 100 y 200 euros al mes por hijo o hija hasta los 18 años, para todas las familias.",
+    "medida": 212
+   },
+   {
+    "valor": "1.221 euros",
+    "unidad": "euros",
+    "texto": "Pensiones mínimas iguales al SMI neto",
+    "contexto": "Complemento estatal para jubilación, incapacidad, viudedad y no contributivas, tomando como referencia el neto del salario mínimo de 2026 (1.221 euros brutos en 14 pagas).",
+    "medida": 217
+   },
+   {
+    "valor": "40 años",
+    "unidad": "años",
+    "texto": "40 años cotizados, jubilación completa",
+    "contexto": "Sin coeficientes reductores para quien acredite 40 años cotizados.",
+    "medida": 218
+   },
+   {
+    "valor": "64 años",
+    "unidad": "años",
+    "texto": "Jubilación a los 64 años",
+    "contexto": "Edad ordinaria de jubilación a los 64 años y jubilación anticipada desde los 55 con contrato de relevo.",
+    "medida": 220
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Plantillas propias",
+    "contexto": "Supresión de la tasa de reposición, con al menos el 100 % de reposición garantizado en los servicios esenciales, y fin de las subcontratas en todas las administraciones.",
+    "medida": 227
+   },
+   {
+    "valor": "100.000 euros",
+    "unidad": "euros",
+    "texto": "IRPF más progresivo",
+    "contexto": "Rebaja para las rentas más bajas y tipos mucho más altos a partir de 100.000 euros al año, menos deducciones para las rentas altas y rentas del capital que tributen al menos como las del trabajo.",
+    "medida": 232
+   },
+   {
+    "valor": "21 %",
+    "unidad": "%",
+    "texto": "IVA del 21 % para el alquiler turístico",
+    "contexto": "Que tribute como la actividad empresarial que es. Porque el alquiler turístico es un negocio y debe tributar como tal.",
+    "medida": 241
+   },
+   {
+    "valor": "22.000 euros",
+    "unidad": "euros",
+    "texto": "Dos pagadores sin castigo",
+    "contexto": "Quien gane menos de 22.000 euros con dos empleos no tendrá que declarar ni sufrirá regularizaciones sorpresa.",
+    "medida": 245
+   },
+   {
+    "valor": "32 horas",
+    "unidad": "horas",
+    "texto": "Jornada de 32 horas",
+    "contexto": "Sin rebaja de sueldo, en dos años en las grandes empresas y en cuatro en las pymes, con apoyo público para reorganizarse, y prohibición del turno partido sin rebaja de salario. Porque la productividad ha crecido y la jornada lleva décadas sin bajar.",
+    "medida": 268
+   },
+   {
+    "valor": "50 días",
+    "unidad": "días",
+    "texto": "Despido más caro y controlado",
+    "contexto": "50 días por año en el indefinido y 60 en el temporal, con autorización de la Inspección y límites a los despidos colectivos en empresas con beneficios.",
+    "medida": 272
+   },
+   {
+    "valor": "70 %",
+    "unidad": "%",
+    "texto": "Fin del falso trabajo autónomo",
+    "contexto": "Presunción de relación laboral cuando el 70 % de la facturación venga de un solo cliente e inspecciones masivas.",
+    "medida": 279
+   },
+   {
+    "valor": "14 años",
+    "unidad": "años",
+    "texto": "Derecho a adaptar el turno",
+    "contexto": "Por cuidado de menores, sin perder salario ni categoría, y reducción de jornada hasta los 14 años del menor.",
+    "medida": 288
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Cuidar sin perder ingresos",
+    "contexto": "Compensación pública de parte del salario perdido en las reducciones de jornada y excedencias por cuidados, con la cotización mantenida al 100 % para que no merme la pensión.",
+    "medida": 290
+   },
+   {
+    "valor": "250 personas",
+    "unidad": "personas",
+    "texto": "La plantilla, en los consejos",
+    "contexto": "Representación de las personas trabajadoras en los consejos de administración de las empresas de más de 250 personas, como prevé el artículo 129.2 de la Constitución.",
+    "medida": 297
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Bajas al 100 %",
+    "contexto": "Incapacidad temporal pagada al 100 % desde el primer día, sin depender del convenio.",
+    "medida": 302
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Vacaciones y permisos para personas autónomas",
+    "contexto": "Cuota bonificada durante el descanso y al 100 % durante el permiso por nacimiento.",
+    "medida": 306
+   },
+   {
+    "valor": "55 %",
+    "unidad": "%",
+    "texto": "Más recursos para los servicios públicos",
+    "contexto": "Al menos el 55 % del IRPF y el 70 % del IVA y de los impuestos especiales para las comunidades, todo en el fondo de garantía.",
+    "medida": 339
+   },
+   {
+    "valor": "70 %",
+    "unidad": "%",
+    "texto": "Más recursos para los servicios públicos",
+    "contexto": "Al menos el 55 % del IRPF y el 70 % del IVA y de los impuestos especiales para las comunidades, todo en el fondo de garantía.",
+    "medida": 339
+   },
+   {
+    "valor": "0 %",
+    "unidad": "%",
+    "texto": "La deuda de la infrafinanciación no la paga Andalucía",
+    "contexto": "Condonación de la parte de la deuda causada por la falta de financiación, quita del FLA e intereses hacia el 0 %.",
+    "medida": 341
+   },
+   {
+    "valor": "20.000 habitantes",
+    "unidad": "habitantes",
+    "texto": "Compensación por suelo protegido",
+    "contexto": "Más financiación y personal fuera de la tasa de reposición para los pueblos de menos de 20.000 habitantes con gran parte de su suelo protegido por patrimonio o espacios naturales.",
+    "medida": 369
+   },
+   {
+    "valor": "20.000 habitantes",
+    "unidad": "habitantes",
+    "texto": "Tren para toda Andalucía",
+    "contexto": "Cercanías o media distancia en todas las localidades de más de 20.000 habitantes en diez años.",
+    "medida": 374
+   },
+   {
+    "valor": "15 minutos",
+    "unidad": "minutos",
+    "texto": "Prioridad al tren convencional",
+    "contexto": "Recuperar las líneas en desuso antes que abrir nuevas líneas radiales de alta velocidad, con conexión de calidad para Almería y Huelva; la mitad de los fondos previstos para nuevas líneas de alta velocidad, a Cercanías, media distancia y mantenimiento, con Cercanías cada 15 minutos en hora punta.",
+    "medida": 375
+   },
+   {
+    "valor": "65 años",
+    "unidad": "años",
+    "texto": "Transporte gratis para quien más lo necesita",
+    "contexto": "Gratuidad para menores, personas desempleadas, mayores de 65 años y hogares con rentas bajas.",
+    "medida": 391
+   },
+   {
+    "valor": "600 kilómetros",
+    "unidad": "kilómetros",
+    "texto": "Tren antes que avión",
+    "contexto": "Alternativa ferroviaria en trayectos de menos de 600 kilómetros y ecotasas al transporte aéreo.",
+    "medida": 393
+   },
+   {
+    "valor": "2 %",
+    "unidad": "%",
+    "texto": "Ley de emergencia climática",
+    "contexto": "Objetivos anuales y verificables de reducción de emisiones y de demanda energética, y un mínimo del 2 % del PIB para políticas ambientales.",
+    "medida": 397
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Suministro mínimo vital",
+    "contexto": "Prohibido cortar la luz y el gas por impago a los hogares vulnerables, y bono social de luz y agua aplicado de oficio y al 100 %, pagado por las compañías, y fin de los cortes de luz en los barrios, con inversión obligatoria en las redes.",
+    "medida": 400
+   },
+   {
+    "valor": "15 km",
+    "unidad": "km",
+    "texto": "Biogás a escala local",
+    "contexto": "Plantas de menos de 25.000 toneladas al año, solo con residuos de la zona, a no menos de 15 km de los núcleos de población y lejos de los espacios protegidos, con consulta vinculante y prioridad a la gestión pública.",
+    "medida": 411
+   },
+   {
+    "valor": "12 meses",
+    "unidad": "meses",
+    "texto": "Bomberas y bomberos forestales todo el año",
+    "contexto": "Estatuto marco con contratos públicos de 12 meses.",
+    "medida": 420
+   },
+   {
+    "valor": "40 años",
+    "unidad": "años",
+    "texto": "Banco público de tierras",
+    "contexto": "Acceso a la tierra para jóvenes y mujeres y uso social de las tierras infrautilizadas, con exención en el IRPF para las personas jubiladas que cedan sus tierras a menores de 40 años a través del banco.",
+    "medida": 439
+   },
+   {
+    "valor": "15 años",
+    "unidad": "años",
+    "texto": "Quien roba, fuera",
+    "contexto": "Inhabilitación de 15 años para condenados por corrupción y prohibición de contratar con la Administración para las empresas condenadas.",
+    "medida": 465
+   },
+   {
+    "valor": "16 años",
+    "unidad": "años",
+    "texto": "Voto a los 16 años",
+    "contexto": "Reforma de la ley electoral para que la juventud pueda votar desde los 16 años.",
+    "medida": 477
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Vivienda para salir de la violencia",
+    "contexto": "Ayudas de hasta el 100 % del alquiler y viviendas transitorias.",
+    "medida": 514
+   },
+   {
+    "valor": "100 %",
+    "unidad": "%",
+    "texto": "Permisos iguales al 100 %",
+    "contexto": "Iguales, intransferibles y pagados al 100 %: primero seis meses y después un año.",
+    "medida": 523
+   },
+   {
+    "valor": "50 personas",
+    "unidad": "personas",
+    "texto": "Ludotecas en el trabajo",
+    "contexto": "Obligatorias en empresas y administraciones de más de 50 personas, y canguro público para familias monoparentales con pocos recursos.",
+    "medida": 525
+   },
+   {
+    "valor": "1 %",
+    "unidad": "%",
+    "texto": "Empleo trans",
+    "contexto": "Reserva del 1 % de las plazas de la Administración General del Estado e incentivos a las pymes que contraten a personas trans en paro de larga duración.",
+    "medida": 536
+   },
+   {
+    "valor": "18 años",
+    "unidad": "años",
+    "texto": "Infancia migrante protegida",
+    "contexto": "Tutela automática; pacto de Estado con financiación estatal para acoger a la infancia y adolescencia que llega sin familia, con reparto solidario entre comunidades; y permiso de residencia y trabajo, vivienda y acompañamiento al cumplir los 18 años.",
+    "medida": 556
+   },
+   {
+    "valor": "0,7 %",
+    "unidad": "%",
+    "texto": "El 0,7 %",
+    "contexto": "Ayuda oficial al desarrollo del 0,7 % de la renta nacional en la legislatura, con prioridad para el Mediterráneo, el Sahel y América Latina, al menos un 10 % para construcción de paz y presupuesto para el plan Mujeres, Paz y Seguridad.",
+    "medida": 587
+   },
+   {
+    "valor": "10 %",
+    "unidad": "%",
+    "texto": "El 0,7 %",
+    "contexto": "Ayuda oficial al desarrollo del 0,7 % de la renta nacional en la legislatura, con prioridad para el Mediterráneo, el Sahel y América Latina, al menos un 10 % para construcción de paz y presupuesto para el plan Mujeres, Paz y Seguridad.",
+    "medida": 587
+   },
+   {
+    "valor": "26 años",
+    "unidad": "años",
+    "texto": "Monumentos gratis para menores de 26 años",
+    "contexto": "Entrada gratuita a los museos y monumentos de titularidad estatal. Porque la juventud debe poder conocer su patrimonio sin pagar.",
+    "medida": 604
+   },
+   {
+    "valor": "16 años",
+    "unidad": "años",
+    "texto": "Menores fuera de los toros",
+    "contexto": "Prohibido que las personas menores de 16 años participen o asistan a festejos taurinos y a clases prácticas con reses.",
+    "medida": 634
+   },
+   {
+    "valor": "30 minutos",
+    "unidad": "minutos",
+    "texto": "Cercanías con más capacidad",
+    "contexto": "Doble vía aeropuerto–Fuengirola, más trenes, personal y servicio nocturno en la C-1, y en la C-2 un tren cada 30 minutos, prolongada hasta Antequera, con lanzaderas desde Coín y los Alhaurines.",
+    "medida": 691
+   },
+   {
+    "valor": "24 horas",
+    "unidad": "horas",
+    "texto": "Hospital público en Mijas",
+    "contexto": "Con urgencias 24 horas, hospitalización y quirófanos, cofinanciado por el Estado en un proyecto que corresponde a la Junta.",
+    "medida": 710
+   },
+   {
+    "valor": "30 minutos",
+    "unidad": "minutos",
+    "texto": "Cercanías que sirvan",
+    "contexto": "Trenes de más capacidad en la C-1 y la C-3 cada 30 minutos, prolongada hasta Guadalcanal.",
+    "medida": 713
+   }
+  ]
  },
  "autonomos": {
   "categorias": {
    "4": "empleo"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {},
+  "cifrasPrograma": []
  },
  "bng": {
   "categorias": {
@@ -203,7 +1062,185 @@
    "198": "disposición transitoria 3.ª do EBEP",
    "216": "reforma local",
    "496": "Lei Mordaza"
-  }
+  },
+  "cifras": {
+   "23": [
+    "Destinar o 3% dos Orzamentos Xerais do Estado para financiar mediante o Plan estatal de vivenda a creación dun parque público de alugueiro permanente."
+   ],
+   "37": [
+    "Promover a implantación da xornada laboral de 35 horas semanais sen redución salarial, e avanzar no horizonte da xornada de 32 horas semanais en 4 xornadas."
+   ],
+   "38": [
+    "Incrementar o Salario Mínimo Interprofesional até o situar no 60 % do salario medio, tal e como fixa a Carta Social Europea conforme aos datos do EUROSTAT."
+   ],
+   "40": [
+    "Redefinir as causas económicas/organizativas do despedimento obxectivo (última ratio) e período de consultas mínimo dun mes con informe vinculante da Inspección."
+   ],
+   "49": [
+    "Limitar a duración máxima dos períodos de proba a 15 días e esixir causa motivada para a súa non superación."
+   ],
+   "50": [
+    "Limitar a modalidade de contratación fixo-discontinúa: chamamentos cun máximo de 2–3 meses de intervalo, preaviso mínimo de 15 días, indemnización de 45 días/ano por fin de chamamento; prohibición desta modalidade nas ETT e en xornada parcial."
+   ],
+   "51": [
+    "Limitar a contratación a tempo parcial esixindo unha xornada mínima de 20 horas semanais, limitación do 15% do cadro de persoal a tempo parcial por empresa, restrición das horas complementarias (só indefinidos, non obrigatorias)."
+   ],
+   "52": [
+    "Garantir unha retribución do 100% do convenio os contratos formativos con duración inferior ao ano, prohibición en ERTE."
+   ],
+   "61": [
+    "Incremento das pensións mínimas até situalas como mínimo na mesma contía que o Salario Mínimo Interprofesional (60 % do salario medio, conforme ás cifras do EUROSTAT)."
+   ],
+   "63": [
+    "Recuperación da xubilación ordinaria aos 65 anos e a parcial aos 61 anos."
+   ],
+   "65": [
+    "Recoñecer a xubilación voluntaria sen penalización, a partir de ter cotizados 35 anos, reais ou por aplicación dos coeficientes redutores en determinadas profesións."
+   ],
+   "70": [
+    "Mudanza do período de cálculo da base reguladora, que deberá realizarse a partir dun período de 10 anos escollidos pola persoa beneficiaria."
+   ],
+   "73": [
+    "Elevación das pensións non contributivas até o 75 % do limiar de pobreza dun fogar unipersoal, inmediatamente e sen agardar o prazo de 2027 estabelecido na reforma de 2023, actualizando anualmente a súa contía conforme ao IPC real."
+   ],
+   "74": [
+    "Incremento do complemento de fenda de xénero para as pensións de xubilación cunha suba anual, como mínimo, dez"
+   ],
+   "79": [
+    "Ampliación da cotización completa, ao 100%, nas reducións de xornada por coidados e ampliar, alén dos 3 anos, as excedencias por coidados computadas como cotizadas."
+   ],
+   "162": [
+    "Promover un modelo educativo fundamentado no dereito universal á educación para os galegos e galegas de 0 a 18 anos e obrigatoria de 3 a 18 anos"
+   ],
+   "168": [
+    "Dotar o sistema educativo de maiores niveis de calidade, apostando polo crecemento dos orzamentos destinados á educación até lle dedicar, como mínimo, 7% do PIB."
+   ],
+   "171": [
+    "Incrementar o financiamento das universidade públicas, tomando como referencia o 1,5% do PIB"
+   ],
+   "182": [
+    "rehabilitación a doentes con déficit funcional recuperábel para todas as persoas que as precisen, con financiamento 100% público"
+   ],
+   "221": [
+    "de 0,26€ por km a 0,40€ por km percorrido mais os gastos de portaxes e aparcadoiro que se xustifiquen"
+   ],
+   "225": [
+    "Aplicar un incremento da porcentaxe de redución da base impoñíbel do IS do 10 % ao 25 %, pola denominada reserva de capitalización"
+   ],
+   "229": [
+    "Rebaixar de novo o IVE aplicado á electricidade, gas, biomasa para quecemento e madeira para leña, e do resto de subministracións básicas ao 5% e estabelecer a súa permanencia."
+   ],
+   "230": [
+    "Estabelecer a permanencia incondicionada da redución da taxa impositiva do Imposto Especial sobre a Electricidade (IEE) do 5,1 % ao 0,5 %."
+   ],
+   "278": [
+    "Elevar, progresivamente, o investimento estatal en I+D+i até o situar no 3% do PIB en 2030."
+   ],
+   "288": [
+    "Reformar a Lei do sector eléctrico, de forma que Galiza poida decidir sobre as instalacións enerxéticas de máis de 50MW e desenvolver plenamente o artigo 27.13 do actual Estatuto de Autonomía."
+   ],
+   "308": [
+    "Estabelecer unha participación pública obrigatoria mínima do 20% nos proxectos de investigación e explotación de minerais estratéxicos."
+   ],
+   "460": [
+    "Esixir que estas grandes infraestruturas se abastezan ao 100% con enerxías renovábeis de nova xeración propias, impedindo que saturen a rede pública ou despracen outros usos prioritarios."
+   ],
+   "487": [
+    "Recoñecer o dereito das mozas e dos mozos de 16 e 17 anos a poderen votar nas diferentes convocatorias electorais."
+   ],
+   "488": [
+    "Destinar 1 % dos Orzamentos Xerais do Estado (PGE) a políticas para a mocidade, transferindo os fondos ás comunidades autónomas para que estas poidan deseñar políticas adaptadas aos intereses da súa mocidade."
+   ],
+   "493": [
+    "Promover o transporte colectivo entre a mocidade menor de 30 anos a través de bonificacións nas viaxes en transporte por estrada e por ferrocarril."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "3 %",
+    "unidad": "de los PGE para vivienda",
+    "texto": "Parque público de alquiler financiado con el 3 % de los PGE",
+    "contexto": "Destinar o 3% dos Orzamentos Xerais do Estado para financiar mediante o Plan estatal de vivenda",
+    "medida": 23
+   },
+   {
+    "valor": "60 %",
+    "unidad": "del salario medio",
+    "texto": "Salario mínimo interprofesional igual al 60 % del salario medio",
+    "contexto": "Incrementar o Salario Mínimo Interprofesional até o situar no 60 % do salario medio",
+    "medida": 38
+   },
+   {
+    "valor": "35 horas",
+    "unidad": "semanales sin reducción salarial",
+    "texto": "Jornada laboral de 35 horas semanales y horizonte de 32 horas",
+    "contexto": "Promover a implantación da xornada laboral de 35 horas semanais sen redución salarial",
+    "medida": 37
+   },
+   {
+    "valor": "15 %",
+    "unidad": "de la plantilla por empresa",
+    "texto": "Tope de contratos a tiempo parcial, con jornada mínima de 20 horas",
+    "contexto": "limitación do 15% do cadro de persoal a tempo parcial por empresa",
+    "medida": 51
+   },
+   {
+    "valor": "65 años",
+    "unidad": "edad de jubilación ordinaria",
+    "texto": "Recuperar la jubilación ordinaria a los 65 años",
+    "contexto": "Recuperación da xubilación ordinaria aos 65 anos e a parcial aos 61 anos.",
+    "medida": 63
+   },
+   {
+    "valor": "75 %",
+    "unidad": "del umbral de pobreza",
+    "texto": "Pensiones no contributivas elevadas de inmediato al 75 %",
+    "contexto": "Elevación das pensións non contributivas até o 75 % do limiar de pobreza dun fogar unipersoal",
+    "medida": 73
+   },
+   {
+    "valor": "100 %",
+    "unidad": "de cotización",
+    "texto": "Cotización completa en reducciones de jornada por cuidados",
+    "contexto": "Ampliación da cotización completa, ao 100%, nas reducións de xornada por coidados",
+    "medida": 79
+   },
+   {
+    "valor": "7 %",
+    "unidad": "del PIB",
+    "texto": "Gasto educativo como mínimo del 7 % del PIB",
+    "contexto": "até lle dedicar, como mínimo, 7% do PIB.",
+    "medida": 168
+   },
+   {
+    "valor": "0,5 %",
+    "unidad": "tipo del Impuesto sobre la Electricidad",
+    "texto": "Tipo permanente del impuesto eléctrico reducido del 5,1 % al 0,5 %",
+    "contexto": "Imposto Especial sobre a Electricidade (IEE) do 5,1 % ao 0,5 %",
+    "medida": 230
+   },
+   {
+    "valor": "3 %",
+    "unidad": "del PIB",
+    "texto": "Inversión estatal en I+D+i hasta el 3 % del PIB en 2030",
+    "contexto": "Elevar, progresivamente, o investimento estatal en I+D+i até o situar no 3% do PIB en 2030.",
+    "medida": 278
+   },
+   {
+    "valor": "100 %",
+    "unidad": "de energía renovable",
+    "texto": "Centros de datos abastecidos con renovables propias",
+    "contexto": "se abastezan ao 100% con enerxías renovábeis de nova xeración propias",
+    "medida": 460
+   },
+   {
+    "valor": "1 %",
+    "unidad": "de los PGE para juventud",
+    "texto": "Presupuesto estatal para políticas de juventud",
+    "contexto": "Destinar 1 % dos Orzamentos Xerais do Estado (PGE) a políticas para a mocidade",
+    "medida": 488
+   }
+  ]
  },
  "cc": {
   "categorias": {
@@ -260,20 +1297,250 @@
    "98": "democracia",
    "100": "democracia"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {
+   "18": [
+    "Reclamaremos al Estado la financiación de las 1.400 plazas del Cuerpo General de la Policía Canaria previstas en la propuesta de Decreto Canarias."
+   ],
+   "38": [
+    "Defenderemos las medidas de la propuesta de Decreto Canarias para mantener la deducción del 60 % en el IRPF aplicable en La Palma y extenderla a La Gomera y El Hierro.",
+    "Reclamaremos también la bonificación del 50 % de las cuotas empresariales de la Seguridad Social en las tres islas para los contratos previstos en esa propuesta."
+   ],
+   "39": [
+    "Reclamaremos cada año el 100 % de la aportación estatal a las ayudas adicionales autorizadas por la Unión Europea."
+   ],
+   "67": [
+    "Reclamaremos la aportación estatal del 50 % del coste de su mantenimiento prevista en la propuesta de Decreto Canarias."
+   ],
+   "75": [
+    "Protegeremos la bonificación del 75 % en el transporte aéreo y marítimo de residentes."
+   ],
+   "78": [
+    "Para Lanzarote y Fuerteventura, defenderemos la financiación estatal del 50 % de los proyectos, infraestructuras y equipamientos de transporte público por carretera prevista en esa propuesta."
+   ],
+   "80": [
+    "Exigiremos la actualización de las compensaciones estatales para cubrir el 100 % del coste real y efectivo subvencionable, incluyendo el transporte hasta la isla de destino final."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "1.400",
+    "unidad": "plazas de policía",
+    "texto": "Financiación estatal de las plazas de la Policía Canaria",
+    "contexto": "financiación de las 1.400 plazas del Cuerpo General de la Policía Canaria",
+    "medida": 18
+   },
+   {
+    "valor": "60 %",
+    "unidad": "de deducción en el IRPF",
+    "texto": "Mantener la deducción en La Palma y extenderla a La Gomera y El Hierro",
+    "contexto": "mantener la deducción del 60 % en el IRPF aplicable en La Palma y extenderla a La Gomera y El Hierro",
+    "medida": 38
+   },
+   {
+    "valor": "100 %",
+    "unidad": "de la aportación estatal al POSEI",
+    "texto": "Defender íntegramente el POSEI y su dotación para el sector primario",
+    "contexto": "el 100 % de la aportación estatal a las ayudas adicionales autorizadas por la Unión Europea",
+    "medida": 39
+   },
+   {
+    "valor": "50 %",
+    "unidad": "del coste de mantenimiento",
+    "texto": "Aportación estatal al Centro Nacional de Vulcanología",
+    "contexto": "la aportación estatal del 50 % del coste de su mantenimiento",
+    "medida": 67
+   },
+   {
+    "valor": "75 %",
+    "unidad": "de bonificación en transporte",
+    "texto": "Mantener el descuento del 75 % en vuelos y barcos para residentes",
+    "contexto": "la bonificación del 75 % en el transporte aéreo y marítimo de residentes",
+    "medida": 75
+   },
+   {
+    "valor": "50 %",
+    "unidad": "de proyectos de transporte por carretera",
+    "texto": "Financiación estatal del transporte público en Lanzarote y Fuerteventura",
+    "contexto": "la financiación estatal del 50 % de los proyectos, infraestructuras y equipamientos de transporte público por carretera",
+    "medida": 78
+   },
+   {
+    "valor": "100 %",
+    "unidad": "del coste real del transporte de mercancías",
+    "texto": "Compensar el coste real del transporte de mercancías hasta la isla final",
+    "contexto": "cubrir el 100 % del coste real y efectivo subvencionable",
+    "medida": 80
+   }
+  ]
  },
  "d21": {
   "categorias": {
    "17": "democracia"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {
+   "1": [
+    "Los ministros tendrán como máximo 4 asesores, los vicepresidentes 7 y el gabinete del Presidente 20."
+   ],
+   "6": [
+    "Una Oficina Anticorrupción con poder de inspección podrá sancionar hasta el 10 % del volumen de negocios."
+   ],
+   "11": [
+    "El Congreso elegirá una terna por mayoría de tres quintos."
+   ],
+   "12": [
+    "Los organismos independientes se nombrarán con comparecencia pública y mayoría de tres quintos."
+   ],
+   "15": [
+    "Si los partidos bloquean de forma reiterada asuntos de orden mayor, la ciudadanía podrá activar una Asamblea Ciudadana con firmas del 1 % del censo."
+   ],
+   "20": [
+    "Nadie podrá ejercer el mismo cargo público durante más de dos mandatos completos o más de ocho años en total."
+   ],
+   "26": [
+    "Fondo Soberano de Vivienda Protegida y 10.000 M€ de fondos europeos"
+   ],
+   "27": [
+    "Se eliminarán el IVA, el ITP y el AJD en la compra de vivienda habitual para menores de 35 años, hasta un máximo de 400.000 €."
+   ],
+   "28": [
+    "El ITP se fijará en un tipo único del 2 % y el AJD en el 0 %. El IVA superreducido del 4 % se aplicará a la compra de vivienda habitual, hasta 400.000 €."
+   ],
+   "31": [
+    "Se aplicará un recargo mínimo del 10 % a la compra de vivienda no habitual por inversores extracomunitarios. Las comunidades podrán subirlo hasta el 25 %.",
+    "El alquiler turístico de corta estancia tendrá el IVA general del 10 %."
+   ],
+   "32": [
+    "El suelo público se cederá mediante concesiones o derechos de superficie a 75 años.",
+    "Empresas públicas y privadas construirán barrios de mil viviendas, con el Fondo Soberano de Vivienda."
+   ],
+   "34": [
+    "Se aplicará el IVA del 4 % a la obra nueva o a la rehabilitación integral destinada a vivienda asequible."
+   ],
+   "47": [
+    "Objetivo PISA: España en el top 10 europeo",
+    "Un Plan Estatal Educativo llevará a España al top 10 europeo en matemáticas, comprensión lectora y ciencias."
+   ],
+   "51": [
+    "Las comunidades que caigan más de dos puntos por debajo de la media recibirán apoyo estatal."
+   ],
+   "55": [
+    "Se implantará un periodo de dos años de formación práctica remunerada en colegios e institutos, guiado por profesores en activo."
+   ],
+   "67": [
+    "El Bono Cultural Joven y el Verano Joven se integrarán en una cuenta digital de unos 500 € por joven al cumplir 18 años, para formación y materiales de estudio."
+   ],
+   "73": [
+    "Los turnos se reducirán de forma progresiva a un máximo de 12 horas, empezando por los servicios más sobrecargados."
+   ],
+   "79": [
+    "Los profesionales sanitarios españoles que trabajan en el extranjero tendrán deducciones en el IRPF durante tres años tras su vuelta al Sistema Nacional de Salud."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "4",
+    "unidad": "asesores",
+    "texto": "Máximo de asesores por ministro",
+    "contexto": "Los ministros tendrán como máximo 4 asesores",
+    "medida": 1
+   },
+   {
+    "valor": "1 %",
+    "unidad": "del censo",
+    "texto": "Firmas para activar una Asamblea Ciudadana",
+    "contexto": "con firmas del 1 % del censo",
+    "medida": 15
+   },
+   {
+    "valor": "8 años",
+    "unidad": "de cargo público, como máximo",
+    "texto": "Límite total de años en un mismo cargo público",
+    "contexto": "más de ocho años en total",
+    "medida": 20
+   },
+   {
+    "valor": "10 %",
+    "unidad": "del volumen de negocios",
+    "texto": "Sanción máxima de la Oficina Anticorrupción",
+    "contexto": "sancionar hasta el 10 % del volumen de negocios",
+    "medida": 6
+   },
+   {
+    "valor": "10.000 M€",
+    "unidad": "de fondos europeos",
+    "texto": "Fondos europeos para un fondo público de vivienda protegida",
+    "contexto": "Fondo Soberano de Vivienda Protegida y 10.000 M€ de fondos europeos",
+    "medida": 26
+   },
+   {
+    "valor": "400.000 €",
+    "unidad": "de precio máximo",
+    "texto": "Tope de precio para la rebaja de impuestos en la compra",
+    "contexto": "hasta un máximo de 400.000 €",
+    "medida": 27
+   },
+   {
+    "valor": "4 %",
+    "unidad": "de IVA",
+    "texto": "IVA superreducido para obra nueva y rehabilitación de vivienda asequible",
+    "contexto": "Se aplicará el IVA del 4 % a la obra nueva",
+    "medida": 34
+   },
+   {
+    "valor": "Top 10",
+    "unidad": "europeo",
+    "texto": "Posición de España en PISA en matemáticas, lectura y ciencias",
+    "contexto": "llevará a España al top 10 europeo",
+    "medida": 47
+   },
+   {
+    "valor": "12 horas",
+    "unidad": "máximo por turno",
+    "texto": "Límite de los turnos de guardia en hospitales",
+    "contexto": "a un máximo de 12 horas",
+    "medida": 73
+   },
+   {
+    "valor": "500 €",
+    "unidad": "por joven al cumplir 18 años",
+    "texto": "Cuenta digital de formación para jóvenes",
+    "contexto": "una cuenta digital de unos 500 € por joven al cumplir 18 años",
+    "medida": 67
+   }
+  ]
  },
  "eaj-pnv": {
   "categorias": {
    "17": "social",
    "23": "social"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {
+   "4": [
+    "Ampliar la duración máxima de la prestación contributiva por desempleo de 24 a 36 meses, para ofrecer mayor seguridad económica a quienes pierden su trabajo."
+   ],
+   "20": [
+    "Eliminar las penalizaciones de jubilación anticipada para quienes hayan cotizado más de 40 años."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "36",
+    "unidad": "meses",
+    "texto": "Prestación por desempleo ampliada de 24 a 36 meses",
+    "contexto": "Ampliar la duración máxima de la prestación contributiva por desempleo de 24 a 36 meses",
+    "medida": 4
+   },
+   {
+    "valor": "40",
+    "unidad": "años cotizados",
+    "texto": "Jubilación anticipada sin penalización con 40 años cotizados",
+    "contexto": "Eliminar las penalizaciones de jubilación anticipada para quienes hayan cotizado más de 40 años",
+    "medida": 20
+   }
+  ]
  },
  "erc": {
   "categorias": {
@@ -337,7 +1604,189 @@
    "84": "llei Beckham",
    "103": "reformes laborals de 2010 i 2012",
    "249": "Llei de Racionalització i Sostenibilitat de l'Administració Local"
-  }
+  },
+  "cifras": {
+   "19": [
+    "Destinar el 6 % del PIB estatal a l’educació"
+   ],
+   "24": [
+    "Condonar de forma efectiva els més de 17.100 milions d’euros del FLA."
+   ],
+   "28": [
+    "Territorialitzar el 2 % cultural.",
+    "Fons Català del 2 % Cultural destinat a conservar, restaurar i activar el patrimoni"
+   ],
+   "31": [
+    "Almenys el 50 % del temps d’emissió dedicat a obres audiovisuals europees es reservarà a obres en les llengües oficials de l’Estat o de les Comunitats Autònomes.",
+    "TVE reservarà un mínim del 25 % d’aquestes obres a produccions en les llengües oficials diferents del castellà.",
+    "les plataformes de televisió i de vídeo a petició reservaran a obres europees almenys el 35 % del seu catàleg",
+    "les televisions públiques hauran de destinar un 25 % del finançament anticipat d’obra audiovisual europea"
+   ],
+   "46": [
+    "Complir amb el compromís del 0,7 % d’Ajut Oficial al Desenvolupament.",
+    "Donar el compliment efectiu al compromís del 0,7 % de l’AOD"
+   ],
+   "53": [
+    "promoure també l’exercici del dret de vot a partir dels 16 anys"
+   ],
+   "56": [
+    "almenys l’1,5 % del Producte Interior Brut (PIB)"
+   ],
+   "60": [
+    "Elevar el tipus d’IVA aplicable al lloguer turístic al 21 %"
+   ],
+   "66": [
+    "fins al 60 % del salari mitjà brut"
+   ],
+   "67": [
+    "Transferir les competències a la Generalitat de Catalunya per establir un salari mínim català (SMC) a 1.460 €.",
+    "almenys el 60 % del salari mitjà net"
+   ],
+   "68": [
+    "prestació universal per criança a partir de 200 euros per família"
+   ],
+   "69": [
+    "Augmentar el tipus màxim de l’IRPF sobre els guanys de capital del 30 % al 35 %",
+    "reduir els tipus de la fiscalitat del treball per als trams inferiors als 35.000 euros"
+   ],
+   "74": [
+    "augmentant el tipus per a fortunes de més de 10 milions d’euros i creant un tram nou a partir de 100 milions d’euros"
+   ],
+   "85": [
+    "pròrrogues en el pagament fins a 4 anys després d’haver-se concretat el fet imposable"
+   ],
+   "103": [
+    "recuperant la indemnització per acomiadament improcedent de 45 dies per any treballat, amb un màxim de 42 mensualitats"
+   ],
+   "105": [
+    "Reduir la durada màxima de la jornada laboral setmanal a 37 hores i mitja sense reducció salarial."
+   ],
+   "112": [
+    "amb nous trams per als ingressos superiors als 6.000 euros mensuals"
+   ],
+   "138": [
+    "fins als 10 km amb caràcter general i fins als 20.000 metres (20 km) en àrees rurals"
+   ],
+   "142": [
+    "assolir 4.000 punts de recàrrega de més de 350 kW abans de 2030"
+   ],
+   "150": [
+    "convertir els 435 milions d’euros en una injecció directament estatal a fons perdut"
+   ],
+   "151": [
+    "ampliar la Zona d’Especial Protecció per a les Aus (ZEPA) del delta del Llobregat de 935 ha a 2.372 ha"
+   ],
+   "153": [
+    "reducció d’emissions de CO2 d’almenys el 65 % el 2030 i del 95 % el 2040, respecte a 1990"
+   ],
+   "225": [
+    "inclosos els 1.400 milions d’euros addicionals anunciats pel Ministeri de Transports"
+   ],
+   "231": [
+    "suplement de crèdit de 2.018 MEUR per al 2026, 7.200 MEUR per al 2027",
+    "vetllar pel compliment estricte del finançament del 50 % de l’Administració General de l’Estat"
+   ],
+   "242": [
+    "incorporar 180 places entre 2026 i 2027",
+    "el cost del qual, per al Govern, serà de 20 milions d’euros anuals"
+   ],
+   "247": [
+    "fins a un límit del 50 % dels ingressos corrents"
+   ],
+   "248": [
+    "rebaixant el llindar poblacional actual de 20.000 a 10.000 habitants"
+   ],
+   "252": [
+    "incrementar plurianualment la inversió estatal en universitats en un 0,07 % del PIB per assolir una despesa pública de l’1 % del PIB el 2030",
+    "incrementar progressivament la inversió pública fins a assolir l’1,5 % del PIB el 2030, amb un augment de la inversió estatal equivalent al 0,14 % del PIB"
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "6 %",
+    "unidad": "del PIB",
+    "texto": "Gasto estatal en educación pública",
+    "contexto": "Destinar el 6 % del PIB estatal a l’educació",
+    "medida": 19
+   },
+   {
+    "valor": "17.100 M€",
+    "unidad": "de deuda del FLA",
+    "texto": "Condonación de la deuda de la Generalitat con el FLA",
+    "contexto": "Condonar de forma efectiva els més de 17.100 milions d’euros del FLA",
+    "medida": 24
+   },
+   {
+    "valor": "2 %",
+    "unidad": "de obras públicas estatales",
+    "texto": "Fondo catalán del 2 % cultural",
+    "contexto": "Fons Català del 2 % Cultural destinat a conservar, restaurar i activar el patrimoni",
+    "medida": 28
+   },
+   {
+    "valor": "50 %",
+    "unidad": "del tiempo de emisión",
+    "texto": "Obras europeas en lenguas oficiales en TV",
+    "contexto": "Almenys el 50 % del temps d’emissió dedicat a obres audiovisuals europees",
+    "medida": 31
+   },
+   {
+    "valor": "1,5 %",
+    "unidad": "del PIB",
+    "texto": "Inversión estatal en vivienda",
+    "contexto": "almenys l’1,5 % del Producte Interior Brut (PIB)",
+    "medida": 56
+   },
+   {
+    "valor": "21 %",
+    "unidad": "de IVA",
+    "texto": "IVA del alquiler turístico",
+    "contexto": "Elevar el tipus d’IVA aplicable al lloguer turístic al 21 %",
+    "medida": 60
+   },
+   {
+    "valor": "1.460 €",
+    "unidad": "euros",
+    "texto": "Salario mínimo catalán (SMC)",
+    "contexto": "per establir un salari mínim català (SMC) a 1.460 €",
+    "medida": 67
+   },
+   {
+    "valor": "200 euros",
+    "unidad": "por familia",
+    "texto": "Prestación universal por crianza",
+    "contexto": "prestació universal per criança a partir de 200 euros per família",
+    "medida": 68
+   },
+   {
+    "valor": "35 %",
+    "unidad": "tipo máximo",
+    "texto": "IRPF sobre ganancias de capital",
+    "contexto": "Augmentar el tipus màxim de l’IRPF sobre els guanys de capital del 30 % al 35 %",
+    "medida": 69
+   },
+   {
+    "valor": "45 días",
+    "unidad": "por año trabajado",
+    "texto": "Indemnización por despido improcedente",
+    "contexto": "45 dies per any treballat, amb un màxim de 42 mensualitats",
+    "medida": 103
+   },
+   {
+    "valor": "37,5 horas",
+    "unidad": "semanales",
+    "texto": "Jornada laboral máxima",
+    "contexto": "Reduir la durada màxima de la jornada laboral setmanal a 37 hores i mitja",
+    "medida": 105
+   },
+   {
+    "valor": "4.000",
+    "unidad": "puntos de recarga",
+    "texto": "Recarga ultrarrápida de más de 350 kW",
+    "contexto": "assolir 4.000 punts de recàrrega de més de 350 kW abans de 2030",
+    "medida": 142
+   }
+  ]
  },
  "fo": {
   "categorias": {
@@ -364,7 +1813,31 @@
   "deroga": {
    "8": "Real Decreto 17/1977 sobre relaciones de trabajo",
    "58": "Ley Trans"
-  }
+  },
+  "cifras": {
+   "2": [
+    "un sistema obligatorio de representación de los trabajadores en todos las empresas con diez trabajadores o más, sin excepciones."
+   ],
+   "63": [
+    "El objetivo principal de estos planes debe ser aumentar la media de hijos por mujer a más de dos."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "10",
+    "unidad": "trabajadores o más",
+    "texto": "Umbral para la representación obligatoria de los trabajadores en la empresa",
+    "contexto": "obligatorio de representación de los trabajadores en todos las empresas con diez trabajadores o más, sin excepciones",
+    "medida": 2
+   },
+   {
+    "valor": "más de 2",
+    "unidad": "hijos por mujer",
+    "texto": "Objetivo de natalidad de los planes estatales",
+    "contexto": "aumentar la media de hijos por mujer a más de dos",
+    "medida": 63
+   }
+  ]
  },
  "mundo-mas-justo": {
   "categorias": {
@@ -473,13 +1946,187 @@
    "190": "rural",
    "191": "rural"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {
+   "1": [
+    "que nunca superaría el 30% de la renta familiar",
+    "Objetivo 5% (desde el 1,1% actual): alcanzar al menos 1,35 millones de viviendas sociales y asequibles de carácter permanente en 2030"
+   ],
+   "23": [
+    "Ampliar los permisos por nacimiento y cuidado de menores hasta las 24 semanas por progenitor y hasta 40 en familias monoparentales"
+   ],
+   "44": [
+    "incrementando al menos un 40% los recursos humanos y materiales de la Agencia Tributaria"
+   ],
+   "47": [
+    "Establecer una tributación efectiva mínima del 3 % sobre el patrimonio neto",
+    "superior a 50 millones de euros"
+   ],
+   "48": [
+    "limitando al 90 % la exención por doble imposición"
+   ],
+   "51": [
+    "Reducir progresivamente la jornada laboral hasta las 35 horas semanales"
+   ],
+   "70": [
+    "hasta alcanzar al menos el 25% del gasto sanitario público"
+   ],
+   "77": [
+    "Avanzar hacia una dotación de profesionales de salud mental por habitante equiparable a la media europea (50 por cada 100.000 habitantes frente a los 30 de España)."
+   ],
+   "84": [
+    "un incremento progresivo de la inversión pública en educación hasta alcanzar al menos el 6 % del PIB, mediante compromisos presupuestarios plurianuales."
+   ],
+   "85": [
+    "Establecer por ley una jornada lectiva máxima de 23 horas semanales en Infantil, Primaria y Educación Especial, y de 18 horas en el resto de enseñanzas"
+   ],
+   "86": [
+    "Aprobar una ley básica que reduzca progresivamente las ratios máximas a 20 estudiantes por aula en Infantil y Primaria y 25 en ESO y Bachillerato",
+    "El alumnado con necesidades educativas especiales computará como dos plazas",
+    "Garantizar un profesional de orientación educativa por cada 250 estudiantes"
+   ],
+   "92": [
+    "Incrementar la inversión en ciencia e innovación hasta llegar al 3% del PIB"
+   ],
+   "100": [
+    "Respaldar el compromiso de la Unión Europea de reducir al menos un 55% las emisiones"
+   ],
+   "103": [
+    "Garantizar que todo barrio tenga un parque o zona verde a menos de 15 minutos a pie y que cada municipio alcance una cubierta arbórea urbana del 30%."
+   ],
+   "104": [
+    "Ampliar hasta los 6 millones de hectáreas la superficie agraria ecológica en 2030"
+   ],
+   "124": [
+    "que propone reducir el gasto militar en un 2% en todos los países"
+   ],
+   "139": [
+    "Mantener la elección parlamentaria de los 8 vocales juristas, 4 por el Congreso y 4 por el Senado",
+    "los otros 12 vocales, de procedencia judicial, sean elegidos directamente por jueces y magistrados: 6 entre candidaturas presentadas por las asociaciones judiciales y 6 entre candidaturas de jueces y magistrados no asociados"
+   ],
+   "143": [
+    "Un alto cargo de la administración que abandona la política no podrá ser contratado por una empresa del sector de su responsabilidad por, al menos, 5 años."
+   ],
+   "182": [
+    "a través de los instrumentos de financiación gestionados principalmente por la AECID (destinando al menos 400M€ anuales al finalizar la legislatura)"
+   ],
+   "184": [
+    "asegurando la asignación del 0,7% de la Renta Nacional Bruta española como Ayuda Oficial al Desarrollo."
+   ],
+   "185": [
+    "Será necesario actualizar su estrategia y dotarla de una financiación suficiente, flexible y predecible (10% del total de la AOD)."
+   ],
+   "187": [
+    "con una adecuada dotación presupuestaria (20% de la AOD total que tenga la igualdad de género como objetivo principal)."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "30 %",
+    "unidad": "de la renta familiar",
+    "texto": "Tope del alquiler de la vivienda pública en relación con la renta",
+    "contexto": "nunca superaría el 30% de la renta familiar",
+    "medida": 1
+   },
+   {
+    "valor": "3 %",
+    "unidad": "del patrimonio neto",
+    "texto": "Tributación mínima de las grandes fortunas (más de 50 M€)",
+    "contexto": "Establecer una tributación efectiva mínima del 3 % sobre el patrimonio neto",
+    "medida": 47
+   },
+   {
+    "valor": "40 %",
+    "unidad": "más de recursos",
+    "texto": "Más medios para inspeccionar el fraude fiscal",
+    "contexto": "incrementando al menos un 40% los recursos humanos y materiales",
+    "medida": 44
+   },
+   {
+    "valor": "35",
+    "unidad": "horas semanales",
+    "texto": "Jornada laboral reducida sin bajar el salario",
+    "contexto": "Reducir progresivamente la jornada laboral hasta las 35 horas semanales",
+    "medida": 51
+   },
+   {
+    "valor": "25 %",
+    "unidad": "del gasto sanitario público",
+    "texto": "Financiación mínima de la Atención Primaria",
+    "contexto": "hasta alcanzar al menos el 25% del gasto sanitario público",
+    "medida": 70
+   },
+   {
+    "valor": "6 %",
+    "unidad": "del PIB",
+    "texto": "Inversión pública mínima en educación",
+    "contexto": "hasta alcanzar al menos el 6 % del PIB",
+    "medida": 84
+   },
+   {
+    "valor": "20",
+    "unidad": "estudiantes por aula",
+    "texto": "Ratio máxima en Infantil y Primaria",
+    "contexto": "las ratios máximas a 20 estudiantes por aula en Infantil y Primaria",
+    "medida": 86
+   },
+   {
+    "valor": "3 %",
+    "unidad": "del PIB",
+    "texto": "Inversión en ciencia e innovación",
+    "contexto": "hasta llegar al 3% del PIB",
+    "medida": 92
+   },
+   {
+    "valor": "2 %",
+    "unidad": "del gasto militar",
+    "texto": "Reducción del gasto militar en todos los países",
+    "contexto": "reducir el gasto militar en un 2% en todos los países",
+    "medida": 124
+   },
+   {
+    "valor": "0,7 %",
+    "unidad": "de la RNB",
+    "texto": "Ayuda Oficial al Desarrollo",
+    "contexto": "asegurando la asignación del 0,7% de la Renta Nacional Bruta española",
+    "medida": 184
+   },
+   {
+    "valor": "30 %",
+    "unidad": "de cubierta arbórea",
+    "texto": "Cubierta arbórea urbana en cada municipio",
+    "contexto": "cada municipio alcance una cubierta arbórea urbana del 30%",
+    "medida": 103
+   }
+  ]
  },
  "pfac": {
   "categorias": {},
   "deroga": {
    "5": "ley trans"
-  }
+  },
+  "cifras": {
+   "7": [
+    "Aumento del SMI en un 30% superior al coste medio de los alquileres y de acuerdo con el IPC.",
+    "Avanzar hacia la jornada laboral de 30 horas sin merma salarial."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "30 %",
+    "unidad": "sobre el coste del alquiler medio",
+    "texto": "Subida del SMI por encima del coste medio de los alquileres",
+    "contexto": "Aumento del SMI en un 30% superior al coste medio de los alquileres",
+    "medida": 7
+   },
+   {
+    "valor": "30 horas",
+    "unidad": "semanales",
+    "texto": "Jornada laboral de 30 horas sin merma salarial",
+    "contexto": "Avanzar hacia la jornada laboral de 30 horas sin merma salarial",
+    "medida": 7
+   }
+  ]
  },
  "ph": {
   "categorias": {},
@@ -487,14 +2134,378 @@
    "6": "régimen fiscal privilegiado de las SOCIMIs",
    "10": "Ley 15/1997",
    "29": "legislación de extranjería sancionadora"
-  }
+  },
+  "cifras": {
+   "1": [
+    "Creación de Fondos de Accionariado Laboral alimentados con el 25% de los beneficios netos anuales de la empresa, transfiriendo paulatinamente la propiedad de las acciones a la plantilla."
+   ],
+   "2": [
+    "Garantía por ley de una asignación monetaria individual, incondicional y universal de 950 € al mes para toda persona mayor de edad residente en España (calculada en el 120% del umbral de pobreza monetaria actual).",
+    "Una reforma progresiva del IRPF sobre las rentas del capital y del trabajo superiores a 120.000 € anuales (aportando 55.000 M€).",
+    "Un Impuesto a las Grandes Fortunas y Patrimonio Neto superior a 3 millones de euros (aportando 25.000 M€).",
+    "Una Tasa sobre Transacciones Financieras Especulativas (Tasa Tobin) del 0,5% en operaciones bursátiles de alta frecuencia (aportando 20.000 M€).",
+    "Un Plan Integral de Lucha contra el Fraude y la Evasión Fiscal de grandes corporaciones y patrimonios, fijando un objetivo de recaudación recuperada de 30.000 M€ anuales",
+    "Ahorro de costes administrativos y supresión de partidas redundantes de prestaciones mínimas (10.000 M€)."
+   ],
+   "3": [
+    "Reducción legal de la jornada ordinaria laboral a 30 horas semanales distribuidas en 4 días, sin reducción del salario."
+   ],
+   "4": [
+    "La Banca Pública concederá créditos a tipo de interés 0% (cobrando únicamente gastos mínimos de gestión)."
+   ],
+   "5": [
+    "Inversión pública sostenida durante 10 años para incorporar 2,5 millones de viviendas al Parque Público de Alquiler Social, mediante edificación ecológica en suelo público, rehabilitación urbana"
+   ],
+   "7": [
+    "Establecimiento de un límite máximo legal al precio del alquiler residencial: ningún contrato podrá superar el 30% de la renta media disponible del código postal correspondiente."
+   ],
+   "8": [
+    "que mantengan viviendas desocupadas de forma injustificada por más de 12 meses deberán ceder temporalmente el uso del inmueble al parque público de alquiler por un período de hasta 8 años"
+   ],
+   "11": [
+    "Incremento progresivo de la inversión pública en sanidad hasta alcanzar el 9,5% del PIB en la legislatura, destinando como mínimo el 25% de este presupuesto a la Atención Primaria y Comunitaria."
+   ],
+   "12": [
+    "Contratación pública urgente de profesionales de la psicología clínica hasta garantizar una ratio de 20 psicólogos por cada 100.000 habitantes en Atención Primaria."
+   ],
+   "13": [
+    "Inclusión en la cartera pública 100% gratuita de la atención bucodental integral (incluyendo empastes, endodoncias y prótesis) y del servicio de salud visual básica"
+   ],
+   "14": [
+    "Sustitución progresiva del modelo masificado y lucrativo de residencias privadas por una Red Pública de Centros de Convivencia Comunitarios humanizados (máximo 25 plazas por módulo)."
+   ],
+   "15": [
+    "Fijación por ley de un suelo presupuestario del 7% del PIB destinado de forma exclusiva a la red pública de enseñanza."
+   ],
+   "16": [
+    "Reducción legal del número máximo de estudiantes por aula a 15 alumnos en todas las etapas obligatorias (Infantil, Primaria y Secundaria), garantizando una educación personalizada, comprensiva y atenta a las diversas necesidades madurativas."
+   ],
+   "19": [
+    "El 100% del dinero público liberado se transferirá de forma blindada y directa a la red estatal para modernizar infraestructuras, financiar materiales y reforzar el personal de apoyo."
+   ],
+   "20": [
+    "Implantación del Referéndum Revocatorio a mitad de legislatura: si un gobierno incumple sus compromisos fundamentales sin causa de fuerza mayor justificada, la ciudadanía podrá convocar, mediante la recogida de 500.000 firmas"
+   ],
+   "21": [
+    "consultas ciudadanas vinculantes sobre leyes orgánicas, tratados internacionales y presupuestos participativos (fijando un 15% del presupuesto estatal sujeto a decisión directa)"
+   ],
+   "27": [
+    "Reducción a la mitad de las partidas presupuestarias de gasto militar en un plazo de dos años."
+   ],
+   "32": [
+    "Financiación pública al 100% de la instalación de comunidades energéticas solares en tejados de viviendas particulares y polígonos industriales, protegiendo el suelo agrícola frente a grandes macroparques fotovoltaicos especulativos."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "950 €",
+    "unidad": "al mes",
+    "texto": "Renta básica universal e incondicional para toda persona adulta",
+    "contexto": "asignación monetaria individual, incondicional y universal de 950 € al mes",
+    "medida": 2
+   },
+   {
+    "valor": "30",
+    "unidad": "horas semanales en 4 días",
+    "texto": "Jornada laboral de 30 horas sin reducción de salario",
+    "contexto": "Reducción legal de la jornada ordinaria laboral a 30 horas semanales distribuidas en 4 días, sin reducción del salario",
+    "medida": 3
+   },
+   {
+    "valor": "0 %",
+    "unidad": "de interés",
+    "texto": "Créditos de una Banca Pública sin interés",
+    "contexto": "La Banca Pública concederá créditos a tipo de interés 0%",
+    "medida": 4
+   },
+   {
+    "valor": "30 %",
+    "unidad": "de la renta media",
+    "texto": "Tope legal al alquiler: 30 % de la renta media del código postal",
+    "contexto": "ningún contrato podrá superar el 30% de la renta media disponible del código postal correspondiente",
+    "medida": 7
+   },
+   {
+    "valor": "2,5 M",
+    "unidad": "viviendas",
+    "texto": "Viviendas para el parque público de alquiler social en 10 años",
+    "contexto": "para incorporar 2,5 millones de viviendas al Parque Público de Alquiler Social",
+    "medida": 5
+   },
+   {
+    "valor": "9,5 %",
+    "unidad": "del PIB",
+    "texto": "Inversión pública sanitaria hasta el 9,5 % del PIB",
+    "contexto": "hasta alcanzar el 9,5% del PIB en la legislatura",
+    "medida": 11
+   },
+   {
+    "valor": "20",
+    "unidad": "psicólogos por cada 100.000 hab.",
+    "texto": "Psicólogos clínicos en Atención Primaria",
+    "contexto": "una ratio de 20 psicólogos por cada 100.000 habitantes en Atención Primaria",
+    "medida": 12
+   },
+   {
+    "valor": "7 %",
+    "unidad": "del PIB",
+    "texto": "Suelo presupuestario educativo solo para la red pública",
+    "contexto": "un suelo presupuestario del 7% del PIB destinado de forma exclusiva a la red pública de enseñanza",
+    "medida": 15
+   },
+   {
+    "valor": "15",
+    "unidad": "alumnos por aula",
+    "texto": "Máximo de alumnos por aula en Infantil, Primaria y Secundaria",
+    "contexto": "a 15 alumnos en todas las etapas obligatorias",
+    "medida": 16
+   },
+   {
+    "valor": "500.000",
+    "unidad": "firmas",
+    "texto": "Firmas para un referéndum revocatorio a mitad de legislatura",
+    "contexto": "mediante la recogida de 500.000 firmas",
+    "medida": 20
+   },
+   {
+    "valor": "50 %",
+    "unidad": "del gasto militar",
+    "texto": "Reducir a la mitad el gasto militar en dos años",
+    "contexto": "Reducción a la mitad de las partidas presupuestarias de gasto militar en un plazo de dos años",
+    "medida": 27
+   },
+   {
+    "valor": "25 %",
+    "unidad": "de los beneficios netos",
+    "texto": "Fondos de accionariado laboral alimentados con el 25 % de beneficios",
+    "contexto": "alimentados con el 25% de los beneficios netos anuales de la empresa",
+    "medida": 1
+   }
+  ]
  },
  "pp": {
   "categorias": {
    "199": "infraestructuras",
    "238": "inmigracion"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {
+   "7": [
+    "Cada nueva regulación irá acompañada de la supresión de tres normas innecesarias, obsoletas o duplicadas.",
+    "Antes de 2029 reduciremos las cargas administrativas generales un 25% y un 35% para las pymes."
+   ],
+   "9": [
+    "Se extenderá la asistencia digital las 24 horas a todos los servicios para resolver las consultas más habituales."
+   ],
+   "24": [
+    "Elevaremos la multa mínima a 3.000 euros para quienes participen activamente en actos de vandalismo contra bienes públicos o privados durante desórdenes multitudinarios que alteren gravemente la seguridad ciudadana"
+   ],
+   "37": [
+    "En un máximo de una semana, comprobaremos la identidad de quienes sean interceptados al cruzar ilegalmente nuestras fronteras y si suponen un riesgo para la seguridad."
+   ],
+   "46": [
+    "Resolveremos en un máximo de 72 horas los procedimientos de determinación de la edad, reforzando los medios de la Fiscalía."
+   ],
+   "67": [
+    "Ningún candidato podrá haber ocupado cargos políticos durante los cinco años anteriores y estableceremos un régimen estricto de incompatibilidades."
+   ],
+   "68": [
+    "Los recursos de inconstitucionalidad contra leyes que afecten a derechos fundamentales se resolverán en noventa días."
+   ],
+   "70": [
+    "El fiscal general tendrá un mandato único de cinco años y, como recomienda la Comisión Europea, no cesará con el Gobierno que lo propuso."
+   ],
+   "72": [
+    "Los jueces y magistrados de todas las categorías elegirán a los doce vocales judiciales del Consejo General del Poder Judicial.",
+    "Los jueces y fiscales que hayan ocupado cargos políticos no podrán volver a juzgar ni a ejercer la acusación hasta cinco años después de su cese."
+   ],
+   "79": [
+    "no podrán ser elegidos aquellos candidatos que en los últimos cinco años hayan ocupado puestos como cargo electo, miembro de gobiernos o cargo orgánico en un partido político u organización sindical o empresarial."
+   ],
+   "105": [
+    "Destinaremos ayudas directas para los municipios de menos de 250 habitantes, para sostener sus servicios básicos, mantener sus infraestructuras y acceder a proyectos europeos y subvenciones."
+   ],
+   "114": [
+    "Impulsaremos un Pacto de Estado por la Dependencia para asegurar una financiación estable y plurianual de acuerdo con las Comunidades Autónomas y haremos efectiva la aportación estatal del 50% del coste público del sistema.",
+    "Las familias se deducirán el 40% de lo que paguen por la atención profesional de un mayor dependiente,"
+   ],
+   "117": [
+    "Por ello movilizaremos, junto con el sector privado, más de 300.000 millones en los próximos 15 años para impulsar autovías y redes viarias, Alta Velocidad y Cercanías"
+   ],
+   "118": [
+    "Analizaremos las más de 1.000 limitaciones temporales de velocidad y cuantificaremos las inversiones necesarias para abordarlas, estableciendo prioridades a corto y medio plazo."
+   ],
+   "122": [
+    "Desplegaremos un programa de conservación para los más de 26.500 kilómetros de carreteras estatales, empezando por los tramos con mayor tráfico, más deteriorados y con mayor concentración de accidentes."
+   ],
+   "126": [
+    "Dentro del Plan Nacional de Infraestructuras, movilizaremos hasta 40.000 millones de euros en inversiones hasta 2030."
+   ],
+   "144": [
+    "CONSTRUIREMOS UN MILLÓN DE VIVIENDAS",
+    "Las licencias de obra nueva y de rehabilitación se resolverán en tres meses, con silencio positivo."
+   ],
+   "148": [
+    "La rehabilitación de vivienda habitual tendrá un IVA superreducido del 4%, contará con ayudas, financiación pública y avales preferentes, y podrá apoyarse en la figura del agente rehabilitador."
+   ],
+   "153": [
+    "Reduciremos el IVA de la compra de primera vivienda del 10% al 4% para menores de 40 años y permitiremos que se pague de forma fraccionada al ritmo de la hipoteca.",
+    "Ampliaremos a cuatro años el plazo para reinvertir el importe de la venta de la vivienda habitual y mantener la exención en el IRPF."
+   ],
+   "154": [
+    "Ampliaremos el aval público, que cubre hasta el 20% del valor de la vivienda, a los compradores menores de 40 años, con la posibilidad de ampliar el límite de edad hasta los 50"
+   ],
+   "155": [
+    "Los jóvenes menores de 40 años podrán aportar hasta 2.000 euros al año a una cuenta de ahorro para la compra de su primera vivienda, con una deducción fiscal del 20% de lo aportado.",
+    "El límite de aportaciones acumuladas será de 40.000 euros."
+   ],
+   "156": [
+    "El propietario particular que, al vencer el contrato de una vivienda habitual, lo renueve a su inquilino por tres años más subiendo la renta por debajo del IPC tendrá una deducción en el IRPF o un crédito fiscal que compense ese esfuerzo."
+   ],
+   "157": [
+    "Aprobaremos una ley para que el propietario pueda recuperar su vivienda en 48 horas desde el primer día."
+   ],
+   "161": [
+    "Los autónomos que vuelvan a su actividad tras el permiso tendrán bonificada al 100% su cuota durante dos años."
+   ],
+   "163": [
+    "Acordaremos con las Comunidades Autónomas que el Estado financie la mitad del coste de cada plaza de cero a tres años, pública o concertada, y las Comunidades, la otra mitad."
+   ],
+   "168": [
+    "NINGÚN MENOR DE 14 AÑOS PODRÁ TENER UNA CUENTA EN REDES SOCIALES, Y HASTA LOS 16 NECESITARÁ AUTORIZACIÓN DE SUS PADRES"
+   ],
+   "170": [
+    "Los nuevos autónomos no pagarán cuota a la Seguridad Social durante su primer año, ni durante el segundo si sus ingresos no llegan al salario mínimo."
+   ],
+   "171": [
+    "SI ERES AUTÓNOMO Y FACTURAS MENOS DE 85.000 EUROS, NO TENDRÁS QUE COBRAR NI DECLARAR EL IVA",
+    "Los autónomos podrán pasar de cuatro declaraciones trimestrales a dos semestrales en todos los impuestos sujetos a esa obligación.",
+    "Contratar dejará de ser un salto al vacío: bonificaremos el 100% de las cotizaciones empresariales por el primer trabajador durante un año y el 50% por el segundo."
+   ],
+   "175": [
+    "Protegeremos mejor a quien padezca enfermedades severas y de larga duración con hasta el 100% de la base reguladora."
+   ],
+   "179": [
+    "Reduciremos el IRPF de los trabajadores y autónomos de 18 a 35 años durante los cuatro primeros años en que paguen IRPF.",
+    "La reducción será del 100% el primer año, del 75% el segundo, del 50% el tercero y del 25% el cuarto."
+   ],
+   "180": [
+    "Mientras persista la actual crisis de inflación y de poder adquisitivo, aplicaremos un IVA del 0% a los alimentos básicos, incluidos la carne, el pescado y las conservas."
+   ],
+   "187": [
+    "Revisaremos los umbrales nacionales que castigan el crecimiento y, donde el derecho europeo lo permita, los nuevos requisitos sólo se aplicarán cuando la empresa lleve cuatro años creciendo de forma consolidada.",
+    "Simplificaremos las obligaciones de las empresas de hasta 250 trabajadores."
+   ],
+   "188": [
+    "Y los profesionales que vengan a trabajar en grandes proyectos tecnológicos tributarán al 20% durante seis años."
+   ],
+   "190": [
+    "Habrá entornos de prueba seguros, sin cargas nacionales añadidas al marco europeo, y respuesta a los trámites en treinta días."
+   ],
+   "191": [
+    "Los proyectos en inteligencia artificial, semiconductores, biotecnología, baterías o del sector aeroespacial tendrán durante siete años un trato fiscal más favorable."
+   ],
+   "192": [
+    "Declararemos estratégicos de interés nacional los proyectos que creen al menos cien empleos."
+   ],
+   "203": [
+    "Los jóvenes que se incorporen cobrarán por anticipado hasta el 70% de la ayuda de la PAC a la incorporación y tendrán ventajas fiscales especiales."
+   ],
+   "212": [
+    "Los conciertos durarán al menos seis años en todas las etapas, con módulos que cubran el coste real, para que la plaza concertada sea gratuita de verdad."
+   ],
+   "220": [
+    "En Atención Primaria, al menos 4.500 médicos más."
+   ],
+   "225": [
+    "Mantendremos la prestación CUME para el cuidado de hijos con cáncer u otra enfermedad grave y su continuidad más allá de los 26 años en los supuestos previstos."
+   ],
+   "229": [
+    "Eliminaremos de inmediato el impuesto del 7% a la producción eléctrica y reduciremos la carga fiscal del recibo."
+   ],
+   "249": [
+    "mediante la creación de una centralita operativa las 24 horas con número único para canalizar llamadas de emergencia consular desde cualquier lugar del mundo."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "1.000.000",
+    "unidad": "viviendas",
+    "texto": "Nuevas viviendas en la legislatura",
+    "contexto": "CONSTRUIREMOS UN MILLÓN DE VIVIENDAS",
+    "medida": 144
+   },
+   {
+    "valor": "+300.000",
+    "unidad": "M€",
+    "texto": "Inversión movilizada en infraestructuras con el sector privado (15 años)",
+    "contexto": "movilizaremos, junto con el sector privado, más de 300.000 millones en los próximos 15 años",
+    "medida": 117
+   },
+   {
+    "valor": "0 %",
+    "unidad": "IVA",
+    "texto": "IVA cero para alimentos básicos mientras dure la crisis de inflación",
+    "contexto": "aplicaremos un IVA del 0% a los alimentos básicos",
+    "medida": 180
+   },
+   {
+    "valor": "85.000",
+    "unidad": "€",
+    "texto": "Facturación por debajo de la cual el autónomo no cobra ni declara IVA",
+    "contexto": "SI ERES AUTÓNOMO Y FACTURAS MENOS DE 85.000 EUROS",
+    "medida": 171
+   },
+   {
+    "valor": "−25 %",
+    "unidad": "cargas",
+    "texto": "Reducción de cargas administrativas antes de 2029 (−35 % en pymes)",
+    "contexto": "reduciremos las cargas administrativas generales un 25% y un 35% para las pymes",
+    "medida": 7
+   },
+   {
+    "valor": "48",
+    "unidad": "horas",
+    "texto": "Para recuperar una vivienda ocupada por orden judicial",
+    "contexto": "pueda recuperar su vivienda en 48 horas desde el primer día",
+    "medida": 157
+   },
+   {
+    "valor": "7",
+    "unidad": "días",
+    "texto": "Máximo para identificar a quien entre de forma irregular",
+    "contexto": "SERÁN IDENTIFICADOS EN UN MÁXIMO DE SIETE DÍAS",
+    "medida": 37
+   },
+   {
+    "valor": "3 × 1",
+    "unidad": "normas",
+    "texto": "Se eliminan tres normas por cada norma nueva",
+    "contexto": "PARA APROBAR UNA NORMA NUEVA, ELIMINAREMOS TRES VIGENTES",
+    "medida": 7
+   },
+   {
+    "valor": "14",
+    "unidad": "años",
+    "texto": "Edad mínima para tener una cuenta en redes sociales",
+    "contexto": "NINGÚN MENOR DE 14 AÑOS PODRÁ TENER UNA CUENTA EN REDES SOCIALES",
+    "medida": 168
+   },
+   {
+    "valor": "3.000",
+    "unidad": "€",
+    "texto": "Multa mínima por vandalismo durante desórdenes multitudinarios",
+    "contexto": "Elevaremos la multa mínima a 3.000 euros",
+    "medida": 24
+   },
+   {
+    "valor": "26.500",
+    "unidad": "km",
+    "texto": "De carreteras estatales en un programa de conservación",
+    "contexto": "Desplegaremos un programa de conservación para los más de 26.500 kilómetros de carreteras estatales",
+    "medida": 122
+   }
+  ]
  },
  "salf": {
   "categorias": {
@@ -547,7 +2558,309 @@
   "deroga": {
    "37": "el tope de 1.000 euros",
    "40": "la regularización de 2026"
-  }
+  },
+  "cifras": {
+   "1": [
+    "Cero impuestos (ITP y AJD al 0 %; IVA al 4 % devuelto íntegro en la renta), licencia en plazo y suelo público sin coste.",
+    "Resultado garantizado por ley: el comprador de primera vivienda paga, como mínimo, un 35 % menos que hoy."
+   ],
+   "3": [
+    "Con denuncia y título de propiedad, la Policía desaloja en 48 horas.",
+    "Al que deja de pagar, juicio verbal y lanzamiento en 30 días, sin excusas de 'vulnerabilidad': a los vulnerables los atiende el Estado, no tu casa."
+   ],
+   "5": [
+    "Un mes obra menor, dos obra mayor, tres grandes desarrollos. Pasado el plazo, licencia concedida y el ayuntamiento paga el retraso."
+   ],
+   "6": [
+    "Las SOCIMI con más de 100 viviendas en alquiler tributan al 25 %, como cualquier empresa."
+   ],
+   "7": [
+    "Aval público del 20 % de entrada para menores de 40 en su primera vivienda.",
+    "Garantía de 2.000 M€; no es gasto."
+   ],
+   "8": [
+    "Seguro público de impago: doce meses de renta y daños garantizados; después, el Estado persigue al moroso.",
+    "A cambio, se alquila sin exigir tres nóminas y un aval bancario."
+   ],
+   "9": [
+    "Construir rápido: licencia automática en 15 días."
+   ],
+   "12": [
+    "Tres condenas: prisión sin suspensión."
+   ],
+   "15": [
+    "Equiparación salarial real en dos años, jubilación a los 60 sin penalización y reconocimiento de profesión de riesgo."
+   ],
+   "16": [
+    "Apoyo permanente de la Armada y el Ejército del Aire, 180 millones en lanchas, drones y medios aéreos, y decomiso civil de todo bien del narcotráfico."
+   ],
+   "17": [
+    "De seis a doce meses, militar o civil, entre 18 y 30 años: 1.600 euros netos, formación oficial, puntos en todas las oposiciones, vivienda protegida preferente y 5.000 euros al terminar."
+   ],
+   "18": [
+    "Quien complete la mili voluntaria tendrá un mínimo exento de IRPF de 50.000 euros durante diez años (15.000 más que el resto), cero cotización del trabajador en sus tres primeros años de contrato y matrícula gratuita en universidad y FP."
+   ],
+   "19": [
+    "2.000 jueces y 1.500 fiscales más. Juicios rápidos en 72 horas para multirreincidentes y delitos flagrantes."
+   ],
+   "22": [
+    "Plan 2027-2029: UCO de 580 a 1.800 agentes, UDEF de 320 a 1.000, 1.200 más en UDYCO y Vigilancia Aduanera, peritos contables y laboratorio forense propio."
+   ],
+   "23": [
+    "Chaleco, guantes anticorte y defensa a cargo de la empresa; binomio obligatorio en transporte, hospitales y centros de menores; TIP en 30 días, no en nueve meses; título oficial de FP y reglamento nuevo en seis meses: el vigente es de 1994."
+   ],
+   "24": [
+    "Plus de peligrosidad de 150 euros en todo contrato público.",
+    "Coeficientes reductores para jubilarse a los 60 con 35 años cotizados, financiados con cotización adicional, como la policía local."
+   ],
+   "25": [
+    "Mínimo exento de 35.000 euros (hoy, 5.550), con reducción gradual hasta 50.000 para que ganar un euro más nunca cueste dinero.",
+    "Calendario: 15.000 en 2027, 22.000 en 2028, 28.000 en 2029 y 35.000 en 2030."
+   ],
+   "26": [
+    "Cada hijo suma 5.000 euros al mínimo exento de cada progenitor: ni el padre ni la madre pagan IRPF por esa parte.",
+    "Una pareja con dos hijos no paga hasta 45.000 euros cada uno."
+   ],
+   "28": [
+    "Cuota cero, total y para siempre: ningún autónomo vuelve a pagar cuota."
+   ],
+   "29": [
+    "Del 25 al 20 % en dos años; 15 % sobre el beneficio reinvertido; 10 % los tres primeros años de una empresa nueva."
+   ],
+   "31": [
+    "La luz, del 21 al 4 %; el agua, del 10 al 4 %."
+   ],
+   "32": [
+    "Ninguna bajada entra en vigor sin ahorro estructural certificado por la AIReF. Techo de gasto real. Déficit cero en 2030."
+   ],
+   "33": [
+    "Renta en una página, liquidación en 30 días, carga de la prueba para la Administración e intereses de demora simétricos: Hacienda devuelve con el mismo interés con el que cobra.",
+    "Eliminación inmediata de incentivos a la persecución fiscal; el 50 % de los inspectores fiscales se dedicarán en exclusiva a la investigación de políticos, cargos públicos y empresas subvencionadas directa o indirectamente."
+   ],
+   "34": [
+    "Toda subida de impuestos exigirá tres quintos del Congreso (reforma constitucional)."
+   ],
+   "37": [
+    "Derecho a pagar y cobrar en efectivo sin límite de importe: se deroga el tope de 1.000 euros y España vetará el de 10.000 que impone Bruselas desde 2027."
+   ],
+   "38": [
+    "Ley de Devolución del Rescate: las entidades que se quedaron con las cajas rescatadas (CaixaBank, BBVA, Sabadell, Unicaja y Abanca) pagan 4.700 millones al año durante 15 años, en proporción a las ayudas que absorbieron,",
+    "con tope del 40 % de su beneficio anual y el exceso aplazado con interés."
+   ],
+   "39": [
+    "Identificación, orden y salida en 48 horas. El 100 % de las órdenes ejecutadas en 90 días."
+   ],
+   "41": [
+    "Ni un euro, ni un visado, ni una preferencia comercial a Marruecos, Argelia, Senegal o Mauritania si no readmiten a sus nacionales en 72 horas."
+   ],
+   "43": [
+    "Nacionalidad: diez años de residencia legal, examen de cultura y Constitución, sin antecedentes y sin depender de ayudas."
+   ],
+   "48": [
+    "Ninguna prestación no contributiva, ayuda al alquiler ni vivienda pública sin cinco años de residencia legal y cotización.",
+    "Tasa del 2 % a las remesas hacia países que no readmiten."
+   ],
+   "51": [
+    "Menores de 45 años: el 2 % del salario a una cuenta individual obligatoria, tuya, heredable, con comisión máxima del 0,3 %."
+   ],
+   "52": [
+    "El 1,53 % del salario, a cargo de la empresa, a tu cuenta desde el primer día."
+   ],
+   "53": [
+    "Cobra el 100 % de la pensión y sigue trabajando sin recortes ni cotizaciones extra.",
+    "Con 40 años cotizados te jubilas cuando quieras, sin penalización."
+   ],
+   "54": [
+    "Nadie que haya cotizado 35 años cobrará menos de 1.000 euros en 14 pagas."
+   ],
+   "59": [
+    "Central única obligatoria con precios netos públicos: 15 % de ahorro, íntegro para sueldos y plazas."
+   ],
+   "60": [
+    "60 días para cirugía, 30 para especialista, 7 para pruebas prioritarias."
+   ],
+   "61": [
+    "Subida del 20 % a médicos y del 10 % a enfermería y al resto de profesionales sanitarios en cuatro años, 30.000 euros de complemento en plazas rurales y contratos estables desde el primer día."
+   ],
+   "63": [
+    "10.000 camas y 1.500 UCI más.",
+    "Inversión: ≈ 3.000 M€ en la legislatura."
+   ],
+   "64": [
+    "Cita con tu médico en 48 horas."
+   ],
+   "66": [
+    "Subasta nacional de genéricos y biosimilares. Copago cero para pensiones mínimas y enfermos crónicos."
+   ],
+   "67": [
+    "Copago cero en farmacia para todos los menores de 3 años, en toda España."
+   ],
+   "68": [
+    "Un psicólogo clínico por cada 10.000 habitantes en los centros de salud y atención en 15 días."
+   ],
+   "69": [
+    "Dirección de hospitales por méritos con mandato de cinco años."
+   ],
+   "74": [
+    "Responsabilidad civil del triple, decomiso de todo patrimonio no justificado y ningún beneficio hasta restituir. El funcionario condenado pierde la plaza para siempre; la empresa corruptora, quince años sin contratar con el Estado."
+   ],
+   "75": [
+    "El 15 % de lo recuperado, libre de impuestos, con anonimato, protección laboral y una autoridad independiente con capacidad de sancionar."
+   ],
+   "76": [
+    "Elegido por tres quintos del Congreso entre fiscales con 25 años de carrera, mandato de seis años no coincidente con la legislatura."
+   ],
+   "77": [
+    "Anticorrupción pasa a 100 fiscales con unidad propia de peritos y auditores; Antidroga, a 40; Vigilancia Aduanera cubre todas sus vacantes en dos años y el SEPBLAC duplica su plantilla."
+   ],
+   "82": [
+    "Cinco años de incompatibilidad para pasar a empresas reguladas y cinco para que un exministro o dirigente de partido presida el Poder Judicial, la sala constitucional del Supremo, el Banco de España, la CNMC o el Defensor del Pueblo."
+   ],
+   "83": [
+    "Toda emergencia auditada en 30 días y publicada íntegra en 24 horas con los beneficiarios reales."
+   ],
+   "84": [
+    "Todo gasto mayor de 1.000 euros, publicado en 24 horas."
+   ],
+   "85": [
+    "Límite de 15 años en cargos públicos remunerados.",
+    "Partidos: 50 % menos. Asesores: de 1.255 a 400."
+   ],
+   "86": [
+    "Mínimo exento de 35.000, deflactación, el 0,9 % a tu cuenta y cero cotización del trabajador en el salario mínimo."
+   ],
+   "87": [
+    "Un solo contrato indefinido con indemnización creciente de 12 a 33 días, más la mochila del 1,53 %."
+   ],
+   "88": [
+    "Cuota cero, total y para siempre. Licencia de actividad en 24 horas por declaración responsable."
+   ],
+   "89": [
+    "Las mutuas dan el alta en contingencias comunes a los 15 días, con revisión del INSS en 72 horas."
+   ],
+   "90": [
+    "FP dual con contrato y salario del 50 % del convenio, pagado a medias por empresa y Estado.",
+    "Cotización cero durante dos años por contratar a menores de 30 y mayores de 50."
+   ],
+   "91": [
+    "Por cada regulación nueva que afecte a empresas, dos derogadas."
+   ],
+   "94": [
+    "Todas las oposiciones y concursos 100 % anónimos y digitales, con tribunales sorteados y grabados."
+   ],
+   "95": [
+    "Rechazar dos ofertas adecuadas: fin de la prestación.",
+    "Y complemento salarial para que el Ingreso Mínimo baje 50 céntimos por cada euro ganado, no uno a uno."
+   ],
+   "96": [
+    "Aprobada por dos tercios y blindada: no se cambia sin la misma mayoría.",
+    "Contenidos mínimos comunes al 100 %, evaluaciones externas al final de cada etapa y selectividad única y en castellano en toda España."
+   ],
+   "98": [
+    "Dos años de prácticas remuneradas con tutor y examen nacional de acceso."
+   ],
+   "99": [
+    "Autoridad pública en toda España, 10 % más de sueldo en la legislatura y menos burocracia: un profesor está para enseñar."
+   ],
+   "100": [
+    "Aprendizaje remunerado desde los 15, tutor individual y fin del aprobado automático: se titula cuando se ha aprendido."
+   ],
+   "104": [
+    "Beca-salario de 2.000 euros para FP superior con déficit."
+   ],
+   "105": [
+    "5.000 auxiliares nativos más, certificación B2 al terminar Bachillerato pagada por el Estado y versión original en la televisión pública infantil."
+   ],
+   "110": [
+    "Ceuta y Melilla, plaza franca: 0 % de IRPF, 0 % de Sociedades y 0 % de cotizaciones. Para siempre.",
+    "Con SALF, el residente no paga IRPF, la empresa que crea empleo allí no paga Sociedades durante diez años y la cotización empresarial queda al 0 %."
+   ],
+   "111": [
+    "Deducción de 1.000 euros en la cuota del IRPF para cada contribuyente residente en Canarias desde la renta de 2027: 1,09 millones de canarios.",
+    "Zona Especial Canaria al 0 % de Sociedades (hoy, 4 %) para la empresa que cree cinco empleos en las islas.",
+    "Y el 75 % de residente en avión y barco, pagado a las compañías en 30 días: el Estado debe hoy 810 millones y pone en riesgo las rutas."
+   ],
+   "112": [
+    "Escudo del Estrecho y del Atlántico: 5.000 militares más en Ceuta y Melilla; antiaérea y antidrón en cada isla.",
+    "Se acabó: brigada completa en cada ciudad, con la V Bandera de la Legión recuperada, 5.000 militares y 1.000 guardias civiles más en las dos plazas;",
+    "dos buques más en Las Palmas y escuadrón de drones en Lanzarote."
+   ],
+   "113": [
+    "Se duplica para militares, guardias civiles, policías y funcionarios del Estado destinados en los tres territorios, exenta de IRPF y con vivienda militar o alquiler pagado en Ceuta y Melilla."
+   ],
+   "117": [
+    "Defensa: el 2 % se gasta en España y en sus militares.",
+    "nueva Ley de la carrera militar: nadie es expulsado a los 45 años con 600 euros al mes, carrera hasta la jubilación y ascensos por mérito."
+   ],
+   "119": [
+    "Se cortan salvo emergencias humanitarias y programas con retorno para España: readmisión de nacionales en 72 horas, respeto a la soberanía (quien reclame Ceuta, Melilla o Canarias no cobra) y cooperación contra el narcotráfico y el yihadismo."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "35 %",
+    "unidad": "más barata la primera vivienda",
+    "texto": "Primera vivienda: al menos un 35 % menos que hoy, por ley",
+    "contexto": "el comprador de primera vivienda paga, como mínimo, un 35 % menos que hoy",
+    "medida": 1
+   },
+   {
+    "valor": "4 %",
+    "unidad": "de IVA para luz y agua",
+    "texto": "Luz y agua al 4 % de IVA, para siempre",
+    "contexto": "La luz, del 21 al 4 %; el agua, del 10 al 4 %.",
+    "medida": 31
+   },
+   {
+    "valor": "48",
+    "unidad": "horas",
+    "texto": "Para desalojar a okupas con denuncia y título de propiedad",
+    "contexto": "Con denuncia y título de propiedad, la Policía desaloja en 48 horas.",
+    "medida": 3
+   },
+   {
+    "valor": "0 €",
+    "unidad": "cuota de autónomos",
+    "texto": "Ningún autónomo vuelve a pagar cuota",
+    "contexto": "Cuota cero, total y para siempre",
+    "medida": 28
+   },
+   {
+    "valor": "1.600 €",
+    "unidad": "netos al mes",
+    "texto": "Mili voluntaria para jóvenes de 18 a 30 años",
+    "contexto": "1.600 euros netos",
+    "medida": 17
+   },
+   {
+    "valor": "4.700 M€",
+    "unidad": "al año de la banca",
+    "texto": "Devolución del rescate de las cajas, 15 años",
+    "contexto": "pagan 4.700 millones al año durante 15 años",
+    "medida": 38
+   },
+   {
+    "valor": "5.000 €",
+    "unidad": "por hijo al mínimo exento",
+    "texto": "IRPF exento por cada hijo, para padre y madre",
+    "contexto": "Cada hijo suma 5.000 euros al mínimo exento de cada progenitor",
+    "medida": 26
+   },
+   {
+    "valor": "10.000",
+    "unidad": "camas más",
+    "texto": "Más camas y UCI en la sanidad pública",
+    "contexto": "10.000 camas y 1.500 UCI más",
+    "medida": 63
+   },
+   {
+    "valor": "3/5",
+    "unidad": "del Congreso",
+    "texto": "Para subir cualquier impuesto",
+    "contexto": "Toda subida de impuestos exigirá tres quintos del Congreso",
+    "medida": 34
+   }
+  ]
  },
  "soria-ya": {
   "categorias": {
@@ -594,7 +2907,185 @@
    "236": "familia",
    "237": "familia"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {
+   "4": [
+    "Consecución de nuestro objetivo 100 megas/30 kilómetros/30 minutos para las zonas rurales.",
+    "100 megas de acceso a internet de alta velocidad (100 Mbps) en los pueblos, 30 kilómetros de distancia a los servicios esenciales (sanidad, educación, administración, comercio básico), 30 minutos de acceso a una vía de alta capacidad."
+   ],
+   "5": [
+    "Un compromiso con la financiación de la Atención Primaria en Castilla y León, también en el mundo rural, de forma que alcance al menos el 25% del presupuesto anual del Sacyl."
+   ],
+   "15": [
+    "Incorporación de, al menos, una segunda UVI móvil para traslados secundarios activa 24 horas al día, 365 días al año."
+   ],
+   "18": [
+    "Dotar con un helipuerto permanentemente operativo (24 h), con iluminación y equipamiento homologado para vuelos nocturnos, a cada Zona Básica de Salud, para reforzar la atención a emergencias sanitarias."
+   ],
+   "33": [
+    "subvencione el 50% de los costes salariales durante el primer año a las empresas de la provincia de Soria que contraten de forma indefinida al alumnado de FP Dual que haya realizado sus prácticas en ellas."
+   ],
+   "57": [
+    "Aumentar la duración de la bonificación del 100% de las cuotas de la Seguridad Social a los nuevos autónomos a los dos primeros años de actividad."
+   ],
+   "58": [
+    "Ampliar la duración de esta bonificación un año más a nuevos trabajadores por cuenta propia que residan en municipios de Castilla y León con una densidad de población igual o menor a los 12,5 habitantes por kilómetro cuadrado."
+   ],
+   "80": [
+    "Incremento de las deducciones familiares si el obligado tributario reside en un municipio inferior a 5.000 habitantes.",
+    "Deducción por nacimiento/adopción de hijos para obligados tributarios que residan en un municipio de población inferior a 5.000 habitantes (2.020 euros para el primer hijo, 2.950 euros para el segundo y 4.702 euros para el tercer hijo o sucesivos).",
+    "Deducción por familia numerosa, cuando los obligados tributarios que residan en un municipio de población inferior a 5.000 habitantes, de 1.200 euros para familias numerosas de 3 hijos, 3.000 euros para familias numerosas de 4 hijos"
+   ],
+   "81": [
+    "numerosas de 5 hijos, con un incremento de 1.000 euros más por cada hijo adicional al quinto"
+   ],
+   "82": [
+    "Deducción en el donante (progenitores) del 1% del importe que esos padres donen en metálico a sus hijos menores de 35 años para que adquieran su primera vivienda habitual en Castilla y León.",
+    "Si la adquisición de la vivienda se realiza en municipios de población inferior a 5.000 habitantes la deducción se ampliará al 2% del importe donado.",
+    "El límite de la cantidad donada a la que se aplicará la deducción será de 60.000 euros."
+   ],
+   "83": [
+    "Deducción del 15% de los importes satisfechos por menores de 45 años, si adquieren una primera vivienda habitual en municipios de menos de 10.000 habitantes o menores de 3.000 habitantes si está a menos de 30 kilómetros de la capital de provincia.",
+    "Esta deducción será hasta de 10.000 euros de la vivienda habitual nueva, rehabilitada o usada, siempre que la vivienda cueste menos de 250.000 euros."
+   ],
+   "84": [
+    "devolución del principal y pago de intereses, siempre con el límite de la base de la deducción de 10.000 euros o por ejercicio."
+   ],
+   "85": [
+    "Para obligados tributarios con residencia fiscal fuera de Castilla y León durante los 5 últimos años, que adquieran su nueva vivienda habitual en Castilla y León",
+    "en un municipio de hasta 10.000 habitantes o 3.000 si está a menos de 30 kilómetros de la capital de provincia."
+   ],
+   "86": [
+    "Deducción de un 10% de los gastos satisfechos, con un límite máximo de 500 euros por declaración y de 700 euros si el contribuyente tiene discapacidad igual o superior al 65%."
+   ],
+   "87": [
+    "Cuantía de la deducción: 120 euros por hijo en educación Infantil y Primaria y 200 euros por hijo en ESO."
+   ],
+   "88": [
+    "Deducciones del Impuesto de Transmisiones Patrimoniales para compraventa de viviendas por debajo de 200.000 euros en municipios de menos de 10.000 habitantes o de 3.000 si distan menos de 30 kilómetros de la capital de provincia."
+   ],
+   "89": [
+    "0,01% si valor de la vivienda es menor a 200.000 euros.",
+    "4% si la vivienda supera los 200.000 euros.",
+    "0,5% si el valor de la vivienda supera los 200.000 euros."
+   ],
+   "90": [
+    "Asegurar que el 100% del impuesto autonómico sobre la afección medioambiental causada por determinados aprovechamientos del agua embalsada, por los parques eólicos y por las instalaciones de transporte de energía eléctrica de alta tensión"
+   ],
+   "92": [
+    "implementación para Soria de un compromiso de financiación específica, para un proyecto integrado que garantice inversiones en Soria por parte del FEDER de al menos el 7% de los fondos, más la correspondiente cofinanciación de la Junta."
+   ],
+   "98": [
+    "Garantizar conectividad mínima universal con 100 Mbps reales en todos los núcleos de población de la provincia de Soria, independientemente de la tecnología (fibra, conexiones inalámbricas fijas o satélite)."
+   ],
+   "99": [
+    "asegurar conexiones de internet de alta velocidad en las zonas rurales de la provincia con conectividad digital fiable y de calidad, así como telefónica, para el 100% de localidades."
+   ],
+   "123": [
+    "Implantar una línea de ayudas para gastos corrientes en las empresas de transporte sorianas, que cubra el 5% del total de dichos gastos,"
+   ],
+   "124": [
+    "En cuanto al transporte público de viajeros, diseñar un sistema de líneas autonómicas para que se pueda viajar desde todas las cabeceras de comarca a Soria capital, con llegada antes de las 8:00."
+   ],
+   "157": [
+    "El objetivo debe ser construir al menos 4 viviendas públicas en cada municipio, por pequeño que sea."
+   ],
+   "162": [
+    "Establecer una línea de ayudas destinadas a la rehabilitación y reforma de viviendas ubicadas en núcleos de población de menos de 500 habitantes",
+    "con la condición de que dichas viviendas se destinen a residencia habitual al menos durante 6 meses al año",
+    "o, en su defecto, se incorporen al programa de alquiler de la Junta de Castilla y León por un periodo mínimo de 5 años."
+   ],
+   "189": [
+    "Establecer una deducción en el tramo autonómico del Impuesto sobre la Renta de las Personas Físicas del 30% de los gastos relacionados con ejercicio físico y práctica deportiva",
+    "con un límite máximo de 300 € anuales por contribuyente."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "25 %",
+    "unidad": "del presupuesto del Sacyl",
+    "texto": "Atención Primaria con al menos el 25 % del presupuesto",
+    "contexto": "alcance al menos el 25% del presupuesto anual del Sacyl",
+    "medida": 5
+   },
+   {
+    "valor": "50 %",
+    "unidad": "costes salariales, primer año",
+    "texto": "Subvención del 50 % a contratos indefinidos de alumnos de FP Dual",
+    "contexto": "subvencione el 50% de los costes salariales durante el primer año",
+    "medida": 33
+   },
+   {
+    "valor": "100 %",
+    "unidad": "cuotas de autónomos, dos años",
+    "texto": "Autónomos nuevos con cuotas de Seguridad Social bonificadas",
+    "contexto": "bonificación del 100% de las cuotas de la Seguridad Social a los nuevos autónomos",
+    "medida": 57
+   },
+   {
+    "valor": "100 Mbps",
+    "unidad": "reales",
+    "texto": "Conexión mínima universal en todos los núcleos de población",
+    "contexto": "conectividad mínima universal con 100 Mbps reales en todos los núcleos de población",
+    "medida": 98
+   },
+   {
+    "valor": "7 %",
+    "unidad": "de los fondos FEDER",
+    "texto": "Inversión FEDER específica para Soria",
+    "contexto": "garantice inversiones en Soria por parte del FEDER de al menos el 7% de los fondos",
+    "medida": 92
+   },
+   {
+    "valor": "24 horas",
+    "unidad": "al día, 365 días al año",
+    "texto": "Segunda UVI móvil de traslados secundarios",
+    "contexto": "activa 24 horas al día, 365 días al año",
+    "medida": 15
+   },
+   {
+    "valor": "4.702 €",
+    "unidad": "por el tercer hijo",
+    "texto": "Deducción por nacimiento en municipios de menos de 5.000 habitantes",
+    "contexto": "4.702 euros para el tercer hijo o sucesivos",
+    "medida": 80
+   },
+   {
+    "valor": "4",
+    "unidad": "viviendas públicas por municipio",
+    "texto": "Vivienda pública en todos los municipios, por pequeño que sea",
+    "contexto": "construir al menos 4 viviendas públicas en cada municipio",
+    "medida": 157
+   },
+   {
+    "valor": "0,01 %",
+    "unidad": "ITP, vivienda menor de 200.000 €",
+    "texto": "Tipo reducido para la primera vivienda de menores de 45 años",
+    "contexto": "0,01% si valor de la vivienda es menor a 200.000 euros",
+    "medida": 89
+   },
+   {
+    "valor": "30 %",
+    "unidad": "de gastos deportivos, hasta 300 €",
+    "texto": "Deducción en el IRPF por gastos de ejercicio y deporte",
+    "contexto": "del 30% de los gastos relacionados con ejercicio físico y práctica deportiva",
+    "medida": 189
+   },
+   {
+    "valor": "120 €",
+    "unidad": "por hijo, Infantil y Primaria",
+    "texto": "Deducción por libros de texto y material escolar",
+    "contexto": "Cuantía de la deducción: 120 euros por hijo en educación Infantil y Primaria",
+    "medida": 87
+   },
+   {
+    "valor": "5 %",
+    "unidad": "de los gastos corrientes",
+    "texto": "Ayudas a gastos corrientes de empresas de transporte sorianas",
+    "contexto": "que cubra el 5% del total de dichos gastos",
+    "medida": 123
+   }
+  ]
  },
  "tercera-edad": {
   "categorias": {
@@ -610,6 +3101,220 @@
    "55": "innovacion",
    "59": "seguridad"
   },
-  "deroga": {}
+  "deroga": {},
+  "cifras": {
+   "8": [
+    "Aplicar la equiparación en tres fases anuales, cerrando en cada fase un tercio de la brecha inicial y actualizando la referencia si cambia el SMI."
+   ],
+   "10": [
+    "Abrir una evaluación de compensaciones cuando su coste conjunto crezca por encima del IPC general durante dos trimestres consecutivos."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "3",
+    "unidad": "fases anuales",
+    "texto": "Pensiones mínimas al SMI en 3 fases, un tercio de brecha cada una",
+    "contexto": "Aplicar la equiparación en tres fases anuales, cerrando en cada fase un tercio de la brecha inicial",
+    "medida": 8
+   },
+   {
+    "valor": "2",
+    "unidad": "trimestres consecutivos",
+    "texto": "Evaluación de compensaciones si el coste sube sobre el IPC",
+    "contexto": "crezca por encima del IPC general durante dos trimestres consecutivos",
+    "medida": 10
+   }
+  ]
+ },
+ "escanos-en-blanco": {
+  "cifras": {},
+  "cifrasPrograma": []
+ },
+ "ie": {
+  "cifras": {
+   "10": [
+    "Propone integrar terapias naturales en el sistema nacional de salud, reconocer profesionalmente a sus terapeutas y aplicarles un tipo cero de IVA."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "0 %",
+    "unidad": "de IVA",
+    "texto": "IVA de tipo cero para terapias naturales",
+    "contexto": "aplicarles un tipo cero de IVA",
+    "medida": 10
+   }
+  ]
+ },
+ "pacma": {
+  "cifras": {
+   "27": [
+    "Por todo ello, desde PACMA trabajaremos por la supresión de la pena de multa como alternativa a la pena de prisión, así como por un aumento de la pena de prisión que, en el tipo agravado, esté por encima de los cinco años."
+   ],
+   "41": [
+    "Este reconocimiento permitiría una necesaria reducción del IVA de los servicios veterinarios, no al tipo reducido del 10%, sino al tipo superreducido del 4% e, incluso, a su exención.",
+    "de manera que las familias interespecie se puedan deducir hasta un 10% de los gastos veterinarios, con un ahorro máximo de hasta 500€ anuales."
+   ],
+   "55": [
+    "que, actualmente solo suponen un 18% del territorio, abarquen, al menos, un 30% para 2030."
+   ],
+   "57": [
+    "desde PACMA proponemos prohibir la práctica de la actividad cinegética durante 30 años en terrenos afectados por incendios vinculados a intereses relacionados con esta actividad"
+   ],
+   "60": [
+    "desde PACMA impulsaremos una reforma de la Ley de evaluación ambiental, para que los espectáculos con artificios pirotécnicos de, al menos, 100 o más kilos de pólvora deban someterse a una evaluación de impacto ambiental."
+   ],
+   "69": [
+    "Disponibilidad de opción de menú 100% vegetal en todos los comedores de los centros educativos."
+   ],
+   "85": [
+    "proponemos la creación de un fondo de financiación destinado a facilitar el acceso de autónomos/as y pymes a líneas de crédito a interés cero"
+   ],
+   "86": [
+    "ofreciendo bonificaciones del 100% en el IRPF o exenciones del IBI a los pequeños propietarios/as que pongan su vivienda en el mercado un 10% o 15% por debajo del precio medio de la zona"
+   ],
+   "93": [
+    "Composición equilibrada de las candidaturas, en lugar de paritaria, en la que las mujeres representen, al menos, la mitad de los candidatos/as, para no perjudicar la mayor presencia y relevancia de mujeres en candidaturas como las de PACMA."
+   ],
+   "95": [
+    "Unidades policiales especializadas y disponibles las 24 horas, los 365 días del año, para atender los casos de violencia machista."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "4 %",
+    "unidad": "IVA veterinario",
+    "texto": "Reducir el IVA veterinario, hoy al 21 %, al tipo superreducido",
+    "contexto": "superreducido del 4%",
+    "medida": 41
+   },
+   {
+    "valor": "10 %",
+    "unidad": "de los gastos veterinarios",
+    "texto": "Deducción en el IRPF de gastos veterinarios, con tope de 500 € al año",
+    "contexto": "hasta un 10% de los gastos veterinarios",
+    "medida": 41
+   },
+   {
+    "valor": "30 %",
+    "unidad": "del territorio protegido",
+    "texto": "Áreas naturales protegidas para 2030; hoy son el 18 % del territorio",
+    "contexto": "abarquen, al menos, un 30% para 2030",
+    "medida": 55
+   },
+   {
+    "valor": "5 años",
+    "unidad": "de prisión (tipo agravado)",
+    "texto": "Maltrato animal agravado: más de 5 años de prisión y sin multa alternativa",
+    "contexto": "por encima de los cinco años",
+    "medida": 27
+   },
+   {
+    "valor": "100 %",
+    "unidad": "bonificación en el IRPF",
+    "texto": "Para pequeños propietarios que alquilen un 10 % o 15 % por debajo de la media",
+    "contexto": "bonificaciones del 100% en el IRPF",
+    "medida": 86
+   },
+   {
+    "valor": "100 %",
+    "unidad": "menú vegetal",
+    "texto": "Una opción de menú 100 % vegetal en todos los comedores escolares",
+    "contexto": "opción de menú 100% vegetal",
+    "medida": 69
+   },
+   {
+    "valor": "24 h",
+    "unidad": "unidades policiales",
+    "texto": "Unidades policiales contra la violencia machista, los 365 días del año",
+    "contexto": "disponibles las 24 horas, los 365 días del año",
+    "medida": 95
+   },
+   {
+    "valor": "0 %",
+    "unidad": "de interés en créditos",
+    "texto": "Fondo de créditos a interés cero para autónomos y pymes",
+    "contexto": "líneas de crédito a interés cero",
+    "medida": 85
+   },
+   {
+    "valor": "30 años",
+    "unidad": "sin caza en zonas quemadas",
+    "texto": "Prohibir la caza 30 años en terrenos incendiados por intereses cinegéticos",
+    "contexto": "durante 30 años en terrenos afectados por incendios",
+    "medida": 57
+   },
+   {
+    "valor": "100 kg",
+    "unidad": "de pólvora",
+    "texto": "Evaluación de impacto ambiental para espectáculos pirotécnicos grandes",
+    "contexto": "100 o más kilos de pólvora",
+    "medida": 60
+   }
+  ]
+ },
+ "vox": {
+  "cifras": {
+   "2": [
+    "Apoyo a los trabajadores autónomos. Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional y, superado dicho umbral, una cuota progresiva desde los 50 euros en función de sus ingresos."
+   ],
+   "31": [
+    "Desalojo de la vivienda okupada en menos de 24 horas y recuperación inmediata de la posesión por su legítimo titular, el propietario."
+   ],
+   "34": [
+    "Tipo 0% de IVA para la compra de tu primera vivienda habitual -de nueva construcción- y bonificación 100% del ITP para la compra de tu primera vivienda habitual -de segunda mano-."
+   ],
+   "40": [
+    "Cada ley nueva tendrá que identificar, en su propio texto, qué tres normas vigentes deroga."
+   ],
+   "94": [
+    "Bonificación del 100% de la ayuda en el hogar."
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "24",
+    "unidad": "horas",
+    "texto": "Máximo para desalojar una vivienda okupada",
+    "contexto": "Desalojo de la vivienda okupada en menos de 24 horas",
+    "medida": 31
+   },
+   {
+    "valor": "0 %",
+    "unidad": "IVA",
+    "texto": "IVA de la primera vivienda habitual de obra nueva",
+    "contexto": "Tipo 0% de IVA para la compra de tu primera vivienda habitual",
+    "medida": 34
+   },
+   {
+    "valor": "100 %",
+    "unidad": "bonificación del ITP",
+    "texto": "ITP de la primera vivienda habitual de segunda mano",
+    "contexto": "bonificación 100% del ITP para la compra de tu primera vivienda habitual",
+    "medida": 34
+   },
+   {
+    "valor": "0 €",
+    "unidad": "cuota de autónomos",
+    "texto": "Cuota cero para autónomos con ingresos bajo el SMI",
+    "contexto": "Cuota de cero euros si los ingresos no llegan al Salario Mínimo Interprofesional",
+    "medida": 2
+   },
+   {
+    "valor": "3",
+    "unidad": "normas derogadas",
+    "texto": "Por cada ley nueva que se apruebe",
+    "contexto": "Cada ley nueva tendrá que identificar, en su propio texto, qué tres normas vigentes deroga.",
+    "medida": 40
+   },
+   {
+    "valor": "100 %",
+    "unidad": "de la ayuda en el hogar",
+    "texto": "Bonificación a las familias en la ayuda en el hogar",
+    "contexto": "Bonificación del 100% de la ayuda en el hogar",
+    "medida": 94
+   }
+  ]
  }
 }
