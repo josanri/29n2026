@@ -14,13 +14,13 @@ html::-webkit-scrollbar,
 *::-webkit-scrollbar { width: 16px; height: 16px; }
 html::-webkit-scrollbar-track,
 *::-webkit-scrollbar-track {
-  background: var(--color-paper-alt);
+  background: var(--color-paper);
   border-left: var(--border-thin) solid var(--color-ink);
 }
 html::-webkit-scrollbar-thumb,
 *::-webkit-scrollbar-thumb {
   background: var(--color-ink);
-  border: var(--border-thin) solid var(--color-paper-alt);
+  border: var(--border-thin) solid var(--color-paper);
 }
 html::-webkit-scrollbar-thumb:hover,
 *::-webkit-scrollbar-thumb:hover { background: var(--color-highlight); }
@@ -36,7 +36,7 @@ html::-webkit-scrollbar-button {
 @supports not selector(::-webkit-scrollbar) {
   html, * {
     scrollbar-width: auto;
-    scrollbar-color: var(--color-ink) var(--color-paper-alt);
+    scrollbar-color: var(--color-ink) var(--color-paper);
   }
 }
 
@@ -50,36 +50,26 @@ body {
   overflow-x: hidden;
 }
 
-/* A very light paper grain */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: radial-gradient(var(--color-ink) 0.6px, transparent 0.6px);
-  background-size: 4px 4px;
-  z-index: 0;
-}
-
 main, header, footer { position: relative; z-index: var(--z-raised); }
 
-a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+/* Links inside text: an underline 3px thick, offset 4px. Hover paints the yellow marker. */
+a { color: inherit; text-decoration-thickness: 3px; text-underline-offset: 4px; }
 a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
 
 img, svg { max-width: 100%; }
 
+/* Focus: a 3px outline in the ink color, which contrasts with paper in both themes. On a surface
+   painted with ink (inverted controls), the outline is yellow instead: see `.on-ink`. */
 :focus-visible {
-  outline: 3px solid var(--color-highlight);
+  outline: 3px solid var(--color-ink);
   outline-offset: 3px;
-  box-shadow: 0 0 0 6px var(--color-ink);
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 900;
   line-height: var(--leading-tight);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin: 0;
   text-transform: uppercase;
   text-wrap: balance;
@@ -90,4 +80,12 @@ p { margin: 0 0 1em; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+
+/* Page transitions: a link from one page to another of the site fades, and an element with the same
+   `view-transition-name` on both pages (the sphere of the home page and of the categories, the sphere of a
+   party and of its measures) moves from its place to the new one. Only when the reader accepts motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-group(*) { animation-duration: 420ms; animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1); }
 }

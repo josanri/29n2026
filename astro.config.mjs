@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import { ELECTION_DATA_DIR, ELECTION_PUBLIC_DIR, SHARED_PUBLIC_DIR } from './election.config.mjs';
 
 // URL pública del sitio. Se usa en el sitemap, en robots.txt y en las URL canónicas.
-// En producción: SITE_URL=https://tu-dominio.es npm run build
+// En producción: SITE_URL=https://electosfera.es npm run build (ver «Dominio propio» en el README)
 // Se usa `||` y no `??`: una variable vacía (como una variable de GitHub sin definir) no es una URL válida.
 const SITE_URL = process.env.SITE_URL || 'http://localhost:4321';
 // Ruta base del sitio. En GitHub Pages de un repositorio es «/nombre-del-repositorio». En un dominio propio es «/».
@@ -103,7 +103,11 @@ export default defineConfig({
     ...(NESTED_OUTPUT ? [nestedOutput] : []),
     sitemap({
       // la búsqueda es una herramienta y el sistema de diseño es una página oculta: no se indexan
-      filter: (page) => !page.endsWith('/buscar/') && !page.includes('/design-system'),
+      // «/sin-siglas/» es la dirección antigua del test: solo redirige a «/tests/sin-siglas/»
+      filter: (page) =>
+        !page.endsWith('/buscar/') &&
+        !page.includes('/design-system') &&
+        !(page.endsWith('/sin-siglas/') && !page.endsWith('/tests/sin-siglas/')),
       // (la ruta base se añade sola a las URL del sitemap)
       changefreq: 'weekly',
       lastmod: new Date(),

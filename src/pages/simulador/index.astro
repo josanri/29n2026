@@ -22,9 +22,11 @@ const networks = [
 
 // The groups go to the script as data: the script builds the rows, so a reader can add parties of their own.
 const programIds = new Set(programs.map((program) => program.id));
+const hrefOf = (programId?: string) => (programId && programIds.has(programId) ? routes.party(programId) : undefined);
 const groupData = congressGroups.map((group) => ({
   ...group,
-  href: group.programId && programIds.has(group.programId) ? routes.party(group.programId) : undefined,
+  href: hrefOf(group.programId),
+  next: group.next ? { ...group.next, href: hrefOf(group.next.programId) } : undefined,
 }));
 ---
 
@@ -34,7 +36,7 @@ const groupData = congressGroups.map((group) => ({
 >
   <section class="page-hero">
     <div class="container">
-      <Tag variant="ink">Herramienta · No es una encuesta</Tag>
+      <Tag variant="ink">Herramienta, no encuesta</Tag>
       <h1 class="headline">Congreso y pactos</h1>
       <p class="page-hero__lede">
         Reparte los {CONGRESS_SEATS} escaños como quieras, crea partidos nuevos y comprueba qué pactos logran investir a un presidente.
@@ -44,7 +46,7 @@ const groupData = congressGroups.map((group) => ({
   </section>
 
   <div class="container sim" id="sim" data-groups={JSON.stringify(groupData)}>
-    <SectionHeading index="01 / CONGRESO" title="Reparte los escaños">
+    <SectionHeading title="Reparte los escaños">
       <p>Cambia el número de escaños de cada partido o crea uno propio. El hemiciclo se actualiza al momento.</p>
     </SectionHeading>
 
@@ -110,7 +112,7 @@ const groupData = congressGroups.map((group) => ({
       </div>
     </div>
 
-    <SectionHeading index="02 / PACTOS" title="Prueba una investidura">
+    <SectionHeading title="Prueba una investidura">
       <p>
         Elige un candidato y decide el voto de cada partido. Con {ABSOLUTE_MAJORITY} votos a favor se inviste en la primera votación.
         Si no, a las 48 horas basta con más votos a favor que en contra.
@@ -168,7 +170,7 @@ const groupData = congressGroups.map((group) => ({
       </Panel>
     </div>
 
-    <SectionHeading index="03 / COMPARTIR" title="Comparte tu simulación">
+    <SectionHeading title="Comparte tu simulación">
       <p>El enlace guarda los escaños, los partidos que has creado y los votos. Quien lo abra verá lo mismo y podrá cambiarlo.</p>
     </SectionHeading>
     <Panel class="share">
@@ -197,7 +199,7 @@ const groupData = congressGroups.map((group) => ({
     <p class="sim-note">
       Los escaños actuales son los del Congreso de la XV legislatura, que se disolvió el 6 de octubre de 2026 (fuente: la ficha de la
       legislatura en Wikipedia, que no da fecha de esas cifras). Los de 2023 son los resultados oficiales por candidatura: el PSOE
-      incluye al PSC y Sumar a sus coaliciones. El orden del hemiciclo y los colores son aproximados. El simulador aplica el artículo 99
+      incluye al PSC y Sumar a sus coaliciones. Sumar se presenta el 29N como Frente Amplio (FA): con «Congreso actual» y «Resultados de 2023» se llama Sumar, y con «Todo a cero», que empieza el Congreso del 29N, Frente Amplio, cada uno con su color. En la lista, «Convertir en Frente Amplio» cambia el nombre y el color sin cambiar los escaños, y «Convertir en Sumar» lo deshace. El orden del hemiciclo y los colores son aproximados. El simulador aplica el artículo 99
       de la Constitución y no tiene en cuenta cómo se reparten los escaños por provincia.
     </p>
   </div>
@@ -216,6 +218,7 @@ const groupData = congressGroups.map((group) => ({
         <label class="seat-row__label"></label>
         <small class="seat-row__full"></small>
         <button type="button" class="seat-row__remove" hidden>Quitar partido</button>
+        <button type="button" class="seat-row__rename" hidden></button>
       </div>
       <div class="stepper">
         <button type="button" data-step="-1">−</button>
@@ -231,7 +234,7 @@ const groupData = congressGroups.map((group) => ({
         <legend>
           <span class="seat-row__swatch" aria-hidden="true"></span>
           <b></b>
-          <span class="vote-row__seats mono"></span>
+          <span class="vote-row__seats"></span>
         </legend>
         <div class="segmented">
           <input type="radio" value="yes" />
@@ -263,11 +266,22 @@ const groupData = congressGroups.map((group) => ({
     custom: boolean;
     seatsNow: number;
     seats2023: number;
+    /** The other name of the same group (Sumar ↔ Frente Amplio). The button of its row swaps the two names. */
+    alt?: { acronym: string; name: string; color: string; href?: string };
+    /** True when the group uses its name of the new election (Frente Amplio). */
+    renamed?: boolean;
   };
 
   const root = document.querySelector<HTMLElement>('#sim')!;
   const baseData: (CongressGroup & { href?: string })[] = JSON.parse(root.dataset.groups!);
-  const baseGroups = (): Group[] => baseData.map((group) => ({ ...group, seats: group.seatsNow, custom: false }));
+  const baseGroups = (): Group[] =>
+    baseData.map(({ next, ...group }) => ({ ...group, alt: next, seats: group.seatsNow, custom: false }));
+  // The group takes its other name and color; its seats, its votes and its place stay.
+  const swapName = (group: Group): Group => {
+    if (!group.alt) return group;
+    const { acronym, name, color, href } = group;
+    return { ...group, ...group.alt, href: group.alt.href, alt: { acronym, name, color, href }, renamed: !group.renamed };
+  };
 
   // The lights of the voting board (see `.sim` in the styles).
   const VOTE_COLORS: Record<Vote, string> = { yes: 'var(--led-yes)', abstain: 'var(--led-abstain)', no: 'var(--led-no)' };
@@ -427,6 +441,17 @@ const groupData = congressGroups.map((group) => ({
       button.addEventListener('click', () => {
         group.seats = clampSeats(group.seats + Number(button.dataset.step));
         renderAll();
+      });
+    }
+    const rename = seatRow.querySelector<HTMLButtonElement>('.seat-row__rename')!;
+    if (group.alt) {
+      rename.hidden = false;
+      rename.textContent = `Convertir en ${group.alt.name.replace(/\s*\(.*\)$/, '')}`;
+      rename.setAttribute('aria-label', `Convertir ${group.acronym} en ${group.alt.acronym}, con los mismos escaños`);
+      rename.addEventListener('click', () => {
+        rebuild(groups.map((item) => (item.id === group.id ? swapName(item) : item)));
+        renderAll();
+        seatRows.get(group.id)?.querySelector<HTMLButtonElement>('.seat-row__rename')?.focus();
       });
     }
     remove.addEventListener('click', () => {
@@ -676,6 +701,7 @@ const groupData = congressGroups.map((group) => ({
         $<HTMLElement>(`#legend-${part.dataset.part}`).textContent = '–';
       }
       $<HTMLElement>('#vote-rest').style.flexGrow = '1';
+      $<HTMLElement>('#vote-rest').hidden = false;
       bar.setAttribute('aria-label', 'Sin votación: falta elegir un candidato.');
       verdictTitle.textContent = 'Elige un candidato';
       verdictText.textContent = 'Elige arriba el candidato a la investidura. Después, decide el voto de cada partido.';
@@ -705,7 +731,11 @@ const groupData = congressGroups.map((group) => ({
       $<HTMLElement>(`#legend-${kind}`).textContent = String(result[kind]);
     }
     // The bar always stands for the whole Congress: the seats not given to any group stay empty at the end.
-    $<HTMLElement>('#vote-rest').style.flexGrow = String(Math.max(0, CONGRESS_SEATS - total()));
+    const rest = Math.max(0, CONGRESS_SEATS - total());
+    const restPart = $<HTMLElement>('#vote-rest');
+    restPart.style.flexGrow = String(rest);
+    // With every seat given, the empty part must not take any width.
+    restPart.hidden = rest === 0;
     bar.setAttribute('aria-label', `Sí ${result.yes}, abstención ${result.abstain}, no ${result.no}. La mayoría absoluta es ${ABSOLUTE_MAJORITY}.`);
 
     const missing = ABSOLUTE_MAJORITY - result.yes;
@@ -808,6 +838,9 @@ const groupData = congressGroups.map((group) => ({
     else url.searchParams.delete('c');
     if (sortMode === 'hemicycle') url.searchParams.delete('o');
     else url.searchParams.set('o', sortMode);
+    const renamed = groups.filter((group) => group.renamed).map((group) => group.id);
+    if (renamed.length) url.searchParams.set('r', renamed.join(','));
+    else url.searchParams.delete('r');
     const customs = groups.filter((group) => group.custom);
     if (customs.length) {
       url.searchParams.set('x', customs.map((group) => `${group.id}~${encodeURIComponent(group.acronym)}~${group.color.slice(1)}`).join('|'));
@@ -826,6 +859,8 @@ const groupData = congressGroups.map((group) => ({
       groups.push({ id, acronym: decodeURIComponent(acronym).slice(0, 12), name: 'Partido creado por ti', color: `#${hex}`, seats: 0, custom: true, seatsNow: 0, seats2023: 0 });
       nextCustomId = Math.max(nextCustomId, Number(id.slice(1)) + 1);
     }
+    const renamed = (params.get('r') ?? '').split(',');
+    groups = groups.map((group) => (group.alt && renamed.includes(group.id) ? swapName(group) : group));
     const entries = (params.get('e') ?? '').split(',').map((entry) => entry.split('-'));
     const valid = entries.every(([id, seats]) => byId(id) && /^\d+$/.test(seats ?? '') && Number(seats) <= CONGRESS_SEATS);
     if (params.get('e') && valid) {
@@ -850,7 +885,7 @@ const groupData = congressGroups.map((group) => ({
   const nativeButton = $<HTMLButtonElement>('#share-native');
   const networkLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-network]')];
   const CALL_TO_ACTION = `Prueba otros pactos en el simulador de ${SITE_NAME}:`;
-  const TITLE = `Congreso y pactos · ${SITE_NAME}`;
+  const TITLE = `Congreso y pactos (${SITE_NAME})`;
   /** The address that each network gives to a shared page. The text and the link are encoded. */
   const shareUrls: Record<string, (text: string, href: string) => string> = {
     whatsapp: (text, href) => `https://wa.me/?text=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION} ${href}`)}`,
@@ -949,17 +984,18 @@ const groupData = congressGroups.map((group) => ({
 
     ctx.fillStyle = ink;
     ctx.textBaseline = 'alphabetic';
-    ctx.font = '40px "Archivo Black", Arial Black, sans-serif';
+    ctx.font = '900 60px "Big Shoulders Display", Impact, sans-serif';
     ctx.fillText('CONGRESO Y PACTOS', 48, 88);
     ctx.fillStyle = muted;
-    ctx.font = '700 20px "JetBrains Mono", monospace';
-    ctx.fillText(`${election.name} · ${election.shortName} · Candidato: ${candidate ? byId(candidate).acronym : 'sin elegir'}`, 48, 122);
+    ctx.font = '700 20px "Archivo", Arial, sans-serif';
+    ctx.fillText(`${election.name} del ${election.shortName}. Candidato: ${candidate ? byId(candidate).acronym : 'sin elegir'}`, 48, 122);
 
     // The hemicycle of the votes, scaled from the 400 × 210 of the page.
     const scale = 1.85;
     const left = 48;
     // The seats go from y = 3 to y = 205 in the 210 units of the hemicycle: with this top they start below the subtitle.
-    const top = 152;
+    // The block of the seats is 388 px high: it is centered between the subtitle and the footer.
+    const top = 184;
     ctx.lineWidth = 1.4;
     for (const circle of voteCircles) {
       const x = left + Number(circle.getAttribute('cx')) * scale;
@@ -971,43 +1007,73 @@ const groupData = congressGroups.map((group) => ({
       ctx.strokeStyle = ink;
       ctx.stroke();
     }
-    ctx.fillStyle = ink;
-    ctx.font = '84px "Archivo Black", Arial Black, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(String(result.yes), left + 200 * scale, top + 172 * scale);
+    // The middle of the hemicycle only has the majority: the votes go to the board at the right.
     ctx.fillStyle = muted;
-    // The caption is short: the free space in the middle of the hemicycle is only about 280 px wide.
-    ctx.font = '700 18px "JetBrains Mono", monospace';
-    ctx.fillText('votos a favor', left + 200 * scale, top + 192 * scale);
+    ctx.textAlign = 'center';
+    ctx.font = '700 18px "Archivo", Arial, sans-serif';
+    ctx.fillText('Mayoría absoluta', left + 200 * scale, top + 170 * scale);
+    ctx.fillStyle = ink;
+    ctx.font = '900 54px "Big Shoulders Display", Impact, sans-serif';
+    ctx.fillText(String(ABSOLUTE_MAJORITY), left + 200 * scale, top + 198 * scale);
     ctx.textAlign = 'left';
 
-    // The verdict and the votes, at the right.
-    const columnX = 850;
-    ctx.fillStyle = ink;
-    ctx.font = '30px "Archivo Black", Arial Black, sans-serif';
-    let y = wrapText(ctx, verdictTitle.textContent ?? '', columnX, 190, 310, 36);
-    y += 10;
-    const rows: [Vote, number][] = [['yes', result.yes], ['abstain', result.abstain], ['no', result.no]];
-    ctx.font = '700 24px "JetBrains Mono", monospace';
-    for (const [vote, count] of rows) {
-      ctx.fillStyle = resolveColor(VOTE_COLORS[vote]);
-      ctx.fillRect(columnX, y - 20, 24, 24);
-      ctx.strokeStyle = ink;
-      ctx.lineWidth = 2;
-      ctx.strokeRect(columnX, y - 20, 24, 24);
-      ctx.fillStyle = ink;
-      ctx.fillText(`${VOTE_LABELS[vote]} ${count}`, columnX + 38, y);
-      y += 40;
-    }
-    ctx.fillStyle = muted;
-    ctx.font = '600 20px "Archivo", Arial, sans-serif';
-    y = wrapText(ctx, `Mayoría absoluta: ${ABSOLUTE_MAJORITY} votos`, columnX, y + 6, 310, 26);
+    // The parties that vote yes, under the hemicycle, in one or two lines.
     const yes = lastShare.yesNames.join(' + ');
-    if (yes) wrapText(ctx, `Votan sí: ${yes}`, columnX, y + 10, 310, 26);
+    if (yes) {
+      ctx.fillStyle = muted;
+      ctx.font = '600 18px "Archivo", Arial, sans-serif';
+      wrapText(ctx, `Votan sí: ${yes}`, left, top + 214 * scale, 400 * scale, 24);
+    }
+
+    // The right column: the verdict, and under it the vote board of the Congress, with one row per line,
+    // the label at the left and the number at the right, as the screen of the chamber shows a vote.
+    const columnX = 830;
+    const columnWidth = width - 48 - columnX;
+    const rows: [string, number, string | null][] = [
+      ['A favor', result.yes, VOTE_COLORS.yes],
+      ['En contra', result.no, VOTE_COLORS.no],
+      ['Abstenciones', result.abstain, VOTE_COLORS.abstain],
+      ['Votos emitidos', result.yes + result.no + result.abstain, null],
+    ];
+    const rowHeight = 54;
+    const padding = 16;
+    const boardHeight = rows.length * rowHeight + padding * 2;
+    const boardTop = height - 72 - boardHeight;
 
     ctx.fillStyle = ink;
-    ctx.font = '700 20px "JetBrains Mono", monospace';
-    ctx.fillText(`${SITE_NAME} · Simulador de Congreso y pactos`, 48, height - 36);
+    ctx.font = '900 40px "Big Shoulders Display", Impact, sans-serif';
+    // The verdict takes the space above the board. The line height is 1.15 times the font size.
+    wrapText(ctx, verdictTitle.textContent ?? '', columnX, 176, columnWidth, 46);
+
+    ctx.fillStyle = ink;
+    ctx.fillRect(columnX, boardTop, columnWidth, boardHeight);
+    rows.forEach(([label, count, color], index) => {
+      const rowTop = boardTop + padding + index * rowHeight;
+      const baseline = rowTop + rowHeight - 14;
+      if (index === rows.length - 1) {
+        // A rule over the total.
+        ctx.fillStyle = paper;
+        ctx.fillRect(columnX + padding, rowTop + 2, columnWidth - padding * 2, 2);
+      }
+      if (color) {
+        ctx.fillStyle = resolveColor(color);
+        ctx.fillRect(columnX + padding, baseline - 20, 18, 18);
+        ctx.strokeStyle = paper;
+        ctx.lineWidth = 2;
+        ctx.strokeRect(columnX + padding, baseline - 20, 18, 18);
+      }
+      ctx.fillStyle = paper;
+      ctx.font = '700 20px "Archivo", Arial, sans-serif';
+      ctx.fillText(label.toUpperCase(), columnX + padding + 30, baseline - 2);
+      ctx.textAlign = 'right';
+      ctx.font = '900 48px "Big Shoulders Display", Impact, sans-serif';
+      ctx.fillText(String(count), columnX + columnWidth - padding, baseline + 4);
+      ctx.textAlign = 'left';
+    });
+
+    ctx.fillStyle = ink;
+    ctx.font = '700 20px "Archivo", Arial, sans-serif';
+    ctx.fillText(`${SITE_NAME}: simulador de Congreso y pactos`, 48, height - 36);
     return new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'));
   };
 
@@ -1041,8 +1107,12 @@ const groupData = congressGroups.map((group) => ({
     rebuild(baseGroups().map((group) => ({ ...group, seats: group.seats2023 })));
     renderAll();
   });
+  // «Todo a cero» starts the Congress of the new election: a group that changes its name (Sumar → Frente Amplio)
+  // takes the new name and color. The presets of the old Congress keep the old ones.
   $('#preset-zero').addEventListener('click', () => {
-    for (const group of groups) group.seats = 0;
+    rebuild(
+      groups.map((group) => ({ ...(group.alt && !group.renamed ? swapName(group) : group), seats: 0 })),
+    );
     renderAll();
   });
   createMissing.addEventListener('click', () => {
@@ -1117,7 +1187,7 @@ const groupData = congressGroups.map((group) => ({
 
 <style>
   .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
-  .page-hero h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12cqi, 8.5rem); margin: var(--space-4) 0; }
   .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
 
   .sim-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-5); align-items: start; }
@@ -1138,38 +1208,37 @@ const groupData = congressGroups.map((group) => ({
     display: flex;
     flex-direction: column;
     margin-top: var(--space-3);
-    border-top: var(--border-thin) solid var(--color-ink);
+    border-top: var(--border-thick) solid var(--color-ink);
     padding-top: var(--space-2);
   }
   .coalitions-box .coalitions { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
-    /* Room for the hover: a card moves 2px up and left and its shadow grows to 5px, and the scroll area would cut it. */
     padding: 4px 12px 12px 4px; }
   /* The numbers in the hemicycle can not be selected: a drag over them would select the text. */
   :global(#hemi-seats), :global(#hemi-votes) { user-select: none; -webkit-user-select: none; }
   .hemicycle__total, .hemicycle__caption { user-select: none; -webkit-user-select: none; pointer-events: none; }
-  .hemicycle__total { font: 400 40px var(--font-display); fill: var(--color-ink); }
-  .hemicycle__caption { font: 700 11px var(--font-mono); fill: var(--color-ink-muted); text-transform: uppercase; }
-  .status { margin: var(--space-3) 0; font: 700 var(--text-sm) var(--font-mono); }
+  .hemicycle__total { font: 900 40px var(--font-display); fill: var(--color-ink); }
+  .hemicycle__caption { font: 700 13px var(--font-body); fill: var(--color-ink); }
+  .status { margin: var(--space-3) 0; font: 700 var(--text-sm) var(--font-body); }
   .status[data-state='warning'] { background: var(--color-highlight); color: var(--color-on-highlight); padding: var(--space-2) var(--space-3); }
   .sim-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
   .sim-actions :global([hidden]), .share__actions :global([hidden]) { display: none; }
 
   .sort { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); margin-bottom: var(--space-3); }
-  .sort__label { font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .sort__label { font: 700 var(--text-xs) var(--font-body); }
   .sort button {
     min-height: 44px;
     padding: 0 var(--space-3);
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-paper);
     color: var(--color-ink);
-    font: 700 var(--text-xs) var(--font-mono);
-    text-transform: uppercase;
+    font: 700 var(--text-xs) var(--font-body);
     cursor: pointer;
   }
   .sort button + button { margin-left: -2px; }
   .sort button[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
   .sort button:not([aria-pressed='true']):hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .sort button:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: -3px; box-shadow: inset 0 0 0 5px var(--color-ink); }
+  .sort button:focus-visible { outline: 3px solid var(--color-ink); outline-offset: -3px; }
+  .sort button[aria-pressed='true']:focus-visible { outline-color: var(--color-paper); }
   .seat-list, .vote-list, .coalitions { list-style: none; margin: 0; padding: 0; }
   /* The rows are created by the script from a template: their styles are global inside the lists. */
   .seat-list :global(.seat-row) {
@@ -1178,7 +1247,7 @@ const groupData = congressGroups.map((group) => ({
     align-items: center;
     gap: var(--space-3);
     padding: var(--space-2) 0;
-    border-top: 1px dashed var(--color-ink-subtle);
+    border-top: var(--border-fine) solid var(--color-ink);
   }
   .seat-list :global(.seat-row:first-child) { border-top: 0; }
   .hint { margin: 0 0 var(--space-3); font-size: var(--text-sm); color: var(--color-ink-muted); }
@@ -1198,23 +1267,24 @@ const groupData = congressGroups.map((group) => ({
   }
   .seat-list :global(.seat-row__handle:hover) { color: var(--color-ink); }
   .seat-list :global(.seat-row__handle:active) { cursor: grabbing; }
-  .seat-list :global(.seat-row__handle:focus-visible) { outline: 3px solid var(--color-highlight); outline-offset: -3px; box-shadow: inset 0 0 0 5px var(--color-ink); }
+  .seat-list :global(.seat-row__handle:focus-visible) { outline: 3px solid var(--color-ink); outline-offset: -3px; }
   .seat-list[data-sort='alpha'] :global(.seat-row__handle),
   .seat-list[data-sort='seats'] :global(.seat-row__handle) { visibility: hidden; pointer-events: none; }
-  .seat-list :global(.seat-row.is-dragging) { outline: 2px dashed var(--color-ink); outline-offset: -2px; }
+  .seat-list :global(.seat-row.is-dragging) { outline: 3px solid var(--color-ink); outline-offset: -3px; }
   .seat-list :global(.seat-row.is-drop) { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .seat-list :global(.seat-row.is-drop .seat-row__full), .seat-list :global(.seat-row.is-drop .seat-row__remove) { color: inherit; }
+  .seat-list :global(.seat-row.is-drop .seat-row__full), .seat-list :global(.seat-row.is-drop .seat-row__remove), .seat-list :global(.seat-row.is-drop .seat-row__rename), .seat-list :global(.seat-row.is-drop .seat-row__handle) { color: inherit; }
   /* The SVG belongs to the Hemicycle component, so these selectors are global. */
   :global(#hemi-seats circle) { cursor: grab; }
   :global(#hemi-seats.is-dragging circle) { cursor: grabbing; }
   :global(#hemi-seats circle[data-drag='source']) { opacity: 0.35; }
   :global(#hemi-seats circle[data-drag='target']) { stroke-width: 3; }
-  :global(.seat-row__swatch) { width: 14px; height: 14px; box-sizing: border-box; background: var(--group); border: var(--border-thin) solid var(--color-ink); flex: none; }
+  :global(.seat-row__swatch) { width: 16px; height: 16px; box-sizing: border-box; border-radius: 50%; background: var(--group); border: var(--border-fine) solid var(--color-ink); flex: none; }
   .seat-list :global(.seat-row__name) { display: grid; gap: 2px; min-width: 0; font-size: var(--text-sm); justify-items: start; }
-  .seat-list :global(.seat-row__label b) { font-family: var(--font-mono); }
+  .seat-list :global(.seat-row__label b) { font-family: var(--font-body); }
   .seat-list :global(.seat-row__full) { color: var(--color-ink-muted); font-size: var(--text-xs); }
   .seat-list :global(.seat-row__remove) { padding: 0; border: 0; background: none; color: var(--color-ink); font: 600 var(--text-xs) var(--font-body); text-decoration: underline; cursor: pointer; }
-  .seat-list :global(.seat-row__remove[hidden]) { display: none; }
+  .seat-list :global(.seat-row__remove[hidden]), .seat-list :global(.seat-row__rename[hidden]) { display: none; }
+  .seat-list :global(.seat-row__rename) { padding: 0; border: 0; background: none; color: var(--color-ink); font: 600 var(--text-xs) var(--font-body); text-decoration: underline; cursor: pointer; text-align: left; }
 
   .seat-list :global(.stepper) { display: inline-flex; max-width: 100%; border: var(--border-thin) solid var(--color-ink); }
   .seat-list :global(.stepper button) {
@@ -1223,13 +1293,13 @@ const groupData = congressGroups.map((group) => ({
     border: 0;
     background: var(--color-paper);
     color: var(--color-ink);
-    font: 700 1.25rem var(--font-mono);
+    font: 700 1.25rem var(--font-body);
     cursor: pointer;
   }
   .seat-list :global(.stepper button:hover) { background: var(--color-highlight); color: var(--color-on-highlight); }
   /* The focus ring goes inside the control: the global ring is outside and it spills over the panel. */
   .seat-list :global(.stepper button:focus-visible),
-  .seat-list :global(.stepper input:focus-visible) { outline: 3px solid var(--color-highlight); outline-offset: -3px; box-shadow: inset 0 0 0 6px var(--color-ink); }
+  .seat-list :global(.stepper input:focus-visible) { outline: 3px solid var(--color-ink); outline-offset: -3px; }
   .seat-list :global(.stepper input) {
     box-sizing: border-box;
     width: 64px;
@@ -1241,15 +1311,15 @@ const groupData = congressGroups.map((group) => ({
     background: var(--color-paper);
     color: var(--color-ink);
     text-align: center;
-    font: 700 1rem var(--font-mono);
+    font: 700 1rem var(--font-body);
     -moz-appearance: textfield;
     appearance: textfield;
   }
   .seat-list :global(.stepper input::-webkit-outer-spin-button), .seat-list :global(.stepper input::-webkit-inner-spin-button) { -webkit-appearance: none; margin: 0; }
 
   /* Form to create a party. */
-  .party-form { position: relative; flex: none; margin-top: var(--space-3); border-top: var(--border-thin) solid var(--color-ink); padding-top: var(--space-2); }
-  .party-form summary { cursor: pointer; font: 700 var(--text-sm) var(--font-mono); text-transform: uppercase; min-height: 44px; display: flex; align-items: center; }
+  .party-form { position: relative; flex: none; margin-top: var(--space-3); border-top: var(--border-thick) solid var(--color-ink); padding-top: var(--space-2); }
+  .party-form summary { cursor: pointer; font: 700 var(--text-sm) var(--font-body); min-height: 44px; display: flex; align-items: center; }
   /* The open form floats above the summary and covers part of the list: the list does not shrink. */
   .party-form[open] form {
     position: absolute;
@@ -1261,10 +1331,9 @@ const groupData = congressGroups.map((group) => ({
     padding: var(--space-4);
     background: var(--color-paper);
     border: var(--border-thick) solid var(--color-ink);
-    box-shadow: var(--shadow-md);
   }
   .party-form form { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: var(--space-3); align-items: end; margin-top: var(--space-2); }
-  .party-form label { display: grid; gap: 6px; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .party-form label { display: grid; gap: 6px; font: 700 var(--text-xs) var(--font-body); }
   .party-form input:not([type='color']), .party-form select {
     box-sizing: border-box; width: 100%; min-height: 44px; border: var(--border-thin) solid var(--color-ink); border-radius: 0; padding: 0 10px;
     background: var(--color-paper); color: var(--color-ink); font: 600 0.9375rem var(--font-body); text-transform: none;
@@ -1272,20 +1341,20 @@ const groupData = congressGroups.map((group) => ({
   /* The text of the select sits in the middle of its height and the arrow at the right edge, like the other selects. */
   .party-form select, .pact-toolbar select { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
   .party-form input[type='color'] { width: 100%; height: 44px; padding: 2px; border: var(--border-thin) solid var(--color-ink); background: var(--color-paper); cursor: pointer; }
-  .party-form__error { grid-column: 1 / -1; margin: 0; min-height: 1.2em; font: 700 var(--text-xs) var(--font-mono); }
+  .party-form__error { grid-column: 1 / -1; margin: 0; min-height: 1.2em; font: 700 var(--text-xs) var(--font-body); }
 
   /* The bar of the candidate sits above both panels, so they start at the same height. */
   .pact-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); padding: var(--space-3) var(--space-4); margin-bottom: var(--space-5); }
-  .pact-toolbar label { font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .pact-toolbar label { font: 700 var(--text-xs) var(--font-body); }
   .pact-toolbar select { box-sizing: border-box; flex: 0 1 280px; min-width: 0; min-height: 48px; border: var(--border-thin) solid var(--color-ink); border-radius: 0; padding: 0 12px; background: var(--color-paper); color: var(--color-ink); font: 600 1rem var(--font-body); }
   .pact-toolbar p { margin: 0 0 0 auto; font-size: var(--text-sm); color: var(--color-ink-muted); }
 
-  .vote-list :global(.vote-row) { padding: var(--space-2) 0; border-top: 1px dashed var(--color-ink-subtle); }
+  .vote-list :global(.vote-row) { padding: var(--space-2) 0; border-top: var(--border-fine) solid var(--color-ink); }
   .vote-list :global(.vote-row:first-child) { border-top: 0; }
   .vote-list :global(.vote-row[hidden]) { display: none; }
   .vote-list :global(.vote-row fieldset) { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-3); border: 0; margin: 0; padding: 0; min-width: 0; }
   .vote-list :global(.vote-row legend) { display: flex; align-items: center; gap: var(--space-2); float: left; padding: 0; font-size: var(--text-sm); }
-  .vote-list :global(.vote-row legend b) { font-family: var(--font-mono); }
+  .vote-list :global(.vote-row legend b) { font-family: var(--font-body); }
   .vote-list :global(.vote-row__seats) { font-size: var(--text-xs); color: var(--color-ink-muted); }
   .vote-list :global(.segmented) { display: inline-flex; border: var(--border-thin) solid var(--color-ink); margin-left: auto; }
   .vote-list :global(.segmented input) { position: absolute; opacity: 0; pointer-events: none; }
@@ -1295,14 +1364,15 @@ const groupData = congressGroups.map((group) => ({
     min-width: 56px;
     min-height: 44px;
     padding: 0 var(--space-2);
-    font: 700 var(--text-xs) var(--font-mono);
+    font: 700 var(--text-xs) var(--font-body);
     cursor: pointer;
     background: var(--color-paper);
     color: var(--color-ink);
   }
   .vote-list :global(.segmented label + input + label) { border-left: var(--border-thin) solid var(--color-ink); }
   .vote-list :global(.segmented input:checked + label) { background: var(--color-ink); color: var(--color-paper); }
-  .vote-list :global(.segmented input:focus-visible + label) { outline: 3px solid var(--color-highlight); outline-offset: -3px; box-shadow: inset 0 0 0 5px var(--color-ink); }
+  .vote-list :global(.segmented input:focus-visible + label) { outline: 3px solid var(--color-ink); outline-offset: -3px; }
+  .vote-list :global(.segmented input:checked:focus-visible + label) { outline-color: var(--color-paper); }
   .vote-list :global(.segmented input:disabled + label) { cursor: default; }
   .vote-list :global(.segmented input:not(:checked) + label:hover) { background: var(--color-highlight); color: var(--color-on-highlight); }
   .vote-list :global(.vote-row[data-candidate='true'] .segmented input:not(:checked) + label:hover) { background: var(--color-paper); color: var(--color-ink); }
@@ -1325,8 +1395,7 @@ const groupData = congressGroups.map((group) => ({
     background: var(--board-bg);
     color: var(--board-text);
     /* A dark frame in both themes, like a screen. */
-    border: var(--border-thick) solid #000;
-    box-shadow: inset 0 0 0 1px var(--board-line);
+    border: var(--border-thick) solid var(--color-ink);
   }
   /* A light for each seat. A seat with no vote (or no candidate) is a light that is off. */
   .board :global(#hemi-votes circle) { fill: var(--led-off); stroke: #000; }
@@ -1338,11 +1407,10 @@ const groupData = congressGroups.map((group) => ({
     margin: var(--space-4) 0 0;
     padding-bottom: var(--space-2);
     border-bottom: 3px solid var(--board-muted);
-    font: 700 var(--text-xs) var(--font-mono);
-    text-transform: uppercase;
+    font: 700 var(--text-xs) var(--font-body);
     color: var(--board-muted);
   }
-  .board__head b { margin-left: var(--space-2); font: 400 var(--text-lg) var(--font-display); color: var(--board-text); }
+  .board__head b { margin-left: var(--space-2); font: 900 1.625rem var(--font-display); color: var(--board-text); }
   .board__tally { list-style: none; margin: 0; padding: 0; }
   .board__row {
     display: flex;
@@ -1352,30 +1420,30 @@ const groupData = congressGroups.map((group) => ({
     border-bottom: 3px solid var(--row);
     font: 700 var(--text-md) var(--font-body);
   }
-  .board__row b { font: 400 1.75rem / 1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .board__row b { font: 900 2.25rem / 1 var(--font-display); font-variant-numeric: tabular-nums; }
   .board__row--yes { --row: var(--led-yes); }
   .board__row--no { --row: var(--led-no); }
   .board__row--abstain { --row: var(--led-abstain); }
 
   /* The bar of votes, with the mark of the absolute majority. Dark text on each light. */
   .vote-bar { position: relative; display: flex; margin: var(--space-5) 0 var(--space-6); border: var(--border-thin) solid var(--board-line); background: #0a0b0c; min-height: 36px; }
-  .vote-bar__part { display: grid; place-items: center; flex: 1 1 0; min-width: 0; padding: 0 var(--space-2); font: 700 var(--text-xs) var(--font-mono); white-space: nowrap; overflow: hidden; color: var(--board-bg); }
+  /* No padding: the width of each part is exactly its share of the 350 seats (flex-grow = votes, basis 0). */
+  .vote-bar__part { display: grid; place-items: center; flex: 1 1 0; min-width: 0; padding: 0; font: 700 var(--text-xs) var(--font-body); white-space: nowrap; overflow: hidden; color: var(--board-bg); }
   .vote-bar__part[hidden] { display: none; }
   .vote-bar__part--yes { background: var(--led-yes); }
   .vote-bar__part--abstain { background: var(--led-abstain); }
   .vote-bar__part--no { background: var(--led-no); }
   .vote-bar__part--rest { background: transparent; }
   .vote-bar__marker { position: absolute; top: -8px; bottom: -8px; width: 0; border-left: 3px solid var(--board-text); }
-  .vote-bar__marker i { position: absolute; top: calc(100% + 2px); left: 50%; transform: translateX(-50%); font: 700 var(--text-xs) var(--font-mono); font-style: normal; background: var(--board-bg); color: var(--board-text); padding: 0 4px; }
+  .vote-bar__marker i { position: absolute; top: calc(100% + 2px); left: 50%; transform: translateX(-50%); font: 700 var(--text-xs) var(--font-body); font-style: normal; background: var(--board-bg); color: var(--board-text); padding: 0 4px; }
   /* Without a candidate, the votes wait: no option looks selected, and all are muted. */
   .vote-list :global(fieldset:disabled .segmented input + label),
   .vote-list :global(fieldset:disabled .segmented input + label:hover) { background: var(--color-paper); color: var(--color-ink-subtle); cursor: not-allowed; }
 
   .verdict { padding: var(--space-4); margin-top: var(--space-6); }
-  .verdict h3 { font-size: var(--text-xl); margin: 0 0 var(--space-2); }
+  .verdict h3 { font-size: 2rem; margin: 0 0 var(--space-2); }
   .verdict p { margin: 0; }
-  .verdict[data-outcome='failed'], .verdict[data-outcome='none'] { border-style: dashed; }
-  .coalitions__title { font-size: var(--text-lg); margin: 0 0 var(--space-1); }
+  .coalitions__title { font-size: 1.75rem; margin: 0 0 var(--space-1); }
   .coalitions__lead { margin: 0 0 var(--space-3); font-size: var(--text-sm); color: var(--color-ink-muted); }
   .coalitions { display: grid; gap: var(--space-3); }
   .coalitions :global(.coalition) {
@@ -1390,30 +1458,27 @@ const groupData = congressGroups.map((group) => ({
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-paper);
     color: var(--color-ink);
-    box-shadow: 3px 3px 0 var(--color-ink);
     text-align: left;
     cursor: pointer;
-    transition: transform var(--duration-fast), box-shadow var(--duration-fast);
   }
-  .coalitions :global(.coalition__parties) { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font: 700 var(--text-sm) var(--font-mono); }
+  .coalitions :global(.coalition__parties) { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font: 700 var(--text-sm) var(--font-body); }
   .coalitions :global(.coalition__party) { display: inline-flex; align-items: center; gap: 6px; }
-  .coalitions :global(.coalition__swatch) { width: 14px; height: 14px; box-sizing: border-box; border: var(--border-thin) solid var(--color-ink); flex: none; }
+  .coalitions :global(.coalition__swatch) { width: 16px; height: 16px; box-sizing: border-box; border-radius: 50%; border: var(--border-fine) solid var(--color-ink); flex: none; }
   .coalitions :global(.coalition__plus) { color: var(--color-ink-muted); }
   .coalitions :global(.coalition__sum) { display: grid; justify-items: end; line-height: 1.1; }
-  .coalitions :global(.coalition__sum strong) { font: 400 1.5rem var(--font-display); }
-  .coalitions :global(.coalition__sum small) { font: 700 var(--text-2xs) var(--font-mono); color: var(--color-ink-muted); text-transform: uppercase; }
-  .coalitions :global(.coalition:hover) { background: var(--color-highlight); color: var(--color-on-highlight); transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--color-ink); }
+  .coalitions :global(.coalition__sum strong) { font: 900 1.875rem var(--font-display); }
+  .coalitions :global(.coalition__sum small) { font: 700 var(--text-2xs) var(--font-body); color: var(--color-ink-muted); }
+  .coalitions :global(.coalition:hover) { background: var(--color-highlight); color: var(--color-on-highlight); }
   .coalitions :global(.coalition:hover .coalition__plus), .coalitions :global(.coalition:hover .coalition__sum small) { color: inherit; }
   /* The pact that is applied now. */
-  .coalitions :global(.coalition[aria-pressed='true']) { background: var(--color-ink); color: var(--color-paper); box-shadow: none; }
+  .coalitions :global(.coalition[aria-pressed='true']) { background: var(--color-ink); color: var(--color-paper); }
   .coalitions :global(.coalition[aria-pressed='true'] .coalition__plus), .coalitions :global(.coalition[aria-pressed='true'] .coalition__sum small) { color: inherit; }
   .coalitions :global(.coalition[aria-pressed='true'] .coalition__swatch) { border-color: var(--color-paper); }
-  @media (prefers-reduced-motion: reduce) { .coalitions :global(.coalition) { transition: none; } }
 
   .share__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-  .share__status { min-height: 1.4em; margin: var(--space-5) 0 0; padding-top: var(--space-2); font: 700 var(--text-sm) var(--font-mono); }
+  .share__status { min-height: 1.4em; margin: var(--space-5) 0 0; padding-top: var(--space-2); font: 700 var(--text-sm) var(--font-body); }
   .share__preview { margin: 0 0 var(--space-4); font-size: var(--text-md); font-weight: 600; }
-  .share__subtitle { margin: var(--space-5) 0 var(--space-3); font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .share__subtitle { margin: var(--space-5) 0 var(--space-3); font: 700 var(--text-xs) var(--font-body); }
   .share__networks { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
   .sim-note { margin: var(--space-6) 0 var(--space-8); max-width: 80ch; font-size: var(--text-sm); color: var(--color-ink-muted); }
 

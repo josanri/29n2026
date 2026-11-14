@@ -24,7 +24,7 @@ const { provinces, canaryIslands, cityInset } = geography;
 
 <svg class="province-map" {id} viewBox={`0 0 ${geography.width} ${geography.height}`} role="group" aria-label={label}>
   <rect class="province-map__frame province-map__frame--canarias" x={canaryIslands.x} y={canaryIslands.y} width={canaryIslands.width} height={canaryIslands.height} />
-  <text class="province-map__label" x={canaryIslands.x + 10} y={canaryIslands.y + 24} aria-hidden="true">CANARIAS</text>
+  <text class="province-map__label" x={canaryIslands.x + 10} y={canaryIslands.y + 24} aria-hidden="true">Canarias</text>
   <rect class="province-map__frame" x={cityInset.x} y={cityInset.y} width={cityInset.width} height={cityInset.height} />
   {provinces.map((province) => (
     <a
@@ -44,7 +44,7 @@ const { provinces, canaryIslands, cityInset } = geography;
       <path d={province.path} />
       {province.marker && (
         <text class="province-map__label" x={province.marker.x} y={province.marker.labelY} text-anchor="middle" aria-hidden="true">
-          {province.name.toUpperCase()}
+          {province.name}
         </text>
       )}
     </a>
@@ -57,7 +57,7 @@ const { provinces, canaryIslands, cityInset } = geography;
 <style>
   /* Strokes do not scale with the SVG: they always measure the same on screen. */
   .province-map {
-    --province-hover: color-mix(in srgb, var(--color-highlight) 55%, var(--color-paper-alt));
+    --province-hover: color-mix(in srgb, var(--color-highlight) 45%, var(--color-paper));
     display: block;
     width: 100%;
     height: auto;
@@ -65,14 +65,14 @@ const { provinces, canaryIslands, cityInset } = geography;
     overflow: visible;
   }
   .province-map path {
-    fill: var(--color-paper-alt);
+    fill: var(--color-paper);
     stroke: var(--color-ink);
     stroke-width: 1;
-    stroke-linejoin: round;
+    stroke-linejoin: miter;
     vector-effect: non-scaling-stroke;
   }
   .province-map__province { cursor: pointer; }
-  .province-map__province:focus-visible { outline: none; box-shadow: none; }
+  .province-map__province:focus-visible { outline: none; }
   .province-map__province:hover path,
   .province-map__province:focus-visible path,
   .province-map__province.is-near path { fill: var(--province-hover); }
@@ -88,13 +88,12 @@ const { provinces, canaryIslands, cityInset } = geography;
   .province-map circle.province-map__hit-area { stroke: none; }
   .province-map__label {
     fill: var(--color-ink-muted);
-    font: 700 1.1875rem var(--font-mono);
-    letter-spacing: 0.04em;
+    font: 700 1.1875rem var(--font-body);
   }
   .province-map__province.is-city .province-map__label { fill: var(--color-ink); }
   .province-map__frame {
     fill: none;
-    stroke: var(--color-ink-subtle);
+    stroke: var(--color-ink);
     stroke-width: 1.5;
     vector-effect: non-scaling-stroke;
   }

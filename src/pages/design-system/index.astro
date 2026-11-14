@@ -6,55 +6,46 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE_NAME } from '@/lib/site';
 import BarList from '@/components/charts/BarList.astro';
+import Wordmark from '@/components/layout/Wordmark.astro';
 import BlockChip from '@/components/ui/BlockChip.astro';
 import Button from '@/components/ui/Button.astro';
 import Panel from '@/components/ui/Panel.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
+import Icon from '@/components/ui/Icon.astro';
+import CategoryBars from '@/components/charts/CategoryBars.astro';
 import { colorToken, contrastBetween } from '@/lib/design-tokens';
-import { blockColor } from '@/lib/blocks';
 import { tooltip } from '@/lib/tooltip';
 
 const swatchGroups = [
-  { title: 'Superficies y tinta', names: ['paper', 'paper-alt', 'ink', 'ink-muted', 'ink-subtle'] },
-  { title: 'Resaltado y acento', names: ['highlight', 'on-highlight', 'accent', 'accent-light', 'on-accent'] },
-  { title: 'Marca (cabecera, pie, botón principal)', names: ['brand', 'on-brand'] },
+  { title: 'Blanco y negro (el tema oscuro los invierte)', names: ['paper', 'ink', 'ink-muted'] },
+  { title: 'El acento de la marca: amarillo con texto negro en los dos temas', names: ['highlight', 'on-highlight'] },
+  { title: 'Acento (amarillo; una página de partido lo cambia por el color del partido)', names: ['accent', 'on-accent'] },
+  { title: 'Marca (botón principal, esfera de la portada)', names: ['brand', 'on-brand'] },
   { title: 'Fijos (iguales en los dos temas)', names: ['fixed-light', 'fixed-dark'] },
-  { title: 'Bloques (categórica)', names: Array.from({ length: 11 }, (_, i) => `block-${i + 1}`) },
-  { title: 'Escala de calor (secuencial)', names: [1, 2, 3, 4, 5].map((i) => `heat-${i}`) },
+  { title: 'Respuestas del juego «Sin siglas»', names: ['answer-yes', 'answer-no', 'on-answer'] },
 ].map((group) => ({ ...group, tokens: group.names.map(colorToken) }));
 
 // Text and background pairs the site uses. `needs` is the WCAG minimum for that use.
 const pairs = [
   { use: 'Texto principal', fg: 'ink', bg: 'paper', needs: 4.5 },
-  { use: 'Texto secundario', fg: 'ink-muted', bg: 'paper', needs: 4.5 },
-  { use: 'Texto de apoyo', fg: 'ink-subtle', bg: 'paper', needs: 4.5 },
-  { use: 'Texto secundario sobre papel alterno', fg: 'ink-muted', bg: 'paper-alt', needs: 4.5 },
-  { use: 'Texto invertido (etiqueta tinta)', fg: 'paper', bg: 'ink', needs: 4.5 },
+  { use: 'Texto secundario (se usa poco)', fg: 'ink-muted', bg: 'paper', needs: 4.5 },
+  { use: 'Texto invertido (etiqueta de categoría, botón principal)', fg: 'paper', bg: 'ink', needs: 4.5 },
   { use: 'Texto del tooltip (fijo en los dos temas)', fg: 'fixed-light', bg: 'fixed-dark', needs: 4.5 },
-  { use: 'Título amarillo del tooltip', fg: 'highlight', bg: 'fixed-dark', needs: 4.5 },
-  { use: 'Texto sobre el resaltado (hover, tooltip)', fg: 'on-highlight', bg: 'highlight', needs: 4.5 },
+  { use: 'Texto sobre amarillo (banda, provincia elegida, hover)', fg: 'on-highlight', bg: 'highlight', needs: 4.5 },
   { use: 'Texto sobre el acento por defecto', fg: 'on-accent', bg: 'accent', needs: 4.5 },
   { use: 'Texto sobre la marca', fg: 'on-brand', bg: 'brand', needs: 4.5 },
-  { use: 'Cifras de la escala de calor, paso 1', fg: 'on-heat-1', bg: 'heat-1', needs: 4.5 },
-  { use: 'Cifras de la escala de calor, paso 2', fg: 'on-heat-2', bg: 'heat-2', needs: 4.5 },
-  { use: 'Cifras de la escala de calor, paso 3', fg: 'on-heat-3', bg: 'heat-3', needs: 4.5 },
-  { use: 'Cifras de la escala de calor, paso 4', fg: 'on-heat-4', bg: 'heat-4', needs: 4.5 },
-  { use: 'Cifras de la escala de calor, paso 5', fg: 'on-heat-5', bg: 'heat-5', needs: 4.5 },
-  { use: 'Títulos grandes sobre el color de bloque 1', fg: 'on-block', bg: 'block-1', needs: 3 },
-  { use: 'Títulos grandes sobre el color de bloque 2', fg: 'on-block', bg: 'block-2', needs: 3 },
-  { use: 'Títulos grandes sobre el color de bloque 3', fg: 'on-block', bg: 'block-3', needs: 3 },
-  { use: 'Títulos grandes sobre el color de bloque 4', fg: 'on-block', bg: 'block-4', needs: 3 },
+  { use: 'Respuesta «Sí» del juego', fg: 'on-answer', bg: 'answer-yes', needs: 4.5 },
+  { use: 'Respuesta «No» del juego', fg: 'on-answer', bg: 'answer-no', needs: 4.5 },
 ].map((pair) => ({ ...pair, ratio: contrastBetween(pair.fg, pair.bg) }));
 
 const typeScale = [
-  { token: '--text-2xs', size: '11px', use: 'Etiquetas pequeñas, leyendas' },
-  { token: '--text-xs', size: '12px', use: 'Etiquetas, metadatos en mono' },
-  { token: '--text-sm', size: '14px', use: 'Texto de apoyo, navegación' },
+  { token: '--text-xs', size: '14px', use: 'Lo más pequeño: leyendas y notas' },
+  { token: '--text-sm', size: '15px', use: 'Texto de apoyo' },
   { token: '--text-md', size: '16px', use: 'Texto de medidas' },
   { token: '--text-base', size: '17px', use: 'Texto del cuerpo' },
-  { token: '--text-lg', size: '18px', use: 'Entradillas, títulos de medida' },
-  { token: '--text-xl', size: '22px', use: 'Títulos de panel' },
+  { token: '--text-lg', size: '19px', use: 'Entradillas y títulos de medida' },
+  { token: '--text-xl', size: '28px', use: 'Títulos pequeños' },
 ];
 
 const spaceScale = ['--space-1', '--space-2', '--space-3', '--space-4', '--space-5', '--space-6', '--space-7', '--space-8'];
@@ -66,6 +57,20 @@ const sampleBars = [
   { id: 'c', label: 'Educación', count: 9, code: 'EDU' },
 ];
 const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
+const sampleCategories = [
+  { href: '#components', code: 'SOC', name: 'Pensiones y cohesión social', count: 248, percent: '8,6' },
+  { href: '#components', code: 'VIV', name: 'Vivienda', count: 156, percent: '5,4' },
+  { href: '#components', code: 'DEF', name: 'Defensa', count: 38, percent: '1,3' },
+];
+const iconNames = ['measures', 'blocks', 'download', 'external', 'summary', 'search'] as const;
+const iconLabels: Record<(typeof iconNames)[number], string> = {
+  measures: 'Explorar las medidas',
+  blocks: 'Leer por bloques',
+  download: 'Descargar',
+  external: 'Fuente oficial',
+  summary: 'Resumen',
+  search: 'Buscar',
+};
 ---
 
 <BaseLayout
@@ -75,15 +80,17 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
 >
   <section class="hero">
     <div class="container">
-      <Tag variant="ink">Sistema de diseño</Tag>
-      <h1 class="headline">Papel, tinta y sombras duras</h1>
+      <h1 class="headline">Trama: blanco, negro y un punto por medida</h1>
       <p class="hero__lede">
         Un sistema de tokens CSS y pocos componentes. Todo se lee en los dos temas: el botón de la cabecera cambia entre claro
         y oscuro para comprobarlo.
       </p>
       <ol class="toc">
         <li><a href="#principles">Principios</a></li>
+        <li><a href="#lessons">Lo aprendido</a></li>
+        <li><a href="#brand">Marca</a></li>
         <li><a href="#color">Color</a></li>
+        <li><a href="#trama">Trama</a></li>
         <li><a href="#contrast">Contraste</a></li>
         <li><a href="#type">Tipografía</a></li>
         <li><a href="#space">Espacio, bordes y capas</a></li>
@@ -94,15 +101,38 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
   </section>
 
   <div class="container">
-    <SectionHeading index="01 / PRINCIPIOS" title="Cómo se decide" headingId="principles" />
+    <SectionHeading title="Cómo se decide" headingId="principles" />
     <ul class="principles">
       <li class="box"><h3>Tokens, no valores</h3><p>Los componentes leen <code>var(--color-*)</code>, <code>--space-*</code> y similares. Un valor escrito a mano es un error de diseño.</p></li>
-      <li class="box"><h3>Dos temas, un valor</h3><p>Cada token de color usa <code>light-dark()</code>. No hay bloques duplicados para el tema oscuro.</p></li>
-      <li class="box"><h3>Nunca solo color</h3><p>El color de un bloque va siempre con su número. El estado «sin programa» usa borde discontinuo y trama.</p></li>
-      <li class="box"><h3>Pares fijos para lo que se invierte</h3><p>Si una pieza invierte tinta y papel, el texto de énfasis no usa un color de acento: usa un par fijo, como negro sobre amarillo.</p></li>
+      <li class="box"><h3>Dos temas, un valor</h3><p>Cada token de color usa <code>light-dark()</code>. El tema oscuro invierte el blanco y el negro.</p></li>
+      <li class="box"><h3>Nada de grises planos</h3><p>Un tono intermedio se imprime con puntos: la trama. Nunca se pone texto encima de una trama.</p></li>
+      <li class="box"><h3>Un acento y el color del partido</h3><p>El amarillo es la marca. El color de un partido aparece en su esfera, su banda y sus puntos. Sin sombras y sin esquinas redondas.</p></li>
     </ul>
 
-    <SectionHeading index="02 / COLOR" title="Color" headingId="color">
+    <SectionHeading title="Lo aprendido" headingId="lessons">
+      <p>Reglas que salen de errores reales de la web. Cada una dice qué hacer y por qué.</p>
+    </SectionHeading>
+    <ul class="principles">
+      <li class="box"><h3>Quesitos sin texto girado</h3><p>Una tarta con códigos de tres letras girados dentro de las porciones cuesta leerla. Los «quesitos» (<code>CategoryDonut</code>) llevan cada etiqueta fuera del anillo, en horizontal, con código, nombre completo y porcentaje, unida a su porción por una línea fina. Porción, línea y etiqueta son un solo enlace. En un móvil no caben: el anillo va solo y debajo una lista de barras (<code>CategoryBars</code>) o botones.</p></li>
+      <li class="box"><h3>Un partido que cambia de nombre cambia de color</h3><p>Sumar es magenta hasta el 16 de octubre de 2026; desde ese día es Frente Amplio, en bermellón. Las encuestas usan el nombre de su fecha y el simulador usa Sumar en el Congreso actual y en 2023, y Frente Amplio en «Todo a cero».</p></li>
+      <li class="box"><h3>El color del partido subraya, no escribe</h3><p>Las siglas llevan un subrayado fino del color del partido (<code>text-decoration-color</code>). El texto sigue en tinta: un color claro no da contraste como texto.</p></li>
+      <li class="box"><h3>Líneas con contorno de tinta</h3><p>En una gráfica, cada línea de color lleva debajo otra de tinta más ancha y cada punto un aro de tinta. Así VOX (verde claro) se lee sobre blanco y Podemos (morado) sobre negro, aunque el color solo no llegue a 3:1.</p></li>
+      <li class="box"><h3>La incertidumbre es un halo</h3><p>El margen de error o la horquilla de escaños se dibuja como un área suave del color de la serie (opacidad 0,16), bajo la línea. Las líneas se suavizan sin pasarse de los datos (curva monótona).</p></li>
+      <li class="box"><h3>Las cifras de una frase, en placa</h3><p>En la banda amarilla, los números van en Big Shoulders sobre una placa negra con texto amarillo (14,5:1 en los dos temas). Añade los espacios con <code>{'{\' \'}'}</code>: Astro quita el espacio al principio de una línea.</p></li>
+      <li class="box"><h3>Partes proporcionales sin relleno</h3><p>En una barra de partes con <code>flex-grow</code>, las partes no llevan <code>padding</code> y una parte vacía se oculta. Si no, el relleno ocupa sitio y la barra deja un hueco al final.</p></li>
+      <li class="box"><h3>Una esfera que viaja</h3><p>La esfera de la portada y la de un partido son enlaces. En la página de destino, un elemento con el mismo <code>view-transition-name</code> recibe la esfera. Solo con <code>prefers-reduced-motion: no-preference</code>.</p></li>
+      <li class="box"><h3>Desplegables que se notan</h3><p>Lo que se abre es un botón con borde, icono y flecha que gira. Un texto suelto («Filtros avanzados») no parece que se pueda pulsar.</p></li>
+    </ul>
+
+    <SectionHeading title="Marca" headingId="brand">
+      <p>El nombre se escribe en Big Shoulders Display 900. La letra O es un punto macizo del color de la tinta.</p>
+    </SectionHeading>
+    <div class="brand-row">
+      <div class="brand-tile box"><Wordmark /></div>
+      <div class="brand-tile brand-tile--inverted"><Wordmark /></div>
+    </div>
+
+    <SectionHeading title="Color" headingId="color">
       <p>Cada muestra usa el token real: cambia con el tema. Debajo, el valor en claro y en oscuro.</p>
     </SectionHeading>
     {swatchGroups.map((group) => (
@@ -113,16 +143,31 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
             <li class="swatch">
               <span class="swatch__chip" style={`background: var(${token.name})`}></span>
               <code class="swatch__name">{token.name}</code>
-              <span class="swatch__values mono">
-                {token.light === token.dark ? token.light : `${token.light} · ${token.dark}`}
+              <span class="swatch__values">
+                {token.light === token.dark ? token.light : `${token.light} en claro, ${token.dark} en oscuro`}
               </span>
             </li>
           ))}
         </ul>
       </section>
     ))}
+    <p class="note">
+      Los colores de partido no son tokens: llegan con los datos.
+    </p>
 
-    <SectionHeading index="03 / CONTRASTE" title="Contraste" headingId="contrast">
+    <SectionHeading title="Trama" headingId="trama">
+      <p>
+        Puntos de la tinta en una celda de 7 px, en tres densidades. Se usan como fondo de barras, de casillas y de bloques. Los
+        tokens son <code>--trama-light</code>, <code>--trama-medium</code>, <code>--trama-dense</code> y <code>--trama-size</code>.
+      </p>
+    </SectionHeading>
+    <div class="trama-row">
+      <div><span class="trama-sample trama--light"></span><b>Trama clara</b></div>
+      <div><span class="trama-sample trama--medium"></span><b>Trama media</b></div>
+      <div><span class="trama-sample trama--dense"></span><b>Trama densa</b></div>
+    </div>
+
+    <SectionHeading title="Contraste" headingId="contrast">
       <p>Razón de contraste WCAG calculada con los tokens. Mínimo 4,5:1 en texto pequeño y 3:1 en texto grande en negrita.</p>
     </SectionHeading>
     <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de contraste por tema">
@@ -133,47 +178,43 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
         <tbody>
           {pairs.map((pair) => (
             <tr>
-              <th scope="row">{pair.use}<small class="mono">{pair.fg} sobre {pair.bg}</small></th>
-              <td class="mono">{ratioLabel(pair.needs)}</td>
-              <td class="mono" data-pass={String(pair.ratio.light >= pair.needs)}>{ratioLabel(pair.ratio.light)} {pair.ratio.light >= pair.needs ? '✓' : '✗'}</td>
-              <td class="mono" data-pass={String(pair.ratio.dark >= pair.needs)}>{ratioLabel(pair.ratio.dark)} {pair.ratio.dark >= pair.needs ? '✓' : '✗'}</td>
+              <th scope="row">{pair.use}<small>{pair.fg} sobre {pair.bg}</small></th>
+              <td>{ratioLabel(pair.needs)}</td>
+              <td data-pass={String(pair.ratio.light >= pair.needs)}>{ratioLabel(pair.ratio.light)} {pair.ratio.light >= pair.needs ? '✓' : '✗'}</td>
+              <td data-pass={String(pair.ratio.dark >= pair.needs)}>{ratioLabel(pair.ratio.dark)} {pair.ratio.dark >= pair.needs ? '✓' : '✗'}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
     <p class="note">
-      Los colores de partido no son tokens: llegan con los datos. Cada superficie de partido calcula su color de texto (negro o
-      blanco) con <code>readableTextColor()</code> en <code>src/lib/color.ts</code>, y el mapa de presencia oscurece o aclara el
-      color hasta 3:1 con <code>shiftForContrast()</code>.
+      Cada superficie de partido calcula su color de texto (negro o blanco) con <code>readableTextColor()</code> en
+      <code>src/lib/color.ts</code>, y el mapa de presencia oscurece o aclara el color hasta 3:1 con
+      <code>shiftForContrast()</code>.
     </p>
 
-    <SectionHeading index="04 / TIPOGRAFÍA" title="Tipografía" headingId="type" />
-    <div class="grid grid--3">
-      <Panel title="Display" lead="--font-display · Archivo Black">
-        <p class="sample sample--display">Medida a medida</p>
-        <p>Titulares. Siempre en mayúsculas, interlineado 0,95.</p>
+    <SectionHeading title="Tipografía" headingId="type" />
+    <div class="grid grid--2">
+      <Panel title="Display" lead="--font-display, Big Shoulders Display 900">
+        <p class="sample sample--display">Punto por punto</p>
+        <p>Titulares, siglas y cifras grandes. En mayúsculas, interlineado entre 0,88 y 0,9.</p>
       </Panel>
-      <Panel title="Texto" lead="--font-body · Archivo">
+      <Panel title="Texto" lead="--font-body, Archivo 400, 600 y 700">
         <p class="sample sample--body">Cada programa, descompuesto en sus medidas.</p>
-        <p>Cuerpo de texto a 17 px, interlineado 1,55.</p>
-      </Panel>
-      <Panel title="Mono" lead="--font-mono · JetBrains Mono">
-        <p class="sample sample--mono">Nº 144 · 2029 · 43 %</p>
-        <p>Números, etiquetas y metadatos.</p>
+        <p>Cuerpo de texto, etiquetas y botones. Sin etiquetas pequeñas en mayúsculas.</p>
       </Panel>
     </div>
     <ul class="type-scale">
       {typeScale.map((step) => (
         <li>
           <code>{step.token}</code>
-          <span class="mono">{step.size}</span>
+          <span>{step.size}</span>
           <span style={`font-size: var(${step.token})`}>{step.use}</span>
         </li>
       ))}
     </ul>
 
-    <SectionHeading index="05 / ESPACIO" title="Espacio, bordes y capas" headingId="space" />
+    <SectionHeading title="Espacio, bordes y capas" headingId="space" />
     <div class="grid grid--2">
       <Panel title="Espacio" lead="Rejilla de 4 px.">
         <ul class="space-scale">
@@ -185,61 +226,90 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
           ))}
         </ul>
       </Panel>
-      <Panel title="Bordes y sombras" lead="Duros, sin desenfoque.">
-        <div class="elevation">
-          <div class="elevation__item" style="box-shadow: var(--shadow-sm)"><code>--shadow-sm</code></div>
-          <div class="elevation__item" style="box-shadow: var(--shadow-md)"><code>--shadow-md</code></div>
-          <div class="elevation__item" style="box-shadow: var(--shadow-lg)"><code>--shadow-lg</code></div>
+      <Panel title="Bordes" lead="Continuos y de esquinas cuadradas. Sin sombras.">
+        <div class="borders">
+          <div class="borders__item" style="border: var(--border-thick) solid var(--color-ink)"><code>--border-thick</code> 3 px: cajas y controles</div>
+          <div class="borders__item" style="border: var(--border-fine) solid var(--color-ink)"><code>--border-fine</code> 1,5 px: filas de listas y etiquetas de palanca</div>
         </div>
-        <p class="note">Bordes: <code>--border-thick</code> 4 px, <code>--border-thin</code> 2 px, <code>--border-hairline</code> 1 px.</p>
-        <p class="note">Capas: {layers.map((layer, index) => <><code>{layer}</code>{index < layers.length - 1 ? ' · ' : ''}</>)}.</p>
+        <p class="note">Capas: {layers.map((layer, index) => <><code>{layer}</code>{index < layers.length - 1 ? ', ' : ''}</>)}.</p>
         <p class="note">Movimiento: <code>--duration-fast</code>, <code>--duration-base</code>, <code>--duration-slow</code> y <code>--easing-out</code>. Se desactiva con <code>prefers-reduced-motion</code>.</p>
       </Panel>
     </div>
 
-    <SectionHeading index="06 / COMPONENTES" title="Componentes" headingId="components" />
+    <SectionHeading title="Componentes" headingId="components" />
 
-    <Panel title="Button" lead="src/components/ui/Button.astro · variant: default | ink · size: md | sm">
+    <Panel title="Button" lead="src/components/ui/Button.astro, variant: default | ink, size: md | sm">
       <div class="demo-row">
         <Button>Por defecto</Button>
         <Button variant="ink">Principal</Button>
         <Button size="sm">Pequeño</Button>
         <Button href="#components">Enlace</Button>
       </div>
-      <p class="note">Con <code>href</code> es un enlace; sin él, un <code>&lt;button&gt;</code>. Con <code>as="span"</code> se dibuja igual dentro de otro enlace.</p>
+      <p class="note">El principal es de tinta con texto de papel. El secundario tiene un borde de 3 px. Con <code>href</code> es un enlace; sin él, un <code>&lt;button&gt;</code>. Con <code>as="span"</code> se dibuja igual dentro de otro enlace.</p>
     </Panel>
 
     <div class="stack">
-      <Panel title="Tag" lead="src/components/ui/Tag.astro · variant: default | ink | highlight | party · size: sm | md | lg">
+      <Panel title="Tag" lead="src/components/ui/Tag.astro, variant: default | ink | bold | highlight | party, size: sm | md | lg">
         <div class="demo-row">
-          <Tag>Por defecto</Tag>
-          <Tag variant="ink">Tinta</Tag>
-          <Tag variant="highlight">⏱ 100 días</Tag>
+          <Tag variant="ink">Administración y gasto</Tag>
+          <Tag variant="bold">Plazo: 100 días</Tag>
+          <Tag>Gasto e inversión</Tag>
+          <Tag variant="highlight">Oficial</Tag>
           <Tag size="sm" href="#components">Enlace pequeño</Tag>
           <span class="demo-party"><Tag variant="party" size="lg">PP</Tag></span>
         </div>
+        <p class="note">La categoría va en tinta, el plazo con borde grueso y negrita, y las palancas y los colectivos con borde fino.</p>
       </Panel>
 
-      <Panel title="BlockChip" lead="src/components/ui/BlockChip.astro · muestra de color y texto, siempre juntos">
+      <Panel title="BlockChip" lead="src/components/ui/BlockChip.astro, muestra de trama y texto, siempre juntos">
         <div class="demo-row">
           <BlockChip blockId={1}>01</BlockChip>
           <BlockChip blockId={2}>02 Economía</BlockChip>
-          <BlockChip blockId={12}>12 (repite la paleta)</BlockChip>
-        </div>
-        <div class="demo-row demo-row--blocks">
-          {Array.from({ length: 11 }, (_, i) => <span class="block-swatch" style={`background: ${blockColor(i + 1)}`}>{i + 1}</span>)}
+          <BlockChip blockId={3}>03</BlockChip>
+          <BlockChip blockId={4}>04</BlockChip>
+          <BlockChip blockId={5}>05 (repite el ciclo)</BlockChip>
         </div>
       </Panel>
 
-      <Panel title="Panel y SectionHeading" lead="src/components/ui/Panel.astro · src/components/ui/SectionHeading.astro">
+      <Panel title="Panel y SectionHeading" lead="src/components/ui/Panel.astro y src/components/ui/SectionHeading.astro">
         <p>Este recuadro es un <code>Panel</code> con título y línea de apoyo. Los títulos de sección de esta página son <code>SectionHeading</code>.</p>
       </Panel>
 
-      <Panel title="BarList" lead="src/components/charts/BarList.astro · una serie, un color; pasa el ratón por una barra">
+      <Panel title="BarList" lead="src/components/charts/BarList.astro, una serie en trama; pasa el ratón por una barra">
         <BarList items={sampleBars} total={50} unit="medidas" singularUnit="medida" />
       </Panel>
 
-      <Panel title="Tooltip" lead="src/components/ui/Tooltip.astro · cualquier elemento con data-tooltip">
+      <Panel title="Icon" lead="src/components/ui/Icon.astro, rejilla de 20 × 20, trazo de 2,2 y puntas cuadradas">
+        <div class="demo-row">
+          {iconNames.map((name) => <Button size="sm"><Icon name={name} />{iconLabels[name]}</Button>)}
+        </div>
+        <p class="note">El icono toma el color del texto, así que sigue el hover del botón. Los puntos y bloques macizos usan la clase <code>icon__dot</code>. Un icono va siempre con su texto.</p>
+      </Panel>
+
+      <Panel title="CategoryBars" lead="src/components/charts/CategoryBars.astro, las categorías en una lista de barras">
+        <CategoryBars items={sampleCategories} unit="medidas" label="Ejemplo de categorías" />
+        <p class="note">La barra es la parte de la categoría más grande; el número es la parte real del total. Cada fila es un enlace de 44 px o más.</p>
+      </Panel>
+
+      <Panel title="Botones de opción" lead="Grupos de botones con aria-pressed: orden, cámara, encuestadora, porcentaje o escaños">
+        <div class="demo-segmented" role="group" aria-label="Ejemplo">
+          <button type="button" aria-pressed="true">Oficial</button>
+          <button type="button" aria-pressed="false">A–Z</button>
+          <button type="button" aria-pressed="false">Z–A</button>
+        </div>
+        <p class="note">Botones pegados, con un solo borde entre ellos. El activo va en tinta con texto de papel; el hover, en amarillo.</p>
+      </Panel>
+
+      <Panel title="Siglas con el color del partido" lead="Menús, tarjetas de la portada y posturas de «Temas que dividen»">
+        <div class="demo-row">
+          <b class="demo-acronym" style="--party-color:#135898">PP</b>
+          <b class="demo-acronym" style="--party-color:#7cbd2a">VOX</b>
+          <b class="demo-acronym" style="--party-color:#f5b400">ERC</b>
+          <b class="demo-acronym" style="--party-color:#1476a8">BNG</b>
+        </div>
+      </Panel>
+
+      <Panel title="Tooltip" lead="src/components/ui/Tooltip.astro, cualquier elemento con data-tooltip">
         <p>
           <a
             href="#components"
@@ -249,48 +319,75 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
         <p class="note">Se construye con <code>tooltip(titulo, ...lineas)</code> de <code>src/lib/tooltip.ts</code>. El globo usa colores fijos (<code>--color-fixed-light</code> sobre <code>--color-fixed-dark</code>), iguales en los dos temas, y el título es negro sobre amarillo. Si un texto se corta con puntos suspensivos, el tooltip muestra el texto completo sin <code>data-tooltip</code>.</p>
       </Panel>
 
-      <Panel title="Superficies de objeto" lead="src/styles/objects.css · .box · .box--interactive · .grid · .grid--top · .hatched · .container · .headline">
+      <Panel title="Superficies de objeto" lead="src/styles/objects.css, .box, .box--interactive, .trama, .grid, .container, .headline">
         <div class="demo-row">
           <div class="box demo-box">.box</div>
           <a class="box box--interactive demo-box" href="#components">.box--interactive</a>
-          <div class="hatched demo-box demo-box--hatched"><span class="demo-box__label">.hatched</span></div>
+          <div class="trama demo-box demo-box--trama"></div>
         </div>
       </Panel>
     </div>
 
-    <SectionHeading index="07 / ARCHIVOS" title="Dónde está cada cosa" headingId="files" />
+    <SectionHeading title="Dónde está cada cosa" headingId="files" />
     <ul class="files">
       <li><code>src/styles/tokens.css</code> <span>Todos los tokens. Único sitio con valores.</span></li>
       <li><code>src/styles/base.css</code> <span>Reinicio y elementos HTML.</span></li>
       <li><code>src/styles/objects.css</code> <span>Contenedor, caja, rejillas, trama.</span></li>
       <li><code>src/components/ui/</code> <span>Piezas reutilizables sin datos: Button, Tag, Panel, SectionHeading, BlockChip, Tooltip.</span></li>
+      <li><code>src/components/home/</code> <span>La portada: titular, buscador y esfera de puntos.</span></li>
       <li><code>src/components/charts/</code> <span>Gráficos de un programa.</span></li>
       <li><code>src/components/candidacies/</code> <span>Mapas de provincias y candidaturas.</span></li>
       <li><code>src/components/simulator/</code> <span>Piezas del simulador de escaños: hemiciclo e iconos.</span></li>
-      <li><code>src/components/layout/</code> <span>Cabecera y pie.</span></li>
+      <li><code>src/components/layout/</code> <span>Cabecera, pie y logotipo.</span></li>
       <li><code>src/lib/</code> <span>Datos, rutas, formato y color. Sin marcado.</span></li>
+      <li><code>src/lib/tests.ts</code> <span>La lista de tests del menú «Tests» y de <code>/tests/</code>.</span></li>
+      <li><code>src/data/temas.ts</code> <span>Los temas que dividen, comunes a todas las elecciones; las posturas, en <code>src/data/&lt;año&gt;/&lt;tipo&gt;/posturas.ts</code>.</span></li>
+      <li><code>src/data/&lt;año&gt;/&lt;tipo&gt;/encuestas.ts</code> <span>Encuestas: porcentaje, muestra, escaños y enlace a la fuente.</span></li>
     </ul>
   </div>
 </BaseLayout>
 
 <style>
   .hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: clamp(40px, 8vw, 80px) 0 var(--space-6); }
-  .hero h1 { font-size: clamp(2.25rem, 9cqi, 7rem); line-height: 0.9; margin: var(--space-4) 0 var(--space-5); }
+  .hero h1 { font-size: clamp(3rem, 9cqi, 7rem); line-height: 0.9; margin: 0 0 var(--space-5); }
   .hero__lede { font-size: clamp(1.125rem, 2.2vw, 1.375rem); font-weight: 600; max-width: 56ch; }
   .toc { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-5) 0 0; padding: 0; }
   .toc a {
-    display: inline-block;
-    font: 700 var(--text-xs) var(--font-mono);
-    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font: 700 1rem var(--font-body);
     text-decoration: none;
-    border: var(--border-thin) solid var(--color-ink);
-    padding: 6px 10px;
+    border: var(--border-thick) solid var(--color-ink);
+    padding: 0 12px;
+  }
+  .toc a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .demo-segmented { display: flex; }
+  .demo-segmented button {
+    min-height: 44px;
+    padding: 0 14px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1rem var(--font-body);
+  }
+  .demo-segmented button + button { border-left: 0; }
+  .demo-segmented button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .demo-segmented button[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .demo-acronym {
+    font: 900 2.5rem / 1 var(--font-display);
+    text-decoration: underline;
+    text-decoration-color: var(--party-color);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
+    text-decoration-skip-ink: none;
   }
   code {
-    font-family: var(--font-mono);
-    font-size: 0.88em;
-    background: var(--color-paper-alt);
-    padding: 1px 5px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9em;
+    border: var(--border-fine) solid var(--color-ink);
+    padding: 0 5px;
   }
 
   .principles {
@@ -302,45 +399,53 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
     gap: var(--space-5);
   }
   .principles li { padding: 20px; }
-  .principles h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
-  .principles p { margin: 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .principles h3 { font-size: 2rem; margin-bottom: var(--space-2); }
+  .principles p { margin: 0; }
+
+  .brand-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: var(--space-5); }
+  .brand-tile { display: grid; place-items: center; min-height: 170px; font-size: 1rem; }
+  .brand-tile :global(.wordmark) { font-size: clamp(2.75rem, 7vw, 4.25rem); }
+  .brand-tile--inverted { background: var(--color-ink); color: var(--color-paper); }
 
   .swatch-group { margin-top: var(--space-6); }
-  .swatch-group h3 { font: 700 0.8125rem var(--font-mono); margin-bottom: var(--space-3); }
+  .swatch-group h3 { font: 700 1.125rem var(--font-body); text-transform: none; letter-spacing: 0; margin-bottom: var(--space-3); }
   .swatches {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
     gap: var(--space-3);
   }
   .swatch { display: grid; gap: var(--space-1); align-content: start; }
-  .swatch__chip { display: block; height: 56px; border: var(--border-thin) solid var(--color-ink); }
+  .swatch__chip { display: block; height: 56px; border: var(--border-thick) solid var(--color-ink); }
   .swatch__name { font-size: var(--text-xs); overflow-wrap: anywhere; }
-  .swatch__values { font-size: var(--text-2xs); color: var(--color-ink-muted); }
+  .swatch__values { font-size: var(--text-xs); }
 
-  .table-wrap { overflow-x: auto; border: var(--border-thick) solid var(--color-ink); box-shadow: var(--shadow-md); }
+  .trama-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--space-4); }
+  .trama-row > div { display: grid; gap: 6px; }
+  .trama-sample { display: block; height: 84px; }
+
+  .table-wrap { overflow-x: auto; border: var(--border-thick) solid var(--color-ink); }
   .contrast-table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: var(--text-sm); }
-  .contrast-table th, .contrast-table td { text-align: left; padding: 10px var(--space-3); border-bottom: var(--border-thin) solid var(--color-ink); }
-  .contrast-table thead th { font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; background: var(--color-paper-alt); }
+  .contrast-table th, .contrast-table td { text-align: left; padding: 10px var(--space-3); border-bottom: var(--border-fine) solid var(--color-ink); }
+  .contrast-table thead th { font: 700 1rem var(--font-body); border-bottom: var(--border-thick) solid var(--color-ink); }
   .contrast-table tbody th { font-weight: 600; }
-  .contrast-table small { display: block; font-size: var(--text-2xs); color: var(--color-ink-muted); }
-  .contrast-table td { font-size: 0.8125rem; }
-  .contrast-table td[data-pass='false'] { background: var(--color-ink); color: var(--color-paper); font-weight: 700; }
-  .note { margin: var(--space-3) 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); max-width: 80ch; }
+  .contrast-table small { display: block; font-size: var(--text-xs); font-weight: 400; }
+  .contrast-table td { font-weight: 700; }
+  .contrast-table td[data-pass='false'] { background: var(--color-ink); color: var(--color-paper); }
+  .note { margin: var(--space-3) 0 0; font-size: var(--text-sm); max-width: 80ch; }
 
   .sample { margin: 0 0 var(--space-3); }
-  .sample--display { font-family: var(--font-display); font-size: 2rem; line-height: 1; text-transform: uppercase; }
+  .sample--display { font-family: var(--font-display); font-size: 3rem; line-height: 0.9; text-transform: uppercase; font-weight: 900; }
   .sample--body { font-family: var(--font-body); font-size: var(--text-lg); font-weight: 600; }
-  .sample--mono { font-family: var(--font-mono); font-size: var(--text-md); font-weight: 700; }
   .type-scale { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-2); }
   .type-scale li {
     display: grid;
     grid-template-columns: 120px 50px 1fr;
     gap: var(--space-3);
     align-items: baseline;
-    border-bottom: var(--border-hairline) dashed var(--color-ink-subtle);
+    border-bottom: var(--border-fine) solid var(--color-ink);
     padding-bottom: var(--space-2);
   }
   @media (max-width: 560px) { .type-scale li { grid-template-columns: 1fr; gap: 2px; } }
@@ -348,27 +453,16 @@ const ratioLabel = (value: number) => `${value.toFixed(2)}:1`;
   .space-scale { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
   .space-scale li { display: grid; grid-template-columns: 100px 1fr; gap: var(--space-3); align-items: center; }
   .space-scale__bar { display: block; height: 14px; background: var(--color-ink); }
-  .elevation { display: flex; flex-wrap: wrap; gap: var(--space-5); padding: var(--space-2) var(--space-2) var(--space-4); }
-  .elevation__item { padding: var(--space-4); border: var(--border-thin) solid var(--color-ink); background: var(--color-paper); }
+  .borders { display: grid; gap: var(--space-3); }
+  .borders__item { padding: var(--space-4); background: var(--color-paper); }
 
   .stack { display: grid; gap: var(--space-5); margin-top: var(--space-5); }
   .demo-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
-  .demo-row--blocks { gap: var(--space-1); margin-top: var(--space-4); }
-  .demo-party { --party-color: #135898; --party-on-color: #ffffff; }
-  .block-swatch {
-    display: grid;
-    place-items: center;
-    width: 36px;
-    height: 36px;
-    border: var(--border-thin) solid var(--color-ink);
-    color: var(--color-on-block);
-    font: 700 var(--text-xs) var(--font-mono);
-  }
-  .demo-box { padding: var(--space-4) var(--space-5); font: 700 var(--text-xs) var(--font-mono); }
-  .demo-box--hatched { border: var(--border-thick) solid var(--color-ink); background-color: var(--color-paper); }
-  .demo-box__label { background: var(--color-paper); padding: 0 var(--space-1); }
+  .demo-party { --party-color: #1d84ce; --party-on-color: #000000; }
+  .demo-box { padding: var(--space-4) var(--space-5); font: 700 1rem var(--font-body); }
+  .demo-box--trama { min-width: 120px; min-height: 64px; border: var(--border-thick) solid var(--color-ink); }
 
   .files { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
-  .files li { display: grid; grid-template-columns: minmax(180px, 280px) 1fr; gap: var(--space-3); align-items: baseline; border-top: var(--border-thin) solid var(--color-ink); padding-top: var(--space-3); }
+  .files li { display: grid; grid-template-columns: minmax(180px, 280px) 1fr; gap: var(--space-3); align-items: baseline; border-top: var(--border-fine) solid var(--color-ink); padding-top: var(--space-3); }
   @media (max-width: 640px) { .files li { grid-template-columns: 1fr; gap: 2px; } }
 </style>

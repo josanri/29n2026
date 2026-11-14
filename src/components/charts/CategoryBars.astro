@@ -1,0 +1,89 @@
+---
+/**
+ * The categories as a ranked list of bars: easier to read than a pie chart.
+ * Each row has the code, the full name (horizontal, never rotated), a halftone bar and the share.
+ * The bar is the share of the biggest category, so the differences are easy to see; the number is the real share.
+ * Every row is a link to its category.
+ */
+export interface CategoryBarItem {
+  href: string;
+  code: string;
+  name: string;
+  count: number;
+  /** Share of the total, as text: «8,6». */
+  percent: string;
+}
+
+interface Props {
+  items: CategoryBarItem[];
+  /** What an item is, for the accessible name of each row: «medidas». */
+  unit: string;
+  label: string;
+}
+
+const { items, unit, label } = Astro.props;
+const sorted = [...items].sort((a, b) => b.count - a.count);
+const max = Math.max(1, ...sorted.map((item) => item.count));
+---
+
+<ol class="category-bars" aria-label={label}>
+  {sorted.map((item) => (
+    <li>
+      <a href={item.href} aria-label={`${item.name}: ${item.count} ${unit}, ${item.percent} %`}>
+        <span class="category-bars__code" aria-hidden="true">{item.code}</span>
+        <span class="category-bars__name">{item.name}</span>
+        <span class="category-bars__value" aria-hidden="true">{item.percent} %</span>
+        <span class="category-bars__track" aria-hidden="true">
+          <span style={`width:${((item.count / max) * 100).toFixed(1)}%`}></span>
+        </span>
+      </a>
+    </li>
+  ))}
+</ol>
+
+<style>
+  /* Two columns on a wide screen, one on a phone. The order goes down the first column, then the second. */
+  .category-bars {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 2 340px;
+    column-gap: 32px;
+  }
+  .category-bars li { break-inside: avoid; }
+  .category-bars a {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    grid-template-areas: 'code name value' 'code track track';
+    align-items: center;
+    gap: 4px 12px;
+    min-height: 44px;
+    padding: 8px 6px;
+    border-top: var(--border-fine) solid var(--color-ink);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .category-bars a:hover,
+  .category-bars a:focus-visible { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .category-bars__code {
+    grid-area: code;
+    display: grid;
+    place-items: center;
+    height: 26px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font: 700 0.8125rem var(--font-body);
+    letter-spacing: 0.04em;
+  }
+  .category-bars a:hover .category-bars__code,
+  .category-bars a:focus-visible .category-bars__code { background: var(--color-on-highlight); color: var(--color-highlight); }
+  .category-bars__name { grid-area: name; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+  .category-bars__value { grid-area: value; font-weight: 700; font-variant-numeric: tabular-nums; }
+  /* The bar: an ink halftone on a fine track, like the print trama of the site. */
+  .category-bars__track { grid-area: track; display: block; height: 10px; border: var(--border-fine) solid var(--color-ink); }
+  .category-bars__track span {
+    display: block;
+    height: 100%;
+    background-color: var(--color-ink);
+  }
+</style>

@@ -2,27 +2,37 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { election } from '@eleccion/eleccion';
 import Tag from '@/components/ui/Tag.astro';
-import { programs, publishedPrograms } from '@/lib/programs';
+import { announcedMeasures, programs, publishedPrograms, totalMeasures } from '@/lib/programs';
 import { routes } from '@/lib/routes';
 import { formatNumber } from '@/lib/format';
+import { readableTextColor } from '@/lib/color';
 import { presenceOf } from '@/lib/presence';
 import { partySearchText } from '@/lib/party-search';
+import { categories } from '@/lib/taxonomy';
 
-const totalMeasures = publishedPrograms.reduce((sum, program) => sum + program.measures.length, 0);
 
 // Every party, also the ones with no program: the search finds a party by its name, its acronym or its region.
 const partyData = programs.map((program) => ({
   id: program.id,
   a: program.acronym,
+  // The party color and the text color that is readable on it, for the pill.
+  c: program.color,
+  o: readableTextColor(program.color),
   n: program.partyName,
   g: program.programName,
   h: program.hasProgram,
-  m: program.measures.length,
+  m: announcedMeasures(program).length,
   // A long list of regions (a national party) is shortened to its number.
   r: ((regions) => (regions.length > 3 ? `${regions.length} comunidades` : regions.join(', ')))(presenceOf(program).regions),
   s: partySearchText(program),
   u: routes.party(program.id),
 }));
+
+// The parties with measures and the categories, for the advanced filter.
+const filterParties = publishedPrograms
+  .filter((program) => announcedMeasures(program).length > 0)
+  .map((program) => ({ id: program.id, acronym: program.acronym, name: program.partyName, color: program.color }))
+  .sort((a, b) => a.acronym.localeCompare(b.acronym, 'es'));
 ---
 
 <BaseLayout
@@ -30,23 +40,80 @@ const partyData = programs.map((program) => ({
   description={`Busca un partido o una palabra en las medidas de todos los programas electorales del ${election.shortName}. La búsqueda tolera erratas.`}
 >
   <section class="container search">
-    <p class="search__index">Todos los programas</p>
     <h1 class="headline">Buscar</h1>
     <p class="search__lede">
       Busca un partido o una palabra en las {formatNumber(totalMeasures)} medidas de {publishedPrograms.length} programas
       (hay {programs.length} partidos; los demás aún no han publicado el suyo). La búsqueda tolera erratas.
     </p>
 
-    <form class="search__form box" role="search" onsubmit="return false">
+    <form class="search__form box" role="search" id="search-form">
       <label for="search-input">Buscar</label>
-      <input
-        id="search-input"
-        type="search"
-        placeholder="PP, ERC, vivienda, IRPF…"
-        autocomplete="off"
-        data-index-url={routes.searchIndex()}
-        data-parties={JSON.stringify(partyData)}
-      />
+      <!-- One row: the text, the filters and the search button. The filters open a panel downward, over the results. -->
+      <div class="search__row">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="PP, ERC, vivienda, IRPF…"
+          autocomplete="off"
+          data-index-url={routes.searchIndex()}
+          data-parties={JSON.stringify(partyData)}
+        />
+        <button type="button" class="search__filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters-panel">
+          <svg class="search__icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 5h15M5.5 10h9M8.5 15h3"></path></svg>
+          <span>Filtros</span>
+          <span class="search__badge" id="filter-count" hidden></span>
+          <svg class="search__chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5"></path></svg>
+        </button>
+        <button type="submit" class="search__submit">
+          <svg class="search__icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"></circle><path d="m12.5 12.5 5 5"></path></svg>
+          <span>Buscar</span>
+        </button>
+      </div>
+
+      <!-- The panel: two multiselect lists side by side. With a filter, the search also works with no text. -->
+      <div class="search__panel" id="filters-panel" role="group" aria-label="Filtros" hidden>
+        <fieldset class="multi" data-multi="category">
+          <legend>Categoría <span class="multi__count" data-multi-count></span></legend>
+          <input class="multi__find" type="search" placeholder="Buscar categoría…" autocomplete="off" aria-label="Buscar una categoría" data-multi-find />
+          <ul class="multi__list">
+            {
+              categories.map((category) => (
+                <li data-multi-item data-text={`${category.code} ${category.name}`}>
+                  <label class="multi__option">
+                    <input type="checkbox" name="category" value={category.id} data-label={category.name} />
+                    <span class="multi__code">{category.code}</span>
+                    <span class="multi__name">{category.name}</span>
+                  </label>
+                </li>
+              ))
+            }
+          </ul>
+        </fieldset>
+        <fieldset class="multi" data-multi="party">
+          <legend>Partido <span class="multi__count" data-multi-count></span></legend>
+          <input class="multi__find" type="search" placeholder="Buscar partido…" autocomplete="off" aria-label="Buscar un partido" data-multi-find />
+          <ul class="multi__list">
+            {
+              filterParties.map((party) => (
+                <li data-multi-item data-text={`${party.acronym} ${party.name}`}>
+                  <label class="multi__option" style={`--party-color:${party.color}`}>
+                    <input type="checkbox" name="party" value={party.id} data-label={party.acronym} />
+                    <span class="multi__swatch" aria-hidden="true"></span>
+                    <span class="multi__name"><b>{party.acronym}</b> {party.name}</span>
+                  </label>
+                </li>
+              ))
+            }
+          </ul>
+        </fieldset>
+        <div class="search__panel-actions">
+          <button type="button" class="search__reset" id="filter-reset" hidden>Quitar filtros</button>
+          <button type="button" class="search__done" id="filters-done">Ver resultados</button>
+        </div>
+      </div>
+
+      <!-- The active filters, also with the panel closed. Each chip removes its filter. -->
+      <ul class="search__chips" id="filter-chips" aria-label="Filtros activos" hidden></ul>
     </form>
 
     <p class="search__status" id="search-status" aria-live="polite"></p>
@@ -59,7 +126,7 @@ const partyData = programs.map((program) => ({
     <template id="party-template">
       <li class="result result--party box">
         <p class="result__meta">
-          <Tag variant="ink" size="sm" data-field="acronym" />
+          <Tag variant="party" size="sm" data-field="acronym" />
           <Tag size="sm" data-field="state" />
         </p>
         <a class="result__title" data-field="link"></a>
@@ -70,7 +137,7 @@ const partyData = programs.map((program) => ({
     <template id="result-template">
       <li class="result box">
         <p class="result__meta">
-          <Tag variant="ink" size="sm" data-field="party" />
+          <Tag variant="party" size="sm" data-field="party" />
           <Tag size="sm" data-field="category" />
         </p>
         <a class="result__title" data-field="link"></a>
@@ -87,14 +154,16 @@ const partyData = programs.map((program) => ({
   import { routes, SEARCH_PARAMS } from '@/lib/routes';
 
   interface SearchIndex {
-    parties: { id: string; acronym: string }[];
-    items: { p: number; n: number; c: string; t: string; x: string; k: string; s: string }[];
+    parties: { id: string; acronym: string; color: string; on: string }[];
+    items: { p: number; n: number; c: string; d: string; t: string; x: string; k: string; s: string }[];
   }
   type Item = SearchIndex['items'][number];
 
   interface PartyEntry {
     id: string;
     a: string;
+    c: string;
+    o: string;
     n: string;
     g: string;
     h: boolean;
@@ -133,17 +202,24 @@ const partyData = programs.map((program) => ({
     return [...exact, ...found.filter((party) => !exact.includes(party))].slice(0, MAX_PARTIES);
   };
 
+  /** The pill of a party takes the party color and its readable text color. */
+  const paintPill = (pill: HTMLElement, color: string, on: string) => {
+    pill.style.setProperty('--party-color', color);
+    pill.style.setProperty('--party-on-color', on);
+  };
+
   function showParties(matches: PartyEntry[]) {
     partyList.replaceChildren();
     for (const party of matches) {
       const node = partyTemplate.content.cloneNode(true) as DocumentFragment;
       const field = (name: string) => node.querySelector<HTMLElement>(`[data-field="${name}"]`)!;
       field('acronym').textContent = party.a;
+      paintPill(field('acronym'), party.c, party.o);
       field('state').textContent = party.h ? `${party.m} medidas` : 'Sin programa publicado';
       const link = field('link') as HTMLAnchorElement;
       link.href = party.u;
       link.textContent = party.n;
-      field('detail').textContent = [party.g, party.r].filter(Boolean).join(' · ');
+      field('detail').textContent = [party.g, party.r].filter(Boolean).join(', ');
       partyList.append(node);
     }
     partyHeading.hidden = matches.length === 0;
@@ -186,6 +262,7 @@ const partyData = programs.map((program) => ({
       const node = template.content.cloneNode(true) as DocumentFragment;
       const field = (name: string) => node.querySelector<HTMLElement>(`[data-field="${name}"]`)!;
       field('party').textContent = party.acronym;
+      paintPill(field('party'), party.color, party.on);
       field('category').textContent = item.c;
       const link = field('link') as HTMLAnchorElement;
       link.href = routes.measure(party.id, item.n);
@@ -198,7 +275,7 @@ const partyData = programs.map((program) => ({
     moreButton.hidden = shown >= results.length;
   }
 
-  function render(query: string, message?: string, partyMatches: PartyEntry[] = []) {
+  function render(query: string, message?: string, partyMatches: PartyEntry[] = [], filtered = false) {
     list.replaceChildren();
     shown = 0;
     moreButton.hidden = true;
@@ -206,33 +283,61 @@ const partyData = programs.map((program) => ({
     status.textContent = message ?? '';
     if (results.length) showMore();
     measureHeading.hidden = results.length === 0;
-    if (!message && query) {
+    if (!message && (query || filtered)) {
       const count = results.length;
-      const partyText = partyMatches.length ? `${partyMatches.length} ${partyMatches.length === 1 ? 'partido' : 'partidos'} · ` : '';
+      const partyText = partyMatches.length ? `${partyMatches.length} ${partyMatches.length === 1 ? 'partido' : 'partidos'} y ` : '';
       status.textContent =
         count === 0 && partyMatches.length === 0
-          ? `Ningún partido ni medida coincide con «${query}».`
-          : `${partyText}${count} ${count === 1 ? 'medida' : 'medidas'}`;
+          ? query
+            ? `Ningún partido ni medida coincide con «${query}».`
+            : 'Ningún partido ni medida coincide con los filtros.'
+          : `${partyText}${count} ${count === 1 ? 'medida' : 'medidas'}.`;
     }
   }
+
+  // ---- The filters: the parties and the categories that the reader picks ----
+  const form = document.querySelector<HTMLFormElement>('#search-form')!;
+  const toggle = document.querySelector<HTMLButtonElement>('#filters-toggle')!;
+  const panel = document.querySelector<HTMLElement>('#filters-panel')!;
+  const chips = document.querySelector<HTMLUListElement>('#filter-chips')!;
+  const filterCount = document.querySelector<HTMLElement>('#filter-count')!;
+  const filterReset = document.querySelector<HTMLButtonElement>('#filter-reset')!;
+  const partyBoxes = [...document.querySelectorAll<HTMLInputElement>('input[name="party"]')];
+  const categoryBoxes = [...document.querySelectorAll<HTMLInputElement>('input[name="category"]')];
+  const pickedOf = (boxes: HTMLInputElement[]) => new Set(boxes.filter((box) => box.checked).map((box) => box.value));
 
   let latest = 0;
   async function search() {
     const raw = input.value.trim();
     const query = normalizeForSearch(raw);
+    const pickedParties = pickedOf(partyBoxes);
+    const pickedCategories = pickedOf(categoryBoxes);
+    const filtered = pickedParties.size + pickedCategories.size > 0;
+
     const url = new URL(location.href);
-    if (raw) url.searchParams.set(SEARCH_PARAMS.query, raw);
-    else url.searchParams.delete(SEARCH_PARAMS.query);
+    const setParam = (name: string, value: string) => (value ? url.searchParams.set(name, value) : url.searchParams.delete(name));
+    setParam(SEARCH_PARAMS.query, raw);
+    setParam(SEARCH_PARAMS.parties, [...pickedParties].join(','));
+    setParam(SEARCH_PARAMS.categories, [...pickedCategories].join(','));
     history.replaceState(null, '', url);
+    filterCount.hidden = !filtered;
+    filterCount.textContent = String(pickedParties.size + pickedCategories.size);
+    filterReset.hidden = !filtered;
+    renderPicked();
 
     const ticket = ++latest;
-    if (query.length < MIN_FUZZY_LENGTH) {
+    // With no text (or with one letter) and no filter there is nothing to search.
+    const hasText = query.length >= MIN_FUZZY_LENGTH;
+    if (!hasText && !filtered) {
       results = [];
       render(raw, raw ? 'Escribe al menos dos letras.' : '');
       return;
     }
-    const partyMatches = partiesMatching(query);
-    if (!fuse) {
+    // The parties: the ones of the text, or all of them if the reader only filters. A category filter hides them.
+    const partyMatches = pickedCategories.size
+      ? []
+      : (hasText ? partiesMatching(query) : parties).filter((party) => !pickedParties.size || pickedParties.has(party.id));
+    if (!index) {
       // The parties show at once, while the measures load.
       results = [];
       render(raw, 'Cargando medidas…', partyMatches);
@@ -244,30 +349,110 @@ const partyData = programs.map((program) => ({
       }
     }
     if (ticket !== latest) return; // the reader typed more while the index loaded
-    results = fuse!.search(query).map((result) => result.item);
-    render(raw, undefined, partyMatches);
+    const found = hasText ? fuse!.search(query).map((result) => result.item) : index!.items;
+    results = found.filter(
+      (item) =>
+        (!pickedParties.size || pickedParties.has(index!.parties[item.p].id)) &&
+        (!pickedCategories.size || pickedCategories.has(item.d)),
+    );
+    render(raw, undefined, partyMatches, filtered);
   }
+
+  /** The chips of the active filters and the count of each list. */
+  function renderPicked() {
+    const picked = [...categoryBoxes, ...partyBoxes].filter((box) => box.checked);
+    chips.replaceChildren(
+      ...picked.map((box) => {
+        const item = document.createElement('li');
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'search__chip';
+        button.dataset.remove = `${box.name}:${box.value}`;
+        button.setAttribute('aria-label', `Quitar el filtro ${box.dataset.label}`);
+        button.innerHTML = '<span></span><span aria-hidden="true">×</span>';
+        button.firstElementChild!.textContent = box.dataset.label!;
+        if (box.name === 'party') button.style.setProperty('--party-color', box.closest<HTMLElement>('.multi__option')!.style.getPropertyValue('--party-color'));
+        item.append(button);
+        return item;
+      }),
+    );
+    chips.hidden = picked.length === 0;
+    for (const multi of panel.querySelectorAll<HTMLElement>('[data-multi]')) {
+      const count = multi.querySelectorAll('input[type="checkbox"]:checked').length;
+      multi.querySelector<HTMLElement>('[data-multi-count]')!.textContent = count ? `(${count})` : '';
+    }
+  }
+
+  const openPanel = (open: boolean) => {
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) panel.querySelector<HTMLInputElement>('[data-multi-find]')?.focus();
+  };
+  toggle.addEventListener('click', () => openPanel(toggle.getAttribute('aria-expanded') !== 'true'));
+  document.querySelector('#filters-done')!.addEventListener('click', () => {
+    openPanel(false);
+    toggle.focus();
+  });
+  // The panel closes with Escape and with a click outside the form.
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !panel.hidden) {
+      openPanel(false);
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (!panel.hidden && !form.contains(event.target as Node)) openPanel(false);
+  });
+  // «Buscar» runs the search and closes the panel. The search also runs while the reader types.
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    openPanel(false);
+    search();
+  });
+  // The find field of each list hides the options that do not match.
+  const plain = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  for (const find of panel.querySelectorAll<HTMLInputElement>('[data-multi-find]')) {
+    find.addEventListener('input', () => {
+      const wanted = plain(find.value.trim());
+      for (const item of find.closest('[data-multi]')!.querySelectorAll<HTMLElement>('[data-multi-item]')) {
+        item.hidden = Boolean(wanted) && !plain(item.dataset.text!).includes(wanted);
+      }
+    });
+  }
+  chips.addEventListener('click', (event) => {
+    const chip = (event.target as Element).closest<HTMLButtonElement>('[data-remove]');
+    if (!chip) return;
+    const [name, value] = chip.dataset.remove!.split(':');
+    const box = [...partyBoxes, ...categoryBoxes].find((item) => item.name === name && item.value === value);
+    if (box) box.checked = false;
+    search();
+    (chips.querySelector<HTMLButtonElement>('[data-remove]') ?? toggle).focus();
+  });
 
   input.addEventListener('input', search);
+  for (const box of [...partyBoxes, ...categoryBoxes]) box.addEventListener('change', search);
+  filterReset.addEventListener('click', () => {
+    for (const box of [...partyBoxes, ...categoryBoxes]) box.checked = false;
+    search();
+  });
   moreButton.addEventListener('click', showMore);
 
-  const initial = new URLSearchParams(location.search).get(SEARCH_PARAMS.query);
-  if (initial) {
-    input.value = initial;
-    search();
-  }
+  const params = new URLSearchParams(location.search);
+  const initial = params.get(SEARCH_PARAMS.query);
+  const restore = (boxes: HTMLInputElement[], name: string) => {
+    const wanted = new Set((params.get(name) ?? '').split(',').filter(Boolean));
+    for (const box of boxes) box.checked = wanted.has(box.value);
+    return wanted.size > 0;
+  };
+  const restored = [restore(partyBoxes, SEARCH_PARAMS.parties), restore(categoryBoxes, SEARCH_PARAMS.categories)].some(Boolean);
+  if (initial) input.value = initial;
+  if (initial || restored) search();
   input.focus();
 </script>
 
 <style>
   .search { padding-bottom: var(--space-8); }
-  .search__index {
-    margin: var(--space-6) 0 0;
-    font: 700 var(--text-sm) var(--font-mono);
-    text-transform: uppercase;
-    color: var(--color-ink-subtle);
-  }
-  .search h1 { font-size: clamp(2.5rem, 9cqi, 6rem); margin: var(--space-2) 0 var(--space-4); }
+  .search h1 { font-size: clamp(3.5rem, 14cqi, 8.5rem); margin: var(--space-6) 0 var(--space-4); }
   .search__lede { max-width: 60ch; font-weight: 600; margin: 0 0 var(--space-5); }
 
   .search__form {
@@ -279,37 +464,166 @@ const partyData = programs.map((program) => ({
     padding: 14px var(--space-4);
     background: var(--color-paper);
   }
-  .search__form label { font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
-  .search__form input {
-    min-height: 48px;
-    border: var(--border-thin) solid var(--color-ink);
+  .search__form label { font: 700 1rem var(--font-body); }
+  /* The row: the field takes the width; the two buttons sit at its right, as tall as the field. */
+  .search__row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; }
+  .search__row input {
+    min-width: 0;
+    min-height: 52px;
+    border: var(--border-thick) solid var(--color-ink);
     border-radius: 0;
     padding: 8px 12px;
     background: var(--color-paper);
     color: var(--color-ink);
     font: 600 1.125rem var(--font-body);
   }
-  @media (max-width: 560px) {
+  .search__row input::placeholder { color: var(--color-ink-muted); opacity: 1; }
+  .search__filters-toggle,
+  .search__submit {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 52px;
+    padding: 0 16px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  /* «Filtros»: paper, ink when the panel is open. «Buscar»: the main action, ink. */
+  .search__filters-toggle { background: var(--color-paper); color: var(--color-ink); }
+  .search__filters-toggle:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .search__filters-toggle[aria-expanded='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .search__filters-toggle[aria-expanded='true'] .search__badge { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .search__submit { background: var(--color-ink); color: var(--color-paper); }
+  .search__submit:hover { background: var(--color-highlight); color: var(--color-on-highlight); border-color: var(--color-ink); }
+  .search__icon,
+  .search__chevron { flex: none; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: square; }
+  .search__icon { width: 18px; height: 18px; }
+  .search__chevron { width: 12px; height: 8px; transition: transform var(--duration-base); }
+  .search__filters-toggle[aria-expanded='true'] .search__chevron { transform: rotate(180deg); }
+  .search__badge {
+    display: inline-grid;
+    place-items: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    box-sizing: border-box;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font: 700 0.875rem var(--font-body);
+  }
+  .search__badge[hidden] { display: none; }
+
+  /* The panel opens downward under the row, inside the form, and pushes the results down. It is not a floating
+     layer: the page clips what goes past its bottom (`overflow-x: hidden` on the page), and with few results a
+     floating panel was cut. While the panel is open the form is not sticky, so it never covers the results. */
+  .search__panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin-top: 8px;
+    padding: var(--space-4);
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+  }
+  .search__form:has(.search__panel:not([hidden])) { position: static; }
+  .search__panel[hidden] { display: none; }
+  .multi { display: grid; grid-template-rows: auto auto 1fr; gap: 8px; min-width: 0; margin: 0; padding: 0; border: 0; }
+  .multi legend { padding: 0; margin-bottom: 8px; font: 700 1rem var(--font-body); }
+  .multi__count { font-weight: 600; }
+  .multi__find {
+    min-height: 44px;
+    padding: 0 10px;
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 1rem var(--font-body);
+  }
+  .multi__find::placeholder { color: var(--color-ink-muted); opacity: 1; }
+  /* The list scrolls inside the panel, so the panel fits on the screen. */
+  .multi__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: min(46vh, 360px);
+    overflow-y: auto;
+    border: var(--border-thin) solid var(--color-ink);
+  }
+  .multi__list li + li { border-top: var(--border-fine) solid var(--color-ink); }
+  .multi__list li[hidden] { display: none; }
+  .multi__option { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 10px; cursor: pointer; font: 600 0.9375rem / 1.25 var(--font-body); }
+  .multi__option input { flex: none; width: 20px; height: 20px; margin: 0; accent-color: var(--color-ink); cursor: pointer; }
+  .multi__option:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .multi__option:has(input:checked) { background: var(--color-ink); color: var(--color-paper); }
+  .multi__option:has(input:checked) input { accent-color: var(--color-highlight); }
+  .multi__option:has(input:focus-visible) { outline: 3px solid var(--color-ink); outline-offset: -3px; }
+  .multi__code { flex: none; min-width: 38px; padding: 1px 4px; border: var(--border-fine) solid currentColor; font: 700 0.75rem var(--font-body); text-align: center; }
+  .multi__swatch { flex: none; width: 12px; height: 24px; background: var(--party-color); border: var(--border-fine) solid currentColor; }
+  .multi__name { min-width: 0; overflow-wrap: anywhere; }
+  .search__panel-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+  .search__reset,
+  .search__done {
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 0;
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .search__reset { background: var(--color-paper); color: var(--color-ink); }
+  .search__done { background: var(--color-ink); color: var(--color-paper); }
+  .search__reset:hover, .search__done:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .search__reset[hidden] { display: none; }
+
+  /* The active filters: removable chips under the row. The script makes them, so their rules are global. */
+  .search__chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 6px 0 0; padding: 0; }
+  .search__chips[hidden] { display: none; }
+  .search__chips :global(.search__chip) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 10px;
+    border: var(--border-thin) solid var(--color-ink);
+    border-left: 8px solid var(--party-color, var(--color-ink));
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    cursor: pointer;
+  }
+  .search__chips :global(.search__chip:hover) { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+  /* A phone: the field on its own row and the two buttons under it; the lists one under the other. */
+  @media (max-width: 640px) {
+    .search__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .search__row input { grid-column: 1 / -1; }
+    .search__filters-toggle, .search__submit { justify-content: center; }
+    .search__panel { grid-template-columns: minmax(0, 1fr); padding: var(--space-3); }
+    /* The form is tall on a phone: it is not sticky, so it does not cover the results. */
     .search__form { position: static; }
   }
 
-  .search__status { margin: var(--space-4) 0; font: 700 0.8125rem var(--font-mono); min-height: 1.4em; }
-  .search__heading { margin: var(--space-5) 0 var(--space-3); font-size: var(--text-xl); }
+  .search__status { margin: var(--space-4) 0; font: 700 1rem var(--font-body); min-height: 1.4em; }
+  .search__heading { margin: var(--space-5) 0 var(--space-3); font-size: 2.75rem; }
   .search__heading[hidden] { display: none; }
   .search__results { display: grid; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
   .result { padding: var(--space-3) var(--space-4); }
   .result__meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--space-2); }
-  .result__title { display: block; font-weight: 800; font-size: var(--text-lg); }
-  .result__excerpt { margin: var(--space-2) 0 0; color: var(--color-ink-muted); font-size: 0.9375rem; overflow-wrap: anywhere; }
+  .result__title { display: block; font-weight: 700; font-size: var(--text-lg); }
+  .result__excerpt { margin: var(--space-2) 0 0; font-size: 1rem; overflow-wrap: anywhere; }
   .search__more {
     display: block;
     margin: var(--space-5) auto 0;
-    padding: 10px var(--space-4);
-    border: var(--border-thin) solid var(--color-ink);
+    min-height: 50px;
+    padding: 0 var(--space-5);
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
     background: var(--color-paper);
     color: var(--color-ink);
-    font: 700 0.8125rem var(--font-mono);
-    text-transform: uppercase;
+    font: 700 1.0625rem var(--font-body);
     cursor: pointer;
   }
   .search__more:hover { background: var(--color-highlight); color: var(--color-on-highlight); }

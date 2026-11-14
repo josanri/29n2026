@@ -259,4 +259,42 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [11, 19, 23, 54, 57, 71, 72, 73, 77, 111],
     },
   ],
+  pacma: [
+    {
+      title: 'Los animales ocupan casi la mitad del programa',
+      text:
+        'El bloque «Nuestro compromiso con los Animales» reúne 42 de las 102 propuestas, y 13 de las 18 del bloque de medio ambiente también hablan de animales: macrogranjas, piscifactorías, granjas de pulpos o fauna silvestre. La pieza central es una Ley de Bienestar y Protección de los Animales sin exclusiones, frente a la Ley 7/2023, que según el programa deja fuera a los animales de producción, de caza y de espectáculos.',
+      measureNumbers: [1, 25, 26, 47, 48, 50],
+    },
+    {
+      title: 'Prohibir es la herramienta principal',
+      text:
+        '18 de las 102 propuestas anuncian en su título una prohibición, un «fin», un «cese», un «veto» o una «abolición»: la compraventa de animales de compañía, los zoológicos, los espectáculos y festejos con animales, las granjas peleteras, el foie gras, los sacrificios halal y kosher, la experimentación animal, el glifosato y la pirotecnia, entre otros.',
+      measureNumbers: [2, 6, 7, 11, 33, 35, 39, 51, 60],
+    },
+    {
+      title: 'Contra la caza, también en sus formas indirectas',
+      text:
+        'PACMA se presenta como el único partido que se opone a la caza. Propone prohibir el uso de perros y otros animales para cazar, la caza del lobo y del zorro, la caza durante 30 años en los terrenos incendiados por intereses cinegéticos y la presencia de menores en la caza y la tauromaquia. Mientras tanto, pide controles de alcoholemia a los cazadores y prohibir la munición de plomo.',
+      measureNumbers: [8, 9, 10, 57, 96],
+    },
+    {
+      title: 'Una sola derogación: la ley que protege la tauromaquia',
+      text:
+        'El programa pide derogar una sola ley: la Ley 18/2013, que declara la tauromaquia patrimonio cultural. Pide además retirar de inmediato las subvenciones a los espectáculos con animales, prohibir su retransmisión y prohibir que los menores asistan o participen en festejos taurinos.',
+      measureNumbers: [7, 74, 96],
+    },
+    {
+      title: 'Los animales entran en la política social',
+      text:
+        '16 de las 42 propuestas del bloque «Personas» mencionan a los animales. Entre ellas: entrar con animales en el transporte público, los albergues, las residencias y las casas de acogida para víctimas de violencia de género, recibir su visita en el hospital, anular las cláusulas de alquiler que prohíben tener animales y ofrecer menús vegetales en los comedores públicos.',
+      measureNumbers: [22, 23, 86, 95, 97, 102],
+    },
+    {
+      title: 'Impuestos con criterio animal',
+      text:
+        'El programa baja el IVA de los servicios veterinarios del 21 % al 4 % (o lo exime) y propone deducir en el IRPF hasta el 10 % de los gastos veterinarios. Sube el IVA de los lácteos de origen animal y baja el de sus equivalentes vegetales, crea un impuesto climático para las explotaciones ganaderas según sus emisiones y retira las subvenciones a las macrogranjas y a la pesca.',
+      measureNumbers: [41, 46, 47, 48],
+    },
+  ],
 };

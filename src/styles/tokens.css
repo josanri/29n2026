@@ -1,7 +1,6 @@
 /* ==========================================================================
    DESIGN TOKENS
-   The single source of truth for color, type, space, borders, shadows, layers
-   and motion. Components read tokens and never write raw values.
+   The single source of truth for color, type, space, borders, layers and motion. Components read tokens and never write raw values.
 
    Themes: `light-dark()` picks the value from `color-scheme`.
    - No `data-theme` attribute: the theme follows the operating system.
@@ -11,73 +10,98 @@
 :root {
   color-scheme: light dark;
 
-  /* ---------- Color: surfaces and ink ---------- */
-  --color-paper: light-dark(#f3efe4, #151515);
-  --color-paper-alt: light-dark(#e8e2d2, #222120);
-  --color-ink: light-dark(#0e0e0e, #f1ece0);
-  --color-ink-muted: light-dark(#3d3b36, #c9c3b5);
-  --color-ink-subtle: light-dark(#6b675d, #9a9487);
+  /* ---------- Color: surfaces and ink ----------
+     Black and white. The dark theme inverts them: paper is black and ink is white.
+     There are no flat greys: a mid tone is printed as a "trama" (see below). */
+  --color-paper: light-dark(#ffffff, #000000);
+  --color-ink: light-dark(#000000, #ffffff);
+  /* The muted ink reaches 4.5:1 on paper in both themes. Use it rarely. */
+  --color-ink-muted: light-dark(#3a3a3a, #c8c8c8);
+  --color-ink-subtle: var(--color-ink-muted);
 
   /* ---------- Color: fixed (the same in both themes) ----------
-     For surfaces that sit on a fixed-color background, such as a block color. */
-  --color-fixed-light: #f3efe4;
-  --color-fixed-dark: #0e0e0e;
+     For surfaces that sit on a fixed-color background, such as a block color or the tooltip. */
+  --color-fixed-light: #ffffff;
+  --color-fixed-dark: #000000;
 
-  /* ---------- Color: highlight (the yellow marker) ---------- */
+  /* ---------- Color: highlight (the one brand accent: yellow, with black text in both themes) ----------
+     The disc behind the sphere, the band of the election, the selected province and other selected states. */
   --color-highlight: #ffd23f;
   --color-on-highlight: var(--color-fixed-dark);
 
-  /* ---------- Color: accent (a party page redefines these three) ---------- */
-  --color-accent: light-dark(#135898, #4f8fd6);
-  --color-accent-light: #4dc1df;
-  --color-on-accent: light-dark(#ffffff, #0e0e0e);
+  /* ---------- Color: accent ----------
+     Yellow by default. A party page redefines these two with the party color. */
+  --color-accent: var(--color-highlight);
+  /* Heat scale (sequential, five steps, from the brand yellow to ink). The low step is near the paper
+     in each theme. `--color-on-heat-N` is the text color of each step. */
+  --color-heat-1: light-dark(#fff6cf, #262626);
+  --color-heat-2: light-dark(#ffe680, #6e6e6e);
+  --color-heat-3: #ffd23f;
+  --color-heat-4: light-dark(#4d4d4d, #ffe680);
+  --color-heat-5: light-dark(#000000, #ffffff);
+  --color-on-heat-1: light-dark(#000000, #ffffff);
+  --color-on-heat-2: light-dark(#000000, #ffffff);
+  --color-on-heat-3: #000000;
+  --color-on-heat-4: light-dark(#ffffff, #000000);
+  --color-on-heat-5: light-dark(#ffffff, #000000);
+  /* Bars with no border. A party page replaces it with the party color (see `partyScaleStyle` in color.ts). */
+  --color-bar: var(--color-ink);
+  --color-on-accent: var(--color-on-highlight);
 
-  /* Brand: the strong surface of header, footer and primary buttons.
-     Ink by default; the accent on a party page. */
+  /* Brand: the strong surface of the footer and the primary buttons. Ink on paper. */
   --color-brand: var(--color-ink);
   --color-on-brand: var(--color-paper);
 
-  /* ---------- Color: block palette (categorical, 11 colors) ---------- */
-  --color-block-1: light-dark(#2a78d6, #3987e5);
-  --color-block-2: light-dark(#eb6834, #d95926);
-  --color-block-3: light-dark(#1baf7a, #199e70);
-  --color-block-4: light-dark(#eda100, #c98500);
-  --color-block-5: #bd8be8;
-  --color-block-6: #ed8c9c;
-  --color-block-7: #55b8c2;
-  --color-block-8: #b7c957;
-  --color-block-9: #65a6e8;
-  --color-block-10: #f08a55;
-  --color-block-11: #7bc598;
-  --color-on-block: var(--color-fixed-dark);
+  /* ---------- Trama: a pattern of dots for a mid tone ----------
+     Dots of the current text color in a 7px cell, in three densities. Never put text on a trama. */
+  --trama-size: 7px 7px;
+  --trama-light: radial-gradient(currentColor 1.2px, transparent 1.6px);
+  --trama-medium: radial-gradient(currentColor 2.2px, transparent 2.6px);
+  --trama-dense: radial-gradient(currentColor 3.1px, transparent 3.5px);
 
-  /* ---------- Color: heat scale (sequential, one hue, five steps) ----------
-     In the dark theme the order flips: the low step is near the background. */
-  --color-heat-1: light-dark(#cde2fb, #184f95);
-  --color-heat-2: light-dark(#9ec5f4, #1c5cab);
-  --color-heat-3: light-dark(#5598e7, #3987e5);
-  --color-heat-4: light-dark(#256abf, #6da7ec);
-  --color-heat-5: light-dark(#104281, #b7d3f6);
-  --color-on-heat-1: light-dark(#0e0e0e, #ffffff);
-  --color-on-heat-2: light-dark(#0e0e0e, #ffffff);
-  --color-on-heat-3: #0e0e0e;
-  --color-on-heat-4: light-dark(#ffffff, #0e0e0e);
-  --color-on-heat-5: light-dark(#ffffff, #0e0e0e);
+  /* ---------- Color: the answers of the game "Sin siglas" ----------
+     The only two colors that are not black, white, yellow or a party color. They mean yes and no, with a
+     symbol beside them. Text on them is black. */
+  --color-answer-yes: light-dark(#1baf7a, #199e70);
+  --color-answer-no: light-dark(#eb6834, #d95926);
+  --color-on-answer: var(--color-fixed-dark);
+  /* «Con matices»: a pale tint of the same color, always with an ink edge (the tint alone is under 3:1 on
+     white). Black text on the tints: 15:1 or more. */
+  --color-answer-yes-soft: light-dark(#c4ecdb, #9fd8c0);
+  --color-answer-no-soft: light-dark(#fbd3c2, #f0b59c);
+  /* «Neutral» / «Sin opinión»: grey, between the two. */
+  --color-answer-neutral: light-dark(#e6e6e6, #bdbdbd);
+
+  /* ---------- Color: the two sides of «Temas que dividen» ----------
+     A and B are not «good» and «bad», so they are not green and red: navy and coral, cold against warm, also
+     clear with red-green colour blindness. Chosen from six palettes; the navy and the coral can remind readers of
+     party colors, and that is an accepted choice.
+     - A: navy with white text (10.4:1). On the black paper the navy is lighter (#3157c9: white text 6.3:1,
+       3.3:1 against black), because #1d3a8a has only 2:1 against black.
+     - B: coral with black text (5.1:1); 4.1:1 against white and 5.1:1 against black.
+     - Soft («con matices»): black text on them 12:1 or more. */
+  --color-side-a: light-dark(#1d3a8a, #3157c9);
+  --color-side-b: #e0462f;
+  --color-side-a-soft: #b9c8f2;
+  --color-side-b-soft: #ffc7b8;
+  --color-on-side-a: var(--color-fixed-light);
+  --color-on-side-b: var(--color-fixed-dark);
 
   /* ---------- Typography ---------- */
-  --font-display: 'Archivo Black', 'Arial Black', Impact, sans-serif;
+  /* Display: headings, acronyms and large figures, weight 900, upper case. */
+  --font-display: 'Big Shoulders Display', Impact, 'Arial Narrow', sans-serif;
   --font-body: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
 
-  --text-2xs: 0.6875rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
+  /* Nothing under 14px: small text is still read. */
+  --text-2xs: 0.875rem;
+  --text-xs: 0.875rem;
+  --text-sm: 0.9375rem;
   --text-md: 1rem;
   --text-base: 1.0625rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.375rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.75rem;
 
-  --leading-tight: 0.95;
+  --leading-tight: 0.9;
   --leading-snug: 1.25;
   --leading-body: 1.55;
 
@@ -91,13 +115,11 @@
   --space-7: 48px;
   --space-8: 72px;
 
-  /* ---------- Borders and shadows (hard, no blur) ---------- */
-  --border-thick: 4px;
-  --border-thin: 2px;
-  --border-hairline: 1px;
-  --shadow-sm: 4px 4px 0 var(--color-ink);
-  --shadow-md: 6px 6px 0 var(--color-ink);
-  --shadow-lg: 9px 9px 0 var(--color-ink);
+  /* ---------- Borders: solid and square. No shadows, no rounded corners ---------- */
+  --border-thick: 3px;
+  --border-thin: 3px;
+  --border-fine: 1.5px;
+  --border-hairline: 1.5px;
 
   /* ---------- Layout ---------- */
   --layout-width: 100%;

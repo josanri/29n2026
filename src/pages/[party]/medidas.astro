@@ -3,10 +3,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import MeasureCard from '@/components/measures/MeasureCard.astro';
 import UnpublishedNotice from '@/components/party/UnpublishedNotice.astro';
 import Button from '@/components/ui/Button.astro';
+import CategoryRose from '@/components/charts/CategoryRose.astro';
 import { getProgram, programs } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
-import { allOf, capitalize, padNumber } from '@/lib/format';
+import { allOf, capitalize, padNumber, percentOf } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { MEASURE_FILTER_PARAMS as PARAMS, routes } from '@/lib/routes';
 
@@ -20,10 +21,20 @@ const singular = program.measureUnit;
 const categoryCounts = countBy(program.measures, (measure) => measure.categoryId);
 const targetGroupCounts = countBy(program.measures, (measure) => measure.targetGroupIds);
 const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
+// The categories of the program, from the biggest. The sphere of the party page opens here as a «rosa» (same
+// `view-transition-name`): a petal, or its row in the list, filters the measures.
+const categoryPetals = categoryCounts.map(([id, count]) => ({
+  id,
+  href: routes.measures(program.id, { category: id }),
+  code: categoryById[id].code,
+  name: categoryById[id].name,
+  count,
+  percent: String(percentOf(count, program.measures.length)),
+}));
 ---
 
 <BaseLayout
-  title={`${plural} · ${program.acronym}`}
+  title={`${capitalize(plural)} de ${program.acronym}`}
   description={`${capitalize(allOf(program, program.measures.length))} del programa ${program.programName} con filtros.`}
   accent={program.color}
   accentLight={program.lightColor}
@@ -35,10 +46,23 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
       <>
         <section class="page-hero">
           <div class="container">
-            <p class="breadcrumb mono">
-              <a href={routes.party(program.id)}>{program.acronym} · {program.programName}</a> / {plural}
-            </p>
-            <h1 class="headline">{capitalize(allOf(program, program.measures.length))}</h1>
+            <div class="wheel-panel">
+              <CategoryRose
+                petals={categoryPetals}
+                defaultFigure={String(program.measures.length)}
+                defaultLabel={plural}
+                unit={plural}
+                label={`${capitalize(plural)} por categoría, de más a menos. El área de cada pétalo es su número de ${plural}. Cada pétalo filtra las ${plural} de su categoría.`}
+              >
+                <div class="page-hero__text">
+                  <p class="breadcrumb">
+                    <a href={routes.party(program.id)}>{program.acronym}: {program.programName}</a> / {plural}
+                  </p>
+                  <h1 class="headline">{capitalize(allOf(program, program.measures.length))}</h1>
+                  <p class="page-hero__hint">Pulsa una categoría para ver solo sus {plural}. Púlsala otra vez para verlas todas.</p>
+                </div>
+              </CategoryRose>
+            </div>
           </div>
         </section>
 
@@ -64,7 +88,7 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
                         <label>
                           <input type="radio" name={PARAMS.block} value={block.id} />
                           <span>
-                            <i style={`background: ${blockColor(block.id)}`}></i> {padNumber(block.id)} {block.title}
+                            <i style={`background: ${blockColor(block.id).color}`}></i> {padNumber(block.id)} {block.title}
                           </span>
                         </label>
                       ))}
@@ -214,8 +238,50 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
   form.addEventListener('change', countActiveFilters);
   form.addEventListener('reset', () => setTimeout(countActiveFilters, 0));
 
+  const categorySelect = form.elements.namedItem(MEASURE_FILTER_PARAMS.category) as HTMLSelectElement;
+  // The «rosa» filters: a petal, or its row in the list, picks its category, and a second click removes it.
+  // The hole keeps the active category when the pointer leaves.
+  const rose = document.querySelector<HTMLElement>('[data-rose]');
+  const roseLinks = rose ? [...rose.querySelectorAll<HTMLElement | SVGAElement>('a[data-category]')] : [];
+  const holeFigure = rose?.querySelector<HTMLElement>('[data-rose-figure]');
+  const holeLabel = rose?.querySelector<HTMLElement>('[data-rose-label]');
+  const holeCount = rose?.querySelector<HTMLElement>('[data-rose-count]');
+  if (holeFigure && holeLabel) {
+    holeFigure.dataset.all = holeFigure.dataset.default;
+    holeLabel.dataset.all = holeLabel.dataset.default;
+  }
+  const syncChips = () => {
+    let active: HTMLElement | SVGAElement | undefined;
+    for (const link of roseLinks) {
+      const isActive = link.dataset.category === categorySelect.value;
+      link.classList.toggle('is-active', isActive);
+      link.setAttribute('aria-pressed', String(isActive));
+      if (isActive) active = link;
+    }
+    if (holeFigure && holeLabel) {
+      holeFigure.dataset.default = active?.dataset.code ?? holeFigure.dataset.all;
+      holeLabel.dataset.default = active?.dataset.share ?? holeLabel.dataset.all;
+      holeFigure.textContent = holeFigure.dataset.default!;
+      holeLabel.textContent = holeLabel.dataset.default!;
+      if (holeCount) {
+        holeCount.dataset.default = active?.dataset.count ?? '';
+        holeCount.textContent = holeCount.dataset.default;
+      }
+    }
+  };
+  rose?.addEventListener('click', (event) => {
+    const link = (event.target as Element).closest<HTMLElement | SVGAElement>('a[data-category]');
+    if (!link) return;
+    event.preventDefault();
+    categorySelect.value = categorySelect.value === link.dataset.category ? '' : link.dataset.category!;
+    categorySelect.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+  form.addEventListener('change', syncChips);
+  form.addEventListener('reset', () => setTimeout(syncChips, 0));
+
   readFiltersFromUrl();
   applyFilters(false);
+  syncChips();
   adjustPanel();
   form.addEventListener('input', () => applyFilters());
   form.addEventListener('change', () => applyFilters());
@@ -252,14 +318,23 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
     background: var(--color-accent);
     color: var(--color-on-accent); /* black or white, whichever reads better on the party color */
   }
-  .page-hero h1 {
-    font-size: clamp(2.125rem, 8cqi, 6rem);
-    /* A shadow between the text color and the background: it adds depth and never lowers legibility */
-    text-shadow: 0.05em 0.05em 0 color-mix(in srgb, var(--color-on-accent) 45%, var(--color-accent));
+  .page-hero h1 { font-size: clamp(3rem, 12cqi, 6.5rem); margin: 0; }
+  .page-hero__text { min-width: 0; container-type: inline-size; }
+  .page-hero__hint { margin: var(--space-3) 0 0; max-width: 34em; font-weight: 600; }
+  /* The «rosa» on a paper card, framed by the party color. The heading and the list are at the left of the rose
+     and the rose starts at the top, so it fits in the window. The text on the card is ink: it never sits on the
+     party color. Only the rose takes the transition from the sphere of the party page. */
+  .wheel-panel {
+    box-sizing: border-box;
+    padding: var(--space-4) clamp(16px, 2.5vw, 32px);
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
   }
-  .breadcrumb { font-size: 0.8125rem; font-weight: 700; margin-bottom: 10px; }
-  .breadcrumb a { color: var(--color-on-accent); }
-  .breadcrumb a:hover { color: var(--color-on-highlight); }
+  .wheel-panel :global(.rose__fig) { view-transition-name: party-sphere; }
+  .breadcrumb { font-size: 1rem; font-weight: 700; margin: 0 0 10px; }
+  .breadcrumb a { color: var(--color-ink); }
+  .breadcrumb a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
 
   .explorer {
     display: grid;
@@ -278,25 +353,25 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
   form { display: grid; gap: var(--space-4); }
   .field { display: grid; gap: var(--space-1); }
   .field__label {
-    font-family: var(--font-mono);
-    font-size: var(--text-2xs);
+    font-family: var(--font-body);
+    font-size: 1rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
   }
   input[type='search'],
   select {
     font: inherit;
-    font-size: 0.9375rem;
+    font-size: 1rem;
+    min-height: 48px;
     padding: 9px 10px;
-    border: var(--border-thin) solid var(--color-ink);
+    border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
     color: var(--color-ink);
     border-radius: 0;
     width: 100%;
   }
+  input[type='search']::placeholder { color: var(--color-ink-muted); opacity: 1; }
   input[type='search']:focus,
-  select:focus { outline: 3px solid var(--color-highlight); outline-offset: 0; }
+  select:focus { outline: 3px solid var(--color-ink); outline-offset: 2px; }
   fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 6px; }
   legend { margin-bottom: 6px; padding: 0; }
   .block-options { display: grid; gap: var(--space-1); }
@@ -306,50 +381,53 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    border: var(--border-thin) solid var(--color-ink);
+    min-height: 44px;
+    border: var(--border-thick) solid var(--color-ink);
     padding: 6px var(--space-2);
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     font-weight: 700;
     line-height: 1.15;
   }
   .block-options i {
-    width: 14px;
-    height: 14px;
-    border: var(--border-thin) solid var(--color-ink);
+    width: 16px;
+    height: 16px;
+    border: var(--border-fine) solid currentColor;
     flex: 0 0 auto;
   }
   .block-options input:checked + span { background: var(--color-ink); color: var(--color-paper); }
-  .block-options input:focus-visible + span { outline: 3px solid var(--color-highlight); }
+  .block-options input:focus-visible + span { outline: 3px solid var(--color-ink); outline-offset: 2px; }
   .checks label {
     display: flex;
     gap: var(--space-2);
     align-items: center;
-    font-size: var(--text-sm);
+    min-height: 44px;
+    font-size: var(--text-md);
     font-weight: 600;
     cursor: pointer;
   }
-  .checks input { width: 18px; height: 18px; accent-color: var(--color-ink); }
+  .checks input { width: 22px; height: 22px; accent-color: var(--color-ink); }
   .actions { display: flex; gap: var(--space-2); flex-wrap: wrap; }
   .more-filters__body { display: grid; gap: var(--space-4); }
   .more-filters__toggle { display: none; }
   .more-filters__toggle::-webkit-details-marker { display: none; }
-  .more-filters__count { font-size: 0.8125rem; }
+  .more-filters__count { font-size: 1rem; }
 
   .results__count {
     font-family: var(--font-display);
-    font-size: var(--text-xl);
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 1;
     text-transform: uppercase;
     margin: 0 0 var(--space-4);
   }
   .results__count strong {
-    font-weight: 400;
     background: var(--color-highlight);
     color: var(--color-on-highlight);
     padding: 0 var(--space-2);
-    border: var(--border-thin) solid var(--color-ink);
+    border: var(--border-thick) solid var(--color-ink);
   }
-  .results__list { display: grid; gap: 18px; }
-  .results__empty { font-weight: 700; padding: var(--space-5); border: var(--border-thick) dashed var(--color-ink); }
+  .results__list { display: grid; gap: 18px; padding-left: 4px; }
+  .results__empty { font-weight: 700; padding: var(--space-5); border: var(--border-thick) solid var(--color-ink); }
 
   @media (max-width: 900px) {
     .explorer { grid-template-columns: 1fr; }
@@ -359,13 +437,13 @@ const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
       list-style: none;
       width: 100%;
       justify-content: center;
+      align-items: center;
       gap: var(--space-2);
-      font-family: var(--font-display);
-      font-size: var(--text-sm);
-      text-transform: uppercase;
-      padding: 9px var(--space-3);
+      min-height: 48px;
+      font-weight: 700;
+      font-size: 1.0625rem;
+      padding: 0 var(--space-3);
       border: var(--border-thick) solid var(--color-ink);
-      box-shadow: var(--shadow-sm);
       background: var(--color-paper);
       cursor: pointer;
     }

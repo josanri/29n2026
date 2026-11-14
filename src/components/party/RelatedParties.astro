@@ -20,13 +20,13 @@ const relations = relationsOf(program);
         {relations.map((relation) => (
           <li class="related__item">
             <p class="related__line">
-              <span class="related__chamber mono">
+              <span class="related__chamber">
                 {chamberLabel(relation.chambers)}
-                {relation.provinceCodes.length > 0 && ` · ${provincesLabel(relation.provinceCodes)}`}
+                {relation.provinceCodes.length > 0 && `, ${provincesLabel(relation.provinceCodes)}`}
               </span>
               {relation.partners.map((partner, index) => (
                 <>
-                  {index > 0 && ' · '}
+                  {index > 0 && ', '}
                   <a href={routes.party(partner.id)}>{partner.acronym}</a>
                 </>
               ))}
@@ -40,11 +40,11 @@ const relations = relationsOf(program);
 }
 
 <style>
-  .related { margin-top: var(--space-5); padding-top: var(--space-4); border-top: var(--border-thin) solid var(--color-ink); }
-  .related__title { font-size: var(--text-xl); margin-bottom: var(--space-3); }
+  .related { margin-top: var(--space-5); padding-top: var(--space-4); border-top: var(--border-thick) solid var(--color-ink); }
+  .related__title { font-size: 2rem; margin-bottom: var(--space-3); }
   .related__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
-  .related__item { border-left: var(--border-thick) solid var(--color-highlight); padding-left: var(--space-3); }
+  .related__item { border-left: var(--border-thick) solid var(--color-ink); padding-left: var(--space-3); }
   .related__line { margin: 0; font-weight: 700; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 6px; }
-  .related__chamber { font-size: var(--text-xs); text-transform: uppercase; color: var(--color-ink-muted); margin-right: var(--space-2); }
-  .related__note { margin: 4px 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .related__chamber { margin-right: var(--space-2); font-weight: 600; }
+  .related__note { margin: 4px 0 0; font-size: 1rem; }
 </style>

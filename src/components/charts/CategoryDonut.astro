@@ -1,0 +1,225 @@
+---
+/**
+ * The «quesitos»: the sphere opened as a ring of slices, one per category, from the top and clockwise.
+ * - The order alternates a big slice and a small one (the biggest, the smallest, the second, the second smallest…).
+ *   The small slices do not gather in one corner, so the labels spread around the ring and their lines are short.
+ * - The slices keep the halftone of the sphere (three densities, from the biggest to the smallest third).
+ * - Every category has a horizontal label OUTSIDE the ring, with its code, its full name and its share, joined to its
+ *   slice by a fine line. No text is rotated and no text sits on the halftone.
+ * - The slice, its line and its label are one link: pointing at any of them lights the three, and the hole shows
+ *   the name and the count.
+ * - `filter`: the host page filters with the slices (each link has `data-category`) instead of following the link.
+ * On a narrow screen the labels do not fit: the ring shows alone, smaller, and the host shows a list under it.
+ * Colors: `--sphere-disc` and `--sphere-dots` of a party page; the yellow and black of the brand elsewhere.
+ */
+export interface DonutSlice {
+  id: string;
+  href: string;
+  code: string;
+  name: string;
+  count: number;
+  /** Share of the total, as text: «8,6». */
+  percent: string;
+}
+
+interface Props {
+  slices: DonutSlice[];
+  /** What the hole shows when no slice is under the pointer. */
+  defaultName: string;
+  defaultShare: string;
+  /** What an item is, for the accessible name of each slice: «medidas». */
+  unit: string;
+  label: string;
+  filter?: boolean;
+}
+
+const { slices: given, defaultName, defaultShare, unit, label, filter = false } = Astro.props;
+const bySize = [...given].sort((a, b) => b.count - a.count);
+// The rank by size gives the tone; the alternate order gives the place on the ring.
+const rankOf = new Map(bySize.map((slice, index) => [slice.id, index]));
+const slices = bySize.map((_, index) => bySize[index % 2 ? bySize.length - 1 - (index - 1) / 2 : index / 2]);
+const total = Math.max(1, slices.reduce((sum, slice) => sum + slice.count, 0));
+
+// A very thin category gets a slightly wider slice in the drawing, so that it can be seen and pointed at.
+const MIN_FRACTION = 0.012;
+const raw = slices.map((slice) => Math.max(slice.count / total, MIN_FRACTION));
+const rawSum = raw.reduce((sum, value) => sum + value, 0);
+const fractions = raw.map((value) => value / rawSum);
+
+// The drawing: a 330 × 170 box. The ring in the middle, the labels at both sides (the longest label is about
+// 90 units long).
+const W = 330;
+const H = 170;
+const CX = W / 2;
+const CY = H / 2;
+const OUTER = 62;
+const HOLE = 31;
+const LABEL_GAP = 9.2; // the minimum vertical distance between two labels
+const point = (angle: number, radius: number): [number, number] => [CX + radius * Math.cos(angle), CY + radius * Math.sin(angle)];
+const fmt = ([x, y]: [number, number]) => `${x.toFixed(2)} ${y.toFixed(2)}`;
+
+let angle = -Math.PI / 2;
+const parts = slices.map((slice, index) => {
+  const from = angle;
+  const to = fractions[index] >= 0.9999 ? from + 2 * Math.PI - 0.0001 : from + fractions[index] * 2 * Math.PI;
+  angle = to;
+  const large = to - from > Math.PI ? 1 : 0;
+  const d = `M${fmt(point(from, HOLE))} L${fmt(point(from, OUTER))} A${OUTER} ${OUTER} 0 ${large} 1 ${fmt(point(to, OUTER))} L${fmt(point(to, HOLE))} A${HOLE} ${HOLE} 0 ${large} 0 ${fmt(point(from, HOLE))} Z`;
+  const middle = (from + to) / 2;
+  const third = Math.floor((rankOf.get(slice.id)! * 3) / slices.length); // 0: the biggest third, 2: the smallest
+  return { ...slice, d, middle, tone: 2 - third, right: Math.cos(middle) >= 0 };
+});
+
+// The labels: each side is a column. A label wants the height of its slice; the labels of a column keep LABEL_GAP
+// between them and stay inside the box (a pass down, then a pass up from the bottom).
+const layout = (side: typeof parts) => {
+  const items = side
+    .map((part) => ({ part, y: CY + (OUTER + 10) * Math.sin(part.middle) }))
+    .sort((a, b) => a.y - b.y);
+  for (let i = 0; i < items.length; i++) items[i].y = Math.max(items[i].y, i ? items[i - 1].y + LABEL_GAP : 6);
+  for (let i = items.length - 1; i >= 0; i--) items[i].y = Math.min(items[i].y, i === items.length - 1 ? H - 5 : items[i + 1].y - LABEL_GAP);
+  return items;
+};
+const labelled = [...layout(parts.filter((part) => part.right)), ...layout(parts.filter((part) => !part.right))].map(({ part, y }) => {
+  const sign = part.right ? 1 : -1;
+  const rim = point(part.middle, OUTER + 1.5);
+  const elbowX = CX + sign * (OUTER + 14);
+  const textX = CX + sign * (OUTER + 18);
+  return {
+    ...part,
+    line: `M${fmt(rim)} L${elbowX.toFixed(2)} ${y.toFixed(2)} L${(textX - sign * 1.5).toFixed(2)} ${y.toFixed(2)}`,
+    textX,
+    textY: y,
+    anchor: part.right ? 'start' : 'end',
+  };
+});
+---
+
+<div class="donut" data-donut data-filter={filter ? 'true' : undefined}>
+  <svg viewBox={`0 0 ${W} ${H}`} role="group" aria-label={label}>
+    <defs>
+      {[0.42, 0.78, 1.12].map((radius, tone) => (
+        <pattern id={`donut-tone-${tone}`} width="2.6" height="2.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="2.6" height="2.6" class="donut__bg"></rect>
+          <circle cx="1.3" cy="1.3" r={radius} class="donut__dot"></circle>
+        </pattern>
+      ))}
+    </defs>
+    <circle class="donut__rim" cx={CX} cy={CY} r={OUTER + 1.8}></circle>
+    {labelled.map((part) => (
+      <a
+        href={part.href}
+        data-category={part.id}
+        data-name={part.name}
+        data-share={`${part.percent} %`}
+        data-count={`${part.count} ${unit}`}
+        aria-label={`${part.name}: ${part.count} ${unit} (${part.percent} %)`}
+      >
+        <path class={`donut__slice donut__slice--${part.tone}`} d={part.d}></path>
+        <path class="donut__line" d={part.line}></path>
+        <text class="donut__label" x={part.textX.toFixed(2)} y={part.textY.toFixed(2)} text-anchor={part.anchor} dominant-baseline="middle">
+          <tspan class="donut__code">{part.code}</tspan>
+          <tspan dx="1.6">{part.name}</tspan>
+          <tspan class="donut__share" dx="1.6">{part.percent} %</tspan>
+        </text>
+      </a>
+    ))}
+  </svg>
+  <span class="donut__hole" aria-hidden="true">
+    <strong data-donut-name data-default={defaultName}>{defaultName}</strong>
+    <span data-donut-share data-default={defaultShare}>{defaultShare}</span>
+    <small data-donut-count data-default="">{''}</small>
+  </span>
+</div>
+
+<script>
+  // The hole shows the slice under the pointer or with focus. A host can set `data-default` on the hole to show
+  // the active filter (the measures page does).
+  for (const donut of document.querySelectorAll<HTMLElement>('[data-donut]')) {
+    const name = donut.querySelector<HTMLElement>('[data-donut-name]')!;
+    const share = donut.querySelector<HTMLElement>('[data-donut-share]')!;
+    const count = donut.querySelector<HTMLElement>('[data-donut-count]')!;
+    // The hole: the name, the share in large figures and the count under it.
+    const show = (slice: HTMLElement | SVGElement | null) => {
+      name.textContent = slice?.dataset.name ?? name.dataset.default!;
+      share.textContent = slice?.dataset.share ?? share.dataset.default!;
+      count.textContent = slice?.dataset.count ?? count.dataset.default ?? '';
+    };
+    const sliceOf = (target: EventTarget | null) => (target as Element | null)?.closest<SVGAElement>('a[data-name]') ?? null;
+    donut.addEventListener('pointerover', (event) => show(sliceOf(event.target)));
+    donut.addEventListener('pointerleave', () => show(null));
+    donut.addEventListener('focusin', (event) => show(sliceOf(event.target)));
+    donut.addEventListener('focusout', () => show(null));
+  }
+</script>
+
+<style>
+  .donut { position: relative; width: 100%; container-type: inline-size; }
+  .donut svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .donut__rim { fill: var(--sphere-disc, var(--color-highlight)); stroke: var(--color-ink); stroke-width: 0.6; }
+  .donut__bg { fill: var(--sphere-disc, var(--color-highlight)); }
+  .donut__dot { fill: var(--sphere-dots, var(--color-fixed-dark)); }
+  .donut__slice { stroke: var(--color-paper); stroke-width: 0.9; stroke-linejoin: round; }
+  .donut__slice--0 { fill: url(#donut-tone-0); }
+  .donut__slice--1 { fill: url(#donut-tone-1); }
+  .donut__slice--2 { fill: url(#donut-tone-2); }
+  .donut__line { fill: none; stroke: var(--color-ink); stroke-width: 0.45; }
+  /* The labels: ink text on the paper of the page, never on the halftone. */
+  .donut__label { fill: var(--color-ink); font: 600 4.6px var(--font-body); }
+  .donut__code { font-weight: 800; letter-spacing: 0.15px; }
+  .donut__share { font-weight: 800; font-variant-numeric: tabular-nums; }
+  .donut a { outline: none; cursor: pointer; }
+  /* The slice under the pointer, with focus or active is solid ink; its line is thicker and its label has the
+     yellow marker. */
+  .donut a:hover .donut__slice,
+  .donut a:focus-visible .donut__slice,
+  .donut a.is-active .donut__slice { fill: var(--color-ink); }
+  .donut a:hover .donut__line,
+  .donut a:focus-visible .donut__line,
+  .donut a.is-active .donut__line { stroke-width: 1.1; }
+  .donut a:hover .donut__label,
+  .donut a:focus-visible .donut__label,
+  .donut a.is-active .donut__label { paint-order: stroke; stroke: var(--color-highlight); stroke-width: 3.2px; stroke-linejoin: round; fill: var(--color-on-highlight); }
+  .donut a:focus-visible .donut__slice { stroke: var(--color-ink); }
+
+  /* The hole: paper with an ink ring, the name and the count. Its size follows the ring (31 of the 170 units). */
+  .donut__hole {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* The width and the height are set (not an aspect ratio), so a long name never stretches the circle. */
+    width: calc(100cqi * 58 / 330);
+    height: calc(100cqi * 58 / 330);
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    /* In cqi, not in %: a percentage would be of the whole chart, not of the hole, and leave no room for the text. */
+    padding: 0 calc(100cqi * 5 / 330);
+    overflow: hidden;
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 50%;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    text-align: center;
+    pointer-events: none;
+  }
+  /* The name breaks between words, and with a hyphen only when one word is too long. The share never breaks. */
+  .donut__hole strong { max-width: 100%; font: 700 clamp(0.75rem, 1.45cqi, 1rem) / 1.15 var(--font-body); overflow-wrap: break-word; hyphens: auto; }
+  .donut__hole span { font: 900 clamp(1.125rem, 2.6cqi, 1.875rem) / 1 var(--font-display); white-space: nowrap; }
+  .donut__hole small { font: 600 clamp(0.6875rem, 1.3cqi, 0.875rem) / 1.2 var(--font-body); }
+  .donut__hole small:empty { display: none; }
+
+  /* A narrow screen: the ring alone, cropped to its circle, and bigger; the host shows the list under it. */
+  @media (max-width: 760px) {
+    .donut { width: min(100%, 340px); margin-inline: auto; overflow: hidden; aspect-ratio: 1; }
+    .donut svg { max-width: none; width: calc(100% * 330 / 140); height: auto; margin-left: calc(-100% * 95 / 140); margin-top: calc(-100% * 15 / 140); }
+    .donut__line, .donut__label { display: none; }
+    .donut__hole { width: 44%; height: 44%; }
+    .donut__hole strong { font-size: 0.875rem; }
+    .donut__hole span { font-size: 1.25rem; }
+  }
+</style>

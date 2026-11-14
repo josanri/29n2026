@@ -1,0 +1,38 @@
+---
+/** The list of the tests. Each test has its own page under `/tests/`. */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { siteTests } from '@/lib/tests';
+---
+
+<BaseLayout title="Tests" description="Tests para leer los programas electorales sin prejuicios y comparar la postura de cada partido.">
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Tests</Tag>
+      <h1 class="headline">Tests</h1>
+      <p class="page-hero__lede">Dos formas de comparar los programas con lo que tú piensas.</p>
+    </div>
+  </section>
+  <div class="container">
+    <ul class="tests">
+      {siteTests.map((test) => (
+        <li>
+          <a href={test.href}>
+            <span class="tests__name">{test.name}</span>
+            <span>{test.text}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12vw, 8.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; margin: 0; }
+  .tests { list-style: none; margin: var(--space-7) 0 var(--space-8); padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--border-thick); }
+  .tests a { container-type: inline-size; display: flex; flex-direction: column; gap: 10px; height: 100%; box-sizing: border-box; padding: 28px 24px; background: var(--color-ink); color: var(--color-paper); text-decoration: none; }
+  .tests a:hover, .tests a:focus-visible { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .tests__name { font: 900 clamp(2rem, 13cqi, 3.5rem) / 0.95 var(--font-display); text-transform: uppercase; }
+</style>

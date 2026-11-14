@@ -21,7 +21,6 @@
   .headline { overflow-wrap: anywhere; }
 }
 
-.mono { font-family: var(--font-mono); }
 .uppercase { text-transform: uppercase; }
 .sr-only {
   position: absolute;
@@ -32,24 +31,32 @@
   white-space: nowrap;
 }
 
-/* The basic surface: paper, thick border, hard shadow */
+/* The basic surface: paper and a thick square border. No shadow. */
 .box {
   background: var(--color-paper);
   border: var(--border-thick) solid var(--color-ink);
-  box-shadow: var(--shadow-md);
 }
 
-/* A box that lifts when the pointer is over it. Use on links that are cards. */
-.box--interactive {
-  text-decoration: none;
-  transition: transform var(--duration-fast), box-shadow var(--duration-fast);
+/* A box that is a link. On hover the surface turns yellow, with black text. */
+.box--interactive { text-decoration: none; }
+.box--interactive:hover,
+.on-highlight {
+  background: var(--color-highlight);
+  color: var(--color-on-highlight);
+  /* Everything inside takes black: a muted ink (light grey in the dark theme) fails on yellow. */
+  --color-ink-muted: var(--color-on-highlight);
+  --color-ink-subtle: var(--color-on-highlight);
 }
-.box--interactive:hover {
-  background: var(--color-paper);
-  color: var(--color-ink);
-  transform: translate(-3px, -3px);
-  box-shadow: var(--shadow-lg);
-}
+
+/* A mid tone printed as dots. `currentColor` gives the dots the text color of the box. Never put text on it. */
+.trama { background-image: var(--trama-light); background-size: var(--trama-size); }
+.trama--light { background-image: var(--trama-light); background-size: var(--trama-size); }
+.trama--medium { background-image: var(--trama-medium); background-size: var(--trama-size); }
+.trama--dense { background-image: var(--trama-dense); background-size: var(--trama-size); }
+
+/* A surface painted with ink (or with the brand): the focus outline takes the paper color, which
+   contrasts with ink in both themes. */
+.on-ink :focus-visible { outline-color: var(--color-paper); }
 
 /* Responsive grids */
 .grid { display: grid; gap: var(--space-5); }
@@ -59,10 +66,8 @@
 /* Party cards: as many columns as fit, each at least 340px wide */
 .grid--cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--space-4); }
 
-/* Diagonal hatching for "pending" things */
-.hatched {
-  background-image: repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 7px);
-}
+/* Pending things: a light trama */
+.hatched { background-image: var(--trama-light); background-size: var(--trama-size); }
 
 /* Clear button of the search fields: a thick square cross in the site style. Chrome, Edge and
    Safari draw it; Firefox has no such button. */
@@ -77,7 +82,7 @@ input[type='search']::-webkit-search-cancel-button {
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M3 3l10 10M13 3L3 13'/%3E%3C/svg%3E") center / 14px no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M3 3l10 10M13 3L3 13'/%3E%3C/svg%3E") center / 14px no-repeat;
 }
-input[type='search']::-webkit-search-cancel-button:hover { background: var(--color-accent); }
+input[type='search']::-webkit-search-cancel-button:hover { background: var(--color-ink-muted); }
 
 /* Select list in the site design. Browsers that support `appearance: base-select` (Chrome and
    Edge 135+) draw the open list with these styles. The others keep the system list, which a
@@ -104,12 +109,11 @@ input[type='search']::-webkit-search-cancel-button:hover { background: var(--col
     border: var(--border-thick) solid var(--color-ink);
     border-radius: 0;
     background: var(--color-paper);
-    box-shadow: var(--shadow-md);
     max-height: min(60vh, 420px);
   }
   select option {
     padding: 8px 10px;
-    border: var(--border-thin) solid transparent;
+    border: var(--border-fine) solid transparent;
     background: var(--color-paper);
     color: var(--color-ink);
     font: 600 0.9375rem var(--font-body);
@@ -125,7 +129,7 @@ input[type='search']::-webkit-search-cancel-button:hover { background: var(--col
   }
   select option:checked { border-color: var(--color-ink); }
   select option::checkmark { content: '✓'; color: currentColor; font-weight: 800; }
-  select:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
+  select:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 2px; }
 }
 
 @media (forced-colors: active) {

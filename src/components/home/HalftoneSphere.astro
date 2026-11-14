@@ -1,0 +1,24 @@
+---
+/**
+ * The halftone sphere of the site: a yellow disc with one black dot per measure, drawn at build time.
+ * The home page shows it large (as a link to the categories) and the categories page small; both have the
+ * same `view-transition-name`, so the sphere moves from one page to the other.
+ */
+import { sphereDots } from '@/lib/sphere';
+
+const round = (value: number) => Number(value.toFixed(2));
+---
+
+<svg class="halftone-sphere" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <circle class="halftone-sphere__disc" cx="50" cy="50" r="50"></circle>
+  <g>
+    {sphereDots.map((dot) => <circle cx={round(dot.x)} cy={round(dot.y)} r={round(dot.r)} />)}
+  </g>
+</svg>
+
+<style>
+  /* A yellow disc and black dots, in both themes. */
+  .halftone-sphere { display: block; width: 100%; height: auto; aspect-ratio: 1; }
+  .halftone-sphere__disc { fill: var(--color-highlight); }
+  .halftone-sphere g circle { fill: var(--color-fixed-dark); }
+</style>

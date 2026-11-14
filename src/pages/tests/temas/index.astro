@@ -1,0 +1,639 @@
+---
+/**
+ * «Temas que dividen»: el test y el comparador de los temas más polarizantes.
+ * - El lector elige una postura en cada tema, en una escala de cinco: A, A con matices, neutral, B con matices y B.
+ * - Los partidos no se ven mientras responde: así no elige por el partido. Al terminar (todos los temas, o «Ver
+ *   resultados ahora»), ve qué partidos defienden cada postura, con la medida en la que se apoya cada uno, y su afinidad.
+ * - Al final, la afinidad con cada partido: los temas en los que coincide, sobre los temas en común.
+ * - «Ver todas las posturas» lo convierte en un comparador, sin responder.
+ * Los temas están en `src/data/temas.ts` y las posturas en `@eleccion/posturas`: añadir o quitar uno no toca esta página.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Tag from '@/components/ui/Tag.astro';
+import Button from '@/components/ui/Button.astro';
+import { activeTopics, topics } from '@/data/temas';
+import { stances } from '@eleccion/posturas';
+import { getProgram, programs } from '@/lib/programs';
+import { routes } from '@/lib/routes';
+import { tooltip } from '@/lib/tooltip';
+
+// Every stance must point to a topic, a party and measures that exist. A typo fails the build.
+const programIds = new Set(programs.map((program) => program.id));
+for (const stance of stances) {
+  if (!topics.some((topic) => topic.id === stance.topic)) throw new Error(`Postura de un tema que no existe: ${stance.topic} (${stance.party}).`);
+  if (!programIds.has(stance.party)) throw new Error(`Postura de un partido que no existe: ${stance.party}`);
+  const program = getProgram(stance.party);
+  for (const number of stance.measures) {
+    if (!program.measures.some((measure) => measure.number === number)) {
+      throw new Error(`La medida ${number} de ${stance.party} no existe (tema ${stance.topic}).`);
+    }
+  }
+}
+
+const sides = [
+  { id: 'a', name: (topic: (typeof activeTopics)[number]) => topic.a.label },
+  { id: 'matiz', name: () => 'Con matices' },
+  { id: 'b', name: (topic: (typeof activeTopics)[number]) => topic.b.label },
+] as const;
+
+const topicsWithStances = activeTopics
+  .map((topic) => ({
+    topic,
+    stances: stances
+      .filter((stance) => stance.topic === topic.id)
+      .map((stance) => {
+        const program = getProgram(stance.party);
+        return {
+          ...stance,
+          program,
+          links: stance.measures.map((number) => {
+            const measure = program.measures.find((item) => item.number === number)!;
+            return { number, href: routes.measure(program.id, number), title: measure.phraseTitle };
+          }),
+        };
+      }),
+  }));
+// The order of the file. The browser shuffles the topics on each visit (see the script), so the order does not look
+// like an editorial ranking.
+// The list «Ir a un tema» goes in alphabetical order, for the same reason.
+const topicsByTitle = [...topicsWithStances].sort((a, b) => a.topic.title.localeCompare(b.topic.title, 'es'));
+
+const featuredCount = topicsWithStances.filter(({ topic }) => topic.featured).length;
+const partiesWithStances = [...new Set(stances.map((stance) => stance.party))].map((id) => getProgram(id));
+// The data of the result, for the script: the side of each party in each topic.
+const stanceData = JSON.stringify(
+  Object.fromEntries(
+    topicsWithStances.map(({ topic, stances }) => [topic.id, Object.fromEntries(stances.map((stance) => [stance.party, stance.side]))]),
+  ),
+);
+const partyData = JSON.stringify(
+  Object.fromEntries(partiesWithStances.map((program) => [program.id, { acronym: program.acronym, href: routes.party(program.id) }])),
+);
+---
+
+<BaseLayout
+  title="Temas que dividen"
+  description="Elige tu postura en los temas más polarizantes (inmigración, aborto, monarquía, vivienda, memoria…) y compara qué dicen los programas de cada partido, con la medida en la que se apoyan."
+>
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Test</Tag>
+      <h1 class="headline">Temas que dividen</h1>
+      <p class="page-hero__lede">
+        {topicsWithStances.length} debates con dos posturas opuestas. Elige la tuya sin saber qué dice cada partido. Al terminar,
+        verás qué partidos defienden cada postura en su programa, con la medida que lo dice, y tu afinidad con cada uno.
+      </p>
+    </div>
+  </section>
+
+  <div class="container quiz" data-topic-quiz data-stances={stanceData} data-parties={partyData}>
+    <div class="quiz__bar box" role="group" aria-label="Opciones del test">
+      <div class="quiz__scope" role="group" aria-label="Temas">
+        <button type="button" data-scope="featured" aria-pressed="true">Los {featuredCount} principales</button>
+        <button type="button" data-scope="all" aria-pressed="false">Los {topicsWithStances.length} temas</button>
+      </div>
+      <label class="quiz__jump">
+        <span>Ir a un tema</span>
+        <select data-jump>
+          <option value="">Elige un tema…</option>
+          {topicsByTitle.map(({ topic }) => <option value={topic.id}>{topic.title}</option>)}
+        </select>
+      </label>
+      <button type="button" class="quiz__reveal" data-reveal-all aria-pressed="false">Ver todas las posturas</button>
+      <div class="quiz__progress">
+        <p data-progress aria-live="polite"></p>
+        <span class="quiz__meter" aria-hidden="true"><span data-meter></span></span>
+      </div>
+    </div>
+
+    <ol class="topics">
+      {topicsWithStances.map(({ topic, stances }, index) => (
+        <li class="topic" id={`tema-${topic.id}`} data-topic={topic.id} data-featured={String(Boolean(topic.featured))}>
+          <article>
+            <p class="topic__meta">
+              <span class="topic__number">{String(index + 1).padStart(2, '0')}</span>
+              <span>{topic.title}</span>
+              <span class="topic__kind">{topic.kind === 'eje' ? 'Gran tema' : 'Dilema'}</span>
+            </p>
+            <h2 class="topic__question">{topic.question}</h2>
+            <div class="topic__choices" role="group" aria-label={`Tu postura: ${topic.title}`}>
+              <button type="button" class="choice choice--end" data-answer="a" aria-pressed="false">
+                <b>{topic.a.label}</b>
+                <span>{topic.a.text}</span>
+              </button>
+              <button type="button" class="choice choice--lean" data-answer="a-matiz" aria-pressed="false">
+                <b>{topic.a.label}</b>
+                <span>con matices</span>
+              </button>
+              <button type="button" class="choice choice--neutral" data-answer="neutral" aria-pressed="false">Neutral</button>
+              <button type="button" class="choice choice--lean" data-answer="b-matiz" aria-pressed="false">
+                <b>{topic.b.label}</b>
+                <span>con matices</span>
+              </button>
+              <button type="button" class="choice choice--end" data-answer="b" aria-pressed="false">
+                <b>{topic.b.label}</b>
+                <span>{topic.b.text}</span>
+              </button>
+            </div>
+
+            <div class="topic__stances" data-stances-panel hidden>
+              {stances.length === 0 ? (
+                <p class="topic__none">Ningún programa publicado se posiciona aún sobre este tema.</p>
+              ) : (
+                <div class="stances">
+                  {sides.map((side) => {
+                    const list = stances.filter((stance) => stance.side === side.id);
+                    return (
+                      <section class:list={['stances__side', `stances__side--${side.id}`]} data-side={side.id}>
+                        <h3>{side.name(topic)} <span>{list.length}</span></h3>
+                        {list.length === 0 ? (
+                          <p class="stances__empty">Ningún programa.</p>
+                        ) : (
+                          <ul>
+                            {list.map((stance) => (
+                              <li style={`--party-color:${stance.program.color}`}>
+                                <a class="stances__party" href={routes.party(stance.program.id)}>{stance.program.acronym}</a>
+                                <p>{stance.note}</p>
+                                <p class="stances__refs">
+                                  {stance.links.map((link) => (
+                                    <a href={link.href} data-tooltip={tooltip(`${stance.program.acronym}, medida ${link.number}`, link.title)}>
+                                      Medida {link.number}
+                                    </a>
+                                  ))}
+                                </p>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </section>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </article>
+        </li>
+      ))}
+    </ol>
+
+    <section class="result box" data-result aria-labelledby="result-title">
+      <h2 id="result-title">Tu afinidad</h2>
+      <p data-result-lead>Responde al menos un tema para ver con qué partidos coincides.</p>
+      <button type="button" class="result__finish" data-finish hidden>Ver resultados ahora</button>
+      <ol class="result__list" data-result-list></ol>
+      <p class="result__note">
+        Tu respuesta y la postura de cada programa están en una escala de A a B: cuanto más cerca, más coincidencia. Un
+        programa «con matices» está en el centro, como «Neutral». Un partido solo cuenta en los temas que su programa
+        trata: un programa corto tiene pocos temas en común.
+      </p>
+      <Button id="quiz-reset">Empezar de nuevo</Button>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  type Side = 'a' | 'b' | 'matiz';
+  type Answer = 'a' | 'a-matiz' | 'neutral' | 'b-matiz' | 'b';
+  // The scale, from A (1) to B (-1). A program «con matices» is in the middle.
+  const ANSWER_VALUE: Record<Answer, number> = { a: 1, 'a-matiz': 0.5, neutral: 0, 'b-matiz': -0.5, b: -1 };
+  const SIDE_VALUE: Record<Side, number> = { a: 1, matiz: 0, b: -1 };
+  // The column of the positions that is nearest to the answer of the reader.
+  const SIDE_OF: Record<Answer, Side> = { a: 'a', 'a-matiz': 'a', neutral: 'matiz', 'b-matiz': 'b', b: 'b' };
+  const root = document.querySelector<HTMLElement>('[data-topic-quiz]')!;
+  const stanceData: Record<string, Record<string, Side>> = JSON.parse(root.dataset.stances!);
+  const partyData: Record<string, { acronym: string; href: string }> = JSON.parse(root.dataset.parties!);
+  const topics = [...root.querySelectorAll<HTMLElement>('[data-topic]')];
+  // A random order on each visit (Fisher–Yates), so that no topic comes first because of an editorial priority.
+  // The numbers follow the new order.
+  for (let i = topics.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [topics[i], topics[j]] = [topics[j], topics[i]];
+  }
+  const topicList = root.querySelector<HTMLElement>('.topics')!;
+  topics.forEach((topic) => topicList.append(topic));
+  const renumber = () => {
+    let number = 0;
+    for (const topic of topics) {
+      if (topic.hidden) continue;
+      number += 1;
+      topic.querySelector<HTMLElement>('.topic__number')!.textContent = String(number).padStart(2, '0');
+    }
+  };
+  const scopeButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-scope]')];
+  const revealButton = root.querySelector<HTMLButtonElement>('[data-reveal-all]')!;
+  const progress = root.querySelector<HTMLElement>('[data-progress]')!;
+  const meter = root.querySelector<HTMLElement>('[data-meter]')!;
+  const finishButton = root.querySelector<HTMLButtonElement>('[data-finish]')!;
+  const resultLead = root.querySelector<HTMLElement>('[data-result-lead]')!;
+  const resultList = root.querySelector<HTMLElement>('[data-result-list]')!;
+  const STORAGE_KEY = 'temas-que-dividen';
+
+  // The answers stay in this browser, so that the reader can come back. Storage can be blocked: then they live only here.
+  let answers: Record<string, Answer> = {};
+  try {
+    answers = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}');
+  } catch {
+    answers = {};
+  }
+  // An answer of an older version («skip») is not on the scale: it goes.
+  for (const [id, answer] of Object.entries(answers)) if (!(answer in ANSWER_VALUE)) delete answers[id];
+  const save = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
+    } catch {
+      /* The answers stay for this visit. */
+    }
+  };
+
+  let scope: 'featured' | 'all' = 'featured';
+  // The parties stay hidden while the reader answers, so the answers do not follow a party. The test is finished
+  // when every topic in view has an answer, or when the reader presses «Ver resultados ahora» (`finished`).
+  let finished = false;
+  // The positions: `auto` shows them for the answered topics once the test is finished; `all` shows every topic (the
+  // comparator, a choice of the reader); `none` hides them all. The button goes to `none` when something is
+  // visible, and to `all` when nothing is.
+  let reveal: 'auto' | 'all' | 'none' = 'auto';
+  const inScope = (topic: HTMLElement) => scope === 'all' || topic.dataset.featured === 'true';
+
+  const render = () => {
+    const visible = topics.filter(inScope);
+    const answered = visible.filter((topic) => answers[topic.dataset.topic!]).length;
+    const resolved = answered > 0 && (finished || answered === visible.length);
+    for (const topic of topics) {
+      topic.hidden = !inScope(topic);
+      const answer = answers[topic.dataset.topic!];
+      // The color of the answer marks the card, so the reader sees which topics are done.
+      topic.dataset.answer = answer ?? '';
+      for (const choice of topic.querySelectorAll<HTMLButtonElement>('[data-answer]')) {
+        choice.setAttribute('aria-pressed', String(choice.dataset.answer === answer));
+      }
+      topic.querySelector<HTMLElement>('[data-stances-panel]')!.hidden =
+        reveal === 'all' ? false : reveal === 'none' || !resolved || !answer;
+      // The side that the reader chose is marked in the stances.
+      for (const side of topic.querySelectorAll<HTMLElement>('[data-side]')) side.classList.toggle('is-mine', Boolean(answer) && side.dataset.side === SIDE_OF[answer]);
+    }
+    renumber();
+    progress.textContent = `${answered} de ${visible.length} respondidos`;
+    meter.style.width = `${visible.length ? Math.round((answered / visible.length) * 100) : 0}%`;
+    const anyShown = visible.some((topic) => !topic.querySelector<HTMLElement>('[data-stances-panel]')!.hidden);
+    revealButton.textContent = anyShown ? 'Ocultar las posturas' : 'Ver todas las posturas';
+    revealButton.setAttribute('aria-pressed', String(anyShown));
+    renderResult(visible, answered, resolved);
+  };
+
+  const renderResult = (visible: HTMLElement[], answered: number, resolved: boolean) => {
+    // Before the end: only the progress, and a button to end the test now.
+    finishButton.hidden = resolved || answered === 0;
+    finishButton.textContent = `Ver resultados ahora (${answered} de ${visible.length})`;
+    if (!resolved) {
+      resultLead.textContent = answered
+        ? `Has respondido ${answered} de ${visible.length} temas. Los partidos y tu afinidad aparecen al terminar, para que respondas sin saber qué dice cada uno.`
+        : 'Responde los temas para ver con qué partidos coincides. Los partidos aparecen al terminar.';
+      resultList.replaceChildren();
+      return;
+    }
+    const scores = new Map<string, { score: number; common: number }>();
+    for (const topic of visible) {
+      const answer = answers[topic.dataset.topic!];
+      if (!answer) continue;
+      for (const [party, side] of Object.entries(stanceData[topic.dataset.topic!] ?? {})) {
+        const entry = scores.get(party) ?? { score: 0, common: 0 };
+        entry.common += 1;
+        // 1 at the same point of the scale, 0 at the two ends. A and «con matices»: 0,5; A con matices and A: 0,75.
+        entry.score += 1 - Math.abs(ANSWER_VALUE[answer] - SIDE_VALUE[side]) / 2;
+        scores.set(party, entry);
+      }
+    }
+    const ranked = [...scores.entries()]
+      .map(([party, { score, common }]) => ({ party, score, common, share: score / common }))
+      .sort((a, b) => b.share - a.share || b.common - a.common);
+    resultLead.textContent = ranked.length
+      ? 'Los partidos que defienden tus posturas en su programa, de más a menos coincidencia.'
+      : 'Responde al menos un tema para ver con qué partidos coincides.';
+    resultList.replaceChildren(
+      ...ranked.map(({ party, score, common, share }, rank) => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = partyData[party].href;
+        link.textContent = partyData[party].acronym;
+        const bar = document.createElement('span');
+        bar.className = 'result__bar';
+        bar.setAttribute('aria-hidden', 'true');
+        const fill = document.createElement('span');
+        fill.style.width = `${Math.round(share * 100)}%`;
+        bar.append(fill);
+        const value = document.createElement('span');
+        value.className = 'result__value';
+        const scoreText = score.toLocaleString('es-ES', { maximumFractionDigits: 1 });
+        value.textContent = `${Math.round(share * 100)} % · ${scoreText} de ${common} ${common === 1 ? 'tema' : 'temas'}`;
+        if (rank === 0 || share === ranked[0].share) item.classList.add('is-top');
+        item.append(link, bar, value);
+        return item;
+      }),
+    );
+  };
+
+  root.addEventListener('click', (event) => {
+    const choice = (event.target as Element).closest<HTMLButtonElement>('[data-answer]');
+    if (!choice) return;
+    const id = choice.closest<HTMLElement>('[data-topic]')!.dataset.topic!;
+    const answer = choice.dataset.answer as Answer;
+    if (answers[id] === answer) delete answers[id];
+    else answers[id] = answer;
+    // An answer shows the positions of its topic again (once the test is finished).
+    if (reveal === 'none') reveal = 'auto';
+    save();
+    render();
+  });
+  for (const button of scopeButtons) {
+    button.addEventListener('click', () => {
+      scope = button.dataset.scope as 'featured' | 'all';
+      for (const other of scopeButtons) other.setAttribute('aria-pressed', String(other === button));
+      render();
+    });
+  }
+  revealButton.addEventListener('click', () => {
+    reveal = revealButton.getAttribute('aria-pressed') === 'true' ? 'none' : 'all';
+    render();
+  });
+  root.querySelector<HTMLSelectElement>('[data-jump]')!.addEventListener('change', (event) => {
+    const select = event.target as HTMLSelectElement;
+    const topic = topics.find((item) => item.dataset.topic === select.value);
+    if (!topic) return;
+    if (topic.hidden) {
+      scope = 'all';
+      for (const button of scopeButtons) button.setAttribute('aria-pressed', String(button.dataset.scope === 'all'));
+      render();
+    }
+    topic.scrollIntoView({ block: 'start' });
+    topic.querySelector<HTMLButtonElement>('[data-answer]')?.focus({ preventScroll: true });
+    select.value = '';
+  });
+  finishButton.addEventListener('click', () => {
+    finished = true;
+    if (reveal === 'none') reveal = 'auto';
+    render();
+    root.querySelector<HTMLElement>('[data-result]')!.scrollIntoView({ block: 'start' });
+  });
+  document.querySelector('#quiz-reset')!.addEventListener('click', () => {
+    answers = {};
+    finished = false;
+    reveal = 'auto';
+    save();
+    render();
+    topics.find(inScope)?.scrollIntoView({ block: 'start' });
+  });
+  // A link to a topic (#tema-aborto) shows it, also when it is not one of the main topics.
+  const anchored = topics.find((topic) => `#${topic.id}` === location.hash);
+  if (anchored && anchored.dataset.featured !== 'true') scope = 'all';
+  for (const button of scopeButtons) button.setAttribute('aria-pressed', String(button.dataset.scope === scope));
+  render();
+</script>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 11vw, 8.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; margin: 0; }
+
+  .quiz { margin-top: var(--space-6); margin-bottom: var(--space-8); }
+  .quiz__bar {
+    position: sticky;
+    top: 84px;
+    z-index: var(--z-sticky);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px 20px;
+    padding: 14px var(--space-4);
+    background: var(--color-paper);
+  }
+  .quiz__scope { display: flex; }
+  .quiz__scope button,
+  .quiz__reveal {
+    min-height: 48px;
+    padding: 0 16px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .quiz__scope button + button { border-left: 0; }
+  .quiz__scope button:hover, .quiz__reveal:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .quiz__scope button[aria-pressed='true'], .quiz__reveal[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .quiz__jump { display: grid; gap: 6px; font: 700 1rem var(--font-body); }
+  .quiz__jump select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 48px;
+    min-width: 220px;
+    padding: 0 12px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 1rem var(--font-body);
+  }
+  .quiz__progress { display: grid; gap: 6px; margin-left: auto; min-width: 180px; }
+  .quiz__progress p { margin: 0; font-weight: 700; text-align: right; }
+  /* The share of topics answered: an ink bar in a frame. */
+  .quiz__meter { display: block; height: 10px; border: var(--border-fine) solid var(--color-ink); }
+  .quiz__meter span { display: block; height: 100%; width: 0; background: var(--color-ink); transition: width 200ms; }
+  @media (max-width: 720px) {
+    .quiz__bar { position: static; }
+    .quiz__progress { margin: 0; width: 100%; }
+    .quiz__progress p { text-align: left; }
+    .quiz__jump, .quiz__jump select { width: 100%; min-width: 0; }
+  }
+
+  /* The cards: a short head (number, topic, kind), the question, and the scale of five answers. The thick bar at the
+     left is ink while the topic has no answer, and takes the color of the answer after it. */
+  .topics { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; gap: var(--space-3); }
+  .topic {
+    --topic-accent: var(--color-ink);
+    scroll-margin-top: 190px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-left: 12px solid var(--topic-accent);
+    padding: 16px 20px 18px;
+  }
+  .topic[data-answer='a'] { --topic-accent: var(--color-side-a); }
+  .topic[data-answer='a-matiz'] { --topic-accent: var(--color-side-a-soft); }
+  .topic[data-answer='neutral'] { --topic-accent: var(--color-ink-muted); }
+  .topic[data-answer='b-matiz'] { --topic-accent: var(--color-side-b-soft); }
+  .topic[data-answer='b'] { --topic-accent: var(--color-side-b); }
+  .topic[hidden] { display: none; }
+  .topic__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: 0 0 6px; font-size: 0.9375rem; font-weight: 700; }
+  .topic__number { font: 900 1.375rem / 1 var(--font-display); }
+  .topic__kind { padding: 1px 6px; border: var(--border-fine) solid var(--color-ink); font-size: 0.8125rem; }
+  .topic__question { margin: 0 0 14px; font: 700 clamp(1.1875rem, 1.9vw, 1.5rem) / 1.2 var(--font-body); text-transform: none; letter-spacing: 0; }
+
+  /* The scale of five, as one joined control: A and B at the ends, wide and with their text; «con matices» beside
+     each one; «Neutral» in the middle. A band of color runs along the top: navy (A), light blue, ink,
+     light coral, coral (B). Each answer has its fill (`--answer-fill`) and the text that reads on it
+     (`--answer-text`): white on the navy (6.3:1 or more), black on the coral (5.1:1) and on the light ones (12:1 or more), and
+     paper on ink for «Neutral». The navy is lighter in the dark theme, so it stays visible on the black paper. */
+  .choice[data-answer='a'] { --answer-fill: var(--color-side-a); --answer-text: var(--color-on-side-a); }
+  .choice[data-answer='a-matiz'] { --answer-fill: var(--color-side-a-soft); --answer-text: var(--color-fixed-dark); }
+  .choice[data-answer='neutral'] { --answer-fill: var(--color-ink); --answer-text: var(--color-paper); }
+  .choice[data-answer='b-matiz'] { --answer-fill: var(--color-side-b-soft); --answer-text: var(--color-fixed-dark); }
+  .choice[data-answer='b'] { --answer-fill: var(--color-side-b); --answer-text: var(--color-on-side-b); }
+  .topic__choices {
+    display: grid;
+    grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 2.4fr);
+    border: var(--border-thick) solid var(--color-ink);
+  }
+  .choice {
+    position: relative;
+    display: grid;
+    align-content: start;
+    gap: 4px;
+    min-height: 64px;
+    padding: 20px 14px 12px;
+    border: 0;
+    border-left: var(--border-fine) solid var(--color-ink);
+    box-shadow: inset 0 8px 0 var(--answer-fill);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 400 0.875rem / 1.35 var(--font-body);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 120ms, color 120ms;
+  }
+  .choice:first-child { border-left: 0; }
+  .choice b { font: 900 1.25rem / 1 var(--font-display); text-transform: uppercase; overflow-wrap: anywhere; }
+  .choice span { color: var(--color-ink-muted); }
+  /* The middle of the scale is quieter: smaller labels, centered. */
+  .choice--lean { align-content: center; text-align: center; }
+  .choice--lean b { font-size: 1rem; }
+  .choice--lean span { font-weight: 600; }
+  .choice--neutral { align-content: center; justify-content: center; text-align: center; font-size: 0.9375rem; font-weight: 700; }
+  .choice[data-answer='b'], .choice[data-answer='b'] b { text-align: right; }
+  /* Under the pointer: the band grows down a little. The text keeps the paper behind it. */
+  .choice:hover { box-shadow: inset 0 14px 0 var(--answer-fill); }
+  /* The answer of the reader: the full color of the answer, its text color, and a check mark. */
+  .choice[aria-pressed='true'],
+  .choice[aria-pressed='true']:hover {
+    background: var(--answer-fill);
+    color: var(--answer-text);
+    box-shadow: none;
+  }
+  .choice[aria-pressed='true'] span { color: inherit; }
+  .choice[aria-pressed='true']::after {
+    content: '✓';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    background: var(--answer-text);
+    color: var(--answer-fill);
+    font: 800 0.875rem / 1 var(--font-body);
+  }
+  .choice[data-answer='b'][aria-pressed='true']::after { right: auto; left: 8px; }
+  /* A phone: A and B side by side, «con matices» under each one, and «Neutral» as a thin row under them. */
+  @media (max-width: 720px) {
+    .topic { padding: 12px 12px 14px; border-left-width: 10px; }
+    .topic__choices { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: 'a b' 'a-m b-m' 'n n'; gap: 6px; border: 0; }
+    .choice, .choice:first-child { padding: 18px 10px 10px; font-size: 0.8125rem; border: var(--border-thick) solid var(--color-ink); }
+    .choice b { font-size: 1.0625rem; }
+    .choice[data-answer='a'] { grid-area: a; }
+    .choice[data-answer='b'] { grid-area: b; }
+    .choice[data-answer='a-matiz'] { grid-area: a-m; }
+    .choice[data-answer='b-matiz'] { grid-area: b-m; }
+    .choice--neutral { grid-area: n; min-height: 48px; }
+  }
+
+  .topic__stances { margin-top: var(--space-3); }
+  .topic__stances[hidden] { display: none; }
+  .topic__none { margin: 0; font-weight: 600; }
+  .stances { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: var(--border-thick) solid var(--color-ink); border-left: var(--border-thick) solid var(--color-ink); }
+  @media (max-width: 860px) {
+    .stances { grid-template-columns: minmax(0, 1fr); }
+  }
+  .stances__side { min-width: 0; padding: 16px; border-right: var(--border-thick) solid var(--color-ink); border-bottom: var(--border-thick) solid var(--color-ink); }
+  /* The heading of each side has the color of the side, as in the buttons: white on navy, black on coral, paper on
+     ink for «Con matices». The side that the reader chose carries a yellow «Tu postura» tag. */
+  .stances__side h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 var(--space-3);
+    padding: 6px 10px;
+    font-size: 1.5rem;
+    background: var(--side-color);
+    color: var(--side-text);
+  }
+  .stances__side h3 span { margin-left: auto; }
+  .stances__side--a { --side-color: var(--color-side-a); --side-text: var(--color-on-side-a); }
+  .stances__side--matiz { --side-color: var(--color-ink); --side-text: var(--color-paper); }
+  .stances__side--b { --side-color: var(--color-side-b); --side-text: var(--color-on-side-b); }
+  .stances__side.is-mine h3::after {
+    content: 'Tu postura';
+    order: 1;
+    padding: 3px 7px;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    font: 800 0.8125rem var(--font-body);
+  }
+  .stances__side.is-mine { box-shadow: inset 0 0 0 4px var(--color-highlight); }
+  .stances__side--matiz h3 { font-size: 1.25rem; }
+  .stances__side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+  .stances__side li { display: grid; gap: 4px; padding-top: var(--space-2); border-top: var(--border-fine) solid var(--color-ink); }
+  .stances__side li p { margin: 0; font-size: 0.9375rem; line-height: 1.4; }
+  .stances__empty { margin: 0; font-size: 0.9375rem; }
+  /* The acronym with a fine underline in the party color, as in the menus. */
+  .stances__party {
+    justify-self: start;
+    font: 900 1.5rem / 1 var(--font-display);
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--party-color);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 3px;
+    text-decoration-skip-ink: none;
+  }
+  .stances__refs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .stances__refs a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 8px;
+    border: var(--border-fine) solid var(--color-ink);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .stances__refs a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+  .result { margin-top: var(--space-6); padding: clamp(18px, 3vw, 28px); }
+  .result h2 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: var(--space-2); }
+  .result__list { list-style: none; margin: var(--space-4) 0; padding: 0; display: grid; gap: 8px; }
+  .result__list :global(li) { display: grid; grid-template-columns: minmax(80px, 140px) minmax(0, 1fr) auto; align-items: center; gap: 12px; }
+  .result__list :global(a) { font: 900 1.375rem / 1 var(--font-display); }
+  .result__list :global(.result__bar) { height: 16px; border: var(--border-fine) solid var(--color-ink); }
+  .result__list :global(.result__bar span) { display: block; height: 100%; background: var(--color-ink); }
+  .result__list :global(.result__value) { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  @media (max-width: 560px) {
+    .result__list :global(li) { grid-template-columns: minmax(0, 1fr) auto; }
+    .result__list :global(.result__bar) { grid-column: 1 / -1; grid-row: 2; }
+  }
+  .result__list :global(li.is-top a) { padding: 0 6px; background: var(--color-highlight); color: var(--color-on-highlight); justify-self: start; }
+  .result__list :global(li.is-top .result__bar span) { background: var(--color-highlight); }
+  .result__finish {
+    min-height: 48px;
+    margin-top: var(--space-3);
+    padding: 0 18px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .result__finish[hidden] { display: none; }
+  .result__finish:hover { background: var(--color-ink); color: var(--color-paper); }
+  .result__note { font-size: 0.9375rem; max-width: 60ch; }
+</style>

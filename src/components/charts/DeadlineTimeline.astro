@@ -1,7 +1,10 @@
 ---
-/** Timeline of the commitments with an explicit deadline, grouped by kind, from the nearest to the farthest. */
+/**
+ * The commitments with an explicit deadline, grouped by kind, from the nearest to the farthest.
+ * Each kind is a vertical list: a square node for each deadline, the deadline in the display font and its measures.
+ */
 import type { DeadlineEntry, Program } from '@/lib/programs';
-import { compareText } from '@/lib/format';
+import { compareText, measureNoun } from '@/lib/format';
 import { unique } from '@/lib/collections';
 import { routes } from '@/lib/routes';
 import { deadlineKind, deadlineKindLabel, deadlineKindOrder, deadlineRank } from '@/lib/deadlines';
@@ -47,17 +50,17 @@ const groups = deadlineKindOrder
       <p class="timeline-group__lead">{group.lead}</p>
       <ol class="timeline">
         {group.milestones.map((milestone, index) => (
-          <li class="timeline__milestone">
-            <div class="timeline__mark">
-              <span class="timeline__dot" aria-hidden="true">{index + 1}</span>
+          <li class="timeline__milestone" id={`plazo-${group.kind}-${index}`}>
+            <div class="timeline__when">
               <span class="timeline__deadline">{milestone.deadline}</span>
+              <span class="timeline__count">{milestone.entries.length} {measureNoun(program, milestone.entries.length)}</span>
             </div>
             <ul class="timeline__entries">
               {milestone.entries.map((entry) => (
                 <li>
+                  <span class="timeline__text">{entry.text}</span>
                   <a href={routes.measure(program.id, entry.measureNumber)}>
-                    <span class="mono">Nº {entry.measureNumber}</span>
-                    {entry.text}
+                    Medida {entry.measureNumber}<span class="sr-only">: {entry.text}</span>
                   </a>
                 </li>
               ))}
@@ -70,87 +73,88 @@ const groups = deadlineKindOrder
 }
 
 <style>
-  .timeline-group + .timeline-group { margin-top: var(--space-6); }
-  .timeline-group__title { font-size: var(--text-xl); margin: 0; }
-  .timeline-group__lead { font-size: var(--text-sm); margin: var(--space-1) 0 0; max-width: 70ch; }
+  .timeline-group + .timeline-group { margin-top: var(--space-7, 56px); }
+  .timeline-group__title { font-size: 2.25rem; margin: 0; }
+  .timeline-group__lead { margin: var(--space-1) 0 var(--space-4); max-width: 70ch; }
+
+  /* The list: a vertical line on the left with a square node for each deadline. */
   .timeline {
+    position: relative;
     list-style: none;
     margin: 0;
-    padding: 0;
-    position: relative;
-    display: grid;
-    gap: 0;
+    padding: 0 0 0 48px;
   }
   .timeline::before {
     content: '';
     position: absolute;
-    left: 19px;
-    top: 10px;
-    bottom: 10px;
-    width: 6px;
+    left: 11px;
+    top: 14px;
+    bottom: 14px;
+    width: 4px;
     background: var(--color-ink);
   }
   .timeline__milestone {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 18px;
-    padding: var(--space-3) 0;
     position: relative;
-  }
-  .timeline__mark {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .timeline__dot {
-    flex: 0 0 44px;
-    height: 44px;
     display: grid;
-    place-items: center;
-    background: var(--color-highlight);
-    color: var(--color-on-highlight);
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    column-gap: 24px;
+    padding: var(--space-4) 0;
+    scroll-margin-top: 96px;
+  }
+  .timeline__milestone + .timeline__milestone { border-top: var(--border-fine) solid var(--color-ink); }
+  .timeline__milestone::before {
+    content: '';
+    position: absolute;
+    left: -48px;
+    top: calc(var(--space-4) + 2px);
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
     border: var(--border-thick) solid var(--color-ink);
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    position: relative;
-    z-index: var(--z-raised);
+    background: var(--color-highlight);
   }
+  .timeline__milestone:target::before { background: var(--color-ink); }
+  .timeline__when { display: grid; gap: 6px; align-content: start; }
   .timeline__deadline {
     font-family: var(--font-display);
-    font-size: var(--text-xl);
+    font-weight: 900;
+    font-size: 2.25rem;
     line-height: 1;
     text-transform: uppercase;
-    padding-top: 10px;
+    padding-top: 2px;
+    overflow-wrap: anywhere;
   }
+  .timeline__count { font: 700 0.9375rem var(--font-body); }
   .timeline__entries {
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+  .timeline__entries li {
     display: grid;
-    gap: var(--space-2);
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 24px;
+    min-height: 56px;
+    border-top: var(--border-fine) solid var(--color-ink);
   }
+  .timeline__entries li:first-child { border-top: 0; }
+  .timeline__text { font-size: 1.1875rem; font-weight: 600; line-height: 1.3; padding-block: 6px; }
   .timeline__entries a {
-    display: block;
-    text-decoration: none;
-    border: var(--border-thin) solid var(--color-ink);
-    background: var(--color-paper);
-    padding: var(--space-2) var(--space-3);
-    font-weight: 600;
-    font-size: 0.9375rem;
-    line-height: 1.3;
-    box-shadow: 3px 3px 0 var(--color-ink);
-  }
-  .timeline__entries a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .timeline__entries .mono {
-    font-size: var(--text-2xs);
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     font-weight: 700;
-    margin-right: var(--space-2);
-    padding: 1px 5px;
-    background: var(--color-ink);
-    color: var(--color-paper);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
   }
   @media (max-width: 720px) {
-    .timeline__milestone { grid-template-columns: 1fr; gap: var(--space-2); padding-left: 0; }
-    .timeline__entries { padding-left: 58px; }
+    .timeline { padding-left: 40px; }
+    .timeline::before { left: 9px; }
+    .timeline__milestone { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); }
+    .timeline__milestone::before { left: -40px; width: 22px; height: 22px; }
+    .timeline__deadline { font-size: 1.875rem; }
+    .timeline__entries li { grid-template-columns: minmax(0, 1fr); }
   }
 </style>

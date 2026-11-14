@@ -1,0 +1,52 @@
+---
+/**
+ * Small line icons of the site, drawn on a 20×20 grid with square ends, like the icons of the nav.
+ * The stroke and the dots take the color of the text, so an icon follows the hover of its button.
+ * - `measures`: three dots (measures) and a magnifier: explore the measures.
+ * - `blocks`: an open book with straight pages and one solid block on each page: read the program block by block.
+ * - `download`: an arrow that goes down into a tray.
+ * - `external`: an arrow that leaves a frame: a page of another site.
+ * - `summary`: a sheet with a short list.
+ * - `search`: a magnifier.
+ */
+interface Props {
+  name: 'measures' | 'blocks' | 'download' | 'external' | 'summary' | 'search';
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 20, class: className } = Astro.props;
+
+const shapes: Record<Props['name'], string> = {
+  measures:
+    '<circle class="icon__dot" cx="3.5" cy="3.5" r="1.9"/><circle class="icon__dot" cx="9" cy="3.5" r="1.9"/><circle class="icon__dot" cx="3.5" cy="9" r="1.9"/><circle cx="12" cy="12" r="4.2"/><path d="m15.2 15.2 3.3 3.3"/>',
+  blocks:
+    '<path d="M10 5 2 3v13l8 2 8-2V3z"/><path d="M10 5v13"/><path class="icon__dot" d="m4.5 8.1 3.5.9v4l-3.5-.9z"/><path class="icon__dot" d="m15.5 8.1-3.5.9v4l3.5-.9z"/>',
+  download: '<path d="M10 2.5v10.5"/><path d="m5.5 8.5 4.5 4.5 4.5-4.5"/><path d="M2.5 13.5v4h15v-4"/>',
+  external: '<path d="M8.5 3.5h-5v13h13v-5"/><path d="M12 2.5h5.5V8"/><path d="m17.5 2.5-8 8"/>',
+  summary: '<path d="M4 2.5h9l3 3v12H4z"/><path d="M7 8h6M7 11h6M7 14h4"/>',
+  search: '<circle cx="8.5" cy="8.5" r="5.5"/><path d="m12.7 12.7 5 5"/>',
+};
+---
+
+<svg
+  class:list={['icon', className]}
+  viewBox="0 0 20 20"
+  width={size}
+  height={size}
+  aria-hidden="true"
+  focusable="false"
+  set:html={shapes[name]}
+/>
+
+<style>
+  .icon {
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+  .icon :global(.icon__dot) { fill: currentColor; stroke: none; }
+</style>

@@ -8,15 +8,14 @@ import PresenceMap from '@/components/candidacies/PresenceMap.astro';
 import UnpublishedNotice from '@/components/party/UnpublishedNotice.astro';
 import RelatedParties from '@/components/party/RelatedParties.astro';
 import Button from '@/components/ui/Button.astro';
+import Icon from '@/components/ui/Icon.astro';
 import Panel from '@/components/ui/Panel.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
-import Tag from '@/components/ui/Tag.astro';
 import { getProgram, programs } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
 import { deadlineKind, deadlineKindLabel, deadlineKindOrder } from '@/lib/deadlines';
-import { allOf, capitalize, measureNoun, padNumber, percentOf, splitParagraphs } from '@/lib/format';
-import { blockColor } from '@/lib/blocks';
+import { allOf, capitalize, formatLongDate, measureNoun, percentOf, splitParagraphs } from '@/lib/format';
 import { readableTextColor } from '@/lib/color';
 import { methodNote } from '@/lib/method-note';
 import { routes, withBase } from '@/lib/routes';
@@ -104,31 +103,58 @@ const byVerb = program.verbs.map(({ verb, count }) => ({
 
 const isLocalDocument = program.documentType !== 'web' && program.documentUrl.startsWith('/');
 const isWebProgram = program.documentType === 'web';
-// The numbered sections of the page. A section with no data is not shown, and the numbers
-// of the next ones move up, so the index never skips a number.
 const hasFigures = program.figures.length > 0;
 const hasMoreData = repealingMeasures.length > 0 || pendingMeasures.length > 0 || program.verbs.length > 0;
-const sectionLabels = [
-  ['keys', 'LECTURA RÁPIDA', true],
-  ['figures', 'CIFRAS', hasFigures],
-  ['structure', 'ESTRUCTURA', true],
-  ['topics', 'TEMAS', true],
-  ['groups', 'A QUIÉN Y CÓMO', true],
-  ['calendar', 'CALENDARIO', withDeadline > 0],
-  ['more', 'MÁS DATOS', hasMoreData],
-  ['read', 'LEER', true],
-  ['presence', 'CANDIDATURAS', true],
-] as const;
-const sectionIndex = Object.fromEntries(
-  sectionLabels
-    .filter(([, , shown]) => shown)
-    .map(([id, label], position) => [id, `${padNumber(position + 1)} / ${label}`]),
-) as Record<(typeof sectionLabels)[number][0], string>;
 const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Descargar programa completo' : 'PDF original';
+
+// Masculine units ("compromiso") take "uno": «cada uno con su texto original».
+const eachOne = singular.endsWith('o') ? 'cada uno' : 'cada una';
+const documentDate = program.documentDate ? formatLongDate(program.documentDate) : null;
+const heroSentence = [
+  isWebProgram
+    ? 'El programa se publica en la web del partido.'
+    : program.pageCount
+      ? `El programa oficial tiene ${program.pageCount} páginas${documentDate ? ` y es del ${documentDate}` : ''}.`
+      : null,
+  `Aquí está dividido en ${allOf(program, total)}, ${eachOne} con su texto original.`,
+]
+  .filter(Boolean)
+  .join(' ');
+
+// The band: the program in one sentence, from the counts of its own data.
+const biggestBlock = Math.max(0, ...program.blocks.map((block) => program.measures.filter((measure) => measure.blockId === block.id).length));
+const countParts = [
+  `${withFigures} ${withFigures === 1 ? 'tiene' : 'tienen'} una cifra`,
+  `${withDeadline} ${withDeadline === 1 ? 'tiene' : 'tienen'} un plazo`,
+  repealingMeasures.length > 0 ? `${repealingMeasures.length} ${repealingMeasures.length === 1 ? 'deroga' : 'derogan'} una ley` : null,
+].filter(Boolean) as string[];
+const bandSentence = [
+  `De ${allOf(program, total)}, ${countParts.slice(0, -1).join(', ')} y ${countParts.at(-1)}.`,
+  `Se reparten en ${program.blocks.length} ${program.blocks.length === 1 ? 'bloque' : 'bloques'} y ${program.sections.length} ${program.sections.length === 1 ? 'sección' : 'secciones'}.`,
+  `El bloque más largo tiene ${biggestBlock} ${biggestBlock === 1 ? singular : plural}.`,
+  pendingMeasures.length > 0 ? `Quedan ${pendingMeasures.length} por anunciar durante la campaña.` : null,
+]
+  .filter(Boolean)
+  .join(' ');
+// The title scales with its longest word, so that no word breaks in the middle.
+const longestWord = Math.max(1, ...program.programName.split(/\s+/).map((word) => word.length));
+const FIRST_FIGURES = 12;
+// Figures of the same measure with the same quote go in one card, so the quote shows once.
+// The unit shows only if the value does not already say it («48 horas» + «horas»).
+type FigureCard = { values: { value: string; unit: string }[]; text: string; context?: string; measureNumber: number };
+const figureCards: FigureCard[] = [];
+for (const figure of program.figures) {
+  const value = { value: figure.value, unit: figure.value.toLowerCase().includes(figure.unit.toLowerCase()) ? '' : figure.unit };
+  const same = figureCards.find(
+    (card) => card.measureNumber === figure.measureNumber && card.context === figure.context && card.text === figure.text,
+  );
+  if (same) same.values.push(value);
+  else figureCards.push({ values: [value], text: figure.text, context: figure.context, measureNumber: figure.measureNumber });
+}
 ---
 
 <BaseLayout
-  title={`${program.acronym} · ${program.programName || program.partyName}`}
+  title={`${program.acronym}: ${program.programName || program.partyName}`}
   description={`Análisis del programa electoral del ${program.partyName}: ${program.programName}.`}
   accent={program.color}
   accentLight={program.lightColor}
@@ -138,7 +164,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
       <>
         <UnpublishedNotice program={program} />
         <div class="container">
-          <SectionHeading index="CANDIDATURAS" title="Dónde se presenta">
+          <SectionHeading title="Dónde se presenta">
             <p>Provincias en las que {program.acronym} presenta candidatura al Congreso o al Senado, según la proclamación oficial.</p>
           </SectionHeading>
           <Panel>
@@ -151,41 +177,60 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
       <>
         <section
           class="hero"
-          style={`--party-color:${program.color}; --party-color-light:${program.lightColor}; --party-on-color:${readableTextColor(program.color)}`}
+          style={`--party-color:${program.color}; --party-color-light:${program.lightColor}; --party-on-color:${readableTextColor(program.color)}; --word-length:${longestWord}`}
         >
           <div class="container hero__grid">
-            <div class="hero__title">
-              <p class="hero__party"><Tag variant="party" size="lg">{program.acronym}</Tag> {program.partyName}</p>
-              <h1 class="headline">{program.programName}</h1>
-            </div>
-            <div>
+            <div class="hero__main">
+              <p class="hero__party">
+                <span class="hero__acronym">{program.acronym}</span>
+                <span class="hero__party-name">{program.partyName}</span>
+              </p>
+              <h1 class="hero__title">{program.programName}</h1>
               <p class="hero__subtitle">{program.subtitle}</p>
+              <p class="hero__sentence">{heroSentence}</p>
               <div class="hero__actions">
-                <Button variant="ink" href={routes.measures(program.id)}>{`Explorar ${allOf(program, total)}`}</Button>
-                <Button href={routes.block(program.id, 1)}>Leer por bloques</Button>
+                <Button variant="ink" href={routes.measures(program.id)}><Icon name="measures" />{`Explorar ${allOf(program, total)}`}</Button>
+                <Button href={routes.block(program.id, 1)}><Icon name="blocks" />Leer por bloques</Button>
                 <Button
                   href={program.documentUrl}
                   target={isLocalDocument ? undefined : '_blank'}
                   rel={isLocalDocument ? undefined : 'noopener'}
                   download={isWebProgram ? undefined : downloadFileNames[program.id]}
-                >{documentLabel}</Button>
+                ><Icon name={isLocalDocument ? 'download' : 'external'} />{documentLabel}</Button>
                 {program.summaryUrl && (
-                  <Button href={program.summaryUrl} download={summaryDownloadFileName}>Resumen: las 29 medidas</Button>
+                  <Button href={program.summaryUrl} download={summaryDownloadFileName}><Icon name="summary" />Resumen: las 29 medidas</Button>
                 )}
-                {program.sourceUrl && <Button href={withBase(program.sourceUrl)} target="_blank" rel="noopener">Fuente oficial</Button>}
+                {program.sourceUrl && (
+                  <Button
+                    href={withBase(program.sourceUrl)}
+                    target="_blank"
+                    rel="noopener"
+                    title={isLocalDocument ? 'El documento original, en la web del partido' : undefined}
+                  ><Icon name="external" />{isLocalDocument && /\.pdf($|\?)/i.test(program.sourceUrl) ? 'PDF original del partido' : 'Fuente oficial'}</Button>
+                )}
               </div>
             </div>
-            <dl class={`hero__stats box${pendingMeasures.length === 0 ? ' hero__stats--five' : ''}`}>
-              <div><dt>{plural}</dt><dd>{total}</dd></div>
-              <div><dt>Bloques</dt><dd>{program.blocks.length}</dd></div>
-              <div><dt>Secciones</dt><dd>{program.sections.length}</dd></div>
-              <div><dt>Con cifra</dt><dd>{withFigures}</dd></div>
-              <div><dt>Con plazo</dt><dd>{withDeadline}</dd></div>
-              {pendingMeasures.length > 0 && (
-                <div class="hero__stat-pending"><dt>Por anunciar</dt><dd>{pendingMeasures.length}</dd></div>
-              )}
-            </dl>
+            <div class="party-sphere-wrap">
+              <!-- The sphere goes to the measures: there it turns into the wheel of the categories, which filters them. -->
+              <a class="party-sphere" href={routes.measures(program.id)} aria-label={`Explorar ${allOf(program, total)} por categoría`}>
+                <span class="party-sphere__dots" aria-hidden="true"></span>
+                <span class="party-sphere__cta" aria-hidden="true">
+                  <strong>{total}</strong>
+                  <span>{plural} por categoría</span>
+                </span>
+              </a>
+              <p class="party-sphere__hint">Pulsa la esfera para filtrar {allOf(program, total)} por categoría.</p>
+            </div>
           </div>
+        </section>
+
+        <!-- The program in one sentence, on the party color. The text color is the readable one for that color. -->
+        <section
+          class="band"
+          aria-label="El programa en una frase"
+          style={`--band-color:${program.color}; --band-on-color:${readableTextColor(program.color)}`}
+        >
+          <p class="container">{bandSentence}</p>
         </section>
 
         {program.notes.map((note) => (
@@ -198,7 +243,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
         ))}
 
         <div class="container">
-          <SectionHeading index={sectionIndex.keys} title="Las claves">
+          <SectionHeading title="Las claves">
             <p>
               Ideas basadas en el análisis editorial o, cuando este aún no está disponible, en la distribución temática. Cada una
               enlaza con las {plural} en las que se apoya.
@@ -206,15 +251,16 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
           </SectionHeading>
           <ol class="findings">
             {
-              keyFindings.map((finding, index) => (
-                <li class="finding box">
-                  <span class="finding__index">{padNumber(index + 1)}</span>
+              keyFindings.map((finding) => (
+                <li class="finding">
                   <h3>{finding.title}</h3>
                   <p>{finding.text}</p>
                   <p class="finding__refs">
+                    <span class="finding__refs-label">Leer:</span>
                     {finding.measureNumbers.filter((number) => measureByNumber[number]).map((number) => (
                       <a
                         href={routes.measure(program.id, number)}
+                        aria-label={`Leer la ${singular} ${number}`}
                         data-tooltip={tooltip(
                           `Nº ${number}`,
                           measureByNumber[number].isPending ? 'Pendiente de anunciar' : measureByNumber[number].phraseTitle,
@@ -231,32 +277,41 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
 
           {hasFigures && (
             <>
-            <SectionHeading index={sectionIndex.figures} title="Los números del programa">
+            <SectionHeading title="Los números del programa">
               <p>Los compromisos que el programa cuantifica. Pulsa una ficha para leer la {singular} completa.</p>
             </SectionHeading>
             {
               (() => {
-                const FIRST_FIGURES = 12;
-                const shown = program.figures.slice(0, FIRST_FIGURES);
-                const hidden = program.figures.slice(FIRST_FIGURES);
-                const card = (figure: (typeof program.figures)[number], index: number) => (
-                  <a class:list={['figure-card', { 'figure-card--large': index < 2 }]} href={routes.measure(program.id, figure.measureNumber)}>
-                    <span class="figure-card__value">{figure.value}</span>
-                    <span class="figure-card__unit">{figure.unit}</span>
+                const shown = figureCards.slice(0, FIRST_FIGURES);
+                const hidden = figureCards.slice(FIRST_FIGURES);
+                const card = (figure: FigureCard) => (
+                  <a
+                    class:list={['figure-card on-ink', figure.values.length > 1 && 'figure-card--many']}
+                    href={routes.measure(program.id, figure.measureNumber)}
+                  >
+                    <span class="figure-card__values">
+                      {figure.values.map(({ value, unit }) => (
+                        <span class="figure-card__head">
+                          <span class="figure-card__value">{value}</span>
+                          {unit && <span class="figure-card__unit">{unit}</span>}
+                        </span>
+                      ))}
+                    </span>
                     <span class="figure-card__text">{figure.text}</span>
                     {figure.context && <span class="figure-card__context">«{figure.context}»</span>}
-                    <span class="figure-card__number mono">Nº {figure.measureNumber}</span>
+                    <span class="figure-card__link">Leer la {singular} {figure.measureNumber}</span>
                   </a>
                 );
                 return (
                   <>
-                    <div class="figures">{shown.map((figure, index) => card(figure, index))}</div>
+                    <p class="figures-hint" aria-hidden="true">Desliza para ver más cifras →</p>
+                    <div class="figures" tabindex="0" role="region" aria-label="Cifras del programa: desliza para ver más">{shown.map((figure) => card(figure))}</div>
                     {hidden.length > 0 && (
                       <details class="figures-more">
                         <summary class="figures-more__toggle">
-                          Ver las {hidden.length} cifras restantes
+                          Ver las {hidden.reduce((sum, figure) => sum + figure.values.length, 0)} cifras restantes
                         </summary>
-                        <div class="figures figures--compact">{hidden.map((figure) => card(figure, 99))}</div>
+                        <div class="figures figures--compact">{hidden.map((figure) => card(figure))}</div>
                       </details>
                     )}
                   </>
@@ -266,65 +321,66 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             </>
           )}
 
-          <SectionHeading index={sectionIndex.structure} title="Cómo se reparte">
-            <p>Peso de cada bloque en el total y mapa completo: una casilla por {singular}, una fila por sección.</p>
+          <SectionHeading title="Cómo se reparte">
+            <p>
+              El programa tiene {program.blocks.length} {program.blocks.length === 1 ? 'bloque' : 'bloques'}. La barra muestra la
+              parte de {allOf(program, total)} que tiene cada bloque, y cada bloque tiene un tono del color del partido. El mapa, bajo la barra, resume cada bloque y se amplía con un botón: una casilla por {singular}, una fila por sección.
+            </p>
           </SectionHeading>
           <BlockBar program={program} />
           <div class="map-panel">
             <Panel
               title={`Mapa de ${allOf(program, total)}`}
-              lead={`Pasa el ratón sobre una casilla para ver la ${singular}.${pendingMeasures.length > 0 ? ` Las casillas con trama son las ${pendingMeasures.length} ${plural} que el partido anunciará durante la campaña.` : ''}`}
+              lead={`Un resumen de los bloques, con un punto por ${singular}. Pulsa «Ampliar el mapa» para ver una casilla por ${singular}, con su número, y pasa el ratón sobre una casilla para leerla.${pendingMeasures.length > 0 ? ` Las casillas con trama son las ${pendingMeasures.length} ${plural} que el partido anunciará durante la campaña.` : ''}`}
             >
               <MeasureMap program={program} />
             </Panel>
           </div>
 
-          <SectionHeading index={sectionIndex.topics} title={`${capitalize(plural)} por categoría`}>
+          <SectionHeading title={`${capitalize(plural)} por categoría`}>
             <p>
               Clasificación temática común a todos los programas. Cada {singular} tiene una categoría principal. Pulsa una barra
               para filtrar.
             </p>
           </SectionHeading>
-          <Panel>
-            <BarList items={byCategory} total={total} unit={plural} singularUnit={singular} />
-          </Panel>
+          <BarList items={byCategory} total={total} unit={plural} singularUnit={singular} />
 
-          <SectionHeading index={sectionIndex.groups} title="Colectivos y palancas">
+          <SectionHeading title="Colectivos y palancas">
             <p>
               Detección automática por palabras clave sobre el texto de cada {singular}. Una {singular} puede citar varios
               colectivos y usar varias palancas.
             </p>
           </SectionHeading>
-          <div class="grid grid--2 grid--top">
-            <Panel title="A quién se dirige" lead={`${capitalize(plural)} que citan a cada colectivo (de ${publishedMeasures.length} publicadas).`}>
-              <BarList items={byTargetGroup} total={publishedMeasures.length} color="var(--color-block-3)" unit={plural} singularUnit={singular} />
-            </Panel>
-            <div class="grid">
-              <Panel title="Con qué palanca" lead={`El instrumento que usa cada ${singular}.`}>
-                <BarList items={byLever} total={publishedMeasures.length} color="var(--color-block-2)" unit={plural} singularUnit={singular} />
-              </Panel>
-              <Panel title="Territorios citados" lead={`${capitalize(plural)} que nombran un territorio concreto.`}>
-                <BarList items={byTerritory} total={publishedMeasures.length} color="var(--color-block-4)" unit={plural} singularUnit={singular} />
-              </Panel>
+          <div class="pair">
+            <div class="pair__col">
+              <h3>A quién se dirige</h3>
+              <p>{capitalize(plural)} que citan a cada colectivo (de {publishedMeasures.length} publicadas).</p>
+              <BarList items={byTargetGroup} total={publishedMeasures.length} unit={plural} singularUnit={singular} />
+            </div>
+            <div class="pair__col">
+              <h3>Con qué palanca</h3>
+              <p>El instrumento que usa cada {singular}. Una {singular} puede usar más de uno.</p>
+              <BarList items={byLever} total={publishedMeasures.length} unit={plural} singularUnit={singular} />
+              <h3 class="pair__second">Territorios citados</h3>
+              <p>{capitalize(plural)} que nombran un territorio concreto.</p>
+              <BarList items={byTerritory} total={publishedMeasures.length} unit={plural} singularUnit={singular} />
             </div>
           </div>
 
           {withDeadline > 0 && (
             <>
-              <SectionHeading index={sectionIndex.calendar} title="Lo que tiene fecha">
+              <SectionHeading title="Lo que tiene fecha">
                 <p>
                   {total === 1 ? `${capitalize(allOf(program, total))} fija un plazo.` : `Solo ${withDeadline} de ${allOf(program, total)} fijan un plazo.`} {deadlineKindsText}
                 </p>
               </SectionHeading>
-              <Panel>
-                <DeadlineTimeline program={program} />
-              </Panel>
+              <DeadlineTimeline program={program} />
             </>
           )}
 
           {hasMoreData && (
             <>
-              <SectionHeading index={sectionIndex.more} title="Deroga, reserva y repite" />
+              <SectionHeading title="Deroga, reserva y repite" />
               <div class="grid grid--3">
                 {repealingMeasures.length > 0 && (
                   <Panel title="Leyes que deroga" lead="Derogaciones explícitas.">
@@ -333,7 +389,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
                         <li>
                           <a href={routes.measure(program.id, measure.number)}>
                             <s>{measure.repeals}</s>
-                            <span class="mono">Nº {measure.number}</span>
+                            <span>Medida {measure.number}</span>
                           </a>
                         </li>
                       ))}
@@ -349,7 +405,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
                           <li>
                             <span class="pending__swatch" aria-hidden="true"></span>
                             <a href={routes.measure(program.id, measure.number)}>
-                              <strong>Nº {measure.number}</strong> · {categoryById[measure.categoryId].name}
+                              <strong>Nº {measure.number}</strong>: {categoryById[measure.categoryId].name}
                             </a>
                             <span class="pending__section">{section.id} {section.phraseTitle}</span>
                           </li>
@@ -360,39 +416,12 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
                 )}
                 {byVerb.length > 0 && (
                   <Panel title="El programa en verbos" lead="Los verbos en futuro más repetidos.">
-                    <BarList items={byVerb} total={total} color="var(--color-ink)" unit="veces" />
+                    <BarList items={byVerb} total={total} unit="veces" />
                   </Panel>
                 )}
               </div>
             </>
           )}
-
-          <SectionHeading index={sectionIndex.read} title={`Los ${program.blocks.length} bloques`}>
-            <p>El programa completo, bloque a bloque, con la introducción y el texto íntegro de cada medida.</p>
-          </SectionHeading>
-          <div class="block-links">
-            {
-              program.blocks.map((block) => {
-                const count = program.measures.filter((measure) => measure.blockId === block.id).length;
-                const sectionCount = program.sections.filter((section) => section.blockId === block.id).length;
-                return (
-                  <a
-                    class="block-card box box--interactive"
-                    href={routes.block(program.id, block.id)}
-                    style={`--block-color: ${blockColor(block.id)}`}
-                  >
-                    <span class="block-card__number">{padNumber(block.id)}</span>
-                    <h3>{block.title}</h3>
-                    {block.motto && <p class="block-card__motto">«{block.motto}»</p>}
-                    <p class="block-card__count mono">
-                      {count} {measureNoun(program, count)}
-                      {sectionCount > 1 && ` · ${sectionCount} secciones`}
-                    </p>
-                  </a>
-                );
-              })
-            }
-          </div>
 
           <div class="details details--first">
             <Panel>
@@ -417,7 +446,7 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
             </Panel>
           </div>
 
-          <SectionHeading index={sectionIndex.presence} title="Dónde se presenta">
+          <SectionHeading title="Dónde se presenta">
             <p>Provincias en las que {program.acronym} presenta candidatura al Congreso o al Senado, según la proclamación oficial.</p>
           </SectionHeading>
           <Panel>
@@ -431,164 +460,245 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
 </BaseLayout>
 
 <style>
-  .hero {
-    border-bottom: var(--border-thick) solid var(--color-ink);
-    padding: clamp(36px, 6vw, 72px) 0;
-    background:
-      repeating-linear-gradient(-45deg, transparent 0 22px, color-mix(in srgb, var(--party-color-light) 22%, transparent) 22px 28px),
-      var(--color-paper);
-  }
+  .hero { padding: clamp(28px, 4vw, 44px) 0 clamp(32px, 4vw, 52px); }
   .hero__grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
-    gap: 28px 40px;
-    align-items: end;
-  }
-  /* The title always takes the full row: it never competes with the stats box */
-  .hero__title { grid-column: 1 / -1; }
-  .hero__party {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
     align-items: center;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: var(--text-sm);
+    gap: 32px 48px;
   }
-  .hero h1 {
-    /* «RECONSTRUCCIÓN» is about 10.4 em wide in Archivo Black: 9 cqi keeps the word whole on one line */
-    font-size: clamp(1.625rem, 9cqi, 8rem);
-    line-height: 0.85;
-    margin: 14px 0 0;
-    text-shadow: 0.045em 0.045em 0 var(--party-color-light);
-  }
-  .hero__subtitle { font-size: clamp(1.125rem, 2.4vw, 1.5rem); font-weight: 800; max-width: 30ch; margin: 0; }
-  .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: 26px; }
-  .hero__stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0;
-  }
-  .hero__stats div {
-    padding: 14px var(--space-4);
-    border-right: var(--border-thin) solid var(--color-ink);
-    border-bottom: var(--border-thin) solid var(--color-ink);
-  }
-  .hero__stats div:nth-child(3n) { border-right: 0; }
-  .hero__stats div:nth-child(n + 4) { border-bottom: 0; }
-  .hero__stats dt { font-family: var(--font-mono); font-size: var(--text-2xs); font-weight: 700; text-transform: uppercase; }
-  .hero__stats dd { margin: 0; font-family: var(--font-display); font-size: clamp(2.125rem, 4vw, 3rem); line-height: 1; }
-  /* Five stats (no "Por anunciar"): three cells on top, two wide cells below, no empty slot */
-  .hero__stats--five { grid-template-columns: repeat(6, 1fr); }
-  .hero__stats--five div { grid-column: span 2; }
-  .hero__stats--five div:nth-child(n + 4) {
-    grid-column: span 3;
+  .hero__main {
+    flex: 1 1 560px;
+    min-width: 0;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--space-3);
-    border-top: var(--border-thin) solid var(--color-ink);
-    background: color-mix(in srgb, var(--party-color-light) 30%, transparent);
+    flex-direction: column;
+    gap: 18px;
+    container-type: inline-size; /* the title scales with the width of this column */
   }
-  .hero__stats--five div:nth-child(4) { border-right: var(--border-thin) solid var(--color-ink); }
-  .hero__stats--five div:nth-child(5) { border-right: 0; }
-  .hero__stat-pending {
-    background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--color-ink) 14%, transparent) 0 2px, transparent 2px 8px);
+  .hero__party { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+  .hero__acronym { font-family: var(--font-display); font-weight: 900; font-size: 4.5rem; line-height: 0.9; overflow-wrap: anywhere; }
+  .hero__party-name { font-size: 1.1875rem; font-weight: 600; }
+  .hero__title {
+    margin: 0;
+    /* Big Shoulders Black capitals are about 0.55em wide, and a wide letter (M, D) more: with 0.6em per
+       letter the longest word fits the column, and no word breaks in the middle. */
+    font-size: clamp(2.5rem, calc(100cqi / (var(--word-length) * 0.6)), 7.5rem);
+    line-height: 0.88;
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
-  .notes { padding-top: 20px; }
-  .notes__body { padding: var(--space-4) 20px; border-left: 8px solid var(--color-highlight); box-shadow: none; }
-  .notes__body p { margin: var(--space-1) 0 0; font-size: var(--text-sm); }
+  .hero__subtitle { margin: 0; max-width: 31em; font-size: 1.375rem; font-weight: 600; }
+  .hero__sentence { margin: 0; max-width: 34em; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
+  /* The sphere of the party: a disc in its color with dots, lit from the top left.
+     When the reader points at it, the dots fade and a pie chart of the categories shows. */
+  .party-sphere-wrap { flex: 0 1 400px; min-width: 0; }
+  .party-sphere {
+    position: relative;
+    display: block;
+    view-transition-name: party-sphere;
+    color: var(--color-ink);
+    text-decoration: none;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--sphere-disc);
+    container-type: inline-size; /* the text of the hole follows the size of the sphere */
+    cursor: pointer;
+  }
+  .party-sphere__dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--sphere-dots) 3.1px, transparent 3.6px);
+    background-size: 10px 10px;
+    -webkit-mask-image: linear-gradient(135deg, transparent 30%, #000 95%);
+    mask-image: linear-gradient(135deg, transparent 30%, #000 95%);
+    transition: opacity var(--duration-slow) var(--easing-out);
+  }
+  /* Hover: the dots fade a little and a paper plate in the middle says where the sphere goes. */
+  .party-sphere__cta {
+    position: absolute;
+    inset: 26%;
+    display: grid;
+    place-content: center;
+    gap: 2px;
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 50%;
+    background: var(--color-paper);
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity var(--duration-base) var(--easing-out), transform var(--duration-base) var(--easing-out);
+  }
+  .party-sphere__cta strong { font: 900 clamp(1.75rem, 12cqi, 3rem) / 1 var(--font-display); }
+  .party-sphere__cta span { font: 700 clamp(0.8125rem, 3.4cqi, 1rem) / 1.15 var(--font-body); }
+  .party-sphere:hover .party-sphere__dots,
+  .party-sphere:focus-visible .party-sphere__dots { opacity: 0.35; }
+  .party-sphere:hover .party-sphere__cta,
+  .party-sphere:focus-visible .party-sphere__cta { opacity: 1; transform: none; }
+  .party-sphere:focus-visible { outline-offset: 4px; }
+  .party-sphere__hint { margin: var(--space-2) 0 0; font-size: var(--text-sm); font-weight: 600; text-align: center; }
+  @media (prefers-reduced-motion: reduce) {
+    .party-sphere__dots, .party-sphere__cta { transition: none; }
+  }
+
+  /* The band on the party color. */
+  .band {
+    background: var(--band-color);
+    color: var(--band-on-color);
+    border-top: var(--border-thick) solid var(--color-ink);
+    border-bottom: var(--border-thick) solid var(--color-ink);
+  }
+  .band p {
+    margin: 0;
+    padding-block: 26px;
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+    line-height: 1.35;
+    font-weight: 600;
+  }
+
+  .notes { padding-top: 28px; }
+  .notes__body { padding: var(--space-4) 20px; }
+  .notes__body p { margin: var(--space-1) 0 0; }
+
+  /* The keys: cells that share their borders. */
   .findings {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-    gap: var(--space-5);
+    border-top: var(--border-thick) solid var(--color-ink);
+    border-left: var(--border-thick) solid var(--color-ink);
   }
-  .finding { padding: 22px; position: relative; }
-  .finding__index {
-    position: absolute;
-    top: -18px;
-    right: var(--space-4);
-    font-family: var(--font-display);
-    font-size: 1.625rem;
-    background: var(--color-highlight);
-    color: var(--color-on-highlight);
-    border: var(--border-thick) solid var(--color-ink);
-    padding: 2px 10px;
+  .finding {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+    border-right: var(--border-thick) solid var(--color-ink);
+    border-bottom: var(--border-thick) solid var(--color-ink);
   }
-  .finding h3 { font-size: var(--text-xl); margin: 6px 0 var(--space-3); max-width: 18ch; }
-  .finding p { font-size: 0.9375rem; }
-  .finding__refs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+  .finding h3 { font-family: var(--font-body); font-size: 1.625rem; line-height: 1.15; font-weight: 700; letter-spacing: 0; text-transform: none; }
+  .finding p { margin: 0; }
+  .finding__refs { margin-top: auto !important; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .finding__refs-label { font-weight: 700; margin-right: 4px; }
   .finding__refs a {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
     font-weight: 700;
     text-decoration: none;
-    border: var(--border-thin) solid var(--color-ink);
-    padding: 2px 7px;
+    border: var(--border-fine) solid var(--color-ink);
+    padding: 0 8px;
   }
+  .finding__refs a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
 
+  /* The figures: ink cells with large numbers. */
   .figures {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 3px;
   }
   .figure-card {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 6px;
+    padding: 18px 20px 16px;
+    background: var(--color-ink);
+    color: var(--color-paper);
     text-decoration: none;
-    border: var(--border-thick) solid var(--color-ink);
-    background: var(--color-paper);
-    box-shadow: var(--shadow-sm);
-    padding: var(--space-4) 18px;
-    transition: transform var(--duration-fast), box-shadow var(--duration-fast);
     container-type: inline-size; /* each card is its own container: the figure fits the card width */
   }
-  .figure-card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-md);
-    background: var(--color-highlight);
-    color: var(--color-on-highlight);
-  }
-  .figure-card--large { grid-column: span 2; background: var(--color-ink); color: var(--color-paper); }
+  .figure-card:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .figure-card__values { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; }
+  .figure-card__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; min-width: 0; }
   .figure-card__value {
     max-width: 100%;
     font-family: var(--font-display);
-    font-size: clamp(1.75rem, 8cqi, 2.875rem);
-    line-height: 1;
-    overflow-wrap: anywhere;
+    font-weight: 900;
+    font-size: clamp(2rem, 15cqi, 3.5rem);
+    line-height: 0.95;
+    overflow-wrap: break-word;
   }
-  .figure-card--large .figure-card__value { font-size: clamp(1.75rem, 12cqi, 5.25rem); }
-  .figure-card__unit { font-family: var(--font-mono); font-weight: 700; font-size: 0.8125rem; text-transform: uppercase; }
-  .figure-card__text { font-size: var(--text-sm); line-height: 1.3; margin-top: var(--space-2); flex: 1; }
-  .figure-card__context { font-size: var(--text-xs); line-height: 1.35; font-style: italic; }
-  .figure-card__number { font-size: var(--text-2xs); font-weight: 700; margin-top: 10px; opacity: 0.75; }
-  @media (max-width: 520px) { .figure-card--large { grid-column: span 1; } }
+  /* Several figures of one measure: each figure is smaller, so the card keeps its size. */
+  .figure-card--many .figure-card__value { font-size: clamp(1.75rem, 11cqi, 2.5rem); }
+  .figure-card__unit { font-family: var(--font-display); font-weight: 900; font-size: 1.375rem; line-height: 1; text-transform: uppercase; }
+  .figure-card__text { font-size: 1.0625rem; font-weight: 600; line-height: 1.3; }
+  /* The quote shows at most four lines; the whole text is in the measure. */
+  .figure-card__context {
+    font-size: 0.9375rem;
+    line-height: 1.35;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+  }
+  .figure-card__link {
+    margin-top: auto;
+    padding-top: 8px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+  .figure-card:focus-visible { outline-offset: -6px; }
   .figures-more { margin-top: 20px; }
   .figures-more__toggle {
     cursor: pointer;
-    display: inline-block;
-    font-family: var(--font-mono);
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
     font-weight: 700;
-    font-size: var(--text-sm);
-    text-transform: uppercase;
     border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
-    padding: 10px 16px;
-    box-shadow: var(--shadow-sm);
+    padding: 0 22px;
   }
   .figures-more__toggle:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
   .figures-more[open] .figures-more__toggle { margin-bottom: 20px; }
-  .figures--compact { grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 14px; }
-  .figures--compact .figure-card { padding: var(--space-3) 12px; }
-  .figures--compact .figure-card__value { font-size: clamp(1.375rem, 7cqi, 2rem); }
-  .figures--compact .figure-card__text { font-size: var(--text-xs); }
+  .figures-hint { display: none; margin: 0 0 var(--space-2); font: 700 1rem var(--font-body); }
+  /* Phone: the figures go in one row that scrolls sideways, one card at a time (it snaps), so each card
+     is read whole and the page is not a very long column. The next card shows a little at the right. */
+  @media (max-width: 700px) {
+    .figures-hint { display: block; }
+    .figures,
+    .figures--compact {
+      display: flex;
+      gap: var(--space-2);
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: var(--gutter);
+      margin-inline: calc(-1 * var(--gutter));
+      padding: 0 var(--gutter) var(--space-3);
+    }
+    .figures .figure-card,
+    .figures--compact .figure-card { flex: 0 0 min(82%, 320px); scroll-snap-align: start; }
+    .figures:focus-visible { outline-offset: -3px; }
+  }
+  .figures--compact { grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+  .figures--compact .figure-card { padding: var(--space-3) 16px; }
+  .figures--compact .figure-card__value { font-size: clamp(1.625rem, 13cqi, 2.5rem); }
+  .figures--compact .figure-card--many .figure-card__value { font-size: clamp(1.5rem, 10cqi, 2rem); }
+  .figures--compact .figure-card__unit { font-size: 1.125rem; }
+  .figures--compact .figure-card__text { font-size: 1rem; }
 
   .map-panel { margin-top: 36px; }
+
+  .pair { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 48px; }
+  .pair__col { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  .pair__col h3 { font-family: var(--font-body); font-size: 1.625rem; line-height: 1.15; font-weight: 700; letter-spacing: 0; text-transform: none; }
+  .pair__col p { margin: 0; }
+  .pair__second { margin-top: var(--space-5); }
 
   .repeals, .pending { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
   .repeals a {
@@ -596,67 +706,53 @@ const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Des
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    min-height: 44px;
     text-decoration: none;
-    border: var(--border-thin) solid var(--color-ink);
+    border: var(--border-fine) solid var(--color-ink);
     padding: 10px var(--space-3);
     font-family: var(--font-display);
+    font-weight: 900;
     text-transform: uppercase;
-    font-size: var(--text-lg);
+    font-size: 1.375rem;
     line-height: 1.05;
   }
-  .repeals s { text-decoration-thickness: 2px; text-decoration-color: var(--color-block-2); }
-  .repeals .mono { font-family: var(--font-mono); font-size: var(--text-2xs); white-space: nowrap; }
+  .repeals a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .repeals s { text-decoration-thickness: 3px; }
+  .repeals a span { font-family: var(--font-body); font-weight: 700; font-size: 0.9375rem; text-transform: none; white-space: nowrap; }
   .pending li {
     display: grid;
     grid-template-columns: 22px 1fr;
     gap: 2px 10px;
-    font-size: var(--text-sm);
     align-items: center;
   }
   .pending__swatch {
     width: 22px;
     height: 22px;
-    border: var(--border-thin) solid var(--color-ink);
-    background: repeating-linear-gradient(45deg, var(--color-ink) 0 2px, transparent 2px 6px);
+    border: var(--border-thick) solid var(--color-ink);
+    color: var(--color-ink);
+    background-image: var(--trama-light);
+    background-size: var(--trama-size);
     grid-row: span 2;
   }
-  .pending a { text-decoration: none; font-weight: 600; }
-  .pending__section { font-size: var(--text-xs); color: var(--color-ink-subtle); line-height: 1.2; }
-
-  .block-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-    gap: var(--space-5);
-  }
-  .block-card {
-    padding: 0 20px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-  .block-card__number {
-    font-family: var(--font-display);
-    font-size: 4.5rem;
-    line-height: 1;
-    background: var(--block-color);
-    color: var(--color-on-block);
-    margin: 0 -20px var(--space-2);
-    padding: 14px 20px 6px;
-    border-bottom: var(--border-thick) solid var(--color-ink);
-  }
-  .block-card h3 { font-size: 1.5rem; overflow-wrap: anywhere; }
-  .block-card__motto { font-style: italic; margin: 0; flex: 1; }
-  .block-card__count { font-size: var(--text-xs); font-weight: 700; margin: 0; }
+  .pending a { font-weight: 600; }
+  .pending__section { font-size: 0.9375rem; line-height: 1.2; }
 
   .details { margin-top: 28px; }
   .details--first { margin-top: 56px; }
   .introduction { columns: 2 340px; column-gap: 36px; margin-top: var(--space-3); }
-  .introduction p { font-size: 0.9375rem; margin-top: 0; }
+  .introduction p { margin-top: 0; }
   .details summary { cursor: pointer; }
   .details summary h3 { display: inline; }
-  .details p { margin-top: var(--space-3); font-size: 0.9375rem; max-width: 80ch; }
+  .details p { margin-top: var(--space-3); max-width: 80ch; }
 
-  @media (max-width: 860px) {
-    .hero__grid { grid-template-columns: minmax(0, 1fr); }
+  @media (max-width: 560px) {
+    .hero__grid { gap: var(--space-5); }
+    .hero__main { flex-basis: 100%; gap: var(--space-3); }
+    /* The buttons fill the width, one under the other, with the same height. */
+    .hero__actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-2); }
+    .hero__actions :global(.button) { width: 100%; box-sizing: border-box; justify-content: center; text-align: center; }
+    .hero__subtitle { font-size: 1.1875rem; }
+    .party-sphere-wrap { flex: 0 0 auto; width: min(100%, 300px); margin-inline: auto; }
+    .hero__acronym { font-size: 3.5rem; }
   }
 </style>

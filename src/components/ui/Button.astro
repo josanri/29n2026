@@ -1,8 +1,9 @@
 ---
 /**
  * Button. Renders a link when `href` is set, and a <button> when it is not.
- * - `default`: paper surface.
- * - `ink`: strong brand surface (ink, or the accent on a party page).
+ * - `default`: secondary, a 3px ink border on paper.
+ * - `ink`: primary, ink background with paper text.
+ * Square corners, no shadow, at least 44px tall.
  */
 import type { HTMLAttributes } from 'astro/types';
 
@@ -31,35 +32,32 @@ const Element = as ?? (href ? 'a' : 'button');
   .button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    font-family: var(--font-display);
-    font-size: var(--text-md);
-    text-transform: uppercase;
+    min-height: 50px;
+    padding: 0 22px;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.2;
     text-decoration: none;
-    padding: 12px 18px;
     border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
     background: var(--color-paper);
     color: var(--color-ink);
-    box-shadow: var(--shadow-sm);
     cursor: pointer;
-    transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
   }
   .button:hover {
     background: var(--color-highlight);
     color: var(--color-on-highlight);
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-md);
-  }
-  .button:active {
-    transform: translate(4px, 4px);
-    box-shadow: 0 0 0 var(--color-ink);
   }
   .button--ink {
     background: var(--color-brand);
     color: var(--color-on-brand);
   }
   .button--sm {
-    font-size: 0.8125rem;
-    padding: 8px 12px;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 1rem;
   }
 </style>

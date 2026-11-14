@@ -3,21 +3,23 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Panel from '@/components/ui/Panel.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
-import { programs, publishedPrograms } from '@/lib/programs';
+import CategoryRose from '@/components/charts/CategoryRose.astro';
+import { sphereCategories, sphereTotal } from '@/lib/sphere';
+import { announcedMeasures, programs, publishedPrograms } from '@/lib/programs';
 import { categories } from '@/lib/taxonomy';
 import { formatNumber, measureNoun, normalizeForSearch } from '@/lib/format';
 import { routes } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
 
 // Only parties with a program: the others have no measures to compare.
-const comparable = publishedPrograms.filter((program) => program.measures.length > 0);
+const comparable = publishedPrograms.filter((program) => announcedMeasures(program).length > 0);
 const withoutProgram = programs.length - comparable.length;
 
 const rows = categories
   .map((category) => {
     const cells = comparable.map((program) => {
-      const count = program.measures.filter((measure) => measure.categoryId === category.id).length;
-      return { program, count, share: (count / program.measures.length) * 100 };
+      const count = announcedMeasures(program).filter((measure) => measure.categoryId === category.id).length;
+      return { program, count, share: (count / announcedMeasures(program).length) * 100 };
     });
     return {
       category,
@@ -29,7 +31,7 @@ const rows = categories
   })
   .sort((a, b) => b.averageShare - a.averageShare);
 
-// Sequential one-hue scale in steps: the darker, the more weight in the program.
+// Five steps: the stronger the background of the cell, the more weight the category has in the program.
 const steps = [
   { upTo: 3, label: 'menos de 3 %' },
   { upTo: 6, label: '3–6 %' },
@@ -40,6 +42,17 @@ const steps = [
 const stepOf = (share: number) => (share === 0 ? 0 : steps.findIndex((step) => share < step.upTo) + 1);
 const shareLabel = (share: number) => (share === 0 ? '–' : share < 1 ? '<1' : String(Math.round(share)));
 const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumFractionDigits: 1 });
+
+// The categories of the hero, from the biggest: the sphere of the home page opens here as a «rosa» (same
+// `view-transition-name`), one petal per category, with the list of the full names beside it.
+const categoryPetals = sphereCategories.map((category) => ({
+  id: category.id,
+  href: routes.category(category.id),
+  name: category.name,
+  code: categories.find((item) => item.id === category.id)?.code ?? '',
+  count: category.count,
+  percent: shareDecimal((category.count / sphereTotal) * 100),
+}));
 ---
 
 <BaseLayout
@@ -47,18 +60,28 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   description="Las medidas de todos los programas agrupadas por categoría temática, con una tabla que compara el peso de cada tema en cada programa."
 >
   <section class="page-hero">
-    <div class="container">
-      <Tag variant="ink">Taxonomía común</Tag>
-      <h1 class="headline">{categories.length} categorías</h1>
-      <p class="page-hero__lede">
-        La misma clasificación temática para todos los programas. La tabla muestra qué parte de cada programa dedica a cada
-        tema, para comparar partidos con programas de tamaño muy distinto.
-      </p>
+    <div class="container hero-rose">
+      <CategoryRose
+        petals={categoryPetals}
+        defaultFigure={formatNumber(sphereTotal)}
+        defaultLabel="medidas"
+        unit="medidas"
+        label="Medidas por categoría, de más a menos. El área de cada pétalo es su número de medidas. Cada pétalo enlaza con las medidas de su categoría."
+      >
+        <div class="page-hero__text">
+          <Tag variant="ink">Taxonomía común</Tag>
+          <h1 class="headline">{categories.length} categorías</h1>
+          <p class="page-hero__lede">
+            La misma clasificación temática para todos los programas. Elige una categoría en la rosa o en la lista para
+            leer sus {formatNumber(sphereTotal)} medidas. La tabla, más abajo, compara qué parte de cada programa dedica a cada tema.
+          </p>
+        </div>
+      </CategoryRose>
     </div>
   </section>
 
   <div class="container">
-    <SectionHeading index="01 / COMPARAR" title="El peso de cada tema">
+    <SectionHeading title="El peso de cada tema">
       <p>
         Porcentaje de las medidas de cada programa que corresponden a cada categoría. Pulsa una casilla (o un partido, en el móvil) para ver esas
         medidas. {withoutProgram > 0 && `No aparecen los ${withoutProgram} partidos que aún no han publicado su programa.`}
@@ -128,11 +151,11 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
                     href={routes.party(program.id)}
                     data-tooltip={tooltip(
                       program.partyName,
-                      `${formatNumber(program.measures.length)} ${measureNoun(program, program.measures.length)}`,
+                      `${formatNumber(announcedMeasures(program).length)} ${measureNoun(program, announcedMeasures(program).length)}`,
                     )}
                   >
                     <span class:list={['heatmap__acronym', { 'heatmap__acronym--long': program.acronym.length > 7 }]}>{program.acronym.replace(/\+/g, '+​')}</span>
-                    <span class="heatmap__total">{formatNumber(program.measures.length)}</span>
+                    <span class="heatmap__total">{formatNumber(announcedMeasures(program).length)}</span>
                   </a>
                 </th>
               ))}
@@ -154,8 +177,8 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
                         href={routes.measures(program.id, { category: category.id })}
                         aria-label={`${program.acronym}, ${category.name}: ${count} ${measureNoun(program, count)}, ${shareDecimal(share)} % del programa`}
                         data-tooltip={tooltip(
-                          `${program.acronym} · ${category.name}`,
-                          `${count} de ${formatNumber(program.measures.length)} ${measureNoun(program, program.measures.length)} (${shareDecimal(share)} %)`,
+                          `${program.acronym}: ${category.name}`,
+                          `${count} de ${formatNumber(announcedMeasures(program).length)} ${measureNoun(program, announcedMeasures(program).length)} (${shareDecimal(share)} %)`,
                         )}
                       >{shareLabel(share)}</a>
                     ) : (
@@ -195,7 +218,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
                       <span class="heatlist__bar" aria-hidden="true">
                         <span data-step={stepOf(share)} style={`width: ${(share / maxShare) * 100}%`}></span>
                       </span>
-                      <span class="heatlist__value mono">{shareDecimal(share)} %</span>
+                      <span class="heatlist__value">{shareDecimal(share)} %</span>
                     </a>
                   </li>
                 ))}
@@ -210,7 +233,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     </Panel>
 
     <div class="read-section">
-    <SectionHeading index="02 / LEER" title="Las medidas por tema">
+    <SectionHeading title="Las medidas por tema">
       <p>Cada categoría reúne las medidas de todos los programas sobre ese tema.</p>
     </SectionHeading>
     <ul class="category-list">
@@ -224,12 +247,12 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
               <span class="category-card__body">
                 <h3>{category.name}</h3>
                 <p>{category.description}</p>
-                <span class="category-card__stats mono">
+                <span class="category-card__stats">
                   <strong>{formatNumber(total)}</strong> medidas en {programCount} de {comparable.length} programas
                 </span>
                 {top.length > 0 && (
                   <span class="category-card__top">
-                    Más medidas: {top.map((cell) => `${cell.program.acronym} (${cell.count})`).join(' · ')}
+                    Más medidas: {top.map((cell) => `${cell.program.acronym} (${cell.count})`).join(', ')}
                   </span>
                 )}
               </span>
@@ -335,7 +358,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     emptyMessage.hidden = !isEmpty;
     resetButton.hidden = !filtered;
     summary.textContent = filtered
-      ? `${visibleRows} de ${rows.length} categorías · ${visibleParties} de ${totalParties} partidos`
+      ? `${visibleRows} de ${rows.length} categorías y ${visibleParties} de ${totalParties} partidos`
       : '';
   };
 
@@ -399,27 +422,37 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
 
 <style>
   .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
-  .page-hero h1 { font-size: clamp(2.25rem, 10cqi, 7.5rem); margin: var(--space-4) 0; }
-  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12cqi, 8.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; margin-bottom: 0; }
+  .page-hero__text { min-width: 0; container-type: inline-size; }
+  /* The «rosa»: the sphere of the home page, opened in petals. The heading and the list are at its left, so the
+     rose starts at the top of the page and fits in the window. Only the rose takes the transition from the sphere. */
+  .hero-rose :global(.rose__fig) { view-transition-name: sphere; }
 
-  /* The heat scale tokens flip in the dark theme (see tokens.css). `data-step` picks a step. */
+  /* The scale: a background that gets stronger with the weight. `data-step` picks the step (0 is no measure). */
   .scale {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 6px 14px;
+    gap: 6px 16px;
     margin-bottom: 14px;
-    font: 700 var(--text-xs) var(--font-mono);
+    font: 700 1rem var(--font-body);
   }
-  .scale__title { text-transform: uppercase; }
-  .scale__step { display: inline-flex; align-items: center; gap: 6px; }
-  .scale i { display: inline-block; width: 22px; height: 14px; border: 1px solid var(--color-ink-subtle); }
-  .scale i[data-step='0'] { background: var(--color-paper); }
-  .scale i[data-step='1'] { background: var(--color-heat-1); }
-  .scale i[data-step='2'] { background: var(--color-heat-2); }
-  .scale i[data-step='3'] { background: var(--color-heat-3); }
-  .scale i[data-step='4'] { background: var(--color-heat-4); }
-  .scale i[data-step='5'] { background: var(--color-heat-5); }
+  .scale__step { display: inline-flex; align-items: center; gap: 8px; }
+  .scale i {
+    flex: none;
+    display: block;
+    box-sizing: border-box;
+    width: 22px;
+    height: 22px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--heat, var(--color-paper));
+  }
+  .scale i[data-step='1'], .heatmap__cell[data-step='1'] { --heat: var(--color-heat-1); --on-heat: var(--color-on-heat-1); }
+  .scale i[data-step='2'], .heatmap__cell[data-step='2'] { --heat: var(--color-heat-2); --on-heat: var(--color-on-heat-2); }
+  .scale i[data-step='3'], .heatmap__cell[data-step='3'] { --heat: var(--color-heat-3); --on-heat: var(--color-on-heat-3); }
+  .scale i[data-step='4'], .heatmap__cell[data-step='4'] { --heat: var(--color-heat-4); --on-heat: var(--color-on-heat-4); }
+  .scale i[data-step='5'], .heatmap__cell[data-step='5'] { --heat: var(--color-heat-5); --on-heat: var(--color-on-heat-5); }
 
   .heat-filters {
     display: flex;
@@ -428,12 +461,12 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     gap: 12px 20px;
     margin-bottom: var(--space-4);
   }
-  .heat-filters__field { display: grid; gap: 6px; font: 700 var(--text-xs) var(--font-mono); text-transform: uppercase; }
+  .heat-filters__field { display: grid; gap: 6px; font: 700 1rem var(--font-body); }
   .heat-filters__field input {
     box-sizing: border-box;
     width: 100%;
     min-width: min(100%, 220px);
-    min-height: 42px;
+    min-height: 48px;
     border: var(--border-thin) solid var(--color-ink);
     border-radius: 0;
     padding: 7px 10px;
@@ -447,13 +480,13 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     flex-wrap: wrap;
     align-items: center;
     gap: 6px;
-    min-height: 42px;
+    min-height: 48px;
     box-sizing: border-box;
     padding: 5px 6px;
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-paper);
   }
-  .multi__box:focus-within { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
+  .multi__box:focus-within { outline: 3px solid var(--color-ink); outline-offset: 2px; }
   .heat-filters__field .multi__box input {
     flex: 1 1 140px;
     width: auto;
@@ -473,20 +506,19 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   .multi__box :global(.multi__chip) {
     display: inline-flex;
     align-items: stretch;
-    height: 30px;
+    height: 36px;
     padding: 0;
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-ink);
     color: var(--color-paper);
-    font: 700 0.75rem / 1 var(--font-mono);
-    letter-spacing: 0.02em;
+    font: 700 0.9375rem / 1 var(--font-body);
     cursor: pointer;
   }
   .multi__box :global(.multi__chip-label) { display: flex; align-items: center; padding: 0 8px 0 9px; }
   .multi__box :global(.multi__chip-remove) {
     position: relative;
-    width: 26px;
-    border-left: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+    width: 34px;
+    border-left: var(--border-fine) solid currentColor;
   }
   /* The cross: two thin bars, drawn in the text color. */
   .multi__box :global(.multi__chip-remove)::before,
@@ -517,7 +549,6 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     list-style: none;
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-paper);
-    box-shadow: var(--shadow-sm);
     text-transform: none;
     font-family: var(--font-body);
   }
@@ -529,11 +560,11 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     min-height: 40px;
     padding: 4px 10px;
     color: var(--color-ink);
-    font-size: 0.875rem;
+    font-size: 1rem;
     cursor: pointer;
   }
   .multi__list li[hidden] { display: none; }
-  .multi__list li b { font: 700 0.8125rem var(--font-mono); flex: none; }
+  .multi__list li b { font: 700 1rem var(--font-body); flex: none; }
   .multi__name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
   .multi__list li.is-active, .multi__list li:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
   .multi__check { flex: none; width: 16px; height: 16px; border: var(--border-thin) solid currentColor; }
@@ -544,18 +575,17 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   .multi__list li.is-active[aria-selected='true'] .multi__check,
   .multi__list li:hover[aria-selected='true'] .multi__check { box-shadow: inset 0 0 0 3px var(--color-highlight); }
   .heat-filters__reset {
-    min-height: 42px;
+    min-height: 48px;
     padding: 7px var(--space-3);
     border: var(--border-thin) solid var(--color-ink);
     background: var(--color-paper);
     color: var(--color-ink);
-    font: 700 0.8125rem var(--font-mono);
-    text-transform: uppercase;
+    font: 700 1rem var(--font-body);
     cursor: pointer;
   }
   .heat-filters__reset:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
   .heat-filters__reset[hidden], .heat-empty[hidden], .table-wrap[hidden], .heatmap [hidden] { display: none; }
-  .heat-filters__summary { margin: 0 0 10px auto; font: 700 0.8125rem var(--font-mono); }
+  .heat-filters__summary { margin: 0 0 10px auto; font: 700 1rem var(--font-body); }
   .heat-empty { margin: 0; font-weight: 600; }
   @media (max-width: 560px) {
     .heat-filters { display: grid; grid-template-columns: minmax(0, 1fr); }
@@ -587,8 +617,7 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     z-index: 2;
     background: var(--color-paper);
     text-align: left;
-    font: 700 var(--text-xs) var(--font-mono);
-    text-transform: uppercase;
+    font: 700 1rem var(--font-body);
     padding: 0 var(--space-2) 6px 0;
     width: var(--cat-w);
     /* Paper color over the 2px table spacing on every side, and 2px to the right, so scrolled cells never show in the gaps. */
@@ -608,10 +637,10 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   .heatmap__party a:hover,
   .heatmap__party a:hover .heatmap__total,
   .heatmap__category a:hover { color: var(--color-on-highlight); }
-  .heatmap__acronym { font-family: var(--font-display); font-size: var(--text-sm); text-transform: uppercase; white-space: nowrap; }
+  .heatmap__acronym { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 700; white-space: nowrap; }
   /* A long acronym (MUNDO+JUSTO) is smaller and breaks after the "+", so its column is as wide as the others. */
-  .heatmap__acronym--long { font-size: 0.5938rem; letter-spacing: -0.02em; white-space: normal; overflow-wrap: anywhere; max-width: 100%; text-align: center; line-height: 1.1; }
-  .heatmap__total { font: 500 var(--text-2xs) var(--font-mono); color: var(--color-ink-muted); }
+  .heatmap__acronym--long { font-size: 0.875rem; white-space: normal; overflow-wrap: anywhere; max-width: 100%; text-align: center; line-height: 1.1; }
+  .heatmap__total { font: 500 0.875rem var(--font-body); }
   .heatmap__category {
     position: sticky;
     left: 0;
@@ -641,49 +670,38 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     padding: 2px var(--space-1);
     background: var(--color-ink);
     color: var(--color-paper);
-    font: 400 var(--text-2xs) var(--font-display);
+    font: 700 0.875rem var(--font-body);
     text-align: center;
   }
-  .heatmap__cell { height: 34px; text-align: center; font: 700 0.8125rem var(--font-mono); }
+  .heatmap__cell { height: 40px; text-align: center; font: 700 0.9375rem var(--font-body); }
   .heatmap__cell > * {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     width: 100%;
     height: 100%;
-    min-height: 34px;
+    min-height: 40px;
     text-decoration: none;
   }
-  .heatmap__cell[data-step='0'] {
-    color: var(--color-ink-subtle);
-    background: var(--color-paper);
-    outline: 1px dashed var(--color-ink-subtle);
-    outline-offset: -1px;
-  }
-  .heatmap__cell[data-step='1'] { background: var(--color-heat-1); }
-  .heatmap__cell[data-step='1'] a { color: var(--color-on-heat-1); }
-  .heatmap__cell[data-step='2'] { background: var(--color-heat-2); }
-  .heatmap__cell[data-step='2'] a { color: var(--color-on-heat-2); }
-  .heatmap__cell[data-step='3'] { background: var(--color-heat-3); }
-  .heatmap__cell[data-step='3'] a { color: var(--color-on-heat-3); }
-  .heatmap__cell[data-step='4'] { background: var(--color-heat-4); }
-  .heatmap__cell[data-step='4'] a { color: var(--color-on-heat-4); }
-  .heatmap__cell[data-step='5'] { background: var(--color-heat-5); }
-  .heatmap__cell[data-step='5'] a { color: var(--color-on-heat-5); }
-  /* Cell under the pointer or with focus: an ink ring with a gap of the background color. */
-  .heatmap__cell a:hover { background: transparent; } /* keeps the color of the step, not the yellow of links */
+  /* The background of the cell gets stronger with the share of the program. The number stays as text. */
+  .heatmap__cell > a { background: var(--heat, transparent); color: var(--on-heat, var(--color-ink)); }
+  /* Cell under the pointer or with focus: it keeps its step and gets a frame of paper and ink inside it. */
   .heatmap__cell a:hover,
   .heatmap__cell a:focus-visible {
-    outline: 3px solid var(--color-ink);
-    outline-offset: -3px;
-    box-shadow: inset 0 0 0 5px var(--color-paper);
+    background: var(--heat, transparent);
+    color: var(--on-heat, var(--color-ink));
+    box-shadow: inset 0 0 0 var(--border-thick) var(--color-ink), inset 0 0 0 calc(var(--border-thick) + 2px) var(--color-paper);
+    text-decoration: underline;
+    outline: none;
   }
 
-  .swipe-hint { display: none; margin: 0 0 var(--space-2); font: 700 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
+  .swipe-hint { display: none; margin: 0 0 var(--space-2); font: 700 1rem var(--font-body); }
 
   /* The list of the phones. On a wide screen the table is shown, and the list is not. */
   .heatlist { display: none; }
-  .heatlist__category { border-top: var(--border-thin) solid var(--color-ink); }
-  .heatlist__category:last-child { border-bottom: var(--border-thin) solid var(--color-ink); }
+  .heatlist__category { border-top: var(--border-fine) solid var(--color-ink); }
+  .heatlist__category:last-child { border-bottom: var(--border-thick) solid var(--color-ink); }
   .heatlist__category[hidden] { display: none; }
   .heatlist__category summary {
     display: grid;
@@ -700,13 +718,13 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     content: '+';
     grid-row: 1 / span 2;
     grid-column: 2;
-    font: 700 1.25rem var(--font-mono);
+    font: 700 1.25rem var(--font-body);
   }
   .heatlist__category[open] summary::after { content: '–'; }
-  .heatlist__name { font-weight: 800; font-size: 1.0625rem; line-height: 1.2; }
-  .heatlist__lead { grid-column: 1; font: 500 var(--text-xs) var(--font-mono); color: var(--color-ink-muted); }
-  .heatlist__about { margin: 0 0 var(--space-3); font-size: var(--text-sm); color: var(--color-ink-muted); }
-  .heatlist__all { display: block; margin: 0 0 var(--space-4); padding: var(--space-3) 0; font-weight: 700; font-size: var(--text-sm); }
+  .heatlist__name { font-weight: 700; font-size: 1.0625rem; line-height: 1.2; }
+  .heatlist__lead { grid-column: 1; font: 500 1rem var(--font-body); }
+  .heatlist__about { margin: 0 0 var(--space-3); font-size: 1rem; }
+  .heatlist__all { display: block; margin: 0 0 var(--space-4); padding: var(--space-3) 0; font-weight: 700; font-size: 1rem; }
   .heatlist__items { list-style: none; margin: 0; padding: 0 0 var(--space-3); }
   .heatlist__items li[hidden] { display: none; }
   .heatlist__items a {
@@ -719,15 +737,16 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
     color: var(--color-ink);
   }
   .heatlist__items a:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .heatlist__acronym { font: 400 var(--text-sm) var(--font-display); text-transform: uppercase; overflow-wrap: anywhere; line-height: 1.1; }
-  .heatlist__bar { height: 14px; box-sizing: border-box; border: var(--border-thin) solid var(--color-ink); background: var(--color-paper); }
-  .heatlist__bar > span { display: block; height: 100%; }
-  .heatlist__bar > span[data-step='1'] { background: var(--color-heat-1); }
-  .heatlist__bar > span[data-step='2'] { background: var(--color-heat-2); }
-  .heatlist__bar > span[data-step='3'] { background: var(--color-heat-3); }
-  .heatlist__bar > span[data-step='4'] { background: var(--color-heat-4); }
-  .heatlist__bar > span[data-step='5'] { background: var(--color-heat-5); }
-  .heatlist__value { text-align: right; font-size: var(--text-xs); font-weight: 700; }
+  .heatlist__acronym { font: 700 1rem var(--font-body); overflow-wrap: anywhere; line-height: 1.1; }
+  .heatlist__bar { height: 14px; }
+  .heatlist__bar > span {
+    display: block;
+    height: 100%;
+    color: var(--color-ink);
+    background-image: var(--trama-medium);
+    background-size: var(--trama-size);
+  }
+  .heatlist__value { text-align: right; font-size: 1rem; font-weight: 700; }
 
   @media (max-width: 700px) {
     .table-wrap, .swipe-hint { display: none; }
@@ -753,16 +772,18 @@ const shareDecimal = (share: number) => share.toLocaleString('es-ES', { maximumF
   }
   .category-card__code {
     font-family: var(--font-display);
-    font-size: var(--text-xl);
+    font-size: 2rem;
+    line-height: 1;
     background: var(--color-ink);
     color: var(--color-paper);
     padding: var(--space-2) var(--space-2) 6px;
     height: fit-content;
+    font-weight: 900;
   }
   .category-card__body { display: grid; gap: var(--space-2); align-content: start; }
-  .category-card h3 { font-size: var(--text-xl); margin: 0; overflow-wrap: anywhere; }
-  .category-card p { font-size: var(--text-sm); color: var(--color-ink-muted); margin: 0; }
-  .category-card__stats { font-size: var(--text-xs); }
-  .category-card__stats strong { font-family: var(--font-display); font-weight: 400; font-size: var(--text-lg); }
-  .category-card__top { font-size: 0.8125rem; color: var(--color-ink-muted); }
+  .category-card h3 { font-size: 2.25rem; margin: 0; overflow-wrap: anywhere; }
+  .category-card p { font-size: 1rem; margin: 0; }
+  .category-card__stats { font-size: 1rem; }
+  .category-card__stats strong { font-weight: 700; font-size: 1.125rem; }
+  .category-card__top { font-size: 1rem; }
 </style>
