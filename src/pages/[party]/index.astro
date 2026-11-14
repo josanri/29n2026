@@ -20,6 +20,7 @@ import { readableTextColor } from '@/lib/color';
 import { methodNote } from '@/lib/method-note';
 import { routes, withBase } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
+import { programVerbs } from '@/lib/verbs';
 import { keyFindingsByParty, type KeyFinding } from '@eleccion/analysis';
 import { downloadFileNames, summaryDownloadFileName } from '@eleccion/download-names';
 
@@ -94,7 +95,9 @@ const byTerritory = countBy(publishedMeasures, (measure) => measure.territories)
   count,
   href: routes.measures(program.id, { search: id }),
 }));
-const byVerb = program.verbs.map(({ verb, count }) => ({
+// The verbs: the list of the extractor or the one computed for every program (`src/lib/verbs.ts`).
+const verbs = programVerbs(program);
+const byVerb = verbs.verbs.map(({ verb, count }) => ({
   id: verb,
   label: capitalize(verb),
   count,
@@ -104,7 +107,7 @@ const byVerb = program.verbs.map(({ verb, count }) => ({
 const isLocalDocument = program.documentType !== 'web' && program.documentUrl.startsWith('/');
 const isWebProgram = program.documentType === 'web';
 const hasFigures = program.figures.length > 0;
-const hasMoreData = repealingMeasures.length > 0 || pendingMeasures.length > 0 || program.verbs.length > 0;
+const hasMoreData = repealingMeasures.length > 0 || pendingMeasures.length > 0 || verbs.verbs.length > 0;
 const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Descargar programa completo' : 'PDF original';
 
 // Masculine units ("compromiso") take "uno": «cada uno con su texto original».
@@ -415,7 +418,7 @@ for (const figure of program.figures) {
                   </Panel>
                 )}
                 {byVerb.length > 0 && (
-                  <Panel title="El programa en verbos" lead="Los verbos en futuro más repetidos.">
+                  <Panel title="El programa en verbos" lead={`Los verbos en ${verbs.form} más repetidos.`}>
                     <BarList items={byVerb} total={total} unit="veces" />
                   </Panel>
                 )}

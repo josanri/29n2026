@@ -119,9 +119,11 @@ Usa los `id` de `src/data/taxonomia.json`. No inventes ninguno.
   `medida`, y `ordenPlazos` va de lo más inmediato a lo más lejano.
 - **Deroga**: solo las derogaciones explícitas («derogaremos la Ley de Vivienda»). «Superar» o «revisar» no es
   derogar, ni lo es citar que otros pidieron una derogación. El script comprueba que la medida dice «derog».
-- **Verbos**: los 15 verbos más repetidos (`verbos`), sin los auxiliares ni las frases hechas (`NO_VERBOS`: «no nos
-  cansaremos»). Si el programa escribe en futuro, cuenta las formas en -remos; si escribe en infinitivo (VOX), los
-  infinitivos.
+- **Verbos**: no hace falta escribirlos en el extractor. `src/lib/verbs.ts` calcula para cada programa los 15
+  infinitivos más repetidos en el texto de la propuesta (sin la explicación «Porque…» o «Para qué:»), y solo los
+  muestra con 30 medidas o más y un infinitivo en la mitad de ellas. Si el programa escribe en futuro (PACMA, PP),
+  el extractor puede escribir su propia lista de formas en -remos (`verbos`); entonces se usa esa y el panel dice
+  «en futuro». Un falso verbo nuevo («lugar», «fogar») va a la lista `NOT_VERBS` de `verbs.ts`.
 - **Presentación**: el texto introductorio del programa, literal.
 
 ## 4. La ficha del partido
