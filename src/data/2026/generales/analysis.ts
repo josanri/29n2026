@@ -507,4 +507,36 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [12, 13, 14, 15, 17, 4],
     },
   ],
+  upc: [
+    {
+      title: 'Un manifiesto de 16 ejes',
+      text:
+        'El documento es un manifiesto de cuatro páginas de texto, no un programa extenso: 16 ejes de uno o dos párrafos, cada uno contado aquí como una propuesta. Solo un eje lleva una cifra, consignar al menos el 0,7 % de los Presupuestos Generales del Estado a la cooperación internacional, y ninguno fija una fecha.',
+      measureNumbers: [15, 1, 16],
+    },
+    {
+      title: 'Canarias, sujeto político',
+      text:
+        'Los cuatro primeros ejes tratan del lugar de Canarias en el Estado y en la UE: su reconocimiento como sujeto político y el pleno desarrollo del Estatuto, la mediana con Marruecos y el reconocimiento de sus aguas, fondos marinos y espacio aéreo, una financiación que respete el REF y compense la insularidad, unos Presupuestos que «cumplan con Canarias» y el trato de región ultraperiférica en el próximo marco financiero europeo.',
+      measureNumbers: [1, 2, 3, 4],
+    },
+    {
+      title: 'Vivienda y límites al turismo',
+      text:
+        'El manifiesto pide regular los precios del alquiler en zonas tensionadas, ampliar el parque público de vivienda con protección permanente e intervenir el mercado. Lo une al modelo turístico: límites efectivos al crecimiento turístico, una moratoria de nuevas instalaciones y camas y una tasa turística para los no residentes.',
+      measureNumbers: [5, 7, 8],
+    },
+    {
+      title: 'Más impuestos a las grandes fortunas',
+      text:
+        'Propone una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital, más tributación a la banca y las energéticas, y mejores deducciones por alquiler para las rentas medias y bajas. En lo laboral, rechaza que el Estado deje de actualizar el salario mínimo.',
+      measureNumbers: [9, 10],
+    },
+    {
+      title: 'Derechos, migración y paz',
+      text:
+        'El manifiesto defiende los derechos sexuales y reproductivos y los de las personas LGTBIQA+, «especialmente de las personas trans», una política migratoria con vías legales y seguras y sin externalización de fronteras, el voto a los 16 años y la solidaridad con los pueblos palestino y saharaui «en su lucha por la autodeterminación y la independencia».',
+      measureNumbers: [11, 12, 16, 15],
+    },
+  ],
 };

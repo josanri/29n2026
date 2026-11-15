@@ -2,26 +2,714 @@
  "id": "upc",
  "partido": "Unidad del Pueblo Canario",
  "siglas": "UPC",
+ "comunidad": "Canarias",
  "color": "#1F9995",
  "colorClaro": "#D7F3F2",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Una sola papeleta. Todo un pueblo",
+ "subtitulo": "Manifiesto electoral de Unidad del Pueblo Canario: 16 ejes para las elecciones generales del 29N",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "pdf": "/programas/upc-manifiesto-29n-2026.pdf",
+ "fuentePdf": "https://www.unidadpueblocanario.org/documentos/manifiesto-upc.pdf",
+ "paginas": 6,
+ "fechaPdf": "2026-10-30",
+ "observaciones": [
+  "Es el manifiesto electoral de la coalición, no un programa extenso: 16 ejes, cada uno con uno o dos párrafos. Cada eje es aquí una propuesta.",
+  "El PDF no tiene fecha de creación; la fecha es la de su última modificación (30 de octubre de 2026). La prensa lo publicó el 4 de noviembre de 2026.",
+  "Unidad del Pueblo Canario reúne a Nueva Canarias-Bloque Canarista, Podemos, Izquierda Unida Canaria, Movimiento Sumar y Partido Verde Canarias."
+ ],
+ "unidadMedida": "eje",
+ "unidadMedidas": "ejes",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Una sola papeleta. Todo un pueblo",
+  "texto": "Unidad del Pueblo Canario (UPC) surge del compromiso de las fuerzas de la izquierda canaria, progresista, democrática y plural, uniendo a la izquierda nacionalista, soberanista, federal y confederal en una alternativa política para defender los intereses de Canarias y de su ciudadanía.\n\nFrente a la dispersión, damos un paso al frente para ofrecer una sola papeleta que garantice una voz canaria propia y fuerte en las Cortes Generales, que represente a quienes viven de su trabajo, a quienes tienen dificultades para acceder a una vivienda, a nuestra juventud, a las personas mayores y a quienes sostienen cada día nuestra tierra.\n\nEn un contexto de avance de la ultraderecha y de amenazas a los derechos sociales, laborales, feministas y democráticos conquistados, reivindicamos la unidad de las fuerzas progresistas, el respeto a la diversidad y la defensa de una Canarias con capacidad para decidir su futuro."
  },
- "cifras": [],
+ "cifras": [
+  {
+   "valor": "0,7 %",
+   "unidad": "de los Presupuestos Generales del Estado",
+   "texto": "Consignación mínima para cooperación y solidaridad internacional",
+   "contexto": "mínimo, del 0,7% de los Presupuestos Generales del Estado",
+   "medida": 15
+  }
+ ],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Canarias"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Autogobierno, soberanía popular y derecho a decidir",
+   "tituloMayus": "AUTOGOBIERNO, SOBERANÍA POPULAR Y DERECHO A DECIDIR",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 2
+  },
+  {
+   "id": 2,
+   "titulo": "Sistema de Financiación Autonómica",
+   "tituloMayus": "SISTEMA DE FINANCIACIÓN AUTONÓMICA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 2
+  },
+  {
+   "id": 3,
+   "titulo": "Presupuestos Generales del Estado",
+   "tituloMayus": "PRESUPUESTOS GENERALES DEL ESTADO",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 4,
+   "titulo": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "tituloMayus": "NUEVO MARCO FINANCIERO PLURIANUAL 2028-2034 DE LA UNIÓN EUROPEA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 5,
+   "titulo": "La vivienda es un derecho y no un negocio",
+   "tituloMayus": "LA VIVIENDA ES UN DERECHO Y NO UN NEGOCIO",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 6,
+   "titulo": "Servicios públicos y pensiones",
+   "tituloMayus": "SERVICIOS PÚBLICOS Y PENSIONES",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 7,
+   "titulo": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
+   "tituloMayus": "SOSTENIBILIDAD TERRITORIAL, LÍMITES AL CRECIMIENTO TURÍSTICO Y SOBERANÍA ENERGÉTICA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 8,
+   "titulo": "Nuevo Pacto Económico para Canarias",
+   "tituloMayus": "NUEVO PACTO ECONÓMICO PARA CANARIAS",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 4
+  },
+  {
+   "id": 9,
+   "titulo": "Propuestas de reforma fiscal a nivel estatal",
+   "tituloMayus": "PROPUESTAS DE REFORMA FISCAL A NIVEL ESTATAL",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 4
+  },
+  {
+   "id": 10,
+   "titulo": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
+   "tituloMayus": "AUMENTO DEL SALARIO MÍNIMO Y AVANCES EN LA LEGISLACIÓN LABORAL A FAVOR DE LOS DERECHOS DE LOS TRABAJADORES",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 4
+  },
+  {
+   "id": 11,
+   "titulo": "Canarias feminista e igualitaria",
+   "tituloMayus": "CANARIAS FEMINISTA E IGUALITARIA",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 4
+  },
+  {
+   "id": 12,
+   "titulo": "Canarias, frontera Sur",
+   "tituloMayus": "CANARIAS, FRONTERA SUR",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 4
+  },
+  {
+   "id": 13,
+   "titulo": "Cultura, identidad y patrimonio canario",
+   "tituloMayus": "CULTURA, IDENTIDAD Y PATRIMONIO CANARIO",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  },
+  {
+   "id": 14,
+   "titulo": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
+   "tituloMayus": "DEMOCRACIA PARTICIPATIVA, TRANSPARENCIA PÚBLICA Y LUCHA CONTRA EL TRANSFUGUISMO POLÍTICO",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  },
+  {
+   "id": 15,
+   "titulo": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
+   "tituloMayus": "SOLIDARIDAD INTERNACIONAL, COOPERACIÓN ENTRE PUEBLOS Y BÚSQUEDA DE LA PAZ",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  },
+  {
+   "id": 16,
+   "titulo": "Juventud, emancipación y justicia intergeneracional",
+   "tituloMayus": "JUVENTUD, EMANCIPACIÓN Y JUSTICIA INTERGENERACIONAL",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Autogobierno, soberanía popular y derecho a decidir",
+   "tituloFrase": "Autogobierno, soberanía popular y derecho a decidir",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 2,
+   "titulo": "Sistema de Financiación Autonómica",
+   "tituloFrase": "Sistema de Financiación Autonómica",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 3,
+   "titulo": "Presupuestos Generales del Estado",
+   "tituloFrase": "Presupuestos Generales del Estado",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 4,
+   "titulo": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "tituloFrase": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "5",
+   "bloque": 5,
+   "titulo": "La vivienda es un derecho y no un negocio",
+   "tituloFrase": "La vivienda es un derecho y no un negocio",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "6",
+   "bloque": 6,
+   "titulo": "Servicios públicos y pensiones",
+   "tituloFrase": "Servicios públicos y pensiones",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "7",
+   "bloque": 7,
+   "titulo": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
+   "tituloFrase": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "8",
+   "bloque": 8,
+   "titulo": "Nuevo Pacto Económico para Canarias",
+   "tituloFrase": "Nuevo Pacto Económico para Canarias",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "9",
+   "bloque": 9,
+   "titulo": "Propuestas de reforma fiscal a nivel estatal",
+   "tituloFrase": "Propuestas de reforma fiscal a nivel estatal",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "10",
+   "bloque": 10,
+   "titulo": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
+   "tituloFrase": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "11",
+   "bloque": 11,
+   "titulo": "Canarias feminista e igualitaria",
+   "tituloFrase": "Canarias feminista e igualitaria",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "12",
+   "bloque": 12,
+   "titulo": "Canarias, frontera Sur",
+   "tituloFrase": "Canarias, frontera Sur",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "13",
+   "bloque": 13,
+   "titulo": "Cultura, identidad y patrimonio canario",
+   "tituloFrase": "Cultura, identidad y patrimonio canario",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "14",
+   "bloque": 14,
+   "titulo": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
+   "tituloFrase": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "15",
+   "bloque": 15,
+   "titulo": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
+   "tituloFrase": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "16",
+   "bloque": 16,
+   "titulo": "Juventud, emancipación y justicia intergeneracional",
+   "tituloFrase": "Juventud, emancipación y justicia intergeneracional",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Autogobierno, soberanía popular y derecho a decidir",
+   "tituloFrase": "Autogobierno, soberanía popular y derecho a decidir",
+   "texto": "Defendemos el reconocimiento de Canarias como sujeto político, el fortalecimiento de su autogobierno y el pleno desarrollo de las competencias reconocidas en nuestro Estatuto de Autonomía. Reclamamos una financiación justa, la participación adecuada en los presupuestos estatales y europeos y el reconocimiento efectivo de nuestra condición de región ultraperiférica, respetando las singularidades del Archipiélago.\n\nIgualmente, defendemos el establecimiento de la mediana con Marruecos, el reconocimiento de nuestras aguas, así como de los fondos marinos del archipiélago, y su espacio aéreo.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias",
+    "Unión Europea",
+    "Marruecos"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Sistema de Financiación Autonómica",
+   "tituloFrase": "Sistema de Financiación Autonómica",
+   "texto": "Exigimos una financiación autonómica suficiente y justa que respete los recursos del Régimen Económico y Fiscal (REF), garantice la solidaridad y que compense la insularidad y la lejanía, garantice la conectividad, el transporte público, el apoyo al sector primario y los servicios esenciales, y contribuya a reducir las desigualdades entre islas y personas.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Presupuestos Generales del Estado",
+   "tituloFrase": "Presupuestos Generales del Estado",
+   "texto": "Reclamamos que los Presupuestos Generales del Estado cumplan con Canarias y financien adecuadamente nuestro REF. Exigimos compensaciones por los sobrecostes energéticos, las bonificaciones al transporte de pasajeros y mercancías, el transporte público, las políticas de empleo, la lucha contra la pobreza, el agua, el sector primario y una inversión territorializada justa.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "tituloFrase": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "texto": "Defendemos que la Unión Europea mantenga un tratamiento específico para Canarias como Región Ultraperiférica. Exigimos garantizar y actualizar los fondos del POSEI, apoyar al sector agrario, pesquero y acuícola, preservar la financiación regionalizada del FEDER y el FSE+ y atender la realidad migratoria de las Islas.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "rural",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias",
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "La vivienda es un derecho y no un negocio",
+   "tituloFrase": "La vivienda es un derecho y no un negocio",
+   "texto": "Defendemos que el acceso a una vivienda digna y asequible sea un derecho efectivo y no un privilegio. Exigimos ampliar el parque público de vivienda con protección permanente, regular los precios del alquiler en zonas tensionadas, la intervención del mercado, limitar los efectos de la vivienda vacacional y de la especulación inmobiliaria y favorecer la emancipación juvenil, evitando que las familias sean expulsadas de sus hogares.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes",
+    "familias"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Servicios públicos y pensiones",
+   "tituloFrase": "Servicios públicos y pensiones",
+   "texto": "Defendemos una sanidad, educación y unos servicios sociales públicos, universales y de calidad, con financiación suficiente y gestión prioritariamente directa, avanzando en la reversión de privatizaciones y externalizaciones.\n\nExigimos fortalecer la atención primaria, la salud mental, la educación pública de 0 a 3 años y un sistema público de cuidados y atención a la dependencia. Defendemos igualmente unas pensiones públicas dignas, garantizadas y revalorizadas conforme al coste de la vida.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores",
+    "infancia",
+    "discapacidad",
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
+   "tituloFrase": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
+   "texto": "Defendemos una planificación del crecimiento acorde con la capacidad real de las Islas y límites efectivos al crecimiento turístico para proteger la vivienda, el territorio, nuestros recursos naturales y el medioambiente y la convivencia. Apostamos por las energías renovables, la generación distribuida, la soberanía energética, la gestión responsable, sostenible y circular de residuos y vertidos y la gestión pública de los recursos estratégicos.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Nuevo Pacto Económico para Canarias",
+   "tituloFrase": "Nuevo Pacto Económico para Canarias",
+   "texto": "Apostamos por diversificar la economía y reducir la dependencia del turismo, impulsando el sector primario, la economía azul, las energías limpias, la investigación, la tecnología y la cultura canaria. Reclamamos que la riqueza turística revierta en la mayoría social, con mejores salarios, empleo de calidad y una fiscalidad justa. Defendemos un REF orientado a la sostenibilidad, la innovación y la cohesión social. Planificando y modulando el modelo turístico, con una moratoria de nuevas instalaciones y camas. Apostando por la calidad frente a la cantidad y el incremento del gasto en destino. Implantando una tasa turística para los no residentes. Con mayor formación y cualificación, mejores condiciones laborales y más elevados salarios.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "rural",
+    "discapacidad"
+   ],
+   "palancas": [
+    "impuestos",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Propuestas de reforma fiscal a nivel estatal",
+   "tituloFrase": "Propuestas de reforma fiscal a nivel estatal",
+   "texto": "Defendemos una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital. Proponemos reforzar la tributación de las grandes fortunas y los sectores bancario y energético, mejorar las deducciones por alquiler de vivienda para las rentas medias y bajas y adoptar medidas fiscales frente a la inflación, protegiendo el poder adquisitivo de las familias trabajadoras.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "familias",
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
+   "tituloFrase": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
+   "texto": "Defenderemos salarios dignos, garantías en el cobro de las horas extras, empleo de calidad, negociación colectiva y mejores condiciones laborales. Combatiremos la precariedad y los abusos, impulsando la igualdad de oportunidades, la conciliación y la corresponsabilidad en los cuidados. Rechazamos que se elimine el papel del Estado en la actualización del salario mínimo interprofesional.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Canarias feminista e igualitaria",
+   "tituloFrase": "Canarias feminista e igualitaria",
+   "texto": "Defendemos una Canarias feminista e igualitaria, comprometida con la erradicación de las violencias machistas, la igualdad salarial y la garantía de los derechos sexuales y reproductivos. Apostamos por un sistema público de cuidados que avance en la corresponsabilidad y combata la desigualdad estructural. Reivindicamos los derechos de las personas LGTBIQA+, especialmente de las personas trans, y el rechazo a cualquier forma de discriminación, odio o exclusión.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 12,
+   "seccion": "12",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Canarias, frontera Sur",
+   "tituloFrase": "Canarias, frontera Sur",
+   "texto": "Defendemos una política migratoria basada en los derechos humanos, las vías legales y seguras, la acogida digna y la corresponsabilidad entre territorios. Exigimos una protección específica de la infancia y adolescencia migrante no acompañada, garantizando sus derechos y una\n\ndistribución solidaria de las responsabilidades de acogida. Rechazamos la externalización de fronteras, el racismo y la xenofobia, y apostamos por una Canarias diversa, solidaria y comprometida con la dignidad humana.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "infancia",
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 13,
+   "seccion": "13",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Cultura, identidad y patrimonio canario",
+   "tituloFrase": "Cultura, identidad y patrimonio canario",
+   "texto": "Defendemos la identidad nacional canaria, nuestra historia, el habla, las tradiciones y el patrimonio histórico, natural y cultural. Apostamos por proteger el patrimonio material e inmaterial, apoyar la creación artística y las industrias culturales canarias y fomentar el intercambio con otros pueblos.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 14,
+   "seccion": "14",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
+   "tituloFrase": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
+   "texto": "Proponemos profundizar en una democracia más participativa, transparente y cercana, que garantice la implicación ciudadana en las decisiones políticas. Reclamamos mecanismos de participación directa, rendición de cuentas, limitación de privilegios y medidas firmes contra la corrupción y el transfuguismo político, que deterioran la confianza en las instituciones.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 15,
+   "seccion": "15",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
+   "tituloFrase": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
+   "texto": "Defendemos Canarias como territorio de paz, de cooperación y solidaridad internacional. Apostamos por relaciones justas con África, América Latina y Europa, basadas en los derechos humanos, el antirracismo y la justicia global. Expresamos nuestra solidaridad con los pueblos palestino y saharaui en su lucha por la autodeterminación y la independencia, y defendemos una Canarias acogedora, contraria a la xenofobia y comprometida con la dignidad de todas las personas.\n\nIgualmente impulsaremos una consignación, mínimo, del 0,7% de los Presupuestos Generales del Estado destinado a proyectos de cooperación y solidaridad internacional.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias",
+    "Unión Europea",
+    "África",
+    "América Latina",
+    "Palestina",
+    "Sáhara Occidental"
+   ],
+   "cifras": [
+    "Igualmente impulsaremos una consignación, mínimo, del 0,7% de los Presupuestos Generales del Estado destinado a proyectos de cooperación y solidaridad internacional."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 16,
+   "seccion": "16",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Juventud, emancipación y justicia intergeneracional",
+   "tituloFrase": "Juventud, emancipación y justicia intergeneracional",
+   "texto": "Defendemos el derecho de la juventud canaria a construir su futuro en las islas, con vivienda asequible, empleo digno, educación pública y acceso a la salud mental. Apostamos por ampliar la participación democrática, incluido el voto a los 16 años, y por incorporar la justicia intergeneracional a las políticas públicas, garantizando que las decisiones de hoy no comprometan los derechos y oportunidades de las generaciones futuras.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }
