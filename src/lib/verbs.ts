@@ -73,7 +73,8 @@ function computeVerbs(program: Program): ProgramVerbs {
 /** The verbs of a program: the list of its extractor, or the computed one. */
 export function programVerbs(program: Program): ProgramVerbs {
   if (program.verbs.length) {
-    const future = program.verbs.filter(({ verb }) => /remos$/.test(verb)).length;
+    // Future tense, first person plural: Spanish «-remos» and Catalan «-rem» (ERC, Convergents).
+    const future = program.verbs.filter(({ verb }) => /(?:remos|[aei]rem)$/.test(verb)).length;
     return { verbs: program.verbs, form: future > program.verbs.length / 2 ? 'futuro' : 'infinitivo' };
   }
   return computeVerbs(program);

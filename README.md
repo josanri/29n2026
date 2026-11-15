@@ -113,9 +113,9 @@ scripts/                      solo código: extracción y análisis de los PDF
 | Ruta | Contenido |
 |---|---|
 | `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas |
-| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
-| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
-| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/` | Lectura completa por bloque |
+| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/`, `/convergents/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
+| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/convergents/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
+| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
@@ -173,6 +173,9 @@ src/data/2026/generales/programas/fe-jons.json      resultado que consume la web
 public/2026/generales/programas/pcte-programa-de-lucha-2026.pdf «Programa de lucha» del PCTE (24 páginas, sin fecha), versión impresa de su [web](https://oposicionobrera.pcte.es/es/); sin optimizar: pesa 0,3 MB
 scripts/extract_pcte.py              extracción de 95 medidas en 11 bloques: cada ficha de «Ejes de lucha» es una medida; comprueba los bloques contra el índice del PDF
 src/data/2026/generales/programas/pcte.json         resultado que consume la web
+public/2026/generales/programas/convergents-programa-electoral-2026.pdf PDF oficial de Convergents (48 páginas, en catalán, 27 de noviembre de 2025 según sus metadatos), sin optimizar: pesa 1,2 MB
+scripts/extract_convergents.py       extracción de 300 propuestas en 10 compromisos y 48 objetivos: cada «✓» del PDF es una propuesta; comprueba los compromisos contra el índice del PDF
+src/data/2026/generales/programas/convergents.json  resultado que consume la web; las propuestas no tienen número ni título en el PDF
 src/data/2026/generales/programas/eaj-pnv.json      30 propuestas transcritas de la [página oficial del PNV](https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/)
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026.pdf BOE, candidaturas proclamadas el 3 de noviembre
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf BOE, corrección oficial del 7 de noviembre
@@ -197,6 +200,7 @@ Para regenerar los datos de Feministas al Congreso: `npm run data:pfac` (necesit
 Para regenerar los datos de En Acción 3e: `npm run data:tercera-edad` (necesita Python con PyMuPDF).
 Para regenerar los datos de VOX: `npm run data:vox` (necesita Python con PyMuPDF).
 Para regenerar los datos de PACMA: `npm run data:pacma` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada propuesta).
+Para regenerar los datos de Convergents: `npm run data:convergents` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada bloque y cada propuesta).
 Para regenerar los datos del PCTE: `npm run data:pcte` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada bloque y cada medida).
 Para regenerar los datos de FE de las JONS: `npm run data:fe-jons` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 Para regenerar los datos de Adelante Andalucía: `npm run data:adelante` (consulta las páginas oficiales por área; procesa 637 propuestas temáticas y 82 territoriales, numeradas del 1 al 719. Las 29 prioridades del resumen no se cuentan de nuevo).
