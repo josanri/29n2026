@@ -596,8 +596,6 @@ def crear_programa(pdf):
         'subtitulo': f'{len(medidas)} compromisos en {len(bloques)} capítulos',
         'elecciones': 'Elecciones generales · 29 de noviembre de 2026',
         'observaciones': [
-            'La web del partido protege sus archivos frente a las descargas automáticas: el PDF se obtuvo de una '
-            'copia facilitada a la redacción, idéntica a la publicada en psoe.es.',
             'En la página 71, un punto sin número («Acercar la Administración General del Estado a la '
             'ciudadanía…») sigue a la medida 279: va con ella, como un punto más.',
         ],
