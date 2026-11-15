@@ -259,6 +259,44 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [11, 19, 23, 54, 57, 71, 72, 73, 77, 111],
     },
   ],
+  psoe: [
+    {
+      title: 'El bienestar ocupa más de una quinta parte',
+      text:
+        'El capítulo del Estado de bienestar reúne 109 de los 500 compromisos: la senda fiscal y los impuestos que lo financian, la sanidad, la educación, la universidad, la dependencia, la infancia, la discapacidad y la financiación autonómica. Fija la financiación pública de la sanidad en torno al 7 % del PIB, una primera consulta de psicología en 30 días como máximo, una cuenta pública de 1.000 euros para cada niño al nacer y la asunción por el Estado de 83.000 millones de euros de deuda autonómica.',
+      measureNumbers: [136, 143, 193, 231],
+    },
+    {
+      title: 'Vivienda: 100.000 pisos públicos y el 1 % del PIB al año',
+      text:
+        'Los 50 compromisos de vivienda prometen movilizar cada año el 1 % del PIB, un parque público estatal de 100.000 viviendas y más de 25.000 millones de euros del ICO en avales y préstamos. Gravan con un impuesto progresivo las viviendas de grandes propietarios y fondos que no se alquilen a precio asequible, y refuerzan las inspecciones de los precios del alquiler en las zonas tensionadas.',
+      measureNumbers: [38, 42, 55, 70, 77],
+    },
+    {
+      title: 'Más impuestos a las rentas del capital y a los más ricos',
+      text:
+        'El programa sube el tipo máximo de las rentas del capital hasta el 35 % a partir de 300.000 euros, dobla la tasa Tobin del 0,2 % al 0,4 %, amplía los impuestos a las grandes tecnológicas y crea una tasa a los jets privados y los megayates. Una Ley de Salarios Justos sube la tributación de las empresas cotizadas cuyo directivo gane más de 100 veces la mediana de su plantilla.',
+      measureNumbers: [130, 131, 132, 133, 135],
+    },
+    {
+      title: 'Jornada de 37,5 horas y SMI por ley',
+      text:
+        'El PSOE completaría la reducción de la jornada a 37,5 horas semanales, con las 35 horas como horizonte de la negociación colectiva, y blindaría por ley el salario mínimo por encima del 60 % del salario medio. También eleva la pensión de orfandad del 20 al 30 % y pretende blindar en la Constitución el sistema público de pensiones.',
+      measureNumbers: [87, 106, 108, 365],
+    },
+    {
+      title: 'Nuevos derechos en la Constitución',
+      text:
+        'El programa propone reformar la Constitución para blindar el derecho al aborto y el sistema público de pensiones, hacer de la vivienda y la salud derechos fundamentales y reconocer el derecho a la seguridad climática y al acceso al agua potable. Además, suprime los aforamientos de los cargos públicos para los delitos ajenos a su cargo.',
+      measureNumbers: [37, 327, 365, 366, 367, 373],
+    },
+    {
+      title: 'Sustituir, no derogar',
+      text:
+        'Ninguno de los 500 compromisos usa la palabra «derogar». La Ley de Seguridad Ciudadana de 2015, la llamada «ley mordaza», no se deroga: el programa propone una ley nueva que la sustituya. En energía mantiene el calendario de cierre de las nucleares hasta 2035 y fija un 81 % de electricidad renovable para 2030.',
+      measureNumbers: [431, 240, 234],
+    },
+  ],
   pcte: [
     {
       title: 'Un programa de lucha, no de gobierno',

@@ -37,6 +37,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'fe-jons', side: 'b', measures: [2, 5, 13, 34], note: 'Fronteras cerradas y militarizadas, un Plan Nacional de Remigración con expulsiones y una tasa máxima de inmigración del 1,5 %.' },
   { topic: 'inmigracion', party: 'pcte', side: 'a', measures: [85], note: 'Cierre de los CIE y un mecanismo permanente de regularización para todas las personas trabajadoras sin papeles.' },
   { topic: 'inmigracion', party: 'convergents', side: 'matiz', measures: [188, 191, 194, 293], note: 'Vincular la residencia y la nacionalidad a la integración lingüística y a los valores occidentales y expulsar a quien delinque, pero también acoger a refugiados y contratar en origen.' },
+  { topic: 'inmigracion', party: 'psoe', side: 'matiz', measures: [388, 389], note: 'Un Plan de Integración y Ciudadanía de 500 millones y más vías legales de protección internacional, sin hablar de regularizar.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -45,6 +46,7 @@ export const stances: Stance[] = [
   { topic: 'aborto', party: 'vox', side: 'b', measures: [98], note: 'Defensa del derecho a la vida «desde su concepción hasta la muerte natural» y objeción de conciencia de los sanitarios.' },
   { topic: 'aborto', party: 'fe-jons', side: 'b', measures: [90], note: '«La vida humana no es negociable»: ilegalizar las leyes del aborto.' },
   { topic: 'aborto', party: 'pcte', side: 'a', measures: [65], note: 'Derechos sexuales y reproductivos en la sanidad pública: todas las interrupciones del embarazo, en hospitales públicos.' },
+  { topic: 'aborto', party: 'psoe', side: 'a', measures: [327], note: 'Blindar en la Constitución el derecho a la interrupción voluntaria del embarazo.' },
 
   // Monarquía o república
   { topic: 'monarquia', party: 'pfac', side: 'b', measures: [12], note: 'Avanzar hacia un Estado republicano, federal y laico.' },
@@ -79,6 +81,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'fe-jons', side: 'a', measures: [43], note: 'Tope del alquiler: nunca más del 25 % del salario de la unidad familiar.' },
   { topic: 'vivienda', party: 'pcte', side: 'a', measures: [21], note: 'Bajada inmediata de los alquileres del 50 % y después precios máximos ligados a los salarios de la zona.' },
   { topic: 'vivienda', party: 'convergents', side: 'b', measures: [57, 60], note: 'Derogar la Ley de Vivienda, «un freno a la oferta de alquiler por culpa de los controles de precios», e incentivos fiscales a los promotores privados.' },
+  { topic: 'vivienda', party: 'psoe', side: 'a', measures: [62, 77, 78], note: 'Congelar las rentas que superen los índices de referencia y hacer cumplir la normativa de precios del alquiler en las zonas tensionadas.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -105,6 +108,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'fe-jons', side: 'b', measures: [87], note: 'Derogar las leyes de «género», incluida la Ley de Violencia de Género.' },
   { topic: 'igualdad', party: 'pcte', side: 'a', measures: [64], note: 'Vivienda, ingresos, empleo y atención suficientes para que las mujeres que sufren violencia rompan la dependencia económica.' },
   { topic: 'igualdad', party: 'convergents', side: 'a', measures: [175, 183], note: 'Los recursos necesarios para erradicar las violencias machistas y una ley estatal de igualdad retributiva.' },
+  { topic: 'igualdad', party: 'psoe', side: 'a', measures: [333, 335], note: 'Una nueva Estrategia Estatal contra las Violencias Machistas y una Ley Orgánica contra la Violencia Vicaria.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -115,6 +119,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'vox', side: 'b', measures: [46], note: 'Superar las «divisivas leyes ideológicas», como la de Memoria Democrática.' },
   { topic: 'memoria', party: 'fe-jons', side: 'b', measures: [231], note: 'Derogación inmediata de las «mal llamadas Leyes de “Memoria”».' },
   { topic: 'memoria', party: 'pcte', side: 'a', measures: [86], note: 'Ilegalizar las organizaciones fascistas y franquistas y disolver las fundaciones que enaltecen la dictadura.' },
+  { topic: 'memoria', party: 'psoe', side: 'a', measures: [422, 423], note: 'Ampliar los Lugares de Memoria Democrática, retirar la simbología franquista y llevar la memoria a la educación.' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
@@ -126,6 +131,7 @@ export const stances: Stance[] = [
   { topic: 'nuclear', party: 'pacma', side: 'a', measures: [43], note: 'El modelo basado en los combustibles fósiles y la energía nuclear «es insostenible»: apuesta por las renovables.' },
   { topic: 'nuclear', party: 'fe-jons', side: 'b', measures: [122, 124], note: 'La energía nuclear como fuente principal: anular el plan de cierre y proyectar centrales nuevas.' },
   { topic: 'nuclear', party: 'convergents', side: 'b', measures: [252], note: 'Un mix energético que mantenga el parque nuclear actual mientras se desarrolla un sistema renovable.' },
+  { topic: 'nuclear', party: 'psoe', side: 'a', measures: [240], note: 'Mantener el calendario de cierre de las centrales nucleares hasta 2035.' },
 
   // Impuestos y redistribución
   { topic: 'impuestos', party: 'adelante', side: 'a', measures: [232, 233], note: 'IRPF más progresivo y un impuesto sobre la riqueza.' },
@@ -137,6 +143,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'vox', side: 'b', measures: [2], note: 'Rebaja masiva de impuestos: IRPF, IVA y sociedades.' },
   { topic: 'impuestos', party: 'fe-jons', side: 'matiz', measures: [101, 103, 108], note: 'Más tramos para que los impuestos sean progresivos y tasas a las multinacionales, pero bajada progresiva del IRPF.' },
   { topic: 'impuestos', party: 'convergents', side: 'b', measures: [77, 78], note: 'Eliminar los impuestos de Sucesiones, Donaciones y Patrimonio y bajar Transmisiones Patrimoniales y el tramo autonómico del IRPF.' },
+  { topic: 'impuestos', party: 'psoe', side: 'a', measures: [130, 131, 132, 135], note: 'Subir la tributación de las rentas del capital más altas, de las grandes tecnológicas, de los jets privados y de las transacciones financieras.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },
@@ -146,6 +153,7 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'salf', side: 'b', measures: [97], note: 'Castellano garantizado, sin tener que ir a juicio.' },
   { topic: 'lenguas', party: 'fe-jons', side: 'b', measures: [203, 232], note: 'Las asignaturas básicas, en español; las lenguas regionales, solo en sus propias horas de clase.' },
   { topic: 'lenguas', party: 'convergents', side: 'a', measures: [4, 5, 144, 145], note: 'El conocimiento del catalán obligatorio por el Estatuto, el catalán oficial en la UE y preservar la inmersión lingüística.' },
+  { topic: 'lenguas', party: 'psoe', side: 'a', measures: [385, 485], note: 'Usar las lenguas cooficiales en las Cortes y en la Administración General del Estado, y su oficialidad en la UE.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
@@ -157,6 +165,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'fe-jons', side: 'b', measures: [162, 176], note: 'Más penas y cadena perpetua no revisable para los delitos «de Lesa Patria», el asesinato, la violación y el terrorismo.' },
   { topic: 'seguridad', party: 'pcte', side: 'a', measures: [81, 84], note: 'Derogar la Ley Mordaza y acabar con la impunidad policial: sin pelotas de goma ni tanquetas en las protestas.' },
   { topic: 'seguridad', party: 'convergents', side: 'b', measures: [29, 36, 64], note: 'Que los abusos sexuales a menores no prescriban, penas más duras en los delitos contra personas mayores y reformar el Código Penal contra la ocupación.' },
+  { topic: 'seguridad', party: 'psoe', side: 'a', measures: [431], note: 'Una nueva Ley de Seguridad Ciudadana que sustituya a la Ley Orgánica 4/2015 y garantice los derechos de reunión y manifestación.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },
@@ -200,6 +209,7 @@ export const stances: Stance[] = [
   { topic: 'eutanasia', party: 'vox', side: 'b', measures: [98], note: 'El derecho a la vida «hasta la muerte natural» y más cuidados paliativos.' },
   { topic: 'eutanasia', party: 'pp', side: 'matiz', measures: [226], note: 'Garantizar los cuidados paliativos «respetando siempre la voluntad del paciente», sin hablar de la eutanasia.' },
   { topic: 'eutanasia', party: 'fe-jons', side: 'b', measures: [90], note: 'Ilegalizar las leyes de la eutanasia: «La vida humana no es negociable».' },
+  { topic: 'eutanasia', party: 'psoe', side: 'a', measures: [147, 368], note: 'Garantizar la muerte digna y el ejercicio efectivo del derecho a la eutanasia.' },
 
   // Servicio militar
   { topic: 'servicio-militar', party: 'adelante', side: 'a', measures: [589], note: 'Ningún servicio militar, ni obligatorio ni voluntario.' },
