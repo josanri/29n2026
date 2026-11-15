@@ -51,8 +51,8 @@
   },
   {
    "valor": "30 %",
-   "unidad": "pensión de orfandad",
-   "texto": "Del 20 % actual al 30 %",
+   "unidad": "en la pensión de orfandad",
+   "texto": "Sube desde el 20 % actual",
    "contexto": "Elevar del 20% al 30 % la pensión de orfandad",
    "medida": 106
   },
@@ -80,7 +80,7 @@
   {
    "valor": "7 %",
    "unidad": "del PIB",
-   "texto": "Financiación pública de la sanidad",
+   "texto": "Financiación pública de la sanidad, consolidada en torno a esa cifra",
    "contexto": "consolidando una financiación pública de la sanidad en torno al 7% del PIB",
    "medida": 136
   },
@@ -123,52 +123,47 @@
  "plazos": [
   {
    "plazo": "Para 2035",
-   "texto": "Impulsar la innovación para transformar la economía",
+   "texto": "Inversión pública en I+D del 1,5 % del PIB",
    "medida": 8
   },
   {
    "plazo": "En cuatro años",
-   "texto": "Renovar la red viaria. Impulsaremos la conservación, modernización y mejora de l",
+   "texto": "Reparar los firmes de 5.000 km de la red estatal de carreteras",
    "medida": 32
   },
   {
    "plazo": "En la próxima legislatura",
-   "texto": "Seguir desplegando las medidas de refuerzo del sistema público de pensiones y de",
+   "texto": "Completar el despliegue de la cuota de solidaridad de las pensiones",
    "medida": 98
   },
   {
    "plazo": "En la primavera de 2027",
-   "texto": "Presentar a la Comisión Europea, en la primavera de 2027, un nuevo Plan Fiscal y",
+   "texto": "Presentar a la Comisión Europea un nuevo Plan Fiscal y Estructural",
    "medida": 125
   },
   {
-   "plazo": "Hasta 2030",
-   "texto": "Proteger la inversión que sostiene el crecimiento",
-   "medida": 128
-  },
-  {
    "plazo": "Antes de 2030",
-   "texto": "Reducir la tasa de abandono escolar temprano por debajo del 10% antes de 2030",
+   "texto": "Abandono escolar temprano por debajo del 10 %",
    "medida": 160
   },
   {
    "plazo": "En 2030",
-   "texto": "Impulsar el despliegue de energías renovables",
+   "texto": "El 81 % de la electricidad, renovable",
    "medida": 234
   },
   {
    "plazo": "Hasta 2035",
-   "texto": "Mantener el calendario de cierre de las centrales nucleares hasta 2035 y desarro",
+   "texto": "Mantener el calendario de cierre de las centrales nucleares",
    "medida": 240
   },
   {
    "plazo": "En 2030",
-   "texto": "Reducir el vertido de residuos por debajo del 30 % en 2030",
+   "texto": "Vertido de residuos por debajo del 30 %",
    "medida": 246
   },
   {
    "plazo": "En el primer año de legislatura",
-   "texto": "Establecer a 16 años la edad mínima para usar redes sociales",
+   "texto": "Ley de protección de los menores en los entornos digitales",
    "medida": 399
   }
  ],
@@ -179,7 +174,6 @@
   "En la próxima legislatura",
   "Antes de 2030",
   "En 2030",
-  "Hasta 2030",
   "Hasta 2035",
   "Para 2035"
  ],
@@ -372,7 +366,7 @@
     },
     {
      "titulo": "Según los usos de la vivienda",
-     "intro": ""
+     "intro": "Incentivar el uso residencial de la vivienda frente a otros usos:"
     },
     {
      "titulo": "Revertir las zonas declaradas tensionadas",
@@ -1342,7 +1336,9 @@
     "gasto"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Blindaremos durante los próximos 5 años la conservación y el mantenimiento de la red: unos 19.000 millones de euros en 2026-2030."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -1725,7 +1721,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Constituir un parque público estatal de 100.000 viviendas",
-   "texto": "Constituir un parque público estatal de 100.000 viviendas mediante la construcción y adquisición para incrementar la oferta de vivienda para la venta o alquiler estable a precio asequible , que se sumarán a las promovidas por las comunidades autónomas y las entidades locales en el ejercicio de sus competencias.\n\n– Reinvertir los ingresos del parque estatal en nuevas actuaciones de vivienda asequible.\n\n– Garantizar las máximas exigencias de transparencia, calidad de construcción, sostenibilidad ambiental y normativa de salud laboral en la gestión .",
+   "texto": "Constituir un parque público estatal de 100.000 viviendas mediante la construcción y adquisición para incrementar la oferta de vivienda para la venta o alquiler estable a precio asequible, que se sumarán a las promovidas por las comunidades autónomas y las entidades locales en el ejercicio de sus competencias.\n\n– Reinvertir los ingresos del parque estatal en nuevas actuaciones de vivienda asequible.\n\n– Garantizar las máximas exigencias de transparencia, calidad de construcción, sostenibilidad ambiental y normativa de salud laboral en la gestión.",
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [
@@ -1736,7 +1732,7 @@
    ],
    "territorios": [],
    "cifras": [
-    "Constituir un parque público estatal de 100.000 viviendas mediante la construcción y adquisición para incrementar la oferta de vivienda para la venta o alquiler estable a precio asequible , que se sumarán a las promovidas por las comunidades autónomas y las entidades locales en el ejercicio de sus competencias."
+    "Constituir un parque público estatal de 100.000 viviendas mediante la construcción y adquisición para incrementar la oferta de vivienda para la venta o alquiler estable a precio asequible, que se sumarán a las promovidas por las comunidades autónomas y las entidades locales en el ejercicio de sus competencias."
    ],
    "plazo": null,
    "deroga": null
@@ -2296,7 +2292,7 @@
    "subapartado": 0,
    "titulo": "",
    "tituloFrase": "Mantener y garantizar la limitación de la compra de viviendas por fondos especulativos",
-   "texto": "Mantener y garantizar la limitación de la compra de viviendas por fondos especulativos .",
+   "texto": "Mantener y garantizar la limitación de la compra de viviendas por fondos especulativos.",
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
@@ -2316,7 +2312,7 @@
    "subapartado": 1,
    "titulo": "",
    "tituloFrase": "Priorizar el uso residencial y asequible de las viviendas existentes",
-   "texto": "Priorizar el uso residencial y asequible de las viviendas existentes a través de un impuesto progresivo a las viviendas de grandes tenedores que no se destinen al alquiler asequible o a usos residenciales.\n\n– Incentivar el uso residencial de la vivienda frente a otros usos:",
+   "texto": "Priorizar el uso residencial y asequible de las viviendas existentes a través de un impuesto progresivo a las viviendas de grandes tenedores que no se destinen al alquiler asequible o a usos residenciales.",
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
@@ -2374,8 +2370,8 @@
    "pagina": 32,
    "subapartado": 1,
    "titulo": "",
-   "tituloFrase": "Poner en marcha un plan de recuperación de viviendas no residenciales , favoreciendo su incorporación al mercado residencial",
-   "texto": "Poner en marcha un plan de recuperación de viviendas no residenciales , favoreciendo su incorporación al mercado residencial.",
+   "tituloFrase": "Poner en marcha un plan de recuperación de viviendas no residenciales, favoreciendo su incorporación al mercado residencial",
+   "texto": "Poner en marcha un plan de recuperación de viviendas no residenciales, favoreciendo su incorporación al mercado residencial.",
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
@@ -2835,7 +2831,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Seguir desplegando las medidas de refuerzo del sistema público de pensiones y de garantía de poder adquisitivo de las…",
-   "texto": "Seguir desplegando las medidas de refuerzo del sistema público de pensiones y de garantía de poder adquisitivo de las pensiones actuales y futuras, y culminando el proceso de convergencia de las cuantías de las pensiones mínimas con estándares de ingresos del conjunto de la sociedad.\n\n– Consolidar el refuerzo de ingresos de la Seguridad Social , adaptando sus fuentes de financiación a los cambios demográficos, tecnológicos y productivos mediante las siguientes medidas:\n\n– Acordar en el Pacto de Toledo y en el diálogo social nuevas fuentes de financiación que permitan que los aumentos de productividad derivados de la automatización refuercen también la financiación de la Seguridad Social.\n\n– Acelerar el despliegue de la cuota de solidaridad para completar su aplicación durante la próxima legislatura y fortalecer el carácter redistributivo del sistema.",
+   "texto": "Seguir desplegando las medidas de refuerzo del sistema público de pensiones y de garantía de poder adquisitivo de las pensiones actuales y futuras, y culminando el proceso de convergencia de las cuantías de las pensiones mínimas con estándares de ingresos del conjunto de la sociedad.\n\n– Consolidar el refuerzo de ingresos de la Seguridad Social, adaptando sus fuentes de financiación a los cambios demográficos, tecnológicos y productivos mediante las siguientes medidas:\n\n– Acordar en el Pacto de Toledo y en el diálogo social nuevas fuentes de financiación que permitan que los aumentos de productividad derivados de la automatización refuercen también la financiación de la Seguridad Social.\n\n– Acelerar el despliegue de la cuota de solidaridad para completar su aplicación durante la próxima legislatura y fortalecer el carácter redistributivo del sistema.",
    "oculta": false,
    "categoria": "social",
    "colectivos": [],
@@ -3266,9 +3262,7 @@
    ],
    "palancas": [],
    "territorios": [],
-   "cifras": [
-    "Este Plan contaría con un itinerario específico de Mujer 45+, que acompañe a las mujeres en su entrada al mundo laboral y buscando reducir el 20% de desempleo femenino de larga duración."
-   ],
+   "cifras": [],
    "plazo": null,
    "deroga": null
   },
@@ -3365,9 +3359,7 @@
    ],
    "palancas": [],
    "territorios": [],
-   "cifras": [
-    "Garantizar el cumplimiento efectivo de la cuota de reserva del 2% de empleo para personas con discapacidad en las empresas y sector público, reforzando los mecanismos de inspección y control para promover un empleo inclusivo, estable y de calidad."
-   ],
+   "cifras": [],
    "plazo": null,
    "deroga": null
   },
@@ -3455,7 +3447,7 @@
    "cifras": [
     "Tras los fondos europeos, mantendremos el esfuerzo de inversión pública con prioridad en la conservación y la seguridad de las infraestructuras, empezando por los 19.000 millones de euros comprometidos con el ferrocarril hasta 2030."
    ],
-   "plazo": "Hasta 2030",
+   "plazo": null,
    "deroga": null
   },
   {
@@ -3919,7 +3911,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Garantizar actualización continua del programa de cribado neonatal",
-   "texto": "Garantizar actualización continua del programa de cribado neonatal del SNS, reforzando la equidad territorial .",
+   "texto": "Garantizar actualización continua del programa de cribado neonatal del SNS, reforzando la equidad territorial.",
    "oculta": false,
    "categoria": "sanidad",
    "colectivos": [],
@@ -4544,8 +4536,8 @@
    "pagina": 55,
    "subapartado": null,
    "titulo": "",
-   "tituloFrase": "Transformar la Universidad Internacional Menéndez Pelayo (UIMP) en una universidad pública singula",
-   "texto": "Transformar la Universidad Internacional Menéndez Pelayo (UIMP) en una universidad pública singula r integrada en el sistema universitario español, preservando su singular proyección internacional.",
+   "tituloFrase": "Transformar la Universidad Internacional Menéndez Pelayo (UIMP) en una universidad pública",
+   "texto": "Transformar la Universidad Internacional Menéndez Pelayo (UIMP) en una universidad pública singular integrada en el sistema universitario español, preservando su singular proyección internacional.",
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
@@ -4581,7 +4573,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Impulsar la renovación y estabilización de las plantillas universitarias",
-   "texto": "Impulsar la renovación y estabilización de las plantillas universitarias mediante el Programa María Goyri, garantizando la incorporación de nuevo profesorado , el relevo generacional, la reducción de la precariedad y la atracción de talento para reforzar la docencia y la investigación en las universidades públicas.",
+   "texto": "Impulsar la renovación y estabilización de las plantillas universitarias mediante el Programa María Goyri, garantizando la incorporación de nuevo profesorado, el relevo generacional, la reducción de la precariedad y la atracción de talento para reforzar la docencia y la investigación en las universidades públicas.",
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
@@ -5150,7 +5142,7 @@
    "subapartado": 1,
    "titulo": "",
    "tituloFrase": "Avanzar en la prevención y erradicación del sinhogarismo",
-   "texto": "Avanzar en la prevención y erradicación del sinhogarismo, reforzando los recursos de emergencia en colaboración con las administraciones competentes e impulsando soluciones estables de alojamiento y acompañamiento social bajo el modelo Housing First .",
+   "texto": "Avanzar en la prevención y erradicación del sinhogarismo, reforzando los recursos de emergencia en colaboración con las administraciones competentes e impulsando soluciones estables de alojamiento y acompañamiento social bajo el modelo Housing First.",
    "oculta": false,
    "categoria": "social",
    "colectivos": [],
@@ -5166,8 +5158,8 @@
    "seccion": "4.8",
    "pagina": 58,
    "subapartado": 2,
-   "titulo": "Desplegar el Plan “A Tu Lado ” para envejecer en casa, con autonomía y compañía.",
-   "tituloFrase": "Desplegar el Plan “A Tu Lado ” para envejecer en casa, con autonomía y compañía",
+   "titulo": "Desplegar el Plan “A Tu Lado” para envejecer en casa, con autonomía y compañía.",
+   "tituloFrase": "Desplegar el Plan “A Tu Lado” para envejecer en casa, con autonomía y compañía",
    "texto": "Ayudas para instalar ascensores y eliminar barreras, para que ninguna persona mayor o con movilidad reducida se quede atrapada en su casa. A partir de los 80 años, una visita periódica a domicilio de enfermería o trabajo social para detectar a tiempo la fragilidad y la soledad.",
    "oculta": false,
    "categoria": "social",
@@ -5328,8 +5320,8 @@
    "pagina": 59,
    "subapartado": null,
    "titulo": "",
-   "tituloFrase": "Pondremos en marcha el Programa Estatal de Promoción de la Accesibilidad Universa",
-   "texto": "Pondremos en marcha el Programa Estatal de Promoción de la Accesibilidad Universa l.",
+   "tituloFrase": "Pondremos en marcha el Programa Estatal de Promoción de la Accesibilidad",
+   "texto": "Pondremos en marcha el Programa Estatal de Promoción de la Accesibilidad Universal.",
    "oculta": false,
    "categoria": "social",
    "colectivos": [],
@@ -5533,7 +5525,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Garantizaremos una financiación local suficiente y justa, adaptada a las distintas realidades territoriales",
-   "texto": "Garantizaremos una financiación local suficiente y justa, adaptada a las distintas realidades territoriales (municipios, diputaciones provinciales, cabildos y consejos insulares, comarcas, mancomunidades, áreas metropolitanas y entidades locales menores) y con especial apoyo a los municipios con mayores dificultades financieras .",
+   "texto": "Garantizaremos una financiación local suficiente y justa, adaptada a las distintas realidades territoriales (municipios, diputaciones provinciales, cabildos y consejos insulares, comarcas, mancomunidades, áreas metropolitanas y entidades locales menores) y con especial apoyo a los municipios con mayores dificultades financieras.",
    "oculta": false,
    "categoria": "territorio",
    "colectivos": [
@@ -6223,7 +6215,7 @@
    "subapartado": 0,
    "titulo": "Aprobar un paquete de medidas para garantizar la viabilidad económica, el reconocimiento social y el papel estratégico del sector agrario.",
    "tituloFrase": "Aprobar un paquete de medidas para garantizar la viabilidad económica, el reconocimiento social y el papel estratégico…",
-   "texto": "El paquete comenzará por la aprobación de una Ley de Agricultura Familiar y Profesional y permitirá impulsar cinco objetivos:\n\na. modernizar el sector mediante la renovación de maquinaria y el impulso de la agricultura de precisión;\n\nb. reducir vulnerabilidades reforzando los seguros agrarios;\n\nc. incentivar la integración cooperativa ;\n\nd. promover el relevo generacional , impulsando el apoyo a jóvenes, mujeres e innovación agroalimentaria\n\ne. y evitar la concentración de los terrenos fértiles en manos de fondos de inversión.",
+   "texto": "El paquete comenzará por la aprobación de una Ley de Agricultura Familiar y Profesional y permitirá impulsar cinco objetivos:\n\na. modernizar el sector mediante la renovación de maquinaria y el impulso de la agricultura de precisión;\n\nb. reducir vulnerabilidades reforzando los seguros agrarios;\n\nc. incentivar la integración cooperativa;\n\nd. promover el relevo generacional, impulsando el apoyo a jóvenes, mujeres e innovación agroalimentaria\n\ne. y evitar la concentración de los terrenos fértiles en manos de fondos de inversión.",
    "oculta": false,
    "categoria": "rural",
    "colectivos": [
@@ -6306,8 +6298,8 @@
    "pagina": 70,
    "subapartado": 0,
    "titulo": "",
-   "tituloFrase": "Impulsar un Plan de Transición Justa para una pesca y una acuicultura sostenibles , resilientes y competitivas",
-   "texto": "Impulsar un Plan de Transición Justa para una pesca y una acuicultura sostenibles , resilientes y competitivas.",
+   "tituloFrase": "Impulsar un Plan de Transición Justa para una pesca y una acuicultura sostenibles, resilientes y competitivas",
+   "texto": "Impulsar un Plan de Transición Justa para una pesca y una acuicultura sostenibles, resilientes y competitivas.",
    "oculta": false,
    "categoria": "rural",
    "colectivos": [
@@ -6444,7 +6436,7 @@
    "subapartado": 1,
    "titulo": "",
    "tituloFrase": "Reforzar la innovación, el emprendimiento y las oportunidades para la juventud rural",
-   "texto": "Reforzar la innovación, el emprendimiento y las oportunidades para la juventud rural, consolidando los Centros de Innovación Territorial y ampliando programas como Campus Rural.\n\n– Acercar la Administración General del Estado a la ciudadanía , descentralizando servicios y facilitando trámites y sedes administrativas fuera de las grandes ciudades.",
+   "texto": "Reforzar la innovación, el emprendimiento y las oportunidades para la juventud rural, consolidando los Centros de Innovación Territorial y ampliando programas como Campus Rural.\n\n– Acercar la Administración General del Estado a la ciudadanía, descentralizando servicios y facilitando trámites y sedes administrativas fuera de las grandes ciudades.",
    "oculta": false,
    "categoria": "rural",
    "colectivos": [
@@ -6817,7 +6809,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Incorporar evacuación y rescate animal en protección civil ante emergencias",
-   "texto": "Incorporar evacuación y rescate animal en protección civil ante emergencias .",
+   "texto": "Incorporar evacuación y rescate animal en protección civil ante emergencias.",
    "oculta": false,
    "categoria": "emergencias",
    "colectivos": [],
@@ -7580,7 +7572,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Crear unidades especializadas de atención y acompañamiento a familiares y víctimas ante los feminicidios",
-   "texto": "Crear unidades especializadas de atención y acompañamiento a familiares y víctimas ante los feminicidios .",
+   "texto": "Crear unidades especializadas de atención y acompañamiento a familiares y víctimas ante los feminicidios.",
    "oculta": false,
    "categoria": "seguridad",
    "colectivos": [
@@ -7630,7 +7622,9 @@
     "gasto"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Ampliar la protección a los huérfanos y huérfanas de la violencia de género, extendiendo las ayudas hasta los 26 años y reforzando los sistemas de seguimiento y evaluación."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -8227,7 +8221,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Blindar los principales avances en derechos y libertades civiles",
-   "texto": "Blindar los principales avances en derechos y libertades civiles, garantizando la máxima protección jurídica del matrimonio igualitario, el derecho a la interrupción voluntaria del embarazo y la eutanasia .",
+   "texto": "Blindar los principales avances en derechos y libertades civiles, garantizando la máxima protección jurídica del matrimonio igualitario, el derecho a la interrupción voluntaria del embarazo y la eutanasia.",
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
@@ -8313,7 +8307,9 @@
    ],
    "palancas": [],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Impulsar la participación juvenil y la profundización democrática, rebajando la edad de voto a los 16 años, fortaleciendo los consejos de juventud y ampliando los mecanismos de participación ciudadana en las decisiones públicas."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -8351,7 +8347,9 @@
    ],
    "palancas": [],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Impulsar la participación juvenil y la profundización democrática, fortaleciendo los consejos de juventud, apoyando el asociacionismo juvenil y rebajando la edad de voto a los 16 años."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -8799,7 +8797,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Impulsaremos, junto a las organizaciones representativas del pueblo gitano, una Comisión Estatal de Trabajo para…",
-   "texto": "Impulsaremos, junto a las organizaciones representativas del pueblo gitano, una Comisión Estatal de Trabajo para desarrollar la igualdad de trato, la participación institucional, la inclusión social y el reconocimiento cultural , incluyendo un Plan Estatal para la modernización y continuidad del comercio ambulante.",
+   "texto": "Impulsaremos, junto a las organizaciones representativas del pueblo gitano, una Comisión Estatal de Trabajo para desarrollar la igualdad de trato, la participación institucional, la inclusión social y el reconocimiento cultural, incluyendo un Plan Estatal para la modernización y continuidad del comercio ambulante.",
    "oculta": false,
    "categoria": "social",
    "colectivos": [],
@@ -8848,7 +8846,9 @@
     "ley"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Establecer a 16 años la edad mínima para usar redes sociales."
+   ],
    "plazo": "En el primer año de legislatura",
    "deroga": null
   },
@@ -9139,8 +9139,8 @@
    "pagina": 97,
    "subapartado": null,
    "titulo": "",
-   "tituloFrase": "Culminar la reforma del Código Penal para penalizar las llamadas «terapias de conversión» , retomando la iniciativa…",
-   "texto": "Culminar la reforma del Código Penal para penalizar las llamadas «terapias de conversión» , retomando la iniciativa legislativa impulsada durante la anterior legislatura.",
+   "tituloFrase": "Culminar la reforma del Código Penal para penalizar las llamadas «terapias de conversión», retomando la iniciativa…",
+   "texto": "Culminar la reforma del Código Penal para penalizar las llamadas «terapias de conversión», retomando la iniciativa legislativa impulsada durante la anterior legislatura.",
    "oculta": false,
    "categoria": "social",
    "colectivos": [],
@@ -9548,7 +9548,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Reformar el acceso a las carreras judicial y fiscal con pruebas anonimizadas y casos prácticos, un sistema público y…",
-   "texto": "Reformar el acceso a las carreras judicial y fiscal con pruebas anonimizadas y casos prácticos, un sistema público y opcional de preparación y el blindaje de las Becas Seré , y reforzar la transparencia con un registro público de preparadores, autorización de compatibilidad para quienes preparen oposiciones y la prohibición de la financiación privada de las asociaciones judiciales y fiscales.",
+   "texto": "Reformar el acceso a las carreras judicial y fiscal con pruebas anonimizadas y casos prácticos, un sistema público y opcional de preparación y el blindaje de las Becas Seré, y reforzar la transparencia con un registro público de preparadores, autorización de compatibilidad para quienes preparen oposiciones y la prohibición de la financiación privada de las asociaciones judiciales y fiscales.",
    "oculta": false,
    "categoria": "justicia",
    "colectivos": [],
@@ -9745,7 +9745,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Aprobar una Ley Orgánica de Integridad Pública y una Estrategia Nacional Anticorrupción con mapas de riesgos en todas las…",
-   "texto": "Aprobar una Ley Orgánica de Integridad Pública y una Estrategia Nacional Anticorrupción con mapas de riesgos en todas las administraciones , y crear una Agencia Independiente de Integridad Pública que coordine los organismos de supervisión y refuerce la protección de quienes denuncian.",
+   "texto": "Aprobar una Ley Orgánica de Integridad Pública y una Estrategia Nacional Anticorrupción con mapas de riesgos en todas las administraciones, y crear una Agencia Independiente de Integridad Pública que coordine los organismos de supervisión y refuerce la protección de quienes denuncian.",
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
@@ -10011,7 +10011,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Apoyar de forma activa los trabajos de la OCDE y las Naciones Unidas para reforzar la tributación mínima efectiva de los…",
-   "texto": "Apoyar de forma activa los trabajos de la OCDE y las Naciones Unidas para reforzar la tributación mínima efectiva de los grandes grupos multinacionales, especialmente en la economía digital . Asimismo, promoveremos el debate internacional sobre la creación de un gravamen específico sobre los tokens utilizados por los modelos de inteligencia artificial, para que una parte de la riqueza generada gracias al conocimiento, la creación y los datos acumulados por la humanidad revierta en el conjunto de la sociedad y contribuya a afrontar sus impactos sociales, laborales y medioambientales.",
+   "texto": "Apoyar de forma activa los trabajos de la OCDE y las Naciones Unidas para reforzar la tributación mínima efectiva de los grandes grupos multinacionales, especialmente en la economía digital. Asimismo, promoveremos el debate internacional sobre la creación de un gravamen específico sobre los tokens utilizados por los modelos de inteligencia artificial, para que una parte de la riqueza generada gracias al conocimiento, la creación y los datos acumulados por la humanidad revierta en el conjunto de la sociedad y contribuya a afrontar sus impactos sociales, laborales y medioambientales.",
    "oculta": false,
    "categoria": "fiscalidad",
    "colectivos": [],
@@ -10706,7 +10706,7 @@
    "subapartado": null,
    "titulo": "",
    "tituloFrase": "Impulsar una comisión en el ámbito parlamentario para estudiar la creación de una Circunscripción Exterior",
-   "texto": "Impulsar una comisión en el ámbito parlamentario para estudiar la creación de una Circunscripción Exterior que permita la elección directa de representantes de la ciudadanía española residente en el exterior .",
+   "texto": "Impulsar una comisión en el ámbito parlamentario para estudiar la creación de una Circunscripción Exterior que permita la elección directa de representantes de la ciudadanía española residente en el exterior.",
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],

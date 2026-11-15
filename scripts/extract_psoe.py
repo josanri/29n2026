@@ -125,11 +125,11 @@ CIFRAS = [
     ('1 %', 'del PIB al año', 'Para garantizar el acceso a la vivienda', 38, 'Movilizar anualmente un 1% del PIB para garantizar el acceso a la vivienda'),
     ('100.000', 'viviendas', 'Parque público estatal de vivienda', 42, 'Constituir un parque público estatal de 100.000 viviendas'),
     ('60 %', 'del salario medio', 'El SMI, blindado por ley por encima de esa cifra', 87, 'Blindar por ley el SMI por encima del 60% del salario medio'),
-    ('30 %', 'pensión de orfandad', 'Del 20 % actual al 30 %', 106, 'Elevar del 20% al 30 % la pensión de orfandad'),
+    ('30 %', 'en la pensión de orfandad', 'Sube desde el 20 % actual', 106, 'Elevar del 20% al 30 % la pensión de orfandad'),
     ('37,5', 'horas semanales', 'Completar la reducción de la jornada', 108, 'Completar la reducción de la jornada a 37,5 horas'),
     ('35 %', 'tipo máximo', 'Para las rentas del capital de más de 300.000 €', 130, 'llegando progresivamente a un tipo máximo del 35% para rentas del capital superiores a 300.000€'),
     ('0,4 %', 'tasa Tobin', 'El impuesto a las transacciones financieras, del 0,2 al 0,4 %', 135, 'aumentando el tipo impositivo del 0,2% al 0,4%'),
-    ('7 %', 'del PIB', 'Financiación pública de la sanidad', 136, 'consolidando una financiación pública de la sanidad en torno al 7% del PIB'),
+    ('7 %', 'del PIB', 'Financiación pública de la sanidad, consolidada en torno a esa cifra', 136, 'consolidando una financiación pública de la sanidad en torno al 7% del PIB'),
     ('1.000 €', 'al nacer', 'Cuenta pública invertida para cada niño o niña', 193, 'Asignar al nacer a cada niño o niña una cuenta pública de 1.000 euros invertida en fondos públicos'),
     ('83.000 M€', 'de deuda autonómica', 'Que asume el Estado', 231, 'asunción parcial por el Estado de 83.000 millones de euros de deuda autonómica'),
     ('81 %', 'de electricidad renovable', 'Generación eléctrica renovable en 2030', 234, 'para alcanzar el 81% de generación eléctrica en 2030'),
@@ -138,6 +138,11 @@ CIFRAS = [
 ]
 # Otros compromisos cuantificados que no van en la cabecera. (número, prueba literal)
 CIFRAS_MEDIDA = [
+    (23, '19.000 millones de euros'),
+    (338, 'extendiendo las ayudas hasta los 26 años'),
+    (372, 'rebajando la edad de voto a los 16 años'),
+    (374, 'rebajando la edad de voto a los 16 años'),
+    (399, 'Establecer a 16 años la edad mínima para usar redes sociales'),
     (32, 'con una inversión de 1.629 millones de euros'),
     (32, 'reparar los firmes de 5.000 km de la red estatal en los próximos cuatro años'),
     (40, 'Destinar el 1% de la licitación anual de obra pública a constituir un fondo de adquisición de vivienda protegida y asequible'),
@@ -151,8 +156,6 @@ CIFRAS_MEDIDA = [
     (105, 'cubra cuatro semanas del permiso parental para el cuidado de hijos menores de ocho años con el 100 % de la base reguladora'),
     (105, 'reconociendo una semana adicional para el segundo progenitor'),
     (108, 'incentivar los avances en la negociación colectiva hacia las 35 horas'),
-    (119, 'buscando reducir el 20% de desempleo femenino de larga duración'),
-    (124, 'Garantizar el cumplimiento efectivo de la cuota de reserva del 2% de empleo para personas con discapacidad'),
     (128, 'empezando por los 19.000 millones de euros comprometidos con el ferrocarril hasta 2030'),
     (137, 'crearemos una ayuda directa de hasta 200 euros anuales por persona'),
     (143, 'con una primera consulta en un plazo máximo de 30 días'),
@@ -169,19 +172,18 @@ CIFRAS_MEDIDA = [
 ]
 # Plazos: solo cuándo se aplica la medida. (número, plazo, texto, prueba literal)
 PLAZOS = [
-    (8, 'Para 2035', 'Impulsar la innovación para transformar la economía', 'para 2035'),
-    (32, 'En cuatro años', 'Renovar la red viaria. Impulsaremos la conservación, modernización y mejora de l', 'en los próximos cuatro años'),
-    (98, 'En la próxima legislatura', 'Seguir desplegando las medidas de refuerzo del sistema público de pensiones y de', 'completar su aplicación durante la próxima legislatura'),
-    (125, 'En la primavera de 2027', 'Presentar a la Comisión Europea, en la primavera de 2027, un nuevo Plan Fiscal y', 'en la primavera de 2027'),
-    (128, 'Hasta 2030', 'Proteger la inversión que sostiene el crecimiento', 'hasta 2030'),
-    (160, 'Antes de 2030', 'Reducir la tasa de abandono escolar temprano por debajo del 10% antes de 2030', 'antes de 2030'),
-    (234, 'En 2030', 'Impulsar el despliegue de energías renovables', 'para alcanzar el 81% de generación eléctrica en 2030'),
-    (240, 'Hasta 2035', 'Mantener el calendario de cierre de las centrales nucleares hasta 2035 y desarro', 'calendario de cierre de las centrales nucleares hasta 2035'),
-    (246, 'En 2030', 'Reducir el vertido de residuos por debajo del 30 % en 2030', 'por debajo del 30 % en 2030'),
-    (399, 'En el primer año de legislatura', 'Establecer a 16 años la edad mínima para usar redes sociales', 'Aprobar en el primer año de legislatura'),
+    (8, 'Para 2035', 'Inversión pública en I+D del 1,5 % del PIB', 'para 2035'),
+    (32, 'En cuatro años', 'Reparar los firmes de 5.000 km de la red estatal de carreteras', 'en los próximos cuatro años'),
+    (98, 'En la próxima legislatura', 'Completar el despliegue de la cuota de solidaridad de las pensiones', 'completar su aplicación durante la próxima legislatura'),
+    (125, 'En la primavera de 2027', 'Presentar a la Comisión Europea un nuevo Plan Fiscal y Estructural', 'en la primavera de 2027'),
+    (160, 'Antes de 2030', 'Abandono escolar temprano por debajo del 10 %', 'antes de 2030'),
+    (234, 'En 2030', 'El 81 % de la electricidad, renovable', 'para alcanzar el 81% de generación eléctrica en 2030'),
+    (240, 'Hasta 2035', 'Mantener el calendario de cierre de las centrales nucleares', 'calendario de cierre de las centrales nucleares hasta 2035'),
+    (246, 'En 2030', 'Vertido de residuos por debajo del 30 %', 'por debajo del 30 % en 2030'),
+    (399, 'En el primer año de legislatura', 'Ley de protección de los menores en los entornos digitales', 'Aprobar en el primer año de legislatura'),
 ]
 ORDEN_PLAZOS = ['En el primer año de legislatura', 'En la primavera de 2027', 'En cuatro años', 'En la próxima legislatura',
-                'Antes de 2030', 'En 2030', 'Hasta 2030', 'Hasta 2035', 'Para 2035']
+                'Antes de 2030', 'En 2030', 'Hasta 2035', 'Para 2035']
 
 NUMERO_RE = re.compile(r'^(\d{1,3})\.\s*')
 
@@ -189,7 +191,28 @@ NUMERO_RE = re.compile(r'^(\d{1,3})\.\s*')
 def limpiar(texto):
     texto = unicodedata.normalize('NFC', texto)
     texto = texto.replace('​', '').replace('\xa0', ' ').replace('\xad', '').replace('\t', ' ')
-    return re.sub(r'\s+', ' ', texto).strip()
+    texto = re.sub(r'\s+', ' ', texto)
+    return re.sub(r' ([,.;:)])', r'\1', texto).strip()
+
+
+def unir_piezas(spans):
+    """Une las piezas de una línea: solo pone un espacio donde hay hueco, para no partir palabras que Word
+    escribe en dos piezas («singula» + «r»)."""
+    texto = ''
+    for anterior, span in zip([None] + spans[:-1], spans):
+        hueco = anterior is not None and span['bbox'][0] - anterior['bbox'][2] > 1.5
+        if hueco and not texto.endswith(' ') and not span['text'].startswith(' '):
+            texto += ' '
+        texto += span['text']
+    return texto
+
+
+def cortar_titulo(titulo, resto):
+    """Si la negrita acaba a mitad de palabra («singula» + «r integrada…»), el trozo de palabra pasa al texto."""
+    if titulo and resto and not titulo.endswith(' ') and not resto.startswith(' ') and re.match(r'\w', resto):
+        trozo = re.search(r'\S+$', titulo)
+        return titulo[:trozo.start()], trozo.group(0) + resto
+    return titulo, resto
 
 
 def lineas(documento):
@@ -217,7 +240,7 @@ def lineas(documento):
                 'y': round(fila['y'], 1),
                 'x': round(primero['bbox'][0]),
                 'spans': spans,
-                'texto': limpiar(' '.join(s['text'] for s in spans)),
+                'texto': limpiar(unir_piezas(spans)),
                 'fuente': primero['font'],
                 'tam': round(primero['size'], 1),
                 'rojo': primero['color'] == ROJO,
@@ -366,7 +389,7 @@ def extraer(pdf):
             # Título: la negrita del principio, sin el número. El resto de la línea ya es texto.
             spans = list(fila['spans'])
             spans[0] = dict(spans[0], text=NUMERO_RE.sub('', spans[0]['text'].lstrip()))
-            medida['_piezas'] = [(s['text'], 'Bold' in s['font']) for s in spans]
+            medida['_piezas'] = spans
             previa = fila
             i += 1
             continue
@@ -383,7 +406,7 @@ def extraer(pdf):
             i += 1
             continue
 
-        if medida is not None and fila['x'] < 80:
+        if medida is not None and fila['x'] < 80 and fila['texto'].startswith('●'):
             # Una viñeta suelta a la altura de la introducción tras una medida (página 71, «●Acercar la
             # Administración…»): el documento le quitó el número. Va con la medida anterior como un punto más.
             medida.setdefault('_lineas', []).append(None)
@@ -392,6 +415,14 @@ def extraer(pdf):
             i += 1
             continue
 
+        if medida is not None:
+            # Texto a la altura de la introducción tras una medida (página 32, «Incentivar el uso residencial de la
+            # vivienda frente a otros usos:»): introduce las medidas siguientes, no es parte de la anterior.
+            cerrar()
+            medida = None
+            seccion = capitulos[-1]['secciones'][-1]
+            destino = seccion['apartados'][-1]['intro'] if seccion['apartados'] else seccion['intro']
+            previa = None
         # Texto corrido: introducción del capítulo, la sección o el apartado, o la presentación.
         if previa is not None and (fila['pagina'] != previa['pagina'] and re.search(r'[.:;]$', ' '.join(parrafo))
                                    or fila['pagina'] == previa['pagina'] and fila['y'] - previa['y'] > 24):
@@ -409,14 +440,16 @@ def extraer(pdf):
     for medida in medidas:
         piezas = list(medida.pop('_piezas'))
         lineas_medida = medida.pop('_lineas', [])
-        titulo, texto, en_titulo = [], [], True
-        for texto_pieza, negrita in piezas:
-            if en_titulo and (negrita or not texto_pieza.strip()):
-                titulo.append(texto_pieza)
+        titulo_spans, resto_spans, en_titulo = [], [], True
+        for span in piezas:
+            if en_titulo and ('Bold' in span['font'] or not span['text'].strip()):
+                titulo_spans.append(span)
             else:
                 en_titulo = False
-                texto.append(texto_pieza)
-        parrafos, actual = [], [' '.join(texto)]
+                resto_spans.append(span)
+        titulo_linea, resto_linea = cortar_titulo(unir_piezas(titulo_spans), unir_piezas(resto_spans))
+        titulo = [titulo_linea]
+        parrafos, actual = [], [resto_linea]
         for linea in lineas_medida:
             if linea is None:
                 parrafos.append(actual)
@@ -428,14 +461,16 @@ def extraer(pdf):
                 continue
             if en_titulo and not texto_linea.startswith('–'):
                 # La negrita termina a mitad de línea: lo que va en negrita al principio aún es título.
-                resto = []
+                negrita, resto = [], []
                 for span in spans:
                     if en_titulo and 'Bold' in span['font']:
-                        titulo.append(span['text'])
+                        negrita.append(span)
                     else:
                         en_titulo = False
-                        resto.append(span['text'])
-                actual.append(' '.join(resto))
+                        resto.append(span)
+                titulo_linea, resto_linea = cortar_titulo(unir_piezas(negrita), unir_piezas(resto))
+                titulo.append(titulo_linea)
+                actual.append(resto_linea)
                 continue
             en_titulo = False
             actual.append(texto_linea)

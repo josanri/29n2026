@@ -37,7 +37,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'fe-jons', side: 'b', measures: [2, 5, 13, 34], note: 'Fronteras cerradas y militarizadas, un Plan Nacional de Remigración con expulsiones y una tasa máxima de inmigración del 1,5 %.' },
   { topic: 'inmigracion', party: 'pcte', side: 'a', measures: [85], note: 'Cierre de los CIE y un mecanismo permanente de regularización para todas las personas trabajadoras sin papeles.' },
   { topic: 'inmigracion', party: 'convergents', side: 'matiz', measures: [188, 191, 194, 293], note: 'Vincular la residencia y la nacionalidad a la integración lingüística y a los valores occidentales y expulsar a quien delinque, pero también acoger a refugiados y contratar en origen.' },
-  { topic: 'inmigracion', party: 'psoe', side: 'a', measures: [389, 388], note: 'Ampliar las vías legales y seguras de protección internacional y un Plan de Integración y Ciudadanía de 500 millones.' },
+  { topic: 'inmigracion', party: 'psoe', side: 'matiz', measures: [388, 389], note: 'Un Plan de Integración y Ciudadanía de 500 millones y más vías legales de protección internacional, sin hablar de regularizar.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -81,7 +81,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'fe-jons', side: 'a', measures: [43], note: 'Tope del alquiler: nunca más del 25 % del salario de la unidad familiar.' },
   { topic: 'vivienda', party: 'pcte', side: 'a', measures: [21], note: 'Bajada inmediata de los alquileres del 50 % y después precios máximos ligados a los salarios de la zona.' },
   { topic: 'vivienda', party: 'convergents', side: 'b', measures: [57, 60], note: 'Derogar la Ley de Vivienda, «un freno a la oferta de alquiler por culpa de los controles de precios», e incentivos fiscales a los promotores privados.' },
-  { topic: 'vivienda', party: 'psoe', side: 'a', measures: [77, 78], note: 'Hacer cumplir la normativa de precios del alquiler en las zonas tensionadas y limitar allí la compra especulativa.' },
+  { topic: 'vivienda', party: 'psoe', side: 'a', measures: [62, 77, 78], note: 'Congelar las rentas que superen los índices de referencia y hacer cumplir la normativa de precios del alquiler en las zonas tensionadas.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -209,7 +209,7 @@ export const stances: Stance[] = [
   { topic: 'eutanasia', party: 'vox', side: 'b', measures: [98], note: 'El derecho a la vida «hasta la muerte natural» y más cuidados paliativos.' },
   { topic: 'eutanasia', party: 'pp', side: 'matiz', measures: [226], note: 'Garantizar los cuidados paliativos «respetando siempre la voluntad del paciente», sin hablar de la eutanasia.' },
   { topic: 'eutanasia', party: 'fe-jons', side: 'b', measures: [90], note: 'Ilegalizar las leyes de la eutanasia: «La vida humana no es negociable».' },
-  { topic: 'eutanasia', party: 'psoe', side: 'a', measures: [147], note: 'Garantizar la muerte digna y el ejercicio efectivo del derecho a la eutanasia.' },
+  { topic: 'eutanasia', party: 'psoe', side: 'a', measures: [147, 368], note: 'Garantizar la muerte digna y el ejercicio efectivo del derecho a la eutanasia.' },
 
   // Servicio militar
   { topic: 'servicio-militar', party: 'adelante', side: 'a', measures: [589], note: 'Ningún servicio militar, ni obligatorio ni voluntario.' },

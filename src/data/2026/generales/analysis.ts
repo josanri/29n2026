@@ -263,7 +263,7 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
     {
       title: 'El bienestar ocupa más de una quinta parte',
       text:
-        'El capítulo del Estado de bienestar reúne 109 de los 500 compromisos: sanidad, educación, universidad, dependencia, infancia, discapacidad y financiación autonómica. Fija la financiación pública de la sanidad en torno al 7 % del PIB, una primera consulta de psicología en 30 días como máximo, una cuenta pública de 1.000 euros para cada niño al nacer y la asunción por el Estado de 83.000 millones de euros de deuda autonómica.',
+        'El capítulo del Estado de bienestar reúne 109 de los 500 compromisos: la senda fiscal y los impuestos que lo financian, la sanidad, la educación, la universidad, la dependencia, la infancia, la discapacidad y la financiación autonómica. Fija la financiación pública de la sanidad en torno al 7 % del PIB, una primera consulta de psicología en 30 días como máximo, una cuenta pública de 1.000 euros para cada niño al nacer y la asunción por el Estado de 83.000 millones de euros de deuda autonómica.',
       measureNumbers: [136, 143, 193, 231],
     },
     {
@@ -285,10 +285,10 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [87, 106, 108, 365],
     },
     {
-      title: 'Cinco cambios en la Constitución',
+      title: 'Nuevos derechos en la Constitución',
       text:
-        'El programa propone llevar a la Constitución el derecho al aborto, el sistema público de pensiones, la salud y la vivienda como derechos fundamentales y el derecho a la seguridad climática y al agua potable, y completar la reforma del artículo 49 sobre la discapacidad. Además, suprime los aforamientos de los cargos públicos para los delitos ajenos a su cargo.',
-      measureNumbers: [327, 365, 366, 367, 369, 373],
+        'El programa propone reformar la Constitución para blindar el derecho al aborto y el sistema público de pensiones, hacer de la vivienda y la salud derechos fundamentales y reconocer el derecho a la seguridad climática y al acceso al agua potable. Además, suprime los aforamientos de los cargos públicos para los delitos ajenos a su cargo.',
+      measureNumbers: [37, 327, 365, 366, 367, 373],
     },
     {
       title: 'Sustituir, no derogar',
