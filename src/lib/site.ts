@@ -11,8 +11,8 @@ export const THEME_STORAGE_KEY = 'tema';
 
 /** The accounts of the site on social networks: the footer links them and link previews on X name the first. */
 export const SOCIAL_ACCOUNTS = [
-  { network: 'X', handle: '@Electosfera', url: 'https://x.com/Electosfera' },
-  { network: 'Instagram', handle: '@Electosfera', url: 'https://www.instagram.com/electosfera/' },
+  { id: 'x', network: 'X', handle: '@Electosfera', url: 'https://x.com/Electosfera' },
+  { id: 'instagram', network: 'Instagram', handle: '@Electosfera', url: 'https://www.instagram.com/electosfera/' },
 ] as const;
 export const X_HANDLE = SOCIAL_ACCOUNTS[0].handle;
 

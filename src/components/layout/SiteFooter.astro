@@ -2,6 +2,11 @@
 import { election } from '@eleccion/eleccion';
 import { routes } from '@/lib/routes';
 import { SOCIAL_ACCOUNTS } from '@/lib/site';
+import xIcon from '@/assets/icons/x.svg?raw';
+import instagramIcon from '@/assets/icons/instagram.svg?raw';
+
+// The official marks of each network (see `src/assets/icons/README.md`), drawn in the color of the text.
+const icons: Record<(typeof SOCIAL_ACCOUNTS)[number]['id'], string> = { x: xIcon, instagram: instagramIcon };
 import Wordmark from './Wordmark.astro';
 ---
 
@@ -26,8 +31,9 @@ import Wordmark from './Wordmark.astro';
       <li><a href={routes.accessibility()}>Accesibilidad</a></li>
       {SOCIAL_ACCOUNTS.map((account) => (
         <li>
-          <a href={account.url} rel="me noopener" target="_blank">
-            {account.network}: {account.handle}<span class="sr-only"> (se abre en otra pestaña)</span>
+          <a class="site-footer__social" href={account.url} rel="me noopener" target="_blank">
+            <span class="site-footer__icon" set:html={icons[account.id]} />
+            <span class="sr-only">{account.network}: </span>{account.handle}<span class="sr-only"> (se abre en otra pestaña)</span>
           </a>
         </li>
       ))}
@@ -66,6 +72,10 @@ import Wordmark from './Wordmark.astro';
   /* Accessibility and the accounts of the site on X and Instagram, in one row that wraps. */
   .site-footer__meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-4); margin: var(--space-3) 0 0; padding: 0; list-style: none; font-weight: 700; }
   .site-footer__meta a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* The mark of the network, beside the handle: the icon says where the link goes, the handle says which account. */
+  .site-footer__social { gap: 8px; }
+  .site-footer__icon { display: inline-flex; flex: none; }
+  .site-footer__icon :global(svg) { width: 1.25em; height: 1.25em; }
 
   /* Phone: the mark and the text go in one column, the text uses the full width, and the page ends
      above the bars of the phone (safe area), so the last line is not cut. */
