@@ -82,6 +82,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'pcte', side: 'a', measures: [21], note: 'Bajada inmediata de los alquileres del 50 % y después precios máximos ligados a los salarios de la zona.' },
   { topic: 'vivienda', party: 'convergents', side: 'b', measures: [57, 60], note: 'Derogar la Ley de Vivienda, «un freno a la oferta de alquiler por culpa de los controles de precios», e incentivos fiscales a los promotores privados.' },
   { topic: 'vivienda', party: 'psoe', side: 'a', measures: [62, 77, 78], note: 'Congelar las rentas que superen los índices de referencia y hacer cumplir la normativa de precios del alquiler en las zonas tensionadas.' },
+  { topic: 'vivienda', party: 'teruel-existe', side: 'matiz', measures: [45, 50, 51], note: 'Vivienda pública de alquiler en todos los municipios, incentivos al alquiler y un tope de viviendas turísticas en las zonas tensionadas, sin limitar el precio del alquiler.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -109,6 +110,8 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'pcte', side: 'a', measures: [64], note: 'Vivienda, ingresos, empleo y atención suficientes para que las mujeres que sufren violencia rompan la dependencia económica.' },
   { topic: 'igualdad', party: 'convergents', side: 'a', measures: [175, 183], note: 'Los recursos necesarios para erradicar las violencias machistas y una ley estatal de igualdad retributiva.' },
   { topic: 'igualdad', party: 'psoe', side: 'a', measures: [333, 335], note: 'Una nueva Estrategia Estatal contra las Violencias Machistas y una Ley Orgánica contra la Violencia Vicaria.' },
+  { topic: 'igualdad', party: 'teruel-existe', side: 'a', measures: [135], note: 'Cumplir, actualizar y seguir el Pacto de Estado contra la Violencia de Género, con recursos que lleguen al medio rural.' },
+  { topic: 'igualdad', party: 'geroa-bai', side: 'a', measures: [14], note: 'Reforzar las políticas públicas de protección de las mujeres víctimas de maltrato.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -120,6 +123,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'fe-jons', side: 'b', measures: [231], note: 'Derogación inmediata de las «mal llamadas Leyes de “Memoria”».' },
   { topic: 'memoria', party: 'pcte', side: 'a', measures: [86], note: 'Ilegalizar las organizaciones fascistas y franquistas y disolver las fundaciones que enaltecen la dictadura.' },
   { topic: 'memoria', party: 'psoe', side: 'a', measures: [422, 423], note: 'Ampliar los Lugares de Memoria Democrática, retirar la simbología franquista y llevar la memoria a la educación.' },
+  { topic: 'memoria', party: 'geroa-bai', side: 'a', measures: [17, 12], note: 'Reforzar las políticas de memoria y acabar con la Ley de Secretos Oficiales, «monumento franquista».' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
