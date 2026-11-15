@@ -89,8 +89,9 @@
 
   /* ---------- Typography ---------- */
   /* Display: headings, acronyms and large figures, weight 900, upper case. */
-  --font-display: 'Big Shoulders Display', Impact, 'Arial Narrow', sans-serif;
-  --font-body: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  /* The «Fallback» families (fonts.css) have the metrics of the web fonts, so the swap does not move the text. */
+  --font-display: 'Big Shoulders Display', 'Big Shoulders Fallback', 'Big Shoulders Fallback Roboto', Impact, 'Arial Narrow', sans-serif;
+  --font-body: 'Archivo Variable', 'Archivo', 'Archivo Fallback', 'Archivo Fallback Roboto', 'Helvetica Neue', Arial, sans-serif;
 
   /* Nothing under 14px: small text is still read. */
   --text-2xs: 0.875rem;

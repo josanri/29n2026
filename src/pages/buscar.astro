@@ -46,13 +46,24 @@ const filterParties = publishedPrograms
       (hay {programs.length} partidos; los demás aún no han publicado el suyo). La búsqueda tolera erratas.
     </p>
 
-    <form class="search__form box" role="search" id="search-form">
+    <!-- WebMCP, declarative: the AI agent of the browser can fill this form and search, and gets the results back
+         (see the «submit» listener). The browsers without WebMCP ignore the `tool*` attributes. -->
+    <form
+      class="search__form box"
+      role="search"
+      id="search-form"
+      toolname="mostrar_busqueda"
+      tooldescription="Escribe una búsqueda en el formulario de esta página y muestra al usuario los partidos y las medidas de los programas del 29N que coinciden. Tolera erratas. Devuelve el número de medidas y las primeras, con su enlace."
+      toolautosubmit
+    >
       <label for="search-input">Buscar</label>
       <!-- One row: the text, the filters and the search button. The filters open a panel downward, over the results. -->
       <div class="search__row">
         <input
           id="search-input"
+          name="q"
           type="search"
+          toolparamdescription="Lo que se busca: un partido, una sigla o un tema, por ejemplo «vivienda» o «IRPF»."
           placeholder="PP, ERC, vivienda, IRPF…"
           autocomplete="off"
           data-index-url={routes.searchIndex()}
@@ -407,7 +418,29 @@ const filterParties = publishedPrograms
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     openPanel(false);
-    search();
+    const searching = search();
+    // WebMCP: when the agent of the browser sends the form, it gets back what the page shows.
+    const agentEvent = event as SubmitEvent & { agentInvoked?: boolean; respondWith?: (result: Promise<unknown>) => void };
+    if (agentEvent.agentInvoked && agentEvent.respondWith) {
+      agentEvent.respondWith(
+        searching.then(() => ({
+          estado: status.textContent,
+          medidas: results.length,
+          primeras: results.slice(0, 20).map((item) => {
+            const party = index!.parties[item.p];
+            return {
+              partido: party.id,
+              siglas: party.acronym,
+              n: item.n,
+              titulo: item.t,
+              categoria: item.c,
+              url: new URL(routes.measure(party.id, item.n), location.origin).href,
+            };
+          }),
+          url: location.href,
+        })),
+      );
+    }
   });
   // The find field of each list hides the options that do not match.
   const plain = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();

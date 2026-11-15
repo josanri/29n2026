@@ -37,7 +37,8 @@ Con `NESTED_OUTPUT=1`, la web se compila en `dist/2026/generales/`, porque Cloud
 
 - `_headers`, con la ruta base delante de cada ruta;
 - `_redirects`: `/`, `/2026` y `/2026/` llevan a `/2026/generales/` (302, temporal: más adelante serán portadas con la lista de elecciones);
-- `robots.txt`, porque los buscadores solo lo buscan en la raíz.
+- `robots.txt`, porque los buscadores solo lo buscan en la raíz;
+- `favicon.ico`: la raíz redirige a la elección, y un buscador que no encuentra el icono en la portada lo pide en `/favicon.ico`.
 
 GitHub Pages ya no publica el sitio: solo una página que redirige a electosfera.es (ver «Dominio propio», paso 9).
 
@@ -98,7 +99,7 @@ src/data/2026/generales/      datos de la elección: programas/, calendario, Con
   eleccion.ts                 nombre corto (29N), nombre, fecha: la interfaz toma los textos de aquí
 src/data/taxonomia.json       taxonomía común a todas las elecciones
 public/2026/generales/        archivos públicos de la elección: programas/, datos-electorales/, favicon.svg
-public/comun/                 archivos públicos comunes: _headers, sw.js
+public/comun/                 archivos públicos comunes: _headers, sw.js y los favicons en mapa de bits (favicon.ico, favicon-192.png, apple-touch-icon.png), que dibuja `python scripts/favicons.py`
 scripts/                      solo código: extracción y análisis de los PDF
 .cache/2026/generales/        resultados intermedios de la extracción (pp_raw.json…); no está en git
 ```
@@ -113,15 +114,33 @@ scripts/                      solo código: extracción y análisis de los PDF
 | Ruta | Contenido |
 |---|---|
 | `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas |
-| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
-| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
-| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/` | Lectura completa por bloque |
+| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/`, `/convergents/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
+| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/convergents/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
+| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
 | `/encuestas/` | Seguimiento de la estimación de voto (CIS, 40dB., Sigma Dos, SocioMétrica y GAD3), con gráfica de evolución y enlace a cada publicación |
 | `/tests/` | Lista de los tests: «Sin siglas» (`/tests/sin-siglas/`) y «Temas que dividen» (`/tests/temas/`) |
 | `/tests/temas/` | Test y comparador de los temas más polarizantes: la postura del lector frente a la de cada programa, con la medida que la prueba |
+| `/agentes/partidos.json`, `/agentes/<partido>.json` | Datos para las herramientas WebMCP (ver «Herramientas para agentes») |
+
+### Herramientas para agentes (WebMCP)
+
+En un navegador con [WebMCP](https://webmachinelearning.github.io/webmcp/) (Chrome lo trae en pruebas), la web ofrece herramientas de solo lectura al agente de IA del navegador. Un navegador sin WebMCP no descarga nada: la comprobación está en `BaseLayout.astro`.
+
+| Herramienta | Dónde | Qué hace |
+|---|---|---|
+| `listar_partidos` | Todas las páginas | Partidos, ámbito, comunidades y si tienen programa |
+| `buscar_medidas` | Todas las páginas | Búsqueda con erratas (el mismo índice que `/buscar/`), con filtros por partido y categoría |
+| `leer_medidas` | Todas las páginas | Texto completo de medidas, con página del PDF y enlaces |
+| `ficha_partido` | Todas las páginas | Resumen de un programa: categorías, «Las claves», cifras, plazos, derogaciones y bloques |
+| `listar_categorias` | Todas las páginas | La taxonomía común |
+| `posturas_por_tema` | Todas las páginas | Los temas que dividen y la postura de cada partido, con sus medidas |
+| `filtrar_medidas` | `/<partido>/medidas/` | Aplica los filtros del formulario en pantalla y devuelve lo que queda a la vista |
+| `mostrar_busqueda` | `/buscar/` | API declarativa: el agente rellena el formulario y recibe los resultados |
+
+Un error del agente (un partido o un valor que no existe) vuelve como `{ "error": "…" }`, con el mensaje que dice cómo corregirlo. Los tests «Sin siglas» y «Temas que dividen» no tienen herramientas a propósito: los responde el lector. Código: `src/lib/webmcp/` y `src/lib/agent-data.ts`.
 
 ## Datos
 
@@ -173,6 +192,9 @@ src/data/2026/generales/programas/fe-jons.json      resultado que consume la web
 public/2026/generales/programas/pcte-programa-de-lucha-2026.pdf «Programa de lucha» del PCTE (24 páginas, sin fecha), versión impresa de su [web](https://oposicionobrera.pcte.es/es/); sin optimizar: pesa 0,3 MB
 scripts/extract_pcte.py              extracción de 95 medidas en 11 bloques: cada ficha de «Ejes de lucha» es una medida; comprueba los bloques contra el índice del PDF
 src/data/2026/generales/programas/pcte.json         resultado que consume la web
+public/2026/generales/programas/convergents-programa-electoral-2026.pdf PDF oficial de Convergents (48 páginas, en catalán, 27 de noviembre de 2025 según sus metadatos), sin optimizar: pesa 1,2 MB
+scripts/extract_convergents.py       extracción de 300 propuestas en 10 compromisos y 48 objetivos: cada «✓» del PDF es una propuesta; comprueba los compromisos contra el índice del PDF
+src/data/2026/generales/programas/convergents.json  resultado que consume la web; las propuestas no tienen número ni título en el PDF
 src/data/2026/generales/programas/eaj-pnv.json      30 propuestas transcritas de la [página oficial del PNV](https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/)
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026.pdf BOE, candidaturas proclamadas el 3 de noviembre
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf BOE, corrección oficial del 7 de noviembre
@@ -197,6 +219,7 @@ Para regenerar los datos de Feministas al Congreso: `npm run data:pfac` (necesit
 Para regenerar los datos de En Acción 3e: `npm run data:tercera-edad` (necesita Python con PyMuPDF).
 Para regenerar los datos de VOX: `npm run data:vox` (necesita Python con PyMuPDF).
 Para regenerar los datos de PACMA: `npm run data:pacma` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada propuesta).
+Para regenerar los datos de Convergents: `npm run data:convergents` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada bloque y cada propuesta).
 Para regenerar los datos del PCTE: `npm run data:pcte` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada bloque y cada medida).
 Para regenerar los datos de FE de las JONS: `npm run data:fe-jons` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 Para regenerar los datos de Adelante Andalucía: `npm run data:adelante` (consulta las páginas oficiales por área; procesa 637 propuestas temáticas y 82 territoriales, numeradas del 1 al 719. Las 29 prioridades del resumen no se cuentan de nuevo).
@@ -217,6 +240,8 @@ src/
     taxonomy.ts           categorías, colectivos (target groups) y palancas (levers)
     geography.ts          geometría del mapa de provincias
     routes.ts             todas las URL del sitio (no se escribe ninguna ruta a mano)
+    agent-data.ts         datos de /agentes/*.json para las herramientas WebMCP
+    webmcp/               context.ts (detecta la API y registra) y tools.ts (las herramientas de todo el sitio)
     format.ts, color.ts, collections.ts, tooltip.ts, blocks.ts, site.ts
   styles/                 tokens.css, base.css, objects.css (ver «Sistema de diseño»)
   components/

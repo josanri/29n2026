@@ -58,6 +58,10 @@ export const routes = {
   search: (query = '') => withBase(`/buscar/${query ? `?${SEARCH_PARAMS.query}=${encodeURIComponent(query)}` : ''}`),
   /** JSON file with the text of every measure. The search page loads it on the first search. */
   searchIndex: () => withBase('/indice-busqueda.json'),
+  /** Data for the AI agents of the browser (WebMCP): every party, the categories and the topics. */
+  agentParties: () => withBase('/agentes/partidos.json'),
+  /** Data for the AI agents of the browser (WebMCP): one program, with the full text of each measure. */
+  agentProgram: (partyId: string) => withBase(`/agentes/${partyId}.json`),
   categories: () => withBase('/categorias/'),
   category: (categoryId: string) => withBase(`/categorias/${categoryId}/`),
   calendar: () => withBase('/calendario/'),

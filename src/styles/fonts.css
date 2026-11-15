@@ -1,0 +1,43 @@
+/*
+ * Fallback fonts with the metrics of the web fonts. Until Archivo and Big Shoulders Display arrive, the text is set
+ * in Arial (Windows, macOS, iOS; Liberation Sans on Linux, with the same metrics) or Roboto (Android), scaled so that it takes the same width and line height. When
+ * the web font swaps in, the text does not move: without this, the home page shifted (CLS 0,13 in Web Analytics).
+ *
+ * The numbers come from the font files: `size-adjust` is the ratio of the average advance width over a sample of
+ * Spanish text (in upper case for Big Shoulders, which is always set in upper case), and the overrides are the
+ * ascent and descent of the web font divided by that ratio. Recompute them if a web font changes.
+ */
+@font-face {
+  font-family: 'Archivo Fallback';
+  src: local('Arial'), local('ArialMT'), local('Liberation Sans');
+  size-adjust: 98.28%;
+  ascent-override: 89.33%;
+  descent-override: 21.37%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Archivo Fallback Roboto';
+  src: local('Roboto'), local('Roboto-Regular');
+  size-adjust: 99.18%;
+  ascent-override: 88.52%;
+  descent-override: 21.17%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Big Shoulders Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold');
+  font-weight: 900;
+  size-adjust: 69.48%;
+  ascent-override: 141.62%;
+  descent-override: 30.65%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Big Shoulders Fallback Roboto';
+  src: local('Roboto Bold'), local('Roboto-Bold');
+  font-weight: 900;
+  size-adjust: 75.72%;
+  ascent-override: 129.95%;
+  descent-override: 28.13%;
+  line-gap-override: 0%;
+}

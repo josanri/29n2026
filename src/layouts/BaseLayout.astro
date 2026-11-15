@@ -3,6 +3,11 @@ import '@/styles/global.css';
 import '@fontsource/big-shoulders-display/900';
 import '@fontsource-variable/archivo/wght.css';
 import '@fontsource-variable/archivo/wght-italic.css';
+// The two fonts of the first screen, preloaded: without this the browser finds them only after the CSS, and the
+// late swap moves the header and the hero (Web Analytics: CLS 0,13 on the home page). Vite gives them the same
+// hashed URL as the CSS, so the browser downloads each file once.
+import bodyFontUrl from '@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url';
+import displayFontUrl from '@fontsource/big-shoulders-display/files/big-shoulders-display-latin-900-normal.woff2?url';
 import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import Tooltip from '@/components/ui/Tooltip.astro';
@@ -53,6 +58,8 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={bodyFontUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={displayFontUrl} as="font" type="font/woff2" crossorigin />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -67,7 +74,12 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta name="twitter:card" content="summary" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <!-- The ICO and the PNG are for search engines and old browsers (they need a file of their own, in a multiple of
+         48 px); browsers that read SVG take the last icon, the SVG. `scripts/favicons.py` draws them. -->
+    <link rel="icon" href={routes.asset('/favicon.ico')} sizes="48x48" />
+    <link rel="icon" href={routes.asset('/favicon-192.png')} type="image/png" sizes="192x192" />
     <link rel="icon" href={faviconHref} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={routes.asset('/apple-touch-icon.png')} />
     <!-- Apply the saved theme before the first paint, so the page does not flash. The `js` class lets the CSS
          fold the phone menu only when the script that opens it can run. -->
     <script is:inline define:vars={{ storageKey: THEME_STORAGE_KEY }}>
@@ -86,6 +98,12 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     </main>
     <SiteFooter />
     <Tooltip />
+    <script>
+      // WebMCP: tools for the AI agent of the browser (`src/lib/webmcp/`). Only a browser that has the API downloads
+      // them; for the others this is one check and nothing else.
+      import { modelContext } from '@/lib/webmcp/context';
+      if (modelContext()) import('@/lib/webmcp/tools').then(({ registerSiteTools }) => registerSiteTools());
+    </script>
   </body>
 </html>
 
