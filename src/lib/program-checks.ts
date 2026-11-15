@@ -47,6 +47,10 @@ export function checkPrograms(): void {
         if (!existsSync(file)) errors.push(`${id}: no existe el PDF ${file}.`);
         if (!downloadFileNames[id]) errors.push(`${id}: falta su nombre de descarga en download-names.ts.`);
       }
+      for (const doc of program.documents) {
+        const docFile = join(ROOT, ELECTION_PUBLIC_DIR, doc.file);
+        if (!existsSync(docFile)) errors.push(`${id}: no existe el PDF ${docFile} del documento «${doc.title}».`);
+      }
       if (!program.documentDate) warnings.push(`${id}: el PDF no tiene fecha («fechaPdf»); la ficha la omite.`);
     }
     for (const [field, value] of [['fechaPdf', program.documentDate], ['fechaFuente', program.sourceDate]] as const) {

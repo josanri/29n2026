@@ -8,6 +8,15 @@ Usage: python scripts/build_d21.py src/data/2026/generales/programas/d21.json
 import json
 import sys
 
+# Download names and page counts of the PDF of each section (the reader picks one in a dialog).
+DOCUMENTS = {
+    "limpieza": ("programa-d21-espana-limpia-2026.pdf", 13),
+    "vivienda": ("programa-d21-vivienda-2026.pdf", 9),
+    "educacion": ("programa-d21-educacion-2026.pdf", 8),
+    "sanidad": ("programa-d21-sanidad-2026.pdf", 6),
+    "energia": ("programa-d21-potencia-energetica-2026.pdf", 4),
+}
+
 SECTIONS = {
     "limpieza": {"bloque": 1, "pdf": "/programas/d21-espana-limpia-2026.pdf",
                  "titulo": "España Limpia", "tituloFrase": "Una limpieza política radical",
@@ -311,6 +320,12 @@ def build():
         "pdf": "/programas/d21-espana-limpia-2026.pdf",
         "fuentePdf": "https://democracia21.es/#soluciones",
         "fechaPdf": "2026-11-11",
+        "documentos": [{
+            "titulo": data["titulo"],
+            "pdf": data["pdf"],
+            "nombreDescarga": DOCUMENTS[sid][0],
+            "paginas": DOCUMENTS[sid][1],
+        } for sid, data in SECTIONS.items()],
         "paginas": 40,
         "unidadMedida": "medida",
         "unidadMedidas": "medidas",

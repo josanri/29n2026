@@ -1,0 +1,93 @@
+---
+/**
+ * A button that opens a dialog with every PDF of a program published as several documents (D21).
+ * Each PDF is a download link with the name the browser proposes. The dialog is a native <dialog>:
+ * Escape closes it, the focus returns to the button and it works without styles.
+ */
+import Button from '@/components/ui/Button.astro';
+import Icon from '@/components/ui/Icon.astro';
+
+interface Props {
+  label: string;
+  documents: { title: string; url: string; downloadName: string; pageCount?: number }[];
+}
+
+const { label, documents } = Astro.props;
+---
+
+<Button class="documents-open" data-documents-open><Icon name="download" />{label}</Button>
+
+<dialog class="documents" aria-labelledby="documents-title" data-documents-dialog>
+  <div class="documents__head">
+    <h2 class="documents__title" id="documents-title">Elige el documento</h2>
+    <button class="documents__close" type="button" aria-label="Cerrar" data-documents-close>×</button>
+  </div>
+  <p class="documents__intro">El programa se publica en {documents.length} PDF, uno por área.</p>
+  <ul class="documents__list">
+    {documents.map((doc) => (
+      <li>
+        <a class="documents__link" href={doc.url} download={doc.downloadName}>
+          <Icon name="download" />
+          <span class="documents__name">{doc.title}</span>
+          {doc.pageCount && <span class="documents__pages">{doc.pageCount} págs.</span>}
+        </a>
+      </li>
+    ))}
+  </ul>
+</dialog>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('[data-documents-dialog]');
+  const opener = document.querySelector<HTMLElement>('[data-documents-open]');
+  if (dialog && opener) {
+    opener.addEventListener('click', () => dialog.showModal());
+    dialog.querySelector('[data-documents-close]')?.addEventListener('click', () => dialog.close());
+    // A click on the backdrop (outside the box) closes it.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+</script>
+
+<style>
+  .documents {
+    width: min(100% - 32px, 520px);
+    padding: var(--space-4);
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  .documents::backdrop { background: rgb(0 0 0 / 55%); }
+  .documents__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+  .documents__title { margin: 0; font-size: 1.5rem; line-height: 1.2; }
+  .documents__close {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .documents__close:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .documents__intro { margin: var(--space-2) 0 var(--space-3); }
+  .documents__list { display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+  .documents__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 50px;
+    padding: 8px 16px;
+    border: var(--border-thick) solid var(--color-ink);
+    color: var(--color-ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .documents__link:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .documents__name { flex: 1; }
+  .documents__pages { font-weight: 400; white-space: nowrap; }
+</style>
