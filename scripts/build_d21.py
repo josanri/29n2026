@@ -23,6 +23,10 @@ SECTIONS = {
                 "titulo": "Sanidad pública: cuidar a quienes nos cuidan",
                 "tituloFrase": "Que cada euro salve vidas",
                 "intro": "Gestión eficiente, dignidad para los profesionales y especialización con inteligencia artificial."},
+    "energia": {"bloque": 2, "pdf": "/programas/d21-energia-2026.pdf",
+                "titulo": "Ser una potencia energética",
+                "tituloFrase": "Energía limpia, barata y competitiva para toda Europa",
+                "intro": "Reglas claras y precios reales, redes modernas con almacenamiento e inteligencia en el sistema, y una gran reindustrialización verde."},
 }
 
 # (título, categoría, sección, página, texto, plazo)
@@ -204,6 +208,27 @@ MEASURES = [
      "Los pacientes crónicos tendrán dispositivos conectados y seguimiento diario por enfermería. Algoritmos de alerta temprana evitarán ingresos urgentes.", None),
     ("Centro Nacional de Trasplantes para descongestionar los hospitales", "sanidad", "sanidad", 6,
      "Un Centro Nacional de Trasplantes, impulsado por la ONT, concentrará los trasplantes más complejos y liberará quirófanos en la red hospitalaria.", None),
+    # Energía
+    ("Blindaje contra la retroactividad y fin de las distorsiones arbitrarias", "energia", "energia", 2,
+     "Se prohibirá por ley cualquier cambio normativo retroactivo sobre proyectos de generación ya comprometidos. Los regímenes de penalización bruscos («efectos acantilado») se sustituirán por escalas graduales y predecibles. La CNMC actuará con independencia técnica frente a la injerencia política.", None),
+    ("Neutralidad tecnológica sin tutelas ideológicas", "energia", "energia", 2,
+     "El Estado fijará objetivos de descarbonización, eficiencia y seguridad de suministro, sin decidir qué tecnología gana. Las energías verdes, el almacenamiento y el respaldo firme competirán en igualdad de condiciones.", None),
+    ("Precios transparentes y escudo social hiperfocalizado", "energia", "energia", 2,
+     "La intervención indiscriminada de precios y tarifas se sustituirá por mecanismos de competencia que trasladen al usuario el abaratamiento de la generación limpia. Los recursos públicos se concentrarán en un bono social eléctrico automático, directo y reforzado para los hogares vulnerables.", None),
+    ("Fiscalidad energética orientada a la electrificación", "fiscalidad", "energia", 3,
+     "Se reestructurarán los tributos energéticos para dejar de penalizar la electricidad frente a los combustibles fósiles. Bajarán las cargas fiscales del consumo eléctrico de familias y empresas, para impulsar las bombas de calor, el transporte limpio y los procesos industriales eléctricos.", None),
+    ("Independencia del operador del sistema y apertura de redes", "energia", "energia", 3,
+     "La operación del sistema se separará de la titularidad de la red de transporte. Se facilitará la entrada de capital privado en las redes de distribución y transporte. Un sistema dinámico y bienal de capacidad impedirá el acaparamiento especulativo.", None),
+    ("Apuesta masiva por el almacenamiento y la flexibilidad", "energia", "energia", 3,
+     "Las grandes baterías, el bombeo y el calor se reconocerán por norma como pilar estratégico del sistema. Su despliegue comercial se acelerará junto a los parques renovables existentes, para no desperdiciar energía limpia en las horas punta.", None),
+    ("Gestión inteligente de la red con IA y presión por las interconexiones", "innovacion", "energia", 3,
+     "Gemelos digitales e inteligencia artificial optimizarán la previsión horaria, anticiparán averías y equilibrarán la variabilidad renovable. España presionará en Europa para acelerar las interconexiones y exportar sus excedentes verdes.", None),
+    ("Suelo industrial listo para enchufar", "energia", "energia", 4,
+     "Con las Comunidades Autónomas y los puertos se habilitarán zonas industriales verdes con la evaluación ambiental resuelta, el planeamiento aprobado y la capacidad de red reservada. La tramitación será un expediente digital único, con plazos máximos vinculantes y seguimiento público en tiempo real.", None),
+    ("Luz limpia a largo plazo, también para las pymes", "energia", "energia", 4,
+     "Plataformas de compra agregada permitirán a las pymes industriales contratar energía limpia a 10 o 15 años en condiciones de gran consumidor, con las garantías públicas ya existentes. La industria electrointensiva tendrá además contratos por diferencias.", None),
+    ("Fábricas que ganan aportando flexibilidad", "energia", "energia", 4,
+     "Los mercados de flexibilidad se abrirán a la industria: hornos, cámaras frigoríficas o centros de datos podrán concentrar su consumo en las horas de máxima producción solar y cobrar por estabilizar la red. Se facilitará el almacenamiento térmico («baterías de calor») para electrificar el calor industrial.", None),
 ]
 
 # (valor, unidad, texto, título de la medida)
@@ -215,6 +240,7 @@ FIGURES = [
     ("850.000", "pacientes", "Pacientes que esperan una operación en listas de espera quirúrgica", "Rendimiento máximo de quirófanos y reinversión en listas de espera"),
     ("10.000", "profesionales", "Profesionales sanitarios que han emigrado en los últimos años", "Bono fiscal para el retorno del talento sanitario"),
     ("Top 10", "europeo", "Objetivo de posición de España en PISA", "Objetivo PISA: España en el top 10 europeo"),
+    ("10-15", "años", "Duración de los contratos de luz limpia al alcance de las pymes industriales", "Luz limpia a largo plazo, también para las pymes"),
 ]
 
 BLOCKS = [
@@ -223,9 +249,9 @@ BLOCKS = [
      "cita": "",
      "intro": "El sistema político beneficia hoy a los políticos. Esta limpieza corta el clientelismo y la corrupción, despolitiza las instituciones y devuelve el control a la ciudadanía."},
     {"id": 2, "titulo": "Venimos a solucionar lo que de verdad importa",
-     "lema": "Vivienda, educación y sanidad.",
+     "lema": "Vivienda, educación, sanidad y energía.",
      "cita": "",
-     "intro": "Medidas detalladas en vivienda, educación en el centro y sanidad pública. Democracia 21 anunciará nuevas soluciones para el país."},
+     "intro": "Medidas detalladas en vivienda, educación en el centro, sanidad pública y energía. Democracia 21 anunciará nuevas soluciones para el país."},
 ]
 
 
@@ -274,7 +300,7 @@ def build():
         "siglas": "D21",
         "observaciones": [
             "El texto de cada medida es un resumen del PDF de su área. Cada medida enlaza a ese PDF.",
-            "El programa se publica en cuatro documentos: España Limpia, Vivienda, Educación y Sanidad. Faltan los textos del bloque Modernización del país, que no tiene PDF.",
+            "El programa se publica en cinco documentos: España Limpia, Vivienda, Educación, Sanidad y Potencia energética. Faltan los textos del bloque Modernización del país, que no tiene PDF.",
         ],
         "color": "#0A0B0D",
         "colorClaro": "#FFFD38",
@@ -283,14 +309,14 @@ def build():
         "elecciones": "Elecciones generales · 29 de noviembre de 2026",
         "pdf": "/programas/d21-espana-limpia-2026.pdf",
         "fuentePdf": "https://democracia21.es/#soluciones",
-        "paginas": 36,
+        "paginas": 40,
         "unidadMedida": "medida",
         "unidadMedidas": "medidas",
         "presentacion": {
             "titulo": "Una democracia que funcione para todos",
             "texto": (
                 f"Democracia 21 propone {len(numbered)} medidas en dos bloques: una limpieza política "
-                "radical y soluciones en vivienda, educación y sanidad. Cada ficha resume el PDF de su área."
+                "radical y soluciones en vivienda, educación, sanidad y energía. Cada ficha resume el PDF de su área."
             ),
         },
         "cifras": cifras,
