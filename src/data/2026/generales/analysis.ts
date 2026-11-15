@@ -373,4 +373,42 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [41, 46, 47, 48],
     },
   ],
+  convergents: [
+    {
+      title: 'Diecisiete condiciones para apoyar a un Gobierno',
+      text:
+        'El primer compromiso avisa de que Convergents no apoyará a ningún partido que no asuma sus 17 propuestas. Entre ellas: una resolución de las Cortes que reconozca la nación catalana y un Estado plurinacional, un concierto económico como el vasco, la amnistía «total», que los Mossos y la Policía Local sustituyan en cuatro años a la Policía Nacional y la Guardia Civil, el traspaso de los aeropuertos y selecciones deportivas catalanas oficiales.',
+      measureNumbers: [2, 3, 9, 11, 12, 13],
+    },
+    {
+      title: 'Pedir al Estado: traspasos y gestión propia',
+      text:
+        '60 de las 300 propuestas empiezan por «Exigirem», «Reclamarem» o «Demanarem», y 24 piden traspasar a Cataluña una competencia, un servicio o sus recursos: la inmigración, la sanidad y la enseñanza, la cultura, los impuestos generados en Cataluña, la Inspección de Trabajo, el Ingreso Mínimo Vital, las ayudas de la PAC, las plazas MIR, la red ferroviaria, los puertos, la justicia y la seguridad ciudadana.',
+      measureNumbers: [8, 10, 72, 97, 247, 270],
+    },
+    {
+      title: 'Bajar impuestos, sin subir ninguno',
+      text:
+        'Unas 24 propuestas bajan un impuesto o una cotización o crean una deducción, una bonificación o un incentivo fiscal: eliminar Sucesiones, Donaciones y Patrimonio, rebajar Transmisiones Patrimoniales y el tramo autonómico del IRPF, una tarifa plana de dos años para los nuevos autónomos, la Seguridad Social gratis por el primer empleado de un autónomo y deducir en el IRPF las mutuas de salud. Ninguna propuesta sube un impuesto; la fiscalidad de las SOCIMI solo se «revisa».',
+      measureNumbers: [77, 78, 82, 86, 218],
+    },
+    {
+      title: 'Vivienda: una derogación y 48 horas contra la ocupación',
+      text:
+        'La única ley que el programa pide derogar es la Ley 12/2023 por el derecho a la vivienda, por los controles de precios del alquiler. La oferta llega con vivienda protegida, cesiones de la Sareb e incentivos fiscales a los promotores privados. La ocupación aparece tres veces: una ley para devolver la posesión en 48 horas (24 si es la primera vivienda o un centro productivo), la misma promesa en el bloque de economía y una reforma del Código Penal contra la ocupación ligada a mafias.',
+      measureNumbers: [60, 51, 57, 16, 71, 64],
+    },
+    {
+      title: 'Inmigración con «valores occidentales»',
+      text:
+        'El sexto compromiso se presenta como «defensor dels valors occidentals». Propone que la residencia y la nacionalidad dependan de la integración lingüística y de adoptar esos valores, y una gestión migratoria «sin complejos», lejos de las políticas «bonistas». La expulsión de los inmigrantes en situación irregular que hayan delinquido aparece dos veces, con el mismo texto. A la vez, quiere una Cataluña de acogida para los refugiados y la contratación en origen.',
+      measureNumbers: [190, 191, 17, 194, 188, 293],
+    },
+    {
+      title: 'El catalán, obligatorio y oficial en Europa',
+      text:
+        'El programa quiere reformar el Estatuto para que conocer el catalán sea obligatorio, como el castellano, y que el Gobierno use incluso el veto para que sea oficial en las instituciones europeas. Pide acabar con la distinción entre valenciano y catalán en el Estado, preservar la inmersión lingüística y que todos los profesionales sanitarios dominen el catalán.',
+      measureNumbers: [4, 5, 7, 145, 202],
+    },
+  ],
 };

@@ -21,6 +21,7 @@ export const downloadFileNames: Record<string, string> = {
   salf: 'programa-salf-contrato-electoral-29n.pdf',
   'soria-ya': 'programa-soria-ya-2026.pdf',
   'tercera-edad': 'programa-en-accion-3e-2026.pdf',
+  convergents: 'programa-convergents-eleccions-generals-2026.pdf',
 };
 
 /** File name of the summary PDF of Adelante Andalucía (the 29 main measures). */

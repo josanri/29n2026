@@ -36,6 +36,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'pacma', side: 'matiz', measures: [100], note: 'Acceso unificado a la educación, la sanidad y el alojamiento, y más plazas de acogida, sin hablar de regularizar ni de vías legales.' },
   { topic: 'inmigracion', party: 'fe-jons', side: 'b', measures: [2, 5, 13, 34], note: 'Fronteras cerradas y militarizadas, un Plan Nacional de Remigración con expulsiones y una tasa máxima de inmigración del 1,5 %.' },
   { topic: 'inmigracion', party: 'pcte', side: 'a', measures: [85], note: 'Cierre de los CIE y un mecanismo permanente de regularización para todas las personas trabajadoras sin papeles.' },
+  { topic: 'inmigracion', party: 'convergents', side: 'matiz', measures: [188, 191, 194, 293], note: 'Vincular la residencia y la nacionalidad a la integración lingüística y a los valores occidentales y expulsar a quien delinque, pero también acoger a refugiados y contratar en origen.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -59,6 +60,7 @@ export const stances: Stance[] = [
   { topic: 'autodeterminacion', party: 'bng', side: 'a', measures: [157], note: 'Cambiar las leyes para permitir referendos vinculantes, «incluído o dereito de autodeterminación».' },
   { topic: 'autodeterminacion', party: 'adelante', side: 'matiz', measures: [346], note: 'Un modelo confederal: «un Estado de pueblos libres e iguales».' },
   { topic: 'autodeterminacion', party: 'fe-jons', side: 'b', measures: [58, 61], note: 'España es «indivisible»: ilegalizar y perseguir a todo movimiento separatista.' },
+  { topic: 'autodeterminacion', party: 'convergents', side: 'a', measures: [1, 2, 262, 278], note: 'El derecho «inalienable» de los catalanes a decidir su futuro, referéndums vinculantes y el derecho a la autodeterminación en la UE.' },
 
   // Vivienda: control del alquiler
   { topic: 'vivienda', party: 'adelante', side: 'a', measures: [160, 161, 164], note: 'Alquiler social obligatorio, alquiler al 20 % del salario y zonas tensionadas obligatorias.' },
@@ -76,6 +78,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'pacma', side: 'matiz', measures: [86], note: 'Construcción masiva de vivienda pública y límites a los pisos turísticos, pero con incentivos fiscales a los propietarios y sin tope general del alquiler.' },
   { topic: 'vivienda', party: 'fe-jons', side: 'a', measures: [43], note: 'Tope del alquiler: nunca más del 25 % del salario de la unidad familiar.' },
   { topic: 'vivienda', party: 'pcte', side: 'a', measures: [21], note: 'Bajada inmediata de los alquileres del 50 % y después precios máximos ligados a los salarios de la zona.' },
+  { topic: 'vivienda', party: 'convergents', side: 'b', measures: [57, 60], note: 'Derogar la Ley de Vivienda, «un freno a la oferta de alquiler por culpa de los controles de precios», e incentivos fiscales a los promotores privados.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -86,6 +89,7 @@ export const stances: Stance[] = [
   { topic: 'religion-educacion', party: 'salf', side: 'b', measures: [101], note: 'Cheque escolar válido en la pública, la concertada y la privada.' },
   { topic: 'religion-educacion', party: 'pacma', side: 'a', measures: [69], note: 'Garantizar «una escuela pública realmente laica».' },
   { topic: 'religion-educacion', party: 'pcte', side: 'a', measures: [34], note: 'Un sistema educativo «exclusivamente público, gratuito, laico e inclusivo» que integre la concertada en una red pública única.' },
+  { topic: 'religion-educacion', party: 'convergents', side: 'b', measures: [146, 147], note: 'Un sistema plural con escuelas públicas, concertadas y privadas y el derecho de las familias a escoger centro.' },
 
   // Feminismo y leyes de igualdad
   { topic: 'igualdad', party: 'bng', side: 'a', measures: [100, 101, 106], note: 'Cumplir las obligaciones internacionales y el Pacto de Estado contra la violencia machista y legislar el feminicidio.' },
@@ -100,6 +104,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'pacma', side: 'a', measures: [95], note: 'Más medios contra la violencia machista: unidades policiales especializadas las 24 horas y campañas contra los estereotipos de género.' },
   { topic: 'igualdad', party: 'fe-jons', side: 'b', measures: [87], note: 'Derogar las leyes de «género», incluida la Ley de Violencia de Género.' },
   { topic: 'igualdad', party: 'pcte', side: 'a', measures: [64], note: 'Vivienda, ingresos, empleo y atención suficientes para que las mujeres que sufren violencia rompan la dependencia económica.' },
+  { topic: 'igualdad', party: 'convergents', side: 'a', measures: [175, 183], note: 'Los recursos necesarios para erradicar las violencias machistas y una ley estatal de igualdad retributiva.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -120,6 +125,7 @@ export const stances: Stance[] = [
   { topic: 'nuclear', party: 'erc', side: 'matiz', measures: [147], note: 'Que el Estado contribuya al Fondo de Transición Nuclear de Cataluña.' },
   { topic: 'nuclear', party: 'pacma', side: 'a', measures: [43], note: 'El modelo basado en los combustibles fósiles y la energía nuclear «es insostenible»: apuesta por las renovables.' },
   { topic: 'nuclear', party: 'fe-jons', side: 'b', measures: [122, 124], note: 'La energía nuclear como fuente principal: anular el plan de cierre y proyectar centrales nuevas.' },
+  { topic: 'nuclear', party: 'convergents', side: 'b', measures: [252], note: 'Un mix energético que mantenga el parque nuclear actual mientras se desarrolla un sistema renovable.' },
 
   // Impuestos y redistribución
   { topic: 'impuestos', party: 'adelante', side: 'a', measures: [232, 233], note: 'IRPF más progresivo y un impuesto sobre la riqueza.' },
@@ -130,6 +136,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'salf', side: 'b', measures: [30, 86], note: 'Suprimir sucesiones, donaciones y patrimonio y bajar la cuña fiscal.' },
   { topic: 'impuestos', party: 'vox', side: 'b', measures: [2], note: 'Rebaja masiva de impuestos: IRPF, IVA y sociedades.' },
   { topic: 'impuestos', party: 'fe-jons', side: 'matiz', measures: [101, 103, 108], note: 'Más tramos para que los impuestos sean progresivos y tasas a las multinacionales, pero bajada progresiva del IRPF.' },
+  { topic: 'impuestos', party: 'convergents', side: 'b', measures: [77, 78], note: 'Eliminar los impuestos de Sucesiones, Donaciones y Patrimonio y bajar Transmisiones Patrimoniales y el tramo autonómico del IRPF.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },
@@ -138,6 +145,7 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'pp', side: 'b', measures: [96, 127], note: 'Garantizar la enseñanza en castellano en toda España y el castellano como lengua común de trabajo en el Congreso.' },
   { topic: 'lenguas', party: 'salf', side: 'b', measures: [97], note: 'Castellano garantizado, sin tener que ir a juicio.' },
   { topic: 'lenguas', party: 'fe-jons', side: 'b', measures: [203, 232], note: 'Las asignaturas básicas, en español; las lenguas regionales, solo en sus propias horas de clase.' },
+  { topic: 'lenguas', party: 'convergents', side: 'a', measures: [4, 5, 144, 145], note: 'El conocimiento del catalán obligatorio por el Estatuto, el catalán oficial en la UE y preservar la inmersión lingüística.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
@@ -148,6 +156,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'salf', side: 'b', measures: [11, 12], note: 'Una macrocárcel y el cumplimiento íntegro de las penas.' },
   { topic: 'seguridad', party: 'fe-jons', side: 'b', measures: [162, 176], note: 'Más penas y cadena perpetua no revisable para los delitos «de Lesa Patria», el asesinato, la violación y el terrorismo.' },
   { topic: 'seguridad', party: 'pcte', side: 'a', measures: [81, 84], note: 'Derogar la Ley Mordaza y acabar con la impunidad policial: sin pelotas de goma ni tanquetas en las protestas.' },
+  { topic: 'seguridad', party: 'convergents', side: 'b', measures: [29, 36, 64], note: 'Que los abusos sexuales a menores no prescriban, penas más duras en los delitos contra personas mayores y reformar el Código Penal contra la ocupación.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },
