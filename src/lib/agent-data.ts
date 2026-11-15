@@ -11,7 +11,8 @@ import { keyFindingsByParty } from '@eleccion/analysis';
 import { stances } from '@eleccion/posturas';
 import { activeTopics } from '@/data/temas';
 import { countBy } from './collections';
-import { announcedMeasures, getProgram, programs, type Measure, type Program } from './programs';
+import { compareText } from './format';
+import { announcedMeasures, getProgram, programs, publishedPrograms, type Measure, type Program } from './programs';
 import { presenceOf } from './presence';
 import { routes } from './routes';
 import { categories, categoryById, leverById, targetGroupById } from './taxonomy';
@@ -25,6 +26,8 @@ const pdfPage = (program: Program, page: number | undefined, site: URL | undefin
 
 /** The communities where a regional party runs. A national party runs in all of them: the list stays empty. */
 const regionsOf = (program: Program) => (presenceOf(program).scope === 'national' ? [] : presenceOf(program).regions);
+
+const SIDE_ORDER = ['a', 'matiz', 'b'];
 
 const scopeName = (program: Program) => (presenceOf(program).scope === 'national' ? 'estatal' : 'autonómico');
 
@@ -46,27 +49,48 @@ export function partiesData(site: URL | undefined) {
       url: absolute(routes.party(program.id), site),
     })),
     categorias: categories.map((category) => ({ id: category.id, nombre: category.name })),
-    temas: activeTopics.map((topic) => ({
-      id: topic.id,
-      titulo: topic.title,
-      pregunta: topic.question,
-      a: { etiqueta: topic.a.label, texto: topic.a.text },
-      b: { etiqueta: topic.b.label, texto: topic.b.text },
-      posturas: stances
-        .filter((stance) => stance.topic === topic.id)
-        .map((stance) => ({
-          partido: stance.party,
-          siglas: getProgram(stance.party).acronym,
-          // `matiz`: the program deals with the topic without taking either side fully.
-          lado: stance.side,
-          postura: stance.side === 'matiz' ? 'Con matices' : topic[stance.side].label,
-          nota: stance.note,
-          medidas: stance.measures.map((number) => ({
-            n: number,
-            url: absolute(routes.measure(stance.party, number), site),
-          })),
-        })),
-    })),
+    temas: activeTopics.map((topic) => {
+      const topicStances = stances.filter((stance) => stance.topic === topic.id);
+      const withStance = new Set(topicStances.map((stance) => stance.party));
+      return {
+        id: topic.id,
+        titulo: topic.title,
+        pregunta: topic.question,
+        a: { etiqueta: topic.a.label, texto: topic.a.text },
+        b: { etiqueta: topic.b.label, texto: topic.b.text },
+        // The side of a party is decided by the text of A and B, which can be wider than the question
+        // (B of «Servicio militar» is «alguna forma de servicio militar», also a voluntary one).
+        comoLeer:
+          'El lado de cada partido se decide por el texto de la postura A o B, que puede ser más amplio que la pregunta. «matiz»: el programa trata el tema sin tomar del todo una de las dos posturas. La nota resume la postura; las medidas son la prueba.',
+        // The same stances as «Temas que dividen» (`/tests/temas/`), grouped by side (A, with nuances, B) and then
+        // by acronym: the order of the file is not a ranking, and it must not look like one.
+        posturas: topicStances
+          .map((stance) => {
+            const program = getProgram(stance.party);
+            return {
+              partido: stance.party,
+              siglas: program.acronym,
+              // `matiz`: the program deals with the topic without taking either side fully.
+              lado: stance.side,
+              postura: stance.side === 'matiz' ? 'Con matices' : topic[stance.side].label,
+              // Written by the editors with the words of the program; the measures are the proof.
+              nota: stance.note,
+              medidas: stance.measures.map((number) => ({
+                n: number,
+                titulo: program.measures.find((measure) => measure.number === number)?.phraseTitle ?? '',
+                url: absolute(routes.measure(stance.party, number), site),
+              })),
+            };
+          })
+          .sort((x, y) => SIDE_ORDER.indexOf(x.lado) - SIDE_ORDER.indexOf(y.lado) || compareText(x.siglas, y.siglas)),
+        // A party with a program and no stance: its program says nothing that takes a side on this topic.
+        // A party without a program has no stance anywhere: it is not in this list.
+        sinPostura: publishedPrograms
+          .filter((program) => !withStance.has(program.id))
+          .map((program) => program.acronym)
+          .sort(compareText),
+      };
+    }),
   };
 }
 

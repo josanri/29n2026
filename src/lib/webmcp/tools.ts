@@ -30,7 +30,7 @@ interface PartyEntry {
 interface PartiesData {
   partidos: PartyEntry[];
   categorias: { id: string; nombre: string }[];
-  temas: { id: string; titulo: string; pregunta: string; posturas: unknown[] }[];
+  temas: { id: string; titulo: string; pregunta: string; posturas: unknown[]; sinPostura: string[] }[];
   aviso: string;
 }
 
@@ -249,25 +249,46 @@ const listCategories: WebMcpTool = {
   },
 };
 
+/** A topic by its id or its title, or the only topic whose title or question has the words («alquiler»). */
+function findTopic(topics: PartiesData['temas'], text: unknown) {
+  const wanted = normalizeForSearch(String(text ?? ''));
+  const exact = topics.find((topic) => [topic.id, topic.titulo].some((value) => normalizeForSearch(value) === wanted));
+  if (exact) return exact;
+  const words = wanted.split(/\s+/).filter(Boolean);
+  const partial = topics.filter((topic) => {
+    const haystack = normalizeForSearch(`${topic.id} ${topic.titulo} ${topic.pregunta}`);
+    return words.every((word) => haystack.includes(word));
+  });
+  if (partial.length === 1) return partial[0];
+  const options = (partial.length ? partial : topics).map((topic) => `${topic.id} (${topic.titulo})`).join('; ');
+  throw new Error(
+    partial.length
+      ? `«${String(text)}» encaja con varios temas: ${options}. Indica el id.`
+      : `No hay ningún tema «${String(text)}». Los temas son: ${options}.`,
+  );
+}
+
 const topicStances: WebMcpTool = {
   name: 'posturas_por_tema',
   title: 'Posturas en los temas que dividen',
   description:
-    'Compara a los partidos en los temas más polarizantes (inmigración, aborto, vivienda, impuestos, lenguas…). Sin «tema», lista los temas. Con «tema», da la pregunta, las dos posturas y la de cada partido, con una nota y las medidas de su programa que la apoyan. «matiz» es un programa que trata el tema sin tomar del todo una postura. Un partido sin postura no dice nada del tema en su programa.',
+    'Compara a los partidos en los temas más polarizantes del test «Temas que dividen» de Electosfera (inmigración, aborto, alquiler, impuestos, lenguas…). Sin «tema», lista los temas. Con «tema», da la pregunta, las dos posturas (A y B) y la de cada partido: «a», «b» o «matiz» (el programa trata el tema sin tomar del todo una postura), con una nota editorial y las medidas de su programa que la prueban. El lado se decide por el texto de A y B, que puede ser más amplio que la pregunta: léelo antes de resumir. «sinPostura» son los partidos con programa que no toman partido en ese tema; los partidos sin programa publicado no aparecen. Es una clasificación editorial: para citar a un partido, cita sus medidas.',
   inputSchema: {
     type: 'object',
-    properties: { tema: { type: 'string', description: 'Id o título del tema, por ejemplo «vivienda». Vacío: la lista de temas.' } },
+    properties: {
+      tema: { type: 'string', description: 'Id, título o palabras del tema, por ejemplo «vivienda» o «alquiler». Vacío: la lista de temas.' },
+    },
   },
   annotations: READ_ONLY,
   async execute(input) {
     const { temas, aviso } = await partiesData();
     if (!input.tema) {
-      return temas.map(({ id, titulo, pregunta, posturas }) => ({ id, titulo, pregunta, partidosConPostura: posturas.length }));
+      return {
+        temas: temas.map(({ id, titulo, pregunta, posturas }) => ({ id, titulo, pregunta, partidosConPostura: posturas.length })),
+        aviso,
+      };
     }
-    const wanted = normalizeForSearch(String(input.tema));
-    const topic = temas.find((candidate) => [candidate.id, candidate.titulo].some((value) => normalizeForSearch(value) === wanted));
-    if (!topic) throw new Error(`No hay ningún tema «${String(input.tema)}». Llama a «posturas_por_tema» sin tema para ver la lista.`);
-    return { ...topic, aviso };
+    return { ...findTopic(temas, input.tema), aviso };
   },
 };
 
