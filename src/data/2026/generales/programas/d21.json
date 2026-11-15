@@ -15,6 +15,38 @@
  "pdf": "/programas/d21-espana-limpia-2026.pdf",
  "fuentePdf": "https://democracia21.es/#soluciones",
  "fechaPdf": "2026-11-11",
+ "documentos": [
+  {
+   "titulo": "España Limpia",
+   "pdf": "/programas/d21-espana-limpia-2026.pdf",
+   "nombreDescarga": "programa-d21-espana-limpia-2026.pdf",
+   "paginas": 13
+  },
+  {
+   "titulo": "Vivienda, prioridad nº1",
+   "pdf": "/programas/d21-vivienda-2026.pdf",
+   "nombreDescarga": "programa-d21-vivienda-2026.pdf",
+   "paginas": 9
+  },
+  {
+   "titulo": "La educación en el centro",
+   "pdf": "/programas/d21-educacion-2026.pdf",
+   "nombreDescarga": "programa-d21-educacion-2026.pdf",
+   "paginas": 8
+  },
+  {
+   "titulo": "Sanidad pública: cuidar a quienes nos cuidan",
+   "pdf": "/programas/d21-sanidad-2026.pdf",
+   "nombreDescarga": "programa-d21-sanidad-2026.pdf",
+   "paginas": 6
+  },
+  {
+   "titulo": "Ser una potencia energética",
+   "pdf": "/programas/d21-energia-2026.pdf",
+   "nombreDescarga": "programa-d21-potencia-energetica-2026.pdf",
+   "paginas": 4
+  }
+ ],
  "paginas": 40,
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",

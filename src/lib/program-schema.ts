@@ -131,6 +131,10 @@ export const programSchema = z
     unidadMedida: z.string().optional(),
     unidadMedidas: z.string().optional(),
     pdfResumen: z.string().optional(),
+    /** A program published as several PDF (D21): the reader picks one in a dialog. */
+    documentos: z
+      .array(z.object({ titulo: z.string(), pdf: z.string(), nombreDescarga: z.string(), paginas: z.number().optional() }))
+      .optional(),
     presentacion: z.object({ titulo: z.string(), texto: z.string() }),
     cifras: z.array(keyFigureSchema),
     plazos: z.array(deadlineSchema),
@@ -164,6 +168,13 @@ export const programSchema = z
     measureUnit: raw.unidadMedida ?? 'medida',
     measureUnitPlural: raw.unidadMedidas ?? 'medidas',
     summaryUrl: raw.pdfResumen ? withBase(raw.pdfResumen) : raw.pdfResumen,
+    documents: (raw.documentos ?? []).map((doc) => ({
+      title: doc.titulo,
+      url: withBase(doc.pdf),
+      file: doc.pdf,
+      downloadName: doc.nombreDescarga,
+      pageCount: doc.paginas,
+    })),
     introduction: { title: raw.presentacion.titulo, text: raw.presentacion.texto },
     figures: raw.cifras,
     deadlines: raw.plazos,

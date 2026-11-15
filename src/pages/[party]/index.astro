@@ -7,6 +7,7 @@ import DeadlineTimeline from '@/components/charts/DeadlineTimeline.astro';
 import PresenceMap from '@/components/candidacies/PresenceMap.astro';
 import UnpublishedNotice from '@/components/party/UnpublishedNotice.astro';
 import RelatedParties from '@/components/party/RelatedParties.astro';
+import DocumentsDialog from '@/components/party/DocumentsDialog.astro';
 import Button from '@/components/ui/Button.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Panel from '@/components/ui/Panel.astro';
@@ -199,12 +200,16 @@ for (const figure of program.figures) {
               <div class="hero__actions">
                 <Button variant="ink" href={routes.measures(program.id)}><Icon name="measures" />{`Explorar ${allOf(program, total)}`}</Button>
                 <Button href={routes.block(program.id, 1)}><Icon name="blocks" />Leer por bloques</Button>
-                <Button
-                  href={program.documentUrl}
-                  target={isLocalDocument ? undefined : '_blank'}
-                  rel={isLocalDocument ? undefined : 'noopener'}
-                  download={isWebProgram ? undefined : downloadFileNames[program.id]}
-                ><Icon name={isLocalDocument ? 'download' : 'external'} />{documentLabel}</Button>
+                {isLocalDocument && program.documents.length > 1 ? (
+                  <DocumentsDialog label={documentLabel} documents={program.documents} />
+                ) : (
+                  <Button
+                    href={program.documentUrl}
+                    target={isLocalDocument ? undefined : '_blank'}
+                    rel={isLocalDocument ? undefined : 'noopener'}
+                    download={isWebProgram ? undefined : downloadFileNames[program.id]}
+                  ><Icon name={isLocalDocument ? 'download' : 'external'} />{documentLabel}</Button>
+                )}
                 {program.summaryUrl && (
                   <Button href={program.summaryUrl} download={summaryDownloadFileName}><Icon name="summary" />Resumen: las 29 medidas</Button>
                 )}
