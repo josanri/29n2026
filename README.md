@@ -113,9 +113,9 @@ scripts/                      solo código: extracción y análisis de los PDF
 | Ruta | Contenido |
 |---|---|
 | `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas |
-| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
-| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
-| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/` | Lectura completa por bloque |
+| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
+| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
+| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
@@ -161,12 +161,15 @@ public/2026/generales/programas/en-accion-3e-2026.pdf PDF oficial de En Acción 
 scripts/extract_tercera_edad.py      extracción de 63 medidas en 13 áreas
 src/data/2026/generales/programas/tercera-edad.json resultado que consume la web; el documento no se identifica expresamente como programa del 29N
 public/2026/generales/programas/vox-es-sentido-comun-2026.pdf PDF oficial de VOX «Es sentido común» (55 páginas, 12 de noviembre de 2026), optimizado: 2,0 MB frente a los 14,5 MB del original
-scripts/optimize_pdf.py              reduce un PDF antes de publicarlo: recomprime las fotos y deja solo los glifos usados de cada fuente; el texto no cambia
+scripts/optimize_pdf.py              reduce un PDF antes de publicarlo: recomprime las fotos (también las que van dentro de objetos de formulario) y deja solo los glifos usados de cada fuente; el texto no cambia
 scripts/extract_vox.py               extracción y análisis de las 115 medidas en 13 áreas
 src/data/2026/generales/programas/vox.json          resultado que consume la web; diez medidas solo tienen título en el PDF
 public/2026/generales/programas/pacma-programa-generales-2026.pdf PDF oficial de PACMA (82 páginas, 12 de noviembre de 2026), sin optimizar: pesa 1,1 MB
 scripts/extract_pacma.py             extracción de 102 propuestas en 3 bloques; comprueba los apartados contra el índice del PDF
 src/data/2026/generales/programas/pacma.json        resultado que consume la web; cada apartado de último nivel del PDF (1.1.8.1) es una propuesta
+public/2026/generales/programas/fe-jons-programa-electoral-2026.pdf PDF de FE de las JONS (60 páginas, 13 de noviembre de 2026), facilitado a la redacción en Google Drive; optimizado: 3,3 MB frente a los 19,2 MB del original
+scripts/extract_fe_jons.py           extracción de 262 medidas en 6 bloques: los puntos numerados (1.1, 1.2…) y las 25 piezas del Anexo I sin numerar; comprueba los capítulos contra el índice del PDF
+src/data/2026/generales/programas/fe-jons.json      resultado que consume la web; las medidas no tienen título y el del anexo lleva la fase del plan como plazo
 src/data/2026/generales/programas/eaj-pnv.json      30 propuestas transcritas de la [página oficial del PNV](https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/)
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026.pdf BOE, candidaturas proclamadas el 3 de noviembre
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf BOE, corrección oficial del 7 de noviembre
@@ -191,6 +194,7 @@ Para regenerar los datos de Feministas al Congreso: `npm run data:pfac` (necesit
 Para regenerar los datos de En Acción 3e: `npm run data:tercera-edad` (necesita Python con PyMuPDF).
 Para regenerar los datos de VOX: `npm run data:vox` (necesita Python con PyMuPDF).
 Para regenerar los datos de PACMA: `npm run data:pacma` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada propuesta).
+Para regenerar los datos de FE de las JONS: `npm run data:fe-jons` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 Para regenerar los datos de Adelante Andalucía: `npm run data:adelante` (consulta las páginas oficiales por área; procesa 637 propuestas temáticas y 82 territoriales, numeradas del 1 al 719. Las 29 prioridades del resumen no se cuentan de nuevo).
 Para regenerar candidaturas y mapa: `npm run data:candidaturas` (necesita Python con PyMuPDF y conexión para obtener el GeoJSON de provincias). Se usan las proclamaciones del BOE del 3 de noviembre y todas las correcciones de la resolución del 7 de noviembre; las circunscripciones insulares se muestran separadas. El mapa emplea áreas HTML (`<map>`) y se deriva de la capa de provincias del Ministerio de Transportes y Movilidad Sostenible (Sistema de Información Urbana, servicio `SIU/ENTIDADES_TERRITORIALES_EGRN`). En Ceuta y Melilla, el script quita los diques del puerto, que a esa escala son picos finos.
 La portada agrupa los partidos autonómicos por comunidad y muestra los tres temas más frecuentes de cada programa. El PDF aportado de ERC salta de la propuesta 167 a la 198 y de la 250 a la 252; el análisis incluye solo las 227 propuestas presentes en el documento.

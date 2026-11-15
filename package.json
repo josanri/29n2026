@@ -19,6 +19,7 @@
     "data:tercera-edad": "python scripts/extract_tercera_edad.py public/2026/generales/programas/en-accion-3e-2026.pdf src/data/2026/generales/programas/tercera-edad.json",
     "data:vox": "python scripts/extract_vox.py public/2026/generales/programas/vox-es-sentido-comun-2026.pdf src/data/2026/generales/programas/vox.json",
     "data:pacma": "python scripts/extract_pacma.py public/2026/generales/programas/pacma-programa-generales-2026.pdf src/data/2026/generales/programas/pacma.json",
+    "data:fe-jons": "python scripts/extract_fe_jons.py public/2026/generales/programas/fe-jons-programa-electoral-2026.pdf src/data/2026/generales/programas/fe-jons.json",
     "data:adelante": "python scripts/extract_adelante.py",
     "data:candidaturas": "python scripts/extract_candidaturas.py"
   },

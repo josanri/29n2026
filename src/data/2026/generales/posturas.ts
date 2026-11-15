@@ -34,17 +34,20 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'fo', side: 'b', measures: [101, 103], note: 'Control absoluto de las fronteras y expulsión de quien esté de forma irregular.' },
   { topic: 'inmigracion', party: 'ie', side: 'b', measures: [7], note: 'Reforzar el control de fronteras y cambiar las reglas de expulsión y asilo.' },
   { topic: 'inmigracion', party: 'pacma', side: 'matiz', measures: [100], note: 'Acceso unificado a la educación, la sanidad y el alojamiento, y más plazas de acogida, sin hablar de regularizar ni de vías legales.' },
+  { topic: 'inmigracion', party: 'fe-jons', side: 'b', measures: [2, 5, 13, 34], note: 'Fronteras cerradas y militarizadas, un Plan Nacional de Remigración con expulsiones y una tasa máxima de inmigración del 1,5 %.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
   { topic: 'aborto', party: 'mundo-mas-justo', side: 'matiz', measures: [80, 81, 82], note: 'Prevención de embarazos no deseados, apoyo a la maternidad y atención psicológica antes y después de una interrupción voluntaria, sin pedir más derechos.' },
   { topic: 'aborto', party: 'pp', side: 'matiz', measures: [159], note: 'No habla del aborto, pero el concebido no nacido contará para las ayudas a la familia.' },
   { topic: 'aborto', party: 'vox', side: 'b', measures: [98], note: 'Defensa del derecho a la vida «desde su concepción hasta la muerte natural» y objeción de conciencia de los sanitarios.' },
+  { topic: 'aborto', party: 'fe-jons', side: 'b', measures: [90], note: '«La vida humana no es negociable»: ilegalizar las leyes del aborto.' },
 
   // Monarquía o república
   { topic: 'monarquia', party: 'pfac', side: 'b', measures: [12], note: 'Avanzar hacia un Estado republicano, federal y laico.' },
   { topic: 'monarquia', party: 'erc', side: 'b', measures: [3, 9], note: 'Fiscalizar al rey y a la Casa Real y apoyar las iniciativas que puedan «poner fin a esta institución».' },
   { topic: 'monarquia', party: 'vox', side: 'a', measures: [105], note: 'La máxima protección jurídica para los símbolos de la Nación, entre ellos la Corona.' },
+  { topic: 'monarquia', party: 'fe-jons', side: 'b', measures: [145, 147], note: 'Abolir la monarquía para alumbrar un Estado «republicano Nacional-Sindicalista».' },
 
   // Cataluña y autodeterminación
   { topic: 'autodeterminacion', party: 'erc', side: 'a', measures: [1], note: 'Negociar un referéndum de autodeterminación en Cataluña con acompañamiento internacional.' },
@@ -53,6 +56,7 @@ export const stances: Stance[] = [
   { topic: 'autodeterminacion', party: 'vox', side: 'b', measures: [42], note: 'España es «un solo mercado y una sola Nación».' },
   { topic: 'autodeterminacion', party: 'bng', side: 'a', measures: [157], note: 'Cambiar las leyes para permitir referendos vinculantes, «incluído o dereito de autodeterminación».' },
   { topic: 'autodeterminacion', party: 'adelante', side: 'matiz', measures: [346], note: 'Un modelo confederal: «un Estado de pueblos libres e iguales».' },
+  { topic: 'autodeterminacion', party: 'fe-jons', side: 'b', measures: [58, 61], note: 'España es «indivisible»: ilegalizar y perseguir a todo movimiento separatista.' },
 
   // Vivienda: control del alquiler
   { topic: 'vivienda', party: 'adelante', side: 'a', measures: [160, 161, 164], note: 'Alquiler social obligatorio, alquiler al 20 % del salario y zonas tensionadas obligatorias.' },
@@ -68,6 +72,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'erc', side: 'matiz', measures: [62], note: 'Mejorar la regulación de los arrendamientos para proteger a los inquilinos, sin un tope de precio.' },
   { topic: 'vivienda', party: 'cc', side: 'matiz', measures: [24], note: 'Incentivos fiscales al pequeño propietario que alquila a precio asequible, sin tope general.' },
   { topic: 'vivienda', party: 'pacma', side: 'matiz', measures: [86], note: 'Construcción masiva de vivienda pública y límites a los pisos turísticos, pero con incentivos fiscales a los propietarios y sin tope general del alquiler.' },
+  { topic: 'vivienda', party: 'fe-jons', side: 'a', measures: [43], note: 'Tope del alquiler: nunca más del 25 % del salario de la unidad familiar.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -89,6 +94,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'vox', side: 'b', measures: [47], note: 'Derogar «las leyes que han criminalizado a los hombres».' },
   { topic: 'igualdad', party: 'erc', side: 'a', measures: [87], note: 'Blindar las políticas feministas y los recursos contra las violencias machistas.' },
   { topic: 'igualdad', party: 'pacma', side: 'a', measures: [95], note: 'Más medios contra la violencia machista: unidades policiales especializadas las 24 horas y campañas contra los estereotipos de género.' },
+  { topic: 'igualdad', party: 'fe-jons', side: 'b', measures: [87], note: 'Derogar las leyes de «género», incluida la Ley de Violencia de Género.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -97,6 +103,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'mundo-mas-justo', side: 'a', measures: [16], note: 'Una red pública de memoria, reparación y justicia restaurativa.' },
   { topic: 'memoria', party: 'pp', side: 'b', measures: [129], note: 'Derogar la Ley de Memoria Democrática y aprobar una Ley de Concordia.' },
   { topic: 'memoria', party: 'vox', side: 'b', measures: [46], note: 'Superar las «divisivas leyes ideológicas», como la de Memoria Democrática.' },
+  { topic: 'memoria', party: 'fe-jons', side: 'b', measures: [231], note: 'Derogación inmediata de las «mal llamadas Leyes de “Memoria”».' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
@@ -106,6 +113,7 @@ export const stances: Stance[] = [
   { topic: 'nuclear', party: 'vox', side: 'b', measures: [8], note: 'Recuperar el plan nuclear nacional y derogar el calendario de cierre de las centrales.' },
   { topic: 'nuclear', party: 'erc', side: 'matiz', measures: [147], note: 'Que el Estado contribuya al Fondo de Transición Nuclear de Cataluña.' },
   { topic: 'nuclear', party: 'pacma', side: 'a', measures: [43], note: 'El modelo basado en los combustibles fósiles y la energía nuclear «es insostenible»: apuesta por las renovables.' },
+  { topic: 'nuclear', party: 'fe-jons', side: 'b', measures: [122, 124], note: 'La energía nuclear como fuente principal: anular el plan de cierre y proyectar centrales nuevas.' },
 
   // Impuestos y redistribución
   { topic: 'impuestos', party: 'adelante', side: 'a', measures: [232, 233], note: 'IRPF más progresivo y un impuesto sobre la riqueza.' },
@@ -115,6 +123,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'pp', side: 'b', measures: [178, 183], note: 'Deflactar el IRPF y eliminar los impuestos que frenan la inversión.' },
   { topic: 'impuestos', party: 'salf', side: 'b', measures: [30, 86], note: 'Suprimir sucesiones, donaciones y patrimonio y bajar la cuña fiscal.' },
   { topic: 'impuestos', party: 'vox', side: 'b', measures: [2], note: 'Rebaja masiva de impuestos: IRPF, IVA y sociedades.' },
+  { topic: 'impuestos', party: 'fe-jons', side: 'matiz', measures: [101, 103, 108], note: 'Más tramos para que los impuestos sean progresivos y tasas a las multinacionales, pero bajada progresiva del IRPF.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },
@@ -122,6 +131,7 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'fo', side: 'matiz', measures: [41], note: 'Derecho a estudiar en castellano o en las lenguas cooficiales.' },
   { topic: 'lenguas', party: 'pp', side: 'b', measures: [96, 127], note: 'Garantizar la enseñanza en castellano en toda España y el castellano como lengua común de trabajo en el Congreso.' },
   { topic: 'lenguas', party: 'salf', side: 'b', measures: [97], note: 'Castellano garantizado, sin tener que ir a juicio.' },
+  { topic: 'lenguas', party: 'fe-jons', side: 'b', measures: [203, 232], note: 'Las asignaturas básicas, en español; las lenguas regionales, solo en sus propias horas de clase.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
@@ -130,6 +140,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'pp', side: 'b', measures: [20, 30], note: 'Respuesta penal más rápida a la multirreincidencia y más prisión permanente revisable.' },
   { topic: 'seguridad', party: 'vox', side: 'b', measures: [81], note: 'Ampliar la prisión permanente revisable.' },
   { topic: 'seguridad', party: 'salf', side: 'b', measures: [11, 12], note: 'Una macrocárcel y el cumplimiento íntegro de las penas.' },
+  { topic: 'seguridad', party: 'fe-jons', side: 'b', measures: [162, 176], note: 'Más penas y cadena perpetua no revisable para los delitos «de Lesa Patria», el asesinato, la violación y el terrorismo.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },
@@ -137,6 +148,7 @@ export const stances: Stance[] = [
   { topic: 'ley-trans', party: 'pp', side: 'b', measures: [115], note: 'Revisar la Ley Trans y eliminar la libre autodeterminación registral del sexo.' },
   { topic: 'ley-trans', party: 'pfac', side: 'b', measures: [5], note: 'Derogar la ley trans.' },
   { topic: 'ley-trans', party: 'fo', side: 'b', measures: [58], note: 'Derogar la Ley Trans.' },
+  { topic: 'ley-trans', party: 'fe-jons', side: 'b', measures: [87, 228], note: 'Derogar las leyes de los colectivos LGTBI y prohibir las terapias y cirugías de cambio de sexo.' },
 
   // Gestación subrogada
   { topic: 'gestacion-subrogada', party: 'adelante', side: 'b', measures: [521], note: 'Prohibir la gestación subrogada.' },
@@ -149,6 +161,7 @@ export const stances: Stance[] = [
   { topic: 'tauromaquia', party: 'vox', side: 'b', measures: [77], note: 'Defensa y promoción de la tauromaquia.' },
   { topic: 'tauromaquia', party: 'pp', side: 'b', measures: [136], note: 'Restituir el Premio Nacional de Tauromaquia y proteger las fiestas y tradiciones populares.' },
   { topic: 'tauromaquia', party: 'pacma', side: 'a', measures: [7, 96], note: 'Abolir los festejos con animales, derogar la Ley 18/2013, retirar las subvenciones y prohibir la presencia de menores.' },
+  { topic: 'tauromaquia', party: 'fe-jons', side: 'b', measures: [237], note: 'Protección especial y promoción de la tauromaquia, con patrocinio público.' },
 
   // OTAN
   { topic: 'otan', party: 'ph', side: 'a', measures: [24], note: 'Neutralidad activa y salida de la OTAN.' },
@@ -157,6 +170,7 @@ export const stances: Stance[] = [
   { topic: 'otan', party: 'ie', side: 'a', measures: [5], note: 'Revisar la relación con la OTAN con consultas ciudadanas y una política de neutralidad.' },
   { topic: 'otan', party: 'bng', side: 'matiz', measures: [506], note: 'Rechaza más gasto militar y las directrices de la OTAN, sin pedir la salida.' },
   { topic: 'otan', party: 'pp', side: 'b', measures: [54], note: 'Reforzar los contingentes españoles y el pilar europeo de la OTAN.' },
+  { topic: 'otan', party: 'fe-jons', side: 'a', measures: [46, 166], note: 'Abandonar la OTAN de inmediato y no participar en misiones ajenas a los intereses de España.' },
 
   // Burka
   { topic: 'burka', party: 'vox', side: 'b', measures: [71], note: 'Prohibir el burka y el niqab en los espacios públicos.' },
@@ -167,9 +181,11 @@ export const stances: Stance[] = [
   { topic: 'eutanasia', party: 'mundo-mas-justo', side: 'b', measures: [74, 83], note: 'Cuidados paliativos universales: «que nadie pida morir por falta de cuidados».' },
   { topic: 'eutanasia', party: 'vox', side: 'b', measures: [98], note: 'El derecho a la vida «hasta la muerte natural» y más cuidados paliativos.' },
   { topic: 'eutanasia', party: 'pp', side: 'matiz', measures: [226], note: 'Garantizar los cuidados paliativos «respetando siempre la voluntad del paciente», sin hablar de la eutanasia.' },
+  { topic: 'eutanasia', party: 'fe-jons', side: 'b', measures: [90], note: 'Ilegalizar las leyes de la eutanasia: «La vida humana no es negociable».' },
 
   // Servicio militar
   { topic: 'servicio-militar', party: 'adelante', side: 'a', measures: [589], note: 'Ningún servicio militar, ni obligatorio ni voluntario.' },
   { topic: 'servicio-militar', party: 'bng', side: 'a', measures: [492], note: 'Abolir para siempre el servicio militar obligatorio y prohibir por ley que vuelva.' },
   { topic: 'servicio-militar', party: 'salf', side: 'b', measures: [17, 18], note: 'Una «mili voluntaria» de seis a doce meses, pagada y con ventajas fiscales.' },
+  { topic: 'servicio-militar', party: 'fe-jons', side: 'b', measures: [172], note: 'Servicio militar obligatorio de 18 meses para hombres y mujeres de 18 a 22 años.' },
 ];

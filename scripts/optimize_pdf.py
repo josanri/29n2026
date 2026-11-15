@@ -39,6 +39,39 @@ def main():
             salida = io.BytesIO()
             foto.save(salida, 'JPEG', quality=calidad, optimize=True, progressive=True)
             pagina.replace_image(xref, stream=salida.getvalue())
+    # Las imágenes dentro de un objeto de formulario (Form XObject) no salen en `get_images` de la página
+    # (FE de las JONS: 15 de 19 MB). Se recomprimen directamente en su objeto.
+    for xref in range(1, documento.xref_length()):
+        if xref in vistas or documento.xref_get_key(xref, 'Subtype') != ('name', '/Image'):
+            continue
+        if documento.xref_get_key(xref, 'SMask')[0] != 'null' or documento.xref_get_key(xref, 'ImageMask')[1] == 'true':
+            continue
+        vistas.add(xref)
+        try:
+            pixmap = pymupdf.Pixmap(documento, xref)
+        except Exception:
+            continue
+        if pixmap.n - pixmap.alpha >= 4:
+            pixmap = pymupdf.Pixmap(pymupdf.csRGB, pixmap)
+        if pixmap.alpha or pixmap.n not in (1, 3):
+            continue
+        modo = 'RGB' if pixmap.n == 3 else 'L'
+        foto = Image.frombytes(modo, (pixmap.width, pixmap.height), pixmap.samples)
+        if foto.width > ancho_max:
+            foto = foto.resize((ancho_max, round(foto.height * ancho_max / foto.width)), Image.LANCZOS)
+        salida = io.BytesIO()
+        foto.save(salida, 'JPEG', quality=calidad, optimize=True, progressive=True)
+        datos = salida.getvalue()
+        if len(datos) >= len(documento.xref_stream_raw(xref)):
+            continue
+        documento.update_stream(xref, datos, compress=False)
+        for clave in ('DecodeParms', 'Decode', 'Intent'):
+            documento.xref_set_key(xref, clave, 'null')
+        documento.xref_set_key(xref, 'Filter', '/DCTDecode')
+        documento.xref_set_key(xref, 'Width', str(foto.width))
+        documento.xref_set_key(xref, 'Height', str(foto.height))
+        documento.xref_set_key(xref, 'ColorSpace', '/DeviceRGB' if modo == 'RGB' else '/DeviceGray')
+        documento.xref_set_key(xref, 'BitsPerComponent', '8')
     documento.subset_fonts()
     documento.ez_save(destino, garbage=4, deflate=True, clean=True)
 
