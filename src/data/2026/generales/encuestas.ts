@@ -7,12 +7,13 @@
  *
  * Origen de las cifras (revisión del 15 de noviembre de 2026):
  * - `checked: true`: la cifra se ha leído en la página original enlazada.
- * - `checked: false`: la cifra viene de la tabla de Mapa Electoral (agregador). El enlace es la publicación original.
+ * - `checked: false`: la cifra no se ha leído en la página original enlazada: viene de la tabla de Mapa Electoral
+ *   (agregador) o de otra fuente que la recoge (electografica, Demócrata…). El enlace es la publicación original.
  * Sumar se convierte en Frente Amplio el 16 de octubre de 2026 (registro en la Junta Electoral Central). Una encuesta
- * publicada antes de esa fecha da «Sumar»; una publicada después, «Frente Amplio»: `v()` lo decide por la fecha.
+ * publicada antes de esa fecha da «Sumar»; una publicada después, «Frente Amplio»: quien añade la línea elige `v()` (antes del 16-X) o `vFa()` (desde esa fecha).
  * La cifra es la suma que publica cada encuestadora para la coalición y sus socios.
  * Escaños y muestra: de la tabla de Mapa Electoral, salvo los leídos en la página original (Sigma Dos 9 nov,
- * SocioMétrica 8 nov y GAD3). En «Frente Amplio» se usa la suma del agregador, igual que en el porcentaje.
+ * SocioMétrica 8 y 15 nov, 40dB. 15 nov y GAD3). En «Frente Amplio» se usa la suma del agregador, igual que en el porcentaje.
  */
 
 export type PollPartyId =
@@ -114,8 +115,9 @@ export const polls: Poll[] = [
   { pollster: 'cis', date: '2026-07-15', checked: false, url: 'https://www.cis.es/es/w/avance-de-resultados-del-estudio-3571-bar%C3%B3metro-de-julio-2026-', values: v(25.1, 33.0, 15.3, 6.1, 2.5, 2.6, { erc: 2.7, junts: 0.7, bildu: 0.8, pnv: 1.0, bng: 0.9, cc: 0.2, upn: 0.2 }), sample: 4020 },
   { pollster: 'cis', date: '2026-06-11', checked: false, url: 'https://www.cis.es/es/w/avance-de-resultados-del-estudio-3567-bar%C3%B3metro-de-junio-2026-', values: v(27.1, 31.3, 15.8, 6.4, 2.8, 1.9, { erc: 1.9, junts: 1.0, bildu: 1.2, pnv: 0.6, bng: 1.0, cc: 0.2, upn: 0.1 }), sample: 4024 },
   // 40dB.
+  // 15 nov: FA suma Frente Amplio (3,7) y las otras coaliciones del bloque (1,7): 5,4 %. El informe no da escaños de FA.
   { pollster: '40db', date: '2026-11-15', checked: true, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_dia03.pdf', values: vFa(31.4, 29.9, 18.3, 5.4, 1.3, 1.8), sample: 2000, seats: { pp: [125, 136], psoe: [117, 123], vox: [59, 65], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1 } },
-  { pollster: '40db', date: '2026-11-14', checked: false, url: 'https://elpais.com/infografias/encuestas40db/2026/11-tracking-electoral/informe_tracking_dia02.pdf', values: vFa(31.1, 29.8, 18.5, 5.2, 1.3, 1.6), sample: 1500, seats: { pp: [121, 132], psoe: [116, 123], vox: [61, 67], fa: [7, 11], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
+  { pollster: '40db', date: '2026-11-14', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_dia02.pdf', values: vFa(31.1, 29.8, 18.5, 5.2, 1.3, 1.6), sample: 1500, seats: { pp: [121, 132], psoe: [116, 123], vox: [61, 67], fa: [7, 11], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
   { pollster: '40db', date: '2026-11-13', checked: false, url: 'https://elpais.com/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_dia01.pdf', values: vFa(31.5, 29.4, 18.8, 5.1, 1.3, 1.7), sample: 1000, seats: { pp: [124, 137], psoe: [113, 121], vox: [61, 70], fa: [7, 11], podemos: 0, erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1 } },
   { pollster: '40db', date: '2026-11-09', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/11-preelectoral/2026_11_preelectoral_informe.pdf', values: vFa(31.9, 29.9, 18.0, 5.0, 1.2, 2.0), sample: 2000, seats: { pp: [126, 139], psoe: [115, 123], vox: [58, 64], fa: [7, 11], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1 } },
   { pollster: '40db', date: '2026-10-09', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/10-08-barometro-flash/2026_10_informe_voto_barometro_flash.pdf', values: v(31.9, 28.1, 18.9, 5.3, 2.3, 1.8), sample: 800, seats: { pp: [123, 140], psoe: [105, 117], vox: [63, 74], sumar: [5, 7], erc: 8, junts: 7, bildu: 7, pnv: 6, bng: 2, cc: 1, upn: 1, adelante: 1 } },
