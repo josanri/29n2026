@@ -14,7 +14,7 @@ Common…) no entra: primero se añade a `pollsters` con su página oficial, y s
 
 1. Lee `polls` y apunta, por encuestadora, la fecha de la última línea. Solo interesa lo publicado **después**.
 2. Mira la fecha de hoy y el ritmo de cada una. En campaña (desde el 13 de noviembre) publican a diario o casi:
-   - **40dB.** (El País y SER): tracking diario, PDF `…/2026/11-tracking-electoral/informe_tracking_diaNN.pdf`.
+   - **40dB.** (El País y SER): tracking diario, PDF `https://ep00.epimg.net/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_diaNN.pdf`.
    - **Sigma Dos** (El Mundo): tracking diario.
    - **SocioMétrica** (El Español): sondeo del domingo por la noche (avance el sábado o domingo).
    - **GAD3** (ABC): barómetro mensual, con alguna entrega extra en campaña.
@@ -42,10 +42,10 @@ fuente. Las cifras de un titular sin tabla no sirven: hace falta PP, PSOE y VOX 
 Todo es **% sobre voto válido** (estimación, no intención directa).
 
 - **PP**: el mismo criterio que la línea anterior de esa encuestadora. Si publica «PP» y «PP + UPN-PP» (Navarra),
-  la **estimación de voto** sigue la serie existente y los **escaños** van con UPN-PP incluido (así están ya 40dB.,
-  GAD3 y SocioMétrica). Déjalo escrito en un comentario sobre la línea.
+  la **estimación de voto** sigue la serie existente y los **escaños** van con UPN-PP incluido (es el criterio de las líneas recientes de
+  40dB., GAD3 y SocioMétrica; en caso de duda, copia el de la línea anterior de esa encuestadora). Déjalo escrito en un comentario sobre la línea.
 - **Frente Amplio** (`fa`): la suma que publica la encuestadora para la coalición y sus socios (Front Valencià,
-  UPCan, Compromís…). `vFa()` lo coloca en `fa` si la fecha es posterior al 16-X-2026; antes de esa fecha, `v()` y `sumar`.
+  UPCan, Compromís…). `vFa()` pone el cuarto valor en `fa` y se usa si la publicación es del 16-X-2026 o posterior; antes, `v()` lo pone en `sumar`. Las dos las elige quien escribe la línea: no miran la fecha.
   Si la fuente solo da FA suelto y los socios aparte, súmalos y apunta la suma en el comentario.
 - **Podemos** y **SALF**: la cifra de la encuesta, o `null` si no la publica (Sigma Dos no da SALF).
 - **Autonómicos** (`erc`, `junts`, `bildu`, `pnv`, `bng`, `cc`, `upn`, `adelante`): solo los que la fuente da.
@@ -64,8 +64,10 @@ Dentro de `polls`, bajo el comentario de su encuestadora y por **orden de fecha,
 { pollster: 'sociometrica', date: '2026-11-15', checked: true, url: 'https://…', values: vFa(31.6, 27.8, 19.1, 6.0, 1.2, 2.2, { erc: 2.5, bildu: 1.5, adelante: 1.6 }), sample: 5923, seats: { pp: 132, psoe: 110, vox: 67, fa: 9, erc: 9, junts: 5 } },
 ```
 
-`vFa(pp, psoe, vox, frenteAmplio, podemos, salf, { otros })` (o `v(...)` antes del 16-X). Los tres primeros y los cuatro
-siguientes son obligatorios (`null` si no se publica).
+(Ejemplo abreviado: la línea real lleva todos los escaños que publica la fuente.)
+
+`vFa(pp, psoe, vox, frenteAmplio, podemos, salf, { otros })` (o `v(...)` antes del 16-X). PP, PSOE y VOX son números
+obligatorios; Frente Amplio (o Sumar), Podemos y SALF son obligatorios pero pueden ser `null`; `{ otros }` es opcional.
 
 - `url`: la **publicación original**. Si no existe o no se ha podido abrir, pon la mejor fuente que sí has abierto y
   dilo en un comentario sobre la línea (`// sin enlace propio de El Mundo: …`). Una URL deducida de un patrón (el PDF
