@@ -86,6 +86,12 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     </main>
     <SiteFooter />
     <Tooltip />
+    <script>
+      // WebMCP: tools for the AI agent of the browser (`src/lib/webmcp/`). Only a browser that has the API downloads
+      // them; for the others this is one check and nothing else.
+      import { modelContext } from '@/lib/webmcp/context';
+      if (modelContext()) import('@/lib/webmcp/tools').then(({ registerSiteTools }) => registerSiteTools());
+    </script>
   </body>
 </html>
 
