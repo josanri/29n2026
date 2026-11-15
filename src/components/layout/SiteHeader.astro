@@ -74,7 +74,8 @@ const testsCurrent = path.startsWith(routes.tests());
 ---
 
 <header class="site-header">
-  <div class="container site-header__row">
+  <!-- data-nosnippet: the menu (party names, «Sin programa») is never the text of a search result. -->
+  <div class="container site-header__row" data-nosnippet>
     <a class="logo" href={routes.home()} aria-label={`${SITE_NAME}, inicio`}>
       <Wordmark />
     </a>

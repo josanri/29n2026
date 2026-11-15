@@ -37,7 +37,8 @@ Con `NESTED_OUTPUT=1`, la web se compila en `dist/2026/generales/`, porque Cloud
 
 - `_headers`, con la ruta base delante de cada ruta;
 - `_redirects`: `/`, `/2026` y `/2026/` llevan a `/2026/generales/` (302, temporal: más adelante serán portadas con la lista de elecciones);
-- `robots.txt`, porque los buscadores solo lo buscan en la raíz.
+- `robots.txt`, porque los buscadores solo lo buscan en la raíz;
+- `favicon.ico`: la raíz redirige a la elección, y un buscador que no encuentra el icono en la portada lo pide en `/favicon.ico`.
 
 GitHub Pages ya no publica el sitio: solo una página que redirige a electosfera.es (ver «Dominio propio», paso 9).
 
@@ -98,7 +99,7 @@ src/data/2026/generales/      datos de la elección: programas/, calendario, Con
   eleccion.ts                 nombre corto (29N), nombre, fecha: la interfaz toma los textos de aquí
 src/data/taxonomia.json       taxonomía común a todas las elecciones
 public/2026/generales/        archivos públicos de la elección: programas/, datos-electorales/, favicon.svg
-public/comun/                 archivos públicos comunes: _headers, sw.js
+public/comun/                 archivos públicos comunes: _headers, sw.js y los favicons en mapa de bits (favicon.ico, favicon-192.png, apple-touch-icon.png), que dibuja `python scripts/favicons.py`
 scripts/                      solo código: extracción y análisis de los PDF
 .cache/2026/generales/        resultados intermedios de la extracción (pp_raw.json…); no está en git
 ```
