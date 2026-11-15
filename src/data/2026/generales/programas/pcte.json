@@ -1067,7 +1067,9 @@
    "colectivos": [],
    "palancas": [],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Ninguna pensión por debajo del salario mínimo."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -1110,7 +1112,8 @@
    "palancas": [],
    "territorios": [],
    "cifras": [
-    "Incapacidad temporal pagada al 100 % del salario desde el primer día."
+    "Incapacidad temporal pagada al 100 % del salario desde el primer día.",
+    "Prestación por desempleo mientras dure el paro, nunca inferior al salario mínimo."
    ],
    "plazo": null,
    "deroga": null
@@ -1359,7 +1362,9 @@
    "colectivos": [],
    "palancas": [],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Solo prácticas curriculares que no cubran labores esenciales de producción, con tutor, límite de horas y un máximo de becarios por plantilla, y con compensación no inferior al salario mínimo en proporción a las horas."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -1423,7 +1428,9 @@
    ],
    "palancas": [],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Beca-salario equivalente al salario mínimo para estudiantes de familias trabajadoras y plaza en residencia pública para quien estudie fuera de su localidad."
+   ],
    "plazo": null,
    "deroga": null
   },

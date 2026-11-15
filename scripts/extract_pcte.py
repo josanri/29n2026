@@ -109,6 +109,11 @@ CIFRAS_MEDIDA = [
     ('6.4', 'Reserva de un tercio del parque público de alquiler para jóvenes trabajadores'),
     ('7.3', 'hasta que el hijo o la hija cumpla 3 años'),
     ('11.2', 'al menos 10 horas retribuidas al año'),
+    # Cuantías fijadas por referencia al salario mínimo (como las pensiones mínimas del BNG).
+    ('4.10', 'Ninguna pensión por debajo del salario mínimo'),
+    ('4.12', 'Prestación por desempleo mientras dure el paro, nunca inferior al salario mínimo'),
+    ('6.2', 'con compensación no inferior al salario mínimo en proporción a las horas'),
+    ('6.5', 'Beca-salario equivalente al salario mínimo'),
 ]
 # Plazos: solo cuándo se aplica la medida. (código, plazo, texto, prueba literal)
 PLAZOS = [
