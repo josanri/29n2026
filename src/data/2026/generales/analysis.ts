@@ -543,7 +543,7 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
     {
       title: 'La limpieza política abre el programa: 21 medidas',
       text:
-        'El bloque 1, «Una limpieza política radical», reúne 21 de las 95 medidas (22 %). Los delitos de corrupción no prescribirán y sus condenados quedarán inhabilitados de por vida, se eliminarán los aforamientos no previstos en la Constitución, nadie podrá ejercer el mismo cargo más de ocho años y los parlamentarios no cobrarán si no asisten a las sesiones.',
+        'El bloque 1, «Una limpieza política radical», reúne 21 de las 95 medidas (22 %). Se doblarán los recursos de la Fiscalía Anticorrupción, los delitos de corrupción no prescribirán y sus condenados quedarán inhabilitados de por vida, se eliminarán los aforamientos no previstos en la Constitución, nadie podrá ejercer el mismo cargo más de ocho años y los parlamentarios no cobrarán si no asisten a las sesiones.',
       measureNumbers: [6, 9, 13, 16, 20],
     },
     {
@@ -555,7 +555,7 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
     {
       title: 'Vivienda: alivio hoy y un plan a diez años',
       text:
-        'Las 19 medidas de vivienda se ordenan en dos fases. La primera limita de forma temporal los alquileres en zonas tensionadas, elimina el IVA, el ITP y el AJD a los menores de 35 años en la compra de vivienda habitual (hasta 400.000 €) y reasigna 10.000 M€ de fondos europeos. La segunda levanta barrios completos con un Plan Nacional a diez años y obliga a resolver las licencias de obra mayor en 30 días.',
+        'Las 19 medidas de vivienda se ordenan en dos fases. La primera limita de forma temporal los alquileres en zonas tensionadas, elimina el IVA, el ITP y el AJD a los menores de 35 años en la compra de vivienda habitual (hasta 400.000 €) y reasigna 10.000 M€ de fondos europeos. La segunda levanta barrios completos con un Plan Nacional a diez años y da a los ayuntamientos 30 días para revisar las licencias de obra mayor.',
       measureNumbers: [22, 26, 27, 33, 36],
     },
     {
