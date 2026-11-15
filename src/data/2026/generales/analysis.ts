@@ -259,6 +259,82 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [11, 19, 23, 54, 57, 71, 72, 73, 77, 111],
     },
   ],
+  pcte: [
+    {
+      title: 'Un programa de lucha, no de gobierno',
+      text:
+        'El PCTE presenta su texto como «programa de lucha» y no como programa electoral: «Estas no son una serie de medidas para aplicar desde las instituciones». Las 95 medidas son reivindicaciones para una «oposición obrera» organizada desde los centros de trabajo, y el último bloque pide más derechos sindicales: representantes también en las empresas de menos de seis trabajadores, 10 horas de asamblea retribuidas al año y consultas vinculantes antes de firmar convenios o ERE.',
+      measureNumbers: [89, 90, 91, 94],
+    },
+    {
+      title: 'Menos tiempo de trabajo',
+      text:
+        'El primer bloque reduce la jornada a 35 horas semanales «ya», como paso hacia las 30, con un tope de 1.540 horas al año; da cinco semanas de vacaciones y adelanta la jubilación ordinaria a los 60 años (a los 55 en los trabajos penosos o peligrosos). Si una máquina produce lo mismo en menos tiempo, «el resultado debe ser menos jornada y no menos empleo».',
+      measureNumbers: [2, 3, 4, 16],
+    },
+    {
+      title: 'Ningún desahucio y alquileres a la mitad',
+      text:
+        'Las 12 medidas de vivienda prohíben todo desahucio de la vivienda habitual de los hogares trabajadores, «sea cual sea la causa», bajan los alquileres un 50 % de inmediato y expropian sin indemnización las viviendas vacías de bancos, fondos y grandes tenedores. El parque público de alquiler debe llegar al 10 % de las viviendas y la vivienda turística no puede pasar del 0,5 %.',
+      measureNumbers: [17, 21, 23, 24, 25],
+    },
+    {
+      title: 'Propiedad estatal bajo control obrero',
+      text:
+        'El programa pasa a propiedad estatal, bajo «mecanismos de control obrero», los sectores estratégicos (energía, transporte y telecomunicaciones) y las empresas viables que sus dueños quieran cerrar. Recupera con gestión pública directa los servicios privatizados y quiere un sistema educativo «exclusivamente público», que integre los centros concertados en una red pública única.',
+      measureNumbers: [13, 14, 30, 34, 37],
+    },
+    {
+      title: 'Fuera de la OTAN y de la UE',
+      text:
+        'El bloque de paz pide salir de la OTAN y de la Unión Europea, reducir el gasto militar, anular los Programas Especiales de Modernización y llevar los fondos de I+D militar a salud, energía, alimentación y medio ambiente. También un embargo militar total a Israel y el reconocimiento de la República Árabe Saharaui Democrática.',
+      measureNumbers: [72, 73, 75, 79, 80],
+    },
+    {
+      title: 'Cuatro derogaciones',
+      text:
+        'El programa deroga la Ley de Seguridad Ciudadana («Ley Mordaza»), la Ley de Convivencia Universitaria, la Ley 15/1997, que abre la sanidad a la gestión privada, y los delitos de injurias a la Corona y de ultrajes a símbolos. Pide además ilegalizar las organizaciones fascistas y franquistas y las empresas de desocupación.',
+      measureNumbers: [29, 81, 82, 83, 86, 87],
+    },
+  ],
+  'fe-jons': [
+    {
+      title: 'La remigración abre el programa',
+      text:
+        '34 de las 262 medidas tratan de inmigración: el capítulo 1 y su Anexo I, el Plan Nacional de Remigración, que reparte 25 medidas en tres fases. En los primeros cinco años, expulsar a todo inmigrante con antecedentes penales o en paro y retirar las ayudas sociales y las pensiones no contributivas a los extranjeros; en diez años, retirar la nacionalidad concedida a quien no cumpla el ius sanguinis; después, una tasa máxima de inmigración del 1,5 %.',
+      measureNumbers: [4, 13, 14, 23, 30, 34],
+    },
+    {
+      title: 'Fuera de la UE, el euro, la OTAN y la ONU',
+      text:
+        'El programa pide el abandono inmediato de la OTAN, el FMI, la UE y la ONU y de los tratados que limiten la soberanía, la salida inmediata del euro y una salida «escalonada y pactada» de la Unión. También propone romper relaciones con la OMS, abandonar el acuerdo UE-Mercosur y desmantelar las bases militares extranjeras, Gibraltar incluido.',
+      measureNumbers: [46, 48, 56, 57, 136, 227],
+    },
+    {
+      title: 'Un régimen nuevo en lugar de la Constitución de 1978',
+      text:
+        'El bloque «Ruptura con el Régimen del 78» (48 medidas) propone abolir la monarquía para alumbrar un Estado «republicano Nacional-Sindicalista», disolver el régimen y su Constitución y sustituir la democracia de partidos por una representación a través de la familia, el municipio y el sindicato. Pide además disolver las comunidades autónomas y el Tribunal Constitucional.',
+      measureNumbers: [59, 145, 150, 151, 152, 181],
+    },
+    {
+      title: 'Nacionalizar los sectores estratégicos',
+      text:
+        'Siete medidas nacionalizan algo: la banca, los sectores y las industrias estratégicos, la producción, el transporte y la distribución de la energía, los yacimientos estratégicos, las redes troncales de telecomunicaciones y la industria farmacéutica. El programa se opone «frontalmente al sistema capitalista» y quiere sustituirlo por una economía nacional-sindicalista.',
+      measureNumbers: [96, 97, 114, 126, 128, 226],
+    },
+    {
+      title: 'Cinco derogaciones y cinco ilegalizaciones',
+      text:
+        'El programa deroga la Ley de Extranjería, las reformas laborales de PP, PSOE y Podemos/Sumar, las leyes LGTBI y de «género» (incluida la Ley de Violencia de Género), las leyes de memoria y el decreto de las zonas de bajas emisiones. Ilegaliza las ONG que faciliten el tráfico de personas, los grupos de presión al servicio de intereses extranjeros, los movimientos separatistas, las ETT y las leyes del aborto y la eutanasia.',
+      measureNumbers: [10, 68, 87, 231, 251, 90],
+    },
+    {
+      title: 'Servicio militar de 18 meses',
+      text:
+        'El programa recupera el servicio militar obligatorio para hombres y mujeres de 18 a 22 años, de 18 meses, remunerado y cotizado, con al menos cuatro meses en tareas civiles y reserva activa hasta los 45 años. También aumenta el presupuesto de defensa y militariza las fronteras de Ceuta, Melilla y Canarias.',
+      measureNumbers: [167, 171, 172, 173],
+    },
+  ],
   pacma: [
     {
       title: 'Los animales ocupan casi la mitad del programa',
