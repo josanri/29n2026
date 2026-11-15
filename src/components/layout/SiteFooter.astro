@@ -1,6 +1,7 @@
 ---
 import { election } from '@eleccion/eleccion';
 import { routes } from '@/lib/routes';
+import { SOCIAL_ACCOUNTS } from '@/lib/site';
 import Wordmark from './Wordmark.astro';
 ---
 
@@ -21,7 +22,16 @@ import Wordmark from './Wordmark.astro';
       Puede haber errores de extracción o de clasificación: consulta siempre el programa oficial de cada partido antes de
       citarlo o de tomar una decisión.
     </p>
-    <p class="site-footer__meta"><a href={routes.accessibility()}>Accesibilidad</a></p>
+    <ul class="site-footer__meta">
+      <li><a href={routes.accessibility()}>Accesibilidad</a></li>
+      {SOCIAL_ACCOUNTS.map((account) => (
+        <li>
+          <a href={account.url} rel="me noopener" target="_blank">
+            {account.network}: {account.handle}<span class="sr-only"> (se abre en otra pestaña)</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   </div>
 </footer>
 
@@ -53,7 +63,8 @@ import Wordmark from './Wordmark.astro';
     border-top: var(--border-fine) solid var(--color-ink);
     font-size: 0.9375rem;
   }
-  .site-footer__meta { margin-top: var(--space-3); font-weight: 700; }
+  /* Accessibility and the accounts of the site on X and Instagram, in one row that wraps. */
+  .site-footer__meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-4); margin: var(--space-3) 0 0; padding: 0; list-style: none; font-weight: 700; }
   .site-footer__meta a { display: inline-flex; align-items: center; min-height: 44px; }
 
   /* Phone: the mark and the text go in one column, the text uses the full width, and the page ends

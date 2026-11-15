@@ -7,6 +7,7 @@
 import { election } from '@eleccion/eleccion';
 import { allOf } from './format';
 import { announcedMeasures, type Block, type Program } from './programs';
+import type { ShareImage } from './site';
 
 /** «Partido Popular (PP)», or just «VOX» when the acronym is the name. */
 export const partyLabel = (program: Program) =>
@@ -40,3 +41,12 @@ export const blockPageDescription = (program: Program, block: Block) => {
   const noun = count === 1 ? program.measureUnit : program.measureUnitPlural;
   return `${partyLabel(program)}, bloque ${block.id} de su programa para el ${election.shortName}: ${block.title}. ${count} ${noun} con su texto original, su categoría y su página en el PDF.`;
 };
+
+/** The link preview of a party page: its own card when it has a program (`scripts/og_images.py`), else the site's. */
+export const partyShareImage = (program: Program): ShareImage | undefined =>
+  program.hasProgram
+    ? {
+        path: `/og/${program.id}.png`,
+        alt: `${partyLabel(program)}: ${program.measures.length} ${program.measureUnitPlural} de su programa para el ${election.shortName}, en Electosfera.`,
+      }
+    : undefined;

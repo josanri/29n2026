@@ -21,7 +21,7 @@ import { methodNote } from '@/lib/method-note';
 import { routes, withBase } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
 import { programVerbs } from '@/lib/verbs';
-import { partyPageDescription, partyPageTitle } from '@/lib/seo';
+import { partyPageDescription, partyPageTitle, partyShareImage } from '@/lib/seo';
 import { checkPrograms } from '@/lib/program-checks';
 import { keyFindingsByParty, type KeyFinding } from '@eleccion/analysis';
 import { downloadFileNames, summaryDownloadFileName } from '@eleccion/download-names';
@@ -165,6 +165,7 @@ for (const figure of program.figures) {
   description={partyPageDescription(program)}
   accent={program.color}
   accentLight={program.lightColor}
+  image={partyShareImage(program)}
 >
   {
     !program.hasProgram ? (

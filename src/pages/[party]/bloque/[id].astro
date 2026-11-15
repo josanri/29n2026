@@ -9,7 +9,7 @@ import { categoryById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
 import { measureNoun, padNumber, splitParagraphs } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
-import { blockPageDescription } from '@/lib/seo';
+import { blockPageDescription, partyShareImage } from '@/lib/seo';
 import { SECTION_ID_PREFIX, routes } from '@/lib/routes';
 
 export function getStaticPaths() {
@@ -49,6 +49,7 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
   description={blockPageDescription(program, block)}
   accent={program.color}
   accentLight={program.lightColor}
+  image={partyShareImage(program)}
 >
   <section class="block-hero">
     <div class="container block-hero__grid" style={!block.quote ? 'grid-template-columns: 1fr' : undefined}>

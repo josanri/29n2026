@@ -12,7 +12,7 @@ import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import Tooltip from '@/components/ui/Tooltip.astro';
 import { partyHighlightStyle, partyScaleStyle, readableTextColor, sphereStyle } from '@/lib/color';
-import { DEFAULT_DESCRIPTION, SITE_NAME, THEME_STORAGE_KEY } from '@/lib/site';
+import { DEFAULT_DESCRIPTION, DEFAULT_SHARE_IMAGE, SITE_NAME, THEME_STORAGE_KEY, X_HANDLE, type ShareImage } from '@/lib/site';
 import { routes } from '@/lib/routes';
 
 interface Props {
@@ -23,11 +23,15 @@ interface Props {
   accentLight?: string;
   /** Hide the page from search engines. */
   noindex?: boolean;
+  /** The picture of the link preview (X, Instagram, WhatsApp…). Without it, the card of the site. */
+  image?: ShareImage;
 }
 
-const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false, image = DEFAULT_SHARE_IMAGE } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const fullTitle = `${title} | ${SITE_NAME}`;
+// A link preview needs the full URL of its picture.
+const imageUrl = new URL(routes.asset(image.path), Astro.site).href;
 
 // Party theme: the accent takes the party color (and its readable text). The brand stays black and white,
 // and the yellow highlight is the same on every page.
@@ -71,7 +75,17 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={image.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={X_HANDLE} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={image.alt} />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <!-- The ICO and the PNG are for search engines and old browsers (they need a file of their own, in a multiple of

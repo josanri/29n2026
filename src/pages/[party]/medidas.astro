@@ -9,7 +9,7 @@ import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
 import { allOf, capitalize, padNumber, percentOf } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
-import { measuresPageDescription, partyLabel } from '@/lib/seo';
+import { measuresPageDescription, partyLabel, partyShareImage } from '@/lib/seo';
 import { MEASURE_FILTER_PARAMS as PARAMS, routes } from '@/lib/routes';
 
 export function getStaticPaths() {
@@ -39,6 +39,7 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
   description={measuresPageDescription(program)}
   accent={program.color}
   accentLight={program.lightColor}
+  image={partyShareImage(program)}
 >
   {
     !program.hasProgram ? (

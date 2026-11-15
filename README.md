@@ -99,6 +99,7 @@ src/data/2026/generales/      datos de la elección: programas/, calendario, Con
   eleccion.ts                 nombre corto (29N), nombre, fecha: la interfaz toma los textos de aquí
 src/data/taxonomia.json       taxonomía común a todas las elecciones
 public/2026/generales/        archivos públicos de la elección: programas/, datos-electorales/, favicon.svg
+  og/                         imágenes de vista previa de los enlaces (X, Instagram, WhatsApp): portada.png y una por partido con programa; las dibuja `python scripts/og_images.py` (vuelve a ejecutarlo al añadir o cambiar un programa)
 public/comun/                 archivos públicos comunes: _headers, sw.js y los favicons en mapa de bits (favicon.ico, favicon-192.png, apple-touch-icon.png), que dibuja `python scripts/favicons.py`
 scripts/                      solo código: extracción y análisis de los PDF
 .cache/2026/generales/        resultados intermedios de la extracción (pp_raw.json…); no está en git
