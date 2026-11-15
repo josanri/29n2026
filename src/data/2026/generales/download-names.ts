@@ -24,6 +24,7 @@ export const downloadFileNames: Record<string, string> = {
   'tercera-edad': 'programa-en-accion-3e-2026.pdf',
   convergents: 'programa-convergents-eleccions-generals-2026.pdf',
   'teruel-existe': 'programa-teruel-existe-29n-2026.pdf',
+  'compromis-front-valencia': 'programa-compromis-29n-2026.pdf',
   upc: 'manifiesto-unidad-del-pueblo-canario-29n-2026.pdf',
   'geroa-bai': 'programa-geroa-bai-bases-politicas-29n-2026.pdf',
 };

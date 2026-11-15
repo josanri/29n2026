@@ -115,9 +115,9 @@ scripts/                      solo código: extracción y análisis de los PDF
 | Ruta | Contenido |
 |---|---|
 | `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas |
-| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/`, `/convergents/`, `/psoe/`, `/teruel-existe/`, `/geroa-bai/`, `/upc/`, `/d21/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
-| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/convergents/medidas/`, `/psoe/medidas/`, `/teruel-existe/medidas/`, `/geroa-bai/medidas/`, `/upc/medidas/`, `/d21/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
-| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/`, `/psoe/bloque/1/` … `/8/`, `/teruel-existe/bloque/1/` … `/12/`, `/geroa-bai/bloque/1/` … `/5/`, `/upc/bloque/1/` … `/16/`, `/d21/bloque/1/` … `/2/` | Lectura completa por bloque |
+| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/`, `/convergents/`, `/psoe/`, `/teruel-existe/`, `/compromis-front-valencia/`, `/geroa-bai/`, `/upc/`, `/d21/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
+| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/convergents/medidas/`, `/psoe/medidas/`, `/teruel-existe/medidas/`, `/compromis-front-valencia/medidas/`, `/geroa-bai/medidas/`, `/upc/medidas/`, `/d21/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
+| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/`, `/psoe/bloque/1/` … `/8/`, `/teruel-existe/bloque/1/` … `/12/`, `/compromis-front-valencia/bloque/1/` … `/7/`, `/geroa-bai/bloque/1/` … `/5/`, `/upc/bloque/1/` … `/16/`, `/d21/bloque/1/` … `/2/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
@@ -202,6 +202,9 @@ src/data/2026/generales/programas/convergents.json  resultado que consume la web
 public/2026/generales/programas/teruel-existe-programa-29n-2026.pdf PDF oficial completo de Teruel Existe (15 páginas, publicado el 13 de noviembre de 2026; sin fecha en sus metadatos), sin optimizar: pesa 0,2 MB
 scripts/extract_teruel_existe.py     extracción de 140 medidas en 12 bloques y 20 secciones: cada viñeta es una medida y su comienzo en negrita, el título; comprueba los bloques contra el índice del PDF
 src/data/2026/generales/programas/teruel-existe.json resultado que consume la web; las medidas 125 y 126 repiten casi literalmente la 7 y la 8
+public/2026/generales/programas/compromis-front-valencia-programa-29n-2026.pdf PDF oficial completo de Compromís: Front Valencià (64 páginas, en valenciano, publicado el 13 de noviembre de 2026; sin fecha en el texto, la de creación del PDF), sin optimizar: pesa 0,3 MB
+scripts/extract_compromis.py        extracción de 547 medidas en 7 bloques y 50 apartados: cada viñeta de primer nivel es una medida, sin número ni título (el título es su primera frase); comprueba los apartados contra el índice del PDF
+src/data/2026/generales/programas/compromis-front-valencia.json resultado que consume la web; la categoría de cada medida es editorial (el deporte va a Lengua, cultura y memoria y los derechos de los animales a Campo, mar y mundo rural)
 public/2026/generales/programas/geroa-bai-bases-politicas-29n-2026.pdf «Bases políticas» de Geroa Bai (14 páginas, publicado el 12 de noviembre de 2026; los metadatos dicen 13 de noviembre), sin optimizar: pesa 0,2 MB
 scripts/extract_geroa_bai.py         17 compromisos en 5 capítulos, transcritos del texto en prosa y comprobados literalmente contra el PDF
 src/data/2026/generales/programas/geroa-bai.json    resultado que consume la web; el texto de cada compromiso es literal y su título corto, editorial
@@ -222,7 +225,7 @@ src/data/taxonomia.json              21 categorías, colectivos y palancas comun
 src/data/2026/generales/analysis.ts                 lectura editorial («Las claves») por programa
 src/data/temas.ts                    temas que dividen: pregunta y dos posturas; común a todas las elecciones
 src/data/2026/generales/posturas.ts  postura de cada partido en cada tema, con las medidas que la apoyan (la compilación las comprueba)
-src/data/2026/generales/encuestas.ts encuestas (fecha, enlace a la publicación original y porcentajes) y páginas oficiales de cada encuestadora
+src/data/2026/generales/encuestas.ts encuestas (fecha, enlace a la publicación original y porcentajes) y páginas oficiales de cada encuestadora (la skill `.claude/skills/actualizar-encuestas/` explica cómo añadir las nuevas)
 ```
 
 Para regenerar los datos del PP: `npm run data:pp` (necesita Python con PyMuPDF).
@@ -237,6 +240,8 @@ Para regenerar los datos de VOX: `npm run data:vox` (necesita Python con PyMuPDF
 Para regenerar los datos de PACMA: `npm run data:pacma` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada propuesta).
 Para regenerar los datos de Convergents: `npm run data:convergents` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada bloque y cada propuesta).
 Para regenerar los datos del PSOE: `npm run data:psoe` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada compromiso).
+Para regenerar los datos de Compromís: `npm run data:compromis` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
+
 Para regenerar los datos de Teruel Existe: `npm run data:teruel-existe` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 Para regenerar los datos de Geroa Bai: `npm run data:geroa-bai` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada compromiso).
 Para regenerar los datos de Unidad del Pueblo Canario: `npm run data:upc` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada eje).

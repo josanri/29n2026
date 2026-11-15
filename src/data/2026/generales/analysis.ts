@@ -481,6 +481,44 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [117, 45, 32, 120],
     },
   ],
+  'compromis-front-valencia': [
+    {
+      title: 'Democracia y derechos pesan más que la economía',
+      text:
+        'El bloque 5, «Més democràcia, més drets, més llibertats», reúne 189 de las 547 medidas (35 %), más que ningún otro. Incluye juventud (31 medidas, el apartado más largo), administración pública, feminismo, violencias machistas, laicismo, derechos animales y memoria democrática. La vivienda, el empleo y las pensiones, que abren el programa, suman 44.',
+      measureNumbers: [326, 330, 355, 361, 455, 482],
+    },
+    {
+      title: 'Vivienda: fondos, tope a la acumulación y 18.000 M€',
+      text:
+        'La vivienda tiene 24 medidas. Prohíben que fondos y sociedades especulativas compren vivienda, proponen una ley de expropiación de grandes tenedores, destinan el 1 % del PIB a vivienda pública o protegida, crean un fondo de inversión de 18.000 M€ y gravan con un 10 % del valor catastral las viviendas desde la tercera propiedad.',
+      measureNumbers: [1, 3, 4, 15, 18],
+    },
+    {
+      title: 'Más impuestos a patrimonios, rentas del capital y grandes empresas',
+      text:
+        'El apartado de fiscalidad tiene 19 medidas: deflactar el IRPF por debajo de 30.000 €, ampliar el impuesto a las grandes fortunas hacia una tasa tipo Zucman, igualar la tributación de las rentas financieras a las del trabajo, un impuesto sobre los beneficios de las empresas oligopolísticas y una tasa de 2 € por noche en viviendas turísticas.',
+      measureNumbers: [138, 139, 143, 144, 148, 150],
+    },
+    {
+      title: 'Energía: recuperar lo público',
+      text:
+        'Frente a la transición solo con incentivos, el programa propone una empresa pública de generación, distribución y comercialización, recuperar de forma progresiva la titularidad pública de las grandes eléctricas, el 100 % de Red Eléctrica y un fondo soberano de renovables. Mantiene el calendario de cierre nuclear y fija el 100 % de electrificación del sistema en 2030.',
+      measureNumbers: [240, 241, 245, 254, 255, 248],
+    },
+    {
+      title: 'Un País Valencià con más financiación y más competencias',
+      text:
+        'Treinta medidas nombran el País Valenciano o el valenciano. Piden un sistema de financiación o un concierto económico propio, la condonación de la deuda histórica de la Generalitat, un fondo transitorio de nivelación, inversiones del Estado proporcionales a la población y un plan de Rodalies de 1.500 M€ con 58 trenes nuevos, en un Estado plurinacional.',
+      measureNumbers: [493, 494, 495, 496, 501, 507],
+    },
+    {
+      title: 'Siete derogaciones y pocas fechas',
+      text:
+        'El programa deroga la Ley de Amnistía de 1977, la ley mordaza, la ley de secretos oficiales, el delito de ofensa a los sentimientos religiosos, la ley de la tauromaquia como patrimonio cultural, la Ley 15/1997 de gestión sanitaria y la normativa que limita las plantillas públicas. Solo 9 medidas tienen un plazo (inmediato, primer año, 2030, 2040, 2050) y 28 una cifra.',
+      measureNumbers: [45, 320, 335, 357, 361, 377, 382],
+    },
+  ],
   'geroa-bai': [
     {
       title: 'Bases políticas, no un programa de medidas',
