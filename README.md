@@ -123,6 +123,24 @@ scripts/                      solo código: extracción y análisis de los PDF
 | `/encuestas/` | Seguimiento de la estimación de voto (CIS, 40dB., Sigma Dos, SocioMétrica y GAD3), con gráfica de evolución y enlace a cada publicación |
 | `/tests/` | Lista de los tests: «Sin siglas» (`/tests/sin-siglas/`) y «Temas que dividen» (`/tests/temas/`) |
 | `/tests/temas/` | Test y comparador de los temas más polarizantes: la postura del lector frente a la de cada programa, con la medida que la prueba |
+| `/agentes/partidos.json`, `/agentes/<partido>.json` | Datos para las herramientas WebMCP (ver «Herramientas para agentes») |
+
+### Herramientas para agentes (WebMCP)
+
+En un navegador con [WebMCP](https://webmachinelearning.github.io/webmcp/) (Chrome lo trae en pruebas), la web ofrece herramientas de solo lectura al agente de IA del navegador. Un navegador sin WebMCP no descarga nada: la comprobación está en `BaseLayout.astro`.
+
+| Herramienta | Dónde | Qué hace |
+|---|---|---|
+| `listar_partidos` | Todas las páginas | Partidos, ámbito, comunidades y si tienen programa |
+| `buscar_medidas` | Todas las páginas | Búsqueda con erratas (el mismo índice que `/buscar/`), con filtros por partido y categoría |
+| `leer_medidas` | Todas las páginas | Texto completo de medidas, con página del PDF y enlaces |
+| `ficha_partido` | Todas las páginas | Resumen de un programa: categorías, «Las claves», cifras, plazos, derogaciones y bloques |
+| `listar_categorias` | Todas las páginas | La taxonomía común |
+| `posturas_por_tema` | Todas las páginas | Los temas que dividen y la postura de cada partido, con sus medidas |
+| `filtrar_medidas` | `/<partido>/medidas/` | Aplica los filtros del formulario en pantalla y devuelve lo que queda a la vista |
+| `mostrar_busqueda` | `/buscar/` | API declarativa: el agente rellena el formulario y recibe los resultados |
+
+Un error del agente (un partido o un valor que no existe) vuelve como `{ "error": "…" }`, con el mensaje que dice cómo corregirlo. Los tests «Sin siglas» y «Temas que dividen» no tienen herramientas a propósito: los responde el lector. Código: `src/lib/webmcp/` y `src/lib/agent-data.ts`.
 
 ## Datos
 
@@ -222,6 +240,8 @@ src/
     taxonomy.ts           categorías, colectivos (target groups) y palancas (levers)
     geography.ts          geometría del mapa de provincias
     routes.ts             todas las URL del sitio (no se escribe ninguna ruta a mano)
+    agent-data.ts         datos de /agentes/*.json para las herramientas WebMCP
+    webmcp/               context.ts (detecta la API y registra) y tools.ts (las herramientas de todo el sitio)
     format.ts, color.ts, collections.ts, tooltip.ts, blocks.ts, site.ts
   styles/                 tokens.css, base.css, objects.css (ver «Sistema de diseño»)
   components/
