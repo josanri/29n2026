@@ -38,7 +38,8 @@ const max = Math.max(1, ...petals.map((petal) => petal.count));
 const SIZE = 580;
 const C = SIZE / 2;
 const RIM = 205;
-const HOLE = 70;
+// The hole is wide enough for a word like «compromisos» on a phone.
+const HOLE = 84;
 const LABEL = 243;
 const point = (angle: number, radius: number): [number, number] => [C + radius * Math.cos(angle), C + radius * Math.sin(angle)];
 const fmt = ([x, y]: [number, number]) => `${x.toFixed(2)} ${y.toFixed(2)}`;
@@ -60,7 +61,7 @@ const parts = petals.map((petal, index) => {
   <div class:list={['rose__grid', { 'rose__grid--intro': Astro.slots.has('default') }]}>
     {/* Optional: the heading and the text of the host page, above the list and beside the rose. */}
     {Astro.slots.has('default') && <div class="rose__intro"><slot /></div>}
-    <div class="rose__fig">
+    <div class="rose__fig" style={`--hole: ${(2 * HOLE) / SIZE}`}>
       <svg viewBox={`0 0 ${SIZE} ${SIZE}`} role="group" aria-label={label}>
         <defs>
           <pattern id="rose-track" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -89,7 +90,7 @@ const parts = petals.map((petal, index) => {
       </svg>
       <span class="rose__hole" aria-hidden="true">
         <strong data-rose-figure data-default={defaultFigure}>{defaultFigure}</strong>
-        <span data-rose-label data-default={defaultLabel}>{defaultLabel}</span>
+        <span data-rose-label data-default={defaultLabel} style={`--chars: ${defaultLabel.length}`}>{defaultLabel}</span>
         <small data-rose-count></small>
       </span>
     </div>
@@ -122,6 +123,10 @@ const parts = petals.map((petal, index) => {
       label.textContent = link?.dataset.share ?? label.dataset.default!;
       count.textContent = link?.dataset.count ?? count.dataset.default ?? '';
     };
+    // The word in the hole shrinks to fit it, whatever its length («compromisos», «11,4 %»).
+    const fit = () => label.style.setProperty('--chars', String(Math.max(1, label.textContent?.length ?? 1)));
+    new MutationObserver(fit).observe(label, { childList: true, characterData: true, subtree: true });
+    fit();
     const linkOf = (target: EventTarget | null) => (target as Element | null)?.closest<HTMLElement | SVGAElement>('a[data-category]') ?? null;
     rose.addEventListener('pointerover', (event) => show(linkOf(event.target)));
     rose.addEventListener('pointerleave', () => show(null));
@@ -172,13 +177,13 @@ const parts = petals.map((petal, index) => {
   .rose svg a:is(:hover, :focus-visible, .is-on, .is-active) .rose__code { paint-order: stroke; stroke: var(--color-highlight); stroke-width: 8px; stroke-linejoin: round; fill: var(--color-on-highlight); }
   .rose svg a:is(:hover, :focus-visible, .is-on, .is-active) .rose__share { fill: var(--color-ink); font-weight: 800; }
 
-  /* The hole: paper with an ink ring. Its size follows the rose (a radius of 70 of the 580 units). */
+  /* The hole: paper with an ink ring. Its size follows the rose (`--hole`: its diameter over the side of the box). */
   .rose__hole {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: calc(100cqi * 140 / 580);
-    height: calc(100cqi * 140 / 580);
+    width: calc(100cqi * var(--hole));
+    height: calc(100cqi * var(--hole));
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     display: flex;
@@ -196,7 +201,11 @@ const parts = petals.map((petal, index) => {
     pointer-events: none;
   }
   .rose__hole strong { font: 900 clamp(1.375rem, 6.4cqi, 2.375rem) / 1 var(--font-display); }
-  .rose__hole span { font: 700 clamp(0.875rem, 2.9cqi, 1.0625rem) / 1.1 var(--font-body); font-variant-numeric: tabular-nums; }
+  /* The word fits in about 80 % of the hole: an Archivo letter in bold is about 0.6 em wide. */
+  .rose__hole span {
+    font: 700 min(clamp(0.875rem, 2.9cqi, 1.0625rem), calc(100cqi * var(--hole) * 0.8 / (var(--chars, 8) * 0.6))) / 1.1 var(--font-body);
+    font-variant-numeric: tabular-nums;
+  }
   .rose__hole small { font: 600 0.875rem / 1.1 var(--font-body); }
   .rose__hole small:empty { display: none; }
 
