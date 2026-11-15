@@ -3,6 +3,11 @@ import '@/styles/global.css';
 import '@fontsource/big-shoulders-display/900';
 import '@fontsource-variable/archivo/wght.css';
 import '@fontsource-variable/archivo/wght-italic.css';
+// The two fonts of the first screen, preloaded: without this the browser finds them only after the CSS, and the
+// late swap moves the header and the hero (Web Analytics: CLS 0,13 on the home page). Vite gives them the same
+// hashed URL as the CSS, so the browser downloads each file once.
+import bodyFontUrl from '@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url';
+import displayFontUrl from '@fontsource/big-shoulders-display/files/big-shoulders-display-latin-900-normal.woff2?url';
 import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import Tooltip from '@/components/ui/Tooltip.astro';
@@ -53,6 +58,8 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={bodyFontUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={displayFontUrl} as="font" type="font/woff2" crossorigin />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}

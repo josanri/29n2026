@@ -1,4 +1,5 @@
 /* Design system entry point. The order matters: tokens, then base, then objects. */
+@import './fonts.css';
 @import './tokens.css';
 @import './base.css';
 @import './objects.css';
