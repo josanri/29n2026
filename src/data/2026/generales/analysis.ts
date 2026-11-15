@@ -449,4 +449,94 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [4, 5, 7, 145, 202],
     },
   ],
+  'teruel-existe': [
+    {
+      title: 'Infraestructuras, el capítulo más largo',
+      text:
+        'Infraestructuras y agua es la categoría con más medidas: 26 de 140. El programa enumera las obras que reclama para la provincia: los tramos de la A-68 hasta el Mediterráneo, desbloquear la A-40 Cuenca-Teruel, la A-25 hasta Alcolea del Pinar, una nueva autovía Teruel–Requena–Almansa, el corredor Cantábrico-Mediterráneo con doble vía electrificada y un tren directo Teruel–Madrid «de forma inmediata».',
+      measureNumbers: [54, 55, 56, 57, 61, 67],
+    },
+    {
+      title: 'Renovables sí, pero no así',
+      text:
+        'El programa pide una moratoria en los grandes parques renovables y las líneas de muy alta tensión, se opone al clúster del Maestrazgo y a los parques eólicos del Matarraña, y quiere que los macroparques paguen un canon para el desarrollo local. Reserva el 20 % de la capacidad de la red para las pequeñas instalaciones y pide garantías máximas a los centros de datos. La moratoria y el canon aparecen dos veces, casi con el mismo texto, en los bloques 2 y 10.',
+      measureNumbers: [7, 8, 11, 14, 125, 126],
+    },
+    {
+      title: 'Impuestos más bajos para quien vive en los pueblos',
+      text:
+        'En las localidades despobladas de menos de 5.000 habitantes, los residentes con rentas bajas y medias podrían quedar exentos del IBI, pagar un 80 % menos de transmisiones patrimoniales al comprar vivienda y un 25 % menos de IRPF. Las empresas y autónomos de Teruel recibirían ayudas al funcionamiento hasta el máximo de la UE, el 20 % de los costes laborales.',
+      measureNumbers: [116, 94, 30],
+    },
+    {
+      title: 'Dinero del Estado para el reequilibrio territorial',
+      text:
+        'La medida más cuantiosa es un Pacto de Estado que destine al menos el 2 % del PIB cada año, durante 30 años, a corregir los desequilibrios territoriales. Se suman un Fondo de Inversiones de Teruel de 100 millones de euros, un plan estatal específico para la provincia, la negociación de una «deuda histórica» y una reforma de la financiación que pague el coste real de prestar servicios en territorios dispersos.',
+      measureNumbers: [115, 29, 28, 27, 24],
+    },
+    {
+      title: 'Servicios a menos de 30 minutos',
+      text:
+        'El Plan 300/30/30 promete 300 megas simétricos en todos los municipios, servicios públicos básicos a 30 minutos como máximo y una vía de alta capacidad a menos de 30 kilómetros. Pide vivienda pública de alquiler en todos los municipios, al menos cuatro viviendas en los pequeños, el 25 % del presupuesto sanitario para la atención primaria y un complemento salarial para los empleados públicos de las zonas menos pobladas.',
+      measureNumbers: [117, 45, 32, 120],
+    },
+  ],
+  'geroa-bai': [
+    {
+      title: 'Bases políticas, no un programa de medidas',
+      text:
+        'El documento tiene cinco capítulos en prosa y ninguna medida numerada, cifra ni fecha de aplicación. Este análisis cuenta 17 compromisos: lo que la coalición dice que exigirá, defenderá o mantendrá en las Cortes. El primer capítulo explica el contexto, el avance de la ultraderecha y lo que a su juicio ha fallado en la gestión del Gobierno, sin ningún compromiso.',
+      measureNumbers: [1, 5, 6],
+    },
+    {
+      title: 'Autogobierno y Convenio Económico',
+      text:
+        'Cinco compromisos tratan del autogobierno de Navarra: las transferencias que marca la LORAFNA, la competencia de becas, mantener el Convenio Económico frente a una reforma constitucional que, según el texto, Vox pondría como condición, y la presencia de Navarra con voz y voto en las instituciones europeas que deciden sobre competencias forales, como el Ecofin.',
+      measureNumbers: [2, 5, 10, 3, 11],
+    },
+    {
+      title: 'Lo que el Estado debe a Navarra',
+      text:
+        'Cuatro compromisos reclaman al Estado obras y decisiones pendientes: las infraestructuras ferroviarias y de regadío, la conexión ferroviaria con la Y vasca, los compromisos con el regadío navarro y la posición de Navarra en la planificación eléctrica 2030.',
+      measureNumbers: [1, 8, 9, 7],
+    },
+    {
+      title: 'Frente a la ultraderecha',
+      text:
+        'El último capítulo enumera lo que significa «combatir a la ultraderecha»: acabar con la Ley de Secretos Oficiales, mantener los derechos civiles del colectivo LGTBI, reforzar la protección de las mujeres víctimas de maltrato, seguir siendo tierra de acogida y reforzar las políticas de cambio climático y de memoria. La Ley de Secretos Oficiales aparece dos veces, también para reparar casos como el de Mikel Zabalza.',
+      measureNumbers: [12, 13, 14, 15, 17, 4],
+    },
+  ],
+  upc: [
+    {
+      title: 'Un manifiesto de 16 ejes',
+      text:
+        'El documento es un manifiesto de cuatro páginas de texto, no un programa extenso: 16 ejes de uno o dos párrafos, cada uno contado aquí como una propuesta. Solo un eje lleva una cifra, consignar al menos el 0,7 % de los Presupuestos Generales del Estado a la cooperación internacional, y ninguno fija una fecha.',
+      measureNumbers: [15, 1, 16],
+    },
+    {
+      title: 'Canarias, sujeto político',
+      text:
+        'Los cuatro primeros ejes tratan del lugar de Canarias en el Estado y en la UE: su reconocimiento como sujeto político y el pleno desarrollo del Estatuto, la mediana con Marruecos y el reconocimiento de sus aguas, fondos marinos y espacio aéreo, una financiación que respete el REF y compense la insularidad, unos Presupuestos que «cumplan con Canarias» y el trato de región ultraperiférica en el próximo marco financiero europeo.',
+      measureNumbers: [1, 2, 3, 4],
+    },
+    {
+      title: 'Vivienda y límites al turismo',
+      text:
+        'El manifiesto pide regular los precios del alquiler en zonas tensionadas, ampliar el parque público de vivienda con protección permanente e intervenir el mercado. Lo une al modelo turístico: límites efectivos al crecimiento turístico, una moratoria de nuevas instalaciones y camas y una tasa turística para los no residentes.',
+      measureNumbers: [5, 7, 8],
+    },
+    {
+      title: 'Más impuestos a las grandes fortunas',
+      text:
+        'Propone una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital, más tributación a la banca y las energéticas, y mejores deducciones por alquiler para las rentas medias y bajas. En lo laboral, rechaza que el Estado deje de actualizar el salario mínimo.',
+      measureNumbers: [9, 10],
+    },
+    {
+      title: 'Derechos, migración y paz',
+      text:
+        'El manifiesto defiende los derechos sexuales y reproductivos y los de las personas LGTBIQA+, «especialmente de las personas trans», una política migratoria con vías legales y seguras y sin externalización de fronteras, el voto a los 16 años y la solidaridad con los pueblos palestino y saharaui «en su lucha por la autodeterminación y la independencia».',
+      measureNumbers: [11, 12, 16, 15],
+    },
+  ],
 };

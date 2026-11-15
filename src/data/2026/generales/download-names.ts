@@ -23,6 +23,9 @@ export const downloadFileNames: Record<string, string> = {
   'soria-ya': 'programa-soria-ya-2026.pdf',
   'tercera-edad': 'programa-en-accion-3e-2026.pdf',
   convergents: 'programa-convergents-eleccions-generals-2026.pdf',
+  'teruel-existe': 'programa-teruel-existe-29n-2026.pdf',
+  upc: 'manifiesto-unidad-del-pueblo-canario-29n-2026.pdf',
+  'geroa-bai': 'programa-geroa-bai-bases-politicas-29n-2026.pdf',
 };
 
 /** File name of the summary PDF of Adelante Andalucía (the 29 main measures). */

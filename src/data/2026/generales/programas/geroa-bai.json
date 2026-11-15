@@ -2,26 +2,490 @@
  "id": "geroa-bai",
  "partido": "Geroa Bai",
  "siglas": "GBAI",
+ "comunidad": "Navarra",
  "color": "#3a5a98",
  "colorClaro": "#a6b5d1",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Defiéndete, Nafarroa",
+ "subtitulo": "Bases políticas de Geroa Bai para las elecciones generales del 29N",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "pdf": "/programas/geroa-bai-bases-politicas-29n-2026.pdf",
+ "fuentePdf": "https://geroabai.eus/files/2026/11/bases-politicas-29n-1.pdf",
+ "paginas": 14,
+ "fechaPdf": "2026-11-12",
+ "observaciones": [
+  "El documento son unas bases políticas en prosa, no un programa de medidas. Los compromisos son las exigencias y defensas que el texto enumera; sus títulos cortos son editoriales y el texto es literal.",
+  "Los metadatos del PDF dicen 13 de noviembre de 2026; la web del partido lo fecha el 12 de noviembre, el día de su publicación.",
+  "Hay versión en euskera: https://geroabai.eus/files/2026/11/bases-politicas-29n-euskeraz-1.pdf"
+ ],
+ "unidadMedida": "compromiso",
+ "unidadMedidas": "compromisos",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Defender y defendernos",
+  "texto": "Navarra se enfrenta el próximo 29 de noviembre a unas elecciones generales en convocatoria adelantada por el Gobierno de Pedro Sánchez con el problema de la vivienda como reto cierto, pero no el único.\n\nAsí que estas próximas elecciones toca defender la democracia y defenderla desde Navarra para defendernos."
  },
  "cifras": [],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Navarra"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Defender y defendernos",
+   "tituloMayus": "DEFENDER Y DEFENDERNOS",
+   "lema": "",
+   "cita": "",
+   "intro": "Navarra se enfrenta el próximo 29 de noviembre a unas elecciones generales en convocatoria adelantada por el Gobierno de Pedro Sánchez con el problema de la vivienda como reto cierto, pero no el único.\n\nLo cierto es que, como en el resto del Estado, las navarras y los navarros volvemos a una convocatoria electoral adelantada y bajo la misma espada de Damocles que hace tres años: el avance de la ultraderecha.\n\nEl avance de la ultraderecha en EE.UU. y en Europa es una realidad que ha llegado ya a muchas de las primeras instituciones y ahora se perfila de manera nítida en el Gobierno Central español, una vez que el Partido Popular ya ha consolidado su presencia, la presencia de Vox en varios gobiernos autonómicos.\n\nEs cierto que, tanto en el Estado como en Europa, el avance de corrientes o formaciones ultraderechistas viene alentado y hasta financiado por intereses contrarios a la estabilidad política y económica europeas.\n\nPero aun siendo conscientes de esta amenaza externa, no podemos obviar en el análisis de lo ocurrido los errores internos: en el conjunto de Europa la respuesta política a través de cordones sanitarios en las instituciones no ha funcionado; y no ha funcionado porque no ha llevado aparejado un elemento nuclear: el bienestar de la clase media europea.\n\nLo cierto es que mientras el debate político se ha centrado en el establecimiento de cordones sanitarios en las instituciones, en estos años y tras la crisis Lehman Brothers los ricos son mas ricos en Europa, la pobreza se ha extendido y la clase media tiene hoy más dificultades en su día a día que hace 15 años.\n\nLos mismos años en los que la ultraderecha avanza en las urnas.\n\nPor eso en Geroa Bai reivindicamos la necesidad de ganar la batalla a la ultraderecha donde más les duele a los totalitarios: en las urnas.\n\nY hacerlo además como mejor se les combate: construyendo gobiernos estables, capaces de políticas públicas para el reparto de la riqueza y que hagan realidad el bienestar del conjunto más amplio de la sociedad.\n\nLa democracia se defiende también y especialmente reforzando el Estado del Bienestar.\n\nYa lo vivimos en las elecciones generales de 2023: o Gobierno del Partido Popular con Vox o encuentro de todas las formaciones progresistas y plurinacionales en torno al PSOE.\n\nSin embargo, superado aquello y lejos de contener el avance de la ultraderecha, estos cuatro años nos dejan un reforzamiento nítido de Vox.\n\n¿Qué ha fallado?\n\nEvidentemente, las cosas no se han hecho bien. El llamado “voto útil” no se ha visto correspondido con una gestión útil al reforzamiento del Estado del Bienestar y por lo tanto al reforzamiento de la democracia.\n\nAsí que estas próximas elecciones toca defender la democracia y defenderla desde Navarra para defendernos.",
+   "pagina": 3
+  },
+  {
+   "id": 2,
+   "titulo": "Navarra, sujeto político",
+   "tituloMayus": "NAVARRA, SUJETO POLÍTICO",
+   "lema": "",
+   "cita": "",
+   "intro": "Geroa Bai planteó a las cuatro formaciones políticas que hoy sostienen al Gobierno de Navarra la concurrencia conjunta a esta convocatoria electoral tanto al Congreso como al Senado.\n\nBuscar el máximo rédito electoral para frenar a la ultraderecha también desde Navarra, pero hacerlo además buscando una representación que aportara la realidad de nuestra pluralidad y reivindicaciones.\n\nUna lista navarra para parar a la ultraderecha que finalmente se frenó en Madrid, por la vía de las exclusiones…\n\nInaceptable. Porque, si somos capaces de gobernar esta comunidad cumpliendo año tras año con la responsabilidad de sacar adelante los presupuestos, ¿podemos aceptar exclusiones por los intereses o los miedos de Madrid?\n\nGeroa Bai jamás ha aceptado esto ni lo aceptará. Al contrario, frente al objeto político al que unos y otros han pretendido limitar durante décadas a nuestra comunidad, Geroa Bai ha fundamentado la realidad de ser sujeto político de Navarra y su ciudadanía.\n\nPor eso no aceptamos exclusiones ordenadas en Madrid.\n\nUn capítulo este que nos retrotrae al “Navarra cuestión de Estado”… salvo cuando es al Estado al que le toca pagar la factura.\n\nPorque a día de hoy Navarra sigue siendo la eterna castigada por el bipartidismo.\n\nCastigada por el bipartidismo en infraestructuras, como pone de manifiesto el hecho de que tanto PP como PSOE defiendan la conexión de la futura red ferroviaria de Altas Prestaciones con la Y vasca por Ezkio, pero ambos partidos en el Gobierno opten por otro recorrido más barato y de peores condiciones para los intereses navarros…\n\nNavarra, castigada por el bipartidismo cuando no se reconoce la bilateralidad marcada en la LORAFNA o castigada por el bipartidismo cuando sigue imponiendo la franquista Ley de Secretos Oficiales para mantener el olvido.\n\nPor eso este próximo 29 de noviembre Geroa Bai estará en las urnas para defender a Navarra como sujeto político que:\n\nexige el cumplimiento de las obligaciones que el Estado quiere obviar en nuestro territorio en materia de infraestructuras ferroviarias o de regadío.\n\nexige el cumplimiento de lo marcado por la LORAFNA en materia de transferencias.\n\nexige la presencia de una representación del Gobierno de Navarra con voz y con voto en aquellas instituciones europeas que deciden sobre competencias forales (como es el Ecofin).\n\nexige el reconocimiento del daño causado con la reforma de la Ley de Secretos Oficiales, que permita resolver casos como el de Mikel Zabalza ante los que los sucesivos gobiernos de PP y PSOE han optado por mirar a otro lado.",
+   "pagina": 6
+  },
+  {
+   "id": 3,
+   "titulo": "¿Una nueva gamazada?",
+   "tituloMayus": "¿UNA NUEVA GAMAZADA?",
+   "lema": "",
+   "cita": "",
+   "intro": "Lo cierto es que una lista conjunta especialmente al Senado español hubiera decantado claramente la mayoría de la representación de Navarra al lado progresista y plural, y con ello reducido las posibilidades de una mayoría absoluta e incluso cualificada en la Cámara Alta.\n\n¿Por qué es esto importante? Porque en una eventual reforma Constitucional, una mayoría en el Senado contraria a esta reforma la pararía.\n\nEste hecho resulta especialmente importante ante la legislatura que comenzará a partir del próximo 29 de noviembre, porque Vox ya ha anunciado que será una de sus condiciones para dar el Gobierno al Partido Popular: una reforma constitucional para terminar, entre otras cuestiones, con el reconocimiento de los derechos históricos y todo lo que eso implica.\n\nNo ya el cuestionamiento del Amejoramiento, sino que otros de los ejes vertebrales de nuestro autogobierno como el Convenio Económico quedarían en riesgo evidente de anulación.\n\nA finales del siglo XIX el entonces Ministro español de Hacienda, Gamazo, lo intentó por la vía de una reforma en la Ley de Presupuestos. Hoy, Vox lo propone directamente suprimiendo Concierto y Convenio.\n\nLos ultraderechistas lo han reivindicado tantas veces como programas electorales han presentado.\n\nEstos son los previsibles socios del Partido Popular -y por lo tanto de UPN- para llegar a Moncloa.\n\nPor eso Geroa Bai defenderá en las urnas el próximo 29 de noviembre la permanencia del Convenio Económico como herramienta básica del autogobierno, frente a quienes amparan gamazadas encubiertas.",
+   "pagina": 8
+  },
+  {
+   "id": 4,
+   "titulo": "Defender el Estado del bienestar, defender la democracia",
+   "tituloMayus": "DEFENDER EL ESTADO DEL BIENESTAR, DEFENDER LA DEMOCRACIA",
+   "lema": "",
+   "cita": "",
+   "intro": "Tras las elecciones de julio de 2023, la ciudadanía en el conjunto del Estado volvió a dar una oportunidad a un gobierno de coalición de izquierda apoyado en las posiciones plurales de entender el Estado.\n\nA pesar de todo ello, el riesgo de un gobierno de coalición de derecha y ultraderecha se agrava hoy por el reforzamiento nítido de esta última según avanzan los sondeos desde hace meses. Hoy, más allá de la posición que ocupen los dos principales partidos españoles -PP y PSOE-, nadie cuestiona que la suma de los escaños de PP y Vox harán posible un gobierno de ultraderecha con la entrada de Vox en el Ejecutivo.\n\nSi en 2023 ya se veía este avance, ¿qué ha fallado en estos 3 años?\n\nY no valen paños calientes: ha fallado la gestión.\n\nEs innegable que los casos de corrupción explican en buena parte el malestar ciudadano; sin obviar que en las idas y venidas de casos y cosas en los tribunales se han pertrechado también tanto el malestar ciudadano como las invocaciones al lawfare; y por supuesto, las tragedias ferroviarias en las que el dolor indescriptible de decenas y decenas de fallecidos horrorizan más si cabe cuando sobrevuela la duda sobre el mantenimiento y la seguridad de las vías…\n\nTodo ello explica también cómo hemos llegado hoy hasta aquí, pero sería una irresponsabilidad política no reconocer que lo que ha fallado estrepitosamente estos tres años es la gestión del Gobierno.\n\nLa gestión para reforzar el Estado del Bienestar, la gestión para empoderar a la clase media, la buena gestión política con la que se refuerza la democracia.\n\nY así, esta legislatura del Gobierno Sánchez se salda sin un solo presupuesto aprobado. El fracaso no es atribuible a quien no apoya unas cuentas generales si el responsable de redactarlas no lo ha hecho. Y no lo ha hecho: en esta legislatura el Gobierno no ha presentado ni uno solo de los cuatro proyectos de presupuestos que debía haber presentado antes de la convocatoria de adelanto electoral del pasado 5 de octubre. Mantiene prorrogados los presupuestos de 2023.\n\nEn lo relativo a la economía doméstica ha habido avances importantes que debemos reconocer como el aumento del Salario Mínimo Interprofesional, pero los sueldos medios siguen estancados frente a una economía en constante inflación.\n\nLa clase media se ha empobrecido, y ve todavía más endurecidas sus condiciones de vida por el aumento de precio de la vivienda. Y es cierto que políticas de vivienda son políticas compartidas con las Comunidades Autónomas, pero las iniciativas del Gobierno Central no han tenido repercusión en la realidad de la gente, hasta el punto que han precipitado el fin de la legislatura…\n\nTodo esto debe tener respuesta desde la izquierda plural los próximos cuatro años, y ese es el compromiso de Geroa Bai: la defensa el Estado de Bienestar y los servicios públicos de los recortes que se avecinan.\n\nCon respecto a nuestra comunidad, quedan pendientes asuntos de envergadura para nuestra realidad hoy, pero también para el futuro de las próximas generaciones: en el momento de la convocatoria electoral quedan pendientes de cerrar cuestiones nucleares para nuestra comunidad como la posición de Navarra en la planificación eléctrica 2030, la definición de la conexión ferroviaria navarra con la Y vasca, los compromisos con el regadío navarro o la transferencia de la competencia de becas a Navarra.\n\nEstos entre otros, como la presencia reglada y regulada de Navarra en reuniones con la UE sobre materias reguladas por nuestra comunidad son compromisos de Geroa Bai en las Cortes Generales, también a partir de las próximas elecciones del 29 de noviembre.",
+   "pagina": 10
+  },
+  {
+   "id": 5,
+   "titulo": "La pluralidad, eje de la convivencia",
+   "tituloMayus": "LA PLURALIDAD, EJE DE LA CONVIVENCIA",
+   "lema": "",
+   "cita": "",
+   "intro": "Geroa Bai siempre ha defendido la pluralidad como eje de la convivencia en Navarra. Y lo cierto es que tras décadas de ocultamiento de esa pluralidad por intereses de quienes han gobernado en nuestra comunidad durante décadas, esto ha cambiado radicalmente en los últimos doce años.\n\nPero el riesgo de involución en materia de convivencia se hace especialmente ostensible ahora en el Estado: el negacionismo de la violencia de genero, el desprecio a los derechos civiles conquistados estos años para el colectivo LGTBI, o las amenazas a derribar las conquistas en materia de memoria histórica…\n\nEsto, y el desprecio explícito al reconocimiento de la realidad plurinacional en el Estado con especial amenaza a las lenguas oficiales, son motivos más que suficientes para temer por el grado de enfrentamiento al que quieren someternos los nostálgicos de la “Una, Grande y Libre”…\n\nPor eso no podíamos renunciar entonces a la unión entre diferentes para frenar a la ultraderecha, ni podemos renunciar ahora a no llevar compromisos frente a un más que posible futuro Gobierno.\n\nPorque combatir a la ultraderecha es combatir monumentos franquistas como la Ley de Secretos Oficiales.\n\nPorque combatir a la ultraderecha es mantener vigentes los derechos civiles conquistados estos años para el colectivo LGTBI.\n\nCombatir a la ultraderecha reforzando las políticas públicas de protección de mujeres víctimas de maltrato.\n\nCombatir a la ultraderecha es seguir siendo tierra de acogida, reforzar las políticas frente al cambio climático o reforzar las políticas de memoria.\n\nPor todo ello, el próximo 29 de noviembre vota: a la ultraderecha se le combate en las urnas. El 29 de noviembre defiende Navarra y defiéndete: vota Geroa Bai.",
+   "pagina": 13
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Defender y defendernos",
+   "tituloFrase": "Defender y defendernos",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 2,
+   "titulo": "Navarra, sujeto político",
+   "tituloFrase": "Navarra, sujeto político",
+   "intro": "",
+   "pagina": 6,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 3,
+   "titulo": "¿Una nueva gamazada?",
+   "tituloFrase": "¿Una nueva gamazada?",
+   "intro": "",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 4,
+   "titulo": "Defender el Estado del bienestar, defender la democracia",
+   "tituloFrase": "Defender el Estado del bienestar, defender la democracia",
+   "intro": "",
+   "pagina": 10,
+   "subapartados": []
+  },
+  {
+   "id": "5",
+   "bloque": 5,
+   "titulo": "La pluralidad, eje de la convivencia",
+   "tituloFrase": "La pluralidad, eje de la convivencia",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Que el Estado cumpla sus obligaciones en ferrocarril y regadío",
+   "tituloFrase": "Que el Estado cumpla sus obligaciones en ferrocarril y regadío",
+   "texto": "Exige el cumplimiento de las obligaciones que el Estado quiere obviar en nuestro territorio en materia de infraestructuras ferroviarias o de regadío.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Las transferencias que marca la LORAFNA",
+   "tituloFrase": "Las transferencias que marca la LORAFNA",
+   "texto": "Exige el cumplimiento de lo marcado por la LORAFNA en materia de transferencias.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Navarra, con voz y voto en las instituciones europeas que deciden sobre competencias forales",
+   "tituloFrase": "Navarra, con voz y voto en las instituciones europeas que deciden sobre competencias forales",
+   "texto": "Exige la presencia de una representación del Gobierno de Navarra con voz y con voto en aquellas instituciones europeas que deciden sobre competencias forales (como es el Ecofin).",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Navarra",
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reparar el daño de la Ley de Secretos Oficiales",
+   "tituloFrase": "Reparar el daño de la Ley de Secretos Oficiales",
+   "texto": "Exige el reconocimiento del daño causado con la reforma de la Ley de Secretos Oficiales, que permita resolver casos como el de Mikel Zabalza ante los que los sucesivos gobiernos de PP y PSOE han optado por mirar a otro lado.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Mantener el Convenio Económico",
+   "tituloFrase": "Mantener el Convenio Económico",
+   "texto": "Geroa Bai defenderá en las urnas el próximo 29 de noviembre la permanencia del Convenio Económico como herramienta básica del autogobierno, frente a quienes amparan gamazadas encubiertas.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Defender el Estado de bienestar y los servicios públicos de los recortes",
+   "tituloFrase": "Defender el Estado de bienestar y los servicios públicos de los recortes",
+   "texto": "Ese es el compromiso de Geroa Bai: la defensa el Estado de Bienestar y los servicios públicos de los recortes que se avecinan.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "La posición de Navarra en la planificación eléctrica 2030",
+   "tituloFrase": "La posición de Navarra en la planificación eléctrica 2030",
+   "texto": "La posición de Navarra en la planificación eléctrica 2030.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "La conexión ferroviaria de Navarra con la Y vasca",
+   "tituloFrase": "La conexión ferroviaria de Navarra con la Y vasca",
+   "texto": "La definición de la conexión ferroviaria navarra con la Y vasca.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Navarra",
+    "Euskadi"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Los compromisos con el regadío navarro",
+   "tituloFrase": "Los compromisos con el regadío navarro",
+   "texto": "Los compromisos con el regadío navarro.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "La transferencia de la competencia de becas a Navarra",
+   "tituloFrase": "La transferencia de la competencia de becas a Navarra",
+   "texto": "La transferencia de la competencia de becas a Navarra.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Presencia reglada de Navarra en las reuniones con la UE",
+   "tituloFrase": "Presencia reglada de Navarra en las reuniones con la UE",
+   "texto": "La presencia reglada y regulada de Navarra en reuniones con la UE sobre materias reguladas por nuestra comunidad.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Navarra",
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Acabar con la Ley de Secretos Oficiales",
+   "tituloFrase": "Acabar con la Ley de Secretos Oficiales",
+   "texto": "Combatir a la ultraderecha es combatir monumentos franquistas como la Ley de Secretos Oficiales.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Mantener los derechos civiles del colectivo LGTBI",
+   "tituloFrase": "Mantener los derechos civiles del colectivo LGTBI",
+   "texto": "Combatir a la ultraderecha es mantener vigentes los derechos civiles conquistados estos años para el colectivo LGTBI.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Reforzar la protección de las mujeres víctimas de maltrato",
+   "tituloFrase": "Reforzar la protección de las mujeres víctimas de maltrato",
+   "texto": "Combatir a la ultraderecha reforzando las políticas públicas de protección de mujeres víctimas de maltrato.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres",
+    "victimas"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Seguir siendo tierra de acogida",
+   "tituloFrase": "Seguir siendo tierra de acogida",
+   "texto": "Combatir a la ultraderecha es seguir siendo tierra de acogida.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Reforzar las políticas frente al cambio climático",
+   "tituloFrase": "Reforzar las políticas frente al cambio climático",
+   "texto": "Reforzar las políticas frente al cambio climático.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Reforzar las políticas de memoria",
+   "tituloFrase": "Reforzar las políticas de memoria",
+   "texto": "Reforzar las políticas de memoria.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }

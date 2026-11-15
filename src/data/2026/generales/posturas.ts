@@ -38,6 +38,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'pcte', side: 'a', measures: [85], note: 'Cierre de los CIE y un mecanismo permanente de regularización para todas las personas trabajadoras sin papeles.' },
   { topic: 'inmigracion', party: 'convergents', side: 'matiz', measures: [188, 191, 194, 293], note: 'Vincular la residencia y la nacionalidad a la integración lingüística y a los valores occidentales y expulsar a quien delinque, pero también acoger a refugiados y contratar en origen.' },
   { topic: 'inmigracion', party: 'psoe', side: 'matiz', measures: [388, 389], note: 'Un Plan de Integración y Ciudadanía de 500 millones y más vías legales de protección internacional, sin hablar de regularizar.' },
+  { topic: 'inmigracion', party: 'upc', side: 'a', measures: [12], note: 'Vías legales y seguras, acogida digna, protección de la infancia migrante no acompañada y rechazo a la externalización de fronteras.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -63,6 +64,7 @@ export const stances: Stance[] = [
   { topic: 'autodeterminacion', party: 'adelante', side: 'matiz', measures: [346], note: 'Un modelo confederal: «un Estado de pueblos libres e iguales».' },
   { topic: 'autodeterminacion', party: 'fe-jons', side: 'b', measures: [58, 61], note: 'España es «indivisible»: ilegalizar y perseguir a todo movimiento separatista.' },
   { topic: 'autodeterminacion', party: 'convergents', side: 'a', measures: [1, 2, 262, 278], note: 'El derecho «inalienable» de los catalanes a decidir su futuro, referéndums vinculantes y el derecho a la autodeterminación en la UE.' },
+  { topic: 'autodeterminacion', party: 'upc', side: 'a', measures: [1], note: '«Autogobierno, soberanía popular y derecho a decidir»: el reconocimiento de Canarias como sujeto político.' },
 
   // Vivienda: control del alquiler
   { topic: 'vivienda', party: 'adelante', side: 'a', measures: [160, 161, 164], note: 'Alquiler social obligatorio, alquiler al 20 % del salario y zonas tensionadas obligatorias.' },
@@ -82,6 +84,8 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'pcte', side: 'a', measures: [21], note: 'Bajada inmediata de los alquileres del 50 % y después precios máximos ligados a los salarios de la zona.' },
   { topic: 'vivienda', party: 'convergents', side: 'b', measures: [57, 60], note: 'Derogar la Ley de Vivienda, «un freno a la oferta de alquiler por culpa de los controles de precios», e incentivos fiscales a los promotores privados.' },
   { topic: 'vivienda', party: 'psoe', side: 'a', measures: [62, 77, 78], note: 'Congelar las rentas que superen los índices de referencia y hacer cumplir la normativa de precios del alquiler en las zonas tensionadas.' },
+  { topic: 'vivienda', party: 'teruel-existe', side: 'matiz', measures: [45, 50, 51], note: 'Vivienda pública de alquiler en todos los municipios, incentivos al alquiler y un tope de viviendas turísticas en las zonas tensionadas, sin limitar el precio del alquiler.' },
+  { topic: 'vivienda', party: 'upc', side: 'a', measures: [5], note: 'Regular los precios del alquiler en zonas tensionadas, intervenir el mercado y ampliar el parque público de vivienda.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -109,6 +113,9 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'pcte', side: 'a', measures: [64], note: 'Vivienda, ingresos, empleo y atención suficientes para que las mujeres que sufren violencia rompan la dependencia económica.' },
   { topic: 'igualdad', party: 'convergents', side: 'a', measures: [175, 183], note: 'Los recursos necesarios para erradicar las violencias machistas y una ley estatal de igualdad retributiva.' },
   { topic: 'igualdad', party: 'psoe', side: 'a', measures: [333, 335], note: 'Una nueva Estrategia Estatal contra las Violencias Machistas y una Ley Orgánica contra la Violencia Vicaria.' },
+  { topic: 'igualdad', party: 'teruel-existe', side: 'a', measures: [135], note: 'Cumplir, actualizar y seguir el Pacto de Estado contra la Violencia de Género, con recursos que lleguen al medio rural.' },
+  { topic: 'igualdad', party: 'geroa-bai', side: 'a', measures: [14], note: 'Reforzar las políticas públicas de protección de las mujeres víctimas de maltrato.' },
+  { topic: 'igualdad', party: 'upc', side: 'a', measures: [11], note: 'Una Canarias feminista, comprometida con la erradicación de las violencias machistas y la igualdad salarial.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -120,6 +127,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'fe-jons', side: 'b', measures: [231], note: 'Derogación inmediata de las «mal llamadas Leyes de “Memoria”».' },
   { topic: 'memoria', party: 'pcte', side: 'a', measures: [86], note: 'Ilegalizar las organizaciones fascistas y franquistas y disolver las fundaciones que enaltecen la dictadura.' },
   { topic: 'memoria', party: 'psoe', side: 'a', measures: [422, 423], note: 'Ampliar los Lugares de Memoria Democrática, retirar la simbología franquista y llevar la memoria a la educación.' },
+  { topic: 'memoria', party: 'geroa-bai', side: 'a', measures: [17, 12], note: 'Reforzar las políticas de memoria y acabar con la Ley de Secretos Oficiales, «monumento franquista».' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
@@ -144,6 +152,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'fe-jons', side: 'matiz', measures: [101, 103, 108], note: 'Más tramos para que los impuestos sean progresivos y tasas a las multinacionales, pero bajada progresiva del IRPF.' },
   { topic: 'impuestos', party: 'convergents', side: 'b', measures: [77, 78], note: 'Eliminar los impuestos de Sucesiones, Donaciones y Patrimonio y bajar Transmisiones Patrimoniales y el tramo autonómico del IRPF.' },
   { topic: 'impuestos', party: 'psoe', side: 'a', measures: [130, 131, 132, 135], note: 'Subir la tributación de las rentas del capital más altas, de las grandes tecnológicas, de los jets privados y de las transacciones financieras.' },
+  { topic: 'impuestos', party: 'upc', side: 'a', measures: [9], note: 'Una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },

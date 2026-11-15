@@ -29,5 +29,17 @@ export function methodNote(program: Program): string {
   if (program.id === 'pcte') {
     return `El programa se publica como web, y el texto se extrae de su versión impresa en PDF (${pdfFacts(program)}). Cada bloque tiene una introducción y unas fichas, los «ejes de lucha», sin numerar: cada ficha es aquí una medida, con su título, numerada del 1 al ${program.measures.length} en el orden del documento. El PCTE lo presenta como un programa de lucha y no como un programa para aplicar desde las instituciones. La categoría principal de cada medida es una asignación editorial. Los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF.`;
   }
+  // Geroa Bai: political bases in prose; each commitment is a demand or a defense the text lists.
+  if (program.id === 'geroa-bai') {
+    return `El texto se extrae del PDF oficial (${pdfFacts(program)}), unas bases políticas en prosa con cinco capítulos y sin medidas numeradas. Cada compromiso es aquí una de las exigencias o defensas que el texto enumera (los cuatro «exige» del capítulo 2, el Convenio Económico, los asuntos pendientes y la lista «combatir a la ultraderecha es…»), numerado del 1 al ${program.measures.length} en el orden del documento. El texto de cada compromiso es literal; su título corto es editorial. El primer capítulo no tiene compromisos. La categoría principal es una asignación editorial, y los colectivos, las palancas y los territorios se detectan con palabras clave. El número de página enlaza con el PDF original.`;
+  }
+  // UPC: a short manifesto; each numbered axis is one proposal and its own block.
+  if (program.id === 'upc') {
+    return `El texto se extrae del PDF oficial (${pdfFacts(program)}), un manifiesto electoral con 16 ejes numerados; el PDF no tiene fecha de creación y la fecha es la de su última modificación. Cada eje es aquí una propuesta y un bloque, con su título y su texto completos. La categoría principal es una asignación editorial, y los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
+  }
+  // Teruel Existe: unnumbered bullets; a bold lead or the first sentence is the title.
+  if (program.id === 'teruel-existe') {
+    return `El texto se extrae del PDF oficial (${pdfFacts(program)}), que no tiene fecha en sus metadatos: la fecha es la de su publicación en la web del partido. El programa no numera sus propuestas: cada viñeta es aquí una medida, numerada del 1 al ${program.measures.length} en el orden del documento. El título es el comienzo en negrita de la viñeta o, si no lo tiene, su primera frase. Dos medidas del bloque 10 repiten casi literalmente otras dos del bloque 2, y se cuentan las dos veces porque así aparecen. La categoría principal de cada medida es una asignación editorial. Los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
+  }
   return `El texto se extrae del PDF oficial (${pdfFacts(program)}) a partir de la tipografía del documento: bloque, sección, número de medida, título y texto. La categoría principal de cada medida es una asignación editorial. Los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
 }
