@@ -153,6 +153,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'convergents', side: 'b', measures: [77, 78], note: 'Eliminar los impuestos de Sucesiones, Donaciones y Patrimonio y bajar Transmisiones Patrimoniales y el tramo autonómico del IRPF.' },
   { topic: 'impuestos', party: 'psoe', side: 'a', measures: [130, 131, 132, 135], note: 'Subir la tributación de las rentas del capital más altas, de las grandes tecnológicas, de los jets privados y de las transacciones financieras.' },
   { topic: 'impuestos', party: 'upc', side: 'a', measures: [9], note: 'Una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital.' },
+  { topic: 'impuestos', party: 'd21', side: 'matiz', measures: [27, 28, 89, 31], note: 'Rebajas concretas (sin IVA, ITP ni AJD para los menores de 35 años en la compra de vivienda habitual y menos carga fiscal en la electricidad) y un recargo a los compradores extracomunitarios, pero ninguna medida sobre las rentas o los patrimonios altos.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },
@@ -175,6 +176,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'pcte', side: 'a', measures: [81, 84], note: 'Derogar la Ley Mordaza y acabar con la impunidad policial: sin pelotas de goma ni tanquetas en las protestas.' },
   { topic: 'seguridad', party: 'convergents', side: 'b', measures: [29, 36, 64], note: 'Que los abusos sexuales a menores no prescriban, penas más duras en los delitos contra personas mayores y reformar el Código Penal contra la ocupación.' },
   { topic: 'seguridad', party: 'psoe', side: 'a', measures: [431], note: 'Una nueva Ley de Seguridad Ciudadana que sustituya a la Ley Orgánica 4/2015 y garantice los derechos de reunión y manifestación.' },
+  { topic: 'seguridad', party: 'd21', side: 'b', measures: [9, 23, 78], note: 'Que los delitos de corrupción no prescriban, que firmar un alquiler con intención de impago sea estafa y penas más duras por agredir al personal sanitario.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },

@@ -11,7 +11,8 @@ export function methodNote(program: Program): string {
     if (program.id === 'adelante') {
       return `El PDF oficial completo tiene ${program.pageCount} páginas y distingue 29 medidas principales de 637 propuestas por áreas y 82 propuestas territoriales. Este análisis recoge las 719 propuestas numeradas de las fichas oficiales consultadas el ${program.sourceDate}; no cuenta aparte las 29 medidas-resumen. La categoría principal, los colectivos y las palancas son una clasificación editorial.`;
     }
-    return `El programa se publica en fichas web oficiales, consultadas el ${program.sourceDate}. Se conservan sus títulos y resúmenes. La categoría principal, los colectivos y las palancas son una clasificación editorial.`;
+    const consulted = program.sourceDate ? `, consultadas el ${program.sourceDate}` : '';
+    return `El programa se publica en fichas web oficiales${consulted}. Se conservan sus títulos y resúmenes. La categoría principal, los colectivos y las palancas son una clasificación editorial.`;
   }
   // PACMA numbers its sections in up to four levels («1.1.8.1») and has no numbered measures.
   if (program.id === 'pacma') {
@@ -36,6 +37,10 @@ export function methodNote(program: Program): string {
   // UPC: a short manifesto; each numbered axis is one proposal and its own block.
   if (program.id === 'upc') {
     return `El texto se extrae del PDF oficial (${pdfFacts(program)}), un manifiesto electoral con 16 ejes numerados; el PDF no tiene fecha de creación y la fecha es la de su última modificación. Cada eje es aquí una propuesta y un bloque, con su título y su texto completos. La categoría principal es una asignación editorial, y los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
+  }
+  // Democracia 21: several PDFs with different layouts; each measure is a hand-written summary.
+  if (program.id === 'd21') {
+    return `El programa se publica en varios PDF oficiales, uno por área (${program.pageCount} páginas en total${program.documentDate ? `; fecha ${program.documentDate}, la del más reciente` : ''}), sin maqueta común. Cada medida es aquí un resumen editorial del texto de su PDF, numerado del 1 al ${program.measures.length} en el orden de los documentos, y enlaza con ese PDF. La categoría principal de cada medida es una asignación editorial; no se asignan colectivos, palancas ni territorios. El número de página enlaza con el PDF de su área.`;
   }
   // Teruel Existe: unnumbered bullets; a bold lead or the first sentence is the title.
   if (program.id === 'teruel-existe') {

@@ -539,4 +539,36 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [11, 12, 16, 15],
     },
   ],
+  d21: [
+    {
+      title: 'La limpieza política abre el programa: 21 medidas',
+      text:
+        'El bloque 1, «Una limpieza política radical», reúne 21 de las 95 medidas (22 %). Se doblarán los recursos de la Fiscalía Anticorrupción, los delitos de corrupción no prescribirán y sus condenados quedarán inhabilitados de por vida, se eliminarán los aforamientos no previstos en la Constitución, nadie podrá ejercer el mismo cargo más de ocho años y los parlamentarios no cobrarán si no asisten a las sesiones.',
+      measureNumbers: [6, 9, 13, 16, 20],
+    },
+    {
+      title: 'Educación es la sección más larga: 27 medidas',
+      text:
+        'Educación suma 27 de las 95 medidas (28 %), más que España Limpia (21), Vivienda (19), Sanidad (18) o Energía (10). Fija como objetivo el top 10 europeo en PISA en ocho años, y propone pruebas de acceso a las facultades de educación, un MIR educativo de dos años remunerado, becas pagadas en septiembre, un comparador público de titulaciones y una cuenta de unos 500 € por joven.',
+      measureNumbers: [47, 54, 55, 60, 61, 67],
+    },
+    {
+      title: 'Vivienda: alivio hoy y un plan a diez años',
+      text:
+        'Las 19 medidas de vivienda se ordenan en dos fases. La primera limita de forma temporal los alquileres en zonas tensionadas, elimina el IVA, el ITP y el AJD a los menores de 35 años en la compra de vivienda habitual (hasta 400.000 €) y reasigna 10.000 M€ de fondos europeos. La segunda levanta barrios completos con un Plan Nacional a diez años y da a los ayuntamientos 30 días para revisar las licencias de obra mayor.',
+      measureNumbers: [22, 26, 27, 33, 36],
+    },
+    {
+      title: 'La inteligencia artificial aparece en cuatro de las cinco secciones',
+      text:
+        'Ocho medidas usan inteligencia artificial o algoritmos, entre ellas el control de la contratación pública, un tutor de IA para la educación, la auditoría continua de la sanidad, los asistentes clínicos, la alerta temprana de pacientes crónicos y la gestión de la red eléctrica. Solo Vivienda no la menciona.',
+      measureNumbers: [7, 42, 71, 82, 84, 92],
+    },
+    {
+      title: 'Energía: reglas estables y neutralidad tecnológica',
+      text:
+        'Las 10 medidas de energía prohíben por ley los cambios retroactivos sobre proyectos ya comprometidos, piden que el Estado fije objetivos sin elegir tecnología, sustituyen la intervención indiscriminada de precios por un bono social eléctrico automático y piden bajar la carga fiscal de la electricidad. El documento no menciona la energía nuclear.',
+      measureNumbers: [86, 87, 88, 89],
+    },
+  ],
 };
