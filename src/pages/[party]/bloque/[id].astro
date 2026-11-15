@@ -9,6 +9,7 @@ import { categoryById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
 import { measureNoun, padNumber, splitParagraphs } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
+import { blockPageDescription } from '@/lib/seo';
 import { SECTION_ID_PREFIX, routes } from '@/lib/routes';
 
 export function getStaticPaths() {
@@ -45,6 +46,7 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
 
 <BaseLayout
   title={`Bloque ${blockId}: ${block.title} (${program.acronym})`}
+  description={blockPageDescription(program, block)}
   accent={program.color}
   accentLight={program.lightColor}
 >

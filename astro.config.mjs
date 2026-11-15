@@ -25,7 +25,13 @@ const ROOT_DIR = new URL('./dist/', import.meta.url);
 /** Archivos comunes a todas las elecciones (por ejemplo «_headers»). */
 const SHARED_DIR = fileURLToPath(new URL(`./${SHARED_PUBLIC_DIR}/`, import.meta.url));
 /** @type {Record<string, string>} */
-const CONTENT_TYPES = { '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json' };
+const CONTENT_TYPES = {
+  '.js': 'text/javascript; charset=utf-8',
+  '.svg': 'image/svg+xml',
+  '.json': 'application/json',
+  '.ico': 'image/x-icon',
+  '.png': 'image/png',
+};
 
 /**
  * Astro solo tiene una carpeta pública: la de la elección («public/<año>/<tipo>/»).
@@ -56,7 +62,8 @@ const sharedPublic = {
  * Archivos que Cloudflare solo lee en la raíz de «dist/». Con NESTED_OUTPUT, esta integración:
  * - mueve «_headers» a la raíz y pone la ruta base delante de cada ruta (menos «/*»);
  * - crea «_redirects»: la raíz del dominio y los niveles intermedios van a la elección (302, temporal);
- * - copia «robots.txt» a la raíz, donde lo buscan los buscadores.
+ * - copia «robots.txt» y «favicon.ico» a la raíz, donde los buscan los buscadores (la raíz redirige a la elección,
+ *   y un buscador que no encuentra el icono en la portada lo pide en «/favicon.ico»).
  * @type {import('astro').AstroIntegration}
  */
 const nestedOutput = {
@@ -80,8 +87,10 @@ const nestedOutput = {
         .map((path) => `${path} ${BASE_PREFIX}/ 302`);
       writeFileSync(new URL('_redirects', ROOT_DIR), `${redirects.join('\n')}\n`);
 
-      const robots = new URL('robots.txt', dir);
-      if (existsSync(robots)) writeFileSync(new URL('robots.txt', ROOT_DIR), readFileSync(robots));
+      for (const name of ['robots.txt', 'favicon.ico']) {
+        const file = new URL(name, dir);
+        if (existsSync(file)) writeFileSync(new URL(name, ROOT_DIR), readFileSync(file));
+      }
     },
   },
 };
