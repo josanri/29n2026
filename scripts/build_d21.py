@@ -301,6 +301,7 @@ def build():
         "observaciones": [
             "El texto de cada medida es un resumen del PDF de su área. Cada medida enlaza a ese PDF.",
             "El programa se publica en cinco documentos: España Limpia, Vivienda, Educación, Sanidad y Potencia energética. Faltan los textos del bloque Modernización del país, que no tiene PDF.",
+            "La fecha es la del PDF más reciente (España Limpia y Potencia energética, 11 de noviembre de 2026); los de Sanidad (9 de noviembre), Educación (5) y Vivienda (20 de octubre) son anteriores.",
         ],
         "color": "#0A0B0D",
         "colorClaro": "#FFFD38",
@@ -309,6 +310,7 @@ def build():
         "elecciones": "Elecciones generales · 29 de noviembre de 2026",
         "pdf": "/programas/d21-espana-limpia-2026.pdf",
         "fuentePdf": "https://democracia21.es/#soluciones",
+        "fechaPdf": "2026-11-11",
         "paginas": 40,
         "unidadMedida": "medida",
         "unidadMedidas": "medidas",

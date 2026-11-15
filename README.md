@@ -115,9 +115,9 @@ scripts/                      solo código: extracción y análisis de los PDF
 | Ruta | Contenido |
 |---|---|
 | `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas |
-| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/`, `/convergents/`, `/psoe/`, `/teruel-existe/`, `/geroa-bai/`, `/upc/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
+| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fe-jons/`, `/pcte/`, `/convergents/`, `/psoe/`, `/teruel-existe/`, `/geroa-bai/`, `/upc/`, `/d21/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
 | `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/convergents/medidas/`, `/psoe/medidas/`, `/teruel-existe/medidas/`, `/geroa-bai/medidas/`, `/upc/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
-| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/`, `/psoe/bloque/1/` … `/8/`, `/teruel-existe/bloque/1/` … `/12/`, `/geroa-bai/bloque/1/` … `/5/`, `/upc/bloque/1/` … `/16/` | Lectura completa por bloque |
+| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/`, `/psoe/bloque/1/` … `/8/`, `/teruel-existe/bloque/1/` … `/12/`, `/geroa-bai/bloque/1/` … `/5/`, `/upc/bloque/1/` … `/16/`, `/d21/bloque/1/` … `/2/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
@@ -208,6 +208,9 @@ src/data/2026/generales/programas/geroa-bai.json    resultado que consume la web
 public/2026/generales/programas/upc-manifiesto-29n-2026.pdf manifiesto electoral de Unidad del Pueblo Canario (6 páginas; sin fecha de creación, modificado el 30 de octubre de 2026), optimizado: 0,2 MB frente a los 3,4 MB del original
 scripts/extract_upc.py               extracción de los 16 ejes numerados: cada eje es una propuesta y un bloque
 src/data/2026/generales/programas/upc.json          resultado que consume la web
+public/2026/generales/programas/d21-*.pdf            los cinco PDF de «Soluciones» de Democracia 21, tal como los publica mi.democracia21.es y sin optimizar (España Limpia 13 págs., Vivienda 9, Educación 8, Sanidad 6 y Potencia energética 4): pesan entre 0,2 y 0,5 MB; el de España Limpia es el del 11 de noviembre de 2026, con el mismo texto que la copia anterior
+scripts/build_d21.py                 las 95 medidas de D21, escritas a mano como resumen de su PDF (los cinco PDF no comparten maqueta) y con un enlace a su documento
+src/data/2026/generales/programas/d21.json          resultado que consume la web
 src/data/2026/generales/programas/eaj-pnv.json      30 propuestas transcritas de la [página oficial del PNV](https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/)
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026.pdf BOE, candidaturas proclamadas el 3 de noviembre
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf BOE, corrección oficial del 7 de noviembre
@@ -237,6 +240,7 @@ Para regenerar los datos del PSOE: `npm run data:psoe` (necesita Python con PyMu
 Para regenerar los datos de Teruel Existe: `npm run data:teruel-existe` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 Para regenerar los datos de Geroa Bai: `npm run data:geroa-bai` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada compromiso).
 Para regenerar los datos de Unidad del Pueblo Canario: `npm run data:upc` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada eje).
+Para regenerar los datos de Democracia 21: `npm run data:d21` (solo Python: las medidas están en el propio script).
 Para regenerar los datos del PCTE: `npm run data:pcte` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada bloque y cada medida).
 Para regenerar los datos de FE de las JONS: `npm run data:fe-jons` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 Para regenerar los datos de Adelante Andalucía: `npm run data:adelante` (consulta las páginas oficiales por área; procesa 637 propuestas temáticas y 82 territoriales, numeradas del 1 al 719. Las 29 prioridades del resumen no se cuentan de nuevo).

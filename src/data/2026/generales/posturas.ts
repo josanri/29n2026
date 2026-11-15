@@ -153,6 +153,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'convergents', side: 'b', measures: [77, 78], note: 'Eliminar los impuestos de Sucesiones, Donaciones y Patrimonio y bajar Transmisiones Patrimoniales y el tramo autonómico del IRPF.' },
   { topic: 'impuestos', party: 'psoe', side: 'a', measures: [130, 131, 132, 135], note: 'Subir la tributación de las rentas del capital más altas, de las grandes tecnológicas, de los jets privados y de las transacciones financieras.' },
   { topic: 'impuestos', party: 'upc', side: 'a', measures: [9], note: 'Una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital.' },
+  { topic: 'impuestos', party: 'd21', side: 'b', measures: [27, 28, 89], note: 'Eliminar el IVA, el ITP y el AJD a los menores de 35 años, bajarlos para todos en la compra de vivienda habitual y reducir la carga fiscal de la electricidad.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },
