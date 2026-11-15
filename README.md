@@ -222,7 +222,7 @@ src/data/taxonomia.json              21 categorías, colectivos y palancas comun
 src/data/2026/generales/analysis.ts                 lectura editorial («Las claves») por programa
 src/data/temas.ts                    temas que dividen: pregunta y dos posturas; común a todas las elecciones
 src/data/2026/generales/posturas.ts  postura de cada partido en cada tema, con las medidas que la apoyan (la compilación las comprueba)
-src/data/2026/generales/encuestas.ts encuestas (fecha, enlace a la publicación original y porcentajes) y páginas oficiales de cada encuestadora
+src/data/2026/generales/encuestas.ts encuestas (fecha, enlace a la publicación original y porcentajes) y páginas oficiales de cada encuestadora (la skill `.claude/skills/actualizar-encuestas/` explica cómo añadir las nuevas)
 ```
 
 Para regenerar los datos del PP: `npm run data:pp` (necesita Python con PyMuPDF).
