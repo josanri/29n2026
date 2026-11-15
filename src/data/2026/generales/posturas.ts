@@ -35,6 +35,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'ie', side: 'b', measures: [7], note: 'Reforzar el control de fronteras y cambiar las reglas de expulsión y asilo.' },
   { topic: 'inmigracion', party: 'pacma', side: 'matiz', measures: [100], note: 'Acceso unificado a la educación, la sanidad y el alojamiento, y más plazas de acogida, sin hablar de regularizar ni de vías legales.' },
   { topic: 'inmigracion', party: 'fe-jons', side: 'b', measures: [2, 5, 13, 34], note: 'Fronteras cerradas y militarizadas, un Plan Nacional de Remigración con expulsiones y una tasa máxima de inmigración del 1,5 %.' },
+  { topic: 'inmigracion', party: 'pcte', side: 'a', measures: [85], note: 'Cierre de los CIE y un mecanismo permanente de regularización para todas las personas trabajadoras sin papeles.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -42,6 +43,7 @@ export const stances: Stance[] = [
   { topic: 'aborto', party: 'pp', side: 'matiz', measures: [159], note: 'No habla del aborto, pero el concebido no nacido contará para las ayudas a la familia.' },
   { topic: 'aborto', party: 'vox', side: 'b', measures: [98], note: 'Defensa del derecho a la vida «desde su concepción hasta la muerte natural» y objeción de conciencia de los sanitarios.' },
   { topic: 'aborto', party: 'fe-jons', side: 'b', measures: [90], note: '«La vida humana no es negociable»: ilegalizar las leyes del aborto.' },
+  { topic: 'aborto', party: 'pcte', side: 'a', measures: [65], note: 'Derechos sexuales y reproductivos en la sanidad pública: todas las interrupciones del embarazo, en hospitales públicos.' },
 
   // Monarquía o república
   { topic: 'monarquia', party: 'pfac', side: 'b', measures: [12], note: 'Avanzar hacia un Estado republicano, federal y laico.' },
@@ -73,6 +75,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'cc', side: 'matiz', measures: [24], note: 'Incentivos fiscales al pequeño propietario que alquila a precio asequible, sin tope general.' },
   { topic: 'vivienda', party: 'pacma', side: 'matiz', measures: [86], note: 'Construcción masiva de vivienda pública y límites a los pisos turísticos, pero con incentivos fiscales a los propietarios y sin tope general del alquiler.' },
   { topic: 'vivienda', party: 'fe-jons', side: 'a', measures: [43], note: 'Tope del alquiler: nunca más del 25 % del salario de la unidad familiar.' },
+  { topic: 'vivienda', party: 'pcte', side: 'a', measures: [21], note: 'Bajada inmediata de los alquileres del 50 % y después precios máximos ligados a los salarios de la zona.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -82,6 +85,7 @@ export const stances: Stance[] = [
   { topic: 'religion-educacion', party: 'pp', side: 'b', measures: [212], note: 'Los padres elegirán colegio y no se eliminará ningún concierto con demanda.' },
   { topic: 'religion-educacion', party: 'salf', side: 'b', measures: [101], note: 'Cheque escolar válido en la pública, la concertada y la privada.' },
   { topic: 'religion-educacion', party: 'pacma', side: 'a', measures: [69], note: 'Garantizar «una escuela pública realmente laica».' },
+  { topic: 'religion-educacion', party: 'pcte', side: 'a', measures: [34], note: 'Un sistema educativo «exclusivamente público, gratuito, laico e inclusivo» que integre la concertada en una red pública única.' },
 
   // Feminismo y leyes de igualdad
   { topic: 'igualdad', party: 'bng', side: 'a', measures: [100, 101, 106], note: 'Cumplir las obligaciones internacionales y el Pacto de Estado contra la violencia machista y legislar el feminicidio.' },
@@ -95,6 +99,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'erc', side: 'a', measures: [87], note: 'Blindar las políticas feministas y los recursos contra las violencias machistas.' },
   { topic: 'igualdad', party: 'pacma', side: 'a', measures: [95], note: 'Más medios contra la violencia machista: unidades policiales especializadas las 24 horas y campañas contra los estereotipos de género.' },
   { topic: 'igualdad', party: 'fe-jons', side: 'b', measures: [87], note: 'Derogar las leyes de «género», incluida la Ley de Violencia de Género.' },
+  { topic: 'igualdad', party: 'pcte', side: 'a', measures: [64], note: 'Vivienda, ingresos, empleo y atención suficientes para que las mujeres que sufren violencia rompan la dependencia económica.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -104,6 +109,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'pp', side: 'b', measures: [129], note: 'Derogar la Ley de Memoria Democrática y aprobar una Ley de Concordia.' },
   { topic: 'memoria', party: 'vox', side: 'b', measures: [46], note: 'Superar las «divisivas leyes ideológicas», como la de Memoria Democrática.' },
   { topic: 'memoria', party: 'fe-jons', side: 'b', measures: [231], note: 'Derogación inmediata de las «mal llamadas Leyes de “Memoria”».' },
+  { topic: 'memoria', party: 'pcte', side: 'a', measures: [86], note: 'Ilegalizar las organizaciones fascistas y franquistas y disolver las fundaciones que enaltecen la dictadura.' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
@@ -141,6 +147,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'vox', side: 'b', measures: [81], note: 'Ampliar la prisión permanente revisable.' },
   { topic: 'seguridad', party: 'salf', side: 'b', measures: [11, 12], note: 'Una macrocárcel y el cumplimiento íntegro de las penas.' },
   { topic: 'seguridad', party: 'fe-jons', side: 'b', measures: [162, 176], note: 'Más penas y cadena perpetua no revisable para los delitos «de Lesa Patria», el asesinato, la violación y el terrorismo.' },
+  { topic: 'seguridad', party: 'pcte', side: 'a', measures: [81, 84], note: 'Derogar la Ley Mordaza y acabar con la impunidad policial: sin pelotas de goma ni tanquetas en las protestas.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },
@@ -155,6 +162,7 @@ export const stances: Stance[] = [
   { topic: 'gestacion-subrogada', party: 'mundo-mas-justo', side: 'b', measures: [164], note: 'Mantener la prohibición de la gestación subrogada en España.' },
   { topic: 'gestacion-subrogada', party: 'fo', side: 'b', measures: [62], note: 'Prohibir y perseguir los vientres de alquiler.' },
   { topic: 'gestacion-subrogada', party: 'pfac', side: 'b', measures: [4], note: 'Perseguir la explotación reproductiva y no inscribir a los bebés comprados en otros países.' },
+  { topic: 'gestacion-subrogada', party: 'pcte', side: 'b', measures: [67], note: 'Rechazo de la gestación subrogada y persecución de las agencias que la intermedian desde España.' },
 
   // Tauromaquia
   { topic: 'tauromaquia', party: 'adelante', side: 'a', measures: [631, 632, 634], note: 'Que no sea patrimonio, ni un euro público y fuera los menores.' },
@@ -171,6 +179,7 @@ export const stances: Stance[] = [
   { topic: 'otan', party: 'bng', side: 'matiz', measures: [506], note: 'Rechaza más gasto militar y las directrices de la OTAN, sin pedir la salida.' },
   { topic: 'otan', party: 'pp', side: 'b', measures: [54], note: 'Reforzar los contingentes españoles y el pilar europeo de la OTAN.' },
   { topic: 'otan', party: 'fe-jons', side: 'a', measures: [46, 166], note: 'Abandonar la OTAN de inmediato y no participar en misiones ajenas a los intereses de España.' },
+  { topic: 'otan', party: 'pcte', side: 'a', measures: [75], note: 'Salida de España de la OTAN y de la Unión Europea.' },
 
   // Burka
   { topic: 'burka', party: 'vox', side: 'b', measures: [71], note: 'Prohibir el burka y el niqab en los espacios públicos.' },
