@@ -8,11 +8,11 @@ Salida (en `public/<año>/<tipo>/og/`):
 - medidas/<partido>-<n>.png  la de una medida, como una cita (titular y arranque del texto): solo las que se piden
 
 Dibuja con las fuentes y los colores de la web, en un navegador sin ventana (Playwright).
-Hay que volver a ejecutarlo cuando se añade o se cambia un programa.
+Hay que volver a ejecutarlo cuando se añade o se cambia un programa, y para cada medida cuyo texto cambie: la imagen de una medida no se actualiza sola.
 
 Uso: python scripts/og_images.py [elección]                     (portada y partidos; por defecto «2026/generales»)
      python scripts/og_images.py --medida pp:144 [--medida …]  (solo esas medidas, para compartirlas)
-     python scripts/og_images.py --todas-las-medidas            (una por medida: pesa decenas de megabytes)
+     python scripts/og_images.py --todas-las-medidas            (una por medida: unos 6.000 PNG, 150-240 MB; Cloudflare admite 20.000 archivos por despliegue)
 
 La página de una medida (`/<partido>/medidas/<n>/`) usa su imagen si existe y, si no, la del partido.
 Requiere: pip install playwright pillow && playwright install chromium; y `npm install` (las fuentes salen de node_modules).
@@ -125,7 +125,13 @@ def medida(datos, m):
     titulo = m.get('tituloFrase') or m['titulo']
     # Un titular largo baja de tamaño para caber en tres líneas.
     tamano = 72 if len(titulo) <= 38 else 58 if len(titulo) <= 64 else 46
-    unidad = {'medidas': 'medida', 'propuestas': 'propuesta', 'compromisos': 'compromiso'}.get(datos.get('unidadMedidas') or 'medidas', 'medida')
+    plural = datos.get('unidadMedidas') or 'medidas'
+    unidad = {'ejes': 'eje'}.get(plural, plural.removesuffix('s'))
+    # Algunos programas listan una medida con título y sin texto: entonces no hay arranque que mostrar.
+    texto_html = (
+        f'<p style="font:500 26px/1.35 Archivo;color:#3a3a3a;margin-top:22px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{html.escape(recortar(m["texto"]))}</p>'
+        if m.get('texto', '').strip() else ''
+    )
     pagina_texto = f" · pág. {m['pagina']}" if m.get('pagina') else ''
     return pagina(f"""<div class="card">
   <div style="display:flex;justify-content:space-between;align-items:center">{marca()}<span style="font:800 26px Archivo">Programa electoral · 29N</span></div>
@@ -133,7 +139,7 @@ def medida(datos, m):
     <div style="font:900 190px/.8 BSD;color:{datos['color']};flex:none;margin-top:6px">“</div>
     <div style="min-width:0">
       <p style="font:800 {tamano}px/1.04 Archivo;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{html.escape(titulo)}</p>
-      <p style="font:500 26px/1.35 Archivo;color:#3a3a3a;margin-top:22px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">{html.escape(recortar(m['texto']))}</p>
+      {texto_html}
     </div>
   </div>
   <div class="pie"><span>{html.escape(datos['siglas'])} · {unidad} {m['n']}{pagina_texto}</span><span class="url">electosfera.es</span></div>
@@ -153,7 +159,8 @@ def medidas_pedidas(programas):
         if not encontrada or encontrada.get('oculta'):
             raise SystemExit(f'No hay una medida anunciada «{peticion}» (se espera partido:n, por ejemplo pp:144).')
         pedidas.append((datos, encontrada))
-    return pedidas
+    # `--medida` junto a `--todas-las-medidas` no dibuja dos veces la misma.
+    return list({(datos['id'], m['n']): (datos, m) for datos, m in pedidas}.values())
 
 
 def main():
@@ -184,7 +191,7 @@ def main():
             imagen.save(SALIDA / f'{nombre}.png', optimize=True)
             temporal.unlink()
         navegador.close()
-    print(f'{len(trabajos)} imágenes en {SALIDA.relative_to(RAIZ)}')
+    print(f'{len(trabajos)} imágenes en {(SALIDA_MEDIDAS if pedidas else SALIDA).relative_to(RAIZ)}')
 
 
 if __name__ == '__main__':
