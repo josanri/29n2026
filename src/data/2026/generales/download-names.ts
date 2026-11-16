@@ -29,6 +29,9 @@ export const downloadFileNames: Record<string, string> = {
   'compromis-front-valencia': 'programa-compromis-29n-2026.pdf',
   upc: 'manifiesto-unidad-del-pueblo-canario-29n-2026.pdf',
   'geroa-bai': 'programa-geroa-bai-bases-politicas-29n-2026.pdf',
+  ixlg: 'programa-ixlg-senado-29n-2026.pdf',
+  nex: 'programa-nex-generales-29n-2026.pdf',
+  comuns: 'programa-comuns-29n-2026.pdf',
 };
 
 /** File name of the summary PDF of Adelante Andalucía (the 29 main measures). */

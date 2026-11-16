@@ -685,4 +685,228 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [12, 25, 26, 90, 50, 88],
     },
   ],
+  comuns: [
+    {
+      title: 'Drets: el capítulo más largo',
+      text:
+        'El capítulo «Drets» tiene 250 de las 1.097 medidas (23 %). Incluye también las medidas sobre agricultura y compra pública alimentaria, como las medidas 518 a 522.',
+      measureNumbers: [518, 519, 520, 521, 522],
+    },
+    {
+      title: 'Energía y empleo, las categorías con más medidas',
+      text:
+        'La categoría «energía y clima» tiene 136 medidas y «empleo y emprendimiento», 119. Juntas suman 255 medidas (23 %).',
+      measureNumbers: [66, 69, 75, 98, 106],
+    },
+    {
+      title: 'Prohibir: 42 medidas',
+      text:
+        '42 medidas usan la palabra «prohibir» o «prohibición» en su texto. La medida 31, por ejemplo, propone prohibir la compra de vivienda que no sea para vivir en zonas tensionadas.',
+      measureNumbers: [19, 30, 31, 32, 89],
+    },
+    {
+      title: '85 medidas tienen una cifra en porcentaje',
+      text:
+        '85 de las 1.097 medidas (8 %) llevan un porcentaje en el texto. La medida 1 fija una inversión de al menos el 1 % del PIB durante diez años.',
+      measureNumbers: [1, 3, 16, 19, 20],
+    },
+  ],
+  ixlg: [
+    {
+      title: 'Vivienda y transporte abren el programa: 6 de las 22 medidas',
+      text:
+        'El primer bloque, «Compromisos para La Gomera», reúne 6 de las 22 medidas (27 %). Tres son de vivienda: un plan estatal para las islas no capitalinas (1), más alquiler público permanente (2) y rehabilitación y bolsa pública de alquiler asequible, con prioridad al uso residencial frente al alquiler turístico (3). Las otras dos tratan del transporte: compensaciones al transporte aéreo y marítimo y medidas para la doble insularidad (4), y frecuencias mínimas, también en fines de semana y festivos (5).',
+      measureNumbers: [1, 2, 3, 4, 5],
+    },
+    {
+      title: 'Seis medidas piden un fondo, un plan o una financiación del Estado',
+      text:
+        'En 6 de las 22 medidas el texto remite al Estado: un plan estatal de vivienda (1), una financiación estatal de los servicios esenciales según su coste real y no solo según los habitantes (6), un fondo estatal plurianual contra el abandono rural (8), un plan estatal de garantía hídrica para las islas menores (13), la financiación estatal de la dependencia (16) y partidas estatales para vivienda, transporte, cuidados, agricultura y prevención de incendios (20).',
+      measureNumbers: [1, 6, 8, 13, 16, 20],
+    },
+    {
+      title: 'El bloque económico es una sola medida, sobre el REF',
+      text:
+        'El bloque «Una economía que te ayude a vivir» contiene una única medida, la 7, un texto largo sobre el Régimen Económico y Fiscal (REF) de Canarias. Dice que no lo cuestiona, pero sí que se haya confundido su defensa con la de determinados intereses, y pide un REF que llegue también a autónomos, pequeñas empresas, trabajadores, familias y jóvenes. El empleo aparece en otros bloques: empleo local ligado a la restauración de bancales y la gestión forestal (10), apoyo a la agricultura familiar, la ganadería y la pesca artesanal (9) y empleo estable y formación profesional en cuidados (18).',
+      measureNumbers: [7, 9, 10, 18],
+    },
+    {
+      title: 'Agua, incendios y abandono rural, en 8 medidas',
+      text:
+        'El bloque «Una isla habitable, productiva y cuidada» tiene 8 medidas, el más largo del programa. Incluye el fondo contra el abandono rural insular (8), el empleo local ligado a bancales, gestión forestal y prevención de incendios (10), finalizar las obras hidráulicas pendientes y poner en funcionamiento las conexiones ya instaladas entre depósitos (12), el plan de garantía hídrica (13) y la financiación estable para la prevención de incendios y la restauración del monteverde (15).',
+      measureNumbers: [8, 10, 12, 13, 15],
+    },
+    {
+      title: 'Una ponencia en el Senado y un balance cada seis meses',
+      text:
+        'El último bloque propone impulsar en el Senado una ponencia sobre las necesidades de las islas menores (19), defender partidas estatales y presentar iniciativas y preguntas parlamentarias sobre los compromisos pendientes (20), abrir una oficina territorial con atención presencial periódica y publicar cada seis meses un balance de actividad (21) y consultar a la ciudadanía y a los municipios sobre las iniciativas que afecten a La Gomera (22). Ninguna de las 22 medidas lleva cifra, plazo ni derogación.',
+      measureNumbers: [19, 20, 21, 22],
+    },
+  ],
+  nex: [
+    {
+      title: 'Vivienda: congelar alquileres, acabar con las SOCIMIs y ceder vivienda vacía',
+      text:
+        'El bloque de vivienda tiene 16 de las 150 medidas (11 %). Propone congelar los alquileres mientras dure la emergencia habitacional (2), acabar con el régimen fiscal especial de las SOCIMIs (5), la cesión obligatoria del uso de la vivienda vacía de los grandes propietarios para alquiler social (7), precios de referencia del alquiler por código postal en las zonas tensionadas (9) y un Plan Estatal de Vivienda para un parque público de alquiler social a precio de coste (13).',
+      measureNumbers: [2, 5, 7, 9, 13],
+    },
+    {
+      title: 'Trabajo: salario mínimo de 1.500 euros, 32 horas y baja pagada al 100 %',
+      text:
+        'El bloque de trabajo reúne 16 medidas y la categoría «empleo» es la mayor del programa, con 20. Fija un salario mínimo de 1.500 euros en 14 pagas (19), una jornada de 32 horas en todas las empresas y de 30 en las grandes, sin bajar el sueldo (21), la baja médica cobrada al 100 % desde el primer día (28) y 30 días de vacaciones pagadas al año mediante una nueva prestación de la Seguridad Social (29). La medida 26 aplica las 32 horas a la Administración General del Estado.',
+      measureNumbers: [19, 21, 26, 28, 29],
+    },
+    {
+      title: 'Nueve de las 13 medidas de la deuda histórica son de ferrocarril',
+      text:
+        'El bloque «Deuda histórica» tiene 13 medidas y 9 son de ferrocarril (42 a 50). Piden reabrir la Ruta de la Plata con partidas y fechas en los Presupuestos (42), vía doble en los grandes ejes (44), el traspaso a la Junta de los servicios ferroviarios regionales (45), la reapertura de líneas y estaciones clausuradas (49) y un tren de Media Distancia y Regional Exprés gratuito dentro de Extremadura, financiado por el Estado (50). La medida 38 pide cuantificar oficialmente la deuda y un calendario de pago anual.',
+      measureNumbers: [38, 42, 44, 45, 49, 50],
+    },
+    {
+      title: 'Energía: el Estado entra con un 30 % en cada nueva planta renovable',
+      text:
+        'El bloque «Energía y agua» tiene 14 medidas. Fija la independencia energética en 2040 (51), una entrada del Estado del 30 % en cada nueva planta renovable y de almacenamiento (52), una consulta vecinal vinculante para las plantas de más de 50 MW y ninguna en suelo agrícola (53), un peaje eléctrico a las megaplantas (55) y la reversión pública de los saltos hidroeléctricos del Tajo y el Guadiana al vencer las concesiones (56).',
+      measureNumbers: [51, 52, 53, 55, 56],
+    },
+    {
+      title: 'Campo y paisajes: el bloque más largo, con 17 medidas',
+      text:
+        'Es el bloque con más medidas (17). Rechaza Mercosur y cualquier tratado comercial sin cláusulas espejo (65), plantea 6 millones de hectáreas ecológicas en 2030 (66), una normativa básica contra las macrogranjas (74), una Ley de Herbivoría con pastoreo de conservación en montes públicos (78) y un Cuerpo Civil de Regeneración con 20.000 empleos al año dentro del Trabajo Garantizado (81).',
+      measureNumbers: [65, 66, 74, 78, 81],
+    },
+    {
+      title: '17 medidas con cifra, 2 con plazo y una derogación',
+      text:
+        '17 de las 150 medidas (11 %) llevan un compromiso cuantificado. Solo 2 tienen plazo: la independencia energética en 2040 (51) y las hectáreas ecológicas en 2030 (66). La única derogación explícita es la de la Ley 15/1997, que abrió la puerta a la gestión privada de la sanidad pública (127). Entre las cifras están una pensión mínima por encima de 1.200 euros (120) y el 0,7 % de la Renta Nacional Bruta para cooperación al desarrollo (146).',
+      measureNumbers: [51, 66, 120, 127, 146],
+    },
+  ],
+  eguzkilore: [
+    {
+      title: 'Sanidad y familia suman 28 de las 64 medidas',
+      text:
+        'El programa tiene un único bloque de 64 medidas. Las categorías «sanidad» (15) y «familia» (13) reúnen 28 de ellas (44 %). Entre las de familia están que la Administración garantice y sufrague de 0 a 3 años la excedencia o la reducción de jornada de uno de los progenitores (6), poder reducir hasta un 50 % la jornada hasta los 18 años (18), y el derecho a estar en casa con un hijo enfermo (19) o con un mayor enfermo (28).',
+      measureNumbers: [2, 6, 18, 19, 28],
+    },
+    {
+      title: 'Educación: ratios, sin tareas y respeto a los ritmos',
+      text:
+        'La propuesta de reducir progresivamente las ratios fija 5 alumnos por educador en el primer ciclo de Infantil, 9 en el segundo, 12 en Primaria y 15 en Secundaria (8). Otras piden respeto a los ritmos y procesos de aprendizaje (9), eliminar las tareas salvo excepciones acordadas con cada alumno (12) y tener en cuenta la necesidad de movimiento y el contacto con la naturaleza (13).',
+      measureNumbers: [8, 9, 12, 13],
+    },
+    {
+      title: 'Consentimiento y libertad de tratamiento',
+      text:
+        'Un grupo de medidas defiende el consentimiento y la libertad sanitaria: que se respete el consentimiento recogido en el Código de Núremberg y el Convenio de Oviedo (21), la libertad de elección de los propios tratamientos o pruebas (22), no al pasaporte de vacunación ni a la obligatoriedad de mascarillas (23) y asesoramiento al Parlamento y al Gobierno de Navarra por profesionales de la salud independientes (24). La medida 63 añade la objeción de conciencia para respetar ese consentimiento.',
+      measureNumbers: [21, 22, 23, 24, 63],
+    },
+    {
+      title: 'Política exterior: competencias de la UE, Rusia y BRICS',
+      text:
+        'Cuatro medidas tratan de política exterior: que los Estados recuperen las competencias trasladadas a la Unión Europea, como antes de Maastricht (53), oponerse al euro digital (54), que la Unión incluya a Rusia (55) y que España participe en los BRICS (56). La medida 41 propone además promover la salida de la OTAN y eliminar el uso militar del polígono de tiro de las Bardenas Reales.',
+      measureNumbers: [41, 53, 54, 55, 56],
+    },
+    {
+      title: 'Democracia directa, derogar la ley mordaza y recuperar empresas públicas',
+      text:
+        'Entre las medidas de organización política figuran derogar la ley mordaza y revisar la ley de Bienestar Animal y la «ley trans» (57), la separación de poderes (58), abolir los sueldos vitalicios y suprimir el aforamiento (59), recuperar las empresas públicas privatizadas (60) y una consulta ciudadana que se aplica si obtiene más del 50 % de los votos a favor, a petición del 5 % de los censados (62). Ninguna de las 64 medidas lleva plazo.',
+      measureNumbers: [57, 58, 59, 60, 62],
+    },
+  ],
+  fia: [
+    {
+      title: 'Cinco temas aparecen en los dos bloques',
+      text:
+        'El programa tiene 20 medidas en dos bloques de 10: «Nuestros 10 compromisos para Aragón» y «Programa político». Cinco temas se repiten: vivienda (2 y 11), salarios y pensiones (1 y 12), campo (6 y 16), sanidad pública y listas de espera (3 y 17) y eliminación de las subvenciones a los partidos (8 y 20).',
+      measureNumbers: [1, 2, 3, 6, 8, 20],
+    },
+    {
+      title: 'Vivienda: alquiler municipal y dos derogaciones',
+      text:
+        'La medida 2 propone construir vivienda social para alquiler con derecho a compra y la 11, viviendas municipales en alquiler. La 7 pide derogar la ley okupa, garantizando el derecho a la propiedad privada, y el reciente Real Decreto-ley sobre el alquiler de viviendas.',
+      measureNumbers: [2, 7, 11],
+    },
+    {
+      title: 'Salarios, pensiones, impuestos y cuotas de autónomos',
+      text:
+        'El primer compromiso propone la subida de salarios y pensiones y la bajada de impuestos (1). El programa político añade un aumento del salario mínimo y sueldos y pensiones con el IPC (12) y una reducción de las cuotas fiscales a los autónomos (18). El compromiso sobre empleo pide empleo estable y de calidad e inversión en I+D (4).',
+      measureNumbers: [1, 4, 12, 18],
+    },
+    {
+      title: 'Cuatro medidas nombran obras o lugares concretos',
+      text:
+        'Cuatro medidas del programa político citan un lugar: usar el aeropuerto de Huesca para tráfico de mercancías (13), terminar la autovía del Pirineo (14), industrializar la ciudad de Huesca (15) y potenciar las empresas del Aragón oriental (19).',
+      measureNumbers: [13, 14, 15, 19],
+    },
+    {
+      title: 'Subvenciones a partidos, sindicatos y patronal, y cita presencial',
+      text:
+        'Dos medidas piden eliminar las subvenciones públicas a los partidos (8, 20) y la 8 extiende la petición a sindicatos y patronal. La 9 mantiene la cita presencial y elimina la obligatoriedad de la cita previa, y la 10 pide una gestión profesional y transparente de lo público, con responsabilidad directa de los gestores. Ninguna de las 20 medidas lleva cifra ni plazo.',
+      measureNumbers: [8, 9, 10, 20],
+    },
+  ],
+  alhora: [
+    {
+      title: 'La independencia, también en inmigración y vivienda',
+      text:
+        'El programa tiene 41 medidas en 6 bloques, y el primero, «Independència», reúne 5 (1 a 5): una malla municipalista nacional, el uso estratégico de las instituciones, nuevos liderazgos, la confrontación continuada con el Estado y «la pedagogia del no». Otras dos medidas de bloques distintos se titulan «Assolir la independència per gestionar la immigració» (19) y «Assolir la independència per gestionar l\'habitatge» (33).',
+      measureNumbers: [1, 4, 5, 19, 33],
+    },
+    {
+      title: 'Lengua: escuelas 100 % en catalán y contratos solo a quien respete el catalán',
+      text:
+        'El bloque «Llengua i educació» propone una red de escuelas 100 % en catalán (6), una Escola Superior de Magisteri de Catalunya y formar 5.000 nuevos profesores de lengua y cultura catalanas (7), TV3 y Catalunya Ràdio exclusivamente en catalán (8), una regidoria de política lingüística con el 10 % del presupuesto municipal (9) y que ninguna empresa que no respete el catalán reciba contratos públicos (10).',
+      measureNumbers: [6, 7, 8, 9, 10],
+    },
+    {
+      title: 'Inmigración: catalanización de adultos y de las familias',
+      text:
+        'El bloque de inmigración tiene 7 medidas. Una invierte 1.000 millones de euros en un plan remunerado de enseñanza de lengua y cultura catalanas, con el objetivo de formar 100.000 personas al año (22). Otras piden formación profesional para la segunda generación (23), facilitar la inserción laboral de las mujeres inmigrantes como vía para la catalanización de las familias (24) y una estrategia demográfica centrada en vivienda, estabilidad laboral, transporte y cuidados (25).',
+      measureNumbers: [19, 22, 23, 24, 25],
+    },
+    {
+      title: 'Vivienda: parque público de alquiler, fiscalidad y moratoria turística',
+      text:
+        'El bloque de vivienda tiene 8 medidas. Propone un gran parque público de alquiler para rentas mixtas, que crezca construyendo y comprando vivienda privada (26), un mercado de alquiler con garantías públicas ante el impago (29), estudiar rebajar el ITP y el AJD en la primera vivienda habitual (31) y una tasa turística disuasoria y una moratoria de licencias turísticas (32).',
+      measureNumbers: [26, 29, 31, 32],
+    },
+    {
+      title: 'Ferrocarril: 8 de las 41 medidas, de «Fora Renfe» a una sola red catalana',
+      text:
+        'El bloque «Mobilitat i territori» tiene 8 medidas (20 %), todas sobre transporte. Plantea que la Generalitat decida quién opera Rodalies, con la plataforma «Fora Renfe» y su iniciativa legislativa popular (34), horarios cadenciados de tres niveles como en Suiza (35), un interregional exprés por la línea de alta velocidad (36), una red en malla entre capitales de comarca (37) y un único ancho de vía y un único voltaje (38).',
+      measureNumbers: [34, 35, 36, 37, 38],
+    },
+  ],
+  'agenda-valenciana': [
+    {
+      title: 'Financiación: un nuevo modelo, compensar la deuda e igualar a Madrid y Barcelona',
+      text:
+        'Cuatro de las 16 medidas piden recursos al Estado: reformar de inmediato el sistema de financiación con una igualación transitoria (1), compensar la deuda valenciana por infrafinanciación (2), dotaciones para el área metropolitana equivalentes a las de Madrid y Barcelona (7) y equiparar la financiación estatal del Palau de les Arts a la del Teatro Real o el Liceu (14).',
+      measureNumbers: [1, 2, 7, 14],
+    },
+    {
+      title: 'Menos trabas y fondos más rápidos',
+      text:
+        'Varias medidas buscan agilizar: reformas en el Congreso para eliminar trabas burocráticas y agilizar la contratación de obras y personal en los ayuntamientos (3), acelerar la ejecución de los fondos asignados a los municipios (4), reducir las cargas administrativas de pymes y autónomos (11) y crear plazas judiciales para reducir los retrasos procesales (13).',
+      measureNumbers: [3, 4, 11, 13],
+    },
+    {
+      title: 'Identidad: derecho civil, Policía Valenciana y lengua',
+      text:
+        'El bloque «Autogobierno, Derecho Civil e Identidad» tiene 3 de las 16 medidas: recuperar el Derecho Civil Valenciano (8), impulsar una Policía Valenciana capacitada para responder a emergencias (9) y proteger y fomentar el uso de la lengua valenciana y profundizar en el autogobierno (10).',
+      measureNumbers: [8, 9, 10],
+    },
+    {
+      title: 'Cercanías y Metrovalencia, con las líneas C1, C2, C3 y C6',
+      text:
+        'El bloque de movilidad tiene 3 medidas. La primera amplía frecuencias, capacidad y fiabilidad en las líneas C1, C2, C3 y C6 de Renfe y mejora Metrovalencia, con atención a los municipios de l\'Horta (5). Las otras finalizan las actuaciones en la C3 y aceleran el corredor ferroviario con Europa (6) y piden dotaciones metropolitanas equivalentes a las de Madrid y Barcelona (7).',
+      measureNumbers: [5, 6, 7],
+    },
+    {
+      title: 'Regeneración y voz propia: el bloque más largo, con 4 medidas',
+      text:
+        'El último bloque es el más largo (4 de las 16 medidas). Propone justicia más eficaz (13), más canales temáticos en À Punt (14), una reducción drástica de los aforamientos y más transparencia (15) y votar en Madrid a favor de cualquier iniciativa que beneficie a los municipios valencianos, con independencia de su origen partidista (16). Ninguna de las 16 medidas lleva cifra ni plazo.',
+      measureNumbers: [13, 14, 15, 16],
+    },
+  ],
 };

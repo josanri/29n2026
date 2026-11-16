@@ -2,26 +2,601 @@
  "id": "ixlg",
  "partido": "Iniciativa por La Gomera",
  "siglas": "IxLG",
+ "comunidad": "Canarias",
+ "observaciones": [
+  "Programa para el Senado: es la candidatura de La Gomera al Senado. No es el programa del Congreso.",
+  "El PDF no pone título a las medidas: el título es la primera frase del texto. La medida 12 usa el título en mayúsculas del PDF.",
+  "El PDF numera las medidas dentro de cada apartado (01 a 04). Aquí se numeran de 1 a 22 seguidas.",
+  "La medida 7 es prosa: el apartado de economía del PDF no tiene medidas numeradas. Su texto es el apartado completo."
+ ],
  "color": "#009C4E",
  "colorClaro": "#DFFAE8",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Un escaño. Una isla.",
+ "subtitulo": "Programa electoral al Senado de Iniciativa por La Gomera",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "/programas/ixlg-programa-senado-2026.pdf",
+ "fuentePdf": "https://iniciativaporlagomera.org/wp-content/uploads/2026/11/programa_electoral_la_gomera_gilam_editable-2.pdf",
+ "paginas": 11,
+ "fechaPdf": "2026-11-04",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "El sentido de la candidatura",
+  "texto": "El Senado solo tiene sentido si sirve para llevar a Madrid los problemas reales de La Gomera y de Canarias. No queremos reproducir debates ni consignas estatales alejadas de la vida cotidiana: queremos una representación útil, cercana y sometida a rendición de cuentas. Concurrimos desde una tradición democrática y de justicia social vinculada a nuestra historia. No heredamos cargos ni patrimonio: somos fieles y acreedores de unos principios, de quienes los defendieron y de quienes lucharon por una Gomera más justa. Reconocemos las dificultades de la insularidad y la lejanía, pero no aceptamos que se conviertan en excusa para la falta de resultados. Defender los intereses y las reivindicaciones de la mayoría social de La Gomera es defender también Canarias. La insularidad es una realidad que exige más derechos, no menos."
  },
  "cifras": [],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Canarias"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Compromisos para La Gomera",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 2,
+   "titulo": "Una economía que te ayude a vivir",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  },
+  {
+   "id": 3,
+   "titulo": "Una isla habitable, productiva y cuidada",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 7
+  },
+  {
+   "id": 4,
+   "titulo": "Derechos, cuidados y una representación útil",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 9
+  }
+ ],
+ "secciones": [
+  {
+   "id": "vivienda",
+   "bloque": 1,
+   "titulo": "Vivienda y derecho a quedarse",
+   "tituloFrase": "Vivienda y derecho a quedarse",
+   "intro": "Que vivir en La Gomera no sea un privilegio ni obligue a marcharse.",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "movilidad",
+   "bloque": 1,
+   "titulo": "Movilidad y coste de la insularidad",
+   "tituloFrase": "Movilidad y coste de la insularidad",
+   "intro": "La distancia no puede limitar el acceso a derechos y oportunidades.",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "economia",
+   "bloque": 2,
+   "titulo": "Una economía al servicio de la ciudadanía, no de unos pocos",
+   "tituloFrase": "Una economía al servicio de la ciudadanía, no de unos pocos",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "pueblos",
+   "bloque": 3,
+   "titulo": "Pueblos vivos, empleo y economía local",
+   "tituloFrase": "Pueblos vivos, empleo y economía local",
+   "intro": "Recuperar las medianías y asegurar futuro a la actividad productiva.",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "agua",
+   "bloque": 3,
+   "titulo": "Agua, energía y naturaleza protegida",
+   "tituloFrase": "Agua, energía y naturaleza protegida",
+   "intro": "Una transición ecológica justa, participativa y al servicio de la población.",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "cuidados",
+   "bloque": 4,
+   "titulo": "Cuidados, salud y servicios cercanos",
+   "tituloFrase": "Cuidados, salud y servicios cercanos",
+   "intro": "Envejecer con dignidad y poder vivir en el propio pueblo.",
+   "pagina": 9,
+   "subapartados": []
+  },
+  {
+   "id": "escano",
+   "bloque": 4,
+   "titulo": "Un escaño cercano y con cuentas claras",
+   "tituloFrase": "Un escaño cercano y con cuentas claras",
+   "intro": "Compromisos de trabajo parlamentario por La Gomera.",
+   "pagina": 10,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Impulsar un plan estatal de vivienda para las islas no capitalinas, con financiación específica para La Gomera.",
+   "tituloFrase": "Impulsar un plan estatal de vivienda para las islas no capitalinas, con financiación específica para La Gomera.",
+   "texto": "Impulsar un plan estatal de vivienda para las islas no capitalinas, con financiación específica para La Gomera.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "plan",
+    "gasto"
+   ],
+   "territorios": [
+    "La Gomera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Ampliar el alquiler público permanente mediante construcción en suelo público transformado, adquisición y rehabilitación de viviendas vacías y recuperación de casas tradicionales.",
+   "tituloFrase": "Ampliar el alquiler público permanente mediante construcción en suelo público transformado, adquisición y rehabilitación de viviendas vacías y recuperación de casas tradicionales.",
+   "texto": "Ampliar el alquiler público permanente mediante construcción en suelo público transformado, adquisición y rehabilitación de viviendas vacías y recuperación de casas tradicionales.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Reforzar la rehabilitación de viviendas habituales y rurales, la bolsa pública de alquiler asequible y las soluciones residenciales para jóvenes, mayores y trabajadores esenciales.",
+   "tituloFrase": "Reforzar la rehabilitación de viviendas habituales y rurales, la bolsa pública de alquiler asequible y las soluciones residenciales para jóvenes, mayores y trabajadores esenciales.",
+   "texto": "Reforzar la rehabilitación de viviendas habituales y rurales, la bolsa pública de alquiler asequible y las soluciones residenciales para jóvenes, mayores y trabajadores esenciales. Priorizar el uso residencial frente a la especulación y el alquiler turístico.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes",
+    "mayores"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "movilidad",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Revisar las compensaciones al transporte aéreo y marítimo y establecer medidas específicas para la doble insularidad, con tarifas asequibles y conexiones compatibles con el trabajo, los estudios y la atención sanitaria.",
+   "tituloFrase": "Revisar las compensaciones al transporte aéreo y marítimo y establecer medidas específicas para la doble insularidad, con tarifas asequibles y conexiones compatibles con el trabajo, los estudios y la atención sanitaria.",
+   "texto": "Revisar las compensaciones al transporte aéreo y marítimo y establecer medidas específicas para la doble insularidad, con tarifas asequibles y conexiones compatibles con el trabajo, los estudios y la atención sanitaria.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "movilidad",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Exigir frecuencias mínimas, continuidad en fines de semana y festivos y garantías para pacientes y mercancías esenciales; impulsar ayudas de transporte, alojamiento y manutención para quienes deban desplazarse por atención especializada.",
+   "tituloFrase": "Exigir frecuencias mínimas, continuidad en fines de semana y festivos y garantías para pacientes y mercancías esenciales; impulsar ayudas de transporte, alojamiento y manutención para quienes deban desplazarse por atención especializada.",
+   "texto": "Exigir frecuencias mínimas, continuidad en fines de semana y festivos y garantías para pacientes y mercancías esenciales; impulsar ayudas de transporte, alojamiento y manutención para quienes deban desplazarse por atención especializada.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "movilidad",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Promover una financiación estatal de los servicios esenciales basada en su coste real, no solo en el número de habitantes, y evaluar el impacto de las leyes estatales en las islas menores y en la aplicación del REF.",
+   "tituloFrase": "Promover una financiación estatal de los servicios esenciales basada en su coste real, no solo en el número de habitantes, y evaluar el impacto de las leyes estatales en las islas menores y en la aplicación del REF.",
+   "texto": "Promover una financiación estatal de los servicios esenciales basada en su coste real, no solo en el número de habitantes, y evaluar el impacto de las leyes estatales en las islas menores y en la aplicación del REF.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 2,
+   "seccion": "economia",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Queremos un REF que llegue también a autónomos, pequeñas empresas, trabajadores, familias y jóvenes",
+   "tituloFrase": "Queremos un REF que llegue también a autónomos, pequeñas empresas, trabajadores, familias y jóvenes",
+   "texto": "Durante décadas, Canarias ha tenido que reivindicar una y otra vez la aplicación efectiva del Régimen Económico y Fiscal (REF). Defender el REF es defender un derecho de Canarias y una herramienta para compensar nuestra lejanía, insularidad y condiciones estructurales.\n\nPero también debemos preguntarnos para quién está funcionando realmente el REF.\n\nNo queremos un REF reducido a una permanente batalla por mantener beneficios fiscales o incentivos a quienes tienen mayor capacidad para invertir, mientras una parte importante de la ciudadanía continúa soportando el sobrecoste de vivir en las islas: vivienda, alimentación, transporte, energía, agua o acceso a servicios.\n\nEl REF no puede convertirse en una cuestión reservada a despachos, grandes empresas o determinados intereses económicos y políticos. Sus beneficios deben traducirse en bienestar para la mayoría social, empleo estable, actividad productiva, servicios públicos y oportunidades a quienes viven y trabajan en Canarias.\n\nLa propia evolución del debate sobre el REF plantea hoy la necesidad de revisar a quién llegan sus instrumentos y cómo se distribuyen sus beneficios. Existen incentivos dirigidos a la inversión y a la actividad económica, pero también medidas destinadas directamente a compensar costes y garantizar servicios. La cuestión es que el conjunto del sistema debe orientarse de forma más clara hacia el interés general.\n\nNo cuestionamos el REF. Cuestionamos que durante demasiado tiempo se haya confundido su defensa con la defensa de determinados intereses.\n\nQueremos un REF que llegue también a autónomos, pequeñas empresas, trabajadores, familias y jóvenes; que contribuya a reducir los sobrecostes de la insularidad y que genere retornos sociales y territoriales verificables. Porque el REF no nació para que unos pocos tengan más oportunidades por vivir en Canarias. Nació para que vivir en Canarias NO suponga tener menos oportunidades.\n\nY en La Gomera, además debe incorporar de manera efectiva nuestra condición de isla no capitalina y la doble insularidad, de manera que los beneficios y compensaciones respondan a los costes reales de nuestro territorio. Defender el REF sí. Pero defenderlo para que cumpla su función: compensar a Canarias y mejorar la vida de quienes vivimos aquí.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "autonomos",
+    "familias",
+    "jovenes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "La Gomera",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 3,
+   "seccion": "pueblos",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Crear un fondo estatal plurianual contra el abandono rural insular para rehabilitación, caminos, redes de agua, transporte a demanda, servicios de proximidad y recuperación de tierras agrícolas.",
+   "tituloFrase": "Crear un fondo estatal plurianual contra el abandono rural insular para rehabilitación, caminos, redes de agua, transporte a demanda, servicios de proximidad y recuperación de tierras agrícolas.",
+   "texto": "Crear un fondo estatal plurianual contra el abandono rural insular para rehabilitación, caminos, redes de agua, transporte a demanda, servicios de proximidad y recuperación de tierras agrícolas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 3,
+   "seccion": "pueblos",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Apoyar la agricultura familiar, la ganadería y la pesca artesanal; facilitar la cesión de fincas abandonadas y promover la compra pública de alimentos locales para comedores, residencias y otros servicios públicos.",
+   "tituloFrase": "Apoyar la agricultura familiar, la ganadería y la pesca artesanal; facilitar la cesión de fincas abandonadas y promover la compra pública de alimentos locales para comedores, residencias y otros servicios públicos.",
+   "texto": "Apoyar la agricultura familiar, la ganadería y la pesca artesanal; facilitar la cesión de fincas abandonadas y promover la compra pública de alimentos locales para comedores, residencias y otros servicios públicos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 3,
+   "seccion": "pueblos",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Impulsar empleo local ligado a la restauración de bancales, la gestión forestal, la prevención de incendios, el mantenimiento de senderos, la rehabilitación energética y la conservación del patrimonio natural y etnográfico.",
+   "tituloFrase": "Impulsar empleo local ligado a la restauración de bancales, la gestión forestal, la prevención de incendios, el mantenimiento de senderos, la rehabilitación energética y la conservación del patrimonio natural y etnográfico.",
+   "texto": "Impulsar empleo local ligado a la restauración de bancales, la gestión forestal, la prevención de incendios, el mantenimiento de senderos, la rehabilitación energética y la conservación del patrimonio natural y etnográfico.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 3,
+   "seccion": "pueblos",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Mejorar la conectividad digital en todos los núcleos y facilitar la formación, el teletrabajo y el emprendimiento, con oportunidades para jóvenes y mujeres.",
+   "tituloFrase": "Mejorar la conectividad digital en todos los núcleos y facilitar la formación, el teletrabajo y el emprendimiento, con oportunidades para jóvenes y mujeres.",
+   "texto": "Mejorar la conectividad digital en todos los núcleos y facilitar la formación, el teletrabajo y el emprendimiento, con oportunidades para jóvenes y mujeres.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "jovenes",
+    "mujeres"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 3,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "FINALIZAR LAS OBRAS HIDRÁULICAS PENDIENTES",
+   "tituloFrase": "FINALIZAR LAS OBRAS HIDRÁULICAS PENDIENTES",
+   "texto": "FINALIZAR LAS OBRAS HIDRÁULICAS PENDIENTES: Exigiremos la finalización de todas las obras hidráulicas pendientes y la puesta en funcionamiento efectiva de las conexiones ya instaladas entre los distintos depósitos de la isla, garantizando que las infraestructuras construidas cumplan finalmente la función para la que fueron proyectadas. No basta con construir. Hay que terminar, conectar y poner en funcionamiento.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 3,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Promover un plan estatal de garantía hídrica para las islas menores: reducir pérdidas en redes, modernizar depósitos y riego, reutilizar agua y proteger acuíferos, manantiales y ecosistemas vinculados.",
+   "tituloFrase": "Promover un plan estatal de garantía hídrica para las islas menores: reducir pérdidas en redes, modernizar depósitos y riego, reutilizar agua y proteger acuíferos, manantiales y ecosistemas vinculados.",
+   "texto": "Promover un plan estatal de garantía hídrica para las islas menores: reducir pérdidas en redes, modernizar depósitos y riego, reutilizar agua y proteger acuíferos, manantiales y ecosistemas vinculados.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "plan",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 3,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Favorecer el autoconsumo, las comunidades energéticas y la participación pública y vecinal en los beneficios de las renovables, priorizando cubiertas, aparcamientos y suelos degradados frente a la ocupación de suelo agrario o paisajes protegidos.",
+   "tituloFrase": "Favorecer el autoconsumo, las comunidades energéticas y la participación pública y vecinal en los beneficios de las renovables, priorizando cubiertas, aparcamientos y suelos degradados frente a la ocupación de suelo agrario o paisajes protegidos.",
+   "texto": "Favorecer el autoconsumo, las comunidades energéticas y la participación pública y vecinal en los beneficios de las renovables, priorizando cubiertas, aparcamientos y suelos degradados frente a la ocupación de suelo agrario o paisajes protegidos.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 3,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Asegurar financiación estable para la prevención de incendios, la restauración de monteverde, barrancos y laderas, la recuperación de bancales y la adaptación del litoral al cambio climático.",
+   "tituloFrase": "Asegurar financiación estable para la prevención de incendios, la restauración de monteverde, barrancos y laderas, la recuperación de bancales y la adaptación del litoral al cambio climático.",
+   "texto": "Asegurar financiación estable para la prevención de incendios, la restauración de monteverde, barrancos y laderas, la recuperación de bancales y la adaptación del litoral al cambio climático.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 4,
+   "seccion": "cuidados",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Reforzar la financiación estatal de la dependencia, la ayuda a domicilio, la teleasistencia, los centros de día y el respiro familiar, con servicios próximos a los núcleos rurales.",
+   "tituloFrase": "Reforzar la financiación estatal de la dependencia, la ayuda a domicilio, la teleasistencia, los centros de día y el respiro familiar, con servicios próximos a los núcleos rurales.",
+   "texto": "Reforzar la financiación estatal de la dependencia, la ayuda a domicilio, la teleasistencia, los centros de día y el respiro familiar, con servicios próximos a los núcleos rurales.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 4,
+   "seccion": "cuidados",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Reclamar atención sanitaria especializada periódica y facilitar transporte accesible a consultas y servicios esenciales.",
+   "tituloFrase": "Reclamar atención sanitaria especializada periódica y facilitar transporte accesible a consultas y servicios esenciales.",
+   "texto": "Reclamar atención sanitaria especializada periódica y facilitar transporte accesible a consultas y servicios esenciales. Combatir la soledad no deseada y mantener alternativas presenciales para quienes no pueden depender de trámites digitales.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "mayores",
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 4,
+   "seccion": "cuidados",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Promover empleo estable y formación profesional en cuidados, así como vivienda, trabajo y formación que faciliten el arraigo y el retorno de jóvenes.",
+   "tituloFrase": "Promover empleo estable y formación profesional en cuidados, así como vivienda, trabajo y formación que faciliten el arraigo y el retorno de jóvenes.",
+   "texto": "Promover empleo estable y formación profesional en cuidados, así como vivienda, trabajo y formación que faciliten el arraigo y el retorno de jóvenes.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 4,
+   "seccion": "escano",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Impulsar en el Senado una ponencia sobre las necesidades de las islas menores, escuchando a ayuntamientos, Cabildo, sectores productivos y colectivos sociales.",
+   "tituloFrase": "Impulsar en el Senado una ponencia sobre las necesidades de las islas menores, escuchando a ayuntamientos, Cabildo, sectores productivos y colectivos sociales.",
+   "texto": "Impulsar en el Senado una ponencia sobre las necesidades de las islas menores, escuchando a ayuntamientos, Cabildo, sectores productivos y colectivos sociales.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 4,
+   "seccion": "escano",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Defender partidas estatales para vivienda, transporte, cuidados, agricultura y prevención de incendios; promover iniciativas y preguntas parlamentarias sobre los compromisos pendientes que afecten a la isla.",
+   "tituloFrase": "Defender partidas estatales para vivienda, transporte, cuidados, agricultura y prevención de incendios; promover iniciativas y preguntas parlamentarias sobre los compromisos pendientes que afecten a la isla.",
+   "texto": "Defender partidas estatales para vivienda, transporte, cuidados, agricultura y prevención de incendios; promover iniciativas y preguntas parlamentarias sobre los compromisos pendientes que afecten a la isla.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 4,
+   "seccion": "escano",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Abrir una oficina territorial con atención presencial periódica y publicar cada seis meses un balance de actividad: iniciativas, gestiones, respuestas recibidas y asuntos pendientes.",
+   "tituloFrase": "Abrir una oficina territorial con atención presencial periódica y publicar cada seis meses un balance de actividad: iniciativas, gestiones, respuestas recibidas y asuntos pendientes.",
+   "texto": "Abrir una oficina territorial con atención presencial periódica y publicar cada seis meses un balance de actividad: iniciativas, gestiones, respuestas recibidas y asuntos pendientes.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 4,
+   "seccion": "escano",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Consultar a la ciudadanía y a los municipios sobre las iniciativas que afecten a La Gomera, evaluar sus resultados y rendir cuentas de forma pública.",
+   "tituloFrase": "Consultar a la ciudadanía y a los municipios sobre las iniciativas que afecten a La Gomera, evaluar sus resultados y rendir cuentas de forma pública.",
+   "texto": "Consultar a la ciudadanía y a los municipios sobre las iniciativas que afecten a La Gomera, evaluar sus resultados y rendir cuentas de forma pública.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "La Gomera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }

@@ -2,26 +2,3501 @@
  "id": "nex",
  "partido": "Nuevo Extremeñismo - Adelante Extremadura",
  "siglas": "NEX",
+ "comunidad": "Extremadura",
+ "observaciones": [
+  "Programa para el Congreso y para el Senado por Cáceres y Badajoz.",
+  "El PDF no pone título a las medidas: el título es la primera frase del texto.",
+  "Las cifras de los paneles del PDF (precios, paro, gasolineras, firmas) son datos de contexto. Solo son cifras las que son compromisos.",
+  "La web del partido (nuevoext.es, sección «programa») publica el PDF. La URL directa del archivo no consta: la ficha enlaza la página."
+ ],
  "color": "#00bca4",
  "colorClaro": "#b2ebe4",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "La única candidatura 100% extremeña",
+ "subtitulo": "150 medidas para que se escuche a Extremadura en Madrid",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "/programas/nex-programa-generales-29n-2026.pdf",
+ "fuentePdf": "https://www.nuevoext.es/#/programa",
+ "paginas": 15,
+ "fechaPdf": "2026-11-16",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Lo que llevaremos a Madrid",
+  "texto": "Nuevo Extremeñismo concurre el 29 de noviembre a las elecciones al Congreso de los Diputados y al Senado por las provincias de Cáceres y Badajoz. Tendremos una voz decisiva en Madrid que solo responda ante Extremadura."
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
+ "cifras": [
+  {
+   "valor": "30 h",
+   "unidad": "horas",
+   "texto": "Jornada semanal",
+   "contexto": "30 horas semanales",
+   "medida": 18
+  },
+  {
+   "valor": "1.500 €",
+   "unidad": "€",
+   "texto": "Salario mínimo en 14 pagas",
+   "contexto": "Salario mínimo de 1.500 euros en 14 pagas",
+   "medida": 19
+  },
+  {
+   "valor": "32 h",
+   "unidad": "horas",
+   "texto": "Jornada en todas las empresas",
+   "contexto": "Jornada de 32 horas en todas las empresas",
+   "medida": 21
+  },
+  {
+   "valor": "32 h",
+   "unidad": "horas",
+   "texto": "Jornada en la Administración General del Estado",
+   "contexto": "Jornada de 32 horas en la Administración General del Estado",
+   "medida": 26
+  },
+  {
+   "valor": "100 %",
+   "unidad": "%",
+   "texto": "Baja médica cobrada desde el primer día",
+   "contexto": "Baja médica cobrada al 100 % desde el primer día",
+   "medida": 28
+  },
+  {
+   "valor": "30 días",
+   "unidad": "días",
+   "texto": "Vacaciones pagadas al año",
+   "contexto": "30 días de vacaciones pagadas al año",
+   "medida": 29
+  },
+  {
+   "valor": "212",
+   "unidad": "municipios",
+   "texto": "Municipios extremeños sin gasolinera",
+   "contexto": "Prioridad para los 212 municipios extremeños sin gasolinera",
+   "medida": 34
+  },
+  {
+   "valor": "30 %",
+   "unidad": "%",
+   "texto": "Entrada del Estado en cada nueva planta renovable",
+   "contexto": "el Estado entra con un 30 %",
+   "medida": 52
+  },
+  {
+   "valor": "6 millones",
+   "unidad": "hectáreas",
+   "texto": "Hectáreas ecológicas en 2030",
+   "contexto": "6 millones de hectáreas ecológicas en 2030",
+   "medida": 66
+  },
+  {
+   "valor": "20.000",
+   "unidad": "empleos",
+   "texto": "Empleos al año en el Cuerpo Civil de Regeneración",
+   "contexto": "con 20.000 empleos al año",
+   "medida": 81
+  },
+  {
+   "valor": "15 años",
+   "unidad": "años",
+   "texto": "Incompatibilidad de los altos cargos",
+   "contexto": "15 años de incompatibilidad",
+   "medida": 94
+  },
+  {
+   "valor": "500.000",
+   "unidad": "firmas",
+   "texto": "Firmas para la Iniciativa Legislativa Popular",
+   "contexto": "fijadas en 500.000",
+   "medida": 97
+  },
+  {
+   "valor": "1 año",
+   "unidad": "año",
+   "texto": "Permiso de nacimiento",
+   "contexto": "Permisos de nacimiento de un año",
+   "medida": 110
+  },
+  {
+   "valor": "1.200 €",
+   "unidad": "€",
+   "texto": "Pensión mínima",
+   "contexto": "Pensión mínima por encima de 1.200 euros",
+   "medida": 120
+  },
+  {
+   "valor": "48 h",
+   "unidad": "horas",
+   "texto": "Cita en atención primaria",
+   "contexto": "cita en atención primaria en 48 horas",
+   "medida": 123
+  },
+  {
+   "valor": "4 años",
+   "unidad": "años",
+   "texto": "Becas de doctorado",
+   "contexto": "Becas de doctorado de cuatro años",
+   "medida": 138
+  },
+  {
+   "valor": "0,7 %",
+   "unidad": "%",
+   "texto": "Cooperación al desarrollo",
+   "contexto": "el 0,7 % de la Renta Nacional Bruta",
+   "medida": 146
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "en 2040",
+   "texto": "Independencia energética en 2040",
+   "medida": 51
+  },
+  {
+   "plazo": "en 2030",
+   "texto": "6 millones de hectáreas ecológicas en 2030",
+   "medida": 66
+  }
+ ],
+ "ordenPlazos": [
+  "en 2030",
+  "en 2040"
+ ],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Extremadura"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Vivienda",
+   "lema": "Una casa para vivir, no para invertir.",
+   "cita": "",
+   "intro": "Lo que llevaremos al Congreso: reforma de la Ley de Arrendamientos Urbanos y de la Ley de Enjuiciamiento Civil, y un nuevo Plan Estatal de Vivienda.",
+   "pagina": 3
+  },
+  {
+   "id": 2,
+   "titulo": "Trabajo digno y garantizado",
+   "lema": "Que nadie que quiera trabajar se quede sin trabajo.",
+   "cita": "",
+   "intro": "Lo que llevaremos al Congreso: una Ley de Garantía de Empleo, pagada por el Estado a través del SEPE y puesta en marcha por fases, empezando por los territorios con más paro, como Extremadura.",
+   "pagina": 4
+  },
+  {
+   "id": 3,
+   "titulo": "Gasolineras públicas",
+   "lema": "Llenar el depósito no puede ser un lujo.",
+   "cita": "",
+   "intro": "Lo que llevaremos al Congreso: una Ley de Red Pública de Estaciones de Servicio.",
+   "pagina": 6
+  },
+  {
+   "id": 4,
+   "titulo": "Deuda histórica",
+   "lema": "Trenes, industria y financiación justa.",
+   "cita": "",
+   "intro": "",
+   "pagina": 7
+  },
+  {
+   "id": 5,
+   "titulo": "Energía y agua",
+   "lema": "Sin colonialismo ni expolios.",
+   "cita": "",
+   "intro": "",
+   "pagina": 8
+  },
+  {
+   "id": 6,
+   "titulo": "Campo y paisajes",
+   "lema": "La raíz de nuestra tierra.",
+   "cita": "",
+   "intro": "",
+   "pagina": 9
+  },
+  {
+   "id": 7,
+   "titulo": "Autogobierno y democracia",
+   "lema": "Lo que afecta a Extremadura, con Extremadura.",
+   "cita": "",
+   "intro": "",
+   "pagina": 10
+  },
+  {
+   "id": 8,
+   "titulo": "Servicios públicos, fiscalidad y contratación",
+   "lema": "Servicios fuertes, impuestos justos.",
+   "cita": "",
+   "intro": "",
+   "pagina": 11
+  },
+  {
+   "id": 9,
+   "titulo": "Conciliación y bienestar",
+   "lema": "Del nacimiento a la jubilación, queremos un futuro aquí.",
+   "cita": "",
+   "intro": "",
+   "pagina": 12
+  },
+  {
+   "id": 10,
+   "titulo": "Sanidad y educación",
+   "lema": "Defender la vida de los nuestros.",
+   "cita": "",
+   "intro": "",
+   "pagina": 13
+  },
+  {
+   "id": 11,
+   "titulo": "Derechos y cooperación",
+   "lema": "Real para todas las personas.",
+   "cita": "",
+   "intro": "",
+   "pagina": 14
+  }
+ ],
+ "secciones": [
+  {
+   "id": "vivienda",
+   "bloque": 1,
+   "titulo": "Vivienda",
+   "tituloFrase": "Vivienda",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "plan-de-trabajo-garantizado",
+   "bloque": 2,
+   "titulo": "Plan de trabajo garantizado",
+   "tituloFrase": "Plan de trabajo garantizado",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "empleo-y-salarios",
+   "bloque": 2,
+   "titulo": "Empleo y salarios",
+   "tituloFrase": "Empleo y salarios",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "autonomos-y-pequeno-comercio",
+   "bloque": 2,
+   "titulo": "Autónomos y pequeño comercio",
+   "tituloFrase": "Autónomos y pequeño comercio",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "gasolineras-publicas",
+   "bloque": 3,
+   "titulo": "Gasolineras públicas",
+   "tituloFrase": "Gasolineras públicas",
+   "intro": "",
+   "pagina": 6,
+   "subapartados": []
+  },
+  {
+   "id": "deuda-historica-y-financiacion-justa",
+   "bloque": 4,
+   "titulo": "Deuda histórica y financiación justa",
+   "tituloFrase": "Deuda histórica y financiación justa",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "tren-y-movilidad",
+   "bloque": 4,
+   "titulo": "Tren y movilidad",
+   "tituloFrase": "Tren y movilidad",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "energia",
+   "bloque": 5,
+   "titulo": "Energía",
+   "tituloFrase": "Energía",
+   "intro": "",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "agua",
+   "bloque": 5,
+   "titulo": "Agua",
+   "tituloFrase": "Agua",
+   "intro": "",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "agricultura-y-ganaderia",
+   "bloque": 6,
+   "titulo": "Agricultura y ganadería",
+   "tituloFrase": "Agricultura y ganadería",
+   "intro": "",
+   "pagina": 9,
+   "subapartados": []
+  },
+  {
+   "id": "montes-y-paisajes-vivos",
+   "bloque": 6,
+   "titulo": "Montes y paisajes vivos",
+   "tituloFrase": "Montes y paisajes vivos",
+   "intro": "",
+   "pagina": 9,
+   "subapartados": []
+  },
+  {
+   "id": "autogobierno",
+   "bloque": 7,
+   "titulo": "Autogobierno",
+   "tituloFrase": "Autogobierno",
+   "intro": "",
+   "pagina": 10,
+   "subapartados": []
+  },
+  {
+   "id": "territorio-y-municipios",
+   "bloque": 7,
+   "titulo": "Territorio y municipios",
+   "tituloFrase": "Territorio y municipios",
+   "intro": "",
+   "pagina": 10,
+   "subapartados": []
+  },
+  {
+   "id": "cultura-y-memoria",
+   "bloque": 7,
+   "titulo": "Cultura y memoria",
+   "tituloFrase": "Cultura y memoria",
+   "intro": "",
+   "pagina": 10,
+   "subapartados": []
+  },
+  {
+   "id": "democracia-y-transparencia",
+   "bloque": 7,
+   "titulo": "Democracia y transparencia",
+   "tituloFrase": "Democracia y transparencia",
+   "intro": "",
+   "pagina": 10,
+   "subapartados": []
+  },
+  {
+   "id": "servicios-publicos-con-plantilla",
+   "bloque": 8,
+   "titulo": "Servicios públicos con plantilla",
+   "tituloFrase": "Servicios públicos con plantilla",
+   "intro": "",
+   "pagina": 11,
+   "subapartados": []
+  },
+  {
+   "id": "fiscalidad",
+   "bloque": 8,
+   "titulo": "Fiscalidad",
+   "tituloFrase": "Fiscalidad",
+   "intro": "",
+   "pagina": 11,
+   "subapartados": []
+  },
+  {
+   "id": "contratacion-publica",
+   "bloque": 8,
+   "titulo": "Contratación pública",
+   "tituloFrase": "Contratación pública",
+   "intro": "",
+   "pagina": 11,
+   "subapartados": []
+  },
+  {
+   "id": "familias",
+   "bloque": 9,
+   "titulo": "Familias",
+   "tituloFrase": "Familias",
+   "intro": "",
+   "pagina": 12,
+   "subapartados": []
+  },
+  {
+   "id": "juventud",
+   "bloque": 9,
+   "titulo": "Juventud",
+   "tituloFrase": "Juventud",
+   "intro": "",
+   "pagina": 12,
+   "subapartados": []
+  },
+  {
+   "id": "pensiones-y-mayores",
+   "bloque": 9,
+   "titulo": "Pensiones y mayores",
+   "tituloFrase": "Pensiones y mayores",
+   "intro": "",
+   "pagina": 12,
+   "subapartados": []
+  },
+  {
+   "id": "sanidad",
+   "bloque": 10,
+   "titulo": "Sanidad",
+   "tituloFrase": "Sanidad",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  },
+  {
+   "id": "educacion",
+   "bloque": 10,
+   "titulo": "Educación",
+   "tituloFrase": "Educación",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  },
+  {
+   "id": "derechos-e-igualdad",
+   "bloque": 11,
+   "titulo": "Derechos e igualdad",
+   "tituloFrase": "Derechos e igualdad",
+   "intro": "",
+   "pagina": 14,
+   "subapartados": []
+  },
+  {
+   "id": "cooperacion-internacional-y-politica-exterior",
+   "bloque": 11,
+   "titulo": "Cooperación internacional y política exterior",
+   "tituloFrase": "Cooperación internacional y política exterior",
+   "intro": "",
+   "pagina": 14,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Contratos indefinidos de vivienda habitual: mientras pagues y cumplas, nadie te echa.",
+   "tituloFrase": "Contratos indefinidos de vivienda habitual: mientras pagues y cumplas, nadie te echa.",
+   "texto": "Contratos indefinidos de vivienda habitual: mientras pagues y cumplas, nadie te echa. Primero para familias con hijos, mayores y dependientes; después, para todos los inquilinos.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "mayores",
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Congelación de los alquileres mientras dure la emergencia habitacional.",
+   "tituloFrase": "Congelación de los alquileres mientras dure la emergencia habitacional.",
+   "texto": "Congelación de los alquileres mientras dure la emergencia habitacional.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Los mismos derechos en el alquiler de temporada y por habitaciones cuando se use como residencia permanente.",
+   "tituloFrase": "Los mismos derechos en el alquiler de temporada y por habitaciones cuando se use como residencia permanente.",
+   "texto": "Los mismos derechos en el alquiler de temporada y por habitaciones cuando se use como residencia permanente.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Ningún desahucio de una familia vulnerable sin alternativa habitacional.",
+   "tituloFrase": "Ningún desahucio de una familia vulnerable sin alternativa habitacional.",
+   "texto": "Ningún desahucio de una familia vulnerable sin alternativa habitacional.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Fin del régimen fiscal especial de las SOCIMIs en toda España.",
+   "tituloFrase": "Fin del régimen fiscal especial de las SOCIMIs en toda España.",
+   "texto": "Fin del régimen fiscal especial de las SOCIMIs en toda España.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Las viviendas de Sareb en Extremadura, a alquiler social.",
+   "tituloFrase": "Las viviendas de Sareb en Extremadura, a alquiler social.",
+   "texto": "Las viviendas de Sareb en Extremadura, a alquiler social.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Cesión obligatoria del uso de la vivienda vacía de los grandes propietarios para alquiler social.",
+   "tituloFrase": "Cesión obligatoria del uso de la vivienda vacía de los grandes propietarios para alquiler social.",
+   "texto": "Cesión obligatoria del uso de la vivienda vacía de los grandes propietarios para alquiler social.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Protección permanente de toda vivienda protegida construida con dinero público.",
+   "tituloFrase": "Protección permanente de toda vivienda protegida construida con dinero público.",
+   "texto": "Protección permanente de toda vivienda protegida construida con dinero público.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Precios de referencia del alquiler por código postal, ligados a los ingresos de la población, como en París, para todos los alquileres de las zonas tensionadas y no solo los de los grandes tenedores.",
+   "tituloFrase": "Precios de referencia del alquiler por código postal, ligados a los ingresos de la población, como en París, para todos los alquileres de las zonas tensionadas y no solo los de los grandes tenedores.",
+   "texto": "Precios de referencia del alquiler por código postal, ligados a los ingresos de la población, como en París, para todos los alquileres de las zonas tensionadas y no solo los de los grandes tenedores.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Límites a la compra especulativa y a la compra por empresas en zonas tensionadas.",
+   "tituloFrase": "Límites a la compra especulativa y a la compra por empresas en zonas tensionadas.",
+   "texto": "Límites a la compra especulativa y a la compra por empresas en zonas tensionadas.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Transparencia total sobre la propiedad: datos públicos de los grandes tenedores.",
+   "tituloFrase": "Transparencia total sobre la propiedad: datos públicos de los grandes tenedores.",
+   "texto": "Transparencia total sobre la propiedad: datos públicos de los grandes tenedores.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "0 % de impuestos en la compra de la primera vivienda cuando vaya a ser vivienda habitual.",
+   "tituloFrase": "0 % de impuestos en la compra de la primera vivienda cuando vaya a ser vivienda habitual.",
+   "texto": "0 % de impuestos en la compra de la primera vivienda cuando vaya a ser vivienda habitual.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Plan Estatal de Vivienda para un parque público de alquiler social a precio de coste, como en Viena.",
+   "tituloFrase": "Plan Estatal de Vivienda para un parque público de alquiler social a precio de coste, como en Viena.",
+   "texto": "Plan Estatal de Vivienda para un parque público de alquiler social a precio de coste, como en Viena.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Plan estatal de rehabilitación de la vivienda vacía y en ruina, sobre todo en los pueblos, a cambio de destinarla a alquiler social.",
+   "tituloFrase": "Plan estatal de rehabilitación de la vivienda vacía y en ruina, sobre todo en los pueblos, a cambio de destinarla a alquiler social.",
+   "texto": "Plan estatal de rehabilitación de la vivienda vacía y en ruina, sobre todo en los pueblos, a cambio de destinarla a alquiler social.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Construcción bioclimática en el Código Técnico de la Edificación.",
+   "tituloFrase": "Construcción bioclimática en el Código Técnico de la Edificación.",
+   "texto": "Construcción bioclimática en el Código Técnico de la Edificación.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 1,
+   "seccion": "vivienda",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Freno judicial al boicot autonómico de la Ley de Vivienda: impulsaremos, junto a otros grupos, el recurso ante el Tribunal Constitucional de toda ley o decreto autonómico que intente esquivarla, y exigiremos al Gobierno que lo presente.",
+   "tituloFrase": "Freno judicial al boicot autonómico de la Ley de Vivienda: impulsaremos, junto a otros grupos, el recurso ante el Tribunal Constitucional de toda ley o decreto autonómico que intente esquivarla, y exigiremos al Gobierno que lo presente.",
+   "texto": "Freno judicial al boicot autonómico de la Ley de Vivienda: impulsaremos, junto a otros grupos, el recurso ante el Tribunal Constitucional de toda ley o decreto autonómico que intente esquivarla, y exigiremos al Gobierno que lo presente.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 2,
+   "seccion": "plan-de-trabajo-garantizado",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Derecho a un empleo de utilidad social para toda persona en paro que quiera trabajar, con puestos adaptados para personas con discapacidad.",
+   "tituloFrase": "Derecho a un empleo de utilidad social para toda persona en paro que quiera trabajar, con puestos adaptados para personas con discapacidad.",
+   "texto": "Derecho a un empleo de utilidad social para toda persona en paro que quiera trabajar, con puestos adaptados para personas con discapacidad. Participar es voluntario.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 2,
+   "seccion": "plan-de-trabajo-garantizado",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Salario mínimo, 30 horas semanales y formación continua para dar el salto al empleo privado.",
+   "tituloFrase": "Salario mínimo, 30 horas semanales y formación continua para dar el salto al empleo privado.",
+   "texto": "Salario mínimo, 30 horas semanales y formación continua para dar el salto al empleo privado.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "30 horas semanales"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Salario mínimo de 1.500 euros en 14 pagas, nunca por debajo del 70 % del salario medio y actualizado cada año con el IPC.",
+   "tituloFrase": "Salario mínimo de 1.500 euros en 14 pagas, nunca por debajo del 70 % del salario medio y actualizado cada año con el IPC.",
+   "texto": "Salario mínimo de 1.500 euros en 14 pagas, nunca por debajo del 70 % del salario medio y actualizado cada año con el IPC.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Salario mínimo de 1.500 euros en 14 pagas"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Ley de actualización de los salarios con la inflación.",
+   "tituloFrase": "Ley de actualización de los salarios con la inflación.",
+   "texto": "Ley de actualización de los salarios con la inflación.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Jornada de 32 horas en todas las empresas y de 30 en las grandes, sin bajar el sueldo y con un año de apoyo a las pymes para contratar.",
+   "tituloFrase": "Jornada de 32 horas en todas las empresas y de 30 en las grandes, sin bajar el sueldo y con un año de apoyo a las pymes para contratar.",
+   "texto": "Jornada de 32 horas en todas las empresas y de 30 en las grandes, sin bajar el sueldo y con un año de apoyo a las pymes para contratar.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos",
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Jornada de 32 horas en todas las empresas"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Límites a la jornada partida, con mejor cotización y parte del descanso pagado.",
+   "tituloFrase": "Límites a la jornada partida, con mejor cotización y parte del descanso pagado.",
+   "texto": "Límites a la jornada partida, con mejor cotización y parte del descanso pagado.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Más negociación colectiva y voz de los trabajadores en las decisiones de las grandes empresas.",
+   "tituloFrase": "Más negociación colectiva y voz de los trabajadores en las decisiones de las grandes empresas.",
+   "texto": "Más negociación colectiva y voz de los trabajadores en las decisiones de las grandes empresas.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Plan de choque contra los accidentes laborales y reforma de la Ley de Prevención de Riesgos Laborales.",
+   "tituloFrase": "Plan de choque contra los accidentes laborales y reforma de la Ley de Prevención de Riesgos Laborales.",
+   "texto": "Plan de choque contra los accidentes laborales y reforma de la Ley de Prevención de Riesgos Laborales.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Buzón de denuncias anónimas conectado directamente con la Inspección de Trabajo.",
+   "tituloFrase": "Buzón de denuncias anónimas conectado directamente con la Inspección de Trabajo.",
+   "texto": "Buzón de denuncias anónimas conectado directamente con la Inspección de Trabajo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 2,
+   "seccion": "empleo-y-salarios",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Jornada de 32 horas en la Administración General del Estado y en todas las administraciones que lo decidan.",
+   "tituloFrase": "Jornada de 32 horas en la Administración General del Estado y en todas las administraciones que lo decidan.",
+   "texto": "Jornada de 32 horas en la Administración General del Estado y en todas las administraciones que lo decidan.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Jornada de 32 horas en la Administración General del Estado"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 2,
+   "seccion": "autonomos-y-pequeno-comercio",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Cuota cero para quien ingrese menos del salario mínimo.",
+   "tituloFrase": "Cuota cero para quien ingrese menos del salario mínimo.",
+   "texto": "Cuota cero para quien ingrese menos del salario mínimo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 2,
+   "seccion": "autonomos-y-pequeno-comercio",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Baja médica cobrada al 100 % desde el primer día.",
+   "tituloFrase": "Baja médica cobrada al 100 % desde el primer día.",
+   "texto": "Baja médica cobrada al 100 % desde el primer día.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Baja médica cobrada al 100 % desde el primer día"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 2,
+   "seccion": "autonomos-y-pequeno-comercio",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "30 días de vacaciones pagadas al año, mediante una nueva prestación de la Seguridad Social.",
+   "tituloFrase": "30 días de vacaciones pagadas al año, mediante una nueva prestación de la Seguridad Social.",
+   "texto": "30 días de vacaciones pagadas al año, mediante una nueva prestación de la Seguridad Social.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "30 días de vacaciones pagadas al año"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 2,
+   "seccion": "autonomos-y-pequeno-comercio",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "El Estado paga el salario del sustituto durante los permisos de nacimiento, lactancia y cuidado de dependientes, no solo sus cotizaciones.",
+   "tituloFrase": "El Estado paga el salario del sustituto durante los permisos de nacimiento, lactancia y cuidado de dependientes, no solo sus cotizaciones.",
+   "texto": "El Estado paga el salario del sustituto durante los permisos de nacimiento, lactancia y cuidado de dependientes, no solo sus cotizaciones.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "mayores",
+    "familias"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 2,
+   "seccion": "autonomos-y-pequeno-comercio",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Fondo público de anticipo de facturas y reforma de la Ley de Morosidad.",
+   "tituloFrase": "Fondo público de anticipo de facturas y reforma de la Ley de Morosidad.",
+   "texto": "Fondo público de anticipo de facturas y reforma de la Ley de Morosidad.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 2,
+   "seccion": "autonomos-y-pequeno-comercio",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Datáfonos sin comisiones abusivas para el pequeño comercio.",
+   "tituloFrase": "Datáfonos sin comisiones abusivas para el pequeño comercio.",
+   "texto": "Datáfonos sin comisiones abusivas para el pequeño comercio.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 3,
+   "seccion": "gasolineras-publicas",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Una ley y un fondo estatal de inversión; la gestión, para comunidades autónomas, ayuntamientos y mancomunidades.",
+   "tituloFrase": "Una ley y un fondo estatal de inversión; la gestión, para comunidades autónomas, ayuntamientos y mancomunidades.",
+   "texto": "Una ley y un fondo estatal de inversión; la gestión, para comunidades autónomas, ayuntamientos y mancomunidades.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 3,
+   "seccion": "gasolineras-publicas",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Prioridad para los 212 municipios extremeños sin gasolinera y para las zonas agrícolas.",
+   "tituloFrase": "Prioridad para los 212 municipios extremeños sin gasolinera y para las zonas agrícolas.",
+   "texto": "Prioridad para los 212 municipios extremeños sin gasolinera y para las zonas agrícolas.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [
+    "Prioridad para los 212 municipios extremeños sin gasolinera"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 3,
+   "seccion": "gasolineras-publicas",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Precio de coste más un margen mínimo para mantener el servicio.",
+   "tituloFrase": "Precio de coste más un margen mínimo para mantener el servicio.",
+   "texto": "Precio de coste más un margen mínimo para mantener el servicio. Nunca por debajo de coste.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 3,
+   "seccion": "gasolineras-publicas",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Convenios con las cooperativas que ya tienen surtidores para abrirlos al público en gasolina y gasóleo A.",
+   "tituloFrase": "Convenios con las cooperativas que ya tienen surtidores para abrirlos al público en gasolina y gasóleo A.",
+   "texto": "Convenios con las cooperativas que ya tienen surtidores para abrirlos al público en gasolina y gasóleo A.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 3,
+   "seccion": "gasolineras-publicas",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Combustible garantizado y a precio justo para el campo mientras se descarboniza.",
+   "tituloFrase": "Combustible garantizado y a precio justo para el campo mientras se descarboniza.",
+   "texto": "Combustible garantizado y a precio justo para el campo mientras se descarboniza.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 4,
+   "seccion": "deuda-historica-y-financiacion-justa",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Cuantificación oficial de la deuda histórica del Estado con Extremadura y calendario de pago anual en los Presupuestos Generales.",
+   "tituloFrase": "Cuantificación oficial de la deuda histórica del Estado con Extremadura y calendario de pago anual en los Presupuestos Generales.",
+   "texto": "Cuantificación oficial de la deuda histórica del Estado con Extremadura y calendario de pago anual en los Presupuestos Generales.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 4,
+   "seccion": "deuda-historica-y-financiacion-justa",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reclamación por la vía bilateral Junta-Estado, con comisión de seguimiento.",
+   "tituloFrase": "Reclamación por la vía bilateral Junta-Estado, con comisión de seguimiento.",
+   "texto": "Reclamación por la vía bilateral Junta-Estado, con comisión de seguimiento.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 4,
+   "seccion": "deuda-historica-y-financiacion-justa",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reforma de la financiación autonómica que pese la dispersión, el envejecimiento y la superficie.",
+   "tituloFrase": "Reforma de la financiación autonómica que pese la dispersión, el envejecimiento y la superficie.",
+   "texto": "Reforma de la financiación autonómica que pese la dispersión, el envejecimiento y la superficie.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 4,
+   "seccion": "deuda-historica-y-financiacion-justa",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reindustrialización como parte del pago: inversión estatal en transformación agraria y energía dentro de Extremadura.",
+   "tituloFrase": "Reindustrialización como parte del pago: inversión estatal en transformación agraria y energía dentro de Extremadura.",
+   "texto": "Reindustrialización como parte del pago: inversión estatal en transformación agraria y energía dentro de Extremadura.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reapertura de la Ruta de la Plata, con partidas y fechas en los Presupuestos Generales del Estado.",
+   "tituloFrase": "Reapertura de la Ruta de la Plata, con partidas y fechas en los Presupuestos Generales del Estado.",
+   "texto": "Reapertura de la Ruta de la Plata, con partidas y fechas en los Presupuestos Generales del Estado.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Electrificación pendiente y un tren digno que vertebre la región.",
+   "tituloFrase": "Electrificación pendiente y un tren digno que vertebre la región.",
+   "texto": "Electrificación pendiente y un tren digno que vertebre la región.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Vía doble en los grandes ejes ferroviarios extremeños para acabar con los cuellos de botella, mejorar la puntualidad y que convivan trenes de pasajeros y de mercancías.",
+   "tituloFrase": "Vía doble en los grandes ejes ferroviarios extremeños para acabar con los cuellos de botella, mejorar la puntualidad y que convivan trenes de pasajeros y de mercancías.",
+   "texto": "Vía doble en los grandes ejes ferroviarios extremeños para acabar con los cuellos de botella, mejorar la puntualidad y que convivan trenes de pasajeros y de mercancías.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Traspaso a la Junta de Extremadura de los servicios ferroviarios regionales, con la financiación necesaria.",
+   "tituloFrase": "Traspaso a la Junta de Extremadura de los servicios ferroviarios regionales, con la financiación necesaria.",
+   "texto": "Traspaso a la Junta de Extremadura de los servicios ferroviarios regionales, con la financiación necesaria.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Trenes de proximidad entre Zafra y Navalmoral de la Mata: estudio de su integración, a medio camino entre Cercanías y Media Distancia, para los trayectos de cada día.",
+   "tituloFrase": "Trenes de proximidad entre Zafra y Navalmoral de la Mata: estudio de su integración, a medio camino entre Cercanías y Media Distancia, para los trayectos de cada día.",
+   "texto": "Trenes de proximidad entre Zafra y Navalmoral de la Mata: estudio de su integración, a medio camino entre Cercanías y Media Distancia, para los trayectos de cada día.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Nuevas líneas: estudio de viabilidad de Coria-Plasencia, Villanueva de la Serena-Herrera del Duque y Cáceres-Trujillo.",
+   "tituloFrase": "Nuevas líneas: estudio de viabilidad de Coria-Plasencia, Villanueva de la Serena-Herrera del Duque y Cáceres-Trujillo.",
+   "texto": "Nuevas líneas: estudio de viabilidad de Coria-Plasencia, Villanueva de la Serena-Herrera del Duque y Cáceres-Trujillo.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cáceres"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Más frecuencias en las líneas que ya existen, como Cáceres-Valencia de Alcántara, Mérida-Zafra y Zafra-Jerez de los Caballeros.",
+   "tituloFrase": "Más frecuencias en las líneas que ya existen, como Cáceres-Valencia de Alcántara, Mérida-Zafra y Zafra-Jerez de los Caballeros.",
+   "texto": "Más frecuencias en las líneas que ya existen, como Cáceres-Valencia de Alcántara, Mérida-Zafra y Zafra-Jerez de los Caballeros.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cáceres"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Recuperación de las vías tradicionales: reapertura de líneas y estaciones clausuradas para dar servicio a la población local y conectar, de forma barata y eficiente, territorios hoy aislados.",
+   "tituloFrase": "Recuperación de las vías tradicionales: reapertura de líneas y estaciones clausuradas para dar servicio a la población local y conectar, de forma barata y eficiente, territorios hoy aislados.",
+   "texto": "Recuperación de las vías tradicionales: reapertura de líneas y estaciones clausuradas para dar servicio a la población local y conectar, de forma barata y eficiente, territorios hoy aislados.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 4,
+   "seccion": "tren-y-movilidad",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Tren de Media Distancia y Regional Exprés gratuito dentro de Extremadura, financiado por el Estado hasta que salde la deuda histórica en transporte.",
+   "tituloFrase": "Tren de Media Distancia y Regional Exprés gratuito dentro de Extremadura, financiado por el Estado hasta que salde la deuda histórica en transporte.",
+   "texto": "Tren de Media Distancia y Regional Exprés gratuito dentro de Extremadura, financiado por el Estado hasta que salde la deuda histórica en transporte.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Independencia energética en 2040, electrificando hogares, industria y transporte.",
+   "tituloFrase": "Independencia energética en 2040, electrificando hogares, industria y transporte.",
+   "texto": "Independencia energética en 2040, electrificando hogares, industria y transporte.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "en 2040",
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Fondo Generacional de la Energía: el Estado entra con un 30 % en cada nueva planta renovable y de almacenamiento, y sus beneficios financian vivienda pública en alquiler, rehabilitación de edificios sin derramas y, con el tiempo, las pensiones.",
+   "tituloFrase": "Fondo Generacional de la Energía: el Estado entra con un 30 % en cada nueva planta renovable y de almacenamiento, y sus beneficios financian vivienda pública en alquiler, rehabilitación de edificios sin derramas y, con el tiempo, las pensiones.",
+   "texto": "Fondo Generacional de la Energía: el Estado entra con un 30 % en cada nueva planta renovable y de almacenamiento, y sus beneficios financian vivienda pública en alquiler, rehabilitación de edificios sin derramas y, con el tiempo, las pensiones.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "el Estado entra con un 30 %"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Consulta vecinal vinculante para las plantas de más de 50 MW, que autoriza el Estado, y ninguna en suelo agrícola.",
+   "tituloFrase": "Consulta vecinal vinculante para las plantas de más de 50 MW, que autoriza el Estado, y ninguna en suelo agrícola.",
+   "texto": "Consulta vecinal vinculante para las plantas de más de 50 MW, que autoriza el Estado, y ninguna en suelo agrícola.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Renovables por la regeneración: agrivoltaica obligatoria y cada parque, un refugio de vida, con cultivo o pastoreo, praderas autóctonas, charcas y setos.",
+   "tituloFrase": "Renovables por la regeneración: agrivoltaica obligatoria y cada parque, un refugio de vida, con cultivo o pastoreo, praderas autóctonas, charcas y setos.",
+   "texto": "Renovables por la regeneración: agrivoltaica obligatoria y cada parque, un refugio de vida, con cultivo o pastoreo, praderas autóctonas, charcas y setos.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Peaje eléctrico a las megaplantas para abaratar la luz a familias y pymes donde se genera.",
+   "tituloFrase": "Peaje eléctrico a las megaplantas para abaratar la luz a familias y pymes donde se genera.",
+   "texto": "Peaje eléctrico a las megaplantas para abaratar la luz a familias y pymes donde se genera.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "familias",
+    "autonomos"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Reversión pública de los saltos hidroeléctricos del Tajo y el Guadiana al vencer las concesiones, con gestión pública extremeña.",
+   "tituloFrase": "Reversión pública de los saltos hidroeléctricos del Tajo y el Guadiana al vencer las concesiones, con gestión pública extremeña.",
+   "texto": "Reversión pública de los saltos hidroeléctricos del Tajo y el Guadiana al vencer las concesiones, con gestión pública extremeña.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Reforma de la Ley de Minas de 1973 con consulta vecinal vinculante para la megaminería.",
+   "tituloFrase": "Reforma de la Ley de Minas de 1973 con consulta vecinal vinculante para la megaminería.",
+   "texto": "Reforma de la Ley de Minas de 1973 con consulta vecinal vinculante para la megaminería.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Almaraz, nodo de estabilidad de la red, reutilizando sus alternadores y con garantía de empleo para la comarca.",
+   "tituloFrase": "Almaraz, nodo de estabilidad de la red, reutilizando sus alternadores y con garantía de empleo para la comarca.",
+   "texto": "Almaraz, nodo de estabilidad de la red, reutilizando sus alternadores y con garantía de empleo para la comarca.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Bombeo reversible como almacenamiento energético en la planificación nacional.",
+   "tituloFrase": "Bombeo reversible como almacenamiento energético en la planificación nacional.",
+   "texto": "Bombeo reversible como almacenamiento energético en la planificación nacional.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 5,
+   "seccion": "energia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Energía que deja riqueza en el territorio: parte de los impuestos que pagan los parques, para crear comunidades energéticas de vecinos y ayuntamientos, y un marco estatal para el autoconsumo.",
+   "tituloFrase": "Energía que deja riqueza en el territorio: parte de los impuestos que pagan los parques, para crear comunidades energéticas de vecinos y ayuntamientos, y un marco estatal para el autoconsumo.",
+   "texto": "Energía que deja riqueza en el territorio: parte de los impuestos que pagan los parques, para crear comunidades energéticas de vecinos y ayuntamientos, y un marco estatal para el autoconsumo.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 5,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Posición extremeña en los planes hidrológicos del Tajo y el Guadiana, que aprueba el Estado.",
+   "tituloFrase": "Posición extremeña en los planes hidrológicos del Tajo y el Guadiana, que aprueba el Estado.",
+   "texto": "Posición extremeña en los planes hidrológicos del Tajo y el Guadiana, que aprueba el Estado.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 5,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Moratoria a nuevos regadíos superintensivos y freno a los usos de alto consumo de agua, como los centros de datos.",
+   "tituloFrase": "Moratoria a nuevos regadíos superintensivos y freno a los usos de alto consumo de agua, como los centros de datos.",
+   "texto": "Moratoria a nuevos regadíos superintensivos y freno a los usos de alto consumo de agua, como los centros de datos.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 5,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Plan Nacional de Siembra de Agua: recuperar acequias, regueras y zanjas de infiltración, presas permeables en los torrentes y un plan de recuperación del castor.",
+   "tituloFrase": "Plan Nacional de Siembra de Agua: recuperar acequias, regueras y zanjas de infiltración, presas permeables en los torrentes y un plan de recuperación del castor.",
+   "texto": "Plan Nacional de Siembra de Agua: recuperar acequias, regueras y zanjas de infiltración, presas permeables en los torrentes y un plan de recuperación del castor.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 5,
+   "seccion": "agua",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Recarga de acuíferos y reforestación autóctona de las cabeceras de cuenca.",
+   "tituloFrase": "Recarga de acuíferos y reforestación autóctona de las cabeceras de cuenca.",
+   "texto": "Recarga de acuíferos y reforestación autóctona de las cabeceras de cuenca.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "No a Mercosur ni a ningún tratado comercial sin cláusulas espejo: las mismas exigencias laborales, ambientales y sanitarias para lo que viene de fuera.",
+   "tituloFrase": "No a Mercosur ni a ningún tratado comercial sin cláusulas espejo: las mismas exigencias laborales, ambientales y sanitarias para lo que viene de fuera.",
+   "texto": "No a Mercosur ni a ningún tratado comercial sin cláusulas espejo: las mismas exigencias laborales, ambientales y sanitarias para lo que viene de fuera.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Plan Nacional de Agricultura Regenerativa: 6 millones de hectáreas ecológicas en 2030, con fincas demostrativas, técnicos de apoyo, biofábricas de biofertilizantes en las cooperativas y un seguro de transición.",
+   "tituloFrase": "Plan Nacional de Agricultura Regenerativa: 6 millones de hectáreas ecológicas en 2030, con fincas demostrativas, técnicos de apoyo, biofábricas de biofertilizantes en las cooperativas y un seguro de transición.",
+   "texto": "Plan Nacional de Agricultura Regenerativa: 6 millones de hectáreas ecológicas en 2030, con fincas demostrativas, técnicos de apoyo, biofábricas de biofertilizantes en las cooperativas y un seguro de transición.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "6 millones de hectáreas ecológicas en 2030"
+   ],
+   "plazo": "en 2030",
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Una PAC para la agricultura familiar, regenerativa y cooperativa.",
+   "tituloFrase": "Una PAC para la agricultura familiar, regenerativa y cooperativa.",
+   "texto": "Una PAC para la agricultura familiar, regenerativa y cooperativa.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "familias",
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Sello público Ecorregenerativo (ECO+): el ecológico más regeneración de suelos y biodiversidad, un valor añadido que cobra el agricultor.",
+   "tituloFrase": "Sello público Ecorregenerativo (ECO+): el ecológico más regeneración de suelos y biodiversidad, un valor añadido que cobra el agricultor.",
+   "texto": "Sello público Ecorregenerativo (ECO+): el ecológico más regeneración de suelos y biodiversidad, un valor añadido que cobra el agricultor.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Una Ley de la Cadena Alimentaria más dura: precios dignos en origen, persecución real de la venta a pérdidas y etiquetado con lo que cobra el productor.",
+   "tituloFrase": "Una Ley de la Cadena Alimentaria más dura: precios dignos en origen, persecución real de la venta a pérdidas y etiquetado con lo que cobra el productor.",
+   "texto": "Una Ley de la Cadena Alimentaria más dura: precios dignos en origen, persecución real de la venta a pérdidas y etiquetado con lo que cobra el productor.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Seguros agrarios públicos contra el clima y las plagas, sin esperas.",
+   "tituloFrase": "Seguros agrarios públicos contra el clima y las plagas, sin esperas.",
+   "texto": "Seguros agrarios públicos contra el clima y las plagas, sin esperas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Pago por la captura de carbono en suelos agrarios.",
+   "tituloFrase": "Pago por la captura de carbono en suelos agrarios.",
+   "texto": "Pago por la captura de carbono en suelos agrarios.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Todas las flexibilidades europeas de higiene para pequeños productores artesanos y venta directa.",
+   "tituloFrase": "Todas las flexibilidades europeas de higiene para pequeños productores artesanos y venta directa.",
+   "texto": "Todas las flexibilidades europeas de higiene para pequeños productores artesanos y venta directa.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Registro público de semillas autóctonas de libre circulación.",
+   "tituloFrase": "Registro público de semillas autóctonas de libre circulación.",
+   "texto": "Registro público de semillas autóctonas de libre circulación.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Normativa básica contra las macrogranjas.",
+   "tituloFrase": "Normativa básica contra las macrogranjas.",
+   "texto": "Normativa básica contra las macrogranjas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 6,
+   "seccion": "agricultura-y-ganaderia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Titularidad compartida de las explotaciones para las mujeres rurales.",
+   "tituloFrase": "Titularidad compartida de las explotaciones para las mujeres rurales.",
+   "texto": "Titularidad compartida de las explotaciones para las mujeres rurales.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "mujeres",
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 6,
+   "seccion": "montes-y-paisajes-vivos",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Bosques vivos: convertir los pinares de repoblación en bosques diversos y paisajes en mosaico que frenen los grandes incendios.",
+   "tituloFrase": "Bosques vivos: convertir los pinares de repoblación en bosques diversos y paisajes en mosaico que frenen los grandes incendios.",
+   "texto": "Bosques vivos: convertir los pinares de repoblación en bosques diversos y paisajes en mosaico que frenen los grandes incendios.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 6,
+   "seccion": "montes-y-paisajes-vivos",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Más medios estatales contra los incendios, con brigadas activas todo el año y prevención en invierno.",
+   "tituloFrase": "Más medios estatales contra los incendios, con brigadas activas todo el año y prevención en invierno.",
+   "texto": "Más medios estatales contra los incendios, con brigadas activas todo el año y prevención en invierno.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 6,
+   "seccion": "montes-y-paisajes-vivos",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Ley de Herbivoría: pastoreo superextensivo de conservación en montes públicos, con pastores que cobren por cada hectárea cuidada.",
+   "tituloFrase": "Ley de Herbivoría: pastoreo superextensivo de conservación en montes públicos, con pastores que cobren por cada hectárea cuidada.",
+   "texto": "Ley de Herbivoría: pastoreo superextensivo de conservación en montes públicos, con pastores que cobren por cada hectárea cuidada.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 6,
+   "seccion": "montes-y-paisajes-vivos",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Cañadas vivas: recuperar las vías pecuarias como corredores de vida, con pasos de fauna, trashumancia y ecoturismo.",
+   "tituloFrase": "Cañadas vivas: recuperar las vías pecuarias como corredores de vida, con pasos de fauna, trashumancia y ecoturismo.",
+   "texto": "Cañadas vivas: recuperar las vías pecuarias como corredores de vida, con pasos de fauna, trashumancia y ecoturismo.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 6,
+   "seccion": "montes-y-paisajes-vivos",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "La UME, a reforestar y regenerar suelos degradados.",
+   "tituloFrase": "La UME, a reforestar y regenerar suelos degradados.",
+   "texto": "La UME, a reforestar y regenerar suelos degradados.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 6,
+   "seccion": "montes-y-paisajes-vivos",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Consejos biorregionales y Cuerpo Civil de Regeneración: vecinos, ayuntamientos y agricultores deciden su paisaje, con 20.000 empleos al año, sobre todo para jóvenes, dentro del Trabajo Garantizado.",
+   "tituloFrase": "Consejos biorregionales y Cuerpo Civil de Regeneración: vecinos, ayuntamientos y agricultores deciden su paisaje, con 20.000 empleos al año, sobre todo para jóvenes, dentro del Trabajo Garantizado.",
+   "texto": "Consejos biorregionales y Cuerpo Civil de Regeneración: vecinos, ayuntamientos y agricultores deciden su paisaje, con 20.000 empleos al año, sobre todo para jóvenes, dentro del Trabajo Garantizado.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "jovenes",
+    "rural"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "con 20.000 empleos al año"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 82,
+   "bloque": 7,
+   "seccion": "autogobierno",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Desbloqueo de los traspasos pendientes y cumplimiento íntegro del Estatuto de Autonomía.",
+   "tituloFrase": "Desbloqueo de los traspasos pendientes y cumplimiento íntegro del Estatuto de Autonomía.",
+   "texto": "Desbloqueo de los traspasos pendientes y cumplimiento íntegro del Estatuto de Autonomía.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 83,
+   "bloque": 7,
+   "seccion": "autogobierno",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Protección del estremeñu, A Fala y el portugués raiano y cumplimiento de la Carta Europea de las Lenguas Regionales o Minoritarias.",
+   "tituloFrase": "Protección del estremeñu, A Fala y el portugués raiano y cumplimiento de la Carta Europea de las Lenguas Regionales o Minoritarias.",
+   "texto": "Protección del estremeñu, A Fala y el portugués raiano y cumplimiento de la Carta Europea de las Lenguas Regionales o Minoritarias.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura",
+    "Portugal"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 7,
+   "seccion": "territorio-y-municipios",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Concejo abierto en todos los municipios de menos de 5.000 habitantes.",
+   "tituloFrase": "Concejo abierto en todos los municipios de menos de 5.000 habitantes.",
+   "texto": "Concejo abierto en todos los municipios de menos de 5.000 habitantes.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 7,
+   "seccion": "territorio-y-municipios",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Reforma de la Ley de Racionalización de la Administración Local para que los ayuntamientos puedan recuperar la gestión directa del agua, la basura y otros servicios sin trabas.",
+   "tituloFrase": "Reforma de la Ley de Racionalización de la Administración Local para que los ayuntamientos puedan recuperar la gestión directa del agua, la basura y otros servicios sin trabas.",
+   "texto": "Reforma de la Ley de Racionalización de la Administración Local para que los ayuntamientos puedan recuperar la gestión directa del agua, la basura y otros servicios sin trabas.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 7,
+   "seccion": "territorio-y-municipios",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Fondo estatal contra la despoblación: sanidad, transporte, internet y efectivo en cada pueblo.",
+   "tituloFrase": "Fondo estatal contra la despoblación: sanidad, transporte, internet y efectivo en cada pueblo.",
+   "texto": "Fondo estatal contra la despoblación: sanidad, transporte, internet y efectivo en cada pueblo.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "rural",
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 7,
+   "seccion": "territorio-y-municipios",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Banda ancha y móvil en todo el medio rural como servicio universal.",
+   "tituloFrase": "Banda ancha y móvil en todo el medio rural como servicio universal.",
+   "texto": "Banda ancha y móvil en todo el medio rural como servicio universal.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 88,
+   "bloque": 7,
+   "seccion": "cultura-y-memoria",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Devolución a Extremadura de su patrimonio arqueológico y artístico custodiado en museos estatales.",
+   "tituloFrase": "Devolución a Extremadura de su patrimonio arqueológico y artístico custodiado en museos estatales.",
+   "texto": "Devolución a Extremadura de su patrimonio arqueológico y artístico custodiado en museos estatales.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 7,
+   "seccion": "cultura-y-memoria",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Ley de Memoria Democrática aplicada en Extremadura, con financiación para exhumaciones y espacios de memoria.",
+   "tituloFrase": "Ley de Memoria Democrática aplicada en Extremadura, con financiación para exhumaciones y espacios de memoria.",
+   "texto": "Ley de Memoria Democrática aplicada en Extremadura, con financiación para exhumaciones y espacios de memoria.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 7,
+   "seccion": "cultura-y-memoria",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Cooperación transfronteriza con Portugal a lo largo de la Raya.",
+   "tituloFrase": "Cooperación transfronteriza con Portugal a lo largo de la Raya.",
+   "texto": "Cooperación transfronteriza con Portugal a lo largo de la Raya.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Portugal"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 7,
+   "seccion": "cultura-y-memoria",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Apoyo estatal a los Hogares Extremeños y a la memoria de la emigración.",
+   "tituloFrase": "Apoyo estatal a los Hogares Extremeños y a la memoria de la emigración.",
+   "texto": "Apoyo estatal a los Hogares Extremeños y a la memoria de la emigración.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 7,
+   "seccion": "democracia-y-transparencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Sueldo de diputados y senadores limitado al salario medio y fin de las dietas injustificadas.",
+   "tituloFrase": "Sueldo de diputados y senadores limitado al salario medio y fin de las dietas injustificadas.",
+   "texto": "Sueldo de diputados y senadores limitado al salario medio y fin de las dietas injustificadas.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 7,
+   "seccion": "democracia-y-transparencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Fin de los aforamientos de diputados y senadores, y de los cargos autonómicos mediante la reforma del Estatuto en las Cortes.",
+   "tituloFrase": "Fin de los aforamientos de diputados y senadores, y de los cargos autonómicos mediante la reforma del Estatuto en las Cortes.",
+   "texto": "Fin de los aforamientos de diputados y senadores, y de los cargos autonómicos mediante la reforma del Estatuto en las Cortes.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 7,
+   "seccion": "democracia-y-transparencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Contra las puertas giratorias: 15 años de incompatibilidad para los altos cargos del Estado.",
+   "tituloFrase": "Contra las puertas giratorias: 15 años de incompatibilidad para los altos cargos del Estado.",
+   "texto": "Contra las puertas giratorias: 15 años de incompatibilidad para los altos cargos del Estado.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "15 años de incompatibilidad"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 7,
+   "seccion": "democracia-y-transparencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Auditoría patrimonial de entrada y salida y registro obligatorio de lobbies.",
+   "tituloFrase": "Auditoría patrimonial de entrada y salida y registro obligatorio de lobbies.",
+   "texto": "Auditoría patrimonial de entrada y salida y registro obligatorio de lobbies.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 96,
+   "bloque": 7,
+   "seccion": "democracia-y-transparencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Reforma constitucional para ampliar los referéndums y ley de democracia directa comarcal.",
+   "tituloFrase": "Reforma constitucional para ampliar los referéndums y ley de democracia directa comarcal.",
+   "texto": "Reforma constitucional para ampliar los referéndums y ley de democracia directa comarcal.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 97,
+   "bloque": 7,
+   "seccion": "democracia-y-transparencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Menos firmas para la Iniciativa Legislativa Popular, hoy fijadas en 500.000.",
+   "tituloFrase": "Menos firmas para la Iniciativa Legislativa Popular, hoy fijadas en 500.000.",
+   "texto": "Menos firmas para la Iniciativa Legislativa Popular, hoy fijadas en 500.000.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "fijadas en 500.000"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 98,
+   "bloque": 8,
+   "seccion": "servicios-publicos-con-plantilla",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Fuera la tasa de reposición y la Ley Montoro, que asfixian a ayuntamientos y comunidades.",
+   "tituloFrase": "Fuera la tasa de reposición y la Ley Montoro, que asfixian a ayuntamientos y comunidades.",
+   "texto": "Fuera la tasa de reposición y la Ley Montoro, que asfixian a ayuntamientos y comunidades.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 99,
+   "bloque": 8,
+   "seccion": "servicios-publicos-con-plantilla",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Más plazas MIR y de especialistas para Extremadura.",
+   "tituloFrase": "Más plazas MIR y de especialistas para Extremadura.",
+   "texto": "Más plazas MIR y de especialistas para Extremadura.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 100,
+   "bloque": 8,
+   "seccion": "servicios-publicos-con-plantilla",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Incentivos estatales para las plazas rurales de difícil cobertura en sanidad y educación.",
+   "tituloFrase": "Incentivos estatales para las plazas rurales de difícil cobertura en sanidad y educación.",
+   "texto": "Incentivos estatales para las plazas rurales de difícil cobertura en sanidad y educación.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "rural",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 101,
+   "bloque": 8,
+   "seccion": "servicios-publicos-con-plantilla",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Más inspectores de Trabajo en Extremadura.",
+   "tituloFrase": "Más inspectores de Trabajo en Extremadura.",
+   "texto": "Más inspectores de Trabajo en Extremadura.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 102,
+   "bloque": 8,
+   "seccion": "fiscalidad",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Recargos sobre la vivienda vacía y la acumulación de viviendas en IRPF y Patrimonio, y más margen municipal en el IBI.",
+   "tituloFrase": "Recargos sobre la vivienda vacía y la acumulación de viviendas en IRPF y Patrimonio, y más margen municipal en el IBI.",
+   "texto": "Recargos sobre la vivienda vacía y la acumulación de viviendas en IRPF y Patrimonio, y más margen municipal en el IBI.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 103,
+   "bloque": 8,
+   "seccion": "fiscalidad",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Más margen municipal en el IAE para las multinacionales y en las tasas a las plataformas de reparto.",
+   "tituloFrase": "Más margen municipal en el IAE para las multinacionales y en las tasas a las plataformas de reparto.",
+   "texto": "Más margen municipal en el IAE para las multinacionales y en las tasas a las plataformas de reparto.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 104,
+   "bloque": 8,
+   "seccion": "fiscalidad",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "IVA reducido en la factura de la luz para el consumo básico.",
+   "tituloFrase": "IVA reducido en la factura de la luz para el consumo básico.",
+   "texto": "IVA reducido en la factura de la luz para el consumo básico.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 105,
+   "bloque": 8,
+   "seccion": "contratacion-publica",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Subcontratación limitada a un solo nivel en los contratos públicos.",
+   "tituloFrase": "Subcontratación limitada a un solo nivel en los contratos públicos.",
+   "texto": "Subcontratación limitada a un solo nivel en los contratos públicos.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 106,
+   "bloque": 8,
+   "seccion": "contratacion-publica",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "El empleo estable, criterio obligatorio de adjudicación en los contratos públicos.",
+   "tituloFrase": "El empleo estable, criterio obligatorio de adjudicación en los contratos públicos.",
+   "texto": "El empleo estable, criterio obligatorio de adjudicación en los contratos públicos.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 107,
+   "bloque": 8,
+   "seccion": "contratacion-publica",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Estabilización del empleo público: cumplir la directiva europea y las sentencias del Tribunal de Justicia de la UE contra el abuso de la temporalidad.",
+   "tituloFrase": "Estabilización del empleo público: cumplir la directiva europea y las sentencias del Tribunal de Justicia de la UE contra el abuso de la temporalidad.",
+   "texto": "Estabilización del empleo público: cumplir la directiva europea y las sentencias del Tribunal de Justicia de la UE contra el abuso de la temporalidad.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 108,
+   "bloque": 8,
+   "seccion": "contratacion-publica",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Valorar la cercanía y el tamaño de la empresa en las licitaciones, dentro de lo que permite el derecho europeo.",
+   "tituloFrase": "Valorar la cercanía y el tamaño de la empresa en las licitaciones, dentro de lo que permite el derecho europeo.",
+   "texto": "Valorar la cercanía y el tamaño de la empresa en las licitaciones, dentro de lo que permite el derecho europeo.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 109,
+   "bloque": 8,
+   "seccion": "contratacion-publica",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Alimentos de cercanía en los comedores de colegios, hospitales y residencias.",
+   "tituloFrase": "Alimentos de cercanía en los comedores de colegios, hospitales y residencias.",
+   "texto": "Alimentos de cercanía en los comedores de colegios, hospitales y residencias.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 110,
+   "bloque": 9,
+   "seccion": "familias",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Permisos de nacimiento de un año, iguales e intransferibles, y 15 días retribuidos al año hasta que los hijos cumplan 14.",
+   "tituloFrase": "Permisos de nacimiento de un año, iguales e intransferibles, y 15 días retribuidos al año hasta que los hijos cumplan 14.",
+   "texto": "Permisos de nacimiento de un año, iguales e intransferibles, y 15 días retribuidos al año hasta que los hijos cumplan 14.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Permisos de nacimiento de un año"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 111,
+   "bloque": 9,
+   "seccion": "familias",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Permiso adicional por parto por cesárea o con complicaciones, que no reste semanas del permiso de nacimiento.",
+   "tituloFrase": "Permiso adicional por parto por cesárea o con complicaciones, que no reste semanas del permiso de nacimiento.",
+   "texto": "Permiso adicional por parto por cesárea o con complicaciones, que no reste semanas del permiso de nacimiento.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 112,
+   "bloque": 9,
+   "seccion": "familias",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Derecho a adaptar y reducir la jornada con hijos de 0 a 3 años.",
+   "tituloFrase": "Derecho a adaptar y reducir la jornada con hijos de 0 a 3 años.",
+   "texto": "Derecho a adaptar y reducir la jornada con hijos de 0 a 3 años.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 113,
+   "bloque": 9,
+   "seccion": "familias",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Más derechos de conciliación para familias con personas con discapacidad.",
+   "tituloFrase": "Más derechos de conciliación para familias con personas con discapacidad.",
+   "texto": "Más derechos de conciliación para familias con personas con discapacidad.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "familias",
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 114,
+   "bloque": 9,
+   "seccion": "juventud",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Estatuto del Becario: prácticas 100 % remuneradas en FP y universidad.",
+   "tituloFrase": "Estatuto del Becario: prácticas 100 % remuneradas en FP y universidad.",
+   "texto": "Estatuto del Becario: prácticas 100 % remuneradas en FP y universidad.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 115,
+   "bloque": 9,
+   "seccion": "juventud",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Estatuto del Trabajador Joven.",
+   "tituloFrase": "Estatuto del Trabajador Joven.",
+   "texto": "Estatuto del Trabajador Joven.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 116,
+   "bloque": 9,
+   "seccion": "juventud",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Bono Alquiler Joven y Aval Joven al alcance de cualquier joven.",
+   "tituloFrase": "Bono Alquiler Joven y Aval Joven al alcance de cualquier joven.",
+   "texto": "Bono Alquiler Joven y Aval Joven al alcance de cualquier joven.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 117,
+   "bloque": 9,
+   "seccion": "juventud",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Becas Retorno para que los jóvenes que emigraron puedan volver con un empleo o un proyecto.",
+   "tituloFrase": "Becas Retorno para que los jóvenes que emigraron puedan volver con un empleo o un proyecto.",
+   "texto": "Becas Retorno para que los jóvenes que emigraron puedan volver con un empleo o un proyecto.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 118,
+   "bloque": 9,
+   "seccion": "juventud",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Alto Comisionado para las Generaciones Futuras, independiente, que evalúe cada ley.",
+   "tituloFrase": "Alto Comisionado para las Generaciones Futuras, independiente, que evalúe cada ley.",
+   "texto": "Alto Comisionado para las Generaciones Futuras, independiente, que evalúe cada ley.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 119,
+   "bloque": 9,
+   "seccion": "juventud",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Salud mental en el Seguro Escolar, en todos los niveles educativos.",
+   "tituloFrase": "Salud mental en el Seguro Escolar, en todos los niveles educativos.",
+   "texto": "Salud mental en el Seguro Escolar, en todos los niveles educativos.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 120,
+   "bloque": 9,
+   "seccion": "pensiones-y-mayores",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Pensión mínima por encima de 1.200 euros y rebaja de la edad de jubilación.",
+   "tituloFrase": "Pensión mínima por encima de 1.200 euros y rebaja de la edad de jubilación.",
+   "texto": "Pensión mínima por encima de 1.200 euros y rebaja de la edad de jubilación.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Pensión mínima por encima de 1.200 euros"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 121,
+   "bloque": 9,
+   "seccion": "pensiones-y-mayores",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Integración de las Clases Pasivas en el régimen general, respetando las pensiones ya reconocidas.",
+   "tituloFrase": "Integración de las Clases Pasivas en el régimen general, respetando las pensiones ya reconocidas.",
+   "texto": "Integración de las Clases Pasivas en el régimen general, respetando las pensiones ya reconocidas.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 122,
+   "bloque": 9,
+   "seccion": "pensiones-y-mayores",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Más financiación estatal de la Dependencia y de las plazas residenciales públicas.",
+   "tituloFrase": "Más financiación estatal de la Dependencia y de las plazas residenciales públicas.",
+   "texto": "Más financiación estatal de la Dependencia y de las plazas residenciales públicas.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 123,
+   "bloque": 10,
+   "seccion": "sanidad",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Tiempos máximos garantizados en todo el Sistema Nacional de Salud: cita en atención primaria en 48 horas y plazos máximos para especialistas, quirófanos y dependencia.",
+   "tituloFrase": "Tiempos máximos garantizados en todo el Sistema Nacional de Salud: cita en atención primaria en 48 horas y plazos máximos para especialistas, quirófanos y dependencia.",
+   "texto": "Tiempos máximos garantizados en todo el Sistema Nacional de Salud: cita en atención primaria en 48 horas y plazos máximos para especialistas, quirófanos y dependencia.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "mayores",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "cita en atención primaria en 48 horas"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 124,
+   "bloque": 10,
+   "seccion": "sanidad",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Terapia psicológica gratuita hasta los 35 años en la sanidad pública.",
+   "tituloFrase": "Terapia psicológica gratuita hasta los 35 años en la sanidad pública.",
+   "texto": "Terapia psicológica gratuita hasta los 35 años en la sanidad pública.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 125,
+   "bloque": 10,
+   "seccion": "sanidad",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Gafas y lentes en la cartera de servicios de la sanidad pública.",
+   "tituloFrase": "Gafas y lentes en la cartera de servicios de la sanidad pública.",
+   "texto": "Gafas y lentes en la cartera de servicios de la sanidad pública.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 126,
+   "bloque": 10,
+   "seccion": "sanidad",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Plan Nacional de Salud Mental y Prevención del Suicidio, con financiación para las comunidades.",
+   "tituloFrase": "Plan Nacional de Salud Mental y Prevención del Suicidio, con financiación para las comunidades.",
+   "texto": "Plan Nacional de Salud Mental y Prevención del Suicidio, con financiación para las comunidades.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 127,
+   "bloque": 10,
+   "seccion": "sanidad",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Derogar la Ley 15/1997, que abrió la puerta a la gestión privada de la sanidad pública.",
+   "tituloFrase": "Derogar la Ley 15/1997, que abrió la puerta a la gestión privada de la sanidad pública.",
+   "texto": "Derogar la Ley 15/1997, que abrió la puerta a la gestión privada de la sanidad pública.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley 15/1997"
+  },
+  {
+   "n": 128,
+   "bloque": 10,
+   "seccion": "sanidad",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Ley estatal contra el cáncer: diagnóstico y tratamiento en igualdad en todo el territorio.",
+   "tituloFrase": "Ley estatal contra el cáncer: diagnóstico y tratamiento en igualdad en todo el territorio.",
+   "texto": "Ley estatal contra el cáncer: diagnóstico y tratamiento en igualdad en todo el territorio.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 129,
+   "bloque": 10,
+   "seccion": "sanidad",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Aborto garantizado en los centros públicos.",
+   "tituloFrase": "Aborto garantizado en los centros públicos.",
+   "texto": "Aborto garantizado en los centros públicos.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 130,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Pacto de Estado por la Educación: un acuerdo con todas las fuerzas políticas y la comunidad educativa para sacar la educación de la confrontación partidista, con un marco legal estable durante al menos dos décadas y una inversión mínima blindada por ley.",
+   "tituloFrase": "Pacto de Estado por la Educación: un acuerdo con todas las fuerzas políticas y la comunidad educativa para sacar la educación de la confrontación partidista, con un marco legal estable durante al menos dos décadas y una inversión mínima blindada por ley.",
+   "texto": "Pacto de Estado por la Educación: un acuerdo con todas las fuerzas políticas y la comunidad educativa para sacar la educación de la confrontación partidista, con un marco legal estable durante al menos dos décadas y una inversión mínima blindada por ley.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 131,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Bajada de ratios: menos alumnos por aula para mejorar la atención y la calidad educativa.",
+   "tituloFrase": "Bajada de ratios: menos alumnos por aula para mejorar la atención y la calidad educativa.",
+   "texto": "Bajada de ratios: menos alumnos por aula para mejorar la atención y la calidad educativa.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 132,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Aulas climatizadas y patios verdes: fondos de los Presupuestos Generales del Estado, transferidos sin tutelas, para el aislamiento, la climatización, la sombra y la renaturalización de todos los colegios e institutos públicos.",
+   "tituloFrase": "Aulas climatizadas y patios verdes: fondos de los Presupuestos Generales del Estado, transferidos sin tutelas, para el aislamiento, la climatización, la sombra y la renaturalización de todos los colegios e institutos públicos.",
+   "texto": "Aulas climatizadas y patios verdes: fondos de los Presupuestos Generales del Estado, transferidos sin tutelas, para el aislamiento, la climatización, la sombra y la renaturalización de todos los colegios e institutos públicos.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 133,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Nuevo sistema estatal de acceso a la docencia, más justo y planificado.",
+   "tituloFrase": "Nuevo sistema estatal de acceso a la docencia, más justo y planificado.",
+   "texto": "Nuevo sistema estatal de acceso a la docencia, más justo y planificado.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 134,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Estabilización del profesorado interino con más de tres años de servicio.",
+   "tituloFrase": "Estabilización del profesorado interino con más de tres años de servicio.",
+   "texto": "Estabilización del profesorado interino con más de tres años de servicio.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 135,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Títulos de Formación Profesional adaptados a la realidad productiva de cada territorio.",
+   "tituloFrase": "Títulos de Formación Profesional adaptados a la realidad productiva de cada territorio.",
+   "texto": "Títulos de Formación Profesional adaptados a la realidad productiva de cada territorio.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 136,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Becas solo por renta, sin requisitos de nota añadidos.",
+   "tituloFrase": "Becas solo por renta, sin requisitos de nota añadidos.",
+   "texto": "Becas solo por renta, sin requisitos de nota añadidos.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 137,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Plazas en los másteres habilitantes para todos los titulados.",
+   "tituloFrase": "Plazas en los másteres habilitantes para todos los titulados.",
+   "texto": "Plazas en los másteres habilitantes para todos los titulados.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 138,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Becas de doctorado de cuatro años en todas las áreas de conocimiento.",
+   "tituloFrase": "Becas de doctorado de cuatro años en todas las áreas de conocimiento.",
+   "texto": "Becas de doctorado de cuatro años en todas las áreas de conocimiento.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Becas de doctorado de cuatro años"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 139,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Fin de la precariedad del profesorado universitario: homologación salarial y estabilización real del personal docente e investigador, frente a la precariedad y la temporalidad.",
+   "tituloFrase": "Fin de la precariedad del profesorado universitario: homologación salarial y estabilización real del personal docente e investigador, frente a la precariedad y la temporalidad.",
+   "texto": "Fin de la precariedad del profesorado universitario: homologación salarial y estabilización real del personal docente e investigador, frente a la precariedad y la temporalidad.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 140,
+   "bloque": 10,
+   "seccion": "educacion",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Llevar a una ley los requisitos del Real Decreto 905/2025 para crear universidades privadas, anulado por el Tribunal Supremo por defectos en su tramitación.",
+   "tituloFrase": "Llevar a una ley los requisitos del Real Decreto 905/2025 para crear universidades privadas, anulado por el Tribunal Supremo por defectos en su tramitación.",
+   "texto": "Llevar a una ley los requisitos del Real Decreto 905/2025 para crear universidades privadas, anulado por el Tribunal Supremo por defectos en su tramitación.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 141,
+   "bloque": 11,
+   "seccion": "derechos-e-igualdad",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Blindaje legal de los derechos LGTBI y refuerzo del Pacto de Estado contra la Violencia de Género.",
+   "tituloFrase": "Blindaje legal de los derechos LGTBI y refuerzo del Pacto de Estado contra la Violencia de Género.",
+   "texto": "Blindaje legal de los derechos LGTBI y refuerzo del Pacto de Estado contra la Violencia de Género.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 142,
+   "bloque": 11,
+   "seccion": "derechos-e-igualdad",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Más protección frente al racismo y los delitos de odio, con atención integral a las víctimas.",
+   "tituloFrase": "Más protección frente al racismo y los delitos de odio, con atención integral a las víctimas.",
+   "texto": "Más protección frente al racismo y los delitos de odio, con atención integral a las víctimas.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 143,
+   "bloque": 11,
+   "seccion": "derechos-e-igualdad",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Delito específico para la pornografía infantil generada con inteligencia artificial y los deepfakes sexuales.",
+   "tituloFrase": "Delito específico para la pornografía infantil generada con inteligencia artificial y los deepfakes sexuales.",
+   "texto": "Delito específico para la pornografía infantil generada con inteligencia artificial y los deepfakes sexuales.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 144,
+   "bloque": 11,
+   "seccion": "derechos-e-igualdad",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Accesibilidad universal, también en los procesos electorales.",
+   "tituloFrase": "Accesibilidad universal, también en los procesos electorales.",
+   "texto": "Accesibilidad universal, también en los procesos electorales.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 145,
+   "bloque": 11,
+   "seccion": "derechos-e-igualdad",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Asistencia jurídica gratuita más accesible para las personas vulnerables.",
+   "tituloFrase": "Asistencia jurídica gratuita más accesible para las personas vulnerables.",
+   "texto": "Asistencia jurídica gratuita más accesible para las personas vulnerables.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 146,
+   "bloque": 11,
+   "seccion": "cooperacion-internacional-y-politica-exterior",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "La cooperación al desarrollo, política de Estado: el 0,7 % de la Renta Nacional Bruta, con una senda plurianual firme, como marca la Ley 1/2023.",
+   "tituloFrase": "La cooperación al desarrollo, política de Estado: el 0,7 % de la Renta Nacional Bruta, con una senda plurianual firme, como marca la Ley 1/2023.",
+   "texto": "La cooperación al desarrollo, política de Estado: el 0,7 % de la Renta Nacional Bruta, con una senda plurianual firme, como marca la Ley 1/2023.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "el 0,7 % de la Renta Nacional Bruta"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 147,
+   "bloque": 11,
+   "seccion": "cooperacion-internacional-y-politica-exterior",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Acción humanitaria basada en principios y en el Derecho Internacional Humanitario, centrada en quienes sufren crisis y conflictos armados.",
+   "tituloFrase": "Acción humanitaria basada en principios y en el Derecho Internacional Humanitario, centrada en quienes sufren crisis y conflictos armados.",
+   "texto": "Acción humanitaria basada en principios y en el Derecho Internacional Humanitario, centrada en quienes sufren crisis y conflictos armados.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 148,
+   "bloque": 11,
+   "seccion": "cooperacion-internacional-y-politica-exterior",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Defensa del espacio cívico y apoyo a las ONGD, organizaciones feministas, sociales y defensoras de derechos y del planeta.",
+   "tituloFrase": "Defensa del espacio cívico y apoyo a las ONGD, organizaciones feministas, sociales y defensoras de derechos y del planeta.",
+   "texto": "Defensa del espacio cívico y apoyo a las ONGD, organizaciones feministas, sociales y defensoras de derechos y del planeta.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 149,
+   "bloque": 11,
+   "seccion": "cooperacion-internacional-y-politica-exterior",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Refuerzo de la cooperación descentralizada de comunidades y ayuntamientos, con la extremeña como parte activa del sistema español.",
+   "tituloFrase": "Refuerzo de la cooperación descentralizada de comunidades y ayuntamientos, con la extremeña como parte activa del sistema español.",
+   "texto": "Refuerzo de la cooperación descentralizada de comunidades y ayuntamientos, con la extremeña como parte activa del sistema español.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Extremadura"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 150,
+   "bloque": 11,
+   "seccion": "cooperacion-internacional-y-politica-exterior",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Embargo de armas y sanciones ante violaciones graves de los derechos humanos, empezando por Palestina.",
+   "tituloFrase": "Embargo de armas y sanciones ante violaciones graves de los derechos humanos, empezando por Palestina.",
+   "texto": "Embargo de armas y sanciones ante violaciones graves de los derechos humanos, empezando por Palestina.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Palestina"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }

@@ -42,6 +42,8 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'compromis-front-valencia', side: 'a', measures: [546, 438], note: 'Regularizar a quienes viven aquí, con vías de regularización y autorización de trabajo, y ampliar el voto a las personas migrantes.' },
   { topic: 'inmigracion', party: 'fa', side: 'a', measures: [737, 738, 742, 741], note: 'Culminar la regularización extraordinaria de 2026, un procedimiento estable de regularización, cierre de los CIE y derogación del rechazo en frontera.' },
   { topic: 'inmigracion', party: 'eh-bildu', side: 'a', measures: [133, 134, 135, 137], note: 'Regularización efectiva y estable, una nueva Ley de Extranjería, derecho de asilo, acogida universal y ampliar el derecho al voto.' },
+  { topic: 'inmigracion', party: 'eguzkilore', side: 'matiz', measures: [44], note: 'Respetar el derecho a emigrar y también a los nativos, sin medidas concretas: las elaborará cuando tenga representación en el Parlamento.' },
+  { topic: 'inmigracion', party: 'alhora', side: 'matiz', measures: [19, 22], note: 'Gestionar la inmigración desde la independencia y catalanizar a los adultos con un plan de 1.000 millones, sin hablar de regularizar.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -54,6 +56,7 @@ export const stances: Stance[] = [
   { topic: 'aborto', party: 'compromis-front-valencia', side: 'a', measures: [455], note: 'Garantizar la interrupción voluntaria del embarazo gratuita, segura y accesible en la red pública.' },
   { topic: 'aborto', party: 'fa', side: 'a', measures: [122, 123, 202], note: 'Blindaje constitucional del aborto «libre y universal» en la sanidad pública y una estrategia para garantizar la IVE en todas las comunidades.' },
   { topic: 'aborto', party: 'eh-bildu', side: 'a', measures: [121, 122], note: 'Blindar el derecho al aborto con acceso libre, seguro y confidencial, y protección frente al acoso en los centros.' },
+  { topic: 'aborto', party: 'nex', side: 'a', measures: [129], note: 'Aborto garantizado en los centros públicos.' },
 
   // Monarquía o república
   { topic: 'monarquia', party: 'pfac', side: 'b', measures: [12], note: 'Avanzar hacia un Estado republicano, federal y laico.' },
@@ -74,6 +77,7 @@ export const stances: Stance[] = [
   { topic: 'autodeterminacion', party: 'upc', side: 'a', measures: [1], note: '«Autogobierno, soberanía popular y derecho a decidir»: el reconocimiento de Canarias como sujeto político.' },
   { topic: 'autodeterminacion', party: 'fa', side: 'matiz', measures: [819, 821, 621], note: 'Una República Federal, un «federalismo social y plurinacional» y un pacto territorial con el máximo desarrollo de los Estatutos, sin proponer un referéndum de autodeterminación en España.' },
   { topic: 'autodeterminacion', party: 'eh-bildu', side: 'a', measures: [152, 153, 154], note: 'Reconocer a Euskal Herria como nación y el derecho a decidir del pueblo vasco como vía democrática para resolver el conflicto político con el Estado.' },
+  { topic: 'autodeterminacion', party: 'alhora', side: 'a', measures: [1, 2, 4, 33], note: 'La independencia como objetivo: uso estratégico de las instituciones y confrontación continuada con el Estado.' },
 
   // Vivienda: control del alquiler
   { topic: 'vivienda', party: 'adelante', side: 'a', measures: [160, 161, 164], note: 'Alquiler social obligatorio, alquiler al 20 % del salario y zonas tensionadas obligatorias.' },
@@ -98,6 +102,10 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'compromis-front-valencia', side: 'a', measures: [8, 11, 6], note: 'Dar competencias a los ayuntamientos para declarar zonas tensionadas y controlar los precios del alquiler, con un registro estatal de arrendamientos y límites a la compra especulativa.' },
   { topic: 'vivienda', party: 'fa', side: 'a', measures: [25, 26, 29], note: 'Tope del alquiler en las zonas tensionadas: el 25 % de la renta del barrio, con una rebaja adicional del 30 % en las grandes ciudades.' },
   { topic: 'vivienda', party: 'eh-bildu', side: 'a', measures: [1, 5, 8], note: 'Contratos con prórroga automática, un máximo del 2 % de actualización anual de la renta y prohibir la compra especulativa de viviendas.' },
+  { topic: 'vivienda', party: 'nex', side: 'a', measures: [2, 9], note: 'Congelación de los alquileres durante la emergencia habitacional y precios de referencia por código postal en las zonas tensionadas.' },
+  { topic: 'vivienda', party: 'fia', side: 'b', measures: [7], note: 'Derogar el Real Decreto-ley del alquiler y la ley okupa, con el derecho a la propiedad privada por delante.' },
+  { topic: 'vivienda', party: 'alhora', side: 'matiz', measures: [26, 29], note: 'Un gran parque público de alquiler, pero con un mercado privado «sense topall de preu» y garantías públicas ante el impago.' },
+  { topic: 'vivienda', party: 'ixlg', side: 'matiz', measures: [2, 3], note: 'Más alquiler público permanente y prioridad del uso residencial frente al alquiler turístico, sin hablar de limitar los precios.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -133,6 +141,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'compromis-front-valencia', side: 'a', measures: [468, 467, 453], note: 'Reforzar las unidades policiales, los juzgados y los protocolos de protección frente a la violencia machista y las políticas contra la brecha salarial.' },
   { topic: 'igualdad', party: 'fa', side: 'a', measures: [203, 211, 221], note: 'Erradicar la violencia machista y LGTBIfóbica, reforzar VioGén y la violencia vicaria y una estrategia estatal de educación en igualdad.' },
   { topic: 'igualdad', party: 'eh-bildu', side: 'a', measures: [125, 126, 127], note: 'Reconocer y penalizar la violencia vicaria, combatir los discursos antifeministas y revisar los recursos de protección de las víctimas.' },
+  { topic: 'igualdad', party: 'nex', side: 'a', measures: [141], note: 'Refuerzo del Pacto de Estado contra la Violencia de Género y blindaje legal de los derechos LGTBI.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -148,6 +157,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'compromis-front-valencia', side: 'a', measures: [361, 364], note: 'Derogar la Ley de Amnistía de 1977 y ampliar la Ley de Memoria Democrática con medidas de reparación.' },
   { topic: 'memoria', party: 'fa', side: 'a', measures: [881, 882, 883, 887], note: 'Desarrollo reglamentario de la Ley de Memoria Democrática, cierre de fundaciones franquistas, reparación de las víctimas y resignificación de Cuelgamuros.' },
   { topic: 'memoria', party: 'eh-bildu', side: 'a', measures: [171, 172], note: 'Ampliar la Ley de Memoria Democrática a más víctimas y derogar la Ley de Secretos Oficiales.' },
+  { topic: 'memoria', party: 'nex', side: 'a', measures: [89], note: 'Ley de Memoria Democrática aplicada en Extremadura, con financiación para exhumaciones y espacios de memoria.' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
@@ -193,6 +203,9 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'compromis-front-valencia', side: 'a', measures: [365, 366, 367], note: 'Ley de plurilingüismo de la Administración, derechos lingüísticos de los valencianohablantes en la Justicia y oficialidad del valenciano en la UE.' },
   { topic: 'lenguas', party: 'fa', side: 'a', measures: [154, 824, 195], note: 'Un Plan Estatal para las lenguas cooficiales, una ley del plurilingüismo y ayudas a la creación digital en las lenguas del Estado.' },
   { topic: 'lenguas', party: 'eh-bildu', side: 'a', measures: [161, 162, 164, 165], note: 'Atención en euskera en todas las administraciones del Estado, oficialidad europea del euskera, el catalán y el gallego y blindar las ayudas a producciones en lenguas oficiales.' },
+  { topic: 'lenguas', party: 'alhora', side: 'a', measures: [6, 8, 9, 10], note: 'Escuelas 100 % en catalán, TV3 exclusivamente en catalán y contratos públicos solo a quien respete el catalán.' },
+  { topic: 'lenguas', party: 'agenda-valenciana', side: 'a', measures: [10], note: 'Proteger y fomentar activamente el uso de la lengua valenciana.' },
+  { topic: 'lenguas', party: 'eguzkilore', side: 'matiz', measures: [50], note: 'Dos lenguas en Navarra, castellano y euskera, que «convivan con respeto», sin medidas concretas.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
@@ -209,6 +222,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'compromis-front-valencia', side: 'a', measures: [357, 359], note: 'Derogar la ley mordaza y abolir las balas de goma.' },
   { topic: 'seguridad', party: 'fa', side: 'a', measures: [843, 844, 853], note: 'Derogar «por completo la Ley Mordaza», reducir las multas excesivas y restringir las paradas de identificación policial.' },
   { topic: 'seguridad', party: 'eh-bildu', side: 'a', measures: [148, 149], note: 'Acabar con la Ley Mordaza (pelotas de goma, sanciones subjetivas) y eliminar delitos del Código Penal que restringen la libertad de expresión.' },
+  { topic: 'seguridad', party: 'eguzkilore', side: 'a', measures: [57], note: 'Derogar la ley mordaza.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },
@@ -220,6 +234,7 @@ export const stances: Stance[] = [
   { topic: 'ley-trans', party: 'compromis-front-valencia', side: 'a', measures: [484, 486], note: 'Blindar la ley trans y los avances en derechos LGTBIQ+ y seguir avanzando en los derechos de las personas trans y no binarias.' },
   { topic: 'ley-trans', party: 'fa', side: 'a', measures: [726, 727], note: 'Desplegar de forma efectiva la Ley Trans, reconocer a las personas no binarias y garantizar su aplicación.' },
   { topic: 'ley-trans', party: 'eh-bildu', side: 'a', measures: [128, 132], note: 'Prohibir las terapias de conversión y desarrollar el artículo 50 de la Ley 4/2023 para la igualdad real de las personas trans.' },
+  { topic: 'ley-trans', party: 'eguzkilore', side: 'b', measures: [57], note: 'Revisar la «ley trans», junto a la ley de Bienestar Animal.' },
 
   // Gestación subrogada
   { topic: 'gestacion-subrogada', party: 'adelante', side: 'b', measures: [521], note: 'Prohibir la gestación subrogada.' },
@@ -237,6 +252,7 @@ export const stances: Stance[] = [
   { topic: 'tauromaquia', party: 'fe-jons', side: 'b', measures: [237], note: 'Protección especial y promoción de la tauromaquia, con patrocinio público.' },
   { topic: 'tauromaquia', party: 'compromis-front-valencia', side: 'a', measures: [380, 382], note: 'Suprimir los espectáculos taurinos con muerte, retirar las ayudas públicas y derogar la ley que los declara patrimonio cultural.' },
   { topic: 'tauromaquia', party: 'fa', side: 'a', measures: [178, 476, 477], note: 'Derogar la Ley 18/2013 que declara la tauromaquia patrimonio cultural y suprimir las subvenciones estatales.' },
+  { topic: 'tauromaquia', party: 'eguzkilore', side: 'a', measures: [47], note: 'Una ley que prohíba herir y matar animales para uso de espectáculos, sin nombrar la tauromaquia.' },
 
   // OTAN
   { topic: 'otan', party: 'ph', side: 'a', measures: [24], note: 'Neutralidad activa y salida de la OTAN.' },
@@ -250,6 +266,7 @@ export const stances: Stance[] = [
   { topic: 'otan', party: 'compromis-front-valencia', side: 'matiz', measures: [526], note: 'Construir una Unión Europea de la Defensa que pueda sustituir el marco de la OTAN, sin pedir la salida inmediata ni un referéndum.' },
   { topic: 'otan', party: 'fa', side: 'matiz', measures: [761, 763], note: 'Rechaza el objetivo del 5 % del PIB en gasto militar de la OTAN y quiere reducirlo, pero no propone salir de la Alianza ni convocar un referéndum.' },
   { topic: 'otan', party: 'eh-bildu', side: 'a', measures: [179], note: 'Rechazar la OTAN y la pertenencia a ella, en línea con el voto vasco en el referéndum de 1986.' },
+  { topic: 'otan', party: 'eguzkilore', side: 'a', measures: [41], note: 'Promover la salida de la OTAN y eliminar el uso militar del polígono de tiro de las Bardenas Reales.' },
 
   // Burka
   { topic: 'burka', party: 'vox', side: 'b', measures: [71], note: 'Prohibir el burka y el niqab en los espacios públicos.' },

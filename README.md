@@ -115,9 +115,9 @@ scripts/                      solo código: extracción y análisis de los PDF
 | Ruta | Contenido |
 |---|---|
 | `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas |
-| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fa/`, `/eh-bildu/`, `/fe-jons/`, `/pcte/`, `/convergents/`, `/psoe/`, `/teruel-existe/`, `/compromis-front-valencia/`, `/geroa-bai/`, `/upc/`, `/d21/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
-| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fa/medidas/`, `/eh-bildu/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/convergents/medidas/`, `/psoe/medidas/`, `/teruel-existe/medidas/`, `/compromis-front-valencia/medidas/`, `/geroa-bai/medidas/`, `/upc/medidas/`, `/d21/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
-| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fa/bloque/1/` … `/18/`, `/eh-bildu/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/`, `/psoe/bloque/1/` … `/8/`, `/teruel-existe/bloque/1/` … `/12/`, `/compromis-front-valencia/bloque/1/` … `/7/`, `/geroa-bai/bloque/1/` … `/5/`, `/upc/bloque/1/` … `/16/`, `/d21/bloque/1/` … `/2/` | Lectura completa por bloque |
+| `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fa/`, `/eh-bildu/`, `/fe-jons/`, `/pcte/`, `/convergents/`, `/psoe/`, `/teruel-existe/`, `/compromis-front-valencia/`, `/geroa-bai/`, `/upc/`, `/d21/`, `/ixlg/`, `/nex/`, `/eguzkilore/`, `/fia/`, `/alhora/`, `/agenda-valenciana/`, `/comuns/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
+| `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fa/medidas/`, `/eh-bildu/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/convergents/medidas/`, `/psoe/medidas/`, `/teruel-existe/medidas/`, `/compromis-front-valencia/medidas/`, `/geroa-bai/medidas/`, `/upc/medidas/`, `/d21/medidas/`, `/ixlg/medidas/`, `/nex/medidas/`, `/eguzkilore/medidas/`, `/fia/medidas/`, `/alhora/medidas/`, `/agenda-valenciana/medidas/`, `/comuns/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
+| `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fa/bloque/1/` … `/18/`, `/eh-bildu/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/`, `/psoe/bloque/1/` … `/8/`, `/teruel-existe/bloque/1/` … `/12/`, `/compromis-front-valencia/bloque/1/` … `/7/`, `/geroa-bai/bloque/1/` … `/5/`, `/upc/bloque/1/` … `/16/`, `/d21/bloque/1/` … `/2/`, `/ixlg/bloque/1/` … `/4/`, `/nex/bloque/1/` … `/11/`, `/eguzkilore/bloque/1/`, `/fia/bloque/1/` … `/2/`, `/alhora/bloque/1/` … `/6/`, `/agenda-valenciana/bloque/1/` … `/6/`, `/comuns/bloque/1/` … `/6/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
@@ -220,6 +220,26 @@ src/data/2026/generales/programas/upc.json          resultado que consume la web
 public/2026/generales/programas/d21-*.pdf            los cinco PDF de «Soluciones» de Democracia 21, tal como los publica mi.democracia21.es y sin optimizar (España Limpia 13 págs., Vivienda 9, Educación 8, Sanidad 6 y Potencia energética 4): pesan entre 0,2 y 0,5 MB; el de España Limpia es el del 11 de noviembre de 2026, con el mismo texto que la copia anterior
 scripts/build_d21.py                 las 95 medidas de D21, escritas a mano como resumen de su PDF (los cinco PDF no comparten maqueta) y con un enlace a su documento
 src/data/2026/generales/programas/d21.json          resultado que consume la web
+public/2026/generales/programas/ixlg-programa-senado-2026.pdf PDF oficial de Iniciativa por La Gomera para el Senado (11 páginas, 4 de noviembre de 2026); pesa 0,5 MB
+scripts/extract_ixlg.py              extracción de 22 medidas en 4 bloques y 7 secciones; la medida 7 es un texto largo sobre el REF y la 12 lleva su título en mayúsculas
+src/data/2026/generales/programas/ixlg.json         resultado que consume la web
+public/2026/generales/programas/nex-programa-generales-29n-2026.pdf PDF del programa de Nuevo Extremeñismo - Adelante Extremadura (15 páginas, 16 de noviembre de 2026; fuente oficial: https://www.nuevoext.es/#/programa); pesa 0,5 MB
+scripts/extract_nex.py               extracción de 150 propuestas en 11 bloques y 25 secciones; las propuestas no tienen número ni título (el título es su primera frase)
+src/data/2026/generales/programas/nex.json          resultado que consume la web
+public/2026/generales/programas/comuns-programa-29n-2026.pdf PDF oficial de Comuns-Front Ampli (134 páginas, 16 de noviembre de 2026), en catalán; pesa 2,0 MB
+scripts/extract_comuns.py            extracción de 1.097 medidas en 6 bloques y 6 secciones: cada medida es una viñeta, sin número ni título (el título es su primera frase)
+src/data/2026/generales/programas/comuns.json       resultado que consume la web; los textos están en catalán
+.cache/2026/generales/eguzkilore-web.html           página oficial de Eguzkilore (https://www.eguzkilore-na.org/sample-page/), guardada para el extractor; el programa es solo web, sin PDF ni fecha
+scripts/extract_eguzkilore.py        extracción de 64 propuestas en un solo bloque y 7 secciones
+src/data/2026/generales/programas/eguzkilore.json   resultado que consume la web
+scripts/extract_fia.py               20 medidas en 2 bloques (diez compromisos y diez medidas del programa político), transcritas a mano de los dos carteles de https://www.fia-independientes.es/ELECCIONES-29N/ (imágenes sin texto, sin PDF ni fecha)
+src/data/2026/generales/programas/fia.json          resultado que consume la web
+.cache/2026/generales/alhora/                       una página de texto por política de https://alhora.cat/politiques/, guardadas para el extractor; el programa es solo web, sin PDF ni fecha
+scripts/extract_alhora.py            extracción de 41 medidas en 6 bloques, en catalán; el título de cada una es el de la página
+src/data/2026/generales/programas/alhora.json       resultado que consume la web; los textos están en catalán
+.cache/2026/generales/agenda-valenciana-web.txt     texto de https://www.agendavalenciana.org/index.html#programa, guardado para el extractor; el programa es solo web, sin PDF ni fecha
+scripts/extract_agenda_valenciana.py 16 medidas en 6 ejes, comprobadas literalmente contra el texto guardado
+src/data/2026/generales/programas/agenda-valenciana.json resultado que consume la web
 src/data/2026/generales/programas/eaj-pnv.json      30 propuestas transcritas de la [página oficial del PNV](https://www.eaj-pnv.eus/es/programa-elecciones-generales-2026/)
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026.pdf BOE, candidaturas proclamadas el 3 de noviembre
 public/2026/generales/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf BOE, corrección oficial del 7 de noviembre
@@ -255,6 +275,13 @@ Para regenerar los datos de Teruel Existe: `npm run data:teruel-existe` (necesit
 Para regenerar los datos de Geroa Bai: `npm run data:geroa-bai` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada compromiso).
 Para regenerar los datos de Unidad del Pueblo Canario: `npm run data:upc` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada eje).
 Para regenerar los datos de Democracia 21: `npm run data:d21` (solo Python: las medidas están en el propio script).
+Para regenerar los datos de Iniciativa por La Gomera: `npm run data:ixlg` (necesita Python con PyMuPDF).
+Para regenerar los datos de Nuevo Extremeñismo - Adelante Extremadura: `npm run data:nex` (necesita Python con PyMuPDF).
+Para regenerar los datos de Eguzkilore: `npm run data:eguzkilore` (lee `.cache/2026/generales/eguzkilore-web.html`, la página guardada).
+Para regenerar los datos de la FIA: `npm run data:fia` (solo Python: las medidas están en el propio script).
+Para regenerar los datos de Alhora: `npm run data:alhora` (lee las páginas guardadas en `.cache/2026/generales/alhora/`).
+Para regenerar los datos de Agenda Valenciana: `npm run data:agenda-valenciana` (lee `.cache/2026/generales/agenda-valenciana-web.txt`).
+Para regenerar los datos de Comuns-Front Ampli: `npm run data:comuns` (necesita Python con PyMuPDF).
 Para regenerar los datos del PCTE: `npm run data:pcte` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada bloque y cada medida).
 Para regenerar los datos de FE de las JONS: `npm run data:fe-jons` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 Para regenerar los datos de Adelante Andalucía: `npm run data:adelante` (consulta las páginas oficiales por área; procesa 637 propuestas temáticas y 82 territoriales, numeradas del 1 al 719. Las 29 prioridades del resumen no se cuentan de nuevo).

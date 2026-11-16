@@ -2,26 +2,508 @@
  "id": "fia",
  "partido": "Federación de los Independientes de Aragón",
  "siglas": "FIA",
+ "comunidad": "Aragón",
+ "observaciones": [
+  "Hay dos carteles para 29N: uno de Zaragoza (diez compromisos) y otro de Huesca (diez puntos). Sus listas no coinciden. Se publican las dos.",
+  "Los textos se escribieron a partir de imágenes de baja resolución (nuevos-partidos/fia/). No hay PDF ni texto extraíble.",
+  "Palabras inciertas en el cartel de Zaragoza: «okupa» en la medida 7 y la frase final de la medida 10 («Menos promesas. Más compromisos»).",
+  "Los carteles del Huesca no tienen título: el título y el texto de cada medida son la misma frase."
+ ],
  "color": "#C63C3E",
  "colorClaro": "#FDE5E5",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Menos promesas. Más compromisos.",
+ "subtitulo": "Diez compromisos para Aragón y programa político de Huesca",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "https://www.fia-independientes.es/ELECCIONES-29N/",
+ "fuentePdf": "https://www.fia-independientes.es/ELECCIONES-29N/",
+ "tipoDocumento": "web",
+ "origenMedidas": "web",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Un proyecto real para gestionar nuestra tierra",
+  "texto": "Un proyecto real para gestionar nuestra tierra con sentido común, eficacia y rigor profesional."
  },
  "cifras": [],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Aragón"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Nuestros 10 compromisos para Aragón",
+   "lema": "Cartel de Zaragoza",
+   "cita": "",
+   "intro": "Cartel de la provincia de Zaragoza. Lista de diez compromisos."
+  },
+  {
+   "id": 2,
+   "titulo": "Programa político",
+   "lema": "Cartel de Huesca",
+   "cita": "",
+   "intro": "Cartel de la provincia de Huesca. Lista de diez puntos."
+  }
+ ],
+ "secciones": [
+  {
+   "id": "zaragoza",
+   "bloque": 1,
+   "titulo": "Nuestros 10 compromisos para Aragón",
+   "tituloFrase": "Nuestros 10 compromisos para Aragón",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "huesca",
+   "bloque": 2,
+   "titulo": "Programa político",
+   "tituloFrase": "Programa político",
+   "intro": "",
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Salarios y Pensiones",
+   "tituloFrase": "Salarios y Pensiones",
+   "texto": "Recuperación del poder adquisitivo, garantizando salarios y pensiones dignas. Subida de salarios, subida de pensiones y bajada de impuestos.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "impuestos"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Vivienda Asequible",
+   "tituloFrase": "Vivienda Asequible",
+   "texto": "Construcción de vivienda social para alquiler con derecho a compra.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Reforma de la Sanidad Pública",
+   "tituloFrase": "Reforma de la Sanidad Pública",
+   "texto": "Apoyo a la Sanidad Pública. Eliminación de las listas de espera.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Creación de Empleo y Apuesta por la Investigación y Desarrollo (I+D)",
+   "tituloFrase": "Creación de Empleo y Apuesta por la Investigación y Desarrollo (I+D)",
+   "texto": "Creación de empleo estable y de calidad en Aragón. Inversión en Investigación y Desarrollo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Educación de Calidad Orientada al Empleo",
+   "tituloFrase": "Educación de Calidad Orientada al Empleo",
+   "texto": "Reforma del sistema educativo para orientarlo hacia las necesidades reales del mercado laboral, fomentando la Formación Profesional.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Apoyo al Campo y Equilibrio Territorial",
+   "tituloFrase": "Apoyo al Campo y Equilibrio Territorial",
+   "texto": "Defensa y ayuda directa a la agricultura y la ganadería aragonesas. Infraestructuras modernas y medidas reales contra la despoblación para vertebrar Aragón.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Reforma de Leyes e Igualdad de derechos entre Personas",
+   "tituloFrase": "Reforma de Leyes e Igualdad de derechos entre Personas",
+   "texto": "Reforma de la Ley del Menor. Reforma de la ley «solo sí es sí». Dureza ante denuncias falsas demostradas. Igualdad real ante la ley para todas las personas. Derogación de la ley okupa, garantizando el derecho a la propiedad privada. Derogación del reciente Real Decreto-ley referido al alquiler de viviendas.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Eliminación de Subvenciones Públicas",
+   "tituloFrase": "Eliminación de Subvenciones Públicas",
+   "texto": "Eliminación de las subvenciones públicas a partidos políticos, sindicatos y patronal.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Administración Pública Eficiente y con Menos Burocracia al Servicio del Ciudadano",
+   "tituloFrase": "Administración Pública Eficiente y con Menos Burocracia al Servicio del Ciudadano",
+   "texto": "Mantenimiento de la cita presencial, y eliminación de la obligatoriedad de la cita previa.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "zaragoza",
+   "subapartado": null,
+   "titulo": "Regeneración Democrática y Transparencia",
+   "tituloFrase": "Regeneración Democrática y Transparencia",
+   "texto": "Gestión profesional y transparente de lo público, con exigencia de responsabilidad directa a los gestores.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 11,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Construcción de viviendas municipales en alquiler.",
+   "tituloFrase": "Construcción de viviendas municipales en alquiler.",
+   "texto": "Construcción de viviendas municipales en alquiler.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 12,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Aumento del salario mínimo. Sueldos y pensiones con el IPC.",
+   "tituloFrase": "Aumento del salario mínimo. Sueldos y pensiones con el IPC.",
+   "texto": "Aumento del salario mínimo. Sueldos y pensiones con el IPC.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 13,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Utilizar el aeropuerto de Huesca para tráfico de mercancías.",
+   "tituloFrase": "Utilizar el aeropuerto de Huesca para tráfico de mercancías.",
+   "texto": "Utilizar el aeropuerto de Huesca para tráfico de mercancías.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 14,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Terminación autovía del Pirineo.",
+   "tituloFrase": "Terminación autovía del Pirineo.",
+   "texto": "Terminación autovía del Pirineo.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 15,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Industrializar ciudad de Huesca.",
+   "tituloFrase": "Industrializar ciudad de Huesca.",
+   "texto": "Industrializar ciudad de Huesca.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 16,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Apoyar el campo. Negociar aumento PAC.",
+   "tituloFrase": "Apoyar el campo. Negociar aumento PAC.",
+   "texto": "Apoyar el campo. Negociar aumento PAC.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 17,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Apoyar la sanidad pública. Reducción listas de espera.",
+   "tituloFrase": "Apoyar la sanidad pública. Reducción listas de espera.",
+   "texto": "Apoyar la sanidad pública. Reducción listas de espera.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 18,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Reducción cuotas fiscales a los autónomos.",
+   "tituloFrase": "Reducción cuotas fiscales a los autónomos.",
+   "texto": "Reducción cuotas fiscales a los autónomos.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 19,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Potenciar empresas del Aragón oriental.",
+   "tituloFrase": "Potenciar empresas del Aragón oriental.",
+   "texto": "Potenciar empresas del Aragón oriental.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  },
+  {
+   "n": 20,
+   "bloque": 2,
+   "seccion": "huesca",
+   "subapartado": null,
+   "titulo": "Eliminar subvenciones a los partidos políticos.",
+   "tituloFrase": "Eliminar subvenciones a los partidos políticos.",
+   "texto": "Eliminar subvenciones a los partidos políticos.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.fia-independientes.es/ELECCIONES-29N/"
+  }
+ ]
 }

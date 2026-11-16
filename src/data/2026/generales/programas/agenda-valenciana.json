@@ -2,26 +2,455 @@
  "id": "agenda-valenciana",
  "partido": "Agenda Valenciana",
  "siglas": "AV",
+ "comunidad": "Comunidad Valenciana",
+ "observaciones": [
+  "Programa publicado en la web del partido. No tiene PDF ni fecha de publicación. Su web lo enlaza a una noticia de Diari La Veu como fuente.",
+  "La página no numera las medidas: se numeran del 1 al 16 en orden. El título es el que la página pone antes de los dos puntos.",
+  "Coalición cívica de la circunscripción de Valencia para el Congreso y el Senado. Las medidas son del programa de esa circunscripción."
+ ],
  "color": "#0088d4",
  "colorClaro": "#b2dbf2",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Hoja de Ruta para Valencia",
+ "subtitulo": "Seis ejes estratégicos para defender nuestros municipios con voz propia",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "https://www.agendavalenciana.org/index.html#programa",
+ "fuentePdf": "https://www.agendavalenciana.org/index.html#programa",
+ "tipoDocumento": "web",
+ "origenMedidas": "web",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Candidatura cívica, municipalista y transversal",
+  "texto": "Seis ejes estratégicos para defender nuestros municipios con voz propia. Propuestas concretas, cercanas y realistas para llevar al Congreso de los Diputados y al Senado las prioridades de las familias, autónomos y municipios valencianos."
  },
  "cifras": [],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Comunidad Valenciana"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Financiación Autonómica y Deuda Histórica",
+   "lema": "Recursos justos para blindar los servicios públicos valencianos",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 2,
+   "titulo": "Reconstrucción post-DANA y Prevención",
+   "lema": "Agilidad administrativa, protección y ayudas reales a los municipios",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 3,
+   "titulo": "Movilidad e Infraestructuras",
+   "lema": "Cercanías, Metrovalencia y conexiones estratégicas de primer nivel",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 4,
+   "titulo": "Autogobierno, Derecho Civil e Identidad",
+   "lema": "Marco jurídico propio, seguridad autonómica y lengua valenciana",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 5,
+   "titulo": "Economía Productiva, Empleo y Territorio",
+   "lema": "Respaldo a pymes, autónomos, comercio local y sector primario",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 6,
+   "titulo": "Justicia, Cultura y Regeneración Institucional",
+   "lema": "Transparencia, fin de privilegios y voz libre de vetos en Madrid",
+   "cita": "",
+   "intro": ""
+  }
+ ],
+ "secciones": [
+  {
+   "id": "financiacion",
+   "bloque": 1,
+   "titulo": "Financiación Autonómica y Deuda Histórica",
+   "tituloFrase": "Financiación Autonómica y Deuda Histórica",
+   "intro": "Recursos justos para blindar los servicios públicos valencianos",
+   "subapartados": []
+  },
+  {
+   "id": "post-dana",
+   "bloque": 2,
+   "titulo": "Reconstrucción post-DANA y Prevención",
+   "tituloFrase": "Reconstrucción post-DANA y Prevención",
+   "intro": "Agilidad administrativa, protección y ayudas reales a los municipios",
+   "subapartados": []
+  },
+  {
+   "id": "movilidad",
+   "bloque": 3,
+   "titulo": "Movilidad e Infraestructuras",
+   "tituloFrase": "Movilidad e Infraestructuras",
+   "intro": "Cercanías, Metrovalencia y conexiones estratégicas de primer nivel",
+   "subapartados": []
+  },
+  {
+   "id": "autogobierno",
+   "bloque": 4,
+   "titulo": "Autogobierno, Derecho Civil e Identidad",
+   "tituloFrase": "Autogobierno, Derecho Civil e Identidad",
+   "intro": "Marco jurídico propio, seguridad autonómica y lengua valenciana",
+   "subapartados": []
+  },
+  {
+   "id": "economia",
+   "bloque": 5,
+   "titulo": "Economía Productiva, Empleo y Territorio",
+   "tituloFrase": "Economía Productiva, Empleo y Territorio",
+   "intro": "Respaldo a pymes, autónomos, comercio local y sector primario",
+   "subapartados": []
+  },
+  {
+   "id": "justicia",
+   "bloque": 6,
+   "titulo": "Justicia, Cultura y Regeneración Institucional",
+   "tituloFrase": "Justicia, Cultura y Regeneración Institucional",
+   "intro": "Transparencia, fin de privilegios y voz libre de vetos en Madrid",
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "financiacion",
+   "subapartado": null,
+   "titulo": "Reforma inmediata del sistema de financiación",
+   "tituloFrase": "Reforma inmediata del sistema de financiación",
+   "texto": "Exigir un nuevo modelo para garantizar recursos suficientes en sanidad, educación, dependencia y bienestar social, estableciendo una igualación transitoria mientras llega la reforma definitiva.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "financiacion",
+   "subapartado": null,
+   "titulo": "Compensación de la deuda por infrafinanciación",
+   "tituloFrase": "Compensación de la deuda por infrafinanciación",
+   "texto": "Reclamar al Estado la asunción y compensación de la deuda valenciana generada por el retraso y la falta de reforma del modelo autonómico.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Comunidad Valenciana"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 3,
+   "bloque": 2,
+   "seccion": "post-dana",
+   "subapartado": null,
+   "titulo": "Agilización legal en el Congreso",
+   "tituloFrase": "Agilización legal en el Congreso",
+   "texto": "Impulsar reformas urgentes para eliminar trabas burocráticas y agilizar la contratación de obras y personal en los ayuntamientos.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 4,
+   "bloque": 2,
+   "seccion": "post-dana",
+   "subapartado": null,
+   "titulo": "Prevención y ayudas directas",
+   "tituloFrase": "Prevención y ayudas directas",
+   "texto": "Garantizar apoyo efectivo a familias, personas autónomas y empresas, previniendo nuevos daños y acelerando la ejecución de los fondos asignados a los municipios.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 5,
+   "bloque": 3,
+   "seccion": "movilidad",
+   "subapartado": null,
+   "titulo": "Plan de Cercanías y Metrovalencia",
+   "tituloFrase": "Plan de Cercanías y Metrovalencia",
+   "texto": "Ampliar frecuencias, capacidad y fiabilidad en las líneas C1, C2, C3 y C6 de Renfe, y mejorar la red de Metrovalencia, prestando especial atención a los municipios de l'Horta.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 6,
+   "bloque": 3,
+   "seccion": "movilidad",
+   "subapartado": null,
+   "titulo": "Ejes estratégicos y conexión logística",
+   "tituloFrase": "Ejes estratégicos y conexión logística",
+   "texto": "Finalizar las actuaciones en la línea C3, acelerar el corredor ferroviario con Europa y adecuar enlaces viarios y logísticos.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 7,
+   "bloque": 3,
+   "seccion": "movilidad",
+   "subapartado": null,
+   "titulo": "Financiación metropolitana equitativa",
+   "tituloFrase": "Financiación metropolitana equitativa",
+   "texto": "Exigir dotaciones presupuestarias estatales equivalentes a las de las áreas metropolitanas de Madrid y Barcelona.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 8,
+   "bloque": 4,
+   "seccion": "autogobierno",
+   "subapartado": null,
+   "titulo": "Recuperación del Derecho Civil Valenciano",
+   "tituloFrase": "Recuperación del Derecho Civil Valenciano",
+   "texto": "Restablecer las competencias y un marco civil propio.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 9,
+   "bloque": 4,
+   "seccion": "autogobierno",
+   "subapartado": null,
+   "titulo": "Seguridad y emergencias",
+   "tituloFrase": "Seguridad y emergencias",
+   "texto": "Impulsar una Policía Valenciana capacitada y dotada para la respuesta ante emergencias.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "organizacion",
+    "gasto"
+   ],
+   "territorios": [
+    "Comunidad Valenciana"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 10,
+   "bloque": 4,
+   "seccion": "autogobierno",
+   "subapartado": null,
+   "titulo": "Promoción lingüística y autogobierno",
+   "tituloFrase": "Promoción lingüística y autogobierno",
+   "texto": "Proteger y fomentar activamente el uso de la lengua valenciana y profundizar en el autogobierno autonómico.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Comunidad Valenciana"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 11,
+   "bloque": 5,
+   "seccion": "economia",
+   "subapartado": null,
+   "titulo": "Protección del tejido empresarial y pymes",
+   "tituloFrase": "Protección del tejido empresarial y pymes",
+   "texto": "Reducción de cargas administrativas, apoyo prioritario a autónomos, comercio local y empresas familiares frente a abusos de grandes multinacionales.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 12,
+   "bloque": 5,
+   "seccion": "economia",
+   "subapartado": null,
+   "titulo": "Sector primario y agua",
+   "tituloFrase": "Sector primario y agua",
+   "texto": "Garantizar agua suficiente, modernizar regadíos, exigir reciprocidad en las importaciones frente a terceros países y apoyar el relevo generacional en cítricos, arroz, caqui, vid, ganadería y pesca.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 13,
+   "bloque": 6,
+   "seccion": "justicia",
+   "subapartado": null,
+   "titulo": "Justicia eficaz",
+   "tituloFrase": "Justicia eficaz",
+   "texto": "Crear plazas judiciales, reforzar plantillas e infraestructuras tecnológicas para descongestionar juzgados y reducir retrasos procesales.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 14,
+   "bloque": 6,
+   "seccion": "justicia",
+   "subapartado": null,
+   "titulo": "Cultura y medios públicos",
+   "tituloFrase": "Cultura y medios públicos",
+   "texto": "Aumentar los canales temáticos de À Punt y equiparar la financiación estatal del Palau de les Arts a la de recintos como el Teatro Real o el Liceu.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 15,
+   "bloque": 6,
+   "seccion": "justicia",
+   "subapartado": null,
+   "titulo": "Regeneración democrática",
+   "tituloFrase": "Regeneración democrática",
+   "texto": "Reducción drástica de aforamientos, mayor transparencia en la gestión pública y rendición de cuentas directa de los representantes ante los ciudadanos.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  },
+  {
+   "n": 16,
+   "bloque": 6,
+   "seccion": "justicia",
+   "subapartado": null,
+   "titulo": "Voz propia y libre de vetos",
+   "tituloFrase": "Voz propia y libre de vetos",
+   "texto": "Negociar y votar en Madrid a favor de cualquier iniciativa que beneficie a los municipios valencianos, con independencia de su origen partidista.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Comunidad Valenciana"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://www.agendavalenciana.org/index.html#programa"
+  }
+ ]
 }

@@ -4,10 +4,10 @@
  * piece of the page instead (the wordmark or the footer). So each description names the party, the election and
  * what the page holds. The party name goes first, so no article is needed («del Partido Popular», «de VOX»).
  */
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { election } from '@eleccion/eleccion';
-import { ELECTION_PUBLIC_DIR } from '../../election.config.mjs';
+import type { MeasureCard, PartyCard } from '../../worker/og/card.ts';
+import { CARD_VERSION } from '../../worker/og/version.ts';
 import { allOf } from './format';
 import { announcedMeasures, type Block, type Measure, type Program } from './programs';
 import type { ShareImage } from './site';
@@ -45,23 +45,48 @@ export const blockPageDescription = (program: Program, block: Block) => {
   return `${partyLabel(program)}, bloque ${block.id} de su programa para el ${election.shortName}: ${block.title}. ${count} ${noun} con su texto original, su categoría y su página en el PDF.`;
 };
 
-/** The link preview of a party page: its own card when it has a program (`scripts/og_images.py`), else the site's. */
+/**
+ * The link previews are drawn on request by the Worker (`worker/index.ts`), from `/og/datos/<party>.json`.
+ * The address ends with a hash of the data of the card: when a title or a color changes, the address changes, and
+ * the cache of Cloudflare and of the social networks draw it again.
+ */
+const cardVersion = (data: unknown) =>
+  createHash('sha1').update(JSON.stringify([CARD_VERSION, data])).digest('hex').slice(0, 10);
+
+/** What the card of a party shows. */
+export const partyCardData = (program: Program): PartyCard => ({
+  acronym: program.acronym,
+  name: program.partyName,
+  program: program.programName,
+  color: program.color,
+  lightColor: program.lightColor || program.color,
+  count: announcedMeasures(program).length,
+  unit: program.measureUnit,
+  unitPlural: program.measureUnitPlural,
+});
+
+/** What the card of a measure shows: the title as a quote and the start of the text (none when it has no text). */
+export const measureCardData = (program: Program, measure: Measure): MeasureCard => ({
+  acronym: program.acronym,
+  color: program.color,
+  lightColor: program.lightColor || program.color,
+  unit: program.measureUnit,
+  number: measure.number,
+  title: measure.phraseTitle || measure.title,
+  excerpt: measure.text?.trim() ? measureExcerpt(measure, 190) : '',
+  page: measure.page,
+});
+
+/** The link preview of a party page: its own card when it has a program, else the site's card. */
 export const partyShareImage = (program: Program): ShareImage | undefined =>
   program.hasProgram
     ? {
-        path: `/og/${program.id}.png`,
-        alt: `${partyLabel(program)}: ${program.measures.length} ${program.measureUnitPlural} de su programa para el ${election.shortName}, en Electosfera.`,
+        path: `/og/tarjetas/${program.id}.png?v=${cardVersion(partyCardData(program))}`,
+        alt: `${partyLabel(program)}: ${announcedMeasures(program).length} ${program.measureUnitPlural} de su programa para el ${election.shortName}, en Electosfera.`,
       }
     : undefined;
 
-/** The path of the picture of one measure, under the base of the site (`scripts/og_images.py --medida pp:144`). */
-const measureImagePath = (program: Program, measure: Measure) => `/og/medidas/${program.id}-${measure.number}.png`;
-
-/**
- * The page of one measure: «Construiremos un millón de viviendas» (PP, medida 144).
- * The picture is a quote of the measure. Only the measures that have one (it is made on demand, because a
- * picture for every measure would weigh tens of megabytes) get it; the others take the card of the party.
- */
+/** The page of one measure: «Construiremos un millón de viviendas» (PP, medida 144). Its picture is a quote of it. */
 export const measurePageTitle = (program: Program, measure: Measure) =>
   `${measureQuote(measure)} (${program.acronym}, ${program.measureUnit} ${measure.number})`;
 
@@ -82,10 +107,7 @@ export const measureExcerpt = (measure: Measure, max = 200) => {
 export const measurePageDescription = (program: Program, measure: Measure) =>
   `${partyLabel(program)}, ${electionText}${measure.page ? `, pág. ${measure.page}` : ''}: ${measureExcerpt(measure)}`;
 
-export const measureShareImage = (program: Program, measure: Measure): ShareImage | undefined =>
-  existsSync(join(process.cwd(), ELECTION_PUBLIC_DIR, measureImagePath(program, measure)))
-    ? {
-        path: measureImagePath(program, measure),
-        alt: `${measureQuote(measure)}: ${program.measureUnit} ${measure.number} del programa de ${partyLabel(program)}${measure.page ? `, pág. ${measure.page}` : ''}.`,
-      }
-    : partyShareImage(program);
+export const measureShareImage = (program: Program, measure: Measure): ShareImage => ({
+  path: `/og/tarjetas/${program.id}/${measure.number}.png?v=${cardVersion(measureCardData(program, measure))}`,
+  alt: `${measureQuote(measure)}: ${program.measureUnit} ${measure.number} del programa de ${partyLabel(program)}${measure.page ? `, pág. ${measure.page}` : ''}.`,
+});

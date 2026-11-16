@@ -2,26 +2,945 @@
  "id": "alhora",
  "partido": "Alhora",
  "siglas": "ALHORA",
+ "comunidad": "Cataluña",
+ "observaciones": [
+  "Programa publicado en la web del partido, en catalán. Los textos se mantienen en catalán: no están traducidos.",
+  "No tiene PDF ni fecha de publicación. Las medidas son las «Solucions» de las seis políticas (41). Los diagnósticos, las urgencias y las distracciones no son medidas.",
+  "Los títulos son las frases en negrita de la página. Las categorías las asigna el equipo a mano y son aproximadas."
+ ],
  "color": "#e82040",
  "colorClaro": "#f8bcc6",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Programa per a Catalunya",
+ "subtitulo": "Les nostres propostes",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "https://alhora.cat/politiques/",
+ "fuentePdf": "https://alhora.cat/politiques/",
+ "tipoDocumento": "web",
+ "origenMedidas": "web",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Programa per a Catalunya: les nostres propostes",
+  "texto": "Aquests posicionaments són el resultat de trobades, grups de debat, jornades de formació, congressos, assemblees, pòdcasts i articles fets pels militants d'Alhora en contacte amb especialistes i investigadors. Com tot en política, és un treball en procés de millora i evolució."
  },
  "cifras": [],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Cataluña"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Independència",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 2,
+   "titulo": "Llengua i educació",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 3,
+   "titulo": "Model econòmic",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 4,
+   "titulo": "Immigració",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 5,
+   "titulo": "Habitatge",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 6,
+   "titulo": "Mobilitat i territori",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  }
+ ],
+ "secciones": [
+  {
+   "id": "independencia",
+   "bloque": 1,
+   "titulo": "Independència",
+   "tituloFrase": "Independència",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "llengua-i-educacio",
+   "bloque": 2,
+   "titulo": "Llengua i educació",
+   "tituloFrase": "Llengua i educació",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "model-economic",
+   "bloque": 3,
+   "titulo": "Model econòmic",
+   "tituloFrase": "Model econòmic",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "immigracio",
+   "bloque": 4,
+   "titulo": "Immigració",
+   "tituloFrase": "Immigració",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "habitatge",
+   "bloque": 5,
+   "titulo": "Habitatge",
+   "tituloFrase": "Habitatge",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "mobilitat-i-territori",
+   "bloque": 6,
+   "titulo": "Mobilitat i territori",
+   "tituloFrase": "Mobilitat i territori",
+   "intro": "",
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "independencia",
+   "subapartado": null,
+   "titulo": "Construcció d'una malla municipalista nacional",
+   "tituloFrase": "Construcció d'una malla municipalista nacional",
+   "texto": "El municipi no és només una administració de proximitat: és el primer espai de poder institucional, el més allunyat del control de l'Estat, i on la nació es construeix o es dissol. La continuïtat del poble català comença coordinant-se políticament als ajuntaments, refent la malla de l'independentisme que permeti generar els lideratges que la política del país necessita per existir i alliberar-se. El municipalisme ha de deixar de ser una gestió localista i passar a ser una estratègia nacional d'alliberament, arrelament i cohesió. No gestionem pobles i ciutats: defensem un país. Cada mesura municipal ha de respondre a una sola pregunta: fa avançar o retrocedir el projecte nacional català? El 2027 demanem el suport per governar pensant en un futur que només serà possible si és plenament independent.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/independencia/"
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "independencia",
+   "subapartado": null,
+   "titulo": "Ús estratègic de les institucions per a la independència",
+   "tituloFrase": "Ús estratègic de les institucions per a la independència",
+   "texto": "Contra el fals dilema que la independència només pot arribar des de fora de les institucions, l'experiència històrica demostra que l'aprofitament estratègic de les estructures existents ha estat una constant en els processos d'alliberament nacional. L'Índia va utilitzar les estructures del Raj britànic, mentre que Estònia, Letònia i Lituània van recuperar la independència utilitzant els seus parlaments soviètics. Ens comprometem a declarar la independència quan aconseguim la majoria absoluta, però sabem que cal també remobilitzar el moviment popular i posar les institucions al servei d'una estratègia insurreccional cívica.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/independencia/"
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "independencia",
+   "subapartado": null,
+   "titulo": "Nous lideratges compromesos amb el país",
+   "tituloFrase": "Nous lideratges compromesos amb el país",
+   "texto": "Necessitem lideratges que no siguin responsables de la rendició del 2017, amb vida professional solvent fora de la política, que no se sustentin en l'obediència sinó en el criteri propi, amb talent i coratge per no defugir el conflicte. Catalunya és plena de gent amb talent que no s'acosta a la política perquè aquesta s'ha convertit en un món que corromp l'esperit i posa al servei de l'assimilació a Espanya. Cal trencar aquest cercle viciós d'autocensura i mediocritat.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/independencia/"
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "independencia",
+   "subapartado": null,
+   "titulo": "Confrontació continuada amb l'Estat",
+   "tituloFrase": "Confrontació continuada amb l'Estat",
+   "texto": "Els processos d'alliberament nacional triomfen quan la fricció amb l'Estat és constant, obligant-lo a desgastar-se invertint recursos en apagar el conflicte. Si l'Estat vol frenar les nostres mesures, haurà de fer-ho assumint-ne les conseqüències, no li estalviarem d'entrada l'esforç d'oposar-se. La confrontació estratègica ha de combinar-se amb una gestió efectiva del país sense dependre d'Espanya, generant confiança en el projecte independentista mitjançant resultats tangibles en la millora dels indicadors de fortalesa de la nació.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/independencia/"
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "independencia",
+   "subapartado": null,
+   "titulo": "La pedagogia del no",
+   "tituloFrase": "La pedagogia del no",
+   "texto": "Cal boicotejar els acords de pacificació vigents de les forces polítiques catalanes amb els partits que governen l’Estat. Cal arrossegar la política catalana a dir NO a l’Estat, que és l’única cosa que mai no ha dit. Sempre, des d’abans del 2017 i especialment després, els partits catalans es deixen fer xantatge i acaben dient que SÍ a les falses promeses dels partits espanyols, tot i saber que són falses. Quan s’incompleixen, intenten fer creure al seu electorat que han aconseguit grans coses («el millor finançament de la història») perquè no sigui tan evident que s’han deixat prendre el pèl a canvi de grups parlamentaris i solucions personals. El primer que necessita la política catalana és dir un NO rotund a la política espanyola. Des del Primer d’Octubre, Espanya governa Catalunya sense el consentiment dels catalans i cal dir alt i clar que «no és no». Els partits no ho faran perquè mai no paguen el preu dels seus agenollaments. Fins que no els arrosseguem a dir NO a Espanya, no podrem arrossegar-los a dir SÍ a Catalunya. Aquest és l’espai polític que l’independentisme té el deure de fer créixer.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/independencia/"
+  },
+  {
+   "n": 6,
+   "bloque": 2,
+   "seccion": "llengua-i-educacio",
+   "subapartado": null,
+   "titulo": "Implementació d’una xarxa d’escoles en català que vagi substituint l’actual",
+   "tituloFrase": "Implementació d’una xarxa d’escoles en català que vagi substituint l’actual",
+   "texto": "Crear una xarxa d'escoles 100% en català que garanteixi el dret a una educació catalana de qualitat, fonamentada en el compromís explícit de les famílies amb el projecte educatiu i lingüístic. Aquesta xarxa funcionarà integralment en català a tota l'escola: aula, pati, menjador, extraescolars, demostrant que l'arrelament educatiu és una qualitat pedagògica que arrossegarà la resta del sistema cap a nivells més elevats d'immersió (gràcies a mesures com l'avaluació externa). Fer dependre l'escola catalana de la tria dels pares suposarà un salt de la immersió de menys d'un 20% al voltant del 60% d’entrada, tal com hem vist a Balears, País Valencià i País Basc.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/llengua-i-educacio/"
+  },
+  {
+   "n": 7,
+   "bloque": 2,
+   "seccion": "llengua-i-educacio",
+   "subapartado": null,
+   "titulo": "Revolució en la formació del professorat",
+   "tituloFrase": "Revolució en la formació del professorat",
+   "texto": "Crear una Escola Superior de Magisteri de Catalunya per formar docents d'excel·lència sense dependre d'organismes espanyols. Formar 5.000 nous professors de llengua i cultura catalanes, amb beques per a alumnes que es comprometin a dedicar part de la seva vida professional a produir coneixement en català. Implementar avaluacions periòdiques de competència lingüística per a tot el personal educatiu.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/llengua-i-educacio/"
+  },
+  {
+   "n": 8,
+   "bloque": 2,
+   "seccion": "llengua-i-educacio",
+   "subapartado": null,
+   "titulo": "Transformació dels mitjans públics catalans",
+   "tituloFrase": "Transformació dels mitjans públics catalans",
+   "texto": "TV3 i Catalunya Ràdio han de ser exclusivament en català, minimitzant les entrevistes i altres continguts en castellà, i en cas de fer-los, normalitzar la traducció simultània o els subtítols. Crear una plataforma digital conjunta entre TV3, À Punt i IB3 que prioritzi continguts per a joves en català. Acabar amb la importació de formats espanyols i apostar per produccions originals que reflecteixin la realitat cultural catalana.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/llengua-i-educacio/"
+  },
+  {
+   "n": 9,
+   "bloque": 2,
+   "seccion": "llengua-i-educacio",
+   "subapartado": null,
+   "titulo": "Regidories de política lingüística municipals",
+   "tituloFrase": "Regidories de política lingüística municipals",
+   "texto": "Crear una regidoria de política lingüística en tots els municipis on Alhora tingui representació, destinant el 10% del pressupost municipal per defecte. Aquesta regidoria garantirà l'ús exclusiu del català en actes oficials, escoles municipals de català immersius per a immigrants, esdeveniments culturals i esportius en català, acreditació lingüística obligatòria per a funcionaris, clàusules lingüístiques en contractació pública, retolació exclusiva en català, i creació d'una oficina de drets lingüístics amb règim sancionador efectiu.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/llengua-i-educacio/"
+  },
+  {
+   "n": 10,
+   "bloque": 2,
+   "seccion": "llengua-i-educacio",
+   "subapartado": null,
+   "titulo": "Catalanització del teixit empresarial",
+   "tituloFrase": "Catalanització del teixit empresarial",
+   "texto": "Utilitzar el poder de la contractació pública com a motor de canvi lingüístic: cap empresa que no respecti el català rebrà contractes públics de cap mena. Implementar un sistema de certificació lingüística empresarial vinculat a avantatges fiscals, amb un règim sancionador efectiu que penalitzi l'incompliment dels drets lingüístics amb multes significatives.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/llengua-i-educacio/"
+  },
+  {
+   "n": 11,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "Sortir del monocultiu turístic",
+   "tituloFrase": "Sortir del monocultiu turístic",
+   "texto": "Prou Hard Rocks i altres invents. Cal ser molt més restrictius amb les llicències d'habitatges d'ús turístic, endurir-ne les condicions de renovació i reforçar les inspeccions de treball a hotels i restaurants. Proposem un increment substancial de la taxa turística, destinat a un fons d'habitatge i amb una recaptació que no controli el sector. I les activitats que contracten mà d'obra temporal per sobre d'un llindar n'han de garantir l'allotjament, com fan els hotels d'Àustria i Suïssa: és un cost del negoci, no del barri.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 12,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "El coneixement, al centre del model econòmic",
+   "tituloFrase": "El coneixement, al centre del model econòmic",
+   "texto": "Volem incentivar l'activitat empresarial que prospera des del coneixement, la innovació i el respecte pel medi ambient. Cal millorar l'eficiència de la inversió en R+D, eliminar les barreres al finançament privat de la recerca universitària (que avui és només un 1,5% del total), reformar el finançament i el govern de les universitats amb autonomia, òrgans reduïts i avaluació, i fer que les empreses de tecnologia punta participin en la formació professional i en la formació contínua dels treballadors.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 13,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "Un pla de xoc contra el fracàs escolar",
+   "tituloFrase": "Un pla de xoc contra el fracàs escolar",
+   "texto": "No hi ha economia del coneixement sense una escola que funcioni. Cal posar els mestres al centre de l'aula, atraure cap al magisteri els joves més motivats i brillants, crear una Escola Superior de Magisteri de Catalunya i establir una carrera professional per als directius de les escoles, amb avaluacions externes i resultats públics. El fracàs escolar és tres vegades superior en els nois que en les noies, i això també s'ha d'abordar.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 14,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "Institucions al servei de l'emprenedoria",
+   "tituloFrase": "Institucions al servei de l'emprenedoria",
+   "texto": "Fem la vida més fàcil a qui vol crear una empresa. Predictibilitat: les autoritzacions han de tenir terminis coneguts i funcionar per silenci administratiu positiu. Transparència: l'IDESCAT ha de publicar per a cada municipi les dades de permisos d'obres i d'activitat, perquè cap ajuntament no faci de barrera opaca. Simplificació: una ponència única que consolidi els tràmits de totes les administracions. I seguretat jurídica: un programa de consolidació i simplificació de la normativa.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 15,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "Una fiscalitat al servei de la continuïtat de la nació",
+   "tituloFrase": "Una fiscalitat al servei de la continuïtat de la nació",
+   "texto": "Revisarem els impostos, a l'alça o a la baixa, amb un sol criteri: que permetin arrelar una economia de valor afegit i afavoreixin la continuïtat de la nació. La fiscalitat no pot servir per compensar l'espoli: mantenir impostos alts perquè l'Estat se n'endú una part és fer pagar dues vegades els catalans. Cal revisar els impostos regressius, com el de patrimoni tal com està formulat avui, que castiga la classe mitjana mentre deixa exemptes les grans fortunes, i el de successions, perquè ningú no hagi de vendre el patrimoni familiar per pagar-lo. I cal una fiscalitat que no expulsi els professionals molt qualificats, com metges, enginyers o investigadors, que són la classe mitjana que sosté els països més pròspers d'Europa, i que en canvi gravi més el turisme i les activitats que extreuen valor del país.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 16,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "Indústria i energia, el nostre avantatge competitiu",
+   "tituloFrase": "Indústria i energia, el nostre avantatge competitiu",
+   "texto": "Volem una indústria que produeixi amb energia neta, abundant i barata generada aquí. Cal facilitar, en lloc d'entorpir, la implantació de l'energia solar a les empreses amb grans necessitats energètiques, accelerar el desplegament de renovables i atraure els sectors d'alt valor afegit que necessiten energia de qualitat i constant. La revolució energètica i el decreixement turístic són les dues cares de la mateixa moneda.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 17,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "Pols econòmics arreu del país",
+   "tituloFrase": "Pols econòmics arreu del país",
+   "texto": "La feina qualificada no pot quedar concentrada a l'àrea metropolitana. Volem incentius per a les empreses que s'instal·lin fora de Barcelona, nous centres de recerca i seus universitàries a les ciutats mitjanes i un transport que les connecti entre elles. Un país amb molts centres econòmics és un país més ric, més equilibrat i amb un habitatge més assequible.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 18,
+   "bloque": 3,
+   "seccion": "model-economic",
+   "subapartado": null,
+   "titulo": "Una contractació pública que premiï la feina arrelada",
+   "tituloFrase": "Una contractació pública que premiï la feina arrelada",
+   "texto": "Les administracions gasten l'equivalent a gairebé la meitat del PIB, i una part molt important d'aquesta despesa arriba a les empreses a través de contractes. Cal que la contractació pública condicioni l'estructura de les empreses que hi opten: els plecs han de valorar els salaris dignes, l'estabilitat i la formació dels treballadors, inclosa la formació en llengua i cultura del país, i deixar fora les empreses que competeixen amb sous baixos i rotació permanent. Un treballador que es forma, que aprèn la llengua i arrela al país surt més fàcilment del cercle de la mà d'obra barata i pot aspirar a feines millors. És la via més directa per empènyer el teixit productiu cap al valor afegit i deixar de subvencionar la precarietat.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/model-economic/"
+  },
+  {
+   "n": 19,
+   "bloque": 4,
+   "seccion": "immigracio",
+   "subapartado": null,
+   "titulo": "Assolir la independència per gestionar la immigració",
+   "tituloFrase": "Assolir la independència per gestionar la immigració",
+   "texto": "Assolir les competències en matèria migratòria assolint la independència de Catalunya és imprescindible per gestionar adequadament els fluxos d'arribada i garantir l'arrelament efectiu. No podem continuar amb el model actual on l'Estat espanyol controla qui rep ciutadania mentre nosaltres assumim els costos d'una integració que és en espanyol. A dia d'avui, el camí per accedir a la ciutadania dels països de parla espanyola és més ràpid: hi ha una discriminació positiva dels ciutadans de països llatinoamericans respecte d'altres immigrants perquè des del punt de vista de l'estat espanyol un immigrant que parla espanyol i que ve de país cristià és més integrable a la seva idea d'hispanitat. Això és inacceptable des d'una perspectiva nacional catalana, però qualsevol intent de modificar-ho implicaria pactar amb l'estat la nostra pròpia minorització demogràfica. Per això, mentre els partits que estan disposats a posar les institucions al servei de la revolta independentista no tinguin majoria, farem valer cada esquerda competencial per desenvolupar polítiques pròpies que enforteixin la comunitat catalana.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/immigracio/"
+  },
+  {
+   "n": 20,
+   "bloque": 4,
+   "seccion": "immigracio",
+   "subapartado": null,
+   "titulo": "Transformació del model econòmic",
+   "tituloFrase": "Transformació del model econòmic",
+   "texto": "Cal transformar el model econòmic català apostant pel decreixement controlat dels sectors que generen precarietat i mà d’obra poc qualificada (turisme massiu, construcció orientada a la inversió, agroindústria intensiva) i pel creixement en àmbits d’alt valor afegit (tecnologia, biomedicina, enginyeria, disseny, recerca aplicada), per retenir el talent local i reduir la dependència de mà d’obra temporal. És essencial deixar de subvencionar sectors tòxics, tant directament (macroprojectes com el Hard Rock o la Copa Amèrica, sector porcí intensiu, promoció d'aquests sectors a través de la taxa turística, etc.) com indirectament (infraestructures i legislació que n’afavoreixen l’expansió). Cal reorientar la inversió pública cap a sectors productius i sostenibles, amb criteris d’arrelament territorial i qualificació laboral en la contractació pública, i incentius fiscals per a empreses que contractin joves catalans en sectors estratègics. Mesures immediates: triplicar la taxa turística, moratòria de nous hotels i apartaments turístics, aturar infraestructures que facilitin el turisme massiu o l’agroindústria intensiva, impulsar denominacions d’origen i productes locals d’alt valor afegit, multiplicar la plantilla d’inspectors de treball fins a la ràtio recomanada per l’OIT, perseguir la contractació irregular i combatre l’explotació laboral. Finalment, cal establir salaris mínims sectorials més elevats en neteja, cures i serveis domiciliaris mitjançant la negociació col·lectiva, per dignificar i professionalitzar aquests oficis essencials i trencar el model basat en sous de misèria.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/immigracio/"
+  },
+  {
+   "n": 21,
+   "bloque": 4,
+   "seccion": "immigracio",
+   "subapartado": null,
+   "titulo": "Doble xarxa escolar",
+   "tituloFrase": "Doble xarxa escolar",
+   "texto": "Reformar el sistema educatiu amb una doble xarxa educativa per garantir la immersió lingüística efectiva: una xarxa d'escoles 100% en català (escoles senceres, no línies) on es garanteixi la veritable immersió. A aquesta xarxa s'hi sumarien les famílies conscienciades que la triïn i, com a prioritat política, les zones amb més immigració. L'altra xarxa, l'actual (diglòssica, a la pràctica bilingüe pel creixent domini del castellà), serà avaluada externament i, si no compleix les expectatives, se l'obligarà a canviar el projecte lingüístic fins que formi part de la primera. L'experiència a Euskadi, el País Valencià i les Illes Balears indica que, amb la possibilitat de triar una escola 100% en català, passaríem del 17% actual a com a mínim un 60% de manera immediata. Cal incentivar, formar i contractar 5.000 nous professors de llengua i cultura catalanes en els 10 anys vinents, crear una Escola Superior de Magisteri de Catalunya, implementar mecanismes que retribueixin l'excel·lència en llengua catalana del professorat en actiu, mobilitzar el professorat jubilat i formar professors i estudiants en sociolingüística. Prendre consciència de la importància de mantenir la llengua forma part de l'aprenentatge necessari.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/immigracio/"
+  },
+  {
+   "n": 22,
+   "bloque": 4,
+   "seccion": "immigracio",
+   "subapartado": null,
+   "titulo": "Catalanització d'adults",
+   "tituloFrase": "Catalanització d'adults",
+   "texto": "Invertir 1.000 milions d'euros en un pla d'ensenyament de llengua i cultura catalanes remunerat per a tothom qui no ha gaudit del dret de passar per l'escola catalana democràtica, seguint el model de Finlàndia amb el suec, amb retribució condicional a l'assistència i superació de proves cada dos mesos, amb l'objectiu de formar 100.000 persones l'any. A més, ajudes específiques a la contractació d'immigrants que aprenguin català, creació de xarxes de suport entre famílies locals i nouvingudes, polítiques urbanístiques que facilitin la immersió cultural, assessorament personalitzat que presenti el català com una eina pràctica d'ascens social, suprimir el castellà als mitjans públics i condicionar la contractació pública a criteris lingüístics.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/immigracio/"
+  },
+  {
+   "n": 23,
+   "bloque": 4,
+   "seccion": "immigracio",
+   "subapartado": null,
+   "titulo": "Formació professional per a la segona generació d'immigrants",
+   "tituloFrase": "Formació professional per a la segona generació d'immigrants",
+   "texto": "Reforçar l'oferta de formació professional vinculada als sectors estratègics (tecnologia, biomedicina, renovables) que permeti als fills d'immigrants accedir a oficis qualificats i trencar el cicle de precarietat intergeneracional que els condemnaria a repetir els sectors de baixa qualificació dels seus pares. Això inclou crear ponts entre l'educació secundària i la formació professional, vincular aquesta formació amb l'ús del català com a llengua vehicular (requisit indispensable per accedir a llocs de treball qualificats), establir beques de mèrit acadèmic per a estudiants de famílies treballadores que vulguin accedir a formació superior, i facilitar l'accés a pràctiques en empreses dels sectors emergents. L'objectiu és que la segona generació vegi el català i la catalanitat com a vehicles d'ascens social, no com a obstacles.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/immigracio/"
+  },
+  {
+   "n": 24,
+   "bloque": 4,
+   "seccion": "immigracio",
+   "subapartado": null,
+   "titulo": "Inserció laboral de les dones immigrants",
+   "tituloFrase": "Inserció laboral de les dones immigrants",
+   "texto": "Facilitar la inserció de les dones immigrants al mercat laboral és fonamental per múltiples raons: és una qüestió de drets i d'independència econòmica, però sobretot és una eina essencial per a la catalanització de les famílies immigrades, ja que quan la dona treballa i aprèn català trasllada la llengua als fills amb una eficàcia molt superior a qualsevol política d'integració tradicional. Ho veiem ara en sentit contrari: moltes famílies magribines parlen en castellà als seus fills com a llengua aspiracional. Cal reforçar els programes públics de formació professional específics per a dones en sectors amb futur (cures professionals, administració, comerç especialitzat), vincular obligatòriament aquests programes amb l'aprenentatge del català, desenvolupar polítiques de conciliació familiar que no penalitzin les dones al mercat laboral, i crear espais de trobada entre dones catalanes i immigrades a través de les biblioteques, centres cívics i equipaments públics. En definitiva, crear oportunitats d'ocupació qualificada que requereixin català, invertint en la capacitació necessària.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/immigracio/"
+  },
+  {
+   "n": 25,
+   "bloque": 4,
+   "seccion": "immigracio",
+   "subapartado": null,
+   "titulo": "Polítiques demogràfiques realistes",
+   "tituloFrase": "Polítiques demogràfiques realistes",
+   "texto": "Tenir fills catalanoparlants és la millor garantia de continuïtat nacional i d'integració de la diversitat a la catalanitat. Sabem que els incentius econòmics directes no funcionen: ni tan sols Suècia, amb la seva política familiar, aconsegueix revertir la tendència. La nostra estratègia se centra en garantir que tothom que vulgui tenir fills en pugui tenir sense sacrificis desproporcionats, abordant les causes reals: habitatge accessible, estabilitat laboral, infraestructures de transport per conciliar i xarxa pública de serveis de cura.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/immigracio/"
+  },
+  {
+   "n": 26,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Habitatge públic de lloguer per a totes les rendes",
+   "tituloFrase": "Habitatge públic de lloguer per a totes les rendes",
+   "texto": "A Barcelona només l'1,8% dels habitatges són de titularitat pública; la mitjana europea supera el 15% i Viena arriba al 45%. Proposem un gran parc públic de lloguer per a rendes mixtes (mitjanes-altes, mitjanes i baixes), repartit pel teixit urbà i no concentrat en polígons: evita guetos, treu pressió al mercat de la classe mitjana i facilita la mobilitat. Ha de créixer per dues vies: construint i amb una compra agressiva d'habitatge privat, que és més ràpida i ofereix un lloguer estable des del primer dia. El model és Zuric: l'Ajuntament i les seves fundacions municipals compren edificis al mercat, respecten els contractes dels llogaters i lloguen a preus basats en el cost; només la fundació PWG ja té més de 2.500 pisos. El 2011, el 76% dels votants va aprovar que el 2050 un terç dels pisos de lloguer siguin d'entitats sense ànim de lucre (avui en són una quarta part), i el 2024 hi van destinar 300 milions de francs més. El parc públic també ha de facilitar, amb programes de mobilitat i permutes, que qui viu sol en un pis que era d'una família nombrosa pugui canviar a un habitatge adaptat al seu moment de vida.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 27,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Edificar pensant en el país",
+   "tituloFrase": "Edificar pensant en el país",
+   "texto": "La hiperconcentració a Barcelona és fruit de dècades sense política territorial. Com a Alemanya, on Stuttgart, Hamburg, Munic o Leipzig són pols de primer ordre, primer calen projectes que atreguin activitat (universitats, centres de recerca, centres assistencials, indústria, serveis per a la gent gran) i després l'habitatge de valor mixt que els acompanya, d'acord amb els valors tradicionals de cada població. Una seu universitària als aularis de Vilafranca, com va passar a Vic, o una facultat d'infermeria a Tremp, on hi ha pisos de protecció oficial buits, fa més per l'habitatge que qualsevol polígon, i els nous centres de recerca i empreses tecnològiques poden anar a Manresa, Reus, Girona o Lleida. Cada nou pol ha de ser també un pol de catalanització: universitat, cultura i formació professional en català.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 28,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Més habitatge on hi ha demanda",
+   "tituloFrase": "Més habitatge on hi ha demanda",
+   "texto": "Les ciutats tenen sòl i sostre per fer habitatge sense crear guetos. A Barcelona i l'àrea metropolitana: la zona marítimo-terrestre recuperada, l'avinguda de l'Estatut, els trams soterrats de les Rondes, el Morrot, la Marina del Prat Vermell o Sant Adrià, a tocar del Besòs. Proposem, a més, rezonificar zones comercials perquè admetin habitatge per a les classes mitjanes; un programa de remuntes (pisos nous sobre edificis existents), amb ascensor obligatori i més edificabilitat o bonificacions fiscals si una part dels pisos va a lloguer assequible, com fan Viena i diverses ciutats alemanyes i suïsses, i incentius fiscals perquè els despatxos que ocupen pisos principals (notaris, advocats, gestories, dentistes o pediatres) baixin als locals de planta baixa i alliberin aquests pisos.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 29,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Un mercat de lloguer sa, amb més varietat de promotors",
+   "tituloFrase": "Un mercat de lloguer sa, amb més varietat de promotors",
+   "texto": "Un mercat de lloguer sa permet canviar de pis segons el moment de la vida i es basa en tres peces que es compensen: el parc públic, que conté els preus; els promotors i operadors professionals que construeixen per llogar, perquè un pis de lloguer és un servei i calen inversors disposats a aixecar-ne de nous, i els petits propietaris, que busquen estabilitat. Per atraure els primers cal seguretat jurídica i regles estables: ningú no construeix per llogar si no sap quines condicions tindrà d'aquí a deu anys. Per mobilitzar els pisos d'aquests últims proposem garanties públiques davant l'impagament, ajuts de la Generalitat per rehabilitar els pisos que es posin en lloguer estable i una gestió simplificada. El lloguer de temporada és legítim (estudiants, trasllats, tractaments mèdics), però sense frau: la causa ha de constar al contracte i s'ha d'acreditar, i qui la falsegi n'ha d'assumir les conseqüències, amb sancions que facin que el frau no surti a compte; cal un registre únic i inspecció de l'ús turístic encobert. Sense topall de preu: si el lloguer de temporada deixa de ser rendible, el pis no torna al lloguer ordinari, va a la venda.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 30,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Transport: connectar millor el país perquè creixi de manera equilibrada",
+   "tituloFrase": "Transport: connectar millor el país perquè creixi de manera equilibrada",
+   "texto": "Un bon transport ja és mitja política d'habitatge. Sense un tren fiable no es pot viure fora de l'àrea metropolitana sense renunciar a la feina. Rodalies arrossega quaranta anys de desinversió, i l'empresa mixta del 2026, amb Renfe al 50,1%, blinda aquest model. Avui Renfe opera Rodalies sense cap contracte vigent amb la Generalitat, que és la titular del servei: la Generalitat pot retirar l'empresa mixta i encarregar el servei a una operadora catalana nova, amb control polític ple. Per això a Alhora hem impulsat la plataforma Fora Renfe, que liderarà una iniciativa legislativa popular per fer fora Renfe de Catalunya. Mentrestant, llançadores d'autobús d'alta freqüència en carrils prioritaris, peatges intel·ligents que bonifiquin els vehicles plens i financin el transport públic, i incentius per a les empreses que s'instal·lin fora de Barcelona.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 31,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Una fiscalitat que ajudi a accedir a l'habitatge",
+   "tituloFrase": "Una fiscalitat que ajudi a accedir a l'habitatge",
+   "texto": "La fiscalitat també fa política d'habitatge, i la Generalitat i els ajuntaments tenen marge per revisar-la amb un consens ampli, sense demanar res a ningú. Proposem estudiar, entre altres mesures: rebaixar l'ITP i l'AJD en la compra del primer habitatge habitual, sobretot per a joves i famílies; ampliar la deducció del tram autonòmic de l'IRPF per lloguer de l'habitatge habitual; bonificar l'ICIO a la rehabilitació, a les remuntes i a la construcció d'habitatge assequible, i revisar les taxes i els tràmits municipals que encareixen construir. L'objectiu no és pujar ni baixar impostos per principi, sinó que cada impost empenyi en la direcció correcta: més habitatge, més estabilitat i més accés per a qui vol fer vida aquí.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 32,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Decreixement turístic i canvi de model productiu",
+   "tituloFrase": "Decreixement turístic i canvi de model productiu",
+   "texto": "El turisme massiu encareix l'habitatge perquè converteix pisos en apartaments turístics, però sobretot perquè genera feines de baix valor afegit que atrauen població sense capacitat per pagar els preus. Reduir el pes del turisme i dels altres sectors que viuen de la mà d'obra barata importada, com el porc o l'oci nocturn i la venda d'alcohol lligats al turisme d'excés, és també una política d'habitatge (i d' immigració). Proposem una taxa turística dissuasòria destinada a un fons d'habitatge, una moratòria de llicències turístiques, deixar de subvencionar aquests sectors, apujar els salaris de referència que depenen de nosaltres (contractació pública i convenis) i impulsar des de la Generalitat incentius per atraure talent i feina qualificada. Els temporers els ha d'allotjar qui els contracta. Les campanyes agroalimentàries, els escorxadors i l'hostaleria de temporada porten cada any treballadors que necessiten un llit durant uns mesos. Si l'empresa no els allotja, competeixen pels pisos del poble, sovint amuntegats. Com fan els hotels d'Àustria i Suïssa, les activitats que contracten mà d'obra temporal per sobre d'un llindar n'han de garantir un allotjament digne: és un cost del negoci, no del barri.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 33,
+   "bloque": 5,
+   "seccion": "habitatge",
+   "subapartado": null,
+   "titulo": "Assolir la independència per gestionar l'habitatge",
+   "tituloFrase": "Assolir la independència per gestionar l'habitatge",
+   "texto": "Amb les competències actuals es pot fer molt, però les eines estructurals (la infraestructura ferroviària que gestiona ADIF, l'ordenació territorial plena, la fiscalitat i la frontera) depenen de la sobirania. Per això la independència de Catalunya és imprescindible per tenir una política d'habitatge pròpia, que respongui a les necessitats del país i no a un model d'inversió i de turisme fomentat per l'Estat espanyol, i que faci de l'habitatge una eina d'arrelament nacional.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/habitatge/"
+  },
+  {
+   "n": 34,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "Fora Renfe i una sola xarxa catalana",
+   "tituloFrase": "Fora Renfe i una sola xarxa catalana",
+   "texto": "La Generalitat pot decidir qui opera Rodalies: pot encarregar el servei directament a Ferrocarrils de la Generalitat o a un altre operador 100% públic seu, o treure'l a concurs. Per això a Alhora hem impulsat la plataforma Fora Renfe, amb més de 40.000 adhesions, i el 4 de novembre de 2026 vam registrar al Parlament una iniciativa legislativa popular perquè només un operador íntegrament de la Generalitat pugui rebre el servei sense concurs. I a mitjà termini, FGC, la xarxa convencional d'Adif i l'alta velocitat no poden continuar funcionant per separat: han de formar una sola xarxa catalana, gestionada des d'aquí.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  },
+  {
+   "n": 35,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "Horaris cadenciats de tres nivells, com a Suïssa",
+   "tituloFrase": "Horaris cadenciats de tres nivells, com a Suïssa",
+   "texto": "Suïssa va transformar la seva xarxa el 1982 amb l'horari cadenciat (Taktfahrplan), i els defensors de l'statu quo també deien que era impossible. Proposem separar clarament el servei local, el regional i l'interregional, i sincronitzar-los per reduir els temps de transbord. Un viatger que vagi de Sils a Portbou agafaria un regional fins a Maçanet, un interregional per la línia d'alta velocitat amb parada només a Girona i Figueres, i un regional fins a Portbou: 51 minuts en comptes de 90. La sincronització no pot acabar al tren: els autobusos interurbans i comarcals han de formar part del mateix horari, i l'administració ha de donar la informació completa del viatge, de porta a porta i en temps real, inclosos els trajectes a peu entre estacions properes. Avui aquesta feina s'ha deixat en mans d'aplicacions privades, que no tenen totes les dades del transport local ni haurien de ser les que informen d'un servei públic. Bona part d'aquest canvi és organitzatiu, no d'obra nova.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  },
+  {
+   "n": 36,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "Un interregional exprés per la línia d'alta velocitat",
+   "tituloFrase": "Un interregional exprés per la línia d'alta velocitat",
+   "texto": "Com a primer pas, una línia pública interregional exprés per les vies d'alta velocitat que avui gairebé no fem servir: Lleida, Montblanc, el Vendrell, Martorell, Barcelona, Granollers, Maçanet, Girona i Figueres. Amb una sola estació d'intercanvi a Martorell per a l'alta velocitat, la xarxa convencional i FGC, la R4 es podria substituir per línies més curtes i fiables cap al Penedès, el Baix Llobregat, l'Anoia i el Bages, amb un estalvi de fins a 40 minuts en la majoria de trajectes.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  },
+  {
+   "n": 37,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "La xarxa dels mil centres",
+   "tituloFrase": "La xarxa dels mil centres",
+   "texto": "Una xarxa en malla que connecti les capitals de comarca sense passar per Barcelona. Proposem completar el corredor ferroviari transversal amb les línies Manresa–Vic i Torelló–Figueres, i millorar els traçats Calaf–Manresa i Igualada–Martorell; vertebrar l'Ebre i Ponent amb les línies de mercaderies Tortosa–Móra d'Ebre i Flix–Lleida, que alliberarien el litoral per a Rodalies; connectar Valls amb Reus i Tarragona per Alcover; fer la línia orbital Martorell–Terrassa; i crear xarxes de tren-tramvia al Camp de Tarragona (Tarragona–Reus i Cambrils–Salou–Reus), a les comarques gironines (Girona–Besalú–Olot i Caldes de Malavella–Palamós–Flaçà) i a la Catalunya Central (Súria–Solsona i Sallent–Berga). Ho detallem al nostre pla de xarxa ferroviària mallada Catalunya 2050.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  },
+  {
+   "n": 38,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "Integrar de veritat les xarxes que ja tenim",
+   "tituloFrase": "Integrar de veritat les xarxes que ja tenim",
+   "texto": "Perquè el nou model funcioni, tota la xarxa catalana ha de ser compatible. Els FGC del Vallès i del Llobregat han d'arribar a Sants, que ha de ser l'estació principal de Barcelona. I cal un únic ample de via i un únic voltatge, els europeus, perquè qualsevol tren pugui circular per qualsevol via. A l'àrea metropolitana, cal acabar les línies de metro pendents, com el tram central de la L9/L10, i fer arribar el metro allà on avui no hi ha tren, com Ripollet o Badia del Vallès.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  },
+  {
+   "n": 39,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "Manteniment abans que renovació",
+   "tituloFrase": "Manteniment abans que renovació",
+   "texto": "Cal tornar a posar en valor el manteniment, que s'ha descuidat durant anys perquè no fa foto electoral. Un material rodant ben mantingut dura dècades: a Suïssa, cotxes de passatgers dels anys vuitanta, renovats per dins, continuaran en servei fins als anys 2030. Si trens i autobusos es mantenen bé, no cal renovar-los tan sovint, i aquests diners poden anar a la infraestructura que falta. Per això revisarem amb criteris tècnics i amb transparència els plans de renovació de flota, perquè cada compra respongui a una necessitat real. I a la xarxa: sistemes redundants de comunicació i senyalització, l'estàndard europeu ETCS, barreres als passos a nivell i vies amb el balast i els rails ben mantinguts, que vol dir més velocitat, menys costos i menys soroll per als veïns.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  },
+  {
+   "n": 40,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "Estacions que facin país",
+   "tituloFrase": "Estacions que facin país",
+   "texto": "Una sola estació principal per població, més gran i millor, amb la resta de cobertura feta amb transport local. Cada estació ha de ser el centre d'on surten els autobusos, els tramvies i els taxis de la seva àrea, amb lavabos, connexió a internet, aparcament vigilat per a bicicletes com als Països Baixos i Suïssa, i aparcament d'enllaç a les comarques menys denses. I una targeta única per a tot el país, sense zones.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  },
+  {
+   "n": 41,
+   "bloque": 6,
+   "seccion": "mobilitat-i-territori",
+   "subapartado": null,
+   "titulo": "Un tren que descongestioni les carreteres",
+   "tituloFrase": "Un tren que descongestioni les carreteres",
+   "texto": "On un bon traçat de tren pot fer la feina d'una carretera nova, fem el tren, com entre Abrera i Terrassa. Mentre arriben les obres, proposem llançadores d'autobús d'alta freqüència en carrils prioritaris i incentius per compartir cotxe. I abans de demanar a la gent que visqui fora de l'àrea metropolitana, cal portar-hi feina, universitat i serveis: cada pol ben connectat és també un pol de catalanització. Aquesta és, alhora, la nostra política d'habitatge i de model econòmic.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://alhora.cat/politiques/mobilitat-i-territori/"
+  }
+ ]
 }

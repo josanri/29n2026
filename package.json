@@ -31,6 +31,13 @@
     "data:eh-bildu": "python scripts/extract_ehbildu.py public/2026/generales/programas/eh-bildu-garantia-y-derechos-2026.pdf src/data/2026/generales/programas/eh-bildu.json",
     "data:fa": "python scripts/extract_fa.py public/2026/generales/programas/fa-programa-electoral-2026.pdf src/data/2026/generales/programas/fa.json",
     "data:adelante": "python scripts/extract_adelante.py",
+    "data:ixlg": "python scripts/extract_ixlg.py public/2026/generales/programas/ixlg-programa-senado-2026.pdf src/data/2026/generales/programas/ixlg.json",
+    "data:eguzkilore": "python scripts/extract_eguzkilore.py .cache/2026/generales/eguzkilore-web.html src/data/2026/generales/programas/eguzkilore.json",
+    "data:agenda-valenciana": "python scripts/extract_agenda_valenciana.py .cache/2026/generales/agenda-valenciana-web.txt src/data/2026/generales/programas/agenda-valenciana.json",
+    "data:fia": "python scripts/extract_fia.py src/data/2026/generales/programas/fia.json",
+    "data:alhora": "python scripts/extract_alhora.py src/data/2026/generales/programas/alhora.json",
+    "data:comuns": "python scripts/extract_comuns.py public/2026/generales/programas/comuns-programa-29n-2026.pdf src/data/2026/generales/programas/comuns.json",
+    "data:nex": "python scripts/extract_nex.py public/2026/generales/programas/nex-programa-generales-29n-2026.pdf src/data/2026/generales/programas/nex.json",
     "data:candidaturas": "python scripts/extract_candidaturas.py"
   },
   "dependencies": {

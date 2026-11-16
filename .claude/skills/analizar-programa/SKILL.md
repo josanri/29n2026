@@ -211,6 +211,10 @@ npm run build
 
 - Los dos deben terminar sin errores. La compilación imprime «[programas] N avisos» y, si hay, «[programas] N
   errores en los datos» (`src/lib/program-checks.ts`): resuelve los errores y revisa los avisos del programa nuevo.
+- Vista previa de los enlaces (WhatsApp, X, Telegram): `python scripts/og_images.py` dibuja de nuevo la portada y la
+  tarjeta de cada partido con programa (`public/<e>/og/<id>.png`). Hay que ejecutarlo al añadir o cambiar un programa.
+  Si falta la tarjeta, el partido usa la de la web. La imagen de una medida no se genera en bloque: solo con
+  `--medida <id>:<n>` para las que se compartan (ver el README, «og/»).
 - Compara 5 medidas al azar con el PDF: número, título, texto y página.
 - Busca palabras pegadas (`[a-z][A-Z]` dentro de una palabra) y viñetas sueltas («•», «-») en los textos.
 - Los totales salen de una sola fuente: `allMeasures`, `totalMeasures` y `announcedMeasures(program)` en
