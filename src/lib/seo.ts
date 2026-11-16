@@ -4,9 +4,12 @@
  * piece of the page instead (the wordmark or the footer). So each description names the party, the election and
  * what the page holds. The party name goes first, so no article is needed («del Partido Popular», «de VOX»).
  */
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { election } from '@eleccion/eleccion';
+import { ELECTION_PUBLIC_DIR } from '../../election.config.mjs';
 import { allOf } from './format';
-import { announcedMeasures, type Block, type Program } from './programs';
+import { announcedMeasures, type Block, type Measure, type Program } from './programs';
 import type { ShareImage } from './site';
 
 /** «Partido Popular (PP)», or just «VOX» when the acronym is the name. */
@@ -50,3 +53,39 @@ export const partyShareImage = (program: Program): ShareImage | undefined =>
         alt: `${partyLabel(program)}: ${program.measures.length} ${program.measureUnitPlural} de su programa para el ${election.shortName}, en Electosfera.`,
       }
     : undefined;
+
+/** The path of the picture of one measure, under the base of the site (`scripts/og_images.py --medida pp:144`). */
+const measureImagePath = (program: Program, measure: Measure) => `/og/medidas/${program.id}-${measure.number}.png`;
+
+/**
+ * The page of one measure: «Construiremos un millón de viviendas» (PP, medida 144).
+ * The picture is a quote of the measure. Only the measures that have one (it is made on demand, because a
+ * picture for every measure would weigh tens of megabytes) get it; the others take the card of the party.
+ */
+export const measurePageTitle = (program: Program, measure: Measure) =>
+  `${measureQuote(measure)} (${program.acronym}, ${program.measureUnit} ${measure.number})`;
+
+/** The title of the measure between «», unless it already comes quoted. */
+export const measureQuote = (measure: Measure) =>
+  measure.phraseTitle.startsWith('«') ? measure.phraseTitle : `«${measure.phraseTitle}»`;
+
+/** The start of the text of the measure, cut at the end of a sentence when it is long. */
+export const measureExcerpt = (measure: Measure, max = 200) => {
+  // Some programs list a measure with a title and no text: the title is then all there is to quote.
+  const text = (measure.text || measure.phraseTitle).replace(/\s+/g, ' ').trim();
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const sentenceEnd = cut.lastIndexOf('. ');
+  return sentenceEnd > max / 2 ? cut.slice(0, sentenceEnd + 1) : `${cut.replace(/\s+\S*$/, '')}…`;
+};
+
+export const measurePageDescription = (program: Program, measure: Measure) =>
+  `${partyLabel(program)}, ${electionText}${measure.page ? `, pág. ${measure.page}` : ''}: ${measureExcerpt(measure)}`;
+
+export const measureShareImage = (program: Program, measure: Measure): ShareImage | undefined =>
+  existsSync(join(process.cwd(), ELECTION_PUBLIC_DIR, measureImagePath(program, measure)))
+    ? {
+        path: measureImagePath(program, measure),
+        alt: `${measureQuote(measure)}: ${program.measureUnit} ${measure.number} del programa de ${partyLabel(program)}${measure.page ? `, pág. ${measure.page}` : ''}.`,
+      }
+    : partyShareImage(program);

@@ -19,9 +19,11 @@ interface Props {
   showParty?: boolean;
   /** False on the page of a category: every card there has the same category. */
   showCategory?: boolean;
+  /** False on the page of the measure itself: the link would point to the page that shows it. */
+  showShare?: boolean;
 }
 
-const { measure, program, open = false, showParty = false, showCategory = true } = Astro.props;
+const { measure, program, open = false, showParty = false, showCategory = true, showShare = true } = Astro.props;
 const category = categoryById[measure.categoryId];
 const block = program.blocks.find((candidate) => candidate.id === measure.blockId)!;
 // On a page with measures of several parties, each card carries the color scale of its party.
@@ -101,6 +103,12 @@ const documentLabel = measure.page
               <div>
                 <dt>Territorios</dt>
                 <dd class="measure-card__tags">{measure.territories.map((territory) => <Tag size="sm">{territory}</Tag>)}</dd>
+              </div>
+            )}
+            {showShare && (
+              <div>
+                <dt>Compartir</dt>
+                <dd><a href={routes.measureShare(program.id, measure.number)}>Enlace con vista previa</a></dd>
               </div>
             )}
             <div>
