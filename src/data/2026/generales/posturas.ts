@@ -40,6 +40,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'psoe', side: 'matiz', measures: [388, 389], note: 'Un Plan de Integración y Ciudadanía de 500 millones y más vías legales de protección internacional, sin hablar de regularizar.' },
   { topic: 'inmigracion', party: 'upc', side: 'a', measures: [12], note: 'Vías legales y seguras, acogida digna, protección de la infancia migrante no acompañada y rechazo a la externalización de fronteras.' },
   { topic: 'inmigracion', party: 'compromis-front-valencia', side: 'a', measures: [546, 438], note: 'Regularizar a quienes viven aquí, con vías de regularización y autorización de trabajo, y ampliar el voto a las personas migrantes.' },
+  { topic: 'inmigracion', party: 'fa', side: 'a', measures: [737, 738, 742, 741], note: 'Culminar la regularización extraordinaria de 2026, un procedimiento estable de regularización, cierre de los CIE y derogación del rechazo en frontera.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -50,12 +51,14 @@ export const stances: Stance[] = [
   { topic: 'aborto', party: 'pcte', side: 'a', measures: [65], note: 'Derechos sexuales y reproductivos en la sanidad pública: todas las interrupciones del embarazo, en hospitales públicos.' },
   { topic: 'aborto', party: 'psoe', side: 'a', measures: [327], note: 'Blindar en la Constitución el derecho a la interrupción voluntaria del embarazo.' },
   { topic: 'aborto', party: 'compromis-front-valencia', side: 'a', measures: [455], note: 'Garantizar la interrupción voluntaria del embarazo gratuita, segura y accesible en la red pública.' },
+  { topic: 'aborto', party: 'fa', side: 'a', measures: [122, 123, 202], note: 'Blindaje constitucional del aborto «libre y universal» en la sanidad pública y una estrategia para garantizar la IVE en todas las comunidades.' },
 
   // Monarquía o república
   { topic: 'monarquia', party: 'pfac', side: 'b', measures: [12], note: 'Avanzar hacia un Estado republicano, federal y laico.' },
   { topic: 'monarquia', party: 'erc', side: 'b', measures: [3, 9], note: 'Fiscalizar al rey y a la Casa Real y apoyar las iniciativas que puedan «poner fin a esta institución».' },
   { topic: 'monarquia', party: 'vox', side: 'a', measures: [105], note: 'La máxima protección jurídica para los símbolos de la Nación, entre ellos la Corona.' },
   { topic: 'monarquia', party: 'fe-jons', side: 'b', measures: [145, 147], note: 'Abolir la monarquía para alumbrar un Estado «republicano Nacional-Sindicalista».' },
+  { topic: 'monarquia', party: 'fa', side: 'b', measures: [819, 845], note: '«Nuestro horizonte es avanzar hacia una República Federal» en la que se elija la Jefatura del Estado, y derogar los delitos contra la Corona.' },
 
   // Cataluña y autodeterminación
   { topic: 'autodeterminacion', party: 'erc', side: 'a', measures: [1], note: 'Negociar un referéndum de autodeterminación en Cataluña con acompañamiento internacional.' },
@@ -67,6 +70,7 @@ export const stances: Stance[] = [
   { topic: 'autodeterminacion', party: 'fe-jons', side: 'b', measures: [58, 61], note: 'España es «indivisible»: ilegalizar y perseguir a todo movimiento separatista.' },
   { topic: 'autodeterminacion', party: 'convergents', side: 'a', measures: [1, 2, 262, 278], note: 'El derecho «inalienable» de los catalanes a decidir su futuro, referéndums vinculantes y el derecho a la autodeterminación en la UE.' },
   { topic: 'autodeterminacion', party: 'upc', side: 'a', measures: [1], note: '«Autogobierno, soberanía popular y derecho a decidir»: el reconocimiento de Canarias como sujeto político.' },
+  { topic: 'autodeterminacion', party: 'fa', side: 'matiz', measures: [819, 821, 621], note: 'Una República Federal, un «federalismo social y plurinacional» y un pacto territorial con el máximo desarrollo de los Estatutos, sin proponer un referéndum de autodeterminación en España.' },
 
   // Vivienda: control del alquiler
   { topic: 'vivienda', party: 'adelante', side: 'a', measures: [160, 161, 164], note: 'Alquiler social obligatorio, alquiler al 20 % del salario y zonas tensionadas obligatorias.' },
@@ -89,6 +93,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'teruel-existe', side: 'matiz', measures: [45, 50, 51], note: 'Vivienda pública de alquiler en todos los municipios, incentivos al alquiler y un tope de viviendas turísticas en las zonas tensionadas, sin limitar el precio del alquiler.' },
   { topic: 'vivienda', party: 'upc', side: 'a', measures: [5], note: 'Regular los precios del alquiler en zonas tensionadas, intervenir el mercado y ampliar el parque público de vivienda.' },
   { topic: 'vivienda', party: 'compromis-front-valencia', side: 'a', measures: [8, 11, 6], note: 'Dar competencias a los ayuntamientos para declarar zonas tensionadas y controlar los precios del alquiler, con un registro estatal de arrendamientos y límites a la compra especulativa.' },
+  { topic: 'vivienda', party: 'fa', side: 'a', measures: [25, 26, 29], note: 'Tope del alquiler en las zonas tensionadas: el 25 % de la renta del barrio, con una rebaja adicional del 30 % en las grandes ciudades.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -101,6 +106,7 @@ export const stances: Stance[] = [
   { topic: 'religion-educacion', party: 'pcte', side: 'a', measures: [34], note: 'Un sistema educativo «exclusivamente público, gratuito, laico e inclusivo» que integre la concertada en una red pública única.' },
   { topic: 'religion-educacion', party: 'convergents', side: 'b', measures: [146, 147], note: 'Un sistema plural con escuelas públicas, concertadas y privadas y el derecho de las familias a escoger centro.' },
   { topic: 'religion-educacion', party: 'compromis-front-valencia', side: 'a', measures: [373, 370, 371], note: 'Escuela pública laica, sin educación confesional en el currículum, y fin de los privilegios y de la financiación de la Iglesia católica.' },
+  { topic: 'religion-educacion', party: 'fa', side: 'a', measures: [903, 905, 906, 149], note: 'Revisar los Acuerdos con la Santa Sede, eliminar la financiación pública a las confesiones y los conciertos con escuelas segregadas, y que el 100 % de los fondos públicos vaya a la educación pública.' },
 
   // Feminismo y leyes de igualdad
   { topic: 'igualdad', party: 'bng', side: 'a', measures: [100, 101, 106], note: 'Cumplir las obligaciones internacionales y el Pacto de Estado contra la violencia machista y legislar el feminicidio.' },
@@ -121,6 +127,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'geroa-bai', side: 'a', measures: [14], note: 'Reforzar las políticas públicas de protección de las mujeres víctimas de maltrato.' },
   { topic: 'igualdad', party: 'upc', side: 'a', measures: [11], note: 'Una Canarias feminista, comprometida con la erradicación de las violencias machistas y la igualdad salarial.' },
   { topic: 'igualdad', party: 'compromis-front-valencia', side: 'a', measures: [468, 467, 453], note: 'Reforzar las unidades policiales, los juzgados y los protocolos de protección frente a la violencia machista y las políticas contra la brecha salarial.' },
+  { topic: 'igualdad', party: 'fa', side: 'a', measures: [203, 211, 221], note: 'Erradicar la violencia machista y LGTBIfóbica, reforzar VioGén y la violencia vicaria y una estrategia estatal de educación en igualdad.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -134,6 +141,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'psoe', side: 'a', measures: [422, 423], note: 'Ampliar los Lugares de Memoria Democrática, retirar la simbología franquista y llevar la memoria a la educación.' },
   { topic: 'memoria', party: 'geroa-bai', side: 'a', measures: [17, 12], note: 'Reforzar las políticas de memoria y acabar con la Ley de Secretos Oficiales, «monumento franquista».' },
   { topic: 'memoria', party: 'compromis-front-valencia', side: 'a', measures: [361, 364], note: 'Derogar la Ley de Amnistía de 1977 y ampliar la Ley de Memoria Democrática con medidas de reparación.' },
+  { topic: 'memoria', party: 'fa', side: 'a', measures: [881, 882, 883, 887], note: 'Desarrollo reglamentario de la Ley de Memoria Democrática, cierre de fundaciones franquistas, reparación de las víctimas y resignificación de Cuelgamuros.' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
@@ -147,6 +155,7 @@ export const stances: Stance[] = [
   { topic: 'nuclear', party: 'convergents', side: 'b', measures: [252], note: 'Un mix energético que mantenga el parque nuclear actual mientras se desarrolla un sistema renovable.' },
   { topic: 'nuclear', party: 'psoe', side: 'a', measures: [240], note: 'Mantener el calendario de cierre de las centrales nucleares hasta 2035.' },
   { topic: 'nuclear', party: 'compromis-front-valencia', side: 'a', measures: [248], note: 'Mantener el calendario de cierre de las centrales nucleares y no aceptar ninguna prórroga.' },
+  { topic: 'nuclear', party: 'fa', side: 'a', measures: [389], note: 'Cumplir el calendario de cierre de las centrales nucleares: Almaraz I y II cerrarán en los plazos previstos, sin beneficios fiscales.' },
 
   // Impuestos y redistribución
   { topic: 'impuestos', party: 'adelante', side: 'a', measures: [232, 233], note: 'IRPF más progresivo y un impuesto sobre la riqueza.' },
@@ -162,6 +171,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'upc', side: 'a', measures: [9], note: 'Una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital.' },
   { topic: 'impuestos', party: 'd21', side: 'matiz', measures: [27, 28, 89, 31], note: 'Rebajas concretas (sin IVA, ITP ni AJD para los menores de 35 años en la compra de vivienda habitual y menos carga fiscal en la electricidad) y un recargo a los compradores extracomunitarios, pero ninguna medida sobre las rentas o los patrimonios altos.' },
   { topic: 'impuestos', party: 'compromis-front-valencia', side: 'a', measures: [139, 144, 143], note: 'Ampliar el impuesto a las grandes fortunas hacia una tasa tipo Zucman, igualar la tributación de las rentas financieras a las del trabajo y gravar los beneficios de las empresas oligopolísticas.' },
+  { topic: 'impuestos', party: 'fa', side: 'a', measures: [244, 259, 261, 265], note: 'Tipo mínimo del 20 % en Sociedades, Tasa Zucman del 3 % sobre patrimonios de más de 50 millones, tope de 10 millones a las herencias y un IRPF del 52 % desde 300.000 euros.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },
@@ -173,6 +183,7 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'convergents', side: 'a', measures: [4, 5, 144, 145], note: 'El conocimiento del catalán obligatorio por el Estatuto, el catalán oficial en la UE y preservar la inmersión lingüística.' },
   { topic: 'lenguas', party: 'psoe', side: 'a', measures: [385, 485], note: 'Usar las lenguas cooficiales en las Cortes y en la Administración General del Estado, y su oficialidad en la UE.' },
   { topic: 'lenguas', party: 'compromis-front-valencia', side: 'a', measures: [365, 366, 367], note: 'Ley de plurilingüismo de la Administración, derechos lingüísticos de los valencianohablantes en la Justicia y oficialidad del valenciano en la UE.' },
+  { topic: 'lenguas', party: 'fa', side: 'a', measures: [154, 824, 195], note: 'Un Plan Estatal para las lenguas cooficiales, una ley del plurilingüismo y ayudas a la creación digital en las lenguas del Estado.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
@@ -187,6 +198,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'psoe', side: 'a', measures: [431], note: 'Una nueva Ley de Seguridad Ciudadana que sustituya a la Ley Orgánica 4/2015 y garantice los derechos de reunión y manifestación.' },
   { topic: 'seguridad', party: 'd21', side: 'b', measures: [9, 23, 78], note: 'Que los delitos de corrupción no prescriban, que firmar un alquiler con intención de impago sea estafa y penas más duras por agredir al personal sanitario.' },
   { topic: 'seguridad', party: 'compromis-front-valencia', side: 'a', measures: [357, 359], note: 'Derogar la ley mordaza y abolir las balas de goma.' },
+  { topic: 'seguridad', party: 'fa', side: 'a', measures: [843, 844, 853], note: 'Derogar «por completo la Ley Mordaza», reducir las multas excesivas y restringir las paradas de identificación policial.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },
@@ -196,6 +208,7 @@ export const stances: Stance[] = [
   { topic: 'ley-trans', party: 'fo', side: 'b', measures: [58], note: 'Derogar la Ley Trans.' },
   { topic: 'ley-trans', party: 'fe-jons', side: 'b', measures: [87, 228], note: 'Derogar las leyes de los colectivos LGTBI y prohibir las terapias y cirugías de cambio de sexo.' },
   { topic: 'ley-trans', party: 'compromis-front-valencia', side: 'a', measures: [484, 486], note: 'Blindar la ley trans y los avances en derechos LGTBIQ+ y seguir avanzando en los derechos de las personas trans y no binarias.' },
+  { topic: 'ley-trans', party: 'fa', side: 'a', measures: [726, 727], note: 'Desplegar de forma efectiva la Ley Trans, reconocer a las personas no binarias y garantizar su aplicación.' },
 
   // Gestación subrogada
   { topic: 'gestacion-subrogada', party: 'adelante', side: 'b', measures: [521], note: 'Prohibir la gestación subrogada.' },
@@ -212,6 +225,7 @@ export const stances: Stance[] = [
   { topic: 'tauromaquia', party: 'pacma', side: 'a', measures: [7, 96], note: 'Abolir los festejos con animales, derogar la Ley 18/2013, retirar las subvenciones y prohibir la presencia de menores.' },
   { topic: 'tauromaquia', party: 'fe-jons', side: 'b', measures: [237], note: 'Protección especial y promoción de la tauromaquia, con patrocinio público.' },
   { topic: 'tauromaquia', party: 'compromis-front-valencia', side: 'a', measures: [380, 382], note: 'Suprimir los espectáculos taurinos con muerte, retirar las ayudas públicas y derogar la ley que los declara patrimonio cultural.' },
+  { topic: 'tauromaquia', party: 'fa', side: 'a', measures: [178, 476, 477], note: 'Derogar la Ley 18/2013 que declara la tauromaquia patrimonio cultural y suprimir las subvenciones estatales.' },
 
   // OTAN
   { topic: 'otan', party: 'ph', side: 'a', measures: [24], note: 'Neutralidad activa y salida de la OTAN.' },
@@ -223,6 +237,7 @@ export const stances: Stance[] = [
   { topic: 'otan', party: 'fe-jons', side: 'a', measures: [46, 166], note: 'Abandonar la OTAN de inmediato y no participar en misiones ajenas a los intereses de España.' },
   { topic: 'otan', party: 'pcte', side: 'a', measures: [75], note: 'Salida de España de la OTAN y de la Unión Europea.' },
   { topic: 'otan', party: 'compromis-front-valencia', side: 'matiz', measures: [526], note: 'Construir una Unión Europea de la Defensa que pueda sustituir el marco de la OTAN, sin pedir la salida inmediata ni un referéndum.' },
+  { topic: 'otan', party: 'fa', side: 'matiz', measures: [761, 763], note: 'Rechaza el objetivo del 5 % del PIB en gasto militar de la OTAN y quiere reducirlo, pero no propone salir de la Alianza ni convocar un referéndum.' },
 
   // Burka
   { topic: 'burka', party: 'vox', side: 'b', measures: [71], note: 'Prohibir el burka y el niqab en los espacios públicos.' },
@@ -235,6 +250,7 @@ export const stances: Stance[] = [
   { topic: 'eutanasia', party: 'pp', side: 'matiz', measures: [226], note: 'Garantizar los cuidados paliativos «respetando siempre la voluntad del paciente», sin hablar de la eutanasia.' },
   { topic: 'eutanasia', party: 'fe-jons', side: 'b', measures: [90], note: 'Ilegalizar las leyes de la eutanasia: «La vida humana no es negociable».' },
   { topic: 'eutanasia', party: 'psoe', side: 'a', measures: [147, 368], note: 'Garantizar la muerte digna y el ejercicio efectivo del derecho a la eutanasia.' },
+  { topic: 'eutanasia', party: 'fa', side: 'a', measures: [908], note: 'Una ley de libertad de conciencia que recoja el derecho a la eutanasia y al suicidio asistido, junto al aborto.' },
 
   // Servicio militar
   { topic: 'servicio-militar', party: 'adelante', side: 'a', measures: [589], note: 'Ningún servicio militar, ni obligatorio ni voluntario.' },

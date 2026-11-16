@@ -139,17 +139,26 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
             </header>
             {section.intro && <p class="section__intro">{section.intro}</p>}
             {section.subsections.length > 0 ? (
-              section.subsections.map((subsection, index) => (
+              <>
+              {sectionMeasures.some((measure) => measure.subsectionIndex === null) && (
+                <div class="measure-list">
+                  {sectionMeasures
+                    .filter((measure) => measure.subsectionIndex === null)
+                    .map((measure) => <MeasureCard measure={measure} program={program} open />)}
+                </div>
+              )}
+              {section.subsections.map((subsection, index) => (
                 <div class="subsection">
                   <h3 class="subsection__title">{subsection.title}</h3>
-                  <p class="subsection__intro">{subsection.intro}</p>
+                  {subsection.intro && <p class="subsection__intro">{subsection.intro}</p>}
                   <div class="measure-list">
                     {sectionMeasures
                       .filter((measure) => measure.subsectionIndex === index)
                       .map((measure) => <MeasureCard measure={measure} program={program} open />)}
                   </div>
                 </div>
-              ))
+              ))}
+              </>
             ) : (
               <div class="measure-list">
                 {sectionMeasures.map((measure) => <MeasureCard measure={measure} program={program} open />)}

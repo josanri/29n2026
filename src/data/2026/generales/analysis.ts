@@ -411,6 +411,44 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [41, 46, 47, 48],
     },
   ],
+  fa: [
+    {
+      title: 'Derechos sociales y transición ecológica pesan más que todo lo demás',
+      text:
+        'Los bloques «Derechos sociales para una vida digna» (182 propuestas) y «Transición ecológica justa» (150) suman 332 de las 908 propuestas: el 37 %. La sección con más propuestas es la de sanidad (47), por delante del empleo (44 en la de salarios y tiempo de trabajo) y del bienestar animal (35). Vivienda, el primer capítulo y el que el programa pone en cabeza, tiene 61.',
+      measureNumbers: [101, 148, 62, 388, 357],
+    },
+    {
+      title: 'Un suelo de gasto fijado en porcentaje del PIB',
+      text:
+        'Dieciséis propuestas citan un porcentaje del PIB. Los suelos que fijan son el 1 % para el parque público de vivienda, el 8 % para la sanidad pública, el 7 % para la educación (en 2030), el 3,5 % para la transición ecológica, el 2,4 % para infancia y familias (hoy el 1,5 %) y el 3 % para I+D+i (en 2030). Rechaza de forma expresa el 5 % del PIB en gasto militar que pide la OTAN.',
+      measureNumbers: [1, 101, 148, 356, 223, 761],
+    },
+    {
+      title: 'La reforma fiscal es un bloque entero: 48 propuestas',
+      text:
+        'El bloque «Una reforma fiscal en profundidad» reúne 48 propuestas, y 77 de las 908 pertenecen a la categoría de impuestos. Suben el tipo mínimo del Impuesto sobre Sociedades al 20 % para las grandes empresas, crean la Tasa Zucman (3 % anual sobre patrimonios de más de 50 millones), limitan las herencias a 10 millones por heredero y elevan el IRPF al 52 % a partir de 300.000 euros. A cambio bajan el IRPF a las rentas del trabajo de hasta 27.000 euros y el IVA de bienes y servicios básicos.',
+      measureNumbers: [244, 259, 261, 265, 264, 270],
+    },
+    {
+      title: 'Lo público como herramienta: de la banca a la luz',
+      text:
+        'La primera frase de 228 de las 908 propuestas (el 25 %) menciona lo público. El programa crea un Banco Postal Estatal a partir de Correos y de las acciones de CaixaBank en manos del FROB, una comercializadora eléctrica pública, una Agencia Estatal de la Vivienda, una empresa pública de materias primas estratégicas y una industria farmacéutica pública, y pide la titularidad pública de las redes de distribución de electricidad y gas.',
+      measureNumbers: [537, 381, 379, 18, 536, 131],
+    },
+    {
+      title: 'Diez propuestas derogan una norma de forma explícita',
+      text:
+        'Derogan el régimen fiscal especial de las SOCIMI, la Ley 15/1997 de nuevas formas de gestión sanitaria, la Ley 18/2013 de la tauromaquia (aparece dos veces, en cultura y en bienestar animal), el rechazo en frontera de la Ley de Extranjería, la Ley Mordaza, los delitos del Código Penal contra los sentimientos religiosos y contra la Corona, el Código Penal Militar en las tareas policiales, las exenciones del IBI a bienes confesionales y la Ley de Libertad Religiosa.',
+      measureNumbers: [51, 103, 178, 741, 843, 845, 908],
+    },
+    {
+      title: 'Treinta plazos: once son «de inmediato» y ocho caen en 2030',
+      text:
+        'Treinta propuestas llevan un plazo explícito. Once se aplican de inmediato (la Comisión de Investigación de la SAREB, derogar el régimen de las SOCIMI, la jornada de 37,5 horas, la reforma de la financiación autonómica) y ocho fijan 2030 como meta (el 7 % del PIB en educación, el 81 % de generación renovable, la electrificación del ferrocarril). El resto va de los seis meses a 2045, con la retirada de los ciclos combinados.',
+      measureNumbers: [24, 51, 334, 621, 148, 359, 399],
+    },
+  ],
   convergents: [
     {
       title: 'Diecisiete condiciones para apoyar a un Gobierno',
