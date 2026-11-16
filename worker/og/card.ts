@@ -1,8 +1,9 @@
 /**
- * The link previews (1200 × 630) of a party and of one measure, drawn without a browser, in a few milliseconds.
+ * The link previews of a party and of one measure, drawn without a browser, in a few milliseconds: 1200 × 630, and
+ * 600 × 600 for WhatsApp (`drawSquareCard`).
  *
- * The design is the one of `scripts/og_images.py` (the static cards), with the same fonts, sizes and boxes; the
- * coordinates below are those of its CSS. The letters come from the atlas (`atlas.ts`), already drawn, so drawing
+ * The design is the one of the first static cards (drawn from CSS with Playwright), with the same fonts, sizes and
+ * boxes; the coordinates below are those of that CSS. The letters come from the atlas (`atlas.ts`), already drawn, so drawing
  * text is copying small bitmaps. The image has a palette of 65 colors: each color of the card (black, the gray of
  * the text, the party color, its light color) has 16 steps from its background, one for each coverage level of
  * the atlas. With one byte per pixel and long runs of one color, `png.ts` compresses it in about 1 ms.
@@ -40,7 +41,8 @@ export interface MeasureCard {
 
 export const WIDTH = 1200;
 export const HEIGHT = 630;
-const STRIDE = WIDTH + 1;
+/** The square card for WhatsApp, which shows a small square cut from the middle of a wide image. */
+export const SQUARE = 600;
 
 // Palette: four ramps of 16 steps (step 0 is the background, step 15 the ink), then the frame.
 const INK = 0; // white → black (step 0 is the white of the card)
@@ -51,7 +53,7 @@ const FRAME = 64;
 const WHITE = INK;
 const BLACK = INK + 15;
 
-// The boxes of the CSS of `scripts/og_images.py`: body padding 34, border 6, card padding 44 / 54 / 36.
+// The boxes of that CSS: body padding 34, border 6, card padding 44 / 54 / 36.
 const X0 = 94;
 const X1 = 1106;
 const Y0 = 84;
@@ -67,6 +69,10 @@ const ON_BLACK: Ink = { inverse: true };
 interface Canvas {
   rows: Uint8Array;
   atlas: Atlas;
+  width: number;
+  height: number;
+  /** Bytes per row: the filter byte and one byte per pixel. */
+  stride: number;
 }
 
 const hex = (color: string) => {
@@ -93,9 +99,9 @@ function palette(color: string, lightColor: string): Uint8Array {
 }
 
 function fillRect(canvas: Canvas, x: number, y: number, width: number, height: number, index: number) {
-  for (let row = Math.max(0, y); row < Math.min(HEIGHT, y + height); row++) {
-    const start = row * STRIDE + 1;
-    canvas.rows.fill(index, start + Math.max(0, x), start + Math.min(WIDTH, x + width));
+  for (let row = Math.max(0, y); row < Math.min(canvas.height, y + height); row++) {
+    const start = row * canvas.stride + 1;
+    canvas.rows.fill(index, start + Math.max(0, x), start + Math.min(canvas.width, x + width));
   }
 }
 
@@ -188,11 +194,11 @@ function drawText(canvas: Canvas, font: Font, text: string, x: number, y: number
     const gy = y + glyph.top;
     for (let r = 0; r < glyph.height; r++) {
       const row = gy + r;
-      if (row < 0 || row >= HEIGHT) continue;
+      if (row < 0 || row >= canvas.height) continue;
       const source = glyph.offset + r * glyph.width;
-      const target = row * STRIDE + 1 + gx;
+      const target = row * canvas.stride + 1 + gx;
       const from = Math.max(0, -gx);
-      const to = Math.min(glyph.width, WIDTH - gx);
+      const to = Math.min(glyph.width, canvas.width - gx);
       for (let c = from; c < to; c++) {
         const level = pixels[source + c];
         if (level === 0) continue;
@@ -216,20 +222,29 @@ function drawText(canvas: Canvas, font: Font, text: string, x: number, y: number
 // ── Common parts ────────────────────────────────────────────────────────────────────────────────────────────────
 
 /** The frame in the party color, the black border and the white card. */
-function drawFrame(canvas: Canvas) {
+function drawFrame(canvas: Canvas, margin = 34, border = 6) {
   canvas.rows.fill(FRAME);
-  for (let row = 0; row < HEIGHT; row++) canvas.rows[row * STRIDE] = 0; // filter byte of each row: «none»
-  fillRect(canvas, 34, 34, 1132, 562, BLACK);
-  fillRect(canvas, 40, 40, 1120, 550, WHITE);
+  for (let row = 0; row < canvas.height; row++) canvas.rows[row * canvas.stride] = 0; // filter byte of each row: «none»
+  fillRect(canvas, margin, margin, canvas.width - 2 * margin, canvas.height - 2 * margin, BLACK);
+  const inner = margin + border;
+  fillRect(canvas, inner, inner, canvas.width - 2 * inner, canvas.height - 2 * inner, WHITE);
 }
 
 /** «ELECT●SFERA» and «Programa electoral · 29N». */
 function drawHeader(canvas: Canvas) {
+  drawWordmark(canvas, X0, Y0);
+  const label = canvas.atlas.font('archivo-800-26');
   const center = Y0 + HEADER_HEIGHT / 2;
+  drawText(canvas, label, 'Programa electoral · 29N', X1, Math.round(center + (label.ascent - label.descent) / 2), ink(INK), 0, true);
+}
+
+/** «ELECT●SFERA» in a line of 52 px from (`x`, `top`). */
+function drawWordmark(canvas: Canvas, x: number, top: number) {
+  const center = top + HEADER_HEIGHT / 2;
   const wordmark = canvas.atlas.font('bsd-900-52');
   const spacing = 0.52; // letter-spacing .01em
-  const y = baseline(wordmark, Y0, HEADER_HEIGHT);
-  let pen = X0 + drawText(canvas, wordmark, 'ELECT', X0, y, ink(INK), spacing);
+  const y = baseline(wordmark, top, HEADER_HEIGHT);
+  let pen = x + drawText(canvas, wordmark, 'ELECT', x, y, ink(INK), spacing);
   // The dot: .675em wide, .075em of margin on each side, a black ring of .07em around the light color.
   const radius = (52 * 0.675) / 2;
   const ring = 52 * 0.07;
@@ -237,9 +252,6 @@ function drawHeader(canvas: Canvas) {
   drawDot(canvas, pen + radius, center, radius, radius - ring);
   pen += 2 * radius + 52 * 0.075;
   drawText(canvas, wordmark, 'SFERA', pen, y, ink(INK), spacing);
-
-  const label = canvas.atlas.font('archivo-800-26');
-  drawText(canvas, label, 'Programa electoral · 29N', X1, Math.round(center + (label.ascent - label.descent) / 2), ink(INK), 0, true);
 }
 
 function drawDot(canvas: Canvas, cx: number, cy: number, outer: number, inner: number) {
@@ -248,7 +260,7 @@ function drawDot(canvas: Canvas, cx: number, cy: number, outer: number, inner: n
       const distance = Math.hypot(x + 0.5 - cx, y + 0.5 - cy);
       const outside = Math.min(1, Math.max(0, outer - distance + 0.5)); // coverage of the whole dot
       const fill = Math.min(1, Math.max(0, inner - distance + 0.5)); // coverage of the light inside
-      const at = y * STRIDE + 1 + x;
+      const at = y * canvas.stride + 1 + x;
       // The ring is thicker than a pixel, so a pixel is on one edge only: black over white, or the light over black.
       if (fill > 0) canvas.rows[at] = DOT + Math.round((1 - fill) * 15);
       else if (outside > 0) canvas.rows[at] = INK + Math.round(outside * 15);
@@ -271,8 +283,14 @@ function drawFooter(canvas: Canvas, text: string) {
 }
 
 // One buffer for every card: the drawing and the encoding are synchronous, so two requests never share it.
-const ROWS = new Uint8Array(STRIDE * HEIGHT);
-const newCanvas = (atlas: Atlas): Canvas => ({ rows: ROWS, atlas });
+const ROWS = new Uint8Array((WIDTH + 1) * HEIGHT);
+const newCanvas = (atlas: Atlas, width = WIDTH, height = HEIGHT): Canvas => ({
+  rows: ROWS.subarray(0, (width + 1) * height),
+  atlas,
+  width,
+  height,
+  stride: width + 1,
+});
 
 // ── The cards ───────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -370,6 +388,67 @@ export function drawPartyCard(atlas: Atlas, data: PartyCard): Uint8Array {
   return canvas.rows;
 }
 
+// ── The square card for WhatsApp ────────────────────────────────────────────────────────────────────────────────
+
+const SQUARE_MARGIN = 56; // from the edge of the image to the content
+
+/**
+ * The square card. In a chat, WhatsApp shows the image at about 90 px, so the card has only what reads at that
+ * size: the acronym as large as fits and one line under it («medida 144», «241 medidas»). The title of the measure
+ * is the text of the preview. With `quote`, the quote mark of the measure cards, in the party color, top right.
+ */
+export function drawSquareCard(atlas: Atlas, acronym: string, line: string, quote: boolean): Uint8Array {
+  const canvas = newCanvas(atlas, SQUARE, SQUARE);
+  drawFrame(canvas, 20, 6);
+  drawWordmark(canvas, SQUARE_MARGIN, SQUARE_MARGIN);
+  if (quote) {
+    const font = atlas.font('bsd-900-190');
+    const glyph = glyphOf(font, 0x201c);
+    // The top of the quote mark level with the top of the wordmark.
+    if (glyph) drawText(canvas, font, '“', SQUARE - SQUARE_MARGIN, SQUARE_MARGIN - glyph.top, ink(ACCENT), 0, true);
+  }
+
+  const width = SQUARE - 2 * SQUARE_MARGIN;
+  const center = SQUARE / 2;
+  const text = acronym.toUpperCase();
+  // The largest size that fits in one line; else two lines at 100 px («FE DE LAS JONS»).
+  const oneLine = ACRONYM_SIZES.map((size) => atlas.font(`bsd-900-${size}`)).find((font) => measure(font, text) <= width);
+  const font = oneLine ?? atlas.font('bsd-900-100');
+  const lines = oneLine ? [text] : wrap(font, text, width, 2);
+  const capHeight = -(glyphOf(font, 72)?.top ?? font.size * 0.7); // the height of «H»
+  const lineHeight = Math.round(font.size * 0.86);
+  // The acronym a little above the middle, to leave room for the line under it.
+  let y = Math.round(center - 24 - ((lines.length - 1) * lineHeight) / 2 + capHeight / 2);
+  for (const part of lines) {
+    drawText(canvas, font, part, Math.round(center - measure(font, part) / 2), y, ink(INK));
+    y += lineHeight;
+  }
+
+  const lineFont = atlas.font('archivo-800-46');
+  const [fitted = ''] = wrap(lineFont, line, width, 1);
+  drawText(canvas, lineFont, fitted, Math.round(center - measure(lineFont, fitted) / 2), y - lineHeight + 80, ink(INK));
+
+  // «electosfera.es» in white on black, centered at the bottom.
+  const urlFont = atlas.font('archivo-800-26');
+  const url = 'electosfera.es';
+  const pillWidth = Math.round(measure(urlFont, url) + 32);
+  const pillLeft = Math.round(center - pillWidth / 2);
+  const pillTop = SQUARE - SQUARE_MARGIN - FOOTER_ROW;
+  fillRect(canvas, pillLeft, pillTop, pillWidth, FOOTER_ROW, BLACK);
+  const urlY = Math.round(pillTop + FOOTER_ROW / 2 + (urlFont.ascent - urlFont.descent) / 2);
+  drawText(canvas, urlFont, url, pillLeft + 16, urlY, ON_BLACK);
+  return canvas.rows;
+}
+
+const measureLine = (data: MeasureCard) => `${data.unit} ${data.number}`;
+const partyLine = (data: PartyCard) => `${data.count} ${data.count === 1 ? data.unit : data.unitPlural}`;
+
+export const squareMeasureCardPng = (atlas: Atlas, data: MeasureCard) =>
+  encodePng(SQUARE, SQUARE, drawSquareCard(atlas, data.acronym, measureLine(data), true), palette(data.color, data.lightColor));
+
+export const squarePartyCardPng = (atlas: Atlas, data: PartyCard) =>
+  encodePng(SQUARE, SQUARE, drawSquareCard(atlas, data.acronym, partyLine(data), false), palette(data.color, data.lightColor));
+
 export const measureCardPng = (atlas: Atlas, data: MeasureCard) =>
   encodePng(WIDTH, HEIGHT, drawMeasureCard(atlas, data), palette(data.color, data.lightColor));
 
@@ -394,6 +473,15 @@ export function warmUp(atlas: Atlas, rounds = 4) {
       title: sample.slice(0, 30 + i * 20),
       excerpt: `${sample}. ${sample}. ${sample}.`,
       page: 10,
+    });
+    squareMeasureCardPng(atlas, {
+      acronym: 'ABC',
+      color: '#123456',
+      lightColor: '#abcdef',
+      unit: 'medida',
+      number: 100 + i,
+      title: '',
+      excerpt: '',
     });
     partyCardPng(atlas, {
       acronym: 'ABC',

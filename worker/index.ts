@@ -5,6 +5,10 @@
  *   /og/tarjetas/<party>/<n>.png    the card of one measure
  * Any other address goes back to the static files (and their 404 page).
  *
+ * WhatsApp shows a small square cut from the middle of a wide image, which cuts the text. Its app downloads the image
+ * with its own User-Agent («WhatsApp/2.24…»), so for WhatsApp the same address gives a square card (`drawSquareCard`).
+ * `?formato=cuadrada` gives the square card to any browser, to look at it.
+ *
  * The free plan gives 10 ms of CPU per request. A card takes 1 to 3 ms:
  * - the letters come already drawn (`og/atlas.bin`, made by `scripts/og_atlas.py`);
  * - the PNG has a palette and its own compressor for runs of one color (`og/png.ts`);
@@ -15,7 +19,7 @@
  */
 import atlasData from './og/atlas.bin';
 import { loadAtlas } from './og/atlas.ts';
-import { measureCardPng, partyCardPng, warmUp, type PartyCard } from './og/card.ts';
+import { measureCardPng, partyCardPng, squareMeasureCardPng, squarePartyCardPng, warmUp, type PartyCard } from './og/card.ts';
 
 interface Env {
   ASSETS: { fetch: (request: Request | string) => Promise<Response> };
@@ -31,7 +35,7 @@ const CARD = /^(.*)\/og\/tarjetas\/([a-z0-9-]+)(?:\/(\d+))?\.png$/;
 
 const notFound = () => new Response('No existe esa tarjeta.', { status: 404, headers: { 'Cache-Control': 'public, max-age=300' } });
 
-async function drawCard(request: Request, env: Env, base: string, party: string, number: string | undefined) {
+async function drawCard(request: Request, env: Env, base: string, party: string, number: string | undefined, square: boolean) {
   const data = await env.ASSETS.fetch(new URL(`${base}/og/datos/${party}.json`, request.url).href);
   if (!data.ok) return notFound();
   const text = await data.text();
@@ -40,13 +44,13 @@ async function drawCard(request: Request, env: Env, base: string, party: string,
   const card = JSON.parse(line(2)) as PartyCard;
   let png: Uint8Array;
   if (number === undefined) {
-    png = partyCardPng(atlas, card);
+    png = (square ? squarePartyCardPng : partyCardPng)(atlas, card);
   } else {
     // Only the line of this measure is parsed.
     const start = text.indexOf(`\n[${number},`);
     if (start < 0) return notFound();
     const [n, title, excerpt, page] = JSON.parse(line(start + 1)) as [number, string, string, number];
-    png = measureCardPng(atlas, { ...card, number: n, title, excerpt, page: page || undefined });
+    png = (square ? squareMeasureCardPng : measureCardPng)(atlas, { ...card, number: n, title, excerpt, page: page || undefined });
   }
   return new Response(png as Uint8Array<ArrayBuffer>, {
     headers: {
@@ -65,15 +69,21 @@ export default {
     if (!match || (request.method !== 'GET' && request.method !== 'HEAD')) return env.ASSETS.fetch(request);
     const [, base, party, number] = match;
 
-    // One cache entry per card and version; any other query is ignored.
-    const version = (url.searchParams.get('v') ?? '').replace(/[^a-z0-9]/g, '').slice(0, 16);
-    const key = new Request(`${url.origin}${url.pathname}${version ? `?v=${version}` : ''}`);
-    const cache = (caches as unknown as { default: Cache }).default;
-    const cached = await cache.match(key);
-    if (cached) return cached;
+    const square = url.searchParams.get('formato') === 'cuadrada' || /WhatsApp/i.test(request.headers.get('User-Agent') ?? '');
 
-    const response = await drawCard(request, env, base, party, number);
-    if (response.ok) context.waitUntil(cache.put(key, response.clone()));
+    // One cache entry per card, version and shape; any other query is ignored.
+    const version = (url.searchParams.get('v') ?? '').replace(/[^a-z0-9]/g, '').slice(0, 16);
+    const query = [version && `v=${version}`, square && 'formato=cuadrada'].filter(Boolean).join('&');
+    const key = new Request(`${url.origin}${url.pathname}${query ? `?${query}` : ''}`);
+    const cache = (caches as unknown as { default: Cache }).default;
+    let response = await cache.match(key);
+    if (!response) {
+      response = await drawCard(request, env, base, party, number, square);
+      if (response.ok) context.waitUntil(cache.put(key, response.clone()));
+    }
+    // The same address gives another image to WhatsApp: a cache between the two must keep them apart.
+    response = new Response(response.body, response);
+    response.headers.set('Vary', 'User-Agent');
     return response;
   },
 };

@@ -5,7 +5,8 @@
  * Use: node scripts/og_card_bench.ts pp 144 [out.png]   (one measure)
  *      node scripts/og_card_bench.ts pp [out.png]       (the party)
  *      node scripts/og_card_bench.ts --all              (the CPU time of every card, without writing files)
- *      node scripts/og_card_bench.ts --all --out <dir>  (also writes every card: <dir>/<party>.png and <dir>/<party>/<n>.png)
+ *      node scripts/og_card_bench.ts --all --out <dir>  (also writes every card: <dir>/<party>.png and <dir>/<party>/<n>.png,
+ *                                                        and the square ones for WhatsApp in <dir>/whatsapp/)
  *      npm run og:preview                               (the same, in .cache/og-tarjetas/, to look at all of them)
  *      --cold: without the warm-up that the Worker makes when an isolate starts
  *
@@ -15,7 +16,7 @@
 import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { loadAtlas } from '../worker/og/atlas.ts';
-import { drawMeasureCard, drawPartyCard, HEIGHT, measureCardPng, partyCardPng, warmUp, WIDTH, type MeasureCard, type PartyCard } from '../worker/og/card.ts';
+import { drawMeasureCard, drawPartyCard, drawSquareCard, HEIGHT, measureCardPng, partyCardPng, SQUARE, squareMeasureCardPng, squarePartyCardPng, warmUp, WIDTH, type MeasureCard, type PartyCard } from '../worker/og/card.ts';
 import { deflateRows } from '../worker/og/png.ts';
 
 const root = new URL('../', import.meta.url);
@@ -72,11 +73,11 @@ const measureCard = (raw: any, m: any): MeasureCard => ({
 });
 
 /** CPU time of the drawing and of the compression, in ms. */
-function time(draw: () => Uint8Array) {
+function time(draw: () => Uint8Array, width = WIDTH, height = HEIGHT) {
   cpu = performance.now();
   const rows = draw();
   const drawing = ms();
-  const size = deflateRows(rows, WIDTH + 1, HEIGHT).length;
+  const size = deflateRows(rows, width + 1, height).length;
   return { drawing, compression: ms(), size };
 }
 
@@ -102,9 +103,14 @@ if (args[0] === '--all') {
     if (raw.vacio || !raw.medidas?.length) continue;
     results.push({ card: raw.id, ...time(() => drawPartyCard(atlas, partyCard(raw))) });
     save(`${raw.id}.png`, partyCardPng(atlas, partyCard(raw)));
+    const party = partyCard(raw);
+    results.push({ card: `${raw.id} (square)`, ...time(() => drawSquareCard(atlas, party.acronym, `${party.count} ${party.unitPlural}`, false), SQUARE, SQUARE) });
+    save(`whatsapp/${raw.id}.png`, squarePartyCardPng(atlas, party));
     for (const m of raw.medidas.filter((m: any) => !m.oculta)) {
       results.push({ card: `${raw.id}-${m.n}`, ...time(() => drawMeasureCard(atlas, measureCard(raw, m))) });
       save(`${raw.id}/${m.n}.png`, measureCardPng(atlas, measureCard(raw, m)));
+      results.push({ card: `${raw.id}-${m.n} (square)`, ...time(() => drawSquareCard(atlas, raw.siglas, `medida ${m.n}`, true), SQUARE, SQUARE) });
+      save(`whatsapp/${raw.id}/${m.n}.png`, squareMeasureCardPng(atlas, measureCard(raw, m)));
     }
   }
   const totals = results.map((r) => r.drawing + r.compression).sort((a, b) => a - b);

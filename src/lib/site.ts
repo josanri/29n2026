@@ -16,7 +16,7 @@ export const SOCIAL_ACCOUNTS = [
 ] as const;
 export const X_HANDLE = SOCIAL_ACCOUNTS[0].handle;
 
-/** A link preview: a 1200 × 630 PNG (`scripts/og_images.py`), its path under the base of the site and its text. */
+/** A link preview: a 1200 × 630 PNG, its path under the base of the site and its text. The site's comes from `scripts/og_images.py`; those of a party or a measure, from the Worker (`worker/og/card.ts`). */
 export interface ShareImage {
   path: string;
   alt: string;
