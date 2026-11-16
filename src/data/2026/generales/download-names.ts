@@ -13,6 +13,7 @@ export const downloadFileNames: Record<string, string> = {
   pp: 'programa-pp-reconstruccion-nacional-2026.pdf',
   pacma: 'programa-pacma-generales-29n-2026.pdf',
   fa: 'programa-frente-amplio-29n-2026.pdf',
+  'eh-bildu': 'programa-eh-bildu-garantia-y-derechos-2026.pdf',
   d21: 'programa-d21-espana-limpia-2026.pdf',
   'fe-jons': 'programa-fe-jons-29n-2026.pdf',
   pcte: 'programa-de-lucha-pcte-2026.pdf',
