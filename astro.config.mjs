@@ -116,6 +116,8 @@ export default defineConfig({
       filter: (page) =>
         !page.endsWith('/buscar/') &&
         !page.includes('/design-system') &&
+        // la página de una medida existe para compartirla: duplica el texto de /medidas/ y no se indexa
+        !/\/medidas\/\d+\/$/.test(page) &&
         !(page.endsWith('/sin-siglas/') && !page.endsWith('/tests/sin-siglas/')),
       // (la ruta base se añade sola a las URL del sitemap)
       changefreq: 'weekly',

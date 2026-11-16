@@ -104,6 +104,10 @@ const documentLabel = measure.page
               </div>
             )}
             <div>
+              <dt>Compartir</dt>
+              <dd><a href={routes.measureShare(program.id, measure.number)}>Enlace con vista previa</a></dd>
+            </div>
+            <div>
               <dt>Fuente</dt>
               <dd>
                 {measure.sourceUrl ? (

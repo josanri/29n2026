@@ -52,6 +52,8 @@ export const routes = {
   },
   measure: (partyId: string, measureNumber: number) =>
     withBase(`/${partyId}/medidas/#${MEASURE_ID_PREFIX}${measureNumber}`),
+  /** The page of one measure, made to be shared: its own link preview (a quote of the measure) and the card open. */
+  measureShare: (partyId: string, measureNumber: number) => withBase(`/${partyId}/medidas/${measureNumber}/`),
   block: (partyId: string, blockId: number) => withBase(`/${partyId}/bloque/${blockId}/`),
   section: (partyId: string, blockId: number, sectionId: string) =>
     withBase(`/${partyId}/bloque/${blockId}/#${SECTION_ID_PREFIX}${sectionId}`),
