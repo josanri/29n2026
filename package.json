@@ -28,6 +28,7 @@
     "data:geroa-bai": "python scripts/extract_geroa_bai.py public/2026/generales/programas/geroa-bai-bases-politicas-29n-2026.pdf src/data/2026/generales/programas/geroa-bai.json",
     "data:upc": "python scripts/extract_upc.py public/2026/generales/programas/upc-manifiesto-29n-2026.pdf src/data/2026/generales/programas/upc.json",
     "data:d21": "python scripts/build_d21.py src/data/2026/generales/programas/d21.json",
+    "data:eh-bildu": "python scripts/extract_ehbildu.py public/2026/generales/programas/eh-bildu-garantia-y-derechos-2026.pdf src/data/2026/generales/programas/eh-bildu.json",
     "data:fa": "python scripts/extract_fa.py public/2026/generales/programas/fa-programa-electoral-2026.pdf src/data/2026/generales/programas/fa.json",
     "data:adelante": "python scripts/extract_adelante.py",
     "data:candidaturas": "python scripts/extract_candidaturas.py"

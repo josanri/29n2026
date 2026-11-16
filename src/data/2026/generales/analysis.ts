@@ -647,4 +647,42 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [86, 87, 88, 89],
     },
   ],
+  'eh-bildu': [
+    {
+      title: 'Cuatro de cada cinco propuestas son de derechos y libertades',
+      text:
+        '151 de las 188 propuestas (el 80 %) están en el capítulo «Derechos y libertades»; «Nación y autogobierno» tiene 19 y «Paz y convivencia», 18. Las secciones más largas son servicios públicos (35 propuestas, 20 de ellas de salud) y transición ecosocial (31).',
+      measureNumbers: [37, 57, 90, 107, 152],
+    },
+    {
+      title: 'Diez propuestas piden traspasar competencias',
+      text:
+        'Diez propuestas hablan de una transferencia: la Inspección de Trabajo (21), las políticas pasivas de empleo para Navarra (22), el régimen económico de la Seguridad Social (28), la formación sanitaria especializada (48), el Ingreso Mínimo Vital (77), las competencias migratorias (139) y las ferroviarias, aeroportuarias y portuarias (106). La sección de autogobierno exige además todas las competencias pendientes del Estatuto Vasco y del Amejoramiento Navarro (157) y añade como nuevas migración, Seguridad Social, protección social y desempleo, puertos y aeropuertos y energía (158).',
+      measureNumbers: [21, 28, 77, 139, 157, 158],
+    },
+    {
+      title: 'Vivienda: regular el alquiler y frenar la compra especulativa',
+      text:
+        'La vivienda abre el programa con 11 propuestas, casi todas de regulación: contratos de alquiler con prórroga automática (1), prohibición permanente de los desahucios de familias vulnerables sin alternativa (2), prohibición de la compra especulativa por empresas, fondos y grandes tenedores (5), un máximo del 2 % de actualización anual de la renta cuando el IPC lo supere (8) y la eliminación de las SOCIMIs (11). El IVA del 21 % a los alojamientos turísticos de corta duración aparece dos veces: en vivienda (10) y en política fiscal (86).',
+      measureNumbers: [1, 2, 5, 8, 10, 11],
+    },
+    {
+      title: 'Los impuestos nuevos apuntan a la banca, las energéticas y la distribución',
+      text:
+        'El programa recupera de forma permanente el impuesto a las energéticas (83), sube el de la banca y las grandes fortunas (84), crea uno sobre los beneficios de las grandes distribuidoras alimentarias (85) y propone gravar los beneficios extraordinarios de las corporaciones energéticas (116) y los vuelos privados (119). Pide además que cualquier figura fiscal nueva se concierte con las haciendas forales (120).',
+      measureNumbers: [83, 84, 85, 116, 119, 120],
+    },
+    {
+      title: 'Paz: fuera de la OTAN, sin bases y con embargo de armas a Israel',
+      text:
+        'La sección de paz (3.2) reúne 13 propuestas, casi todas en prosa y en futuro: rechazar la OTAN y el aumento del gasto en defensa que exige (177, 179), cerrar el campo de tiro de las Bardenas (181), impedir el uso de las bases de EEUU en Europa, incluidas Rota y Morón (182), adherirse al Tratado sobre la Prohibición de Armas Nucleares (183) y romper el Tratado de Amistad entre la UE e Israel, con un embargo de armas total (184, 185).',
+      measureNumbers: [177, 179, 181, 182, 183, 184],
+    },
+    {
+      title: 'Pocas cifras, casi ningún plazo y tres derogaciones',
+      text:
+        'Solo 10 de las 188 propuestas llevan un compromiso cuantificado y solo 2 un plazo: la jornada de 32 horas, que las pymes alcanzarían en 3 años como máximo (12), y adelantar la descarbonización al menos a 2045 (90). Las cifras se concentran en pensiones y vivienda: una pensión mínima de 1.220 € (25) y al menos un 15 % más para las de viudedad y las no contributivas (26). Hay tres derogaciones explícitas: la Ley 15/1997 sobre gestión sanitaria (50), la reforma del artículo 135 de la Constitución (88) y la Ley de Secretos Oficiales (172).',
+      measureNumbers: [12, 25, 26, 90, 50, 88],
+    },
+  ],
 };
