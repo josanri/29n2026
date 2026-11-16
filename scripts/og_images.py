@@ -14,7 +14,9 @@ Uso: python scripts/og_images.py [elección]                     (portada y part
      python scripts/og_images.py --medida pp:144 [--medida …]  (solo esas medidas, para compartirlas)
      python scripts/og_images.py --todas-las-medidas            (una por medida: unos 6.000 PNG, 150-240 MB; Cloudflare admite 20.000 archivos por despliegue)
 
-La página de una medida (`/<partido>/medidas/<n>/`) usa su imagen si existe y, si no, la del partido.
+Las páginas de los partidos y de las medidas ya no usan estas imágenes: el Worker las dibuja al pedirlas, con el
+mismo diseño (`worker/og/card.ts`, en `/og/tarjetas/…`). Este script sigue haciendo la portada, y sus tarjetas sirven
+para comparar con las del Worker.
 Requiere: pip install playwright pillow && playwright install chromium; y `npm install` (las fuentes salen de node_modules).
 """
 import argparse
