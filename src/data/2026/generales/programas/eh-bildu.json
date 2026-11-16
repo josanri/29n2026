@@ -10,7 +10,8 @@
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
  "observaciones": [
   "El programa no numera ni titula sus propuestas: cada viñeta es una propuesta, con sus puntos. Las secciones en prosa (2.3, 2.6 y 3.2) cuentan un párrafo por propuesta. En la sección 2.5 la última propuesta pierde su viñeta en el PDF y se cuenta como una más.",
-  "La fuente enlazada es el PDF que publica el diario Naiz (naiz.eus); el documento se presenta como el programa de EH Bildu («Euskal Herria Bildu»). La fecha es la de creación del PDF."
+  "El propio PDF repite algunas propuestas (51 y 52, 10 y 86, 82 y 138, 36 y 73): se cuentan las dos veces.",
+  "La fuente enlazada es el PDF que publica el diario Naiz (naiz.eus); el documento se presenta como el programa de EH Bildu («Euskal Herria Bildu»). La fecha es la de creación del PDF. No se ha encontrado aún en la web de EH Bildu (16 de noviembre de 2026): la URL se sustituirá si aparece."
  ],
  "pdf": "/programas/eh-bildu-garantia-y-derechos-2026.pdf",
  "fuentePdf": "https://www.naiz.eus/media/asset_publics/resources/001/388/034/original/posibleegin-programa-cas.pdf",
@@ -67,8 +68,8 @@
   },
   {
    "valor": "6 %",
-   "unidad": "del PIB en educación",
-   "texto": "inversión educativa, a la que acercarse progresivamente (referencia de la UNESCO)",
+   "unidad": "de inversión educativa",
+   "texto": "a la que acercarse progresivamente, según la referencia de la UNESCO",
    "contexto": "6%",
    "medida": 59
   },
@@ -92,6 +93,34 @@
    "texto": "para las personas más vulnerables, que puede llegar a cubrir toda la obra",
    "contexto": "puede llegar al 100%",
    "medida": 113
+  },
+  {
+   "valor": "21 %",
+   "unidad": "IVA de los pisos turísticos",
+   "texto": "IVA de los alojamientos turísticos de corta duración (repite la propuesta de vivienda)",
+   "contexto": "21%",
+   "medida": 86
+  },
+  {
+   "valor": "3 meses",
+   "unidad": "periodo de prueba",
+   "texto": "máximo para el personal técnico titulado, y un mes para el resto, si no hay pacto colectivo",
+   "contexto": "máximo de 3 meses",
+   "medida": 15
+  },
+  {
+   "valor": "2 años",
+   "unidad": "de padrón",
+   "texto": "inscripción previa para que un extranjero multipropietario compre vivienda",
+   "contexto": "2 años previos",
+   "medida": 6
+  },
+  {
+   "valor": "40 años",
+   "unidad": "de cotización",
+   "texto": "para jubilarse sin penalización",
+   "contexto": "al menos 40 años de cotización",
+   "medida": 27
   }
  ],
  "plazos": [
@@ -110,68 +139,7 @@
   "En 3 años",
   "2045"
  ],
- "verbos": [
-  {
-   "verbo": "defenderemos",
-   "n": 4
-  },
-  {
-   "verbo": "trabajaremos",
-   "n": 4
-  },
-  {
-   "verbo": "apostaremos",
-   "n": 3
-  },
-  {
-   "verbo": "presentaremos",
-   "n": 2
-  },
-  {
-   "verbo": "apoyaremos",
-   "n": 2
-  },
-  {
-   "verbo": "volveremos",
-   "n": 2
-  },
-  {
-   "verbo": "rechazaremos",
-   "n": 2
-  },
-  {
-   "verbo": "reivindicaremos",
-   "n": 2
-  },
-  {
-   "verbo": "solicitaremos",
-   "n": 1
-  },
-  {
-   "verbo": "iniciaremos",
-   "n": 1
-  },
-  {
-   "verbo": "desarrollaremos",
-   "n": 1
-  },
-  {
-   "verbo": "exigiremos",
-   "n": 1
-  },
-  {
-   "verbo": "velaremos",
-   "n": 1
-  },
-  {
-   "verbo": "respaldaremos",
-   "n": 1
-  },
-  {
-   "verbo": "abogaremos",
-   "n": 1
-  }
- ],
+ "verbos": [],
  "bloques": [
   {
    "id": 1,
@@ -334,7 +302,7 @@
    "pagina": 19,
    "subapartados": [
     {
-     "titulo": "Lgtbiq+",
+     "titulo": "LGTBIQ+",
      "intro": "Lucharemos a favor del reconocimiento de la identidad sexual y de género de las personas LGBTIQ+ y no aceptaremos retrocesos en los derechos adquiridos, especialmente en la despatologización de las personas Trans. Para ello, propondremos:"
     }
    ]
@@ -450,11 +418,11 @@
      "intro": ""
     },
     {
-     "titulo": "No a la otan",
+     "titulo": "No a la OTAN",
      "intro": ""
     },
     {
-     "titulo": "Bases fuera, bardeak herriarentzat",
+     "titulo": "Bases fuera, Bardeak herriarentzat",
      "intro": ""
     },
     {
@@ -462,7 +430,7 @@
      "intro": ""
     },
     {
-     "titulo": "Frente al genocidio y la ocupacion, libertad para palestina",
+     "titulo": "Frente al genocidio y la ocupacion, libertad para Palestina",
      "intro": ""
     },
     {
@@ -470,7 +438,7 @@
      "intro": ""
     },
     {
-     "titulo": "Acabar con el bloqueo contra cuba y su pueblo",
+     "titulo": "Acabar con el bloqueo contra Cuba y su pueblo",
      "intro": ""
     },
     {
@@ -596,12 +564,12 @@
    "texto": "Condicionar la compra de vivienda por parte de extranjeros multipropietarios a la inscripción en el padrón municipal durante al menos los 2 años previos a la compra de vivienda. El inmueble adquirido deberá dedicarse a vivienda habitual y efectiva del propietario o a alquiler regulado bajo los índices de precios de referencia.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [
-    "inmigrantes"
-   ],
+   "colectivos": [],
    "palancas": [],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Condicionar la compra de vivienda por parte de extranjeros multipropietarios a la inscripción en el padrón municipal durante al menos los 2 años previos a la compra de vivienda."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -746,8 +714,7 @@
    "colectivos": [
     "jovenes",
     "mujeres",
-    "empresas",
-    "discapacidad"
+    "empresas"
    ],
    "palancas": [
     "ley"
@@ -796,7 +763,9 @@
     "plan"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Mediante la negociación colectiva se fijará la duración del periodo de prueba y a falta de pacto colectivo se fijará un periodo máximo de 3 meses para el personal técnico titulado y un mes para el resto."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -1042,7 +1011,9 @@
     "ley"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Culminar la tramitación de la Ley que reconoce el derecho a pensión sin penalización de las personas con al menos 40 años de cotización."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -1183,8 +1154,7 @@
    "oculta": false,
    "categoria": "energia",
    "colectivos": [
-    "empresas",
-    "discapacidad"
+    "empresas"
    ],
    "palancas": [
     "gasto"
@@ -1205,9 +1175,7 @@
    "texto": "Mantener y ampliar rebajas de tarifas y los bonos subvencionados de viajero frecuente actuales, incluidas la financiación estatal para la bonificación de los transportes dependientes de instituciones autonómicas, forales y locales.",
    "oculta": false,
    "categoria": "infraestructuras",
-   "colectivos": [
-    "discapacidad"
-   ],
+   "colectivos": [],
    "palancas": [
     "gasto"
    ],
@@ -1226,7 +1194,7 @@
    "tituloFrase": "Ampliar y automatizar el acceso al bono social eléctrico y térmico, garantizando que todas las personas y hogares que…",
    "texto": "Ampliar y automatizar el acceso al bono social eléctrico y térmico, garantizando que todas las personas y hogares que cumplan los requisitos accedan efectivamente a esta prestación, evitando que el desconocimiento, la complejidad o la falta de recursos administrativos impidan el ejercicio de un derecho reconocido legalmente.",
    "oculta": false,
-   "categoria": "energia",
+   "categoria": "social",
    "colectivos": [],
    "palancas": [
     "gasto"
@@ -1583,9 +1551,7 @@
    "texto": "Avanzar junto con las comunidades autónomas hacia la creación de una Farmacia Pública con el objetivo de fomentar la autogestión de las comunidades autónomas de los materiales básicos de mayor uso en el Sistema Sanitario Público, de los medicamentos considerados básicos por la Organización Mundial de la Salud y de los fármacos que se ven abocados a la rotura de stock.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [
-    "autonomos"
-   ],
+   "colectivos": [],
    "palancas": [
     "organizacion"
    ],
@@ -2265,7 +2231,9 @@
     "impuestos"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Establecer un 21% de IVA para los alojamientos turísticos de corta duración."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -2360,9 +2328,7 @@
    "texto": "Dependencia fósil: Reducir urgentemente el uso de los combustibles fósiles como vía prioritaria para reducir emisiones y dependencia energética exterior. Actuar para ello en todos los sectores estableciendo objetivos más ambiciosos en cada uno de ellos.",
    "oculta": false,
    "categoria": "energia",
-   "colectivos": [
-    "discapacidad"
-   ],
+   "colectivos": [],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -2515,8 +2481,7 @@
    "categoria": "innovacion",
    "colectivos": [
     "autonomos",
-    "empresas",
-    "discapacidad"
+    "empresas"
    ],
    "palancas": [
     "ley",
@@ -2734,9 +2699,7 @@
    "categoria": "infraestructuras",
    "colectivos": [],
    "palancas": [],
-   "territorios": [
-    "País Vasco"
-   ],
+   "territorios": [],
    "cifras": [],
    "plazo": null,
    "deroga": null
@@ -3323,9 +3286,7 @@
    "texto": "Ciudadanía plena y reconocimiento de los derechos políticos: Impulsar las reformas necesarias para ampliar el derecho al voto y a la representación política de las personas de origen extranjero residentes, avanzando hacia un modelo de ciudadanía basado en la residencia efectiva y la participación democrática.",
    "oculta": false,
    "categoria": "inmigracion",
-   "colectivos": [
-    "inmigrantes"
-   ],
+   "colectivos": [],
    "palancas": [
     "ley"
    ],
@@ -3409,9 +3370,7 @@
    "texto": "Potenciar la soberanía digital, desarrollar infraestructuras tecnológicas propias, gobernanza de datos y capacidad de computación. Promover la participación de agentes tecnológicos y científicos del País Vasco en los proyectos de gigafactores de la futura IA en la red europea de supercomputación (EuroHPC). Atracción, formación y retención del talento. Priorizar el software libre, el código abierto y los estándares abiertos, en línea con la soberanía digital europea y la tecnología abierta, para reducir la dependencia de los proveedores externos.",
    "oculta": false,
    "categoria": "innovacion",
-   "colectivos": [
-    "discapacidad"
-   ],
+   "colectivos": [],
    "palancas": [],
    "territorios": [
     "País Vasco"
@@ -4162,9 +4121,7 @@
    "texto": "Europa necesita un proyecto de seguridad integral que no puede ser dependiente de los Estados Unidos y debe apostar por el diálogo y la diplomacia. En este sentido reivindicaremos una revisión de la arquitectura de paz y seguridad existente hasta la fecha: los Acuerdos de Helsinki, las convenciones de Ginebra, el Protocolo de Viena, la OSCE… y reivindicaremos de manera central el principio de la seguridad indivisible, ya que la seguridad en Europa no puede construirse en detrimento de la seguridad de otros.",
    "oculta": false,
    "categoria": "exterior",
-   "colectivos": [
-    "discapacidad"
-   ],
+   "colectivos": [],
    "palancas": [
     "plan"
    ],
@@ -4186,9 +4143,7 @@
    "texto": "Rechazamos la OTAN y la pertenencia de Euskal Herria a la misma, adoptando y reconociendo así la decisión adoptada por la sociedad vasca expresada con su voto en el referéndum de 1986. Por ello, apostaremos por terminar con el modelo de dependencia actual hacia esta organización y EEUU.",
    "oculta": false,
    "categoria": "defensa",
-   "colectivos": [
-    "discapacidad"
-   ],
+   "colectivos": [],
    "palancas": [],
    "territorios": [
     "País Vasco"
@@ -4231,7 +4186,9 @@
     "gasto",
     "plan"
    ],
-   "territorios": [],
+   "territorios": [
+    "Navarra"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null

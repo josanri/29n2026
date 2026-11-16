@@ -68,6 +68,7 @@ CATEGORIA = {
 CATEGORIA_PROPUESTA = [
     ('1.2', r'Inspecci[oó]n de Trabajo|empleadas de hogar|homologaci[oó]n', 'empleo'),
     ('1.2', r'prestaciones y desem|desempleo', 'social'),
+    ('1.4', r'bono social', 'social'),
     ('1.4', r'gas utilizado|electricidad|energ[eé]tic|combustibles|bono social', 'energia'),
     ('1.4', r'alimentari|alimentos|agr[ií]col|ganader|pesca', 'rural'),
     ('1.4', r'transporte|viajero|tarifas', 'infraestructuras'),
@@ -95,8 +96,6 @@ CATEGORIA_PROPUESTA = [
     ('1.12', r'Empleo, distribuci[oó]n', 'empleo'),
     ('1.13', r'Ley Mordaza', 'seguridad'),
     ('1.13', r'delitos del c[oó]digo penal|discurso de odio', 'justicia'),
-    ('2.2', r'Defenderemos tambi[eé]n|Velaremos|Trabajaremos para que cualquier', 'territorio'),
-    ('2.3', r'Concierto', 'fiscalidad'),
     ('3.1', r'legislaci[oó]n penitenciaria|presas', 'justicia'),
     ('3.1', r'Secretos Oficiales', 'democracia'),
     ('3.1', r'repliegue|condecoraciones', 'seguridad'),
@@ -124,7 +123,7 @@ CIFRAS = [
      'Establecer de manera estructural el máximo de 2%', 'máximo de 2%'),
     ('21 %', 'IVA de los pisos turísticos', 'IVA de los alojamientos turísticos de corta duración', '1.1',
      'Establecer un IVA del 21%', '21%'),
-    ('6 %', 'del PIB en educación', 'inversión educativa, a la que acercarse progresivamente (referencia de la UNESCO)', '1.5.2',
+    ('6 %', 'de inversión educativa', 'a la que acercarse progresivamente, según la referencia de la UNESCO', '1.5.2',
      'Aumentar la financiación', '6%'),
     ('53 %', 'plazas MIR, EIR y PIR', 'reserva transitoria para profesionales que dominen las dos lenguas oficiales del País Vasco',
      '1.5.1', 'Transitoriamente y mientras la transferencia', '53%'),
@@ -132,6 +131,14 @@ CIFRAS = [
      'Que un mínimo del 15%', '15%'),
     ('100 %', 'subvención a la rehabilitación', 'para las personas más vulnerables, que puede llegar a cubrir toda la obra',
      '1.9.5', 'Financiación para la rehabilitación', 'puede llegar al 100%'),
+    ('21 %', 'IVA de los pisos turísticos', 'IVA de los alojamientos turísticos de corta duración (repite la propuesta de vivienda)',
+     '1.8', 'Establecer un 21% de IVA', '21%'),
+    ('3 meses', 'periodo de prueba', 'máximo para el personal técnico titulado, y un mes para el resto, si no hay pacto colectivo',
+     '1.2', 'Control de las extinciones', 'máximo de 3 meses'),
+    ('2 años', 'de padrón', 'inscripción previa para que un extranjero multipropietario compre vivienda', '1.1',
+     'Condicionar la compra de vivienda', '2 años previos'),
+    ('40 años', 'de cotización', 'para jubilarse sin penalización', '1.3', 'Culminar la tramitación',
+     'al menos 40 años de cotización'),
 ]
 
 # Plazos: (apartado, inicio de la propuesta, plazo, texto, prueba literal).
@@ -148,13 +155,13 @@ COLECTIVOS = {
     'mujeres': r'\bmujer(?:es)?\b|violencia (?:machista|vicaria|obst[eé]trica|sexual)|\bfeminis\w*|\bmaternidad\b',
     'familias': r'\bfamilias?\b|conciliaci[oó]n|\bcrianza\b|\bpaternidad\b',
     'infancia': r'\binfancia\b|\bni[ñn][oa]s\b|\bmenores\b|\balumnado\b|\blactancia\b',
-    'autonomos': r'\baut[oó]nom[oa]s\b|\bpymes?\b|\bmicro\b',
+    'autonomos': r'(?<!comunidades )\baut[oó]nom[oa]s\b|\bpymes?\b|\bmicro\b',
     'empresas': r'\bempresas?\b|\bindustri\w*|\bdistribuidoras\b',
     'rural': r'\bmundo rural\b|\bmedio rural\b|\bagricultur\w*|\bganader\w*|\bprimer sector\b|\bpesquer\w*',
     'funcionarios': r'\bfuncionari\w*|\bempleo p[uú]blico\b|\bprofesionales (?:sanitari|de la salud)\w*|\bprofesionales\b.*\bMIR\b',
-    'discapacidad': r'\bdiscapacidad\b|\bdependencia\b|\bdependientes?\b',
+    'discapacidad': r'\bdiscapacidad\b|\b(?:ley de|atenci[oó]n a la|por la) dependencia\b|\bpersonas dependientes\b',
     'victimas': r'\bv[ií]ctimas\b',
-    'inmigrantes': r'\bmigrantes?\b|\binmigrantes\b|\brefugiad\w*|\basilo\b|\bextranjer\w*|\bracismo\b',
+    'inmigrantes': r'\bmigrantes?\b|\binmigrantes\b|\brefugiad\w*|\basilo\b|personas extranjeras|\bextranjer[ií]a\b|titulaciones extranjeras|\bracismo\b',
     'pacientes': r'\bpacientes\b|\bsanidad p[uú]blica\b|\bSistema (?:Nacional|P[uú]blico) de Salud\b|\bsalud mental\b',
     'agentes': r'\bFuerzas (?:y Cuerpos )?de Seguridad\b|\bGuardia Civil\b|\bpol[ií]cia\b|\bpelotas de goma\b',
 }
@@ -162,21 +169,18 @@ COLECTIVOS = {
 PALANCAS = {
     'ley': r'\bley(?:es)?\b|\bderog\w*|\breform\w*|\blegisla\w*|\bprohib\w*|C[oó]digo Penal|\bnormativ\w*|\bpenaliz\w*|\bregular\b|\bregulaci[oó]n\b',
     'impuestos': r'\bIVA\b|\bIRPF\b|\bfiscal\w*|\bimpuestos?\b|\bdeducci\w*|\btribut\w*|\bgravamen\b|\bgravar\b',
-    'gasto': r'\binversi[oó]n\b|\bfinanci\w*|\bpresupuest\w*|\bfondos?\b|\bayudas?\b|\bsubvenci\w*|\bbonos?\b|\bdotar\b|\bdotaci[oó]n\b',
+    'gasto': r'\binversi[oó]n\b|\bfinanci\w*|\bpresupuest\w*|\bfondos?\b(?! de inversi)|\bayudas?\b|\bsubvenci\w*|\bbonos?\b|\bdotar\b|\bdotaci[oó]n\b',
     'organizacion': r'\bcreaci[oó]n\b|\bcrear\b|\bagencia\b|\borganismo\b|\bobservatorio\b|\bregistro\b|\btransferencia\b|\bcompetencias?\b|\boficinas?\b',
     'plan': r'\bplan(?:es)?\b|\bestrategia\b|\bprogramas?\b|\bpacto\b|\bcampañas?\b|\bprotocolos?\b|\bPNIEC\b',
 }
 
 TERRITORIOS = {
     'Unión Europea': r'\bUni[oó]n Europea\b|\bParlamento Europeo\b|\bComisi[oó]n Europea\b|\bPAC\b|\bPol[ií]tica Pesquera Com[uú]n\b|\bEuropa\b',
-    'Navarra': r'\bNavarra\b|\bNafarroa\b',
-    'País Vasco': r'\bCAPV\b|\bPa[ií]s Vasco\b|\bComunidad Aut[oó]noma (?:del Pa[ií]s )?Vasca\b|\bHego Euskal Herria\b|\bEuskal Herria\b',
+    'Navarra': r'\bNavarra\b|\bNafarroa\b|\bBardenas\b|\bBardeak\b',
+    'País Vasco': r'\bCAPV\b|\bPa[ií]s Vasco\b|\bComunidad Aut[oó]noma (?:del Pa[ií]s )?Vasca\b|\bHego Euskal Herria\b|(?<!Ipar )\bEuskal Herria\b',
     'Palestina': r'\bPalestin\w*',
     'Sáhara Occidental': r'\bSahara\b|\bsaharaui\w*',
 }
-
-NO_VERBOS = set()
-
 
 def limpiar(texto):
     texto = unicodedata.normalize('NFC', texto)
@@ -340,6 +344,9 @@ def leer(pdf):
             m = re.match(r'^(\d+\.\d+\.\d+)\s*(.*)$', t)
             titulo = m.group(2).strip().rstrip('.:')
             titulo = titulo[:1] + titulo[1:].lower()
+            for mal, bien in (('Lgtbiq+', 'LGTBIQ+'), ('otan', 'OTAN'), ('bardeak', 'Bardeak'), ('palestina', 'Palestina'),
+                              ('cuba', 'Cuba')):
+                titulo = re.sub(rf'\b{re.escape(mal)}(?!\w)', bien, titulo)
             subapartado = {'id': m.group(1), 'titulo': titulo, 'intro': [], 'indice': len(seccion['subapartados'])}
             seccion['subapartados'].append(subapartado)
             ultimo_u = None
@@ -480,12 +487,7 @@ def crear_programa(pdf):
         medida['plazo'] = plazo
         plazos.append({'plazo': plazo, 'texto': texto, 'medida': medida['n']})
 
-    # El programa escribe en futuro de primera persona («propondremos», «defenderemos») y en infinitivo.
-    verbos = Counter()
-    for medida in medidas:
-        for verbo in re.findall(r'\b([a-záéíóúñ]{3,}(?:aremos|eremos|iremos))\b', medida['texto'].lower()):
-            if verbo not in NO_VERBOS:
-                verbos[verbo] += 1
+    # Los verbos no se escriben aquí: el programa va en infinitivo y `src/lib/verbs.ts` los calcula.
 
     for medida in medidas:
         del medida['_apartado']
@@ -505,8 +507,10 @@ def crear_programa(pdf):
             'El programa no numera ni titula sus propuestas: cada viñeta es una propuesta, con sus puntos. Las secciones '
             'en prosa (2.3, 2.6 y 3.2) cuentan un párrafo por propuesta. En la sección 2.5 la última propuesta pierde su '
             'viñeta en el PDF y se cuenta como una más.',
+            'El propio PDF repite algunas propuestas (51 y 52, 10 y 86, 82 y 138, 36 y 73): se cuentan las dos veces.',
             'La fuente enlazada es el PDF que publica el diario Naiz (naiz.eus); el documento se presenta como el '
-            'programa de EH Bildu («Euskal Herria Bildu»). La fecha es la de creación del PDF.',
+            'programa de EH Bildu («Euskal Herria Bildu»). La fecha es la de creación del PDF. No se ha encontrado aún en la web de EH Bildu (16 de noviembre de 2026): '
+            'la URL se sustituirá si aparece.',
         ],
         'pdf': PDF_PUBLICO,
         'fuentePdf': FUENTE,
@@ -518,7 +522,7 @@ def crear_programa(pdf):
         'cifras': cifras,
         'plazos': plazos,
         'ordenPlazos': ORDEN_PLAZOS,
-        'verbos': [{'verbo': v, 'n': c} for v, c in verbos.most_common(15)],
+        'verbos': [],
         'bloques': bloques,
         'secciones': secciones,
         'medidas': medidas,
