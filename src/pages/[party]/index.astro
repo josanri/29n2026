@@ -200,7 +200,7 @@ for (const figure of program.figures) {
               <div class="hero__actions">
                 <Button variant="ink" href={routes.measures(program.id)}><Icon name="measures" />{`Explorar ${allOf(program, total)}`}</Button>
                 <Button href={routes.block(program.id, 1)}><Icon name="blocks" />Leer por bloques</Button>
-                {isLocalDocument && program.documents.length > 1 ? (
+                {isLocalDocument && (program.documents?.length ?? 0) > 1 ? (
                   <DocumentsDialog label={documentLabel} documents={program.documents} />
                 ) : (
                   <Button
