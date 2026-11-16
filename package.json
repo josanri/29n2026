@@ -9,6 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "og:atlas": "python scripts/og_atlas.py",
+    "og:preview": "node scripts/og_card_bench.ts --all --out .cache/og-tarjetas",
     "data:pp": "python scripts/extract_pp.py public/2026/generales/programas/pp-reconstruccion-nacional.pdf .cache/2026/generales/pp_raw.json && python scripts/enrich_pp.py .cache/2026/generales/pp_raw.json src/data/2026/generales/programas/pp.json",
     "data:bng": "python scripts/extract_bng.py public/2026/generales/programas/bng-xerais-2026.pdf .cache/2026/generales/bng_raw.json && python scripts/enrich_bng.py .cache/2026/generales/bng_raw.json src/data/2026/generales/programas/bng.json",
     "data:cc": "python scripts/extract_cc.py public/2026/generales/programas/cc-defiende-canarias-2026.pdf src/data/2026/generales/programas/cc.json",
