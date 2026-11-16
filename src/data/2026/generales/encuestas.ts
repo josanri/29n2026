@@ -5,7 +5,7 @@
  * publicación original y los porcentajes que da. Un partido que la encuesta no publica va como `null`.
  * Para añadir una encuestadora: una entrada en `pollsters` con su página oficial.
  *
- * Origen de las cifras (revisión del 15 de noviembre de 2026):
+ * Origen de las cifras (revisión del 16 de noviembre de 2026):
  * - `checked: true`: la cifra se ha leído en la página original enlazada.
  * - `checked: false`: la cifra no se ha leído en la página original enlazada: viene de la tabla de Mapa Electoral
  *   (agregador) o de otra fuente que la recoge (electografica, Demócrata…). El enlace es la publicación original.
