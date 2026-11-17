@@ -9,6 +9,7 @@
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
  "observaciones": [
   "El PDF procede del diario Demócrata, que lo alojaba el 17 de noviembre de 2026; no se encontró una copia en la web oficial de Podemos. El enlace «PDF original» lleva a esa copia hasta que el partido publique la suya.",
+  "La taxonomía común no tiene categoría de protección animal: las medidas 394 a 405 van a la más cercana (legislación a Justicia, ganadería y fauna a Campo, mar y mundo rural, tauromaquia y espectáculos a Lengua, cultura y memoria, y ciencia sin animales a Productividad e innovación).",
   "Las medidas 10 a 14 y la 393 solo dicen «Ver en apartado…» y remiten al bloque «Los precios tienen que bajar»: por su título repiten las medidas 54, 56, 57 y 58, 55, 53 y 43. Se cuentan como medidas porque el PDF las numera."
  ],
  "pdf": "/programas/podemos-paz-casa-y-trabajo-2026.pdf",
@@ -193,6 +194,41 @@
    "medida": 439
   },
   {
+   "plazo": "Durante la legislatura",
+   "texto": "Congelar el gasto militar",
+   "medida": 72
+  },
+  {
+   "plazo": "Durante la legislatura",
+   "texto": "Ley orgánica para adaptar la legislación a la Convención de la ONU sobre discapacidad",
+   "medida": 174
+  },
+  {
+   "plazo": "Durante la legislatura",
+   "texto": "Estabilización del personal investigador",
+   "medida": 297
+  },
+  {
+   "plazo": "Durante la legislatura",
+   "texto": "Duplicar el presupuesto del deporte femenino, inclusivo y de base",
+   "medida": 299
+  },
+  {
+   "plazo": "En una legislatura",
+   "texto": "Equiparar los tipos del IRPF de las rentas del capital y del trabajo",
+   "medida": 49
+  },
+  {
+   "plazo": "En una legislatura",
+   "texto": "Reducir un 50 % el desperdicio alimentario",
+   "medida": 381
+  },
+  {
+   "plazo": "En dos años",
+   "texto": "Legislación autonómica de coordinación en emergencias",
+   "medida": 392
+  },
+  {
    "plazo": "En 2028",
    "texto": "Transporte ferroviario de mercancías al 15 %",
    "medida": 346
@@ -274,6 +310,7 @@
   "Durante la legislatura",
   "En una legislatura",
   "En la próxima legislatura",
+  "En dos años",
   "En cuatro años",
   "Antes de 2030",
   "En 2030",
@@ -811,9 +848,7 @@
     "plan"
    ],
    "territorios": [],
-   "cifras": [
-    "Con la rehabilitación de la vivienda las familias podrán llegar a reducir en un 50 % su consumo de energía y ahorrar un promedio de 400 euros anuales."
-   ],
+   "cifras": [],
    "plazo": null,
    "deroga": null
   },
@@ -900,7 +935,8 @@
    ],
    "territorios": [],
    "cifras": [
-    "Crearemos un Fondo de Responsabilidad Social de provisión obligatoria por parte de las entidades financieras, dotado anualmente con el 0,15 % del volumen total de crédito bancario durante 30 años, bajo gestión pública y con personalidad jurídica propia, para compensar los daños derivados de la actividad financiera y proteger a consumidores y deudores hipotecarios."
+    "Crearemos un Fondo de Responsabilidad Social de provisión obligatoria por parte de las entidades financieras, dotado anualmente con el 0,15 % del volumen total de crédito bancario durante 30 años, bajo gestión pública y con personalidad jurídica propia, para compensar los daños derivados de la actividad financiera y proteger a consumidores y deudores hipotecarios.",
+    "Garantizaremos que el coste conjunto de la hipoteca y los suministros básicos no supere el 30 % de los ingresos de la unidad de convivencia, mediante quitas obligatorias de las cuotas hipotecarias cuando sea necesario para afrontar las subidas de tipos de interés y mantener la viabilidad de los préstamos."
    ],
    "plazo": null,
    "deroga": null
@@ -1037,7 +1073,8 @@
    ],
    "territorios": [],
    "cifras": [
-    "Recuperaremos los descuentos extraordinarios del bono social eléctrico e incrementaremos durante 12 meses los descuentos hasta el 60 % para los consumidores vulnerables y hasta el 100% para los consumidores vulnerables severos, reforzando la protección de los hogares con mayores dificultades económicas frente al coste de la electricidad."
+    "Recuperaremos los descuentos extraordinarios del bono social eléctrico e incrementaremos durante 12 meses los descuentos hasta el 60 % para los consumidores vulnerables y hasta el 100% para los consumidores vulnerables severos, reforzando la protección de los hogares con mayores dificultades económicas frente al coste de la electricidad.",
+    "El bono se diseñará para que, en ningún caso, el gasto en vivienda más el gasto en suministros supere el 30% de los ingresos de la unidad familiar."
    ],
    "plazo": null,
    "deroga": null
@@ -1123,7 +1160,7 @@
    "tituloFrase": "Creación de una Banca Pública",
    "texto": "Crearemos una Banca Pública a la que se integrarán todos los recursos y la estructura del ICO, CDTI y ENISA, que será con la que operen las administraciones públicas en exclusiva, con el fin de atraer ahorro y orientarlo a la creación de empleo estable y de calidad.",
    "oculta": false,
-   "categoria": "fiscalidad",
+   "categoria": "administracion",
    "colectivos": [],
    "palancas": [
     "gasto",
@@ -1259,7 +1296,9 @@
     "gasto"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "En las facturas más bajas, el término fijo no superará nunca el 25% del total de la factura."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -1495,7 +1534,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": null,
+   "plazo": "En una legislatura",
    "deroga": null
   },
   {
@@ -1694,7 +1733,7 @@
    "territorios": [],
    "cifras": [],
    "plazo": null,
-   "deroga": "Beneficios fiscales del IRPF a los caseros"
+   "deroga": null
   },
   {
    "n": 59,
@@ -2011,7 +2050,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": null,
+   "plazo": "Durante la legislatura",
    "deroga": null
   },
   {
@@ -2860,6 +2899,7 @@
    ],
    "territorios": [],
    "cifras": [
+    "Estableceremos por ley que nunca pueda ser inferior al 75% del salario mediano.",
     "Aumentaremos el SMI hasta los 1.800 euros al mes en una legislatura para garantizar salarios dignos y acercar el poder adquisitivo de las personas trabajadoras al de los países de nuestro entorno."
    ],
    "plazo": "En una legislatura",
@@ -3071,9 +3111,7 @@
     "organizacion"
    ],
    "territorios": [],
-   "cifras": [
-    "Eliminaremos la posibilidad de recurrir a la contratación temporal sin causa justificada durante 90 días al año y perseguiremos el uso fraudulento de contratos a tiempo parcial para encubrir jornadas superiores a las declaradas, eludir el pago de las horas efectivamente trabajadas y abonar salarios inferiores al SMI que corresponda en proporción a la jornada realizada."
-   ],
+   "cifras": [],
    "plazo": null,
    "deroga": null
   },
@@ -3445,7 +3483,7 @@
    "tituloFrase": "Reconocer y remunerar el trabajo de cuidados en el entorno familiar",
    "texto": "Reconoceremos económicamente el trabajo de las personas cuidadoras principales de personas en situación de dependencia, garantizando una prestación económica digna que permita dar protección a quienes sostienen los cuidados en el ámbito familiar. Para ello, modificaremos el artículo 18 de la Ley 39/2006, estableciendo una prestación económica vinculada al grado de dependencia equivalente al 100 % del SMI para el grado III, al 70 % para el grado II y al 40 % para el grado I, con actualización conforme al SMI vigente.",
    "oculta": false,
-   "categoria": "familia",
+   "categoria": "social",
    "colectivos": [
     "discapacidad"
    ],
@@ -4317,7 +4355,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": null,
+   "plazo": "Durante la legislatura",
    "deroga": null
   },
   {
@@ -5051,7 +5089,7 @@
    "territorios": [],
    "cifras": [],
    "plazo": null,
-   "deroga": "Ley Orgánica 4/2000 (Ley de Extranjería)"
+   "deroga": null
   },
   {
    "n": 207,
@@ -5076,7 +5114,9 @@
     "organizacion"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "El plazo se reducirá a un año el plazo para las personas que acrediten arraigo efectivo y continuado, sin discriminaciones por origen, y ampliar los supuestos de adquisición por opción."
+   ],
    "plazo": "De forma inmediata",
    "deroga": null
   },
@@ -5228,7 +5268,7 @@
    "tituloFrase": "Transparencia, investigación independiente y rendición de cuentas",
    "texto": "Garantizaremos investigaciones independientes, diligentes y efectivas cuando una intervención policial provoque muerte o existan indicios de violencia racista. Impondremos la obligatoriedad de publicar la información institucional sobre los casos, su estado procesal y las resoluciones judiciales, con respeto a la presunción de inocencia, la protección de datos y los derechos de las víctimas. Apostaremos también por un mecanismo independiente de supervisión de las actuaciones policiales. Asimismo, cuando exista una condena firme por delitos incompatibles con el ejercicio de funciones policiales, se aplicarán las consecuencias disciplinarias y de inhabilitación que correspondan, prohibiendo la reincorporación al servicio cuando legalmente proceda. Finalmente, se dará prioridad a la reparación de las víctimas y sus familias.",
    "oculta": false,
-   "categoria": "inmigracion",
+   "categoria": "seguridad",
    "colectivos": [
     "familias",
     "agentes",
@@ -5290,7 +5330,7 @@
    "territorios": [],
    "cifras": [],
    "plazo": null,
-   "deroga": "Ley de Extranjería"
+   "deroga": null
   },
   {
    "n": 217,
@@ -7048,7 +7088,7 @@
    "cifras": [
     "Incrementaremos los salarios de todas las categorías, garantizando una subida mínima del 30 %."
    ],
-   "plazo": null,
+   "plazo": "Durante la legislatura",
    "deroga": null
   },
   {
@@ -7098,8 +7138,10 @@
     "plan"
    ],
    "territorios": [],
-   "cifras": [],
-   "plazo": null,
+   "cifras": [
+    "Duplicaremos durante la próxima legislatura los presupuestos destinados al deporte femenino, al deporte inclusivo y al deporte base, priorizando los barrios más vulnerables y los municipios de menos de 10.000 habitantes."
+   ],
+   "plazo": "Durante la legislatura",
    "deroga": null
   },
   {
@@ -7176,6 +7218,7 @@
    ],
    "territorios": [],
    "cifras": [
+    "Al menos el 30% de los fondos se destinará a la Atención Primaria y al menos el 20% al sistema público de salud mental; y del total del presupuesto sanitario, un mínimo del 25% irá a Atención Primaria.",
     "Incrementaremos progresivamente la financiación del Sistema Nacional de Salud hasta alcanzar una dotación mínima de 2.900 euros por habitante y año, frente a los 2.247 euros actuales, para converger con los países de nuestro entorno (en torno al 8% del PIB)."
    ],
    "plazo": null,
@@ -7307,7 +7350,9 @@
     "gasto"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "Aumentaremos hasta el 100% la cobertura de la cartera de servicios de salud bucodental, oftalmológica y auditiva, así como de fisioterapia y psicológica, para que una familia humilde reciba la misma atención que una con más recursos puede pagar en el ámbito privado; el dentista público incluirá empastes, limpiezas, ortodoncias, endodoncias, prótesis y férulas."
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -8128,6 +8173,7 @@
    ],
    "territorios": [],
    "cifras": [
+    "En el mismo año, se alcanzará el 100 % de kilómetros electrificados y un sistema libre de consumo directo de combustibles fósiles.",
     "La inversión ferroviaria pasará de unos 5.000 a 20.000 millones al año, con prioridad donde sea más fácil cambiar el coche por el tren, y las infraestructuras ferroviarias estratégicas no se privatizarán."
    ],
    "plazo": "Antes de 2030",
@@ -8996,8 +9042,10 @@
     "organizacion"
    ],
    "territorios": [],
-   "cifras": [],
-   "plazo": null,
+   "cifras": [
+    "Por ello, es necesario aprobar un texto legislativo con carácter integral que establezca mecanismos de control, sancionatorios y de optimización de los procesos de recogida y distribución de los alimentos desechados que reduzca el desperdicio en un 50% en una legislatura."
+   ],
+   "plazo": "En una legislatura",
    "deroga": null
   },
   {
@@ -9238,7 +9286,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": null,
+   "plazo": "En dos años",
    "deroga": null
   },
   {

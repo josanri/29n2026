@@ -189,7 +189,7 @@ public/2026/generales/programas/fa-programa-electoral-2026.pdf  PDF del programa
 scripts/extract_fa.py                extracción de 908 propuestas (cada viñeta) en 18 bloques y 75 secciones; comprueba las secciones contra el índice del PDF
 src/data/2026/generales/programas/fa.json           resultado que consume la web; los epígrafes de cada sección son subapartados y el capítulo 5 abre con una sección «5.0» sin número en el PDF
 public/2026/generales/programas/podemos-paz-casa-y-trabajo-2026.pdf PDF de Podemos «Así de básico: Paz, casa y trabajo» (141 páginas, 17 de noviembre de 2026), copia que aloja el diario Demócrata (no se encontró en la web del partido), sin optimizar: pesa 1,8 MB
-scripts/extract_podemos.py           extracción de 442 medidas numeradas en 6 bloques (el tercero con 3 secciones); comprueba la numeración y los títulos de bloque y sección contra el PDF
+scripts/extract_podemos.py           extracción de 442 medidas numeradas en 6 bloques (el quinto con 3 secciones); comprueba la numeración y los títulos de bloque y sección contra el PDF
 src/data/2026/generales/programas/podemos.json      resultado que consume la web; las medidas 10-14 y 393 solo remiten a otro apartado
 public/2026/generales/programas/eh-bildu-garantia-y-derechos-2026.pdf PDF del programa de EH Bildu «Garantía y derechos» (30 páginas, 16 de noviembre de 2026), tal como lo publica el diario Naiz; sin optimizar: pesa 0,6 MB
 scripts/extract_ehbildu.py           extracción de 188 propuestas (cada viñeta, o cada párrafo en las secciones en prosa) en 3 capítulos y 21 secciones

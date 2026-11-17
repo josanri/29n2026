@@ -5,7 +5,7 @@ The PDF (A4, 141 pages, InDesign) is set in Barlow:
   15493700 span); the body goes on in Barlow-Regular 13 pt. Inside the body, Barlow-ExtraBold with the
   body colour (5723990) is only emphasis, not a title.
 - Bullet points start with «•» (Barlow-Bold) or «⮡» (PPNeueMontreal) and are indented.
-- Block headings are BarlowCondensed-Bold 26-28 pt. The third block has three sections whose headings are
+- Block headings are BarlowCondensed-Bold 26-28 pt. The fifth block has three sections whose headings are
   BarlowCondensed-ExtraBold 16 pt («VIDAS QUE MEREZCAN LA PENA SER VIVIDAS», …).
 - Every page repeats «PROGRAMA ELECTORAL» (BarlowCondensed-Bold 12 pt) and ends with its page number
   (Barlow-Regular 12 pt). Pages 6, 15, 25, 39, 49 and 125 are block covers; page 140 is blank, 141 the back cover.
@@ -30,6 +30,7 @@ TOTAL_MEDIDAS = 442
 FUENTE_PDF = 'https://www.democrata.es/uploads/s1/35/51/60/4/29n-programa-podemos-paz-casa-y-trabajo.pdf'
 OBSERVACIONES = [
     'El PDF procede del diario Demócrata, que lo alojaba el 17 de noviembre de 2026; no se encontró una copia en la web oficial de Podemos. El enlace «PDF original» lleva a esa copia hasta que el partido publique la suya.',
+    'La taxonomía común no tiene categoría de protección animal: las medidas 394 a 405 van a la más cercana (legislación a Justicia, ganadería y fauna a Campo, mar y mundo rural, tauromaquia y espectáculos a Lengua, cultura y memoria, y ciencia sin animales a Productividad e innovación).',
     'Las medidas 10 a 14 y la 393 solo dicen «Ver en apartado…» y remiten al bloque «Los precios tienen que bajar»: por su título repiten las medidas 54, 56, 57 y 58, 55, 53 y 43. Se cuentan como medidas porque el PDF las numera.',
 ]
 
@@ -56,20 +57,20 @@ POR_CATEGORIA = {
     'fiscalidad': [10, 11, 12, 13, 14, 393],
     'energia': [27, 28, 29, 36, 37, 38, 39],
     # Block 2 (base: fiscalidad)
-    'administracion': [32, 34, 62, 114],
+    'administracion': [32, 33, 34, 62, 114],
     'innovacion': [35, 298, 402],
     'infraestructuras': [40, 336, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357,
                          359, 360, 361],
-    'social': [46, 115, 116, 126, 127, 128, 129, 130, 131, 132, 133, 135, 268],
+    'social': [46, 137, 115, 116, 126, 127, 128, 129, 130, 131, 132, 133, 135, 268],
     'empleo': [64, 66, 67, 68, 69, 252, 273, 276, 322],
     # Block 3 (base: exterior)
     'defensa': [70, 71, 72, 73, 74, 76, 78, 110],
-    'inmigracion': [86, 87, 88, 89, 90, 91, 103, 159] + list(range(205, 222)),
+    'inmigracion': [86, 87, 88, 89, 90, 91, 103, 159] + [n for n in range(205, 222) if n != 214],
     # Block 4 (base: empleo)
-    'familia': [137, 140, 149, 162, 165, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 192, 194, 197, 200, 432],
+    'familia': [140, 149, 162, 165, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 192, 194, 197, 200, 432],
     'rural': [141, 358] + list(range(362, 383)) + [399, 400, 401, 403],
     # Block 5.1 (base: social)
-    'seguridad': [145, 147, 148, 151, 152, 153, 154, 157, 158, 163, 423, 424, 427, 429],
+    'seguridad': [145, 214, 147, 148, 151, 152, 153, 154, 157, 158, 163, 423, 424, 427, 429],
     'sanidad': [146, 164, 166, 167, 177],
     'justicia': [155, 156, 201, 394, 395, 396, 398, 409, 414, 415, 416, 417, 418, 419, 420, 421, 422, 428],
     'democracia': [161, 170, 172, 173, 222, 223],
@@ -85,14 +86,11 @@ CATEGORIA_MEDIDA = {n: categoria for categoria, numeros in POR_CATEGORIA.items()
 # Laws and measures the program names explicitly as repealed or abolished («Derogar…», «derogaremos…»).
 DEROGA = {
     51: 'Ley Beckham',
-    58: 'Beneficios fiscales del IRPF a los caseros',
     62: 'Reforma del artículo 135 de la Constitución',
     86: 'Pacto Europeo de Migración y Asilo',
     117: 'Efectos de las reformas laborales de 2010 y 2012',
     124: 'Real Decreto 17/1977 sobre el derecho de huelga',
     205: 'Ley de Extranjería',
-    206: 'Ley Orgánica 4/2000 (Ley de Extranjería)',
-    216: 'Ley de Extranjería',
     300: 'Ley 15/1997 y las leyes privatizadoras de la sanidad',
     404: 'Ley 18/2013 de la tauromaquia',
     421: 'Ley Orgánica 1/2014 de justicia universal',
@@ -171,9 +169,10 @@ CIFRAS = [
 # Other quantified commitments of a measure (fragment that must appear in it). The measure keeps the whole sentence
 # that holds the fragment; context data about the present («el 70 % de la evasión…») is not listed.
 CIFRAS_MEDIDA = {
-    8: ['30 % de la renta media'], 16: ['al menos el 50%'], 19: ['reducir en un 50 %'], 23: ['0,15 %'], 29: ['hasta el 60 %'],
+    8: ['30 % de la renta media'], 38: ['40 €/MWh'], 39: ['25%'], 111: ['75%'], 207: ['reducirá a un año'], 299: ['Duplicaremos'],
+    307: ['hasta el 100%'], 381: ['en un 50%'], 343: ['100 %'], 302: ['Al menos el 30%'], 16: ['al menos el 50%'], 23: ['0,15 %', 'no supere el 30 %'], 29: ['hasta el 60 %', 'supere el 30%'],
     38: ['en más de un 5 %'], 41: ['entre el 7 y el 15 %'], 42: ['al 10 %'], 43: ['al 10%'], 44: ['IVA al 5%'], 46: ['700 euros'],
-    48: ['al 9 %'], 115: ['40 años'], 120: ['90 días'], 122: ['por cada 2 meses cotizados'], 127: ['80% del SMI'],
+    48: ['al 9 %'], 115: ['40 años'], 122: ['por cada 2 meses cotizados'], 127: ['80% del SMI'],
     137: ['100 % del SMI'], 141: ['50 % del SMI'], 142: ['más de 30 días'], 151: ['durante 6 meses'], 180: ['10 semanas'],
     181: ['hasta 7 días'], 183: ['hasta 7 días'], 186: ['10 días hábiles'], 196: ['pública y directa al 100%'],
     230: ['Multiplicar por dos'], 280: ['máximo de 3 bebés'], 282: ['Incrementaremos un 30 %'], 283: ['22 horas'],
@@ -191,6 +190,13 @@ PLAZOS = [
     ('De forma inmediata', 'Más personal y financiación de mantenimiento en el sistema ferroviario', 344, 'aumento inmediato de personal'),
     ('De forma inmediata', 'Paralizar nuevos derechos de riego a regadíos hiperintensivos', 358, 'de forma inmediata la concesión'),
     ('De forma inmediata', 'Desarrollar lo pendiente de la Ley de Memoria Democrática', 439, 'de forma inmediata todos los aspectos pendientes'),
+    ('Durante la legislatura', 'Congelar el gasto militar', 72, 'durante toda la legislatura'),
+    ('Durante la legislatura', 'Ley orgánica para adaptar la legislación a la Convención de la ONU sobre discapacidad', 174, 'a lo largo de la legislatura'),
+    ('Durante la legislatura', 'Estabilización del personal investigador', 297, 'durante una legislatura'),
+    ('Durante la legislatura', 'Duplicar el presupuesto del deporte femenino, inclusivo y de base', 299, 'durante la próxima legislatura'),
+    ('En una legislatura', 'Equiparar los tipos del IRPF de las rentas del capital y del trabajo', 49, 'plazo máximo de una legislatura'),
+    ('En una legislatura', 'Reducir un 50 % el desperdicio alimentario', 381, 'en una legislatura'),
+    ('En dos años', 'Legislación autonómica de coordinación en emergencias', 392, 'plazo máximo de dos años'),
     ('En 2028', 'Transporte ferroviario de mercancías al 15 %', 346, 'en 2028'),
     ('Durante la legislatura', 'Jornada laboral de 30 horas semanales, empezando por 35', 113, 'durante la legislatura'),
     ('En una legislatura', 'Salario mínimo de 1.800 euros al mes', 111, 'en una legislatura'),
@@ -208,7 +214,7 @@ PLAZOS = [
     ('En 2040', 'Sistema eléctrico completamente descarbonizado', 328, 'en 2040'),
 ]
 ORDEN_PLAZOS = ['De forma inmediata', 'En 2028', 'Durante la legislatura', 'En una legislatura', 'En la próxima legislatura',
-                'En cuatro años', 'Antes de 2030', 'En 2030', 'En 2035', 'Antes de 2040', 'En 2040']
+                'En dos años', 'En cuatro años', 'Antes de 2030', 'En 2030', 'En 2035', 'Antes de 2040', 'En 2040']
 
 PRESENTACION_TITULO = 'Así de básico: paz, casa y trabajo'
 

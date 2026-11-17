@@ -221,6 +221,7 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'agenda-valenciana', side: 'a', measures: [10], note: 'Proteger y fomentar activamente el uso de la lengua valenciana.' },
   { topic: 'lenguas', party: 'eguzkilore', side: 'matiz', measures: [50], note: 'Dos lenguas en Navarra, castellano y euskera, que «convivan con respeto», sin medidas concretas.' },
   { topic: 'lenguas', party: 'comuns', side: 'a', measures: [605], note: 'Defender la inmersión lingüística catalana y el catalán como lengua vehicular de la escuela.' },
+  { topic: 'lenguas', party: 'podemos', side: 'a', measures: [256, 292], note: 'Promoción y enseñanza de las lenguas cooficiales y cuotas de pantalla para las lenguas oficiales del Estado.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
@@ -253,7 +254,7 @@ export const stances: Stance[] = [
   { topic: 'ley-trans', party: 'eh-bildu', side: 'a', measures: [128, 132], note: 'Prohibir las terapias de conversión y desarrollar el artículo 50 de la Ley 4/2023 para la igualdad real de las personas trans.' },
   { topic: 'ley-trans', party: 'eguzkilore', side: 'b', measures: [57], note: 'Revisar la «ley trans», junto a la ley de Bienestar Animal.' },
   { topic: 'ley-trans', party: 'comuns', side: 'a', measures: [788], note: 'Las personas trans y no binarias son identificadas según su identidad de género manifestada.' },
-  { topic: 'ley-trans', party: 'podemos', side: 'a', measures: [147, 150], note: 'Reconocer la identidad no binaria en los documentos oficiales y eliminar obstáculos a la libre determinación de género en las infancias trans.' },
+  { topic: 'ley-trans', party: 'podemos', side: 'a', measures: [150], note: 'Reconocer la identidad no binaria en los documentos oficiales y eliminar obstáculos a la libre determinación de género en las infancias trans.' },
 
   // Gestación subrogada
   { topic: 'gestacion-subrogada', party: 'adelante', side: 'b', measures: [521], note: 'Prohibir la gestación subrogada.' },

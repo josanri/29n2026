@@ -913,13 +913,13 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
     {
       title: 'Casi seis de cada diez medidas son de «vida y planeta»',
       text:
-        'El bloque «Vida solo hay una. Planeta solo hay uno» reúne 261 de las 442 medidas (el 59 %): violencias machistas y aborto, cuidados, migración, cultura (48 medidas), educación, sanidad, clima, transporte, campo y protección animal. Los cinco bloques restantes suman entre 29 (vivienda) y 41 (paz) medidas cada uno.',
+        'El bloque «Vida solo hay una. Planeta solo hay uno» reúne 261 de las 442 medidas (el 59 %): violencias machistas y aborto, cuidados, migración, cultura (44 medidas), educación, sanidad, clima, transporte, campo y protección animal. Los cinco bloques restantes suman entre 29 (vivienda) y 41 (paz) medidas cada uno.',
       measureNumbers: [146, 190, 205, 278, 300, 328],
     },
     {
       title: 'Vivienda: alquileres un 40 % más baratos por ley',
       text:
-        'El primer bloque, con 29 medidas, propone rebajar el alquiler un 40 % en contratos vigentes y nuevos, sin que baje del 60 % del precio medio de la zona (1), hacer indefinidos los contratos de vivienda habitual (2) y prohibir comprar casas que no sean para vivir (3). Expropia el uso de las viviendas de grandes tenedores con más de diez (4), prohíbe los pisos turísticos mientras dure la emergencia habitacional (7) y crea una Inmobiliaria Pública con renta máxima del 30 % de la renta media del municipio (8).',
+        'El primer bloque (29 medidas, cinco de ellas remisiones al bloque de precios) propone rebajar el alquiler un 40 % en contratos vigentes y nuevos, sin que baje del 60 % del precio medio de la zona (1), hacer indefinidos los contratos de vivienda habitual (2) y prohibir comprar casas que no sean para vivir (3). Impulsa la expropiación de uso de las viviendas de grandes tenedores con más de diez (4), prohíbe los pisos turísticos mientras dure la emergencia habitacional (7) y crea una Inmobiliaria Pública con renta máxima del 30 % de la renta media del municipio (8).',
       measureNumbers: [1, 2, 3, 4, 7, 8],
     },
     {
@@ -941,9 +941,9 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [111, 113, 116, 119, 127, 135],
     },
     {
-      title: '13 medidas derogan leyes y 16 llevan «prohibir» en el título',
+      title: '10 medidas derogan leyes y 16 llevan «prohibir» en el título',
       text:
-        'Trece medidas anuncian derogaciones explícitas: la Ley de Extranjería (205), la «Ley Beckham» (51), la reforma del artículo 135 de la Constitución (62), los efectos de las reformas laborales de 2010 y 2012 (117), las leyes privatizadoras de la sanidad (300), la ley de la tauromaquia (404), la Ley Mordaza (427) y otras. Otras 16 llevan «prohibición» o «prohibir» en su título, entre ellas los pisos turísticos (7), las horas extra (119) y los vuelos cortos con alternativa ferroviaria (341).',
+        'Diez medidas anuncian derogaciones explícitas: la Ley de Extranjería (205), la «Ley Beckham» (51), la reforma del artículo 135 de la Constitución (62), los efectos de las reformas laborales de 2010 y 2012 (117), las leyes privatizadoras de la sanidad (300), la ley de la tauromaquia (404), la Ley Mordaza (427) y otras. Otras 16 llevan «prohibición» o «prohibir» en su título, entre ellas los pisos turísticos (7), las horas extra (119) y los vuelos cortos con alternativa ferroviaria (341).',
       measureNumbers: [51, 62, 117, 205, 300, 427],
     },
   ],
