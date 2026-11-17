@@ -38,6 +38,12 @@ export function checkPrograms(): void {
     const empty = measures.filter((measure) => !measure.title.trim() && !measure.text.trim()).map((measure) => measure.number);
     if (empty.length) errors.push(`${id}: medidas sin título ni texto: ${empty.slice(0, 10).join(', ')}`);
 
+    // A text that starts with «. » or «, »: the extractor cut the bold title before its punctuation.
+    const leadingPunctuation = measures.filter((measure) => /^\s*[.,;:]/.test(measure.text)).map((measure) => measure.number);
+    if (leadingPunctuation.length) {
+      errors.push(`${id}: medidas cuyo texto empieza por un signo de puntuación: ${leadingPunctuation.slice(0, 10).join(', ')}`);
+    }
+
     // A PDF program: its official source, the PDF file of this site, the download name and a valid date.
     if (program.documentType === 'pdf') {
       if (!program.sourceUrl) errors.push(`${id}: falta «fuentePdf», la URL oficial del partido.`);

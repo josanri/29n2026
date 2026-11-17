@@ -192,6 +192,12 @@ def classify(patterns, text):
     return [name for name, pattern in patterns.items() if re.search(pattern, text, re.I)]
 
 
+def strip_leading_punctuation(text):
+    """En el PDF, el título en negrita acaba antes de su punto o su coma: el texto empieza por «. » o «, ». Se quita."""
+    stripped = re.sub(r"^[.,;:]\s*", "", text)
+    return text if stripped == text else stripped[:1].upper() + stripped[1:]
+
+
 def complete_title(title, text):
     comma = text.find(",")
     if len(title) < 12 and 0 < comma < 100:
@@ -289,6 +295,7 @@ def extract(document):
             if not proposal["text"]:
                 raise ValueError(f"{title}, propuesta {proposal['number']} (pág. {proposal['page']}): texto vacío")
             proposal["title"], proposal["text"] = complete_title(proposal["title"], proposal["text"])
+            proposal["text"] = strip_leading_punctuation(proposal["text"])
             proposal["axis"] = axis_index + 1
             measures.append(proposal)
 

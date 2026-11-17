@@ -6,6 +6,12 @@ import fitz, sys, json, re, os
 PARA = '¶'  # marca interna de salto de párrafo
 
 
+def strip_leading_punctuation(text):
+    """En el PDF, el título en negrita acaba antes de su punto: el cuerpo empieza por «. ». Se quita."""
+    stripped = re.sub(r'^[.,;:]\s*', '', text)
+    return text if stripped == text else stripped[:1].upper() + stripped[1:]
+
+
 def classify(s):
     f, sz, x, y = s['font'], round(s['size']), s['bbox'][0], s['bbox'][1]
     t = s['text']
@@ -142,7 +148,7 @@ def main():
             ob['sections'].append(dict(
                 num=s['num'], title=join(s['title']), intro=join(s['intro']), page=s['page'],
                 groups=[dict(label=join(g['label']), intro=join(g['intro'])) for g in s['groups']],
-                measures=[dict(n=m['n'], title=join(m['title']), body=join(m['body']), page=m['page'],
+                measures=[dict(n=m['n'], title=join(m['title']), body=strip_leading_punctuation(join(m['body'])), page=m['page'],
                                group=m['group'], hidden=not m['title']) for m in s['measures']]))
         out['blocks'].append(ob)
     # un párrafo de introducción de subapartado puede quedar pegado al final de
