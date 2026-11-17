@@ -87,6 +87,8 @@ const siteSections = [
         </dl>
       </Panel>
 
+      <!-- The summary panels: two text columns on a wide screen, so the page does not leave half of its width empty. -->
+      <div class="columns">
       <Panel title="Votar en persona">
         <Fragment slot="icon"><Icon name="voter" size={24} /></Fragment>
         <h4>Dónde</h4>
@@ -246,10 +248,11 @@ const siteSections = [
         <Fragment slot="icon"><Icon name="calendar" size={24} /></Fragment>
         <p>Las fechas del proceso (consulta del censo, voto por correo, campaña, votación y escrutinio) están en el <a href={routes.calendar()}>calendario</a> de esta web, con un enlace a la página oficial de cada una y la opción de añadirlas a tu agenda.</p>
       </Panel>
+      </div>
 
       <Panel title="Más en la web oficial" lead="Estos apartados no están resumidos aquí. Cada enlace lleva a la web del Ministerio del Interior.">
         <Fragment slot="icon"><Icon name="external" size={24} /></Fragment>
-        <ul>
+        <ul class="sections">
           {siteSections.map((section) => (
             <li><a href={link(section.path)} rel="noopener" target="_blank">{section.name}<span class="sr-only"> (se abre en otra pestaña)</span></a>. {section.text}</li>
           ))}
@@ -269,9 +272,17 @@ const siteSections = [
   .intro { padding: var(--space-7) 0 var(--space-6); }
   .intro h1 { font-size: clamp(3.5rem, 14cqi, 8.5rem); }
   .intro__lede { max-width: 62ch; font-size: var(--text-lg); margin-top: var(--space-3); }
-  .stack { display: grid; gap: var(--space-5); max-width: 78ch; }
+  .stack { display: grid; gap: var(--space-5); }
+  /* Text columns, not a grid: the panels have very different heights, and a grid row would leave a gap under the
+     short ones. Each column is at least 34rem wide, so a line keeps a good length; a narrow screen has one column. */
+  .columns { columns: 2 34rem; column-gap: var(--space-5); }
+  .columns > :global(.panel) { break-inside: avoid; margin-bottom: var(--space-5); }
+  .columns > :global(.panel:last-child) { margin-bottom: 0; }
   ul { padding-left: 1.2em; margin: 0; }
   li + li { margin-top: var(--space-2); }
+  /* The links to the official site: short items in two columns. */
+  .sections { columns: 2 26rem; column-gap: var(--space-6); }
+  .sections li { break-inside: avoid; margin: 0 0 var(--space-2); }
   h4 { font-size: 1.125rem; margin: var(--space-4) 0 var(--space-2); }
   h4:first-child { margin-top: 0; }
   .facts { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-4); margin: 0; }
