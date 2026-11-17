@@ -25,12 +25,14 @@ interface Props {
   noindex?: boolean;
   /** The picture of the link preview (X, Instagram, WhatsApp…). Without it, the card of the site. */
   image?: ShareImage;
-  /** The address of the Markdown version of the page, for AI agents (`src/lib/markdown.ts`). */
-  markdownPath?: string;
+  /** `false` for a page with no Markdown version (the hidden design system). The others have one: `src/lib/markdown/`. */
+  markdown?: boolean;
 }
 
-const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false, image = DEFAULT_SHARE_IMAGE, markdownPath } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false, image = DEFAULT_SHARE_IMAGE, markdown = true } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+// The Markdown version is the file `index.md` next to the page (see `src/lib/markdown/shared.ts`).
+const markdownHref = `${Astro.url.pathname.replace(/\/$/, '')}/index.md`;
 const fullTitle = `${title} | ${SITE_NAME}`;
 // A link preview needs the full URL of its picture.
 const imageUrl = new URL(routes.asset(image.path), Astro.site).href;
@@ -70,7 +72,7 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
-    {markdownPath && <link rel="alternate" type="text/markdown" href={markdownPath} />}
+    {markdown && <link rel="alternate" type="text/markdown" href={markdownHref} />}
     <link rel="sitemap" href={routes.asset('/sitemap-index.xml')} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />

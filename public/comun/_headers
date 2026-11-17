@@ -7,3 +7,6 @@
 
 /programas/*
   Cache-Control: public, max-age=86400
+
+/*.md
+  Content-Type: text/markdown; charset=utf-8
