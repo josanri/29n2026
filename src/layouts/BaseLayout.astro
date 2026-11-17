@@ -25,9 +25,11 @@ interface Props {
   noindex?: boolean;
   /** The picture of the link preview (X, Instagram, WhatsApp…). Without it, the card of the site. */
   image?: ShareImage;
+  /** The address of the Markdown version of the page, for AI agents (`src/lib/markdown.ts`). */
+  markdownPath?: string;
 }
 
-const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false, image = DEFAULT_SHARE_IMAGE } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false, image = DEFAULT_SHARE_IMAGE, markdownPath } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const fullTitle = `${title} | ${SITE_NAME}`;
 // A link preview needs the full URL of its picture.
@@ -68,6 +70,7 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
+    {markdownPath && <link rel="alternate" type="text/markdown" href={markdownPath} />}
     <link rel="sitemap" href={routes.asset('/sitemap-index.xml')} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
