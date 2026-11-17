@@ -54,8 +54,16 @@ const links = [
     icon: '<rect x="2" y="3" width="12" height="11"/><path d="M2 7h12M5 1v4M11 1v4"/>',
   },
   {
+    href: routes.info(),
+    label: 'Info',
+    // A circle with an «i»: a short dot and a longer stem, both with square ends like the other icons.
+    icon: '<circle cx="8" cy="8" r="6.5"/><path d="M8 4.6v.9M8 7.4v4"/>',
+  },
+  {
     href: routes.simulator(),
     label: 'Simulador',
+    // The last link of the row: on the phone, with an odd number of links, it takes the whole row.
+    className: 'nav__link--wide',
     icon: '<path d="M1 13a7 7 0 0 1 14 0M4.5 13a3.5 3.5 0 0 1 7 0M1 13h14"/>',
   },
   {
@@ -476,6 +484,7 @@ const testsCurrent = path.startsWith(routes.tests());
       white-space: nowrap;
     }
     .nav > a .nav__icon { display: inline; }
+    .nav > a.nav__link--wide { grid-column: 1 / -1; }
     /* The theme button is a setting, not a page: it takes the last row on its own. */
     .nav > .theme-toggle {
       grid-column: 1 / -1;
@@ -532,7 +541,15 @@ const testsCurrent = path.startsWith(routes.tests());
 
   /* Folding phone or tablet: the sections in one row. */
   @media (min-width: 720px) and (max-width: 1179px) {
-    .nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    /* Five links in one row: each takes one column, and the icons go away while the row is narrow. */
+    .nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .nav > a.nav__link--wide { grid-column: auto; }
+    .nav > a:not(.nav__link--search) { padding: 0 8px; }
+    .nav > a:not(.nav__link--search) .nav__icon { display: none; }
+  }
+  @media (min-width: 900px) and (max-width: 1179px) {
+    .nav > a:not(.nav__link--search) { padding: 0 12px; }
+    .nav > a:not(.nav__link--search) .nav__icon { display: inline; }
   }
 
   /* Phone: a smaller logo. */

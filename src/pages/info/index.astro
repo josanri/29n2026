@@ -1,0 +1,299 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Panel from '@/components/ui/Panel.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { routes } from '@/lib/routes';
+import { OFFICIAL_SITE, OFFICIAL_EMAIL } from '@/data/2026/generales/calendario';
+
+// Source: the official site of the Ministry of the Interior. The page is a summary, not a legal text.
+const SOURCE_URL = `${OFFICIAL_SITE}/`;
+const INFOELECTORAL = 'https://infoelectoral.interior.gob.es';
+const JEC = 'https://www.juntaelectoralcentral.es';
+/** An article of the LOREG (Ley Orgánica 5/1985) in the consolidated text of the BOE. */
+const LOREG = 'https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672';
+/** The official app of the Policía Nacional. The names of the apps in the stores can be alike: use these links. */
+const MIDNI_ANDROID = 'https://play.google.com/store/apps/details?id=es.gob.interior.policia.midni';
+const MIDNI_IOS = 'https://apps.apple.com/es/app/midni/id6477598076';
+/** The search of the INE (Oficina del Censo Electoral): province, municipality and first letter of the first surname. */
+const INE_MESAS = 'https://sede.ine.gob.es/ce-mesas/presentacion';
+const AUTOFIRMA = 'https://firmaelectronica.gob.es/Home/Descargas.html';
+/** A page of the official site. */
+const link = (path: string) => `${OFFICIAL_SITE}${path}`;
+
+const keyFacts = [
+  { label: 'Día de la votación', value: 'Domingo 29 de noviembre de 2026, de 9:00 a 20:00.' },
+  { label: 'Qué se elige', value: 'El Congreso de los Diputados (350 diputados) y el Senado.' },
+  { label: 'Voto por correo desde España', value: 'La solicitud termina el 19 de noviembre. El voto se entrega en Correos hasta el 25 de noviembre.' },
+  { label: 'Permiso para votar', value: 'Hasta cuatro horas retribuidas el día de la votación.' },
+  { label: 'Quién puede votar', value: 'Quien tiene nacionalidad española, es mayor de edad (también si cumple 18 años ese día) y está en el censo. Votar no es obligatorio.' },
+];
+
+const identification = [
+  'DNI.',
+  `La app MiDNI (<a href="${MIDNI_ANDROID}" rel="noopener" target="_blank">Google Play<span class="sr-only"> (se abre en otra pestaña)</span></a> o <a href="${MIDNI_IOS}" rel="noopener" target="_blank">App Store<span class="sr-only"> (se abre en otra pestaña)</span></a>): la Mesa tiene un dispositivo que lee el código QR de la app (acuerdo de la JEC del 5 de noviembre de 2026). Descárgala solo con estos enlaces: en las tiendas hay apps con un nombre parecido que no son oficiales.`,
+  'Pasaporte con fotografía.',
+  'Permiso de conducir con fotografía.',
+  'Los documentos caducados se aceptan, pero deben ser originales. Una fotocopia no vale.',
+];
+
+const siteSections = [
+  { name: 'Cómo votar en persona', path: '/informacion-general/como-votar/voto-presencial', text: 'Dónde, con qué documento y cómo es el voto en la Mesa.' },
+  { name: 'Voto por correo desde España', path: '/informacion-general/como-votar/voto-por-correo-desde-espana/', text: 'Solicitud, impresos en cinco lenguas y AutoFirma.' },
+  { name: 'Impresos para electores', path: '/informacion-general/impresos-electores/impresos-electores', text: 'Todos los impresos que puede necesitar un elector.' },
+  { name: 'Calendario oficial', path: '/informacion-general/calendarios/calendarios', text: 'Unas 116 filas, con la referencia legal de cada plazo.' },
+  { name: 'Resuelva sus dudas', path: '/informacion-general/resuelva-sus-dudas/las-cortes-generales', text: 'Congreso, Senado, sistema electoral, Administración electoral, censo, voto en el extranjero, Mesas, escrutinio y paridad.' },
+  { name: 'Vídeos explicativos', path: '/informacion-general/videos-explicativos/voto-por-correo-desde-espana', text: 'Voto por correo, CERA, ERTA, Mesas, local electoral, Congreso, Senado, voto accesible, método D’Hondt y servicio postal.' },
+  { name: 'Campañas institucionales', path: '/informacion-general/campanas-institucionales/campanas-television', text: 'Las campañas de televisión y de radio.' },
+  { name: 'Enlaces de interés', path: '/informacion-general/enlaces-de-interes/enlaces-de-interes', text: 'Los organismos del Estado que intervienen en las elecciones.' },
+  { name: 'Candidaturas proclamadas', path: '/formaciones-politicas/candidaturas/proclamadas-congreso', text: 'Mapa interactivo por provincia, para Congreso y Senado.' },
+  { name: 'Presentación de candidaturas', path: '/formaciones-politicas/informacion-general/la-presentacion-de-las-candidaturas-en-las-elecciones-generales-de-2026', text: 'Para las formaciones políticas.' },
+  { name: 'Impresos electrónicos', path: '/formaciones-politicas/impresos-electronicos', text: 'Para las formaciones políticas.' },
+  { name: 'Subvenciones por gastos electorales', path: '/formaciones-politicas/subvenciones-por-gastos-electorales/tipos-y-requisitos', text: 'Tipos y requisitos.' },
+  { name: 'Tribunal de Cuentas', path: '/formaciones-politicas/tribunal-de-cuentas', text: 'Instrucciones para la fiscalización de los gastos electorales.' },
+  { name: 'Información para las Mesas', path: '/informacion-mesas/informacion-general/informacion-general-sobre-las-mesas-electorales', text: 'Información general para quien forma parte de una Mesa.' },
+  { name: 'Manual de instrucciones de las Mesas', path: '/informacion-mesas/manual-de-instrucciones-mesas/', text: 'El manual completo, con unas breves instrucciones aparte.' },
+  { name: 'Guía sobre accesibilidad', path: '/accesibilidad/guia-sobre-accesibilidad', text: 'Voto accesible, discapacidad en una Mesa, apoyo a la discapacidad intelectual y cartelería accesible.' },
+  { name: 'Declaración de accesibilidad', path: '/declaracion-de-accesibilidad/', text: 'Estado de accesibilidad de la web oficial.' },
+];
+---
+
+<BaseLayout
+  title="Información oficial"
+  description="Cómo, dónde y cuándo votar el 29 de noviembre de 2026: documentos, voto por correo, voto en el extranjero, Mesas, escrutinio y accesibilidad."
+>
+  <section class="intro">
+    <div class="container">
+      <h1 class="headline">Info</h1>
+      <p class="intro__lede">
+        Lo que necesitas saber para votar el 29 de noviembre. Es un resumen de la web oficial del Ministerio del Interior,
+        con los datos que más se consultan.
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="stack">
+      <Panel title="Lo esencial">
+        <Fragment slot="icon"><Icon name="info" size={24} /></Fragment>
+        <dl class="facts">
+          {keyFacts.map((fact) => (
+            <>
+              <dt>{fact.label}</dt>
+              <dd>{fact.value}</dd>
+            </>
+          ))}
+          <dt>Dudas oficiales</dt>
+          <dd><a href={`mailto:${OFFICIAL_EMAIL}`}>{OFFICIAL_EMAIL}</a>, <a href={INFOELECTORAL} rel="noopener" target="_blank">infoelectoral.interior.gob.es<span class="sr-only"> (se abre en otra pestaña)</span></a> o el teléfono 060.</dd>
+        </dl>
+      </Panel>
+
+      <Panel title="Votar en persona">
+        <Fragment slot="icon"><Icon name="voter" size={24} /></Fragment>
+        <h4>Dónde</h4>
+        <ul>
+          <li>La Oficina del Censo Electoral envía la tarjeta censal. Indica tu sección y tu Mesa, y avisa de los cambios.</li>
+          <li><strong>Busca tu Mesa:</strong> en el <a href={INE_MESAS} rel="noopener" target="_blank">buscador del INE<span class="sr-only"> (se abre en otra pestaña)</span></a> eliges la provincia, el municipio y la inicial de tu primer apellido, y te dice tu local, tu sección y tu Mesa. No necesitas certificado digital. También puedes preguntar en tu ayuntamiento o en la Delegación Provincial de la Oficina del Censo Electoral.</li>
+          <li>Solo puedes votar en la Mesa que te corresponde. Los interventores votan en la Mesa donde están acreditados, si está en su circunscripción.</li>
+          <li>Si no estás en la lista, solo puedes votar con una sentencia judicial que reconozca tu derecho o con un certificado censal específico de la Delegación Provincial de la Oficina del Censo Electoral.</li>
+        </ul>
+        <h4>Con qué documento</h4>
+        <ul>
+          {identification.map((item) => <li set:html={item} />)}
+        </ul>
+        <p class="more">Más detalles en la <a href={link('/informacion-general/como-votar/voto-presencial')} rel="noopener" target="_blank">página oficial del voto presencial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
+        <h4>Cómo es el voto</h4>
+        <ul>
+          <li>Dices tu nombre y apellidos a la Presidencia. Los vocales y los interventores comprueban tu identidad y el censo.</li>
+          <li>Entregas el sobre cerrado a la Presidencia. Dice tu nombre en voz alta, añade «Vota» y te devuelve el sobre para que lo metas en la urna.</li>
+          <li>El voto es personal y no se puede delegar. Una persona con discapacidad puede ir con una persona de confianza desde que elige la papeleta hasta que entrega el sobre.</li>
+          <li>Solo los miembros de la Mesa pueden explicarte cómo votar, si se lo pides.</li>
+          <li>La votación termina a las 20:00. Quien está dentro del local a esa hora puede votar.</li>
+        </ul>
+        <h4>El día de la votación</h4>
+        <ul>
+          <li>La Mesa se constituye a las 8:00. La Presidencia es la única autoridad para mantener el orden dentro del local.</li>
+          <li>No se permite propaganda de ningún tipo en el local ni cerca de él. Las siglas que llevan interventores y apoderados para identificarse no son propaganda.</li>
+          <li>Los medios informan desde fuera. Solo pueden grabar el interior con la acreditación previa de la Mesa.</li>
+          <li>Si se acaban las papeletas de una candidatura, sus interventores pueden aportarlas. Si no, la Junta Electoral de Zona las repone. Una interrupción no puede durar más de una hora y se alarga la votación ese tiempo.</li>
+        </ul>
+      </Panel>
+
+      <Panel title="Voto válido, en blanco y nulo">
+        <Fragment slot="icon"><Icon name="envelope" size={24} /></Fragment>
+        <ul class="votes">
+          <li class="votes__kind"><span class="votes__tile"><Icon name="vote-valid" size={24} /></span><span><strong>Válido:</strong> un voto a una candidatura o un voto en blanco.</span></li>
+          <li class="votes__kind"><span class="votes__tile"><Icon name="vote-blank" size={24} /></span><span><strong>En blanco:</strong> en el Congreso, un sobre sin papeleta. En el Senado, un sobre sin papeleta o una papeleta sin ningún candidato marcado.</span></li>
+          <li class="votes__kind"><span class="votes__tile"><Icon name="vote-null" size={24} /></span><span><strong>Nulo:</strong> un sobre o una papeleta que no son el modelo oficial, que están alterados o rotos, una papeleta sin sobre, o un voto en el que no se puede saber la intención del elector.</span></li>
+        </ul>
+        <ul class="votes votes--rules">
+          <li><Icon name="ballots" /><span>Un sobre con varias papeletas de la misma candidatura cuenta como un solo voto válido. Un sobre con papeletas de candidaturas distintas es nulo.</span></li>
+          <li><Icon name="congress" /><span>Congreso: es nulo si cambias, añades o tachas nombres, si cambias el orden o si alteras el símbolo.</span></li>
+          <li><Icon name="senate-list" /><span>Senado: es nulo si marcas más de tres nombres (provincias de la península), más de dos (Gran Canaria, Mallorca, Tenerife, Ceuta y Melilla) o más de uno (las demás islas).</span></li>
+          <li><Icon name="pencil" /><span>Una marca junto a un candidato cuenta como válida, salvo que altere de forma notable la papeleta o sea una censura.</span></li>
+          <li><Icon name="mesa" /><span>Solo la Mesa decide si un voto es válido o nulo.</span></li>
+        </ul>
+      </Panel>
+
+      <Panel title="Voto por correo desde España">
+        <Fragment slot="icon"><Icon name="mail" size={24} /></Fragment>
+        <ul>
+          <li>Puedes pedirlo del 6 de octubre al 19 de noviembre. <a href={link('/informacion-general/como-votar/voto-por-correo-desde-espana/')} rel="noopener" target="_blank">Página oficial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</li>
+          <li><strong>En persona:</strong> recoge el impreso en cualquier oficina de Correos o descárgalo. Entrégalo tú mismo con tu DNI, pasaporte o permiso de conducir originales.</li>
+          <li><strong>Por vía electrónica:</strong> necesitas un certificado digital o el DNI electrónico y la aplicación <a href={AUTOFIRMA} rel="noopener" target="_blank">AutoFirma<span class="sr-only"> (se abre en otra pestaña)</span></a>. La web oficial indica la versión de Chrome, Firefox o Safari que corresponde a tu sistema.</li>
+          <li>Hay impresos en castellano, catalán, gallego, euskera y valenciano, cada uno con su hoja informativa.</li>
+          <li>Cuando admiten tu solicitud, ya no puedes votar en persona.</li>
+          <li>La Oficina del Censo Electoral te envía por correo certificado las papeletas, los sobres, el certificado censal, un sobre con la dirección de tu Mesa y una hoja explicativa. Debes recogerlos tú, con tu identificación, en tu domicilio o en Correos.</li>
+          <li><strong>Congreso:</strong> mete la papeleta en el sobre blanco. <strong>Senado:</strong> marca los candidatos y mete la papeleta en el sobre sepia.</li>
+          <li>Mete los sobres de votación y el certificado censal en el sobre con la dirección de la Mesa. No metas ningún documento de identidad en el sobre de votación: el voto sería nulo.</li>
+          <li>Entrega ese sobre en Correos, identificándote, hasta el 25 de noviembre. Es gratis. Si no puedes ir, otra persona puede entregarlo con una autorización y una fotocopia de tu documento. Correos puede enviarte un correo electrónico que confirme la entrega en la Mesa.</li>
+          <li>Correos entrega el correo a las Mesas a las 9:00 del día de la votación y sigue hasta las 20:00. Los sobres que llegan después de las 20:00 no se cuentan. Un voto enviado por correo ordinario es nulo.</li>
+          <li>Las personas con movilidad reducida pueden obtener gratis el certificado médico y el poder notarial, y otra persona puede pedir el voto por ellas (<a href={`${LOREG}#a72`} rel="noopener" target="_blank">art. 72.c LOREG<span class="sr-only"> (se abre en otra pestaña)</span></a>). Un documento vale para un solo elector.</li>
+        </ul>
+      </Panel>
+
+      <Panel title="Votar desde el extranjero">
+        <Fragment slot="icon"><Icon name="globe" size={24} /></Fragment>
+        <h4>Residentes permanentes (CERA)</h4>
+        <ul>
+          <li>Reciben el material por correo certificado del 24 de octubre al 1 de noviembre. Las papeletas oficiales llegan hasta el 11 de noviembre, o hasta el 14 si se recurre alguna candidatura.</li>
+          <li>Pueden descargar el juego completo de papeletas del 2 al 7 de noviembre. Solo se puede descargar el juego completo, para proteger el secreto del voto.</li>
+          <li><strong>En urna:</strong> en el consulado o en un centro habilitado, del 21 al 26 de noviembre, con identificación y el segundo certificado censal.</li>
+          <li><strong>Por correo certificado:</strong> hasta el 24 de noviembre, al consulado. El sello consular debe mostrar que se respetó el plazo.</li>
+          <li>Quien está de forma temporal en España puede pedir el voto por correo, como los residentes, hasta el 19 de noviembre. Lo envía a la Junta Electoral Provincial hasta el 25 de noviembre. No puede votar en una Mesa.</li>
+          <li>La página oficial del CERA muestra una medida cautelar del Tribunal Supremo (<a href={JEC} rel="noopener" target="_blank">acuerdo 270/2026 de la JEC<span class="sr-only"> (se abre en otra pestaña)</span></a>). Consulta la web oficial para saber qué cambia.</li>
+        </ul>
+        <h4>Residentes temporales (ERTA)</h4>
+        <ul>
+          <li>La solicitud terminó el 31 de octubre. Se entrega en persona en el consulado o en la embajada.</li>
+          <li>La Oficina del Censo Electoral envía el material hasta el 17 de noviembre.</li>
+          <li>El elector devuelve el sobre por correo certificado hasta el 25 de noviembre. El matasellos debe mostrar que se respetó el plazo.</li>
+        </ul>
+        <h4>Otros procedimientos</h4>
+        <ul>
+          <li><strong>Tripulaciones de barcos:</strong> piden el certificado a la Oficina del Censo Electoral por radiotelegrafía, correo electrónico, fax u otro medio, y envían el voto desde un puerto.</li>
+          <li><strong>Fuerzas Armadas en misiones en el exterior:</strong> el mando de la unidad envía la lista al Ministerio de Defensa. El Ministerio entrega los votos a Correos antes del tercer día previo a la votación.</li>
+          <li><strong>Personas presas:</strong> votan por correo. Cada prisión informa y pide a Correos que acuda con los impresos. Sirve el documento de identidad interno, si lleva fotografía.</li>
+        </ul>
+        <p class="more">Las fechas están en el <a href={routes.calendar()}>calendario</a>. Más detalles en la <a href={link('/informacion-general/resuelva-sus-dudas/las-cortes-generales')} rel="noopener" target="_blank">página oficial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
+      </Panel>
+
+      <Panel title="Si te toca una Mesa">
+        <Fragment slot="icon"><Icon name="mesa" size={24} /></Fragment>
+        <ul>
+          <li>Formar parte de una Mesa es obligatorio. Hay un presidente, dos vocales y dos suplentes para cada uno.</li>
+          <li>El ayuntamiento hace un sorteo público entre los electores de la sección menores de 70 años que saben leer y escribir. El presidente debe tener el Bachiller, la FP de segundo grado o, como mínimo, el Graduado Escolar. Quien tiene 65 años o más puede renunciar.</li>
+          <li>El sorteo es del 31 de octubre al 4 de noviembre. Se avisa a las personas elegidas hasta el 7 de noviembre y se les entrega el manual de instrucciones.</li>
+          <li>Tienes siete días desde el aviso, hasta el 14 de noviembre, para alegar ante la Junta Electoral de Zona una causa que te lo impida. La Junta decide en cinco días. También se puede hacer en línea con Cl@ve.</li>
+          <li>Una discapacidad declarada es causa suficiente, sin certificado médico. Quien es candidato no puede formar parte de una Mesa.</li>
+          <li>Si después no puedes ir, avisa a la Junta al menos 72 horas antes. Si surge más tarde, avisa de inmediato y antes de las 8:00 del día de la votación.</li>
+          <li>Faltar o abandonar sin causa tiene pena de prisión de tres meses a un año o multa de seis a veinticuatro meses.</li>
+          <li><strong>Permiso:</strong> el día de la votación es un día libre retribuido si es laborable, y al día siguiente la jornada se reduce en cinco horas. Hay una dieta de 75 €. El suplente que sustituye a un titular también tiene el permiso y la dieta.</li>
+          <li><strong>Seguridad Social:</strong> los titulares y los suplentes tienen cobertura, incluido el accidente de camino a la Mesa o de vuelta.</li>
+          <li>Las secciones, los locales y las Mesas definitivos se publican del 19 al 28 de noviembre, en los ayuntamientos y en línea.</li>
+        </ul>
+        <p class="more">Para más detalle, lee el <a href={link('/informacion-mesas/manual-de-instrucciones-mesas/')} rel="noopener" target="_blank">manual de instrucciones<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
+      </Panel>
+
+      <Panel title="Escrutinio y resultados">
+        <Fragment slot="icon"><Icon name="count" size={24} /></Fragment>
+        <ul>
+          <li>Al terminar la votación, la Presidencia saca los sobres uno a uno, lee en voz alta la candidatura y enseña la papeleta. Se cuenta primero el Congreso y después el Senado.</li>
+          <li>La Mesa anuncia el número de electores, los certificados censales, los votos nulos, los votos en blanco y los votos de cada candidatura. Cualquier persona puede asistir al recuento si el local lo permite, sin voz ni voto.</li>
+          <li>Los resultados provisionales de la noche salen de las actas de las Mesas, que el representante de la Administración pasa al Ministerio del Interior.</li>
+          <li>Los resultados oficiales son los que publica el BOE.</li>
+          <li>El escrutinio general lo hace la Junta Electoral Provincial el quinto día tras la votación, el 4 de diciembre, y debe terminar antes del 7 de diciembre. La Junta no puede anular actas ni votos: solo corrige errores.</li>
+        </ul>
+      </Panel>
+
+      <Panel title="Cómo se reparten los escaños">
+        <Fragment slot="icon"><Icon name="hemicycle" size={24} /></Fragment>
+        <ul>
+          <li><strong>Congreso:</strong> 350 diputados. Cada provincia tiene dos como mínimo, Ceuta y Melilla tienen uno cada una, y los otros 248 se reparten según la población. Las listas son cerradas y bloqueadas: eliges un partido, no personas.</li>
+          <li><strong>Reparto:</strong> se excluyen las candidaturas con menos del 3 % de los votos válidos de la circunscripción. Se divide el total de cada una entre 1, 2, 3… y los escaños van a los cocientes más altos (método D’Hondt). En Ceuta y Melilla gana el candidato con más votos.</li>
+          <li><strong>Senado:</strong> se eligen 209 senadores. Hay cuatro por provincia de la península, tres en Gran Canaria, Tenerife y Mallorca, dos en Ceuta y Melilla y uno en las demás islas. Formentera tiene senador propio. Los demás los designan los parlamentos autonómicos.</li>
+          <li>En el Senado votas a personas, no a partidos: marcas tres, dos o un candidato, según la circunscripción, y pueden ser de partidos distintos.</li>
+          <li><strong>Papeletas:</strong> la del Congreso es blanca y la del Senado es sepia, una por circunscripción y común a todas las candidaturas.</li>
+          <li><strong>Paridad:</strong> en las listas del Congreso, cada sexo debe tener al menos un 40 % del total y de cada bloque de cinco puestos.</li>
+          <li><strong>Administración electoral:</strong> la forman las Mesas y las Juntas Electorales (Central, Provinciales y de Zona). Su misión es garantizar la transparencia, la objetividad y la igualdad.</li>
+        </ul>
+      </Panel>
+
+      <Panel title="Permiso para votar">
+        <Fragment slot="icon"><Icon name="clock" size={24} /></Fragment>
+        <ul>
+          <li>Quien trabaja el 29 de noviembre puede disponer de hasta cuatro horas retribuidas para votar. Con jornada reducida, el permiso se reduce en proporción.</li>
+          <li>Quien trabaja lejos de su domicilio, o está en una situación que hace difícil votar ese día, puede votar por correo y tiene las mismas cuatro horas para pedir el voto (<a href={`${LOREG}#a72`} rel="noopener" target="_blank">art. 72 LOREG<span class="sr-only"> (se abre en otra pestaña)</span></a>).</li>
+        </ul>
+      </Panel>
+
+      <Panel title="Accesibilidad del voto">
+        <Fragment slot="icon"><Icon name="access" size={24} /></Fragment>
+        <ul>
+          <li>Todas las personas pueden votar, se comuniquen como se comuniquen y con el apoyo que necesiten (<a href={`${LOREG}#a3`} rel="noopener" target="_blank">art. 3.2 LOREG<span class="sr-only"> (se abre en otra pestaña)</span></a>).</li>
+          <li>La Administración debe garantizar la igualdad de oportunidades de las personas con discapacidad para llegar a los colegios y a las Mesas, y no puede discriminarlas.</li>
+          <li><strong>Voto accesible:</strong> las personas con discapacidad visual que leen braille y tienen un 33 % o más de discapacidad, o son miembros de la ONCE, pueden pedir el kit del 6 de octubre al 2 de noviembre. El teléfono es el 900 150 000, de lunes a viernes de 9:00 a 17:30 y los sábados de 9:00 a 14:00. Se recibe en casa o se recoge en la Mesa.</li>
+          <li>El kit lleva las papeletas y los sobres de siempre, una guía en braille, etiquetas y una plantilla para el Senado.</li>
+          <li>Con una discapacidad auditiva, quien forma parte de una Mesa puede pedir un intérprete de lengua de signos y un bucle de inducción magnética gratis. Debe pedirlo por escrito a la Junta Electoral de Zona en siete días desde el aviso.</li>
+          <li>Se admiten perros guía y de asistencia. Si hay cola, las personas con discapacidad tienen prioridad.</li>
+          <li>Si necesitas transporte gratuito porque el local no tiene transporte público accesible, pregunta a la Junta Electoral de Zona o a la Delegación o Subdelegación del Gobierno.</li>
+          <li>Hay cartelería accesible con pictogramas de Plena Inclusión en las capitales y en los municipios de más de 50 000 habitantes.</li>
+          <li>La Confederación Estatal de Personas Sordas (CNSE) ofrece vídeos en lengua de signos.</li>
+        </ul>
+        <p class="more">Lee la <a href={link('/accesibilidad/guia-sobre-accesibilidad')} rel="noopener" target="_blank">guía oficial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
+      </Panel>
+
+      <Panel title="Fechas del proceso">
+        <Fragment slot="icon"><Icon name="calendar" size={24} /></Fragment>
+        <p>Las fechas del proceso (consulta del censo, voto por correo, campaña, votación y escrutinio) están en el <a href={routes.calendar()}>calendario</a> de esta web, con un enlace a la página oficial de cada una y la opción de añadirlas a tu agenda.</p>
+      </Panel>
+
+      <Panel title="Más en la web oficial" lead="Estos apartados no están resumidos aquí. Cada enlace lleva a la web del Ministerio del Interior.">
+        <Fragment slot="icon"><Icon name="external" size={24} /></Fragment>
+        <ul>
+          {siteSections.map((section) => (
+            <li><a href={link(section.path)} rel="noopener" target="_blank">{section.name}<span class="sr-only"> (se abre en otra pestaña)</span></a>. {section.text}</li>
+          ))}
+        </ul>
+      </Panel>
+
+      <Panel title="Fuente">
+        <Fragment slot="icon"><Icon name="summary" size={24} /></Fragment>
+        <p>Resumen de <a href={SOURCE_URL} rel="noopener" target="_blank">29neleccionesgenerales.es<span class="sr-only"> (se abre en otra pestaña)</span></a> (Ministerio del Interior), consultado el 17 de noviembre de 2026. Esta web es informativa e independiente y no es una fuente oficial: antes de actuar, comprueba los plazos y los requisitos en la web oficial.</p>
+        <p>Contacto oficial: <a href={`mailto:${OFFICIAL_EMAIL}`}>{OFFICIAL_EMAIL}</a> · <a href={INFOELECTORAL} rel="noopener" target="_blank">infoelectoral.interior.gob.es<span class="sr-only"> (se abre en otra pestaña)</span></a> · teléfono 060.</p>
+      </Panel>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .intro { padding: var(--space-7) 0 var(--space-6); }
+  .intro h1 { font-size: clamp(3.5rem, 14cqi, 8.5rem); }
+  .intro__lede { max-width: 62ch; font-size: var(--text-lg); margin-top: var(--space-3); }
+  .stack { display: grid; gap: var(--space-5); max-width: 78ch; }
+  ul { padding-left: 1.2em; margin: 0; }
+  li + li { margin-top: var(--space-2); }
+  h4 { font-size: 1.125rem; margin: var(--space-4) 0 var(--space-2); }
+  h4:first-child { margin-top: 0; }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-4); margin: 0; }
+  .facts dt { font-weight: 700; }
+  .facts dd { margin: 0; }
+  .more { margin-top: var(--space-3); }
+  /* Valid, blank and null: an icon in a square tile for each kind, a small icon for each rule. */
+  .votes { list-style: none; padding-left: 0; }
+  .votes li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-3); align-items: start; }
+  .votes__kind + .votes__kind { margin-top: var(--space-3); }
+  .votes__tile {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--color-ink);
+  }
+  .votes--rules { margin-top: var(--space-4); padding-top: var(--space-4); border-top: var(--border-fine) solid var(--color-ink); }
+  .votes--rules li { padding-left: 12px; }
+  .votes--rules :global(.icon) { margin-top: 2px; }
+  @media (max-width: 560px) {
+    .facts { grid-template-columns: 1fr; gap: 0; }
+    .facts dd { margin-bottom: var(--space-3); }
+  }
+</style>

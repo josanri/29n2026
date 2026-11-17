@@ -21,11 +21,17 @@ export interface CalendarEvent {
   basis?: string;
   /** Link to the document of the site that supports an official date. */
   documentPath?: string;
+  /** Link to the page of the official site (Ministry of the Interior) that explains the event. */
+  officialUrl?: string;
 }
+
+/** Official site of the Ministry of the Interior for this election. */
+export const OFFICIAL_SITE = 'https://29neleccionesgenerales.es';
+export const OFFICIAL_EMAIL = 'infoelectoral@interior.es';
 
 export const ELECTION_DATE = '2026-11-29';
 
-export const calendarEvents: CalendarEvent[] = [
+const events: CalendarEvent[] = [
   {
     id: 'convocatoria',
     date: '2026-10-06',
@@ -45,8 +51,8 @@ export const calendarEvents: CalendarEvent[] = [
   {
     id: 'proclamacion-candidaturas',
     date: '2026-11-03',
-    title: 'Proclamación de candidaturas',
-    description: 'Las Juntas Electorales proclaman las candidaturas al Congreso y al Senado.',
+    title: 'Candidaturas proclamadas',
+    description: 'Las Juntas Electorales proclamaron el 2 de noviembre las candidaturas al Congreso y al Senado. El BOE las publica el 3 de noviembre.',
     source: 'official',
     documentPath: '/datos-electorales/candidaturas-proclamadas-2026.pdf',
   },
@@ -59,6 +65,16 @@ export const calendarEvents: CalendarEvent[] = [
     documentPath: '/datos-electorales/candidaturas-proclamadas-2026-correccion.pdf',
   },
   {
+    id: 'consulta-censo',
+    date: '2026-10-12',
+    endDate: '2026-10-19',
+    title: 'Consulta del censo y reclamaciones',
+    description:
+      'Puedes comprobar tus datos del censo electoral en tu ayuntamiento, en el consulado o en la Delegación Provincial de la Oficina del Censo Electoral, y reclamar si hay un error.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
     id: 'inicio-campana',
     date: '2026-11-13',
     endDate: '2026-11-27',
@@ -67,6 +83,35 @@ export const calendarEvents: CalendarEvent[] = [
       'Quince días de campaña: desde el viernes 13 hasta el viernes 27 de noviembre. Los partidos piden el voto con mítines y propaganda.',
     source: 'derived',
     basis: 'LOREG, art. 51: la campaña dura quince días y termina a las 0 horas del día anterior a la jornada de reflexión.',
+  },
+  {
+    id: 'fin-solicitud-voto-correo',
+    date: '2026-11-19',
+    title: 'Fin de la solicitud del voto por correo',
+    description:
+      'Último día para pedir el voto por correo desde España. Puedes hacerlo en cualquier oficina de Correos o por vía electrónica, con un certificado digital o el DNI electrónico y la aplicación AutoFirma.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/como-votar/voto-por-correo-desde-espana/`,
+  },
+  {
+    id: 'envio-documentacion-voto-correo',
+    date: '2026-11-09',
+    endDate: '2026-11-22',
+    title: 'Voto por correo: envío de la documentación',
+    description:
+      'La Oficina del Censo Electoral envía a quien lo ha pedido la documentación para votar por correo (LOREG, art. 73.2).',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'devolucion-voto-correo',
+    date: '2026-11-09',
+    endDate: '2026-11-25',
+    title: 'Voto por correo: entrega del voto',
+    description:
+      'Las personas que votan por correo entregan su voto en una oficina de Correos (LOREG, art. 73.3). Quien está temporalmente fuera (ERTA) tiene hasta el 25 de noviembre para que su papeleta llegue a la Mesa; el envío empieza el 3 de noviembre (art. 74).',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/como-votar/voto-por-correo-desde-espana/`,
   },
   {
     id: 'jornada-reflexion',
@@ -81,17 +126,110 @@ export const calendarEvents: CalendarEvent[] = [
     date: '2026-11-29',
     time: { from: '09:00', to: '20:00' },
     title: 'Día de las elecciones',
-    description: 'Votación en los colegios electorales, de 9:00 a 20:00. Se elige el Congreso y 208 de los 265 escaños del Senado.',
+    description: 'Votación en los colegios electorales, de 9:00 a 20:00. Se eligen los 350 diputados del Congreso y 209 senadores. Para identificarte vale el DNI, la app MiDNI, el pasaporte o el permiso de conducir.',
     source: 'derived',
     basis: 'Fecha de la convocatoria. Horario: LOREG, art. 85.',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/como-votar/voto-presencial`,
   },
   {
     id: 'escrutinio-general',
-    date: '2026-12-02',
+    date: '2026-12-04',
+    endDate: '2026-12-07',
     title: 'Escrutinio general',
     description: 'Las Juntas Electorales Provinciales hacen el recuento oficial. Hasta entonces, los resultados son provisionales.',
-    source: 'derived',
-    basis: 'LOREG, art. 103: el tercer día siguiente a la votación.',
+    source: 'official',
+    basis: 'LOREG, art. 103 y siguientes: es el quinto día tras la votación y debe terminar antes del octavo, el 7 de diciembre. Otros calendarios muestran el 2 de diciembre, que es el tercer día.',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'reclamaciones-escrutinio',
+    date: '2026-12-04',
+    endDate: '2026-12-12',
+    title: 'Reclamaciones y resolución del escrutinio',
+    description:
+      'Los representantes y apoderados pueden reclamar contra el escrutinio del 4 al 8 de diciembre. La Junta Provincial resuelve y envía el expediente a la Junta Electoral Central hasta el 12 de diciembre.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'solicitud-voto-erta',
+    date: '2026-10-06',
+    endDate: '2026-10-31',
+    title: 'Solicitud del voto de residentes temporales en el extranjero (ERTA)',
+    description:
+      'Las personas que están temporalmente en el extranjero piden votar con el impreso de solicitud ERTA.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'designacion-mesas',
+    date: '2026-10-31',
+    endDate: '2026-11-07',
+    title: 'Designación de los miembros de las Mesas',
+    description:
+      'Se notifica a las personas elegidas por sorteo como presidente o vocal de Mesa y se les entrega el manual de instrucciones.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-mesas/informacion-general/informacion-general-sobre-las-mesas-electorales`,
+  },
+  {
+    id: 'alegaciones-mesas',
+    date: '2026-11-01',
+    endDate: '2026-11-14',
+    title: 'Alegar una causa para no formar parte de una Mesa',
+    description:
+      'Quien ha sido designado para una Mesa puede alegar ante la Junta Electoral de Zona una causa que se lo impide.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-mesas/informacion-general/informacion-general-sobre-las-mesas-electorales`,
+  },
+  {
+    id: 'cera-papeletas-descargables',
+    date: '2026-11-02',
+    endDate: '2026-11-07',
+    title: 'Voto en el extranjero (CERA): papeletas descargables',
+    description:
+      'Los residentes permanentes en el extranjero (CERA) pueden descargar sus papeletas.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'cera-voto-correo-consulado',
+    date: '2026-11-03',
+    endDate: '2026-11-24',
+    title: 'Voto en el extranjero (CERA): envío al consulado',
+    description:
+      'Los electores CERA que votan por correo envían su voto al consulado.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'secciones-locales-mesas-definitivos',
+    date: '2026-11-19',
+    endDate: '2026-11-28',
+    title: 'Secciones, locales y Mesas definitivos',
+    description:
+      'Se publican y se exponen, en los ayuntamientos y en línea, las secciones, los locales y las Mesas definitivos.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'cera-voto-urna',
+    date: '2026-11-21',
+    endDate: '2026-11-26',
+    title: 'Voto en el extranjero (CERA): voto en urna',
+    description:
+      'Los residentes en el extranjero votan en la urna del consulado o de los centros habilitados.',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
+  },
+  {
+    id: 'proclamacion-electos',
+    date: '2026-12-08',
+    endDate: '2026-12-16',
+    title: 'Proclamación de los electos',
+    description:
+      'Las Juntas Electorales Provinciales proclaman a los candidatos electos. Antes, la Junta Electoral Central resuelve los recursos (del 7 al 15 de diciembre).',
+    source: 'official',
+    officialUrl: `${OFFICIAL_SITE}/informacion-general/calendarios/calendarios`,
   },
   {
     id: 'constitucion-cortes',
@@ -103,3 +241,8 @@ export const calendarEvents: CalendarEvent[] = [
     basis: 'CE, art. 68.6: el Congreso electo se convoca dentro de los veinticinco días siguientes a las elecciones.',
   },
 ];
+
+/** The events in order of date: the page and the files `.ics` rely on this order. */
+export const calendarEvents: CalendarEvent[] = [...events].sort(
+  (a, b) => a.date.localeCompare(b.date) || (a.endDate ?? a.date).localeCompare(b.endDate ?? b.date),
+);

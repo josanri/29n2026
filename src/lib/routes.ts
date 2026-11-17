@@ -69,6 +69,8 @@ export const routes = {
   calendar: () => withBase('/calendario/'),
   /** The `.ics` file of one event, or of the whole calendar when there is no id. */
   calendarIcs: (eventId?: string) => withBase(eventId ? `/calendario/${eventId}.ics` : '/calendario.ics'),
+  /** Practical information to vote: documents, mail vote, leave from work and dates. */
+  info: () => withBase('/info/'),
   simulator: () => withBase('/simulador/'),
   /** The page that lists the tests. */
   tests: () => withBase('/tests/'),
