@@ -211,6 +211,11 @@ const months = monthKeys.map((key) => {
                   <a href={routes.asset(event.documentPath)}>Ver el documento oficial (PDF)</a>
                 </p>
               )}
+              {event.officialUrl && (
+                <p class="event__basis">
+                  <a href={event.officialUrl} rel="noopener" target="_blank">Ver en la web oficial<span class="sr-only"> (se abre en otra pestaña)</span></a>
+                </p>
+              )}
               <div class="event__actions">
                 <Button size="sm" href={event.google} target="_blank" rel="noopener noreferrer">
                   Google Calendar

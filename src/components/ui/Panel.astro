@@ -11,14 +11,30 @@ const { title, lead, class: className, ...attrs } = Astro.props;
 ---
 
 <div class:list={['box', 'panel', className]} {...attrs}>
-  {title && <h3 class="panel__title">{title}</h3>}
+  {title && (
+    <h3 class:list={['panel__title', { 'panel__title--icon': Astro.slots.has('icon') }]}>
+      {Astro.slots.has('icon') && <span class="panel__icon"><slot name="icon" /></span>}
+      <span>{title}</span>
+    </h3>
+  )}
   {lead && <p class="panel__lead">{lead}</p>}
   <slot />
 </div>
 
 <style>
   .panel { padding: 22px; }
-  .panel__title { font-size: 2rem; margin-bottom: 8px; }
+  .panel__title { display: flex; align-items: center; gap: 12px; font-size: 2rem; margin-bottom: 8px; }
+  .panel__title--icon { margin-bottom: 18px; }
+  .panel__icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
   .panel__lead {
     font-size: 1rem;
     margin-bottom: 18px;
