@@ -292,6 +292,10 @@ Para regenerar los datos de Adelante Andalucía: `npm run data:adelante` (consul
 Para regenerar candidaturas y mapa: `npm run data:candidaturas` (necesita Python con PyMuPDF y conexión para obtener el GeoJSON de provincias). Se usan las proclamaciones del BOE del 3 de noviembre y todas las correcciones de la resolución del 7 de noviembre; las circunscripciones insulares se muestran separadas. El mapa emplea áreas HTML (`<map>`) y se deriva de la capa de provincias del Ministerio de Transportes y Movilidad Sostenible (Sistema de Información Urbana, servicio `SIU/ENTIDADES_TERRITORIALES_EGRN`). En Ceuta y Melilla, el script quita los diques del puerto, que a esa escala son picos finos.
 La portada agrupa los partidos autonómicos por comunidad y muestra los tres temas más frecuentes de cada programa. El PDF aportado de ERC salta de la propuesta 167 a la 198 y de la 250 a la 252; el análisis incluye solo las 227 propuestas presentes en el documento.
 
+## Markdown para agentes
+
+Cada página de un partido tiene una versión en Markdown: `/<partido>/index.md` (`src/lib/markdown.ts`, `src/pages/[party]/index.md.ts`). La página HTML la anuncia con `<link rel="alternate" type="text/markdown">`.
+
 ## Estructura del código
 
 Todo el código (variables, funciones, tipos, clases CSS) está en inglés. Los textos de la web, las URL públicas y las claves de los JSON de datos siguen en español.

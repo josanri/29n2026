@@ -23,6 +23,7 @@ import { routes, withBase } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
 import { programVerbs } from '@/lib/verbs';
 import { partyPageDescription, partyPageTitle, partyShareImage } from '@/lib/seo';
+import { markdownPath } from '@/lib/markdown';
 import { checkPrograms } from '@/lib/program-checks';
 import { keyFindingsByParty, type KeyFinding } from '@eleccion/analysis';
 import { downloadFileNames, summaryDownloadFileName } from '@eleccion/download-names';
@@ -167,6 +168,7 @@ for (const figure of program.figures) {
   accent={program.color}
   accentLight={program.lightColor}
   image={partyShareImage(program)}
+  markdownPath={markdownPath(routes.party(program.id))}
 >
   {
     !program.hasProgram ? (
