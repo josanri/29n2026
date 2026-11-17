@@ -5,7 +5,7 @@
  * publicación original y los porcentajes que da. Un partido que la encuesta no publica va como `null`.
  * Para añadir una encuestadora: una entrada en `pollsters` con su página oficial.
  *
- * Origen de las cifras (revisión del 16 de noviembre de 2026):
+ * Origen de las cifras (revisión del 17 de noviembre de 2026):
  * - `checked: true`: la cifra se ha leído en la página original enlazada.
  * - `checked: false`: la cifra no se ha leído en la página original enlazada: viene de la tabla de Mapa Electoral
  *   (agregador) o de otra fuente que la recoge (electografica, Demócrata…). El enlace es la publicación original.
@@ -115,6 +115,11 @@ export const polls: Poll[] = [
   { pollster: 'cis', date: '2026-07-15', checked: false, url: 'https://www.cis.es/es/w/avance-de-resultados-del-estudio-3571-bar%C3%B3metro-de-julio-2026-', values: v(25.1, 33.0, 15.3, 6.1, 2.5, 2.6, { erc: 2.7, junts: 0.7, bildu: 0.8, pnv: 1.0, bng: 0.9, cc: 0.2, upn: 0.2 }), sample: 4020 },
   { pollster: 'cis', date: '2026-06-11', checked: false, url: 'https://www.cis.es/es/w/avance-de-resultados-del-estudio-3567-bar%C3%B3metro-de-junio-2026-', values: v(27.1, 31.3, 15.8, 6.4, 2.8, 1.9, { erc: 1.9, junts: 1.0, bildu: 1.2, pnv: 0.6, bng: 1.0, cc: 0.2, upn: 0.1 }), sample: 4024 },
   // 40dB.
+  // 16 y 17 nov: FA suma Frente Amplio (3,7) y las otras coaliciones del bloque (1,7): 5,4 %. Sin el informe original: cifras de Electografica y Demócrata (checked: false).
+  // 16 nov: horquilla del PP con UPN-PP (125-136); la muestra (2.500) y el campo (10-15 nov) los da una sola fuente.
+  // 17 nov: SALF y muestra (2.000) de Electografica; FA y otras coaliciones sin escaños sumados (se publican por separado: FA 5-6, otras 3-5).
+  { pollster: '40db', date: '2026-11-17', checked: false, url: 'https://www.democrata.es/encuestas/elecciones-generales/elecciones-generales-tracking-encuesta-29n-hoy-40db-17-noviembre-2026/', values: vFa(31.8, 30.6, 17.5, 5.4, 1.1, 1.6), sample: 2000, seats: { pp: [126, 137], psoe: [118, 126], vox: [55, 62], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
+  { pollster: '40db', date: '2026-11-16', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-40db-261116.html', values: vFa(31.5, 30.3, 18.0, 5.4, 1.1, 1.7), sample: 2500, seats: { pp: [125, 136], psoe: [118, 124], vox: [57, 64], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
   // 15 nov: FA suma Frente Amplio (3,7) y las otras coaliciones del bloque (1,7): 5,4 %. El informe no da escaños de FA.
   { pollster: '40db', date: '2026-11-15', checked: true, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_dia03.pdf', values: vFa(31.4, 29.9, 18.3, 5.4, 1.3, 1.8), sample: 2000, seats: { pp: [125, 136], psoe: [117, 123], vox: [59, 65], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1 } },
   { pollster: '40db', date: '2026-11-14', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_dia02.pdf', values: vFa(31.1, 29.8, 18.5, 5.2, 1.3, 1.6), sample: 1500, seats: { pp: [121, 132], psoe: [116, 123], vox: [61, 67], fa: [7, 11], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
@@ -126,6 +131,8 @@ export const polls: Poll[] = [
   { pollster: '40db', date: '2026-07-06', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/07-barometro/2026_07_informe_voto.pdf', values: v(32.0, 28.0, 17.2, 5.8, 3.1, 2.1), sample: 2000 },
   { pollster: '40db', date: '2026-06-08', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/06-barometro-y-Papa/2026_06_barometro_voto.pdf', values: v(32.4, 27.7, 17.4, 6.2, 2.3, 2.1), sample: 2000 },
   // Sigma Dos (no publica SALF)
+  // 16 nov: sin enlace propio de El Mundo; cifras de Electografica (horquillas, muestra) y Demócrata (FA 6,7 % y 14 escaños). FA 6,7 y 14 escaños (central de Demócrata); la fuente no detalla si incluye Front Valencià y UPCan, se asume por la serie (7,2 el 15 nov, 13-16 escaños). Horquillas de una sola fuente. Sin muestra (el tracking es acumulado y no se ha podido confirmar) ni autonómicos.
+  { pollster: 'sigmados', date: '2026-11-16', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-sigmados-261116.html', values: vFa(30.8, 26.1, 19.8, 6.7, 1.4, null), seats: { pp: [123, 129], psoe: [107, 113], vox: [63, 68], fa: 14, podemos: 0 } },
   // 15 nov: FA suma Frente Amplio (5,6), Front Valencià (1,1) y UPCan (0,5): 7,2 % y 13-16 escaños.
   { pollster: 'sigmados', date: '2026-11-15', checked: false, url: 'https://www.elmundo.es/elecciones/elecciones-generales/2026/11/15/6af8afeae9cf4ab47b8b4586.html', values: vFa(31.0, 25.6, 19.7, 7.2, 1.4, null, { erc: 2.7, junts: 1.3, bildu: 1.4, pnv: 0.8, bng: 1.1, cc: 0.4, adelante: 1.9 }), sample: 5370, seats: { pp: [126, 132], psoe: [105, 111], vox: [62, 67], fa: [13, 16], podemos: 0, erc: [9, 10], junts: [4, 5], bildu: [6, 8], pnv: [3, 4], bng: 2, cc: [0, 1], adelante: [3, 5] } },
   { pollster: 'sigmados', date: '2026-11-13', checked: false, url: 'https://www.elmundo.es/elecciones/elecciones-generales/2026/11/13/6af73a35fdddffb36c8b45a0.html', values: vFa(31.0, 25.4, 19.7, 8.8, 1.4, null, { erc: 2.7, junts: 1.4, bildu: 1.4, pnv: 0.8, bng: 1.1, cc: 0.3, adelante: 2.0 }), sample: 4620, seats: { pp: [126, 132], psoe: [104, 109], vox: [62, 69], fa: [13, 15], podemos: 0, erc: [8, 9], junts: [6, 7], bildu: [6, 8], pnv: [4, 5], bng: 2, cc: [0, 1], adelante: [3, 4] } },
