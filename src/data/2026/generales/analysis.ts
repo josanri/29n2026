@@ -909,4 +909,42 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [13, 14, 15, 16],
     },
   ],
+  podemos: [
+    {
+      title: 'Casi seis de cada diez medidas son de «vida y planeta»',
+      text:
+        'El bloque «Vida solo hay una. Planeta solo hay uno» reúne 261 de las 442 medidas (el 59 %): violencias machistas y aborto, cuidados, migración, cultura (44 medidas), educación, sanidad, clima, transporte, campo y protección animal. Los cinco bloques restantes suman entre 29 (vivienda) y 41 (paz) medidas cada uno.',
+      measureNumbers: [146, 190, 205, 278, 300, 328],
+    },
+    {
+      title: 'Vivienda: alquileres un 40 % más baratos por ley',
+      text:
+        'El primer bloque (29 medidas, cinco de ellas remisiones al bloque de precios) propone rebajar el alquiler un 40 % en contratos vigentes y nuevos, sin que baje del 60 % del precio medio de la zona (1), hacer indefinidos los contratos de vivienda habitual (2) y prohibir comprar casas que no sean para vivir (3). Impulsa la expropiación de uso de las viviendas de grandes tenedores con más de diez (4), prohíbe los pisos turísticos mientras dure la emergencia habitacional (7) y crea una Inmobiliaria Pública con renta máxima del 30 % de la renta media del municipio (8).',
+      measureNumbers: [1, 2, 3, 4, 7, 8],
+    },
+    {
+      title: 'Más sector público: banca, energía, supermercados y tren',
+      text:
+        'Varias medidas crean o amplían titularidad pública: una Banca Pública con el ICO, CDTI y ENISA (33), una red pública de supermercados (34), una Empresa Pública de Energía con la mayoría del capital de Repsol (36 y 37), el 100 % del capital de Red Eléctrica (329) y un operador ferroviario único, con la revocación de las licencias de Ouigo e Iryo (345). La Inmobiliaria Pública (8) y la industria sanitaria y farmacéutica pública (301) siguen la misma línea.',
+      measureNumbers: [8, 33, 34, 36, 37, 329, 345],
+    },
+    {
+      title: 'Paz: salida de la OTAN y gasto militar congelado',
+      text:
+        'Las 41 medidas del bloque de paz piden denunciar el Tratado del Atlántico Norte y cerrar las bases de Rota y Morón (70), revertir el rearme y congelar el gasto militar durante la legislatura (72) y rechazar el 5 % del PIB en 2035 (73). También proponen un Estatuto de Neutralidad con una reforma constitucional «No a la Guerra» (71), un embargo de armas a Israel (95) y la ruptura de relaciones con ese país (94).',
+      measureNumbers: [70, 71, 72, 73, 94, 95],
+    },
+    {
+      title: 'Trabajar menos: SMI de 1.800 euros, 30 horas y jubilación a los 63',
+      text:
+        'El bloque laboral fija un SMI de 1.800 euros al mes en una legislatura y nunca inferior al 75 % del salario mediano (111), una jornada de 30 horas semanales, empezando por 35 (113), y la edad ordinaria de jubilación a los 63 años (116). Añade la pensión mínima equiparada al SMI (127), la prohibición de las horas extra sin compensación en descanso (119) y una renta universal incondicionada a partir del Ingreso Mínimo Vital (135).',
+      measureNumbers: [111, 113, 116, 119, 127, 135],
+    },
+    {
+      title: '10 medidas derogan leyes y 16 llevan «prohibir» en el título',
+      text:
+        'Diez medidas anuncian derogaciones explícitas: la Ley de Extranjería (205), la «Ley Beckham» (51), la reforma del artículo 135 de la Constitución (62), los efectos de las reformas laborales de 2010 y 2012 (117), las leyes privatizadoras de la sanidad (300), la ley de la tauromaquia (404), la Ley Mordaza (427) y otras. Otras 16 llevan «prohibición» o «prohibir» en su título, entre ellas los pisos turísticos (7), las horas extra (119) y los vuelos cortos con alternativa ferroviaria (341).',
+      measureNumbers: [51, 62, 117, 205, 300, 427],
+    },
+  ],
 };
