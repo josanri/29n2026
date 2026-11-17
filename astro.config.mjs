@@ -4,6 +4,7 @@ import { extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import markdownPages from './integrations/markdown-pages.mjs';
 import { ELECTION_DATA_DIR, ELECTION_PUBLIC_DIR, SHARED_PUBLIC_DIR } from './election.config.mjs';
 
 // URL pública del sitio. Se usa en el sitemap, en robots.txt y en las URL canónicas.
@@ -110,6 +111,8 @@ export default defineConfig({
     // Primero la carpeta común: nested-output mueve después su «_headers» a la raíz.
     sharedPublic,
     ...(NESTED_OUTPUT ? [nestedOutput] : []),
+    // Markdown for the AI agents: the pages that are not built from data (see `src/lib/markdown/shared.ts`).
+    markdownPages(),
     sitemap({
       // la búsqueda es una herramienta y el sistema de diseño es una página oculta: no se indexan
       // «/sin-siglas/» es la dirección antigua del test: solo redirige a «/tests/sin-siglas/»
