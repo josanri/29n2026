@@ -63,15 +63,15 @@ DEROGA = {
 COLECTIVOS = {
     'jovenes': r'\bjoves?\b|\bjoventut\b|\bestudiants?\b',
     'mayores': r'\bgent gran\b|\bpensionistes?\b|\bjubilaci[óo]\b|\bpensions\b',
-    'mujeres': r'\bdones?\b|\bmaternitat\b|\bmasclista\b|\bembarassad\w*',
-    'familias': r'\bfam[ií]lies?\b|\bcrian[çc]a\b|\bnaixement\b|\bconciliaci[óo]\b',
+    'mujeres': r'\bdon(?:a|es)\b|\bmaternitat\b|\bmasclista\b|\bembarassad\w*',
+    'familias': r'\bfam[ií]li(?:a|es)\b|\bcrian[çc]a\b|\bnaixement\b|\bconciliaci[óo]\b',
     'infancia': r'\binfància\b|\bnen[sa]?s?\b|\bmenors\b|\balumn\w*|\b0 a 3\b|\b0-3\b|\bescoles bressol\b',
     'autonomos': r'\baut[òo]noms?\b|\bfalsos aut[òo]noms\b',
-    'empresas': r'\bempreses?\b|\bpatronal\b|\bgrups empresarials\b',
+    'empresas': r'\bempres(?:a|es)\b|\bpatronal\b|\bgrups empresarials\b',
     'rural': r'\bmedi rural\b|\bcamp\b|\bjornaler\w*|\bagricult\w*|\bramader\w*|\bpetits productors\b',
     'funcionarios': r'\bocupaci[óo] p[úu]blica\b|\bfuncionari\w*',
-    'discapacidad': r'\bdiscapacitat\b|\bdepend[èe]ncia\b',
-    'victimas': r'\bv[ií]ctimes\b',
+    'discapacidad': r'\bdiscapacitat\b|\bdepend[èe]ncia\b(?! econòmica)',
+    'victimas': r'\bv[ií]ctim(?:a|es)\b',
     'inmigrantes': r'\bmigrants?\b|\bimmigra\w*|\bsense papers\b|\bCIE\b|\bestrangers?\b',
     'pacientes': r'\bpacients\b|\bsanitat p[úu]blica\b|\bllistes d.espera\b',
     'agentes': r'\bpol[ií]c\w*|\bGuàrdia Civil\b',
@@ -80,9 +80,9 @@ COLECTIVOS = {
 PALANCAS = {
     'ley': r'\bllei(?:s)?\b|\bderog\w*|\breform\w*|\blegislaci[óo]\b|\bprohibi\w*|\bCodi Penal\b|\bnormativa\b|\bil·legalitz\w*|\bnul·litat\b',
     'impuestos': r'\bIVA\b|\bIRPF\b|\bfiscal\w*|\bimpostos?\b|\btribut\w*|\bcotitz\w*',
-    'gasto': r'\binversi[óo]\b|\bfinan[çc]\w*|\bpressupost\w*|\bfons\b|\bajudes?\b|\bsubvenci\w*|\bdespesa\b|\bgratu[ïi]t\w*',
-    'organizacion': r'\bcreaci[óo]\b|\bcrear\b|\bempresa p[úu]blica\b|\bempreses estatals\b|\bnacionalitz\w*|\bexpropiaci\w*|\bgesti[óo] (?:p[úu]blica|directa)\b|\bxarxa p[úu]blica\b|\bparc p[úu]blic\b',
-    'plan': r'\bplans?\b|\bestratègia\b|\bprogrames?\b|\bprotocols?\b',
+    'gasto': r'\binversi[óo]\b|\bfinan[çc]\w*|\bpressupost\w*|(?<!bancs, )\bfons\b|\bajud(?:a|es)\b|\bsubvenci\w*|\bdespesa\b|\bgratu[ïi]t\w*',
+    'organizacion': r'\bcreaci[óo]\b|\bcrear\b|\bempresa p[úu]blica\b|\bempres(?:a|es) estatals?\b|\bnacionalitz\w*|\bexpropiaci\w*|\bgesti[óo] (?:p[úu]blica|directa)\b|\bxarxa p[úu]blica\b|\bparc p[úu]blic\b',
+    'plan': r'\bpla(?:ns?)\b|\bestratègia\b|\bprogram(?:a|es)\b|\bprotocols?\b',
 }
 
 TERRITORIOS = {
@@ -260,7 +260,7 @@ def extraer(pdf):
 
 
 def coincidencias(texto, patrones):
-    return [clave for clave, patron in patrones.items() if re.search(patron, texto)]
+    return [clave for clave, patron in patrones.items() if re.search(patron, texto, re.I)]
 
 
 def frase_con(texto, prueba):
@@ -379,7 +379,7 @@ def crear_programa(pdf):
             'Es la versión catalana del «Programa de lucha» del PCTE, que se publica en la web oposicionobrera.pcte.es: '
             'mismas 11 secciones y mismas 95 fichas, con el mismo orden. El PDF no menciona al PCTC: el texto habla del '
             'Partit Comunista dels Treballadors d’Espanya. El PDF no tiene fecha.',
-            'El PCTC presenta el texto como «programa de lucha» y no como programa electoral: «Aquestes no són un seguit '
+            'El texto se presenta como «programa de lluita» y no como programa electoral: «Aquestes no són un seguit '
             'de mesures per aplicar des de les institucions».',
             'Cada ficha de «Eixos de lluita» es una medida, con su título. Las fichas no están numeradas en el '
             'original: el número sigue el orden del PDF.',

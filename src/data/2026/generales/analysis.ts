@@ -337,37 +337,37 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
   ],
   pctc: [
     {
-      title: 'Un programa de lluita, no de govern',
+      title: 'Un programa de lucha, no de gobierno',
       text:
-        'El programa del PCTC es la edición en catalán del «Programa de lluita» del PCTE, que lo presenta como algo distinto de un programa electoral: «Aquestes no són un seguit de mesures per aplicar des de les institucions». Las 95 medidas son reivindicaciones para una «oposició obrera» organizada desde los centros de trabajo, y el último bloque pide más derechos sindicales: representantes también en las empresas de menos de seis trabajadores, 10 horas de asamblea retribuidas al año y consultas vinculantes antes de firmar convenios o ERE.',
+        'El PCTE publica una edición en catalán de su «Programa de lucha» (el PDF lleva «PCTC» en el nombre) y la presenta como algo distinto de un programa electoral: «Aquestes no són un seguit de mesures per aplicar des de les institucions». Las 95 medidas son reivindicaciones para una «oposició obrera» organizada desde los centros de trabajo, y el último bloque pide más derechos sindicales: representantes también en las empresas de menos de seis trabajadores, 10 horas de asamblea retribuidas al año y consultas vinculantes antes de firmar convenios o ERE.',
       measureNumbers: [89, 90, 91, 94],
     },
     {
-      title: 'Menys temps de treball',
+      title: 'Menos tiempo de trabajo',
       text:
         'El primer bloque reduce la jornada a 35 horas semanales «ja», como paso hacia las 30, con un tope de 1.540 horas al año; da cinco semanas de vacaciones y adelanta la jubilación ordinaria a los 60 años (a los 55 en los trabajos penosos o peligrosos). Si una máquina produce lo mismo en menos tiempo, «el resultat ha de ser menys jornada i no menys ocupació».',
       measureNumbers: [2, 3, 4, 16],
     },
     {
-      title: 'Cap desnonament i lloguers a la meitat',
+      title: 'Ningún desahucio y alquileres a la mitad',
       text:
-        'Las 12 medidas de vivienda prohíben todo desahucio de la vivienda habitual de los hogares trabajadores, «sigui quina sigui la causa», bajan los alquileres un 50 % de inmediato y expropian sin indemnización las viviendas vacías de bancos, fondos y grandes tenedores. El parque público de alquiler debe llegar al 10 % de las viviendas y la vivienda turística no puede pasar del 0,5 %.',
+        'Las 12 medidas del bloque de vivienda prohíben todo desahucio de la vivienda habitual de los hogares trabajadores, «sigui quina sigui la causa», bajan los alquileres un 50 % de inmediato y expropian sin indemnización las viviendas vacías de bancos, fondos y grandes tenedores. El parque público de alquiler debe llegar al 10 % de las viviendas y la vivienda turística no puede pasar del 0,5 %.',
       measureNumbers: [17, 21, 23, 24, 25],
     },
     {
-      title: 'Propietat estatal sota control obrer',
+      title: 'Propiedad estatal bajo control obrero',
       text:
         'El programa pasa a propiedad estatal, bajo «mecanismes de control obrer», los sectores estratégicos (energía, transporte y telecomunicaciones) y las empresas viables que sus dueños quieran cerrar. Recupera con gestión pública directa los servicios privatizados y quiere un sistema educativo «exclusivament públic», que integre los centros concertados en una red pública única.',
       measureNumbers: [13, 14, 30, 34, 37],
     },
     {
-      title: 'Fora de l’OTAN i de la UE',
+      title: 'Fuera de la OTAN y de la UE',
       text:
-        'El bloque de paz pide salir de la OTAN y de la Unión Europea, reducir el gasto militar, anular los Programas Especiales de Modernización y llevar los fondos de I+D militar a salud, energía, alimentación y medio ambiente. También un embargo militar total a Israel y el reconocimiento de la República Árabe Saharaui Democrática.',
+        'El bloque de paz pide salir de la OTAN y de la Unión Europea, reducir el gasto militar y anular los Programas Especiales de Modernización; el bloque de cultura y ciencia lleva los fondos de I+D militar a salud, energía, alimentación y medio ambiente. También pide un embargo militar total a Israel y el reconocimiento de la República Árabe Saharaui Democrática.',
       measureNumbers: [72, 73, 75, 79, 80],
     },
     {
-      title: 'Quatre derogacions',
+      title: 'Cuatro derogaciones',
       text:
         'El programa deroga la Ley de Seguridad Ciudadana («Llei mordassa»), la Ley de Convivencia Universitaria, la Ley 15/1997, que abre la sanidad a la gestión privada, y los delitos de injurias a la Corona y de ultrajes a símbolos. Pide además ilegalizar las organizaciones fascistas y franquistas y las empresas de desocupación.',
       measureNumbers: [29, 81, 82, 83, 86, 87],
