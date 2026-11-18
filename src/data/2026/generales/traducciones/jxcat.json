@@ -1,0 +1,2554 @@
+{
+ "id": "jxcat",
+ "idiomaOrigen": "catalán",
+ "estado": "revisada",
+ "fecha": "2026-11-18",
+ "medidas": {
+  "1": {
+   "titulo": "Garantizar el derecho de Cataluña a su autodeterminación empleando todos los medios democráticos necesarios.",
+   "texto": ""
+  },
+  "2": {
+   "titulo": "Derogar el artículo 384 bis de la LECrim, que permite suspender cargos públicos procesados por rebelión o terrorismo cuando se encuentran en prisión provisional, porque vulnera el derecho a la participación política de los cargos electos de acuerdo con las resoluciones de las Naciones Unidas.",
+   "texto": ""
+  },
+  "3": {
+   "titulo": "Derogar y reformar los delitos vinculados a la expresión política, la protesta y la crítica institucional, porque la libertad de expresión no se puede proteger de manera separada de los derechos de reunión, manifestación y participación política: adecuar a los estándares europeos el delito de enaltecimiento del terrorismo y restringir sustancialmente su alcance, reformar los delitos de odio para que no criminalicen ideas, religiones o instituciones, y suprimir el delito de injurias.",
+   "texto": ""
+  },
+  "4": {
+   "titulo": "Combatir la catalanofobia y la discriminación lingüística: incorporar la lengua y el origen territorial como motivos de discriminación; proteger ante la discriminación laboral o en el acceso a prestaciones públicas y privadas; sancionar los abusos de los poderes públicos relacionados con la retirada o prohibición de banderas o símbolos lícitos, la prohibición de cánticos o expresiones en una determinada lengua, las restricciones de expresiones artísticas y las identificaciones, retenciones, registros o controles motivados por lengua, ideología o simbología; regular la conservación y el tratamiento de datos recogidos con finalidades de control ideológico, y trasladar estas garantías al ámbito deportivo.",
+   "texto": "La exhibición pacífica de banderas y símbolos o el uso de una lengua oficial no puede ser considerada, por sí sola, una manifestación violenta o intolerante."
+  },
+  "5": {
+   "titulo": "Regular las infiltraciones policiales realizadas fuera de los supuestos legalmente previstos, con protección específica cuando interfieran en los derechos de asociación, de expresión, de reunión y de sindicación, sin afectar a las infiltraciones legalmente autorizadas para investigar delitos graves.",
+   "texto": ""
+  },
+  "6": {
+   "titulo": "Garantizar el derecho de reunión y manifestación con una responsabilidad estrictamente individual por los actos cometidos: los participantes no deben responder por los actos violentos de terceros ni los organizadores, subsidiariamente, por los daños causados por otros manifestantes.",
+   "texto": "Reforzar la protección de las concentraciones espontáneas y limitar la facultad de disolver manifestaciones, para evitar un efecto desalentador sobre el derecho de protesta."
+  },
+  "7": {
+   "titulo": "Reformar la definición de terrorismo del artículo 573 del Código Penal y aproximarla a la Directiva (UE) 2017/541, con más precisión en las conductas y finalidades que permiten considerar unos hechos como terrorismo, para impedir que una definición excesivamente abierta se aplique a conductas vinculadas a la protesta política, la reunión o la manifestación.",
+   "texto": ""
+  },
+  "8": {
+   "titulo": "Reformar el delito de malversación de acuerdo con los estándares europeos sobre corrupción; reformar los desórdenes públicos para que no puedan actuar como una «sedición bajo otro nombre», exigiendo violencia efectiva y responsabilidad personal, y reservar el delito de rebelión a un alzamiento armado con violencia grave e idónea para alcanzar sus finalidades.",
+   "texto": ""
+  },
+  "9": {
+   "titulo": "Derogar la ley franquista de secretos oficiales y aprobar una nueva basada en los estándares europeos, con plazos estrictos de desclasificación y que facilite el acceso a la información relacionada con corrupción, actuaciones irregulares y eventuales crímenes de Estado.",
+   "texto": ""
+  },
+  "10": {
+   "titulo": "Derogar la Ley de seguridad ciudadana («ley mordaza») y, en su caso, prohibir o limitar las balas de goma, regular los registros policiales de actividades que afectan a datos personales y actividad política o social, defender las competencias de los Mossos d'Esquadra y objetivar las sanciones por desobediencia y falta de respeto.",
+   "texto": ""
+  },
+  "11": {
+   "titulo": "Crear y poner en funcionamiento el Consejo de Justicia de Cataluña de acuerdo con el Estatuto de Autonomía.",
+   "texto": "El Consejo asumirá funciones de gestión de la justicia en Cataluña, incluidos determinados nombramientos, y funciones de garantía de transparencia y buen funcionamiento."
+  },
+  "12": {
+   "titulo": "Consolidar el Tribunal Superior de Justicia de Cataluña (TSJC) como última instancia jurisdiccional en Cataluña.",
+   "texto": ""
+  },
+  "13": {
+   "titulo": "Reclamar el traspaso integral del personal de la Administración de Justicia, incluyendo los LAJ, médicos forenses y el Instituto Nacional de Toxicología de Barcelona.",
+   "texto": ""
+  },
+  "14": {
+   "titulo": "Devolver a los jueces de paz, que hemos mantenido gracias a la Ley Orgánica 1/2025, la competencia para celebrar matrimonios, y ampliar sus funciones a las conciliaciones penales, los divorcios y las separaciones sin menores y los delitos leves, especialmente los hurtos.",
+   "texto": ""
+  },
+  "15": {
+   "titulo": "Reclamar la recaudación íntegra de las tasas judiciales estatales en Cataluña para financiar el Turno de Oficio y la devolución de las cantidades percibidas indebidamente.",
+   "texto": ""
+  },
+  "16": {
+   "titulo": "Actualizar los acuerdos de financiación y los módulos de creación de juzgados.",
+   "texto": ""
+  },
+  "17": {
+   "titulo": "Fijar un modelo con la participación decisiva de la Generalitat en la demarcación, planta y redistribución de la carga de trabajo de los juzgados, y revisar el mapa judicial con una descentralización real.",
+   "texto": ""
+  },
+  "18": {
+   "titulo": "Permitir a las procuradoras y procuradores el acceso directo al Punto Neutro Judicial para la investigación patrimonial y eliminar la duplicidad de testimonios en las notificaciones.",
+   "texto": ""
+  },
+  "19": {
+   "titulo": "Hacer una justicia accesible, ágil, paritaria y de proximidad, con la digitalización al servicio de la ciudadanía, la participación de la sociedad civil, el acceso gratuito y universal a la justicia y la paridad de género en la carrera judicial.",
+   "texto": ""
+  },
+  "20": {
+   "titulo": "Suprimir la Audiencia Nacional, una excepcionalidad jurisdiccional heredera del Tribunal de Orden Público franquista contraria a los estándares europeos de independencia e imparcialidad judicial, y redistribuir sus competencias entre los órganos judiciales territorial y materialmente competentes.",
+   "texto": ""
+  },
+  "21": {
+   "titulo": "Modificar la LOPJ para que los vocales del Consejo General del Poder Judicial cesen efectivamente cuando finaliza su mandato, para impedir su prórroga indefinida y reducir el uso partidista del órgano.",
+   "texto": "Despolitizar el CGPJ y establecer criterios técnicos para todos los nombramientos judiciales."
+  },
+  "22": {
+   "titulo": "Sacar el acceso a las carreras judicial y fiscal del campo de batalla de los partidos españoles y de sus asociaciones de jueces y fiscales.",
+   "texto": "Reformar el acceso a la carrera judicial inspirándose en el modelo alemán, con una doble evaluación (antes y después de un período de prácticas remuneradas) y eliminando el sistema de oposiciones memorísticas, con un período de prueba profesional, evaluaciones periódicas a lo largo de toda la carrera y mecanismos de control ético y disciplinario que eviten la impunidad funcional."
+  },
+  "23": {
+   "titulo": "Suprimir privilegios procesales como el aforamiento y las puertas giratorias entre la judicatura y la política, y reforzar el principio de legalidad y la seguridad jurídica en la actuación jurisdiccional.",
+   "texto": ""
+  },
+  "24": {
+   "titulo": "Crear un Estatuto del juez y de la jueza que regule de manera integral sus condiciones, derechos y deberes.",
+   "texto": ""
+  },
+  "25": {
+   "titulo": "Establecer un nuevo régimen de responsabilidad penal de los jueces, con un sistema de sorteo en la composición de los tribunales encargados de juzgar estos casos, para evitar el corporativismo y reforzar la imparcialidad.",
+   "texto": ""
+  },
+  "26": {
+   "titulo": "Reformar la Ley Orgánica del Tribunal Constitucional para limitar su capacidad de incidencia política: revertir las reformas de 2015, eliminando el recurso previo de inconstitucionalidad sobre los estatutos y retirando la capacidad coercitiva del Tribunal, y establecer un conflicto de competencias entre órganos constitucionales y judiciales.",
+   "texto": ""
+  },
+  "27": {
+   "titulo": "Retirar al Tribunal de Cuentas las competencias jurisdiccionales, de acuerdo con la jurisprudencia europea.",
+   "texto": ""
+  },
+  "28": {
+   "titulo": "Reformar la Fiscalía, el papel del fiscal general del Estado y la instrucción penal de acuerdo con los parámetros europeos de independencia y de defensa del interés de la ley, y no desde un punto de vista partidista y de confrontación entre los poderes del Estado.",
+   "texto": ""
+  },
+  "29": {
+   "titulo": "Reformar integralmente el régimen electoral: eliminar la circunscripción única en las elecciones europeas, descentralizar y desjudicializar la administración electoral, derogar la inelegibilidad sobrevenida sin condena firme de los artículos 6.2.b y 6.4 de la LOREG, que la Junta Electoral Central y la judicatura han utilizado como mecanismo de suspensión política de cargos electos, de acuerdo con las resoluciones de las Naciones Unidas; eliminar la obligación de juramento o promesa para adquirir plenamente la condición de cargo electo, reformar el voto exterior y mejorar el voto accesible para las personas ciegas.",
+   "texto": ""
+  },
+  "30": {
+   "titulo": "Impedir que la Mesa del Congreso haga juicios preventivos de constitucionalidad que bloqueen iniciativas antes del debate parlamentario en materias como la autodeterminación, la amnistía o la monarquía.",
+   "texto": ""
+  },
+  "31": {
+   "titulo": "Hacer efectivo el derecho a utilizar el catalán ante los órganos con jurisdicción en todo el Estado, que hemos conseguido en la Ley Orgánica 5/2024, del derecho de defensa, y exigir al Gobierno español los medios técnicos que prevé la ley.",
+   "texto": "Modificar los artículos 231.4 de la LOPJ y 142.2 de la LEC para reconocer la validez de las actuaciones en catalán en todo el Estado sin alegar indefensión. Reformar también el artículo 231 de la LOPJ, de acuerdo con la Carta europea de las lenguas regionales o minoritarias y para dar cumplimiento al artículo 102 del Estatuto, para que el personal judicial tenga la obligación de entender el catalán y los procedimientos judiciales se puedan desarrollar en catalán cuando lo solicite una de las partes."
+  },
+  "32": {
+   "titulo": "Establecer el conocimiento de la lengua catalana como requisito obligatorio para jueces, fiscales y letrados judiciales que ejerzan en Cataluña.",
+   "texto": "Todo el personal de la Administración de Justicia debe acreditar una competencia lingüística suficiente en las lenguas oficiales del territorio donde ejerce."
+  },
+  "33": {
+   "titulo": "Reanudar la publicación de la versión en catalán del Boletín Oficial del Estado (BOE) a cargo del presupuesto del Estado.",
+   "texto": ""
+  },
+  "34": {
+   "titulo": "Reservar una cuota de plazas para catalanohablantes en las ofertas de trabajo de la Administración de Justicia, con especial valoración del mérito lingüístico, en términos similares a los existentes en el País Vasco y Navarra.",
+   "texto": ""
+  },
+  "35": {
+   "titulo": "Garantizar la aplicación efectiva de la Ley Orgánica 1/2026 contra la multirreincidencia en los hurtos y hacer su seguimiento.",
+   "texto": ""
+  },
+  "36": {
+   "titulo": "Aprobar la ley contra las ocupaciones ilegales que hemos presentado, con medidas cautelares y procedimientos ágiles contra las ocupaciones de inmuebles de carácter delincuencial o conflictivo, y preservar la respuesta social para las situaciones de vulnerabilidad.",
+   "texto": ""
+  },
+  "37": {
+   "titulo": "Establecer un sistema de emisión oficial de información de los procesos para evitar filtraciones y juicios mediáticos paralelos.",
+   "texto": ""
+  },
+  "38": {
+   "titulo": "Denunciar ante el grupo europeo GRECO la actividad anómala del Tribunal de Cuentas por la falta de recurso ante tribunales ordinarios independientes.",
+   "texto": ""
+  },
+  "39": {
+   "titulo": "Derogar la prisión permanente revisable y la restricción estatal de la justicia universal.",
+   "texto": ""
+  },
+  "40": {
+   "titulo": "Limitar el requisito de procedibilidad previa cuando pueda afectar a derechos y garantías de los menores.",
+   "texto": ""
+  },
+  "41": {
+   "titulo": "Reforzar la tutela judicial en la declaración de desamparo de los menores.",
+   "texto": ""
+  },
+  "42": {
+   "titulo": "Exigir el desarrollo del reglamento que permite el traspaso al RETA de forma ordenada de los derechos económicos vinculados a la alternatividad.",
+   "texto": ""
+  },
+  "43": {
+   "titulo": "Proteger las funciones y la autonomía de los colegios profesionales catalanes ante proyectos de armonización estatal.",
+   "texto": ""
+  },
+  "44": {
+   "titulo": "Traspasar a Cataluña las competencias de gestión y registro de las entidades religiosas.",
+   "texto": ""
+  },
+  "45": {
+   "titulo": "Aplicar la jurisprudencia del TJUE sobre estabilidad en el sector público a los jueces y fiscales sustitutos, a los letrados de la Administración de Justicia (LAJ) y a los funcionarios interinos, y crear o reforzar una bolsa de interinos de la Generalitat para dar respuesta a la falta de personal interino en la Administración de Justicia.",
+   "texto": ""
+  },
+  "46": {
+   "titulo": "Exigir la cesión de la jefatura de la Via Laietana, 43, para ubicar en ella la sede del Memorial Democràtic.",
+   "texto": ""
+  },
+  "47": {
+   "titulo": "Reconocimiento, verdad y reparación para las víctimas del servicio militar obligatorio (1976-2001):",
+   "texto": "– Exigir la apertura inmediata y completa de los archivos militares, judiciales y administrativos sobre abusos y muertes de soldados durante el servicio militar obligatorio.\n\n– Promover una declaración institucional en la que el Estado asuma la responsabilidad política por la falta de protección de estos jóvenes, así como una comisión de investigación parlamentaria sobre los hechos."
+  },
+  "48": {
+   "titulo": "Desahuciar las ocupaciones ilegales en un máximo de 48 horas, mediante un juicio inmediato, y garantizar la atención pública a las personas en situación de vulnerabilidad.",
+   "texto": ""
+  },
+  "49": {
+   "titulo": "Aprobar una ley orgánica que permita a la policía desahuciar inmediatamente una vivienda cuando la ocupación se detecte en el mismo momento de producirse, con pleno respeto a la inviolabilidad del domicilio.",
+   "texto": ""
+  },
+  "50": {
+   "titulo": "Garantizar que el pequeño propietario cobre.",
+   "texto": "Cuando un inquilino vulnerable no pueda pagar el alquiler, la Administración debe abonar la totalidad de la deuda al propietario en un plazo máximo de dos meses, con fondos del Estado. Si el pago no se hace en este plazo, el procedimiento de desahucio continúa."
+  },
+  "51": {
+   "titulo": "Permitir que el juez suspenda, caso por caso, el desahucio de personas vulnerables sin alternativa de vivienda cuando quien lo pide es un fondo o una entidad que compró la vivienda en bloque o con descuento, con compensación a cargo del Estado.",
+   "texto": ""
+  },
+  "52": {
+   "titulo": "Reconocer el derecho de las personas hipotecadas a cancelar el préstamo por el mismo precio que pagó el fondo cuando el banco lo ha vendido con descuento.",
+   "texto": ""
+  },
+  "53": {
+   "titulo": "Recuperar la deducción del 15% en el IRPF por el alquiler de la vivienda habitual.",
+   "texto": ""
+  },
+  "54": {
+   "titulo": "Recuperar la deducción del 15% en el IRPF de las cuotas de la hipoteca de la vivienda habitual.",
+   "texto": ""
+  },
+  "55": {
+   "titulo": "Recuperar la cuenta vivienda, con una deducción del 15% en el IRPF del ahorro destinado a comprar la primera vivienda.",
+   "texto": ""
+  },
+  "56": {
+   "titulo": "Reducir del 10% al 5% el IVA de la compra de vivienda nueva y de la autopromoción destinadas a residencia habitual, con límites de superficie, precio y renta y la obligación de vivir en ella, para que no se utilice como inversión, y aplicar también el 5% a la vivienda social.",
+   "texto": ""
+  },
+  "57": {
+   "titulo": "Aplicar el IVA del 10% a las obras de renovación de viviendas destinadas a alquiler habitual.",
+   "texto": ""
+  },
+  "58": {
+   "titulo": "Hacer permanente la exención en el IRPF de la ganancia obtenida al vender a las administraciones viviendas que hace al menos dos años que están vacías.",
+   "texto": ""
+  },
+  "59": {
+   "titulo": "Garantizar que las rebajas fiscales en vivienda no las paguen las finanzas de la Generalitat.",
+   "texto": "Como la deducción del alquiler también reduce la parte catalana del IRPF y el IVA es un impuesto compartido, el Estado debe compensar íntegramente y de manera inmediata a la Generalitat por todo lo que deje de ingresar."
+  },
+  "60": {
+   "titulo": "Prohibir hasta 2028 que las entidades financieras y sus inmobiliarias, los fondos de inversión y las entidades de gestión de activos compren viviendas.",
+   "texto": ""
+  },
+  "61": {
+   "titulo": "Exigir que el Estado destine a políticas de vivienda unos recursos equiparables a la media europea y que transfiera a la Generalitat la parte que corresponde al peso de la población de Cataluña, para empezar a cubrir las más de 140.000 viviendas que faltan.",
+   "texto": ""
+  },
+  "62": {
+   "titulo": "Exigir la cesión sin coste a la Generalitat y a los ayuntamientos de la totalidad de las viviendas y el suelo que la SAREB y Casa 47 tienen en Cataluña, en propiedad y no solo en gestión, con un fondo específico para acondicionarlos y hacerlos habitables.",
+   "texto": "También hay que ceder el suelo de titularidad estatal situado en Cataluña para construir en él vivienda de alquiler asequible. El Estado debe facilitar a cada ayuntamiento un inventario actualizado de las viviendas y solares disponibles en su municipio, para que puedan planificar su uso."
+  },
+  "63": {
+   "titulo": "Blindar el parque público de vivienda de titularidad estatal para que continúe destinado a vivienda asequible.",
+   "texto": ""
+  },
+  "64": {
+   "titulo": "Mantener y ampliar las líneas de avales del Estado para financiar vivienda de alquiler social o asequible, de hasta 2.000 millones de euros, y la construcción industrializada, de hasta 280 millones.",
+   "texto": ""
+  },
+  "65": {
+   "titulo": "Hacer un inventario riguroso de las viviendas vacías para saber cuáles se pueden movilizar.",
+   "texto": ""
+  },
+  "66": {
+   "titulo": "Dotar de fondos estatales a la Generalitat y a los ayuntamientos para que puedan ejercer de manera efectiva los derechos de tanteo y retracto en todas las modalidades que permite la ley.",
+   "texto": ""
+  },
+  "67": {
+   "titulo": "Impulsar la colaboración público-privada con un marco para los proveedores sociales de vivienda asequible y las cooperativas de vivienda, establecido con las comunidades autónomas y con pleno respeto a sus competencias.",
+   "texto": ""
+  },
+  "68": {
+   "titulo": "Garantizar que el aval para pagar la entrada de la primera vivienda llegue de verdad a los jóvenes menores de 35 años, gestionado por la Generalitat, con los fondos territorializados y adaptado a los precios de Cataluña.",
+   "texto": ""
+  },
+  "69": {
+   "titulo": "Transformar el Bo Jove en una verdadera renta de emancipación juvenil, con más presupuesto y adaptada a la media de precios de la vivienda de Cataluña, y que la Generalitat pueda fijar los criterios y los importes de acuerdo con la realidad de nuestro país.",
+   "texto": ""
+  },
+  "70": {
+   "titulo": "Eximir de tributar en el IRPF la ganancia patrimonial que se genera cuando los padres o los abuelos donan una vivienda a los hijos o nietos para que vivan en ella como vivienda habitual.",
+   "texto": ""
+  },
+  "71": {
+   "titulo": "Ampliar la línea de avales contra el impago del alquiler para jóvenes y familias con dificultades económicas, con financiación estatal suficiente y gestión íntegra de la Generalitat, para que el propietario tenga garantizado el cobro y los jóvenes y familias vulnerables puedan alquilar.",
+   "texto": ""
+  },
+  "72": {
+   "titulo": "Crear incentivos fiscales para los propietarios que ofrezcan viviendas a precios asequibles.",
+   "texto": ""
+  },
+  "73": {
+   "titulo": "Reducir los impuestos sobre la construcción y la rehabilitación de vivienda asequible, dentro del marco fiscal europeo.",
+   "texto": ""
+  },
+  "74": {
+   "titulo": "Impulsar la rehabilitación de las viviendas existentes para destinarlas a alquiler habitual, con la transferencia de los fondos estatales y europeos para financiar la mejora energética de los edificios.",
+   "texto": ""
+  },
+  "75": {
+   "titulo": "Condicionar los beneficios fiscales de las SOCIMI a la promoción efectiva de vivienda de alquiler asequible.",
+   "texto": ""
+  },
+  "76": {
+   "titulo": "Revisar la legislación estatal de vivienda para garantizar la seguridad jurídica de propietarios e inquilinos y respetar las competencias de Cataluña.",
+   "texto": ""
+  },
+  "77": {
+   "titulo": "Crear un mecanismo de evaluación periódica de los efectos de la regulación sobre los precios, la oferta y el acceso a la vivienda.",
+   "texto": ""
+  },
+  "78": {
+   "titulo": "Evitar que la fiscalidad estatal sobre la vivienda vacía duplique o vacíe de contenido el impuesto catalán sobre las viviendas vacías.",
+   "texto": ""
+  },
+  "79": {
+   "titulo": "Aplicar los proyectos lingüísticos de centro con vigilancia activa de la inspección de educación.",
+   "texto": ""
+  },
+  "80": {
+   "titulo": "Replantear las pruebas de nivel y las certificaciones que se obtienen al acabar la ESO.",
+   "texto": ""
+  },
+  "81": {
+   "titulo": "Asegurar la participación económica del Estado español para cumplir las prioridades lingüísticas educativas.",
+   "texto": ""
+  },
+  "82": {
+   "titulo": "Establecer planes de financiación extraordinarios para aulas de aceleración lingüística.",
+   "texto": ""
+  },
+  "83": {
+   "titulo": "Legislar para garantizar que la lengua catalana, el aranés en el Valle de Arán y la lengua de signos catalana sean las lenguas preferentes de uso de las administraciones, de la enseñanza en todos sus ámbitos y etapas y de los medios de comunicación públicos y privados.",
+   "texto": ""
+  },
+  "84": {
+   "titulo": "Promover una nueva Ley de la Función Pública española para requerir el conocimiento del catalán de manera estricta a todo el personal de la administración del Estado en Cataluña (incluyendo la judicatura y los cuerpos de seguridad estatales) y garantizar su capacitación lingüística en catalán, aranés y LSC según corresponda.",
+   "texto": ""
+  },
+  "85": {
+   "titulo": "Seguir endureciendo las sanciones y las obligaciones para las empresas (especialmente en grandes plataformas digitales, streaming y comercio electrónico) para garantizar la atención y el etiquetaje en catalán.",
+   "texto": ""
+  },
+  "86": {
+   "titulo": "Garantizar que los documentos, los servicios y las comunicaciones de la Administración del Estado en catalán que se traduzcan con inteligencia artificial tengan revisión profesional cuando afecten a derechos y obligaciones, y que se indique su uso de manera transparente.",
+   "texto": ""
+  },
+  "87": {
+   "titulo": "Incrementar la capacidad reguladora y la exigencia sobre las obligaciones lingüísticas de los sectores de creación, producción, doblaje, subtitulación, distribución, exhibición y consumo digital.",
+   "texto": ""
+  },
+  "88": {
+   "titulo": "Continuar presionando diplomáticamente hasta conseguir efectivamente la oficialidad del catalán en la UE, que es indispensable, entre otras razones, para exigir al Estado español el reconocimiento y la protección que él mismo no le da.",
+   "texto": ""
+  },
+  "89": {
+   "titulo": "Asegurar la disponibilidad lingüística en catalán de las webs y las publicaciones del Estado y hacer efectiva la reciprocidad de los medios de comunicación en lengua catalana, facilitar el acceso a los canales y programas de radio y televisión en catalán en todo el dominio lingüístico.",
+   "texto": ""
+  },
+  "90": {
+   "titulo": "Aprobar un nuevo mandato marco y un contrato programa de RTVE con reconocimiento de la diversidad lingüística del Estado español.",
+   "texto": "Aumentar la financiación de la programación estatal en catalán."
+  },
+  "91": {
+   "titulo": "Establecer mecanismos para que las ayudas públicas estatales a la producción y la distribución cultural se destinen a la creación en catalán, en proporción al peso de Cataluña y del conjunto del dominio lingüístico.",
+   "texto": ""
+  },
+  "92": {
+   "titulo": "Consolidar la 2Cat íntegramente en catalán y completar el paso de Clan al catalán, tal como acordamos, y cuadruplicar el presupuesto del centro de RTVE en Sant Cugat.",
+   "texto": ""
+  },
+  "93": {
+   "titulo": "Alcanzar un equilibrio territorial proporcional en las coproducciones de RTVE.",
+   "texto": ""
+  },
+  "94": {
+   "titulo": "Ampliar la participación del catalán en los PERTE Nueva Economía de la Lengua.",
+   "texto": ""
+  },
+  "95": {
+   "titulo": "Blindaje y ampliación de las competencias de Cataluña en seguridad y emergencias.",
+   "texto": ""
+  },
+  "96": {
+   "titulo": "Desarrollar el Sistema de Seguridad de Cataluña.",
+   "texto": "El Sistema de Seguridad de Cataluña debe estructurarse en dos subsistemas: el de Policía, con los Mossos d'Esquadra y las policías locales, y el de Emergencias, con los bomberos, la protección civil y el resto de servicios que intervienen en las emergencias. La Generalitat debe poder ordenarlos y coordinarlos ambos, con la participación de los ayuntamientos y respetando su autonomía."
+  },
+  "97": {
+   "titulo": "Delegación de competencias estatales en inmigración y extranjería.",
+   "texto": "Aprobar la ley orgánica de delegación presentada en el Congreso, con las facultades administrativas, sancionadoras, documentales y de seguridad pública que prevé y con los recursos y los mecanismos de coordinación correspondientes."
+  },
+  "98": {
+   "titulo": "Financiación suficiente de los traspasos y de las nuevas responsabilidades.",
+   "texto": "Ninguna competencia nueva sin el dinero, el personal, los medios y el acceso a la información para ejercerla, y con mecanismos de seguimiento y actualización."
+  },
+  "99": {
+   "titulo": "Refuerzo de los mecanismos bilaterales de decisión y coordinación.",
+   "texto": "La Junta de Seguridad de Cataluña debe ser el órgano donde se acuerde el despliegue de las nuevas funciones, se resuelvan los conflictos de competencias y se coordinen las actuaciones policiales. La Generalitat también debe participar en las decisiones estatales que afecten a la seguridad del país."
+  },
+  "100": {
+   "titulo": "Desplegar y aplicar efectivamente la reforma legislativa contra la multirreincidencia.",
+   "texto": "La Ley orgánica 1/2026, de 8 de abril, en materia de multirreincidencia, impulsada por Junts per Catalunya, debe aplicarse de verdad con más recursos judiciales y más coordinación entre Mossos, fiscalía, juzgados y ayuntamientos. Haremos su seguimiento, sobre todo en lo que se refiere a la reiteración de delitos patrimoniales, la agilidad de los procedimientos, las medidas cautelares y la personación de los ayuntamientos, y propondremos cambios si la ley no da el resultado esperado."
+  },
+  "101": {
+   "titulo": "Agilizar la justicia penal y reforzar su capacidad de respuesta.",
+   "texto": ""
+  },
+  "102": {
+   "titulo": "Reformar el marco estatal de seguridad ciudadana y ampliación de las competencias de Cataluña.",
+   "texto": "Derogar la Ley orgánica de protección de la seguridad ciudadana y reformar la Ley orgánica de fuerzas y cuerpos de seguridad para que respeten la distribución de competencias y reconozcan que es la Generalitat quien dirige la seguridad pública en Cataluña. Los agentes necesitan seguridad jurídica, y la ciudadanía, garantías para sus derechos."
+  },
+  "103": {
+   "titulo": "Reforzar los instrumentos legales contra la criminalidad organizada y las ocupaciones delictivas.",
+   "texto": "Las reformas pendientes contra las ocupaciones ilegales y el crimen organizado deben tramitarse ya. Los Mossos deben tener más capacidad de investigación contra las redes de narcotráfico, el blanqueo de capitales y los robos organizados."
+  },
+  "104": {
+   "titulo": "Ampliar las competencias de Cataluña en materia de seguridad privada.",
+   "texto": "Modificar la Ley 5/2014, de seguridad privada, para que la Generalitat regule, habilite, inspeccione y sancione a las empresas y al personal de seguridad privada que trabajan en Cataluña, bajo la coordinación de los Mossos d'Esquadra."
+  },
+  "105": {
+   "titulo": "Desarrollar el Subsistema de Policía de Cataluña y reconocer su marco competencial.",
+   "texto": "También reclamamos el traspaso de las competencias de tráfico que todavía tiene el Estado español, como la expedición y renovación de los permisos de conducir, los exámenes y la gestión de la documentación, con el personal y los recursos correspondientes."
+  },
+  "106": {
+   "titulo": "Traspasar el control administrativo de armas y explosivos.",
+   "texto": "La Generalitat debe asumir el control administrativo de armas, explosivos, cartuchería y artículos pirotécnicos, y las funciones policiales asociadas que hoy realiza la Guardia Civil."
+  },
+  "107": {
+   "titulo": "Ampliar las funciones policiales en puertos, aeropuertos, espacios marítimos y en materia de inmigración y extranjería.",
+   "texto": "Los Mossos d'Esquadra deben asumir todas las funciones de seguridad pública en los puertos, aeropuertos y espacios marítimos de Cataluña, incluidas la investigación criminal y la protección de las infraestructuras estratégicas. También las funciones policiales que comporte la delegación en inmigración: el control fronterizo en los términos acordados y la tramitación policial de los expedientes de extranjería."
+  },
+  "108": {
+   "titulo": "Desarrollar el modelo de policía local de Cataluña y superar las limitaciones a la cooperación supramunicipal.",
+   "texto": "La ley estatal debe permitir que varios municipios compartan el servicio de policía local de manera estable."
+  },
+  "109": {
+   "titulo": "Participación directa de los Mossos d'Esquadra en los organismos de cooperación policial europeos e internacionales.",
+   "texto": "Los Mossos deben tener acceso a los sistemas de información compartidos y poder intervenir en investigaciones conjuntas, en la cooperación transfronteriza y en la lucha contra el crimen organizado y el terrorismo."
+  },
+  "110": {
+   "titulo": "Reconocer y desarrollar el Subsistema de Emergencias de Cataluña.",
+   "texto": ""
+  },
+  "111": {
+   "titulo": "Reconocer jurídicamente y proteger integralmente a los bomberos voluntarios, preservando el modelo catalán de bomberos, basado en la complementariedad entre profesionales y voluntarios.",
+   "texto": "Hay que reformar la legislación estatal para garantizar:\n\n– Un régimen jurídico específico que reconozca la naturaleza del servicio que prestan, sus funciones y responsabilidades y su vinculación con la Administración, sin imponer necesariamente una relación laboral ordinaria;\n\n– La protección en materia de seguridad y salud, la protección social y sanitaria y el reconocimiento de los servicios prestados en los términos que establezca la legislación;\n\n– La salvaguarda que conseguimos en la Ley 5/2024, por la cual este voluntariado se rige por el Estatuto y la normativa catalana, de manera que la normativa básica estatal respete siempre la capacidad de la Generalitat para organizar, regular y dirigir su modelo de bomberos."
+  },
+  "112": {
+   "titulo": "Reforzar la prevención multirriesgo y la respuesta ante grandes emergencias.",
+   "texto": "Tener más capacidad para prevenir y combatir incendios forestales, inundaciones, episodios meteorológicos extremos y accidentes tecnológicos, con alerta temprana e información compartida entre administraciones."
+  },
+  "113": {
+   "titulo": "Desarrollar las capacidades de gestión de crisis y resiliencia nacional.",
+   "texto": ""
+  },
+  "114": {
+   "titulo": "Participación directa de Cataluña en los mecanismos europeos e internacionales de protección civil.",
+   "texto": ""
+  },
+  "115": {
+   "titulo": "Participación efectiva de Cataluña en las políticas de seguridad nacional.",
+   "texto": "La Generalitat debe sentarse en el Consejo de Seguridad Nacional y en sus comités cuando se traten cuestiones que afecten a Cataluña, con acceso a la información estratégica. Una crisis no puede servir de excusa para recentralizar competencias."
+  },
+  "116": {
+   "titulo": "Desarrollo del modelo catalán de ciberseguridad, protección de datos y seguridad de las infraestructuras críticas.",
+   "texto": "Ampliar las competencias en ciberseguridad y protección de datos y reforzar la Agencia de Ciberseguridad de Cataluña y la Autoridad Catalana de Protección de Datos, con presencia en los mecanismos estatales y europeos de respuesta a los ciberincidentes."
+  },
+  "117": {
+   "titulo": "Desarrollar capacidades de anticipación estratégica y respuesta ante amenazas híbridas.",
+   "texto": "Cataluña debe formar parte de los sistemas de alerta y respuesta ante las amenazas híbridas: ciberataques, campañas de desinformación, sabotajes e interferencias externas."
+  },
+  "118": {
+   "titulo": "Participación de Cataluña en la seguridad y defensa europeas y garantía de un retorno industrial justo de las inversiones estratégicas.",
+   "texto": "Universidades, centros tecnológicos y empresas catalanas deben poder participar en los programas europeos y estatales de seguridad y defensa, en investigación, formación, industria de defensa y tecnologías de uso dual. Las inversiones estatales en defensa y tecnología estratégica deben tener en Cataluña un retorno industrial como mínimo proporcional a su peso en el PIB del Estado. Para comprobarlo, pedimos transparencia sobre el reparto territorial de los contratos y de los programas de I+D y una comisión que haga su seguimiento."
+  },
+  "119": {
+   "titulo": "Reconocer el papel estratégico de Cataluña en la seguridad del Mediterráneo.",
+   "texto": "Cataluña debe participar en las políticas estatales y europeas de seguridad en el Mediterráneo occidental, como la protección de infraestructuras estratégicas, la seguridad marítima, las amenazas transfronterizas y la resiliencia de las cadenas logísticas y energéticas."
+  },
+  "120": {
+   "titulo": "Incrementar la capacidad reguladora y la exigencia sobre las obligaciones lingüísticas de los sectores audiovisuales.",
+   "texto": ""
+  },
+  "121": {
+   "titulo": "Regular la capacidad efectiva de incidir en las plataformas digitales y en la disponibilidad de contenidos en catalán.",
+   "texto": ""
+  },
+  "122": {
+   "titulo": "Establecer los mecanismos oportunos para que las ayudas públicas estatales a la producción y distribución cultural tengan en cuenta la diversidad lingüística.",
+   "texto": ""
+  },
+  "123": {
+   "titulo": "Garantizar la participación decisiva de la Generalitat en los planes estatales de digitalización y preservación del patrimonio audiovisual catalán.",
+   "texto": ""
+  },
+  "124": {
+   "titulo": "Recuperar los niveles y la relevancia de la producción audiovisual en Cataluña.",
+   "texto": ""
+  },
+  "125": {
+   "titulo": "Traspasar a la Generalitat la titularidad del Archivo de la Corona de Aragón",
+   "texto": ""
+  },
+  "126": {
+   "titulo": "Completar el retorno de los papeles de Salamanca.",
+   "texto": ""
+  },
+  "127": {
+   "titulo": "Detener el expolio de las pinturas de la Sala Capitular de Sijena, que Cataluña adquirió legalmente y que el MNAC conserva con la máxima protección y rigor profesional.",
+   "texto": "El traslado no responde a ningún criterio técnico, sino a la voluntad política de hacer daño a Cataluña."
+  },
+  "128": {
+   "titulo": "Transferir la gestión de los equipamientos estatales situados en Cataluña de acuerdo con el Estatuto de Cataluña y procedimentar el traspaso de la titularidad de los mismos.",
+   "texto": ""
+  },
+  "129": {
+   "titulo": "Establecer convenios estables de financiación, personal, inversión y programación cultural en Cataluña.",
+   "texto": ""
+  },
+  "130": {
+   "titulo": "Garantizar la participación efectiva de la Generalitat en los órganos de gobierno de los grandes equipamientos estatales.",
+   "texto": ""
+  },
+  "131": {
+   "titulo": "Pactar los planes de adquisiciones, conservación y difusión de las colecciones vinculadas a la historia y la cultura catalanas.",
+   "texto": ""
+  },
+  "132": {
+   "titulo": "Proteger el ecosistema cultural catalán y conseguir su máxima capacidad legislativa propia para disponer de plena libertad de actuación política.",
+   "texto": ""
+  },
+  "133": {
+   "titulo": "Reformar la Ley de propiedad intelectual para que los autores, traductores y otros creadores sepan cuándo se utilizan sus obras para entrenar sistemas de inteligencia artificial, puedan reservar sus derechos de manera efectiva y reciban una remuneración adecuada, teniendo en cuenta la realidad de los autónomos y de las pequeñas empresas del sector cultural catalán.",
+   "texto": ""
+  },
+  "134": {
+   "titulo": "Establecer la participación vinculante de la Generalitat en la planificación de las inversiones culturales estatales en Cataluña.",
+   "texto": ""
+  },
+  "135": {
+   "titulo": "Aprobar un plan efectivo y calendarizado de reducción del IVA del consumo cultural desde las cuotas de las grandes operadoras hasta las entradas para conciertos, teatros, cine y el resto de eventos y prácticas culturales.",
+   "texto": ""
+  },
+  "136": {
+   "titulo": "Equiparar el IVA aplicable a las galerías de arte al del resto de países europeos.",
+   "texto": ""
+  },
+  "137": {
+   "titulo": "Eliminar la tasa de exportación de obras de arte.",
+   "texto": ""
+  },
+  "138": {
+   "titulo": "Aplicar las medidas del CoNCA sobre el Estatuto del Artista.",
+   "texto": ""
+  },
+  "139": {
+   "titulo": "Establecer financiación estatal para la diplomacia cultural catalana, darle capacidad de participar directamente en redes, programas y organismos culturales internacionales a través de la Generalitat.",
+   "texto": ""
+  },
+  "140": {
+   "titulo": "Garantizar presencia propia y estable en ferias del libro, festivales, bienales, mercados audiovisuales y circuitos artísticos.",
+   "texto": ""
+  },
+  "141": {
+   "titulo": "Habilitar la diplomacia cultural catalana para establecer acuerdos de cooperación cultural y diplomacia cultural con otros países y territorios.",
+   "texto": ""
+  },
+  "142": {
+   "titulo": "Reformar en las Cortes la normativa estatal de acción exterior y de acuerdos internacionales para quitar las restricciones injustificadas a la Generalitat y a los entes locales.",
+   "texto": "El servicio exterior del Estado también debe apoyar los intereses catalanes."
+  },
+  "143": {
+   "titulo": "El Gobierno español debe respetar y facilitar la actividad internacional de las instituciones catalanas.",
+   "texto": "Queremos control parlamentario sobre cualquier uso de recursos diplomáticos para desacreditar el independentismo u obstaculizar actividades legítimas."
+  },
+  "144": {
+   "titulo": "Mantendremos la autodeterminación de Cataluña en la agenda internacional, mediante iniciativas parlamentarias, relaciones bilaterales y cooperación con naciones sin estado y democracias receptivas a una solución política y democrática.",
+   "texto": ""
+  },
+  "145": {
+   "titulo": "Coordinación estable entre instituciones, mundo local y sociedad civil para reforzar la proyección exterior del país, y recursos para la diplomacia pública, cultural, científica, universitaria y deportiva, con objetivos verificables y colaboración público-privada.",
+   "texto": ""
+  },
+  "146": {
+   "titulo": "Apoyaremos la preparación técnica de la transición internacional hacia la independencia: capacidades diplomáticas y consulares, continuidad de obligaciones internacionales, seguridad compartida y estrategia de reconocimientos.",
+   "texto": "Promoveremos un marco europeo de ampliación interna."
+  },
+  "147": {
+   "titulo": "Reclamaremos la oficialidad plena y efectiva del catalán en la UE, con los recursos y los acuerdos necesarios para su uso institucional.",
+   "texto": "Defenderemos también el reconocimiento y la protección del occitano aranés, de acuerdo con sus vías específicas."
+  },
+  "148": {
+   "titulo": "Garantizar la participación de Cataluña en los asuntos de la UE, con presencia en las delegaciones y grupos de trabajo de las materias propias y rendición de cuentas ante el Parlamento de Cataluña.",
+   "texto": ""
+  },
+  "149": {
+   "titulo": "Los fondos europeos de gestión compartida deben territorializarse con transparencia, y la Generalitat debe tener más capacidad de programación.",
+   "texto": "Ayuntamientos, pymes y entidades necesitan asistencia técnica y menos papeleo para acceder a los programas de gestión directa de la UE."
+  },
+  "150": {
+   "titulo": "Queremos que el Estado apoye una reforma europea que refuerce el Parlamento Europeo, la subsidiariedad, la protección de las minorías nacionales y lingüísticas y el Estado de derecho, y que amplíe el uso de la mayoría cualificada en los procedimientos europeos.",
+   "texto": ""
+  },
+  "151": {
+   "titulo": "Más cooperación con Andorra, Francia y los territorios vecinos, la Euroregión Pirineos Mediterráneo y las redes municipales europeas.",
+   "texto": "Hay que resolver los obstáculos estatales que frenan proyectos transfronterizos de movilidad, salud, educación y emergencias."
+  },
+  "152": {
+   "titulo": "Promoveremos un compromiso plurianual de apoyo humanitario, financiero y militar a Ucrania, con control parlamentario; la aplicación efectiva de las sanciones a Rusia; y el apoyo a la adhesión ucraniana a la UE según los criterios exigibles.",
+   "texto": "Defenderemos una paz justa, la integridad territorial de Ucrania, incluida Crimea, y el rechazo de las anexiones por la fuerza, sin imponer a los ucranianos una rendición negociada por terceros."
+  },
+  "153": {
+   "titulo": "Una defensa europea más integrada, complementaria de la OTAN, con capacidades, financiación y control democrático.",
+   "texto": "La industria y la investigación catalanas deben participar en ella, y hay que coordinar mejor la ciberseguridad, la protección de infraestructuras críticas y la lucha contra las injerencias autoritarias."
+  },
+  "154": {
+   "titulo": "Promoveremos una paz entre israelíes y palestinos basada en dos estados, reconocimiento mutuo y garantías de seguridad.",
+   "texto": "Exigiremos la protección de los civiles, el acceso humanitario seguro y sostenido, el respeto de las obligaciones internacionales y la investigación independiente de las vulneraciones, sea quien sea el responsable. Apoyaremos una gobernanza palestina legítima, responsable y desvinculada de Hamás y el respeto de la soberanía del Líbano."
+  },
+  "155": {
+   "titulo": "Defenderemos el derecho de Israel a existir en seguridad y a su defensa, así como el pleno respeto por el derecho internacional.",
+   "texto": "Condenaremos a Hamás y Hizbulá, y los ataques contra civiles por parte de los dos bandos. Apoyaremos la prevención de la financiación y el armamento de Hamás y Hizbulá y los esfuerzos de desarme, con cooperación internacional y garantías de derechos."
+  },
+  "156": {
+   "titulo": "Impulsaremos recursos y coordinación para combatir el antisemitismo y proteger a las comunidades, escuelas e instituciones judías, con educación sobre el Holocausto y formación para los servicios públicos.",
+   "texto": "Rechazaremos la discriminación de judíos o israelíes y los boicots indiscriminados por origen, preservando la libertad de crítica a los gobiernos y el cumplimiento de los controles legales sobre armas y bienes sensibles. Combatiremos igualmente el racismo y el odio antimusulmán."
+  },
+  "157": {
+   "titulo": "Negociar una transferencia estable a ACCIÓ de los recursos estatales de internacionalización empresarial, de acuerdo con el peso exportador de Cataluña.",
+   "texto": "Las pymes y las empresas familiares necesitan ayuda específica en financiación, diversificación de mercados y riesgos geopolíticos."
+  },
+  "158": {
+   "titulo": "En los acuerdos comerciales europeos defenderemos la apertura de mercados, la reciprocidad, la competencia leal y las garantías sociales y ambientales.",
+   "texto": "La Generalitat y los sectores afectados, especialmente el campesinado y la industria, deben poder intervenir antes de que el Estado fije su posición."
+  },
+  "159": {
+   "titulo": "Compromisos presupuestarios y calendarios verificables para el Corredor Mediterráneo, las conexiones transfronterizas y los accesos ferroviarios a los puertos, más capacidad catalana de gobernanza aeroportuaria y servicios aduaneros y de inspección adecuados al comercio exterior.",
+   "texto": ""
+  },
+  "160": {
+   "titulo": "Reforzar las interconexiones energéticas europeas y reducir la dependencia de proveedores autoritarios, con proyectos viables y evaluados ambientalmente.",
+   "texto": "Cataluña también debe participar en los programas de innovación y reconstrucción de Ucrania."
+  },
+  "161": {
+   "titulo": "Reclamaremos apoyo a Barcelona como capital euromediterránea, a la Unión por el Mediterráneo y a las iniciativas de cooperación territorial y empresarial de las dos orillas.",
+   "texto": "Favoreceremos las relaciones científicas y económicas con las democracias innovadoras, incluido Israel, y eliminaremos obstáculos estatales a los proyectos internacionales de los municipios, universidades y empresas catalanas."
+  },
+  "162": {
+   "titulo": "Mejorar el voto exterior: plazos, información, seguimiento de la documentación y accesibilidad.",
+   "texto": "Hacen falta más puntos y medios de votación y una evaluación pública de las incidencias, con garantías de identificación, secreto y verificabilidad."
+  },
+  "163": {
+   "titulo": "Servicios consulares accesibles, documentación ágil y protocolos de emergencia coordinados con la Generalitat.",
+   "texto": "Mediante convenios, los residentes en el extranjero deben poder ser atendidos e informados en catalán."
+  },
+  "164": {
+   "titulo": "Reconocimiento de titulaciones, portabilidad de los derechos sociales y retorno del talento.",
+   "texto": "Queremos conectar a profesionales, investigadores y emprendedores de la diáspora con el tejido económico y académico catalán y apoyar a las comunidades catalanas del exterior."
+  },
+  "165": {
+   "titulo": "El Estado se ha comprometido a alcanzar el 0,7 % de la renta nacional bruta en ayuda oficial al desarrollo en 2030.",
+   "texto": "Exigiremos su cumplimiento, con incrementos presupuestarios verificables, y recursos para la cooperación descentralizada catalana. Las prioridades son los derechos de las mujeres y de las minorías, la educación, la salud, el agua, la capacitación institucional y el desarrollo económico local."
+  },
+  "166": {
+   "titulo": "Impulsaremos una cooperación con evaluación independiente, transparencia y diligencia debida para prevenir la corrupción, la incitación al odio y el desvío de recursos a grupos armados.",
+   "texto": "Reclamaremos correcciones en los programas con irregularidades acreditadas, preservando la ayuda vital a los civiles. Promoveremos vías legales de protección y un reparto europeo solidario de responsabilidades de acogida."
+  },
+  "167": {
+   "titulo": "Fijar por ley la obligación de aplicar el principio «Una sola vez» (once only) en todas las administraciones del Estado, prohibiendo requerir a ciudadanos y empresas documentación que ya obre en poder de cualquier Administración pública.",
+   "texto": ""
+  },
+  "168": {
+   "titulo": "Reformar el marco estatal de contratación pública para reducir los plazos y la complejidad en las licitaciones para pymes y autónomos, facilitando su acceso a los contratos públicos.",
+   "texto": ""
+  },
+  "169": {
+   "titulo": "Establecer la caducidad automática de procedimientos o indemnización por daños cuando la Administración General del Estado supere los plazos de resolución garantizados.",
+   "texto": ""
+  },
+  "170": {
+   "titulo": "Reformar la Ley 39/2015 para que el silencio administrativo positivo y la declaración responsable sean la norma en los procedimientos de la Administración General del Estado, y para que la legislación básica deje a la Generalitat fijar su alcance en los procedimientos de su competencia.",
+   "texto": ""
+  },
+  "171": {
+   "titulo": "Crear un Portal de Transparencia de las Inversiones del Estado español en Cataluña, con actualización trimestral de la ejecución presupuestaria real regionalizada y de las licitaciones de infraestructuras.",
+   "texto": ""
+  },
+  "172": {
+   "titulo": "Hacer públicos y comparables los tiempos de tramitación.",
+   "texto": "Modificar la Ley 19/2013, de transparencia, acceso a la información pública y buen gobierno, y el artículo 21.4 de la Ley 39/2015, del procedimiento administrativo común, para que la Administración General del Estado publique el tiempo medio real que tarda en resolver cada trámite, y para que las comunidades autónomas puedan establecerlo en su normativa de transparencia."
+  },
+  "173": {
+   "titulo": "Modificar la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno para hacer obligatoria la publicación de las agendas públicas, la huella legislativa de los lobbies y los informes de evaluación de impacto de las leyes estatales.",
+   "texto": ""
+  },
+  "174": {
+   "titulo": "Fortalecer los mecanismos de control del Congreso sobre los órganos reguladores del Estado español y la Administración tributaria para evitar el uso arbitrario o politizado de las inspecciones y sanciones.",
+   "texto": ""
+  },
+  "175": {
+   "titulo": "Regular los grupos de interés con criterios de transparencia y proporcionalidad.",
+   "texto": "Diferenciar claramente la actividad profesional y remunerada de lobby de la representación ocasional de intereses de pymes, autónomos, cooperativas, entidades sin ánimo de lucro, asociaciones y ciudadanos. Someter a los lobbistas profesionales y a las grandes consultoras a obligaciones reforzadas de registro, información financiera, declaración de clientes y transparencia; y simplificar o eximir estas cargas cuando se trate de actores no profesionales. Crear un registro público y accesible de la actividad profesional de influencia, garantizar la trazabilidad sobre normas y decisiones públicas, preservar las competencias de Cataluña y los derechos lingüísticos, y evitar que la regulación desincentive la participación legítima de la sociedad civil."
+  },
+  "176": {
+   "titulo": "Desplegar la Estrategia Nacional de Gobernanza de Datos, garantizando el acceso completo de las administraciones catalanas a la información tributaria y de la Seguridad Social para simplificar las ayudas sociales.",
+   "texto": ""
+  },
+  "177": {
+   "titulo": "Exigir el reconocimiento y la compatibilidad total del sistema de identidad digital catalana en todos los servicios públicos del Estado sin ningún tipo de bloqueo técnico o jurídico.",
+   "texto": ""
+  },
+  "178": {
+   "titulo": "Aprobar una Ley de Garantía de Atención Presencial Directa, prohibiendo imponer la cita previa obligatoria en las oficinas de la Administración del Estado (Seguridad Social, Extranjería, Hacienda) para atender a la ciudadanía.",
+   "texto": ""
+  },
+  "179": {
+   "titulo": "Regular el uso ético y auditable de la inteligencia artificial en los algoritmos de la Administración central utilizados para la concesión de prestaciones sociales, subsidios o inspecciones.",
+   "texto": ""
+  },
+  "180": {
+   "titulo": "Secretarios e interventores municipales: ejecutar todas las actuaciones necesarias para hacer inmediatamente efectivo el traspaso a la Generalitat de la gestión integral (oferta pública, selección, formación, habilitación y nombramiento) de secretarios, interventores y tesoreros de administración local (competencia recuperada la pasada legislatura mediante un régimen específico para Cataluña en la Ley de Bases de Régimen Local).",
+   "texto": ""
+  },
+  "181": {
+   "titulo": "Reformar el Estatuto Básico del Empleado Público (EBEP) para favorecer la selección por competencias, la movilidad justa y la eliminación definitiva de la tasa de reposición en los servicios públicos esenciales.",
+   "texto": ""
+  },
+  "182": {
+   "titulo": "Garantizar el requisito del conocimiento de la lengua catalana para todos los empleados públicos de la Administración General del Estado que prestan servicios en Cataluña (Justicia, Policía, Seguridad Social, Hacienda, etcétera).",
+   "texto": ""
+  },
+  "183": {
+   "titulo": "Promover la creación de fondos de modernización e innovación pública directamente transferidos a los ayuntamientos catalanes para digitalizar los pequeños municipios.",
+   "texto": ""
+  },
+  "184": {
+   "titulo": "Interinos: estabilizar al personal público en situación de abuso de temporalidad:",
+   "texto": "Reconocer la condición de personal fijo a extinguir —funcionario, laboral o estatutario— a los empleados públicos temporales que se encuentren objetivamente en situación de abuso de temporalidad, con identificación de oficio por parte de las administraciones y estabilización en un plazo de tres meses. La medida se extendería, en determinadas condiciones, a personas cesadas que hayan impugnado el cese, y requeriría adaptar el EBEP para regular las nuevas categorías, de acuerdo con la Directiva 1999/70/CE y la jurisprudencia del TJUE."
+  },
+  "185": {
+   "titulo": "Cuota de catalanohablantes en la administración de justicia para garantizar el conocimiento del catalán favoreciendo el arraigo y la estabilidad:",
+   "texto": "Reservar una cuota de plazas de la Administración de Justicia con perfil lingüístico acreditado hasta que la tasa de interinidad de los puestos singularizados por razón de lengua sea inferior al 8%. El requisito lingüístico deberá ser necesario y proporcional a las funciones del puesto, de acuerdo también con el artículo 102.4 del Estatuto, sin incremento de plantilla ni gasto al tratarse de plazas estructurales ya existentes."
+  },
+  "186": {
+   "titulo": "Derecho de opción lingüística ante la Administración del Estado:",
+   "texto": "Exigir competencia suficiente en catalán en los puestos de atención e información al público, adaptar el nivel al cuerpo y al puesto de trabajo, atribuir a la Generalitat la certificación y homologación de los niveles, y establecer que el personal se adapte a la lengua oficial escogida por la ciudadanía. Crear complementos retributivos vinculados al conocimiento acreditado de lenguas cooficiales y un régimen disciplinario gradual ante la vulneración del derecho de opción lingüística."
+  },
+  "187": {
+   "titulo": "Modernizar la carrera profesional, la movilidad y la provisión de puestos: definir con precisión las funciones de los cuerpos y escalas; permitir la prolongación voluntaria del servicio activo hasta los 72 años; reforzar la movilidad como un derecho del funcionario y sustituir restricciones genéricas por incentivos retributivos, carrera profesional, valoración de méritos o teletrabajo en puestos deficitarios.",
+   "texto": "Garantizar concursos con méritos objetivamente vinculados al puesto, convocatorias anuales de vacantes, fase de resultas y plazos máximos de resolución; restringir la remoción de los puestos obtenidos por concurso e introducir más criterios objetivos en la libre designación. Impulsar una promoción interna con pruebas eminentemente prácticas y reforzar la calidad de la formación continua."
+  },
+  "188": {
+   "titulo": "Abrir la negociación colectiva en el empleo público actualmente reservada a los grandes sindicatos españoles.",
+   "texto": "Reformar el EBEP para que puedan participar en las mesas generales de negociación los sindicatos que obtengan al menos el 10% de representación en el conjunto de los empleados públicos, superando la exigencia de alcanzar este porcentaje por separado entre personal funcionario y laboral."
+  },
+  "189": {
+   "titulo": "Racionalizar y actualizar los cuerpos funcionariales de la Administración General del Estado.",
+   "texto": "Reorganizar los cuerpos funcionariales de acuerdo con las funciones efectivamente realizadas; facilitar la promoción interna; e integrar determinados cuerpos técnicos de Hacienda, Auditoría y Contabilidad y Gestión Catastral en un cuerpo superior A1."
+  },
+  "190": {
+   "titulo": "Agilizar y simplificar los requisitos de la Iniciativa Legislativa Popular (ILP) en el Congreso de los Diputados, facilitando el uso de firmas digitales en la recogida de apoyos.",
+   "texto": ""
+  },
+  "191": {
+   "titulo": "Regular la creación de paneles ciudadanos deliberativos previos a las grandes reformas legislativas de impacto económico y social.",
+   "texto": ""
+  },
+  "192": {
+   "titulo": "Reformar el régimen de incompatibilidades de los altos cargos del Estado para eliminar la puerta giratoria hacia grandes corporaciones en sectores regulados (energía, telecomunicaciones, banca...).",
+   "texto": ""
+  },
+  "193": {
+   "titulo": "Potenciar la publicación de datos abiertos en formatos reutilizables (Open Data) por parte del Estado para favorecer el periodismo de investigación, la investigación y la transparencia democrática.",
+   "texto": ""
+  },
+  "194": {
+   "titulo": "Centro de Investigaciones Sociológicas: garantizar su independencia, el rigor y la transparencia de los sondeos públicos.",
+   "texto": "Reformar los organismos públicos de estudios de opinión para blindar su autonomía respecto del Gobierno y reforzar su rigor metodológico haciendo que dejen de ser simples agentes de propaganda. Crear un consejo rector independiente con expertos académicos y representación plural de los grupos parlamentarios, aprobar anualmente un plan público de encuestas y establecer un registro público de todas las encuestas encargadas por el Gobierno."
+  },
+  "195": {
+   "titulo": "Impulsar una reforma legislativa para reforzar la igualdad salarial y la transparencia retributiva.",
+   "texto": "Mismo sueldo para trabajos de igual valor, con auditorías retributivas y control de las discriminaciones de acuerdo con la normativa europea, y con capacidad de las administraciones catalanas para vigilar su cumplimiento."
+  },
+  "196": {
+   "titulo": "Combatir la brecha de género en las pensiones y la protección social.",
+   "texto": "La maternidad y los cuidados no pueden rebajar la pensión. Los períodos en que una persona deja temporalmente el trabajo o reduce su jornada para cuidar de los hijos o de otros familiares deben reconocerse mejor en el cálculo de la cotización, para que no generen desigualdades permanentes."
+  },
+  "197": {
+   "titulo": "Favorecer el emprendimiento femenino y el acceso de las mujeres a los espacios de decisión económica.",
+   "texto": "Incentivos fiscales y financiación para las emprendedoras, sobre todo en sectores tecnológicos, industriales y de alto valor añadido, y más mujeres en los órganos de dirección de las empresas."
+  },
+  "198": {
+   "titulo": "Eliminar las penalizaciones laborales y económicas asociadas a la maternidad.",
+   "texto": ""
+  },
+  "199": {
+   "titulo": "Incorporar la perspectiva de género en las políticas económicas y presupuestarias estatales.",
+   "texto": ""
+  },
+  "200": {
+   "titulo": "Mejorar la legislación procesal para evitar la revictimización de las mujeres que sufren violencias machistas.",
+   "texto": "La declaración de la víctima debe poder hacerse como prueba preconstituida cuando la ley lo permita, para que no tenga que repetirla una y otra vez, y con atención judicial especializada."
+  },
+  "201": {
+   "titulo": "Reforzar la formación especializada de los operadores jurídicos y de los profesionales que intervienen en la atención a las víctimas.",
+   "texto": ""
+  },
+  "202": {
+   "titulo": "Garantizar una protección integral de las víctimas y de sus hijos e hijas.",
+   "texto": ""
+  },
+  "203": {
+   "titulo": "Mejorar los mecanismos de protección y reparación de las víctimas.",
+   "texto": "Simplificar los trámites para que las víctimas cobren de manera efectiva las prestaciones e indemnizaciones que ya tienen reconocidas."
+  },
+  "204": {
+   "titulo": "Impulsar una reforma de la legislación laboral para garantizar una conciliación efectiva y corresponsable.",
+   "texto": "Derecho a adaptar la jornada y a tener flexibilidad horaria para atender a la familia, sin que ejercerlo perjudique la carrera profesional."
+  },
+  "205": {
+   "titulo": "Mejorar los permisos y las prestaciones vinculados a las responsabilidades familiares y de cuidado.",
+   "texto": "Permisos individuales, retribuidos y corresponsables para cuidar de hijos y personas dependientes. En las familias monoparentales, el permiso por nacimiento y las prestaciones de cuidado deben ajustarse para que el niño o la niña no tenga menos tiempo de cuidado por tener un solo progenitor."
+  },
+  "206": {
+   "titulo": "Reconocer los cuidados en el sistema de protección social.",
+   "texto": ""
+  },
+  "207": {
+   "titulo": "Impulsar incentivos para las empresas que fomenten la corresponsabilidad.",
+   "texto": "Incentivos fiscales para las empresas, especialmente las pymes, que apliquen políticas reales de conciliación y corresponsabilidad sin penalizar la contratación o la promoción de mujeres."
+  },
+  "208": {
+   "titulo": "Dignificar las condiciones laborales de las personas trabajadoras del hogar y de los cuidados.",
+   "texto": "Son trabajos realizados mayoritariamente por mujeres. Hay que mejorar su protección laboral y social, la prevención de riesgos y la protección frente a los abusos."
+  },
+  "209": {
+   "titulo": "Reforzar la legislación penal y procesal ante las nuevas formas de violencia machista digital.",
+   "texto": "Cerrar los vacíos legales ante la creación y difusión sin consentimiento de imágenes íntimas manipuladas con inteligencia artificial y la suplantación de identidad para acosar sexualmente, con sanciones proporcionadas."
+  },
+  "210": {
+   "titulo": "Establecer mecanismos ágiles de retirada de los contenidos digitales que vulneren los derechos de las mujeres y de los menores.",
+   "texto": "Las víctimas deben poder exigir la retirada rápida de contenidos íntimos difundidos sin consentimiento o manipulados, y las plataformas deben tener obligaciones más claras, de acuerdo con la normativa europea."
+  },
+  "211": {
+   "titulo": "Combatir la violencia sexual digital contra niñas y adolescentes.",
+   "texto": "Prevenir y perseguir la captación en internet, la difusión no consentida de imágenes íntimas y los contenidos sexuales manipulados con inteligencia artificial, con perspectiva de género y con una atención especializada a las víctimas."
+  },
+  "212": {
+   "titulo": "Garantizar que los sistemas de inteligencia artificial no reproduzcan discriminaciones de género.",
+   "texto": "Auditar los sistemas de IA que se utilizan en la selección de personal, el acceso a servicios o las decisiones que afectan a derechos, para corregir sus sesgos por razón de sexo."
+  },
+  "213": {
+   "titulo": "Combatir el acoso digital y las campañas de violencia machista contra las mujeres con proyección pública.",
+   "texto": "Las mujeres que hacen política, periodismo, cultura o activismo sufren campañas coordinadas de acoso y amenazas. Necesitan vías específicas de denuncia, protección y asistencia para poder seguir participando en la vida pública."
+  },
+  "214": {
+   "titulo": "Garantizar el respeto a las competencias exclusivas de Cataluña en materia de políticas de género.",
+   "texto": "La normativa estatal debe respetar el artículo 153 del Estatuto y no puede duplicar ni interferir en las políticas catalanas de igualdad."
+  },
+  "215": {
+   "titulo": "Reclamar la transferencia efectiva de los recursos económicos estatales destinados a las políticas de igualdad y contra las violencias machistas con criterios de suficiencia y estabilidad, con plena autonomía de gestión para la Generalitat y sin imponer modelos que ignoren el sistema catalán de atención y protección.",
+   "texto": ""
+  },
+  "216": {
+   "titulo": "Reforzar las competencias del Consejo del Audiovisual de Cataluña en la protección de los derechos de las mujeres en el entorno digital.",
+   "texto": ""
+  },
+  "217": {
+   "titulo": "Garantizar la participación de Cataluña en los organismos europeos e internacionales de igualdad.",
+   "texto": ""
+  },
+  "218": {
+   "titulo": "Exigir el respeto a las competencias de Cataluña en políticas de género.",
+   "texto": ""
+  },
+  "219": {
+   "titulo": "Votar en contra de cualquier iniciativa que cuestione el matrimonio entre personas del mismo sexo o limite sus efectos en materia de filiación y adopción.",
+   "texto": ""
+  },
+  "220": {
+   "titulo": "Mantener en el Código Penal el agravante por motivos LGTBI-fóbicos y el delito de discurso de odio, y oponernos a cualquier reforma que rebaje su protección.",
+   "texto": ""
+  },
+  "221": {
+   "titulo": "Oponernos a cualquier derogación o recorte de la Ley 4/2023 (trans y LGTBI) y de la Ley 15/2022 de igualdad de trato y no discriminación, siempre con respeto a las competencias de Cataluña.",
+   "texto": ""
+  },
+  "222": {
+   "titulo": "Reformar el Código Penal para combatir la violencia digital contra el colectivo LGTBI+.",
+   "texto": ""
+  },
+  "223": {
+   "titulo": "Defender la Ley catalana 13/2025 ante cualquier intento de recurso o de recorte desde las instituciones del Estado.",
+   "texto": ""
+  },
+  "224": {
+   "titulo": "Recuperar y aprobar la ley orgánica que tipifica como delito las terapias de conversión, aprobada por el Congreso el 25 de junio de 2026 y caducada en el Senado con la disolución de las Cortes.",
+   "texto": "Incorporaremos a ella las mejoras de la proposición de ley de No és Teràpia que cofirmamos: penas más altas y ayudas a las víctimas."
+  },
+  "225": {
+   "titulo": "Volver a registrar y aprobar la Ley de Memoria y Justicia para la reparación de las personas trans y LGTBI víctimas de la dictadura, que cofirmamos en noviembre de 2024.",
+   "texto": ""
+  },
+  "226": {
+   "titulo": "Garantizar que en Cataluña la Generalitat gestione las reparaciones y las medidas de memoria LGTBI+, con los recursos correspondientes.",
+   "texto": ""
+  },
+  "227": {
+   "titulo": "Coordinar la penalización de las terapias de conversión con el régimen sancionador catalán de la Ley 13/2025, sin vacíos ni duplicidades.",
+   "texto": ""
+  },
+  "228": {
+   "titulo": "Impulsar sanciones europeas efectivas contra los estados miembros que vulneren los derechos LGTBI+, tal como reclamamos en el Congreso a raíz de la prohibición del Pride de Hungría.",
+   "texto": ""
+  },
+  "229": {
+   "titulo": "Exigir que la normativa estatal de igualdad LGTBI+ y su desarrollo reglamentario respeten la competencia exclusiva de la Generalitat, y actúen como suelo mínimo, nunca como techo, de la normativa catalana.",
+   "texto": ""
+  },
+  "230": {
+   "titulo": "Oponernos al uso de la coordinación sanitaria estatal, como los protocolos estatales de atención a las personas trans e intersexuales, para condicionar el modelo catalán del Servei Trànsit.",
+   "texto": ""
+  },
+  "231": {
+   "titulo": "Garantizar que Cataluña decida los criterios de acceso a la PrEP y la PEP dentro de su sistema de salud.",
+   "texto": ""
+  },
+  "232": {
+   "titulo": "Defender ante la normativa básica estatal la capacidad de Cataluña de fijar su currículo, con referentes LGTBI+ y educación afectivosexual en todas las etapas, y oponernos a cualquier medida que permita excluir de ella al alumnado.",
+   "texto": ""
+  },
+  "233": {
+   "titulo": "Conseguir que la normativa estatal sobre medidas LGTBI+ en las empresas reconozca los protocolos catalanes y el control de la Inspección de Trabajo de Cataluña, sin duplicar burocracia.",
+   "texto": ""
+  },
+  "234": {
+   "titulo": "Territorializar los fondos estatales para políticas de igualdad LGTBI+, incluidas las subvenciones a entidades, y transferirlos a la Generalitat, sin programas estatales en ámbitos de competencias catalanas.",
+   "texto": ""
+  },
+  "235": {
+   "titulo": "Reclamar fondos finalistas para desplegar la Ley 13/2025: la Red SAI como punto neurálgico de los servicios LGTBI+, la atención a las víctimas y la redistribución territorial de los servicios.",
+   "texto": ""
+  },
+  "236": {
+   "titulo": "Reclamar financiación sanitaria para ampliar el Servicio Tránsito en el territorio y el acceso a la PrEP y la PEP, y transferencia de los fondos estatales de prevención del VIH y las ITS.",
+   "texto": ""
+  },
+  "237": {
+   "titulo": "Transferir íntegramente a la Generalitat el 0,7 % del IRPF para fines sociales, cumpliendo las sentencias que el Estado incumple.",
+   "texto": ""
+  },
+  "238": {
+   "titulo": "Impulsar un cambio de orientación en las políticas de asilo y exigir el reglamento de desarrollo de la Ley 12/2009, con atención específica a las personas perseguidas por orientación sexual o expresión de género.",
+   "texto": ""
+  },
+  "239": {
+   "titulo": "Recuperar los fondos de acogida que el Estado español debe a la Generalitat por sentencia, para que Cataluña ejerza su competencia exclusiva en acogida.",
+   "texto": ""
+  },
+  "240": {
+   "titulo": "Reclamar la interlocución directa entre el Gobierno de Cataluña y la Comisión Europea en materia de acogida de refugiados.",
+   "texto": ""
+  },
+  "241": {
+   "titulo": "Facilitar la adecuación del nombre y el sexo en los documentos de las personas extranjeras residentes (NIE, tarjeta sanitaria), de manera coherente con la comunicación de la identidad de género de la Ley 13/2025.",
+   "texto": ""
+  },
+  "242": {
+   "titulo": "Exigir que el Estado español valore el respeto a los derechos humanos, incluidos los derechos LGTBI+, a la hora de priorizar acuerdos y convenios internacionales.",
+   "texto": ""
+  },
+  "243": {
+   "titulo": "Exigir que los presupuestos generales del Estado español consignen y transfieran los recursos necesarios para cumplir las obligaciones estatales en dependencia y discapacidad, incluida la financiación del 50 % del gasto público en dependencia que corresponde al Estado, con liquidación transparente y calendario de pago.",
+   "texto": ""
+  },
+  "244": {
+   "titulo": "Desplegar dentro de 2027 los reglamentos pendientes de la legislación estatal de discapacidad, incluyendo los nuevos baremos de valoración, el marco de ayudas a la contratación y la acreditación de la asistencia personal, con aplicación efectiva como máximo a principios de 2028.",
+   "texto": ""
+  },
+  "245": {
+   "titulo": "Los municipios pequeños, sobre todo los rurales y los que tienen menos capacidad fiscal, necesitan apoyo técnico y financiero plurianual del Estado para cumplir las obligaciones de accesibilidad.",
+   "texto": ""
+  },
+  "246": {
+   "titulo": "Preservar el Fondo Social Europeo Plus (FSE+) para financiar la accesibilidad, la inclusión laboral y los apoyos comunitarios, gestionado con criterio de subsidiariedad y con participación de las instituciones catalanas.",
+   "texto": ""
+  },
+  "247": {
+   "titulo": "Completar la reforma de la prestación CUME de la ley 4/2026 incorporando las enmiendas todavía pendientes de Junts.",
+   "texto": ""
+  },
+  "248": {
+   "titulo": "Garantizar una financiación estable de la asistencia personal y de los apoyos para la vida independiente, y actualizar sus importes, sobre todo en los grados 2 y 3, para que cubran el coste real de los profesionales y no se interrumpan entre ejercicios presupuestarios.",
+   "texto": ""
+  },
+  "249": {
+   "titulo": "Revisar el copago de los servicios de apoyo para que sea progresivo y basado en la capacidad económica real; establecer la exención para las personas con ingresos que no superen 2,5 veces el IPREM y evitar que el coste del apoyo impida vivir de manera independiente.",
+   "texto": ""
+  },
+  "250": {
+   "titulo": "Un plan estatal de simplificación para el reconocimiento de la discapacidad y la dependencia, con ventanilla única, interoperabilidad y más personal técnico, para que se cumpla como mínimo el plazo legal de seis meses.",
+   "texto": ""
+  },
+  "251": {
+   "titulo": "Promover reformas que hagan compatible, en condiciones justas y sin penalizaciones desproporcionadas, la percepción de pensiones y prestaciones con la actividad laboral; incorporar el análisis de los sobrecostes de la discapacidad a las medidas fiscales y de apoyo económico a las personas y familias.",
+   "texto": ""
+  },
+  "252": {
+   "titulo": "Aprobar la reforma de la LOREG para que las personas ciegas o con discapacidad visual severa puedan votar de manera autónoma y secreta en las elecciones municipales, por correo y desde el extranjero, y garantizar la accesibilidad de todas las modalidades de votación presentes y futuras.",
+   "texto": ""
+  },
+  "253": {
+   "titulo": "Establecer un plan estatal, con calendario, presupuesto e indicadores públicos, para garantizar la accesibilidad universal de las estaciones, los trenes y los servicios ferroviarios de titularidad estatal, incluyendo protocolos de respuesta rápida ante averías de ascensores, plataformas u otros elementos accesibles.",
+   "texto": ""
+  },
+  "254": {
+   "titulo": "Hacer cumplir las obligaciones de accesibilidad digital en webs, aplicaciones, trámites y documentos de la Administración General del Estado; incorporar lectura fácil, lenguaje llano, subtitulación, lengua de signos, audiodescripción y formatos alternativos según las necesidades.",
+   "texto": ""
+  },
+  "255": {
+   "titulo": "Reconocer el apoyo personal, el asesoramiento en accesibilidad, los apoyos a la comunicación y las tecnologías de asistencia como condiciones estructurales para ejercer cargos electos, con financiación pública estable y neutralidad económica para las personas candidatas.",
+   "texto": ""
+  },
+  "256": {
+   "titulo": "Hacer cumplir la cuota de reserva de puestos de trabajo para personas con discapacidad en las empresas ordinarias, con más inspección y datos transparentes.",
+   "texto": ""
+  },
+  "257": {
+   "titulo": "Los incentivos estatales a la contratación deben favorecer el trabajo estable y de calidad, la promoción y la igualdad salarial, e incluir adaptaciones y trabajo con apoyo en la empresa ordinaria.",
+   "texto": ""
+  },
+  "258": {
+   "titulo": "Desplegar un plan de transición de los centros especiales de empleo hacia más oportunidades en el mercado ordinario, preservando los apoyos necesarios y promoviendo itinerarios voluntarios, personalizados y evaluables, con participación de las organizaciones especializadas.",
+   "texto": ""
+  },
+  "259": {
+   "titulo": "Desarrollar el reglamento de la disposición adicional vigésima cuarta de la legislación estatal de discapacidad para que las organizaciones especializadas puedan cooperar en el diseño de procesos de selección, promoción, adaptación y estabilidad laboral de las personas con discapacidad.",
+   "texto": ""
+  },
+  "260": {
+   "titulo": "Impulsar un estudio estatal periódico sobre los sobrecostes de la discapacidad y reformar, a partir de sus conclusiones, las medidas fiscales y las prestaciones económicas; garantizar también el acceso a formación profesional, digital y a lo largo de la vida en formatos accesibles.",
+   "texto": ""
+  },
+  "261": {
+   "titulo": "Establecer garantías de acceso a una atención sanitaria accesible y de calidad en los servicios de competencia estatal, incluyendo información comprensible, comunicación aumentativa y alternativa, ajustes razonables, accesibilidad física y sensorial y formación de los profesionales.",
+   "texto": ""
+  },
+  "262": {
+   "titulo": "Promover un marco de cooperación y financiación para facilitar el acceso a viviendas accesibles y adaptables, e impulsar los cambios normativos estatales necesarios para que las comunidades de propietarios no puedan bloquear injustificadamente las obras de accesibilidad y para que haya ayudas suficientes.",
+   "texto": ""
+  },
+  "263": {
+   "titulo": "Los sistemas de inteligencia artificial y de decisión automatizada de las administraciones deben respetar los derechos de las personas con discapacidad, con evaluación de impacto, supervisión humana, transparencia y vías de reclamación.",
+   "texto": ""
+  },
+  "264": {
+   "titulo": "Establecer mecanismos permanentes de participación de las personas con discapacidad y sus organizaciones en la elaboración, aplicación y evaluación de las políticas estatales; publicar datos desagregados sobre participación política y representación, y promover objetivos medibles para incrementar su presencia en cargos y candidaturas.",
+   "texto": ""
+  },
+  "265": {
+   "titulo": "Reformar el Código Penal para ampliar los tipos delictivos sobre los animales y adaptarlos a la realidad, y suplir las carencias de la última reforma, como la tipificación correcta del abuso sexual de animales.",
+   "texto": ""
+  },
+  "266": {
+   "titulo": "Revisar los rangos de penas de los tipos básicos de maltrato animal.",
+   "texto": ""
+  },
+  "267": {
+   "titulo": "Adaptar la normativa procesal estatal para que garantice la seguridad jurídica de los animales en las situaciones de derecho privado, de acuerdo con el derecho civil catalán.",
+   "texto": ""
+  },
+  "268": {
+   "titulo": "Rebajar el IVA de los gastos veterinarios.",
+   "texto": ""
+  },
+  "269": {
+   "titulo": "Introducir una deducción estatal en el IRPF por los gastos veterinarios, para favorecer los tratamientos clínicos de los animales.",
+   "texto": ""
+  },
+  "270": {
+   "titulo": "Reconocer en el Estatuto de los Trabajadores el derecho a un permiso retribuido por enfermedad grave, hospitalización o muerte de un animal de la familia.",
+   "texto": ""
+  },
+  "271": {
+   "titulo": "Modificar la Ley 7/2023 de protección de los derechos y el bienestar de los animales para que respete las competencias de Cataluña, enmiende los perjuicios ocasionados al marco catalán y corrija sus carencias, como la protección de los perros de caza.",
+   "texto": ""
+  },
+  "272": {
+   "titulo": "Derogar la declaración de la tauromaquia como patrimonio cultural.",
+   "texto": ""
+  },
+  "273": {
+   "titulo": "Modificar la normativa para favorecer la pirotecnia insonora y hacer compatibles las fiestas populares con la salud de los animales de compañía, la fauna silvestre y las personas con determinadas enfermedades.",
+   "texto": ""
+  },
+  "274": {
+   "titulo": "Mejorar el etiquetado de consumo para distinguir claramente los productos veganos de los vegetarianos.",
+   "texto": ""
+  },
+  "275": {
+   "titulo": "Prohibir el transporte marítimo internacional de animales vivos destinados al consumo o a la ganadería, de acuerdo con las recomendaciones del informe del Tribunal de Cuentas Europeo del 17 de abril de 2023.",
+   "texto": ""
+  },
+  "276": {
+   "titulo": "Reformar las normas reguladoras del bienestar de los animales en la explotación, el transporte y el sacrificio, y apoyar la transición hacia sistemas libres de jaulas.",
+   "texto": ""
+  },
+  "277": {
+   "titulo": "Establecer una excepción a las normas de vigilancia epidemiológica para los santuarios que acogen animales que han salido de la cadena de producción, para que no se tengan que sacrificar por enfermedades tratables.",
+   "texto": ""
+  },
+  "278": {
+   "titulo": "Impulsar los planes de la UE para un sistema alimentario más sostenible y crear fondos, gestionados por la Generalitat, para las empresas que quieran hacer la transición a sistemas de producción sin sufrimiento animal o a productos de origen vegetal.",
+   "texto": ""
+  },
+  "279": {
+   "titulo": "Dotar los fondos estatales previstos para corregir las líneas eléctricas de alta y media tensión, de acuerdo con la normativa catalana de protección de la avifauna.",
+   "texto": ""
+  },
+  "280": {
+   "titulo": "Desarrollar la normativa sobre el rescate de animales en las obras de interés general del Estado español y en la red de carreteras estatales.",
+   "texto": ""
+  },
+  "281": {
+   "titulo": "Impulsar la autorización y el uso de sistemas de inmunocontracepción como método prioritario de control de la superpoblación de especies.",
+   "texto": ""
+  },
+  "282": {
+   "titulo": "Reformar la Ley de la ciencia para que un porcentaje de la inversión en investigación se destine a métodos alternativos a la experimentación con animales, y hacer obligatoria la formación en bienestar animal del personal investigador.",
+   "texto": ""
+  },
+  "283": {
+   "titulo": "Revisar las iniciativas legislativas estatales en el ámbito social para evitar invasiones de las competencias de Cataluña y preservar su capacidad reguladora y organizativa.",
+   "texto": ""
+  },
+  "284": {
+   "titulo": "Establecer mecanismos de participación efectiva de la Generalitat en la preparación de reformas estatales que afecten a servicios sociales, dependencia y prestaciones.",
+   "texto": ""
+  },
+  "285": {
+   "titulo": "Impulsar el despliegue de las competencias estatutarias de gestión en protección social que sean jurídicamente viables y acordar los recursos asociados.",
+   "texto": ""
+  },
+  "286": {
+   "titulo": "Promover convenios e instrumentos de interoperabilidad que eviten duplicidades, con respeto a la normativa de protección de datos y a la distribución competencial.",
+   "texto": ""
+  },
+  "287": {
+   "titulo": "Garantizar en los presupuestos estatales el cumplimiento del artículo 32 de la Ley 39/2006, en la redacción de la Ley 4/2026: aportación estatal equivalente al 50 % del gasto total certificado por cada comunidad autónoma en el ejercicio precedente, sin incluir en él la aportación de las personas beneficiarias.",
+   "texto": ""
+  },
+  "288": {
+   "titulo": "Desarrollar sistemas transparentes de certificación, liquidación, seguimiento y revisión de los costes reales de los servicios, evitando trasladar a los entes gestores nuevas obligaciones sin cobertura económica.",
+   "texto": ""
+  },
+  "289": {
+   "titulo": "Asegurar los instrumentos presupuestarios y reglamentarios necesarios para aplicar las novedades de la Ley 4/2026 en compatibilidad de apoyos, atención domiciliaria y vida independiente, respetando las competencias catalanas.",
+   "texto": ""
+  },
+  "290": {
+   "titulo": "Reforzar la protección de las personas cuidadoras no profesionales y desplegar los servicios de apoyo, formación y respiro previstos en la reforma, con financiación y coordinación adecuadas.",
+   "texto": ""
+  },
+  "291": {
+   "titulo": "Impulsar mecanismos de cooperación y financiación para facilitar la atención integrada social y sanitaria, sin imponer un modelo organizativo único en Cataluña.",
+   "texto": ""
+  },
+  "292": {
+   "titulo": "Simplificar la regulación y los trámites del ingreso mínimo vital y mejorar el acceso a la información y al acompañamiento de las personas solicitantes.",
+   "texto": ""
+  },
+  "293": {
+   "titulo": "Revisar los mecanismos de coordinación entre el IMV y la renta garantizada de ciudadanía para reducir duplicidades, vacíos de cobertura y trámites repetidos, respetando la competencia catalana.",
+   "texto": ""
+  },
+  "294": {
+   "titulo": "Perfeccionar los incentivos al empleo y la compatibilidad gradual entre prestaciones y rentas del trabajo para evitar discontinuidades bruscas en los ingresos familiares.",
+   "texto": ""
+  },
+  "295": {
+   "titulo": "Promover la evaluación del efecto preventivo de las prestaciones estatales sobre la pobreza persistente y la inclusión, con indicadores públicos y análisis territorial.",
+   "texto": ""
+  },
+  "296": {
+   "titulo": "Reforzar la interoperabilidad segura de datos y las comprobaciones proporcionadas para reducir cargas burocráticas, errores y usos indebidos, preservando los derechos de las personas.",
+   "texto": ""
+  },
+  "297": {
+   "titulo": "Revisar los mínimos y las deducciones estatales vinculados a hijos, discapacidad y dependencia y estudiar mecanismos reembolsables o prestaciones equivalentes para que el apoyo llegue también a las rentas bajas, con atención especial a las familias monoparentales, y con importes adaptados al coste de la vida en Cataluña.",
+   "texto": ""
+  },
+  "298": {
+   "titulo": "Impulsar medidas fiscales y de Seguridad Social de apoyo a las responsabilidades de cuidado y a la conciliación, con atención a los hogares con más cargas familiares y modular las deducciones fiscales estatales de vivienda según los niños a cargo.",
+   "texto": ""
+  },
+  "299": {
+   "titulo": "Reforzar los instrumentos estatales de lucha contra la pobreza infantil y evaluar su cobertura efectiva y su compatibilidad con las prestaciones autonómicas.",
+   "texto": ""
+  },
+  "300": {
+   "titulo": "Garantizar el despliegue de las nuevas disposiciones estatales sobre accesibilidad, autonomía y derechos de las personas con discapacidad, con recursos y respeto competencial.",
+   "texto": ""
+  },
+  "301": {
+   "titulo": "Mejorar la coordinación legislativa y administrativa para la protección de la infancia y las personas vulnerables ante situaciones de violencia, exclusión residencial o desamparo.",
+   "texto": ""
+  },
+  "302": {
+   "titulo": "Equiparar las familias monoparentales a las numerosas en los beneficios que dependen del Estado español (IRPF, Seguridad Social, permisos, bonificaciones y tasas estatales), reconociendo en todo el Estado el título de familia monoparental que expide la Generalitat.",
+   "texto": ""
+  },
+  "303": {
+   "titulo": "Exigir un fondo estatal estable y finalista, transferido y gestionado por la Generalitat, para los programas de emancipación de los jóvenes extutelados y de los jóvenes sin apoyo familiar, para que la protección pública no se acabe cuando cumplen 18 años.",
+   "texto": ""
+  },
+  "304": {
+   "titulo": "Incorporar memorias económicas y garantías de financiación en las normas estatales que creen nuevas obligaciones en el ámbito social para las administraciones competentes.",
+   "texto": ""
+  },
+  "305": {
+   "titulo": "Impulsar instrumentos estables y plurianuales de financiación estatal de las políticas de protección social, con criterios de necesidad, demografía, dispersión y coste efectivo.",
+   "texto": ""
+  },
+  "306": {
+   "titulo": "Revisar el marco estatal de financiación local en los aspectos que inciden en la suficiencia de recursos para los servicios de proximidad, respetando la ordenación competencial catalana.",
+   "texto": ""
+  },
+  "307": {
+   "titulo": "Promover indicadores compartidos de evaluación de los resultados sociales, simplificación administrativa y coordinación entre administraciones, sin duplicar sistemas de información.",
+   "texto": ""
+  },
+  "308": {
+   "titulo": "Garantizar que las reformas estatales que exijan nuevas actuaciones a los servicios sociales municipales vayan acompañadas de recursos, apoyo técnico y plazos de implantación viables.",
+   "texto": ""
+  },
+  "309": {
+   "titulo": "Aprobar la ley de delegación de competencias en inmigración a la Generalitat, que hemos vuelto a registrar en el Congreso (publicada en el BOCG el 11 de septiembre de 2026), después de que PP, Vox y Podemos la tumbaran el 23 de septiembre de 2025 por 173 votos a favor y 177 en contra.",
+   "texto": ""
+  },
+  "310": {
+   "titulo": "Traspasar a la Generalitat la gestión de los permisos de residencia y trabajo, las renovaciones y las estancias, con todos los medios personales, materiales y tecnológicos necesarios.",
+   "texto": ""
+  },
+  "311": {
+   "titulo": "Delegar en la Generalitat la tramitación de los expedientes sancionadores y de expulsión y la ejecución de las devoluciones, la gestión integral de los CIE y la expedición del NIE, la TIE, el DNI y el pasaporte.",
+   "texto": ""
+  },
+  "312": {
+   "titulo": "Garantizar el acceso de la Generalitat a los sistemas estatales y europeos de información en materia de extranjería.",
+   "texto": ""
+  },
+  "313": {
+   "titulo": "Asegurar la financiación suficiente de las nuevas competencias, para que ningún traspaso llegue sin recursos.",
+   "texto": ""
+  },
+  "314": {
+   "titulo": "Priorizar las vías legales y la contratación en origen, con una planificación anual de las ocupaciones que necesitan las empresas y los sectores: agricultura, industria y pymes, cuidados, hostelería y servicios.",
+   "texto": ""
+  },
+  "315": {
+   "titulo": "Oponernos a las regularizaciones masivas aprobadas por decreto, sin planificación laboral ni integración lingüística, y apoyar el expediente abierto por la Comisión Europea a raíz de la denuncia de Junts.",
+   "texto": ""
+  },
+  "316": {
+   "titulo": "Hacer que los permisos y las renovaciones funcionen, con trámites ágiles y previsibles, y establecer criterios de arraigo exigentes que incluyan el conocimiento del catalán.",
+   "texto": ""
+  },
+  "317": {
+   "titulo": "Exigir que cualquier decisión estatal sobre flujos o regularizaciones tenga en cuenta la capacidad real del mercado laboral, la vivienda, la escuela y los servicios públicos de Cataluña.",
+   "texto": ""
+  },
+  "318": {
+   "titulo": "Agilizar la homologación de títulos y cualificaciones profesionales, y el canje de permisos de conducir, para que las personas con derecho a trabajar puedan ocupar los puestos que necesitan las empresas catalanas.",
+   "texto": ""
+  },
+  "319": {
+   "titulo": "Reformar la normativa del padrón para que el empadronamiento acredite la residencia efectiva y el domicilio real, perseguir los empadronamientos ficticios y la sobreocupación, e impedir que la ocupación ilegal de una vivienda permita empadronarse.",
+   "texto": ""
+  },
+  "320": {
+   "titulo": "Garantizar recursos estatales para gestionar la matrícula viva: aulas de acogida para que ningún alumno llegue al aula ordinaria sin haber pasado por ellas cuando lo necesite, más profesorado y un reparto equilibrado entre centros.",
+   "texto": ""
+  },
+  "321": {
+   "titulo": "Exigir el conocimiento del catalán en los procesos de arraigo y de renovación de los permisos, y que ninguna regularización se haga de espaldas a la lengua del país.",
+   "texto": ""
+  },
+  "322": {
+   "titulo": "Prohibir en el espacio público las prendas que cubren total o sustancialmente el rostro e impiden identificar a la persona, como el niqab y el burka, tal como propone la ley del velo integral que Junts presentó en febrero de 2026.",
+   "texto": "La prohibición no afecta al hiyab."
+  },
+  "323": {
+   "titulo": "Reforzar la lucha contra los matrimonios forzados y la mutilación genital femenina, y garantizar la igualdad entre mujeres y hombres como norma común para todos.",
+   "texto": ""
+  },
+  "324": {
+   "titulo": "Aplicar el principio de responsabilidad compartida: quien llega debe conocer las normas, y quien ya vive aquí, sea de donde sea, debe cumplirlas.",
+   "texto": ""
+  },
+  "325": {
+   "titulo": "Delegar en los Mossos d'Esquadra la seguridad y el control de acceso al espacio Schengen en los puertos y aeropuertos de Cataluña, y llegar hasta 26.800 agentes en 2032.",
+   "texto": ""
+  },
+  "326": {
+   "titulo": "Garantizar que las resoluciones de retorno se cumplan cuando legalmente corresponda, sin expedientes eternos.",
+   "texto": "Hay que distinguir siempre la situación de un adulto sin derecho a quedarse de la de un solicitante de asilo, una víctima de trata o un menor."
+  },
+  "327": {
+   "titulo": "Reforzar la lucha contra la trata de seres humanos y aprobar una ley integral de protección y asistencia a las víctimas, con identificación temprana y atención especializada, y con el papel de los Mossos d'Esquadra como policía integral.",
+   "texto": ""
+  },
+  "328": {
+   "titulo": "Garantizar que en cualquier reparto de menores migrantes cuente el esfuerzo de acogida que Cataluña ya ha hecho y la capacidad real de su red, con compensación económica para las comunidades que tienen más plazas que la media y que los jóvenes extutelados que siguen un itinerario de formación, trabajo y aprendizaje del catalán no pierdan la documentación al cumplir 18 años, para que el esfuerzo de integración no acabe en irregularidad.",
+   "texto": ""
+  },
+  "329": {
+   "titulo": "Exigir que el Estado asuma las consecuencias de sus decisiones en el control de fronteras y la gestión de las llegadas, sin trasladar automáticamente la presión ni el coste a Cataluña.",
+   "texto": ""
+  },
+  "330": {
+   "titulo": "Reclamaremos una financiación sanitaria suficiente y plurianual, con el objetivo de avanzar hacia los estándares europeos del 8 % del PIB en gasto sanitario público y destinar el 25 % del presupuesto de salud a la atención primaria.",
+   "texto": ""
+  },
+  "331": {
+   "titulo": "Exigiremos que el Estado financie adecuadamente las obligaciones que impone al sistema catalán y que las nuevas prestaciones o normas básicas vayan acompañadas de los recursos correspondientes.",
+   "texto": ""
+  },
+  "332": {
+   "titulo": "Reclamaremos el traspaso a la Generalitat de la titularidad de los inmuebles sanitarios estatales que gestiona y mantiene, como los hospitales Vall d'Hebron, Bellvitge, Arnau de Vilanova de Lleida, Josep Trueta y Joan XXIII, además de algunos CAP.",
+   "texto": ""
+  },
+  "333": {
+   "titulo": "Exigiremos la eliminación inmediata del distrito universitario único del Estado español para que deje de dificultar que los jóvenes formados en el país se conviertan en profesionales del sistema catalán.",
+   "texto": ""
+  },
+  "334": {
+   "titulo": "Reclamaremos el traspaso de las competencias y los recursos de la formación sanitaria especializada y la ampliación de las plazas MIR de acuerdo con las necesidades asistenciales, con especial atención a Medicina Familiar y Comunitaria y a las especialidades deficitarias.",
+   "texto": ""
+  },
+  "335": {
+   "titulo": "Reformaremos la Ley de Ordenación de las Profesiones Sanitarias para actualizar las competencias profesionales, reconocer nuevos perfiles y dar más capacidad de planificación a Cataluña.",
+   "texto": ""
+  },
+  "336": {
+   "titulo": "Garantizaremos la ordenación, la planificación y la regulación de las prestaciones y servicios sanitarios, sociosanitarios y de salud mental de provisión pública que son competencia de la Generalitat.",
+   "texto": ""
+  },
+  "337": {
+   "titulo": "Exigiremos al Gobierno español que financie adecuadamente el sistema sanitario catalán y que la coordinación interterritorial no se utilice para limitar las competencias de Cataluña.",
+   "texto": ""
+  },
+  "338": {
+   "titulo": "No apoyaremos ninguna medida estatal uniformizadora de los servicios sanitarios que no respete las competencias y el modelo sanitario catalán de colaboración publicosocial establecido en la LOSC y en el resto de la legislación catalana.",
+   "texto": ""
+  },
+  "339": {
+   "titulo": "Garantizaremos que una futura ley del medicamento respete las competencias y el modelo farmacéutico catalán, facilitando la colaboración con la industria farmacéutica para mejorar la atención farmacéutica, la investigación y la innovación.",
+   "texto": ""
+  },
+  "340": {
+   "titulo": "Velaremos para que cualquier reforma del Estatuto Marco respete las competencias de Cataluña e incorpore las reivindicaciones de los distintos colectivos de profesionales sanitarios.",
+   "texto": ""
+  },
+  "341": {
+   "titulo": "Reconoceremos las competencias y especialidades de las enfermeras, con su clasificación dentro del grupo A1, así como de los técnicos superiores dentro del grupo B y del personal técnico en cuidados auxiliares de enfermería en el grupo C1, y garantizaremos su participación efectiva en los órganos de decisión del sistema.",
+   "texto": ""
+  },
+  "342": {
+   "titulo": "Exigiremos las competencias para la homologación de los títulos de especialistas extracomunitarios, para poder instaurar desde Cataluña un procedimiento transparente, ágil y con todas las garantías profesionales, y facilitar la incorporación y fidelización de los profesionales que el sistema necesita.",
+   "texto": ""
+  },
+  "343": {
+   "titulo": "Impulsaremos instrumentos estatales de financiación estable para la investigación biomédica, clínica y traslacional en medicamentos, promoviendo la utilización de fármacos biosimilares, con la participación de centros de investigación, hospitales, universidades y empresas.",
+   "texto": ""
+  },
+  "344": {
+   "titulo": "Fomentaremos la colaboración publicoprivada en la investigación de medicamentos mediante convocatorias competitivas, transparencia, independencia científica y retorno público de los resultados, favoreciendo la innovación y el desarrollo de nuevos tratamientos.",
+   "texto": ""
+  },
+  "345": {
+   "titulo": "Impulsaremos la investigación y fabricación industrial de medicamentos, especialmente antiinfecciosos para los antibióticos prioritarios, mediante incentivos económicos a las empresas y ayudas a la industrialización, condicionados a la producción en Europa y a la garantía del suministro.",
+   "texto": ""
+  },
+  "346": {
+   "titulo": "Exigiremos que los medicamentos aprobados en la Unión Europea se incorporen con más rapidez al sistema público, especialmente cuando el retraso afecte a personas con enfermedades graves o con alternativas terapéuticas limitadas, como el Alzheimer, y habilitar mecanismos de acceso controlado a las terapias que todavía no se han incorporado al sistema público, para generar evidencia sobre su efectividad en la práctica clínica.",
+   "texto": ""
+  },
+  "347": {
+   "titulo": "Priorizaremos la investigación en Alzheimer y en enfermedades neurodegenerativas, con financiación estatal estable para los centros de investigación catalanes de referencia, e impulsar la participación en ensayos clínicos y la atracción de talento investigador.",
+   "texto": ""
+  },
+  "348": {
+   "titulo": "Más recursos humanos y materiales para la escuela pública y la de iniciativa social financiada con fondos públicos.",
+   "texto": ""
+  },
+  "349": {
+   "titulo": "Actualización de los módulos de la enseñanza concertada para adecuarlos a los costes reales.",
+   "texto": ""
+  },
+  "350": {
+   "titulo": "La educación de los niños de 0 a 3 años debe tener financiación pública estatal.",
+   "texto": ""
+  },
+  "351": {
+   "titulo": "Hay que universalizar la gratuidad de la enseñanza postobligatoria (16-18 años) en todo el Servicio de Educación de Cataluña.",
+   "texto": ""
+  },
+  "352": {
+   "titulo": "Hay que reforzar la autonomía de las universidades y centros de investigación (dándoles toda la autonomía posible en los ámbitos organizativos, financieros, de gestión de personal y académica, etc.), acción que permitirá diferentes modelos de gobernanza de acuerdo con la voluntad de cada institución.",
+   "texto": ""
+  },
+  "353": {
+   "titulo": "Muy especialmente, hay que permitir a las instituciones académicas una total autonomía en las políticas de personal, que les permita fomentar políticas de atracción y retención de talento, estabilización, reducción de la precarización, etc. Esto requiere, en primer lugar, exigir al Gobierno del Estado la eliminación de la tasa de reposición que impide el necesario relevo generacional en las universidades catalanas, y reduce su autonomía.",
+   "texto": ""
+  },
+  "354": {
+   "titulo": "Superar de una vez por todas el marco único, funcionarial y rígido del sistema universitario y la discriminación de las figuras contractuales que todavía dificultan la participación del profesorado permanente en el gobierno de las universidades.",
+   "texto": ""
+  },
+  "355": {
+   "titulo": "La inversión en universidades, que hoy representa el 0,40 % del PIB, debe incrementarse hasta el 0,6 % del PIB en cinco años, ya que países de dimensión media semejante a Cataluña (Austria, Dinamarca, Suecia, Finlandia, Escocia, Irlanda) destinan a ello en torno al 1 % del PIB.",
+   "texto": ""
+  },
+  "356": {
+   "titulo": "Hay que incrementar también el conjunto de la inversión en I+D respecto al PIB hasta llegar, como mínimo, a la media europea, tal como se indica en la última reforma de la ley estatal de la ciencia.",
+   "texto": "Esta inversión debe basarse en criterios competitivos con el objetivo de poner un énfasis especial en la movilización de la inversión privada, ámbito en el que España está especialmente lejos de la media europea."
+  },
+  "357": {
+   "titulo": "Es fundamental adecuar la legislación fiscal en materia de IVA para evitar que las subvenciones que reciben los centros para hacer investigación se consideren gravadas con IVA.",
+   "texto": "Devolver el 100 % del IVA de la investigación, tal como establece la normativa europea."
+  },
+  "358": {
+   "titulo": "Incremento de gasto estructural en grandes infraestructuras de investigación, principalmente ALBA-CELLS, Barcelona Supercomputing Center y el Centro Nacional de Análisis Genómico (CNAG), a través de la firma o renovación de acuerdos plurianuales de largo alcance.",
+   "texto": ""
+  },
+  "359": {
+   "titulo": "Traspasar a la Generalitat e incrementar los fondos que el Estado aporta a las siguientes instituciones en las que participa:",
+   "texto": "Consorcio CSIC-IRTA, Instituto de Ciencias Fotónicas, Parque Científico de Barcelona, Instituto de Investigación Biomédica de Barcelona (IRB Barcelona), Instituto de Física de Altas Energías (IFAE), Instituto de Bioingeniería de Cataluña (IBEC) y Barcelona School of Economics (BSE)."
+  },
+  "360": {
+   "titulo": "Defender que la declaración del IRPF permita marcar con una crucecita la voluntad de asignar una parte de los impuestos que pagamos a actividades de I+D.",
+   "texto": ""
+  },
+  "361": {
+   "titulo": "Reforzar la interrelación de las universidades y los centros de investigación (consorcios de investigación, parques científicos y tecnológicos) con las empresas para favorecer la transferencia de conocimiento de estas instituciones hacia la actividad productiva y para atraer más recursos a las actividades de investigación e innovación.",
+   "texto": ""
+  },
+  "362": {
+   "titulo": "Alinear las grandes apuestas en política científica con las prioridades europeas, expresadas en los programas marco de investigación actualmente en vigor (Horizon Europe, Digital Europe, etcétera).",
+   "texto": "El contexto actual pide, más que nunca, una elevada contribución a las principales políticas europeas en el ámbito de la I+D y, así, reforzar las instituciones catalanas que lideran grandes proyectos y consorcios europeos."
+  },
+  "363": {
+   "titulo": "Incrementar la participación de la sociedad en la ciencia con el fin de seguir los principios de Ciencia Abierta y Acceso Abierto.",
+   "texto": ""
+  },
+  "364": {
+   "titulo": "Garantizar por ley el derecho a la dignidad, al buen trato, al respeto y a la igualdad de las personas mayores en todos los ámbitos de la vida pública y privada.",
+   "texto": ""
+  },
+  "365": {
+   "titulo": "Reforzar la protección de los derechos humanos de las personas mayores, especialmente ante cualquier situación de abuso, maltrato, discriminación, negligencia o vulneración de su autonomía.",
+   "texto": ""
+  },
+  "366": {
+   "titulo": "Garantizar que las personas mayores puedan ser atendidas en catalán por los servicios de todas las administraciones públicas.",
+   "texto": ""
+  },
+  "367": {
+   "titulo": "Garantizar el derecho a tomar decisiones sobre la propia vida, incluyendo el lugar donde vivir, los servicios que se quieren recibir y las personas que participan en las decisiones sobre su atención.",
+   "texto": ""
+  },
+  "368": {
+   "titulo": "Proteger a las personas mayores ante las estafas y los abusos financieros, con obligaciones de atención presencial y en catalán a las entidades bancarias y un endurecimiento de las penas de las estafas contra personas mayores.",
+   "texto": ""
+  },
+  "369": {
+   "titulo": "Apoyar una Convención de las Naciones Unidas sobre los derechos de las personas mayores, con obligaciones vinculantes para los estados.",
+   "texto": ""
+  },
+  "370": {
+   "titulo": "Financiar con fondos estatales el despliegue de un modelo de atención de larga duración en Cataluña de acuerdo con sus servicios sanitarios y sociales.",
+   "texto": ""
+  },
+  "371": {
+   "titulo": "Asegurar que la aplicación de la Ley de promoción de la autonomía personal y atención a la dependencia cubra efectivamente las necesidades de las personas beneficiarias.",
+   "texto": "Garantizar una respuesta rápida ante las situaciones de dependencia, reduciendo los plazos de valoración, resolución y acceso efectivo a las prestaciones."
+  },
+  "372": {
+   "titulo": "Garantizar una financiación suficiente y estable del sistema de dependencia, con una distribución adecuada entre las administraciones responsables y respecto de las competencias de las comunidades autónomas.",
+   "texto": ""
+  },
+  "373": {
+   "titulo": "Priorizar los servicios que permitan a la persona seguir viviendo en su domicilio y en su entorno habitual, siempre que esa sea su voluntad.",
+   "texto": ""
+  },
+  "374": {
+   "titulo": "Promover la innovación, la tecnología, la inteligencia artificial y la investigación al servicio de la prevención, la autonomía y la calidad de vida, sin sustituir nunca el trato humano.",
+   "texto": ""
+  },
+  "375": {
+   "titulo": "Financiar con fondos estatales los programas de transporte público gratuito para las personas mayores que decidan Cataluña y sus ayuntamientos.",
+   "texto": ""
+  },
+  "376": {
+   "titulo": "Erradicar la brecha sociodigital, garantizando formación y apoyo a las personas mayores.",
+   "texto": "Establecer por ley que la digitalización de las administraciones no pueda comportar la desaparición de la atención presencial. Toda persona mayor debe poder ser atendida presencialmente cuando lo necesite."
+  },
+  "377": {
+   "titulo": "Impulsar políticas de vivienda que permitan a las personas mayores seguir viviendo en su entorno, con adaptación de las viviendas, ayudas a la accesibilidad y promoción de viviendas con servicios.",
+   "texto": ""
+  },
+  "378": {
+   "titulo": "Desarrollar una estrategia estatal contra la soledad no deseada, con la participación de los ayuntamientos, entidades sociales, servicios sanitarios y la comunidad.",
+   "texto": ""
+  },
+  "379": {
+   "titulo": "Impulsar programas que faciliten la socialización, las relaciones intergeneracionales, el voluntariado, la cultura, el deporte y la participación comunitaria de las personas mayores.",
+   "texto": ""
+  },
+  "380": {
+   "titulo": "Combatir el edadismo en el ámbito político e institucional, garantizando que la edad no sea una barrera para participar en la vida pública.",
+   "texto": ""
+  },
+  "381": {
+   "titulo": "Reconocer a las personas mayores como un activo social imprescindible para la cohesión comunitaria, aprovechando su experiencia, conocimientos y capacidad de participación.",
+   "texto": ""
+  },
+  "382": {
+   "titulo": "Crear mecanismos estables de diálogo civil y social con las organizaciones representativas de las personas mayores.",
+   "texto": ""
+  },
+  "383": {
+   "titulo": "Reconocer y apoyar el trabajo desarrollado por las entidades sociales, asociativas y cívicas que trabajan a favor de las personas mayores.",
+   "texto": ""
+  },
+  "384": {
+   "titulo": "Impulsar políticas de participación de las personas mayores en la lucha contra la emergencia climática y la protección ambiental, promoviendo también el diálogo intergeneracional.",
+   "texto": ""
+  },
+  "385": {
+   "titulo": "Garantizar el sistema público de pensiones y asegurar por ley el mantenimiento del poder adquisitivo de las personas pensionistas, revisando anualmente las pensiones según el IPC catalán y el superior coste de la vida en Cataluña.",
+   "texto": "Mejorar las pensiones mínimas y de viudedad, incrementándolas anualmente por encima del IPC catalán, hasta igualarlas al salario mínimo catalán (1.400 euros mensuales en 14 pagas). Fomentar y facilitar desde las instituciones planes de ahorro y de pensiones complementarios o de empresa, así como modelos de previsión social complementaria adaptados a la realidad catalana."
+  },
+  "386": {
+   "titulo": "Deflactar anualmente las tarifas y los mínimos personales y familiares del IRPF de acuerdo con la inflación, evitando incrementos fiscales derivados exclusivamente de la pérdida de valor del dinero.",
+   "texto": "Establecer por ley un mecanismo automático de revisión de la fiscalidad en función de la inflación, del IPC catalán y el superior coste de la vida en Cataluña, para impedir que el aumento nominal de los ingresos provoque una pérdida de poder adquisitivo real."
+  },
+  "387": {
+   "titulo": "Garantizar una política de pensiones que tenga especialmente en cuenta a las personas con carreras laborales largas y cotizaciones suficientes.",
+   "texto": "Establecer por ley que las personas jubiladas con 40 años o más cotizados puedan percibir íntegramente la pensión que les corresponda sin penalizaciones por jubilación anticipada, con carácter retroactivo."
+  },
+  "388": {
+   "titulo": "Impulsar la eliminación del impuesto de sucesiones, evitando que el patrimonio construido a lo largo de una vida de trabajo soporte una doble carga fiscal en el momento de ser transmitido a la familia.",
+   "texto": ""
+  },
+  "389": {
+   "titulo": "Garantizar que los costes derivados de la dependencia, la asistencia personal, las adaptaciones de la vivienda y los cuidados de larga duración no comprometan la suficiencia económica de las personas mayores.",
+   "texto": ""
+  },
+  "390": {
+   "titulo": "Modificar el IRPF para las rentas que provienen de ingresos por pensiones contributivas: creación de bases específicas más laxas, incremento de los mínimos personales, deducciones por costes de servicios de atención a domicilio, centros de día, residencias, mutuas médicas u otros servicios para evitar el empobrecimiento por la dependencia.",
+   "texto": ""
+  },
+  "391": {
+   "titulo": "Reconocer el tiempo dedicado a cuidar de familiares dependientes como período cotizado a efectos de jubilación, para que cuidar, una tarea que hacen mayoritariamente las mujeres, no conlleve una pensión más baja.",
+   "texto": ""
+  },
+  "392": {
+   "titulo": "Exigir el traspaso total de la competencia y los fondos de las becas y ayudas al estudio, con el fin de revisar el conjunto del sistema de becas y ayudas de la educación superior, con el objetivo de potenciar el acceso de los estudiantes que se encuentran en una situación de vulnerabilidad mediante la implementación progresiva de un sistema de becas salario.",
+   "texto": ""
+  },
+  "393": {
+   "titulo": "Incluir la lengua catalana en la plataforma OLS (Online Linguistic Support) para que los estudiantes universitarios puedan hacer sus proyectos de movilidad internacional en la lengua propia del país.",
+   "texto": ""
+  },
+  "394": {
+   "titulo": "Aprobar nuestra Proposición de ley para crear un distrito universitario propio en Cataluña y acabar con el distrito único estatal, para que las reglas de acceso a las universidades catalanas se decidan aquí.",
+   "texto": "Hoy el Estado las fija y la Generalitat solo las aplica, y eso perjudica a los estudiantes catalanes, especialmente en los estudios de más demanda como Medicina. Con un distrito propio, la Generalitat podrá decidir los criterios de admisión y la asignación de plazas, respetando la igualdad, el mérito y la capacidad, con el catalán como eje del acceso y de la docencia."
+  },
+  "395": {
+   "titulo": "Exigir el traspaso inmediato, sin coste y de la totalidad de las viviendas, solares y suelos residenciales de la SAREB y de Casa 47 situados en Cataluña, informando a los ayuntamientos de lo que tienen disponible en su municipio, con una transferencia económica estatal finalista para rehabilitarlos y destinarlos a alquiler asequible, con una parte reservada a los jóvenes.",
+   "texto": ""
+  },
+  "396": {
+   "titulo": "Derogar los artículos de la Ley 12/2023 que invaden la competencia exclusiva de Cataluña en vivienda, empezando por los de contención de precios y zonas tensionadas, que reducen la oferta de alquiler para los jóvenes, y blindar las competencias de Cataluña ante cualquier nueva injerencia estatal, para eliminar la inseguridad jurídica de los pequeños propietarios y hacer crecer el parque de alquiler.",
+   "texto": ""
+  },
+  "397": {
+   "titulo": "Ampliar la línea de avales contra el impago del alquiler para jóvenes (artículo 76 del Real decreto ley 1/2025), con financiación estatal suficiente y gestión íntegra de la Generalitat, para que el propietario tenga garantizado el cobro y los jóvenes puedan alquilar.",
+   "texto": ""
+  },
+  "398": {
+   "titulo": "Rebajar la fiscalidad en el acceso a la vivienda:",
+   "texto": "– Reducir del 10 % al 5 % el IVA de la vivienda habitual de obra nueva y de autopromoción.\n\n– Establecer una deducción del 15 % en el IRPF por el alquiler de la vivienda habitual para todo el mundo, y hacerla permanente, como herramienta para facilitar el acceso a la vivienda y la emancipación de los jóvenes.\n\n– Recuperar la deducción del 15 % en el IRPF de las cuotas de la hipoteca de la vivienda habitual, aplicable también a quien haya comprado a partir de 2013.\n\n– Recuperar la cuenta vivienda, con una deducción del 15 % del ahorro destinado a comprar la primera vivienda.\n\n– Ampliar el aval público para la entrada de la primera vivienda de los menores de 35 años, con un límite de precio adaptado al coste real de la vivienda en Cataluña y gestionado desde aquí, sin obligar a que el piso quede calificado como VPO para siempre."
+  },
+  "399": {
+   "titulo": "Transferir a la Generalitat la gestión íntegra de los fondos estatales para residencias universitarias, para que, conjuntamente con las universidades públicas catalanas, pueda impulsar residencias propias a precios asequibles, ante la falta de plazas que obliga a muchos estudiantes a competir en el mercado de alquiler.",
+   "texto": ""
+  },
+  "400": {
+   "titulo": "Transformar el Bo Jove en una verdadera renta de emancipación juvenil, con más presupuesto y adaptada a la media de precios de la vivienda de Cataluña, y que la Generalitat pueda fijar los criterios y los importes de acuerdo con la realidad de nuestro país.",
+   "texto": ""
+  },
+  "401": {
+   "titulo": "Aprobar un Estatuto del becario que garantice una remuneración digna a todos los estudiantes en prácticas, respetando las competencias de Cataluña en universidades y formación profesional.",
+   "texto": ""
+  },
+  "402": {
+   "titulo": "Impulsar becas remuneradas de «segunda oportunidad» para jóvenes sin trabajo y sin estudios, condicionadas al retorno al sistema educativo y a los resultados académicos, con fondos transferidos a la Generalitat.",
+   "texto": ""
+  },
+  "403": {
+   "titulo": "Transferir a la Generalitat los recursos para un programa de convenios e incentivos que facilite el retorno y la incorporación laboral de los jóvenes catalanes que trabajan en el extranjero.",
+   "texto": ""
+  },
+  "404": {
+   "titulo": "Reformar los procesos de oposición de la Administración General del Estado para acortar sus plazos, garantizar convocatorias periódicas y previsibles y priorizar las pruebas competenciales, para que los jóvenes titulados puedan acceder a ellas sin tener que esperar años.",
+   "texto": ""
+  },
+  "405": {
+   "titulo": "Reformar el contrato de relevo para rejuvenecer las plantillas y favorecer el acceso de los jóvenes al mercado laboral, al tiempo que se posibilitan adecuadamente las jubilaciones parciales.",
+   "texto": ""
+  },
+  "406": {
+   "titulo": "Transferir a la Generalitat la totalidad de los fondos de la Garantía Juvenil y la capacidad de decidir su programación, sin condiciones estatales, para reforzar los servicios de acompañamiento, de formación y de autoempleo para jóvenes.",
+   "texto": ""
+  },
+  "407": {
+   "titulo": "Transferir a la Generalitat los fondos estatales de innovación y de formación digital para crear espacios de coworking rural, talleres tecnológicos y puntos de formación conectados con las universidades, y para que los jóvenes puedan formarse gratuitamente en ciberseguridad, inteligencia artificial, programación y robótica por toda Cataluña.",
+   "texto": ""
+  },
+  "408": {
+   "titulo": "Ampliar a todos los jóvenes menores de 35 años o recién titulados las bonificaciones de las cuotas empresariales a la Seguridad Social por contratación indefinida, siempre que se garanticen condiciones salariales adecuadas al puesto de trabajo.",
+   "texto": ""
+  },
+  "409": {
+   "titulo": "Reducir el IRPF a los jóvenes:",
+   "texto": "– Paquete fiscal para menores de 35 años en el tramo estatal del IRPF, con un límite de renta: exención total el primer año de actividad laboral, reducción del 75 % el segundo y del 50 % el tercero, y reducción progresiva hasta el décimo año, para aumentar la renta disponible y frenar la fuga de talento.\n\n– Deducción del 15 % de los gastos justificados en formación superior reglada, idiomas o certificaciones tecnológicas para jóvenes trabajadores.\n\n– Reducciones en el IRPF para jóvenes asalariados y autónomos que vivan y trabajen en municipios rurales de baja densidad y en riesgo de despoblación."
+  },
+  "410": {
+   "titulo": "Reformar el RETA para establecer una cuota cero para jóvenes autónomos de hasta 35 años durante los 3 primeros años de actividad, sin perder el derecho a las prestaciones y reduciendo los trámites de alta.",
+   "texto": ""
+  },
+  "411": {
+   "titulo": "Facilitar que los jóvenes se hagan cargo de negocios viables que cierran por jubilación, con beneficios en el impuesto de sociedades en la compra, condicionados a mantener la actividad y el empleo, y con fondos estatales transferidos a la Generalitat para complementar Reempresa y las inversiones posteriores.",
+   "texto": ""
+  },
+  "412": {
+   "titulo": "Transferir a la Generalitat un fondo para financiar la compra y la adecuación del primer local o espacio de trabajo de los jóvenes emprendedores.",
+   "texto": ""
+  },
+  "413": {
+   "titulo": "Transferir a la Generalitat recursos estatales para programas de formación en emprendimiento y autoempleo en los centros educativos y en las universidades.",
+   "texto": ""
+  },
+  "414": {
+   "titulo": "Facilitar la transmisión de explotaciones agrarias y ganaderas a titulares menores de 35 años, con incentivos fiscales estatales y fondos transferidos a la Generalitat para la diversificación económica rural, para garantizar el relevo generacional en el campo.",
+   "texto": ""
+  },
+  "415": {
+   "titulo": "Obligar a las grandes plataformas digitales y redes sociales a hacer auditorías algorítmicas, a utilizar sistemas de verificación de edad respetuosos con la privacidad y a prevenir los diseños adictivos o nocivos que afectan a la salud mental de los menores, respetando la competencia de la Generalitat en infancia, juventud y salud pública.",
+   "texto": ""
+  },
+  "416": {
+   "titulo": "Proteger a los niños y adolescentes ante el acceso a la pornografía, la violencia sexual digital, el grooming, la difusión no consentida de imágenes íntimas y los contenidos sexuales creados con inteligencia artificial.",
+   "texto": ""
+  },
+  "417": {
+   "titulo": "Exigir que cualquier ley estatal de protección de los menores en entornos digitales respete las competencias de Cataluña, de manera que la estrategia, los programas de prevención y los recursos se gestionen desde la Generalitat, y no desde el Ministerio de Juventud e Infancia.",
+   "texto": ""
+  },
+  "418": {
+   "titulo": "Garantizar la participación de Cataluña en la supervisión del Reglamento europeo de servicios digitales (DSA), especialmente en lo que se refiere a la protección de los menores en las plataformas.",
+   "texto": ""
+  },
+  "419": {
+   "titulo": "Avanzar hacia el reconocimiento del derecho a voto a los dieciséis años, con una reforma de la LOREG que haga realidad una equiparación justa de los derechos y deberes de las personas jóvenes de entre dieciséis y dieciocho años, extendiendo el derecho de sufragio a esta edad.",
+   "texto": ""
+  },
+  "420": {
+   "titulo": "Reformar la LOREG para que el Parlamento de Cataluña pueda fijar la edad de voto en las elecciones al Parlamento de Cataluña y hacer efectivo el derecho de sufragio a los dieciséis años en Cataluña.",
+   "texto": ""
+  },
+  "421": {
+   "titulo": "Facilitar el voto de los jóvenes que estudian o trabajan temporalmente en el extranjero, con un voto por correo sencillo y sin trabas, dentro de la reforma del voto exterior.",
+   "texto": ""
+  },
+  "422": {
+   "titulo": "Oponernos a cualquier ley estatal de juventud que invada la competencia exclusiva de Cataluña en políticas de juventud (artículo 142 del Estatuto), y exigir que los recursos estatales destinados a juventud se transfieran íntegramente a la Generalitat.",
+   "texto": ""
+  },
+  "423": {
+   "titulo": "Transferir a la Generalitat la financiación estatal necesaria para garantizar el acceso gratuito universal a productos de higiene menstrual, anticonceptivos hormonales y preservativos, entre otros, para las personas de hasta 35 años, para mejorar la salud sexual y reproductiva de los jóvenes.",
+   "texto": ""
+  },
+  "424": {
+   "titulo": "Exigir al Gobierno español la financiación del servicio telefónico de atención a la salud mental, a través del CatSalut, como herramienta imprescindible para revertir la problemática de salud mental entre los jóvenes.",
+   "texto": ""
+  },
+  "425": {
+   "titulo": "Eliminar el artículo 104.1.C de la Ley 39/2022 que castiga como falta muy grave la no asistencia de un deportista a la convocatoria de las selecciones españolas y que conlleva una sanción de multa de hasta 30.000 euros y suspensión de la licencia federativa hasta 15 años.",
+   "texto": ""
+  },
+  "426": {
+   "titulo": "Garantizar la libertad de expresión en los estadios y recintos deportivos, de manera que el uso de banderas como la catalana o la estelada no conlleve su retirada ni ninguna sanción.",
+   "texto": ""
+  },
+  "427": {
+   "titulo": "Impulsar los cambios legislativos necesarios para reconocer la continuidad histórica de las federaciones deportivas catalanas creadas antes de 1936 y anular las órdenes de disolución franquistas.",
+   "texto": ""
+  },
+  "428": {
+   "titulo": "Lograr una reducción del IVA de los servicios vinculados a la práctica de actividad física y deportiva para cuotas, uso de instalaciones y clases de actividad física, presenciales o en línea, y ampliación de la exención.",
+   "texto": ""
+  },
+  "429": {
+   "titulo": "Deducción en la cuota íntegra estatal del IRPF (tramo estatal) por las cuotas de clubes, licencias federativas y abonos a gimnasios e instalaciones deportivas, sin límite por contribuyente y con porcentaje incrementado para personas con discapacidad, mayores de 65 años, familias numerosas y monoparentales, y actividad física prescrita.",
+   "texto": "Compatible con las deducciones autonómicas."
+  },
+  "430": {
+   "titulo": "Declarar exentas las cuotas de gimnasio, clubes y programas de actividad física que la empresa pague a sus trabajadores.",
+   "texto": ""
+  },
+  "431": {
+   "titulo": "Tipo reducido de IVA para la construcción y rehabilitación de instalaciones deportivas, o deducción en el IS por inversiones en instalaciones y en eficiencia energética.",
+   "texto": ""
+  },
+  "432": {
+   "titulo": "Facilitar el reconocimiento como deportistas de alto nivel (DAN) de los deportistas paralímpicos con discapacidad y revisar sus criterios de reconocimiento para tener en cuenta las particularidades del deporte paralímpico y evitar que las condiciones de competición les dificulten el acceso a este reconocimiento.",
+   "texto": ""
+  },
+  "433": {
+   "titulo": "Bonificaciones a la contratación de deportistas de alto nivel estatal y autonómico con horarios compatibles, y programas de transición profesional con las empresas.",
+   "texto": ""
+  },
+  "434": {
+   "titulo": "Reconocer legalmente el voluntariado deportivo como esencial para la supervivencia del deporte de base.",
+   "texto": ""
+  },
+  "435": {
+   "titulo": "Respetar la legislación catalana sobre profesiones del deporte puesto que también forma parte de nuestras competencias.",
+   "texto": ""
+  },
+  "436": {
+   "titulo": "Mecenazgo, acceso de los clubes federados a la Ley 49/2002.",
+   "texto": "Incluir una vía simplificada para que los clubes deportivos sin ánimo de lucro afiliados a una federación deportiva e inscritos en el registro de entidades deportivas correspondiente sean entidades beneficiarias, con requisitos de transparencia adaptados a su tamaño."
+  },
+  "437": {
+   "titulo": "Incluir como beneficiarias de la Ley 49/2002 a todas las federaciones autonómicas reconocidas e inscritas en el registro de su comunidad, sin necesidad de que estén adscritas a una federación española.",
+   "texto": ""
+  },
+  "438": {
+   "titulo": "Favorecer el patrocinio deportivo permitiendo la deducción del 100% en la cuota del impuesto sobre sociedades por el patrocinio a clubes federados, consejos deportivos y federaciones deportivas y entidades organizadoras de eventos deportivos.",
+   "texto": ""
+  },
+  "439": {
+   "titulo": "Para los eventos deportivos de excepcional interés público, establecer un régimen estable y criterios objetivos para declarar los grandes eventos deportivos, con una parte de los beneficios fiscales vinculada al deporte de base.",
+   "texto": ""
+  },
+  "440": {
+   "titulo": "Reservar un porcentaje del reparto de la recaudación de la quiniela para las federaciones autonómicas, transferido a través de las comunidades con criterios de licencias y recaudación territorial.",
+   "texto": ""
+  },
+  "441": {
+   "titulo": "Aprobar el despliegue del Reglamento de recaudación de las apuestas deportivas para destinar el retorno a los organizadores de las competiciones, incluida una parte para las federaciones autonómicas para el deporte de base y la integridad.",
+   "texto": ""
+  },
+  "442": {
+   "titulo": "Encontrar nuevas fórmulas para la concesión de instalaciones deportivas municipales para garantizar que se valore de manera significativa la prevalencia en la gestión de clubes y entidades del sector arraigadas en el territorio y la calidad del proyecto deportivo presentado, más allá de la oferta económica.",
+   "texto": "Los criterios de valoración deben dar un peso destacado al fomento del deporte de base, la promoción del deporte femenino y el acceso y la participación de las personas con discapacidad. También deben tener en cuenta la calidad de las actividades, la cualificación del personal técnico, la accesibilidad de las instalaciones y el compromiso con la inclusión y la función social del deporte."
+  },
+  "443": {
+   "titulo": "Modificar la Ley de Costas y, específicamente, el límite de 300 m² previsto en el artículo 70.1.c del Reglamento General de Costas para determinadas instalaciones deportivas náuticas, que excluye la superficie de varada.",
+   "texto": "Proponemos una regulación que valore la función deportiva, educativa y social de los clubes y las necesidades justificadas de cada instalación."
+  },
+  "444": {
+   "titulo": "Hacer compatible la actividad de los clubes con la protección del litoral, el acceso público, la accesibilidad y la adaptación a los riesgos costeros.",
+   "texto": "Promover criterios transparentes para las concesiones y las renovaciones, con seguridad jurídica para planificar las inversiones y mantener las escuelas de vela y los deportes de mar."
+  },
+  "445": {
+   "titulo": "Reclamar una mejor financiación estatal para los centros de alto rendimiento.",
+   "texto": ""
+  },
+  "446": {
+   "titulo": "Desplegar el concierto económico con una ley específica fuera del régimen común y dotar a la ATC de los recursos para asumir todas las funciones tributarias.",
+   "texto": ""
+  },
+  "447": {
+   "titulo": "Exigir la publicación anual de las balanzas fiscales.",
+   "texto": ""
+  },
+  "448": {
+   "titulo": "Exigir la condonación del 100% de la deuda de la Generalitat con el Fondo de Liquidez Autonómico (FLA).",
+   "texto": ""
+  },
+  "449": {
+   "titulo": "Deflactar el IRPF, rebajar los primeros tramos, aumentar los mínimos personales y familiares y actualizarlos anualmente según la inflación.",
+   "texto": ""
+  },
+  "450": {
+   "titulo": "Eliminar el impuesto de sucesiones y donaciones.",
+   "texto": ""
+  },
+  "451": {
+   "titulo": "Establecer beneficios fiscales y ayudas para compensar el sobrecoste de la alimentación de las personas con celiaquía diagnosticada.",
+   "texto": ""
+  },
+  "452": {
+   "titulo": "Elevar a dos millones de euros la exención del IAE y permitir su compensación en sociedades, compensando a los ayuntamientos.",
+   "texto": ""
+  },
+  "453": {
+   "titulo": "Establecer un tipo del 0% en el impuesto sobre el valor de la producción eléctrica cuando el sistema eléctrico no esté produciendo un déficit de tarifa.",
+   "texto": ""
+  },
+  "454": {
+   "titulo": "Acelerar la rebaja de sociedades para pymes, microempresas y cooperativas.",
+   "texto": ""
+  },
+  "455": {
+   "titulo": "Continuar reforzando los incentivos a la reinversión y la capitalización y ampliar la libertad de amortización de las inversiones productivas.",
+   "texto": ""
+  },
+  "456": {
+   "titulo": "Implantar la franquicia voluntaria del IVA para autónomos y pequeñas empresas con facturación anual de hasta 85.000 euros.",
+   "texto": ""
+  },
+  "457": {
+   "titulo": "Reducir al 10% el IVA de la luz y el gas natural, garantizando que la rebaja se traslade a la factura de las familias y las pymes.",
+   "texto": ""
+  },
+  "458": {
+   "titulo": "Reducir el IVA de los servicios funerarios al 10% y el de los servicios de teleasistencia, ayuda a domicilio, centros de día y atención residencial al 4%.",
+   "texto": ""
+  },
+  "459": {
+   "titulo": "Reducir del 21% al 10% el IVA de los servicios de peluquería.",
+   "texto": ""
+  },
+  "460": {
+   "titulo": "Impulsar tipos reducidos de IVA para la cultura y los servicios de especial interés social, dentro del marco europeo.",
+   "texto": ""
+  },
+  "461": {
+   "titulo": "Establecer la deducción del 15% en el IRPF por la adquisición de vivienda habitual, incluidos los pagos de la hipoteca.",
+   "texto": ""
+  },
+  "462": {
+   "titulo": "Establecer una deducción del 15% en el IRPF por las aportaciones a cuentas de ahorro destinadas a adquirir la vivienda habitual.",
+   "texto": ""
+  },
+  "463": {
+   "titulo": "Establecer una deducción del 15% en el IRPF por el alquiler de la vivienda habitual.",
+   "texto": ""
+  },
+  "464": {
+   "titulo": "Reducir del 10% al 5% el IVA de la compra de vivienda nueva y de la autopromoción destinadas a residencia habitual, con límites de superficie, precio y renta y la obligación de vivir en ella, para que no se utilice como inversión, y aplicar también el 5% a la vivienda social.",
+   "texto": ""
+  },
+  "465": {
+   "titulo": "Garantizar que los contribuyentes puedan recurrir las deudas y las sanciones reclamadas por Hacienda sin tener que pagarlas anticipadamente ni aportar avales, hasta que haya una resolución firme.",
+   "texto": ""
+  },
+  "466": {
+   "titulo": "Frenar las subidas indiscriminadas de cuotas de los autónomos y adecuar la cotización a los rendimientos reales, con más reconocimiento de los gastos de la actividad.",
+   "texto": ""
+  },
+  "467": {
+   "titulo": "Equiparar la protección social de los autónomos a la de los asalariados, especialmente ante el cese de actividad, la enfermedad y las necesidades de conciliación.",
+   "texto": ""
+  },
+  "468": {
+   "titulo": "Ampliar los gastos deducibles de los autónomos, elevar hasta 5.000 euros el límite de los de difícil justificación y facilitar la deducción de los vehículos, los suministros y otros bienes vinculados a la actividad.",
+   "texto": ""
+  },
+  "469": {
+   "titulo": "Establecer que autónomos y empresas con facturación inferior a dos millones de euros ingresen el IVA cuando cobren las facturas, sin tener que adelantarlo a Hacienda.",
+   "texto": ""
+  },
+  "470": {
+   "titulo": "Proteger la vivienda habitual de los autónomos ante las deudas de la actividad y mejorar la segunda oportunidad, incluida la exoneración de deudas con Hacienda y la Seguridad Social.",
+   "texto": ""
+  },
+  "471": {
+   "titulo": "Revisar los umbrales legales que penalizan el crecimiento de las pymes y facilitar su acceso al crédito, a los avales y a la financiación alternativa.",
+   "texto": ""
+  },
+  "472": {
+   "titulo": "Facilitar el relevo de las empresas familiares y reconocer a los continuadores como emprendedores a efectos de ayudas, formación e incentivos.",
+   "texto": ""
+  },
+  "473": {
+   "titulo": "Combatir la morosidad pública y privada con un régimen efectivo de control y sanciones que garantice el cobro dentro de los plazos legales.",
+   "texto": ""
+  },
+  "474": {
+   "titulo": "Consolidar el aplazamiento del Verifactu y coordinarlo con la aplicación de la facturación electrónica y el marco europeo para evitar duplicidades y costes desproporcionados.",
+   "texto": ""
+  },
+  "475": {
+   "titulo": "Modificar la normativa de contratación pública para facilitar el acceso a ella de pymes y autónomos, reforzando la división en lotes, simplificando los trámites y evitando requisitos de solvencia desproporcionados.",
+   "texto": ""
+  },
+  "476": {
+   "titulo": "Potenciar Cataluña como polo de atracción de ferias y congresos internacionales, conectando estos eventos con las empresas del país para generar inversión, negocio y proyección exterior.",
+   "texto": ""
+  },
+  "477": {
+   "titulo": "Revisar las trabas de origen estatal que dificultan la adaptación de los mercados municipales con pleno respeto a las competencias de la Generalitat y los ayuntamientos y prioridad de la inversión pública en la rentabilidad, digitalización y modernización de los mercados existentes.",
+   "texto": ""
+  },
+  "478": {
+   "titulo": "Garantizar que Cataluña reciba los recursos y ayudas industriales que corresponden a su peso productivo, con gestión desde la Generalitat y respeto a sus competencias.",
+   "texto": ""
+  },
+  "479": {
+   "titulo": "Exigir que el reparto de los recursos de apoyo a la exportación tenga en cuenta el peso de Cataluña en las exportaciones y el número de empresas exportadoras.",
+   "texto": ""
+  },
+  "480": {
+   "titulo": "Reforzar ACCIÓ y los instrumentos propios de internacionalización para abrir mercados, diversificar exportaciones y atraer inversión que genere actividad y empleo en Cataluña.",
+   "texto": ""
+  },
+  "481": {
+   "titulo": "Defender los sectores estratégicos del país y sus cadenas de proveedores, con especial atención a la automoción, la química, la agroalimentación, la salud y las tecnologías digitales.",
+   "texto": ""
+  },
+  "482": {
+   "titulo": "Exigir la ejecución de las inversiones estatales pendientes que condicionan la competitividad catalana, especialmente el Corredor Mediterráneo y las conexiones con puertos y polígonos industriales.",
+   "texto": ""
+  },
+  "483": {
+   "titulo": "Favorecer la atracción y la retención de talento y la colaboración entre universidades, centros de investigación y empresas para que la inversión en I+D+I se traduzca en innovación, actividad productiva y empleo cualificado.",
+   "texto": ""
+  },
+  "484": {
+   "titulo": "Avanzar hacia una inversión total en I+D del 3% del PIB, reforzar los centros tecnológicos y la transferencia a las empresas y facilitar la adopción de IA, automatización, robótica y ciberseguridad, con formación para los trabajadores.",
+   "texto": ""
+  },
+  "485": {
+   "titulo": "Reforzar los instrumentos propios de promoción e internacionalización y exigir que la gestión de los recursos estatales y europeos respete las competencias y las prioridades de Cataluña.",
+   "texto": ""
+  },
+  "486": {
+   "titulo": "Traspaso del Consorcio de la Zona Franca y la creación de una autoridad única para la gestión integrada del Puerto de Barcelona y del Consorcio de la Zona Franca para permitir a nuestro país aumentar su competitividad como nodo logístico del sur de Europa y del Mediterráneo occidental.",
+   "texto": ""
+  },
+  "487": {
+   "titulo": "Impulsar un salario mínimo catalán que avance progresivamente hacia el 60% del salario medio catalán, con diálogo social, mejoras de productividad y medidas de acompañamiento a las pequeñas empresas.",
+   "texto": ""
+  },
+  "488": {
+   "titulo": "Traspasar las competencias de la Seguridad Social a Cataluña, con todos los recursos necesarios para garantizar la continuidad de las prestaciones.",
+   "texto": ""
+  },
+  "489": {
+   "titulo": "Garantizar pensiones públicas según el coste de la vida de Cataluña.",
+   "texto": ""
+  },
+  "490": {
+   "titulo": "Eliminar con carácter retroactivo las penalizaciones por jubilación anticipada de las personas con 40 años o más cotizados.",
+   "texto": ""
+  },
+  "491": {
+   "titulo": "Ampliar el límite de horas extraordinarias para que quien lo quiera pueda trabajar más y cobrar más, con horas voluntarias, registradas y remuneradas y respeto a los descansos.",
+   "texto": ""
+  },
+  "492": {
+   "titulo": "Mejorar el tratamiento fiscal de las horas extraordinarias para que el esfuerzo adicional se traduzca en más salario neto, especialmente para las rentas bajas y medias.",
+   "texto": ""
+  },
+  "493": {
+   "titulo": "Impulsar un plan contra el absentismo laboral que combine prevención, mejor gestión de las bajas y control del fraude, garantizando la protección de las personas enfermas.",
+   "texto": ""
+  },
+  "494": {
+   "titulo": "Reforzar la colaboración de las mutuas con la sanidad pública para agilizar pruebas diagnósticas, tratamientos y recuperación, con garantías médicas y respeto a los derechos de los trabajadores.",
+   "texto": ""
+  },
+  "495": {
+   "titulo": "Dotar a los organismos de gestión de las incapacidades temporales de más recursos y mejorar la coordinación entre servicios de salud, Seguridad Social y mutuas.",
+   "texto": ""
+  },
+  "496": {
+   "titulo": "Incentivar a las empresas que inviertan en prevención de riesgos y en la salud física y mental de los trabajadores.",
+   "texto": ""
+  },
+  "497": {
+   "titulo": "Reforzar la formación profesional, la cualificación y la recualificación para reducir el paro y dar respuesta a la falta de profesionales.",
+   "texto": ""
+  },
+  "498": {
+   "titulo": "Modificar la normativa de 1957 sobre trabajo de menores para facilitar que los jóvenes de 16 y 17 años aprendan un oficio, con criterios de seguridad adaptados a las herramientas y a los procesos actuales.",
+   "texto": ""
+  },
+  "499": {
+   "titulo": "Aprobar un Estatuto del Trabajador de Cataluña y potenciar el Tribunal Laboral de Cataluña.",
+   "texto": ""
+  },
+  "500": {
+   "titulo": "Impulsar planes de recolocación y formación continua orientados a la productividad.",
+   "texto": ""
+  },
+  "501": {
+   "titulo": "Reclamar el traspaso inmediato e incondicional del 100% de Rodalies y Media Distancia, con las vías, las catenarias, las estaciones y los presupuestos pendientes de ejecutar para modernizarla.",
+   "texto": ""
+  },
+  "502": {
+   "titulo": "Exigir un plan de choque contra los retrasos y las averías, con auditorías externas e inversiones inmediatas para reducir las incidencias que sufren cada día los usuarios.",
+   "texto": ""
+  },
+  "503": {
+   "titulo": "Impulsar el transporte de mercancías por ferrocarril, con conexiones directas en ancho europeo con los polígonos industriales y los puertos de Barcelona y Tarragona.",
+   "texto": ""
+  },
+  "504": {
+   "titulo": "Traspasar a la Generalitat las competencias y la titularidad del Aeropuerto del Prat y del resto de aeropuertos catalanes, fuera del modelo centralizado de AENA, con una gobernanza catalana que permita al Prat operar como hub intercontinental de primer orden.",
+   "texto": ""
+  },
+  "505": {
+   "titulo": "Exigir al Estado español que cumpla el calendario de ejecución del Corredor Mediterráneo.",
+   "texto": "Debe ser una vía independiente, con ancho europeo y fuera de los núcleos urbanos, y en ningún caso un tercer hilo sobre la línea convencional de pasajeros."
+  },
+  "506": {
+   "titulo": "Reforzar la autonomía de gestión de los puertos de titularidad catalana y el papel de los puertos de Barcelona y Tarragona en las cadenas logísticas globales.",
+   "texto": ""
+  },
+  "507": {
+   "titulo": "Reclamar el traspaso integral de la red de carreteras de titularidad estatal a Cataluña.",
+   "texto": ""
+  },
+  "508": {
+   "titulo": "Dotar a las comarcas de montaña y del interior de los presupuestos necesarios para mejorar la seguridad vial y mantener en ellas redes de comunicación modernas.",
+   "texto": ""
+  },
+  "509": {
+   "titulo": "Dar a los ayuntamientos herramientas normativas para gestionar la movilidad que genera el turismo masivo y los flujos de transporte interno, y defender el modelo concesional del transporte por carretera de Cataluña.",
+   "texto": ""
+  },
+  "510": {
+   "titulo": "Garantizar conexiones digitales fiables en todo el territorio para que la gente pueda teletrabajar y elegir dónde vivir sin depender del área metropolitana de Barcelona.",
+   "texto": ""
+  },
+  "511": {
+   "titulo": "Renovar las líneas eléctricas y de comunicación obsoletas del mundo rural, que generan agravios económicos y riesgos para la seguridad.",
+   "texto": ""
+  },
+  "512": {
+   "titulo": "Exigir el traspaso inmediato e íntegro a la Generalitat de todas las competencias en materia agraria, ganadera, forestal y de pesca que el Estado español todavía retiene, con los recursos económicos y humanos correspondientes, para que se gestionen desde Cataluña con criterio técnico, sentido común y proximidad al territorio.",
+   "texto": ""
+  },
+  "513": {
+   "titulo": "Aprobar una estrategia nacional de soberanía alimentaria y seguridad estratégica que sitúe el sector primario como prioridad de país, garantice el abastecimiento de proximidad y reduzca la dependencia exterior de alimentos.",
+   "texto": ""
+  },
+  "514": {
+   "titulo": "Exigir que Cataluña participe directamente en el diseño y la aplicación de la PAC y de otros fondos europeos del sector, con margen para adaptar sus ayudas a las especificidades de la agricultura y la ganadería catalanas.",
+   "texto": ""
+  },
+  "515": {
+   "titulo": "Impulsar una reducción directa de la presión fiscal sobre las explotaciones agrarias profesionales, revisando el régimen de estimación objetiva (módulos) y las reducciones del IRPF aplicables al sector para que reflejen los costes de producción reales.",
+   "texto": ""
+  },
+  "516": {
+   "titulo": "Establecer mecanismos de aplicación ágil de reducciones fiscales temporales para las explotaciones afectadas por siniestros climáticos, sanitarios o crisis de precios.",
+   "texto": ""
+  },
+  "517": {
+   "titulo": "Modificar la legislación para que las ayudas públicas tributen como las indemnizaciones y no como ingresos ordinarios, y así no resten liquidez a las explotaciones afectadas.",
+   "texto": ""
+  },
+  "518": {
+   "titulo": "Permitir ajustar las amortizaciones de las inversiones a la liquidez real de cada explotación, para rebajar la presión fiscal y dar estabilidad a los agricultores.",
+   "texto": ""
+  },
+  "519": {
+   "titulo": "Aplicar un tipo reducido de IVA a las obras de modernización de regadíos de los agricultores profesionales, para abaratar las inversiones en eficiencia hídrica.",
+   "texto": ""
+  },
+  "520": {
+   "titulo": "Adaptar el IVA a las comunidades de regantes, que por su naturaleza jurídica no pueden desgravárselo y lo pagan como un coste directo que frena las mejoras.",
+   "texto": "También hay que modificar la ley reguladora de las haciendas locales para que las infraestructuras hidráulicas de las comunidades de regantes queden exentas del IBI."
+  },
+  "521": {
+   "titulo": "Crear un gasóleo profesional para el sector agrario, con fiscalidad reducida en origen, como solución definitiva.",
+   "texto": ""
+  },
+  "522": {
+   "titulo": "Mientras no llegue, rebajar de manera urgente los impuestos sobre los carburantes agrícolas para compensar el aumento de los costes de producción.",
+   "texto": ""
+  },
+  "523": {
+   "titulo": "Establecer el principio de que la normativa estatal no puede imponer a los productores requisitos más exigentes que los fijados por la UE, y exigir una evaluación del impacto competitivo de toda nueva norma que afecte al sector agrario.",
+   "texto": ""
+  },
+  "524": {
+   "titulo": "Garantizar que los productores catalanes puedan utilizar, en las mismas condiciones que en el resto de la UE, las nuevas herramientas de innovación (agricultura de precisión, nuevas técnicas genómicas, biocontrol y digitalización), eliminando las trabas estatales más allá del uso de drones.",
+   "texto": ""
+  },
+  "525": {
+   "titulo": "Crear un marco seguro y viable para que la agricultura y la ganadería puedan utilizar drones, sin que la normativa española lo impida.",
+   "texto": ""
+  },
+  "526": {
+   "titulo": "Evitar que el Estado español imponga en fitosanitarios más restricciones que las que exige Europa, para que los agricultores catalanes tengan las mismas herramientas que sus competidores.",
+   "texto": "Hay que agilizar las autorizaciones excepcionales ante plagas o enfermedades sin alternativa y crear un mecanismo de reconocimiento automático de las autorizaciones de emergencia, para no perder cosechas."
+  },
+  "527": {
+   "titulo": "Exigir la aplicación estricta de la Ley de la cadena alimentaria para que los precios en origen cubran los costes reales de producción.",
+   "texto": ""
+  },
+  "528": {
+   "titulo": "Reforzar la trazabilidad del campo a la mesa, para que se sepa el origen de los alimentos y cómo se forma el precio en cada eslabón de la cadena.",
+   "texto": ""
+  },
+  "529": {
+   "titulo": "Incluir cláusulas espejo en los acuerdos comerciales internacionales, para que los productos importados de terceros países cumplan las mismas exigencias ambientales, sanitarias y laborales que los productores europeos.",
+   "texto": ""
+  },
+  "530": {
+   "titulo": "Revisar las cotizaciones de los autónomos del primer sector a la Seguridad Social para mejorar su pensión de jubilación y acabar con el agravio respecto al resto de autónomos.",
+   "texto": ""
+  },
+  "531": {
+   "titulo": "Introducir en la cotización por rendimientos reales mecanismos correctores para que los años de malas cosechas o de crisis de precios no rebajen la pensión.",
+   "texto": ""
+  },
+  "532": {
+   "titulo": "Aumentar las ayudas para contratar personal de sustitución durante las bajas de maternidad y paternidad, y permitir adaptar estos permisos al calendario del campo para que no coincidan sin cobertura con la cosecha o la siembra.",
+   "texto": ""
+  },
+  "533": {
+   "titulo": "Crear una nueva línea de seguros en Agroseguro que proteja mejor al productor: revisar los criterios de afectación y las franquicias, acortar los plazos de peritaje y ajustar las coberturas al aumento de los costes, para que una mala campaña no obligue a cerrar la explotación.",
+   "texto": ""
+  },
+  "534": {
+   "titulo": "Establecer una exención fiscal para los propietarios que transmitan o arrienden fincas rústicas a jóvenes agricultores o a agricultores profesionales.",
+   "texto": ""
+  },
+  "535": {
+   "titulo": "Declarar exentas de tributación las ayudas a la incorporación de jóvenes al sector agrario, para que los impuestos no lastren el inicio de la actividad.",
+   "texto": ""
+  },
+  "536": {
+   "titulo": "Reducir trámites y duplicidades, aplicar el principio de que la Administración no puede pedir datos que ya tiene, crear una ventanilla única digital para los procedimientos agrarios y establecer el silencio administrativo positivo.",
+   "texto": ""
+  },
+  "537": {
+   "titulo": "Fijar plazos máximos de respuesta y reforzar los servicios técnicos y de asesoramiento de proximidad para que la Administración dé soluciones rápidas sobre el terreno, priorizando la orientación por delante de la sanción.",
+   "texto": ""
+  },
+  "538": {
+   "titulo": "Impulsar ayudas e instrumentos que faciliten la integración de los productores en la transformación y la comercialización (cooperativas, agroindustria, venta directa y circuitos cortos), para que retengan una parte mayor del valor añadido.",
+   "texto": ""
+  },
+  "539": {
+   "titulo": "Reorientar los objetivos del PNIEC territorializando sus objetivos para poder favorecer y priorizar la promoción de proyectos renovables con la finalidad de equilibrar la aportación de generación por territorios.",
+   "texto": ""
+  },
+  "540": {
+   "titulo": "Abrir los nudos de evacuación para facilitar que proyectos renovables dispongan de acceso y conexión.",
+   "texto": ""
+  },
+  "541": {
+   "titulo": "Extender la opción del autoconsumo ampliando la actual limitación de 5 km a 100 km de manera que se pueda promover la implantación de proyectos que encuentren usuarios más fácilmente por el hecho de abrir el radio de cobertura del autoconsumo.",
+   "texto": ""
+  },
+  "542": {
+   "titulo": "Promover la energía térmica renovable: la bioenergía y las redes de calor y frío equiparándolas a las fuentes eléctricas y de gas a la hora de atribuir a sus usuarios bonificaciones fiscales como rebajas de impuesto e IVA.",
+   "texto": ""
+  },
+  "543": {
+   "titulo": "Abrir la red de gas para simplificar la tramitación de la inyección de biogás/biometano de manera que se facilite la inyección de gas renovable en la actual red de gas natural, muy extendida en Cataluña.",
+   "texto": ""
+  },
+  "544": {
+   "titulo": "Tender hacia una red eléctrica más accesible con tramitaciones de acceso simplificadas y sobre todo ágiles para verter en ella energía.",
+   "texto": "Dotar al consumidor de conocimiento fácilmente accesible sobre la red eléctrica."
+  },
+  "545": {
+   "titulo": "Promover la inversión en red de transporte eléctrico, subestaciones eléctricas y red de distribución eléctrica introduciendo sistemas de gestión inteligentes y telegestión que faciliten la integración de la generación distribuida.",
+   "texto": ""
+  },
+  "546": {
+   "titulo": "Revisar la red eléctrica, especialmente la de baja tensión, que queda ausente de la fiscalización de acuerdo con las ratios TIEPI y NIEPI por abarcar un ámbito limitado de consumidores, así como el estado y nivel de carga de los centros de transformación para evaluar la resiliencia real de la red.",
+   "texto": ""
+  },
+  "547": {
+   "titulo": "Igualar en todo el Estado los peajes de acceso a la red de media tensión acabando con la discriminación a los consumidores (principalmente pymes) que se alimentan de la red de 25 kV (peajes de acceso más elevados) frente a los que se alimentan eléctricamente desde la red de 36 kV (con peajes de acceso más económicos), hecho que sitúa a las empresas catalanas en una situación de inferioridad competitiva.",
+   "texto": ""
+  },
+  "548": {
+   "titulo": "Modificar el Real decreto legislativo 2/2004, de 5 de marzo, por el que se aprueba el texto refundido de la Ley reguladora de las haciendas locales, con el fin de dotar a las administraciones locales de las herramientas fiscales necesarias para promover la transición energética dentro de su ámbito competencial.",
+   "texto": ""
+  },
+  "549": {
+   "titulo": "Dado que el 40% de las emisiones de GEI proviene de la energía usada para la movilidad de bienes y personas, hay que promover activamente una movilidad eléctrica y colectiva y acompañar la reconversión industrial del sector de la automoción hacia la fabricación de vehículos eléctricos.",
+   "texto": ""
+  },
+  "550": {
+   "titulo": "Invertir en una red de autobuses urbanos e interurbanos con fuentes energéticas limpias.",
+   "texto": ""
+  },
+  "551": {
+   "titulo": "Desplegar la implantación de puntos de recarga eléctrica punto a punto y colectiva y establecer sistemas de recarga rápida y ultrarrápida en los principales ejes viarios.",
+   "texto": ""
+  },
+  "552": {
+   "titulo": "Impulsar el despliegue de la electrificación masiva de la movilidad, facilitando la implantación de puntos de recarga, ayudas a la adquisición de vehículos y sobre todo estableciendo mecanismos para la reconversión de la industria del automóvil para adaptar sus productos a la industria del vehículo eléctrico.",
+   "texto": ""
+  },
+  "553": {
+   "titulo": "Dotar al consumidor de conocimiento y accesibilidad sobre su consumo energético.",
+   "texto": "Se puede actuar cuando se conoce cómo y cuándo se usa la energía. Informar sobre los sistemas de generación, tipos de energía, coste de producción y precio."
+  },
+  "554": {
+   "titulo": "Establecer un mecanismo de ayudas y bonificaciones fiscales estable en el tiempo para la rehabilitación y para la adquisición de electrodomésticos de bajo consumo energético.",
+   "texto": ""
+  },
+  "555": {
+   "titulo": "Abordar la pobreza energética más allá de la ayuda pública, empoderando a los ciudadanos en conocimiento sobre la factura y el uso de la energía y facilitando la inversión para hacer las viviendas más ahorradoras, eficientes y autoproductoras.",
+   "texto": ""
+  },
+  "556": {
+   "titulo": "Incentivar activamente mecanismos como las comunidades energéticas, que hay que implementar de forma efectiva aplicando la extensa definición y, sobre todo, el alcance y la potencialidad completa que permiten las Directivas Europeas.",
+   "texto": ""
+  },
+  "557": {
+   "titulo": "Revisar el calendario de cierre de las centrales nucleares catalanas con el fin de garantizar el suministro a las empresas y los hogares si se da el caso de que las energías renovables no puedan asegurar el volumen demandado.",
+   "texto": ""
+  },
+  "558": {
+   "titulo": "Presentar una proposición de ley de modificación de la Ley general de telecomunicaciones para transferir a la Generalitat de Catalunya la capacidad reguladora, la gestión regional del espectro radioeléctrico y el control del despliegue de redes de nueva generación (5G/6G).",
+   "texto": ""
+  },
+  "559": {
+   "titulo": "Exigir el traspaso directo y ejecutivo a la Generalitat de la totalidad de los fondos de extensión de la banda ancha (programas UNICO y equivalentes) con el fin de eliminar las zonas de sombra en el mundo rural y garantizar la conectividad del 100% del territorio catalán sin intermediación del Estado español.",
+   "texto": ""
+  },
+  "560": {
+   "titulo": "Incluir en la transposición estatal de la directiva NIS2 y del Reglamento de Ciberresiliencia (CRA) el reconocimiento de la Agencia de Ciberseguridad de Cataluña como autoridad competente, de supervisión y de certificación, y como centro de respuesta inmediata ante los ciberataques a infraestructuras críticas, productos y servicios digitales, a la manera del Sistema de Emergencias Médicas (SEM).",
+   "texto": ""
+  },
+  "561": {
+   "titulo": "Exigir la participación de Cataluña como organismo competente acreditado en la gestión y supervisión del Reglamento de Servicios Digitales (Digital Services Act - DSA) para garantizar el control directo sobre el cumplimiento de las grandes plataformas en la moderación de contenidos, la protección de los menores y la neutralidad en el ámbito territorial catalán.",
+   "texto": ""
+  },
+  "562": {
+   "titulo": "Exigir la presencia directa de Cataluña en la estructura de aplicación del Reglamento de inteligencia artificial (AI Act), así como el traspaso de las herramientas de supervisión con el fin de que la Generalitat pueda establecer su propio organismo de gobernanza de la IA.",
+   "texto": "Esto debe permitir auditar los algoritmos de alto riesgo utilizados en nuestro territorio, prevenir sesgos sociales y de género, y garantizar la soberanía algorítmica y lingüística del catalán en los nuevos desarrollos de IA."
+  },
+  "563": {
+   "titulo": "Establecer la obligatoriedad legal para las grandes plataformas digitales, redes sociales y desarrolladores de modelos de inteligencia artificial de ofrecer el catalán como lengua nativa en sus interfaces, asistentes de voz y algoritmos de recomendación, bajo sanción administrativa en caso de incumplimiento.",
+   "texto": ""
+  },
+  "564": {
+   "titulo": "Impulsar la coordinación normativa que respete la competencia de la Generalitat en infancia, juventud y salud pública, para implementar auditorías algorítmicas obligatorias, herramientas de edad y sistemas de prevención ante diseños adictivos o nocivos de las redes sociales que afectan a la salud mental de los menores.",
+   "texto": ""
+  },
+  "565": {
+   "titulo": "Modificar el marco normativo del sector eléctrico y de desarrollo de infraestructuras digitales para condicionar las autorizaciones de nuevos centros de datos a la planificación territorial propia de la Generalitat, avalando criterios de eficiencia energética 100% renovable, cierre de circuitos hídricos y aprovechamiento de calor residual.",
+   "texto": ""
+  },
+  "566": {
+   "titulo": "Reclamar la soberanía en el almacenamiento de los datos públicos de la ciudadanía catalana en infraestructuras de proximidad, evitando la dependencia de nubes centralizadas por el Estado español y promoviendo la distribución de centros de datos de alta eficiencia fuera de la primera corona metropolitana para favorecer el equilibrio territorial.",
+   "texto": ""
+  },
+  "567": {
+   "titulo": "Reclamar el traspaso y la integración tecnológica de las plataformas digitales del Estado español que afectan a la ciudadanía en Cataluña (Seguridad Social, Extranjería, DNI/Pasaporte) para poder unificar la gestión en la ventanilla única de la Administración catalana (One-stop shop), eliminando el colapso de las citas previas y la burocracia ineficaz.",
+   "texto": ""
+  },
+  "568": {
+   "titulo": "Acelerar la implantación de proyectos solares y eólicos con criterios de cohesión territorial e impulsar las comunidades energéticas locales previstas por las directivas europeas.",
+   "texto": ""
+  },
+  "569": {
+   "titulo": "Aprobar un nuevo marco de bonificaciones fiscales para los hogares y las pymes que instalen placas solares y otros sistemas de autoconsumo renovable.",
+   "texto": ""
+  },
+  "570": {
+   "titulo": "Impulsar la electrificación de los procesos industriales intensivos y del transporte de personas y mercancías para reducir sus emisiones.",
+   "texto": ""
+  },
+  "571": {
+   "titulo": "Renovar las redes municipales de agua para reducir las pérdidas por debajo del 10% y mejorar las conexiones para transportar agua desalada.",
+   "texto": ""
+  },
+  "572": {
+   "titulo": "Modernizar los canales de riego como infraestructura de país para garantizar la producción de alimentos de proximidad y la competitividad del sector primario.",
+   "texto": ""
+  },
+  "573": {
+   "titulo": "Utilizar el agua regenerada de las depuradoras para el riego de apoyo de los cultivos afectados por la sequía, como la viña y el secano.",
+   "texto": ""
+  },
+  "574": {
+   "titulo": "Traspasar a la Generalitat la gestión de la parte catalana de la cuenca hidrográfica del Ebro.",
+   "texto": ""
+  },
+  "575": {
+   "titulo": "Impulsar la digestión anaeróbica de la fracción orgánica de los residuos urbanos, agrícolas y ganaderos, con inyección en la red del gas obtenido.",
+   "texto": ""
+  },
+  "576": {
+   "titulo": "Implantar un sistema de depósito, devolución y retorno (SDDR) de envases para aumentar la tasa de reciclaje.",
+   "texto": ""
+  },
+  "577": {
+   "titulo": "Fomentar la separación en origen de los residuos industriales y la recogida selectiva del textil, e impulsar las tecnologías de despolimerización y repolimerización.",
+   "texto": ""
+  },
+  "578": {
+   "titulo": "Reformar la LOEPSF para que los ayuntamientos puedan destinar siempre los remanentes y superávits a inversiones, vivienda y servicios para la ciudadanía, y no solo a amortizar deuda.",
+   "texto": "Hoy solo pueden hacerlo cuando el Estado español lo autoriza por decreto. Lo hemos conseguido dos veces: con el real decreto ley 15/2025, los ayuntamientos pueden destinar el superávit de 2024 a inversiones financieramente sostenibles hasta 2027; y con el real decreto ley 13/2026, pueden destinar el superávit de 2025 a inversiones y a vivienda, sin que cuente en la regla de gasto y con cuatro años para ejecutarlo. Queremos que deje de depender de un decreto y sea un derecho permanente de los ayuntamientos."
+  },
+  "579": {
+   "titulo": "Eximir de presentar un plan económico y financiero a los municipios sin déficit estructural.",
+   "texto": "Con el real decreto ley 13/2026 hemos conseguido que los ayuntamientos que superen las reglas fiscales por haber utilizado el remanente no tengan que presentarlo en 2027. Ahora queremos que ningún municipio saneado económicamente tenga que hacer este trámite, porque es una carga burocrática que castiga a quien gestiona bien."
+  },
+  "580": {
+   "titulo": "Aceptar el informe de la intervención municipal como documento suficiente para autorizar usos puntuales del remanente, sin trámites adicionales.",
+   "texto": ""
+  },
+  "581": {
+   "titulo": "Revisar la regla de gasto para excluir de ella los gastos urgentes y extraordinarios derivados de emergencias sociales, crisis económicas o catástrofes naturales, así como las inversiones de alto impacto social: vivienda, servicios sociales, transición energética, equipamientos y espacio público.",
+   "texto": ""
+  },
+  "582": {
+   "titulo": "Rechazar los topes uniformes de endeudamiento y los planes de reequilibrio impuestos por el Estado español que no tienen en cuenta la solvencia real de cada municipio.",
+   "texto": ""
+  },
+  "583": {
+   "titulo": "Garantizar que el reparto de la deuda y de los objetivos de estabilidad que afectan a Cataluña se negocie bilateralmente en la Comisión Mixta de Asuntos Económicos y Fiscales Estado-Generalitat, y rechazar cualquier reparto del margen de déficit que subordine el de la Generalitat y los ayuntamientos a las necesidades del Estado español.",
+   "texto": ""
+  },
+  "584": {
+   "titulo": "Reformar el sistema de financiación local y la Ley de haciendas locales para garantizar la suficiencia financiera y la autonomía de los entes locales, con un modelo propio para Cataluña acordado bilateralmente.",
+   "texto": ""
+  },
+  "585": {
+   "titulo": "Revisar la fórmula de cálculo de la Participación en los Tributos del Estado español para que tenga en cuenta la evolución real del gasto municipal y la diversidad territorial, se incremente automáticamente para cubrir el aumento del gasto de personal y garantice la financiación de los servicios impropios.",
+   "texto": "El sistema de financiación debe incorporar criterios que tengan en cuenta la población estacional, la dispersión territorial, la ruralidad, el envejecimiento y el crecimiento demográfico. Cualquier nueva competencia atribuida a los entes locales debe ir acompañada de la dotación financiera correspondiente."
+  },
+  "586": {
+   "titulo": "Aumentar progresivamente la parte del IRPF y del IVA que el Estado español recauda y que va a parar a los ayuntamientos, para que tengan unos ingresos más estables, que crezcan con la actividad económica y que dependan menos de las transferencias del Estado.",
+   "texto": ""
+  },
+  "587": {
+   "titulo": "Compensar a los entes locales por la pérdida de ingresos derivada de la reforma de la plusvalía municipal, por el IVA soportado y por cualquier reforma estatal que afecte a los tributos municipales.",
+   "texto": ""
+  },
+  "588": {
+   "titulo": "Continuar reclamando un mecanismo de condonación parcial de la deuda municipal, en coherencia con lo que se ha previsto para las comunidades autónomas, para devolver capacidad de inversión a los ayuntamientos.",
+   "texto": ""
+  },
+  "589": {
+   "titulo": "Reconocer a los consejos comarcales y a las otras entidades supramunicipales como beneficiarios de la Participación en los Tributos del Estado español, con una financiación estable para los servicios que prestan, como el transporte y los comedores escolares o los servicios sociales.",
+   "texto": ""
+  },
+  "590": {
+   "titulo": "Reforzar los fondos de cooperación territorial con criterios de equidad que corrijan los desequilibrios entre municipios poniendo énfasis en los municipios pequeños y rurales.",
+   "texto": ""
+  },
+  "591": {
+   "titulo": "Consolidar el acceso de las ciudades medianas de más de 20.000 habitantes al sistema estatal de financiación del transporte urbano y garantizar una financiación estable del mismo.",
+   "texto": ""
+  },
+  "592": {
+   "titulo": "Derogar la LRSAL de manera pactada y sustitutiva, con una nueva ley acordada con la Generalitat de Catalunya y con las entidades municipalistas catalanas, como la Associació Catalana de Municipis (ACM), la Federació de Municipis de Catalunya (FMC) y otras entidades que trabajan en defensa del mundo local.",
+   "texto": "La nueva ley debe garantizar la autonomía, la suficiencia financiera y la seguridad competencial, y respetar las competencias de Cataluña, el principio de subsidiariedad y la Carta Europea de Autonomía Local. Mientras no se apruebe, hay que mantener el marco actual para evitar vacíos normativos y la parálisis de los servicios."
+  },
+  "593": {
+   "titulo": "Eliminar los obstáculos de la legislación estatal para que Cataluña pueda aprobar su propia ley de gobiernos locales y desplegar las veguerías como gobierno local con auténtico poder político y de gestión, superando la división provincial y ampliando nuestro propio modelo territorial.",
+   "texto": ""
+  },
+  "594": {
+   "titulo": "Secretarios e interventores municipales: ejecutar todas las actuaciones necesarias para hacer inmediatamente efectivo el traspaso a la Generalitat de la gestión integral (oferta pública, selección, formación, habilitación y nombramiento) de secretarios, interventores y tesoreros de administración local (competencia recuperada la pasada legislatura mediante un régimen específico para Cataluña en la Ley de Bases de Régimen Local).",
+   "texto": ""
+  },
+  "595": {
+   "titulo": "Continuar impulsando la estabilización de oficio como personal funcionario, laboral o estatutario fijo a extinguir de los empleados públicos en situación de abuso de temporalidad, incluidos los cesados que hayan reclamado contra el cese, de acuerdo con las sentencias del Tribunal de Justicia de la UE.",
+   "texto": ""
+  },
+  "596": {
+   "titulo": "Volver a impulsar la ley orgánica de delegación en Cataluña de las competencias estatales en inmigración, con los recursos humanos, técnicos y económicos necesarios para ejercerlas.",
+   "texto": ""
+  },
+  "597": {
+   "titulo": "Modificar la Ley de bases de régimen local y el Reglamento de población y demarcación territorial para que el empadronamiento exija un título habilitante sobre la vivienda (propiedad, alquiler u otro derecho que legitime la ocupación), con efectos limitados al período de vigencia del título.",
+   "texto": "Un acto ilegal como la ocupación no puede dar la condición de vecino. Las personas sin hogar o en infravivienda deben poder ser atendidas mediante un padrón social, de acuerdo con el modelo que decida Cataluña y con financiación estatal, sin que esta carga recaiga sobre los ayuntamientos."
+  },
+  "598": {
+   "titulo": "Convertir la potestad de comprobar el padrón en una obligación: los ayuntamientos deben verificar de manera sistemática la residencia efectiva, como mínimo una vez al año, y dar de baja de oficio las inscripciones sin título habilitante vigente.",
+   "texto": "Las inscripciones fraudulentas o con datos falsos deben quedar expresamente prohibidas y ser sancionables."
+  },
+  "599": {
+   "titulo": "Dar a los ayuntamientos un plazo de doce meses para revisar las inscripciones existentes, con los recursos humanos y presupuestarios necesarios a cargo del Estado español.",
+   "texto": ""
+  },
+  "600": {
+   "titulo": "Que el Estado español financie la acogida, incluida la de los menores migrantes no acompañados, y compense a los ayuntamientos por las necesidades de padrón, escolarización, atención social y convivencia que asumen ante la llegada de flujos migratorios no planificados.",
+   "texto": ""
+  },
+  "601": {
+   "titulo": "Garantizar que el reparto de menores migrantes no acompañados entre comunidades autónomas continúe reconociendo el esfuerzo de acogida que ya ha hecho Cataluña, de manera que no se le asignen nuevos traslados mientras su sistema de acogida esté tensionado.",
+   "texto": ""
+  },
+  "602": {
+   "titulo": "Garantizar la aplicación efectiva de la Ley orgánica 1/2026 contra la multirreincidencia, que hemos impulsado, con los medios judiciales suficientes para que los hurtos y las estafas reiterados tengan una respuesta rápida y no queden impunes.",
+   "texto": ""
+  },
+  "603": {
+   "titulo": "Hacer efectivas las herramientas de la ley contra la multirreincidencia en los municipios: la acción penal de los ayuntamientos en los casos de hurto y las medidas cautelares territoriales contra la delincuencia reiterada.",
+   "texto": ""
+  },
+  "604": {
+   "titulo": "Modificar la legislación procesal para que los ayuntamientos puedan instar el desalojo de las ocupaciones ilegales que perturban la convivencia cuando el propietario no lo hace.",
+   "texto": ""
+  },
+  "605": {
+   "titulo": "Impulsar un programa masivo de rehabilitación de viviendas en el mundo rural y municipios de montaña (objetivo: contribuir al 30% del parque rehabilitado en una década), con subvenciones específicas para jóvenes y familias que se instalen o permanezcan en el territorio.",
+   "texto": ""
+  },
+  "606": {
+   "titulo": "Garantizar servicios de proximidad: escuelas y guarderías rurales, especialistas de salud (pediatría, gerontología) en los CAP rurales, transporte y comedor escolar gratuitos para alumnos de núcleos agregados, y modelos de atención a las personas mayores basados en autonomía y centros de día.",
+   "texto": ""
+  },
+  "607": {
+   "titulo": "Desplegar la estrategia «País de oportunidades, país vivo» y crear un ámbito institucional de gobernanza rural para impulsar el gran Pacto Nacional Rural-Urbano.",
+   "texto": ""
+  },
+  "608": {
+   "titulo": "Fomentar el teletrabajo y la flexibilidad laboral con vivienda asequible y conectividad plena para que la gente pueda vivir en el mundo rural sin perder oportunidades profesionales.",
+   "texto": ""
+  },
+  "609": {
+   "titulo": "Exigir la regionalización efectiva de la PAC y la recuperación de los fondos detraídos, defendiendo la definición catalana de «agricultor genuino» y la flexibilización de requisitos ambientales ante situaciones de sequía o crisis.",
+   "texto": ""
+  },
+  "610": {
+   "titulo": "Elaborar un plan integral de regadíos actualizado (Canals d’Urgell, Segarra-Garrigues, transformación de secano a regadío en el Penedès, etc.) y modernizar los sistemas para hacer frente a la emergencia climática.",
+   "texto": ""
+  },
+  "611": {
+   "titulo": "Aplicar estrictamente la Ley de la cadena alimentaria, crear un sello catalán de «producto propio» y redes de consumo de proximidad, y potenciar el cooperativismo agrario y los equipamientos comunitarios (obradores, mataderos).",
+   "texto": ""
+  },
+  "612": {
+   "titulo": "Impulsar un centro de desarrollo de soluciones tecnológicas (5G, IA, robótica, big data) aplicadas al mundo rural y agropecuario.",
+   "texto": ""
+  },
+  "613": {
+   "titulo": "Potenciar la biomasa y la gestión forestal sostenible como fuente de energía renovable, prevención de incendios y creación de empleo rural; modificar la Ley forestal para dar más autonomía a los ayuntamientos.",
+   "texto": ""
+  },
+  "614": {
+   "titulo": "Completar la red de fibra óptica en todos los núcleos de más de 50 habitantes y desplegar cobertura 5G total en el mundo rural, eliminando zonas de sombra.",
+   "texto": ""
+  },
+  "615": {
+   "titulo": "Mejorar la red viaria rural (carreteras, caminos rurales, pistas forestales, accesos a masías y explotaciones) con un plan de caminos públicos adaptado a vehículos agrícolas.",
+   "texto": ""
+  },
+  "616": {
+   "titulo": "Exigir y ejecutar las inversiones pendientes en ejes estratégicos (N-260, N-230, N-240, paso de Comiols, etc.) que conectan las comarcas de montaña y del interior.",
+   "texto": ""
+  },
+  "617": {
+   "titulo": "Crear la estructura de gobernanza rural descentralizada que coordine todas las políticas que afectan al mundo rural e impulse el Pacto Nacional Rural-Urbano.",
+   "texto": ""
+  },
+  "618": {
+   "titulo": "Establecer un sistema de compensación por los servicios ecosistémicos (descarbonización, biodiversidad, prevención de incendios, calidad del agua) a través de la Declaración Única Agraria (DUN).",
+   "texto": ""
+  },
+  "619": {
+   "titulo": "Reconocer y dignificar el papel de las mujeres en el mundo rural y marítimo con certificados de competencia profesional, ayudas específicas y sensibilización para la titularidad de explotaciones.",
+   "texto": ""
+  },
+  "620": {
+   "titulo": "Facilitar el relevo generacional con exenciones fiscales en la transmisión o arrendamiento de tierras y viviendas rurales a jóvenes y profesionales agrarios.",
+   "texto": ""
+  }
+ },
+ "bloques": {
+  "1": "Los derechos y las libertades en el centro",
+  "2": "El bienestar de los catalanes en el centro",
+  "3": "Las estructuras y el modelo productivo en el centro"
+ },
+ "secciones": {
+  "1.1": "Nuestros derechos y libertades nacionales y la justicia en el centro",
+  "1.2": "El derecho a la propiedad y a la vivienda en el centro",
+  "1.3": "La lengua catalana en el centro",
+  "1.4": "La seguridad de los catalanes en el centro",
+  "1.5": "La cultura catalana en el centro",
+  "1.6": "La política internacional de Cataluña en el centro",
+  "1.7": "Las administraciones públicas en el centro",
+  "1.8": "La igualdad entre catalanes y catalanas en el centro",
+  "1.9": "Los derechos LGTBI+ en el centro",
+  "1.10": "Los derechos de las personas con discapacidad en el centro",
+  "1.11": "Los derechos de nuestros animales en el centro",
+  "2.1": "El bienestar de todos los catalanes en el centro",
+  "2.2": "Las competencias en inmigración en el centro",
+  "2.3": "La salud de los catalanes en el centro",
+  "2.4": "La escuela y la universidad catalanas en el centro",
+  "2.5": "Las personas mayores en el centro",
+  "2.6": "Los jóvenes en el centro",
+  "2.7": "El deporte catalán en el centro",
+  "3.1": "La economía, las empresas y el trabajo en el centro",
+  "3.2": "Las infraestructuras, la movilidad y el transporte en el centro",
+  "3.3": "El sector primario en el centro",
+  "3.4": "La soberanía energética de Cataluña en el centro",
+  "3.5": "La soberanía digital de Cataluña en el centro",
+  "3.6": "El medio ambiente en el centro",
+  "3.7": "El mundo local en el centro",
+  "3.8": "El mundo rural en el centro"
+ },
+ "citas": {
+  "en un màxim de 48 hores": "en un máximo de 48 horas",
+  "deducció del 15%": "deducción del 15%",
+  "Reduir del 10% al 5%": "Reducir del 10% al 5%",
+  "fins a 2.000 milions d’euros": "de hasta 2.000 millones de euros",
+  "fins a 26.800 agents el 2032": "hasta 26.800 agentes en 2032",
+  "del 8 % del PIB en despesa sanitària pública": "del 8 % del PIB en gasto sanitario público",
+  "fins al 0,6 % del PIB en cinc anys": "hasta el 0,6 % del PIB en cinco años",
+  "Retornar el 100 % de l’IVA de la recerca": "Devolver el 100 % del IVA de la investigación",
+  "1.400 euros mensuals en 14 pagues": "1.400 euros mensuales en 14 pagas",
+  "reducció del 75 %": "reducción del 75 %",
+  "durant els 3 primers anys d’activitat": "durante los 3 primeros años de actividad",
+  "deducció del 100%": "deducción del 100%",
+  "condonació del 100%": "condonación del 100%",
+  "Elevar a dos milions d’euros": "Elevar a dos millones de euros",
+  "tipus del 0%": "tipo del 0%",
+  "fins a 85.000 euros": "hasta 85.000 euros",
+  "Reduir al 10% l’IVA de la llum": "Reducir al 10% el IVA de la luz",
+  "del 21% al 10%": "del 21% al 10%",
+  "fins a 5.000 euros": "hasta 5.000 euros",
+  "inferior a dos milions d’euros": "inferior a dos millones de euros",
+  "del 3% del PIB": "del 3% del PIB",
+  "cap al 60% del salari mitjà": "hacia el 60% del salario medio",
+  "del 100% de Rodalies": "del 100% de Rodalies",
+  "a 100 km": "a 100 km",
+  "per sota del 10%": "por debajo del 10%",
+  "contribuir al 30% del parc rehabilitat": "contribuir al 30% del parque rehabilitado"
+ },
+ "lemas": {
+  "1": "Bloque I. Los derechos y las libertades en el centro",
+  "2": "Bloque II. El bienestar de los catalanes en el centro",
+  "3": "Bloque III. Las estructuras y el modelo productivo en el centro"
+ }
+}

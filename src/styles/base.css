@@ -89,3 +89,7 @@ p { margin: 0 0 1em; }
   @view-transition { navigation: auto; }
   ::view-transition-group(*) { animation-duration: 420ms; animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1); }
 }
+
+/* Texts with a translation (components/ui/Bilingual.astro): the original by default, the Spanish one when the reader asks. */
+html:not([data-lang='es']) .lang-es { display: none; }
+html[data-lang='es'] .lang-orig { display: none; }

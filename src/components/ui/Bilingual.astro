@@ -1,0 +1,15 @@
+---
+/**
+ * A text in its original language with its Spanish translation. The page shows the original; the language toggle
+ * (`party/LanguageToggle.astro`) puts `data-lang="es"` on `<html>` and the CSS (`styles/base.css`) swaps the two.
+ * Without a translation it prints the original alone.
+ */
+interface Props {
+  orig: string;
+  es?: string | null;
+}
+
+const { orig, es } = Astro.props;
+---
+
+{es ? (<><span class="lang-orig">{orig}</span><span class="lang-es" lang="es">{es}</span></>) : orig}

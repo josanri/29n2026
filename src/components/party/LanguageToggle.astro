@@ -1,0 +1,58 @@
+---
+/** «Original / Castellano»: swaps the texts of the page between the original language and the translation. */
+import type { Program } from '@/lib/programs';
+import { translationInfo } from '@/lib/translations';
+
+interface Props {
+  program: Program;
+}
+
+const { program } = Astro.props;
+const info = translationInfo(program.id);
+---
+
+{
+  info && (
+    <div class="lang-toggle" data-lang-toggle role="group" aria-label="Idioma de los textos del programa">
+      <button type="button" data-lang="orig" aria-pressed="true">Original ({info.language})</button>
+      <button type="button" data-lang="es" aria-pressed="false">Castellano (traducción)</button>
+    </div>
+  )
+}
+
+<script>
+  const KEY = 'electosfera-lang';
+  const apply = (lang: string) => {
+    document.documentElement.dataset.lang = lang === 'es' ? 'es' : 'orig';
+    document.querySelectorAll<HTMLButtonElement>('[data-lang-toggle] button').forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.dataset.lang === document.documentElement.dataset.lang));
+    });
+  };
+  let stored = 'orig';
+  try {
+    stored = localStorage.getItem(KEY) ?? 'orig';
+  } catch {
+    /* storage can be blocked: the original stays */
+  }
+  if (document.querySelector('[data-lang-toggle]')) apply(stored);
+  document.addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('[data-lang-toggle] button');
+    if (!button) return;
+    apply(button.dataset.lang ?? 'orig');
+    try {
+      localStorage.setItem(KEY, document.documentElement.dataset.lang ?? 'orig');
+    } catch {
+      /* ignore */
+    }
+  });
+</script>
+
+<style>
+  .lang-toggle { display: inline-flex; margin: var(--space-2) 0; border: 2px solid var(--color-ink); }
+  .lang-toggle button {
+    font: inherit; font-weight: 700; font-size: 0.9375rem; padding: 6px 12px; cursor: pointer;
+    background: var(--color-paper); color: var(--color-ink); border: 0;
+  }
+  .lang-toggle button + button { border-left: 2px solid var(--color-ink); }
+  .lang-toggle button[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+</style>

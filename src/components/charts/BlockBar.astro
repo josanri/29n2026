@@ -8,6 +8,8 @@ import { measureNoun, padNumber, percentOf } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { routes } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
+import Bilingual from '@/components/ui/Bilingual.astro';
+import { translatedBlockMotto, translatedBlockTitle } from '@/lib/translations';
 
 interface Props {
   program: Program;
@@ -45,6 +47,11 @@ const segments = program.blocks.map((block) => {
             `${count} ${measureNoun(program, count)} (${percentOf(count, total)} %)`,
             `${sections} secciones${pending ? `, ${pending} por anunciar` : ''}`,
           )}
+          data-tooltip-es={translatedBlockTitle(program.id, block.id) ? tooltip(
+            `${padNumber(block.id)}. ${translatedBlockTitle(program.id, block.id)}`,
+            `${count} ${measureNoun(program, count)} (${percentOf(count, total)} %)`,
+            `${sections} secciones${pending ? `, ${pending} por anunciar` : ''}`,
+          ) : undefined}
         ></a>
       ))
     }
@@ -57,8 +64,8 @@ const segments = program.blocks.map((block) => {
             <span class="block-cells__number">{block.id}</span>
             <span class="block-cells__swatch" aria-hidden="true" style={`background:${color}`}></span>
           </span>
-          <span class="block-cells__title">{block.title}</span>
-          {block.motto && <span class="block-cells__motto">{block.motto}</span>}
+          <span class="block-cells__title"><Bilingual orig={block.title} es={translatedBlockTitle(program.id, block.id)} /></span>
+          {block.motto && <span class="block-cells__motto"><Bilingual orig={block.motto} es={translatedBlockMotto(program.id, block.id)} /></span>}
           <span class="block-cells__count">
             {count} {measureNoun(program, count)} ({percentOf(count, total)} %)
           </span>

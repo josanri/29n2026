@@ -13,6 +13,8 @@ import { measureNoun, padNumber, percentOf } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { routes } from '@/lib/routes';
 import { tooltip } from '@/lib/tooltip';
+import Bilingual from '@/components/ui/Bilingual.astro';
+import { translatedBlockTitle, translatedPhraseTitle, translatedSectionTitle } from '@/lib/translations';
 
 interface Props {
   program: Program;
@@ -47,6 +49,11 @@ const cellTooltip = (measure: Measure) =>
   measure.isPending
     ? tooltip(`Nº ${measure.number}`, `${program.measureUnit} pendiente de anunciar`)
     : tooltip(`Nº ${measure.number} · ${categoryById[measure.categoryId].code}`, measure.phraseTitle);
+// The same tooltip in Spanish, for a program with a translation.
+const cellTooltipEs = (measure: Measure) => {
+  const title = measure.isPending ? null : translatedPhraseTitle(program.id, measure.number);
+  return title ? tooltip(`Nº ${measure.number} · ${categoryById[measure.categoryId].code}`, title) : undefined;
+};
 ---
 
 <div class="measure-map" data-measure-map>
@@ -58,7 +65,7 @@ const cellTooltip = (measure: Measure) =>
         <li style={`--block-color:${blockColor(block.id).color};--block-on:${blockColor(block.id).on}`}>
           <a href={routes.block(program.id, block.id)}>
             <span class="measure-map__mini-number">{padNumber(block.id)}</span>
-            <span class="measure-map__mini-title">{block.title}</span>
+            <span class="measure-map__mini-title"><Bilingual orig={block.title} es={translatedBlockTitle(program.id, block.id)} /></span>
             <span class="measure-map__mini-count">{total}</span>
             <span class="measure-map__mini-dots" aria-hidden="true">
               {sections.flatMap(({ measures }) => measures).map((measure) => <i class:list={{ 'is-pending': measure.isPending }} />)}
@@ -86,7 +93,7 @@ const cellTooltip = (measure: Measure) =>
         <div class="measure-map__body">
           <div class="measure-map__head">
             <h4 class="measure-map__title">
-              <a href={routes.block(program.id, block.id)}>{block.title}</a>
+              <a href={routes.block(program.id, block.id)}><Bilingual orig={block.title} es={translatedBlockTitle(program.id, block.id)} /></a>
             </h4>
             <span class="measure-map__total">
               {total} {measureNoun(program, total)}
@@ -110,6 +117,7 @@ const cellTooltip = (measure: Measure) =>
                   href={routes.measure(program.id, measure.number)}
                   aria-label={cellLabel(measure)}
                   data-tooltip={cellTooltip(measure)}
+                  data-tooltip-es={cellTooltipEs(measure)}
                 />
               ))}
             </div>
@@ -119,7 +127,7 @@ const cellTooltip = (measure: Measure) =>
                 <div class:list={['measure-map__row', { 'measure-map__row--tag': section.id.length > 4 }]}>
                   <span class="measure-map__id">{section.id}</span>
                   <a class="measure-map__section" href={routes.section(program.id, block.id, section.id)}>
-                    {section.phraseTitle}
+                    <Bilingual orig={section.phraseTitle} es={translatedSectionTitle(program.id, section.id)} />
                   </a>
                   <span class="measure-map__count">{measures.length}</span>
                   <div class="measure-map__cells">
@@ -130,6 +138,7 @@ const cellTooltip = (measure: Measure) =>
                         href={routes.measure(program.id, measure.number)}
                         aria-label={cellLabel(measure)}
                         data-tooltip={cellTooltip(measure)}
+                        data-tooltip-es={cellTooltipEs(measure)}
                       />
                     ))}
                   </div>

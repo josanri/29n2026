@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import MeasureCard from '@/components/measures/MeasureCard.astro';
 import UnpublishedNotice from '@/components/party/UnpublishedNotice.astro';
+import TranslationNotice from '@/components/party/TranslationNotice.astro';
 import Button from '@/components/ui/Button.astro';
 import CategoryRose from '@/components/charts/CategoryRose.astro';
 import { getProgram, programs } from '@/lib/programs';
@@ -22,6 +23,7 @@ const singular = program.measureUnit;
 const categoryCounts = countBy(program.measures, (measure) => measure.categoryId);
 const targetGroupCounts = countBy(program.measures, (measure) => measure.targetGroupIds);
 const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
+const territoryCounts = countBy(program.measures, (measure) => measure.territories);
 // The categories of the program, from the biggest. The sphere of the party page opens here as a «rosa» (same
 // `view-transition-name`): a petal, or its row in the list, filters the measures.
 const categoryPetals = categoryCounts.map(([id, count]) => ({
@@ -62,6 +64,7 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
                   </p>
                   <h1 class="headline">{capitalize(allOf(program, program.measures.length))}</h1>
                   <p class="page-hero__hint">Pulsa una categoría para ver solo sus {plural}. Púlsala otra vez para verlas todas.</p>
+                  <TranslationNotice program={program} />
                 </div>
               </CategoryRose>
             </div>
@@ -121,6 +124,16 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
                     </select>
                   </label>
 
+                  {territoryCounts.length > 0 && (
+                    <label class="field">
+                      <span class="field__label">Territorio</span>
+                      <select name={PARAMS.territory}>
+                        <option value="">Todos</option>
+                        {territoryCounts.map(([id, count]) => <option value={id}>{id} ({count})</option>)}
+                      </select>
+                    </label>
+                  )}
+
                   <fieldset class="checks">
                     <legend class="field__label">Solo</legend>
                     <label><input type="checkbox" name={PARAMS.withFigures} value="1" /> con cifras</label>
@@ -178,6 +191,8 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
       category: (card, value) => card.dataset.category === value,
       targetGroup: (card, value) => hasToken(card.dataset.targetGroups, value),
       lever: (card, value) => hasToken(card.dataset.levers, value),
+      // The territories can have spaces («Val d’Aran»): the list is separated by «|».
+      territory: (card, value) => (card.dataset.territories ?? '').split('|').includes(value),
       withFigures: (card) => card.dataset.hasFigures === '1',
       withDeadline: (card) => card.dataset.hasDeadline === '1',
       pendingOnly: (card) => card.dataset.pending === '1',
@@ -353,6 +368,7 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
               categoria: { type: 'string', description: 'Id o nombre de la categoría, por ejemplo «vivienda».' },
               colectivo: { type: 'string', description: 'Id o nombre del colectivo, por ejemplo «jovenes».' },
               palanca: { type: 'string', description: 'Id o nombre de la palanca, por ejemplo «impuestos».' },
+              territorio: { type: 'string', description: 'Territorio que nombra la medida, por ejemplo «Cataluña».' },
               conCifras: { type: 'boolean', description: 'Solo las medidas con un compromiso cuantificado.' },
               conPlazo: { type: 'boolean', description: 'Solo las medidas con un plazo.' },
             },
@@ -365,6 +381,7 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
               category: optionValue('category', input.categoria),
               targetGroup: optionValue('targetGroup', input.colectivo),
               lever: optionValue('lever', input.palanca),
+              territory: input.territorio ? String(input.territorio) : '',
               withFigures: input.conCifras ? '1' : '',
               withDeadline: input.conPlazo ? '1' : '',
               pendingOnly: '',

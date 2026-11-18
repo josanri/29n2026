@@ -9,6 +9,7 @@ import { normalizeForSearch, splitParagraphs } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { partyScaleStyle, readableTextColor } from '@/lib/color';
 import { MEASURE_ID_PREFIX, routes, withBase } from '@/lib/routes';
+import { translationOf } from '@/lib/translations';
 import Tag from '@/components/ui/Tag.astro';
 import BlockChip from '@/components/ui/BlockChip.astro';
 
@@ -25,6 +26,11 @@ interface Props {
 
 const { measure, program, open = false, showParty = false, showCategory = true, showShare = true } = Astro.props;
 const category = categoryById[measure.categoryId];
+// A translation is a separate layer, closed by default and marked as automatic.
+// The header cuts a long title with «…». Only when the short title is the start of the full one (not a rewrite or a change of case).
+const titleIsCut =
+  !measure.isPending && measure.phraseTitle.endsWith('…') && measure.title.startsWith(measure.phraseTitle.slice(0, -1).trimEnd());
+const translation = measure.isPending ? null : translationOf(program.id, measure.number);
 const block = program.blocks.find((candidate) => candidate.id === measure.blockId)!;
 // On a page with measures of several parties, each card carries the color scale of its party.
 const stripeStyle = `--stripe-color: ${blockColor(measure.blockId).color}${showParty ? `;${partyScaleStyle(program.color, program.lightColor)}` : ''}`;
@@ -46,6 +52,7 @@ const documentLabel = measure.page
   data-category={measure.categoryId}
   data-target-groups={measure.targetGroupIds.join(' ')}
   data-levers={measure.leverIds.join(' ')}
+  data-territories={measure.territories.join('|')}
   data-has-figures={measure.figures.length ? '1' : '0'}
   data-has-deadline={measure.deadline ? '1' : '0'}
   data-pending={measure.isPending ? '1' : '0'}
@@ -75,6 +82,9 @@ const documentLabel = measure.page
       <span class="measure-card__toggle" aria-hidden="true"></span>
     </summary>
     <div class="measure-card__text">
+      {translation && <p class="measure-card__lang">Original en {translation.language}</p>}
+      {/* The header cuts a long title with «…»: the full title is then the first paragraph of the body. */}
+      {titleIsCut && <p class="measure-card__full-title">{measure.title}</p>}
       {
         measure.isPending ? (
           <p class="measure-card__notice">
@@ -82,6 +92,16 @@ const documentLabel = measure.page
           </p>
         ) : (
           splitParagraphs(measure.text).map((paragraph) => <p>{paragraph}</p>)
+        )
+      }
+      {
+        translation && (
+          <details class="measure-card__translation">
+            <summary>Ver la traducción al castellano <span class="measure-card__translation-tag">automática</span></summary>
+            <p class="measure-card__translation-notice">{translation.notice}</p>
+            <p lang="es"><strong>{translation.title}</strong></p>
+            {splitParagraphs(translation.text).map((paragraph) => <p lang="es">{paragraph}</p>)}
+          </details>
         )
       }
       {
@@ -129,6 +149,12 @@ const documentLabel = measure.page
 </article>
 
 <style>
+  .measure-card__translation { margin: var(--space-3) 0; border: 2px dashed var(--color-ink); padding: 8px 12px; }
+  .measure-card__translation > summary { display: block; padding: 0; cursor: pointer; font-weight: 700; }
+  .measure-card__translation-tag { border: 2px solid var(--color-ink); padding: 0 6px; margin-left: 6px; font-size: 0.8125rem; text-transform: uppercase; }
+  .measure-card__full-title { font-weight: 700; }
+  .measure-card__lang { margin: 0 0 var(--space-2); font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; }
+  .measure-card__translation-notice { font-size: 0.9375rem; font-style: italic; margin: var(--space-2) 0; }
   .measure-card {
     border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
