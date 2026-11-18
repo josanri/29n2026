@@ -11,6 +11,7 @@ import json
 import re
 import sys
 import unicodedata
+from clasificacion import completar
 
 
 PAGINA = 'https://www.agendavalenciana.org/index.html#programa'
@@ -153,6 +154,8 @@ def main():
         'secciones': secciones,
         'medidas': medidas,
     }
+    for medida in programa['medidas']:
+        completar(medida)
     with open(sys.argv[2], 'w', encoding='utf-8') as salida:
         json.dump(programa, salida, ensure_ascii=False, indent=1)
         salida.write('\n')

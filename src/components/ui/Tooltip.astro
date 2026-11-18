@@ -38,7 +38,9 @@
 
   // The element that owns a tooltip: one with `data-tooltip`, or a text that is cut.
   const htmlOf = (target: Element) => {
-    const html = target.getAttribute('data-tooltip');
+    // `data-tooltip-es`: the same tooltip in Spanish, when the reader asked for the translation of the page.
+    const spanish = document.documentElement.dataset.lang === 'es' ? target.getAttribute('data-tooltip-es') : null;
+    const html = spanish ?? target.getAttribute('data-tooltip');
     if (html) return html;
     const text = target.textContent?.replace(/\s+/g, ' ').trim();
     return text ? escapeHtml(text) : null;

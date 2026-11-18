@@ -14,6 +14,7 @@ import json
 import re
 import sys
 import unicodedata
+from clasificacion import completar
 
 
 PAGINA = 'https://www.eguzkilore-na.org/sample-page/'
@@ -176,6 +177,8 @@ def main():
     if len(sys.argv) != 3:
         raise SystemExit('Uso: python scripts/extract_eguzkilore.py ORIGEN.txt DESTINO.json')
     programa = extraer(sys.argv[1])
+    for medida in programa['medidas']:
+        completar(medida)
     with open(sys.argv[2], 'w', encoding='utf-8') as salida:
         json.dump(programa, salida, ensure_ascii=False, indent=1)
         salida.write('\n')

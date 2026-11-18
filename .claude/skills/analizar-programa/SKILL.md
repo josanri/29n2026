@@ -183,6 +183,8 @@ dato (así faltaron los verbos en 11 de 19 programas). La regla:
 Al terminar un programa nuevo, `npm run build` no debe dar errores, y los avisos de ese programa deben estar
 resueltos o explicados en el informe al usuario.
 
+Si el programa no está en castellano, ofrece al usuario su traducción aparte con la skill `traducir-programa` (el original no se toca).
+
 ## 5. Enlaces y secciones que deben funcionar
 
 Compila y abre la web (`npm run build` y `npx astro preview`, o `npm run dev`) y revisa en `/<id>/`:

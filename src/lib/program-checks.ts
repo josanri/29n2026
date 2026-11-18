@@ -64,6 +64,11 @@ export function checkPrograms(): void {
     }
 
     // «Las claves»: without the editorial reading, the page builds them from the categories.
+    // Colectivos y palancas se calculan por palabras clave: un programa grande con cero es un fallo del extractor.
+    if (program.measures.length >= 10) {
+      if (!program.measures.some((measure) => measure.targetGroupIds.length)) warnings.push(`${id}: ninguna medida tiene colectivos.`);
+      if (!program.measures.some((measure) => measure.leverIds.length)) warnings.push(`${id}: ninguna medida tiene palancas.`);
+    }
     if (!keyFindingsByParty[id]?.length) warnings.push(`${id}: sin «Las claves» en analysis.ts; la ficha usa la versión automática.`);
   }
 

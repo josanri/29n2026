@@ -133,7 +133,9 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -153,7 +155,9 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -193,7 +197,10 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -213,7 +220,10 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -232,8 +242,12 @@
    "texto": "Crear una xarxa d'escoles 100% en català que garanteixi el dret a una educació catalana de qualitat, fonamentada en el compromís explícit de les famílies amb el projecte educatiu i lingüístic. Aquesta xarxa funcionarà integralment en català a tota l'escola: aula, pati, menjador, extraescolars, demostrant que l'arrelament educatiu és una qualitat pedagògica que arrossegarà la resta del sistema cap a nivells més elevats d'immersió (gràcies a mesures com l'avaluació externa). Fer dependre l'escola catalana de la tria dels pares suposarà un salt de la immersió de menys d'un 20% al voltant del 60% d’entrada, tal com hem vist a Balears, País Valencià i País Basc.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -252,8 +266,12 @@
    "texto": "Crear una Escola Superior de Magisteri de Catalunya per formar docents d'excel·lència sense dependre d'organismes espanyols. Formar 5.000 nous professors de llengua i cultura catalanes, amb beques per a alumnes que es comprometin a dedicar part de la seva vida professional a produir coneixement en català. Implementar avaluacions periòdiques de competència lingüística per a tot el personal educatiu.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -272,8 +290,12 @@
    "texto": "TV3 i Catalunya Ràdio han de ser exclusivament en català, minimitzant les entrevistes i altres continguts en castellà, i en cas de fer-los, normalitzar la traducció simultània o els subtítols. Crear una plataforma digital conjunta entre TV3, À Punt i IB3 que prioritzi continguts per a joves en català. Acabar amb la importació de formats espanyols i apostar per produccions originals que reflecteixin la realitat cultural catalana.",
    "oculta": false,
    "categoria": "identidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -292,8 +314,14 @@
    "texto": "Crear una regidoria de política lingüística en tots els municipis on Alhora tingui representació, destinant el 10% del pressupost municipal per defecte. Aquesta regidoria garantirà l'ús exclusiu del català en actes oficials, escoles municipals de català immersius per a immigrants, esdeveniments culturals i esportius en català, acreditació lingüística obligatòria per a funcionaris, clàusules lingüístiques en contractació pública, retolació exclusiva en català, i creació d'una oficina de drets lingüístics amb règim sancionador efectiu.",
    "oculta": false,
    "categoria": "identidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "inmigrantes",
+    "funcionarios"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -312,8 +340,12 @@
    "texto": "Utilitzar el poder de la contractació pública com a motor de canvi lingüístic: cap empresa que no respecti el català rebrà contractes públics de cap mena. Implementar un sistema de certificació lingüística empresarial vinculat a avantatges fiscals, amb un règim sancionador efectiu que penalitzi l'incompliment dels drets lingüístics amb multes significatives.",
    "oculta": false,
    "categoria": "identidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -333,7 +365,9 @@
    "oculta": false,
    "categoria": "innovacion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -352,8 +386,13 @@
    "texto": "Volem incentivar l'activitat empresarial que prospera des del coneixement, la innovació i el respecte pel medi ambient. Cal millorar l'eficiència de la inversió en R+D, eliminar les barreres al finançament privat de la recerca universitària (que avui és només un 1,5% del total), reformar el finançament i el govern de les universitats amb autonomia, òrgans reduïts i avaluació, i fer que les empreses de tecnologia punta participin en la formació professional i en la formació contínua dels treballadors.",
    "oculta": false,
    "categoria": "innovacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -372,8 +411,14 @@
    "texto": "No hi ha economia del coneixement sense una escola que funcioni. Cal posar els mestres al centre de l'aula, atraure cap al magisteri els joves més motivats i brillants, crear una Escola Superior de Magisteri de Catalunya i establir una carrera professional per als directius de les escoles, amb avaluacions externes i resultats públics. El fracàs escolar és tres vegades superior en els nois que en les noies, i això també s'ha d'abordar.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "jovenes",
+    "funcionarios"
+   ],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -392,8 +437,15 @@
    "texto": "Fem la vida més fàcil a qui vol crear una empresa. Predictibilitat: les autoritzacions han de tenir terminis coneguts i funcionar per silenci administratiu positiu. Transparència: l'IDESCAT ha de publicar per a cada municipi les dades de permisos d'obres i d'activitat, perquè cap ajuntament no faci de barrera opaca. Simplificació: una ponència única que consolidi els tràmits de totes les administracions. I seguretat jurídica: un programa de consolidació i simplificació de la normativa.",
    "oculta": false,
    "categoria": "empleo",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "autonomos"
+   ],
+   "palancas": [
+    "ley",
+    "organizacion",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -413,7 +465,9 @@
    "oculta": false,
    "categoria": "fiscalidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -432,7 +486,9 @@
    "texto": "Volem una indústria que produeixi amb energia neta, abundant i barata generada aquí. Cal facilitar, en lloc d'entorpir, la implantació de l'energia solar a les empreses amb grans necessitats energètiques, accelerar el desplegament de renovables i atraure els sectors d'alt valor afegit que necessiten energia de qualitat i constant. La revolució energètica i el decreixement turístic són les dues cares de la mateixa moneda.",
    "oculta": false,
    "categoria": "energia",
-   "colectivos": [],
+   "colectivos": [
+    "empresas"
+   ],
    "palancas": [],
    "territorios": [
     "Cataluña"
@@ -452,7 +508,9 @@
    "texto": "La feina qualificada no pot quedar concentrada a l'àrea metropolitana. Volem incentius per a les empreses que s'instal·lin fora de Barcelona, nous centres de recerca i seus universitàries a les ciutats mitjanes i un transport que les connecti entre elles. Un país amb molts centres econòmics és un país més ric, més equilibrat i amb un habitatge més assequible.",
    "oculta": false,
    "categoria": "empleo",
-   "colectivos": [],
+   "colectivos": [
+    "empresas"
+   ],
    "palancas": [],
    "territorios": [
     "Cataluña"
@@ -472,8 +530,12 @@
    "texto": "Les administracions gasten l'equivalent a gairebé la meitat del PIB, i una part molt important d'aquesta despesa arriba a les empreses a través de contractes. Cal que la contractació pública condicioni l'estructura de les empreses que hi opten: els plecs han de valorar els salaris dignes, l'estabilitat i la formació dels treballadors, inclosa la formació en llengua i cultura del país, i deixar fora les empreses que competeixen amb sous baixos i rotació permanent. Un treballador que es forma, que aprèn la llengua i arrela al país surt més fàcilment del cercle de la mà d'obra barata i pot aspirar a feines millors. És la via més directa per empènyer el teixit productiu cap al valor afegit i deixar de subvencionar la precarietat.",
    "oculta": false,
    "categoria": "administracion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -492,8 +554,12 @@
    "texto": "Assolir les competències en matèria migratòria assolint la independència de Catalunya és imprescindible per gestionar adequadament els fluxos d'arribada i garantir l'arrelament efectiu. No podem continuar amb el model actual on l'Estat espanyol controla qui rep ciutadania mentre nosaltres assumim els costos d'una integració que és en espanyol. A dia d'avui, el camí per accedir a la ciutadania dels països de parla espanyola és més ràpid: hi ha una discriminació positiva dels ciutadans de països llatinoamericans respecte d'altres immigrants perquè des del punt de vista de l'estat espanyol un immigrant que parla espanyol i que ve de país cristià és més integrable a la seva idea d'hispanitat. Això és inacceptable des d'una perspectiva nacional catalana, però qualsevol intent de modificar-ho implicaria pactar amb l'estat la nostra pròpia minorització demogràfica. Per això, mentre els partits que estan disposats a posar les institucions al servei de la revolta independentista no tinguin majoria, farem valer cada esquerda competencial per desenvolupar polítiques pròpies que enforteixin la comunitat catalana.",
    "oculta": false,
    "categoria": "inmigracion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -512,8 +578,17 @@
    "texto": "Cal transformar el model econòmic català apostant pel decreixement controlat dels sectors que generen precarietat i mà d’obra poc qualificada (turisme massiu, construcció orientada a la inversió, agroindústria intensiva) i pel creixement en àmbits d’alt valor afegit (tecnologia, biomedicina, enginyeria, disseny, recerca aplicada), per retenir el talent local i reduir la dependència de mà d’obra temporal. És essencial deixar de subvencionar sectors tòxics, tant directament (macroprojectes com el Hard Rock o la Copa Amèrica, sector porcí intensiu, promoció d'aquests sectors a través de la taxa turística, etc.) com indirectament (infraestructures i legislació que n’afavoreixen l’expansió). Cal reorientar la inversió pública cap a sectors productius i sostenibles, amb criteris d’arrelament territorial i qualificació laboral en la contractació pública, i incentius fiscals per a empreses que contractin joves catalans en sectors estratègics. Mesures immediates: triplicar la taxa turística, moratòria de nous hotels i apartaments turístics, aturar infraestructures que facilitin el turisme massiu o l’agroindústria intensiva, impulsar denominacions d’origen i productes locals d’alt valor afegit, multiplicar la plantilla d’inspectors de treball fins a la ràtio recomanada per l’OIT, perseguir la contractació irregular i combatre l’explotació laboral. Finalment, cal establir salaris mínims sectorials més elevats en neteja, cures i serveis domiciliaris mitjançant la negociació col·lectiva, per dignificar i professionalitzar aquests oficis essencials i trencar el model basat en sous de misèria.",
    "oculta": false,
    "categoria": "innovacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "jovenes",
+    "discapacidad"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -532,8 +607,15 @@
    "texto": "Reformar el sistema educatiu amb una doble xarxa educativa per garantir la immersió lingüística efectiva: una xarxa d'escoles 100% en català (escoles senceres, no línies) on es garanteixi la veritable immersió. A aquesta xarxa s'hi sumarien les famílies conscienciades que la triïn i, com a prioritat política, les zones amb més immigració. L'altra xarxa, l'actual (diglòssica, a la pràctica bilingüe pel creixent domini del castellà), serà avaluada externament i, si no compleix les expectatives, se l'obligarà a canviar el projecte lingüístic fins que formi part de la primera. L'experiència a Euskadi, el País Valencià i les Illes Balears indica que, amb la possibilitat de triar una escola 100% en català, passaríem del 17% actual a com a mínim un 60% de manera immediata. Cal incentivar, formar i contractar 5.000 nous professors de llengua i cultura catalanes en els 10 anys vinents, crear una Escola Superior de Magisteri de Catalunya, implementar mecanismes que retribueixin l'excel·lència en llengua catalana del professorat en actiu, mobilitzar el professorat jubilat i formar professors i estudiants en sociolingüística. Prendre consciència de la importància de mantenir la llengua forma part de l'aprenentatge necessari.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "familias",
+    "inmigrantes",
+    "funcionarios"
+   ],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -552,8 +634,15 @@
    "texto": "Invertir 1.000 milions d'euros en un pla d'ensenyament de llengua i cultura catalanes remunerat per a tothom qui no ha gaudit del dret de passar per l'escola catalana democràtica, seguint el model de Finlàndia amb el suec, amb retribució condicional a l'assistència i superació de proves cada dos mesos, amb l'objectiu de formar 100.000 persones l'any. A més, ajudes específiques a la contractació d'immigrants que aprenguin català, creació de xarxes de suport entre famílies locals i nouvingudes, polítiques urbanístiques que facilitin la immersió cultural, assessorament personalitzat que presenti el català com una eina pràctica d'ascens social, suprimir el castellà als mitjans públics i condicionar la contractació pública a criteris lingüístics.",
    "oculta": false,
    "categoria": "identidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "familias",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -572,8 +661,15 @@
    "texto": "Reforçar l'oferta de formació professional vinculada als sectors estratègics (tecnologia, biomedicina, renovables) que permeti als fills d'immigrants accedir a oficis qualificats i trencar el cicle de precarietat intergeneracional que els condemnaria a repetir els sectors de baixa qualificació dels seus pares. Això inclou crear ponts entre l'educació secundària i la formació professional, vincular aquesta formació amb l'ús del català com a llengua vehicular (requisit indispensable per accedir a llocs de treball qualificats), establir beques de mèrit acadèmic per a estudiants de famílies treballadores que vulguin accedir a formació superior, i facilitar l'accés a pràctiques en empreses dels sectors emergents. L'objectiu és que la segona generació vegi el català i la catalanitat com a vehicles d'ascens social, no com a obstacles.",
    "oculta": false,
    "categoria": "inmigracion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "familias",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -592,8 +688,15 @@
    "texto": "Facilitar la inserció de les dones immigrants al mercat laboral és fonamental per múltiples raons: és una qüestió de drets i d'independència econòmica, però sobretot és una eina essencial per a la catalanització de les famílies immigrades, ja que quan la dona treballa i aprèn català trasllada la llengua als fills amb una eficàcia molt superior a qualsevol política d'integració tradicional. Ho veiem ara en sentit contrari: moltes famílies magribines parlen en castellà als seus fills com a llengua aspiracional. Cal reforçar els programes públics de formació professional específics per a dones en sectors amb futur (cures professionals, administració, comerç especialitzat), vincular obligatòriament aquests programes amb l'aprenentatge del català, desenvolupar polítiques de conciliació familiar que no penalitzin les dones al mercat laboral, i crear espais de trobada entre dones catalanes i immigrades a través de les biblioteques, centres cívics i equipaments públics. En definitiva, crear oportunitats d'ocupació qualificada que requereixin català, invertint en la capacitació necessària.",
    "oculta": false,
    "categoria": "inmigracion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "familias",
+    "inmigrantes",
+    "mujeres"
+   ],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -613,7 +716,9 @@
    "oculta": false,
    "categoria": "familia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -632,8 +737,13 @@
    "texto": "A Barcelona només l'1,8% dels habitatges són de titularitat pública; la mitjana europea supera el 15% i Viena arriba al 45%. Proposem un gran parc públic de lloguer per a rendes mixtes (mitjanes-altes, mitjanes i baixes), repartit pel teixit urbà i no concentrat en polígons: evita guetos, treu pressió al mercat de la classe mitjana i facilita la mobilitat. Ha de créixer per dues vies: construint i amb una compra agressiva d'habitatge privat, que és més ràpida i ofereix un lloguer estable des del primer dia. El model és Zuric: l'Ajuntament i les seves fundacions municipals compren edificis al mercat, respecten els contractes dels llogaters i lloguen a preus basats en el cost; només la fundació PWG ja té més de 2.500 pisos. El 2011, el 76% dels votants va aprovar que el 2050 un terç dels pisos de lloguer siguin d'entitats sense ànim de lucre (avui en són una quarta part), i el 2024 hi van destinar 300 milions de francs més. El parc públic també ha de facilitar, amb programes de mobilitat i permutes, que qui viu sol en un pis que era d'una família nombrosa pugui canviar a un habitatge adaptat al seu moment de vida.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -652,8 +762,13 @@
    "texto": "La hiperconcentració a Barcelona és fruit de dècades sense política territorial. Com a Alemanya, on Stuttgart, Hamburg, Munic o Leipzig són pols de primer ordre, primer calen projectes que atreguin activitat (universitats, centres de recerca, centres assistencials, indústria, serveis per a la gent gran) i després l'habitatge de valor mixt que els acompanya, d'acord amb els valors tradicionals de cada població. Una seu universitària als aularis de Vilafranca, com va passar a Vic, o una facultat d'infermeria a Tremp, on hi ha pisos de protecció oficial buits, fa més per l'habitatge que qualsevol polígon, i els nous centres de recerca i empreses tecnològiques poden anar a Manresa, Reus, Girona o Lleida. Cada nou pol ha de ser també un pol de catalanització: universitat, cultura i formació professional en català.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "mayores"
+   ],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -673,7 +788,12 @@
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "organizacion",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -693,7 +813,9 @@
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -712,8 +834,13 @@
    "texto": "Un bon transport ja és mitja política d'habitatge. Sense un tren fiable no es pot viure fora de l'àrea metropolitana sense renunciar a la feina. Rodalies arrossega quaranta anys de desinversió, i l'empresa mixta del 2026, amb Renfe al 50,1%, blinda aquest model. Avui Renfe opera Rodalies sense cap contracte vigent amb la Generalitat, que és la titular del servei: la Generalitat pot retirar l'empresa mixta i encarregar el servei a una operadora catalana nova, amb control polític ple. Per això a Alhora hem impulsat la plataforma Fora Renfe, que liderarà una iniciativa legislativa popular per fer fora Renfe de Catalunya. Mentrestant, llançadores d'autobús d'alta freqüència en carrils prioritaris, peatges intel·ligents que bonifiquin els vehicles plens i financin el transport públic, i incentius per a les empreses que s'instal·lin fora de Barcelona.",
    "oculta": false,
    "categoria": "infraestructuras",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -732,8 +859,13 @@
    "texto": "La fiscalitat també fa política d'habitatge, i la Generalitat i els ajuntaments tenen marge per revisar-la amb un consens ampli, sense demanar res a ningú. Proposem estudiar, entre altres mesures: rebaixar l'ITP i l'AJD en la compra del primer habitatge habitual, sobretot per a joves i famílies; ampliar la deducció del tram autonòmic de l'IRPF per lloguer de l'habitatge habitual; bonificar l'ICIO a la rehabilitació, a les remuntes i a la construcció d'habitatge assequible, i revisar les taxes i els tràmits municipals que encareixen construir. L'objectiu no és pujar ni baixar impostos per principi, sinó que cada impost empenyi en la direcció correcta: més habitatge, més estabilitat i més accés per a qui vol fer vida aquí.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "familias",
+    "jovenes"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -752,8 +884,13 @@
    "texto": "El turisme massiu encareix l'habitatge perquè converteix pisos en apartaments turístics, però sobretot perquè genera feines de baix valor afegit que atrauen població sense capacitat per pagar els preus. Reduir el pes del turisme i dels altres sectors que viuen de la mà d'obra barata importada, com el porc o l'oci nocturn i la venda d'alcohol lligats al turisme d'excés, és també una política d'habitatge (i d' immigració). Proposem una taxa turística dissuasòria destinada a un fons d'habitatge, una moratòria de llicències turístiques, deixar de subvencionar aquests sectors, apujar els salaris de referència que depenen de nosaltres (contractació pública i convenis) i impulsar des de la Generalitat incentius per atraure talent i feina qualificada. Els temporers els ha d'allotjar qui els contracta. Les campanyes agroalimentàries, els escorxadors i l'hostaleria de temporada porten cada any treballadors que necessiten un llit durant uns mesos. Si l'empresa no els allotja, competeixen pels pisos del poble, sovint amuntegats. Com fan els hotels d'Àustria i Suïssa, les activitats que contracten mà d'obra temporal per sobre d'un llindar n'han de garantir un allotjament digne: és un cost del negoci, no del barri.",
    "oculta": false,
    "categoria": "innovacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -773,7 +910,10 @@
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -793,7 +933,9 @@
    "oculta": false,
    "categoria": "infraestructuras",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -853,7 +995,10 @@
    "oculta": false,
    "categoria": "infraestructuras",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],
@@ -893,7 +1038,9 @@
    "oculta": false,
    "categoria": "infraestructuras",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [
     "Cataluña"
    ],

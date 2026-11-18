@@ -46,6 +46,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'eguzkilore', side: 'matiz', measures: [44], note: 'Respetar el derecho a emigrar y también a los nativos, sin medidas concretas: las elaborará cuando tenga representación en el Parlamento.' },
   { topic: 'inmigracion', party: 'alhora', side: 'matiz', measures: [19, 22], note: 'Gestionar la inmigración desde la independencia y catalanizar a los adultos con un plan de 1.000 millones, sin hablar de regularizar.' },
   { topic: 'inmigracion', party: 'podemos', side: 'a', measures: [205, 206, 210, 211], note: 'Derogar la Ley de Extranjería, cerrar los CIE y un procedimiento permanente de regularización con reconocimiento del arraigo.' },
+  { topic: 'inmigracion', party: 'jxcat', side: 'b', measures: [314, 315, 316, 321], note: 'Prioridad a las vías legales y la contratación en origen, oposición a las «regularizaciones masivas por decreto» y arraigo exigente, con el catalán como requisito.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -85,6 +86,7 @@ export const stances: Stance[] = [
   { topic: 'autodeterminacion', party: 'eh-bildu', side: 'a', measures: [152, 153, 154], note: 'Reconocer a Euskal Herria como nación y el derecho a decidir del pueblo vasco como vía democrática para resolver el conflicto político con el Estado.' },
   { topic: 'autodeterminacion', party: 'alhora', side: 'a', measures: [1, 2, 4, 33], note: 'La independencia como objetivo: uso estratégico de las instituciones y confrontación continuada con el Estado.' },
   { topic: 'autodeterminacion', party: 'comuns', side: 'a', measures: [890], note: 'Un cambio del modelo territorial en sentido federal y plurinacional, con el derecho a decidir mediante referéndum.' },
+  { topic: 'autodeterminacion', party: 'jxcat', side: 'a', measures: [1, 144, 146], note: 'Garantizar el derecho de Cataluña a la autodeterminación «con todos los medios democráticos» y mantenerlo en la agenda internacional.' },
 
   // Vivienda: control del alquiler
   { topic: 'vivienda', party: 'adelante', side: 'a', measures: [160, 161, 164], note: 'Alquiler social obligatorio, alquiler al 20 % del salario y zonas tensionadas obligatorias.' },
@@ -116,6 +118,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'ixlg', side: 'matiz', measures: [2, 3], note: 'Más alquiler público permanente y prioridad del uso residencial frente al alquiler turístico, sin hablar de limitar los precios.' },
   { topic: 'vivienda', party: 'comuns', side: 'a', measures: [19], note: 'Reforzar los mecanismos de regulación y control de los alquileres.' },
   { topic: 'vivienda', party: 'podemos', side: 'a', measures: [1, 2, 15], note: 'Bajar los alquileres un 40 % por ley, contratos indefinidos por defecto y regular el alquiler de temporada y por habitaciones.' },
+  { topic: 'vivienda', party: 'jxcat', side: 'b', measures: [396, 72, 50], note: 'Derogar los artículos de la Ley 12/2023 que contienen los precios y crean zonas tensionadas, porque «reducen la oferta de alquiler», e incentivos fiscales a los propietarios.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -131,6 +134,7 @@ export const stances: Stance[] = [
   { topic: 'religion-educacion', party: 'compromis-front-valencia', side: 'a', measures: [373, 370, 371], note: 'Escuela pública laica, sin educación confesional en el currículum, y fin de los privilegios y de la financiación de la Iglesia católica.' },
   { topic: 'religion-educacion', party: 'fa', side: 'a', measures: [903, 905, 906, 149], note: 'Revisar los Acuerdos con la Santa Sede, eliminar la financiación pública a las confesiones y los conciertos con escuelas segregadas, y que el 100 % de los fondos públicos vaya a la educación pública.' },
   { topic: 'religion-educacion', party: 'podemos', side: 'a', measures: [288, 430], note: 'Suprimir la enseñanza de religión en todos los colegios, denunciar el Concordato y aprobar una Ley de Libertad de Conciencia.' },
+  { topic: 'religion-educacion', party: 'jxcat', side: 'matiz', measures: [348, 349], note: 'Más recursos para la escuela pública y la «de iniciativa social» financiada con fondos públicos y actualizar los módulos de la concertada. No habla de religión ni de libre elección de centro.' },
 
   // Feminismo y leyes de igualdad
   { topic: 'igualdad', party: 'bng', side: 'a', measures: [100, 101, 106], note: 'Cumplir las obligaciones internacionales y el Pacto de Estado contra la violencia machista y legislar el feminicidio.' },
@@ -157,6 +161,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'nex', side: 'a', measures: [141], note: 'Refuerzo del Pacto de Estado contra la Violencia de Género y blindaje legal de los derechos LGTBI.' },
   { topic: 'igualdad', party: 'comuns', side: 'a', measures: [796], note: 'Reforzar el sistema VioGén para proteger a las víctimas de la violencia machista.' },
   { topic: 'igualdad', party: 'podemos', side: 'a', measures: [145, 154, 163], note: 'Un fondo de contingencia de mil millones contra la violencia machista, acompañamiento a las víctimas y una definición más amplia de violencia machista.' },
+  { topic: 'igualdad', party: 'jxcat', side: 'a', measures: [195, 196, 200, 202, 215], note: 'Igualdad salarial y transparencia retributiva, menos brecha en las pensiones, protección integral de las víctimas de violencia machista y recursos estatales para las políticas de igualdad.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -175,6 +180,7 @@ export const stances: Stance[] = [
   { topic: 'memoria', party: 'eh-bildu', side: 'a', measures: [171, 172], note: 'Ampliar la Ley de Memoria Democrática a más víctimas y derogar la Ley de Secretos Oficiales.' },
   { topic: 'memoria', party: 'nex', side: 'a', measures: [89], note: 'Ley de Memoria Democrática aplicada en Extremadura, con financiación para exhumaciones y espacios de memoria.' },
   { topic: 'memoria', party: 'podemos', side: 'a', measures: [434, 437, 439], note: 'Verdad, justicia y reparación para las víctimas de la dictadura, una ley para las personas LGTBI y cumplimiento efectivo de la Ley de Memoria Democrática.' },
+  { topic: 'memoria', party: 'jxcat', side: 'a', measures: [9, 46, 47, 225, 427], note: 'Derogar la ley franquista de secretos oficiales, un Memorial Democrático en la Via Laietana, verdad y reparación para las víctimas de la mili y la memoria LGTBI.' },
 
   // Energía nuclear
   { topic: 'nuclear', party: 'adelante', side: 'a', measures: [407], note: 'Ni un euro para la nuclear y cierre ordenado de El Cabril.' },
@@ -192,6 +198,7 @@ export const stances: Stance[] = [
   { topic: 'nuclear', party: 'eh-bildu', side: 'a', measures: [93], note: 'Mantener el calendario de cierre nuclear del PNIEC.' },
   { topic: 'nuclear', party: 'comuns', side: 'a', measures: [330], note: 'Cierre nuclear sin más prórrogas, sin nuevos reactores y sin beneficios fiscales.' },
   { topic: 'nuclear', party: 'podemos', side: 'a', measures: [339], note: 'Cumplir el calendario de cierre nuclear, empezando por Almaraz, con una transición justa.' },
+  { topic: 'nuclear', party: 'jxcat', side: 'matiz', measures: [557], note: 'Revisar el calendario de cierre de las nucleares catalanas solo «si las energías renovables no pueden asegurar el volumen demandado».' },
 
   // Impuestos y redistribución
   { topic: 'impuestos', party: 'adelante', side: 'a', measures: [232, 233], note: 'IRPF más progresivo y un impuesto sobre la riqueza.' },
@@ -210,6 +217,7 @@ export const stances: Stance[] = [
   { topic: 'impuestos', party: 'fa', side: 'a', measures: [244, 259, 261, 265], note: 'Tipo mínimo del 20 % en Sociedades, Tasa Zucman del 3 % sobre patrimonios de más de 50 millones, tope de 10 millones a las herencias y un IRPF del 52 % desde 300.000 euros.' },
   { topic: 'impuestos', party: 'eh-bildu', side: 'a', measures: [83, 84, 85, 116], note: 'Recuperar el impuesto a las energéticas y subir el de la banca y las grandes fortunas, con otro sobre los beneficios de las grandes distribuidoras.' },
   { topic: 'impuestos', party: 'podemos', side: 'a', measures: [30, 47, 48, 49], note: 'Impuesto a las grandes fortunas, más impuesto de sociedades a las grandes empresas, un IRPF más progresivo y equiparar las rentas del capital y del trabajo.' },
+  { topic: 'impuestos', party: 'jxcat', side: 'b', measures: [449, 450, 454, 388], note: 'Deflactar el IRPF, eliminar el impuesto de sucesiones y donaciones y acelerar la rebaja de Sociedades a pymes y cooperativas.' },
 
   // Lenguas cooficiales
   { topic: 'lenguas', party: 'erc', side: 'a', measures: [10, 11, 17], note: 'Una ley del plurilingüismo, el catalán oficial en la UE y blindar la inmersión lingüística.' },
@@ -228,6 +236,7 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'eguzkilore', side: 'matiz', measures: [50], note: 'Dos lenguas en Navarra, castellano y euskera, que «convivan con respeto», sin medidas concretas.' },
   { topic: 'lenguas', party: 'comuns', side: 'a', measures: [605], note: 'Defender la inmersión lingüística catalana y el catalán como lengua vehicular de la escuela.' },
   { topic: 'lenguas', party: 'podemos', side: 'a', measures: [256, 292], note: 'Promoción y enseñanza de las lenguas cooficiales y cuotas de pantalla para las lenguas oficiales del Estado.' },
+  { topic: 'lenguas', party: 'jxcat', side: 'a', measures: [83, 84, 88, 31], note: 'El catalán como lengua preferente de las administraciones, requisito para trabajar en la Administración del Estado en Cataluña y oficial en la UE.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
@@ -248,6 +257,7 @@ export const stances: Stance[] = [
   { topic: 'seguridad', party: 'eguzkilore', side: 'a', measures: [57], note: 'Derogar la ley mordaza.' },
   { topic: 'seguridad', party: 'comuns', side: 'a', measures: [944], note: 'Derogar los preceptos represivos de la Ley mordaza y crear mecanismos independientes de control.' },
   { topic: 'seguridad', party: 'podemos', side: 'a', measures: [427], note: 'Derogar la Ley Mordaza y limitar la detención a 48 horas con un Habeas Corpus reforzado.' },
+  { topic: 'seguridad', party: 'jxcat', side: 'matiz', measures: [10, 39, 35, 100], note: 'Derogar la ley mordaza y la prisión permanente revisable y, a la vez, aplicar «de verdad» la ley contra la multirreincidencia.' },
 
   // Ley trans
   { topic: 'ley-trans', party: 'bng', side: 'a', measures: [142], note: 'Proteger a las personas trans menores, con su derecho a la autodeterminación de género.' },
@@ -262,6 +272,7 @@ export const stances: Stance[] = [
   { topic: 'ley-trans', party: 'eguzkilore', side: 'b', measures: [57], note: 'Revisar la «ley trans», junto a la ley de Bienestar Animal.' },
   { topic: 'ley-trans', party: 'comuns', side: 'a', measures: [788], note: 'Las personas trans y no binarias son identificadas según su identidad de género manifestada.' },
   { topic: 'ley-trans', party: 'podemos', side: 'a', measures: [150], note: 'Reconocer la identidad no binaria en los documentos oficiales y eliminar obstáculos a la libre determinación de género en las infancias trans.' },
+  { topic: 'ley-trans', party: 'jxcat', side: 'a', measures: [221, 223], note: 'Oponerse a cualquier derogación o recorte de la Ley 4/2023 (trans y LGTBI) y defender la ley catalana 13/2025.' },
 
   // Gestación subrogada
   { topic: 'gestacion-subrogada', party: 'adelante', side: 'b', measures: [521], note: 'Prohibir la gestación subrogada.' },
@@ -284,6 +295,7 @@ export const stances: Stance[] = [
   { topic: 'tauromaquia', party: 'eguzkilore', side: 'a', measures: [47], note: 'Una ley que prohíba herir y matar animales para uso de espectáculos, sin nombrar la tauromaquia.' },
   { topic: 'tauromaquia', party: 'comuns', side: 'a', measures: [455], note: 'Derogar la ley que regula la tauromaquia como patrimonio cultural.' },
   { topic: 'tauromaquia', party: 'podemos', side: 'a', measures: [404], note: 'Derogar la ley que declara la tauromaquia patrimonio cultural y retirar las ayudas a espectáculos con maltrato animal.' },
+  { topic: 'tauromaquia', party: 'jxcat', side: 'a', measures: [272], note: 'Derogar la declaración de la tauromaquia como patrimonio cultural.' },
 
   // OTAN
   { topic: 'otan', party: 'ph', side: 'a', measures: [24], note: 'Neutralidad activa y salida de la OTAN.' },
@@ -300,10 +312,12 @@ export const stances: Stance[] = [
   { topic: 'otan', party: 'eh-bildu', side: 'a', measures: [179], note: 'Rechazar la OTAN y la pertenencia a ella, en línea con el voto vasco en el referéndum de 1986.' },
   { topic: 'otan', party: 'eguzkilore', side: 'a', measures: [41], note: 'Promover la salida de la OTAN y eliminar el uso militar del polígono de tiro de las Bardenas Reales.' },
   { topic: 'otan', party: 'podemos', side: 'a', measures: [70], note: 'Salir de la OTAN denunciando el Tratado del Atlántico Norte y cerrar las bases de Rota y Morón.' },
+  { topic: 'otan', party: 'jxcat', side: 'b', measures: [153], note: 'Una defensa europea más integrada pero «complementaria de la OTAN».' },
 
   // Burka
   { topic: 'burka', party: 'vox', side: 'b', measures: [71], note: 'Prohibir el burka y el niqab en los espacios públicos.' },
   { topic: 'burka', party: 'salf', side: 'b', measures: [47], note: 'Velo integral prohibido.' },
+  { topic: 'burka', party: 'jxcat', side: 'b', measures: [322], note: 'Prohibir en el espacio público las prendas que cubren el rostro, como el niqab y el burka; no afecta al hiyab.' },
 
   // Eutanasia
   { topic: 'eutanasia', party: 'adelante', side: 'a', measures: [33], note: 'Plazos más ágiles para la eutanasia, sin recurso de familiares.' },

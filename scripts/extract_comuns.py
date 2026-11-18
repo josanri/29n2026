@@ -19,6 +19,7 @@ import sys
 import unicodedata
 
 import fitz
+from clasificacion import completar
 
 
 FUENTE_PDF = 'https://comuns.cat/wp-content/uploads/2026/11/Comuns-FA-Programa29N.pdf'
@@ -221,6 +222,8 @@ def main():
         cabecera = json.load(previo)
     programa['color'] = cabecera['color']
     programa['colorClaro'] = cabecera['colorClaro']
+    for medida in programa['medidas']:
+        completar(medida)
     with open(sys.argv[2], 'w', encoding='utf-8') as salida:
         json.dump(programa, salida, ensure_ascii=False, indent=1)
         salida.write('\n')

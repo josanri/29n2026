@@ -227,7 +227,9 @@
    "texto": "Todos los cargos de la Administración y de las empresas públicas se asignarán por mérito y capacidad. El enchufismo será delito. Los nombramientos existentes se revisarán en un plazo de 6 meses.",
    "oculta": false,
    "categoria": "administracion",
-   "colectivos": [],
+   "colectivos": [
+    "empresas"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -247,7 +249,9 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -265,8 +269,12 @@
    "texto": "Se crearán juzgados especializados en corrupción, con medios suficientes. Un órgano revisará cada dos meses los procedimientos impugnados. Los casos de políticos se juzgarán en una comunidad autónoma vecina.",
    "oculta": false,
    "categoria": "justicia",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -284,8 +292,13 @@
    "texto": "La IGAE tendrá los mismos medios tecnológicos, de cruce de datos e inteligencia artificial que la Agencia Tributaria. Sus funcionarios tendrán pluses ligados a resultados de control.",
    "oculta": false,
    "categoria": "administracion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -304,7 +317,11 @@
    "oculta": false,
    "categoria": "justicia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -342,7 +359,9 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -380,7 +399,9 @@
    "oculta": false,
    "categoria": "justicia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -399,7 +420,9 @@
    "oculta": false,
    "categoria": "justicia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -437,7 +460,9 @@
    "oculta": false,
    "categoria": "justicia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -513,7 +538,9 @@
    "oculta": false,
    "categoria": "administracion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -532,7 +559,9 @@
    "oculta": false,
    "categoria": "administracion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -552,7 +581,9 @@
    "categoria": "administracion",
    "colectivos": [],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "España"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -589,7 +620,9 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -608,7 +641,9 @@
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -627,7 +662,9 @@
    "oculta": false,
    "categoria": "justicia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -665,7 +702,9 @@
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -684,7 +723,9 @@
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -702,8 +743,12 @@
    "texto": "Se eliminarán el IVA, el ITP y el AJD en la compra de vivienda habitual para menores de 35 años, hasta un máximo de 400.000 €.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -722,7 +767,9 @@
    "oculta": false,
    "categoria": "fiscalidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -741,7 +788,9 @@
    "oculta": false,
    "categoria": "fiscalidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -759,8 +808,13 @@
    "texto": "La Administración avalará acuerdos de usufructo temporal. Empresas rehabilitadoras reformarán viviendas antiguas a cambio de alquilarlas a precio asequible durante un tiempo pactado.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -779,7 +833,9 @@
    "oculta": false,
    "categoria": "fiscalidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -797,8 +853,12 @@
    "texto": "El suelo público se cederá mediante concesiones o derechos de superficie a 75 años. Empresas públicas y privadas construirán barrios de mil viviendas, con el Fondo Soberano de Vivienda.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -816,7 +876,10 @@
    "texto": "Los barrios integrarán transporte público, colegios, centros de salud y zonas verdes. Una demanda pública estable durante una década permitirá industrializar la construcción.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
+   "colectivos": [
+    "empresas",
+    "pacientes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -836,7 +899,9 @@
    "oculta": false,
    "categoria": "fiscalidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -854,7 +919,9 @@
    "texto": "Si un Ayuntamiento retiene suelo público, paraliza proyectos o bloquea licencias, su competencia urbanística pasará a la Comunidad Autónoma de forma automática.",
    "oculta": false,
    "categoria": "administracion",
-   "colectivos": [],
+   "colectivos": [
+    "autonomos"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -874,7 +941,9 @@
    "oculta": false,
    "categoria": "administracion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -892,8 +961,12 @@
    "texto": "Las obras menores que no requieran proyecto arquitectónico no necesitarán licencia previa. Bastará una declaración responsable digital.",
    "oculta": false,
    "categoria": "administracion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -912,7 +985,10 @@
    "oculta": false,
    "categoria": "administracion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -930,8 +1006,12 @@
    "texto": "Las Administraciones y empresas públicas deberán auditar y liberar su suelo parado. Los propietarios que activen parcelas para vivienda asequible tendrán bonificaciones en la plusvalía y el IBI.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -988,7 +1068,9 @@
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1007,7 +1089,9 @@
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1026,7 +1110,10 @@
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1044,7 +1131,11 @@
    "texto": "Se acordarán compromisos entre docentes, alumnos y familias al inicio de cada curso. Habrá un Premio Nacional a los centros que fomenten la convivencia y una caja de herramientas pública.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "familias",
+    "infancia",
+    "funcionarios"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1083,8 +1174,12 @@
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
-   "palancas": [],
-   "territorios": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "España"
+   ],
    "cifras": [],
    "plazo": "8 años",
    "deroga": null,
@@ -1101,8 +1196,12 @@
    "texto": "Se restablecerán las menciones de Matemáticas, Lengua y Ciencias en el grado de Educación, y se creará una especialidad en Tecnología. Habrá formación continua para acreditar a los docentes actuales.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1120,7 +1219,9 @@
    "texto": "La etapa 0-3 será pedagógica. Se revalorizarán los educadores infantiles, se revisarán las ratios y se incorporará la pareja educativa de apoyo en el aula.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "infancia"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1140,7 +1241,9 @@
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1159,7 +1262,9 @@
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1177,7 +1282,10 @@
    "texto": "Los centros con más necesidades recibirán Equipos Permanentes de Refuerzo, con educadores sociales, orientadores y profesores de lenguas extranjeras.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "inmigrantes",
+    "funcionarios"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1196,7 +1304,9 @@
    "texto": "Se codiseñará con los docentes un nuevo modelo de carrera profesional que deje atrás la antigüedad como único criterio de progreso.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "funcionarios"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1291,7 +1401,9 @@
    "texto": "Todos los títulos incorporarán prácticas tutorizadas. Se eliminarán trabas burocráticas y se incentivará a las empresas que ofrezcan prácticas con garantías de remuneración y supervisión.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "empresas"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1311,7 +1423,9 @@
    "oculta": false,
    "categoria": "educacion",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1367,8 +1481,12 @@
    "texto": "La contratación de profesorado tendrá estándares internacionales y tribunales independientes. Se creará un sexenio de innovación docente con impacto salarial.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1386,7 +1504,9 @@
    "texto": "Se dará prioridad a la experiencia técnica en las bolsas docentes de FP. Habrá un complemento salarial para retener profesionales en especialidades críticas.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "funcionarios"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1405,8 +1525,13 @@
    "texto": "Las prácticas de FP pasarán al segundo curso. Se creará la figura del tutor compartido sectorial, financiado por la Administración, para ayudar a las pymes.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1424,8 +1549,13 @@
    "texto": "Las pymes y autónomos acumularán saldo por cada hora de mentoría certificada. Ese saldo se canjeará por deducciones fiscales, formación o puntuación en la contratación pública.",
    "oculta": false,
    "categoria": "fiscalidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1443,8 +1573,14 @@
    "texto": "La inversión en plazas, infraestructuras, materiales y profesorado se planificará a varios años, según el interés del alumnado, las necesidades de las empresas y los sectores estratégicos.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "infancia",
+    "funcionarios"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1462,7 +1598,9 @@
    "texto": "El Bono Cultural Joven y el Verano Joven se integrarán en una cuenta digital de unos 500 € por joven al cumplir 18 años, para formación y materiales de estudio.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "jovenes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1481,7 +1619,9 @@
    "texto": "La dirección de hospitales y áreas de salud se cubrirá solo por concurso público de mérito y capacidad. Los mandatos se evaluarán según resultados y satisfacción.",
    "oculta": false,
    "categoria": "administracion",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1500,7 +1640,9 @@
    "texto": "Un sistema automatizado detectará las cancelaciones previsibles y asignará el hueco al siguiente paciente en espera.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1519,8 +1661,12 @@
    "texto": "Los quirófanos públicos abrirán por las tardes, con profesionales voluntarios bien pagados. Los ingresos extra se reinvertirán por ley en listas de espera, sueldos y tecnología.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1538,7 +1684,9 @@
    "texto": "Una Red Sanitaria Compartida digitalizará los procesos de gestión. Una IA de auditoría continua, con supervisión humana, detectará ineficiencias y cuellos de botella.",
    "oculta": false,
    "categoria": "administracion",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1557,8 +1705,12 @@
    "texto": "Se auditará la red de infraestructuras sanitarias. No se podrá abrir ningún centro sin presupuesto y plantilla médica garantizados.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1615,7 +1767,9 @@
    "oculta": false,
    "categoria": "sanidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1635,7 +1789,9 @@
    "categoria": "sanidad",
    "colectivos": [],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "Unión Europea"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -1671,8 +1827,14 @@
    "texto": "Una Ley Estatal de Protección del Personal Sanitario endurecerá las penas, impondrá órdenes de alejamiento inmediatas y creará un Registro Nacional de Agresores.",
    "oculta": false,
    "categoria": "seguridad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "pacientes",
+    "funcionarios"
+   ],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1690,8 +1852,13 @@
    "texto": "Los profesionales sanitarios españoles que trabajan en el extranjero tendrán deducciones en el IRPF durante tres años tras su vuelta al Sistema Nacional de Salud.",
    "oculta": false,
    "categoria": "fiscalidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "inmigrantes",
+    "pacientes"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1709,9 +1876,13 @@
    "texto": "Un estándar común y obligatorio permitirá que cualquier profesional autorizado acceda al historial del paciente, con su tarjeta. El paciente decidirá quién lo consulta y verá cada acceso.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "España"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -1767,7 +1938,9 @@
    "oculta": false,
    "categoria": "sanidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1785,7 +1958,9 @@
    "texto": "Los pacientes crónicos tendrán dispositivos conectados y seguimiento diario por enfermería. Algoritmos de alerta temprana evitarán ingresos urgentes.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1824,7 +1999,9 @@
    "oculta": false,
    "categoria": "energia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1862,7 +2039,9 @@
    "oculta": false,
    "categoria": "energia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1880,8 +2059,13 @@
    "texto": "Se reestructurarán los tributos energéticos para dejar de penalizar la electricidad frente a los combustibles fósiles. Bajarán las cargas fiscales del consumo eléctrico de familias y empresas, para impulsar las bombas de calor, el transporte limpio y los procesos industriales eléctricos.",
    "oculta": false,
    "categoria": "fiscalidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "empresas",
+    "familias"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1939,7 +2123,9 @@
    "categoria": "energia",
    "colectivos": [],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "España"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -1956,7 +2142,10 @@
    "texto": "Con las Comunidades Autónomas y los puertos se habilitarán zonas industriales verdes con la evaluación ambiental resuelta, el planeamiento aprobado y la capacidad de red reservada. La tramitación será un expediente digital único, con plazos máximos vinculantes y seguimiento público en tiempo real.",
    "oculta": false,
    "categoria": "innovacion",
-   "colectivos": [],
+   "colectivos": [
+    "empresas",
+    "autonomos"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1975,7 +2164,10 @@
    "texto": "Plataformas de compra agregada permitirán a las pymes industriales contratar energía limpia a 10 o 15 años en condiciones de gran consumidor, con las garantías públicas ya existentes. La industria electrointensiva tendrá además contratos por diferencias.",
    "oculta": false,
    "categoria": "energia",
-   "colectivos": [],
+   "colectivos": [
+    "empresas",
+    "autonomos"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1994,7 +2186,9 @@
    "texto": "Los mercados de flexibilidad se abrirán a la industria: hornos, cámaras frigoríficas o centros de datos podrán concentrar su consumo en las horas de máxima producción solar y cobrar por estabilizar la red. Se facilitará el almacenamiento térmico («baterías de calor») para electrificar el calor industrial.",
    "oculta": false,
    "categoria": "energia",
-   "colectivos": [],
+   "colectivos": [
+    "empresas"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],

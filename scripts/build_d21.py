@@ -7,6 +7,7 @@ Usage: python scripts/build_d21.py src/data/2026/generales/programas/d21.json
 """
 import json
 import sys
+from clasificacion import completar
 
 # Download names and page counts of the PDF of each section (the reader picks one in a dialog).
 DOCUMENTS = {
@@ -350,6 +351,8 @@ def main():
     if len(sys.argv) != 2:
         raise SystemExit("Uso: python scripts/build_d21.py <salida.json>")
     program = build()
+    for medida in program['medidas']:
+        completar(medida)
     with open(sys.argv[1], "w", encoding="utf-8") as output:
         json.dump(program, output, ensure_ascii=False, indent=1)
     print(f"medidas {len(program['medidas'])}; bloques {len(program['bloques'])}; cifras {len(program['cifras'])}; plazos {len(program['plazos'])}")

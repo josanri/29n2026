@@ -6,6 +6,7 @@ export const downloadFileNames: Record<string, string> = {
   bng: 'programa-bng-xerais-2026.pdf',
   cc: 'programa-defiende-canarias-2026.pdf',
   erc: 'programa-erc-2026.pdf',
+  jxcat: 'programa-junts-29n-2026.pdf',
   adelante: 'programa-adelante-andalucia-29n.pdf',
   ph: 'programa-partido-humanista-2026.pdf',
   fo: 'programa-frente-obrero-recuperar-espana.pdf',

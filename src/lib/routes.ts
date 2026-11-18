@@ -10,6 +10,7 @@ export const MEASURE_FILTER_PARAMS = {
   category: 'cat',
   targetGroup: 'col',
   lever: 'pal',
+  territory: 'ter',
   withFigures: 'cifras',
   withDeadline: 'plazo',
   pendingOnly: 'oculta',
