@@ -24,6 +24,7 @@
     "data:pacma": "python scripts/extract_pacma.py public/2026/generales/programas/pacma-programa-generales-2026.pdf src/data/2026/generales/programas/pacma.json",
     "data:fe-jons": "python scripts/extract_fe_jons.py public/2026/generales/programas/fe-jons-programa-electoral-2026.pdf src/data/2026/generales/programas/fe-jons.json",
     "data:pcte": "python scripts/extract_pcte.py public/2026/generales/programas/pcte-programa-de-lucha-2026.pdf src/data/2026/generales/programas/pcte.json",
+    "data:pctc": "python scripts/extract_pctc.py public/2026/generales/programas/pctc-programa-de-lluita-2026.pdf src/data/2026/generales/programas/pctc.json",
     "data:psoe": "python scripts/extract_psoe.py public/2026/generales/programas/psoe-la-fuerza-de-seguir-avanzando-2026.pdf src/data/2026/generales/programas/psoe.json",
     "data:convergents": "python scripts/extract_convergents.py public/2026/generales/programas/convergents-programa-electoral-2026.pdf src/data/2026/generales/programas/convergents.json",
     "data:teruel-existe": "python scripts/extract_teruel_existe.py public/2026/generales/programas/teruel-existe-programa-29n-2026.pdf src/data/2026/generales/programas/teruel-existe.json",
