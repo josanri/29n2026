@@ -132,7 +132,9 @@
    "texto": "Exigir un nuevo modelo para garantizar recursos suficientes en sanidad, educación, dependencia y bienestar social, estableciendo una igualación transitoria mientras llega la reforma definitiva.",
    "oculta": false,
    "categoria": "territorio",
-   "colectivos": [],
+   "colectivos": [
+    "discapacidad"
+   ],
    "palancas": [
     "ley",
     "gasto"
@@ -195,7 +197,11 @@
    "texto": "Garantizar apoyo efectivo a familias, personas autónomas y empresas, previniendo nuevos daños y acelerando la ejecución de los fondos asignados a los municipios.",
    "oculta": false,
    "categoria": "emergencias",
-   "colectivos": [],
+   "colectivos": [
+    "empresas",
+    "familias",
+    "autonomos"
+   ],
    "palancas": [
     "gasto"
    ],
@@ -295,7 +301,9 @@
    "texto": "Impulsar una Policía Valenciana capacitada y dotada para la respuesta ante emergencias.",
    "oculta": false,
    "categoria": "seguridad",
-   "colectivos": [],
+   "colectivos": [
+    "agentes"
+   ],
    "palancas": [
     "organizacion",
     "gasto"
@@ -340,7 +348,10 @@
    "texto": "Reducción de cargas administrativas, apoyo prioritario a autónomos, comercio local y empresas familiares frente a abusos de grandes multinacionales.",
    "oculta": false,
    "categoria": "empleo",
-   "colectivos": [],
+   "colectivos": [
+    "empresas",
+    "autonomos"
+   ],
    "palancas": [
     "ley"
    ],
@@ -360,7 +371,9 @@
    "texto": "Garantizar agua suficiente, modernizar regadíos, exigir reciprocidad en las importaciones frente a terceros países y apoyar el relevo generacional en cítricos, arroz, caqui, vid, ganadería y pesca.",
    "oculta": false,
    "categoria": "rural",
-   "colectivos": [],
+   "colectivos": [
+    "rural"
+   ],
    "palancas": [
     "gasto"
    ],

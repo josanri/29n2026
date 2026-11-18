@@ -10,6 +10,7 @@ Usage: python scripts/extract_fia.py src/data/2026/generales/programas/fia.json
 """
 import json
 import sys
+from clasificacion import completar
 
 
 PAGINA = 'https://www.fia-independientes.es/ELECCIONES-29N/'
@@ -139,6 +140,8 @@ def main():
         'secciones': secciones,
         'medidas': medidas,
     }
+    for medida in programa['medidas']:
+        completar(medida)
     with open(ruta, 'w', encoding='utf-8') as salida:
         json.dump(programa, salida, ensure_ascii=False, indent=1)
         salida.write('\n')

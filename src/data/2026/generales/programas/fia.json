@@ -73,7 +73,9 @@
    "texto": "Recuperación del poder adquisitivo, garantizando salarios y pensiones dignas. Subida de salarios, subida de pensiones y bajada de impuestos.",
    "oculta": false,
    "categoria": "social",
-   "colectivos": [],
+   "colectivos": [
+    "mayores"
+   ],
    "palancas": [
     "gasto",
     "impuestos"
@@ -118,7 +120,9 @@
    "texto": "Apoyo a la Sanidad Pública. Eliminación de las listas de espera.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [
     "gasto"
    ],
@@ -185,7 +189,9 @@
    "texto": "Defensa y ayuda directa a la agricultura y la ganadería aragonesas. Infraestructuras modernas y medidas reales contra la despoblación para vertebrar Aragón.",
    "oculta": false,
    "categoria": "rural",
-   "colectivos": [],
+   "colectivos": [
+    "rural"
+   ],
    "palancas": [
     "gasto"
    ],
@@ -317,7 +323,9 @@
    "texto": "Aumento del salario mínimo. Sueldos y pensiones con el IPC.",
    "oculta": false,
    "categoria": "empleo",
-   "colectivos": [],
+   "colectivos": [
+    "mayores"
+   ],
    "palancas": [
     "gasto"
    ],
@@ -427,7 +435,9 @@
    "texto": "Apoyar la sanidad pública. Reducción listas de espera.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [
     "gasto"
    ],
@@ -449,7 +459,9 @@
    "texto": "Reducción cuotas fiscales a los autónomos.",
    "oculta": false,
    "categoria": "fiscalidad",
-   "colectivos": [],
+   "colectivos": [
+    "autonomos"
+   ],
    "palancas": [
     "impuestos"
    ],
@@ -471,7 +483,9 @@
    "texto": "Potenciar empresas del Aragón oriental.",
    "oculta": false,
    "categoria": "empleo",
-   "colectivos": [],
+   "colectivos": [
+    "empresas"
+   ],
    "palancas": [
     "gasto"
    ],

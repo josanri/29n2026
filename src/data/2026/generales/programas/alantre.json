@@ -2,26 +2,340 @@
  "id": "alantre",
  "partido": "Proyecto Alantre",
  "siglas": "ALANTRE",
+ "comunidad": "Castilla y León",
+ "observaciones": [
+  "La página del programa tiene 12 compromisos y aquí están los 12, con el texto literal de la página.",
+  "El programa solo se publica como página web, sin PDF. Cada compromiso es una medida, con el título de la página.",
+  "La página enlaza una versión en llionés (https://ya-toca.com/programa-lli/) y otra en gallego (https://ya-toca.com/programa-gl/). Aquí solo se recoge la versión en castellano.",
+  "Alantre se presenta solo en la provincia de León."
+ ],
  "color": "#FFCC02",
  "colorClaro": "#FFE88D",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Doce compromisos para el Congreso",
+ "subtitulo": "Las reivindicaciones que Alantre llevará al Congreso",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "pdf": "https://ya-toca.com/programa/",
+ "fuentePdf": "https://ya-toca.com/programa/",
+ "tipoDocumento": "web",
+ "origenMedidas": "web",
+ "fechaFuente": "2026-11-18",
+ "unidadMedida": "compromiso",
+ "unidadMedidas": "compromisos",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Programa",
+  "texto": "Estos son los doce compromisos de nuestro programa, las reivindicaciones que llevaremos al Congreso. Puedes leerlos también en llionés y galego."
  },
  "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
+ "plazos": [
+  {
+   "plazo": "De inmediato",
+   "texto": "Ejecutar la red del Corredor Atlántico de ferrocarril y por carretera",
+   "medida": 5
+  }
+ ],
+ "ordenPlazos": [
+  "De inmediato"
+ ],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Castilla y León"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Doce compromisos",
+   "lema": "Los compromisos de Alantre",
+   "cita": "",
+   "intro": ""
+  }
+ ],
+ "secciones": [
+  {
+   "id": "compromisos",
+   "bloque": 1,
+   "titulo": "Compromisos",
+   "tituloFrase": "Compromisos",
+   "intro": "",
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Autonomía leonesa",
+   "tituloFrase": "Autonomía leonesa",
+   "texto": "Nuestro autogobierno será la principal reivindicación que llevaremos al Congreso. La voluntad de la ciudadanía, expresada en mociones a favor de la autonomía de 70 juntas vecinales y más de 80 municipios que representan al 60% de la población, junto a la moción aprobada por la Diputación de León, tiene que ser el centro del debate político. Alantre será la voz para que ese sentir democrático sea atendido por las instituciones del Estado.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Defensa de nuestro territorio",
+   "tituloFrase": "Defensa de nuestro territorio",
+   "texto": "La energía, infraestructuras y recursos naturales deben servir a las personas que viven y trabajan en nuestros pueblos. Alantre defiende un modelo de transición ecológica justa, donde la protección del medioambiente, la salud ambiental y la sostenibilidad territorial se integren con la justicia social y económica. Nuestra tierra no es una «zona de sacrificio» para el beneficio de otras partes del Estado y Europa",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Blindaje de los servicios públicos",
+   "tituloFrase": "Blindaje de los servicios públicos",
+   "texto": "Garantizar servicios públicos universales y gratuitos es indispensable para combatir las desigualdades sociales, educativas, sanitarias y laborales que atraviesan de forma estructural nuestro territorio, especialmente en las comarcas rurales, envejecidas y castigadas por la despoblación. No hay justicia social sin justicia territorial y la sanidad, educación, vivienda y cuidados tienen que ser la base para alcanzarla.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "rural",
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Protección de los derechos y libertades conseguidas",
+   "tituloFrase": "Protección de los derechos y libertades conseguidas",
+   "texto": "Defenderemos los avances en derechos laborales y civiles contra involuciones, especialmente los conseguidos por mujeres, gente LGTBIQ+ y otros colectivos. Apoyaremos todas aquellas medidas que eviten un posible retroceso democrático. Creemos en un País Leonés plural y diverso y en la normalización y consolidación de una sociedad leonesa solidaria, inclusiva y con memoria. Ni un paso atrás.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Realización de todas las infraestructuras pendientes",
+   "tituloFrase": "Realización de todas las infraestructuras pendientes",
+   "texto": "Exigiremos las inversiones necesarias para nuestro desarrollo: Torneros, Lazo del Manzanal, Vía de la Plata, terminal de mercancías en el aeropuerto, integración de FEVE, soterramiento en Trobajo del Camino, las autovías de Braganza, Bierzo-Ourense y León-Valladolid, así como la ejecución inmediata de la red del Corredor Atlántico de ferrocarril y por carretera, para comunicar con los puertos de Oporto, Lisboa, Vigo y Xixón.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": "De inmediato",
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Elaboración de un Plan de desarrollo y vertebración",
+   "tituloFrase": "Elaboración de un Plan de desarrollo y vertebración",
+   "texto": "Reclamaremos un plan estatal específico para León, Zamora y Salamanca, así como el reconocimiento de El Bierzo como comarca estratégica. No basta con ejecutar los proyectos aplazados durante años, también es necesario revertir las tendencias negativas de población y actividad económica, con inversiones que aprovechen nuestra situación como cruce de caminos y centro del noroeste.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "plan",
+    "gasto"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Plan Estratégico de Movilidad y Transporte",
+   "tituloFrase": "Plan Estratégico de Movilidad y Transporte",
+   "texto": "Que será consensuado entre las diferentes administraciones, basado en la eficiencia energética y la sostenibilidad ambiental. La conexión de nuestra estructura de pueblos y comarcas tiene que priorizar una red en malla interconectada. No queremos ser ciudadanos de segunda con una movilidad deficiente y desestructurada. Exigiremos la supresión de los peajes de las autopistas del Huerna y Astorga-León.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "plan",
+    "impuestos"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Protección de nuestras lenguas y cultura",
+   "tituloFrase": "Protección de nuestras lenguas y cultura",
+   "texto": "Pediremos el cumplimiento de las Recomendaciones del Consejo de Europa, así como de la Carta Europea de las Lenguas regionales o Minoritarias firmada por el Estado español. Las lenguas propias del territorio, el leonés y el gallego, forman parte del patrimonio cultural inmaterial y deben ocupar un lugar prioritario en las políticas culturales. Del mismo modo, reclamaremos una protección efectiva de nuestro patrimonio cultural.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Recuperación de nuestras juntas vecinales",
+   "tituloFrase": "Recuperación de nuestras juntas vecinales",
+   "texto": "Plantearemos las reformas legislativas para recuperar juntas vecinales perdidas, proteger el Concejo Abierto, reforzar la autonomía de las entidades locales menores y asegurar la defensa de los bienes comunales, garantizando que la gestión de lo público se mantenga en manos de quienes mejor conocen el territorio.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Una agricultura y ganadería fuertes",
+   "tituloFrase": "Una agricultura y ganadería fuertes",
+   "texto": "Apoyar una explotación extensiva y familiar, junto con la creación de pequeñas y medianas empresas industriales y de servicios. La población rural debe decidir cómo se utiliza su territorio y cómo se gestiona su riqueza natural, para fijar población manteniendo vivos los entornos rurales. Apoyaremos a agricultores y ganaderos frente a la industria agroalimentaria y la gran distribución.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "empresas",
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 11,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Un modelo de vivienda adaptado a nuestra realidad",
+   "tituloFrase": "Un modelo de vivienda adaptado a nuestra realidad",
+   "texto": "La vivienda es un derecho, no una mercancía. En una provincia que ha perdido 80 000 habitantes y en la que hay 90 000 casas vacías, cualquier Plan de Vivienda debe estar adaptado a nuestras características. Rehabitar el País es una cuestión de justicia social y equilibrio ambiental. Frente a los desahucios y la despoblación, un modelo adaptado a nuestra realidad: rehabilitación de viviendas vacías, alquiler asequible y el acceso a un hogar digno.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  },
+  {
+   "n": 12,
+   "bloque": 1,
+   "seccion": "compromisos",
+   "subapartado": null,
+   "titulo": "Una voz política propia",
+   "tituloFrase": "Una voz política propia",
+   "texto": "Toca hablar de nuestras problemáticas desde un punto de vista centrado en nuestra propia realidad. Defendemos una representación progresista y leonesista que anteponga los intereses de León a las directrices de los grandes partidos estatales. Nuestro derecho al autogobierno aquí no es la opción minoritaria, ha estado en la agenda del país durante los últimos cincuenta años y cuenta con una amplia mayoría social. Es hora de hacernos valer.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Castilla y León"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://ya-toca.com/programa/"
+  }
+ ]
 }

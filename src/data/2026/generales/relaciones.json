@@ -77,7 +77,8 @@
       "provincias": [
         "31"
       ],
-      "nota": "UPN se presenta en coalición con el PP en Navarra."
+      "nota": "UPN se presenta en coalición con el PP en Navarra.",
+      "coalicion": true
     },
     {
       "id": "sa-unio-pp",
@@ -183,6 +184,69 @@
         "48"
       ],
       "nota": "En Álava, Gipuzkoa y Bizkaia, el PCTE se presenta en la lista ELAK/PCTE."
+    },
+    {
+      "id": "frente-amplio-marcas",
+      "partidos": [
+        "fa",
+        "comuns",
+        "cha-fa",
+        "arames"
+      ],
+      "camaras": [
+        "congreso"
+      ],
+      "nota": "Frente Amplio es la coalición de Movimiento Sumar, Izquierda Unida, Más Madrid y Catalunya en Comú, entre otras organizaciones. Comuns-Front Ampli, CHA-Frente Amplio Aragón y Ara Més-Front Ampli son sus fórmulas territoriales. Compromís-Front Valencià es una fórmula propia con Podem y EUPV."
+    },
+    {
+      "id": "psc-psoe",
+      "partidos": [
+        "psc",
+        "psoe"
+      ],
+      "camaras": [
+        "congreso",
+        "senado"
+      ],
+      "provincias": [
+        "08",
+        "17",
+        "25",
+        "43"
+      ],
+      "nota": "El PSC es el partido socialista de Cataluña, federado con el PSOE. En Cataluña se presenta con sus siglas y los escaños del PSC suman en el grupo del PSOE.",
+      "coalicion": true
+    },
+    {
+      "id": "cha-fa-coalicion",
+      "partidos": [
+        "cha-fa",
+        "fa"
+      ],
+      "camaras": [
+        "congreso"
+      ],
+      "provincias": [
+        "22",
+        "50"
+      ],
+      "coalicion": true,
+      "nota": "Chunta Aragonesista participa junto a Izquierda Unida, Sumar y otras organizaciones en la candidatura Chunta Aragonesista-Frente Amplio Aragón."
+    },
+    {
+      "id": "arames-coalicion",
+      "partidos": [
+        "arames",
+        "fa"
+      ],
+      "camaras": [
+        "congreso"
+      ],
+      "provincias": [
+        "07"
+      ],
+      "coalicion": true,
+      "nota": "Ara Més-Front Ampli es la fórmula balear del Frente Amplio, con Més per Mallorca, Més per Menorca, Ara Eivissa y Movimiento Sumar."
     }
   ]
 }

@@ -3,12 +3,16 @@
 import type { Program } from '@/lib/programs';
 import Tag from '@/components/ui/Tag.astro';
 import { readableTextColor } from '@/lib/color';
+import { jointListMembers } from '@/lib/relations';
+import { routes } from '@/lib/routes';
+import RelatedParties from '@/components/party/RelatedParties.astro';
 
 interface Props {
   program: Program;
 }
 
 const { program } = Astro.props;
+const list = jointListMembers(program);
 ---
 
 <section class="container notice">
@@ -16,9 +20,27 @@ const { program } = Astro.props;
     <Tag variant="party" size="lg" style={`--party-color:${program.color};--party-on-color:${readableTextColor(program.color)}`}>{program.acronym}</Tag>
     {program.partyName}
   </p>
-  <h1 class="headline">Programa vacío</h1>
-  <p>Este partido aún no ha publicado su programa electoral.</p>
+  <h1 class="headline">{list ? 'Lista conjunta' : 'Programa vacío'}</h1>
+  {
+    list ? (
+      <>
+        <p>Se presenta en una candidatura conjunta y aquí no tiene un programa propio: consulta el de cada partido de la lista.</p>
+        <p class="notice__members">
+          {list.ownList ? 'Partidos de la lista' : 'En coalición con'}:{' '}
+          {list.members.map((member, index) => (
+            <>
+              {index > 0 && ', '}
+              <a href={routes.party(member.id)}>{member.acronym}</a>
+            </>
+          ))}
+        </p>
+      </>
+    ) : (
+      <p>Este partido aún no ha publicado su programa electoral.</p>
+    )
+  }
   {program.notes.map((note) => <p class="notice__note">{note}</p>)}
+  <RelatedParties program={program} />
 </section>
 
 <style>

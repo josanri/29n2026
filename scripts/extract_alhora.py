@@ -15,6 +15,7 @@ import re
 import sys
 import unicodedata
 from pathlib import Path
+from clasificacion import completar
 
 
 CARPETA = Path('.cache/2026/generales/alhora')
@@ -150,6 +151,8 @@ def main():
         'secciones': secciones,
         'medidas': medidas,
     }
+    for medida in programa['medidas']:
+        completar(medida)
     with open(ruta, 'w', encoding='utf-8') as salida:
         json.dump(programa, salida, ensure_ascii=False, indent=1)
         salida.write('\n')

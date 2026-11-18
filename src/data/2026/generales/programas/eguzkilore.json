@@ -105,7 +105,9 @@
    "texto": "Respetar y garantizar flexibilidad laboral para la mujer embarazada.",
    "oculta": false,
    "categoria": "familia",
-   "colectivos": [],
+   "colectivos": [
+    "mujeres"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -141,7 +143,9 @@
    "texto": "Formación para que los y las profesionales de sanidad puedan acompañar partos respetuosos con la mujer y el bebé.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "mujeres"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -231,7 +235,9 @@
    "texto": "Reducción progresiva de las ratios en las aulas: Infantil: 5 peques por educador/a en 1º ciclo, 9 en 2º ciclo, 12 en Primaria y 15 en Segundaria.",
    "oculta": false,
    "categoria": "familia",
-   "colectivos": [],
+   "colectivos": [
+    "infancia"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -267,7 +273,9 @@
    "texto": "Que se facilite a las/os educadoras/es formación personal y profesional para acompañar académica y personalmente al alumnado.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "infancia"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -285,7 +293,9 @@
    "texto": "Formación de maestras/os, profesores/as, orientadores/as pedagógicos y/o educadoras/es orientada desde la mirada de la Prevención Infantil, el neurodesarrollo de los niños y niñas.",
    "oculta": false,
    "categoria": "familia",
-   "colectivos": [],
+   "colectivos": [
+    "infancia"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -303,7 +313,9 @@
    "texto": "Eliminación de tareas, salvo excepciones y acordadas con cada alumno/a.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "infancia"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -321,7 +333,9 @@
    "texto": "Tener en cuenta la necesidad de movimiento del alumnado, el contacto con la naturaleza, el arte y el deporte.",
    "oculta": false,
    "categoria": "educacion",
-   "colectivos": [],
+   "colectivos": [
+    "infancia"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -339,7 +353,10 @@
    "texto": "Cuidar la salud mental y emocional de la infancia a través de una educación afectuosa que permita minimizar el uso de tratamientos farmacológicos.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "infancia",
+    "pacientes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -375,8 +392,12 @@
    "texto": "Asesoramiento, reconocimiento de la administración y deducciones en la declaración de la renta a las familias que educan a sus hijos/as en casa.",
    "oculta": false,
    "categoria": "familia",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -448,8 +469,12 @@
    "oculta": false,
    "categoria": "familia",
    "colectivos": [],
-   "palancas": [],
-   "territorios": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -466,7 +491,10 @@
    "oculta": false,
    "categoria": "sanidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -519,9 +547,14 @@
    "texto": "Toma de decisiones y asesoramiento del Parlamento y Gobierno de Navarra por profesionales de la salud independientes. No al control de las empresas farmacéuticas que controlan la OMS.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "empresas",
+    "pacientes"
+   ],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "Navarra"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -537,8 +570,12 @@
    "texto": "Aumento en Sanidad de los recursos en salud mental para llegar al 15% del gasto total en salud.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -574,7 +611,9 @@
    "oculta": false,
    "categoria": "sanidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -647,7 +686,9 @@
    "categoria": "empleo",
    "colectivos": [],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "España"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -663,7 +704,9 @@
    "texto": "Jubilación digna desde los 60 años.",
    "oculta": false,
    "categoria": "social",
-   "colectivos": [],
+   "colectivos": [
+    "mayores"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -717,8 +760,12 @@
    "texto": "Apoyar la ganadería pequeña y mediana. Incentivar para pasar al ecológico, pero no subvencionar a las macro-granjas. Fomentar el cultivo ecológico y el km0.",
    "oculta": false,
    "categoria": "empleo",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -754,7 +801,9 @@
    "oculta": false,
    "categoria": "infraestructuras",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -808,7 +857,9 @@
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -825,7 +876,9 @@
    "texto": "Tratar de eliminar el uso militar del polígono de tiro de las Bardenas Reales, investigar sobre las repercusiones en la salud de los pueblos cercanos, que las tierras no las gestione el Ministerio de Defensa y promover la salida de la OTAN.",
    "oculta": false,
    "categoria": "sanidad",
-   "colectivos": [],
+   "colectivos": [
+    "pacientes"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -843,9 +896,15 @@
    "texto": "Fomentar que la electricidad sea gestionada por los ayuntamientos, en mancomunidad. No a la línea de alta tensión de 400 kW. En Navarra somos grandes exportadores de energía a otros territorios y este tipo de proyectos sirve para enriquecer a las empresas. Apostamos por el autoconsumo en los pueblos y en las ciudades y por no colocar más molinos en los montes y dejar a los campos en paz, también apostamos por la gestión de los ayuntamientos. Las fotovoltaicas producen más al medio día, por lo que consideramos necesario bajar el precio de la luz ya que se regula el consumo.",
    "oculta": false,
    "categoria": "energia",
-   "colectivos": [],
-   "palancas": [],
-   "territorios": [],
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -879,8 +938,12 @@
    "texto": "La inmigración, en general, tiene que ver con la explotación de sus recursos por parte de las multinacionales, las guerras… Adhesión a la propuesta de Esenciales. Sobre la migración es muy complicado determinar qué soluciones ofrecer para respetar el derecho fundamental de cada ser humano de emigrar y que se respete a los nativos. Cuando tengamos representación en el Parlamento, nos ponemos a elaborar las medidas para solucionar los problemas.",
    "oculta": false,
    "categoria": "exterior",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -915,7 +978,9 @@
    "texto": "Promover la legalización del cannabis lúdico para adultos mayores de edad.",
    "oculta": false,
    "categoria": "social",
-   "colectivos": [],
+   "colectivos": [
+    "mayores"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -934,7 +999,9 @@
    "oculta": false,
    "categoria": "identidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -951,8 +1018,13 @@
    "texto": "Sobre la prostitución, nos adherimos a lo que Amnistía Internacional propone: despenalizarla ya que la prohibición puede empeorar las condiciones de las mujeres, pero perseguir a los proxenetas. Necesario visibilizar la desaparición de niñas/os con fines de prostitución o de venta de órganos. En algunos casos en casas de acogida.",
    "oculta": false,
    "categoria": "familia",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "infancia",
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -969,9 +1041,18 @@
    "texto": "La primera vivienda nueva, a quien no posea otra vivienda, no paga el IVA.Se acuerda la propuesta de que «los gobiernos construirán más del doble de VPO que actualmente. Lo que invierte, lo recuperan en la venta, sin beneficio. Es necesario también sacar viviendas de VPO de alquiler. Y que se construyan VPO también en zonas rurales.Se propone sacar también algunos pisos más pequeños pero realizados con materiales de calidad y con espacios transformables para optimizarlos para parejas o individuales. Se sabe que los bancos disponen de edificios no utilizados, muchos de los cuales solo están deteriorándose. Se propone que los ayuntamientos regulen para poder disponerlos en el mercado. Actualmente, en España, los alquileres se estipulan para 5 años. La propuesta de Eguzkilore, como sucede en otros países de Europa, es que se firmen contratos indefinidos pero pueda llegarse a otro tipo de acuerdos con previo aviso. La inflación es un factor clave que influye en el coste de la vida y, por lo tanto, en el precio de los alquileres. Como están recogidos en los contratos ahora, el arrendador debe notificar al inquilino para vender o puede extinguir el contrato antes de tiempo para destinar la vivienda a su residencia habitual o la de sus familiares directos (hijos, padres o cónyuge en casos de separación/divorcio)…. con al menos tres meses de antelación; ahora son dos meses. No se debe pagar el alquiler hasta que se les expulsa, ya que el alquiler se paga al inicio de cada mes, a menudo con la fianza retenida hasta el final del contrato. Si los inquilinos no pagan a tiempo, es posible que el arrendador retenga la fianza para cubrir los daños o pagos pendientes. Pasados dos meses sin que el inquilino pague, se le expulsa. El propietario notifica por escrito al inquilino y debe también interponer una demanda de desahucio ante el juzgado competente. El juzgado notificará al inquilino, que tendrá la oportunidad de responder y presentar su defensa. El inquilino tiene dos meses para demostrar ante los servicios sociales que es una persona vulnerable y le paga el gobierno el alquiler, mientras le encuentra otro piso gestionado por el gobierno Pisos de alquiler: Una forma de sacar pisos de alquiler sin especular es los gobiernos compran pisos a través de los bonos en que invierten los ciudadanos, los inversores sacan un rendimiento y el Gobierno ofrece pisos de manera asequible para que los jóvenes puedan beneficiarse. En Nabarra tenemos a Nasubinsa, que protege tanto al propietario de la casa como al inquilino, pero faltan pisos de alquiler o se especula. Necesario revisar las leyes sobre la ocupación para proteger a propietarios particulares que no son bancos.",
    "oculta": false,
    "categoria": "familia",
-   "colectivos": [],
-   "palancas": [],
-   "territorios": [],
+   "colectivos": [
+    "jovenes",
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "plan"
+   ],
+   "territorios": [
+    "España"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -1006,7 +1087,9 @@
    "oculta": false,
    "categoria": "familia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "plan"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1042,8 +1125,13 @@
    "oculta": false,
    "categoria": "rural",
    "colectivos": [],
-   "palancas": [],
-   "territorios": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [
+    "Unión Europea"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -1079,7 +1167,9 @@
    "categoria": "energia",
    "colectivos": [],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "Unión Europea"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -1097,7 +1187,9 @@
    "categoria": "exterior",
    "colectivos": [],
    "palancas": [],
-   "territorios": [],
+   "territorios": [
+    "España"
+   ],
    "cifras": [],
    "plazo": null,
    "deroga": null,
@@ -1114,7 +1206,9 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1132,7 +1226,9 @@
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1149,8 +1245,13 @@
    "texto": "Abolición de los sueldos vitalicios y supresión del aforamiento de las clases políticas. Eliminar las subvenciones a los sindicatos y a las formaciones políticas; en las elecciones cada formación política tiene la posibilidad de llegar a los votantes con una carta pagada por el Estado o la Comunidad Autónoma.",
    "oculta": false,
    "categoria": "empleo",
-   "colectivos": [],
-   "palancas": [],
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1167,7 +1268,9 @@
    "texto": "Recuperación de las empresas públicas privatizadas.",
    "oculta": false,
    "categoria": "energia",
-   "colectivos": [],
+   "colectivos": [
+    "empresas"
+   ],
    "palancas": [],
    "territorios": [],
    "cifras": [],
@@ -1186,7 +1289,10 @@
    "oculta": false,
    "categoria": "fiscalidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,
