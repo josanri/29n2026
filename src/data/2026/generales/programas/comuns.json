@@ -21900,7 +21900,25 @@
    "subapartado": null,
    "titulo": "Quan l’Estat participi en el capital, com a la candidatura de la giga factoria d’IA de Móra la Nova, garantir control democràtic i retorn al territori, i obrir els centres de petit format a la partici",
    "tituloFrase": "Quan l’Estat participi en el capital, com a la candidatura de la giga factoria d’IA de Móra la Nova, garantir control democràtic i retorn al territori, i obrir els centres de petit format a la partici",
-   "texto": "Quan l’Estat participi en el capital, com a la candidatura de la giga factoria d’IA de Móra la Nova, garantir control democràtic i retorn al territori, i obrir els centres de petit format a la participació d’ajuntaments, cooperatives i Aprovar un pla d’internalització de talent tecnològic: una escala de tecnòlegs públics, condicions competitives i menys externalització estructural.",
+   "texto": "Quan l’Estat participi en el capital, com a la candidatura de la giga factoria d’IA de Móra la Nova, garantir control democràtic i retorn al territori, i obrir els centres de petit format a la participació d’ajuntaments, cooperatives.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 1054,
+   "bloque": 6,
+   "seccion": "plurinacionalitat",
+   "pagina": 128,
+   "subapartado": null,
+   "titulo": "Aprovar un pla d’internalització de talent tecnològic: una escala de tecnòlegs públics, condicions competitives i menys externalització estructural.",
+   "tituloFrase": "Aprovar un pla d’internalització de talent tecnològic: una escala de tecnòlegs públics, condicions competitives i menys externalització estructural.",
+   "texto": "Aprovar un pla d’internalització de talent tecnològic: una escala de tecnòlegs públics, condicions competitives i menys externalització estructural.",
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
@@ -21913,7 +21931,7 @@
    "deroga": null
   },
   {
-   "n": 1054,
+   "n": 1055,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 128,
@@ -21931,7 +21949,7 @@
    "deroga": null
   },
   {
-   "n": 1055,
+   "n": 1056,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 128,
@@ -21951,7 +21969,7 @@
    "deroga": null
   },
   {
-   "n": 1056,
+   "n": 1057,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -21969,7 +21987,7 @@
    "deroga": null
   },
   {
-   "n": 1057,
+   "n": 1058,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -21992,7 +22010,7 @@
    "deroga": null
   },
   {
-   "n": 1058,
+   "n": 1059,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -22021,7 +22039,7 @@
    "deroga": null
   },
   {
-   "n": 1059,
+   "n": 1060,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -22041,7 +22059,7 @@
    "deroga": null
   },
   {
-   "n": 1060,
+   "n": 1061,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -22059,7 +22077,7 @@
    "deroga": null
   },
   {
-   "n": 1061,
+   "n": 1062,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -22079,7 +22097,7 @@
    "deroga": null
   },
   {
-   "n": 1062,
+   "n": 1063,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -22097,7 +22115,7 @@
    "deroga": null
   },
   {
-   "n": 1063,
+   "n": 1064,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -22118,7 +22136,7 @@
    "deroga": null
   },
   {
-   "n": 1064,
+   "n": 1065,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 129,
@@ -22138,7 +22156,7 @@
    "deroga": null
   },
   {
-   "n": 1065,
+   "n": 1066,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22158,7 +22176,7 @@
    "deroga": null
   },
   {
-   "n": 1066,
+   "n": 1067,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22180,7 +22198,7 @@
    "deroga": null
   },
   {
-   "n": 1067,
+   "n": 1068,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22198,7 +22216,7 @@
    "deroga": null
   },
   {
-   "n": 1068,
+   "n": 1069,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22218,7 +22236,7 @@
    "deroga": null
   },
   {
-   "n": 1069,
+   "n": 1070,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22240,7 +22258,7 @@
    "deroga": null
   },
   {
-   "n": 1070,
+   "n": 1071,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22262,7 +22280,7 @@
    "deroga": null
   },
   {
-   "n": 1071,
+   "n": 1072,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22284,7 +22302,7 @@
    "deroga": null
   },
   {
-   "n": 1072,
+   "n": 1073,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22302,7 +22320,7 @@
    "deroga": null
   },
   {
-   "n": 1073,
+   "n": 1074,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22320,7 +22338,7 @@
    "deroga": null
   },
   {
-   "n": 1074,
+   "n": 1075,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22338,7 +22356,7 @@
    "deroga": null
   },
   {
-   "n": 1075,
+   "n": 1076,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22358,7 +22376,7 @@
    "deroga": null
   },
   {
-   "n": 1076,
+   "n": 1077,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22378,7 +22396,7 @@
    "deroga": null
   },
   {
-   "n": 1077,
+   "n": 1078,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22396,7 +22414,7 @@
    "deroga": null
   },
   {
-   "n": 1078,
+   "n": 1079,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 130,
@@ -22416,7 +22434,7 @@
    "deroga": null
   },
   {
-   "n": 1079,
+   "n": 1080,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22434,7 +22452,7 @@
    "deroga": null
   },
   {
-   "n": 1080,
+   "n": 1081,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22454,7 +22472,7 @@
    "deroga": null
   },
   {
-   "n": 1081,
+   "n": 1082,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22476,7 +22494,7 @@
    "deroga": null
   },
   {
-   "n": 1082,
+   "n": 1083,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22496,7 +22514,7 @@
    "deroga": null
   },
   {
-   "n": 1083,
+   "n": 1084,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22514,7 +22532,7 @@
    "deroga": null
   },
   {
-   "n": 1084,
+   "n": 1085,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22534,7 +22552,7 @@
    "deroga": null
   },
   {
-   "n": 1085,
+   "n": 1086,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22554,7 +22572,7 @@
    "deroga": null
   },
   {
-   "n": 1086,
+   "n": 1087,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22574,7 +22592,7 @@
    "deroga": null
   },
   {
-   "n": 1087,
+   "n": 1088,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 131,
@@ -22598,7 +22616,7 @@
    "deroga": null
   },
   {
-   "n": 1088,
+   "n": 1089,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 132,
@@ -22621,7 +22639,7 @@
    "deroga": null
   },
   {
-   "n": 1089,
+   "n": 1090,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 132,
@@ -22642,7 +22660,7 @@
    "deroga": null
   },
   {
-   "n": 1090,
+   "n": 1091,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 132,
@@ -22664,7 +22682,7 @@
    "deroga": null
   },
   {
-   "n": 1091,
+   "n": 1092,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 132,
@@ -22686,7 +22704,7 @@
    "deroga": null
   },
   {
-   "n": 1092,
+   "n": 1093,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 132,
@@ -22706,7 +22724,7 @@
    "deroga": null
   },
   {
-   "n": 1093,
+   "n": 1094,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 132,
@@ -22727,7 +22745,7 @@
    "deroga": null
   },
   {
-   "n": 1094,
+   "n": 1095,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 133,
@@ -22749,7 +22767,7 @@
    "deroga": null
   },
   {
-   "n": 1095,
+   "n": 1096,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 133,
@@ -22771,7 +22789,7 @@
    "deroga": null
   },
   {
-   "n": 1096,
+   "n": 1097,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 133,
@@ -22793,7 +22811,7 @@
    "deroga": null
   },
   {
-   "n": 1097,
+   "n": 1098,
    "bloque": 6,
    "seccion": "plurinacionalitat",
    "pagina": 133,

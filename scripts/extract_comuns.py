@@ -139,6 +139,24 @@ def unir(partes):
     return normalizar(texto)
 
 
+# En la página 128 el PDF pega dos propuestas en una sola viñeta: falta la «•» de la segunda.
+# La primera termina en «cooperatives i» y la segunda empieza en «Aprovar un pla…».
+PROPUESTA_PEGADA = re.compile(r'\s+i\s+(?=Aprovar un pla d.internalitzaci)')
+
+
+def separar_propuestas_pegadas(brutas):
+    salida = []
+    for bruta in brutas:
+        texto = unir(bruta['partes'])
+        coincidencia = PROPUESTA_PEGADA.search(texto)
+        if not coincidencia:
+            salida.append(bruta)
+            continue
+        salida.append({'pagina': bruta['pagina'], 'partes': [texto[:coincidencia.start()] + '.']})
+        salida.append({'pagina': bruta['pagina'], 'partes': [texto[coincidencia.end():]]})
+    return salida
+
+
 def main():
     if len(sys.argv) != 3:
         raise SystemExit('Uso: python scripts/extract_comuns.py ORIGEN.pdf DESTINO.json')
@@ -146,9 +164,9 @@ def main():
     if len(documento) != PAGINAS:
         raise SystemExit(f'Se esperaban {PAGINAS} páginas; el PDF tiene {len(documento)}')
 
-    brutas = leer_medidas(documento)
+    brutas = separar_propuestas_pegadas(leer_medidas(documento))
     if len(brutas) < 1000:
-        raise SystemExit(f'Se esperaban unas 1.097 medidas; hay {len(brutas)}. Revisar las viñetas.')
+        raise SystemExit(f'Se esperaban unas 1.098 medidas; hay {len(brutas)}. Revisar las viñetas.')
 
     bloques, secciones = [], []
     for indice, capitulo in enumerate(CAPITULOS, start=1):

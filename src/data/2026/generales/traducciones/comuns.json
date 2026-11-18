@@ -4213,182 +4213,186 @@
    "texto": "Reservar capacidad de cálculo para administraciones, investigación, universidades, modelos públicos como ALIA, pymes, cooperativas y entidades."
   },
   "1053": {
-   "titulo": "Cuando el Estado participe en el capital, como en la candidatura de la gigafactoría de IA de Móra la Nova, garantizar control democrático y retorno al territorio, y abrir los centros de pequeño formato a la partici…",
-   "texto": "Cuando el Estado participe en el capital, como en la candidatura de la gigafactoría de IA de Móra la Nova, garantizar control democrático y retorno al territorio, y abrir los centros de pequeño formato a la participación de ayuntamientos, cooperativas y Aprobar un plan de internalización de talento tecnológico: una escala de tecnólogos públicos, condiciones competitivas y menos externalización estructural."
+   "titulo": "Cuando el Estado participe en el capital, como en la candidatura de la gigafactoría de IA de Móra la Nova, garantizar control democrático y retorno al territorio, y abrir los centros de pequeño formato a la participación de ayuntamientos, cooperativas.",
+   "texto": "Cuando el Estado participe en el capital, como en la candidatura de la gigafactoría de IA de Móra la Nova, garantizar control democrático y retorno al territorio, y abrir los centros de pequeño formato a la participación de ayuntamientos, cooperativas."
   },
   "1054": {
+   "titulo": "Aprobar un plan de internalización de talento tecnológico: una escala de tecnólogos públicos, condiciones competitivas y menos externalización estructural.",
+   "texto": "Aprobar un plan de internalización de talento tecnológico: una escala de tecnólogos públicos, condiciones competitivas y menos externalización estructural."
+  },
+  "1055": {
    "titulo": "Consolidar modelos de IA públicos, abiertos y auditables, como ALIA y AINA: modelos abiertos; datos de entrenamiento documentados; garantía plena del catalán, el euskera y el gallego, en cooperación con el Proyecto AINA.",
    "texto": "Consolidar modelos de IA públicos, abiertos y auditables, como ALIA y AINA: modelos abiertos; datos de entrenamiento documentados; garantía plena del catalán, el euskera y el gallego, en cooperación con el Proyecto AINA."
   },
-  "1055": {
+  "1056": {
    "titulo": "Abrir la computación pública (el BSC y futuras gigafactorías de IA) a pymes, cooperativas, universidades e investigación con criterios de servicio público.",
    "texto": "Abrir la computación pública (el BSC y futuras gigafactorías de IA) a pymes, cooperativas, universidades e investigación con criterios de servicio público."
   },
-  "1056": {
+  "1057": {
    "titulo": "Hacer compra pública innovadora con criterios de soberanía, código abierto y retorno local.",
    "texto": "Hacer compra pública innovadora con criterios de soberanía, código abierto y retorno local."
   },
-  "1057": {
+  "1058": {
    "titulo": "Crear un observatorio del impacto de la IA en el empleo con los agentes sociales.",
    "texto": "Crear un observatorio del impacto de la IA en el empleo con los agentes sociales. Garantizar formación continua dentro del horario laboral, financiada por las empresas que automatizan."
   },
-  "1058": {
+  "1059": {
    "titulo": "Crear itinerarios formativos en tecnologías abiertas e IA con compromiso de contratación, pactados con empresas, cooperativas y centros de investigación del territorio y con los servicios públicos de empleo (SEPE y…",
    "texto": "Crear itinerarios formativos en tecnologías abiertas e IA con compromiso de contratación, pactados con empresas, cooperativas y centros de investigación del territorio y con los servicios públicos de empleo (SEPE y SOC), con prioridad para mujeres y colectivos infrarrepresentados. Derechos digitales e IA con garantías La seguridad, las fronteras y la defensa son los ámbitos donde el riesgo para los derechos es más alto y el control democrático más débil. La UE ha dado un paso: el acuerdo del Ómnibus Digital prohíbe la IA que genera imágenes íntimas no consentidas y material de abuso sexual infantil. Hay que ir más allá del control parental. El problema de fondo es un modelo de negocio que diseña las plataformas para captar atención y datos. Los algoritmos ya deciden turnos, retribuciones y despidos. La Ley Rider fue pionera, pero la presunción de laboralidad solo cubre las plataformas de reparto. Las grandes plataformas son hoy el espacio público donde se forma la opinión, pero funcionan con algoritmos opacos e intereses privados. La UE tiene herramientas y ha empezado a usarlas. La IA generativa permite fabricar a bajo coste audios y vídeos falsos de candidaturas y automatizar la desinformación. Las obligaciones europeas ya han empezado a aplicarse: los deberes de transparencia del artículo 50 del Reglamento de IA se aplican desde agosto de 2026. Aun así, el etiquetado de los sistemas ya comercializados se ha aplazado hasta el 2 de diciembre de 2026. Las instituciones deben dar ejemplo. Si exigen transparencia a las plataformas, deben ser transparentes sobre quién influye en sus decisiones y con qué herramientas trabajan."
   },
-  "1059": {
+  "1060": {
    "titulo": "Aprobar durante el primer año de legislatura una ley orgánica de derechos digitales y gobernanza de la IA.",
    "texto": "Aprobar durante el primer año de legislatura una ley orgánica de derechos digitales y gobernanza de la IA. Retomaría y mejoraría el proyecto caducado y daría rango legal a la Carta de Derechos Digitales."
   },
-  "1060": {
+  "1061": {
    "titulo": "Garantizar derechos exigibles ante las decisiones automatizadas: explicación comprensible, impugnación, revisión humana y reparación de los daños.",
    "texto": "Garantizar derechos exigibles ante las decisiones automatizadas: explicación comprensible, impugnación, revisión humana y reparación de los daños."
   },
-  "1061": {
+  "1062": {
    "titulo": "Crear un registro público obligatorio de todos los sistemas algorítmicos y de IA de todas las administraciones, no solo de los de alto riesgo que exige el Reglamento europeo.",
    "texto": "Crear un registro público obligatorio de todos los sistemas algorítmicos y de IA de todas las administraciones, no solo de los de alto riesgo que exige el Reglamento europeo. En él constaría la finalidad, el proveedor, los datos que usa, los riesgos, la supervisión humana y las auditorías."
   },
-  "1062": {
+  "1063": {
    "titulo": "Exigir evaluación de impacto en derechos fundamentales y no discriminación antes de desplegar cualquier sistema de alto riesgo en el sector público, sin esperar a 2027.",
    "texto": "Exigir evaluación de impacto en derechos fundamentales y no discriminación antes de desplegar cualquier sistema de alto riesgo en el sector público, sin esperar a 2027."
   },
-  "1063": {
+  "1064": {
    "titulo": "Convertir la Agencia Española de Supervisión de la IA (AESIA) en autoridad administrativa independiente, como la Agencia Española de Protección de Datos (AEPD), dotarla de recursos y de un consejo asesor…",
    "texto": "Convertir la Agencia Española de Supervisión de la IA (AESIA) en autoridad administrativa independiente, como la Agencia Española de Protección de Datos (AEPD), dotarla de recursos y de un consejo asesor con sociedad civil, sindicatos y expertos, y coordinarla con las autoridades autonómicas de protección de datos."
   },
-  "1064": {
+  "1065": {
    "titulo": "Defender en la UE que no haya nuevas rebajas del Reglamento de IA ni del Reglamento general de protección de datos (RGPD).",
    "texto": "Defender en la UE que no haya nuevas rebajas del Reglamento de IA ni del Reglamento general de protección de datos (RGPD)."
   },
-  "1065": {
+  "1066": {
    "titulo": "No habilitar por ley las excepciones a la prohibición de identificación biométrica remota en tiempo real en espacios públicos, y limitar estrictamente la identificación biométrica diferida.",
    "texto": "No habilitar por ley las excepciones a la prohibición de identificación biométrica remota en tiempo real en espacios públicos, y limitar estrictamente la identificación biométrica diferida."
   },
-  "1066": {
+  "1067": {
    "titulo": "Prohibir la policía predictiva más allá de lo que fija el Reglamento europeo, incluidos los sistemas basados en perfiles colectivos o zonas.",
    "texto": "Prohibir la policía predictiva más allá de lo que fija el Reglamento europeo, incluidos los sistemas basados en perfiles colectivos o zonas."
   },
-  "1067": {
+  "1068": {
    "titulo": "Establecer un control parlamentario específico de los contratos de vigilancia, defensa y control fronterizo (Palantir y similares).",
    "texto": "Establecer un control parlamentario específico de los contratos de vigilancia, defensa y control fronterizo (Palantir y similares). Se distinguiría la información clasificada de las garantías de derechos, que deben ser públicas."
   },
-  "1068": {
+  "1069": {
    "titulo": "Exigir diligencia debida en derechos humanos en la contratación tecnológica pública, con exclusión de las empresas implicadas en vulneraciones graves documentadas.",
    "texto": "Exigir diligencia debida en derechos humanos en la contratación tecnológica pública, con exclusión de las empresas implicadas en vulneraciones graves documentadas."
   },
-  "1069": {
+  "1070": {
    "titulo": "Impulsar en la UE y en la ONU dos iniciativas: una regulación vinculante de la exportación de tecnología de vigilancia y la prohibición de las armas autónomas letales sin control humano significativo.",
    "texto": "Impulsar en la UE y en la ONU dos iniciativas: una regulación vinculante de la exportación de tecnología de vigilancia y la prohibición de las armas autónomas letales sin control humano significativo. Democracia frente al tecnofeudalismo"
   },
-  "1070": {
+  "1071": {
    "titulo": "Dotar por ley a la CNMC, coordinador de servicios digitales desde 2024, de competencias y recursos para: › aplicar la DSA; › garantizar el acceso de la investigación a los datos de las plataformas; › auditar los s…",
    "texto": "Dotar por ley a la CNMC, coordinador de servicios digitales desde 2024, de competencias y recursos para: › aplicar la DSA; › garantizar el acceso de la investigación a los datos de las plataformas; › auditar los sistemas de recomendación."
   },
-  "1071": {
+  "1072": {
    "titulo": "Defender en la UE la aplicación plena de la DSA y de la Ley de mercados digitales (DMA), al margen de cualquier negociación comercial o amenaza de aranceles.",
    "texto": "Defender en la UE la aplicación plena de la DSA y de la Ley de mercados digitales (DMA), al margen de cualquier negociación comercial o amenaza de aranceles."
   },
-  "1072": {
+  "1073": {
    "titulo": "Obligar a las grandes redes a ser interoperables e impulsar redes abiertas y federadas, con presencia institucional prioritaria en canales públicos y abiertos.",
    "texto": "Obligar a las grandes redes a ser interoperables e impulsar redes abiertas y federadas, con presencia institucional prioritaria en canales públicos y abiertos."
   },
-  "1073": {
+  "1074": {
    "titulo": "Hacer que el feed sin perfilado sea la opción predeterminada y garantizar el derecho a cambiar de red sin perder la comunidad, ampliando las obligaciones de portabilidad de la DMA a contactos y publicacio…",
    "texto": "Hacer que el feed sin perfilado sea la opción predeterminada y garantizar el derecho a cambiar de red sin perder la comunidad, ampliando las obligaciones de portabilidad de la DMA a contactos y publicaciones."
   },
-  "1074": {
+  "1075": {
    "titulo": "Aplicar con rigor el Reglamento europeo de publicidad política, plenamente aplicable desde el 10 de octubre de 2025.",
    "texto": "Aplicar con rigor el Reglamento europeo de publicidad política, plenamente aplicable desde el 10 de octubre de 2025."
   },
-  "1075": {
+  "1076": {
    "titulo": "Reformar la ley electoral (LOREG): › prohibir los deepfakes de candidaturas; › aplicar en período electoral la obligación europea de etiquetar el contenido sintético, con competencia de la Junta Electoral…",
    "texto": "Reformar la ley electoral (LOREG): › prohibir los deepfakes de candidaturas; › aplicar en período electoral la obligación europea de etiquetar el contenido sintético, con competencia de la Junta Electoral, retirada rápida y sanciones; › aprobar un código de conducta de los partidos sobre el uso de la IA en campaña."
   },
-  "1076": {
+  "1077": {
    "titulo": "Garantizar agendas abiertas y huella legislativa: registro público de reuniones con lobbies tecnológicos y trazabilidad de las aportaciones a cada norma digital.",
    "texto": "Garantizar agendas abiertas y huella legislativa: registro público de reuniones con lobbies tecnológicos y trazabilidad de las aportaciones a cada norma digital."
   },
-  "1077": {
+  "1078": {
    "titulo": "Usar IA con modelos auditables, confidencialidad garantizada e infraestructura bajo jurisdicción europea en los procedimientos de datos personales, en las Cortes y en las administraciones del Estado, y promover…",
    "texto": "Usar IA con modelos auditables, confidencialidad garantizada e infraestructura bajo jurisdicción europea en los procedimientos de datos personales, en las Cortes y en las administraciones del Estado, y promover el mismo criterio en los parlamentos autonómicos."
   },
-  "1078": {
+  "1079": {
    "titulo": "Desarrollar en código abierto las herramientas digitales de la democracia (tramitación parlamentaria, transparencia, datos legislativos abiertos), como bienes comunes reutilizables, en cooperación con los parlamentos…",
    "texto": "Desarrollar en código abierto las herramientas digitales de la democracia (tramitación parlamentaria, transparencia, datos legislativos abiertos), como bienes comunes reutilizables, en cooperación con los parlamentos autonómicos y el Parlamento Europeo y a partir de herramientas existentes como Decidim."
   },
-  "1079": {
+  "1080": {
    "titulo": "Desarrollar medidas para fomentar las organizaciones profesionales de verificación de información, reconociendo su función pública como ya se hace con los medios de comunicación.",
    "texto": "Desarrollar medidas para fomentar las organizaciones profesionales de verificación de información, reconociendo su función pública como ya se hace con los medios de comunicación."
   },
-  "1080": {
+  "1081": {
    "titulo": "Aprobar una ley de datos de interés público: los datos generados al prestar servicios públicos, también por concesionarias, son de titularidad pública y deben compartirse con la administración y, con garantías…",
    "texto": "Aprobar una ley de datos de interés público: los datos generados al prestar servicios públicos, también por concesionarias, son de titularidad pública y deben compartirse con la administración y, con garantías de privacidad, con centros de investigación de interés público."
   },
-  "1081": {
+  "1082": {
    "titulo": "Crear espacios de datos comunes (salud, movilidad, vivienda, energía) con gobernanza democrática y privacidad desde el diseño.",
    "texto": "Crear espacios de datos comunes (salud, movilidad, vivienda, energía) con gobernanza democrática y privacidad desde el diseño."
   },
-  "1082": {
+  "1083": {
    "titulo": "Prohibir la reutilización comercial no autorizada de datos públicos y aplicar la minimización de datos a todos los proyectos digitales.",
    "texto": "Prohibir la reutilización comercial no autorizada de datos públicos y aplicar la minimización de datos a todos los proyectos digitales."
   },
-  "1083": {
+  "1084": {
    "titulo": "Publicar conjuntos de datos públicos y documentados para entrenar IA en las lenguas oficiales, bajo gobernanza pública.",
    "texto": "Publicar conjuntos de datos públicos y documentados para entrenar IA en las lenguas oficiales, bajo gobernanza pública."
   },
-  "1084": {
+  "1085": {
    "titulo": "No aceptar en los tratados comerciales cláusulas de libre flujo de datos que limiten la capacidad de regular.",
    "texto": "No aceptar en los tratados comerciales cláusulas de libre flujo de datos que limiten la capacidad de regular. Memoria democrática En las dos últimas legislaturas, nuestra presencia en el gobierno del Estado ha sido clave para avanzar en la memoria democrática. La aprobación de la Ley de memoria democrática ha ampliado el acceso a la nacionalidad española de origen para los descendientes de personas españolas en los supuestos previstos por la ley. Según datos oficiales a 31 de marzo de 2026, se habían aprobado 545.000 expedientes y practicado 306.500 inscripciones en el Registro Civil Consular. También se han impulsado actos de reparación histórica, como la anulación del juicio a Salvador Puig Antich, en enero de 2025. Aun así, hay que seguir profundizando tanto en la aplicación de la Ley de memoria democrática como en impulsar nuevas medidas de justicia y reparación."
   },
-  "1085": {
+  "1086": {
    "titulo": "Garantizaremos que se aceleren y prioricen Aceleración de las exhumaciones e identificaciones: Miles de desaparecidos continúan en fosas sin localizar o sin identificar debido a la lentitud administrativa…",
    "texto": "Garantizaremos que se aceleren y prioricen Aceleración de las exhumaciones e identificaciones: Miles de desaparecidos continúan en fosas sin localizar o sin identificar debido a la lentitud administrativa y a limitaciones presupuestarias."
   },
-  "1086": {
+  "1087": {
    "titulo": "Seguiremos combatiendo la banalización y el olvido, frenando los actos públicos o discursos que equiparan a las víctimas con los verdugos de la dictadura",
    "texto": "Seguiremos combatiendo la banalización y el olvido, frenando los actos públicos o discursos que equiparan a las víctimas con los verdugos de la dictadura"
   },
-  "1087": {
+  "1088": {
    "titulo": "Reformaremos la ley de secretos oficiales, para que esté adaptada a los estándares democráticos y se permita el libre acceso a documentación militar, policial y de inteligencia del período franquista…",
    "texto": "Reformaremos la ley de secretos oficiales, para que esté adaptada a los estándares democráticos y se permita el libre acceso a documentación militar, policial y de inteligencia del período franquista y de la Transición para su investigación. Gobiernos locales Defensa de la autonomía local y fortalecimiento de los gobiernos municipales Los ayuntamientos son la administración más cercana a la ciudadanía y una pieza fundamental para garantizar los servicios públicos, la cohesión social, la participación democrática y las transformaciones ecológicas y económicas. Por eso, defendemos un municipalismo fuerte, con capacidad política, administrativa y financiera para responder a las necesidades de la población. Impulsaremos una reforma de la legislación básica de régimen local que supere las limitaciones introducidas por la Ley de racionalización y sostenibilidad de la Administración local (LRSAL), refuerce la autonomía municipal y garantice la capacidad de los ayuntamientos para desarrollar políticas públicas de proximidad. Queremos reforzar la autonomía política y de gestión de los gobiernos locales, garantizando los recursos necesarios para ejercer sus competencias y prestar servicios públicos de calidad. Cualquier nueva competencia o responsabilidad atribuida a los ayuntamientos deberá ir acompañada de la financiación correspondiente. También proponemos flexibilizar las limitaciones a la contratación de personal, especialmente en los municipios con finanzas saneadas, simplificar los procedimientos administrativos e impulsar mecanismos de cooperación y financiación plurianual entre administraciones. Hace falta garantizar una mayor participación de los gobiernos locales en las decisiones estatales que afecten a sus competencias, recursos y servicios públicos. Una nueva financiación para el mundo local Apostamos por una reforma de la financiación en el marco de los principios constitucionalmente reconocidos de suficiencia financiera y de autonomía en la gestión de los intereses de las entidades locales, que deberá inspirarse en los principios generales de lealtad institucional, transparencia, colaboración y cooperación interadministrativa y adecuación normativa a la realidad social, jurídica, económica e institucional. En este sentido, proponemos:"
   },
-  "1088": {
+  "1089": {
    "titulo": "Impulsar una nueva ley de finanzas locales que dote de estabilidad, rigor y recursos las competencias asumidas por los ayuntamientos, de forma coordinada con la de financiación autonómica, definiendo con clari…",
    "texto": "Impulsar una nueva ley de finanzas locales que dote de estabilidad, rigor y recursos las competencias asumidas por los ayuntamientos, de forma coordinada con la de financiación autonómica, definiendo con claridad la participación de las haciendas locales en los tributos del Estado (PIE) y en los de las comunidades autónomas."
   },
-  "1089": {
+  "1090": {
    "titulo": "Establecer un sistema transparente de participación en los tributos del Estado que permita una planificación presupuestaria estable y no sujeta a liquidaciones del sistema que puedan afectar la estabilidad…",
    "texto": "Establecer un sistema transparente de participación en los tributos del Estado que permita una planificación presupuestaria estable y no sujeta a liquidaciones del sistema que puedan afectar la estabilidad de los entes locales de manera imprevisible."
   },
-  "1090": {
+  "1091": {
    "titulo": "Ampliación del espacio tributario local, con la posible incorporación de nuevas figuras tributarias y la dotación de un ámbito de autonomía normativa mayor en el conjunto de los tributos locales, que permita la…",
    "texto": "Ampliación del espacio tributario local, con la posible incorporación de nuevas figuras tributarias y la dotación de un ámbito de autonomía normativa mayor en el conjunto de los tributos locales, que permita la incorporación de elementos de progresividad en el sistema tributario local. Flexibilizar la aplicación de la regla de gasto y el destino del superávit a aquellos entes locales que cumplan los objetivos de estabilidad presupuestaria y financiera y de deuda pública. Resto de entes locales."
   },
-  "1091": {
+  "1092": {
    "titulo": "Reivindicar la participación de la Administración Local en el Consejo de Política Fiscal y Financiera, como miembro de pleno derecho.",
    "texto": "Reivindicar la participación de la Administración Local en el Consejo de Política Fiscal y Financiera, como miembro de pleno derecho. En todo caso, garantizar mecanismos efectivos de participación e interlocución de los gobiernos locales en las decisiones sobre financiación pública que les afecten."
   },
-  "1092": {
+  "1093": {
    "titulo": "Coordinar actuaciones con la administración del Estado y la Generalitat para buscar fórmulas de lucha contra el fraude y el dumping fiscal.",
    "texto": "Coordinar actuaciones con la administración del Estado y la Generalitat para buscar fórmulas de lucha contra el fraude y el dumping fiscal."
   },
-  "1093": {
+  "1094": {
    "titulo": "Modificar la regla de gasto —uno de los elementos que más han limitado la autonomía municipal— para que no se aplique a los ayuntamientos que tengan las cuentas saneadas, es decir, que tengan superávit o equilibrio presupuestario y un nivel bajo de deuda",
    "texto": "Modificar la regla de gasto —uno de los elementos que más han limitado la autonomía municipal— para que no se aplique a los ayuntamientos con las cuentas saneadas, es decir, con superávit o equilibrio presupuestario, un nivel bajo de deuda y que paguen a sus proveedores en menos de 30 días. Mientras no se apruebe la ley de finanzas locales, exigimos un nuevo modelo de financiación local con la aprobación urgente de las siguientes medidas:"
   },
-  "1094": {
+  "1095": {
    "titulo": "Determinar las fórmulas correspondientes de compensación financiera a las entidades locales por los beneficios fiscales obligatorios en los tributos locales establecidos o que se establezcan por ley.",
    "texto": "Determinar las fórmulas correspondientes de compensación financiera a las entidades locales por los beneficios fiscales obligatorios en los tributos locales establecidos o que se establezcan por ley."
   },
-  "1095": {
+  "1096": {
    "titulo": "Realizar una ponencia única de los valores catastrales en el conjunto del Estado español en un plazo máximo de 2 años.",
    "texto": "Realizar una ponencia única de los valores catastrales en el conjunto del Estado español en un plazo máximo de 2 años. Al mismo tiempo, se traspasará la competencia en materia catastral a las comunidades autónomas."
   },
-  "1096": {
+  "1097": {
    "titulo": "Crear un fondo de compensación del IVA soportado por la Administración local en sus inversiones y en la prestación de servicios obligatorios.",
    "texto": "Crear un fondo de compensación del IVA soportado por la Administración local en sus inversiones y en la prestación de servicios obligatorios."
   },
-  "1097": {
+  "1098": {
    "titulo": "Derogar las restricciones a la formalización de operaciones de endeudamiento por parte de las entidades locales y restablecer el régimen de endeudamiento de las entidades locales establecido en el Real Decreto Legislativo",
    "texto": "Derogar las restricciones a la formalización de operaciones de endeudamiento por parte de las entidades locales y restablecer el régimen de endeudamiento de las entidades locales establecido en el Real Decreto Legislativo 2/2004, de 5 de marzo, por el que se aprueba el texto refundido de la Ley Reguladora de las Haciendas Locales. Desarrollar una organización territorial propia para Cataluña: las veguerías. Cataluña tiene competencias exclusivas en régimen local, tal como prevé el Estatuto. Por tanto, le corresponde regular, desarrollar y desplegar su propia arquitectura institucional a partir del municipio y la veguería como organización territorial básica de Cataluña. Entendemos que la organización supralocal básica de Cataluña debe ser la veguería. En consecuencia, proponemos eliminar las diputaciones provinciales y transferir sus competencias y bienes patrimoniales a las veguerías. En este sentido, proponemos modificar mediante ley orgánica las delimitaciones provinciales actuales para ajustarlas a la Ley 30/2010, de 3 de agosto, de veguerías, al tiempo que se simplifica el conjunto de la estructura administrativa para evitar duplicidades y disfunciones. Elecciones generales UN COM UNA CASA 29N 2026"
   }
