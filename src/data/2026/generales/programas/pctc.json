@@ -4,24 +4,2235 @@
  "siglas": "PCTC",
  "color": "#e3061a",
  "colorClaro": "#f8b4b8",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Programa de lluita",
+ "subtitulo": "95 eixos de lluita en 11 blocs per construir una oposició obrera",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "observaciones": [
+  "Programa en catalán. Los textos se mantienen en catalán: no están traducidos.",
+  "Es la versión catalana del «Programa de lucha» del PCTE, que se publica en la web oposicionobrera.pcte.es: mismas 11 secciones y mismas 95 fichas, con el mismo orden. El PDF no menciona al PCTC: el texto habla del Partit Comunista dels Treballadors d’Espanya. El PDF no tiene fecha.",
+  "El texto se presenta como «programa de lluita» y no como programa electoral: «Aquestes no són un seguit de mesures per aplicar des de les institucions».",
+  "Cada ficha de «Eixos de lluita» es una medida, con su título. Las fichas no están numeradas en el original: el número sigue el orden del PDF."
+ ],
+ "pdf": "/programas/pctc-programa-de-lluita-2026.pdf",
+ "fuentePdf": "https://oposicionobrera.pcte.es/assets/docs/CAT-Programa-de-lluita-PCTC-d.pdf",
+ "paginas": 24,
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Presentación",
+  "texto": "A Espanya, el poder adquisitiu dels treballadors i treballadores és avui un 4,6% inferior al de 2008. L’habitatge absorbeix una part creixent dels salaris. El cost de la vida no para de pujar. Les jornades ens deixen devastats físicament i mentalment. Es privatitzen els serveis públics. I mentre que falten mitjans per a necessitats bàsiques, creix la despesa militar, els rics cada vegada són més rics i els estats es preparen per tenir-nos més controlats si protestem.\n\nAquest sistema, el sistema capitalista, s’alça sobre la nostra misèria arreu del món. Tant és així que milions de persones es veuen forçades a abandonar les seves llars, fugir dels seus països i jugar-se la vida per poder sobreviure. Fugen de la misèria, de les guerres, de la devastació ambiental, de la barbàrie del capitalisme.\n\nI què fan els partits polítics i els governs? La gran majoria d’ells assumeix aquest sistema com l’únic possible. Fins i tot els partits reformistes que diuen que defensen els nostres interessos els adapten, en realitat, a les possibilitats de la llei i l’economia, cosa que no és res més que adaptar-los a les línies vermelles que imposen la gran empresa i la banca.\n\nPer què conformar-nos amb tot això si som la majoria social? Per què acceptar amb resignació aquesta realitat política si som nosaltres els qui ho produïm tot? Fa massa temps que vam deixar de confiar en les nostres pròpies forces, que vam cedir la nostra acció política, que vam abandonar la bandera de la lluita obrera. I així només som més febles davant el fet que sigui explotada i davant del fet de la violència exercida sobre ella.\n\nHem de reprendre el nostre propi camí. Hem de tornar a lluitar, des de cada empresa, fàbrica i polígon; des de cada barri i poble, des de cada universitat i centre d’estudis. Guiats únicament i exclusivament pels nostres propis interessos i necessitats, i no pels dels qui s’enriqueixen a costa nostra.\n\nPer això aquest no és un programa electoral. Aquestes no són un seguit de mesures per aplicar des de les institucions. Aquest és el programa de lluita que el Partit Comunista dels Treballadors d’Espanya presenta davant de la classe obrera i els sectors populars; un conjunt de reivindicacions definit únicament i exclusivament segons els nostres interessos, que, alhora que millori les nostres condicions de vida i de treball, debiliti els poderosos.\n\nUn programa de lluita que guiï la construcció d’una oposició obrera davant dels capitalistes i els seus governs. Perquè els drets es conquereixen, es defensen i s’amplien mitjançant l’organització."
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
+ "cifras": [
+  {
+   "valor": "35",
+   "unidad": "horas semanales",
+   "texto": "Jornada máxima ya, sin reducción salarial, como paso hacia las 30",
+   "contexto": "Jornada de 35 hores setmanals ja",
+   "medida": 2
+  },
+  {
+   "valor": "1.540",
+   "unidad": "horas al año",
+   "texto": "Tope de trabajo efectivo anual",
+   "contexto": "Topall de 1.540 hores anuals de treball efectiu",
+   "medida": 2
+  },
+  {
+   "valor": "25",
+   "unidad": "días laborables de vacaciones",
+   "texto": "Cinco semanas de vacaciones retribuidas",
+   "contexto": "Cinc setmanes (25 dies laborables) de vacances retribuïdes",
+   "medida": 3
+  },
+  {
+   "valor": "60",
+   "unidad": "años",
+   "texto": "Jubilación ordinaria, sin penalización; a los 55 en trabajos penosos",
+   "contexto": "Jubilació ordinària als 60 anys",
+   "medida": 4
+  },
+  {
+   "valor": "50 %",
+   "unidad": "menos de alquiler",
+   "texto": "Bajada inmediata de los alquileres, a costa de los propietarios",
+   "contexto": "Baixada immediata dels lloguers del 50%",
+   "medida": 21
+  },
+  {
+   "valor": "15 %",
+   "unidad": "de los ingresos",
+   "texto": "Alquiler social obligatorio en viviendas de bancos, fondos y grandes tenedores",
+   "contexto": "no més del 15% dels seus ingressos",
+   "medida": 19
+  },
+  {
+   "valor": "10 %",
+   "unidad": "de las viviendas",
+   "texto": "Parque público permanente de vivienda en alquiler, a corto plazo",
+   "contexto": "almenys el 10% del total d’habitatges",
+   "medida": 24
+  },
+  {
+   "valor": "0,5 %",
+   "unidad": "de viviendas turísticas",
+   "texto": "Límite de la vivienda turística en cada localidad",
+   "contexto": "a un 0,5% del conjunt d’habitatges de la localitat",
+   "medida": 23
+  },
+  {
+   "valor": "25 %",
+   "unidad": "del gasto sanitario",
+   "texto": "Para la atención primaria",
+   "contexto": "25% de la despesa sanitària per a l’atenció primària",
+   "medida": 32
+  },
+  {
+   "valor": "52",
+   "unidad": "semanas de permiso",
+   "texto": "Permiso por nacimiento igual, intransferible y retribuido al 100 %",
+   "contexto": "Permís per naixement de 52 setmanes",
+   "medida": 62
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "De inmediato",
+   "texto": "Jornada de 35 horas semanales sin reducción salarial",
+   "medida": 2
+  },
+  {
+   "plazo": "De inmediato",
+   "texto": "Bajar un 50 % los alquileres",
+   "medida": 21
+  },
+  {
+   "plazo": "A corto plazo",
+   "texto": "Parque público de alquiler del 10 % de las viviendas",
+   "medida": 24
+  }
+ ],
+ "ordenPlazos": [
+  "De inmediato",
+  "A corto plazo"
+ ],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Lluitar pel treball, el salari i el temps de vida",
+   "tituloMayus": "LLUITAR PEL TREBALL, EL SALARI I EL TEMPS DE VIDA",
+   "lema": "",
+   "cita": "",
+   "intro": "Per a la majoria de la classe obrera, el salari és la principal font d’ingressos. I avui ja no n’hi ha prou: els preus de la cistella de la compra pugen, com puja el cost de l’habitatge o de la llum. Per a cada vegada més persones, tenir feina no garanteix ni tan sols uns mínims vitals.\n\nAlhora, la «flexibilitat» que tant es promou no és res més que una trampa per colar-nos el treball temporal, la subcontractació, la facilitat d’acomiadament; de la mateixa manera que els avanços tecnològics no es tradueixen en una reducció del temps de treball, sinó en un control més gran sobre les nostres vides. Ha arribat el moment que la classe treballadora es planti i que ens tornem a fer forts des dels nostres comitès, seccions sindicals i assemblees.",
+   "pagina": 7
+  },
+  {
+   "id": 2,
+   "titulo": "Més mecanismes de control obrer en la producció",
+   "tituloMayus": "MÉS MECANISMES DE CONTROL OBRER EN LA PRODUCCIÓ",
+   "lema": "",
+   "cita": "",
+   "intro": "Els qui treballem coneixem el funcionament real de les empreses, però les decisions fonamentals es prenen sense comptar amb nosaltres. La propietat decideix inversions, tancaments, deslocalitzacions o automatitzacions, encara que les seves conseqüències recaiguin sobre plantilles i territoris sencers. Defensar les nostres conquestes i drets passa també per instaurar mecanismes estables de control de la patronal.\n\nAvui, a més, es parla molt de reindustrialitzar, d’«autonomia estratègica» i de planificació. Però la política industrial que s’impulsa des de Brussel·les i Madrid respon als interessos de l’economia de guerra i el benefici privat, no a les nostres necessitats. Que una empresa sigui pública no és suficient: una empresa estatal pot acomiadar, externalitzar i precaritzar com qualsevol altra. El que és decisiu és per a què produeix i qui controla el que es produeix.\n\nPer això totes les propostes d’aquest bloc van en la mateixa direcció: arrencar informació i convertir-la en control, exercit per l’organització unitària, sindical i de base de la classe obrera i en el seu propi benefici. Això passa també perquè sectors essencials com l’energia, el transport o les telecomunicacions deixin d’estar sotmesos als interessos de grans grups privats.",
+   "pagina": 9
+  },
+  {
+   "id": 3,
+   "titulo": "L’habitatge no és un negoci",
+   "tituloMayus": "L’HABITATGE NO ÉS UN NEGOCI",
+   "lema": "",
+   "cita": "",
+   "intro": "L’habitatge és una necessitat bàsica, però s’ha convertit també en una font de rendes i especulació. Una part creixent del salari acaba en lloguers i quotes hipotecàries mentre bancs, fons i grans propietaris acumulen habitatges. El problema de l’habitatge no és un problema a part: és una part del salari que ens prenen fora del centre de treball.\n\nLa conseqüència és que persones amb feina no poden independitzar-se, i que perdre ingressos pot significar perdre també la casa. Per això la lluita per l’habitatge es lliura en dos fronts que han d’anar units: als barris, organitzant-nos veïns i veïnes, i als centres de treball. Cal portar fins al final la lluita per l’habitatge i impedir el negoci amb una necessitat tan bàsica com tenir un sostre.",
+   "pagina": 11
+  },
+  {
+   "id": 4,
+   "titulo": "Defensar els serveis públics i la protecció social",
+   "tituloMayus": "DEFENSAR ELS SERVEIS PÚBLICS I LA PROTECCIÓ SOCIAL",
+   "lema": "",
+   "cita": "",
+   "intro": "El salari no s’acaba en la nòmina. Garantir mínims vitals dignes depèn també de disposar de sanitat, educació i protecció social sense haver de comprar-les al mercat.\n\nQuan un servei públic es deteriora, qui té diners busca una alternativa privada i qui no en té suporta esperes, falta de places o serveis insuficients. La privatització converteix necessitats bàsiques en oportunitats de negoci a costa de les nostres vides.\n\nDefensar el que és públic no pot ser defensar la gestió del qui ho està desmantellant. La defensa dels serveis exigeix la unitat organitzada dels qui hi treballen i dels qui els utilitzen.",
+   "pagina": 13
+  },
+  {
+   "id": 5,
+   "titulo": "Assegurar la cistella de la compra i els drets al camp",
+   "tituloMayus": "ASSEGURAR LA CISTELLA DE LA COMPRA I ELS DRETS AL CAMP",
+   "lema": "",
+   "cita": "",
+   "intro": "No existeix un únic interès «del camp». No es troben en la mateixa situació el jornaler, el petit productor que viu del seu treball i la gran propietat o l’agroindústria multinacional.\n\nEls petits productors es veuen obligats a vendre a preus que no cobreixen els seus costos mentre que els treballadors compren aquests mateixos productes molt més cars. Entre tots dos, la gran distribució i l’agroindústria imposen les seves condicions. La reacció aprofita aquesta ruïna i la converteix en bandera contra els drets dels jornalers, contra els migrants i contra qualsevol regulació.\n\nL’aliança que proposem és la contrària: la de qui treballa la terra contra els qui l’acaparen i especulen amb el que produïm, amb els drets dels assalariats del camp al centre.",
+   "pagina": 15
+  },
+  {
+   "id": 6,
+   "titulo": "Defensar la joventut treballadora",
+   "tituloMayus": "DEFENSAR LA JOVENTUT TREBALLADORA",
+   "lema": "",
+   "cita": "",
+   "intro": "Els i les joves s’incorporen al treball mitjançant pràctiques, temporalitat i salaris baixos, i amb enormes dificultats per accedir a un habitatge. Aquesta precarietat es presenta com una etapa normal de la vida, però no és una etapa: és l’anticipació del que es vol generalitzar. La joventut sofreix primer el que després s’acaba imposant al conjunt dels treballadors.\n\nNo existeix una lluita generacional, és una lluita de classes. La defensa de les condicions de vida i de treball de la joventut és responsabilitat de tota la classe treballadora.",
+   "pagina": 16
+  },
+  {
+   "id": 7,
+   "titulo": "Igualtat real per a les dones treballadores",
+   "tituloMayus": "IGUALTAT REAL PER A LES DONES TREBALLADORES",
+   "lema": "",
+   "cita": "",
+   "intro": "La igualtat legal no ha eliminat les desigualtats reals. Les dones treballadores continuen concentrades en les feines més mal pagades, en les jornades parcials i en els treballs de cures, dins i fora de casa. La maternitat continua penalitzant, i la falta d’ingressos o d’habitatge pot impedir trencar situacions de dependència i de violència masclista.\n\nAquestes desigualtats no són un residu del passat; serveixen, a més, per abaratir la força de treball del conjunt de la classe. Per això la lluita per la igualtat real es lliura als mateixos llocs que totes les altres: als convenis que infravaloren els treballs feminitzats, als serveis públics que haurien de socialitzar les cures i en l’habitatge, sense el qual no hi ha independència possible.",
+   "pagina": 17
+  },
+  {
+   "id": 8,
+   "titulo": "Per l’accés a la cultura i la ciència",
+   "tituloMayus": "PER L’ACCÉS A LA CULTURA I LA CIÈNCIA",
+   "lema": "",
+   "cita": "",
+   "intro": "El progrés no es pot mesurar només per quant produeix una societat, sinó també per quant de temps tenen les persones per llegir, estudiar, crear, fer esport i passar temps en comunitat. Reduir la jornada no té sentit si el temps guanyat no es pot viure.\n\nAvui l’accés a la cultura i a l’esport depèn de la renda i del barri, i els qui treballen en la cultura i la ciència sofreixen una precarietat crònica. Al mateix temps, la recerca pública s’orienta cada vegada més a les prioritats de la competència entre empreses i blocs, inclosa la indústria militar. Defensem una cultura i una ciència al servei de les necessitats de la majoria, no de la rendibilitat ni de la guerra.",
+   "pagina": 18
+  },
+  {
+   "id": 9,
+   "titulo": "Per la pau i l’internacionalisme",
+   "tituloMayus": "PER LA PAU I L’INTERNACIONALISME",
+   "lema": "",
+   "cita": "",
+   "intro": "La competència entre grans potències i blocs econòmics empeny al rearmament i augmenta el risc de noves guerres. La militarització de l’economia ja no és una amenaça: és un fet, i la paguem amb austeritat, amb augment de la repressió i la vigilància i, en darrer terme, amb les nostres pròpies vides.\n\nLa nostra classe no necessita triar entre potències capitalistes. Els diners que avui es destinen al rearmament són els que falten en habitatge, sanitat o educació, i les plantilles de la indústria militar no han de triar entre la seva feina i la pau: poden produir el que la societat necessita. La nostra classe ha d’imposar la seva pròpia agenda internacional, una que no passa per la guerra sinó per la solidaritat dels pobles.",
+   "pagina": 19
+  },
+  {
+   "id": 10,
+   "titulo": "Contra la reacció i l’autoritarisme: defensar les nostres llibertats",
+   "tituloMayus": "CONTRA LA REACCIÓ I L’AUTORITARISME: DEFENSAR LES NOSTRES LLIBERTATS",
+   "lema": "",
+   "cita": "",
+   "intro": "Com més es deterioren les nostres condicions de vida, més necessita el capital mantenir-nos dividits i callats. Ho fa per dues vies que es reforcen entre si. Des de l’Estat, amb lleis que castiguen la protesta, sancions que converteixen un piquet en una falta greu, policies infiltrats en assemblees i sindicats i una vigilància cada vegada més gran. I des de la reacció, que aprofita el malestar dels qui s’empobreixen per assenyalar la persona migrant, la dona, la comunitat LGTB o al qui lluita, mentre que deixa intactes els qui s’enriqueixen amb la nostra misèria.\n\nNo són fenòmens oposats. Les lleis repressives es mantenen governi qui governi, i els qui desallotgen famílies per la força treballen per als mateixos propietaris que protegeix la llei. Per això no confiem la defensa de les nostres llibertats a cap govern. La resposta a la reacció és l’organització i la unitat de la classe treballadora a cada centre de treball, cada barri i cada centre d’estudi.",
+   "pagina": 20
+  },
+  {
+   "id": 11,
+   "titulo": "Augmentar els nostres drets polítics i sindicals",
+   "tituloMayus": "AUGMENTAR ELS NOSTRES DRETS POLÍTICS I SINDICALS",
+   "lema": "",
+   "cita": "",
+   "intro": "Totes les qüestions anteriors porten a una mateixa conclusió: cal organització, més organització, tota l’organització possible. La llibertat per associar-se, però, continua trobant avui múltiples obstacles, molt especialment dins dels centres de treball. Davant del poder organitzat de l’Estat i la patronal, un treballador aïllat és feble, però l’organització col·lectiva canvia aquesta relació.",
+   "pagina": 21
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Lluitar pel treball, el salari i el temps de vida",
+   "tituloFrase": "Lluitar pel treball, el salari i el temps de vida",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 2,
+   "titulo": "Més mecanismes de control obrer en la producció",
+   "tituloFrase": "Més mecanismes de control obrer en la producció",
+   "intro": "",
+   "pagina": 9,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 3,
+   "titulo": "L’habitatge no és un negoci",
+   "tituloFrase": "L’habitatge no és un negoci",
+   "intro": "",
+   "pagina": 11,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 4,
+   "titulo": "Defensar els serveis públics i la protecció social",
+   "tituloFrase": "Defensar els serveis públics i la protecció social",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  },
+  {
+   "id": "5",
+   "bloque": 5,
+   "titulo": "Assegurar la cistella de la compra i els drets al camp",
+   "tituloFrase": "Assegurar la cistella de la compra i els drets al camp",
+   "intro": "",
+   "pagina": 15,
+   "subapartados": []
+  },
+  {
+   "id": "6",
+   "bloque": 6,
+   "titulo": "Defensar la joventut treballadora",
+   "tituloFrase": "Defensar la joventut treballadora",
+   "intro": "",
+   "pagina": 16,
+   "subapartados": []
+  },
+  {
+   "id": "7",
+   "bloque": 7,
+   "titulo": "Igualtat real per a les dones treballadores",
+   "tituloFrase": "Igualtat real per a les dones treballadores",
+   "intro": "",
+   "pagina": 17,
+   "subapartados": []
+  },
+  {
+   "id": "8",
+   "bloque": 8,
+   "titulo": "Per l’accés a la cultura i la ciència",
+   "tituloFrase": "Per l’accés a la cultura i la ciència",
+   "intro": "",
+   "pagina": 18,
+   "subapartados": []
+  },
+  {
+   "id": "9",
+   "bloque": 9,
+   "titulo": "Per la pau i l’internacionalisme",
+   "tituloFrase": "Per la pau i l’internacionalisme",
+   "intro": "",
+   "pagina": 19,
+   "subapartados": []
+  },
+  {
+   "id": "10",
+   "bloque": 10,
+   "titulo": "Contra la reacció i l’autoritarisme: defensar les nostres llibertats",
+   "tituloFrase": "Contra la reacció i l’autoritarisme: defensar les nostres llibertats",
+   "intro": "",
+   "pagina": 20,
+   "subapartados": []
+  },
+  {
+   "id": "11",
+   "bloque": 11,
+   "titulo": "Augmentar els nostres drets polítics i sindicals",
+   "tituloFrase": "Augmentar els nostres drets polítics i sindicals",
+   "intro": "",
+   "pagina": 21,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Salaris",
+   "tituloFrase": "Salaris",
+   "texto": "Salaris per damunt dels preus. Clàusula de revisió automàtica segons l’IPC real, sense topalls i amb efectes des de l’1 de gener. Recuperació del poder adquisitiu perdut des de 2021. Augments lineals, amb els mateixos euros per a totes les categories, per no eixamplar la distància entre els qui cobren més i els qui cobren menys.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Jornada laboral",
+   "tituloFrase": "Jornada laboral",
+   "texto": "Jornada de 35 hores setmanals ja, sense reducció salarial, com a pas cap a les 30. Topall de 1.540 hores anuals de treball efectiu. Registre horari controlat per la representació dels treballadors i prohibició de les bosses d’hores i de la distribució irregular de la jornada. La reducció no es podrà compensar amb menys plantilla, ritmes més intensos, hores extraordinàries o més disponibilitat.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Jornada de 35 hores setmanals ja, sense reducció salarial, com a pas cap a les 30.",
+    "Topall de 1.540 hores anuals de treball efectiu."
+   ],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Vacances",
+   "tituloFrase": "Vacances",
+   "texto": "Cinc setmanes (25 dies laborables) de vacances retribuïdes. L’augment de la productivitat s’ha de traduir també en més temps per viure.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Cinc setmanes (25 dies laborables) de vacances retribuïdes."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Jubilació",
+   "tituloFrase": "Jubilació",
+   "texto": "Jubilació ordinària als 60 anys, amb una pensió suficient i sense penalització. En treballs especialment penosos, perillosos, tòxics o insalubres, jubilació als 55 anys.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Jubilació ordinària als 60 anys, amb una pensió suficient i sense penalització.",
+    "En treballs especialment penosos, perillosos, tòxics o insalubres, jubilació als 55 anys."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Contractació fixa",
+   "tituloFrase": "Contractació fixa",
+   "texto": "Tota necessitat permanent, amb ocupació permanent: contracte fix a partir de 6 mesos de contractes encadenats en un període de 12, a la mateixa empresa o grup, sigui quin sigui el lloc de treball. Acabar amb els falsos autònoms i amb les pràctiques no laborals que cobreixen llocs de treball. Prohibició de les ETT.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos",
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Tota necessitat permanent, amb ocupació permanent: contracte fix a partir de 6 mesos de contractes encadenats en un període de 12, a la mateixa empresa o grup, sigui quin sigui el lloc de treball."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Subcontractació",
+   "tituloFrase": "Subcontractació",
+   "texto": "Mateix treball, mateix salari i mateixos drets. La subcontractació no es pot utilitzar per rebaixar salaris i condicions. Les activitats estructurals s’integren en la plantilla principal; mentrestant, mateixes condicions que a la principal.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Readmissió",
+   "tituloFrase": "Readmissió",
+   "texto": "Readmissió obligatòria, a elecció del treballador, davant de l’acomiadament injustificat.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Acomiadaments col·lectius",
+   "tituloFrase": "Acomiadaments col·lectius",
+   "texto": "Prohibició dels acomiadaments col·lectius en empreses amb beneficis o que reparteixin dividends. Autorització administrativa prèvia per a qualsevol acomiadament col·lectiu, amb informe vinculant de la representació dels treballadors i obertura completa dels comptes del grup. Indemnitzacions que dissuadeixin d’acomiadar.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Salut laboral",
+   "tituloFrase": "Salut laboral",
+   "texto": "La salut per damunt del benefici. Les plantilles han de poder paralitzar de manera efectiva els treballs davant de riscos greus i negar-se a complir ordres que posin en risc la vida.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Comptes oberts",
+   "tituloFrase": "Comptes oberts",
+   "texto": "Obrir els comptes. Els representants dels treballadors han de tenir accés efectiu a beneficis, dividends, inversions, deute, ajudes públiques i operacions dins dels grups empresarials.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Informació i veto",
+   "tituloFrase": "Informació i veto",
+   "texto": "Dret d’informació prèvia i veto suspensiu de la representació dels treballadors davant de contractacions externes, externalitzacions, canvis d’horaris, torns i ritmes, reorganitzacions i sistemes algorítmics d’organització del treball.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Tancaments i deslocalitzacions",
+   "tituloFrase": "Tancaments i deslocalitzacions",
+   "texto": "Cap tancament o deslocalització no ha de ser una decisió exclusivament privada. Davant d’amenaces a l’ocupació, obertura completa dels comptes, estudi obligatori d’alternatives i devolució de les ajudes públiques si s’incompleixen compromisos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Intervenció d’empreses",
+   "tituloFrase": "Intervenció d’empreses",
+   "texto": "Quan una empresa viable i necessària hagi de desaparèixer exclusivament per decisió dels seus propietaris, defensem la seva intervenció i el pas a propietat estatal sota mecanismes de control obrer.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Sectors estratègics",
+   "tituloFrase": "Sectors estratègics",
+   "texto": "Propietat estatal sota mecanismes de control obrer dels sectors estratègics, especialment energia, transport, telecomunicacions i capacitats industrials essencials.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Política industrial",
+   "tituloFrase": "Política industrial",
+   "texto": "Desenvolupament d’una política industrial planificada orientada a les necessitats socials, amb empreses estatals, inversió estable, formació professional, capacitat científica i tecnològica pròpia i mecanismes democràtics de control i decisió.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Noves tecnologies",
+   "tituloFrase": "Noves tecnologies",
+   "texto": "La introducció de noves tecnologies s’ha de negociar amb els treballadors. Si una màquina permet produir el mateix en menys temps, el resultat ha de ser menys jornada i no menys ocupació.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Desnonaments",
+   "tituloFrase": "Desnonaments",
+   "texto": "Prohibició efectiva de qualsevol desnonament de llars treballadores del seu habitatge habitual, sigui quina sigui la causa, el propietari —també l’Administració— i la situació del qui l’habita: amb contracte o sense, en subarrendament o sense papers.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Alternativa d’habitatge",
+   "tituloFrase": "Alternativa d’habitatge",
+   "texto": "En cas que el propietari necessiti l’habitatge per viure-hi, l’Administració garantirà sempre, abans de la sortida, una alternativa digna i estable al mateix barri.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Lloguer social",
+   "tituloFrase": "Lloguer social",
+   "texto": "Qui no pugui pagar el lloguer no es queda sense casa: si l’habitatge és d’un banc, fons o gran tenidor, lloguer social obligatori de no més del 15% dels seus ingressos i amb contracte indefinit; en els altres casos, l’Administració reallotja la llar en el parc públic, en el mateix barri i en les mateixes condicions.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Qui no pugui pagar el lloguer no es queda sense casa: si l’habitatge és d’un banc, fons o gran tenidor, lloguer social obligatori de no més del 15% dels seus ingressos i amb contracte indefinit; en els altres casos, l’Administració reallotja la llar en el parc públic, en el mateix barri i en les mateixes condicions."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Subministraments bàsics",
+   "tituloFrase": "Subministraments bàsics",
+   "texto": "Prohibició de qualsevol tall d’aigua, electricitat o calefacció a llars treballadores.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Baixada de lloguers",
+   "tituloFrase": "Baixada de lloguers",
+   "texto": "Baixada immediata dels lloguers del 50%, a costa del guany dels propietaris i no mitjançant ajudes públiques que acaben a la seva butxaca i empenyen els preus a l’alça. A partir d’aquí, preus màxims lligats als salaris mitjans de la zona. Contractes indefinits per defecte.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Baixada immediata dels lloguers del 50%, a costa del guany dels propietaris i no mitjançant ajudes públiques que acaben a la seva butxaca i empenyen els preus a l’alça."
+   ],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Lloguer d’habitatge habitual",
+   "tituloFrase": "Lloguer d’habitatge habitual",
+   "texto": "Qualsevol lloguer que sigui habitatge habitual, també el de temporada i el d’habitacions, es regeix per les mateixes normes de protecció, durada i preu.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Habitatge turístic",
+   "tituloFrase": "Habitatge turístic",
+   "texto": "Limitar l’habitatge turístic a un 0,5% del conjunt d’habitatges de la localitat.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Limitar l’habitatge turístic a un 0,5% del conjunt d’habitatges de la localitat."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Parc públic",
+   "tituloFrase": "Parc públic",
+   "texto": "Construcció d’un gran parc públic permanent d’habitatge de lloguer fins a assolir, a curt termini, almenys el 10% del total d’habitatges, protegit per sempre, mitjançant promoció directa, foment del cooperativisme social i l’autoconstrucció, rehabilitació, adquisició d’immobles i utilització del sòl públic.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Construcció d’un gran parc públic permanent d’habitatge de lloguer fins a assolir, a curt termini, almenys el 10% del total d’habitatges, protegit per sempre, mitjançant promoció directa, foment del cooperativisme social i l’autoconstrucció, rehabilitació, adquisició d’immobles i utilització del sòl públic."
+   ],
+   "plazo": "A corto plazo",
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Expropiació",
+   "tituloFrase": "Expropiació",
+   "texto": "Expropiació sense indemnització dels habitatges buits i d’ús especulatiu de bancs, fons i grans tenidors per incorporar-los al parc públic.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Preu del lloguer públic",
+   "tituloFrase": "Preu del lloguer públic",
+   "texto": "Preu dels lloguers públics establert segons els ingressos de les llars.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Habitatge protegit",
+   "tituloFrase": "Habitatge protegit",
+   "texto": "Prohibició de vendre o desqualificar qualsevol habitatge públic o protegit.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Hipoteques",
+   "tituloFrase": "Hipoteques",
+   "texto": "Cap execució hipotecària de l’habitatge habitual de llars treballadores: reestructuració del deute a càrrec de la banca, dació en pagament quan la llar ho triï i amb dret a continuar a l’habitatge en lloguer social, i cancel·lació dels deutes dels qui ja van perdre casa seva.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Privatitzacions",
+   "tituloFrase": "Privatitzacions",
+   "texto": "Ni una privatització més: derogació de la Llei 15/1997 i prohibició de nous concerts, concessions i externalitzacions en sanitat, educació i serveis socials.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley 15/1997, de nuevas formas de gestión del Sistema Nacional de Salud"
+  },
+  {
+   "n": 30,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Gestió pública",
+   "tituloFrase": "Gestió pública",
+   "texto": "Recuperació de serveis externalitzats i privatitzats mitjançant gestió pública directa sota mecanismes democràtics de control obrer.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Ocupació pública",
+   "tituloFrase": "Ocupació pública",
+   "texto": "Plantilles públiques suficients i estables. També en els serveis públics: necessitat permanent, ocupació permanent.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Sanitat pública",
+   "tituloFrase": "Sanitat pública",
+   "texto": "Reforç de la sanitat pública, especialment de l’atenció primària, l’atenció especialitzada, la salut mental, la salut bucodental, la prevenció i la recerca. 25% de la despesa sanitària per a l’atenció primària.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "25% de la despesa sanitària per a l’atenció primària."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Medicaments",
+   "tituloFrase": "Medicaments",
+   "texto": "Desenvolupament de capacitats públiques en medicaments, productes sanitaris i recerca farmacèutica.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Educació pública",
+   "tituloFrase": "Educació pública",
+   "texto": "Sistema educatiu exclusivament públic, gratuït, laic i inclusiu en totes les etapes; amb centres i plantilles suficients. Integració dels centres concertats en una xarxa pública única. Descens de les ràtios.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Gratuïtat educativa",
+   "tituloFrase": "Gratuïtat educativa",
+   "texto": "La gratuïtat ha d’abraçar també els costos que poden impedir estudiar: materials, transport, menjador o residència.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Xarxa de cures",
+   "tituloFrase": "Xarxa de cures",
+   "texto": "Creació d’una xarxa pública universal de cures: escoles bressol, ajuda a domicili, centres de dia, residències, dependència, discapacitat i suports comunitaris.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "infancia",
+    "discapacidad"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Cures públiques",
+   "tituloFrase": "Cures públiques",
+   "texto": "Gestió pública directa de les cures fonamentals, amb ocupació estable, salaris dignes i plantilles suficients.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Pensions",
+   "tituloFrase": "Pensions",
+   "texto": "Cap pensió per sota del salari mínim. Revalorització automàtica amb l’IPC real i recuperació del que s’ha perdut quan la inflació superi la revalorització.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Cap pensió per sota del salari mínim."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Plans de pensions",
+   "tituloFrase": "Plans de pensions",
+   "texto": "Rebutgem la seva privatització: fi dels incentius fiscals als plans privats i als fons de pensions d’ocupació.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Atur i baixa mèdica",
+   "tituloFrase": "Atur i baixa mèdica",
+   "texto": "Prestació per desocupació mentre duri l’atur, mai inferior al salari mínim. Incapacitat temporal pagada al 100% del salari des del primer dia.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Incapacitat temporal pagada al 100% del salari des del primer dia.",
+    "Prestació per desocupació mentre duri l’atur, mai inferior al salari mínim."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Transport",
+   "tituloFrase": "Transport",
+   "texto": "Prohibició completa de les subcontractes per a tasques de disseny d’infraestructures i manteniment en el transport.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Drets laborals",
+   "tituloFrase": "Drets laborals",
+   "texto": "Plens drets laborals i sindicals per als treballadors agrícoles, ramaders, pesquers i de la indústria alimentària.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Treballadors migrants",
+   "tituloFrase": "Treballadors migrants",
+   "texto": "Mateixos drets per a treballadors migrants i nacionals. Cap situació administrativa no es pot utilitzar per pagar menys.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Preus en origen",
+   "tituloFrase": "Preus en origen",
+   "texto": "Compliment efectiu de la prohibició de comprar per sota del cost de producció, amb inspecció en què participin les organitzacions de petits productors i jornalers, i publicació de totes les sancions.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Transparència",
+   "tituloFrase": "Transparència",
+   "texto": "Transparència sobre costos, contractes i marges comercials.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Cistella bàsica",
+   "tituloFrase": "Cistella bàsica",
+   "texto": "Preus màxims de venda per a una cistella de productes bàsics i marges màxims per a la gran distribució. Preu pagat en origen visible al costat del de venda.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Capacitats públiques",
+   "tituloFrase": "Capacitats públiques",
+   "texto": "Desenvolupament de capacitats públiques d’emmagatzematge, transformació, transport, distribució i compra d’aliments sota mecanismes de control democràtic.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Terres",
+   "tituloFrase": "Terres",
+   "texto": "Bancs públics de terres i recuperació productiva de terres abandonades.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Accés a recursos",
+   "tituloFrase": "Accés a recursos",
+   "texto": "Accés col·lectiu a maquinària, tecnologia, recerca, serveis veterinaris i finançament.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Abastiment",
+   "tituloFrase": "Abastiment",
+   "texto": "Mantenir les produccions i capacitats necessàries per garantir un abastament alimentari suficient i a preus accessibles per al poble.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Medi rural",
+   "tituloFrase": "Medi rural",
+   "texto": "Serveis públics, transport, habitatge, connectivitat i activitat productiva que permetin viure al medi rural amb els mateixos drets que a les ciutats.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Drets des del primer dia",
+   "tituloFrase": "Drets des del primer dia",
+   "texto": "Si produeixes, treballes; si treballes, cobres i tens drets: tota activitat a l’empresa, també les pràctiques, cotitza i genera drets des del primer dia.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Pràctiques",
+   "tituloFrase": "Pràctiques",
+   "texto": "Només pràctiques curriculars que no cobreixin tasques essencials de producció, amb tutor, límit d’hores i un màxim de becaris per plantilla, i amb compensació no inferior al salari mínim en proporció a les hores. Prohibició de les pràctiques extracurriculars.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Només pràctiques curriculars que no cobreixin tasques essencials de producció, amb tutor, límit d’hores i un màxim de becaris per plantilla, i amb compensació no inferior al salari mínim en proporció a les hores."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Salaris per edat",
+   "tituloFrase": "Salaris per edat",
+   "texto": "Fi de les dobles escales salarials i de qualsevol condició pitjor justificada per l’edat: cap contracte formatiu per sota del salari de conveni. Mateix treball, mateix salari, tinguis l’edat que tinguis.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Habitatge jove",
+   "tituloFrase": "Habitatge jove",
+   "texto": "Reserva d’un terç del parc públic de lloguer per a joves treballadors, amb lloguer segons ingressos, en lloc d’ajudes que acaben en mans dels propietaris.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Reserva d’un terç del parc públic de lloguer per a joves treballadors, amb lloguer segons ingressos, en lloc d’ajudes que acaben en mans dels propietaris."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Beques",
+   "tituloFrase": "Beques",
+   "texto": "Beca salari equivalent al salari mínim per a estudiants de famílies treballadores i plaça en residència pública per als qui estudiïn fora de la seva localitat.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes",
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Beca salari equivalent al salari mínim per a estudiants de famílies treballadores i plaça en residència pública per als qui estudiïn fora de la seva localitat."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Espais juvenils",
+   "tituloFrase": "Espais juvenils",
+   "texto": "Obertura de patis, poliesportius i biblioteques escolars a les tardes i els caps de setmana, i un centre juvenil públic a cada barri.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Apostes i joc",
+   "tituloFrase": "Apostes i joc",
+   "texto": "Prohibició de les cases d’apostes, el joc en línia i la seva publicitat.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Igualtat salarial",
+   "tituloFrase": "Igualtat salarial",
+   "texto": "Igual salari pel mateix treball i per treballs d’igual valor.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Jornada completa",
+   "tituloFrase": "Jornada completa",
+   "texto": "Dret a passar a jornada completa per a tota treballadora a temps parcial que ho demani. Millora de salaris i plantilles en cures, neteja, comerç, sanitat, educació i serveis socials.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Acomiadament i maternitat",
+   "tituloFrase": "Acomiadament i maternitat",
+   "texto": "Nul·litat i readmissió automàtica en qualsevol acomiadament fins que el fill o la filla compleixi 3 anys.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Nul·litat i readmissió automàtica en qualsevol acomiadament fins que el fill o la filla compleixi 3 anys."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Permís per naixement",
+   "tituloFrase": "Permís per naixement",
+   "texto": "Permís per naixement de 52 setmanes, igual, intransferible i retribuït al 100%, que enllaci amb la plaça pública de 0 a 3 anys.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "familias",
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Permís per naixement de 52 setmanes, igual, intransferible i retribuït al 100%, que enllaci amb la plaça pública de 0 a 3 anys."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Cures",
+   "tituloFrase": "Cures",
+   "texto": "Serveis públics que socialitzin les cures: plaça pública 0-3 i fi de la llista d’espera de la dependència.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "infancia",
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Violència masclista",
+   "tituloFrase": "Violència masclista",
+   "texto": "Garantir habitatge, ingressos, ocupació i atenció sanitària, psicològica i jurídica suficients a les dones que pateixen violència, perquè puguin trencar la dependència econòmica.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Drets reproductius",
+   "tituloFrase": "Drets reproductius",
+   "texto": "Drets sexuals i reproductius garantits dins de la sanitat pública: totes les interrupcions de l’embaràs, en hospitals públics.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Prostitució",
+   "tituloFrase": "Prostitució",
+   "texto": "Prohibició de la prostitució i el proxenetisme, amb alternatives materials per a les dones prostituïdes.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Gestació subrogada",
+   "tituloFrase": "Gestació subrogada",
+   "texto": "Rebuig de la gestació subrogada. Persecució de les agències que hi fan d’intermediàries des d’Espanya.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Biblioteques i centres culturals",
+   "tituloFrase": "Biblioteques i centres culturals",
+   "texto": "Una biblioteca pública a cada barri, oberta a les tardes i els caps de setmana, i extensió de centres culturals, escoles artístiques i instal·lacions esportives als barris obrers, els pobles i el medi rural.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Gratuïtat cultural",
+   "tituloFrase": "Gratuïtat cultural",
+   "texto": "Gratuïtat de museus i equipaments públics, ús gratuït de les instal·lacions esportives públiques per a menors i persones desocupades, i preu màxim en tota activitat cultural subvencionada.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Treball cultural",
+   "tituloFrase": "Treball cultural",
+   "texto": "Conveni i cotització en qualsevol treball cultural contractat per les administracions, també el subcontractat, sense falsos autònoms.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Investigació",
+   "tituloFrase": "Investigació",
+   "texto": "Fi dels contractes per projecte encadenats: places estables per al personal investigador.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "R+D militar",
+   "tituloFrase": "R+D militar",
+   "texto": "Cap euro de recerca pública per a finalitats militars: els fons d’R+D militar, a salut, energia, alimentació i medi ambient.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Rearmament",
+   "tituloFrase": "Rearmament",
+   "texto": "No al rearmament: reducció de la despesa militar real i anul·lació dels Programes Especials de Modernització. Aquests recursos, per a habitatge, serveis, ocupació i indústria civil.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Indústria militar",
+   "tituloFrase": "Indústria militar",
+   "texto": "Reconversió de la indústria militar cap a produccions socialment necessàries, de manera que es garanteixi l’ocupació de les seves plantilles.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "OTAN i UE",
+   "tituloFrase": "OTAN i UE",
+   "texto": "Sortida d’Espanya de l’OTAN i de la Unió Europea.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Tropes a l’exterior",
+   "tituloFrase": "Tropes a l’exterior",
+   "texto": "Retorn de les tropes espanyoles desplegades en operacions imperialistes.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Bases militars",
+   "tituloFrase": "Bases militars",
+   "texto": "Ruptura dels acords que permeten l’ús de territori espanyol per forces militars estrangeres i recuperació de la plena sobirania sobre les bases.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Solidaritat internacional",
+   "tituloFrase": "Solidaritat internacional",
+   "texto": "Solidaritat amb els pobles que lluiten contra l’ocupació, el colonialisme i l’agressió imperialista.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Israel",
+   "tituloFrase": "Israel",
+   "texto": "Embargament militar total i sense excepcions a l’Estat d’Israel, i ruptura de les seves relacions diplomàtiques, militars i comercials amb Espanya.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Palestina"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Sàhara Occidental",
+   "tituloFrase": "Sàhara Occidental",
+   "texto": "Reconeixement de la República Àrab Sahrauí Democràtica i referèndum d’autodeterminació lliure i vinculant per al poble sahrauí. Espanya, com a antiga potència administradora, ha de retirar el seu suport al pla d’autonomia marroquí i renunciar a qualsevol acord amb el Marroc a costa del poble sahrauí i dels seus recursos.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Llei Mordassa",
+   "tituloFrase": "Llei Mordassa",
+   "texto": "Derogació de la Llei de seguretat ciutadana (l’anomenada Llei mordassa) i anul·lació de les sancions imposades amb aquesta llei per participar en vagues i protestes.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley de Seguridad Ciudadana («Ley Mordaza»)"
+  },
+  {
+   "n": 82,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Llei universitària",
+   "tituloFrase": "Llei universitària",
+   "texto": "Derogació de la Llei de convivència universitària. Cap sanció acadèmica per organitzar vagues, piquets o protestes als centres d’estudi.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley de Convivencia Universitaria"
+  },
+  {
+   "n": 83,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Desocupació il·legal",
+   "tituloFrase": "Desocupació il·legal",
+   "texto": "Il·legalització de les empreses de desocupació d’immobles, prohibició de contractar-les i persecució penal de les coaccions i els desallotjaments il·legals que practiquen.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Impunitat policial",
+   "tituloFrase": "Impunitat policial",
+   "texto": "Fi de la impunitat policial: prohibició de les pilotes de goma, prohibició de l’ús de vehicles blindats (tanquetes) i de material militar en el control de vagues, piquets i manifestacions, i investigació independent de les actuacions policials.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "CIE i regularització",
+   "tituloFrase": "CIE i regularització",
+   "texto": "Tancament dels CIE i fi de les identificacions per perfil ètnic i de les devolucions en calent. Mecanisme permanent de regularització per a totes les persones treballadores sense papers.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Feixisme i franquisme",
+   "tituloFrase": "Feixisme i franquisme",
+   "texto": "Il·legalització de les organitzacions feixistes i franquistes i dissolució de les fundacions que enalteixen la dictadura: ni un espai ni un euro públic per a aquestes organitzacions. Rebuig de qualsevol llei que equipari el feixisme amb el comunisme.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Delictes d’opinió",
+   "tituloFrase": "Delictes d’opinió",
+   "texto": "Derogació dels delictes d’opinió que protegeixen el poder: injúries a la Corona i a les institucions i ultratges a símbols.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Delitos de injurias a la Corona y a las instituciones y de ultrajes a símbolos"
+  },
+  {
+   "n": 88,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Persones LGTB",
+   "tituloFrase": "Persones LGTB",
+   "texto": "Protecció de les persones LGTB davant de l’acomiadament, l’assetjament laboral, la discriminació en l’accés a l’habitatge i les agressions en tota mena d’empreses, també les de menys de 50 treballadors. Resposta organitzada als barris i centres de treball davant de qualsevol agressió.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Representació",
+   "tituloFrase": "Representació",
+   "texto": "Dret a elegir representant, també a les empreses de menys de sis treballadors, mitjançant delegats territorials o sectorials elegits per les seves plantilles.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Dret d’assemblea",
+   "tituloFrase": "Dret d’assemblea",
+   "texto": "Dret a assemblea en horari de treball: almenys 10 hores retribuïdes l’any.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Dret a assemblea en horari de treball: almenys 10 hores retribuïdes l’any."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Acomiadament sindical",
+   "tituloFrase": "Acomiadament sindical",
+   "texto": "Nul·litat i readmissió obligatòria en qualsevol acomiadament o sanció per activitat sindical. Protecció davant de l’acomiadament per a qui promou assemblees, candidatures o seccions sindicals des del primer moment.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Serveis mínims",
+   "tituloFrase": "Serveis mínims",
+   "texto": "Limitar d’arrel els serveis mínims abusius i l’ampliació del que es declara servei essencial.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Unitat obrera",
+   "tituloFrase": "Unitat obrera",
+   "texto": "Unitat dels treballadors davant de qualsevol intent de dividir-los per origen, sexe, orientació sexual o identitat, edat, tipus de contracte o empresa. Combat del racisme i la xenofòbia des de la igualtat de drets i la defensa d’interessos comuns.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Consultes vinculants",
+   "tituloFrase": "Consultes vinculants",
+   "texto": "Assemblees i consultes vinculants a les plantilles abans de signar convenis, ERO o qualsevol acord que afecti les seves condicions.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Rendició de comptes",
+   "tituloFrase": "Rendició de comptes",
+   "texto": "Rendició periòdica de comptes dels representants davant de l’assemblea de treballadors del centre.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ],
  "comunidad": "Cataluña"
 }
