@@ -1,0 +1,1295 @@
+{
+ "id": "convergents",
+ "idiomaOrigen": "catalán",
+ "estado": "revisada",
+ "fecha": "2026-11-18",
+ "medidas": {
+  "1": {
+   "titulo": "Defenderemos el derecho inalienable de los catalanes a decidir libremente su futuro y a construir una sociedad más justa y libre, mediante la consecución de las máximas cotas de autogobierno.",
+   "texto": ""
+  },
+  "2": {
+   "titulo": "Propondremos a las Cortes Generales una resolución de reconocimiento de la nación catalana y la constatación de que España es un Estado plurinacional, con todas las consecuencias políticas y jurídicas que se deriven de ello.",
+   "texto": ""
+  },
+  "3": {
+   "titulo": "Impulsaremos un concierto económico para Cataluña, como el que tienen en el País Vasco.",
+   "texto": "Para hacerlo posible, aprobaremos una ley orgánica específica y una modificación del Estatuto de Autonomía."
+  },
+  "4": {
+   "titulo": "Impulsaremos la modificación del Estatuto de Autonomía de Cataluña para que el conocimiento del catalán sea obligatorio para todos los ciudadanos catalanes, como lo es el del español para todos los ciudadanos españoles, y para que el Tribunal Constitucional revise en consecuencia la jurisprudencia en esta materia.",
+   "texto": ""
+  },
+  "5": {
+   "titulo": "Exigiremos al Gobierno español que el catalán sea lengua oficial en todas las instituciones europeas y que utilice todas las medidas de presión a su alcance, incluido el veto a otras decisiones, para garantizar el éxito de este propósito.",
+   "texto": ""
+  },
+  "6": {
+   "titulo": "Trabajaremos para que el catalán se utilice en todos los ámbitos de la vida y en las instituciones del país, también en las administraciones estatales que operan en Cataluña.",
+   "texto": ""
+  },
+  "7": {
+   "titulo": "Acabaremos con la diferenciación entre valenciano y catalán en todas las instituciones del Estado, del mismo modo que no se diferencia el castellano/español del andaluz o del canario.",
+   "texto": ""
+  },
+  "8": {
+   "titulo": "Exigiremos el traspaso exclusivo de las competencias en materia de cultura a las comunidades autónomas, junto con los presupuestos, bienes y recursos oportunos, y pediremos en consecuencia la desaparición del Ministerio de Cultura.",
+   "texto": ""
+  },
+  "9": {
+   "titulo": "Defenderemos la aplicación efectiva e íntegra de la amnistía a todas las personas afectadas como solución más justa y primer paso hacia la normalización y la reconstrucción de la confianza democrática, y defenderemos a la vez la necesidad de un «buen gobierno» que, lejos de la confrontación estéril y desde el diálogo, nos permita crecer como país.",
+   "texto": ""
+  },
+  "10": {
+   "titulo": "Aprobaremos, de acuerdo con la propia Constitución española, la delegación integral a la Generalitat de Cataluña de las competencias en materia de inmigración, sanidad y educación —desde las escuelas infantiles hasta las universidades—, y las incorporaremos posteriormente al Estatuto de Autonomía.",
+   "texto": ""
+  },
+  "11": {
+   "titulo": "Trabajaremos para que los Mossos d'Esquadra y la Policía Local se conviertan en los únicos cuerpos policiales de Cataluña, sustituyendo progresivamente, en el plazo de 4 años y en sus funciones, a la Policía Nacional y la Guardia Civil.",
+   "texto": ""
+  },
+  "12": {
+   "titulo": "Exigiremos el traspaso a la Generalitat de Cataluña de los aeropuertos de interés general del Estado (Barcelona, Girona, Reus y Sabadell), así como la gestión integral del sistema aeroportuario.",
+   "texto": ""
+  },
+  "13": {
+   "titulo": "Promoveremos una ley para constituir selecciones nacionales catalanas en todas las disciplinas deportivas, con el objetivo de participar oficialmente en competiciones internacionales.",
+   "texto": ""
+  },
+  "14": {
+   "titulo": "Constituiremos, mediante la aprobación de una ley orgánica, el Consejo de Justicia de Cataluña, tal como establecía nuestro Estatuto y de acuerdo con las competencias reconocidas por el Tribunal Constitucional.",
+   "texto": ""
+  },
+  "15": {
+   "titulo": "Propondremos a las Cortes Generales que las matrículas de los vehículos incorporen el escudo de la comunidad autónoma correspondiente, siguiendo el modelo de Alemania o Francia, como símbolo de pluralidad territorial.",
+   "texto": ""
+  },
+  "16": {
+   "titulo": "Impulsaremos una ley contra la ocupación ilegal de la propiedad privada que establezca la obligación de restituir su posesión en un máximo de 48 horas, y en 24 horas si se trata de la vivienda habitual o de un centro productivo.",
+   "texto": ""
+  },
+  "17": {
+   "titulo": "Apoyaremos la expulsión del país de las personas inmigrantes mayores de edad en situación irregular que hayan delinquido, respetando los derechos fundamentales y los convenios internacionales vigentes.",
+   "texto": ""
+  },
+  "18": {
+   "titulo": "Reivindicamos un sistema de bienestar eficiente, público y concertado, que cuide de las personas mayores, los niños, las personas con discapacidad y las más vulnerables.",
+   "texto": ""
+  },
+  "19": {
+   "titulo": "Escucharemos las necesidades de la ciudadanía e impulsaremos un marco de cooperación público-privada con el tejido asociativo, estableciendo un sistema de prestación de servicios que garantice el bienestar y la calidad de vida de todos.",
+   "texto": ""
+  },
+  "20": {
+   "titulo": "Defenderemos la equidad como eje de las políticas sociales para promover la autonomía de las personas y ofrecer oportunidades a todos, en todos los ámbitos y a lo largo de la vida.",
+   "texto": ""
+  },
+  "21": {
+   "titulo": "Impulsaremos la perspectiva familiar en todas las políticas sociales.",
+   "texto": "Avanzaremos en la protección y el empoderamiento social, jurídico y económico de las familias, reivindicando su papel esencial como eje vertebrador de una sociedad cohesionada."
+  },
+  "22": {
+   "titulo": "Trabajaremos para frenar la pobreza energética, estableciendo acuerdos con las compañías del sector.",
+   "texto": "No queremos ningún hogar sin los derechos básicos al agua, la luz y el gas."
+  },
+  "23": {
+   "titulo": "Impulsaremos políticas para evitar los desahucios, promoviendo acuerdos con entidades financieras, grandes propietarios y otros agentes implicados, para que las familias que no pueden asumir el pago de la hipoteca puedan permanecer en la vivienda con un alquiler social.",
+   "texto": ""
+  },
+  "24": {
+   "titulo": "Exigiremos que los derechos de la infancia estén en el centro de las medidas de atención a la crisis, siguiendo el camino marcado por la Convención sobre los Derechos del Niño, para que todos puedan desarrollar su máximo potencial.",
+   "texto": ""
+  },
+  "25": {
+   "titulo": "Trabajaremos para recuperar las competencias de la DGPPIA (Dirección General de Prevención y Protección de la Infancia y la Adolescencia) en la gestión de las prestaciones económicas para jóvenes extutelados y la contratación de plazas en centros de menores.",
+   "texto": ""
+  },
+  "26": {
+   "titulo": "Trabajaremos para que la «oficina de control de gestión» y la «unidad de seguimiento de incidencias», creadas para revisar protocolos y evitar irregularidades en el marco de las competencias de la DGPPIA, garanticen la seguridad y el bienestar de los menores tutelados.",
+   "texto": ""
+  },
+  "27": {
+   "titulo": "Pediremos que las ayudas a las familias en situación de vulnerabilidad y con hijos a cargo se adapten para garantizar una protección completa de la infancia.",
+   "texto": ""
+  },
+  "28": {
+   "titulo": "Trabajaremos para lograr la accesibilidad universal a bienes o servicios para los niños que, por enfermedad, discapacidad o cualquier otra situación, no tengan garantizado el acceso a ellos.",
+   "texto": ""
+  },
+  "29": {
+   "titulo": "Impulsaremos una modificación legislativa sobre los abusos sexuales infantiles para que estos delitos no prescriban.",
+   "texto": ""
+  },
+  "30": {
+   "titulo": "Impulsaremos medidas para prevenir el abuso, los malos tratos y la violencia contra la infancia, revisando los protocolos existentes y concienciando a la ciudadanía para romper el silencio existente.",
+   "texto": ""
+  },
+  "31": {
+   "titulo": "Impulsaremos un proyecto de ley de las personas mayores, orientado a empoderarlas, detectar situaciones de vulnerabilidad, garantizarles acompañamiento, prevenir los malos tratos y evitar su discriminación.",
+   "texto": ""
+  },
+  "32": {
+   "titulo": "Promoveremos iniciativas de vivienda y covivienda con hogares compartidos y servicios de 24 h para personas mayores autónomas.",
+   "texto": ""
+  },
+  "33": {
+   "titulo": "Defenderemos la adecuación consensuada del sistema de pensiones, en el seno de los Pactos de Toledo y con el acuerdo de los agentes sociales.",
+   "texto": ""
+  },
+  "34": {
+   "titulo": "Propondremos establecer el criterio de «base 100» para acceder al 100% de la pensión de jubilación, de modo que las personas que, a partir de los 60 años, sumen un total de 100 entre edad y años cotizados puedan percibir la totalidad de su pensión.",
+   "texto": ""
+  },
+  "35": {
+   "titulo": "Trabajaremos para suprimir los coeficientes reductores de la prestación de jubilación de las personas que hayan cotizado 40 años o más y se jubilen anticipadamente.",
+   "texto": ""
+  },
+  "36": {
+   "titulo": "Propondremos endurecer las penas para los delitos cuya víctima sea una persona mayor, así como crear juzgados y fiscalías formados y especializados en los malos tratos a personas mayores.",
+   "texto": ""
+  },
+  "37": {
+   "titulo": "Priorizaremos el acceso de los jóvenes a la formación y el empleo y la reducción de su precariedad laboral, facilitándoles perspectivas de estabilidad.",
+   "texto": ""
+  },
+  "38": {
+   "titulo": "Impulsaremos la reforma de los contratos en prácticas y de formación y aprendizaje para facilitar las primeras experiencias laborales.",
+   "texto": ""
+  },
+  "39": {
+   "titulo": "Mejoraremos el acceso de los jóvenes a información innovadora y motivadora sobre el mercado laboral y sus perspectivas de empleo.",
+   "texto": ""
+  },
+  "40": {
+   "titulo": "Impulsaremos políticas ambiciosas de vivienda orientadas a facilitar la emancipación de los jóvenes y su acceso a una vivienda en régimen de compra, alquiler o cesión de uso.",
+   "texto": ""
+  },
+  "41": {
+   "titulo": "Estableceremos medidas específicas para favorecer el retorno a Cataluña de los jóvenes que han emigrado para estudiar y trabajar fuera y desean volver.",
+   "texto": ""
+  },
+  "42": {
+   "titulo": "Impulsamos la educación en el tiempo libre, el voluntariado y el asociacionismo juvenil como fórmula para transmitir valores, arraigarse al territorio y fomentar una ciudadanía activa.",
+   "texto": ""
+  },
+  "43": {
+   "titulo": "Pediremos que aumenten los recursos destinados a garantizar el empleo del colectivo mediante centros especiales de trabajo (CET), revisando el modelo actual de integración sociolaboral de las personas con discapacidad.",
+   "texto": ""
+  },
+  "44": {
+   "titulo": "Impulsaremos una normativa estatal que permita reducir a un máximo de 6 meses los plazos de espera para solicitar el reconocimiento y la revisión del grado de discapacidad y de dependencia, desde la solicitud hasta su resolución.",
+   "texto": ""
+  },
+  "45": {
+   "titulo": "Impulsaremos la creación de figuras de orientadores que acompañen y asesoren de forma continuada a las personas con discapacidad y a sus familias durante toda su vida, tanto personal como laboral.",
+   "texto": ""
+  },
+  "46": {
+   "titulo": "Exigiremos que los recursos del Estado para financiar el coste de los servicios de atención a la dependencia en Cataluña tengan en cuenta el mayor coste de vida de Cataluña.",
+   "texto": ""
+  },
+  "47": {
+   "titulo": "Propondremos mejoras fiscales, como un aumento sustancial de los mínimos personales y de las deducciones del IRPF, especialmente para las personas con un grado de discapacidad igual o superior al 65% o asimilado por resolución judicial.",
+   "texto": ""
+  },
+  "48": {
+   "titulo": "Propondremos reducir la edad mínima de jubilación para las personas con discapacidad y dificultades especiales.",
+   "texto": ""
+  },
+  "49": {
+   "titulo": "Pediremos reducir el período mínimo de cotización en proporción a la reducción de la esperanza de vida de los trabajadores afectados.",
+   "texto": ""
+  },
+  "50": {
+   "titulo": "Impulsaremos la reserva de vivienda protegida para personas con discapacidad intelectual y otros colectivos con necesidades especiales.",
+   "texto": ""
+  },
+  "51": {
+   "titulo": "Impulsaremos la construcción de vivienda protegida (VPO) y la rehabilitación de edificios vacíos, de acuerdo con las necesidades residenciales de la población destinataria (jóvenes, personas vulnerables, mayores y personas con discapacidad), especialmente en áreas con déficit residencial.",
+   "texto": ""
+  },
+  "52": {
+   "titulo": "Trabajaremos para que las administraciones cubran las necesidades de vivienda de las personas y familias en situación de vulnerabilidad.",
+   "texto": ""
+  },
+  "53": {
+   "titulo": "Fomentaremos el desarrollo de vivienda asequible en zonas rurales, mejorando las infraestructuras y los servicios para favorecer el equilibrio territorial.",
+   "texto": ""
+  },
+  "54": {
+   "titulo": "Impulsaremos acuerdos de cesión con la Sareb y otros grandes tenedores para destinar viviendas vacías al alquiler asequible.",
+   "texto": ""
+  },
+  "55": {
+   "titulo": "Promoveremos la colaboración público-privada con incentivos de mejora fiscal.",
+   "texto": ""
+  },
+  "56": {
+   "titulo": "Incentivaremos que las viviendas protegidas mantengan su función social, con mecanismos de control cuando pierdan esa condición (devolución de subvenciones con intereses si se venden o alquilan a precios no regulados).",
+   "texto": ""
+  },
+  "57": {
+   "titulo": "Propondremos préstamos bonificados e incentivos fiscales para promotores privados que contribuyan a la oferta de vivienda asequible.",
+   "texto": ""
+  },
+  "58": {
+   "titulo": "Trabajaremos para revisar la fiscalidad de las SOCIMI (sociedades anónimas cotizadas de inversión en el mercado inmobiliario) con el objetivo de vincularlas a la promoción de vivienda asequible.",
+   "texto": ""
+  },
+  "59": {
+   "titulo": "Plantearemos al Estado reducir del 21% al 10% el IVA aplicado a la cesión de suelo para vivienda social, con el fin de facilitar su construcción y reducir el precio del alquiler.",
+   "texto": ""
+  },
+  "60": {
+   "titulo": "Propondremos derogar la Ley 12/2023, de 24 de mayo, por el derecho a la vivienda, por considerarla una invasión competencial, un ataque a la propiedad privada y un freno a la oferta de alquiler debido a los controles de precios.",
+   "texto": ""
+  },
+  "61": {
+   "titulo": "Propondremos financiación fiscal pública con préstamos bonificados para promotores privados.",
+   "texto": ""
+  },
+  "62": {
+   "titulo": "Reclamaremos el aumento progresivo de los fondos estatales destinados a políticas de vivienda hasta situarlos en la media europea (0,6% del PIB).",
+   "texto": "Y reclamaremos la transferencia de estos recursos a la Generalitat en la parte correspondiente al peso de la población de Cataluña respecto al Estado."
+  },
+  "63": {
+   "titulo": "Exigiremos la cesión a la Generalitat de inmuebles estatales en desuso (como cuarteles de la Guardia Civil) para destinarlos a vivienda social.",
+   "texto": ""
+  },
+  "64": {
+   "titulo": "Impulsaremos una reforma del Código Penal que regule adecuadamente los procedimientos y las sanciones contra la ocupación delictiva, especialmente la vinculada a redes mafiosas.",
+   "texto": ""
+  },
+  "65": {
+   "titulo": "Impulsaremos la redistribución del esfuerzo fiscal a favor de las pymes, con medidas específicas para proteger este segmento fundamental y representativo de la economía catalana.",
+   "texto": ""
+  },
+  "66": {
+   "titulo": "Propondremos crear el Consejo de la Economía Social y Solidaria para promover una economía circular y colaborativa.",
+   "texto": ""
+  },
+  "67": {
+   "titulo": "Estableceremos un plan de bonificaciones fiscales para las empresas multinacionales que se establezcan en Cataluña.",
+   "texto": ""
+  },
+  "68": {
+   "titulo": "Incorporaremos criterios de sostenibilidad y transición verde a la fiscalidad, sin aumentar la presión fiscal global.",
+   "texto": ""
+  },
+  "69": {
+   "titulo": "Mejoraremos el régimen fiscal de las cooperativas y entidades de la economía social para hacerlas más competitivas.",
+   "texto": ""
+  },
+  "70": {
+   "titulo": "Impulsaremos un certificado para los productos reintroducidos en la economía circular que reconozca públicamente a las empresas que contribuyen a ella.",
+   "texto": ""
+  },
+  "71": {
+   "titulo": "Modificaremos la normativa vigente para proteger la propiedad privada y luchar contra las ocupaciones.",
+   "texto": "Tolerancia cero ante cualquier tipo de ocupación ilegal, y forzaremos el desalojo de los bienes ocupados ilegalmente en menos de 48 horas, y en 24 horas si se trata de una vivienda habitual o un centro productivo."
+  },
+  "72": {
+   "titulo": "Reclamaremos la titularidad para la Generalitat de todos los impuestos generados en Cataluña, así como las competencias normativas y de gestión relacionadas.",
+   "texto": ""
+  },
+  "73": {
+   "titulo": "Trabajaremos para conseguir un concierto económico para Cataluña e impulsaremos una hacienda propia que recaude, gestione e inspeccione todos los tributos generados en Cataluña.",
+   "texto": "Mientras tanto, exigiremos el respeto al principio de ordinalidad."
+  },
+  "74": {
+   "titulo": "Propondremos la cesión y gestión del impuesto de sociedades, con deducciones reforzadas para proyectos de I+D+i.",
+   "texto": ""
+  },
+  "75": {
+   "titulo": "Reclamaremos la armonización fiscal dentro de la UE.",
+   "texto": ""
+  },
+  "76": {
+   "titulo": "Defenderemos la lucha contra el fraude fiscal y la economía sumergida, reclamando las competencias necesarias para intervenir en las conductas fraudulentas que limitan los derechos de los trabajadores y la competitividad empresarial.",
+   "texto": ""
+  },
+  "77": {
+   "titulo": "Trabajaremos para reducir el impuesto de transmisiones patrimoniales y el porcentaje del tramo autonómico del IRPF.",
+   "texto": ""
+  },
+  "78": {
+   "titulo": "Defenderemos la eliminación de los impuestos de sucesiones, donaciones y patrimonio.",
+   "texto": ""
+  },
+  "79": {
+   "titulo": "Propondremos una fiscalidad más justa para pymes y autónomos, con límites a la presión fiscal efectiva, evitando que puedan llegar a pagar tipos impositivos efectivos superiores a los de las grandes empresas.",
+   "texto": ""
+  },
+  "80": {
+   "titulo": "Impulsaremos una fiscalidad «blanda» para el mundo rural, con exenciones en los municipios de menos de 5.000 habitantes, para luchar contra la despoblación e incidir en el equilibrio territorial.",
+   "texto": ""
+  },
+  "81": {
+   "titulo": "Propondremos al Estado un Plan Estratégico para el Trabajo Autónomo, con mayor protección social y una mejor regulación fiscal y administrativa.",
+   "texto": ""
+  },
+  "82": {
+   "titulo": "Propondremos una tarifa plana reducida durante dos años para nuevos autónomos o en casos de continuidad por sucesión empresarial.",
+   "texto": ""
+  },
+  "83": {
+   "titulo": "Impulsaremos la reducción de la aportación mínima obligatoria a la Seguridad Social, actualmente excesiva para la mayoría de los nuevos emprendedores.",
+   "texto": "Al mismo tiempo, garantizaremos que los autónomos puedan acceder al subsidio en igualdad de condiciones que los trabajadores del régimen general, preservando siempre la coherencia entre las aportaciones realizadas y las prestaciones percibidas."
+  },
+  "84": {
+   "titulo": "Lucharemos contra la morosidad para garantizar la liquidez de los autónomos.",
+   "texto": ""
+  },
+  "85": {
+   "titulo": "Propondremos una tributación simplificada y más ligera para los autónomos, especialmente en las fases iniciales, con el objetivo de reducir la presión fiscal.",
+   "texto": ""
+  },
+  "86": {
+   "titulo": "Reclamaremos una bonificación del 100% de la cuota de la Seguridad Social por el primer trabajador contratado por un autónomo, facilitando la creación de nuevos puestos de trabajo.",
+   "texto": ""
+  },
+  "87": {
+   "titulo": "Deduciremos en el IRPF los gastos de contratar a personas y empresas para la limpieza y el cuidado del hogar.",
+   "texto": ""
+  },
+  "88": {
+   "titulo": "Fomentaremos la actividad productiva como herramienta para crear empleo estable y de calidad.",
+   "texto": ""
+  },
+  "89": {
+   "titulo": "Acordaremos con los agentes sociales una estrategia contra la discriminación laboral y la brecha salarial de género.",
+   "texto": ""
+  },
+  "90": {
+   "titulo": "Apostaremos por una mayor estabilidad laboral, mejores salarios, formación continua, recualificación y mejores condiciones para la reincorporación laboral.",
+   "texto": ""
+  },
+  "91": {
+   "titulo": "Apoyaremos la inserción laboral de colectivos vulnerables —jóvenes, mayores de 50 años, parados de larga duración y personas con discapacidad— mediante incentivos a las empresas.",
+   "texto": ""
+  },
+  "92": {
+   "titulo": "Trabajaremos para establecer una regulación clara sobre las circunstancias económicas que justifican el despido objetivo.",
+   "texto": ""
+  },
+  "93": {
+   "titulo": "Desarrollaremos y perfeccionaremos la regulación establecida por el Real Decreto-ley del teletrabajo.",
+   "texto": ""
+  },
+  "94": {
+   "titulo": "Bonificaremos a las empresas con un bajo índice de despidos para fomentar la estabilidad laboral.",
+   "texto": ""
+  },
+  "95": {
+   "titulo": "Impulsaremos proyectos de asesoramiento y formación para el empleo, la recualificación profesional y la acreditación de competencias profesionales.",
+   "texto": ""
+  },
+  "96": {
+   "titulo": "Exigiremos el traspaso a la Generalitat de la inspección de trabajo en materia de Seguridad Social, como ya se ha hecho en el País Vasco, para conseguir una inspección de trabajo única.",
+   "texto": ""
+  },
+  "97": {
+   "titulo": "Reclamaremos el traspaso de la gestión del Ingreso Mínimo Vital para adaptarlo a la realidad de Cataluña, como ya se ha hecho en el País Vasco y Navarra.",
+   "texto": ""
+  },
+  "98": {
+   "titulo": "Reclamaremos al Estado las competencias pendientes en política industrial que corresponden a la Generalitat.",
+   "texto": ""
+  },
+  "99": {
+   "titulo": "Impulsaremos la digitalización y la transición energética de la industria catalana.",
+   "texto": ""
+  },
+  "100": {
+   "titulo": "Impulsaremos un modelo de investigación e innovación orientado a mejorar la competitividad de las empresas catalanas.",
+   "texto": ""
+  },
+  "101": {
+   "titulo": "Apoyaremos la reindustrialización de las zonas menos pobladas.",
+   "texto": ""
+  },
+  "102": {
+   "titulo": "Promoveremos la formación en calidad y servicio para los profesionales del sector turístico.",
+   "texto": ""
+  },
+  "103": {
+   "titulo": "Fomentaremos un turismo de calidad, sostenible y territorialmente equilibrado, en colaboración con los agentes del sector.",
+   "texto": ""
+  },
+  "104": {
+   "titulo": "Rechazaremos la imposición del marco normativo estatal en materia de comercio y horarios comerciales, para defender el modelo catalán.",
+   "texto": ""
+  },
+  "105": {
+   "titulo": "Impulsaremos una estrategia integral para revitalizar el comercio de proximidad, especialmente en zonas rurales y de menor densidad demográfica.",
+   "texto": ""
+  },
+  "106": {
+   "titulo": "Fomentaremos el consumo de productos de proximidad (KM 0).",
+   "texto": ""
+  },
+  "107": {
+   "titulo": "Velaremos por el cumplimiento de la normativa europea sobre seguridad de las mercancías.",
+   "texto": ""
+  },
+  "108": {
+   "titulo": "Impulsaremos campañas de consumo responsable, comercio local y sostenibilidad.",
+   "texto": ""
+  },
+  "109": {
+   "titulo": "Exigiremos al Estado que defienda los intereses de los sectores agrario, forestal y pesquero catalanes ante las políticas europeas.",
+   "texto": ""
+  },
+  "110": {
+   "titulo": "Defenderemos los intereses de los agricultores catalanes en la reforma de la PAC (Política Agrícola Común), exigiendo un reparto justo de las ayudas que priorice a los productores locales y no a las grandes corporaciones.",
+   "texto": ""
+  },
+  "111": {
+   "titulo": "Pediremos la gestión directa de las ayudas de la PAC en Cataluña para garantizar que los fondos lleguen rápida y eficazmente a agricultores y ganaderos y se adapten a la realidad catalana.",
+   "texto": ""
+  },
+  "112": {
+   "titulo": "Exigiremos la regionalización efectiva de los fondos y planes estratégicos de la PAC, así como la flexibilización de los requisitos ambientales para adaptarlos al territorio.",
+   "texto": ""
+  },
+  "113": {
+   "titulo": "Reclamaremos una financiación justa del Plan de Desarrollo Rural de Cataluña, con un mínimo del 75% de los fondos de la PAC.",
+   "texto": ""
+  },
+  "114": {
+   "titulo": "Exigiremos el traspaso a Cataluña de la inspección sanitaria en origen, incluidos puertos y aeropuertos, para garantizar la seguridad alimentaria y proteger la producción agraria catalana.",
+   "texto": ""
+  },
+  "115": {
+   "titulo": "Impulsaremos una fiscalidad adaptada al mundo rural, especialmente en zonas en riesgo de despoblación.",
+   "texto": ""
+  },
+  "116": {
+   "titulo": "Propondremos incentivos fiscales para favorecer el relevo generacional en las explotaciones, especialmente entre los jóvenes agricultores.",
+   "texto": ""
+  },
+  "117": {
+   "titulo": "Propondremos reducir la fiscalidad en la compra de tierras para explotaciones familiares o proyectos sostenibles innovadores.",
+   "texto": ""
+  },
+  "118": {
+   "titulo": "Exigiremos una reforma integral de la fiscalidad de la transmisión de explotaciones y derechos de producción para facilitar la continuidad y la inversión en el sector.",
+   "texto": ""
+  },
+  "119": {
+   "titulo": "Exigiremos deducciones fiscales para inversiones en digitalización agraria (como drones, sensores o Big Data).",
+   "texto": ""
+  },
+  "120": {
+   "titulo": "Impulsaremos mejoras en la fiscalidad forestal, como una bonificación del 30% en el IRPF y el impuesto de sociedades para las inversiones en gestión forestal sostenible.",
+   "texto": ""
+  },
+  "121": {
+   "titulo": "Pediremos al Estado que financie el desarrollo del Food Valley catalán como clúster alimentario de primer nivel europeo, integrado por empresas, agricultores, investigadores y universidades.",
+   "texto": ""
+  },
+  "122": {
+   "titulo": "Revisaremos y potenciaremos la Ley de la cadena alimentaria para garantizar precios justos, evitar la venta a pérdidas y favorecer la transparencia en la cadena de valor.",
+   "texto": ""
+  },
+  "123": {
+   "titulo": "Impulsaremos la promoción de la venta de productos ecológicos y de proximidad mediante campañas institucionales, beneficios fiscales para los comercios que fomenten su distribución y apoyo a los circuitos cortos de comercialización.",
+   "texto": ""
+  },
+  "124": {
+   "titulo": "Impulsaremos las denominaciones de origen y las marcas de calidad catalanas para reforzar su presencia estatal e internacional.",
+   "texto": ""
+  },
+  "125": {
+   "titulo": "Pediremos que aumenten las ayudas del Estado para fortalecer las cooperativas y los mercados locales, y fomentar plataformas digitales de venta directa al consumidor, reduciendo así la dependencia de la gran distribución.",
+   "texto": ""
+  },
+  "126": {
+   "titulo": "Exigiremos un apoyo activo a la ganadería extensiva como herramienta de prevención de incendios y conservación del territorio.",
+   "texto": ""
+  },
+  "127": {
+   "titulo": "Exigiremos revisar el reparto de los fondos pesqueros para que la flota mediterránea catalana reciba un apoyo más justo.",
+   "texto": ""
+  },
+  "128": {
+   "titulo": "Promoveremos la modernización de nuestra flota pesquera, con ayudas a la eficiencia energética y a la digitalización del sector.",
+   "texto": ""
+  },
+  "129": {
+   "titulo": "Defenderemos la pesca artesanal y tradicional, garantizando el relevo generacional y la continuidad económica del sector.",
+   "texto": ""
+  },
+  "130": {
+   "titulo": "Apoyaremos a las cofradías de pescadores y los acuerdos pesqueros vigentes como herramientas de sostenibilidad ambiental y económica.",
+   "texto": ""
+  },
+  "131": {
+   "titulo": "Lucharemos para exigir a los productos de terceros países el cumplimiento de los estándares de producción comunitarios, especialmente en materia de bienestar animal y tratamientos fitosanitarios.",
+   "texto": "Hay que evitar la competencia desleal y garantizar la seguridad alimentaria de los consumidores."
+  },
+  "132": {
+   "titulo": "Trabajaremos para reducir la burocracia y simplificar los trámites administrativos que afectan al mundo agrario, ganadero, silvícola y pesquero.",
+   "texto": ""
+  },
+  "133": {
+   "titulo": "Pediremos flexibilizar la aplicación del Cuaderno Integrado de Explotación para apoyar la digitalización del sector sin sobrecargas administrativas.",
+   "texto": ""
+  },
+  "134": {
+   "titulo": "Exigiremos la soberanía hidrológica de Cataluña y la rectificación del Plan Hidrológico del Ebro para garantizar caudales adecuados en el Delta y compatibilidad con la actividad agraria.",
+   "texto": ""
+  },
+  "135": {
+   "titulo": "Solicitaremos inversiones estatales en infraestructuras hídricas y la implantación de tecnologías de reutilización del agua.",
+   "texto": ""
+  },
+  "136": {
+   "titulo": "Pediremos que el Estado financie la modernización del regadío y la optimización del uso del agua, potenciando infraestructuras eficientes para adaptarse a las nuevas condiciones climáticas.",
+   "texto": ""
+  },
+  "137": {
+   "titulo": "Pediremos ayudas estatales para potenciar la biomasa y el trabajo forestal como estrategias para prevenir incendios y generar energía renovable.",
+   "texto": ""
+  },
+  "138": {
+   "titulo": "Impulsaremos la construcción de plantas de biogás a partir de deyecciones ganaderas para generar energía limpia y reducir las emisiones contaminantes.",
+   "texto": ""
+  },
+  "139": {
+   "titulo": "Exigiremos una moratoria inmediata a la autorización de nuevas instalaciones fotovoltaicas en tierras agrícolas de valor y de regadío, priorizando su función productiva.",
+   "texto": ""
+  },
+  "140": {
+   "titulo": "Pediremos la colaboración del Estado para desarrollar un plan de actuación contra la sequía en Cataluña que tenga en cuenta las particularidades del territorio.",
+   "texto": ""
+  },
+  "141": {
+   "titulo": "Impulsaremos la creación de un fondo de estabilización climática, con participación pública y privada, destinado a compensar las pérdidas derivadas de fenómenos extremos como las sequías o las heladas.",
+   "texto": ""
+  },
+  "142": {
+   "titulo": "Pediremos reformar el sistema de seguros agrarios para adaptarlo a los nuevos retos climáticos y facilitar su contratación por parte de pequeños productores.",
+   "texto": ""
+  },
+  "143": {
+   "titulo": "Reivindicaremos la capacidad de Cataluña para definir su propio modelo educativo y trabajaremos para ampliar las competencias en este ámbito.",
+   "texto": ""
+  },
+  "144": {
+   "titulo": "Trabajaremos para garantizar el uso intensivo del catalán (y del aranés en el Valle de Arán) como lengua vehicular y de cohesión social, evitando el retroceso lingüístico que sufre nuestra lengua en los centros educativos.",
+   "texto": ""
+  },
+  "145": {
+   "titulo": "Preservaremos y actualizaremos el modelo de inmersión lingüística para garantizar el dominio oral y escrito del catalán en todas las etapas.",
+   "texto": ""
+  },
+  "146": {
+   "titulo": "Defenderemos un sistema educativo plural que integre escuelas públicas, concertadas y privadas, con un apoyo decidido a la escuela de iniciativa social y una financiación justa.",
+   "texto": ""
+  },
+  "147": {
+   "titulo": "Defenderemos la libertad de enseñanza y el derecho de las familias a elegir centro educativo, garantizando al mismo tiempo los criterios de equidad imprescindibles para avanzar hacia una sociedad cohesionada.",
+   "texto": ""
+  },
+  "148": {
+   "titulo": "Impulsaremos un currículo humanista y arraigado al país, que integre la historia y la cultura catalanas y promueva los valores democráticos.",
+   "texto": ""
+  },
+  "149": {
+   "titulo": "Trabajaremos para que la acción docente se centre en el aprendizaje competencial y de los conocimientos fundamentales de cada etapa educativa, revalorizando el esfuerzo como base del aprendizaje y la superación personal.",
+   "texto": ""
+  },
+  "150": {
+   "titulo": "Defenderemos la enseñanza obligatoria hasta los 18 años como medida para prevenir el abandono escolar prematuro.",
+   "texto": ""
+  },
+  "151": {
+   "titulo": "Trabajaremos para avanzar en la gratuidad de la etapa de 0 a 3 años, colaborando con el Estado y los ayuntamientos.",
+   "texto": ""
+  },
+  "152": {
+   "titulo": "Reforzaremos la orientación educativa a lo largo de toda la trayectoria académica, promoviendo servicios de orientación y tutoría personalizada en todos los centros.",
+   "texto": ""
+  },
+  "153": {
+   "titulo": "Impulsaremos la investigación y la innovación educativa, con participación activa en proyectos estatales y europeos.",
+   "texto": ""
+  },
+  "154": {
+   "titulo": "Favoreceremos el aprendizaje de lenguas extranjeras dentro del marco curricular establecido.",
+   "texto": ""
+  },
+  "155": {
+   "titulo": "Fomentaremos la innovación educativa y el uso responsable de la tecnología y la inteligencia artificial en las aulas.",
+   "texto": ""
+  },
+  "156": {
+   "titulo": "Trabajaremos para garantizar que las escuelas estén libres de acoso y otras formas de violencia entre iguales, con programas de detección precoz y apoyo inmediato a las víctimas, las familias y los centros.",
+   "texto": ""
+  },
+  "157": {
+   "titulo": "Promoveremos una educación que fomente el respeto, el civismo, la responsabilidad, la solidaridad y la convivencia.",
+   "texto": ""
+  },
+  "158": {
+   "titulo": "Fomentaremos la educación para la ciudadanía global, la conciencia europea, la participación democrática, la sostenibilidad y el respeto al medio ambiente en el currículo, siguiendo las directrices estatales y europeas.",
+   "texto": ""
+  },
+  "159": {
+   "titulo": "Garantizaremos becas para comedores y desayunos escolares e impulsaremos un plan contra la pobreza infantil que sitúe a niños y jóvenes en una situación óptima para el aprendizaje.",
+   "texto": ""
+  },
+  "160": {
+   "titulo": "Mejoraremos los incentivos al profesorado que destaque y promoveremos su formación continua y su vinculación con la innovación.",
+   "texto": ""
+  },
+  "161": {
+   "titulo": "Trabajaremos para aumentar la autonomía pedagógica y de gestión de los centros, y reducir las cargas administrativas del profesorado para que pueda centrarse en la labor educativa.",
+   "texto": ""
+  },
+  "162": {
+   "titulo": "Trabajaremos para aumentar el profesorado y el personal de apoyo en las aulas (orientadores, cuidadores e integradores sociales) para dar una respuesta adecuada a las necesidades y la diversidad del alumnado.",
+   "texto": ""
+  },
+  "163": {
+   "titulo": "Defenderemos la reducción de las ratios de alumnos por docente en el aula para responder eficaz y eficientemente a las necesidades reales del alumnado.",
+   "texto": ""
+  },
+  "164": {
+   "titulo": "Reclamaremos financiación suficiente para mejorar las infraestructuras, el equipamiento y los edificios escolares.",
+   "texto": ""
+  },
+  "165": {
+   "titulo": "Defenderemos la formación profesional (FP) como una opción sólida y prestigiosa, adaptada a las necesidades de la economía catalana, con un impulso decidido a la FP dual.",
+   "texto": ""
+  },
+  "166": {
+   "titulo": "Defenderemos los programas de segundas oportunidades como instrumento clave para reducir el abandono escolar prematuro.",
+   "texto": ""
+  },
+  "167": {
+   "titulo": "Impulsaremos becas remuneradas de «segunda oportunidad» para jóvenes sin trabajo ni estudios, que promuevan su regreso al sistema educativo y estén condicionadas a los resultados académicos.",
+   "texto": ""
+  },
+  "168": {
+   "titulo": "Facilitaremos la formación continua y ocupacional a lo largo de la vida laboral, eliminando trámites innecesarios y promoviendo la participación activa de las empresas, especialmente de las pymes.",
+   "texto": ""
+  },
+  "169": {
+   "titulo": "Presentaremos alternativas al sistema de subvenciones para las empresas colaboradoras, eliminando limitaciones e interpretaciones que generen inseguridad jurídica.",
+   "texto": ""
+  },
+  "170": {
+   "titulo": "Reforzaremos el papel de las familias en el proceso escolar y educativo de sus hijos e hijas, promoviendo una actuación coordinada con los centros educativos.",
+   "texto": ""
+  },
+  "171": {
+   "titulo": "Trabajaremos para favorecer la conciliación familiar ampliando los servicios de comedor, acogida y actividades fuera del horario lectivo, en coordinación con otras administraciones.",
+   "texto": ""
+  },
+  "172": {
+   "titulo": "Reclamaremos la financiación necesaria para garantizar el acceso universal a actividades deportivas, académicas, artísticas o culturales fuera del horario escolar, como herramienta de éxito educativo e igualdad de oportunidades.",
+   "texto": ""
+  },
+  "173": {
+   "titulo": "Promoveremos los Planes Educativos de Entorno y otros programas de colaboración con las entidades locales para construir proyectos educativos compartidos, coherentes y arraigados al territorio.",
+   "texto": ""
+  },
+  "174": {
+   "titulo": "Exigiremos que los presupuestos del Estado se adapten a las competencias otorgadas a la Generalitat para poder llevar a cabo las políticas y medidas establecidas en la Ley 17/2015, de 21 de julio, de igualdad efectiva entre mujeres y hombres.",
+   "texto": ""
+  },
+  "175": {
+   "titulo": "Impulsaremos una ley estatal que promueva la igualdad retributiva entre géneros por trabajos de igual valor, así como la igualdad en el acceso al empleo.",
+   "texto": ""
+  },
+  "176": {
+   "titulo": "Velaremos para que el Estado impulse un plan de formación que integre transversalmente la igualdad de género en todas las políticas públicas.",
+   "texto": ""
+  },
+  "177": {
+   "titulo": "Propondremos una ley de corresponsabilidad y conciliación familiar entre mujeres y hombres, con medidas para las empresas, que garantice el cumplimiento del derecho y deber de baja por paternidad o maternidad, el derecho de ambos cónyuges a reducir la jornada y el respeto de la categoría laboral de quienes hayan sido madres o padres.",
+   "texto": ""
+  },
+  "178": {
+   "titulo": "Propondremos ampliar el permiso de maternidad a las familias monoparentales, permitiéndoles acumular los permisos de ambos progenitores.",
+   "texto": ""
+  },
+  "179": {
+   "titulo": "Propondremos elaborar un código ético para los medios de comunicación que erradique los contenidos sexistas, la revictimización y la perpetuación de estereotipos de género.",
+   "texto": ""
+  },
+  "180": {
+   "titulo": "Trabajaremos con las entidades de mujeres con diversidad funcional para combatir la doble discriminación que sufren.",
+   "texto": ""
+  },
+  "181": {
+   "titulo": "Pediremos formación en perspectiva de género y violencia machista para todos los operadores jurídicos.",
+   "texto": ""
+  },
+  "182": {
+   "titulo": "Exigiremos evaluar el impacto del Pacto de Estado contra la Violencia de Género y redefiniremos sus acciones.",
+   "texto": ""
+  },
+  "183": {
+   "titulo": "Exigiremos los recursos presupuestarios necesarios para erradicar la violencia machista, mejorando la prevención y también la reparación de los daños sufridos por las mujeres maltratadas y sus hijos e hijas.",
+   "texto": ""
+  },
+  "184": {
+   "titulo": "Exigiremos el cumplimiento de las obligaciones adquiridas por el Estado español en 2009 al ratificar el Convenio de Varsovia sobre la lucha contra la trata de seres humanos.",
+   "texto": "Las principales víctimas de la trata son mujeres y niñas forzadas a la explotación sexual."
+  },
+  "185": {
+   "titulo": "Defenderemos una sociedad en la que se respete la orientación sexual y la identidad de género de todas las personas.",
+   "texto": "Rechazaremos cualquier discriminación contra el colectivo LGTBI+ y promoveremos el respeto y la convivencia como base de la cohesión social ."
+  },
+  "186": {
+   "titulo": "Trabajaremos para alcanzar plenas competencias en materia de inmigración, a fin de garantizar una gestión eficaz, ordenada y respetuosa de los flujos migratorios que garantice derechos, deberes y oportunidades.",
+   "texto": ""
+  },
+  "187": {
+   "titulo": "Apoyaremos una reforma integral de la acogida de inmigrantes en la Unión Europea, con una visión que mejore nuestra demografía, permita una mejor integración, garantice un reparto equitativo y favorezca la cooperación internacional para actuar en origen, ayudando a los países de procedencia a mejorar las condiciones de vida y reducir la necesidad de emigrar.",
+   "texto": ""
+  },
+  "188": {
+   "titulo": "Promoveremos una Cataluña inclusiva que sea un país de acogida para las personas refugiadas y migrantes, garante de oportunidades e impulsora de sus talentos y conocimientos.",
+   "texto": ""
+  },
+  "189": {
+   "titulo": "Apoyaremos el diálogo intercultural, basado en el humanismo, como eje de las políticas públicas para construir una sociedad fraternal y respetuosa con la diversidad.",
+   "texto": ""
+  },
+  "190": {
+   "titulo": "Apoyaremos, lejos de las actuales políticas «buenistas», una gestión realista y sin complejos de la inmigración, respetando la diversidad, pero preservando en todo momento los valores occidentales.",
+   "texto": ""
+  },
+  "191": {
+   "titulo": "Impulsaremos una ley para vincular el reconocimiento de la residencia y la nacionalidad en Cataluña a la integración lingüística y la adopción de los valores democráticos y occidentales.",
+   "texto": ""
+  },
+  "192": {
+   "titulo": "Defenderemos el pleno respeto de los derechos humanos de las personas solicitantes de protección internacional, de acuerdo con la Convención de Ginebra de 1951.",
+   "texto": ""
+  },
+  "193": {
+   "titulo": "Instaremos al Estado español a agilizar los trámites burocráticos que faciliten la incorporación de los recién llegados al mundo laboral y el acceso a una vivienda digna.",
+   "texto": ""
+  },
+  "194": {
+   "titulo": "Apoyaremos la expulsión del país de las personas inmigrantes mayores de edad en situación irregular que hayan delinquido, respetando los derechos fundamentales y los convenios internacionales vigentes.",
+   "texto": ""
+  },
+  "195": {
+   "titulo": "Promoveremos un pacto, con la colaboración de todas las entidades religiosas, para regular la libertad de culto, garantizar su arraigo en el territorio, evitar el extremismo religioso y luchar contra las agrupaciones radicales.",
+   "texto": ""
+  },
+  "196": {
+   "titulo": "Fomentaremos, de acuerdo con la legislación europea, la cohesión social mediante el diálogo y mecanismos de inclusión, garantizando la equidad, el respeto y el reconocimiento de la diferencia en un marco de valores compartidos.",
+   "texto": ""
+  },
+  "197": {
+   "titulo": "Impulsaremos un Pacto Nacional por la Salud para aumentar la financiación del sistema sanitario catalán, incrementar los salarios de los profesionales, reducir las ratios de pacientes por médico y garantizar la equidad territorial en el acceso a los servicios.",
+   "texto": ""
+  },
+  "198": {
+   "titulo": "Impulsaremos un sistema sanitario público-privado de calidad, tecnológicamente avanzado y que colabore estrechamente con las entidades de investigación del sector.",
+   "texto": ""
+  },
+  "199": {
+   "titulo": "Apoyaremos la sanidad privada como medio para descongestionar la sanidad pública, evitando un exceso de impuestos.",
+   "texto": ""
+  },
+  "200": {
+   "titulo": "Situaremos el sector de la salud como sector estratégico de la economía catalana, con capacidad para generar empleo cualificado, atraer talento y dinamizar la industria biomédica y tecnológica.",
+   "texto": ""
+  },
+  "201": {
+   "titulo": "Agilizaremos los procesos de convalidación de títulos de médicos extracomunitarios, exigiendo garantías académicas, pruebas de evaluación y capacitación en lengua catalana.",
+   "texto": ""
+  },
+  "202": {
+   "titulo": "Garantizaremos que todos los profesionales sanitarios que trabajen en Cataluña tengan un dominio suficiente del catalán para garantizar el derecho de la ciudadanía a ser atendida en su lengua.",
+   "texto": ""
+  },
+  "203": {
+   "titulo": "Incrementaremos el número de plazas MIR (médico interno residente), aumentando así el número de especialistas, y reclamaremos el traspaso de su gestión a la Generalitat de Cataluña.",
+   "texto": ""
+  },
+  "204": {
+   "titulo": "Exigiremos el traspaso de inmuebles sanitarios propiedad de la Seguridad Social pero gestionados por las comunidades autónomas, mediante la actualización del balance económico patrimonial entre el Estado y la Seguridad Social.",
+   "texto": ""
+  },
+  "205": {
+   "titulo": "Pediremos mecanismos de compensación entre comunidades autónomas en función del número de pacientes atendidos procedentes de otros territorios.",
+   "texto": ""
+  },
+  "206": {
+   "titulo": "Pediremos incentivos para atraer profesionales sanitarios al entorno rural y equilibrar la cobertura territorial.",
+   "texto": ""
+  },
+  "207": {
+   "titulo": "Trabajaremos para establecer un convenio laboral propio para los médicos y enfermeros del sistema público catalán.",
+   "texto": ""
+  },
+  "208": {
+   "titulo": "Aprobaremos un Plan Nacional de Prevención y Promoción de la Salud con acciones transversales para fomentar la actividad física, la salud mental, los buenos hábitos alimentarios y el respeto de las normas de seguridad y protección individual y colectiva.",
+   "texto": ""
+  },
+  "209": {
+   "titulo": "Impulsaremos campañas educativas y comunitarias que promuevan la corresponsabilidad ciudadana en el cuidado de la propia salud.",
+   "texto": ""
+  },
+  "210": {
+   "titulo": "Defenderemos un enfoque preventivo de las enfermedades mentales y fomentaremos la detección precoz y la atención integral, especialmente entre niños y jóvenes.",
+   "texto": ""
+  },
+  "211": {
+   "titulo": "Incrementaremos las plazas de psiquiatría y psicología clínica dentro del sistema público de salud.",
+   "texto": ""
+  },
+  "212": {
+   "titulo": "Trabajaremos para reducir las listas de espera, tanto quirúrgicas como diagnósticas, y aumentar el tiempo de consulta por paciente.",
+   "texto": ""
+  },
+  "213": {
+   "titulo": "Trabajaremos por una sanidad equitativa y sin colapsos, especialmente en los servicios de urgencias, mediante la creación de nuevos Centros de Urgencias de Atención Primaria (CUAP) que descongestionen las urgencias hospitalarias.",
+   "texto": ""
+  },
+  "214": {
+   "titulo": "Pediremos reforzar la atención primaria con más profesionales, menos carga burocrática y mayor capacidad resolutiva.",
+   "texto": ""
+  },
+  "215": {
+   "titulo": "Propondremos separar claramente los equipos de atención primaria de los profesionales destinados a residencias de personas mayores y pediremos que aumenten para garantizar una atención específica sin restar horas de atención general.",
+   "texto": ""
+  },
+  "216": {
+   "titulo": "Mejoraremos los plazos de resolución de las solicitudes de dependencia y discapacidad para situarlos dentro de los plazos legales establecidos.",
+   "texto": ""
+  },
+  "217": {
+   "titulo": "Trabajaremos para incluir progresivamente la cobertura pública de gafas, audífonos y tratamientos odontológicos esenciales: caries, prótesis o implantes dentales, como hacen muchos países de la Unión Europea.",
+   "texto": ""
+  },
+  "218": {
+   "titulo": "Promoveremos la deducción fiscal de los gastos derivados del uso de mutuas de salud para las personas que contribuyen a descongestionar el sistema público.",
+   "texto": ""
+  },
+  "219": {
+   "titulo": "Trabajaremos para universalizar la actividad física hasta alcanzar a toda la población, desde la práctica individual hasta la colectiva, prestando especial atención a las mujeres y a los colectivos más vulnerables.",
+   "texto": ""
+  },
+  "220": {
+   "titulo": "Defenderemos reducir la carga fiscal que afecta al sector deportivo, actualmente penalizado por el IVA, y promoveremos medidas económicas que faciliten la financiación y el acceso a la actividad física y el deporte.",
+   "texto": ""
+  },
+  "221": {
+   "titulo": "Apoyaremos la labor de las federaciones deportivas catalanas y de los agentes del sector para acoger grandes acontecimientos deportivos europeos y mundiales, impulsando el turismo deportivo y contribuyendo a la recuperación económica del sector.",
+   "texto": ""
+  },
+  "222": {
+   "titulo": "Propondremos modificar el marco normativo fiscal y laboral que afecta al deporte de base para garantizar su continuidad como entidades sin ánimo de lucro y evitar que se las trate como empresas ordinarias obligadas a cotizar a la Seguridad Social.",
+   "texto": ""
+  },
+  "223": {
+   "titulo": "Reconoceremos legalmente el voluntariado deportivo como pieza clave para la supervivencia y sostenibilidad del deporte de base.",
+   "texto": ""
+  },
+  "224": {
+   "titulo": "Impulsaremos el reconocimiento y la integración de las federaciones deportivas catalanas como miembros de pleno derecho de sus respectivas federaciones internacionales.",
+   "texto": ""
+  },
+  "225": {
+   "titulo": "Promoveremos el reconocimiento y la integración del Comité Olímpico de Cataluña como miembro de pleno derecho del Comité Olímpico Internacional.",
+   "texto": "Y trabajaremos para que el hockey sobre patines sea reconocido como deporte olímpico."
+  },
+  "226": {
+   "titulo": "Potenciaremos el deporte femenino como sector estratégico para el desarrollo deportivo del país y clave para mejorar los resultados, tanto en cantidad como en calidad.",
+   "texto": ""
+  },
+  "227": {
+   "titulo": "Impulsaremos una reforma ambiciosa de la Ley 17/2022 de la Ciencia, la Tecnología y la Innovación para garantizar la transferencia efectiva de conocimiento entre universidades, centros de investigación y empresas, con incentivos fiscales a la innovación y a la contratación de doctorandos e investigadores.",
+   "texto": ""
+  },
+  "228": {
+   "titulo": "Reclamaremos más inversión pública en I+D+i, aumentando el porcentaje del PIB invertido hasta equipararlo a la media europea para mejorar la competitividad del tejido económico.",
+   "texto": ""
+  },
+  "229": {
+   "titulo": "Impulsaremos un sistema estatal de compra pública innovadora (CPI) como palanca de desarrollo de la innovación local en sectores estratégicos.",
+   "texto": ""
+  },
+  "230": {
+   "titulo": "Revisaremos los procesos para simplificar los trámites de acceso a los fondos europeos de investigación, incorporando herramientas de inteligencia artificial y servicios de asistencia especializados.",
+   "texto": ""
+  },
+  "231": {
+   "titulo": "Fomentaremos la creación de consorcios público-privados de colaboración estable, con financiación plurianual y gobernanza compartida.",
+   "texto": ""
+  },
+  "232": {
+   "titulo": "Trabajaremos para reforzar la financiación y la autonomía de las universidades públicas catalanas, con un modelo que incentive la investigación, la captación de talento y la transferencia de conocimiento.",
+   "texto": ""
+  },
+  "233": {
+   "titulo": "Defenderemos un nuevo marco normativo que facilite la integración laboral de inmigrantes extracomunitarios cualificados, con mecanismos de homologación de títulos y visados científicos exprés.",
+   "texto": ""
+  },
+  "234": {
+   "titulo": "Trabajaremos en un Plan Estatal de Infraestructuras Científicas y Tecnológicas con criterios de descentralización y equidad territorial en el acceso a la I+D+i.",
+   "texto": ""
+  },
+  "235": {
+   "titulo": "Impulsaremos una red de espacios de innovación territorial que conecte ciudades medianas y zonas rurales con los grandes polos de conocimiento.",
+   "texto": ""
+  },
+  "236": {
+   "titulo": "Exigiremos la descentralización de los órganos consultivos y de decisión estatales en materia de innovación, actualmente concentrados mayoritariamente en Madrid.",
+   "texto": ""
+  },
+  "237": {
+   "titulo": "Promoveremos el liderazgo de Barcelona como polo digital, científico y biotecnológico internacional, junto con otras ciudades de referencia en distintos ámbitos por todo el territorio, como Girona, Tarragona, Lleida, Mataró, Tortosa o Reus, entre otras.",
+   "texto": ""
+  },
+  "238": {
+   "titulo": "Fomentaremos las vocaciones STEM (ciencia, tecnología, ingeniería y matemáticas) y la formación digital, prestando especial atención a reducir la brecha de género y desarrollar competencias digitales en todos los niveles educativos.",
+   "texto": ""
+  },
+  "239": {
+   "titulo": "Plantearemos al Gobierno central reformas normativas para mejorar la competencia en telecomunicaciones y abaratar los servicios de banda ancha.",
+   "texto": ""
+  },
+  "240": {
+   "titulo": "Impulsaremos el acceso universal a internet de alta velocidad, especialmente en zonas sin cobertura o donde no esté prevista su implantación a corto plazo.",
+   "texto": ""
+  },
+  "241": {
+   "titulo": "Promoveremos un bono social digital para combatir la exclusión tecnológica, dirigido especialmente a las personas en situación de vulnerabilidad, y trabajaremos para ampliar progresivamente su alcance.",
+   "texto": ""
+  },
+  "242": {
+   "titulo": "Propondremos crear un Centro Nacional de Investigación en IA, con sede en Cataluña y en colaboración con universidades, centros tecnológicos y empresas, para incidir en ámbitos prioritarios como la salud, la energía, la empresa, la sostenibilidad o la educación.",
+   "texto": ""
+  },
+  "243": {
+   "titulo": "Fomentaremos la transferencia y la aplicación práctica de la inteligencia artificial en el ecosistema científico y empresarial, prestando especial atención a las pymes.",
+   "texto": ""
+  },
+  "244": {
+   "titulo": "Promoveremos incentivos fiscales y líneas de financiación específicas para impulsar la aplicación de la IA a la mejora de la productividad, el fomento de la investigación y la innovación, y la aparición de nuevos modelos de negocio.",
+   "texto": ""
+  },
+  "245": {
+   "titulo": "Exigiremos la finalización definitiva de las obras del Corredor Mediterráneo y la puesta en funcionamiento urgente de este servicio, clave para la competitividad de la economía catalana.",
+   "texto": ""
+  },
+  "246": {
+   "titulo": "Reclamaremos la renovación integral de la flota de trenes de cercanías y media distancia, así como la modernización de todas las infraestructuras ferroviarias (vías, catenarias y estaciones).",
+   "texto": ""
+  },
+  "247": {
+   "titulo": "Reivindicaremos el traspaso pleno y efectivo de la gestión de la red ferroviaria catalana para garantizar su eficiencia, calidad y adaptación a las necesidades del país.",
+   "texto": ""
+  },
+  "248": {
+   "titulo": "Defenderemos la ampliación del aeropuerto de Barcelona-El Prat y la creación de un modelo propio de gestión aeroportuaria para todos los aeropuertos catalanes, que asegure vuelos transoceánicos directos y una mejor conectividad internacional.",
+   "texto": ""
+  },
+  "249": {
+   "titulo": "Reclamaremos la gestión desde Cataluña de todos los puertos catalanes para potenciar el transporte de mercancías y gestionar de forma sostenible la llegada de cruceros.",
+   "texto": ""
+  },
+  "250": {
+   "titulo": "Impulsaremos un plan de obras públicas para mejorar, integrar y mantener la red viaria catalana, con gestión directa desde el territorio.",
+   "texto": ""
+  },
+  "251": {
+   "titulo": "Exigiremos la ejecución inmediata de todas las inversiones pendientes en infraestructuras en Cataluña y el cumplimiento riguroso de las nuevas partidas aprobadas.",
+   "texto": ""
+  },
+  "252": {
+   "titulo": "Propondremos utilizar una combinación energética equilibrada que incluya mantener el parque nuclear actual mientras se desarrolla un sistema renovable seguro y eficiente.",
+   "texto": ""
+  },
+  "253": {
+   "titulo": "Priorizaremos el refuerzo de las interconexiones eléctricas con Francia y la creación de nuevas conexiones con otros países europeos, como Italia.",
+   "texto": "Asimismo, consideramos clave aumentar sustancialmente la capacidad de almacenamiento de energías renovables, como la solar, la eólica o la hidráulica, para garantizar un sistema eléctrico estable."
+  },
+  "254": {
+   "titulo": "Defenderemos un nuevo sistema de formación de precios y de combinación energética para garantizar un suministro seguro, sostenible y económicamente justo para la ciudadanía y las empresas.",
+   "texto": ""
+  },
+  "255": {
+   "titulo": "Implantaremos sistemas de alerta de emergencia eficaces que puedan llegar al máximo de población, incluso en situaciones de bloqueo de las comunicaciones.",
+   "texto": ""
+  },
+  "256": {
+   "titulo": "Apostaremos por regenerar y reutilizar el agua con soluciones adaptadas a las necesidades de cada territorio (depuración de aguas grises y negras, desalación y aprovechamiento de acuíferos).",
+   "texto": ""
+  },
+  "257": {
+   "titulo": "Impulsaremos un marco normativo que garantice una gestión óptima del agua, con mecanismos de control eficaces y sanciones rigurosas en caso de incumplimiento.",
+   "texto": ""
+  },
+  "258": {
+   "titulo": "Desarrollaremos campañas de concienciación sobre el uso responsable del agua como recurso escaso y vital, promoviendo una cultura compartida de sostenibilidad.",
+   "texto": ""
+  },
+  "259": {
+   "titulo": "Exigiremos al Estado español el traspaso total de las competencias en administración electrónica y transparencia para garantizar una gestión más eficiente y cercana a la ciudadanía.",
+   "texto": ""
+  },
+  "260": {
+   "titulo": "Propondremos crear una Agencia de Transparencia Independiente para supervisar la acción del Gobierno y garantizar el acceso a la información pública en tiempo real.",
+   "texto": ""
+  },
+  "261": {
+   "titulo": "Implantaremos un portal único de acceso a los trámites administrativos para simplificar la relación entre la ciudadanía, las empresas y la Administración.",
+   "texto": ""
+  },
+  "262": {
+   "titulo": "Pediremos reformar la Ley Orgánica para permitir la celebración de referendos vinculantes sobre cuestiones de interés para Cataluña.",
+   "texto": ""
+  },
+  "263": {
+   "titulo": "Exigiremos modificar la Ley de Transparencia para incorporar mecanismos eficaces de participación ciudadana en el control de las instituciones estatales.",
+   "texto": ""
+  },
+  "264": {
+   "titulo": "Crearemos consejos ciudadanos consultivos en ámbitos estratégicos para garantizar la participación activa de la sociedad civil en la toma de decisiones públicas.",
+   "texto": ""
+  },
+  "265": {
+   "titulo": "Exigiremos al Estado una fiscalidad más justa para las pequeñas y medianas empresas catalanas, así como la descentralización de organismos económicos para reforzar la economía productiva del territorio.",
+   "texto": ""
+  },
+  "266": {
+   "titulo": "Promoveremos la digitalización de las pymes mediante programas específicos de ayuda y asesoramiento para mejorar su competitividad.",
+   "texto": ""
+  },
+  "267": {
+   "titulo": "Reclamaremos al Estado reformar el sistema de financiación local para garantizar recursos estables y suficientes a los municipios catalanes.",
+   "texto": ""
+  },
+  "268": {
+   "titulo": "Propondremos crear un Fondo Estatal de Desarrollo Municipal para garantizar la igualdad de oportunidades en todo el territorio.",
+   "texto": ""
+  },
+  "269": {
+   "titulo": "Fomentaremos la cooperación entre municipios para impulsar proyectos supramunicipales de impacto local.",
+   "texto": ""
+  },
+  "270": {
+   "titulo": "Exigiremos al Estado el traspaso total de las competencias en Justicia y la creación de un Consejo de Justicia de Cataluña para gestionar íntegramente este ámbito.",
+   "texto": ""
+  },
+  "271": {
+   "titulo": "Impulsaremos la modernización digital de los juzgados con un plan específico para reducir la sobrecarga y los retrasos judiciales.",
+   "texto": ""
+  },
+  "272": {
+   "titulo": "Estableceremos mecanismos de mediación y arbitraje para descongestionar los tribunales y ofrecer alternativas rápidas y eficaces a la ciudadanía.",
+   "texto": ""
+  },
+  "273": {
+   "titulo": "Defenderemos ante el Estado el traspaso íntegro de las competencias en seguridad ciudadana y el aumento de la financiación para reforzar a los Mossos d'Esquadra.",
+   "texto": ""
+  },
+  "274": {
+   "titulo": "Implantaremos programas de proximidad y prevención comunitaria para mejorar la seguridad y la convivencia en barrios vulnerables.",
+   "texto": ""
+  },
+  "275": {
+   "titulo": "Reivindicaremos una mayor presencia de Cataluña en organismos internacionales para defender los intereses económicos, culturales y sociales del territorio.",
+   "texto": ""
+  },
+  "276": {
+   "titulo": "Impulsaremos iniciativas de diplomacia económica y cultural para proyectar Cataluña al mundo y atraer inversiones estratégicas.",
+   "texto": ""
+  },
+  "277": {
+   "titulo": "Crearemos oficinas de representación exterior para reforzar los vínculos comerciales, institucionales y culturales con otros países.",
+   "texto": ""
+  },
+  "278": {
+   "titulo": "Defenderemos el derecho a la autodeterminación de los pueblos que forman parte de la UE, garantizando la aplicación directa de la Carta de los Derechos Fundamentales.",
+   "texto": ""
+  },
+  "279": {
+   "titulo": "Promoveremos mecanismos de supervisión y sanción para los Estados que vulneren derechos fundamentales o valores democráticos.",
+   "texto": ""
+  },
+  "280": {
+   "titulo": "Reformaremos el Comité de las Regiones para que las regiones y los pueblos que integran la UE tengan poder real de decisión.",
+   "texto": ""
+  },
+  "281": {
+   "titulo": "Exigiremos que el catalán, el occitano y las demás lenguas minorizadas que lo soliciten sean lenguas oficiales y de pleno derecho en la UE.",
+   "texto": ""
+  },
+  "282": {
+   "titulo": "Defenderemos el arraigo de la población del sector primario comunitario a sus territorios, con apoyo directo a los productores europeos, y estableceremos mecanismos que impidan bloqueos en la distribución de sus productos.",
+   "texto": ""
+  },
+  "283": {
+   "titulo": "Priorizaremos la producción comunitaria mediante una reforma de la PAC (Política Agrícola Común) que permita diseñar políticas agrarias y agroalimentarias asimétricas, atendiendo a las particularidades de cada territorio y no solo a criterios burocráticos centralizados.",
+   "texto": ""
+  },
+  "284": {
+   "titulo": "Estableceremos mecanismos ágiles y eficaces para regular los mercados en situaciones de crisis alimentaria o climática.",
+   "texto": ""
+  },
+  "285": {
+   "titulo": "Defenderemos la plena integración de la Política Marítima de Cataluña en el marco europeo y reconoceremos al mismo tiempo la especificidad del Mediterráneo en los instrumentos de la nueva Política Pesquera Europea.",
+   "texto": ""
+  },
+  "286": {
+   "titulo": "Propondremos armonizar la fiscalidad y el concepto de delito fiscal a escala europea para garantizar la equidad y evitar la competencia desleal entre Estados miembros.",
+   "texto": ""
+  },
+  "287": {
+   "titulo": "Priorizaremos los productos de la UE y defenderemos eliminar las cuotas y los límites internos de producción que beneficien a productos de terceros países.",
+   "texto": ""
+  },
+  "288": {
+   "titulo": "Impulsaremos una normativa europea que garantice en todos los Estados miembros un salario mínimo por encima del umbral de pobreza.",
+   "texto": ""
+  },
+  "289": {
+   "titulo": "Impulsaremos la armonización de las condiciones laborales y los convenios colectivos de los trabajadores en toda Europa, de acuerdo con el nivel de vida de cada país miembro.",
+   "texto": ""
+  },
+  "290": {
+   "titulo": "Propondremos establecer una política europea común en materia de inmigración, basada en el respeto a los derechos humanos de todas las personas inmigrantes, el derecho de asilo y la solidaridad entre los Estados miembros de la Unión Europea.",
+   "texto": ""
+  },
+  "291": {
+   "titulo": "Exigiremos un reparto equitativo de las personas migrantes y de los costes derivados, así como sanciones para los Estados que incumplan los acuerdos.",
+   "texto": ""
+  },
+  "292": {
+   "titulo": "Abogaremos por combatir las mafias y frenar la entrada irregular de inmigrantes con medidas eficaces, respetando los derechos fundamentales y con un sistema común de repatriación para los casos de situación irregular.",
+   "texto": ""
+  },
+  "293": {
+   "titulo": "Potenciaremos la contratación en origen y trabajaremos para armonizar los modelos de acogida e integración a escala europea.",
+   "texto": ""
+  },
+  "294": {
+   "titulo": "Apostaremos por una política común de seguridad y defensa que refuerce la autonomía estratégica de la UE, de acuerdo con el derecho internacional.",
+   "texto": ""
+  },
+  "295": {
+   "titulo": "Apoyaremos la creación de un ejército europeo como herramienta de defensa colectiva y cooperación eficaz.",
+   "texto": ""
+  },
+  "296": {
+   "titulo": "Trabajaremos para construir una Europa más segura y fuerte, comprometida con la paz, en la que la cooperación y la eficacia en defensa sean fundamentales para proteger los valores y la estabilidad de la Unión Europea.",
+   "texto": ""
+  },
+  "297": {
+   "titulo": "Fortaleceremos las alianzas internacionales e impulsaremos nuevas cooperaciones con terceros países para afrontar los retos globales.",
+   "texto": ""
+  },
+  "298": {
+   "titulo": "Reclamaremos como prioridad europea la finalización del Corredor Mediterráneo en todo su recorrido por la costa mediterránea.",
+   "texto": ""
+  },
+  "299": {
+   "titulo": "Impulsaremos planes de ordenación del territorio que garanticen redes de infraestructuras modernas, sostenibles y eficientes.",
+   "texto": ""
+  },
+  "300": {
+   "titulo": "Impulsaremos una red energética europea diversificada y segura, con más interconexiones y capacidad de almacenamiento, para garantizar una distribución eficaz y resiliente ante cualquier adversidad.",
+   "texto": ""
+  }
+ },
+ "bloques": {
+  "1": "Soberanía nacional",
+  "2": "Personas y familias",
+  "3": "Economía",
+  "4": "Sector agroalimentario y pesquero",
+  "5": "Escuela catalana",
+  "6": "Igualdad, derechos y acogida",
+  "7": "Salud y calidad de vida",
+  "8": "Innovación, conocimiento e infraestructuras",
+  "9": "Administración, justicia y seguridad",
+  "10": "Europa de las naciones"
+ },
+ "lemas": {
+  "1": "Avanzar hacia la soberanía nacional",
+  "2": "Poner a las personas y a las familias en el centro de las políticas sociales",
+  "3": "Construir una economía fuerte y comprometida con el bienestar de todos",
+  "4": "Defender el sector agroalimentario y pesquero de Cataluña",
+  "5": "Preservar el modelo de escuela catalana y ponerla al servicio de todo el alumnado",
+  "6": "Impulsar un país inclusivo, con visión de mujer, garante de derechos y defensor de los valores occidentales",
+  "7": "Preservar la salud y la calidad de vida de las personas",
+  "8": "Impulsar Cataluña como motor de innovación y conocimiento",
+  "9": "Exigir una administración transparente y al servicio de la ciudadanía",
+  "10": "Reivindicar una Europa de las naciones, fuerte y comprometida"
+ },
+ "secciones": {
+  "1.1": "Reivindicar la soberanía nacional de los catalanes y de las catalanas",
+  "1.2": "Defender el catalán como idioma propio de Cataluña y nuestro bien cultural más preciado",
+  "1.3": "Aspirar al futuro y trabajar el presente",
+  "2.1": "Avanzar en la sociedad del bienestar y consolidar la familia como núcleo de la sociedad",
+  "2.2": "Garantizar el bienestar y la seguridad de la infancia y la adolescencia",
+  "2.3": "Mejorar el sistema de servicios, pensiones y atención a las personas mayores",
+  "2.4": "Favorecer la emancipación de los jóvenes y su compromiso cívico",
+  "2.5": "Promover la autonomía personal y la accesibilidad de las personas con discapacidad o dependencia",
+  "2.6": "Defender el derecho a la vivienda",
+  "3.1": "Avanzar hacia una economía de mercado más competitiva y sostenible",
+  "3.2": "Reforzar la autonomía fiscal catalana y reducir las desigualdades fiscales",
+  "3.3": "Apoyar el trabajo autónomo",
+  "3.4": "Impulsar mejoras laborales",
+  "3.5": "Reforzar las políticas económicas sectoriales: industria, comercio y turismo",
+  "4.1": "Reivindicar la soberanía de Cataluña en el sector primario y la defensa de nuestros intereses",
+  "4.2": "Exigir una fiscalidad justa e incentivadora",
+  "4.3": "Valorar y defender el producto catalán y la seguridad alimentaria",
+  "4.4": "Impulsar la soberanía hídrica, el sector de la bioenergía y dar respuesta a los retos climáticos",
+  "5.1": "Preservar el modelo propio de escuela catalana",
+  "5.2": "Promover la excelencia y la equidad para todo el alumnado",
+  "5.3": "Apoyar a los centros educativos y prestigiar la profesión docente",
+  "5.4": "Promover la formación profesional y los programas de segundas oportunidades",
+  "5.5": "Avanzaremos en la implicación de la comunidad educativa",
+  "6.1": "Garantizar la igualdad efectiva entre hombres y mujeres a partir de la libertad en las decisiones",
+  "6.2": "Erradicar cualquier tipo de violencia y discriminación por razón de género",
+  "6.3": "Hacer de Cataluña un país de acogida cohesionado, respetuoso con la diferencia y garante de los valores occidentales",
+  "7.1": "Reforzar un sistema sanitario público-privado y situarlo como sector estratégico",
+  "7.2": "Impulsar la prevención y la responsabilidad compartida en salud",
+  "7.3": "Mejorar la accesibilidad, la equidad y la calidad de la atención sanitaria",
+  "7.4": "Impulsar el deporte catalán como elemento de bienestar y proyección en el mundo",
+  "8.1": "Apostar por el conocimiento, la investigación y la innovación",
+  "8.2": "Trabajar por la descentralización y la equidad territorial",
+  "8.3": "Avanzar en infraestructuras digitales y conectividad",
+  "8.4": "Avanzar en inteligencia artificial (IA)",
+  "8.5": "Lograr unas infraestructuras propias de un país europeo y con voz propia",
+  "8.6": "Avanzar hacia la transición energética justa, segura y adaptada al país",
+  "8.7": "Trabajar por el uso responsable del agua como recurso escaso y vital",
+  "9.1": "Defender una Administración pública eficiente, participativa y transparente",
+  "9.2": "Garantizar una Administración \"business friendly\" que impulse la iniciativa privada",
+  "9.3": "Defender la autonomía local y supramunicipal y el principio de subsidiariedad",
+  "9.4": "Trabajar para garantizar una Administración de Justicia ágil, moderna y plenamente catalana",
+  "9.5": "Mejorar la seguridad ciudadana para garantizar la cohesión social",
+  "9.6": "Potenciar la presencia institucional de Cataluña en el mundo",
+  "10.1": "Defender los valores, los derechos fundamentales y el derecho a la autodeterminación",
+  "10.2": "Defender nuestro sector primario y avanzar hacia una economía más justa",
+  "10.3": "Exigir una política de inmigración común, solidaria y efectiva",
+  "10.4": "Construir una Europa soberana y preparada en seguridad y defensa",
+  "10.5": "Avanzar en infraestructuras y energías"
+ },
+ "citas": {
+  "en un màxim de 48 hores": "en un máximo de 48 horas",
+  "del 21% al 10%": "del 21 % al 10 %",
+  "(0,6% del PIB)": "(0,6 % del PIB)",
+  "sumin un total de 100 entre edat i anys cotitzats": "sumen un total de 100 entre edad y años cotizados",
+  "cotitzat 40 anys o més": "cotizado 40 años o más",
+  "a un màxim de 6 mesos": "a un máximo de 6 meses",
+  "la bonificació del 100% de la quota": "la bonificación del 100 % de la cuota",
+  "municipis de menys de 5.000 habitants": "municipios de menos de 5.000 habitantes",
+  "un mínim del 75% dels fons del PAC": "un mínimo del 75 % de los fondos de la PAC",
+  "una bonificació del 30%": "una bonificación del 30 %",
+  "fins als 18 anys": "hasta los 18 años"
+ }
+}

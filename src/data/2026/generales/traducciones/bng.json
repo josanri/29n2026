@@ -1,0 +1,2148 @@
+{
+ "id": "bng",
+ "idiomaOrigen": "gallego",
+ "estado": "revisada",
+ "fecha": "2026-11-18",
+ "medidas": {
+  "1": {
+   "titulo": "Un nuevo modelo de financiación basado en el concierto económico",
+   "texto": "Un nuevo modelo de financiación basado en el concierto económico y la bilateralidad con el Estado. Se trata de que Galicia recaude todos los impuestos y tenga capacidad para decidir cómo invertirlos, con el objetivo de desarrollar políticas sociales, impulsar un desarrollo económico autocentrado y blindar unos servicios públicos universales y de calidad."
+  },
+  "2": {
+   "titulo": "Revisar el modelo de financiación local",
+   "texto": "Impulsar de inmediato la revisión del modelo de financiación local, reformando el sistema de Participación en los Ingresos del Estado para que deje de penalizar y"
+  },
+  "3": {
+   "titulo": "Dejar de discriminar a los ayuntamientos gallegos",
+   "texto": "discriminar a los ayuntamientos gallegos y tenga en cuenta la realidad poblacional y geográfica de nuestro país."
+  },
+  "4": {
+   "titulo": "Poner en marcha una Hacienda Gallega",
+   "texto": "Poner en marcha una Hacienda Gallega como instrumento esencial del nuevo modelo de financiación. En consonancia, Galicia debe tener plena capacidad para implantar una política fiscal propia, que responda a criterios de justicia y redistribución social y garantice que todas las empresas que operan en nuestro país paguen aquí los tributos que les corresponden, de modo que podamos utilizar plenamente nuestros recursos económicos al servicio del pueblo gallego."
+  },
+  "5": {
+   "titulo": "Transferir las competencias en relaciones laborales",
+   "texto": "Transferir las competencias en materia de relaciones laborales, con el objetivo de que Galicia tenga plena capacidad legislativa y normativa para establecer un marco gallego de relaciones laborales que blinde la negociación colectiva y garantice un trabajo digno y con derechos para toda la población. También para poder establecer una renta social básica que permita a toda la población gallega, sin exclusiones de ningún tipo, disfrutar de condiciones de vida dignas y participar plenamente en la sociedad."
+  },
+  "6": {
+   "titulo": "Transferir las competencias de Seguridad Social y pensiones",
+   "texto": "Transferir las competencias en materia de Seguridad Social y pensiones, con el objetivo de garantizar un sistema sanitario y de atención social bien financiado y pensiones dignas para las personas jubiladas."
+  },
+  "7": {
+   "titulo": "Traspasar las competencias de seguridad pública",
+   "texto": "Traspasar las competencias en materia de seguridad pública, policía judicial y fiscal, así como la vigilancia del tráfico, para lo que se desplegará el cuerpo de la Policía Gallega."
+  },
+  "8": {
+   "titulo": "Asumir el control público de los recursos y sectores estratégicos",
+   "texto": "Asumir desde los poderes públicos gallegos plena capacidad para ejercer el control público de nuestros recursos, de los sectores estratégicos de la economía y, en especial, de la producción de energía. Esto es fundamental para poder establecer una tarifa eléctrica gallega basada en un modelo tarifario que abarate el precio de la electricidad y permita que este bien público revierta en el desarrollo social y económico del país y en la eliminación de la exclusión energética."
+  },
+  "9": {
+   "titulo": "Traspasar las competencias sobre infraestructuras de transporte",
+   "texto": "Traspasar las competencias en infraestructuras de transporte de interés general: puertos de interés general, aeropuertos y control del tráfico aéreo en Galicia, además de carreteras y ferrocarriles que discurren por territorio gallego."
+  },
+  "10": {
+   "titulo": "Transferir las competencias en materia de costas",
+   "texto": "Transferir las competencias en materia de costas y del dominio público marítimo-terrestre, tanto las normativas sobre protección del litoral como las de intervención y gestión (autorizaciones de instalaciones en la costa gallega). También se abordará el traspaso de las competencias sobre las"
+  },
+  "11": {
+   "titulo": "Traspasar las competencias sobre las cuencas hidrográficas",
+   "texto": "cuencas hidrográficas (transferencia plena de la Confederación Hidrográfica Miño-Sil)."
+  },
+  "12": {
+   "titulo": "Transferir los servicios de salvamento marítimo y guardacostas",
+   "texto": "Transferir las competencias y los servicios de salvamento marítimo y guardacostas, así como los centros del Instituto Español de Oceanografía de A Coruña y Vigo."
+  },
+  "13": {
+   "titulo": "Traspasar y nacionalizar las autopistas",
+   "texto": "Traspasar la AP-9 (Ferrol-A Coruña-Vigo) y la AP-53 (Santiago-Lalín) y nacionalizar estas infraestructuras para poner fin al expolio económico que representan actualmente."
+  },
+  "14": {
+   "titulo": "Traspasar las competencias de fomento audiovisual",
+   "texto": "Traspasar los fondos y las competencias relacionados con el fomento de la industria cinematográfica y audiovisual gallega."
+  },
+  "15": {
+   "titulo": "Traspasar a Galicia los archivos y bienes documentales del Estado",
+   "texto": "Traspasar a Galicia los archivos, bienes y fondos documentales, culturales e históricos que se encuentran dispersos en diversas instituciones y organismos del Estado."
+  },
+  "16": {
+   "titulo": "Traspasar las competencias en materia deportiva",
+   "texto": "Traspasar las competencias deportivas del Consejo Superior de Deportes y de las federaciones deportivas. Galicia participará con plenos derechos en todas las disciplinas y en las competiciones deportivas internacionales oficiales."
+  },
+  "17": {
+   "titulo": "Transferir a Galicia los activos de la SAREB",
+   "texto": "Transferir a Galicia los activos de la SAREB (entidad de gestión de activos inmobiliarios de las entidades financieras saneadas) situados en el país, para incorporarlos a una bolsa de viviendas e inmuebles destinada a fomentar la vivienda pública social en Galicia."
+  },
+  "18": {
+   "titulo": "Traspasar las competencias que aún conserva el Estado",
+   "texto": "En todo caso, traspasar a la Administración gallega todas las competencias previstas que aún conserva la Administración del Estado."
+  },
+  "19": {
+   "titulo": "Fijar por ley los precios de los alquileres",
+   "texto": "Fijar por ley los precios de los alquileres y prohibir los desahucios de personas en situación de vulnerabilidad, así como decretar la suspensión automática e indefinida de cualquier lanzamiento si no hay una alternativa habitacional"
+  },
+  "20": {
+   "titulo": "Proteger la estabilidad de las personas arrendatarias",
+   "texto": "Impulsar la protección y estabilidad de las personas arrendatarias frente a las dinámicas especulativas, estableciendo la renovación automática de los alquileres, blindando por ley el carácter indefinido de los contratos de alquiler e impulsando mecanismos y recursos para perseguir las prácticas de acoso, discriminación y abuso inmobiliario."
+  },
+  "21": {
+   "titulo": "Facilitar la expropiación forzosa de viviendas públicas",
+   "texto": "Facilitar la expropiación forzosa de viviendas de promoción pública adquiridas por fondos de inversión."
+  },
+  "22": {
+   "titulo": "Frenar el desvío de vivienda habitual a alquileres temporales y turísticos",
+   "texto": "Establecer mecanismos eficaces para frenar la salida de viviendas habituales hacia el alquiler de temporada, por habitaciones y de uso turístico."
+  },
+  "23": {
+   "titulo": "Destinar los Presupuestos Generales del Estado a vivienda pública",
+   "texto": "Destinar el 3% de los Presupuestos Generales del Estado a financiar, mediante el Plan Estatal de Vivienda, la creación de un parque público de alquiler permanente."
+  },
+  "24": {
+   "titulo": "Mantener permanentemente la calificación de vivienda protegida",
+   "texto": "Extender el requisito de calificación permanente como vivienda protegida a las viviendas adquiridas por entidades sin ánimo de lucro o de lucro limitado especializadas en vivienda que hayan recibido financiación pública para ese fin."
+  },
+  "25": {
+   "titulo": "Incrementar las reservas mínimas de suelo para vivienda protegida",
+   "texto": "Incrementar las reservas mínimas de suelo para vivienda protegida en actuaciones de renovación y regeneración urbanas, impidiendo que disminuya el porcentaje de la reserva general de suelo de la edificabilidad residencial en suelo urbano no consolidado y suelo urbanizable destinado a vivienda protegida."
+  },
+  "26": {
+   "titulo": "Garantizar el carácter permanentemente público de las viviendas financiadas con fondos públicos",
+   "texto": "Garantizar legalmente el carácter permanentemente público de las viviendas financiadas con recursos públicos e impedir su privatización."
+  },
+  "27": {
+   "titulo": "Modificar las ayudas del Plan Estatal de Vivienda",
+   "texto": "Modificar las líneas de ayudas del Plan Estatal de Vivienda destinadas a fomentar la rehabilitación para que se concedan"
+  },
+  "28": {
+   "titulo": "Conceder las ayudas mediante criterios de concurrencia competitiva",
+   "texto": "por las comunidades autónomas mediante criterios de concurrencia competitiva, como los parámetros de renta y patrimonio."
+  },
+  "29": {
+   "titulo": "Condicionar las ayudas a la rehabilitación y renovación a garantías de alquiler",
+   "texto": "Modificar las ayudas del Plan Estatal de Vivienda destinadas a la rehabilitación, accesibilidad y renovación urbana y rural para condicionarlas a la duración de los contratos vigentes y futuros de las viviendas o edificios subvencionados, o bien al control de los alquileres durante un período determinado, con el fin de evitar que las mejoras, en zonas con una fuerte presión especulativa, provoquen la finalización de contratos o subidas abusivas."
+  },
+  "30": {
+   "titulo": "Facilitar el acceso de las personas vulnerables a las ayudas de rehabilitación energética",
+   "texto": "Establecer mecanismos eficaces que garanticen el acceso de las personas vulnerables a las ayudas para mejorar la eficiencia energética y la accesibilidad."
+  },
+  "31": {
+   "titulo": "Reformular la fiscalidad de la vivienda",
+   "texto": "Reformular la fiscalidad de la vivienda para frenar su uso especulativo con medidas como:"
+  },
+  "32": {
+   "titulo": "Transferir las competencias pendientes en trabajo y empleo",
+   "texto": "Transferir a Galicia todas las competencias pendientes en materia de gestión del trabajo, empleo, formación y reconocimiento de prestaciones."
+  },
+  "33": {
+   "titulo": "Reconocer la participación institucional de los sindicatos más representativos",
+   "texto": "Reconocer la participación institucional real de los sindicatos que tienen legalmente la condición de más representativos, frente a la exclusión práctica de los sindicatos no estatales."
+  },
+  "34": {
+   "titulo": "Garantizar los derechos laborales y la libertad sindical",
+   "texto": "Adoptar medidas que garanticen el pleno ejercicio de los derechos laborales y la libertad sindical, penalizando con contundencia el acoso laboral y las medidas represivas de las empresas."
+  },
+  "35": {
+   "titulo": "Cumplir efectivamente la Carta Social Europea",
+   "texto": "Cumplir efectivamente la Carta Social Europea como marco básico de derechos."
+  },
+  "36": {
+   "titulo": "Derogar las contrarreformas laborales y modificar el Estatuto del Trabajo",
+   "texto": "Derogar íntegramente las contrarreformas laborales que consolidaron el cambio aprobado en 2021 e impulsar una modificación integral del Estatuto del Trabajo para restituir, entre otros derechos:"
+  },
+  "37": {
+   "titulo": "Implantar una jornada laboral reducida",
+   "texto": "Promover la implantación de una jornada laboral de 35 horas semanales sin reducción salarial y avanzar hacia una jornada de 32 horas semanales en 4 días."
+  },
+  "38": {
+   "titulo": "Incrementar el salario mínimo interprofesional",
+   "texto": "Incrementar el Salario Mínimo Interprofesional hasta situarlo en el 60 % del salario medio, tal como establece la Carta Social Europea de acuerdo con los datos de EUROSTAT. Prohibir expresamente que el SMI pueda compensarse o absorberse con otros"
+  },
+  "39": {
+   "titulo": "Prohibir compensar el salario mínimo con complementos salariales",
+   "texto": "complementos salariales. Aprobar la descentralización del SMI para que Galicia tenga competencias para mejorar el estatal."
+  },
+  "40": {
+   "titulo": "Redefinir las causas del despido objetivo",
+   "texto": "Redefinir las causas económicas y organizativas del despido objetivo (último recurso) y establecer un período mínimo de consultas de un mes, con informe vinculante de la Inspección."
+  },
+  "41": {
+   "titulo": "Permitir que la persona trabajadora elija entre readmisión e indemnización",
+   "texto": "Dar a la persona trabajadora la opción de elegir entre la readmisión y una indemnización en caso de despido."
+  },
+  "42": {
+   "titulo": "Desarrollar un Marco Gallego de Relaciones Laborales",
+   "texto": "Desarrollar un Marco Gallego de Relaciones Laborales, es decir, aspirar a que haya convenios de ámbito gallego y, en todo caso, a que los convenios de nivel superior al de empresa prevalezcan sobre los de rango inferior y también sobre los estatales. Asimismo, los acuerdos sobre materias concretas o los acuerdos marco de ámbito gallego deben prevalecer sobre los estatales de características similares."
+  },
+  "43": {
+   "titulo": "Eliminar las ETT y la subcontratación en cadena",
+   "texto": "Eliminar las Empresas de Trabajo Temporal (ETT), las agencias privadas de colocación, la subcontratación en cadena y los falsos autónomos, y garantizar la igualdad de condiciones laborales y retributivas en los Centros Especiales de Empleo."
+  },
+  "44": {
+   "titulo": "Reforzar el Servicio Público de Empleo",
+   "texto": "Reforzar el Servicio Público de Empleo (SEPE) y garantizar la cobertura de todas las personas desempleadas."
+  },
+  "45": {
+   "titulo": "Impulsar un plan de acción contra la siniestralidad laboral",
+   "texto": "Impulsar un plan de acción contra la siniestralidad laboral que incluya:"
+  },
+  "46": {
+   "titulo": "Derogar el IPREM y recuperar el SMI como indicador de renta",
+   "texto": "Derogar el IPREM (DL 3/2004) y recuperar el SMI como único indicador de renta."
+  },
+  "47": {
+   "titulo": "Prohibir las dobles escalas salariales",
+   "texto": "Prohibir las dobles escalas salariales y las categorías de entrada,"
+  },
+  "48": {
+   "titulo": "Realizar auditorías retributivas y planes de igualdad",
+   "texto": "Realizar auditorías retributivas y planes de igualdad de obligado cumplimiento, reforzando la Inspección de Trabajo."
+  },
+  "49": {
+   "titulo": "Limitar los períodos de prueba",
+   "texto": "Limitar a 15 días la duración máxima de los períodos de prueba y exigir una causa justificada para no superarlos."
+  },
+  "50": {
+   "titulo": "Limitar la contratación fija discontinua",
+   "texto": "Limitar la modalidad de contratación fija discontinua: convocatorias con un intervalo máximo de 2–3 meses, preaviso mínimo de 15 días e indemnización de 45 días por año al finalizar cada llamamiento; prohibir esta modalidad en las ETT y en la jornada parcial."
+  },
+  "51": {
+   "titulo": "Limitar la contratación a tiempo parcial",
+   "texto": "Limitar la contratación a tiempo parcial, exigiendo una jornada mínima de 20 horas semanales, limitando al 15% de la plantilla por empresa el trabajo a tiempo parcial y restringiendo las horas complementarias (solo para contratos indefinidos y no obligatorias)."
+  },
+  "52": {
+   "titulo": "Garantizar la retribución de los contratos formativos",
+   "texto": "Garantizar una retribución del 100% del convenio para los contratos formativos con una duración inferior a un año; prohibirlos en los ERTE."
+  },
+  "53": {
+   "titulo": "Establecer la subrogación obligatoria",
+   "texto": "Establecer la subrogación obligatoria en la sucesión empresarial y en la contratación pública."
+  },
+  "54": {
+   "titulo": "Eliminar las modificaciones sustanciales de salario y jornada",
+   "texto": "Eliminar las modificaciones sustanciales del salario y la reducción de jornada, así como limitar las inaplicaciones de convenio y la distribución irregular de la jornada."
+  },
+  "55": {
+   "titulo": "Restringir la aplicación de los ERTE",
+   "texto": "Restringir la aplicación de los ERTE, evitando que tengan carácter permanente y que se combinen con otras medidas de recorte laboral."
+  },
+  "56": {
+   "titulo": "Establecer un registro digital y transparente de jornada",
+   "texto": "Establecer un registro digital, transparente y con trazabilidad verificable de la jornada laboral, y limitar su distribución irregular."
+  },
+  "57": {
+   "titulo": "Reforzar el control del teletrabajo",
+   "texto": "Aplicar medidas de control reforzado a los regímenes de teletrabajo, con un marco claro y límites a su aplicación."
+  },
+  "58": {
+   "titulo": "Elevar la protección por desempleo",
+   "texto": "Elevar la protección por desempleo:"
+  },
+  "59": {
+   "titulo": "Apostar por el empleo público frente a la privatización",
+   "texto": "Apostar por el empleo público frente a la privatización:"
+  },
+  "60": {
+   "titulo": "Derogar las reformas de las pensiones",
+   "texto": "Derogar las reformas de las pensiones aprobadas en 2011, 2013, 2021 y 2023."
+  },
+  "61": {
+   "titulo": "Incrementar las pensiones mínimas",
+   "texto": "Incrementar las pensiones mínimas hasta situarlas, como mínimo, en la misma cuantía que el Salario Mínimo Interprofesional (60 % del salario medio, según las cifras de EUROSTAT)."
+  },
+  "62": {
+   "titulo": "Revalorizar anualmente las pensiones conforme al IPC",
+   "texto": "Revalorizar anualmente las pensiones de acuerdo con el IPC real."
+  },
+  "63": {
+   "titulo": "Recuperar la edad ordinaria y parcial de jubilación",
+   "texto": "Recuperar la jubilación ordinaria a los 65 años y la parcial a los 61 años."
+  },
+  "64": {
+   "titulo": "Evitar la discriminación fiscal de emigrantes retornados",
+   "texto": "Evitar la discriminación fiscal de las personas emigrantes retornadas."
+  },
+  "65": {
+   "titulo": "Reconocer la jubilación voluntaria sin penalización",
+   "texto": "Reconocer la jubilación voluntaria sin penalización a partir de 35 años cotizados, reales o computados mediante coeficientes reductores en determinadas profesiones."
+  },
+  "66": {
+   "titulo": "Eliminar las penalizaciones por jubilación anticipada",
+   "texto": "Eliminar las penalizaciones por acceder anticipadamente a la jubilación."
+  },
+  "67": {
+   "titulo": "Garantizar la sostenibilidad del sistema público de pensiones",
+   "texto": "Garantizar la sostenibilidad del sistema público de pensiones suprimiendo el veto a la financiación pública con cargo a los presupuestos y a los impuestos que gravan la riqueza; eliminar el tope máximo de las bases de cotización y revisar y reducir las bonificaciones y descuentos en las cotizaciones empresariales."
+  },
+  "68": {
+   "titulo": "Eliminar el Mecanismo de Equidad Intergeneracional",
+   "texto": "Eliminar el Mecanismo de Equidad Intergeneracional (MEI) y cualquier mecanismo de ajuste similar al «factor de sostenibilidad», incluida la supresión de las competencias otorgadas a la AIReF en relación con la supervisión del sistema público de pensiones."
+  },
+  "69": {
+   "titulo": "Derogar las normas que fomentan los planes privados de pensiones",
+   "texto": "Derogar las normas que fomentan los planes privados de pensiones de empleo en los convenios colectivos y cualquier forma de privatización o gestión financiera privada de las pensiones públicas."
+  },
+  "70": {
+   "titulo": "Modificar el período de cálculo de la base reguladora",
+   "texto": "Modificar el período de cálculo de la base reguladora, que deberá realizarse a partir de un período de 10 años elegido por la persona beneficiaria."
+  },
+  "71": {
+   "titulo": "Fijar coeficientes reductores para profesiones especialmente penosas",
+   "texto": "Fijar coeficientes reductores de la edad de jubilación para las trabajadoras y los trabajadores de las profesiones más penosas, peligrosas e insalubres."
+  },
+  "72": {
+   "titulo": "Mejorar la protección social de quienes trabajan en el marisqueo",
+   "texto": "Mejorar la protección de la Seguridad Social de las personas que trabajan en el sector marisquero, en línea con lo aprobado por unanimidad en el Consejo Gallego de Pesca en materia de cese de actividad, además de ampliar los actuales coeficientes reductores de la edad de jubilación."
+  },
+  "73": {
+   "titulo": "Elevar las pensiones no contributivas",
+   "texto": "Elevar de inmediato las pensiones no contributivas hasta el 75 % del umbral de pobreza de un hogar unipersonal, sin esperar al plazo de 2027 establecido en la reforma de 2023, y actualizar anualmente su cuantía conforme al IPC real."
+  },
+  "74": {
+   "titulo": "Incrementar el complemento para reducir la brecha de género",
+   "texto": "Incrementar el complemento para reducir la brecha de género de las pensiones de jubilación mediante una subida anual de, como mínimo, diez"
+  },
+  "75": {
+   "titulo": "Aumentar la subida anual por encima del IPC",
+   "texto": "puntos por encima del IPC, hasta su completa extinción como figura diferenciada."
+  },
+  "76": {
+   "titulo": "Establecer una cobertura justa de los períodos sin cotización",
+   "texto": "Establecer un sistema justo de cobertura de los períodos sin cotización que compense las interrupciones en las trayectorias laborales de las mujeres, derivadas de la precariedad, los contratos a tiempo parcial y la asunción de los cuidados"
+  },
+  "77": {
+   "titulo": "Aumentar la progresividad de las cotizaciones de autónomos",
+   "texto": "Aumentar la progresividad del nuevo sistema de cotización de las trabajadoras y los trabajadores autónomos en función de sus ingresos reales."
+  },
+  "78": {
+   "titulo": "Modular las cotizaciones con criterios de solidaridad y progresividad",
+   "texto": "Modular el sistema de cotización de acuerdo con un modelo de solidaridad y progresividad salarial."
+  },
+  "79": {
+   "titulo": "Ampliar la cotización completa durante las reducciones de jornada por cuidados",
+   "texto": "Ampliar al 100% la cotización completa durante las reducciones de jornada por cuidados y extender más allá de los 3 años las excedencias por cuidados computadas como cotizadas."
+  },
+  "80": {
+   "titulo": "Equiparar el personal fijo discontinuo al de jornada completa",
+   "texto": "Equiparar al personal fijo discontinuo con el personal a tiempo completo a efectos de cotización y prestaciones."
+  },
+  "81": {
+   "titulo": "Garantizar la cotización plena del alumnado en prácticas",
+   "texto": "Garantizar la cotización plena del alumnado en prácticas, sin bonificaciones a las empresas."
+  },
+  "82": {
+   "titulo": "Asegurar una gestión pública de las contingencias comunes y profesionales",
+   "texto": "Prohibir que las mutuas gestionen las contingencias comunes y profesionales, que deberán pasar a una gestión íntegramente pública. Derogar las normas aprobadas por el Ministerio de Seguridad Social y el Instituto Nacional de la Seguridad Social (INSS) que promueven la firma de convenios de colaboración entre las consejerías de Sanidad de las comunidades autónomas, las Mutuas Colaboradoras con la Seguridad Social, la Dirección General de Ordenación de la Seguridad Social y el INSS para fomentar que las mutuas atiendan los procesos de incapacidad temporal derivados de patologías musculoesqueléticas."
+  },
+  "83": {
+   "titulo": "Revisar los criterios para reconocer incapacidades permanentes",
+   "texto": "Revisar los criterios para las incapacidades permanentes, dando prioridad a la mejor atención de las limitaciones derivadas de la situación clínica, las patologías y las afecciones."
+  },
+  "84": {
+   "titulo": "Transferir a Galicia el Ingreso Mínimo Vital",
+   "texto": "Reclamar la transferencia a Galicia del Ingreso Mínimo Vital (IMV) para garantizar una gestión más ágil y adaptada a la realidad gallega, que permita crear una verdadera Renta Gallega de Inclusión Social y Laboral por una cuantía no inferior al SMI."
+  },
+  "85": {
+   "titulo": "Aplicar un programa de lucha contra la pobreza y la exclusión",
+   "texto": "Aplicar un programa específico de lucha contra la pobreza y la exclusión social."
+  },
+  "86": {
+   "titulo": "Aumentar la inversión en protección social",
+   "texto": "Aumentar globalmente la inversión en protección social hasta situarla, como mínimo, en el gasto medio del conjunto de la Unión Europea, garantizando el carácter público de los servicios sociales básicos tanto en su titularidad como en su gestión y financiación."
+  },
+  "87": {
+   "titulo": "Regular los precios de los productos básicos de alimentación",
+   "texto": "Regular legalmente los precios de los productos básicos de alimentación, garantizando a la vez precios asequibles para la mayoría social y una remuneración justa para quienes los producen. Aplicar medidas contundentes contra la especulación en los mercados de alimentos y energía, así como contra los beneficios extraordinarios de las grandes empresas de distribución y comercio alimentario."
+  },
+  "88": {
+   "titulo": "Facilitar cuentas bancarias básicas y gratuitas",
+   "texto": "Facilitar el acceso a cuentas bancarias de pago básicas y gratuitas a todas las personas en situación de vulnerabilidad social y mejorar sus condiciones de uso."
+  },
+  "89": {
+   "titulo": "Establecer un precio máximo para la gasolina y el diésel",
+   "texto": "Establecer urgentemente un precio máximo legal para la gasolina y el diésel —tomando como referencia el precio medio de las gasolineras el 24 de febrero de 2022—, que se mantendrá vigente hasta que se estabilicen los precios y se apruebe una solución fiscal justa."
+  },
+  "90": {
+   "titulo": "Reforzar la inspección laboral y combatir la explotación",
+   "texto": "Reforzar los mecanismos de inspección laboral y combatir la explotación."
+  },
+  "91": {
+   "titulo": "Promover la regularización administrativa para eliminar la explotación",
+   "texto": "Promover la regularización administrativa como vía para eliminar la irregularidad como herramienta de explotación."
+  },
+  "92": {
+   "titulo": "Apoyar la afiliación sindical y la organización colectiva",
+   "texto": "Apoyar la afiliación sindical y la organización colectiva."
+  },
+  "93": {
+   "titulo": "Agilizar la homologación de titulaciones extranjeras",
+   "texto": "Agilizar la homologación y el reconocimiento de titulaciones obtenidas en el extranjero y establecer sistemas de acreditación de competencias profesionales. También para la población emigrante retornada."
+  },
+  "94": {
+   "titulo": "Reconocer y dignificar el trabajo de cuidados",
+   "texto": "Reconocer y dignificar el trabajo de cuidados, realizado mayoritariamente por mujeres inmigrantes."
+  },
+  "95": {
+   "titulo": "Garantizar los derechos de la población inmigrante",
+   "texto": "Impulsar las reformas legislativas necesarias para garantizar los derechos de la población inmigrante (vivienda, trabajo, atención sanitaria, educación...) y favorecer y facilitar los procesos de regularización administrativa."
+  },
+  "96": {
+   "titulo": "Cumplir el derecho internacional sobre protección de migrantes y refugiados",
+   "texto": "Garantizar el cumplimiento del derecho internacional en materia de protección de la población inmigrante, refugiada o solicitante de asilo."
+  },
+  "97": {
+   "titulo": "Dotar de recursos a las oficinas de extranjería",
+   "texto": "Reclamar los recursos humanos y materiales necesarios para las oficinas de extranjería, a fin de garantizar una atención adecuada, en tiempo y forma, a la población inmigrante, refugiada o solicitante de asilo."
+  },
+  "98": {
+   "titulo": "Erradicar la discriminación y el racismo en las administraciones",
+   "texto": "Defender la erradicación de cualquier forma de discriminación y actitud racista en las administraciones públicas."
+  },
+  "99": {
+   "titulo": "Cerrar los CIE y poner fin a las deportaciones en caliente",
+   "texto": "Exigir el cierre de los Centros de Internamiento de Extranjeros (CIE) en el Estado español y el fin de las deportaciones en caliente, garantizando el respeto escrupuloso de los derechos humanos de la población inmigrante, refugiada o solicitante de asilo."
+  },
+  "100": {
+   "titulo": "Cumplir las obligaciones internacionales contra la violencia machista",
+   "texto": "Cumplir las obligaciones internacionales de prevención y lucha contra todas las formas de violencia machista, especialmente el Convenio de Estambul, corrigiendo los problemas señalados en los informes GREVIO y, en particular, llevar a cabo una reforma legislativa integral que garantice que la ley orgánica correspondiente cubra todos los tipos de violencia contra las mujeres y otorgue rango de ley efectivo a la violencia vicaria."
+  },
+  "101": {
+   "titulo": "Aplicar las medidas pendientes del Pacto de Estado",
+   "texto": "Impulsar y ejecutar las medidas del Pacto de Estado contra la violencia machista que dependen del Gobierno del Estado y siguen sin desarrollarse."
+  },
+  "102": {
+   "titulo": "Aumentar los fondos transferidos a Galicia para el Pacto de Estado",
+   "texto": "Aumentar la transferencia a Galicia de los fondos destinados a cumplir el Pacto de Estado en el ámbito de sus competencias. Para ello, exigiremos revisar los criterios de reparto de los recursos económicos destinados a la Administración Local y a la Administración gallega, de modo que tengan en cuenta la realidad específica de nuestro país (dispersión poblacional, elevado número de núcleos de población y envejecimiento, entre otros factores), así como los recursos existentes."
+  },
+  "103": {
+   "titulo": "Garantizar la gestión pública de los nuevos recursos contra la violencia sexual",
+   "texto": "Garantizar por ley que los nuevos recursos impulsados al amparo del Pacto de Estado o de la Ley Orgánica 10/2022 de garantía integral de la libertad sexual sean públicos y de gestión directa, y reclamar en Galicia la integración de los centros de crisis privatizados en el sistema público y su adaptación a nuestra estructura territorial y poblacional."
+  },
+  "104": {
+   "titulo": "Incorporar la perspectiva de género en todas las políticas públicas",
+   "texto": "Incorporar la perspectiva de género como elemento transversal en todas las políticas públicas, promoviendo la erradicación de cualquier forma de discriminación o brecha de género en cualquier ámbito o servicio público."
+  },
+  "105": {
+   "titulo": "Reforzar la participación de las mujeres en la vida pública",
+   "texto": "Reforzar la participación de las mujeres en la vida pública e institucional modificando la Ley de Paridad, Ley Orgánica 2/2024, para permitir una mayor presencia correlativa de mujeres en las listas electorales."
+  },
+  "106": {
+   "titulo": "Introducir el término feminicidio en la legislación",
+   "texto": "Introducir el término feminicidio en la legislación española e impulsar un Estatuto de la Víctima de Feminicidio para abordar integralmente la violencia machista."
+  },
+  "107": {
+   "titulo": "Mejorar la protección de las mujeres que sufren violencia machista",
+   "texto": "Mejorar el sistema de protección de las mujeres en situación de violencia machista mediante, entre otras, las siguientes medidas:"
+  },
+  "108": {
+   "titulo": "Garantizar la gestión pública de los sistemas de control telemático",
+   "texto": "Garantizar la gestión pública y directa de los mecanismos de control telemático para proteger a las víctimas de violencia machista, y realizar las mejoras oportunas para poner fin a los problemas de cobertura y revictimización existentes en nuestro país."
+  },
+  "109": {
+   "titulo": "Generalizar los informes forenses de valoración del riesgo",
+   "texto": "Generalizar la elaboración de informes forenses de valoración del riesgo que complementen los policiales, así como revisar periódicamente el sistema VioGén para mejorar su eficiencia y eficacia y extender los mecanismos de geolocalización del agresor a los casos con una valoración de riesgo medio."
+  },
+  "110": {
+   "titulo": "Destinar fondos estatales a los servicios del Imelga",
+   "texto": "Destinar fondos estatales a incrementar y reforzar los servicios del Imelga."
+  },
+  "111": {
+   "titulo": "Reconocer la violencia vicaria y proteger a los menores",
+   "texto": "Avanzar en el reconocimiento de la violencia vicaria y en la protección de los menores, desarrollando medidas eficaces que eviten subterfugios que terminan permitiendo visitas de los maltratadores. Asimismo, avanzar en la adopción de medidas cautelares ante posibles situaciones de riesgo para los menores cuando se sospeche que adultos de referencia ejercen violencia, especialmente en los ámbitos educativo y del tiempo libre. En todos estos ámbitos deberán garantizarse la escucha, la privacidad, la seguridad y el apoyo psicológico a los menores."
+  },
+  "112": {
+   "titulo": "Formar obligatoriamente a todos los agentes implicados",
+   "texto": "Impulsar medidas concretas y específicas para formar obligatoriamente a todos los agentes, organismos e instituciones implicados, directa o indirectamente, en la prevención y actuación frente a la violencia machista, empezando por las fuerzas y cuerpos de seguridad y la Justicia."
+  },
+  "113": {
+   "titulo": "Dotar de plazas y recursos a los juzgados de violencia contra las mujeres",
+   "texto": "Dotar de suficientes plazas judiciales y financiación para medios materiales y humanos a las secciones de violencia contra la mujer de los tribunales de instancia, y reorganizar la comarcalización de las secciones de Ourense y Santiago de Compostela, sin extenderla a Lugo y Pontevedra, para corregir los desequilibrios territoriales y las dificultades que los desplazamientos suponen para las víctimas."
+  },
+  "114": {
+   "titulo": "Combatir la violencia machista en el ámbito digital",
+   "texto": "Impulsar los cambios legales oportunos para combatir cualquier forma de violencia machista en el ámbito digital y garantizar que estos delitos se persigan debidamente cuando se cometan a través de internet o mediante tecnologías y plataformas digitales (incluida la Inteligencia Artificial)."
+  },
+  "115": {
+   "titulo": "Oponerse a la legalización de los vientres de alquiler",
+   "texto": "Oponerse firme y contundentemente a cualquier intento de legalizar, regular y banalizar los vientres de alquiler, por ser una forma de explotación de los cuerpos de las mujeres y de mercantilización de seres humanos (mujeres y niños). Impulsar los cambios legales necesarios para impedir esta práctica a través de terceros países."
+  },
+  "116": {
+   "titulo": "Desbloquear la legislación contra la trata y la explotación",
+   "texto": "Desbloquear la legislación específica contra la trata y la explotación de seres humanos, e impulsar medidas integrales para proteger a las víctimas con un enfoque de derechos, sin ningún tipo de discriminación por su nacionalidad."
+  },
+  "117": {
+   "titulo": "Impulsar medidas para abolir la prostitución",
+   "texto": "Impulsar medidas estratégicas conducentes a abolir la prostitución desde una perspectiva que castigue y persiga al proxeneta y a quien prostituye, dejando a las mujeres prostituidas libres de toda criminalización, estigmatización o enfoque moralista. Desde el respeto al derecho de autodeterminación de las mujeres y a su libre elección, así como al derecho a una vida sin ninguna forma de violencia ni discriminación, se impulsarán medidas dirigidas a:"
+  },
+  "118": {
+   "titulo": "Ofrecer una red de apoyo para dejar la prostitución",
+   "texto": "Ofrecer una red de apoyo que garantice la libertad de dejar la prostitución a todas las mujeres que así lo deseen, cubriendo sus necesidades personales básicas (ingresos, alojamiento, empleo, regularización administrativa…)."
+  },
+  "119": {
+   "titulo": "Perseguir intensamente la prostitución forzada",
+   "texto": "Perseguir de forma intensa y efectiva la prostitución forzada, con una coordinación eficaz entre los distintos organismos, cuerpos y"
+  },
+  "120": {
+   "titulo": "Coordinar los organismos implicados",
+   "texto": "entidades (Policía, Guardia Civil, juzgados, abogacía, Inspección de Trabajo, etc.)."
+  },
+  "121": {
+   "titulo": "Crear centros públicos de estancia media para mujeres que dejen la prostitución",
+   "texto": "Incluir en el Pacto de Estado el impulso de una red pública de centros de estancia media para el desarrollo personal integral de las mujeres en situación de prostitución que decidan dejarla."
+  },
+  "122": {
+   "titulo": "Priorizar a las víctimas de violencia machista en las políticas de vivienda",
+   "texto": "Incluir a las víctimas de violencia machista como colectivo prioritario en el diseño de las políticas públicas que garanticen el acceso a la vivienda."
+  },
+  "123": {
+   "titulo": "Apoyar a las denunciantes perseguidas judicialmente",
+   "texto": "Incorporar políticas públicas o judiciales de apoyo a las denunciantes de violencia machista cuando sean objeto de persecución judicial por parte de las personas denunciadas."
+  },
+  "124": {
+   "titulo": "Reconocer legalmente a las familias monoparentales de origen",
+   "texto": "Reconocer legalmente a las familias monoparentales desde su origen, por decisión propia, e impulsar una legislación específica —para las cuestiones de competencia estatal— que permita garantizar sus derechos y superar la discriminación estructural que sufren actualmente."
+  },
+  "125": {
+   "titulo": "Impulsar la corresponsabilidad social y la conciliación",
+   "texto": "Impulsar medidas de corresponsabilidad social y conciliación real mediante políticas de apoyo a la conciliación personal y de cuidados, incluida la compensación económica de las reducciones de jornada, la garantía de ingresos durante los períodos de excedencia y la aportación económica de la Administración General del Estado para financiar la gratuidad de las escuelas infantiles gallegas."
+  },
+  "126": {
+   "titulo": "Eliminar la discriminación de género en los medios de comunicación",
+   "texto": "Impulsar medidas para eliminar cualquier forma de discriminación por razón de género y de sexismo en los medios de comunicación, tanto públicos como privados, promoviendo un tratamiento informativo adecuado de la violencia machista. Entre ellas se incluirá un código ético cuyo cumplimiento será obligatorio para obtener fondos públicos."
+  },
+  "127": {
+   "titulo": "Completar el catálogo de enfermedades profesionales del sector marisquero",
+   "texto": "Cumplir con la elaboración pendiente del catálogo de enfermedades profesionales recogidas en la Ley de Pesca de 2023, a instancias del BNG, para reconocer las enfermedades profesionales de las mujeres del marisqueo."
+  },
+  "128": {
+   "titulo": "Impulsar la igualdad y el empleo en el medio rural",
+   "texto": "Financiar e impulsar medidas de igualdad en el medio rural y, en concreto, en los programas destinados a fomentar el empleo y el emprendimiento."
+  },
+  "129": {
+   "titulo": "Vigilar el cumplimiento de los convenios en los servicios de cuidados",
+   "texto": "Promover un mayor control y vigilancia del cumplimiento de los convenios colectivos de las trabajadoras de atención a las personas"
+  },
+  "130": {
+   "titulo": "Proteger las condiciones laborales en el cuidado de mayores y dependientes",
+   "texto": "mayores y dependientes, así como en el ámbito del trabajo doméstico."
+  },
+  "131": {
+   "titulo": "Investigar la salud de las mujeres sin sesgos patriarcales",
+   "texto": "Impulsar programas de investigación específicos sobre la salud de las mujeres que superen los sesgos patriarcales."
+  },
+  "132": {
+   "titulo": "Garantizar el suministro de medicación esencial para las mujeres",
+   "texto": "Impulsar medidas que garanticen el suministro de medicación esencial para el tratamiento de las mujeres, como en el ámbito de la menopausia, para evitar nuevas crisis de cobertura."
+  },
+  "133": {
+   "titulo": "Garantizar un envejecimiento digno y sin LGBTfobia",
+   "texto": "Garantizar un envejecimiento digno y sin LGBTfobia, con planes formativos específicos para los profesionales del sector sociosanitario de las residencias de mayores."
+  },
+  "134": {
+   "titulo": "Combatir los delitos de odio y la discriminación",
+   "texto": "Combatir los delitos de odio, garantizando estadísticas adecuadas y promoviendo medidas dirigidas a erradicar la discriminación."
+  },
+  "135": {
+   "titulo": "Promover la inclusión laboral y social de las personas trans",
+   "texto": "Promover medidas de acción positiva para la inclusión laboral y social de las personas trans."
+  },
+  "136": {
+   "titulo": "Apoyar a las personas LGBT+ migrantes, refugiadas y solicitantes de asilo",
+   "texto": "Apoyar y acompañar a las personas LGBT+ migrantes, refugiadas o solicitantes de asilo."
+  },
+  "137": {
+   "titulo": "Retirar ayudas a organizaciones que vulneren los derechos LGBT",
+   "texto": "Suprimir cualquier tipo de subvención o ayuda pública e imponer sanciones a las organizaciones cuyo objetivo sea negar o vulnerar los derechos de las personas LGBT, o que se expresen en ese sentido."
+  },
+  "138": {
+   "titulo": "Crear servicios de igualdad y diversidad sexual en los centros educativos",
+   "texto": "Crear un servicio de igualdad de género y diversidad sexual, a cargo de una profesional con formación y dedicación específicas, en todos los centros educativos."
+  },
+  "139": {
+   "titulo": "Incluir contenidos de igualdad y diversidad en la enseñanza",
+   "texto": "Incluir contenidos transversales y específicos en la enseñanza obligatoria y universitaria para garantizar la formación del profesorado y del alumnado."
+  },
+  "140": {
+   "titulo": "Formar al personal sanitario sobre las necesidades de las personas LGBTI",
+   "texto": "Concienciar y formar a los profesionales sanitarios sobre las necesidades específicas de salud sexual y reproductiva de las personas LGBTI."
+  },
+  "141": {
+   "titulo": "Proteger la identidad legal de las personas trans migrantes",
+   "texto": "Proteger a las personas trans migrantes permitiendo el reconocimiento legal de su identidad en la documentación."
+  },
+  "142": {
+   "titulo": "Proteger la autodeterminación de género de los menores trans",
+   "texto": "Proteger a las personas trans menores de 12 años, respetando su derecho a la autodeterminación de género."
+  },
+  "143": {
+   "titulo": "Reconocer a las personas no binarias",
+   "texto": "Reconocer a las personas no binarias."
+  },
+  "144": {
+   "titulo": "Derogar íntegramente la Ley Mordaza",
+   "texto": "Derogar íntegramente la Ley Mordaza, por favorecer la discrecionalidad policial, criminalizar el derecho de reunión y manifestación y aumentar la indefensión de la ciudadanía. En particular, suprimir las infracciones graves de desobediencia y resistencia a la autoridad, así como la negativa a identificarse o la falta de consideración hacia algún agente de las Fuerzas y Cuerpos de Seguridad del Estado. También debe prohibirse el uso de pelotas de goma y las devoluciones en caliente, y eliminarse el principio de presunción de veracidad que se otorga a las declaraciones (denuncias, actas o atestados) de los agentes."
+  },
+  "145": {
+   "titulo": "Derogar la prisión permanente revisable",
+   "texto": "Derogar la prisión permanente revisable, por ser una forma encubierta de mantener la cadena perpetua y contraria al principio de reinserción social, así como las medidas de libertad vigilada una vez cumplida la pena, basadas en un análisis subjetivo de la «peligrosidad» de las personas y en contradicción con los principios de rehabilitación y reinserción social. Asimismo, trabajar para garantizar que las penas impuestas a los gallegos y gallegas se cumplan en Galicia y trasladar a quienes ya cumplen penas de prisión en otros territorios del Estado."
+  },
+  "146": {
+   "titulo": "Derogar los delitos de desórdenes públicos agravados",
+   "texto": "Derogar el delito de desórdenes públicos agravados, por limitar y afectar al libre ejercicio de los derechos fundamentales de reunión y manifestación, así como el resto de conductas tipificadas como delito que atentan directamente contra la libertad de expresión (injurias contra la Corona, los Ejércitos, las Fuerzas y Cuerpos de Seguridad, el Gobierno y otras instituciones del Estado; escarnio de creencias religiosas, u ofensas o ultrajes a los símbolos nacionales, entre otras)."
+  },
+  "147": {
+   "titulo": "Reducir el importe de las sanciones por infracciones de seguridad ciudadana",
+   "texto": "Reducir el importe de las sanciones previstas para las infracciones de seguridad ciudadana en la Ley contra la Violencia en el Deporte."
+  },
+  "148": {
+   "titulo": "Transferir a Galicia las competencias penitenciarias",
+   "texto": "Transferir a Galicia las competencias en materia de instituciones penitenciarias con el objetivo de avanzar hacia una legislación penitenciaria actualizada, más garantista y respetuosa con los derechos fundamentales de la población reclusa; reducir las sanciones de aislamiento, reforzar el papel de las juntas de tratamiento y reconocer derechos sindicales a las personas presas que trabajen, entre otras medidas."
+  },
+  "149": {
+   "titulo": "Derogar la Ley de Amnistía",
+   "texto": "Derogar la Ley de Amnistía de 1977, que sigue impidiendo las reivindicaciones y la tutela judicial de las víctimas de crímenes contra su vida y dignidad cometidos durante el régimen franquista, así como reconocer la imprescriptibilidad de los delitos de genocidio y lesa humanidad y el principio de legalidad internacional."
+  },
+  "150": {
+   "titulo": "Reconocer el Pazo de Meirás como Lugar de Memoria",
+   "texto": "Reconocer el Pazo de Meirás como Lugar de Memoria, centrado en el expolio y las víctimas del franquismo. Tras la sentencia que avanzó en la devolución del Pazo de Meirás al pueblo gallego, el BNG se compromete a trabajar para que se ceda a Galicia, garantizando que su titularidad y uso públicos respeten su verdadera historia. Reclama que el espacio se centre en recordar los abusos y el expolio de los bienes de los gallegos y gallegas por parte del dictador Franco y su familia, en reconocer a las víctimas y en permitir la participación de las entidades memorialistas en su gestión. Además, el BNG seguirá luchando por recuperar los demás bienes expoliados por el dictador Francisco Franco y su familia (Casa das Cunchas, Casa Cornide...)."
+  },
+  "151": {
+   "titulo": "Revisar la declaración de las islas de San Simón y San Antón",
+   "texto": "Revisar el acuerdo por el que se declara las islas de San Simón y San Antón Lugar de Memoria Democrática, para garantizar la centralidad de su significado como espacio de represión y resistencia e impedir usos que resulten ofensivos para las víctimas, sus familias y la sociedad en su conjunto."
+  },
+  "152": {
+   "titulo": "Modificar la Ley de Memoria para acabar con la impunidad franquista",
+   "texto": "Modificar la Ley de Memoria para acabar con la impunidad del franquismo y garantizar la tutela judicial efectiva de las víctimas y sus familias."
+  },
+  "153": {
+   "titulo": "Retirar la simbología franquista y prohibir actos de exaltación",
+   "texto": "Garantizar la retirada efectiva de la simbología, prohibir los actos públicos de exaltación franquista y avanzar realmente en las medidas en"
+  },
+  "154": {
+   "titulo": "Impulsar la educación y formación sobre memoria democrática",
+   "texto": "materia educativa y de formación del profesorado sobre memoria democrática."
+  },
+  "155": {
+   "titulo": "Derogar las leyes de Secretos Oficiales y de Seguridad Nacional",
+   "texto": "Derogar la Ley de Secretos Oficiales y la Ley de Seguridad Nacional para garantizar la plena transparencia de las actuaciones y los gastos de las instituciones militares o dependientes de las fuerzas y cuerpos de seguridad del Estado."
+  },
+  "156": {
+   "titulo": "Promover el pluralismo informativo en los medios públicos",
+   "texto": "Impulsar y apoyar reformas para lograr un mayor pluralismo informativo en los medios de comunicación de titularidad pública, especialmente durante las convocatorias electorales, porque garantizar la igualdad de acceso a la información nos permite avanzar en democracia."
+  },
+  "157": {
+   "titulo": "Impulsar la participación directa mediante consultas populares",
+   "texto": "Impulsar la participación directa mediante consultas populares. En este sentido, promoveremos y apoyaremos los cambios legales necesarios para convocar referendos vinculantes sobre asuntos de interés, incluido el derecho de autodeterminación, así como la participación social en la planificación y gestión de los fondos públicos."
+  },
+  "158": {
+   "titulo": "Denunciar y revocar el Concordato con la Iglesia católica",
+   "texto": "Denunciar y revocar el Concordato con la Iglesia católica y, en particular, los acuerdos vigentes con la Santa Sede, para avanzar hacia un Estado verdaderamente laico. Esto supondrá eliminar los privilegios de la Iglesia y la presencia de la religión en las instituciones y los servicios públicos."
+  },
+  "159": {
+   "titulo": "Reformar estructuralmente la normativa electoral",
+   "texto": "Reformar estructuralmente la normativa electoral: implantar el método proporcional directo (cuota Hare); establecer Galicia como circunscripción electoral; eliminar los porcentajes mínimos del 5% para obtener representación; hacer obligatorio el voto secreto en cabina; prohibir el reparto de papeletas, y garantizar la igualdad entre partidos políticos en el acceso, la difusión y la presencia en debates electorales en horario de máxima audiencia. Asimismo, exigiremos que el voto exterior se emita, al igual que en las mesas electorales del Estado, siempre en urna y en lugares debidamente habilitados, para identificar a los votantes e impedir el fraude. Exigiremos que se cumpla lo establecido en la disposición adicional séptima de la Ley de Pesca, introducida gracias a una enmienda del BNG, que obliga al Gobierno a remitir a las Cortes una propuesta para garantizar el voto telemático de los marineros embarcados en las flotas de altura."
+  },
+  "160": {
+   "titulo": "Superar el marco legislativo educativo actual",
+   "texto": "Superar el marco legislativo actual, recogido en los artículos 3 y 27 de la Constitución. Dotarnos del poder político necesario para decidir la ordenación y planificación de un sistema educativo gallego, integrado en nuestra realidad social, económica, cultural y lingüística, de acuerdo con nuestras necesidades y carencias y al servicio de la transformación y el desarrollo de Galicia."
+  },
+  "161": {
+   "titulo": "Establecer un nuevo marco educativo gallego",
+   "texto": "Establecer un nuevo marco educativo que supere las limitaciones competenciales impuestas por una visión unitaria del Estado y del sistema educativo, tanto en la enseñanza no universitaria (LOMLOE, LOFP) como en la universitaria (LOSU), y que parta, por tanto, de la configuración plurinacional y plurilingüe del Estado; que Galicia pueda organizar y ordenar el sistema educativo mediante una Ley gallega de educación que lo regule hasta el Bachillerato, una Ley gallega de formación profesional, una Ley de enseñanzas artísticas superiores que permita adscribir a la universidad los centros que imparten estas enseñanzas, y una Ley del Sistema Universitario Gallego."
+  },
+  "162": {
+   "titulo": "Promover un modelo educativo público y universal",
+   "texto": "Promover un modelo educativo fundamentado en el derecho universal a la educación para los gallegos y gallegas de 0 a 18 años y obligatoria de 3 a 18 años, sustentado en una única red de enseñanza, la pública, con servicios complementarios, libros de texto, material escolar y actividades extraescolares gratuitos. Una enseñanza pública, gallega, laica, coeducativa, gratuita y democrática."
+  },
+  "163": {
+   "titulo": "Transferir a Galicia las competencias educativas pendientes",
+   "texto": "Transferir al Gobierno gallego todas las competencias pendientes, garantizando plena capacidad para diseñar y desarrollar un modelo educativo propio. Traspasar todos los programas educativos y los centros educativos y formativos situados en Galicia que están adscritos a la Administración central, así como todas las competencias para elaborar los planes de estudio y los diseños curriculares en todas las etapas educativas y la política de becas para la enseñanza no universitaria; organizar todas las enseñanzas y establecer"
+  },
+  "164": {
+   "titulo": "Establecer los currículos y criterios de evaluación",
+   "texto": "los currículos escolares de todas las materias y fijar los criterios de evaluación del aprendizaje y de promoción del alumnado, para establecer una enseñanza inclusiva e integradora que dé una respuesta satisfactoria y adecuada al alumnado con necesidades especiales."
+  },
+  "165": {
+   "titulo": "Asumir las competencias sobre el personal docente",
+   "texto": "Garantizar la competencia plena y exclusiva en la gestión del personal docente: regular los cuerpos y especialidades docentes; fijar el sistema de acceso a la función pública docente, con plena autonomía para suprimir las tasas de reposición de efectivos en las ofertas de empleo público y dotar así a la enseñanza pública del profesorado que necesite; regular las competencias y la composición de todos los órganos colegiados y la elección democrática de los equipos directivos por y entre quienes integran los propios centros, eliminando la libre designación en los Centros Integrados de FP."
+  },
+  "166": {
+   "titulo": "Defender inequívocamente la enseñanza pública",
+   "texto": "Defender inequívocamente la enseñanza pública. Regular la admisión del alumnado en los centros educativos para establecer conciertos educativos mientras no se supriman. Por consiguiente, vigilar especialmente el cumplimiento efectivo de la eliminación de los conciertos educativos de los centros que segregan al alumnado por razón de género, controlar que desaparezca el modelo segregador de los centros que reciben fondos públicos y aplicar medidas sancionadoras en caso de incumplimiento de la ley. En el camino hacia la supresión de los conciertos en todos los niveles educativos, eliminarlos en la enseñanza no obligatoria y controlar la financiación ajena a los conciertos en los centros sostenidos con fondos públicos."
+  },
+  "167": {
+   "titulo": "Promover una enseñanza laica",
+   "texto": "Promover una enseñanza laica. La asignatura de Religión no formará parte del currículo escolar, ya que es indiscutible que la difusión de la fe religiosa corresponde al ámbito privado y familiar. En este sentido, se denunciará y renegociará el Concordato con la Santa Sede y los acuerdos con las demás confesiones religiosas."
+  },
+  "168": {
+   "titulo": "Aumentar la calidad y el presupuesto del sistema educativo",
+   "texto": "Dotar al sistema educativo de mayores niveles de calidad, apostando por aumentar los presupuestos destinados a educación hasta dedicarle, como mínimo, el 7% del PIB."
+  },
+  "169": {
+   "titulo": "Reformar la Ley Orgánica del Sistema Universitario",
+   "texto": "Defender una reforma de la Ley Orgánica del Sistema Universitario (LOSU) que defina claramente el modelo de universidad pública y permita ejercer todas las competencias en el ámbito gallego mediante una ley propia que evite la privatización del SUG y permita plena competencia para regular los planes de estudio universitarios, actualmente limitados por el RD 43/2015."
+  },
+  "170": {
+   "titulo": "Regular la evaluación del personal docente e investigador",
+   "texto": "Regular la evaluación propia del personal docente e investigador mediante una ACSUG reforzada y coordinada con las demás agencias autonómicas y con la ANECA; regular la ordenación de los cuerpos docentes universitarios y del personal docente e investigador laboral, desde las figuras de acceso hasta las permanentes, eliminando la precariedad y regulando una carrera profesional, investigadora y académica en las universidades públicas gallegas."
+  },
+  "171": {
+   "titulo": "Aumentar la financiación de las universidades públicas",
+   "texto": "Aumentar la financiación de las universidades públicas, tomando como referencia el 1,5% del PIB, para evitar que continúe el camino de privatización encubierta, y favorecer la participación de los proyectos de investigación universitaria en los programas de I+D+i."
+  },
+  "172": {
+   "titulo": "Transferir a Galicia las competencias de la UNED y otras entidades",
+   "texto": "Transferir a Galicia las competencias y los medios materiales de la Universidad Nacional de Educación a Distancia (UNED), la Universidad Internacional Menéndez Pelayo y las entidades dependientes del Consejo Superior de Investigaciones Científicas."
+  },
+  "173": {
+   "titulo": "Transferir la gestión de las becas universitarias",
+   "texto": "Transferir la competencia para gestionar y conceder becas y ayudas al estudio universitario, superando el modelo actual de reparto y garantizando el acceso universal a la enseñanza superior."
+  },
+  "174": {
+   "titulo": "Mejorar y transferir el seguro escolar",
+   "texto": "Mejorar la acción protectora del seguro escolar y transferirlo a la Xunta de Galicia."
+  },
+  "175": {
+   "titulo": "Eliminar la tasa de reposición",
+   "texto": "Eliminar la tasa de reposición."
+  },
+  "176": {
+   "titulo": "Garantizar el relevo generacional del personal",
+   "texto": "Crear programas específicos para garantizar el relevo generacional y evitar el envejecimiento de la plantilla."
+  },
+  "177": {
+   "titulo": "Financiar vivienda para el estudiantado",
+   "texto": "Crear programas específicos de financiación de vivienda para el estudiantado, especialmente mediante residencias universitarias públicas."
+  },
+  "178": {
+   "titulo": "Financiar el transporte universitario",
+   "texto": "Crear programas específicos de financiación del transporte universitario."
+  },
+  "179": {
+   "titulo": "Aumentar la financiación de la sanidad pública",
+   "texto": "Aumentar la financiación de la sanidad pública hasta alcanzar, como mínimo, la media de inversión por habitante de la UE, incrementando el peso de los parámetros de dispersión y envejecimiento de la población, asegurando una mayor racionalidad del gasto farmacéutico y garantizando la participación gallega en la fijación del precio de los medicamentos."
+  },
+  "180": {
+   "titulo": "Garantizar el carácter público de la sanidad",
+   "texto": "Garantizar el carácter público de la sanidad y reducir las posibilidades de privatizarla mediante una modificación de la Ley 15/97, sobre habilitación de nuevas formas de gestión del Sistema de Salud, que asegure que la titularidad, financiación, gestión y provisión de los servicios sanitarios correspondan exclusivamente a entidades públicas."
+  },
+  "181": {
+   "titulo": "Garantizar el derecho universal a la asistencia sanitaria",
+   "texto": "Garantizar el derecho universal a la asistencia sanitaria mediante una nueva ley de universalización, sin ambigüedades interpretativas que amparen la exclusión y orientada, en el fondo y en la forma, a ofrecer cobertura sanitaria pública, garantizada y de calidad a todas las personas."
+  },
+  "182": {
+   "titulo": "Ampliar la cartera común de servicios del sistema público de salud",
+   "texto": "Ampliar la cartera común de servicios del sistema público de salud, con la correspondiente transferencia económica a las comunidades autónomas, para permitir prestaciones como el acceso a productos ortoprotésicos o a rehabilitación para pacientes con déficit funcional recuperable, para todas las personas que lo necesiten y con financiación 100% pública; así como prestaciones sanitarias actualmente fuera de la atención primaria o solo parcialmente financiadas, como la atención odontológica,"
+  },
+  "183": {
+   "titulo": "Incluir nuevas prestaciones en la atención primaria",
+   "texto": "podología, óptica y optometría, terapia ocupacional, logopedia, nutrición..."
+  },
+  "184": {
+   "titulo": "Poner fin a los copagos sanitarios",
+   "texto": "Modificar el marco legal vigente que regula la participación económica de las usuarias y los usuarios de la sanidad pública en la financiación de la prestación farmacéutica, para poner fin al actual modelo de copagos y repagos, que se revela como un impuesto a la enfermedad."
+  },
+  "185": {
+   "titulo": "Establecer criterios transparentes sobre las listas de espera",
+   "texto": "Establecer un marco legal, respetando las competencias de los servicios de salud, para determinar criterios, indicadores y requisitos mínimos, básicos y transparentes en materia de información sobre las listas de espera de consultas externas, pruebas diagnósticas y terapéuticas e intervenciones quirúrgicas."
+  },
+  "186": {
+   "titulo": "Eliminar la tasa de reposición de personal sanitario",
+   "texto": "Eliminar la tasa de reposición de personal como norma básica de obligado cumplimiento en todo el Estado, ya que vulnera las competencias de Galicia en materia de personal en ámbitos transferidos, como la sanidad."
+  },
+  "187": {
+   "titulo": "Asegurar la capacidad docente e investigadora del sistema sanitario",
+   "texto": "Dotarnos de capacidad normativa y financiera para asegurar la capacidad docente e investigadora del sistema educativo y sanitario en materia de salud, con coordinación entre las universidades y el SERGAS y estabilización del personal investigador."
+  },
+  "188": {
+   "titulo": "Transferir los programas de formación sanitaria especializada",
+   "texto": "Transferir a Galicia todas las competencias relacionadas con los programas de formación MIR, EIR, PIR... e incrementar el número de plazas de acuerdo con las necesidades reales de cobertura de profesionales del SERGAS."
+  },
+  "189": {
+   "titulo": "Fomentar la permanencia de profesionales en la sanidad pública",
+   "texto": "Impulsar un marco legal que fomente la permanencia de los profesionales en el sistema sanitario público durante, como mínimo, el mismo tiempo que dure el período de formación especializada, garantizando vínculos estables y condiciones laborales dignas."
+  },
+  "190": {
+   "titulo": "Garantizar la jubilación anticipada y parcial del personal sanitario",
+   "texto": "Adoptar con la mayor urgencia las medidas normativas necesarias para garantizar el derecho del personal estatutario de los servicios de salud a la jubilación anticipada y parcial, atendiendo a la realidad específica de este personal y del personal funcionario de los servicios de salud, así como a sus particularidades."
+  },
+  "191": {
+   "titulo": "Actualizar la regulación de las profesiones sanitarias",
+   "texto": "Modificar la LOPS para adaptarla a la normativa vigente del espacio europeo de formación e incorporar como profesiones sanitarias otras que actualmente no están contempladas, como la de las profesionales de Biología en el ámbito de la investigación biosanitaria y asistencial."
+  },
+  "192": {
+   "titulo": "Actualizar la clasificación de los profesionales de la sanidad pública",
+   "texto": "Actualizar las clasificaciones de los profesionales de la sanidad pública para adaptarlas a los criterios formativos, las funciones y las responsabilidades actuales."
+  },
+  "193": {
+   "titulo": "Crear un nuevo Estatuto Marco para los profesionales de la sanidad pública",
+   "texto": "Crear un nuevo Estatuto Marco para el conjunto de profesionales de la sanidad pública que no suponga recentralizar competencias ya transferidas a Galicia. Reforzar los derechos de las trabajadoras y los trabajadores de la sanidad pública y el ejercicio de sus competencias, con remuneraciones acordes a estas."
+  },
+  "194": {
+   "titulo": "Recuperar las pagas extraordinarias íntegras",
+   "texto": "Recuperar el importe íntegro de las pagas extraordinarias para el personal estatutario."
+  },
+  "195": {
+   "titulo": "Impulsar la investigación de las enfermedades raras",
+   "texto": "Impulsar decididamente la investigación de las llamadas enfermedades raras, garantizando una financiación pública adecuada."
+  },
+  "196": {
+   "titulo": "Priorizar la investigación sobre la salud de las mujeres",
+   "texto": "Establecer líneas prioritarias de investigación sobre la salud de las mujeres, con financiación suficiente, para avanzar en el conocimiento de las enfermedades que les afectan, revisar los patrones de síntomas y la evolución de las enfermedades, así como:"
+  },
+  "197": {
+   "titulo": "Transferir a la Xunta las competencias en salud penitenciaria",
+   "texto": "Traspasar a la Xunta de Galicia las competencias en materia de salud penitenciaria para que las asuma el Servicio Gallego de Salud, de conformidad con lo establecido en la DA 6.ª de la Ley de Cohesión del Sistema Nacional de Salud 16/2003, de 28 de mayo, de modo que la atención a este colectivo se preste en la red sanitaria pública gallega. Esta transferencia debe ir acompañada de los medios humanos, económicos y materiales necesarios, atendiendo a la suficiencia dinámica para prestar el servicio correspondiente, así como de la compensación de la deuda contraída por el Ministerio del Interior con el SERGAS."
+  },
+  "198": {
+   "titulo": "Elaborar el currículo profesional del personal TCAE",
+   "texto": "Elaborar el currículo profesional del personal TCAE, acorde con la actividad laboral que desempeña, y otorgarle el nivel 3 que le corresponde en la clasificación profesional, así como derogar la disposición transitoria 3.ª del EBEP y aplicar su artículo 76."
+  },
+  "199": {
+   "titulo": "Exigir al Estado que cumpla sus obligaciones de financiación del SAAD",
+   "texto": "Exigir al Gobierno español que cumpla sus obligaciones de financiación del SAAD, así como reclamar el pago de la deuda contraída con Galicia desde la aprobación de la Ley 39/2006, de 14 de diciembre, de promoción de la autonomía personal y atención a las personas en situación de dependencia, que actualmente supera los 3.000 millones de euros."
+  },
+  "200": {
+   "titulo": "Destinar los fondos del SAAD a reforzar la red pública de cuidados",
+   "texto": "Exigir que los fondos públicos destinados al SAAD contribuyan a blindar y fortalecer la red pública de cuidados (residencias, centros de día y de noche, Servicio de Ayuda en el Hogar, centros de cuidados intermedios...) y no a promover la privatización."
+  },
+  "201": {
+   "titulo": "Reclamar mejores condiciones laborales para las cuidadoras",
+   "texto": "Reclamar mejores condiciones laborales para las trabajadoras de cuidados, empezando por las trabajadoras del SAF y de las residencias de mayores."
+  },
+  "202": {
+   "titulo": "Garantizar la atención presencial y la accesibilidad administrativa",
+   "texto": "Garantizar la atención presencial sin cita previa y la disponibilidad de intérpretes o recursos adaptados en todas las oficinas de la Administración General del Estado, facilitando el acceso a los servicios públicos."
+  },
+  "203": {
+   "titulo": "Impulsar un Plan de Accesibilidad Universal",
+   "texto": "Impulsar un Plan de Accesibilidad Universal para suprimir las barreras físicas, cognitivas y sensoriales en las instituciones y servicios dependientes del Estado."
+  },
+  "204": {
+   "titulo": "Garantizar el derecho a la autonomía personal",
+   "texto": "Garantizar el derecho a la autonomía personal de las personas con discapacidad mediante medidas como el desarrollo y la financiación de la figura de la asistencia personal."
+  },
+  "205": {
+   "titulo": "Garantizar los derechos de familias con menores con enfermedades graves",
+   "texto": "Garantizar los derechos de las familias con menores afectados por enfermedades graves blindando la prestación económica que perciben (CUME) y garantizando que esté vinculada exclusivamente a la gravedad de la enfermedad y a la necesidad acreditada de cuidados directos, continuos y permanentes."
+  },
+  "206": {
+   "titulo": "Implantar un modelo de cuidados para las personas mayores",
+   "texto": "Implantar un modelo de cuidados para las personas mayores basado en los estándares de derechos del Consejo de Europa, adaptando los servicios de autonomía y proximidad a la diversa realidad plurinacional y territorial del Estado."
+  },
+  "207": {
+   "titulo": "Inhabilitar a cargos públicos por fraude fiscal",
+   "texto": "Inhabilitar directamente a cargos públicos y representativos que cometan fraude fiscal o cuando se detecten operaciones económicas propias —o realizadas en connivencia con su entorno familiar y profesional— a través de paraísos fiscales; asimismo, adoptar medidas de control exhaustivo de las vías de evasión fiscal para evitar que el capital defraudado encuentre refugio en paraísos fiscales o en cuentas de otros Estados."
+  },
+  "208": {
+   "titulo": "Regular estrictamente las puertas giratorias y las incompatibilidades",
+   "texto": "Regular estrictamente las puertas giratorias y las incompatibilidades; en concreto, suprimir la posibilidad de que las propias Cámaras autoricen la compatibilidad profesional de las personas que sean diputadas o senadoras."
+  },
+  "209": {
+   "titulo": "Impulsar reformas para mejorar la contratación pública",
+   "texto": "Para impulsar la democracia y el control público de la acción política, consideramos necesario promover"
+  },
+  "210": {
+   "titulo": "Mejorar la transparencia en la contratación pública",
+   "texto": "reformas que mejoren la transparencia en la contratación pública, como las siguientes:"
+  },
+  "211": {
+   "titulo": "Suprimir las restricciones a la gestión pública directa",
+   "texto": "Suprimir las restricciones normativas a la gestión pública directa de servicios públicos, respetando así la autonomía de cada institución."
+  },
+  "212": {
+   "titulo": "Hacer transparente la contratación negociada y directa",
+   "texto": "Modificar la normativa de contratación pública, introduciendo transparencia en la contratación negociada y directa y publicando las licitaciones negociadas en los perfiles de contratación."
+  },
+  "213": {
+   "titulo": "Fomentar la participación de las pymes en la contratación pública",
+   "texto": "Fomentar la participación de las pequeñas y medianas empresas en la contratación pública, con todas las garantías legales de integridad y transparencia, e impulsar un modelo de contratación pública que contribuya al crecimiento sostenible e integre una perspectiva social y ambiental en los criterios de adjudicación, basado también en la equidad y la justicia social y orientado a establecer una inversión productiva estable, pensada para una economía de pequeña escala como la de las pymes."
+  },
+  "214": {
+   "titulo": "Reestructurar y reducir el aparato administrativo del Estado",
+   "texto": "Reestructurar la Administración y reducir el aparato del Estado. Suprimir la Administración periférica del Estado y también los departamentos ministeriales con competencias transferidas."
+  },
+  "215": {
+   "titulo": "Suprimir las diputaciones provinciales",
+   "texto": "Suprimir las diputaciones provinciales y traspasar sus competencias y funciones a Galicia y a los ayuntamientos, evitando crear estructuras institucionales sustitutivas."
+  },
+  "216": {
+   "titulo": "Derogar la reforma local que limita la autonomía municipal",
+   "texto": "Mientras no se aborden las reformas de mayor alcance mencionadas, derogar la reforma local que limita la autonomía en este ámbito y la prestación de servicios públicos municipales."
+  },
+  "217": {
+   "titulo": "Aumentar la progresividad del sistema tributario",
+   "texto": "Aumentar su progresividad: que pague más quien más renta obtiene."
+  },
+  "218": {
+   "titulo": "Ajustar los tramos estatales del IRPF a los precios gallegos",
+   "texto": "Ajustar los tramos estatales del IRPF en función del incremento anual del Índice de Precios de Consumo en Galicia."
+  },
+  "219": {
+   "titulo": "Establecer tipos distintos según la naturaleza de las rentas",
+   "texto": "Establecer distintos tipos impositivos según la naturaleza de los rendimientos, reduciendo la tributación de los ingresos del trabajo y aumentando la correspondiente a los derivados del capital."
+  },
+  "220": {
+   "titulo": "Aplicar deducciones inversamente proporcionales a los tipos impositivos",
+   "texto": "Aplicar deducciones inversamente proporcionales a los tipos impositivos."
+  },
+  "221": {
+   "titulo": "Elevar los límites exentos para compensar gastos de desplazamiento",
+   "texto": "Modificar la normativa reguladora y elevar los límites exentos y no computables como ingresos del trabajo personal para las cantidades que la empresa destine a compensar los gastos de desplazamiento de trabajadores que utilicen transporte privado: de 0,26 € por km a 0,40 € por km recorrido, más los gastos justificados de peajes y aparcamiento, para evitar que tributen por el incremento derivado de la subida de precios."
+  },
+  "222": {
+   "titulo": "Exigir que las empresas que operan en Galicia tributen allí",
+   "texto": "Exigir que todas las empresas que desarrollan su actividad en Galicia y sitúan su domicilio social en otros lugares del Estado tributen en Galicia."
+  },
+  "223": {
+   "titulo": "Establecer la progresividad según el tamaño de la empresa",
+   "texto": "Establecer su progresividad en función del tamaño de la empresa."
+  },
+  "224": {
+   "titulo": "Aplicar deducciones proporcionales a los tipos impositivos",
+   "texto": "Aplicar deducciones inversamente proporcionales a los tipos impositivos soportados."
+  },
+  "225": {
+   "titulo": "Aumentar la reducción de la base imponible del impuesto de sociedades para pymes",
+   "texto": "Aumentar del 10 % al 25 % el porcentaje de reducción de la base imponible del IS por la denominada reserva de capitalización para las entidades de reducida dimensión o pymes, premiando la no distribución de beneficios para que las empresas se capitalicen con sus propios beneficios en lugar de recurrir a financiación externa y reducir así su deuda."
+  },
+  "226": {
+   "titulo": "Establecer deducciones para empresas de sectores estratégicos gallegos",
+   "texto": "Establecer deducciones adicionales para las empresas cuya actividad complemente ciclos productivos integrados en los sectores estratégicos gallegos."
+  },
+  "227": {
+   "titulo": "Reducir el IVA de los bienes y servicios esenciales",
+   "texto": "Reducir el IVA de los bienes y servicios esenciales, así como de los bienes culturales, para que tributen en el tramo superreducido."
+  },
+  "228": {
+   "titulo": "Rebajar permanentemente el IVA de productos básicos y renovables",
+   "texto": "Establecer una rebaja permanente del IVA de los productos básicos de alimentación, los productos del mar, los artículos de higiene personal y femenina, el transporte público de pasajeros y las inversiones en eficiencia energética y energías renovables en los hogares y las pequeñas y medianas empresas."
+  },
+  "229": {
+   "titulo": "Rebajar permanentemente el IVA de los suministros básicos",
+   "texto": "Volver a reducir al 5% el IVA aplicado a la electricidad, el gas, la biomasa para calefacción y la leña, así como al resto de suministros básicos, y establecer que la rebaja sea permanente."
+  },
+  "230": {
+   "titulo": "Hacer permanente la reducción del impuesto especial sobre la electricidad",
+   "texto": "Establecer la permanencia incondicional de la reducción del tipo impositivo del Impuesto Especial sobre la Electricidad (IEE), del 5,1 % al 0,5 %."
+  },
+  "231": {
+   "titulo": "Blindar los impuestos a la banca, las energéticas y las grandes fortunas",
+   "texto": "Blindar la permanencia de los impuestos específicos a los beneficios de la banca, las grandes empresas energéticas y las grandes fortunas; reducir los límites de exención, aumentar su progresividad y traspasar su gestión a Galicia."
+  },
+  "232": {
+   "titulo": "Reforzar la prevención y lucha contra el fraude fiscal",
+   "texto": "Promover la eficacia de las actuaciones de prevención y lucha contra el fraude y la evasión fiscal, dotándolas de medios y recursos suficientes para lograr una mayor equidad y justicia social en el reparto de las cargas tributarias."
+  },
+  "233": {
+   "titulo": "Prohibir ayudas públicas a empresas con sociedades en paraísos fiscales",
+   "texto": "Prohibir la contratación y la concesión de ayudas públicas a empresas que posean, directa o indirectamente, sociedades domiciliadas en paraísos fiscales sin actividad económica real que lo justifique."
+  },
+  "234": {
+   "titulo": "Establecer un sistema de fiscalidad ambiental",
+   "texto": "Establecer un sistema de fiscalidad ambiental en los ámbitos de la energía, el transporte, la contaminación y los recursos naturales, cuya finalidad sea más modificar las conductas que repercuten negativamente en el medio ambiente que recaudar."
+  },
+  "235": {
+   "titulo": "Reclamar el uso incondicional de los remanentes municipales",
+   "texto": "Reclamar, como venimos haciendo, que se permita utilizar incondicionalmente los remanentes municipales para desarrollar políticas públicas que atiendan mejor las necesidades del vecindario de nuestros municipios, desbloqueándolos definitivamente."
+  },
+  "236": {
+   "titulo": "Permitir el uso incondicional de los remanentes municipales",
+   "texto": "Seguiremos reclamando que se permita utilizar incondicionalmente los remanentes municipales para desarrollar políticas públicas que atiendan mejor las necesidades del vecindario de nuestros municipios, desbloqueándolos definitivamente."
+  },
+  "237": {
+   "titulo": "Sanear los sectores industriales en crisis",
+   "texto": "Sanear los sectores industriales en crisis y desarrollar una política real de reindustrialización basada en impulsar la industria"
+  },
+  "238": {
+   "titulo": "Impulsar la industria auxiliar y la innovación",
+   "texto": "auxiliar, optimizar los costes logísticos y apoyar los sectores industriales emergentes y la I+D+i, a lo que deberían destinarse un aumento considerable de los fondos y una mayor proporción del PIB."
+  },
+  "239": {
+   "titulo": "Elaborar un Plan de Industrialización para Galicia",
+   "texto": "El Estado debe facilitar todos los medios económicos y normativos para que la Xunta de Galicia disponga de los recursos necesarios para llevar a cabo un Plan de Industrialización que incluya entre sus objetivos el reequilibrio territorial y atienda prioritariamente a las comarcas en crisis industrial, como las de Ferrol y Vigo."
+  },
+  "240": {
+   "titulo": "Oponerse a la deslocalización y al cierre de la actividad industrial",
+   "texto": "Oponerse a la deslocalización y al cierre de la actividad industrial y establecer la obligación de devolver las ayudas públicas, subvenciones o bonificaciones para las empresas que hayan deslocalizado su producción."
+  },
+  "241": {
+   "titulo": "Promover y fortalecer la construcción naval en Galicia",
+   "texto": "Promover y fortalecer la construcción naval en Galicia, tanto en el ámbito privado como en el público, mediante la modernización tecnológica y la renovación de las plantillas, con el objetivo de situar los astilleros gallegos como referentes mundiales, atendiendo especialmente a la recuperación de la actividad en los astilleros de Vigo y Ferrol."
+  },
+  "242": {
+   "titulo": "Convertir NAVANTIA-Ferrol en un complejo industrial integral",
+   "texto": "Convertir NAVANTIA-Ferrol en un complejo industrial integral, diversificando su actividad para incorporar la construcción naval civil; implantar un plan de inversiones para renovar las infraestructuras e incorporar a la Xunta de Galicia al consejo de administración de NAVANTIA, como prevén el propio Estatuto de Autonomía de Galicia y el artículo 4.1 de la Ley de Fomento del Sector Naval de Galicia."
+  },
+  "243": {
+   "titulo": "Exigir el cumplimiento de los compromisos de ALCOA-San Cibrao",
+   "texto": "Exigir el cumplimiento de los compromisos y la continuidad de la actividad y el empleo de ALCOA-San Cibrao, previendo incluso la intervención pública de la fábrica."
+  },
+  "244": {
+   "titulo": "Transferir a Galicia las participaciones estatales en empresas del país",
+   "texto": "Transferir a la Xunta de Galicia la titularidad de todas las participaciones del Estado en empresas radicadas o con centros de trabajo en nuestro país, para incorporarlas a una Corporación Industrial Pública Gallega, junto con los fondos correspondientes."
+  },
+  "245": {
+   "titulo": "Descentralizar la gestión de los proyectos de política industrial",
+   "texto": "Establecer un marco de codecisión y gestión descentralizada de todos los proyectos, programas, planes e instrumentos de financiación en materia de política industrial y productiva, para garantizar la participación efectiva de Galicia en su diseño y desarrollo en nuestro país."
+  },
+  "246": {
+   "titulo": "Reorientar los programas estatales de reconversión industrial",
+   "texto": "Reorientar los programas y planes estatales para que abandonen los modelos de reconversión industrial, directa o indirecta, y apuesten por blindar los sectores y actividades estratégicos,"
+  },
+  "247": {
+   "titulo": "Desarrollar las capacidades gallegas en innovación y tecnología",
+   "texto": "especialmente los industriales, y desarrollar las capacidades de Galicia en innovación, tecnología y comunicaciones."
+  },
+  "248": {
+   "titulo": "Modificar la Ley de la Cadena Alimentaria",
+   "texto": "Modificar la Ley de la Cadena Alimentaria para regular eficazmente las relaciones entre los eslabones de la cadena, con transacciones comerciales transparentes y resultado de negociaciones en condiciones de igualdad, garantizando que no haya ventas por debajo de los costes de producción. Para esta protección se utilizarán datos derivados"
+  },
+  "249": {
+   "titulo": "Basar la protección del sector agroganadero en estudios técnicos",
+   "texto": "de estudios técnicos y económicos que recojan las aportaciones de las distintas comunidades autónomas y reflejen las particularidades propias de sus sectores productivos, garantizando la viabilidad del sector agroganadero gallego."
+  },
+  "250": {
+   "titulo": "Impulsar circuitos cortos de transformación y comercialización",
+   "texto": "Impulsar circuitos cortos de transformación y comercialización que generen valor añadido en las explotaciones agroganaderas gallegas y favorezcan la viabilidad de los productores, acercando a los consumidores productos de calidad diferenciada, tanto frescos como transformados, promoviendo una producción respetuosa con el medio ambiente y favoreciendo la economía y la cohesión social."
+  },
+  "251": {
+   "titulo": "Proteger el sector agroganadero frente a enfermedades emergentes",
+   "texto": "Proteger el sector agroganadero: las enfermedades emergentes son una realidad inevitable con la que tenemos que convivir, tanto en la ganadería como en la agricultura, y tienen efectos nocivos sobre nuestro campo, con pérdidas económicas incalculables derivadas de su llegada. La lucha contra ellas debe ser conjunta y contar con los recursos necesarios, tanto económicos como humanos, para proteger nuestro sector productivo y poner a disposición en cada momento las medidas preventivas, los informes, análisis y estudios necesarios para estar preparados e informados."
+  },
+  "252": {
+   "titulo": "Rechazar acuerdos comerciales perjudiciales para el sector agrario",
+   "texto": "Rechazar acuerdos comerciales multilaterales perjudiciales para el sector agrario de Galicia, en particular el acuerdo UE-Mercosur, por los enormes perjuicios que ocasionaría a las explotaciones agrarias gallegas, incapaces de competir con la entrada masiva de productos agroganaderos, y por el grave problema que supondría para los consumidores la falta de garantías sobre las condiciones de producción en los países del Mercosur."
+  },
+  "253": {
+   "titulo": "Adaptar el PEPAC a las particularidades del sector agrario gallego",
+   "texto": "Defender los cambios necesarios en el PEPAC vigente para adaptarlo a las particularidades del sector agrario gallego y evitar los perjuicios que determinadas normas causan a nuestras explotaciones agroganaderas al acceder a las ayudas de la PAC."
+  },
+  "254": {
+   "titulo": "Descentralizar la gestión de los fondos europeos para el desarrollo territorial",
+   "texto": "Frente a la propuesta de la Comisión Europea para el nuevo Marco Financiero Plurianual 2028-34, que pretende rearmar a la UE multiplicando por diez su presupuesto actual de Defensa a costa de centralizar y recortar drásticamente los Fondos de Cohesión (-34%), la PAC (-22%) y el FEMPA (-67%), exigimos una gestión descentralizada y un aumento de los fondos para el desarrollo territorial, la producción y la soberanía alimentaria, la sostenibilidad y el futuro de nuestros sectores productivos. En este ámbito hay que tener en cuenta el fuerte impacto que la posible"
+  },
+  "255": {
+   "titulo": "Evitar la desaparición del segundo pilar de la PAC",
+   "texto": "desaparición del 2.º pilar de la PAC, los fondos FEADER, y, con ello, de las medidas de desarrollo rural."
+  },
+  "256": {
+   "titulo": "Reorientar las políticas forestales y ambientales",
+   "texto": "Defender una nueva orientación de las políticas estatales forestales y ambientales con el objetivo de recuperar el bosque autóctono, diversificar los usos y ordenar el territorio creando valor añadido en el país, frente a un modelo de monocultivo al servicio de grandes intereses industriales."
+  },
+  "257": {
+   "titulo": "Desarrollar una política forestal gallega frente al eucalipto",
+   "texto": "El Estado debe asumir que Galicia necesita una política forestal diferente, coherente con el interés general y con la lucha contra la crisis climática. La expansión descontrolada del eucalipto, amparada por una pseudomoratoria llena de excepciones, ha agravado el abandono del monte, aumentado el riesgo de incendios y empobrecido la base productiva del medio rural."
+  },
+  "258": {
+   "titulo": "Reconocer a Galicia como zona muy dependiente de la pesca",
+   "texto": "Reconocer a Galicia como «zona altamente dependiente de la pesca»."
+  },
+  "259": {
+   "titulo": "Eliminar el principio de estabilidad relativa",
+   "texto": "Eliminar el principio de estabilidad relativa, vigente desde 1986 y que no deja de ser una discriminación para la flota gallega."
+  },
+  "260": {
+   "titulo": "Reconocer la capacidad negociadora directa de Galicia en pesca",
+   "texto": "Reconocer la capacidad de Galicia para negociar directamente, participar y dar su consentimiento en las cuestiones de especial relevancia en materia pesquera, especialmente en la reforma o revisión de la PPC."
+  },
+  "261": {
+   "titulo": "Negociar un reparto equitativo de las cuotas de pesca",
+   "texto": "Negociar un reparto equitativo de las cuotas de pesca para la flota gallega que parta de la capacidad extractiva del sector."
+  },
+  "262": {
+   "titulo": "Eximir a la pesca artesanal de los TAC y las cuotas",
+   "texto": "Exigir que la pesca artesanal quede exenta de los TAC y las cuotas."
+  },
+  "263": {
+   "titulo": "Reducir el IVA de los productos pesqueros",
+   "texto": "Reducir el IVA de los productos pesqueros."
+  },
+  "264": {
+   "titulo": "Proteger las costas gallegas de la eólica marina y la minería submarina",
+   "texto": "Mantener Galicia libre de eólica marina, que en cualquier caso debería situarse siempre fuera de la plataforma continental de la costa gallega, y de minería submarina, especialmente en las Áreas Marinas Protegidas y las Áreas Marinas de Importancia Ecológica o Biológica, incluido el Banco de Galicia frente a las costas gallegas."
+  },
+  "265": {
+   "titulo": "Crear un ámbito gallego de decisión sobre el mar",
+   "texto": "Establecer un ámbito gallego de libre decisión en materia marítima, pesquera o de aprovechamiento energético. Transferir las competencias sobre los puertos de interés general del Estado, Salvamento Marítimo, navegación marítima y marina mercante, investigación oceanográfica (IEO), inspección de buques, ISM, dominio público marítimo y marítimo-terrestre y mar territorial, así como traspasar a Galicia las funciones y servicios de la Administración General del Estado en materia de ordenación y gestión del litoral, etc."
+  },
+  "266": {
+   "titulo": "Estudiar un sistema separativo de depuración de aguas residuales",
+   "texto": "Estudiar la modificación del sistema de depuración de aguas residuales de Galicia hacia un sistema separativo, ya que se ha demostrado que el sistema unitario actualmente instalado es ineficaz para nuestro país, y permitir desarrollar el saneamiento integral y la regeneración ambiental y productiva de las rías gallegas."
+  },
+  "267": {
+   "titulo": "Evitar el acoso a la gente del mar mediante la coordinación inspectora",
+   "texto": "Evitar el acoso que sufre la gente del mar por parte de cuatro cuerpos de inspección (Guardacostas de Galicia, funcionarios del Ministerio, Guardia Civil y funcionarios de la UE), concentrando esa función en el cuerpo de Guardacostas de Galicia."
+  },
+  "268": {
+   "titulo": "Aplicar las medidas de la Ley de Pesca Sostenible",
+   "texto": "Aplicar de inmediato las medidas aprobadas a raíz de las enmiendas del BNG a la Ley 5/2023, de Pesca Sostenible e Investigación Pesquera, sobre:"
+  },
+  "269": {
+   "titulo": "Transferir espacios portuarios estatales en desuso",
+   "texto": "Transferir los espacios portuarios del Estado que estén en desuso para destinarlos a servicios para la ciudadanía, optimizando y reorganizando los espacios portuarios para devolver a la ciudadanía el esfuerzo social que supuso crear los puertos."
+  },
+  "270": {
+   "titulo": "Transferir los inmuebles del ISM y recuperar las casas del mar",
+   "texto": "Transferir los inmuebles del ISM y recuperar las casas del mar que han ido desapareciendo."
+  },
+  "271": {
+   "titulo": "Excluir la pesca artesanal del Reglamento de Control Pesquero",
+   "texto": "Exigir que la pesca artesanal quede excluida del Reglamento (UE) de Control de la Pesca."
+  },
+  "272": {
+   "titulo": "Simplificar el sistema fiscal de los autónomos",
+   "texto": "Promover un sistema fiscal más sencillo, transparente y adaptado a la capacidad económica real de las personas autónomas."
+  },
+  "273": {
+   "titulo": "Aproximar los derechos de los autónomos a los de los asalariados",
+   "texto": "Trabajar para aproximar progresivamente los derechos de las personas autónomas a los de las personas asalariadas, especialmente en materia de incapacidad temporal, maternidad, paternidad, conciliación, jubilación y protección frente al cese de actividad."
+  },
+  "274": {
+   "titulo": "Permitir las bajas médicas sin poner en riesgo la actividad",
+   "texto": "Promover mecanismos que permitan ejercer el derecho a una baja médica sin poner en riesgo la continuidad de la actividad."
+  },
+  "275": {
+   "titulo": "Garantizar prestaciones suficientes por cese de actividad",
+   "texto": "Defender prestaciones suficientes y un acceso más sencillo y efectivo a la protección por cese de actividad."
+  },
+  "276": {
+   "titulo": "Garantizar la vida personal y familiar de las personas autónomas",
+   "texto": "Defender que las personas autónomas puedan ejercer plenamente su derecho a la vida personal y familiar mediante medidas que faciliten la conciliación, la maternidad y paternidad, la atención a las personas dependientes y la cobertura económica durante los períodos en que resulte imposible mantener la actividad profesional."
+  },
+  "277": {
+   "titulo": "Eliminar las desigualdades que afectan a las mujeres autónomas",
+   "texto": "Impulsar políticas específicas para eliminar las desigualdades que afectan a las mujeres autónomas y combatir la brecha económica y de protección social."
+  },
+  "278": {
+   "titulo": "Aumentar la inversión estatal en I+D+i",
+   "texto": "Aumentar progresivamente la inversión estatal en I+D+i hasta situarla en el 3% del PIB en 2030."
+  },
+  "279": {
+   "titulo": "Garantizar condiciones dignas y estables al personal investigador",
+   "texto": "Garantizar condiciones laborales y salariales dignas y estables para el personal científico e investigador, así como los recursos necesarios para desarrollar su carrera investigadora en sus distintas etapas."
+  },
+  "280": {
+   "titulo": "Transferir a Galicia entidades y centros de investigación estatales",
+   "texto": "Transferir a Galicia las entidades dependientes del Consejo Superior de Investigaciones Científicas (CSIC) y los centros del Instituto Español de Oceanografía (IEO)."
+  },
+  "281": {
+   "titulo": "Impulsar un Pacto por la Ciencia",
+   "texto": "Seguir trabajando, en colaboración y contacto permanente con el ecosistema investigador gallego y estatal, a favor de un Pacto por la Ciencia centrado en tres ejes fundamentales:"
+  },
+  "282": {
+   "titulo": "Priorizar un modelo energético distribuido y de menor escala",
+   "texto": "Promover una transformación energética que priorice un modelo de generación y producción de electricidad distribuida, de menor escala y más cercana a los centros de consumo, y"
+  },
+  "283": {
+   "titulo": "Garantizar el control público y social de la energía",
+   "texto": "el control público de la energía, su consideración como un bien público y esencial, y una implantación que se articule en función del desarrollo social y económico de las zonas productoras."
+  },
+  "284": {
+   "titulo": "Impulsar una tarifa eléctrica gallega",
+   "texto": "Impulsar una tarifa eléctrica gallega que, mediante una reducción de los peajes de transporte, tenga en cuenta el papel de Galicia como nación excedentaria en producción eléctrica, compensando el impacto ambiental y social derivado de esta producción."
+  },
+  "285": {
+   "titulo": "Reformar la estructura del sistema eléctrico",
+   "texto": "Modificar la estructura del sistema eléctrico y reformar la configuración de la factura energética para poner fin a la especulación de las grandes eléctricas y garantizar que su remuneración se determine según los costes de producción reconocidos."
+  },
+  "286": {
+   "titulo": "Transferir a Galicia las competencias en materia energética",
+   "texto": "Transferir las competencias en materia energética para corregir la anomalía democrática de que, pese a estar especializada en la producción, Galicia tenga impedimentos para diseñar un modelo energético y de descarbonización propio, acorde con sus necesidades energéticas, sociales, económicas y medioambientales, y garantizar el control público gallego de este sector estratégico."
+  },
+  "287": {
+   "titulo": "Transferir las competencias de planificación y gestión energética",
+   "texto": "Transferir las competencias en materia energética (planificación, ordenación, redes de transporte y distribución, gestión de la oferta y la demanda e impulso de un modelo descentralizado y de proximidad) y lograr el compromiso del Estado de que los planes estatales y las negociaciones supraestatales requieran el acuerdo de las comunidades autónomas."
+  },
+  "288": {
+   "titulo": "Reformar la Ley del Sector Eléctrico",
+   "texto": "Reformar la Ley del Sector Eléctrico para que Galicia pueda decidir sobre las instalaciones energéticas de más de 50MW y desarrollar plenamente el artículo 27.13 del Estatuto de Autonomía vigente."
+  },
+  "289": {
+   "titulo": "Declarar el litoral gallego no apto para parques eólicos marinos",
+   "texto": "Retirar los POEM y declarar el litoral gallego no apto para instalar parques eólicos marinos offshore, tanto en aguas interiores como en la plataforma continental, por considerar esas instalaciones incompatibles con las actividades pesqueras y marisqueras, la protección medioambiental o el ejercicio de competencias de salvamento marítimo, que se consideran prioritarias para los intereses nacionales gallegos, económicos, sociales y ambientales."
+  },
+  "290": {
+   "titulo": "Recuperar las garantías ambientales en los proyectos eólicos",
+   "texto": "Recuperar las garantías ambientales y la participación ciudadana en la implantación de proyectos eólicos, rectificando las medidas incluidas en el RDL 20/2022 que permiten a las grandes"
+  },
+  "291": {
+   "titulo": "Revisar los parques eólicos aprobados sin evaluación ni participación",
+   "texto": "empresas energéticas decidir dónde instalar parques o macroparques eólicos sin control, sin necesidad de una Declaración de Impacto Ambiental y sin participación ciudadana, lo que ha fomentado un auge eólico depredador, con proyectos que no están calibrados para el desarrollo social y económico de nuestro país y que chocan con la preservación de la biodiversidad y los usos económicos y sociales del territorio. En el mismo sentido, hay que revisar los proyectos ya aprobados para paralizar los más perjudiciales."
+  },
+  "292": {
+   "titulo": "Planificar de forma integrada las tecnologías de la transición energética",
+   "texto": "Colaborar con Galicia en la planificación de las tecnologías necesarias para la transición energética y su zonificación, sometiendo dicha planificación a una evaluación ambiental estratégica y colaborando en un desarrollo integrado y complementario de toda la combinación energética (eólica, hidráulica, solar térmica y fotovoltaica, biomasa, biocombustibles, geotermia, gases de vertedero, gases de EDAR, undimotriz y mareomotriz), frente al monopolio de unas tecnologías sobre otras."
+  },
+  "293": {
+   "titulo": "Considerar la electricidad un bien básico y prohibir los cortes",
+   "texto": "Promover que la electricidad se considere un bien básico para la población, garantizando el acceso mediante un mecanismo que supere el planteamiento y las carencias del bono social, y prohibiendo definitivamente los cortes de suministro."
+  },
+  "294": {
+   "titulo": "Impulsar el ahorro y la soberanía energética",
+   "texto": "Impulsar el ahorro energético, reducir el impacto medioambiental y avanzar en la soberanía energética, así como apostar decididamente por fomentar las energías renovables y reducir el consumo de combustibles fósiles en todos los sectores consumidores, prestando especial atención a aquellos que, por sus características, dependen especialmente de ellos, como los sectores primarios o el transporte."
+  },
+  "295": {
+   "titulo": "Desarrollar el autoconsumo y las comunidades energéticas",
+   "texto": "Impulsar una verdadera agenda para desarrollar el autoconsumo energético y las comunidades energéticas ciudadanas sostenibles, en colaboración con los territorios, que avance en la corrección de las carencias relativas a la conexión a la red, la cadena productiva, el aprovechamiento de excedentes, la formación de consumidores y productores, los trámites administrativos y de las distribuidoras, etc.; fomentar iniciativas compartidas y ayudas a los sectores con mayores dificultades económicas para garantizar su democratización, y reconocer a las comunidades de montes como comunidades energéticas."
+  },
+  "296": {
+   "titulo": "Recuperar para el sector público las concesiones hidroeléctricas",
+   "texto": "Impulsar la recuperación para el sector público de las concesiones de los embalses (en muchos casos otorgadas durante el franquismo) y"
+  },
+  "297": {
+   "titulo": "Traspasar las concesiones a Galicia para crear una empresa pública",
+   "texto": "su traspaso a Galicia como base para crear una empresa pública gallega de energía."
+  },
+  "298": {
+   "titulo": "Crear un estatuto especial para las empresas electrointensivas",
+   "texto": "Crear un estatuto especial para las empresas electrointensivas y mantener sus puestos de trabajo."
+  },
+  "299": {
+   "titulo": "Completar los concursos de transición justa para Galicia",
+   "texto": "Completar los concursos de transición justa para Galicia manteniendo, como mínimo, los megavatios liberados al cerrar las centrales, de modo que se fomenten proyectos industriales con inversión y creación de empleo en los municipios afectados, mediante un proceso con bases de concurrencia y supervisado por una mesa de transición con representación de los agentes sociales y de la administración local de las zonas de transición justa."
+  },
+  "300": {
+   "titulo": "Crear un centro de I+D+i sobre almacenamiento energético",
+   "texto": "Impulsar y colaborar en la creación de un gran centro de I+D+i sobre almacenamiento energético diversificado, tanto eléctrico como térmico."
+  },
+  "301": {
+   "titulo": "Dar seguimiento a las medidas de transición energética",
+   "texto": "Garantizar el seguimiento, el diálogo y la concreción de las medidas de transición energética mediante convocatorias periódicas de las mesas de transición, para supervisar el cumplimiento de los Convenios de Transición Justa."
+  },
+  "302": {
+   "titulo": "Compensar la deuda histórica con las comarcas mineras",
+   "texto": "Compensar la deuda histórica del Estado con las comarcas mineras gallegas por el incumplimiento y la exclusión de los sucesivos Planes del Carbón."
+  },
+  "303": {
+   "titulo": "Mantener la prohibición del fracking",
+   "texto": "Comprometerse a mantener la prohibición de la fractura hidráulica (fracking) y de otras técnicas similares por su peligro para el medio ambiente y la salud."
+  },
+  "304": {
+   "titulo": "Regular las plantas de biogás",
+   "texto": "Regular las plantas de biogás. Hace falta una ley que regule este tipo de instalaciones, defina claramente los usos del digestato y limite sus efectos locales."
+  },
+  "305": {
+   "titulo": "Declarar de dominio público las materias primas críticas",
+   "texto": "Declarar las materias primas críticas y estratégicas bienes de dominio público de especial interés, sometiendo su"
+  },
+  "306": {
+   "titulo": "Someter la investigación y el aprovechamiento al control público",
+   "texto": "conocimiento, investigación y aprovechamiento a la planificación y el control públicos."
+  },
+  "307": {
+   "titulo": "Facultar a Galicia para declarar reservas mineras permanentes",
+   "texto": "Facultar a Galicia para declarar zonas de reserva minera permanente, especialmente en yacimientos de minerales estratégicos, garantizando su aprovechamiento mediante iniciativa pública o bajo control público efectivo."
+  },
+  "308": {
+   "titulo": "Establecer una participación pública en proyectos mineros",
+   "texto": "Establecer una participación pública obligatoria mínima del 20% en los proyectos de investigación y explotación de minerales estratégicos."
+  },
+  "309": {
+   "titulo": "Condicionar nuevos derechos mineros a una planificación previa",
+   "texto": "Condicionar la concesión de nuevos derechos mineros a que exista una planificación sectorial previa, sometida a evaluación ambiental estratégica y coordinada con la ordenación territorial, ambiental y económica."
+  },
+  "310": {
+   "titulo": "Delimitar zonas incompatibles con la actividad minera",
+   "texto": "Delimitar zonas incompatibles con la actividad minera, atendiendo a la protección de los espacios naturales, el patrimonio cultural, los recursos hídricos, las captaciones de abastecimiento y los suelos agrarios, ganaderos y forestales de especial valor."
+  },
+  "311": {
+   "titulo": "Aplicar el principio de precaución al autorizar proyectos mineros",
+   "texto": "Incorporar el principio de precaución y dar prioridad a la protección del agua, la salud y las actividades económicas asentadas en el territorio como criterios vinculantes para autorizar o denegar derechos mineros."
+  },
+  "312": {
+   "titulo": "Eliminar la prioridad automática para obtener concesiones mineras",
+   "texto": "Eliminar la prioridad automática del titular de un permiso de investigación para obtener posteriormente la concesión de explotación, sometiendo esta última a una evaluación independiente del interés público y, cuando corresponda, a concurrencia competitiva."
+  },
+  "313": {
+   "titulo": "Evitar la especulación con los derechos mineros",
+   "texto": "Evitar la especulación con los derechos mineros, exigiendo autorización administrativa para su transmisión, identificación del titular real, solvencia técnica y financiera y caducidad efectiva en caso de inactividad o incumplimiento de las condiciones."
+  },
+  "314": {
+   "titulo": "Reducir la duración de las concesiones mineras",
+   "texto": "Reducir la duración de las concesiones y eliminar las prórrogas automáticas, estableciendo revisiones periódicas del cumplimiento ambiental, social, laboral e industrial como requisito para mantener los derechos mineros."
+  },
+  "315": {
+   "titulo": "Garantizar la transparencia de los derechos mineros",
+   "texto": "Garantizar la máxima transparencia mediante un registro público y accesible de los derechos mineros, titulares reales, transmisiones, proyectos, estudios geológicos, autorizaciones, sanciones, garantías financieras y planes de restauración."
+  },
+  "316": {
+   "titulo": "Ampliar los plazos de información pública minera",
+   "texto": "Ampliar los plazos de información pública y garantizar la participación efectiva de los ayuntamientos, comunidades de montes,"
+  },
+  "317": {
+   "titulo": "Incluir a las comunidades y sectores afectados",
+   "texto": "personas propietarias, organizaciones ambientales y sectores económicos afectados."
+  },
+  "318": {
+   "titulo": "Someter los permisos de investigación a evaluación ambiental",
+   "texto": "Someter también a evaluación ambiental los permisos de investigación que impliquen intervención física en el territorio, incluidos sondeos, zanjas, accesos, captaciones de agua y efectos acumulativos con otros proyectos."
+  },
+  "319": {
+   "titulo": "Restringir la minería a cielo abierto y prohibir sustancias peligrosas",
+   "texto": "Restringir las explotaciones mineras a cielo abierto y prohibir las tecnologías que utilicen cianuro u otras sustancias especialmente peligrosas para la salud y el medio ambiente."
+  },
+  "320": {
+   "titulo": "Vincular los derechos mineros a la transformación industrial local",
+   "texto": "Vincular la concesión de derechos mineros a la transformación industrial de los recursos en el territorio, la creación de empleo de calidad, el desarrollo tecnológico y el cierre de los ciclos productivos en Galicia."
+  },
+  "321": {
+   "titulo": "Evitar la exportación de minerales sin transformar",
+   "texto": "Evitar la simple exportación de minerales sin transformar, incorporando a las concesiones compromisos obligatorios de procesamiento, investigación, industrialización y generación de valor añadido en el país."
+  },
+  "322": {
+   "titulo": "Priorizar la reducción de la demanda, el reciclaje y la reutilización",
+   "texto": "Priorizar la reducción de la demanda, el reciclaje, la reutilización y la minería urbana frente a la apertura de nuevas explotaciones, particularmente en el ámbito de las materias primas críticas."
+  },
+  "323": {
+   "titulo": "Reforzar la responsabilidad ambiental de los operadores mineros",
+   "texto": "Reforzar la responsabilidad ambiental del operador mediante garantías financieras suficientes, responsabilidad durante toda la vida de la explotación y la obligación de restaurar íntegramente los terrenos y las aguas afectados."
+  },
+  "324": {
+   "titulo": "Crear un Fondo de Restauración Ambiental y Paisajística",
+   "texto": "Crear un Fondo de Restauración Ambiental y Paisajística, financiado principalmente mediante tasas, avales y aportaciones obligatorias de las empresas mineras, para recuperar minas y canteras abandonadas sin trasladar los costes al erario público."
+  },
+  "325": {
+   "titulo": "Reformar el régimen de residuos mineros",
+   "texto": "Reformar de forma coordinada el régimen de residuos mineros, especialmente el Real Decreto 975/2009, endureciendo las condiciones aplicables a balsas, escombreras, aguas contaminadas, cierre de explotaciones y vigilancia posterior."
+  },
+  "326": {
+   "titulo": "Evitar que los proyectos estratégicos reduzcan las garantías",
+   "texto": "Impedir que la declaración de un proyecto como estratégico rebaje las garantías ambientales o de participación pública, dejando claro que dicha calificación no crea por sí sola una presunción prevalente de utilidad pública."
+  },
+  "327": {
+   "titulo": "Dar capacidad de veto a las administraciones territoriales afectadas",
+   "texto": "Reconocer capacidad de veto o de emitir informes vinculantes a las administraciones territoriales afectadas cuando un proyecto comprometa el abastecimiento de agua, espacios protegidos, actividades económicas estratégicas o valores patrimoniales incompatibles con la explotación."
+  },
+  "328": {
+   "titulo": "Implantar servicios ferroviarios de cercanías en las principales ciudades",
+   "texto": "Implantar de forma efectiva y sin más demoras un servicio ferroviario de cercanías en las principales ciudades gallegas, aprovechando las infraestructuras existentes o creando las nuevas que sean necesarias, recuperando apeaderos y estaciones actualmente en desuso y dotándolo de las conexiones, frecuencias, horarios y tarifas necesarios para fomentar su uso."
+  },
+  "329": {
+   "titulo": "Actualizar la red ferroviaria interior gallega",
+   "texto": "Actualizar la red ferroviaria interior gallega mediante una intervención que incluya, como mínimo, actuaciones en los tramos A Coruña–Ferrol, A Coruña–Lugo y Vigo–frontera portuguesa; modernizar la línea de ancho métrico Ferrol–Ribadeo; acelerar las obras de la salida sur de Vigo, e iniciar efectivamente la construcción de la conexión ferroviaria directa entre Santiago de Compostela y Lugo. En el tramo A Coruña–Ferrol urge resolver definitivamente la tramitación del bypass de Betanzos y pasar a ejecutar las obras; en el corredor A Coruña–Lugo–Monforte deben finalizarse y ampliarse las actuaciones ya iniciadas, sin esperar a los plazos más lejanos previstos en la planificación europea; y en la línea del Miño, la renovación integral en curso debe concluir sin nuevos cortes prolongados del servicio."
+  },
+  "330": {
+   "titulo": "Completar las obras del Corredor Atlántico de Mercancías",
+   "texto": "Completar las obras del Corredor Atlántico de Mercancías en Galicia, para lo que deben abordarse, como mínimo, las obras del eje Ourense–Monforte–Lugo y del tramo León–Monforte, así como la electrificación y las mejoras necesarias en los tramos convencionales del Eje Atlántico, acelerando las actuaciones en marcha y evitando nuevos aplazamientos."
+  },
+  "331": {
+   "titulo": "Integrar y humanizar las líneas ferroviarias a su paso por las localidades",
+   "texto": "Resolver la integración y humanización de las líneas ferroviarias a su paso por pueblos y ciudades, garantizando en cada caso los proyectos que mejor se adapten (paso elevado en Oza-Cesuras, variante ferroviaria de Parga, pasos a nivel en el barrio de los Praceres, soterramiento en O Porriño, pasos subterráneos en Ourense..., entre otros)."
+  },
+  "332": {
+   "titulo": "Aumentar las frecuencias y mejorar los horarios ferroviarios",
+   "texto": "Aumentar las frecuencias y mejorar los horarios de las conexiones ferroviarias en Galicia, especialmente en la línea AVANT; reducir los precios y establecer bonificaciones para los usuarios frecuentes. La incorporación de los trenes Avril y las mejoras puntuales de la oferta no sustituyen las reivindicaciones de fondo: un Eje Atlántico con frecuencias propias de un verdadero corredor metropolitano y sin cortes recurrentes del servicio."
+  },
+  "333": {
+   "titulo": "Finalizar las obras pendientes de la alta velocidad",
+   "texto": "Finalizar las obras pendientes de la alta velocidad, particularmente la variante exterior de Ourense, licitando de inmediato los tramos aún no licitados y estableciendo un calendario firme y financiado para completar la obra."
+  },
+  "334": {
+   "titulo": "Transferir a Galicia las líneas ferroviarias interiores",
+   "texto": "Transferir a Galicia las líneas interiores para que sean gestionadas mediante una empresa pública gallega de transporte ferroviario (GALTRÉN), tomando como referencia los modelos ya consolidados en otros territorios del Estado."
+  },
+  "335": {
+   "titulo": "Auditar de forma independiente la seguridad ferroviaria",
+   "texto": "Realizar una auditoría independiente de toda la red ferroviaria con el objetivo de verificar su seguridad. Instalar el"
+  },
+  "336": {
+   "titulo": "Instalar sistemas ERTMS y mejorar la seguridad ferroviaria",
+   "texto": "sistema ERTMS en las líneas donde aún no esté operativo, así como impulsar las medidas pendientes de seguridad ferroviaria, como la implantación del Plan de Seguridad Ferroviaria."
+  },
+  "337": {
+   "titulo": "Priorizar el transporte ferroviario",
+   "texto": "Declarar que el transporte ferroviario sea prioritario frente a cualquier otra forma de transporte terrestre de personas y mercancías. Incorporar esta declaración al Plan Nacional Integrado de Energía y Clima, con objetivos medibles por año."
+  },
+  "338": {
+   "titulo": "Mejorar las conexiones ferroviarias transfronterizas con Portugal",
+   "texto": "Promover una mejor conexión ferroviaria transfronteriza con Portugal, tanto en tren convencional (con una mejora sustancial del Tren Celta Vigo-Oporto) como mediante un sistema de cercanías transfronterizas, y garantizar la puesta en marcha de la conexión de alta velocidad Vigo-Oporto para el horizonte de 2030-2032."
+  },
+  "339": {
+   "titulo": "Hacer pública y gratuita la autopista",
+   "texto": "Convertir la AP-9 en una autopista gallega, pública y libre de peajes. Tras aprobarse su transferencia, el BNG reclamará la anulación de la prórroga concedida en el año 2000 por el Gobierno del PP para lograr la gratuidad de la principal vía de comunicación del Eje Atlántico."
+  },
+  "340": {
+   "titulo": "Transferir y liberalizar la autopista",
+   "texto": "Transferir a Galicia y liberalizar la AP-53 para que esta autopista quede finalmente libre de peajes."
+  },
+  "341": {
+   "titulo": "Finalizar el tramo pendiente de la autovía",
+   "texto": "Finalizar y poner en servicio el último tramo pendiente de la A-54, Arzúa–Melide, que acumula años de retraso y es fundamental para completar la conexión por autovía entre Santiago de Compostela y Lugo, abierta pero aún incompleta tras la puesta en servicio del tramo Melide–Palas de Rei."
+  },
+  "342": {
+   "titulo": "Licitar las obras de la autovía en A Mariña",
+   "texto": "Licitar de inmediato las obras de la A-74 en A Mariña, única infraestructura viaria alternativa a la N-642 en la comarca, que lleva años en proyecto y sin ejecutarse, tras la aprobación definitiva del proyecto de trazado del primer tramo."
+  },
+  "343": {
+   "titulo": "Ejecutar los tramos pendientes de la autovía",
+   "texto": "Ejecutar los tramos pendientes de la A-76 en Galicia, que permitirán conectar con mayor agilidad las comarcas del sur de Lugo y la ciudad de Ourense y facilitar la salida hacia la comarca de El Bierzo, y que siguen paralizados en el territorio lucense."
+  },
+  "344": {
+   "titulo": "Mejorar la seguridad de las infraestructuras viarias",
+   "texto": "Mejorar las infraestructuras viarias para garantizar una mayor seguridad y reducir el número de accidentes. Por su vulnerabilidad, hay que prestar especial atención a las motocicletas y las bicicletas, particularmente en lo relativo a los sistemas de protección (espacios delimitados, guardarraíles seguros, pintura antideslizante...). El objetivo de una circulación segura también debe abordarse mediante la formación y la regulación del tráfico."
+  },
+  "345": {
+   "titulo": "Transferir a Galicia las competencias de tráfico y seguridad vial",
+   "texto": "Transferir a Galicia las competencias de ordenación del tráfico y seguridad vial, atendiendo a la necesidad de diseñar y poner en práctica medidas para mejorar la seguridad y la gestión del conjunto de la red de carreteras del país."
+  },
+  "346": {
+   "titulo": "Continuar el proyecto de construcción de la autovía",
+   "texto": "Dar continuidad al proyecto de construcción de la A-56 entre Lugo y Ourense."
+  },
+  "347": {
+   "titulo": "Transferir a Galicia la gestión integral de sus aeropuertos",
+   "texto": "Reclamar la transferencia a Galicia de las competencias sobre los aeropuertos gallegos para gestionarlos de forma integral y articular un sistema aeroportuario gallego basado en la especialización, la creación de sinergias y la complementariedad de los tres aeropuertos; también exigir la mejora y modernización de sus instalaciones. Además, revertir y asegurar el control y la gestión pública de las torres de control para garantizar la seguridad aérea."
+  },
+  "348": {
+   "titulo": "Transferir a Galicia los puertos de interés general",
+   "texto": "Solicitar que se transfieran al Gobierno gallego los puertos de interés general de Galicia: Vigo, Marín, Vilagarcía de Arousa, A Coruña y Ferrol-San Cibrao. En este último también es necesario liberalizar el puerto de Morás y abrirlo al tráfico y al transporte de mercancías."
+  },
+  "349": {
+   "titulo": "Dotar a los puertos gallegos de intermodalidad real",
+   "texto": "Dotar a los distintos puertos gallegos de intermodalidad real y de conexiones de transporte ferroviario y autopistas para lograr un transporte moderno de mercancías, acelerando"
+  },
+  "350": {
+   "titulo": "Renovar el acceso ferroviario al puerto de Ferrol",
+   "texto": "actuaciones como la renovación del acceso ferroviario al puerto de Ferrol y la conexión del puerto de Langosteira."
+  },
+  "351": {
+   "titulo": "Incorporar los puertos gallegos a la Red Básica Transeuropea",
+   "texto": "Solicitar la incorporación de los puertos gallegos de interés estatal actualmente excluidos de la Red Básica Transeuropea de Transporte."
+  },
+  "352": {
+   "titulo": "Transferir a Galicia las competencias en materia ambiental",
+   "texto": "Transferir a Galicia todas las competencias en materia ambiental, especialmente las siguientes: costas, salvamento marítimo y lucha contra la contaminación, servicios meteorológicos, centros de investigación, puertos de interés general y cuencas hidrográficas."
+  },
+  "353": {
+   "titulo": "Desafectar los espacios costeros de uso militar",
+   "texto": "Desafectar del uso militar los espacios costeros, los castillos y la isla de Tambo, y transferir su titularidad a Galicia."
+  },
+  "354": {
+   "titulo": "Reformar las normas que invaden competencias gallegas",
+   "texto": "Reformar las normas que invaden competencias propias, como la Ley de Costas, la Ley de Cambio Climático, la Ley de Evaluación Ambiental, la Ley de Patrimonio Natural y la Ley de Parques Nacionales."
+  },
+  "355": {
+   "titulo": "Aplicar los acuerdos internacionales sobre biodiversidad",
+   "texto": "Garantizar la aplicación de los acuerdos internacionales, el Convenio sobre la Diversidad Biológica y los acuerdos de la COP 15, Marco Mundial de Biodiversidad de Kunming-Montreal, adoptado en 2022 para detener y revertir la pérdida de biodiversidad de aquí a 2030, que se concretan en las siguientes metas tras la revisión realizada en la COP 17 (2026)"
+  },
+  "356": {
+   "titulo": "Transferir recursos para proteger la biodiversidad",
+   "texto": "Transferir a Galicia los recursos financieros destinados a proteger la biodiversidad, las especies amenazadas y los espacios naturales, y a regenerar espacios degradados."
+  },
+  "357": {
+   "titulo": "Proteger las especies marinas",
+   "texto": "Desarrollar planes para proteger y preservar las especies marinas protegidas, procurando que sean compatibles con las actividades económicas y sociales tradicionales."
+  },
+  "358": {
+   "titulo": "Controlar la importación de especies foráneas",
+   "texto": "Limitar y controlar estrictamente la importación de especies foráneas, semillas de moluscos, etc., para repoblación, y potenciar los ciclos cerrados para producir especies autóctonas y repoblar como método de recuperación de recursos."
+  },
+  "359": {
+   "titulo": "Poner en marcha una red de alerta temprana de especies invasoras",
+   "texto": "Poner en marcha de forma efectiva una red de alerta temprana ante especies invasoras."
+  },
+  "360": {
+   "titulo": "Hacer seguimiento de las capturas accidentales de especies amenazadas",
+   "texto": "Realizar tareas de seguimiento de las capturas accidentales de especies marinas amenazadas, así como adoptar medidas paliativas, de acuerdo con la legislación vigente y las directivas europeas."
+  },
+  "361": {
+   "titulo": "Adaptar las leyes de costas a la realidad gallega",
+   "texto": "Mientras Galicia no tenga competencias plenas sobre la ordenación y gestión del dominio público marítimo-terrestre (DPMT), impulsar reformas legales (Ley y Reglamento General de Costas, Ley de Cambio Climático) que tengan en cuenta las"
+  },
+  "362": {
+   "titulo": "Reconocer las particularidades de la costa gallega",
+   "texto": "características propias de la costa gallega, las actividades tradicionales y sostenibles del complejo mar-industria y la incidencia del cambio climático. Revisar el deslinde del DPMT para reconocer los asentamientos urbanos tradicionales."
+  },
+  "363": {
+   "titulo": "Reconocer la titularidad comunal del monte en la zona marítima",
+   "texto": "Reconocer la titularidad comunal del monte dentro de la zona de dominio público marítimo-terrestre y del deslinde de costas, sometida en todo caso a los límites de uso y autorizaciones que correspondan a sus características específicas."
+  },
+  "364": {
+   "titulo": "Aplicar la Estrategia del Medio Marino",
+   "texto": "Poner en marcha las medidas establecidas en la Estrategia del Medio Marino para avanzar en la recuperación del estado del medio y en la conservación de las especies y los recursos naturales."
+  },
+  "365": {
+   "titulo": "Impulsar el saneamiento integral y regenerar las rías gallegas",
+   "texto": "Impulsar un saneamiento integral real mediante redes separativas y energéticamente eficientes, y regenerar las rías gallegas, transfiriendo a Galicia los recursos necesarios y la capacidad que actualmente tiene el Gobierno central para planificar, diseñar, aprobar y ejecutar las infraestructuras hidráulicas."
+  },
+  "366": {
+   "titulo": "Crear bases de lucha contra la contaminación marina",
+   "texto": "Crear una red equipada de bases para luchar contra la contaminación del medio marino a lo largo de todo el corredor marítimo frente a la costa gallega."
+  },
+  "367": {
+   "titulo": "Revocar la prórroga de ENCE y regenerar la ría de Pontevedra",
+   "texto": "Revisar y derogar la prórroga concedida a ENCE en la ría de Pontevedra por contravenir la normativa de Costas, la directiva europea de servicios y el Plan de Ordenación del Litoral (POL), e impulsar la regeneración de la ría de Pontevedra y del dominio público marítimo-terrestre. Recuperar y regenerar los terrenos de dominio público marítimo-terrestre ocupados por la Xunta y el Estado en el ENIL de A Xunqueira do Alba (Pontevedra)."
+  },
+  "368": {
+   "titulo": "Inspeccionar el vertedero de residuos nucleares de la Fosa Atlántica",
+   "texto": "Exigir un programa permanente de inspección y seguimiento del estado y la seguridad del vertedero de 140.000 toneladas de residuos nucleares de la Fosa Atlántica, a 600 km de la costa gallega."
+  },
+  "369": {
+   "titulo": "Reconocer jurídicamente la propiedad comunal del monte",
+   "texto": "Reconocer jurídicamente la propiedad comunal del monte mediante la modificación del Código Civil, con el objetivo de reconocer expresamente la propiedad colectiva o comunitaria como una realidad jurídica distinta de la titularidad pública y privada. Este"
+  },
+  "370": {
+   "titulo": "Reconocer la importancia territorial de los montes vecinales",
+   "texto": "reconocimiento tiene una importancia capital en Galicia, ya que los montes vecinales en mano común representan la cuarta parte del territorio (casi 700.000 hectáreas), constituyen una seña de identidad territorial y sociocultural y son, además, un motor de desarrollo económico y productivo."
+  },
+  "371": {
+   "titulo": "Incentivar el uso multifuncional de los montes",
+   "texto": "Aprobar medidas fiscales que incentiven el uso y aprovechamiento multifuncional del monte por parte de agrupaciones de propietarios particulares y comunidades de montes."
+  },
+  "372": {
+   "titulo": "Sustituir los créditos de carbono por compensaciones ecosistémicas",
+   "texto": "Transformar el modelo de mercantilización de la captura de CO2 (sistema de compra de créditos de carbono por parte de empresas contaminantes) hacia sistemas de compensación por la prestación de servicios ecosistémicos (preservación de ecosistemas de gran interés, prevención del cambio climático, conservación y protección de los recursos hídricos, conservación de bosques maduros, prevención de la erosión, degradación y artificialización de los suelos, aumento de la superficie agraria útil y de la producción sostenible de alimentos, usos socioculturales y recreativos…)."
+  },
+  "373": {
+   "titulo": "Considerar invasoras las variedades de eucalipto",
+   "texto": "Considerar las distintas variedades de eucalipto como especies exóticas invasoras e incluirlas en el catálogo correspondiente, limitando su cultivo para garantizar la protección del suelo y las reservas de agua, la conservación de la biodiversidad y la protección frente a los incendios forestales."
+  },
+  "374": {
+   "titulo": "Frenar el acaparamiento de tierras para macroproyectos extractivos",
+   "texto": "Aprobar medidas para frenar el acaparamiento de tierras, especialmente de terrenos forestales, para implantar macroproyectos forestales, energéticos y mineros de carácter extractivo y depredador."
+  },
+  "375": {
+   "titulo": "Reducir, recuperar y reciclar residuos",
+   "texto": "Impulsar políticas de reducción, recuperación y reciclaje de residuos y priorizar el compostaje de los biorresiduos (dando prioridad a los tratamientos de proximidad), con la correspondiente transferencia de recursos a las entidades locales."
+  },
+  "376": {
+   "titulo": "Implantar el sistema de depósito, devolución y retorno",
+   "texto": "Impulsar la implantación del sistema de depósito, devolución y retorno (SDDR) para los envases, superando los obstáculos y el boicot de las entidades gestoras."
+  },
+  "377": {
+   "titulo": "Desarrollar planes para recuperar suelos contaminados",
+   "texto": "Desarrollar planes para recuperar suelos contaminados."
+  },
+  "378": {
+   "titulo": "Sancionar el uso de residuos sin garantías ambientales",
+   "texto": "Vigilar exhaustivamente y sancionar a toda empresa que utilice residuos en productos nuevos, especialmente asfálticos, sin garantías ambientales y sin someterlos a procesos regulados de inertización."
+  },
+  "379": {
+   "titulo": "Reducir el tráfico motorizado y fomentar la movilidad amable",
+   "texto": "Aplicar medidas para reducir el tráfico motorizado y fomentar la movilidad amable (modelo de Pontevedra), frente a las restricciones basadas en el tipo y la antigüedad de los vehículos, que generan discriminación en el acceso según el nivel de renta."
+  },
+  "380": {
+   "titulo": "Ayudar a los ayuntamientos a cumplir la normativa sobre sustancias peligrosas",
+   "texto": "Articular medidas económicas que permitan a los ayuntamientos cumplir la Orden Ministerial de 7 de diciembre de 2001, por la que se modifica el anexo I del Real Decreto 1406/1989, de 10 de noviembre, sobre limitaciones a la comercialización de ciertas sustancias peligrosas, especialmente el amianto."
+  },
+  "381": {
+   "titulo": "Reformar la normativa sobre residuos de construcción y minería",
+   "texto": "Reformar la normativa básica que regula la producción y gestión de los residuos de construcción y demolición (Real Decreto 105/2008), así como la que regula la gestión de los residuos de las industrias extractivas y la protección y rehabilitación del espacio afectado por actividades mineras (Real Decreto 975/2009), para evitar el uso de inertes mezclados y otros materiales potencialmente contaminantes en la «restauración» de canteras, que en la práctica se convierten en enormes vertederos encubiertos."
+  },
+  "382": {
+   "titulo": "Apoyar a los medios de comunicación en lenguas minorizadas",
+   "texto": "Impulsar un plan estatal de apoyo a los medios de comunicación en lenguas minorizadas."
+  },
+  "383": {
+   "titulo": "Garantizar la presencia regular del gallego en RTVE",
+   "texto": "Garantizar la presencia regular de la lengua y las producciones culturales gallegas en RTVE, tanto en las desconexiones para Galicia como en la programación para todo el Estado."
+  },
+  "384": {
+   "titulo": "Aumentar las desconexiones territoriales en gallego de TVE",
+   "texto": "Aumentar las horas de desconexión territorial en gallego en TVE, con el objetivo de crear un nuevo canal de televisión en gallego."
+  },
+  "385": {
+   "titulo": "Recuperar la emisora de RNE en gallego",
+   "texto": "Recuperar Radio 4, emisora de RNE en gallego."
+  },
+  "386": {
+   "titulo": "Incluir el gallego en la programación de Clan TV",
+   "texto": "Incluir el gallego como opción en la programación de Clan TV."
+  },
+  "387": {
+   "titulo": "Aumentar las ayudas a las producciones audiovisuales en gallego",
+   "texto": "Garantizar y aumentar la línea de ayudas del Ministerio de Cultura destinada específicamente a largometrajes, cortometrajes y producciones audiovisuales en gallego."
+  },
+  "388": {
+   "titulo": "Reformar la Ley del Audiovisual para garantizar la igualdad lingüística",
+   "texto": "Reformar la Ley del Audiovisual para garantizar la plena igualdad de todas las lenguas oficiales del Estado. Exigir a las plataformas que sus producciones del catálogo estén disponibles dobladas y subtituladas en gallego, especialmente los contenidos dirigidos al público infantil, además de mejorar la definición y regulación de las productoras independientes y la promoción y normalización de la lengua gallega en el mundo audiovisual."
+  },
+  "389": {
+   "titulo": "Promover la enseñanza del gallego en otros territorios",
+   "texto": "Impulsar convenios para enseñar gallego como segundo idioma en la educación secundaria y en las Escuelas Oficiales de Idiomas de otros territorios del Estado."
+  },
+  "390": {
+   "titulo": "Garantizar convenios para enseñar gallego en territorios limítrofes",
+   "texto": "En particular, garantizar la firma de convenios para enseñar gallego durante toda la etapa educativa en los territorios gallegohablantes de comunidades limítrofes."
+  },
+  "391": {
+   "titulo": "Aumentar la cofinanciación de las instituciones lingüísticas y culturales",
+   "texto": "Aumentar la cofinanciación de las instituciones lingüísticas y culturales de nuestro país."
+  },
+  "392": {
+   "titulo": "Crear ayudas para la creación literaria en gallego",
+   "texto": "Garantizar una línea específica de ayudas a la creación literaria en gallego, eliminando el requisito de entregar esas obras traducidas al español."
+  },
+  "393": {
+   "titulo": "Catalogar y digitalizar el patrimonio documental gallego",
+   "texto": "Solicitar la catalogación y digitalización del patrimonio documental gallego depositado en archivos institucionales de fuera de Galicia, para favorecer su conocimiento, difusión e investigación."
+  },
+  "394": {
+   "titulo": "Promover la cultura gallega en igualdad y a escala internacional",
+   "texto": "Impulsar el conocimiento, la difusión y la convivencia de las distintas expresiones culturales en gallego, en pie de igualdad con las demás del Estado, y contribuir a su proyección internacional."
+  },
+  "395": {
+   "titulo": "Normalizar el uso del gallego en la Administración central",
+   "texto": "Garantizar la plena normalización del uso del gallego por parte de la Administración central, empezando por el conocimiento del gallego entre el funcionariado para garantizar los derechos lingüísticos en las relaciones de la Administración con las empresas que trabajan para ella."
+  },
+  "396": {
+   "titulo": "Respetar la toponimia gallega en todos los organismos estatales",
+   "texto": "Garantizar que todos los organismos de la Administración del Estado respeten estrictamente nuestra toponimia y exigir que las aplicaciones de geolocalización que siguen utilizando nombres deformados respeten la legalidad."
+  },
+  "397": {
+   "titulo": "Oficializar la toponimia marítima gallega",
+   "texto": "Realizar los cambios legales necesarios para oficializar la toponimia marítima de la costa gallega en su forma original en gallego: nombres de distritos y provincias marítimas, matriculación de embarcaciones, cartografía y cartas náuticas, avisos a navegantes y denominación de accidentes geográficos (nombres de rías, islas, puntas, acantilados, etc.)."
+  },
+  "398": {
+   "titulo": "Reconocer como oficiales los documentos en gallego",
+   "texto": "Impulsar los cambios legales necesarios para que, de acuerdo con todas las herramientas tecnológicas disponibles hoy, la documentación en gallego se acepte como oficial para cualquier gestión con la Administración General del Estado."
+  },
+  "399": {
+   "titulo": "Garantizar la oficialidad del gallego en la Administración de Justicia",
+   "texto": "Cumplir con la oficialidad del gallego en la Administración de Justicia, con el objetivo de promoverlo como lengua preferente en las resoluciones, comunicaciones y notificaciones de oficio de los órganos administrativos. Se impulsarán planes piloto, formación e incentivos profesionales para garantizar la oficialidad efectiva del gallego."
+  },
+  "400": {
+   "titulo": "Garantizar la disponibilidad del gallego en toda la Administración estatal",
+   "texto": "Garantizar la plena disponibilidad del gallego en toda la Administración General del Estado y en sus plataformas digitales, habilitando la opción en gallego en todos los trámites telemáticos, formularios, notificaciones y canales de atención de todos los organismos estatales, en condiciones de igualdad real con el castellano, tanto en la web como en las aplicaciones móviles y los sistemas de identificación y firma digitales."
+  },
+  "401": {
+   "titulo": "Garantizar el funcionamiento de los sistemas estatales de IA en gallego",
+   "texto": "Garantizar que todos los sistemas de IA, atención automatizada y administración digital del Estado funcionen plenamente en gallego (chatbots, asistentes virtuales, formularios inteligentes, etc.)."
+  },
+  "402": {
+   "titulo": "Financiar tecnologías lingüísticas en gallego",
+   "texto": "Promover líneas específicas de financiación para garantizar la actualización en gallego de las tecnologías del habla, los modelos lingüísticos, las herramientas educativas digitales, etc."
+  },
+  "403": {
+   "titulo": "Garantizar el derecho a estudiar y examinarse en gallego en la UNED",
+   "texto": "Garantizar el derecho a estudiar y realizar los exámenes de la UNED en gallego."
+  },
+  "404": {
+   "titulo": "Incluir el gallego en los centros educativos en el exterior",
+   "texto": "Incluir el gallego como asignatura optativa en la red de centros de la Acción Educativa Exterior."
+  },
+  "405": {
+   "titulo": "Ofrecer trámites en gallego en los consulados españoles",
+   "texto": "Garantizar el derecho a acceder a la documentación y a realizar trámites administrativos en gallego en los consulados españoles en el extranjero."
+  },
+  "406": {
+   "titulo": "Incorporar a Galicia como miembro asociado de la UNESCO y la OMT",
+   "texto": "Incorporar a Galicia como miembro asociado de la UNESCO y la OMT, además de participar en otras organizaciones internacionales que trabajan en los ámbitos histórico, lingüístico y cultural."
+  },
+  "407": {
+   "titulo": "Lograr la plena oficialidad del gallego en la Unión Europea",
+   "texto": "Lograr la plena oficialidad del gallego en la Unión Europea."
+  },
+  "408": {
+   "titulo": "Ofrecer cursos regulares de gallego",
+   "texto": "Garantizar una oferta regular, no puntual, de cursos presenciales y en línea de gallego en centros estratégicos y en horarios accesibles."
+  },
+  "409": {
+   "titulo": "Ofrecer formación sobre la diversidad lingüística del Estado",
+   "texto": "Impulsar módulos formativos sobre la diversidad de lenguas del Estado español."
+  },
+  "410": {
+   "titulo": "Programar actividades culturales anuales en gallego",
+   "texto": "Desarrollar una programación anual y regular de actividades culturales en gallego (literatura, cine, música, ciencia, etc.)."
+  },
+  "411": {
+   "titulo": "Reforzar los fondos bibliográficos y digitales en gallego",
+   "texto": "Reforzar los fondos bibliográficos y digitales en gallego en todas las bibliotecas del Instituto Cervantes."
+  },
+  "412": {
+   "titulo": "Impulsar el papel de Galicia como puente con el espacio lusófono",
+   "texto": "Reconocer e impulsar el papel de Galicia como puente natural con el espacio lusófono, promoviendo políticas de cooperación cultural, educativa, comunicativa y económica con los países de lengua portuguesa y aprovechando el potencial del gallego como valor estratégico internacional. Hay que eliminar los obstáculos y garantizar las herramientas necesarias para hacer efectiva esa cooperación."
+  },
+  "413": {
+   "titulo": "Exigir la recepción de los medios audiovisuales públicos portugueses",
+   "texto": "Exigir el cumplimiento de los acuerdos parlamentarios para recibir los medios audiovisuales públicos de Portugal en"
+  },
+  "414": {
+   "titulo": "Cooperar con los países de la Lusofonía",
+   "texto": "Galicia, en el marco de la cooperación con los países de la Lusofonía y para establecer relaciones mutuamente beneficiosas entre nuestras culturas."
+  },
+  "415": {
+   "titulo": "Garantizar la presencia de Galicia en la participación estatal en la CPLP",
+   "texto": "Garantizar la presencia de Galicia en la participación del Estado español en la CPLP, incorporando a expertos gallegos en las delegaciones y grupos de trabajo y desarrollando una agenda estable para promover el gallego y cooperar con Portugal, Brasil, los PALOP y los demás territorios de la CPLP."
+  },
+  "416": {
+   "titulo": "Promover una presencia directa de Galicia en la CPLP",
+   "texto": "Explorar y promover, en diálogo con la CPLP y sus Estados miembros, vías para la presencia directa de Galicia, e instar al Estado español a no bloquearla y apoyarla."
+  },
+  "417": {
+   "titulo": "Transferencia de competencias y recursos",
+   "texto": "Reclamar la transferencia de las competencias exclusivas del Estado en telecomunicaciones, espacio audiovisual, infraestructuras digitales, ciberseguridad y certificación de identidad, junto con los fondos y medios correspondientes."
+  },
+  "418": {
+   "titulo": "Derecho a la soberanía digital",
+   "texto": "Impulsar en el Congreso el reconocimiento del derecho de los pueblos a determinar su esfera digital y garantizar la representación de sus diferencias culturales y productivas como un derecho humano y colectivo básico."
+  },
+  "419": {
+   "titulo": "Financiar un ecosistema gallego de inteligencia artificial",
+   "texto": "Reclamar al Estado los recursos necesarios para desarrollar un ecosistema gallego de inteligencia artificial orientado a la tecnodiversidad y a los grandes retos económicos, sociales, culturales y ambientales de nuestro país."
+  },
+  "420": {
+   "titulo": "Impulsar una IA distribuida y modelos especializados",
+   "texto": "Reorientar los fondos públicos de innovación hacia la inteligencia artificial distribuida y modelos lingüísticos pequeños y especializados, ejecutables en infraestructuras locales de bajo consumo energético y con aprendizaje federado que preserve la privacidad."
+  },
+  "421": {
+   "titulo": "Adaptar la tecnología a la realidad productiva",
+   "texto": "Fomentar sistemas diseñados para la colaboración entre las personas y la IA, que aumenten la productividad de las pequeñas y medianas empresas y de la economía de los cuidados; rechazar la sustitución de actividades humanas y excluir los usos militares y armados."
+  },
+  "422": {
+   "titulo": "Reforzar la investigación y la innovación",
+   "texto": "Garantizar financiación estructural estable para el ecosistema gallego de pequeñas y medianas empresas tecnológicas y para los grupos de investigación punteros en tecnologías cuánticas, biotecnología, salud y sector espacial."
+  },
+  "423": {
+   "titulo": "Aprobar una ley de transparencia algorítmica y supervisión humana",
+   "texto": "Promover un marco regulador estatal que garantice el derecho a recibir información inmediata y comprensible sobre los criterios aplicados cuando los sistemas automatizados adopten total o parcialmente una decisión relevante en las administraciones públicas o en grandes empresas de servicios esenciales (banca, seguros y telecomunicaciones)."
+  },
+  "424": {
+   "titulo": "Reconocer el derecho de veto algorítmico",
+   "texto": "Prohibir que se ejecuten resoluciones administrativas o económicas críticas sin una revisión final, vinculante y asumida por personal técnico o funcionario competente, evitando que una máquina sustituya la responsabilidad humana."
+  },
+  "425": {
+   "titulo": "Realizar auditorías públicas contra los sesgos",
+   "texto": "Crear mecanismos públicos de inspección y auditoría de los algoritmos de interés general para detectar y corregir sesgos de género, clase, origen o territorialidad que provoquen discriminación."
+  },
+  "426": {
+   "titulo": "Crear un registro estatal de sistemas algorítmicos",
+   "texto": "Crear un registro público de los sistemas de IA utilizados para adoptar decisiones públicas y prohibir que la concesión o denegación de prestaciones sociales o derechos fundamentales dependa de automatismos sin intervención humana efectiva."
+  },
+  "427": {
+   "titulo": "Supervisar los sistemas de riesgo sistémico antes de su comercialización",
+   "texto": "Obligar a que los modelos de IA y las redes sociales de riesgo sistémico se sometan a la evaluación de organismos públicos independientes antes de salir al mercado. Reclamar financiación para que las naciones del Estado cuenten con organismos propios de supervisión."
+  },
+  "428": {
+   "titulo": "Limitar la vigilancia biométrica",
+   "texto": "Establecer límites estrictos al reconocimiento facial y a la vigilancia biométrica masiva en espacios públicos, prohibiendo la policía predictiva y el uso de la IA para sustituir decisiones judiciales."
+  },
+  "429": {
+   "titulo": "Prohibir las decisiones letales automatizadas",
+   "texto": "Defender la prohibición internacional y estatal del uso de IA para seleccionar objetivos en conflictos armados; las máquinas no pueden decidir sobre la vida y la muerte de las personas."
+  },
+  "430": {
+   "titulo": "Proteger los neuroderechos",
+   "texto": "Impulsar legislación que garantice la privacidad mental y la libre determinación de la identidad frente a la manipulación o el registro neurocognitivo por parte de empresas o Estados."
+  },
+  "431": {
+   "titulo": "Financiar tecnologías lingüísticas en gallego",
+   "texto": "Reclamar partidas presupuestarias estatales específicas y proporcionales para la regeneración digital del gallego, incluidos modelos públicos de lenguaje de gran escala, corpus lingüísticos y herramientas de procesamiento de texto y voz."
+  },
+  "432": {
+   "titulo": "Garantizar la plena disponibilidad del gallego",
+   "texto": "Exigir a las plataformas digitales que incorporen el gallego de forma efectiva y con calidad (en texto y voz) en sistemas operativos, aplicaciones y modelos de IA, en igualdad con las demás lenguas oficiales."
+  },
+  "433": {
+   "titulo": "Impulsar la cooperación gallego-portuguesa",
+   "texto": "Aprovechar el espacio lingüístico gallego-portugués para compartir recursos tecnológicos y corpus. En cumplimiento de la Ley Paz-Andrade, garantizar por defecto el acceso algorítmico a los contenidos y medios de comunicación de Portugal y Brasil, y viceversa."
+  },
+  "434": {
+   "titulo": "Garantizar el derecho a modelos adaptados a cada cultura",
+   "texto": "Promover el derecho de los pueblos a exigir versiones de los grandes modelos de IA adaptadas a su propia cultura, entrenadas con sus propios corpus y alineadas con sus consensos democráticos."
+  },
+  "435": {
+   "titulo": "Impulsar la ciencia abierta y el retorno social",
+   "texto": "Modificar la Ley de la Ciencia para que el software, los algoritmos, las patentes y la propiedad intelectual derivados de proyectos financiados con fondos públicos o desarrollados en las universidades públicas gallegas y las empresas se publiquen con licencias abiertas, evitando que los monopolios privados se apropien de ellos."
+  },
+  "436": {
+   "titulo": "Desarrollar cooperativas de datos",
+   "texto": "Impulsar en el Estado la legislación europea sobre gobernanza de datos —Reglamento (UE) 2022/868— mediante normas y financiación específicas para fórmulas de gestión colectiva."
+  },
+  "437": {
+   "titulo": "Reconocer los datos colectivos como bien común",
+   "texto": "Promover una gestión democrática de la información generada por comunidades y pymes, con el objetivo de preservar los derechos de las comunidades productoras y evitar que terceros se apropien unilateralmente de su valor."
+  },
+  "438": {
+   "titulo": "Garantizar el acceso común al conocimiento",
+   "texto": "Instar al Gobierno del Estado a defender ante la Unión Europea y los organismos internacionales que el conocimiento general de la humanidad se declare un bien común."
+  },
+  "439": {
+   "titulo": "Compartir modelos de IA entrenados con conocimiento común",
+   "texto": "Promover que los modelos de IA de riesgo sistémico entrenados con conocimiento de"
+  },
+  "440": {
+   "titulo": "Facilitar el uso compartido de modelos de IA",
+   "texto": "interés común puedan liberarse de forma segura para su uso por distintas culturas, impidiendo que la carrera por la hegemonía tecnológica bloquee el acceso compartido."
+  },
+  "441": {
+   "titulo": "Garantizar la gobernanza democrática de los datos",
+   "texto": "Desarrollar instrumentos que garanticen la participación de las comunidades en las decisiones sobre el uso y la reutilización de datos colectivos, asegurando que sus beneficios y valor reviertan en el propio territorio."
+  },
+  "442": {
+   "titulo": "Crear una red pública de almacenamiento y computación",
+   "texto": "Impulsar una ley de infraestructuras digitales de propiedad pública y crear una red estatal de almacenamiento y computación como alternativa soberana a las nubes privadas transnacionales."
+  },
+  "443": {
+   "titulo": "Crear una nube pública gallega",
+   "texto": "Reclamar la transferencia directa de fondos europeos y estatales para digitalización, de modo que Galicia pueda desarrollar su propia infraestructura pública de servidores, adaptada a las necesidades de las administraciones, las universidades, los servicios públicos y nuestro tejido productivo."
+  },
+  "444": {
+   "titulo": "Garantizar la custodia pública de los datos estratégicos",
+   "texto": "Garantizar por ley que los datos sanitarios del SERGAS, los datos educativos y los expedientes administrativos se custodien y procesen bajo estricto control público, con seguridad y protección de derechos."
+  },
+  "445": {
+   "titulo": "Reformar la contratación pública tecnológica",
+   "texto": "Modificar la Ley de Contratos del Sector Público y el Esquema Nacional de Seguridad para reducir la dependencia de software privativo de fuera de Europa, favoreciendo el código abierto, las nubes públicas certificadas y la capacidad de auditoría."
+  },
+  "446": {
+   "titulo": "Protegerse frente a leyes extraterritoriales",
+   "texto": "Evaluar y limitar los riesgos de contratar proveedores tecnológicos sujetos a leyes de terceros Estados —como la CLOUD Act estadounidense— que los obliguen a entregar información a su Gobierno, blindando la normativa europea de protección de datos."
+  },
+  "447": {
+   "titulo": "Incluir la lengua y la cultura en la contratación tecnológica",
+   "texto": "Exigir en cada contrato público de software una presencia adecuada del gallego y de nuestra cultura, garantizando financiación para nubes públicas federadas que permitan compartir capacidades entre administraciones sin perder identidad."
+  },
+  "448": {
+   "titulo": "Orientar la compra pública a la soberanía digital",
+   "texto": "Orientar las inversiones hacia soluciones que refuercen las capacidades tecnológicas propias, favorezcan la participación de las pymes locales y eviten dependencias estructurales de un oligopolio de proveedores."
+  },
+  "449": {
+   "titulo": "Limitar los algoritmos manipulativos",
+   "texto": "Exigir al Gobierno del Estado un papel pionero en la Unión Europea para limitar los algoritmos y diseños que maximizan deliberadamente el tiempo de uso mediante conductas adictivas."
+  },
+  "450": {
+   "titulo": "Promover una economía de la intención",
+   "texto": "Favorecer la transición hacia un modelo digital en el que las personas decidan libremente qué información reciben, evitando que sus intereses se deleguen en algoritmos comerciales."
+  },
+  "451": {
+   "titulo": "Garantizar la interoperabilidad de las redes sociales",
+   "texto": "Imponer la interoperabilidad de las redes sociales y los servicios de mensajería mediante protocolos abiertos y federados, permitiendo comunicarse con usuarios de otras plataformas y cambiar de servicio sin barreras tecnológicas."
+  },
+  "452": {
+   "titulo": "Fomentar alternativas digitales abiertas y descentralizadas",
+   "texto": "Favorecer el desarrollo de servicios digitales abiertos, federados y comunitarios para reducir la dependencia de las grandes corporaciones y potenciar la capacidad de decisión ciudadana."
+  },
+  "453": {
+   "titulo": "Reforzar la transparencia y el pluralismo",
+   "texto": "Reforzar las garantías y auditorías sobre el funcionamiento de los sistemas de recomendación para conocer los criterios que condicionan la visibilidad y circulación de contenidos en internet."
+  },
+  "454": {
+   "titulo": "Gravar el capitalismo de vigilancia",
+   "texto": "Promover, en los marcos estatal y europeo, la tributación del negocio basado en la extracción masiva de datos, gravando esta actividad según el volumen real de usuarios en cada territorio."
+  },
+  "455": {
+   "titulo": "Revertir los ingresos fiscales a las comunidades",
+   "texto": "Reclamar que la recaudación de estos impuestos tecnológicos se transfiera a las comunidades para financiar infraestructuras digitales públicas, servicios de interés general y espacios comunes de datos."
+  },
+  "456": {
+   "titulo": "Garantizar una tributación efectiva de las plataformas",
+   "texto": "Defender medidas estrictas contra la ingeniería fiscal y la concentración de beneficios de las grandes plataformas, obligándolas a contribuir de forma justa a los servicios públicos de los territorios donde operan."
+  },
+  "457": {
+   "titulo": "Financiar capacidades tecnológicas propias",
+   "texto": "Vincular las políticas fiscales y la inversión pública al desarrollo de una economía digital soberana que apoye la innovación, el software libre y el tejido gallego de pequeñas y medianas empresas."
+  },
+  "458": {
+   "titulo": "Reformar las leyes de Telecomunicaciones y del Sector Eléctrico",
+   "texto": "Impulsar cambios normativos estatales para establecer límites estrictos y vinculantes a la implantación de macrocentros de datos privados, garantizando su compatibilidad con las necesidades del territorio."
+  },
+  "459": {
+   "titulo": "Exigir auditorías hídricas y ambientales",
+   "texto": "Condicionar cualquier proyecto tecnológico a una evaluación rigurosa que garantice que su consumo de agua no agote los acuíferos ni perjudique el abastecimiento de la población y los ecosistemas."
+  },
+  "460": {
+   "titulo": "Exigir energía renovable propia para los centros de datos",
+   "texto": "Exigir que estas grandes infraestructuras se abastezcan al 100% con nuevas energías renovables propias, impidiendo que saturen la red pública o desplacen otros usos prioritarios."
+  },
+  "461": {
+   "titulo": "Aprovechar obligatoriamente el calor residual",
+   "texto": "Promover el uso obligatorio del calor generado por los centros de datos para abastecer a industrias, servicios públicos o redes locales de calefacción, de modo que revierta productivamente en el territorio."
+  },
+  "462": {
+   "titulo": "Establecer participación, canon y retorno territorial",
+   "texto": "Establecer planes industriales vinculantes y un canon específico por capacidad instalada, destinado íntegramente a financiar la transición digital y el desarrollo local de las comunidades afectadas."
+  },
+  "463": {
+   "titulo": "Poner fin a los enclaves digitales extractivos",
+   "texto": "Oponerse al «sovereignty washing» de multinacionales que usan los recursos gallegos sin generar valor añadido real. Con estos criterios de control y sostenibilidad se examinarán proyectos como el centro de datos de Curtis vinculado a Microsoft."
+  },
+  "464": {
+   "titulo": "Exigir transformación industrial de los minerales críticos",
+   "texto": "Promover normas para que los proyectos de minería estratégica para la transición digital (como los de litio o cobre) estén condicionados por ley a su transformación industrial y a la creación de valor tecnológico en Galicia."
+  },
+  "465": {
+   "titulo": "Evitar que Galicia asuma los costes ambientales sin beneficios",
+   "texto": "Imponer criterios de proximidad energética y compatibilidad ambiental para evitar un modelo asimétrico en el que los costes ecológicos recaigan en Galicia mientras los beneficios económicos se van fuera."
+  },
+  "466": {
+   "titulo": "Evitar que Galicia sea una zona de paso y consumo",
+   "texto": "nuestro país, rechazando que seamos una mera zona de paso o de consumo asimétrico de recursos."
+  },
+  "467": {
+   "titulo": "Promover el amarre de cables submarinos internacionales",
+   "texto": "Impulsar desde el Estado la posición geoestratégica de Galicia como nodo de interconexión atlántica, promoviendo activamente el amarre de cables submarinos internacionales en la costa gallega con criterios estrictos de sostenibilidad ambiental."
+  },
+  "468": {
+   "titulo": "Crear un corredor digital atlántico",
+   "texto": "Promover un corredor de conectividad y alta tecnología con el norte de Portugal y la cornisa cantábrica que favorezca el intercambio científico, la cooperación en innovación e impulse un tejido de pymes de alto valor añadido."
+  },
+  "469": {
+   "titulo": "Planificación territorial de las infraestructuras",
+   "texto": "Reclamar que la legislación estatal someta los centros de datos a la planificación y el control de las administraciones territoriales competentes, garantizando que sirvan para potenciar los ecosistemas productivos locales."
+  },
+  "470": {
+   "titulo": "Retorno industrial y valor añadido",
+   "texto": "Orientar todas las nuevas redes e infraestructuras atlánticas a crear actividad industrial real, fortalecer la investigación pública y la innovación, y garantizar que nuestra geografía se traduzca en capacidad efectiva de decisión."
+  },
+  "471": {
+   "titulo": "Fomentar el empleo juvenil estable y digno",
+   "texto": "Diseñar políticas de fomento del empleo juvenil con el objetivo de crear empleo estable y condiciones laborales dignas, priorizando la igualdad de condiciones y oportunidades para las jóvenes y los jóvenes gallegos."
+  },
+  "472": {
+   "titulo": "Apoyar la incorporación de jóvenes al sector primario",
+   "texto": "Fomentar ayudas directas para que los jóvenes se incorporen al sector primario y medidas complementarias para quienes continúen su actividad, así como un apoyo eficaz y más ayudas y asesoramiento para relevar las explotaciones."
+  },
+  "473": {
+   "titulo": "Garantizar los tiempos de descanso",
+   "texto": "Garantizar el respeto a los tiempos de descanso, evitando comunicaciones y exigencias laborales fuera de la jornada de trabajo."
+  },
+  "474": {
+   "titulo": "Promover el empleo juvenil vinculado a la transición energética",
+   "texto": "Promover el empleo juvenil vinculado a una transición energética justa, la conservación ambiental y la recuperación de los"
+  },
+  "475": {
+   "titulo": "Recuperar los ecosistemas y decidir sobre los recursos naturales",
+   "texto": "ecosistemas, garantizando que Galicia pueda decidir sobre sus recursos naturales."
+  },
+  "476": {
+   "titulo": "Priorizar a la juventud en el acceso a la vivienda pública",
+   "texto": "Garantizar que la juventud sea uno de los colectivos prioritarios para acceder al parque de vivienda pública. Exigir urgentemente al Estado que transfiera todos los activos de la SAREB a la Xunta de Galicia para destinarlos a promover vivienda pública, sobre todo en régimen de alquiler, y priorizar el acceso de la juventud a estas viviendas."
+  },
+  "477": {
+   "titulo": "Combatir la discriminación de jóvenes en el acceso a la vivienda",
+   "texto": "Adoptar medidas contra la discriminación de las personas jóvenes en el acceso a la vivienda por no disponer de avales familiares o tener contratos de trabajo temporales."
+  },
+  "478": {
+   "titulo": "Garantizar empleo, vivienda y emprendimiento en el medio rural",
+   "texto": "Garantizar oportunidades de empleo, vivienda y emprendimiento en el medio rural mediante un programa de rehabilitación de viviendas vacías y la mejora de los servicios públicos, el transporte y la conectividad."
+  },
+  "479": {
+   "titulo": "Garantizar contenidos audiovisuales en lengua gallega",
+   "texto": "Garantizar una oferta real de contenidos audiovisuales en lengua gallega, tanto en las plataformas audiovisuales y de streaming como en los videojuegos, y vigilar el cumplimiento efectivo de la Ley del Audiovisual."
+  },
+  "480": {
+   "titulo": "Transferir plenamente las competencias educativas a Galicia",
+   "texto": "Transferir plenamente a Galicia las competencias educativas para contar con una enseñanza pública y de calidad, adaptada a nuestras características nacionales y, en particular, a la realidad sociolaboral de la juventud gallega."
+  },
+  "481": {
+   "titulo": "Transferir a la Xunta las competencias sobre becas universitarias",
+   "texto": "Transferir a la Xunta de Galicia las competencias sobre becas universitarias, superando el actual modelo de distribución entre la población y garantizando así el acceso a la enseñanza superior."
+  },
+  "482": {
+   "titulo": "Eliminar las tasas de reposición para el nuevo profesorado",
+   "texto": "Eliminar las tasas de reposición para garantizar estabilidad al nuevo profesorado investigador y asegurar el relevo generacional."
+  },
+  "483": {
+   "titulo": "Revertir los aspectos lesivos de la nueva legislación educativa",
+   "texto": "Revertir los aspectos perjudiciales mantenidos o introducidos por la nueva legislación educativa en la LOMLOE, la LOSU y la Ley de FP."
+  },
+  "484": {
+   "titulo": "Garantizar la remuneración de las prácticas",
+   "texto": "Garantizar la remuneración de las prácticas, asegurando que sean una experiencia formativa y de aprendizaje para las estudiantes y no sustituyan a un trabajador o trabajadora, y evitando la precarización de la juventud en el ámbito laboral."
+  },
+  "485": {
+   "titulo": "Equiparar los derechos y la remuneración de los contratos formativos",
+   "texto": "Equiparar los derechos laborales y la remuneración de los contratos formativos a los de cualquier actividad laboral."
+  },
+  "486": {
+   "titulo": "Facilitar el retorno de los jóvenes emigrados",
+   "texto": "Desarrollar un plan de choque para el retorno de las personas jóvenes emigradas, garantizando una inserción laboral y un acceso digno a la vivienda."
+  },
+  "487": {
+   "titulo": "Reconocer el derecho al voto de la juventud",
+   "texto": "Reconocer el derecho de las jóvenes y los jóvenes de 16 y 17 años a votar en las distintas convocatorias electorales."
+  },
+  "488": {
+   "titulo": "Destinar fondos de los Presupuestos Generales a políticas juveniles",
+   "texto": "Destinar el 1 % de los Presupuestos Generales del Estado (PGE) a políticas para la juventud, transfiriendo los fondos a las comunidades autónomas para que puedan diseñar políticas adaptadas a los intereses de sus jóvenes."
+  },
+  "489": {
+   "titulo": "Prevenir y erradicar la violencia machista y la LGBTIfobia",
+   "texto": "Promover la elaboración de un plan para prevenir y erradicar la violencia machista y la LGBTIfobia."
+  },
+  "490": {
+   "titulo": "Prevenir y abordar el acoso escolar y el ciberacoso",
+   "texto": "Elaborar un protocolo estatal para prevenir, detectar y abordar el acoso escolar y el ciberacoso."
+  },
+  "491": {
+   "titulo": "Promover un plan de salud mental para la juventud",
+   "texto": "Impulsar un plan de prevención y actuación en materia de salud mental dirigido a la juventud, destinando recursos económicos y materiales suficientes para su tratamiento."
+  },
+  "492": {
+   "titulo": "Abolir permanentemente el servicio militar obligatorio",
+   "texto": "Abolir permanentemente el servicio militar obligatorio, poner fin al modelo de suspensión del servicio establecido en 2001 y eliminar de la legislación la posibilidad de restablecerlo."
+  },
+  "493": {
+   "titulo": "Bonificar el transporte colectivo para la juventud",
+   "texto": "Promover el transporte colectivo entre los jóvenes menores de 30 años mediante bonificaciones para viajar por carretera y ferrocarril."
+  },
+  "494": {
+   "titulo": "Mejorar y ampliar las infraestructuras ferroviarias gallegas",
+   "texto": "Mejorar y ampliar las infraestructuras ferroviarias gallegas, desde las conexiones entre ciudades, pueblos y comarcas, garantizando así el derecho efectivo de la juventud a la movilidad en toda Galicia e impulsando a la vez la transferencia plena de estas competencias a la Xunta, empezando por la creación del Galitren o tren de proximidad en Galicia."
+  },
+  "495": {
+   "titulo": "Prevenir la ludopatía y eliminar la publicidad del juego",
+   "texto": "Elaborar planes de prevención y choque contra la ludopatía, así como eliminar los anuncios y promociones del juego en cualquier ámbito, recreativo o deportivo."
+  },
+  "496": {
+   "titulo": "Derogar íntegramente la Ley Mordaza",
+   "texto": "Derogar íntegramente la Ley Mordaza, por favorecer la discrecionalidad policial, criminalizar el derecho de reunión y manifestación y aumentar la indefensión de la ciudadanía. En particular, suprimir las infracciones graves de desobediencia y resistencia a la autoridad, así como la negativa a identificarse o la falta de consideración hacia algún agente de las Fuerzas y Cuerpos de Seguridad del Estado. También deben prohibirse las pelotas de goma y las devoluciones en caliente, y eliminarse el principio de"
+  },
+  "497": {
+   "titulo": "Eliminar la presunción de veracidad de los agentes",
+   "texto": "presunción de veracidad que se otorga a las declaraciones (denuncias, actas o atestados) de los agentes."
+  },
+  "498": {
+   "titulo": "Transferir las competencias deportivas a Galicia",
+   "texto": "Transferir las competencias deportivas del Consejo Superior de Deportes y de las federaciones deportivas."
+  },
+  "499": {
+   "titulo": "Garantizar la participación internacional de las selecciones gallegas",
+   "texto": "Garantizar la participación de las selecciones gallegas con plenos derechos en todas las disciplinas y en las competiciones deportivas internacionales oficiales."
+  },
+  "500": {
+   "titulo": "Dar a las federaciones gallegas la última palabra en cada deporte",
+   "texto": "Adoptar las medidas necesarias para que las federaciones gallegas de cada disciplina deportiva sean las máximas instancias organizativas de cada deporte en nuestro país."
+  },
+  "501": {
+   "titulo": "Modificar las infracciones y sanciones de la Ley estatal del deporte",
+   "texto": "Modificar las infracciones y sanciones recogidas en la Ley estatal del deporte, que actualmente penalizan conductas como exhibir pancartas o banderas y atentan contra los derechos fundamentales."
+  },
+  "502": {
+   "titulo": "Promover la igualdad y la participación de las mujeres en el deporte",
+   "texto": "Impulsar medidas y políticas decididas para promover la igualdad en el deporte y la participación de las mujeres en todas las disciplinas deportivas, tanto en el deporte de base como en el profesional."
+  },
+  "503": {
+   "titulo": "Garantizar la conciliación de las deportistas que son madres",
+   "texto": "Impulsar medidas que garanticen los derechos de conciliación de las mujeres deportistas cuando son madres, así como combatir cualquier forma de discriminación que las obligue a elegir entre ser madres o continuar su carrera deportiva profesional."
+  },
+  "504": {
+   "titulo": "Aumentar los recursos para instalaciones deportivas accesibles",
+   "texto": "Aportar más recursos económicos para impulsar instalaciones deportivas accesibles, dirigidas especialmente a personas con discapacidad y movilidad reducida."
+  },
+  "505": {
+   "titulo": "Adoptar un estatus internacional de neutralidad activa",
+   "texto": "Adoptar un estatus internacional de neutralidad activa para el Estado español, que incluirá:"
+  },
+  "506": {
+   "titulo": "Rechazar el aumento del gasto militar",
+   "texto": "Rechazar el aumento del gasto militar y el acatamiento de las directrices de la OTAN y Estados Unidos en este ámbito. Reducir progresivamente las enormes cantidades que se derrochan en esta materia y que, además, implican recortes en servicios públicos esenciales como la sanidad, la enseñanza y los servicios sociales."
+  },
+  "507": {
+   "titulo": "Oponerse a la militarización y al uso militar de minerales críticos",
+   "texto": "Oponerse, en el ámbito de la UE, a la militarización y al desvío hacia fines militares e industria bélica de partidas presupuestarias destinadas a servicios sociales. Excluir de la explotación en los planes de minería, dentro de las actuales competencias españolas sobre legislación minera básica y planes de exploración, las materias primas —litio, coltán, neodimio, berilio, etc.— definidas por la OTAN y la UE como críticas y estratégicas para uso militar."
+  },
+  "508": {
+   "titulo": "Avanzar en la desmilitarización de Galicia",
+   "texto": "Avanzar en la desmilitarización de Galicia y devolver progresivamente los espacios (empezando por los declarados de no interés militar) al uso civil, traspasándolos a la Xunta."
+  },
+  "509": {
+   "titulo": "Defender una arquitectura internacional igualitaria entre los pueblos",
+   "texto": "Defender una nueva arquitectura internacional igualitaria y no jerarquizada entre los pueblos, que reconozca el derecho de las naciones a su libre determinación —empezando por la nuestra— y a relacionarse en pie de igualdad, sin injerencias ni agresiones, en coherencia con nuestra visión pacifista y antiimperialista. De inmediato:"
+  },
+  "510": {
+   "titulo": "Revertir la posición española sobre la autodeterminación saharaui",
+   "texto": "a) Revertir el cambio de posición del Gobierno español respecto al derecho de autodeterminación del pueblo saharaui, condenar enérgicamente la ocupación marroquí del Sáhara Occidental e instar al Estado español a promover un referéndum de autodeterminación con garantías democráticas."
+  },
+  "511": {
+   "titulo": "Condenar la ocupación israelí y reconocer Palestina",
+   "texto": "b) Condenar enérgicamente al Estado de Israel por la ocupación y el colonialismo en los territorios ocupados de Palestina. Reconocer de forma real y efectiva el Estado palestino."
+  },
+  "512": {
+   "titulo": "Poner fin a las agresiones imperialistas",
+   "texto": "c) Pedir el fin de las agresiones imperialistas, especialmente en Oriente Medio y el norte de África."
+  },
+  "513": {
+   "titulo": "Rechazar las injerencias de Estados Unidos en América Latina",
+   "texto": "d) Rechazar la política de injerencia de Estados Unidos, que busca desestabilizar los gobiernos progresistas de América Latina y mantiene la agresión contra Venezuela y el bloqueo a Cuba."
+  },
+  "514": {
+   "titulo": "Defender la paz y abolir el servicio militar obligatorio",
+   "texto": "Defender una política de paz oponiéndose a las medidas que buscan extender el militarismo en la sociedad; por ello, reclamamos la abolición definitiva del servicio militar obligatorio (solo está «suspendido» desde 2001), por responder a las estrategias bélicas de la OTAN y la UE, y por ser el ejército español una herramienta del régimen al servicio del centralismo españolizador que niega la realidad plurinacional del Estado."
+  },
+  "515": {
+   "titulo": "Oponerse a tratados comerciales que vulneren derechos y soberanía",
+   "texto": "Oponerse a cualquier tratado comercial internacional que vulnere la soberanía de los pueblos y los derechos sociales, laborales y ambientales, así como los relacionados con una vida digna y saludable."
+  },
+  "516": {
+   "titulo": "Combatir las causas profundas de las migraciones masivas",
+   "texto": "Combatir las causas profundas de las migraciones masivas, especialmente las políticas neocoloniales e imperialistas en el continente africano y Oriente Medio, las guerras y el saqueo de los recursos naturales; en definitiva, la injerencia externa."
+  },
+  "517": {
+   "titulo": "Defender una política migratoria europea respetuosa con los derechos",
+   "texto": "Defender en la Unión Europea una política migratoria respetuosa con el derecho de asilo político, los derechos sociales y laborales y el desarrollo de los pueblos."
+  },
+  "518": {
+   "titulo": "Renegociar los acuerdos de Schengen para proteger los derechos",
+   "texto": "Renegociar los acuerdos de Schengen a favor de una acción decidida para impulsar nuevas políticas de migración internacional y desarrollo. Asimismo, oponerse plenamente a cualquier reforma regresiva de los derechos y las libertades individuales y civiles con el pretexto de las amenazas antiterroristas."
+  }
+ },
+ "bloques": {
+  "1": "MÁS FUERZA PARA GALICIA",
+  "2": "DERECHO A UNA VIDA DIGNA",
+  "3": "DERECHO A UNOS SERVICIOS PÚBLICOS DE CALIDAD",
+  "4": "LA ECONOMÍA AL SERVICIO DE LAS MAYORÍAS SOCIALES",
+  "5": "INFRAESTRUCTURAS PÚBLICAS Y ORDENACIÓN TERRITORIAL",
+  "6": "FRENTE A LA CRISIS AMBIENTAL Y LA EMERGENCIA CLIMÁTICA",
+  "7": "LENGUA Y CULTURA",
+  "8": "DEMOCRACIA Y SOBERANÍA DIGITAL: INFRAESTRUCTURAS PÚBLICAS PROPIAS Y DERECHOS GARANTIZADOS",
+  "9": "POLÍTICAS PARA LA JUVENTUD",
+  "10": "DEPORTES",
+  "11": "GALICIA POR LA PAZ"
+ },
+ "secciones": {
+  "1": "MÁS FUERZA PARA GALICIA",
+  "2.1": "VIVIENDA",
+  "2.2": "MÁS DERECHOS PARA LA CLASE TRABAJADORA",
+  "2.3": "EN DEFENSA DEL SISTEMA PÚBLICO DE PENSIONES",
+  "2.4": "COMBATIR LA POBREZA Y PROMOVER LA INCLUSIÓN SOCIAL",
+  "2.5": "ACOGIDA, INCLUSIÓN Y DERECHOS DE LAS PERSONAS INMIGRANTES",
+  "2.6": "POLÍTICAS FEMINISTAS PARA AVANZAR EN LOS DERECHOS DE LAS MUJERES",
+  "2.7": "LA DEFENSA DE LOS DERECHOS DE LAS PERSONAS LGTBI",
+  "2.8": "EN DEFENSA DE LA DEMOCRACIA Y DE LAS LIBERTADES PÚBLICAS",
+  "3.1": "EDUCACIÓN",
+  "3.2": "SANIDAD",
+  "3.3": "PERSONAS MAYORES, PERSONAS EN SITUACIÓN DE DEPENDENCIA Y PERSONAS CON DISCAPACIDAD (SAAD).",
+  "3.4": "GARANTÍAS DE BUEN GOBIERNO",
+  "3.5": "REESTRUCTURACIÓN DE LA ADMINISTRACIÓN ESTATAL EN GALICIA",
+  "4.1": "POR UNA NUEVA FISCALIDAD",
+  "4.2": "SECTOR INDUSTRIAL",
+  "4.3": "SECTORES PRIMARIOS",
+  "4.4": "UN COMPROMISO FIRME CON LAS PERSONAS AUTÓNOMAS",
+  "4.5": "CIENCIA E INVESTIGACIÓN",
+  "4.6": "POR UNA TRANSICIÓN ENERGÉTICA JUSTA",
+  "5.1": "INFRAESTRUCTURAS FERROVIARIAS",
+  "5.2": "INFRAESTRUCTURAS VIARIAS",
+  "5.3": "PUERTOS Y AEROPUERTOS",
+  "6": "FRENTE A LA CRISIS AMBIENTAL Y LA EMERGENCIA CLIMÁTICA",
+  "7": "LENGUA Y CULTURA",
+  "8.1": "Soberanía digital, competencias y desarrollo de un ecosistema",
+  "8.2": "Derechos civiles, garantías democráticas y control público de los algoritmos",
+  "8.3": "Lengua gallega, patrimonio cultural e inteligencia artificial soberana",
+  "8.4": "Datos y conocimiento en común",
+  "8.5": "Infraestructuras públicas, nube soberana y autonomía tecnológica",
+  "8.6": "Redes sociales al servicio de las personas y libertad de elección digital",
+  "8.7": "Fiscalidad y retorno social del valor digital",
+  "8.8": "Sostenibilidad ambiental y lucha contra el extractivismo digital",
+  "8.9": "Galicia como nodo de interconexión digital atlántico",
+  "9": "POLÍTICAS PARA LA JUVENTUD",
+  "10": "DEPORTES",
+  "11": "GALICIA POR LA PAZ"
+ },
+ "citas": {
+  "Destinar o 3% dos Orzamentos Xerais do Estado para financiar mediante o Plan estatal de vivenda": "Destinar el 3 % de los Presupuestos Generales del Estado para financiar mediante el Plan estatal de vivienda",
+  "Promover a implantación da xornada laboral de 35 horas semanais sen redución salarial": "Promover la implantación de la jornada laboral de 35 horas semanales sin reducción salarial",
+  "Incrementar o Salario Mínimo Interprofesional até o situar no 60 % do salario medio": "Incrementar el Salario Mínimo Interprofesional hasta situarlo en el 60 % del salario medio",
+  "limitación do 15% do cadro de persoal a tempo parcial por empresa": "limitación del 15 % de la plantilla a tiempo parcial por empresa",
+  "Recuperación da xubilación ordinaria aos 65 anos e a parcial aos 61 anos.": "Recuperación de la jubilación ordinaria a los 65 años y la parcial a los 61 años.",
+  "Elevación das pensións non contributivas até o 75 % do limiar de pobreza dun fogar unipersoal": "Elevación de las pensiones no contributivas hasta el 75 % del umbral de pobreza de un hogar unipersonal",
+  "Ampliación da cotización completa, ao 100%, nas reducións de xornada por coidados": "Ampliación de la cotización completa, al 100 %, en las reducciones de jornada por cuidados",
+  "até lle dedicar, como mínimo, 7% do PIB.": "hasta dedicarle, como mínimo, el 7 % del PIB.",
+  "Incrementar o financiamento das universidade públicas, tomando como referencia o 1,5% do PIB": "Incrementar la financiación de las universidades públicas, tomando como referencia el 1,5 % del PIB",
+  "Imposto Especial sobre a Electricidade (IEE) do 5,1 % ao 0,5 %": "Impuesto Especial sobre la Electricidad (IEE) del 5,1 % al 0,5 %",
+  "Elevar, progresivamente, o investimento estatal en I+D+i até o situar no 3% do PIB en 2030.": "Elevar progresivamente la inversión estatal en I+D+i hasta situarla en el 3 % del PIB en 2030.",
+  "se abastezan ao 100% con enerxías renovábeis de nova xeración propias": "se abastezcan al 100 % con energías renovables de nueva generación propias",
+  "Recoñecer o dereito das mozas e dos mozos de 16 e 17 anos a poderen votar nas diferentes convocatorias electorais.": "Reconocer el derecho de las chicas y los chicos de 16 y 17 años a poder votar en las distintas convocatorias electorales.",
+  "Destinar 1 % dos Orzamentos Xerais do Estado (PGE) a políticas para a mocidade": "Destinar el 1 % de los Presupuestos Generales del Estado (PGE) a políticas para la juventud"
+ }
+}
