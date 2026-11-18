@@ -20,6 +20,7 @@ export const downloadFileNames: Record<string, string> = {
   'fe-jons': 'programa-fe-jons-29n-2026.pdf',
   pcte: 'programa-de-lucha-pcte-2026.pdf',
   pctc: 'programa-de-lluita-pctc-2026.pdf',
+  pctg: 'programa-de-loita-pctg-2026.pdf',
   psoe: 'programa-psoe-la-fuerza-de-seguir-avanzando-2026.pdf',
   ie: 'programa-iustitia-europa-contrato-electoral-2026.pdf',
   'mundo-mas-justo': 'programa-por-un-mundo-mas-justo-29n-2026.pdf',

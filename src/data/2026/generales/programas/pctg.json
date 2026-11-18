@@ -4,24 +4,2255 @@
  "siglas": "PCTG",
  "color": "#C63C3E",
  "colorClaro": "#FDE5E5",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Programa de loita",
+ "subtitulo": "95 eixos de loita en 11 blocos para construír unha oposición obreira",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "observaciones": [
+  "Programa en galego. Los textos se mantienen en galego: no están traducidos. El texto es prácticamente la traducción al gallego del programa del PCTE, que está en castellano.",
+  "Es la versión gallega del «Programa de lucha» del PCTE, publicada en oposicionobrera.pcte.es: mismas 11 secciones y mismas 95 fichas, con el mismo orden. El PDF no menciona al PCTG: el texto habla del Partido Comunista dos Traballadores de España. El PDF no tiene fecha.",
+  "El texto dice «este non é un programa electoral»: se presenta como programa de lucha y no como programa electoral.",
+  "Cada ficha de «Eixos de loita» es una medida, con su título. Las fichas no están numeradas en el original: el número sigue el orden del PDF."
+ ],
+ "pdf": "/programas/pctg-programa-de-loita-2026.pdf",
+ "fuentePdf": "https://oposicionobrera.pcte.es/assets/docs/GAL-Programa-de-loita-PCTG.pdf",
+ "paginas": 24,
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Presentación",
+  "texto": "En España, o poder adquisitivo dos traballadores e traballadoras é hoxe un 4,6% inferior o de 2008. A vivenda absorbe unha parte crecente dos salarios. A carestía da vida non para de subir. As xornadas déixannos devastados física e mentalmente. Privatízanse os servizos públicos. E mentres faltan medios para necesidades básicas ,crece o gasto militar, os ricos cada vez son máis ricos e os Estados prepáranse para ternos o máis controlados se protestamos.\n\nEste sistema, o sistema capitalista levántase sobre a nosa miseria en todo o globo. Tanto é así que millóns de persoas vense forzadas a abandonar os seus fogares, fuxir dos seus países e xogarse a vida para sobrevivir. Fuxen da miseria, das guerras e da devastación ambiental, da barbarie do capitalismo\n\nE que fan os partidos políticos e os gobernos? A gran maioría deles asume este sistema como o único posible. Incluso aqueles partidos reformistas, que din defender os nosos intereses adáptanos, en realidade, ás posibilidades da lei e da economía, que non é mais que adaptalos ás liñas vermellas que impón a gran empresa e a banca.\n\nPor que conformarse con iso se somos a maioría social? Por que aceptar con resignación esta realidade política se somos nos quenes todo o producimos? Fai demasiado tempo que deixamos de confiar nas nosas propias forzas, que cedemos a nosa acción política e que abandonamos a bandeira da loita obreira. Así so somos máis débiles fronte a súa explotación e violencia.\n\nDebemos retomar o noso propio camiño. Debemos volver a loitar, dende cada empresa, fábrica e polígono; dende cada barrio e cidade, dende cada universidade e centro de estudos. Guiados única e exclusivamente polos nosos propios intereses e necesidades, e non polos de quenes se enriquecen a nosa costa.\n\nPor iso este non é un programa electoral. Estas non son unha serie de medidas para aplicar dende as institucións. Este é o programa de loita que o Partido Comunista dos Traballadores de España presenta ante a clase obreira e os sectores populares, un conxunto de reivindicacións definido única e exclusivamente de acordo os nosos intereses, que, á vez que mellore as nosas condicións de vida e traballo, debilite os poderosos.\n\nUn programa de loita que guíe a construción dunha oposición obreira fronte aos capitalistas e aos seus gobernos. Porque os dereitos conquístanse, deféndense e amplíanse mediante a organización."
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
+ "cifras": [
+  {
+   "valor": "35",
+   "unidad": "horas semanales",
+   "texto": "Jornada máxima ya, sin reducción salarial, como paso hacia las 30",
+   "contexto": "Xornadas de 35 horas semanais xa",
+   "medida": 2
+  },
+  {
+   "valor": "1.540",
+   "unidad": "horas al año",
+   "texto": "Tope de trabajo efectivo anual",
+   "contexto": "Tope de 1540 horas anuais de traballo efectivo",
+   "medida": 2
+  },
+  {
+   "valor": "25",
+   "unidad": "días laborables de vacaciones",
+   "texto": "Cinco semanas de vacaciones retribuidas",
+   "contexto": "Cinco semanas (25 dias laborais) de vacacións retribuídas",
+   "medida": 3
+  },
+  {
+   "valor": "60",
+   "unidad": "años",
+   "texto": "Jubilación ordinaria, sin penalización; a los 55 en trabajos penosos",
+   "contexto": "Xubilación ordinaria os 60 anos",
+   "medida": 4
+  },
+  {
+   "valor": "50 %",
+   "unidad": "menos de alquiler",
+   "texto": "Bajada inmediata de los alquileres, a costa de los propietarios",
+   "contexto": "Baixada inmediata dos alugueiros do 50%",
+   "medida": 21
+  },
+  {
+   "valor": "15 %",
+   "unidad": "de los ingresos",
+   "texto": "Alquiler social obligatorio en viviendas de bancos, fondos y grandes propietarios",
+   "contexto": "de non mais do 15% dos seus ingresos",
+   "medida": 19
+  },
+  {
+   "valor": "10 %",
+   "unidad": "de las viviendas",
+   "texto": "Parque público permanente de vivienda en alquiler",
+   "contexto": "polo menos o 10% do total de vivendas",
+   "medida": 24
+  },
+  {
+   "valor": "0,5 %",
+   "unidad": "de viviendas turísticas",
+   "texto": "Límite de la vivienda turística en cada localidad",
+   "contexto": "Limitala vivenda turística a un 0,5% do conxunto de vivendas",
+   "medida": 23
+  },
+  {
+   "valor": "25 %",
+   "unidad": "del gasto sanitario",
+   "texto": "Para la atención primaria",
+   "contexto": "25% do gasto sanitario para atención primaria",
+   "medida": 32
+  },
+  {
+   "valor": "52",
+   "unidad": "semanas de permiso",
+   "texto": "Permiso por nacimiento igual, intransferible y retribuido al 100 %",
+   "contexto": "Permiso por nacemento de 52 semanas",
+   "medida": 62
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "De inmediato",
+   "texto": "Jornada de 35 horas semanales sin reducción salarial",
+   "medida": 2
+  },
+  {
+   "plazo": "De inmediato",
+   "texto": "Bajar un 50 % los alquileres",
+   "medida": 21
+  }
+ ],
+ "ordenPlazos": [
+  "De inmediato"
+ ],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Loitar polo traballo, o salario e o tempo de vida",
+   "tituloMayus": "LOITAR POLO TRABALLO, O SALARIO E O TEMPO DE VIDA",
+   "lema": "",
+   "cita": "",
+   "intro": "Para a maioría da clase traballadora, o salario é a principal fonte de ingresos. E hoxe xa non alcanza: os prezos da cesta da compra suben, como sube o coste da vivenda ou da luz. Para cada vez máis persoas, ter emprego non garante nin sequera uns mínimos vitais.\n\nA súa vez a flexibilidade que tanto se promove, non é máis que unha trampa para colarnos o traballo temporal, a subcontratación, a facilidade no despido; da mesma forma que os avances tecnolóxicos non se traducen nunha redución de tempo de traballo, senón en maior control sobre as nosas vidas. Chegou o momento de que a clase traballadora poña pé en parede e que nos fagamos de novo fortes dende os nosos comités, seccións sindicais e asembleas.",
+   "pagina": 7
+  },
+  {
+   "id": 2,
+   "titulo": "Máis mecanismos de control obreiro na produción",
+   "tituloMayus": "MÁIS MECANISMOS DE CONTROL OBREIRO NA PRODUCIÓN",
+   "lema": "",
+   "cita": "",
+   "intro": "Quenes traballamos coñecemos o funcionamento real das empresas, pero as decisións fundamentais tómanse sen contra connosco. A propiedade decide inversións, peches, deslocalizacións ou automatizacións, aínda que as súas consecuencias recaian sobre cadros de persoal e territorios enteiros. Defendelas nosas conquistas e dereitos pasa tamén por instaurar mecanismos estables de control sobre a patronal.\n\nHoxe, ademais, fálase moito de reindustrializar, de «autonomía estratéxica» e de planificación. Pero a política industrial que se impulsa dende Bruxelas e Madrid responde aos intereses da economía de guerra e o beneficio privado, non ás nosas necesidades. Que unha empresa sexa pública non basta: unha empresa estatal pode despedir, externalizar e precarizar como calquera outra. O decisivo é para que produce e quen controla o que se produce.\n\nPor iso todas as propostas deste bloque van na mesma dirección: arrancar información e convertela en control, exercido pola organización unitaria, sindical e de base da clase obreira e no seu propio beneficio. Isto pasa tamén por que sectores esenciais como a enerxía, o transporte ou as telecomunicacións deixen de estar sometidos aos intereses de grandes grupos privados.",
+   "pagina": 9
+  },
+  {
+   "id": 3,
+   "titulo": "A vivenda non é un negocio",
+   "tituloMayus": "A VIVENDA NON É UN NEGOCIO",
+   "lema": "",
+   "cita": "",
+   "intro": "A vivenda é unha necesidade básica, pero se está a converter nunha fonte de rendas e especulación. Unha parte crecente do salario remata en alugueiros e cuotas hipotecarias mentres bancos, fondos e grandes propietarios acumulan vivendas. O problema da vivenda non é un problema aparte: é unha porción do salario que se nos arrebata fora do centro de traballo.\n\nA consecuencia é que persoas con emprega non poidan independizarse, e que perder ingresos poida significar tamén perder a casa. Por iso a loita pola vivenda desenvólvese en dous frontes que deben ir unidos: nos barrios, organizándonos veciños e veciñas, e nos centros de traballo. Hai que levar ata o final a loita pola vivenda e impedir o negocio cunha necesidade tan básica coma ter un teito.",
+   "pagina": 11
+  },
+  {
+   "id": 4,
+   "titulo": "Defendelos servizos públicos e a protección social",
+   "tituloMayus": "DEFENDELOS SERVIZOS PÚBLICOS E A PROTECCIÓN SOCIAL",
+   "lema": "",
+   "cita": "",
+   "intro": "O salario non remata na nómina, Garantir mínimos vitais dignos depende tamén de dispor de sanidade, educación e protección social sen ter que adquirilas no mercado.\n\nCando un servizo públicos se deteriora, quen ten diñeiro busca unha alternativa privada e quen non ten que soportar esperas, falta de prazas ou servizos insuficientes. A privatización converte necesidades básicas en oportunidades de negocio a costa das nosas vidas.\n\nDefendelo público non pode ser defender a xestión de quenes o están a desmantelar. A defensa dos servizos esixe a unidade organizada de quenes traballan neles e de quenes os usan.",
+   "pagina": 13
+  },
+  {
+   "id": 5,
+   "titulo": "Asegurala cesta da compra e os dereitos no campo",
+   "tituloMayus": "ASEGURALA CESTA DA COMPRA E OS DEREITOS NO CAMPO",
+   "lema": "",
+   "cita": "",
+   "intro": "Non existe un único interese «do campo». Non están na mesma situación o xornaleiro, o pequeno produtor que vive do seu traballo e a gran propiedade ou a agroindustria multinacional.\n\nOs pequenos produtores vense obrigados a vender a prezos que non cobren os seus costes mentres os traballadores mercan eses mesmos produtos moito mais caros. Entre ambos, a gran distribución e a agroindustria impoñen as súas condicións. A reacción aproveita esa ruína e a converte en bandeira contra os dereitos dos xornaleiros, contra os migrantes e contra calquera regulación.\n\nA alianza que propomos é a contraria: a de quenes traballan a terra contra quenes a acaparan e especulan co que producimos, cos dereitos dos asalariados do campo no centro.",
+   "pagina": 15
+  },
+  {
+   "id": 6,
+   "titulo": "Defender a mocidade traballadora",
+   "tituloMayus": "DEFENDER A MOCIDADE TRABALLADORA",
+   "lema": "",
+   "cita": "",
+   "intro": "Os Mozos e mozas incorpóranse o traballo mediante prácticas, temporalidade e baixos salarios e con enormes dificultades para acceder a unha vivenda. Esa precariedade represéntase como unha etapa normal da vida, pero non é unha etapa. É o anticipo do que se quere xeneralizar. A mocidade sofre primeiro o que despois acaba impoñéndose no conxunto dos traballadores.\n\nNon existe unha loita xeracional, é loita de clases. A defensa das condicións de vida e de traballo da mocidade son responsabilidade de toda la clase traballadora.",
+   "pagina": 16
+  },
+  {
+   "id": 7,
+   "titulo": "Igualdade real para as mulleres traballadoras",
+   "tituloMayus": "IGUALDADE REAL PARA AS MULLERES TRABALLADORAS",
+   "lema": "",
+   "cita": "",
+   "intro": "A igualdade legal non eliminou as desigualdades reais. As mulleres traballadoras seguen concentradas nos empregos peor pagados, nas xornadas parciais e nos traballos de coidados dentro e fora da casa. A maternidade segue penalizando e a falta de ingresos e a vivenda poden impedir romper situacións de dependencia e violencia machista.\n\nEstas desigualdades non son un residuo do pasado; serven, ademais, para abaratar a forza de traballo do conxunto da clase. Por iso a loita pola igualdade real líbrase nos mesmos lugares que tódalas demais: nos convenios que infravaloran os traballos feminizados, nos servizos públicos que deberían socializar os coidados e na vivenda sen a cal non hai independencia posible.",
+   "pagina": 17
+  },
+  {
+   "id": 8,
+   "titulo": "Polo acceso á cultura e a ciencia",
+   "tituloMayus": "POLO ACCESO Á CULTURA E A CIENCIA",
+   "lema": "",
+   "cita": "",
+   "intro": "O progreso non pode medirse so por cuanto produce unha sociedade, senón tamén por cuanto tempo dispoñen ás persoas para ler, estudar, crear, facer deporte e pasar tempo en comunidade. Reducila xornada non ten sentido se o tempo gañado non se pode vivir.\n\nHoxe o acceso á cultura e ao deporte depende da renda e do barrio, e quenes traballan na cultura e na ciencia sofren unha precariedade crónica. Ao mesmo tempo, a investigación pública oriéntase cada vez mais ás prioridades da competencia entre empresas e bloques, inclusive a industria militar. Defendemos unha cultura e unha ciencia ao servizo das necesidades da maioría, non da rendibilidade nin da guerra.",
+   "pagina": 18
+  },
+  {
+   "id": 9,
+   "titulo": "Pola paz e o internacionalismo",
+   "tituloMayus": "POLA PAZ E O INTERNACIONALISMO",
+   "lema": "",
+   "cita": "",
+   "intro": "A competencia entre grandes potencias e bloques económicos levan ao rearme e aumenta o risco de novas guerras. A militarización da economía xa non é unha ameaza: é un feito, e pagámola con austeridade, con aumento da represión e da vixilancia e, en último termo, coas nosas vidas.\n\nA nosa clase non necesita escoller entre potencias capitalistas. O diñeiro que hoxe se destina ao rearme é o que falla en vivenda, sanidade ou educación, e os cadros de persoal da industria militar non teñen por que escoller entre o seu emprego e a paz: poden producir o que a sociedade necesita. A nosa clase debe impor a súa propia axenda internacional, unha que non pasa pola guerra senón pola solidariedade dos pobos.",
+   "pagina": 19
+  },
+  {
+   "id": 10,
+   "titulo": "Contra a reacción e o autoritarismo: defendelas nosas liberdades",
+   "tituloMayus": "CONTRA A REACCIÓN E O AUTORITARISMO: DEFENDELAS NOSAS LIBERDADES",
+   "lema": "",
+   "cita": "",
+   "intro": "Canto mais se deterioran as nosas condicións de vida, mais necesita o capital manternos divididos e calados. Faino por dúas vías que se reforzan entre si. Dende o Estado, con leis que castigan a protesta, sancións que converten un piquete nunha falta grave, policías infiltrados en asembleas e sindicatos e unha vixilancia cada vez maior. E dende a reacción, que aproveita o malestar de quenes se empobrecen para sinalar á persoa migrante, á muller, á comunidade LGTB ou a quen loita, mentres deixa intactos a quenes se enriquecen coa nosa miseria.\n\nNon son fenómenos opostos. As leis represivas mantéñense goberne quen goberne, e quenes desaloxan familia á forza traballan para os mesmos propietarios que están protexidos pola lei. Por iso non confiamos a defensa das nosas liberdades a ningún goberno. A resposta á reacción é a organización e a unidade da clase traballadora en cada centro de traballo, cada barrio e cada centro de estudo.",
+   "pagina": 20
+  },
+  {
+   "id": 11,
+   "titulo": "Aumentalos nosos dereitos políticos e sindicais",
+   "tituloMayus": "AUMENTALOS NOSOS DEREITOS POLÍTICOS E SINDICAIS",
+   "lema": "",
+   "cita": "",
+   "intro": "Todas as cuestións anteriores levan a unha mesma conclusión: é necesaria a organización, mais organización, toda a organización posible. A liberdade para asociarse, sen embargo, segue atopando hoxe múltiples obstáculos, moi especialmente dentro dos centros de traballo. Fronte ao poder organizado do Estado e da patronal, un traballador illado é moi débil, pero a organización colectiva cambia esa relación.",
+   "pagina": 21
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Loitar polo traballo, o salario e o tempo de vida",
+   "tituloFrase": "Loitar polo traballo, o salario e o tempo de vida",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 2,
+   "titulo": "Máis mecanismos de control obreiro na produción",
+   "tituloFrase": "Máis mecanismos de control obreiro na produción",
+   "intro": "",
+   "pagina": 9,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 3,
+   "titulo": "A vivenda non é un negocio",
+   "tituloFrase": "A vivenda non é un negocio",
+   "intro": "",
+   "pagina": 11,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 4,
+   "titulo": "Defendelos servizos públicos e a protección social",
+   "tituloFrase": "Defendelos servizos públicos e a protección social",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  },
+  {
+   "id": "5",
+   "bloque": 5,
+   "titulo": "Asegurala cesta da compra e os dereitos no campo",
+   "tituloFrase": "Asegurala cesta da compra e os dereitos no campo",
+   "intro": "",
+   "pagina": 15,
+   "subapartados": []
+  },
+  {
+   "id": "6",
+   "bloque": 6,
+   "titulo": "Defender a mocidade traballadora",
+   "tituloFrase": "Defender a mocidade traballadora",
+   "intro": "",
+   "pagina": 16,
+   "subapartados": []
+  },
+  {
+   "id": "7",
+   "bloque": 7,
+   "titulo": "Igualdade real para as mulleres traballadoras",
+   "tituloFrase": "Igualdade real para as mulleres traballadoras",
+   "intro": "",
+   "pagina": 17,
+   "subapartados": []
+  },
+  {
+   "id": "8",
+   "bloque": 8,
+   "titulo": "Polo acceso á cultura e a ciencia",
+   "tituloFrase": "Polo acceso á cultura e a ciencia",
+   "intro": "",
+   "pagina": 18,
+   "subapartados": []
+  },
+  {
+   "id": "9",
+   "bloque": 9,
+   "titulo": "Pola paz e o internacionalismo",
+   "tituloFrase": "Pola paz e o internacionalismo",
+   "intro": "",
+   "pagina": 19,
+   "subapartados": []
+  },
+  {
+   "id": "10",
+   "bloque": 10,
+   "titulo": "Contra a reacción e o autoritarismo: defendelas nosas liberdades",
+   "tituloFrase": "Contra a reacción e o autoritarismo: defendelas nosas liberdades",
+   "intro": "",
+   "pagina": 20,
+   "subapartados": []
+  },
+  {
+   "id": "11",
+   "bloque": 11,
+   "titulo": "Aumentalos nosos dereitos políticos e sindicais",
+   "tituloFrase": "Aumentalos nosos dereitos políticos e sindicais",
+   "intro": "",
+   "pagina": 21,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Salarios",
+   "tituloFrase": "Salarios",
+   "texto": "Salarios por riba dos prezos. Cláusula de revisión automático de acordo ao IPC real, sen topes e con efectos dende o 1 de xaneiro. Recuperación do poder adquisitivo dende 2021. Subidas lineais, cos mesmos euros para tódalas categorías, para non ensanchar a distancia entre os que máis e os que menos cobran.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Xornada laboral",
+   "tituloFrase": "Xornada laboral",
+   "texto": "Xornadas de 35 horas semanais xa, sen redución salarial, como paso cara as 30. Tope de 1.540 horas anuais de traballo efectivo. Rexistro horario controlado pola representación dos traballadores e prohibición da bolsa de horas e da distribución irregular da xornada. A redución non poderá compensarse con menos cadros de persoal, ritmos mais intensos ,horas extraordinarias ou maior dispoñibilidade.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Xornadas de 35 horas semanais xa, sen redución salarial, como paso cara as 30.",
+    "Tope de 1540 horas anuais de traballo efectivo."
+   ],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Vacacións",
+   "tituloFrase": "Vacacións",
+   "texto": "Cinco semanas (25 dias laborais) de vacacións retribuídas. O aumento da produtividade debe traducirse tamén en máis tempo para vivir.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Cinco semanas (25 dias laborais) de vacacións retribuídas."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Xubilación",
+   "tituloFrase": "Xubilación",
+   "texto": "Xubilación ordinaria os 60 anos, con pensión suficiente e sen penalización. En traballos especialmente penosos, perigosos, tóxicos ou insalubres, xubilación os 55 anos.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Xubilación ordinaria os 60 anos, con pensión suficiente e sen penalización.",
+    "En traballos especialmente penosos, perigosos, tóxicos ou insalubres, xubilación os 55 anos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Contratación fixa",
+   "tituloFrase": "Contratación fixa",
+   "texto": "Toda necesidade permanente con emprego permanente: contrato fixo a partir dos 6 meses de contratos encadeados nun período de 12, na mesma empresa ou grupo, sexa cal sexa o posto. Acabar cos falsos autónomos e coas prácticas non laborais que cobren postos de traballo. Prohibición das ETT.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos",
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Toda necesidade permanente con emprego permanente: contrato fixo a partir dos 6 meses de contratos encadeados nun período de 12, na mesma empresa ou grupo, sexa cal sexa o posto."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Subcontratación",
+   "tituloFrase": "Subcontratación",
+   "texto": "Mesmo traballo, mesmo salario e mesmos dereitos. A subcontratación non pode utilizarse para rebaixar salarios e condicións. As actividades estruturais intégranse no cadro de persoal principal; mentres tanto, mesmas condicións que na principal.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Readmisión",
+   "tituloFrase": "Readmisión",
+   "texto": "Readmisión obrigatoria , a elección do traballadora ante despido inxustificado.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Despedimentos colectivos",
+   "tituloFrase": "Despedimentos colectivos",
+   "texto": "Prohibición dos despidos colectivos en empresas con beneficios ou que repartan dividendos. Autorización administrativa previa para calquera despido colectivo con informe vinculante da representación dos traballadores e apertura completa das contas do grupo. Indemnizacións que disuadan de despedir.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Saúde laboral",
+   "tituloFrase": "Saúde laboral",
+   "texto": "A saúde por riba do beneficio. Os cadros de persoal deben poder paralizar de forma efectiva os traballos ante riscos graves e negarse a cumprir ordes que poñan en risco a súa vida.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Contas abertas",
+   "tituloFrase": "Contas abertas",
+   "texto": "Abrir as contas. Os representantes dos traballadores deben ter acceso efectivo a beneficios, dividendos inversións, débeda, axudas públicas e operacións dentro dos grupos empresariais.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Información e veto",
+   "tituloFrase": "Información e veto",
+   "texto": "Dereito de información previa e veto suspensivo da representación dos traballadores ante contratacións externas, externalizacións, cambios de horarios, quendas e ritmos, reorganizacións e sistemas algorítmicos de organización do traballo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Peches e deslocalizacións",
+   "tituloFrase": "Peches e deslocalizacións",
+   "texto": "Ningún peche ou deslocalización debe ser unha decisión exclusivamente privada. Ante ameazas ao emprego, apertura completa de contas, estudo obrigatorio de alternativas e devolución de axudas públicas se incumpren compromisos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Intervención de empresas",
+   "tituloFrase": "Intervención de empresas",
+   "texto": "Cando unha empresa viable e necesaria vaia a desaparecer exclusivamente por decisión dos seus propietarios, defendemos a intervención e o paso a propiedade estatal baixo mecanismos de control obreiro.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Sectores estratéxicos",
+   "tituloFrase": "Sectores estratéxicos",
+   "texto": "Propiedade estatal baixo mecanismos de control obreiro dos sectores estratéxicos, especialmente enerxía, transporte, telecomunicacións e capacidades industriais esenciais.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Política industrial",
+   "tituloFrase": "Política industrial",
+   "texto": "Desenvolvemento dunha política industrial planificada orientada ás necesidades sociais, con empresas estatais, inversión estable, formación profesional, capacidade científica e tecnolóxica propia e mecanismos democráticos de control e decisión.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Novas tecnoloxías",
+   "tituloFrase": "Novas tecnoloxías",
+   "texto": "A introdución de novas tecnoloxías debe negociarse cos traballadores. Se unha máquina permite producir o mesmo en menos tempo o resultado debe ser menos xornada e non menos emprego.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Desafiuzamentos",
+   "tituloFrase": "Desafiuzamentos",
+   "texto": "Prohibición efectiva de todo desafiuzamento de fogares traballadores da súa vivenda habitual, sexa cal sexa a causa, o propietario — tamén a Administración— e a situación de quen a habita: con ou sen contrato, en subarrendamento ou sen papeis.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Alternativa de vivenda",
+   "tituloFrase": "Alternativa de vivenda",
+   "texto": "No caso de que o propietario necesite a vivenda para vivir nela, a Administración garantirá sempre antes da saída, unha alternativa digna e estable no mesmo barrio.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Aluguer social",
+   "tituloFrase": "Aluguer social",
+   "texto": "Quen non poida pagar o aluguer non se queda sen casa: se a vivenda é dun banco, fondo ou gran posuidor, alugueiro social obrigatorio de non mais do 15% dos seus ingresos e con contrato indefinido; nos demais casos, a Administración reacollerá ao fogar no parque público, no mesmo barrio e nas mesmas condicións.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Quen non poida pagar o aluguer non se queda sen casa: se a vivenda é dun banco, fondo ou gran posuidor, alugueiro social obrigatorio de non mais do 15% dos seus ingresos e con contrato indefinido; nos demais casos, a Administración reacollerá ao fogar no parque público, no mesmo barrio e nas mesmas condicións."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Subministracións básicas",
+   "tituloFrase": "Subministracións básicas",
+   "texto": "Prohibición de calquera corte de auga, electricidade ou calefacción a fogares traballadores.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Baixada de alugueres",
+   "tituloFrase": "Baixada de alugueres",
+   "texto": "Baixada inmediata dos alugueiros do 50%, a costa da ganancia dos propietarios e non mediante axudas públicas que rematen no seu peto e fagan medrar os prezos. A partir de aí, prezos máximos ligados aos salarios medios da zona. Contratos indefinidos por defecto.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Baixada inmediata dos alugueiros do 50%, a costa da ganancia dos propietarios e non mediante axudas públicas que rematen no seu peto e fagan medrar os prezos."
+   ],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Aluguer de vivenda habitual",
+   "tituloFrase": "Aluguer de vivenda habitual",
+   "texto": "Todo alugueiro que sexa vivenda habitual, tamén o de tempada e o de habitacións, réxese polas mesmas normas de protección duración e prezo.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Vivenda turística",
+   "tituloFrase": "Vivenda turística",
+   "texto": "Limitala vivenda turística a un 0,5% do conxunto de vivendas nunha localidade.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Limitala vivenda turística a un 0,5% do conxunto de vivendas nunha localidade."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Parque público",
+   "tituloFrase": "Parque público",
+   "texto": "Construción dun parque público permanente de vivenda en alugueiro ata alcanzar, polo menos o 10% do total de vivendas, protexido para sempre, mediante promoción directa, fomento do cooperativismo social e a autoconstrución, rehabilitación, adquisición de inmobles e utilización do solo público.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Construción dun parque público permanente de vivenda en alugueiro ata alcanzar, polo menos o 10% do total de vivendas, protexido para sempre, mediante promoción directa, fomento do cooperativismo social e a autoconstrución, rehabilitación, adquisición de inmobles e utilización do solo público."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Expropiación",
+   "tituloFrase": "Expropiación",
+   "texto": "Expropiación sen indemnización das vivendas baleiras e de uso especulativo de bancos, fondos e grandes propietarios para incorporalas ao parque público.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Prezo do aluguer público",
+   "tituloFrase": "Prezo do aluguer público",
+   "texto": "Prezo dos alugueiros públicos establecidos segundo os ingresos dos fogares.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Vivenda protexida",
+   "tituloFrase": "Vivenda protexida",
+   "texto": "Prohibición de vender ou descualificar calquera vivenda pública ou protexida.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Hipotecas",
+   "tituloFrase": "Hipotecas",
+   "texto": "Ningunha execución hipotecaria da vivenda habitual de fogares traballadores: reestruturación da débeda a cargo da banca, dación en pago cando o fogar o escolla e con dereito a seguir na vivenda en alugueiro social, e cancelación das débedas de quen xa perdeu a súa casa.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Privatizacións",
+   "tituloFrase": "Privatizacións",
+   "texto": "Non mais privatizacións: derrogación da Lei 15/1997 e prohibición dos novos concertos, concesións e externalizacións en sanidade, educación e servizos sociais.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley 15/1997, de nuevas formas de gestión del Sistema Nacional de Salud"
+  },
+  {
+   "n": 30,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Xestión pública",
+   "tituloFrase": "Xestión pública",
+   "texto": "Recuperación de servizos externalizados e privatizacións mediante xestión publica directa baixo mecanismos democráticos de control obreiro.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Emprego público",
+   "tituloFrase": "Emprego público",
+   "texto": "Cadros de persoal suficientes e estables. Tamén nos servizos públicos: necesidade permanente, emprego permanente.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Sanidade pública",
+   "tituloFrase": "Sanidade pública",
+   "texto": "Reforzo da sanidade pública, especialmente da atención primaria, atención especializada, saúde mental, saúde bucodental, prevención e investigación. 25% do gasto sanitario para atención primaria.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "25% do gasto sanitario para atención primaria."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Medicamentos",
+   "tituloFrase": "Medicamentos",
+   "texto": "Desenvolvemento de capacidades públicas en medicamentos, produtos sanitarios investigación farmacéutica.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Educación pública",
+   "tituloFrase": "Educación pública",
+   "texto": "Sistema educativo exclusivamente público, de balde, laico e inclusivo en tódalas súas etapas; con centros e cadros de persoal suficientes. Integración dos centros concertados nunha rede publica única . Descenso das ratios.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Gratuidade educativa",
+   "tituloFrase": "Gratuidade educativa",
+   "texto": "A gratuidade debe abarcar tamén os custos que poden impedir estudar: materiais, transporte, comedor ou residencia.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Rede de coidados",
+   "tituloFrase": "Rede de coidados",
+   "texto": "Creación dunha rede pública e universal de coidados: escolas infantís axuda a domicilio, centros de día, residencias, dependencia, discapacidade e apoios comunitarios.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "familias",
+    "infancia",
+    "discapacidad"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Coidados públicos",
+   "tituloFrase": "Coidados públicos",
+   "texto": "Xestión pública directa dos coidados fundamentais, con emprego estable, salarios dignos e cadros de persoal suficientes.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Pensións",
+   "tituloFrase": "Pensións",
+   "texto": "Ningunha pensión por debaixo do salario mínimo. Revalorización automática co IPC real e recuperación do perdido cando a inflación supere á revalorización.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Ningunha pensión por debaixo do salario mínimo."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Plans de pensións",
+   "tituloFrase": "Plans de pensións",
+   "texto": "Rexeitamos a súa privatización: fin dos incentivos fiscais aos planes privados e aos fondos de pensións e emprego.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Desemprego e baixa médica",
+   "tituloFrase": "Desemprego e baixa médica",
+   "texto": "Prestación por desemprego mentres dure o paro nunca inferior ao salario mínimo. Incapacidade temporal pagada ao 100% do salario dende o primeiro día.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Incapacidade temporal pagada ao 100% do salario dende o primeiro día.",
+    "Prestación por desemprego mentres dure o paro nunca inferior ao salario mínimo."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Transporte",
+   "tituloFrase": "Transporte",
+   "texto": "Prohibición completa de subcontratas para labores de deseño de infraestruturas e mantemento do transporte.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Dereitos laborais",
+   "tituloFrase": "Dereitos laborais",
+   "texto": "Plenos dereitos laborais e sindicais para os traballadores agrícolas, gandeiros, pesqueiros e da industria alimentaria.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Traballadores migrantes",
+   "tituloFrase": "Traballadores migrantes",
+   "texto": "Mesmos dereitos para traballadores migrantes e nacionais. Ningunha situación administrativa pode utilizarse para pagar menos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Prezos en orixe",
+   "tituloFrase": "Prezos en orixe",
+   "texto": "Cumprimento efectivo da prohibición de mercar por debaixo do custe de produción con inspección na que participen as organizacións de pequenos produtores e xornaleiros, publicación de tódalas sancións.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Transparencia",
+   "tituloFrase": "Transparencia",
+   "texto": "Transparencia sobre custes, contratos e marxes comerciais.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Cesta básica",
+   "tituloFrase": "Cesta básica",
+   "texto": "Prezos máximos de venta para unha cesta de produtos básicos e marxes máximos para a gran distribución e compra de alimentos baixo mecanismos de control democrático.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Capacidades públicas",
+   "tituloFrase": "Capacidades públicas",
+   "texto": "Desenvolvemento de capacidades públicas de almacenamento, transformación, transporte e compra de alimentos baixo mecanismos de control democrático.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Terras",
+   "tituloFrase": "Terras",
+   "texto": "Bancos públicos de terras e recuperación produtiva de terras abandonadas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Acceso a recursos",
+   "tituloFrase": "Acceso a recursos",
+   "texto": "Acceso colectivo a maquinaria, tecnoloxía, investigación, servizos veterinarios e financiación.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Abastecemento",
+   "tituloFrase": "Abastecemento",
+   "texto": "Manter a produción e as capacidades necesarias para garantir un abastecemento alimentario suficiente e a prezos accesibles para o pobo.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 5,
+   "seccion": "5",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Medio rural",
+   "tituloFrase": "Medio rural",
+   "texto": "Servizos públicos, transporte, vivenda, conectividade e actividade produtiva que permitan vivir no medio rural cos mesmos dereitos que nas cidades.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Dereitos desde o primeiro día",
+   "tituloFrase": "Dereitos desde o primeiro día",
+   "texto": "Se produces, traballas, se traballas cobras e tes dereitos: toda actividade na empresa, tamén as prácticas, cotiza e xera dereitos dende o primeiro día.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Prácticas",
+   "tituloFrase": "Prácticas",
+   "texto": "Só prácticas curriculares que non cubran labores esenciais de produción, con titor, límite de horas e un máximo de becarios no cadro de persoal e con compensación non inferior ao salario mínimo en proporción as horas. Prohibición das prácticas extracurriculares.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Só prácticas curriculares que non cubran labores esenciais de produción, con titor, límite de horas e un máximo de becarios no cadro de persoal e con compensación non inferior ao salario mínimo en proporción as horas."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Salarios por idade",
+   "tituloFrase": "Salarios por idade",
+   "texto": "Fin das dobres escalas salariais e de calquera condición peor xustificada pola idade: ningún contrato formativo por debaixo do salario do convenio. Mesmo traballo, mesmo salario teñas a idade que teñas.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Vivenda xove",
+   "tituloFrase": "Vivenda xove",
+   "texto": "Reserva dun tercio do parque público de aluguer para mozos traballadores, con aluguer de acordo a ingresos, en lugar de axudas que acaban en mans dos caseiros.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Reserva dun tercio do parque público de aluguer para mozos traballadores, con aluguer de acordo a ingresos, en lugar de axudas que acaban en mans dos caseiros."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Bolsas",
+   "tituloFrase": "Bolsas",
+   "texto": "Beca-salario equivalente o salario mínimo para estudantes de familias traballadoras e praza en residencias públicas para quen estude fora da súa localidade.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes",
+    "familias"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Beca-salario equivalente o salario mínimo para estudantes de familias traballadoras e praza en residencias públicas para quen estude fora da súa localidade."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Espazos xuvenís",
+   "tituloFrase": "Espazos xuvenís",
+   "texto": "Apertura de patios, polideportivos e bibliotecas escolares polas tardes e fines de semana, e un centro xuvenil público en cada barrio.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 6,
+   "seccion": "6",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Apostas e xogo",
+   "tituloFrase": "Apostas e xogo",
+   "texto": "Prohibición das casas de apostas, o xogo en liña e a súa publicidade.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Igualdade salarial",
+   "tituloFrase": "Igualdade salarial",
+   "texto": "Igual salario polo mesmo traballo e traballos de igual valor.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Xornada completa",
+   "tituloFrase": "Xornada completa",
+   "texto": "Dereito a pasar a xornada completa para toda traballadora a tempo parcial que o pida. Mellora de salarios e cadros de persoal en coidados, limpeza, comercio, sanidade, educación e servizos sociais.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Despedimento e maternidade",
+   "tituloFrase": "Despedimento e maternidade",
+   "texto": "Nulidade e readmisión en todo despido ata que o fillo ou filla cumpra 3 anos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "mujeres",
+    "familias"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Nulidade e readmisión en todo despido ata que o fillo ou filla cumpra 3 anos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Permiso por nacemento",
+   "tituloFrase": "Permiso por nacemento",
+   "texto": "Permiso por nacemento de 52 semanas, igual, intransferible e retribuído ó 100% que enlace coa praza pública de 0 a 3 anos.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "familias",
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Permiso por nacemento de 52 semanas, igual, intransferible e retribuído ó 100% que enlace coa praza pública de 0 a 3 anos."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Coidados",
+   "tituloFrase": "Coidados",
+   "texto": "Servizos públicos que socialicen os coidados: praza pública 0-3 e fin da lista de espera en dependencia.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "familias",
+    "infancia",
+    "discapacidad",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Violencia machista",
+   "tituloFrase": "Violencia machista",
+   "texto": "Garantir vivenda, ingresos, emprego e atención sanitaria, psicolóxica e xurídica suficientes ás mulleres que sofren violencia, para que poidan romper a dependencia económica.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres",
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Dereitos reprodutivos",
+   "tituloFrase": "Dereitos reprodutivos",
+   "texto": "Dereitos sexuais e reprodutivos garantidos dentro da sanidade pública: tódalas interrupcións voluntarias do embarazo en hospitais públicos.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Prostitución",
+   "tituloFrase": "Prostitución",
+   "texto": "Prohibición da prostitución e o proxenetismo, con alternativas materiais para as mulleres prostituídas.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 7,
+   "seccion": "7",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Xestación subrogada",
+   "tituloFrase": "Xestación subrogada",
+   "texto": "Rexeitamento da xestación subrogada. Persecución das axencias que intermedian dende España.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Bibliotecas e centros culturais",
+   "tituloFrase": "Bibliotecas e centros culturais",
+   "texto": "Unha biblioteca pública en cadea barrio, aberta polas tardes e os fines de semana, e extensión de centros culturais, escolas artísticas e instalacións deportivas aos barrios obreiros, as vilas e o medio rural.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Gratuidade cultural",
+   "tituloFrase": "Gratuidade cultural",
+   "texto": "Gratuidade de museos e equipamentos públicos, uso de balde das instalacións deportivas públicas para menores e persoas desempregadas, e prezo máximo en toda actividade cultural subvencionada.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Traballo cultural",
+   "tituloFrase": "Traballo cultural",
+   "texto": "Convenio e cotización de todo traballo cultural contratado polas administracións, tamén o subcontratado, sen falsos autónomos.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Investigación",
+   "tituloFrase": "Investigación",
+   "texto": "Fin dos contratos por proxecto encadeados: prazas estables para o persoal investigador.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 8,
+   "seccion": "8",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "I+D militar",
+   "tituloFrase": "I+D militar",
+   "texto": "Ningún euro de investigación pública para fins militares: os fondos de I+D militar, a saúde, enerxía, alimentación e medio ambiente.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Rearme",
+   "tituloFrase": "Rearme",
+   "texto": "Non ao rearme: redución do gasto militar e anulación dos Programas Especiais de Modernización. Eses recursos, para vivenda, servizos, emprego e industria civil.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Industria militar",
+   "tituloFrase": "Industria militar",
+   "texto": "Reconversión da industria militar cara a produción socialmente necesaria, garantindo o emprego dos cadros de persoal.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "OTAN e UE",
+   "tituloFrase": "OTAN e UE",
+   "texto": "Saída de España da OTAN e da Unión Europea.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Tropas no exterior",
+   "tituloFrase": "Tropas no exterior",
+   "texto": "Regreso das tropas españolas despregadas en operacións imperialistas.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Bases militares",
+   "tituloFrase": "Bases militares",
+   "texto": "Ruptura dos acordos que permiten o uso de territorio español por forza militares estranxeiras e recuperación da plena soberanía sobre as bases.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Solidariedade internacional",
+   "tituloFrase": "Solidariedade internacional",
+   "texto": "Solidariedade cos pobos que loitan contra a ocupación, colonialismo e agresións imperialistas.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Israel",
+   "tituloFrase": "Israel",
+   "texto": "Embargo militar total e sen excepcións ao Estado de Israel, e ruptura de relacións diplomáticas, militares e comerciais.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Palestina"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 9,
+   "seccion": "9",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Sáhara Occidental",
+   "tituloFrase": "Sáhara Occidental",
+   "texto": "Recoñecemento da República Árabe Saharaui Democrática e referéndum de autodeterminación libre e vinculante para o pobo saharaui. España, como antiga potencia administradora, debe retirar o seu apoio ao plan de autonomía marroquí e renunciar a calquera acordo con Marrocos a costa do pobo saharaui e os seus recursos.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Lei Mordaza",
+   "tituloFrase": "Lei Mordaza",
+   "texto": "Derrogación da Lei de Seguridade Cidadá (tamén chamada Lei Mordaza) e anulación das sancións impostas con ela por participar en folgas e protestas.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley Orgánica 4/2015, de protección de la seguridad ciudadana"
+  },
+  {
+   "n": 82,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Lei universitaria",
+   "tituloFrase": "Lei universitaria",
+   "texto": "Derrogación da Lei de Convivencia Universitaria. Ningunha sanción académica por organizar folgas, piquetes ou protestas nos centros de estudo.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley 3/2022, de 24 de febrero, de convivencia universitaria"
+  },
+  {
+   "n": 83,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Desocupación ilegal",
+   "tituloFrase": "Desocupación ilegal",
+   "texto": "Ilegalización das empresas de desocupación, prohibición de contratalas e persecución penal das coaccións e dos desaloxos ilegais que practican.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Impunidade policial",
+   "tituloFrase": "Impunidade policial",
+   "texto": "Fin da impunidade policial: prohibición das pelotas de goma, prohibición do uso de vehículos blindados («tanquetas») e de material militar no control de folgas, piquetes e manifestacións, e investigación independente das actuacións policiais.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "CIE e regularización",
+   "tituloFrase": "CIE e regularización",
+   "texto": "Peche dos CIE e fin das identificacións por perfil étnico e as devolucións en quente. Mecanismo permanente de regularización para todas as persoas traballadoras sen papeis.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Fascismo e franquismo",
+   "tituloFrase": "Fascismo e franquismo",
+   "texto": "Ilegalización das organizacións fascistas e franquistas e disolución das fundacións que enaltecen á ditadura: nin un espazo nin un euro público para elas. Rexeitamento de calquera lei que equipare o fascismo co comunismo.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Delitos de opinión",
+   "tituloFrase": "Delitos de opinión",
+   "texto": "Derrogación dos delitos de opinión que protexen ao poder: inxurias á Coroa e ás institucións e aldraxes a símbolos.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Código Penal (Ley Orgánica 10/1995)"
+  },
+  {
+   "n": 88,
+   "bloque": 10,
+   "seccion": "10",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Persoas LGTB",
+   "tituloFrase": "Persoas LGTB",
+   "texto": "Protección das persoas LGTB fronte ao despido, o acoso laboral, a discriminación no acceso á vivenda e as agresións de todo tipo de empresas, tamén nas de menos de 50 traballadores. Resposta organizada en barrios e centros de traballo ante calquera agresión.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Representación",
+   "tituloFrase": "Representación",
+   "texto": "Dereito a escoller representante, tamén nas empresas de menos de seis traballadores mediante delegados territoriais ou sectoriais escollidos polos cadros de persoal.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Dereito de asemblea",
+   "tituloFrase": "Dereito de asemblea",
+   "texto": "Dereito a asemblea en horario de traballo: polo menos 10 horas retribuídas ao ano.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Dereito a asemblea en horario de traballo: polo menos 10 horas retribuídas ao ano."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Despedimento sindical",
+   "tituloFrase": "Despedimento sindical",
+   "texto": "Nulidade e readmisión obrigatoria en todo despido ou sanción por actividade sindical. Protección fronte ao despido para quenes promoven asembleas, candidaturas ou seccións sindicais dende o primeiro momento.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Servizos mínimos",
+   "tituloFrase": "Servizos mínimos",
+   "texto": "Limitar de raíz os servizos mínimos abusivos e a ampliación do que se declara servizo esencial.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Unidade obreira",
+   "tituloFrase": "Unidade obreira",
+   "texto": "Unidade dos traballadores fronte a calquera intento de dividilos por orixe, sexo, orientación sexual ou identidade, idade, tipo de contrato ou empresa. Combate do racismo e da xenofobia dende a igualdade de dereitos e da defensa de intereses comúns.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Consultas vinculantes",
+   "tituloFrase": "Consultas vinculantes",
+   "texto": "Asembleas e consultas vinculantes aos cadros de persoal antes de firmar convenios, ERE ou calquera acordo que afecta as súas condicións.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 11,
+   "seccion": "11",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Rendición de contas",
+   "tituloFrase": "Rendición de contas",
+   "texto": "Rendición periódica de contas dos representantes ante a asemblea de traballadores do centro.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ],
  "comunidad": "Galicia"
 }
