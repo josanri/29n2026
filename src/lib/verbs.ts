@@ -39,6 +39,8 @@ const NOT_VERBS = new Set([
   'níjar', 'almodóvar', 'aguilar', 'andújar', 'abejar',
   // Galician words that are not verbs.
   'fogar', 'muller', 'aluguer', 'limiar', 'lecer', 'dicir',
+  // Catalan words that are not verbs.
+  'lloguer',
   // Light verbs: they are verbs, but they say nothing about what a program proposes.
   'poder', 'tener', 'estar', 'haber', 'hacer', 'saber', 'deber', 'poner', 'facer', 'ser', 'ter', 'ir', 'ver', 'dar',
 ]);

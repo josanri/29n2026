@@ -449,6 +449,44 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [24, 51, 334, 621, 148, 359, 399],
     },
   ],
+  jxcat: [
+    {
+      title: 'Pedir competencias: una de cada seis propuestas',
+      text:
+        '103 de las 620 propuestas (el 17 %) hablan de traspasos, transferencias, delegaciones o competencias, y 52 empiezan por «Exigir» o «Reclamar». Entre ellas: un concierto económico con una ley específica, la delegación de las competencias de inmigración, el traspaso del 100 % de Rodalies y de los aeropuertos, la gestión de la Seguridad Social y un Consejo de Justicia de Cataluña. La introducción avisa de que Junts «no serem part de cap govern espanyol» y quiere «continuar sent decisius a Madrid».',
+      measureNumbers: [446, 309, 501, 504, 488, 11],
+    },
+    {
+      title: 'Bajar impuestos, sin subir ninguno',
+      text:
+        '47 propuestas están en la categoría Impuestos y ninguna de las 620 sube un impuesto: deflactar el IRPF, eliminar Sucesiones y Donaciones, acelerar la rebaja de Sociedades a pymes, el IVA de la luz al 10 %, el de las peluquerías del 21 % al 10 %, una deducción del 15 % en el IRPF por el alquiler y el IVA de la vivienda nueva del 10 % al 5 %.',
+      measureNumbers: [450, 454, 457, 459, 463, 464],
+    },
+    {
+      title: 'Vivienda: más oferta, sin topes de precio',
+      text:
+        'La única norma de vivienda que el programa deroga son los artículos de la Ley 12/2023 que contienen los precios y crean zonas tensionadas, «que redueixen l’oferta de lloguer per als joves». La alternativa es más oferta y seguridad jurídica: incentivos fiscales a los propietarios, la cesión a la Generalitat de las viviendas y el suelo de la Sareb y Casa 47, desalojar las ocupaciones en 48 horas y, hasta 2028, prohibir que bancos y fondos compren vivienda.',
+      measureNumbers: [396, 72, 48, 60, 62],
+    },
+    {
+      title: 'Inmigración: gestionarla desde Cataluña y limitarla',
+      text:
+        'El programa pide una ley de delegación para que la Generalitat gestione los permisos de residencia y trabajo, los expedientes de expulsión, las devoluciones y los CIE, y que los Mossos d’Esquadra controlen las fronteras Schengen de puertos y aeropuertos, hasta 26.800 agentes en 2032. Se opone a las regularizaciones masivas por decreto, exige el catalán en el arraigo y la renovación de permisos y propone prohibir en el espacio público el niqab y el burka, con el hiyab fuera de la prohibición.',
+      measureNumbers: [309, 311, 315, 321, 322, 325],
+    },
+    {
+      title: 'El catalán, en 38 propuestas de todos los capítulos',
+      text:
+        'La lengua no se queda en el capítulo propio: 38 propuestas la nombran, desde el requisito de catalán para jueces y fiscales, la Administración del Estado en Cataluña y los permisos de residencia hasta sanciones a las plataformas que no atiendan en catalán. También piden una cuota de plazas para catalanoparlantes en la Administración de Justicia y seguir presionando para la oficialidad del catalán en la UE.',
+      measureNumbers: [32, 34, 84, 85, 88, 321],
+    },
+    {
+      title: 'Diez derogaciones, siete de ellas en justicia y libertades',
+      text:
+        'Diez propuestas derogan una norma de forma explícita: la «ley mordaza» (dos veces), la prisión permanente revisable, la ley franquista de secretos oficiales, el artículo 384 bis de la LECrim, los delitos de expresión política, la inelegibilidad sobrevenida de la LOREG, la declaración de la tauromaquia como patrimonio cultural, artículos de la Ley de Vivienda y la LRSAL, la ley de racionalización de la Administración local. Nueve de los catorce plazos son «de inmediato» y cinco de ellos son traspasos a la Generalitat.',
+      measureNumbers: [10, 39, 9, 2, 272, 592],
+    },
+  ],
   convergents: [
     {
       title: 'Diecisiete condiciones para apoyar a un Gobierno',

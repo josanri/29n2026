@@ -39,8 +39,10 @@
     "data:agenda-valenciana": "python scripts/extract_agenda_valenciana.py .cache/2026/generales/agenda-valenciana-web.txt src/data/2026/generales/programas/agenda-valenciana.json",
     "data:fia": "python scripts/extract_fia.py src/data/2026/generales/programas/fia.json",
     "data:alhora": "python scripts/extract_alhora.py src/data/2026/generales/programas/alhora.json",
+    "data:alantre": "python scripts/extract_alantre.py src/data/2026/generales/programas/alantre.json",
     "data:comuns": "python scripts/extract_comuns.py public/2026/generales/programas/comuns-programa-29n-2026.pdf src/data/2026/generales/programas/comuns.json",
     "data:nex": "python scripts/extract_nex.py public/2026/generales/programas/nex-programa-generales-29n-2026.pdf src/data/2026/generales/programas/nex.json",
+    "data:junts": "python scripts/extract_junts.py public/2026/generales/programas/junts-programa-electoral-29n-2026.pdf src/data/2026/generales/programas/jxcat.json",
     "data:candidaturas": "python scripts/extract_candidaturas.py"
   },
   "dependencies": {
