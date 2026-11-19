@@ -1,0 +1,272 @@
+{
+  "slug": "cara-a-cara-19-noviembre-2026",
+  "title": "Cara a cara del 19 de noviembre",
+  "date": "2026-11-19",
+  "channel": "Academia de la Televisión",
+  "url": "https://www.academiatv.es/",
+  "published": true,
+  "speakers": [
+    {
+      "id": "casado",
+      "name": "María Casado",
+      "role": "Moderadora",
+      "partyId": null
+    },
+    {
+      "id": "sanchez",
+      "name": "Pedro Sánchez",
+      "role": "PSOE",
+      "partyId": "psoe"
+    },
+    {
+      "id": "feijoo",
+      "name": "Alberto Núñez Feijóo",
+      "role": "PP",
+      "partyId": "pp"
+    },
+    {
+      "id": "sin-asignar",
+      "name": "Sin asignar",
+      "role": "",
+      "partyId": null
+    }
+  ],
+  "diarization": {
+    "SPEAKER_01": "casado",
+    "SPEAKER_02": "sanchez",
+    "SPEAKER_03": "feijoo",
+    "SPEAKER_00": "sanchez"
+  },
+  "overrides": {
+    "52.846": "feijoo",
+    "1045.938": "feijoo",
+    "1079.407": "feijoo",
+    "1100.318": "feijoo",
+    "1170.62": "feijoo",
+    "1759.966": "feijoo",
+    "1766.595": "feijoo",
+    "2263.508": "feijoo",
+    "3014.463": "sanchez",
+    "3070.846": "sanchez",
+    "3146.52": "feijoo",
+    "3328.567": "sanchez",
+    "3361.846": "feijoo",
+    "3788.625": "sanchez",
+    "3812.8": "feijoo",
+    "3823.338": "sanchez",
+    "3931.862": "feijoo",
+    "3966.078": "sanchez",
+    "4070.458": "feijoo",
+    "4073.323": "feijoo",
+    "4077.431": "feijoo",
+    "4972.261": "feijoo",
+    "4986.636": "feijoo",
+    "5008.868": "feijoo",
+    "5022.79": "sanchez",
+    "5026.522": "feijoo",
+    "5090.708": "sanchez",
+    "5531.587": "sanchez",
+    "5541.798": "sanchez",
+    "4001.219": "sanchez",
+    "961.56": "feijoo",
+    "970.132": "feijoo",
+    "995.609": "feijoo",
+    "1174.844": "feijoo",
+    "1771.082": "feijoo",
+    "2178.735": "sanchez",
+    "2180.497": "sanchez",
+    "2203.821": "feijoo",
+    "2286.742": "feijoo",
+    "3259.853": "sanchez",
+    "3260.794": "sanchez",
+    "3941.481": "sanchez",
+    "3947.81": "sanchez",
+    "4107.288": "feijoo",
+    "4387.916": "feijoo",
+    "4391.361": "feijoo",
+    "5096.618": "feijoo",
+    "5146.585": "sanchez",
+    "5367.912": "feijoo",
+    "5368.654": "feijoo"
+  },
+  "notes": "Fuente: Academia de la Televisión (modera María Casado, su presidenta). Audio desde el minuto 37:00 del directo de YouTube (S-Gz21P6wOU): los tiempos cuentan desde ahí. `skip`: las dos pausas publicitarias. Override: «Muy buenas noches» (52,8 s) es la respuesta de Feijóo a su presentación.",
+  "skip": [
+    [
+      2345.4,
+      2557.7
+    ],
+    [
+      4441.9,
+      4645.4
+    ]
+  ],
+  "textFixes": [
+    [
+      "\\bNúñez (Fij[oó]|Fei?j[oó]|Fej[oó])\\b",
+      "Núñez Feijóo"
+    ],
+    [
+      "\\b([Ss]eñor) (Fij[oó]|Fejo|Fejó|Feijo|Feijó|Fuego|Rijo|Foucault|Fejóo)\\b",
+      "\\1 Feijóo"
+    ],
+    [
+      "\\b(Feijo|Feijó|Fejó|Fejo)\\b",
+      "Feijóo"
+    ],
+    [
+      "\\bvicepresidente cuerpo\\b",
+      "vicepresidente Cuerpo"
+    ],
+    [
+      "\\btrimpos\\b",
+      "tiempos"
+    ],
+    [
+      "\\bColdo\\b",
+      "Koldo"
+    ],
+    [
+      "\\bZerdán\\b",
+      "Cerdán"
+    ],
+    [
+      "\\bJessica Orgías\\b",
+      "Jéssica, orgías"
+    ],
+    [
+      "\\bhuela general\\b",
+      "huelga general"
+    ],
+    [
+      "presidente del asunto de Galicia",
+      "presidente de la Xunta de Galicia"
+    ],
+    [
+      "Porque tú estuvo usted ocho años",
+      "Porque usted estuvo ocho años"
+    ],
+    [
+      "¿Has hableado a los españoles",
+      "¿Ha hablado usted a los españoles"
+    ],
+    [
+      "no me digo usted",
+      "no me diga usted"
+    ],
+    [
+      "su socia Bascal",
+      "su socio Abascal"
+    ],
+    [
+      "\\bIAC 42\\b",
+      "Yak-42"
+    ],
+    [
+      "\\bdescarregamientos\\b",
+      "descarrilamientos"
+    ],
+    [
+      "\\bRafa Latorra\\b",
+      "Rafa Latorre"
+    ],
+    [
+      "cero elecciones del partido",
+      "cero lecciones del partido"
+    ],
+    [
+      "está proveyendo a mi familia",
+      "está profiriendo contra mi familia"
+    ],
+    [
+      "\\bÓscar Puentes\\b",
+      "Óscar Puente"
+    ],
+    [
+      "\\bMilley\\b",
+      "Milei"
+    ],
+    [
+      "se va a vernear a la maretta",
+      "se va a veranear a La Mareta"
+    ],
+    [
+      "\\bMarrocos\\b",
+      "Marruecos"
+    ],
+    [
+      "Centro Nacional de Investigación",
+      "Centro Nacional de Inteligencia"
+    ],
+    [
+      "dictadura y que jamás y Hezbollah",
+      "dictadura y Hamás y Hezbolá"
+    ],
+    [
+      "en Cayo Cozuna",
+      "en cayuco"
+    ],
+    [
+      "candidato de Manuel",
+      "candidato de manual"
+    ],
+    [
+      "\\bque galicia\\b",
+      "qué Galicia"
+    ],
+    [
+      "^que he hecho yo en galicia que pasa que los gallegos son tontos y me votaban cree usted que esto que los gallegos tenía mala sanidad me seguían votando por favor señor sánchez un poco de respeto$",
+      "¿Qué he hecho yo en Galicia? ¿Qué pasa, que los gallegos son tontos y me votaban? ¿Cree usted que los gallegos tenían mala sanidad y me seguían votando? Por favor, señor Sánchez, un poco de respeto."
+    ],
+    [
+      "^le recuerdo que el cierre al bloque el señor feijóo le quedan 25 segundos$",
+      "Le recuerdo que el cierre del bloque es del señor Feijóo: le quedan 25 segundos."
+    ],
+    [
+      "^yo soy el presidente del partido popular$",
+      "Yo soy el presidente del Partido Popular."
+    ]
+  ],
+  "splits": [
+    {
+      "start": 2195.869,
+      "text": "¿Puedo explicar el apagón, señor Sánchez?",
+      "speaker": "feijoo"
+    },
+    {
+      "start": 2288.124,
+      "text": "Señor Feijóo, hemos reducido...",
+      "speaker": "sanchez"
+    },
+    {
+      "start": 2991.257,
+      "text": "Con 100.000 millones de déficit habla usted de la hucha de las pensiones.",
+      "speaker": "feijoo"
+    },
+    {
+      "start": 3346.588,
+      "text": "¿Pero qué dice usted, señor Sánchez?",
+      "speaker": "feijoo"
+    },
+    {
+      "start": 3367.133,
+      "text": "que he hecho yo en galicia que pasa que los gallegos son tontos y me votaban cree usted que esto que los gallegos tenía mala sanidad me seguían votando por favor señor sánchez un poco de respeto",
+      "speaker": "feijoo"
+    },
+    {
+      "start": 3367.133,
+      "text": "le recuerdo que el cierre al bloque el señor feijóo le quedan 25 segundos",
+      "speaker": "casado"
+    },
+    {
+      "start": 3954.518,
+      "text": "Porque la justicia está teniendo...",
+      "speaker": "sanchez"
+    },
+    {
+      "start": 4128.213,
+      "text": "yo soy el presidente del partido popular",
+      "speaker": "feijoo"
+    }
+  ],
+  "urlLabel": "Fuente: Academia de la Televisión"
+}

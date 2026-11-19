@@ -6,6 +6,7 @@ import { jointListMembers } from '@/lib/relations';
 import { SITE_NAME } from '@/lib/site';
 import Wordmark from './Wordmark.astro';
 import { siteTests } from '@/lib/tests';
+import type { Debate } from '@/lib/debate';
 
 const path = Astro.url.pathname;
 const isCurrent = (program: Program) => path.startsWith(routes.party(program.id));
@@ -62,15 +63,10 @@ const links = [
     icon: '<circle cx="8" cy="8" r="6.5"/><path d="M8 4.6v.9M8 7.4v4"/>',
   },
   {
-    href: routes.debate(),
-    label: 'Debate',
-    // Two speech bubbles that face each other: the tail of the front one points left, the tail of the back one
-    // points right. The back bubble stops 1px before the front one, so it reads as behind it.
-    icon: '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h4v6h-2V14L10 11.5H7.5V8.5"/>',
-  },
-  {
     href: routes.simulator(),
     label: 'Simulador',
+    // The last link of the row: on the phone, with an odd number of links, it takes the whole row.
+    className: 'nav__link--wide',
     icon: '<path d="M1 13a7 7 0 0 1 14 0M4.5 13a3.5 3.5 0 0 1 7 0M1 13h14"/>',
   },
   {
@@ -86,6 +82,28 @@ const links = [
 const sectionLinks = links.filter((link) => link.href !== routes.search());
 const searchLinks = links.filter((link) => link.href === routes.search());
 const testsCurrent = path.startsWith(routes.tests());
+
+// The «Debates» menu: each debate with its date and who took part, newest first. A draft shows only on the dev server.
+const debateFiles = import.meta.glob<Debate>('@eleccion/debates/*.json', { eager: true, import: 'default' });
+const debateDay = (date: string) =>
+  new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+const siteDebates = Object.values(debateFiles)
+  .filter((debate) => debate.published !== false || import.meta.env.DEV)
+  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
+  .map((debate) => {
+    const names = debate.speakers
+      .filter((speaker) => speaker.words > 0 && speaker.partyId)
+      .map((speaker) => speaker.name.split(' ').slice(-1)[0]);
+    const who = names.length > 1 ? `${names.slice(0, -1).join(', ')} y ${names[names.length - 1]}` : names.join('');
+    return {
+      href: routes.debate(debate.slug),
+      name: debate.title,
+      text: [debate.date && debateDay(debate.date), debate.channel, who].filter(Boolean).join(' · '),
+    };
+  });
+const debatesCurrent = path.startsWith(routes.debate());
+// Two speech bubbles that face each other: the tail of the front one points left, the tail of the back one points right.
+const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h4v6h-2V14L10 11.5H7.5V8.5"/>';
 ---
 
 <header class="site-header">
@@ -135,6 +153,26 @@ const testsCurrent = path.startsWith(routes.tests());
           {link.label}
         </a>
       ))}
+      <details class="nav-dropdown nav-dropdown--tests nav-dropdown--debates">
+        <summary aria-current={debatesCurrent ? 'page' : undefined}>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={debateIcon} />
+          Debates
+          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
+            <path d="m1 1 5 5 5-5"></path>
+          </svg>
+        </summary>
+        <div class="nav-dropdown__panel">
+          <div class="nav-tests">
+            {siteDebates.map((debate) => (
+              <a href={debate.href} aria-current={path.startsWith(debate.href) ? 'page' : undefined}>
+                <b>{debate.name}</b>
+                <span>{debate.text}</span>
+              </a>
+            ))}
+            <a class="nav-tests__all" href={routes.debate()}>Todos los debates</a>
+          </div>
+        </div>
+      </details>
       <details class="nav-dropdown nav-dropdown--tests">
         <summary aria-current={testsCurrent ? 'page' : undefined}>
           <!-- A box with a check mark: a test. -->
@@ -546,11 +584,17 @@ const testsCurrent = path.startsWith(routes.tests());
     :global(.js) .site-header:not(.is-menu-open) .nav { display: none; }
   }
 
-  /* Folding phone or tablet: the six sections in two even rows of three, with their icons. On the phone they are
-     three rows of two. A seventh section needs `nav__link--wide` on the last link, or a new count here. */
+  /* Folding phone or tablet: the sections in one row. */
   @media (min-width: 720px) and (max-width: 1179px) {
-    .nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    /* Five links in one row: each takes one column, and the icons go away while the row is narrow. */
+    .nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
     .nav > a.nav__link--wide { grid-column: auto; }
+    .nav > a:not(.nav__link--search) { padding: 0 8px; }
+    .nav > a:not(.nav__link--search) .nav__icon { display: none; }
+  }
+  @media (min-width: 900px) and (max-width: 1179px) {
+    .nav > a:not(.nav__link--search) { padding: 0 12px; }
+    .nav > a:not(.nav__link--search) .nav__icon { display: inline; }
   }
 
   /* Phone: a smaller logo. */

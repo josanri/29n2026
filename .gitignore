@@ -34,3 +34,7 @@ Desktop.ini
 # Local Wrangler state (wrangler dev)
 .wrangler/
 stories/
+
+# Debates: the raw WhisperX output (large, local input of the scripts) and the WhisperX command with the token
+salida_debate/
+token

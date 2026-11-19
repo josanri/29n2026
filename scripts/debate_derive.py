@@ -19,6 +19,11 @@ Una interrupción de la moderadora es de tipo «moderacion»; las demás son de 
 La intervención que corta lleva `cut: true` y `kind`; la cortada, `cutOff: true`.
 
 Las gráficas usan bloques de `binSeconds` (por defecto 300 s = 5 min).
+
+Minuto de oro. `golden` es la lista de los cierres de cada candidato (`speaker`, `start`, `end`). Si el debate no la
+tiene, se propone sola: en el último cuarto del debate, el último turno de 35 a 100 s de cada candidato que llega
+justo después de que la moderación diga «minuto». Corríjala a mano en el JSON si hace falta: una lista escrita no se
+vuelve a calcular.
 """
 
 from __future__ import annotations
@@ -144,6 +149,28 @@ def classify(interventions: list[dict], index: int, speakers: dict, overlaps: li
     return "moderacion" if is_moderator(speakers.get(current["speaker"])) else "interrupcion"
 
 
+GOLDEN_MIN_SECONDS = 35
+GOLDEN_MAX_SECONDS = 100
+
+
+def suggest_golden(interventions: list[dict], speakers: dict, duration: float) -> list[dict]:
+    """The closing minute of each candidate: see «Minuto de oro» above. Ordered by time."""
+    found: dict[str, dict] = {}
+    for index in range(1, len(interventions)):
+        current, previous = interventions[index], interventions[index - 1]
+        length = current["end"] - current["start"]
+        if (
+            current["start"] >= duration * 0.75
+            and GOLDEN_MIN_SECONDS <= length <= GOLDEN_MAX_SECONDS
+            and not is_moderator(speakers.get(current["speaker"]))
+            and current["speaker"] in speakers
+            and is_moderator(speakers.get(previous["speaker"]))
+            and "minuto" in fold(" ".join(previous["paragraphs"]))
+        ):
+            found[current["speaker"]] = {"speaker": current["speaker"], "start": current["start"], "end": current["end"]}
+    return sorted(found.values(), key=lambda item: item["start"])
+
+
 def derive(data: dict) -> dict:
     """Devuelve `data` con los campos derivados recalculados. No cambia el texto ni los tiempos."""
     bin_seconds = int(data.get("binSeconds") or DEFAULT_BIN_SECONDS)
@@ -255,7 +282,8 @@ def derive(data: dict) -> dict:
         "moderationDensity": moderation,
         "topics": topics,
     }
-    for key in ("date", "channel", "url", "overlaps"):
+    result["golden"] = data.get("golden") or suggest_golden(interventions, speaker_by_id, duration)
+    for key in ("date", "channel", "url", "urlLabel", "published", "breaks", "overlaps"):
         if key in data:
             result[key] = data[key]
     return result
