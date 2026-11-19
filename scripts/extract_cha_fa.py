@@ -112,15 +112,15 @@ CATEGORIA_MEDIDA = [
 
 COLECTIVOS = {
     'jovenes': r'\bj[oó]venes\b|\bjuventud\b|\bjuvenil\w*|\bemancipaci[oó]n\b',
-    'mujeres': r'\bmujeres?\b|violencia de g[eé]nero|violencia machista|violencia vicaria|\bmachistas?\b',
+    'mujeres': r'\bmujeres?\b|\bMujer\b|violencia de g[eé]nero|violencia machista|violencia vicaria|\bmachistas?\b',
     'rural': r'\bagricultor\w*|\bganader\w+|\bexplotaciones (?:familiares|agrarias)|\bmedio rural\b|\bmundo rural\b|\bpueblos?\b|\bmunicipios (?:rurales|pequeños|de menor población)|\brurales\b|despoblaci[oó]n',
     'mayores': r'\bpersonas mayores\b|\benvejecid\w+|\bpensionistas?\b',
     'discapacidad': r'\bdiscapacidad\b|\bdependencia\b',
     'pacientes': r'\bpacientes?\b|\bELA\b|COVID persistente|enfermedades de alta complejidad',
     'victimas': r'\bv[ií]ctimas?\b|revictimiz\w+',
     'inmigrantes': r'\bmigrantes?\b|\binmigrantes?\b',
-    'autonomos': r'\baut[oó]nom[oa]s?\b',
-    'empresas': r'\bempresas?\b|\bindustri\w+|\bpolígonos\b',
+    'autonomos': r'\baut[oó]nomos\b|\btrabajadores aut[oó]nomos\b',
+    'empresas': r'\bempresas(?! p[uú]blicas)\b|\bempresa(?! p[uú]blica)\b|\bindustri\w+|\bpolígonos\b',
     'funcionarios': r'\bfuncionari[oa]s?\b|empleados p[uú]blicos|profesorado|\bdocente\b',
     'familias': r'\bfamilias?\b',
     'infancia': r'\binfancia\b|\bni[ñn][oa]s?\b|\bmenores\b',
@@ -128,7 +128,7 @@ COLECTIVOS = {
 
 PALANCAS = {
     'ley': r'\bley\b|\blegislar\b|\bleyes?\b|\bEstatuto\b|\bnormativ\w+|\bregul\w+|reformar|\breforma\b|\bmoratorias?\b|\bprohib\w+|\btransposici[oó]n\b|\btranspon\w+',
-    'impuestos': r'\bIBI\b|\bimpuestos?\b|\btribut\w+|\bfiscal\w*|\bexenci[oó]n\b|recaud\w+|\bcatastral\b',
+    'impuestos': r'\bIBI\b|\bimpuestos?\b|\btribut\w+|\bfiscal(?!-|es\b)\w*|\bexenci[oó]n\b|recaud\w+|\bcatastral\b',
     'gasto': r'\bfinanci\w+|\binversi[oó]n(?:es)?\b|\bsubvenci\w+|\bayudas?\b|\bfondos?\b|\bcofinanciar\b|\bdotaci[oó]n\b|\bpresupuestari\w+|\bcompensar\b',
     'organizacion': r'\bcrear\b|\bcreaci[oó]n\b|\bempresa p[uú]blica\b|\boficinas?\b|\bobservatorio\b|\bcomisi[oó]n\b|\bsede\b|\bconsorcio\b|\bagencia\b|\bmapa\b',
     'plan': r'\bplan(?:es)?\b|\bestrategia\b|\bconvenio\b|\bpacto\b|\bplanificaci[oó]n\b|\bprograma\b|\bprogramas\b|\bacuerdo\b',
@@ -231,7 +231,7 @@ TITULOS = [
 
 # Compromisos cuantificados: (sección, inicio del texto de la propuesta, valor, unidad, texto, prueba literal).
 CIFRAS = [
-    ('1.2', 'Desarrollar plenamente el actual Estatuto', '22', 'nuevas competencias', 'traspaso de hasta 22 competencias nuevas a Aragón, con su financiación', 'traspaso de hasta 22 nuevas competencias'),
+    ('1.2', 'Desarrollar plenamente el actual Estatuto', 'hasta 22', 'nuevas competencias', 'traspaso de hasta 22 competencias nuevas a Aragón, con su financiación', 'traspaso de hasta 22 nuevas competencias'),
     ('2.1', 'Nuestra prioridad será recuperar viviendas vacías', '1.612', 'viviendas de la SAREB', 'viviendas y 757 suelos de la SAREB en Aragón que pasarían a la empresa pública Casa 47', '1.612 viviendas y anejos y 757 suelos en Aragón'),
     ('2.1', 'Usando todas estas herramientas', '15.000', 'viviendas', 'nuevas viviendas en el parque público de alquiler asequible en esta legislatura', '15.000 viviendas'),
     ('2.1', 'Ayudas especiales a los pequeños municipios', '20 %', 'de vivienda pública', 'proporción que deben alcanzar los pequeños municipios a corto y medio plazo', 'proporción del 20% de vivienda pública'),
@@ -607,7 +607,8 @@ def crear_programa(pdf):
             'en que se recibió: el PDF no trae fecha.',
             'La Agenda no numera ni titula sus propuestas: cada párrafo que propone algo es una propuesta. Los párrafos de '
             'contexto o que presentan una lista no se cuentan. El título corto es el rótulo en negrita con que empieza la '
-            'propuesta, si lo tiene, o su primera frase.',
+            'propuesta, si lo tiene, o un resumen editorial de su primera frase (79 de 146 están escritos a mano); los nombres de '
+            'los bloques y de las secciones sin epígrafe también son editoriales: el PDF solo tiene número y lema.',
             'Los bloques 2, 9 y 10 no tienen epígrafes y el 5 empieza con propuestas sin epígrafe: se agrupan en una sección '
             'única. El texto de la propuesta sobre «viviendas adecuadas» repite una frase tal como está en el PDF.',
         ],

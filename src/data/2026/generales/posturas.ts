@@ -122,7 +122,6 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'comuns', side: 'a', measures: [19], note: 'Reforzar los mecanismos de regulación y control de los alquileres.' },
   { topic: 'vivienda', party: 'podemos', side: 'a', measures: [1, 2, 15], note: 'Bajar los alquileres un 40 % por ley, contratos indefinidos por defecto y regular el alquiler de temporada y por habitaciones.' },
   { topic: 'vivienda', party: 'jxcat', side: 'b', measures: [396, 72, 50], note: 'Derogar los artículos de la Ley 12/2023 que contienen los precios y crean zonas tensionadas, porque «reducen la oferta de alquiler», e incentivos fiscales a los propietarios.' },
-  { topic: 'vivienda', party: 'cha-fa', side: 'matiz', measures: [6, 7, 12], note: 'Un parque público de 15.000 viviendas de alquiler asequible, con el suelo de la SAREB y suelo público para cooperativas; el programa no propone limitar el precio del alquiler.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
@@ -168,7 +167,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'comuns', side: 'a', measures: [796], note: 'Reforzar el sistema VioGén para proteger a las víctimas de la violencia machista.' },
   { topic: 'igualdad', party: 'podemos', side: 'a', measures: [145, 154, 163], note: 'Un fondo de contingencia de mil millones contra la violencia machista, acompañamiento a las víctimas y una definición más amplia de violencia machista.' },
   { topic: 'igualdad', party: 'jxcat', side: 'a', measures: [195, 196, 200, 202, 215], note: 'Igualdad salarial y transparencia retributiva, menos brecha en las pensiones, protección integral de las víctimas de violencia machista y recursos estatales para las políticas de igualdad.' },
-  { topic: 'igualdad', party: 'cha-fa', side: 'a', measures: [115, 116, 119, 120], note: 'Completar la ley de violencia vicaria, reconocer todas las formas de acreditar la violencia de género y más plazas judiciales y fiscales especializadas en violencia machista.' },
+  { topic: 'igualdad', party: 'cha-fa', side: 'a', measures: [115, 116, 119, 120], note: 'Completar la ley de violencia vicaria, reconocer todas las formas de acreditar la violencia de género, una justicia especializada y de proximidad y más plazas judiciales y fiscales en violencia machista.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },

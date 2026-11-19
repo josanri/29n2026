@@ -279,7 +279,6 @@ Para regenerar los datos de Feministas al Congreso: `npm run data:pfac` (necesit
 Para regenerar los datos de En Acción 3e: `npm run data:tercera-edad` (necesita Python con PyMuPDF).
 Para regenerar los datos de VOX: `npm run data:vox` (necesita Python con PyMuPDF).
 Para regenerar los datos del Frente Amplio: `npm run data:fa` (con `--depurar <archivo>` escribe un volcado legible de cada propuesta).
-
 Para regenerar los datos de la Agenda Aragonesa de CHA-Frente Amplio: `npm run data:cha-fa` (con `--depurar <archivo>` escribe un volcado legible de cada propuesta).
 Para regenerar los datos de Podemos: `npm run data:podemos` (necesita Python con PyMuPDF; con `--depurar <archivo>` escribe un volcado legible de cada medida).
 

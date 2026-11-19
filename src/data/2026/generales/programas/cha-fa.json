@@ -10,7 +10,7 @@
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
  "observaciones": [
   "El PDF se facilitó a la redacción en exclusiva: la Agenda Aragonesa complementa el programa de Frente Amplio y no figuraba en la web oficial (frenteamplio.info/programa), que es el enlace de la fuente. La fecha es la del día en que se recibió: el PDF no trae fecha.",
-  "La Agenda no numera ni titula sus propuestas: cada párrafo que propone algo es una propuesta. Los párrafos de contexto o que presentan una lista no se cuentan. El título corto es el rótulo en negrita con que empieza la propuesta, si lo tiene, o su primera frase.",
+  "La Agenda no numera ni titula sus propuestas: cada párrafo que propone algo es una propuesta. Los párrafos de contexto o que presentan una lista no se cuentan. El título corto es el rótulo en negrita con que empieza la propuesta, si lo tiene, o un resumen editorial de su primera frase (79 de 146 están escritos a mano); los nombres de los bloques y de las secciones sin epígrafe también son editoriales: el PDF solo tiene número y lema.",
   "Los bloques 2, 9 y 10 no tienen epígrafes y el 5 empieza con propuestas sin epígrafe: se agrupan en una sección única. El texto de la propuesta sobre «viviendas adecuadas» repite una frase tal como está en el PDF."
  ],
  "pdf": "/programas/cha-fa-agenda-aragonesa-2026.pdf",
@@ -25,7 +25,7 @@
  },
  "cifras": [
   {
-   "valor": "22",
+   "valor": "hasta 22",
    "unidad": "nuevas competencias",
    "texto": "traspaso de hasta 22 competencias nuevas a Aragón, con su financiación",
    "contexto": "traspaso de hasta 22 nuevas competencias",
@@ -613,9 +613,7 @@
    "texto": "Desarrollar plenamente el actual Estatuto de Autonomía de Aragón, exigiendo al Estado el traspaso de hasta 22 nuevas competencias con su correcta financiación; así como transferir todas las funciones ejecutivas de la administración periférica del Estado a la Comunidad Autónoma de Aragón, de modo que ésta actúe como administración única en su territorio, así como agotar las posibilidades de transferencia de competencias de titularidad estatal a Aragón por la vía del artículo 150 de la Constitución.",
    "oculta": false,
    "categoria": "territorio",
-   "colectivos": [
-    "autonomos"
-   ],
+   "colectivos": [],
    "palancas": [
     "ley",
     "gasto"
@@ -711,9 +709,7 @@
    "texto": "Nuestra prioridad será recuperar viviendas vacías, rehabilitar edificios y barrios y terminar las promociones que quedaron abandonadas tras la crisis inmobiliaria. También se adscribirán todas las fincas urbanas y los suelos residenciales de la SAREB a la empresa pública Casa 47 (1.612 viviendas y anejos y 757 suelos en Aragón). Promocionar vivienda pública no significa necesariamente construir más, sino garantizar que haya más hogares al alcance de la mayoría social.",
    "oculta": false,
    "categoria": "vivienda",
-   "colectivos": [
-    "empresas"
-   ],
+   "colectivos": [],
    "palancas": [
     "organizacion"
    ],
@@ -1617,9 +1613,7 @@
    "oculta": false,
    "categoria": "infraestructuras",
    "colectivos": [],
-   "palancas": [
-    "impuestos"
-   ],
+   "palancas": [],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1704,9 +1698,7 @@
    "texto": "Crear una empresa pública de energía aragonesa, que incluya la gestión de las centrales hidroeléctricas, competencia del Gobierno de España, conforme vayan finalizando las concesiones.",
    "oculta": false,
    "categoria": "energia",
-   "colectivos": [
-    "empresas"
-   ],
+   "colectivos": [],
    "palancas": [
     "organizacion"
    ],
@@ -2520,8 +2512,7 @@
    "oculta": false,
    "categoria": "rural",
    "colectivos": [
-    "rural",
-    "autonomos"
+    "rural"
    ],
    "palancas": [
     "gasto"
@@ -3159,7 +3150,9 @@
    "texto": "Justicia especializada y de proximidad. Revisar la centralización de las Secciones de Violencia sobre la Mujer, garantizando que la especialización no suponga mayores dificultades de acceso a la justicia. Examinar especialmente la situación de Tarazona, Ejea de los Caballeros y La Almunia de Doña Godina.",
    "oculta": false,
    "categoria": "justicia",
-   "colectivos": [],
+   "colectivos": [
+    "mujeres"
+   ],
    "palancas": [],
    "territorios": [
     "Zaragoza"
@@ -3183,7 +3176,6 @@
     "mujeres"
    ],
    "palancas": [
-    "impuestos",
     "gasto"
    ],
    "territorios": [],
@@ -3376,8 +3368,7 @@
    "oculta": false,
    "categoria": "social",
    "colectivos": [
-    "rural",
-    "autonomos"
+    "rural"
    ],
    "palancas": [
     "gasto",

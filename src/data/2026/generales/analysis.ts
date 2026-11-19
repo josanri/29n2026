@@ -491,13 +491,13 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
     {
       title: 'La movilidad es el bloque más largo: 34 de 146 propuestas',
       text:
-        'El bloque «Derecho a la movilidad» reúne 34 de las 146 propuestas (el 23 %), por delante de derechos sociales (26) y de territorio y paisajes (22). Veintidós son de ferrocarril (Corredor Cantábrico-Mediterráneo con doble vía Zaragoza-Teruel-Sagunto, Canfranc, Cercanías, el tranvía de Zaragoza) once de carreteras con tramos concretos (A-68, N-211, A-15, A-25, A-40, A-21 y A-23) y una de ruta ciclable. Nueve piden licitar o adjudicar proyectos y obras.',
+        'El bloque «Derecho a la movilidad» reúne 34 de las 146 propuestas (el 23 %), por delante de derechos sociales (26) y de territorio y paisajes (22). Veintidós están en la sección de ferrocarril y transporte público (Corredor Cantábrico-Mediterráneo con doble vía Zaragoza-Teruel-Sagunto, Canfranc, Cercanías, el tranvía de Zaragoza) once de carreteras con tramos concretos (A-68, N-211, A-15, A-25, A-40, A-21 y A-23) y una de ruta ciclable. Diez piden licitar o adjudicar proyectos y obras.',
       measureNumbers: [18, 20, 35, 40, 46, 49],
     },
     {
       title: 'Casi una de cada cuatro propuestas se dirige al Estado',
       text:
-        'Treinta y seis de las 146 propuestas (el 25 %) mencionan al Estado, al Gobierno central, a un ministerio o a una competencia estatal. El primer bloque lo exige todo del Estado: hasta 22 competencias nuevas, un acuerdo económico-financiero bilateral con la Agencia Tributaria Aragonesa recaudando todos los impuestos y el pago de la «deuda histórica». La Agenda se presenta como el complemento aragonés del programa de Frente Amplio.',
+        'Treinta y seis de las 146 propuestas (el 25 %) mencionan al Estado, al Gobierno central, a un ministerio o a una competencia estatal. El primer bloque se apoya en el Estado: hasta 22 competencias nuevas, un acuerdo económico-financiero bilateral con la Agencia Tributaria Aragonesa recaudando todos los impuestos y el pago de la «deuda histórica». La Agenda se presenta como el complemento aragonés del programa de Frente Amplio.',
       measureNumbers: [2, 4, 5, 24, 38, 93],
     },
     {
@@ -507,9 +507,9 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [52, 56, 57, 63, 67, 71],
     },
     {
-      title: '15.000 viviendas de alquiler público y ningún tope al precio del alquiler',
+      title: '15.000 viviendas de alquiler público, sin medidas sobre el precio del alquiler',
       text:
-        'El bloque de vivienda tiene doce propuestas. La meta es incorporar 15.000 viviendas al parque público de alquiler asequible en esta legislatura, con el suelo y las fincas de la SAREB en Aragón (1.612 viviendas y 757 suelos) pasando a la empresa pública Casa 47, suelo público cedido a cooperativas y a entidades sin ánimo de lucro y ayudas a los pequeños municipios para llegar al 20 % de vivienda pública. Ninguna de las propuestas habla de limitar por ley el precio del alquiler.',
+        'El bloque de vivienda tiene doce propuestas. La meta es incorporar 15.000 viviendas al parque público de alquiler asequible en esta legislatura, con el suelo y las fincas de la SAREB en Aragón (1.612 viviendas y 757 suelos) pasando a la empresa pública Casa 47, suelo público cedido a cooperativas y a entidades sin ánimo de lucro y ayudas a los pequeños municipios para llegar al 20 % de vivienda pública. Ninguna propuesta de la Agenda habla de limitar el precio del alquiler: se presenta como complemento del programa de Frente Amplio.',
       measureNumbers: [6, 7, 8, 12, 13],
     },
     {
@@ -519,9 +519,9 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [2, 7, 20, 98, 146],
     },
     {
-      title: 'El medio rural atraviesa todos los bloques',
+      title: 'Lo rural también aparece fuera de su bloque',
       text:
-        'El bloque de medio rural tiene 19 propuestas, pero otras once fuera de él nombran lo rural, los pueblos o la despoblación: programas piloto de vivienda en el medio rural, transporte rural gratuito de lunes a viernes, un fondo público alimentado por las renovables para el medio rural o la llegada a las comarcas rurales de la financiación de las entidades LGTBIQ+. El bloque rural propone un Pacto de Estado como el de Toledo, un Estatuto Básico de los Municipios de Menor Población en el primer periodo de sesiones y detraer 2.000 millones del Fondo de Participación de Tributos.',
+        'El bloque de medio rural tiene 19 propuestas, pero otras once fuera de él nombran lo rural, los pueblos o la despoblación: programas piloto de vivienda en el medio rural, transporte rural gratuito de lunes a viernes, un Fondo Público de Inversión en Energías Renovables destinado al desarrollo territorial en el medio rural o la llegada a las comarcas rurales de la financiación de las entidades LGTBIQ+. El bloque rural propone un Pacto de Estado como el de Toledo, un Estatuto Básico de los Municipios de Menor Población en el primer periodo de sesiones y detraer 2.000 millones del Fondo de Participación de Tributos.',
       measureNumbers: [17, 30, 65, 87, 89, 98],
     },
   ],
