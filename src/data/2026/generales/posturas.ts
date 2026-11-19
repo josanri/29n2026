@@ -167,6 +167,7 @@ export const stances: Stance[] = [
   { topic: 'igualdad', party: 'comuns', side: 'a', measures: [796], note: 'Reforzar el sistema VioGén para proteger a las víctimas de la violencia machista.' },
   { topic: 'igualdad', party: 'podemos', side: 'a', measures: [145, 154, 163], note: 'Un fondo de contingencia de mil millones contra la violencia machista, acompañamiento a las víctimas y una definición más amplia de violencia machista.' },
   { topic: 'igualdad', party: 'jxcat', side: 'a', measures: [195, 196, 200, 202, 215], note: 'Igualdad salarial y transparencia retributiva, menos brecha en las pensiones, protección integral de las víctimas de violencia machista y recursos estatales para las políticas de igualdad.' },
+  { topic: 'igualdad', party: 'cha-fa', side: 'a', measures: [115, 116, 119, 120], note: 'Completar la ley de violencia vicaria, reconocer todas las formas de acreditar la violencia de género, una justicia especializada y de proximidad y más plazas judiciales y fiscales en violencia machista.' },
 
   // Memoria histórica
   { topic: 'memoria', party: 'adelante', side: 'a', measures: [567, 572], note: 'Fin de la impunidad y la memoria en las aulas.' },
@@ -243,6 +244,7 @@ export const stances: Stance[] = [
   { topic: 'lenguas', party: 'comuns', side: 'a', measures: [605], note: 'Defender la inmersión lingüística catalana y el catalán como lengua vehicular de la escuela.' },
   { topic: 'lenguas', party: 'podemos', side: 'a', measures: [256, 292], note: 'Promoción y enseñanza de las lenguas cooficiales y cuotas de pantalla para las lenguas oficiales del Estado.' },
   { topic: 'lenguas', party: 'jxcat', side: 'a', measures: [83, 84, 88, 31], note: 'El catalán como lengua preferente de las administraciones, requisito para trabajar en la Administración del Estado en Cataluña y oficial en la UE.' },
+  { topic: 'lenguas', party: 'cha-fa', side: 'a', measures: [137], note: 'Reconocer y proteger el aragonés y las lenguas no cooficiales, con ayudas a proyectos culturales, una especialidad docente y financiación de la Academia Aragonesa de la Lengua.' },
 
   // Penas y facultades policiales
   { topic: 'seguridad', party: 'adelante', side: 'a', measures: [487, 496], note: 'Derogar la «ley mordaza» y la prisión permanente revisable.' },
