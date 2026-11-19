@@ -12,7 +12,10 @@ import { routes } from '@/lib/routes';
 
 const debateFiles = import.meta.glob<Debate>('@eleccion/debates/*.json', { eager: true, import: 'default' });
 // The newest debate first. A debate with no date goes last.
-const debates = Object.values(debateFiles).sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+const debates = Object.values(debateFiles)
+  // A draft shows only on the dev server.
+  .filter((debate) => debate.published !== false || import.meta.env.DEV)
+  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
 const dayOf = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
@@ -40,7 +43,7 @@ const clock = (seconds: number) => {
       {debates.map((debate) => (
         <li>
           <Panel class="debate-card">
-            <h3 class="debate-card__title"><a href={routes.debate(debate.slug)}>{debate.title}</a></h3>
+            <h3 class="debate-card__title"><a href={routes.debate(debate.slug)}>{debate.title}</a>{debate.published === false && ' (borrador)'}</h3>
             <p class="debate-card__meta">
               {debate.date && `${dayOf(debate.date)} · `}{debate.channel && `${debate.channel} · `}Duración {clock(debate.durationSeconds)} · {debate.interventions.length} intervenciones · {debate.interruptions.filter((event) => event.kind !== 'moderacion').length} interrupciones entre candidatos
             </p>

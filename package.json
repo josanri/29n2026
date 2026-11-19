@@ -9,6 +9,7 @@
     "debate:build": "python scripts/build_debate.py",
     "debate:retime": "python scripts/debate_retime.py",
     "debate:audio": "python scripts/debate_audio.py",
+    "debate:nuevo": "python scripts/debate_nuevo.py",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

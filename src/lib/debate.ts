@@ -60,6 +60,10 @@ export interface Debate {
   date?: string;
   channel?: string;
   url?: string;
+  /** The text of the link to `url`, when it is a source and not the full video (default: «Ver el debate íntegro…»). */
+  urlLabel?: string;
+  /** false: a draft. It shows only on the dev server (`npm run dev`), never in the built site. */
+  published?: boolean;
   durationSeconds: number;
   binSeconds: number;
   speakers: DebateSpeaker[];
@@ -70,6 +74,10 @@ export interface Debate {
   /** Cuts by the moderator in each bin. */
   moderationDensity: number[];
   topics: DebateTopic[];
+  /** The closing minute of each candidate («minuto de oro»), in order of speech. */
+  golden?: { speaker: string; start: number; end: number }[];
+  /** Advertising breaks left out of the transcript (seconds). */
+  breaks?: [number, number][];
   /** Zones of overlapped speech, from the recording (seconds). */
   overlaps?: [number, number][];
 }
