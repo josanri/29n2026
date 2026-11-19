@@ -491,8 +491,8 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
     {
       title: 'Cinco compromisos tratan del estatus de Navarra',
       text:
-        'Los bloques «Navarra decide su futuro» y «Navarra nunca será moneda de cambio» suman cinco de los 36 compromisos (el 14 %) y no piden nada nuevo: mantener Navarra como Comunidad Foral, defender el Fuero y el Convenio Económico, suprimir la Transitoria Cuarta, que según UPN abre la puerta a anexionar Navarra con el País Vasco, y aceptar solo acuerdos con quien respeta la democracia y las instituciones.',
-      measureNumbers: [5, 6, 7, 8],
+        'Los bloques «Navarra decide su futuro» y «Navarra nunca será moneda de cambio» suman cinco de los 36 compromisos (el 14 %) y no piden nada nuevo: mantener Navarra como Comunidad Foral, defender el Fuero y el Convenio Económico, suprimir la Transitoria Cuarta, que según UPN abre la puerta a anexionar Navarra con el País Vasco, aceptar solo acuerdos con quien respeta la democracia y las instituciones y pedir memoria, dignidad, justicia y verdad para las víctimas del terrorismo.',
+      measureNumbers: [5, 6, 7, 8, 9],
     },
     {
       title: 'El bloque más largo es el de sanidad y dependencia: 6 de 36',
