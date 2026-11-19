@@ -64,6 +64,21 @@ const clock = (seconds: number) => {
 const debateDate = debate.date
   ? new Date(`${debate.date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
   : '';
+// For search engines: who took part (with the party), then what the page offers.
+const lineup = (() => {
+  const names = candidates.map((speaker) => `${speaker.name} (${speaker.role})`);
+  return names.length > 1 ? `${names.slice(0, -1).join(', ')} y ${names[names.length - 1]}` : names.join('');
+})();
+// The date once: only the year when the title already says the day («…del 13 de noviembre de 2026»).
+const dayMonth = debateDate.replace(/ de \d{4}$/, '');
+const dateTail = !debateDate
+  ? ''
+  : debate.title.endsWith(dayMonth)
+    ? debateDate.slice(dayMonth.length)
+    : debate.title.includes(dayMonth)
+      ? ''
+      : ` (${debateDate})`;
+const metaDescription = `Transcripción completa del ${debate.title.charAt(0).toLowerCase()}${debate.title.slice(1)}${dateTail} con ${lineup}: tiempo de palabra, quién interrumpe a quién y cada corte marcado.`;
 const plural = (count: number, one: string, many: string) => `${number(count)} ${count === 1 ? one : many}`;
 const cut = (text: string, size: number) => (text.length <= size ? text : `${text.slice(0, size).replace(/\s+\S*$/, '')}…`);
 
@@ -144,10 +159,7 @@ const wordsOf = (paragraphs: string[]) => paragraphs.reduce((total, paragraph) =
 const ASIDE_WORDS = 15;
 ---
 
-<BaseLayout
-  title={debate.title}
-  description={`Transcripción completa de ${debate.title}: tiempo de palabra, ritmo, quién interrumpe a quién y cada corte marcado.`}
->
+<BaseLayout title={`${debate.title}: transcripción e interrupciones`} description={metaDescription}>
   <section class="page-hero">
     <div class="container">
       <Tag variant="ink">Debate</Tag>

@@ -80,7 +80,7 @@ export const routes = {
   /** The tracking of the polls. */
   polls: () => withBase('/encuestas/'),
   /** The list of the debates, or one debate (its transcript, charts and filter) when it has a slug. */
-  debate: (slug?: string) => withBase(slug ? `/debate/${slug}/` : '/debate/'),
+  debate: (slug?: string) => withBase(slug ? `/debates/${slug}/` : '/debates/'),
   /** «Sin siglas»: vote on measures without the party, then see the parties. */
   partyQuiz: () => withBase('/tests/sin-siglas/'),
   /** JSON file with the measures of one party for «Sin siglas». The page loads the parties of one province. */

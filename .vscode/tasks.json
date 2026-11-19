@@ -33,7 +33,7 @@
       "id": "configuracion",
       "type": "promptString",
       "description": "Ruta del JSON de configuración del debate (ver scripts/debates/)",
-      "default": "scripts/debates/lasexta-primer-debate.json"
+      "default": "scripts/debates/lasexta-13-noviembre-2026.json"
     }
   ]
 }

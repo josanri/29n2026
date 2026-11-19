@@ -64,8 +64,9 @@ const links = [
   {
     href: routes.debate(),
     label: 'Debate',
-    // Two speech bubbles: a turn of talk, then the reply.
-    icon: '<path d="M1.5 2.5h8v6h-4l-2.5 2v-2h-1.5z"/><path d="M14.5 6.5v5h-1.5v2l-2.5-2h-4v-1.5"/>',
+    // Two speech bubbles that face each other: the tail of the front one points left, the tail of the back one
+    // points right. The back bubble stops 1px before the front one, so it reads as behind it.
+    icon: '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h4v6h-2V14L10 11.5H7.5V8.5"/>',
   },
   {
     href: routes.simulator(),
@@ -545,17 +546,11 @@ const testsCurrent = path.startsWith(routes.tests());
     :global(.js) .site-header:not(.is-menu-open) .nav { display: none; }
   }
 
-  /* Folding phone or tablet: the sections in one row. */
+  /* Folding phone or tablet: the six sections in two even rows of three, with their icons. On the phone they are
+     three rows of two. A seventh section needs `nav__link--wide` on the last link, or a new count here. */
   @media (min-width: 720px) and (max-width: 1179px) {
-    /* Five links in one row: each takes one column, and the icons go away while the row is narrow. */
-    .nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .nav { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .nav > a.nav__link--wide { grid-column: auto; }
-    .nav > a:not(.nav__link--search) { padding: 0 8px; }
-    .nav > a:not(.nav__link--search) .nav__icon { display: none; }
-  }
-  @media (min-width: 900px) and (max-width: 1179px) {
-    .nav > a:not(.nav__link--search) { padding: 0 12px; }
-    .nav > a:not(.nav__link--search) .nav__icon { display: inline; }
   }
 
   /* Phone: a smaller logo. */
