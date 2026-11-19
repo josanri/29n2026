@@ -5,6 +5,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "debate:editor": "python scripts/editor_debate.py",
+    "debate:build": "python scripts/build_debate.py",
+    "debate:retime": "python scripts/debate_retime.py",
+    "debate:audio": "python scripts/debate_audio.py",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

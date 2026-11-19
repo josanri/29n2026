@@ -1,0 +1,63 @@
+---
+/**
+ * Lista de los debates del sitio. Cada uno tiene su página con la transcripción, las gráficas y el filtro.
+ * Un debate nuevo aparece aquí solo con añadir su archivo a `@eleccion/debates/`.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Panel from '@/components/ui/Panel.astro';
+import Tag from '@/components/ui/Tag.astro';
+import type { Debate } from '@/lib/debate';
+import { routes } from '@/lib/routes';
+
+const debateFiles = import.meta.glob<Debate>('@eleccion/debates/*.json', { eager: true, import: 'default' });
+// The newest debate first. A debate with no date goes last.
+const debates = Object.values(debateFiles).sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+const dayOf = (date: string) =>
+  new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const clock = (seconds: number) => {
+  const total = Math.floor(seconds);
+  const hours = Math.floor(total / 3600);
+  const minutes = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+  return hours ? `${hours} h ${minutes} min` : `${minutes} min`;
+};
+---
+
+<BaseLayout title="Debates" description="Transcripciones de los debates electorales, con cada interrupción marcada y el tiempo de palabra de cada candidato.">
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Transcripciones</Tag>
+      <h1 class="headline">Debates</h1>
+      <p class="page-hero__lede">Cada debate, con la hora de cada intervención y las interrupciones marcadas.</p>
+    </div>
+  </section>
+
+  <section class="container debate-list-section" aria-labelledby="debates-lista">
+    <SectionHeading title="Los debates" headingId="debates-lista" />
+    {debates.length === 0 && <p>Todavía no hay debates publicados.</p>}
+    <ul class="debate-list">
+      {debates.map((debate) => (
+        <li>
+          <Panel class="debate-card">
+            <h3 class="debate-card__title"><a href={routes.debate(debate.slug)}>{debate.title}</a></h3>
+            <p class="debate-card__meta">
+              {debate.date && `${dayOf(debate.date)} · `}{debate.channel && `${debate.channel} · `}Duración {clock(debate.durationSeconds)} · {debate.interventions.length} intervenciones · {debate.interruptions.filter((event) => event.kind !== 'moderacion').length} interrupciones entre candidatos
+            </p>
+          </Panel>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12vw, 8.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; margin: 0; }
+  .debate-list-section { margin-bottom: var(--space-8); }
+  .debate-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+  .debate-card__title { font-size: 1.5rem; margin: 0 0 var(--space-2); }
+  .debate-card__title a { color: var(--color-ink); }
+  .debate-card__meta { margin: 0; color: var(--color-ink-muted); }
+</style>

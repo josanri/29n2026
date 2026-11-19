@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Editor de debates",
+      "type": "shell",
+      "command": "python",
+      "args": ["scripts/editor_debate.py"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": [],
+      "detail": "Abre http://127.0.0.1:8765/ para editar las intervenciones, los tiempos y los hablantes de cada debate."
+    },
+    {
+      "label": "Generar debate desde transcripción",
+      "type": "shell",
+      "command": "python",
+      "args": ["scripts/build_debate.py", "${input:transcripcion}", "${input:configuracion}"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": [],
+      "detail": "Crea el JSON de un debate nuevo. Sobrescribe las ediciones hechas con el editor: úselo solo para empezar de cero."
+    }
+  ],
+  "inputs": [
+    {
+      "id": "transcripcion",
+      "type": "promptString",
+      "description": "Ruta del JSON de la transcripción (WhisperX con diarización)",
+      "default": "salida_debate/debate_lasexta.json"
+    },
+    {
+      "id": "configuracion",
+      "type": "promptString",
+      "description": "Ruta del JSON de configuración del debate (ver scripts/debates/)",
+      "default": "scripts/debates/lasexta-primer-debate.json"
+    }
+  ]
+}

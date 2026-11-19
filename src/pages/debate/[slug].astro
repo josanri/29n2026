@@ -1,0 +1,1596 @@
+---
+/**
+ * Un debate: quién habla y cuánto, el ritmo (turnos, cortes y temas en un mismo eje de tiempo), quién interrumpe a
+ * quién y la transcripción completa con filtros.
+ * Cada debate es un archivo de `@eleccion/debates/` (lo genera y lo edita `scripts/`). Esta página sale una vez por debate.
+ * Las gráficas y la transcripción comparten un mismo filtro. Sin script, la página entera queda visible; el script
+ * solo filtra, busca y muestra el detalle al pasar el ratón.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import Tag from '@/components/ui/Tag.astro';
+import type { Debate, DebateSpeaker } from '@/lib/debate';
+import { pollParties } from '@eleccion/encuestas';
+
+export function getStaticPaths() {
+  // The glob lives inside this function: Astro moves getStaticPaths out of the module scope.
+  const debateFiles = import.meta.glob<Debate>('@eleccion/debates/*.json', { eager: true, import: 'default' });
+  return Object.values(debateFiles).map((debate) => ({ params: { slug: debate.slug }, props: { debate } }));
+}
+
+const { debate } = Astro.props;
+
+const colorByParty = Object.fromEntries(pollParties.map((party) => [party.id, party.color]));
+const isModerator = (speaker: DebateSpeaker | undefined) => !!speaker && speaker.role.toLowerCase().startsWith('moderad');
+// Only the speakers who say something: a speaker kept for the editor with no words does not show.
+const people = debate.speakers.filter((speaker) => speaker.words > 0);
+const moderator = people.find(isModerator);
+const candidates = people.filter((speaker) => !isModerator(speaker));
+const speakerById = Object.fromEntries(debate.speakers.map((speaker) => [speaker.id, speaker]));
+// A speaker id missing from the data falls back to «Sin asignar», so one bad id never breaks the page.
+const speakerOf = (speakerId: string): DebateSpeaker =>
+  speakerById[speakerId] ?? {
+    id: speakerId,
+    name: 'Sin asignar',
+    role: '',
+    partyId: null,
+    minutes: 0,
+    words: 0,
+    turns: 0,
+    longestSeconds: 0,
+    cutsMade: 0,
+    cutsReceived: 0,
+    moderationsMade: 0,
+    moderationsReceived: 0,
+  };
+const nameOf = (speakerId: string) => speakerOf(speakerId).name;
+const surnameOf = (speakerId: string) => speakerOf(speakerId).name.split(' ').slice(-1)[0];
+// The moderator has no party: ink, which is black or white with the theme.
+const colorOf = (speakerId: string) => {
+  const speaker = speakerOf(speakerId);
+  return (speaker.partyId && colorByParty[speaker.partyId]) || 'var(--color-ink)';
+};
+
+const number = (value: number) => value.toLocaleString('es-ES');
+const decimal = (value: number) => value.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const clock = (seconds: number) => {
+  const total = Math.floor(seconds);
+  const hours = Math.floor(total / 3600);
+  const minutes = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+  const secs = String(total % 60).padStart(2, '0');
+  return hours ? `${hours}:${minutes}:${secs}` : `${minutes}:${secs}`;
+};
+// The date as «13 de noviembre de 2026». Noon UTC, so no time zone moves it to another day.
+const debateDate = debate.date
+  ? new Date(`${debate.date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+  : '';
+const plural = (count: number, one: string, many: string) => `${number(count)} ${count === 1 ? one : many}`;
+const cut = (text: string, size: number) => (text.length <= size ? text : `${text.slice(0, size).replace(/\s+\S*$/, '')}…`);
+
+// ---- Summary -------------------------------------------------------------------------------------------------
+const span = debate.durationSeconds;
+const bin = debate.binSeconds;
+const moderationDensity = debate.moderationDensity ?? debate.density.map(() => 0);
+const candidateCuts = debate.interruptions.filter((event) => event.kind !== 'moderacion');
+const moderatorCuts = debate.interruptions.filter((event) => event.kind === 'moderacion');
+const speakingMinutes = people.reduce((total, speaker) => total + speaker.minutes, 0);
+const maxMinutes = Math.max(...people.map((speaker) => speaker.minutes), 1);
+
+// ---- Rhythm: one time axis for the bins, the lanes of the speakers and the strips of the topics ---------------
+const pct = (seconds: number) => `${((seconds / span) * 100).toFixed(3)}%`;
+const bins = debate.density.map((cuts, index) => {
+  const start = index * bin;
+  const end = Math.min((index + 1) * bin, span);
+  return { index, start, end, cuts, mods: moderationDensity[index] ?? 0, total: cuts + (moderationDensity[index] ?? 0) };
+}).filter((item) => item.end > item.start);
+const binLabel = (index: number) => `${clock(index * bin)}–${clock(Math.min((index + 1) * bin, span))}`;
+const maxBin = Math.max(...bins.map((item) => item.total), 1);
+const peak = bins.reduce((best, item) => (item.total > best.total ? item : best), bins[0]);
+const peakAll = debate.interruptions.filter((event) => event.start >= peak.start && event.start < peak.end);
+const peakEvents = peakAll;
+const ticks = Array.from({ length: Math.floor(span / 900) + 1 }, (_, index) => index * 900).filter((seconds) => seconds < span - 300);
+const laneRows = [...(moderator ? [moderator] : []), ...candidates];
+const turnsOf = (speakerId: string) =>
+  debate.interventions.map((intervention, index) => ({ ...intervention, index })).filter((intervention) => intervention.speaker === speakerId);
+const minWidth = span / 600;
+const topTopics = [...debate.topics].filter((topic) => topic.total > 0).sort((a, b) => b.total - a.total);
+const maxMentions = Math.max(...topTopics.flatMap((topic) => topic.mentions), 1);
+const heatStep = (count: number, max: number) => (count <= 0 ? 0 : Math.max(1, Math.min(5, Math.ceil((count / max) * 5))));
+const eventTopics = (topics: string[]) => topics.join(' ');
+
+// ---- Who interrupts whom ----------------------------------------------------------------------------------------
+const pairCount = (by: string, of: string) => debate.interruptions.filter((event) => event.by === by && event.of === of).length;
+const matrixRows = laneRows;
+const candidateMax = Math.max(...candidates.flatMap((row) => people.map((col) => pairCount(row.id, col.id))), 1);
+const moderatorMax = moderator ? Math.max(...people.map((col) => pairCount(moderator.id, col.id)), 1) : 1;
+// Two-sided bars: received to the left, made to the right, from one centre line and one scale.
+const sideRows = laneRows.map((speaker) => {
+  const mod = isModerator(speaker);
+  return {
+    speaker,
+    mod,
+    made: mod ? speaker.moderationsMade : speaker.cutsMade,
+    byCandidates: speaker.cutsReceived,
+    byModerator: speaker.moderationsReceived,
+  };
+});
+const sideMax = Math.max(...sideRows.flatMap((row) => [row.made, row.byCandidates + row.byModerator]), 1);
+const topPair = candidates
+  .flatMap((row) => candidates.map((col) => ({ by: row.id, of: col.id, count: pairCount(row.id, col.id) })))
+  .sort((a, b) => b.count - a.count)[0];
+
+// ---- Transcript ------------------------------------------------------------------------------------------------
+// The transcription gives one sentence per paragraph. On the page, the sentences join into paragraphs of some
+// 420 characters, so the text reads as speech and not as a list.
+const flow = (paragraphs: string[]) => {
+  const out: string[] = [];
+  let current = '';
+  for (const paragraph of paragraphs) {
+    const text = paragraph.trim();
+    if (!text) continue;
+    current = current ? `${current} ${text}` : text;
+    if (current.length >= 420) {
+      out.push(current);
+      current = '';
+    }
+  }
+  if (current) {
+    if (current.length < 90 && out.length) out[out.length - 1] = `${out[out.length - 1]} ${current}`;
+    else out.push(current);
+  }
+  return out;
+};
+const wordsOf = (paragraphs: string[]) => paragraphs.reduce((total, paragraph) => total + paragraph.split(/\s+/).filter(Boolean).length, 0);
+const ASIDE_WORDS = 15;
+---
+
+<BaseLayout
+  title={debate.title}
+  description={`Transcripción completa de ${debate.title}: tiempo de palabra, ritmo, quién interrumpe a quién y cada corte marcado.`}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Debate</Tag>
+      <h1 class="headline">{debate.title}</h1>
+      <p class="page-hero__lede">
+        Quién habló y cuánto, quién interrumpió a quién y la transcripción completa, con cada corte marcado.
+      </p>
+      {(debateDate || debate.url) && (
+        <p class="source">
+          {debateDate && <time datetime={debate.date}>{debateDate}</time>}
+          {debate.channel && <span>{debate.channel}</span>}
+          {debate.url && (
+            <a href={debate.url} rel="noopener" target="_blank">
+              Ver el debate íntegro{debate.channel ? ` en ${debate.channel}` : ''}<span class="sr-only"> (se abre en otra pestaña)</span>
+              <span aria-hidden="true"> ↗</span>
+            </a>
+          )}
+        </p>
+      )}
+      <dl class="stats">
+        <div class="stats__item">
+          <dt>Duración</dt>
+          <dd>{clock(span)}</dd>
+        </div>
+        <div class="stats__item">
+          <dt>Interrupciones entre candidatos</dt>
+          <dd>{number(candidateCuts.length)}</dd>
+        </div>
+        {moderator && (
+          <div class="stats__item">
+            <dt>Cortes de la moderadora</dt>
+            <dd>{number(moderatorCuts.length)}</dd>
+          </div>
+        )}
+        <div class="stats__item">
+          <dt>Momento más tenso</dt>
+          <dd><a href="#debate-tension">{clock(peak.start)}</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <div id="debate-explorador" data-bin-seconds={bin}>
+    <div id="chart-tip" class="chart-tip" role="tooltip" hidden>
+      <strong class="chart-tip__title"></strong>
+      <span class="chart-tip__body"></span>
+    </div>
+
+    <section class="container debate-section" aria-labelledby="debate-tiempo">
+      <SectionHeading title="Quién habló y cuánto" headingId="debate-tiempo">
+        <p>Minutos de palabra de cada uno ({decimal(speakingMinutes)} min en total) y las veces que corta o le cortan.</p>
+      </SectionHeading>
+      <ul class="speakers">
+        {[...candidates, ...(moderator ? [moderator] : [])].map((speaker) => {
+          const mod = isModerator(speaker);
+          const pace = speaker.minutes > 0 ? Math.round(speaker.words / speaker.minutes) : 0;
+          return (
+            <li class:list={['speaker', { 'speaker--moderator': mod }]} style={`--party: ${colorOf(speaker.id)}`}>
+              <div class="speaker__head">
+                <span class="speaker__swatch" aria-hidden="true" />
+                <div>
+                  <h3 class="speaker__name">{speaker.name}</h3>
+                  <p class="speaker__role">{speaker.role}</p>
+                </div>
+              </div>
+              <p class="speaker__minutes">
+                <strong>{decimal(speaker.minutes)}</strong> min
+                <span class="speaker__share">{Math.round((speaker.minutes / speakingMinutes) * 100)} % del tiempo</span>
+              </p>
+              <span class="speaker__bar" aria-hidden="true"><span style={`width: ${(speaker.minutes / maxMinutes) * 100}%`} /></span>
+              <dl class="speaker__facts">
+                <div><dt>Palabras</dt><dd>{number(speaker.words)}</dd></div>
+                <div><dt>Por minuto</dt><dd>{number(pace)}</dd></div>
+                <div><dt>Turnos</dt><dd>{number(speaker.turns)}</dd></div>
+                <div><dt>Turno más largo</dt><dd>{clock(speaker.longestSeconds)}</dd></div>
+              </dl>
+              {mod ? (
+                <dl class="speaker__cuts">
+                  <div><dt>Corta a un candidato</dt><dd>{speaker.moderationsMade}</dd></div>
+                  <div><dt>La interrumpen</dt><dd>{speaker.cutsReceived}</dd></div>
+                </dl>
+              ) : (
+                <dl class="speaker__cuts">
+                  <div><dt>Interrumpe</dt><dd>{speaker.cutsMade}</dd></div>
+                  <div><dt>Le interrumpen</dt><dd>{speaker.cutsReceived}</dd></div>
+                  {moderator && <div><dt>Le corta la moderadora</dt><dd>{speaker.moderationsReceived}</dd></div>}
+                </dl>
+              )}
+              <button type="button" class="speaker__filter" data-speaker-filter={speaker.id} aria-pressed="false">
+                Ver sus intervenciones
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+
+    <section class="container debate-section" aria-labelledby="debate-ritmo">
+      <SectionHeading title="El ritmo del debate" headingId="debate-ritmo">
+        <p>
+          Cada franja es un turno de palabra; cada marca, un corte. Arriba, los cortes cada {bin / 60} minutos; abajo, de qué se
+          habló. Pase el ratón o el foco para ver el detalle y haga clic para filtrar la transcripción.
+        </p>
+      </SectionHeading>
+
+      <div class="rhythm" role="group" aria-label="Turnos, cortes y temas a lo largo del debate">
+        <div class="rhythm__legend" aria-hidden="true">
+          <span><i class="key key--cut" /> Interrupción</span>
+          {moderator && <span><i class="key key--mod" /> Corte de la moderadora</span>}
+          <span><i class="key key--bar" /> Cortes en {bin / 60} min</span>
+          {moderator && <span><i class="key key--bar-mod trama--medium" /> de ellos, de la moderadora</span>}
+        </div>
+
+        <div class="rhythm__row rhythm__row--bins">
+          <span class="rhythm__label">Cortes</span>
+          <div class="rhythm__plot bins">
+            {bins.map((item) => (
+              <button
+                type="button"
+                class="bins__col"
+                style={`flex-grow: ${item.end - item.start}`}
+                data-bin={item.index}
+                aria-pressed="false"
+                aria-label={`${binLabel(item.index)}: ${plural(item.cuts, 'interrupción', 'interrupciones')}${moderator ? ` y ${plural(item.mods, 'corte', 'cortes')} de la moderadora` : ''}. Filtrar por este bloque`}
+                data-tip-title={binLabel(item.index)}
+                data-tip-body={`${plural(item.cuts, 'interrupción', 'interrupciones')}${moderator ? ` · ${plural(item.mods, 'corte', 'cortes')} de la moderadora` : ''}`}
+              >
+                <span class="bins__stack" style={`height: ${(item.total / maxBin) * 100}%`}>
+                  {item.mods > 0 && <span class="bins__mod trama--medium" style={`flex-grow: ${item.mods}`} />}
+                  {item.cuts > 0 && <span class="bins__cut" style={`flex-grow: ${item.cuts}`} />}
+                </span>
+                {item.index === peak.index && <span class="bins__peak">Pico</span>}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <p class="rhythm__group">Quién habla</p>
+        {laneRows.map((speaker) => (
+          <div class="rhythm__row rhythm__row--lane" style={`--party: ${colorOf(speaker.id)}`}>
+            <button type="button" class="rhythm__label rhythm__label--speaker" data-speaker-filter={speaker.id} aria-pressed="false">
+              <span class="rhythm__swatch" aria-hidden="true" />
+              <span class="rhythm__full">{speaker.name}</span>
+              <span class="rhythm__short" aria-hidden="true">{surnameOf(speaker.id)}</span>
+            </button>
+            <div class="rhythm__plot lane">
+              <svg class="lane__turns" viewBox={`0 0 ${span} 10`} preserveAspectRatio="none" aria-hidden="true">
+                {turnsOf(speaker.id).map((turn) => (
+                  <rect
+                    x={turn.start}
+                    y="3"
+                    width={Math.max(turn.end - turn.start, minWidth)}
+                    height="7"
+                    data-goto={turn.index}
+                    data-tip-title={`${clock(turn.start)} · ${speaker.name} · ${clock(turn.end - turn.start)}`}
+                    data-tip-body={cut(turn.paragraphs.join(' '), 110)}
+                  />
+                ))}
+              </svg>
+              {debate.interruptions.filter((event) => event.by === speaker.id).map((event) => (
+                <a
+                  href={`#intervencion-${event.intervention}`}
+                  class:list={['mark', event.kind === 'moderacion' ? 'mark--mod' : 'mark--cut']}
+                  style={`left: ${pct(event.start)}`}
+                  data-event
+                  data-by={event.by}
+                  data-of={event.of}
+                  data-kind={event.kind}
+                  data-topics={eventTopics(event.topics)}
+                  data-bin={Math.floor(event.start / bin)}
+                  data-tip-title={`${clock(event.start)} · ${nameOf(event.by)} ${event.kind === 'moderacion' ? 'corta' : 'interrumpe'} a ${nameOf(event.of)}`}
+                  data-tip-body={`«${event.text}»`}
+                  aria-label={`${clock(event.start)}: ${nameOf(event.by)} ${event.kind === 'moderacion' ? 'corta' : 'interrumpe'} a ${nameOf(event.of)}. Ir a la intervención`}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div class="rhythm__group rhythm__group--topics">
+          <span class="rhythm__group-title">De qué se habla</span>
+          <span class="heat-key" aria-hidden="true">
+            Menciones cada {bin / 60} min: menos
+            {[1, 2, 3, 4, 5].map((step) => <i style={`background: var(--color-heat-${step})`} />)}
+            más
+          </span>
+        </div>
+        {topTopics.map((topic) => (
+          <div class="rhythm__row rhythm__row--topic">
+            <button type="button" class="rhythm__label" data-topic={topic.id} aria-pressed="false">
+              <span>{topic.label}</span>
+            </button>
+            <div class="rhythm__plot strip">
+              {bins.map((item) => {
+                const count = topic.mentions[item.index] ?? 0;
+                const step = heatStep(count, maxMentions);
+                return (
+                  <span
+                    class="strip__cell"
+                    style={`flex-grow: ${item.end - item.start}; --heat: var(--color-heat-${step || 1}); --on-heat: var(--color-on-heat-${step || 1})`}
+                    data-step={step}
+                    data-topic-bin={`${topic.id}:${item.index}`}
+                    role="button"
+                    tabindex="-1"
+                    aria-label={`${topic.label}, ${binLabel(item.index)}: ${plural(count, 'mención', 'menciones')}`}
+                    data-tip-title={`${topic.label} · ${binLabel(item.index)}`}
+                    data-tip-body={plural(count, 'mención', 'menciones')}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        ))}
+
+        <div class="rhythm__row rhythm__row--axis" aria-hidden="true">
+          <span class="rhythm__label" />
+          <div class="rhythm__plot axis">
+            {ticks.map((seconds) => (
+              <span class="axis__tick" style={`left: ${pct(seconds)}`}>{clock(seconds)}</span>
+            ))}
+            <span class="axis__tick axis__tick--end">{clock(span)}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container duo">
+      <section class="debate-section" aria-labelledby="debate-quien">
+        <SectionHeading title="Quién interrumpe a quién" headingId="debate-quien">
+          <p>
+            {`Cada fila es quien corta; cada columna, a quién. ${
+              topPair && topPair.count > 0 ? `El cruce más repetido: ${nameOf(topPair.by)} a ${nameOf(topPair.of)}, ${plural(topPair.count, 'vez', 'veces')}. ` : ''
+            }Haga clic en una casilla para leer esos cortes.`}
+          </p>
+        </SectionHeading>
+        <div class="duo__body">
+        <ul class="sides" aria-label="Interrupciones por orador">
+          <li class="sides__head" aria-hidden="true">
+            <span />
+            <span class="sides__dir sides__dir--left">← Le interrumpen</span>
+            <span class="sides__dir">Interrumpe →</span>
+          </li>
+          {sideRows.map((row) => (
+            <li style={`--party: ${colorOf(row.speaker.id)}`}>
+              <button
+                type="button"
+                class="sides__row"
+                data-speaker-filter={row.speaker.id}
+                aria-pressed="false"
+                aria-label={`${row.speaker.name}: ${row.mod ? 'corta' : 'interrumpe'} ${plural(row.made, 'vez', 'veces')}; le interrumpen ${plural(row.byCandidates, 'vez', 'veces')}${moderator && !row.mod ? ` y la moderadora le corta ${plural(row.byModerator, 'vez', 'veces')}` : ''}. Ver sus intervenciones`}
+                data-tip-title={row.speaker.name}
+                data-tip-body={`${row.mod ? 'Corta' : 'Interrumpe'} ${plural(row.made, 'vez', 'veces')}. Le interrumpen ${plural(row.byCandidates, 'vez', 'veces')}${moderator && !row.mod ? `; la moderadora le corta ${plural(row.byModerator, 'vez', 'veces')}` : ''}.`}
+              >
+                <span class="sides__name"><span class="rhythm__swatch" aria-hidden="true" />{surnameOf(row.speaker.id)}</span>
+                <span class="sides__half sides__half--left" aria-hidden="true">
+                  <span class="sides__num">{row.byCandidates + row.byModerator}</span>
+                  {row.byModerator > 0 && <span class="sides__bar sides__bar--mod trama--medium" style={`width: ${(row.byModerator / sideMax) * 100}%`} />}
+                  <span class="sides__bar sides__bar--got" style={`width: ${(row.byCandidates / sideMax) * 100}%`} />
+                </span>
+                <span class="sides__half" aria-hidden="true">
+                  <span class:list={['sides__bar', row.mod ? 'sides__bar--mod trama--medium' : 'sides__bar--made']} style={`width: ${(row.made / sideMax) * 100}%`} />
+                  <span class="sides__num">{row.made}</span>
+                </span>
+              </button>
+            </li>
+          ))}
+          {moderator && (
+            <li class="sides__key" aria-hidden="true">
+              <span><i class="key key--bar" /> por un candidato</span>
+              <span><i class="key key--bar-mod trama--medium" /> por la moderadora</span>
+            </li>
+          )}
+        </ul>
+
+        <h3 class="sub-title">Cada cruce, uno a uno</h3>
+        <div class="matrix-wrap">
+          <table class="matrix">
+            <caption class="sr-only">Número de cortes de cada hablante (filas) a cada hablante (columnas)</caption>
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Quién corta</span><span aria-hidden="true">Corta ↓ · a →</span></th>
+                {people.map((col) => (
+                  <th scope="col" style={`--party: ${colorOf(col.id)}`}>
+                    <span class="matrix__col"><span class="rhythm__swatch" aria-hidden="true" />{surnameOf(col.id)}</span>
+                  </th>
+                ))}
+                <th scope="col" class="matrix__total">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {matrixRows.map((row) => {
+                const mod = isModerator(row);
+                const max = mod ? moderatorMax : candidateMax;
+                const rowTotal = people.reduce((total, col) => total + pairCount(row.id, col.id), 0);
+                return (
+                  <tr class:list={{ 'matrix__mod-row': mod }}>
+                    <th scope="row" style={`--party: ${colorOf(row.id)}`}>
+                      <span class="matrix__row"><span class="rhythm__swatch" aria-hidden="true" />{surnameOf(row.id)}</span>
+                      {mod && <span class="matrix__note">moderadora</span>}
+                    </th>
+                    {people.map((col) => {
+                      const count = pairCount(row.id, col.id);
+                      if (row.id === col.id) return <td class="matrix__self" aria-label="No aplica">—</td>;
+                      const step = heatStep(count, max);
+                      return (
+                        <td>
+                          <button
+                            type="button"
+                            class="matrix__cell"
+                            style={`--heat: var(--color-heat-${step || 1}); --on-heat: var(--color-on-heat-${step || 1})`}
+                            data-step={step}
+                            data-pair={`${row.id}|${col.id}`}
+                            aria-pressed="false"
+                            aria-label={`${row.name} ${mod ? 'corta' : 'interrumpe'} a ${col.name}: ${plural(count, 'vez', 'veces')}. Ver en la transcripción`}
+                            disabled={count === 0}
+                          >
+                            {count}
+                          </button>
+                        </td>
+                      );
+                    })}
+                    <td class="matrix__total">{rowTotal}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row">Recibe</th>
+                {people.map((col) => (
+                  <td class="matrix__total">{debate.interruptions.filter((event) => event.of === col.id).length}</td>
+                ))}
+                <td class="matrix__total">{debate.interruptions.length}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        </div>
+      </section>
+
+      <section class="debate-section" aria-labelledby="debate-tension" id="debate-tension-section">
+        <SectionHeading title="El momento más tenso" headingId="debate-tension">
+          <p>
+            {binLabel(peak.index)}: {plural(peak.cuts, 'interrupción', 'interrupciones')}{moderator && ` y ${plural(peak.mods, 'corte', 'cortes')} de la moderadora`}.
+            Desplácese dentro del recuadro para leerlos todos.
+          </p>
+        </SectionHeading>
+        <div class="duo__body">
+        <div class="clash-scroll" tabindex="0" role="region" aria-label={`Los ${peakEvents.length} cortes de ${binLabel(peak.index)}`}>
+        <ol class="clash">
+          {peakEvents.map((event) => (
+            <li class="clash__item">
+              <a
+                href={`#intervencion-${event.intervention}`}
+                class="clash__link"
+                data-event
+                data-by={event.by}
+                data-of={event.of}
+                data-kind={event.kind}
+                data-topics={eventTopics(event.topics)}
+                data-bin={Math.floor(event.start / bin)}
+              >
+                <span class="clash__before" style={`--party: ${colorOf(event.of)}`}>
+                  <span class="clash__who">{nameOf(event.of)}</span>
+                  <span class="clash__said">{event.before}</span>
+                </span>
+                <span class="clash__cut" style={`--party: ${colorOf(event.by)}`}>
+                  <time>{clock(event.start)}</time>
+                  <span class="clash__who">
+                    {nameOf(event.by)}
+                    <span class="clash__kind">{event.kind === 'moderacion' ? 'corta' : 'interrumpe'}</span>
+                  </span>
+                  <span class="clash__said">«{cut(event.text, 140)}»</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        </div>
+        <button type="button" class="peak__filter" data-bin={peak.index} aria-pressed="false">Leer este bloque en la transcripción</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="container debate-section transcript-section" aria-labelledby="debate-transcripcion">
+      <SectionHeading title="Transcripción" headingId="debate-transcripcion">
+        <p>
+          Cada intervención con la hora a la que empieza. Las interjecciones cortas aparecen como un aparte.
+        </p>
+      </SectionHeading>
+
+      <div class="reader">
+        <aside class="reader__side" aria-label="Filtrar la transcripción">
+          <p class="reader__count" id="debate-count" aria-live="polite">
+            {number(debate.interventions.length)} de {number(debate.interventions.length)} intervenciones
+          </p>
+          <label class="field">
+            <span class="field__label">Buscar en el texto</span>
+            <input id="debate-search" class="field__input" type="search" placeholder="Por ejemplo: alquiler" autocomplete="off" />
+          </label>
+          <details class="filters" id="debate-filters" open>
+            <summary>Filtros</summary>
+            <div class="filters__group" role="group" aria-label="Cortes">
+              <p class="filters__title">Cortes</p>
+              <div class="seg">
+                <button type="button" data-kind-filter="" aria-pressed="true">Todo</button>
+                <button type="button" data-kind-filter="any" aria-pressed="false">Con corte</button>
+                <button type="button" data-kind-filter="interrupcion" aria-pressed="false">Interrupciones</button>
+                {moderator && <button type="button" data-kind-filter="moderacion" aria-pressed="false">Moderadora</button>}
+              </div>
+            </div>
+            <div class="filters__group" role="group" aria-label="Hablante">
+              <p class="filters__title">Hablante</p>
+              <div class="pills">
+                {laneRows.map((speaker) => (
+                  <button type="button" class="pill" data-speaker-filter={speaker.id} aria-pressed="false" style={`--party: ${colorOf(speaker.id)}`}>
+                    <span class="rhythm__swatch" aria-hidden="true" />{speaker.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div class="filters__group" role="group" aria-label="Tema">
+              <p class="filters__title">Tema</p>
+              <div class="pills">
+                {topTopics.map((topic) => (
+                  <button type="button" class="pill" data-topic={topic.id} aria-pressed="false">{topic.label}</button>
+                ))}
+              </div>
+            </div>
+            <div class="filters__group range-filter" role="group" aria-label="Rango de tiempo">
+              <p class="filters__title">Tiempo</p>
+              <div class="range-filter__fields">
+                <label class="field">
+                  <span class="field__label">Desde</span>
+                  <input id="range-from" class="field__input" inputmode="numeric" placeholder="0:00" />
+                </label>
+                <label class="field">
+                  <span class="field__label">Hasta</span>
+                  <input id="range-to" class="field__input" inputmode="numeric" placeholder={clock(span)} />
+                </label>
+              </div>
+              <p class="field__hint" id="range-hint">Como 1:02:03 o 02:03. Vacío: sin límite.</p>
+            </div>
+          </details>
+          <div class="chips" id="debate-chips" />
+          <p class="reader__note">
+            Un corte se marca cuando el audio tiene voces a la vez en el cambio de turno, la frase anterior queda a medias o hay
+            una interjección corta. No cuenta el saludo ni la respuesta a una pregunta de la moderadora. Es una aproximación: revise
+            el fragmento antes de citarlo.
+          </p>
+        </aside>
+
+        <ol class="transcript">
+          {debate.interventions.map((intervention, index) => {
+            const speaker = speakerOf(intervention.speaker);
+            const previous = debate.interventions[index - 1];
+            const next = debate.interventions[index + 1];
+            const aside = intervention.cut && wordsOf(intervention.paragraphs) <= ASIDE_WORDS;
+            const mod = isModerator(speaker);
+            const cutBy = intervention.cutOff && next ? next : null;
+            return (
+              <li
+                id={`intervencion-${index}`}
+                class:list={['turn', { 'turn--aside': aside, 'turn--moderator': mod, 'turn--cut': intervention.cut }]}
+                data-speaker={intervention.speaker}
+                data-start={intervention.start}
+                data-topics={eventTopics(intervention.topics)}
+                data-kind={intervention.cut ? intervention.kind ?? 'interrupcion' : ''}
+                data-of={intervention.cut && previous ? previous.speaker : ''}
+                data-cutby={cutBy ? cutBy.speaker : ''}
+                data-cutby-kind={cutBy ? cutBy.kind ?? 'interrupcion' : ''}
+                style={`--party: ${colorOf(intervention.speaker)}`}
+              >
+                <p class="turn__head">
+                  <a class="turn__time" href={`#intervencion-${index}`} aria-label={`Enlace a la intervención de las ${clock(intervention.start)}`}>
+                    <time>{clock(intervention.start)}</time>
+                  </a>
+                  <span class="turn__speaker">{speaker.name}</span>
+                  {speaker.role && <span class="turn__role">{speaker.role}</span>}
+                  {intervention.cut && (
+                    <span class:list={['turn__flag', { 'turn__flag--mod': intervention.kind === 'moderacion' }]}>
+                      {intervention.kind === 'moderacion' ? 'Corta' : 'Interrumpe'}
+                      {previous && ` a ${surnameOf(previous.speaker)}`}
+                    </span>
+                  )}
+                </p>
+                <div class="turn__body">
+                  {flow(intervention.paragraphs).map((paragraph) => (
+                    <p class="turn__text">{paragraph}</p>
+                  ))}
+                </div>
+                {cutBy && (
+                  <p class="turn__cutoff">
+                    <span aria-hidden="true">⟋</span> {cutBy.kind === 'moderacion' ? 'Le corta' : 'Le interrumpe'} {nameOf(cutBy.speaker)}
+                  </p>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+
+        <nav class="minimap" aria-label="Mapa del debate: haga clic para ir a ese momento">
+          <div class="minimap__track" id="debate-minimap" data-span={span}>
+            {[0, ...ticks.slice(1)].filter((seconds) => seconds % 1800 === 0).map((seconds) => (
+              <span class="minimap__tick" style={`top: ${pct(seconds)}`}>{clock(seconds)}</span>
+            ))}
+            <div class="minimap__lanes" aria-hidden="true">
+              {laneRows.map((speaker) => (
+                <div class="minimap__lane" style={`--party: ${colorOf(speaker.id)}`} title={speaker.name}>
+                  {turnsOf(speaker.id).map((turn) => (
+                    <span style={`top: ${pct(turn.start)}; height: max(1px, ${pct(turn.end - turn.start)})`} />
+                  ))}
+                </div>
+              ))}
+            </div>
+            <span class="minimap__now" id="debate-now" aria-hidden="true"><span>00:00</span></span>
+          </div>
+        </nav>
+      </div>
+      <p class="transcript__empty" id="debate-empty" hidden>Ninguna intervención cumple los filtros.</p>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  const root = document.getElementById('debate-explorador') as HTMLElement;
+  const binSeconds = Number(root.dataset.binSeconds);
+  const turns = Array.from(root.querySelectorAll<HTMLElement>('.turn'));
+  const countEl = document.getElementById('debate-count') as HTMLElement;
+  const emptyEl = document.getElementById('debate-empty') as HTMLElement;
+  const chipsEl = document.getElementById('debate-chips') as HTMLElement;
+  const searchEl = document.getElementById('debate-search') as HTMLInputElement;
+  const fromEl = document.getElementById('range-from') as HTMLInputElement;
+  const toEl = document.getElementById('range-to') as HTMLInputElement;
+  const hintEl = document.getElementById('range-hint') as HTMLElement;
+  const filtersEl = document.getElementById('debate-filters') as HTMLDetailsElement;
+  const tip = document.getElementById('chart-tip') as HTMLElement;
+  const tipTitle = tip.querySelector('.chart-tip__title') as HTMLElement;
+  const tipBody = tip.querySelector('.chart-tip__body') as HTMLElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // On a narrow screen the filters start closed, so the transcript is near the top.
+  if (window.matchMedia('(max-width: 899px)').matches) filtersEl.open = false;
+
+  type Kind = '' | 'any' | 'interrupcion' | 'moderacion';
+  type State = {
+    kind: Kind;
+    speaker: string | null;
+    topic: string | null;
+    bin: number | null;
+    pair: string | null;
+    from: number | null;
+    to: number | null;
+    query: string;
+  };
+  const state: State = { kind: '', speaker: null, topic: null, bin: null, pair: null, from: null, to: null, query: '' };
+
+  const fold = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const texts = turns.map((turn) => fold(turn.querySelector('.turn__body')?.textContent ?? ''));
+
+  const clock = (seconds: number) => {
+    const total = Math.floor(seconds);
+    const hours = Math.floor(total / 3600);
+    const minutes = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+    const secs = String(total % 60).padStart(2, '0');
+    return hours ? `${hours}:${minutes}:${secs}` : `${minutes}:${secs}`;
+  };
+  const binLabel = (index: number) => `${clock(index * binSeconds)}–${clock((index + 1) * binSeconds)}`;
+  const topicsOf = (element: HTMLElement | SVGElement) => (element.dataset.topics ?? '').split(' ').filter(Boolean);
+  const nameOf = (speakerId: string) =>
+    root.querySelector(`.pill[data-speaker-filter="${speakerId}"]`)?.textContent?.trim() ?? speakerId;
+  const topicName = (topicId: string) => root.querySelector(`.pill[data-topic="${topicId}"]`)?.textContent?.trim() ?? topicId;
+  const kindLabels: Record<string, string> = { any: 'Con corte', interrupcion: 'Interrupciones', moderacion: 'Cortes de la moderadora' };
+
+  const hasFilter = () =>
+    state.kind !== '' ||
+    state.speaker !== null ||
+    state.topic !== null ||
+    state.bin !== null ||
+    state.pair !== null ||
+    state.from !== null ||
+    state.to !== null ||
+    state.query.length > 0;
+
+  // Accepts 1:02:03, 02:03, 02:03.5 or seconds. Empty means no limit (null). Anything else is NaN.
+  const parseTime = (text: string): number | null => {
+    const value = text.trim();
+    if (value === '') return null;
+    if (/^\d+(\.\d+)?$/.test(value)) return Number(value);
+    const parts = value.split(':');
+    if (parts.length < 2 || parts.length > 3) return NaN;
+    if (!parts.every((part) => /^\d+(\.\d+)?$/.test(part))) return NaN;
+    return parts.map(Number).reduce((total, part) => total * 60 + part, 0);
+  };
+
+  const matchesKind = (turn: HTMLElement) => {
+    const own = turn.dataset.kind ?? '';
+    const received = turn.dataset.cutbyKind ?? '';
+    if (state.kind === '') return true;
+    if (state.kind === 'any') return own !== '' || received !== '';
+    return own === state.kind || received === state.kind;
+  };
+  const matchesPair = (turn: HTMLElement) => {
+    if (state.pair === null) return true;
+    const [by, of] = state.pair.split('|');
+    return (turn.dataset.speaker === by && turn.dataset.of === of) || (turn.dataset.speaker === of && turn.dataset.cutby === by);
+  };
+
+  const renderChips = () => {
+    chipsEl.replaceChildren();
+    const add = (label: string, key: string) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chip';
+      chip.dataset.clear = key;
+      chip.textContent = `${label} ×`;
+      chip.setAttribute('aria-label', `Quitar el filtro ${label}`);
+      chipsEl.append(chip);
+    };
+    if (state.query) add(`«${searchEl.value.trim()}»`, 'query');
+    if (state.kind) add(kindLabels[state.kind], 'kind');
+    if (state.pair) {
+      const [by, of] = state.pair.split('|');
+      add(`${nameOf(by)} → ${nameOf(of)}`, 'pair');
+    }
+    if (state.speaker) add(nameOf(state.speaker), 'speaker');
+    if (state.topic) add(topicName(state.topic), 'topic');
+    if (state.bin !== null) add(binLabel(state.bin), 'bin');
+    if (state.from !== null || state.to !== null) {
+      add(`${state.from !== null ? clock(state.from) : '0:00'} – ${state.to !== null ? clock(state.to) : 'final'}`, 'range');
+    }
+    if (hasFilter()) {
+      const reset = document.createElement('button');
+      reset.type = 'button';
+      reset.className = 'chip chip--reset';
+      reset.dataset.reset = '';
+      reset.textContent = 'Quitar todos los filtros';
+      chipsEl.append(reset);
+    }
+  };
+
+  // The search words are marked with the CSS Custom Highlight API, which does not change the text. Without it, the
+  // search still filters.
+  const highlights = (CSS as unknown as { highlights?: Map<string, unknown> }).highlights;
+  const markQuery = () => {
+    if (!highlights || typeof (window as unknown as { Highlight?: unknown }).Highlight !== 'function') return;
+    highlights.delete('debate-search');
+    if (state.query.length < 2) return;
+    const ranges: Range[] = [];
+    turns.forEach((turn) => {
+      if (turn.hidden) return;
+      turn.querySelectorAll('.turn__text').forEach((paragraph) => {
+        const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+        let node = walker.nextNode();
+        while (node) {
+          const text = fold(node.textContent ?? '');
+          let at = text.indexOf(state.query);
+          while (at !== -1 && ranges.length < 2000) {
+            const range = new Range();
+            range.setStart(node, at);
+            range.setEnd(node, at + state.query.length);
+            ranges.push(range);
+            at = text.indexOf(state.query, at + state.query.length);
+          }
+          node = walker.nextNode();
+        }
+      });
+    });
+    const HighlightCtor = (window as unknown as { Highlight: new (...ranges: Range[]) => unknown }).Highlight;
+    highlights.set('debate-search', new HighlightCtor(...ranges));
+  };
+
+  const apply = () => {
+    let shown = 0;
+    turns.forEach((turn, index) => {
+      const start = Number(turn.dataset.start);
+      const visible =
+        matchesKind(turn) &&
+        matchesPair(turn) &&
+        (state.speaker === null || turn.dataset.speaker === state.speaker) &&
+        (state.topic === null || topicsOf(turn).includes(state.topic)) &&
+        (state.bin === null || Math.floor(start / binSeconds) === state.bin) &&
+        (state.from === null || start >= state.from) &&
+        (state.to === null || start <= state.to) &&
+        (state.query === '' || texts[index].includes(state.query));
+      turn.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    countEl.textContent = `${shown.toLocaleString('es-ES')} de ${turns.length.toLocaleString('es-ES')} intervenciones`;
+    emptyEl.hidden = shown > 0;
+
+    root.querySelectorAll<HTMLElement>('[data-kind-filter]').forEach((button) =>
+      button.setAttribute('aria-pressed', String(button.dataset.kindFilter === state.kind)),
+    );
+    root.querySelectorAll<HTMLElement>('[data-speaker-filter]').forEach((button) =>
+      button.setAttribute('aria-pressed', String(button.dataset.speakerFilter === state.speaker)),
+    );
+    root.querySelectorAll<HTMLElement>('[data-topic]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.topic === state.topic)));
+    root.querySelectorAll<HTMLElement>('[data-pair]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.pair === state.pair)));
+    root.querySelectorAll<HTMLElement>('button[data-bin]').forEach((element) => {
+      element.setAttribute('aria-pressed', String(state.bin !== null && Number(element.dataset.bin) === state.bin));
+    });
+    root.querySelectorAll<HTMLElement>('[data-topic-bin]').forEach((cell) => {
+      const [topic, binIndex] = (cell.dataset.topicBin ?? '').split(':');
+      cell.classList.toggle('is-selected', state.topic === topic && state.bin === Number(binIndex));
+    });
+
+    // The marks of the charts that do not match the filter fade out.
+    root.querySelectorAll<HTMLElement>('[data-event]').forEach((mark) => {
+      const [by, of] = state.pair ? state.pair.split('|') : [null, null];
+      const matches =
+        (state.speaker === null || mark.dataset.by === state.speaker || mark.dataset.of === state.speaker) &&
+        (state.topic === null || topicsOf(mark).includes(state.topic)) &&
+        (state.bin === null || Number(mark.dataset.bin) === state.bin) &&
+        (state.kind === '' || state.kind === 'any' || mark.dataset.kind === state.kind) &&
+        (by === null || (mark.dataset.by === by && mark.dataset.of === of));
+      mark.classList.toggle('is-dim', !matches);
+    });
+
+    renderChips();
+    markQuery();
+  };
+
+  const scrollToTranscript = () => {
+    document.getElementById('debate-transcripcion')?.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+  };
+  const scrollToTurn = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'center' });
+  };
+
+  const toggle = <K extends 'speaker' | 'topic' | 'bin' | 'pair'>(key: K, value: State[K]) => {
+    state[key] = (state[key] === value ? null : value) as State[K];
+  };
+
+  const resetAll = () => {
+    state.kind = '';
+    state.speaker = null;
+    state.topic = null;
+    state.bin = null;
+    state.pair = null;
+    state.from = null;
+    state.to = null;
+    state.query = '';
+    fromEl.value = '';
+    toEl.value = '';
+    searchEl.value = '';
+  };
+
+  root.addEventListener('click', (event) => {
+    const target = event.target as Element;
+
+    // A mark or a line of «el momento más tenso»: show its block and go to the intervention.
+    const link = target.closest<HTMLAnchorElement>('a[data-event]');
+    if (link) {
+      event.preventDefault();
+      resetAll();
+      state.bin = Number(link.dataset.bin);
+      apply();
+      scrollToTurn(link.getAttribute('href')?.slice(1) ?? '');
+      return;
+    }
+    // A turn of a lane: go to that intervention, with no filter.
+    const turnMark = target.closest<SVGElement>('[data-goto]');
+    if (turnMark) {
+      resetAll();
+      apply();
+      scrollToTurn(`intervencion-${turnMark.dataset.goto}`);
+      return;
+    }
+    // A cell of a topic strip: that topic in that block.
+    const cell = target.closest<HTMLElement>('[data-topic-bin]');
+    if (cell) {
+      const [topic, binIndex] = (cell.dataset.topicBin ?? '').split(':');
+      const same = state.topic === topic && state.bin === Number(binIndex);
+      state.topic = same ? null : topic;
+      state.bin = same ? null : Number(binIndex);
+      apply();
+      if (!same) scrollToTranscript();
+      return;
+    }
+
+    const control = target.closest<HTMLElement>('[data-reset], [data-kind-filter], [data-speaker-filter], [data-topic], [data-bin], [data-pair], [data-clear]');
+    if (!control) return;
+    const fromChart = control.closest('.reader') === null;
+
+    if (control.hasAttribute('data-reset')) {
+      resetAll();
+    } else if (control.dataset.kindFilter !== undefined) {
+      state.kind = control.dataset.kindFilter as Kind;
+    } else if (control.dataset.speakerFilter !== undefined) {
+      toggle('speaker', control.dataset.speakerFilter);
+    } else if (control.dataset.topic !== undefined) {
+      toggle('topic', control.dataset.topic);
+    } else if (control.dataset.pair !== undefined) {
+      toggle('pair', control.dataset.pair);
+    } else if (control.dataset.bin !== undefined && control.dataset.bin !== '') {
+      toggle('bin', Number(control.dataset.bin));
+    } else if (control.dataset.clear !== undefined) {
+      const key = control.dataset.clear;
+      if (key === 'kind') state.kind = '';
+      if (key === 'speaker') state.speaker = null;
+      if (key === 'topic') state.topic = null;
+      if (key === 'bin') state.bin = null;
+      if (key === 'pair') state.pair = null;
+      if (key === 'query') {
+        state.query = '';
+        searchEl.value = '';
+      }
+      if (key === 'range') {
+        state.from = null;
+        state.to = null;
+        fromEl.value = '';
+        toEl.value = '';
+      }
+    }
+    apply();
+    if (fromChart && hasFilter()) scrollToTranscript();
+  });
+
+  // Keyboard: an element with role="button" works with Enter and Space.
+  root.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    const element = event.target as HTMLElement;
+    if (element.getAttribute('role') === 'button') {
+      event.preventDefault();
+      element.click();
+    }
+  });
+
+  // The search filters while the reader types, after a short pause.
+  let searchTimer = 0;
+  searchEl.addEventListener('input', () => {
+    window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(() => {
+      state.query = fold(searchEl.value.trim());
+      apply();
+    }, 180);
+  });
+
+  // The time range: «Desde» and «Hasta», in the same format as the transcript times.
+  const readRange = (input: HTMLInputElement, key: 'from' | 'to') => {
+    const value = parseTime(input.value);
+    if (Number.isNaN(value)) {
+      input.setAttribute('aria-invalid', 'true');
+      hintEl.textContent = 'Tiempo no válido. Escríbalo como 1:02:03 o 02:03.';
+      state[key] = null;
+    } else {
+      input.removeAttribute('aria-invalid');
+      hintEl.textContent = 'Como 1:02:03 o 02:03. Vacío: sin límite.';
+      state[key] = value;
+    }
+    apply();
+  };
+  fromEl.addEventListener('change', () => readRange(fromEl, 'from'));
+  toEl.addEventListener('change', () => readRange(toEl, 'to'));
+
+  // The tooltip: shown for each mark, bar, turn and cell that carries data-tip-title.
+  const showTip = (element: Element, x: number | null, y: number | null) => {
+    const data = (element as HTMLElement).dataset;
+    tipTitle.textContent = data.tipTitle ?? '';
+    tipBody.textContent = data.tipBody ?? '';
+    tip.hidden = false;
+    const box = root.getBoundingClientRect();
+    const anchor = element.getBoundingClientRect();
+    const left = x !== null ? x - box.left + 14 : anchor.left - box.left;
+    const top = y !== null ? y - box.top + 18 : anchor.bottom - box.top + 6;
+    tip.style.left = `${Math.max(4, Math.min(left, box.width - tip.offsetWidth - 4))}px`;
+    tip.style.top = `${top}px`;
+  };
+  const hideTip = () => {
+    tip.hidden = true;
+  };
+  root.addEventListener('pointerover', (event) => {
+    const element = (event.target as Element).closest('[data-tip-title]');
+    if (element) showTip(element, event.clientX, event.clientY);
+  });
+  root.addEventListener('pointermove', (event) => {
+    const element = (event.target as Element).closest('[data-tip-title]');
+    if (element && !tip.hidden) showTip(element, event.clientX, event.clientY);
+  });
+  root.addEventListener('pointerout', (event) => {
+    if ((event.target as Element).closest('[data-tip-title]')) hideTip();
+  });
+  root.addEventListener('focusin', (event) => {
+    const element = (event.target as Element).closest('[data-tip-title]');
+    if (element) showTip(element, null, null);
+  });
+  root.addEventListener('focusout', hideTip);
+
+  // The map of the debate beside the transcript: the marker follows the reading position, and a click goes to the
+  // first visible intervention from that moment.
+  const minimap = document.getElementById('debate-minimap') as HTMLElement;
+  const nowEl = document.getElementById('debate-now') as HTMLElement;
+  const span = Number(minimap.dataset.span);
+  let ticking = false;
+  const follow = () => {
+    ticking = false;
+    if (minimap.offsetParent === null) return;
+    const line = window.innerHeight * 0.3;
+    const current = turns.find((turn) => !turn.hidden && turn.getBoundingClientRect().bottom > line);
+    if (!current) return;
+    const start = Number(current.dataset.start);
+    nowEl.style.top = `${(start / span) * 100}%`;
+    (nowEl.firstElementChild as HTMLElement).textContent = clock(start);
+  };
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(follow);
+      }
+    },
+    { passive: true },
+  );
+  minimap.addEventListener('click', (event) => {
+    const box = minimap.getBoundingClientRect();
+    const seconds = ((event.clientY - box.top) / box.height) * span;
+    const target = turns.find((turn) => !turn.hidden && Number(turn.dataset.start) >= seconds) ?? turns.filter((turn) => !turn.hidden).pop();
+    if (target) target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  apply();
+  follow();
+</script>
+
+<style>
+  /* On a very wide screen (or zoomed out) the charts stretch flat and the transcript sits at the left. The content
+     of this page stops at 1680px and stays in the centre; the borders of the hero still take the full width. */
+  .page-hero > .container,
+  #debate-explorador > .container { max-width: 1680px; }
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12vw, 8.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; margin: 0 0 var(--space-3); }
+  .source { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 0 0 var(--space-6); font-size: var(--text-sm); font-weight: 700; }
+  .source > :not(a) + :not(a)::before { content: '·'; margin-right: 14px; }
+  .source a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 12px;
+    border: var(--border-fine) solid var(--color-ink);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .source a:hover,
+  .source a:focus-visible { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+  /* The key figures: a row of cells joined by their borders, like the rest of the site. */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    margin: 0;
+    border-top: var(--border-thick) solid var(--color-ink);
+  }
+  .stats__item { padding: var(--space-4) var(--space-4) var(--space-5) 0; border-right: var(--border-fine) solid var(--color-ink); }
+  .stats__item + .stats__item { padding-left: var(--space-4); }
+  .stats__item:last-child { border-right: 0; }
+  .stats dt { font-size: var(--text-sm); font-weight: 700; }
+  .stats dd { margin: 4px 0 0; font: 900 clamp(2.25rem, 6vw, 3.5rem) / 1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .stats dd a { color: inherit; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+  @media (max-width: 560px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stats__item { border-bottom: var(--border-fine) solid var(--color-ink); }
+    .stats__item:nth-child(2n) { border-right: 0; }
+    .stats__item:nth-child(2n + 1) { padding-left: 0; }
+  }
+
+  #debate-explorador { position: relative; padding-top: var(--space-7); }
+  .debate-section { margin-bottom: var(--space-8); }
+
+  .chart-tip {
+    position: absolute;
+    z-index: var(--z-tooltip);
+    max-width: min(340px, 86vw);
+    padding: 8px 10px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-size: var(--text-xs);
+    line-height: 1.4;
+    pointer-events: none;
+  }
+  .chart-tip[hidden] { display: none; }
+  .chart-tip__title { display: block; font-weight: 800; }
+  .chart-tip__body { display: block; }
+
+  /* ---- Speakers ---- */
+  .speakers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); }
+  .speaker {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: var(--border-thick) solid var(--color-ink);
+    border-top: 12px solid var(--party);
+    background: var(--color-paper);
+  }
+  .speaker--moderator { border-top-color: var(--color-ink); }
+  .speaker__head { display: flex; gap: 10px; align-items: flex-start; }
+  .speaker__swatch { flex: none; width: 14px; height: 14px; margin-top: 6px; background: var(--party); border: var(--border-fine) solid var(--color-ink); }
+  .speaker__name { margin: 0; font: 800 1.125rem / 1.2 var(--font-body); text-transform: none; }
+  .speaker__role { margin: 2px 0 0; font-size: var(--text-sm); color: var(--color-ink-muted); }
+  .speaker__minutes { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; font-weight: 700; }
+  .speaker__minutes strong { font: 900 2.75rem / 1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .speaker__share { flex-basis: 100%; font-size: var(--text-sm); font-weight: 600; color: var(--color-ink-muted); }
+  .speaker__bar { display: block; height: 12px; border: var(--border-fine) solid var(--color-ink); }
+  .speaker__bar span { display: block; height: 100%; background: var(--party); }
+  .speaker__facts,
+  .speaker__cuts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; margin: 0; }
+  .speaker__cuts { padding-top: var(--space-3); border-top: var(--border-fine) solid var(--color-ink); }
+  .speaker__facts dt,
+  .speaker__cuts dt { font-size: var(--text-xs); color: var(--color-ink-muted); }
+  .speaker__facts dd,
+  .speaker__cuts dd { margin: 0; font-weight: 800; font-size: 1.125rem; font-variant-numeric: tabular-nums; }
+  @media (max-width: 640px) {
+    .speakers { gap: var(--space-3); }
+    .speaker { padding: var(--space-3); gap: var(--space-2); }
+    .speaker__minutes strong { font-size: 2.25rem; }
+    .speaker__facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .speaker__cuts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .speaker__filter {
+    margin-top: auto;
+    min-height: 40px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 var(--text-sm) var(--font-body);
+    cursor: pointer;
+  }
+  .speaker__filter:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .speaker__filter[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+
+  /* ---- Rhythm: a grid of rows that share one time axis ---- */
+  .rhythm { --label: 170px; border: var(--border-thick) solid var(--color-ink); padding: var(--space-4); background: var(--color-paper); }
+  .rhythm__legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 var(--space-4); font-size: var(--text-sm); font-weight: 600; }
+  .rhythm__legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .key { display: inline-block; width: 12px; height: 12px; border: var(--border-fine) solid var(--color-ink); }
+  .key--cut { background: var(--color-highlight); transform: rotate(45deg) scale(0.85); }
+  .key--mod { background: var(--color-paper); }
+  .key--bar { background: var(--color-ink); }
+  .key--bar-mod { color: var(--color-ink); background-color: var(--color-paper); }
+
+  .rhythm__row { display: grid; grid-template-columns: var(--label) 1fr; align-items: stretch; }
+  .rhythm__label {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 10px;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1.2;
+    min-width: 0;
+  }
+  button.rhythm__label { cursor: pointer; }
+  button.rhythm__label:hover,
+  button.rhythm__label[aria-pressed='true'] { background: var(--color-highlight); color: var(--color-on-highlight); }
+  button.rhythm__label:focus-visible { outline: 3px solid var(--color-ink); outline-offset: -3px; }
+  .rhythm__swatch { flex: none; display: inline-block; width: 12px; height: 12px; background: var(--party); border: var(--border-fine) solid var(--color-ink); }
+  .rhythm__short { display: none; }
+  .rhythm__plot { position: relative; min-width: 0; }
+  .rhythm__group { margin: var(--space-4) 0 var(--space-2); font-weight: 800; font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.04em; }
+  .rhythm__group--topics { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
+  .heat-key { display: inline-flex; align-items: center; gap: 3px; text-transform: none; letter-spacing: 0; font-weight: 600; color: var(--color-ink-muted); }
+  .heat-key i { display: inline-block; width: 16px; height: 12px; border: 1px solid var(--color-ink-muted); }
+  .heat-key i:first-child { margin-left: 4px; }
+  .heat-key i:last-child { margin-right: 4px; }
+
+  .bins { display: flex; align-items: flex-end; gap: 2px; height: 96px; border-bottom: var(--border-fine) solid var(--color-ink); }
+  .bins__col {
+    all: unset;
+    position: relative;
+    flex-basis: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+  .bins__col:hover,
+  .bins__col[aria-pressed='true'] { background: var(--color-highlight); }
+  .bins__col:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 1px; }
+  .bins__stack { display: flex; flex-direction: column; width: 100%; }
+  .bins__cut { display: block; flex-basis: 0; background: var(--color-ink); }
+  .bins__mod { display: block; flex-basis: 0; color: var(--color-ink); border: var(--border-fine) solid var(--color-ink); border-bottom: 0; }
+  .bins__peak {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 4px;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .rhythm__row--lane { min-height: 34px; border-bottom: var(--border-fine) dotted var(--color-ink-muted); }
+  .lane { height: 34px; }
+  .lane__turns { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .lane__turns rect { fill: var(--party); cursor: pointer; }
+  .lane__turns rect:hover { fill: var(--color-highlight); }
+  .mark {
+    position: absolute;
+    top: 0;
+    width: 11px;
+    height: 11px;
+    margin-left: -5.5px;
+    border: var(--border-fine) solid var(--color-ink);
+    z-index: 1;
+  }
+  .mark::before { content: ''; position: absolute; inset: -6px; }
+  .mark--cut { background: var(--color-highlight); transform: rotate(45deg) scale(0.85); }
+  .mark--mod { background: var(--color-paper); }
+  .mark:hover,
+  .mark:focus-visible { background: var(--color-ink); outline: none; z-index: 2; }
+  .mark.is-dim { opacity: 0.15; }
+
+  .strip { display: flex; gap: 2px; height: 24px; margin: 2px 0; }
+  .strip__cell { flex-basis: 0; background: var(--heat); cursor: pointer; }
+  .strip__cell[data-step='0'] { background: transparent; box-shadow: inset 0 -1.5px 0 var(--color-ink-muted); }
+  .strip__cell:hover,
+  .strip__cell.is-selected { outline: 3px solid var(--color-highlight); outline-offset: -1px; box-shadow: inset 0 0 0 4px var(--color-ink); }
+
+  .axis { height: 26px; border-top: var(--border-fine) solid var(--color-ink); margin-top: var(--space-2); }
+  .axis__tick { position: absolute; top: 4px; transform: translateX(-50%); font-size: var(--text-xs); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .axis__tick:first-child { transform: none; }
+  .axis__tick--end { left: auto; right: 0; transform: none; }
+
+  @media (max-width: 640px) {
+    .rhythm { --label: 84px; padding: var(--space-3); margin: 0 calc(var(--gutter) * -0.5); }
+    .rhythm__full { display: none; }
+    .rhythm__short { display: inline; overflow: hidden; text-overflow: ellipsis; }
+    .rhythm__label { font-size: 0.8125rem; gap: 5px; padding-right: 6px; }
+    .bins { height: 72px; }
+    .bins__peak { display: none; }
+    .axis__tick:nth-child(even):not(.axis__tick--end),
+    .axis__tick--end { display: none; }
+    .matrix__note { display: none; }
+    .matrix__cell { min-width: 40px; height: 44px; }
+    .matrix thead th:first-child span[aria-hidden='true'] { display: none; }
+  }
+  .rhythm__label > span:not(.rhythm__swatch) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* ---- Who interrupts whom and the most tense moment, side by side on a wide screen ---- */
+  .duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); }
+  @media (max-width: 1100px) { .duo { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+  /* Side by side, the two sections share two rows (title, content) through a subgrid: the contents start at the same
+     height even when one title takes two lines, and the box of cuts grows to end with the matrix. */
+  .duo__body { display: flex; flex-direction: column; }
+  @media (min-width: 1101px) {
+    .duo { grid-template-rows: auto 1fr; }
+    .duo > section { display: grid; grid-row: span 2; grid-template-rows: subgrid; }
+    .duo .clash-scroll { flex: 1 1 0; min-height: 360px; max-height: none; }
+    .duo .peak__filter { align-self: flex-start; }
+  }
+
+  .sides { list-style: none; margin: 0 0 var(--space-5); padding: var(--space-4); display: grid; gap: 6px; border: var(--border-thick) solid var(--color-ink); background: var(--color-paper); }
+  .sides__head,
+  .sides__row { display: grid; grid-template-columns: 110px 1fr 1fr; align-items: center; }
+  .sides__dir { font-size: var(--text-xs); font-weight: 700; padding-left: 8px; }
+  .sides__dir--left { text-align: right; padding: 0 8px 0 0; }
+  .sides__row {
+    all: unset;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 110px 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    min-height: 36px;
+    cursor: pointer;
+  }
+  .sides__row:hover,
+  .sides__row[aria-pressed='true'] { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .sides__row:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 2px; }
+  .sides__name { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: var(--text-sm); }
+  .sides__half { display: flex; align-items: center; gap: 0; height: 22px; border-left: var(--border-fine) solid var(--color-ink); }
+  .sides__half--left { justify-content: flex-end; border-left: 0; border-right: var(--border-fine) solid var(--color-ink); }
+  .sides__bar { display: block; height: 100%; }
+  .sides__bar--made { background: var(--party); }
+  .sides__bar--got { background: var(--color-ink); }
+  .sides__bar--mod { color: var(--color-ink); box-shadow: inset 0 0 0 1.5px var(--color-ink); }
+  .sides__row:hover .sides__bar--got,
+  .sides__row[aria-pressed='true'] .sides__bar--got { background: var(--color-on-highlight); }
+  .sides__num { padding: 0 6px; font-weight: 800; font-variant-numeric: tabular-nums; font-size: var(--text-sm); }
+  .sides__key { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 6px; font-size: var(--text-xs); font-weight: 600; }
+  .sides__key span { display: inline-flex; align-items: center; gap: 6px; }
+  .sub-title { margin: 0 0 var(--space-3); font: 800 1.125rem var(--font-body); text-transform: none; }
+  @media (max-width: 640px) {
+    .sides { padding: var(--space-3); }
+    .sides__head,
+    .sides__row { grid-template-columns: 76px 1fr 1fr; }
+    .sides__name { font-size: 0.8125rem; }
+  }
+  .matrix-wrap { overflow-x: auto; border: var(--border-thick) solid var(--color-ink); background: var(--color-paper); }
+  .matrix { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .matrix th,
+  .matrix td { padding: 0; border: var(--border-fine) solid var(--color-ink); text-align: center; }
+  .matrix thead th { padding: 8px 6px; font-size: var(--text-xs); font-weight: 800; vertical-align: bottom; }
+  .matrix thead th:first-child { text-align: left; color: var(--color-ink-muted); font-weight: 700; }
+  .matrix tbody th,
+  .matrix tfoot th { position: sticky; left: 0; z-index: 1; padding: 6px 10px; text-align: left; font-size: var(--text-sm); white-space: nowrap; background: var(--color-paper); }
+  .matrix__col,
+  .matrix__row { display: inline-flex; align-items: center; gap: 6px; }
+  .matrix__note { display: block; font-size: 0.75rem; font-weight: 600; color: var(--color-ink-muted); }
+  .matrix__mod-row th,
+  .matrix__mod-row td { border-bottom-width: var(--border-thick); }
+  .matrix__cell {
+    all: unset;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-width: 44px;
+    height: 48px;
+    background: var(--heat);
+    color: var(--on-heat);
+    font-weight: 800;
+    font-size: 1.0625rem;
+    cursor: pointer;
+  }
+  .matrix__cell[data-step='0'] { background: var(--color-paper); color: var(--color-ink-muted); font-weight: 600; cursor: default; }
+  .matrix__cell:not(:disabled):hover,
+  .matrix__cell[aria-pressed='true'] { box-shadow: inset 0 0 0 4px var(--color-highlight), inset 0 0 0 6px var(--color-ink); }
+  .matrix__cell:focus-visible { outline: 3px solid var(--color-ink); outline-offset: -5px; }
+  .matrix__self { color: var(--color-ink-muted); background-image: var(--trama-light); background-size: var(--trama-size); }
+  .matrix__total { padding: 6px 10px; font-weight: 800; }
+
+  /* The cuts of the peak block, in a box with its own scroll: the list can be long and must not push the page down. */
+  .clash-scroll {
+    max-height: min(560px, 70vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin-bottom: var(--space-4);
+    padding: var(--space-3);
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    scrollbar-gutter: stable;
+  }
+  .clash-scroll:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
+  @media (max-width: 640px) { .clash-scroll { max-height: 420px; padding: var(--space-2); } }
+  .clash { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+  .clash__link { display: grid; gap: 0; color: var(--color-ink); text-decoration: none; border: var(--border-fine) solid var(--color-ink); background: var(--color-paper); }
+  .clash__link:hover { background: var(--color-paper); }
+  .clash__link:hover .clash__cut,
+  .clash__link:focus-visible .clash__cut { background: var(--color-highlight); color: var(--color-on-highlight); --color-ink-muted: var(--color-on-highlight); }
+  .clash__before,
+  .clash__cut { display: grid; gap: 2px; padding: 8px 12px 8px 14px; border-left: 6px solid var(--party); }
+  .clash__before { color: var(--color-ink-muted); font-size: var(--text-sm); }
+  .clash__cut { border-top: var(--border-fine) dashed var(--color-ink); }
+  .clash__cut time { font-weight: 800; font-size: var(--text-xs); font-variant-numeric: tabular-nums; }
+  .clash__who { font-weight: 800; font-size: var(--text-sm); }
+  .clash__kind {
+    margin-left: 6px;
+    padding: 0 5px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  .clash__said { line-height: 1.45; }
+  .peak__filter {
+    min-height: 44px;
+    padding: 0 16px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .peak__filter:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .peak__filter[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+
+  /* ---- Transcript: the filters at the side (on top on a narrow screen), the text in a reading column ---- */
+  /* The sticky panels stay under the site header: one row of 72px below 1180px, and taller above. */
+  .transcript-section { --sticky-top: 108px; scroll-margin-top: 96px; }
+  @media (max-width: 1179px) { .transcript-section { --sticky-top: 84px; } }
+  .reader { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: var(--space-6); align-items: start; }
+  .minimap { display: none; }
+  @media (min-width: 1280px) {
+    .reader { grid-template-columns: 300px minmax(0, 74ch) minmax(120px, 1fr); }
+    .minimap { display: block; position: sticky; top: calc(var(--sticky-top) + 12px); height: calc(100vh - var(--sticky-top) - 48px); max-height: 900px; }
+  }
+  .minimap__track { position: relative; height: 100%; margin-left: 64px; max-width: 120px; cursor: pointer; }
+  .minimap__lanes { display: flex; gap: 3px; height: 100%; border-top: var(--border-fine) solid var(--color-ink); border-bottom: var(--border-fine) solid var(--color-ink); }
+  .minimap__lane { position: relative; flex: 1; max-width: 16px; border-left: 1px dotted var(--color-ink-muted); }
+  .minimap__lane span { position: absolute; left: 0; right: 0; background: var(--party); }
+  .minimap__tick {
+    position: absolute;
+    right: calc(100% + 8px);
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .minimap__tick:first-child { transform: none; }
+  .minimap__now { position: absolute; left: -8px; right: 0; height: 0; border-top: var(--border-thick) solid var(--color-ink); pointer-events: none; transition: top var(--duration-base) var(--easing-out); }
+  .minimap__now span {
+    position: absolute;
+    right: calc(100% + 4px);
+    top: -11px;
+    padding: 1px 5px;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    border: var(--border-fine) solid var(--color-ink);
+    font-size: 0.75rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  @media (prefers-reduced-motion: reduce) { .minimap__now { transition: none; } }
+  .reader__side {
+    position: sticky;
+    top: var(--sticky-top);
+    max-height: calc(100vh - var(--sticky-top) - 16px);
+    overflow-y: auto;
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+  }
+  .reader__count { margin: 0; font: 900 1.75rem / 1 var(--font-display); text-transform: uppercase; }
+  .reader__note { margin: 0; font-size: var(--text-xs); color: var(--color-ink-muted); line-height: 1.45; }
+  @media (max-width: 899px) {
+    .reader { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
+    .reader__side { position: sticky; top: var(--sticky-top); z-index: var(--z-raised); max-height: 70vh; padding: var(--space-3); }
+    .reader__count { font-size: 1.375rem; }
+    .reader__note { display: none; }
+  }
+
+  .field { display: grid; gap: 4px; }
+  .field__label { font-weight: 700; font-size: var(--text-xs); }
+  .field__input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 0 10px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 1rem var(--font-body);
+    font-variant-numeric: tabular-nums;
+  }
+  .field__input:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 1px; }
+  .field__input[aria-invalid='true'] { border-width: var(--border-thick); border-style: dashed; }
+  .field__hint { margin: 0; font-size: var(--text-xs); color: var(--color-ink-muted); }
+
+  .filters { border-top: var(--border-fine) solid var(--color-ink); padding-top: var(--space-2); }
+  .filters summary { cursor: pointer; font-weight: 800; min-height: 32px; display: flex; align-items: center; }
+  .filters__group { display: grid; gap: 6px; margin-top: var(--space-3); }
+  .filters__title { margin: 0; font-weight: 700; font-size: var(--text-xs); }
+  .seg { display: flex; flex-wrap: wrap; }
+  .seg button {
+    flex: 1 1 auto;
+    min-height: 40px;
+    margin: 0 -1.5px -1.5px 0;
+    padding: 0 10px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 var(--text-xs) var(--font-body);
+    cursor: pointer;
+  }
+  .seg button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .seg button[aria-pressed='true'] { position: relative; background: var(--color-ink); color: var(--color-paper); }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 36px;
+    padding: 0 10px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 var(--text-xs) var(--font-body);
+    cursor: pointer;
+  }
+  .pill:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .pill[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .range-filter__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .chips:empty { display: none; }
+  /* The chips are made in the script, so Astro's scoped styles do not reach them: they are global. */
+  :global(.chip) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 10px;
+    border: var(--border-fine) solid var(--color-ink);
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    font: 700 0.875rem var(--font-body);
+    cursor: pointer;
+  }
+  :global(.chip:hover),
+  :global(.chip:focus-visible) { background: var(--color-ink); color: var(--color-paper); outline: none; }
+  :global(.chip--reset) {
+    border-color: transparent;
+    background: transparent;
+    color: var(--color-ink);
+    padding: 0 4px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  :global(.chip--reset:hover),
+  :global(.chip--reset:focus-visible) { background: transparent; color: var(--color-ink); }
+
+  .transcript { list-style: none; margin: 0; padding: 0; max-width: 74ch; }
+  .transcript__empty { font-weight: 700; }
+  .turn {
+    position: relative;
+    border-left: 6px solid var(--party);
+    padding: 10px 0 12px 16px;
+    margin-bottom: 4px;
+    scroll-margin-top: 120px;
+  }
+  .turn[hidden] { display: none; }
+  .turn:target { background: var(--color-highlight); color: var(--color-on-highlight); --color-ink-muted: var(--color-on-highlight); }
+  .turn--moderator { border-left-style: double; border-left-width: 6px; }
+  .turn__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 0 0 4px; font-size: var(--text-xs); }
+  .turn__time { color: inherit; font-weight: 700; font-variant-numeric: tabular-nums; text-decoration: none; }
+  .turn__time:hover { text-decoration: underline; }
+  .turn__speaker { font-weight: 800; font-size: var(--text-sm); }
+  .turn__role { color: var(--color-ink-muted); }
+  .turn__flag { padding: 0 6px; background: var(--color-highlight); color: var(--color-on-highlight); border: var(--border-fine) solid var(--color-ink); font-weight: 800; }
+  .turn__flag--mod { background: var(--color-paper); color: var(--color-ink); }
+  .turn__text { margin: 0; font-size: 1.0625rem; line-height: 1.6; }
+  .turn__text + .turn__text { margin-top: 10px; }
+  .turn__cutoff { margin: 6px 0 0; font-size: var(--text-xs); font-weight: 700; color: var(--color-ink-muted); }
+
+  /* A short interjection: an aside, indented and smaller, so the main turn keeps the eye. */
+  .turn--aside { margin-left: clamp(16px, 5vw, 48px); padding: 6px 0 6px 12px; border-left-width: 4px; }
+  .turn--aside .turn__head { display: inline-flex; margin: 0 8px 0 0; }
+  .turn--aside .turn__body { display: inline; }
+  .turn--aside .turn__text { display: inline; font-size: var(--text-sm); font-style: italic; }
+  .turn--aside .turn__text + .turn__text::before { content: ' '; }
+  .turn--aside .turn__text + .turn__text { margin: 0; }
+
+  ::highlight(debate-search) { background-color: var(--color-highlight); color: var(--color-on-highlight); }
+</style>

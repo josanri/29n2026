@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor de debates</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+  <script src="/audio.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__brand">
+      <span class="topbar__title">Editor de debates</span>
+      <select id="debate-select" class="topbar__debate" aria-label="Debate"></select>
+    </div>
+    <div class="topbar__actions">
+      <span id="status" class="status" role="status" aria-live="polite">Cargando…</span>
+      <button id="reload" type="button" class="button">Recargar</button>
+      <button id="save" type="button" class="button button--primary" disabled>Guardar <kbd>Ctrl S</kbd></button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button role="tab" type="button" class="tab" data-tab="interventions" aria-selected="true">Intervenciones</button>
+      <button role="tab" type="button" class="tab" data-tab="speakers" aria-selected="false">Hablantes</button>
+      <button role="tab" type="button" class="tab" data-tab="settings" aria-selected="false">Ajustes</button>
+    </nav>
+
+    <section id="tab-interventions" class="panel is-active" role="tabpanel">
+      <div class="toolbar">
+        <div class="toolbar__filters">
+          <label class="field">
+            <span>Hablante</span>
+            <select id="filter-speaker"><option value="">Todos</option></select>
+          </label>
+          <label class="field">
+            <span>Desde</span>
+            <input id="filter-from" class="time" placeholder="00:00.0" inputmode="decimal">
+          </label>
+          <label class="field">
+            <span>Hasta</span>
+            <input id="filter-to" class="time" placeholder="1:42:00.0" inputmode="decimal">
+          </label>
+          <label class="field field--grow">
+            <span>Texto</span>
+            <input id="filter-text" type="search" placeholder="Buscar en el texto">
+          </label>
+          <label class="check">
+            <input type="checkbox" id="filter-cuts"> <span>Solo interrupciones</span>
+          </label>
+          <button id="filter-clear" type="button" class="button button--quiet">Quitar filtros</button>
+        </div>
+        <div class="toolbar__meta">
+          <span id="count" class="count"></span>
+          <button id="add-end" type="button" class="button">+ Añadir intervención al final</button>
+        </div>
+      </div>
+      <p class="hint">Tiempos: 1:02:03.5 o 02:03.5. Las acciones cambian el archivo completo, no solo lo que se ve.</p>
+      <div id="interventions" class="cards"></div>
+    </section>
+
+    <section id="tab-speakers" class="panel" role="tabpanel" hidden>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th>Id</th><th>Nombre</th><th>Cargo o partido</th><th>Color del partido</th><th class="num">Intervenciones</th><th></th></tr>
+          </thead>
+          <tbody id="speakers"></tbody>
+        </table>
+      </div>
+      <div class="toolbar__meta"><button id="add-speaker" type="button" class="button">+ Añadir hablante</button></div>
+      <p class="hint">El color del partido es su identificador del sitio (psoe, pp, vox, fa…) o vacío. No se puede borrar un hablante que tiene intervenciones.</p>
+    </section>
+
+    <section id="tab-settings" class="panel" role="tabpanel" hidden>
+      <div class="settings">
+        <label class="field">
+          <span>Tamaño del bloque de las gráficas</span>
+          <select id="bin-minutes">
+            <option value="1">1 minuto</option>
+            <option value="2">2 minutos</option>
+            <option value="5">5 minutos</option>
+            <option value="10">10 minutos</option>
+            <option value="15">15 minutos</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Duración del debate</span>
+          <input id="duration" class="time" placeholder="1:42:00.0" inputmode="decimal">
+        </label>
+      </div>
+      <p class="hint">El bloque cambia las barras del ritmo y los temas por bloque. Se aplica al guardar.</p>
+    </section>
+  </main>
+
+  <div id="player" class="player" hidden>
+    <div class="player__bar">
+      <button id="player-play" type="button" class="button player__play" title="Reproducir / pausar (Espacio)">▶</button>
+      <button id="player-back" type="button" class="button button--small" title="Atrás 5 s (←). Con Mayús, 1 s">−5 s</button>
+      <button id="player-forward" type="button" class="button button--small" title="Adelante 5 s (→). Con Mayús, 1 s">+5 s</button>
+      <span id="player-time" class="player__time" aria-live="off">00:00.0</span>
+      <span class="player__sep"></span>
+      <label class="field">
+        <span>Velocidad</span>
+        <select id="player-rate" title="Velocidad ([ y ])"></select>
+      </label>
+      <span class="player__sep"></span>
+      <button id="zoom-out" type="button" class="button button--small" title="Alejar la línea de tiempo">−</button>
+      <span id="zoom-label" class="player__zoom">Todo</span>
+      <input id="zoom-range" type="range" min="0" max="4" step="1" value="0" aria-label="Zoom de la línea de tiempo" title="Zoom: arrastre o use + y −">
+      <button id="zoom-in" type="button" class="button button--small" title="Acercar (un clic por nivel)">+</button>
+      <label class="check"><input type="checkbox" id="player-follow" checked> <span>Seguir en la línea</span></label>
+      <label class="check"><input type="checkbox" id="list-follow" checked> <span>Seguir en la lista</span></label>
+      <span class="player__sep"></span>
+      <form id="goto-form" class="goto" autocomplete="off">
+        <input id="goto-input" class="time" placeholder="Ir a 12:34.5" aria-label="Ir a un tiempo" inputmode="decimal">
+        <button type="submit" class="button button--small">Ir</button>
+      </form>
+      <audio id="audio" class="player__audio" controls preload="metadata" aria-label="Audio del debate"></audio>
+    </div>
+    <div class="timeline-wrap">
+      <canvas id="timeline" class="timeline" height="70" aria-label="Línea de tiempo: clic o arrastre para situarse"></canvas>
+      <div id="timeline-tip" class="timeline-tip" hidden></div>
+    </div>
+  </div>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <datalist id="party-ids"></datalist>
+</body>
+</html>
