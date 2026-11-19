@@ -4,24 +4,3751 @@
  "siglas": "CHA-FA",
  "color": "#a7513a",
  "colorClaro": "#d7b1a6",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "comunidad": "Aragón",
+ "programa": "Agenda Aragonesa",
+ "subtitulo": "146 propuestas en 10 bloques: autogobierno y financiación, vivienda, ferrocarril y carreteras, energía y territorio, agua, medio rural y derechos sociales",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "observaciones": [
+  "El PDF se facilitó a la redacción en exclusiva: la Agenda Aragonesa complementa el programa de Frente Amplio y no figuraba en la web oficial (frenteamplio.info/programa), que es el enlace de la fuente. La fecha es la del día en que se recibió: el PDF no trae fecha.",
+  "La Agenda no numera ni titula sus propuestas: cada párrafo que propone algo es una propuesta. Los párrafos de contexto o que presentan una lista no se cuentan. El título corto es el rótulo en negrita con que empieza la propuesta, si lo tiene, o su primera frase.",
+  "Los bloques 2, 9 y 10 no tienen epígrafes y el 5 empieza con propuestas sin epígrafe: se agrupan en una sección única. El texto de la propuesta sobre «viviendas adecuadas» repite una frase tal como está en el PDF."
+ ],
+ "pdf": "/programas/cha-fa-agenda-aragonesa-2026.pdf",
+ "fuentePdf": "https://frenteamplio.info/programa/",
+ "paginas": 40,
+ "fechaPdf": "2026-11-19",
+ "unidadMedida": "propuesta",
+ "unidadMedidas": "propuestas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Presentación",
+  "texto": "Esta Agenda Aragonesa pretende complementar el programa de Frente Amplio que suscribimos, incorporando concreciones de dicho programa que se aplican a nuestro territorio y cuestiones que lo complementan. El programa electoral completo de Frente Amplio puede consultarse en frenteamplio.info/programa/"
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
+ "cifras": [
+  {
+   "valor": "22",
+   "unidad": "nuevas competencias",
+   "texto": "traspaso de hasta 22 competencias nuevas a Aragón, con su financiación",
+   "contexto": "traspaso de hasta 22 nuevas competencias",
+   "medida": 2
+  },
+  {
+   "valor": "1.612",
+   "unidad": "viviendas de la SAREB",
+   "texto": "viviendas y 757 suelos de la SAREB en Aragón que pasarían a la empresa pública Casa 47",
+   "contexto": "1.612 viviendas y anejos y 757 suelos en Aragón",
+   "medida": 6
+  },
+  {
+   "valor": "15.000",
+   "unidad": "viviendas",
+   "texto": "nuevas viviendas en el parque público de alquiler asequible en esta legislatura",
+   "contexto": "15.000 viviendas",
+   "medida": 7
+  },
+  {
+   "valor": "20 %",
+   "unidad": "de vivienda pública",
+   "texto": "proporción que deben alcanzar los pequeños municipios a corto y medio plazo",
+   "contexto": "proporción del 20% de vivienda pública",
+   "medida": 8
+  },
+  {
+   "valor": "30 %",
+   "unidad": "del coste del tranvía",
+   "texto": "cofinanciación mínima de la línea 1, la línea 2 y las futuras líneas del tranvía de Zaragoza",
+   "contexto": "al menos en un 30%",
+   "medida": 20
+  },
+  {
+   "valor": "4",
+   "unidad": "servicios más por sentido",
+   "texto": "en la línea Zaragoza-Huesca",
+   "contexto": "4 servicios más por sentido",
+   "medida": 26
+  },
+  {
+   "valor": "4",
+   "unidad": "servicios más por sentido",
+   "texto": "en la línea Zaragoza-Monzón-Binéfar-Lleida",
+   "contexto": "4 servicios más por sentido",
+   "medida": 27
+  },
+  {
+   "valor": "4",
+   "unidad": "servicios al día",
+   "texto": "como mínimo, en la línea Zaragoza-Teruel-Sagunto",
+   "contexto": "4 servicios al día como mínimo",
+   "medida": 36
+  },
+  {
+   "valor": "2 + 2",
+   "unidad": "trenes directos",
+   "texto": "al menos dos de ida y dos de vuelta entre Teruel y Madrid",
+   "contexto": "Al menos, 2 de ida y 2 de vuelta",
+   "medida": 37
+  },
+  {
+   "valor": "5 MW",
+   "unidad": "de potencia",
+   "texto": "umbral de la moratoria de instalaciones de generación renovable",
+   "contexto": "potencia superior a 5 MW",
+   "medida": 56
+  },
+  {
+   "valor": "30 minutos",
+   "unidad": "de acceso a servicios esenciales",
+   "texto": "tiempo máximo para llegar a los servicios esenciales en el medio rural",
+   "contexto": "tiempo máximo de treinta minutos",
+   "medida": 87
+  },
+  {
+   "valor": "2.000 millones",
+   "unidad": "de euros",
+   "texto": "del Fondo de Participación de Tributos para un Fondo Municipal contra la Despoblación",
+   "contexto": "2.000 millones de euros",
+   "medida": 98
+  },
+  {
+   "valor": "600 €",
+   "unidad": "de bono cultural",
+   "texto": "ampliado a tres años, a los 18, 19 y 20 años",
+   "contexto": "Bono cultural a 600 €",
+   "medida": 146
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "En la legislatura",
+   "texto": "15.000 viviendas en el parque público de alquiler asequible",
+   "medida": 7
+  },
+  {
+   "plazo": "A corto y medio plazo",
+   "texto": "Que los pequeños municipios alcancen el 20 % de vivienda pública",
+   "medida": 8
+  },
+  {
+   "plazo": "2035",
+   "texto": "Plan de Modernización del Tren Convencional de Aragón",
+   "medida": 39
+  },
+  {
+   "plazo": "De inmediato",
+   "texto": "Licitar las obras de la A-68 en Aragón",
+   "medida": 40
+  },
+  {
+   "plazo": "De inmediato",
+   "texto": "Obras de mejora de curvas de la N-211 en Valmayor",
+   "medida": 42
+  },
+  {
+   "plazo": "2030",
+   "texto": "Terminar las autovías A-21 y A-23 en Aragón",
+   "medida": 49
+  },
+  {
+   "plazo": "Al acabar las concesiones",
+   "texto": "Pasar a la empresa pública las hidroeléctricas cuando venzan sus concesiones",
+   "medida": 52
+  },
+  {
+   "plazo": "De inmediato",
+   "texto": "Transponer las directivas europeas sobre consumo energético e hídrico de los centros de datos",
+   "medida": 71
+  },
+  {
+   "plazo": "De inmediato",
+   "texto": "Mecanismo Rural de Garantía",
+   "medida": 88
+  },
+  {
+   "plazo": "Primer periodo de sesiones",
+   "texto": "Ley del Estatuto Básico de los Municipios de Menor Población",
+   "medida": 89
+  },
+  {
+   "plazo": "2028",
+   "texto": "Bicentenario del fallecimiento de Goya",
+   "medida": 144
+  }
+ ],
+ "ordenPlazos": [
+  "De inmediato",
+  "Primer periodo de sesiones",
+  "En la legislatura",
+  "A corto y medio plazo",
+  "2028",
+  "2030",
+  "2035",
+  "Al acabar las concesiones"
+ ],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Aragón"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Autogobierno y financiación",
+   "tituloMayus": "AUTOGOBIERNO Y FINANCIACIÓN",
+   "lema": "Defender la democracia y el autogobierno, en defensa de los intereses de Aragón: utilizar la bilateralidad del Estatuto y mejorar la financiación autonómica con el convenio bilateral para garantizar unos servicios públicos de calidad para todas las personas en todo el territorio aragonés: sanidad, educación, servicios sociales y vivienda.",
+   "cita": "",
+   "intro": "",
+   "pagina": 4
+  },
+  {
+   "id": 2,
+   "titulo": "Vivienda",
+   "tituloMayus": "VIVIENDA",
+   "lema": "Derecho a la vivienda digna: Complementar el programa de vivienda estatal, señalando medidas que desarrollan su función como garante de la cohesión social y territorial y que permitan crear un gran parque público de vivienda en alquiler en Aragón.",
+   "cita": "",
+   "intro": "La vivienda debe dejar de ser un activo financiero para poder ser un derecho garantizado, solo se compra para vivir en ella o para alquilarla a precio asequible.",
+   "pagina": 6
+  },
+  {
+   "id": 3,
+   "titulo": "Movilidad",
+   "tituloMayus": "MOVILIDAD",
+   "lema": "Derecho a la movilidad: inversiones y fomento del ferrocarril convencional, acelerar las obras pendientes y abrir la línea internacional Zaragoza-Canfranc-Pau, impulsar y ejecutar la construcción del corredor Cantábrico-Mediterráneo por Zaragoza y Teruel, finalizar las mejoras del tramo convencional Zaragoza-Teruel-Sagunto y restablecimiento de la circulación, desarrollar, mejorar y extender del Cercanías de Zaragoza más allá del área metropolitana, impulso y construcción inmediata de las autovías y carreteras pendientes de Aragón, promoción del uso de la bicicleta y de la intermodalidad.",
+   "cita": "",
+   "intro": "Aragón merece respeto y que las personas y el tejido económico gocen de los mismos derechos y de igualdad de oportunidades. Aragón no puede ser un territorio de sacrificio. El potencial económico, industrial y social de Aragón no puede verse lastrado por quienes desconocen el territorio o lo malquieren.",
+   "pagina": 9
+  },
+  {
+   "id": 4,
+   "titulo": "Transición energética",
+   "tituloMayus": "TRANSICIÓN ENERGÉTICA",
+   "lema": "Por una transición energética justa: implantar un modelo energético renovable y descentralizado que democratice la energía y piense en las personas, crear una empresa pública tras rescatar concesiones hidroeléctricas aragonesas, establecer una moratoria de plantas de generación y líneas de transporte eléctrico hasta que se realice una planificación ajustada a las necesidades de Aragón y que, en todo caso, incluya a proyectos judicializados.",
+   "cita": "",
+   "intro": "",
+   "pagina": 14
+  },
+  {
+   "id": 5,
+   "titulo": "Territorio y paisajes",
+   "tituloMayus": "TERRITORIO Y PAISAJES",
+   "lema": "Defender el territorio y nuestros paisajes: oponerse al extractivismo de los macroproyectos insostenibles de renovables, biogás, minería de arcillas y centros de datos; rechazar la unión de estaciones por Canal Roya y apostar por un nuevo modelo turístico y de la nieve; desmilitarizar nuestro territorio y desmantelar los Campos de Tiro de San Gregorio y de Las Bardenas.",
+   "cita": "",
+   "intro": "Aragón no puede ser territorio de sacrificio para macroparques renovables, minas de arcilla y centros de datos sin control. A diferencia de las zonas de costa, que han disfrutado de una moratoria para planificar la instalación de generación eólica offshore, Aragón ha sido expoliado como objeto de radicación de macrocentrales renovables que han degradado el medioambiente y el paisaje, y que no han revertido los procesos de despoblación intensificando, por el contrario, la desposesión y el abandono rural, dentro de la crisis general del mundo rural en Europa occidental; provocando además situaciones de enfrentamiento social en pequeñas localidades. Por tanto, defendemos la planificación pública con equilibrio territorial, la adaptación de la actividad a los recursos, a las necesidades y a las infraestructuras, la participación cívica y el retorno local en empleo, inversiones y servicios. Las administraciones públicas no pueden ser cómplices, ni asistir de forma contemplativa, ante los casos de corrupción bajo investigación y que se han producido a la sombra de la transición energética española.",
+   "pagina": 16
+  },
+  {
+   "id": 6,
+   "titulo": "Agua",
+   "tituloMayus": "AGUA",
+   "lema": "No al trasvase del Ebro: sí a una política hidráulica eficiente, sostenible y respetuosa con la unidad de cuenca, descartando embalses insostenibles e innecesarios.",
+   "cita": "",
+   "intro": "",
+   "pagina": 21
+  },
+  {
+   "id": 7,
+   "titulo": "Medio rural",
+   "tituloMayus": "MEDIO RURAL",
+   "lema": "Revitalizar el medio rural aragonés: Pacto de Estado por un mundo rural vivo, el reto demográfico y la cohesión territorial, Plan Específico de Vivienda en el Medio Rural, fondos europeos contra la despoblación, nuevo sistema de financiación local y una PAC que favorezca las explotaciones familiares y profesionales agrarias y prime la producción.",
+   "cita": "",
+   "intro": "",
+   "pagina": 24
+  },
+  {
+   "id": 8,
+   "titulo": "Derechos sociales y cuidados",
+   "tituloMayus": "DERECHOS SOCIALES Y CUIDADOS",
+   "lema": "Cuidar de nuestra gente, garantizar los derechos sociales y sostener la vida en todo Aragón: defender la sanidad y la educación públicas, más medios contra las violencias machistas, más medidas por la conciliación y los cuidados, más garantías de derechos para la comunidad LGTBIQ+.",
+   "cita": "",
+   "intro": "Defenderemos que vivir en un pueblo o en una ciudad no determine el acceso a ingresos suficientes, cuidados y servicios públicos de calidad. Las políticas sociales deben responder a la realidad de Aragón: un territorio extenso, envejecido y con población dispersa, donde la atención de proximidad es imprescindible.",
+   "pagina": 29
+  },
+  {
+   "id": 9,
+   "titulo": "Juventud",
+   "tituloMayus": "JUVENTUD",
+   "lema": "La juventud en el centro de las políticas públicas: impulsar la emancipación de los y las jóvenes mediante la inserción laboral, la formación y el acceso a la vivienda para desarrollar su proyecto de vida en Aragón; garantizar su participación efectiva en las decisiones políticas y sociales.",
+   "cita": "",
+   "intro": "Desde CHA-Frente Amplio Aragón vemos a la juventud como una prioridad y no como una promesa de futuro y por eso creemos imprescindible que las políticas públicas tengan en cuenta la diversidad de la juventud y que ninguna persona joven vea limitado su futuro por su situación económica, su lugar de residencia o sus circunstancias personales. Aragón necesita contar con su juventud, escucharla y garantizar capacidad real para decidir sobre el país en el que quiere vivir. Para ello proponemos:",
+   "pagina": 34
+  },
+  {
+   "id": 10,
+   "titulo": "Cultura y lenguas",
+   "tituloMayus": "CULTURA Y LENGUAS",
+   "lema": "Defender nuestra cultura: Recuperar el patrimonio aragonés emigrado o expoliado, así como los bienes culturales inmatriculados irregularmente por la Iglesia en Aragón. Apoyar el desarrollo de las lenguas propias de Aragón para cumplir con la Carta Europea de las Lenguas Minoritarias.",
+   "cita": "",
+   "intro": "",
+   "pagina": 36
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1.1",
+   "bloque": 1,
+   "titulo": "Relación bilateral Aragón-Estado",
+   "tituloFrase": "Relación bilateral Aragón-Estado",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "1.2",
+   "bloque": 1,
+   "titulo": "Máximo techo competencial",
+   "tituloFrase": "Máximo techo competencial",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "1.3",
+   "bloque": 1,
+   "titulo": "Derechos históricos y financiación justa para Aragón",
+   "tituloFrase": "Derechos históricos y financiación justa para Aragón",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "1.4",
+   "bloque": 1,
+   "titulo": "Exigencia de la deuda histórica",
+   "tituloFrase": "Exigencia de la deuda histórica",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "2.1",
+   "bloque": 2,
+   "titulo": "Un gran parque público de vivienda en alquiler",
+   "tituloFrase": "Un gran parque público de vivienda en alquiler",
+   "intro": "La vivienda también debe ser una palanca de vertebración territorial e igualdad de oportunidades en nuestros barrios y pueblos, para lo que hemos pensado herramientas adecuadas a las características específicas de nuestro territorio:",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "3.1",
+   "bloque": 3,
+   "titulo": "Apuesta decidida por el ferrocarril de Aragón y por Aragón",
+   "tituloFrase": "Apuesta decidida por el ferrocarril de Aragón y por Aragón",
+   "intro": "",
+   "pagina": 10,
+   "subapartados": [
+    {
+     "titulo": "Impulso definitivo al Corredor Cantábrico-Mediterráneo",
+     "intro": ""
+    },
+    {
+     "titulo": "Ampliación y mejora del transporte urbano e interurbano de Zaragoza",
+     "intro": ""
+    },
+    {
+     "titulo": "Nuevos servicios y mejora de los actuales",
+     "intro": ""
+    },
+    {
+     "titulo": "Defensa del ferrocarril y de la intermodalidad de Teruel",
+     "intro": ""
+    },
+    {
+     "titulo": "Compromiso con el ferrocarril de Aragón",
+     "intro": ""
+    }
+   ]
+  },
+  {
+   "id": "3.2",
+   "bloque": 3,
+   "titulo": "Transporte terrestre: desarrollo de las infraestructuras pendientes",
+   "tituloFrase": "Transporte terrestre: desarrollo de las infraestructuras pendientes",
+   "intro": "",
+   "pagina": 12,
+   "subapartados": []
+  },
+  {
+   "id": "3.3",
+   "bloque": 3,
+   "titulo": "Vías ciclables",
+   "tituloFrase": "Vías ciclables",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  },
+  {
+   "id": "4.1",
+   "bloque": 4,
+   "titulo": "Nuevo modelo energético",
+   "tituloFrase": "Nuevo modelo energético",
+   "intro": "Implantar un modelo energético renovable que democratice la generación y consumo de energía, pensando en las personas y sus intereses, no en la especulación de los grandes capitales. Queremos que el territorio de Aragón y sus habitantes sean protagonistas de la transición energética, no rehenes de un modelo extractivo y colonial que replica situaciones pasadas, como los grandes embalses en el Pirineo o la extracción de carbón y arcillas en la provincia de Teruel. Este modelo se basa en:",
+   "pagina": 15,
+   "subapartados": []
+  },
+  {
+   "id": "5.1",
+   "bloque": 5,
+   "titulo": "Moratorias y planificación frente a los macroproyectos",
+   "tituloFrase": "Moratorias y planificación frente a los macroproyectos",
+   "intro": "",
+   "pagina": 17,
+   "subapartados": []
+  },
+  {
+   "id": "5.2",
+   "bloque": 5,
+   "titulo": "Planificación, sostenibilidad, transparencia y control de los centros de datos",
+   "tituloFrase": "Planificación, sostenibilidad, transparencia y control de los centros de datos",
+   "intro": "",
+   "pagina": 18,
+   "subapartados": []
+  },
+  {
+   "id": "5.3",
+   "bloque": 5,
+   "titulo": "Bases para una planificación y gestión territorial sostenible y equitativa",
+   "tituloFrase": "Bases para una planificación y gestión territorial sostenible y equitativa",
+   "intro": "",
+   "pagina": 19,
+   "subapartados": []
+  },
+  {
+   "id": "5.4",
+   "bloque": 5,
+   "titulo": "Defensa de nuestros paisajes",
+   "tituloFrase": "Defensa de nuestros paisajes",
+   "intro": "",
+   "pagina": 20,
+   "subapartados": []
+  },
+  {
+   "id": "5.5",
+   "bloque": 5,
+   "titulo": "Desmilitarización de nuestro territorio",
+   "tituloFrase": "Desmilitarización de nuestro territorio",
+   "intro": "",
+   "pagina": 20,
+   "subapartados": []
+  },
+  {
+   "id": "6.1",
+   "bloque": 6,
+   "titulo": "Infraestructuras hidráulicas sostenibles en Aragón",
+   "tituloFrase": "Infraestructuras hidráulicas sostenibles en Aragón",
+   "intro": "",
+   "pagina": 22,
+   "subapartados": []
+  },
+  {
+   "id": "6.2",
+   "bloque": 6,
+   "titulo": "Prevención de riadas",
+   "tituloFrase": "Prevención de riadas",
+   "intro": "",
+   "pagina": 23,
+   "subapartados": []
+  },
+  {
+   "id": "7.1",
+   "bloque": 7,
+   "titulo": "Lucha contra la despoblación",
+   "tituloFrase": "Lucha contra la despoblación",
+   "intro": "",
+   "pagina": 25,
+   "subapartados": []
+  },
+  {
+   "id": "7.2",
+   "bloque": 7,
+   "titulo": "Ciencia y territorio",
+   "tituloFrase": "Ciencia y territorio",
+   "intro": "",
+   "pagina": 26,
+   "subapartados": []
+  },
+  {
+   "id": "7.3",
+   "bloque": 7,
+   "titulo": "Planes de Desarrollo Rural",
+   "tituloFrase": "Planes de Desarrollo Rural",
+   "intro": "",
+   "pagina": 26,
+   "subapartados": []
+  },
+  {
+   "id": "7.4",
+   "bloque": 7,
+   "titulo": "Actuaciones por la revitalización del medio rural aragonés",
+   "tituloFrase": "Actuaciones por la revitalización del medio rural aragonés",
+   "intro": "",
+   "pagina": 26,
+   "subapartados": []
+  },
+  {
+   "id": "7.5",
+   "bloque": 7,
+   "titulo": "Mejora de la financiación local",
+   "tituloFrase": "Mejora de la financiación local",
+   "intro": "",
+   "pagina": 26,
+   "subapartados": []
+  },
+  {
+   "id": "7.6",
+   "bloque": 7,
+   "titulo": "Gestión forestal sostenible y prevención estructural de incendios",
+   "tituloFrase": "Gestión forestal sostenible y prevención estructural de incendios",
+   "intro": "",
+   "pagina": 27,
+   "subapartados": []
+  },
+  {
+   "id": "7.7",
+   "bloque": 7,
+   "titulo": "Agricultura y ganadería familiar y profesional",
+   "tituloFrase": "Agricultura y ganadería familiar y profesional",
+   "intro": "El agricultor profesional está dejando de ser dueño de su explotación para convertirse en ejecutor de tareas al dictado de fondos de inversión e integradoras: es la \"uberización\" del campo. Sin relevo y sin una protección social equiparable a la del resto de trabajadores, ese proceso se acelera. Solo el 9% de los titulares tiene menos de 41 años, y cerca del 70% estará en edad de jubilación en la próxima década. Por ello, defendemos:",
+   "pagina": 27,
+   "subapartados": []
+  },
+  {
+   "id": "8.1",
+   "bloque": 8,
+   "titulo": "Servicios sociales cercanos y con recursos suficientes",
+   "tituloFrase": "Servicios sociales cercanos y con recursos suficientes",
+   "intro": "",
+   "pagina": 30,
+   "subapartados": []
+  },
+  {
+   "id": "8.2",
+   "bloque": 8,
+   "titulo": "Deporte para todas y todos",
+   "tituloFrase": "Deporte para todas y todos",
+   "intro": "",
+   "pagina": 30,
+   "subapartados": []
+  },
+  {
+   "id": "8.3",
+   "bloque": 8,
+   "titulo": "Contra las Violencias Machistas",
+   "tituloFrase": "Contra las Violencias Machistas",
+   "intro": "",
+   "pagina": 31,
+   "subapartados": []
+  },
+  {
+   "id": "8.4",
+   "bloque": 8,
+   "titulo": "Igualdad",
+   "tituloFrase": "Igualdad",
+   "intro": "",
+   "pagina": 31,
+   "subapartados": []
+  },
+  {
+   "id": "8.5",
+   "bloque": 8,
+   "titulo": "Derechos LGTBIQ+",
+   "tituloFrase": "Derechos LGTBIQ+",
+   "intro": "",
+   "pagina": 32,
+   "subapartados": []
+  },
+  {
+   "id": "8.6",
+   "bloque": 8,
+   "titulo": "Cooperación internacional, solidaridad y justicia global",
+   "tituloFrase": "Cooperación internacional, solidaridad y justicia global",
+   "intro": "",
+   "pagina": 32,
+   "subapartados": []
+  },
+  {
+   "id": "9.1",
+   "bloque": 9,
+   "titulo": "Una política integral de juventud",
+   "tituloFrase": "Una política integral de juventud",
+   "intro": "",
+   "pagina": 35,
+   "subapartados": []
+  },
+  {
+   "id": "10.1",
+   "bloque": 10,
+   "titulo": "Patrimonio, lenguas y cultura aragonesa",
+   "tituloFrase": "Patrimonio, lenguas y cultura aragonesa",
+   "intro": "",
+   "pagina": 37,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1.1",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Usar la Comisión Bilateral Aragón-Estado y la Comisión Mixta de Asuntos Económico-Financieros",
+   "tituloFrase": "Usar la Comisión Bilateral Aragón-Estado y la Comisión Mixta de Asuntos Económico-Financieros",
+   "texto": "Utilizar de forma decidida los instrumentos y mecanismos de relación bilateral entre Aragón y el Estado, en particular la Comisión Bilateral de Cooperación Aragón-Estado y la Comisión Mixta de Asuntos Económico-Financieros.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1.2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Desarrollar plenamente el actual Estatuto de Autonomía de Aragón",
+   "tituloFrase": "Desarrollar plenamente el actual Estatuto de Autonomía de Aragón",
+   "texto": "Desarrollar plenamente el actual Estatuto de Autonomía de Aragón, exigiendo al Estado el traspaso de hasta 22 nuevas competencias con su correcta financiación; así como transferir todas las funciones ejecutivas de la administración periférica del Estado a la Comunidad Autónoma de Aragón, de modo que ésta actúe como administración única en su territorio, así como agotar las posibilidades de transferencia de competencias de titularidad estatal a Aragón por la vía del artículo 150 de la Constitución.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [
+    "Desarrollar plenamente el actual Estatuto de Autonomía de Aragón, exigiendo al Estado el traspaso de hasta 22 nuevas competencias con su correcta financiación; así como transferir todas las funciones ejecutivas de la administración periférica del Estado a la Comunidad Autónoma de Aragón, de modo que ésta actúe como administración única en su territorio, así como agotar las posibilidades de transferencia de competencias de titularidad estatal a Aragón por la vía del artículo 150 de la Constitución."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1.2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Reducir el papel de la legislación básica estatal al nivel propio de las auténticas “leyes de bases”",
+   "tituloFrase": "Reducir el papel de la legislación básica estatal al nivel propio de las auténticas “leyes de bases”",
+   "texto": "Reducir el papel de la legislación básica estatal al nivel propio de las auténticas “leyes de bases”, dejando margen para que Aragón pueda desarrollar políticas propias y acometer desarrollos legislativos sustanciales y no meramente anecdóticos.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1.3",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Suscribir el acuerdo bilateral económico-financiero entre Aragón y el Estado",
+   "tituloFrase": "Suscribir el acuerdo bilateral económico-financiero entre Aragón y el Estado",
+   "texto": "Suscribir el acuerdo bilateral económico-financiero entre Aragón y el Estado, previsto en nuestro Estatuto, que garantice la máxima autonomía financiera y un sistema fiscal propio ajustado a nuestra singularidad territorial y demográfica, con respeto al principio de solidaridad, de modo que sea la Agencia Tributaria Aragonesa la que recaude todos los impuestos y controle el fraude fiscal. Y, hasta conseguirlo, reclamar la modificación del actual sistema de financiación para lograr que tenga en cuenta la realidad socioterritorial aragonesa, asumiendo el coste real del servicio público prestado.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1.4",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Exigir al Estado español el reconocimiento y el pago de la deuda histórica contraída con Aragón",
+   "tituloFrase": "Exigir al Estado español el reconocimiento y el pago de la deuda histórica contraída con Aragón",
+   "texto": "Exigir al Estado español el reconocimiento y el pago de la deuda histórica contraída con Aragón, derivada de la exclusión de Aragón del Objetivo 1 y de los Fondos de Compensación Interterritorial, de la ausencia o retrasos en inversiones en infraestructuras, de las transferencias infradotadas, de la merma recaudatoria por la reducción unilateral de tributos cedidos y, finalmente, de las consecuencias sociales, económicas y territoriales del modelo de desarrollo desvertebrador impuesto por sucesivos gobiernos centrales que han favorecido a la periferia en detrimento del interior.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Recuperar vivienda vacía y pasar el suelo y las fincas de la SAREB a Casa 47",
+   "tituloFrase": "Recuperar vivienda vacía y pasar el suelo y las fincas de la SAREB a Casa 47",
+   "texto": "Nuestra prioridad será recuperar viviendas vacías, rehabilitar edificios y barrios y terminar las promociones que quedaron abandonadas tras la crisis inmobiliaria. También se adscribirán todas las fincas urbanas y los suelos residenciales de la SAREB a la empresa pública Casa 47 (1.612 viviendas y anejos y 757 suelos en Aragón). Promocionar vivienda pública no significa necesariamente construir más, sino garantizar que haya más hogares al alcance de la mayoría social.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [
+    "También se adscribirán todas las fincas urbanas y los suelos residenciales de la SAREB a la empresa pública Casa 47 (1.612 viviendas y anejos y 757 suelos en Aragón)."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "15.000 viviendas más en el parque público de alquiler asequible",
+   "tituloFrase": "15.000 viviendas más en el parque público de alquiler asequible",
+   "texto": "Usando todas estas herramientas, proponemos en esta legislatura incorporar al parque público de alquiler asequible 15.000 viviendas en Aragón para facilitar el acceso a una vivienda digna a miles de familias, en todo el territorio aragonés.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [
+    "Usando todas estas herramientas, proponemos en esta legislatura incorporar al parque público de alquiler asequible 15.000 viviendas en Aragón para facilitar el acceso a una vivienda digna a miles de familias, en todo el territorio aragonés."
+   ],
+   "plazo": "En la legislatura",
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Ayudas especiales a los pequeños municipios",
+   "tituloFrase": "Ayudas especiales a los pequeños municipios",
+   "texto": "Ayudas especiales a los pequeños municipios, para que alcancen a corto y medio plazo la proporción del 20% de vivienda pública.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Ayudas especiales a los pequeños municipios, para que alcancen a corto y medio plazo la proporción del 20% de vivienda pública."
+   ],
+   "plazo": "A corto y medio plazo",
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Oficinas territoriales de asesoramiento",
+   "tituloFrase": "Oficinas territoriales de asesoramiento",
+   "texto": "Oficinas territoriales de asesoramiento, con especial implantación en el medio rural y cooperación obligatoria entre administraciones.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Observatorio de la Vivienda",
+   "tituloFrase": "Observatorio de la Vivienda",
+   "texto": "Observatorio de la Vivienda, con implantación territorial, para el seguimiento continuado de las medidas y de la problemática de la vivienda.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Inmobiliarias éticas",
+   "tituloFrase": "Inmobiliarias éticas",
+   "texto": "Inmobiliarias éticas. Relaciones con inmobiliarias éticas con presencia en el medio rural que ayuden a la administración local hasta que el Observatorio de la Vivienda esté implantado en el territorio en representación de Suelo y Vivienda de Aragón.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Suelo público para cooperativas de vivienda",
+   "tituloFrase": "Suelo público para cooperativas de vivienda",
+   "texto": "Cesión de suelo público a cooperativas de vivienda, a cambio de participación en la cooperativa o de la reversión de la inversión a la administración al cesar la cesión.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Suelo público para asociaciones sin ánimo de lucro",
+   "tituloFrase": "Suelo público para asociaciones sin ánimo de lucro",
+   "texto": "Cesión de suelo público a asociaciones sin ánimo de lucro cuyo objeto sea la promoción y gestión de vivienda, con reversión de la inversión al incremento de su parque de vivienda o a la administración.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Revisión general de los planes generales",
+   "tituloFrase": "Revisión general de los planes generales",
+   "texto": "Revisión general de los planes generales para permitir una mayor rentabilidad social del suelo en las zonas que puedan absorber más viviendas, sin sacrificar el suelo dotacional ni los servicios de calidad.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Programas sociales contra el sinhogarismo y la exclusión social",
+   "tituloFrase": "Programas sociales contra el sinhogarismo y la exclusión social",
+   "texto": "Programas sociales contra el sinhogarismo y la exclusión social que integren urbanísticamente a todas las personas usuarias.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Viviendas adecuadas para todas las situaciones familiares",
+   "tituloFrase": "Viviendas adecuadas para todas las situaciones familiares",
+   "texto": "Garantía de viviendas adecuadas para todas las situaciones familiares. para todo tipo de situaciones familiares.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 2,
+   "seccion": "2.1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Programas piloto en el medio rural aragonés",
+   "tituloFrase": "Programas piloto en el medio rural aragonés",
+   "texto": "Programas piloto en el medio rural aragonés. Programas piloto que prioricen la regeneración, la rehabilitación y la promoción de vivienda en el medio rural, para garantizar la inversión y su impacto directo en las personas y la mejora del dinamismo del lugar donde se desarrollen.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 10,
+   "subapartado": 0,
+   "titulo": "Redacción de proyectos, licitación y adjudicación de obras en el tramo Zaragoza-Teruel",
+   "tituloFrase": "Redacción de proyectos, licitación y adjudicación de obras en el tramo Zaragoza-Teruel",
+   "texto": "Redacción de proyectos, licitación y adjudicación de obras en el tramo Zaragoza-Teruel, con doble vía electrificada de altas prestaciones para pasajeros y mercancías de la línea ferroviaria Zaragoza-Teruel-Sagunto.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Teruel"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 10,
+   "subapartado": 0,
+   "titulo": "Retirar el estudio de vía única Teruel-Sagunto y proyectar doble vía electrificada",
+   "tituloFrase": "Retirar el estudio de vía única Teruel-Sagunto y proyectar doble vía electrificada",
+   "texto": "Retirada del estudio informativo que opta por una única vía en el tramo Teruel-Sagunto de la línea ferroviaria Zaragoza-Teruel-Sagunto y elaboración de un nuevo estudio informativo, redacción de proyectos y licitación y adjudicación de las obras de subtramos para la construcción de una línea con doble vía electrificada de altas prestaciones para pasajeros y mercancías entre Teruel y Sagunto.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Teruel"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 10,
+   "subapartado": 1,
+   "titulo": "Cofinanciar al menos el 30 % del tranvía de Zaragoza",
+   "tituloFrase": "Cofinanciar al menos el 30 % del tranvía de Zaragoza",
+   "texto": "Cofinanciar, al menos en un 30%, la ampliación de la línea 1 del tranvía de Zaragoza y la construcción de la línea 2 este/oeste y otras líneas futuras, impulsando la mejora de las conexiones urbanas, como al Aeropuerto y a polígonos como PLAZA, en coherencia con la Ley de Movilidad Sostenible en su impulso a la movilidad sostenible a los centros de actividad.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [
+    "Cofinanciar, al menos en un 30%, la ampliación de la línea 1 del tranvía de Zaragoza y la construcción de la línea 2 este/oeste y otras líneas futuras, impulsando la mejora de las conexiones urbanas, como al Aeropuerto y a polígonos como PLAZA, en coherencia con la Ley de Movilidad Sostenible en su impulso a la movilidad sostenible a los centros de actividad."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 10,
+   "subapartado": 1,
+   "titulo": "Subvencionar el Consorcio de Transporte del Área de Zaragoza y poner en marcha Aratrén",
+   "tituloFrase": "Subvencionar el Consorcio de Transporte del Área de Zaragoza y poner en marcha Aratrén",
+   "texto": "Subvención en favor del Consorcio de Transporte del Área de Zaragoza (CTAZ), en el marco de las ayudas para financiar el transporte terrestre colectivo de ámbito metropolitano, con el objetivo, entre otros, de promover la puesta en marcha de Aratrén (una visión conjunta de Cercanías, Regionales y Media Distancia, como ocurre en Catalunya con el Rodalies) para que en Aragón el ferrocarril contribuya a vertebrar el territorio, con una visión ambiciosa.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Zaragoza",
+    "Aragón",
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 10,
+   "subapartado": 1,
+   "titulo": "Mejorar la Cercanías C1 Casetas-Miraflores",
+   "tituloFrase": "Mejorar la Cercanías C1 Casetas-Miraflores",
+   "texto": "Mejorar infraestructura, frecuencias, horarios y material rodante en la línea de Cercanías C1 Casetas-Miraflores, en Zaragoza.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 10,
+   "subapartado": 1,
+   "titulo": "Ampliación de la línea de Cercanías C1",
+   "tituloFrase": "Ampliación de la línea de Cercanías C1",
+   "texto": "Ampliación de la línea de Cercanías C1 con la construcción de una nueva estación en la Avda. Tenor Fleta, y en otros municipios que disponen de vía en dicho recorrido, en coherencia con la Ley de Movilidad Sostenible.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 10,
+   "subapartado": 1,
+   "titulo": "Firma de un convenio con el Ministerio de Transportes y RENFE",
+   "tituloFrase": "Firma de un convenio con el Ministerio de Transportes y RENFE",
+   "texto": "Firma de un convenio con el Ministerio de Transportes y RENFE que permita a Aragón participar en las decisiones y explotación del sistema de cercanías de Zaragoza y su área metropolitana.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Zaragoza",
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 1,
+   "titulo": "Accesos ferroviarios a PLAZA y Ronda Sur Ferroviaria de Zaragoza",
+   "tituloFrase": "Accesos ferroviarios a PLAZA y Ronda Sur Ferroviaria de Zaragoza",
+   "texto": "Mejora integral de los accesos ferroviarios a la plataforma logística PLAZA e impulso de la Ronda Sur Ferroviaria de Zaragoza, con aceleración de los plazos y ancho mixto.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Más servicios en la línea Zaragoza-Huesca",
+   "tituloFrase": "Más servicios en la línea Zaragoza-Huesca",
+   "texto": "Mejorar infraestructura, frecuencias, horarios y material rodante en la línea Zaragoza-Huesca, con 4 servicios más por sentido con paradas intermedias en Cogullada, San Juan de Mozarrifar, Villanueva de Gállego, San Mateo de Gállego. Zuera y Tardienta, en forma de nueva línea de Cercanías (Línea 2), ampliación de la actual línea 1 o mediante los servicios denominados de Media Distancia.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Huesca"
+   ],
+   "cifras": [
+    "Mejorar infraestructura, frecuencias, horarios y material rodante en la línea Zaragoza-Huesca, con 4 servicios más por sentido con paradas intermedias en Cogullada, San Juan de Mozarrifar, Villanueva de Gállego, San Mateo de Gállego."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Más servicios en la línea Zaragoza-Monzón-Binéfar-Lleida",
+   "tituloFrase": "Más servicios en la línea Zaragoza-Monzón-Binéfar-Lleida",
+   "texto": "Mejorar infraestructura, frecuencias, horarios y material rodante en la línea Zaragoza-Monzón-Binéfar-Lleida, con 4 servicios más por sentido con paradas intermedias en las poblaciones citadas en el punto anterior, además de Grañén y Sariñena, en forma de nueva línea de Cercanías (Línea 2b) o mediante los servicios denominados de Media Distancia.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Huesca",
+    "Cataluña"
+   ],
+   "cifras": [
+    "Mejorar infraestructura, frecuencias, horarios y material rodante en la línea Zaragoza-Monzón-Binéfar-Lleida, con 4 servicios más por sentido con paradas intermedias en las poblaciones citadas en el punto anterior, además de Grañén y Sariñena, en forma de nueva línea de Cercanías (Línea 2b) o mediante los servicios denominados de Media Distancia."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Mejorar la línea Zaragoza-Caspe-Tarragona-Barcelona",
+   "tituloFrase": "Mejorar la línea Zaragoza-Caspe-Tarragona-Barcelona",
+   "texto": "Mejorar infraestructura, frecuencias, horarios y material rodante en la línea convencional Zaragoza-Caspe-Tarragona-Barcelona, al suponer un eje que beneficia a las localidades del trazado y a Aragón en su conjunto.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Aragón",
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Incluir todos los servicios aragoneses en las Obligaciones de Servicio Público de Renfe",
+   "tituloFrase": "Incluir todos los servicios aragoneses en las Obligaciones de Servicio Público de Renfe",
+   "texto": "En la formalización de las Obligaciones de Servicio Pública con RENFE Viajeros S.A. se incluyan todos y cada uno los servicios prestados sobre relaciones ferroviarias declaradas Obligación de Servicio Público que afectan a Aragón.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Aplicar la gratuidad al transporte público de viajeros rurales de lunes a viernes",
+   "tituloFrase": "Aplicar la gratuidad al transporte público de viajeros rurales de lunes a viernes",
+   "texto": "Aplicar la gratuidad al transporte público de viajeros rurales de lunes a viernes para facilitar su acceso a centros hospitalarios, universitarios y administrativos, con el objetivo de ir alcanzando la igualdad entre el medio rural y urbano",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Terminar las mejoras de la línea internacional de Canfranc",
+   "tituloFrase": "Terminar las mejoras de la línea internacional de Canfranc",
+   "texto": "Finalización de las mejoras y la adaptación de la línea internacional de Canfranc (Zaragoza-Huesca-Canfranc).",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Huesca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Mejorar los servicios Zaragoza-Huesca-Canfranc",
+   "tituloFrase": "Mejorar los servicios Zaragoza-Huesca-Canfranc",
+   "texto": "Mejorar las frecuencias, horarios y material rodante en la línea Zaragoza-Huesca-Canfranc para promover el ferrocarril como alternativa sostenible al vehículo privado, contribuir a descongestionar las carreteras de acceso al Pirineo, en coherencia con la Ley de Movilidad Sostenible, y seguir avanzando en la apuesta por la reapertura de la Línea Internacional entre Canfranc y Oloron.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Zaragoza",
+    "Huesca",
+    "Francia"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Recepción del proyecto de reforma del túnel ferroviario de Somport y aprobación del proyecto",
+   "tituloFrase": "Recepción del proyecto de reforma del túnel ferroviario de Somport y aprobación del proyecto",
+   "texto": "Recepción del proyecto de reforma del túnel ferroviario de Somport y aprobación del proyecto, licitación y adjudicación de obras.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Huesca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 11,
+   "subapartado": 2,
+   "titulo": "Implantación del ancho europeo entre Huesca y Canfranc",
+   "tituloFrase": "Implantación del ancho europeo entre Huesca y Canfranc",
+   "texto": "Implantación del ancho europeo entre Huesca y Canfranc.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Huesca",
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 12,
+   "subapartado": 3,
+   "titulo": "Construcción de una nueva estación intermodal en la ciudad de Teruel o adaptación de la actual",
+   "tituloFrase": "Construcción de una nueva estación intermodal en la ciudad de Teruel o adaptación de la actual",
+   "texto": "Construcción de una nueva estación intermodal en la ciudad de Teruel o adaptación de la actual, que dé respuesta a los servicios convencionales y a aquellos de altas prestaciones, así como a otros servicios de movilidad (autobús, coche compartido, taxi, etc.).",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Teruel"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 12,
+   "subapartado": 3,
+   "titulo": "Poner en servicio la línea convencional Zaragoza-Teruel-Sagunto, con 4 servicios al día",
+   "tituloFrase": "Poner en servicio la línea convencional Zaragoza-Teruel-Sagunto, con 4 servicios al día",
+   "texto": "Puesta en servicio, tras su modernización, de la línea convencional Zaragoza-Teruel-Sagunto, con 4 servicios al día como mínimo, garantizando la conectividad de los municipios de la línea.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Teruel"
+   ],
+   "cifras": [
+    "Puesta en servicio, tras su modernización, de la línea convencional Zaragoza-Teruel-Sagunto, con 4 servicios al día como mínimo, garantizando la conectividad de los municipios de la línea."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 12,
+   "subapartado": 3,
+   "titulo": "Implantación de servicios directos competitivos de tren entre Teruel y Madrid",
+   "tituloFrase": "Implantación de servicios directos competitivos de tren entre Teruel y Madrid",
+   "texto": "Implantación de servicios directos competitivos de tren entre Teruel y Madrid. Al menos, 2 de ida y 2 de vuelta.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Teruel"
+   ],
+   "cifras": [
+    "Al menos, 2 de ida y 2 de vuelta."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 12,
+   "subapartado": 4,
+   "titulo": "Ningún cierre de líneas ni estaciones ferroviarias en Aragón",
+   "tituloFrase": "Ningún cierre de líneas ni estaciones ferroviarias en Aragón",
+   "texto": "El Gobierno de España y el Ministerio y organismos competentes declinarán cerrar líneas o estaciones en el territorio aragonés y se comprometen a su mantenimiento y explotación en las condiciones adecuadas que permitan su uso (inversión en las instalaciones, mejora de frecuencias, horarios, servicios, etc…) por las implicaciones económicas, sociales, industriales y ambientales que suponen.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 3,
+   "seccion": "3.1",
+   "pagina": 12,
+   "subapartado": 4,
+   "titulo": "Elaborar un Plan de Modernización del Tren Convencional de Aragón hasta 2035",
+   "tituloFrase": "Elaborar un Plan de Modernización del Tren Convencional de Aragón hasta 2035",
+   "texto": "Elaborar un Plan de Modernización del Tren Convencional de Aragón hasta 2035.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": "2035",
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Licitar de inmediato los tramos aragoneses de la A-68",
+   "tituloFrase": "Licitar de inmediato los tramos aragoneses de la A-68",
+   "texto": "Finalización de la redacción de los proyectos pendientes y licitación inmediata de obras en los tramos aragoneses de la A-68: Fuentes de Ebro-Quinto, Quinto-Azaila, Azaila-Híjar, Híjar-El Regallo, El Regallo-Alcañiz y Alcañiz-Ventas de Valdealgorfa. Acondicionamiento y apertura del enlace Mallén-Cortes pendiente.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Teruel"
+   ],
+   "cifras": [],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Estudio informativo de la A-68 entre Ventas de Valdealgorfa y Vinaroz",
+   "tituloFrase": "Estudio informativo de la A-68 entre Ventas de Valdealgorfa y Vinaroz",
+   "texto": "Licitación y aprobación del estudio informativo y redacción de proyectos de los tramos de la A-68 que se determinen entre Ventas de Valdealgorfa y Vinaroz (Castellón).",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Mejora de curvas de la N-211 en Valmayor (Caspe-Mequinenza)",
+   "tituloFrase": "Mejora de curvas de la N-211 en Valmayor (Caspe-Mequinenza)",
+   "texto": "Ejecución inmediata de las obras de mejora de curvas del tramo llamado Valmayor en el trazado de la N-211 entre Caspe y Mequinenza, eliminando o suavizando los tramos más sinuosos del trazado y mejorando todo el firme (incluidos vial rodante y arcenes).",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Licitación y adjudicación de obras de las variantes de Borja-Maleján y de Tarazona",
+   "tituloFrase": "Licitación y adjudicación de obras de las variantes de Borja-Maleján y de Tarazona",
+   "texto": "Licitación y adjudicación de obras de las variantes de Borja-Maleján y de Tarazona, construcción de los tramos Agreda Este (Soria)-Tarazona y Tarazona-Límite Aragón/ Navarra de la A-15, y aprobación del estudio informativo para desdoblar la N-122 entre la A-68 en Gallur y Tarazona.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Aragón",
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Rotondas de pacificación del tráfico en carreteras nacionales",
+   "tituloFrase": "Rotondas de pacificación del tráfico en carreteras nacionales",
+   "texto": "Impulso a las rotondas de gestión y pacificación del tráfico en carreteras nacionales en núcleos urbanos y su entorno (Cuarte, por ejemplo).",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Seguridad vial en el acceso a la A-68 en Alagón",
+   "tituloFrase": "Seguridad vial en el acceso a la A-68 en Alagón",
+   "texto": "Intervención para adecuar, extender y mejorar la seguridad vial en la vía de incorporación a la A-68 sentido Zaragoza (PK 264) desde el enlace de conexión de la AP-68 (salida 20) con la A-68 (a la altura de la 264) en el municipio de Alagón (Zaragoza).",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Autovía A-25 Monreal del Campo-Alcolea del Pinar",
+   "tituloFrase": "Autovía A-25 Monreal del Campo-Alcolea del Pinar",
+   "texto": "Licitación y aprobación del estudio informativo para la conexión entre Monreal del Campo (Teruel) y Alcolea del Pinar (Guadalajara) en formato autovía: la denominada A-25. Redacción de los proyectos de los subtramos, licitación y adjudicación de obras.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Teruel"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Autovía A-40 Teruel-Cuenca",
+   "tituloFrase": "Autovía A-40 Teruel-Cuenca",
+   "texto": "Licitación y aprobación de un nuevo estudio informativo para la conexión entre Teruel y Cuenca en formato de autovía: la denominada A-40. Redacción de los proyectos de los subtramos, licitación y adjudicación de obras.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Teruel"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Licitación y adjudicación de las obras del tramo Fiscal-Túneles de Balupor de la N-260 (Eje Pirenaico)",
+   "tituloFrase": "Licitación y adjudicación de las obras del tramo Fiscal-Túneles de Balupor de la N-260 (Eje Pirenaico)",
+   "texto": "Licitación y adjudicación de las obras del tramo Fiscal-Túneles de Balupor de la N-260 (Eje Pirenaico).",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Terminar las autovías A-21 y A-23 antes de 2030",
+   "tituloFrase": "Terminar las autovías A-21 y A-23 antes de 2030",
+   "texto": "Culminación viaria del Pirineo y del Alto Aragón con la finalización de las autovías A-21 y A-23 en territorio aragonés, ejecutando los tramos que aún permanecen pendientes y garantizando su dotación presupuestaria plurianual para que las obras se liciten, se adjudiquen y se ejecuten antes de 2030.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Huesca",
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": "2030",
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 3,
+   "seccion": "3.2",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Impulso a la variante sur de Huesca, una infraestructura largamente demandada",
+   "tituloFrase": "Impulso a la variante sur de Huesca, una infraestructura largamente demandada",
+   "texto": "Impulso a la variante sur de Huesca, una infraestructura largamente demandada que descongestionará el tráfico de paso por la ciudad, mejorará la seguridad vial y reforzará la conexión de la capital con los principales ejes de comunicación del Estado.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Huesca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 3,
+   "seccion": "3.3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Impulsar una ruta ciclable internacional que atraviese Aragón, uniendo Teruel-Zaragoza- Huesca",
+   "tituloFrase": "Impulsar una ruta ciclable internacional que atraviese Aragón, uniendo Teruel-Zaragoza- Huesca",
+   "texto": "Impulsar una ruta ciclable internacional que atraviese Aragón, uniendo Teruel-Zaragoza- Huesca, y seguir trabajando para que este recorrido se enmarque en la futura EuroVelo que una Lisboa, atraviese Aragón, y que cruce los Pirineos hasta Toulouse.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Huesca",
+    "Teruel",
+    "Aragón",
+    "Francia",
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 4,
+   "seccion": "4.1",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Crear una empresa pública de energía aragonesa, que incluya la gestión de las centrales hidroeléctricas",
+   "tituloFrase": "Crear una empresa pública de energía aragonesa, que incluya la gestión de las centrales hidroeléctricas",
+   "texto": "Crear una empresa pública de energía aragonesa, que incluya la gestión de las centrales hidroeléctricas, competencia del Gobierno de España, conforme vayan finalizando las concesiones.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": "Al acabar las concesiones",
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 4,
+   "seccion": "4.1",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Red aragonesa de comunidades energéticas y autoconsumo industrial",
+   "tituloFrase": "Red aragonesa de comunidades energéticas y autoconsumo industrial",
+   "texto": "Crear (planificar, tramitar y financiar) una red aragonesa de comunidades energéticas y autoconsumo industrial en localidades, vecindarios y polígonos industriales.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 4,
+   "seccion": "4.1",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Que las distribuidoras eléctricas no frenen la generación local",
+   "tituloFrase": "Que las distribuidoras eléctricas no frenen la generación local",
+   "texto": "Adoptar las medidas normativas, técnicas y económicas para que las empresas eléctricas distribuidoras, propietarias de las redes de distribución, dejen de suponer un cuello de botella para el funcionamiento real de entornos de generación local (comunidades energéticas, autoconsumos, cooperativas y polígonos industriales).",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 4,
+   "seccion": "4.1",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Establecer tarifas reducidas para los municipios productores de excedentes energéticos renovables",
+   "tituloFrase": "Establecer tarifas reducidas para los municipios productores de excedentes energéticos renovables",
+   "texto": "Establecer tarifas reducidas para los municipios productores de excedentes energéticos renovables, eliminando costes de transporte, ambientales y especulativos, con el fin de abaratar la energía en el entorno de las plantas de generación, atraer industria, fijar población y compensar a los territorios afectados.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Establecer moratorias de todos los proyectos de centros de datos, instalaciones de generación renovable",
+   "tituloFrase": "Establecer moratorias de todos los proyectos de centros de datos, instalaciones de generación renovable",
+   "texto": "Establecer moratorias de todos los proyectos de centros de datos, instalaciones de generación renovable con una potencia superior a 5 MW, plantas de biogás, minas de arcilla y líneas de transporte eléctrico, hasta que se realice una planificación ajustada a las necesidades de Aragón, a las capacidades de nuestro medio natural aragonés y a la necesaria ordenación territorial.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [
+    "Establecer moratorias de todos los proyectos de centros de datos, instalaciones de generación renovable con una potencia superior a 5 MW, plantas de biogás, minas de arcilla y líneas de transporte eléctrico, hasta que se realice una planificación ajustada a las necesidades de Aragón, a las capacidades de nuestro medio natural aragonés y a la necesaria ordenación territorial."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Establecer también una moratoria para todos los proyectos judicializados hasta su resolución",
+   "tituloFrase": "Establecer también una moratoria para todos los proyectos judicializados hasta su resolución",
+   "texto": "Establecer también una moratoria para todos los proyectos judicializados hasta su resolución con sentencia firme.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Mapa de subestaciones limitado a los entornos urbanos e industriales",
+   "tituloFrase": "Mapa de subestaciones limitado a los entornos urbanos e industriales",
+   "texto": "Crear un mapa para el gestor de la red de transporte eléctrico de emplazamiento de subestaciones transformadoras limitado a los principales entornos urbanos e industriales.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Renovables solo de consumo de proximidad y sustituir centrales dañinas",
+   "tituloFrase": "Renovables solo de consumo de proximidad y sustituir centrales dañinas",
+   "texto": "Aprobar una planificación de generación renovable limitada a instalaciones de consumo de proximidad (autoconsumo y comunidades energéticas). En este contexto, debe abordarse el desmantelamiento de grandes centrales especialmente dañinas con el medioambiente y sustituirlas por otras de potencia equiparable en espacios industriales y degradados.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Participación pública real en la planificación de renovables",
+   "tituloFrase": "Participación pública real en la planificación de renovables",
+   "texto": "Participación pública real en la planificación de renovables y el desarrollo de una red aragonesa de comunidades energéticas y autoconsumo industrial en localidades, vecindarios y polígonos industriales. Garantizar que el desarrollo y reubicación de las energías renovables se realice mediante procesos reglados de participación pública, asegurando que la población local sea informada, escuchada y tenida en cuenta, incorporando las demandas e intereses de los distintos actores sociales, económicos y ambientales del territorio.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Regulación de las plantas de almacenamiento energético por baterías",
+   "tituloFrase": "Regulación de las plantas de almacenamiento energético por baterías",
+   "texto": "Regulación de las plantas de almacenamiento energético por baterías. Regular la instalación de plantas de almacenamiento de energía mediante baterías para impedir su ubicación en zonas de alto valor ambiental, paisajístico o turístico, así como en aquellos lugares donde exista un rechazo vecinal o de las entidades locales.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Rechazo a la fragmentación artificial de proyectos y defensa de la red pública",
+   "tituloFrase": "Rechazo a la fragmentación artificial de proyectos y defensa de la red pública",
+   "texto": "Rechazo a la fragmentación artificial de proyectos y defensa de la red pública. Tomar medidas para evitar la fragmentación fraudulenta de proyectos renovables destinada a eludir competencias estatales y garantizar el cumplimiento de la Ley 24/2013 del Sector Eléctrico, que establece el carácter público de la red de transporte primario, cuya titularidad debe corresponder exclusivamente a Red Eléctrica Española.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Impedir que un proyecto con DIA cambie de objeto, por ejemplo a centros de datos",
+   "tituloFrase": "Impedir que un proyecto con DIA cambie de objeto, por ejemplo a centros de datos",
+   "texto": "Impedir que los proyectos con DIA compatible, condicionada o no, puedan cambiar de objeto final (por ejemplo, los que han visto no autorizadas sus líneas de evacuación a otras CCAA y pretendan orientarse a los centros de datos), exigiendo el respeto a la legislación que obliga a reiniciar la tramitación ambiental y de autorizaciones.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Suspender las nuevas plantas de biogás hasta tener un Plan de Ordenación",
+   "tituloFrase": "Suspender las nuevas plantas de biogás hasta tener un Plan de Ordenación",
+   "texto": "Suspender cautelarmente la autorización de nuevas plantas de biogás y biometano de carácter industrial hasta la aprobación de un Plan de Ordenación del Biogás y Biometano que determine las necesidades reales del territorio y establezca criterios vinculantes sobre ubicación, capacidad, distancias a núcleos habitados (concentrados o dispersos), recursos hídricos, espacios naturales protegidos, espacios reservados para la recuperación de especies, impacto paisajístico, centros educativos, bienes del patrimonio cultural y artístico y otros equipamientos sensibles; salvo aquellas instalaciones de pequeña escala vinculadas exclusivamente a residuos generados en la propia instalación ganadera, en el propio municipio o comarca.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "rural",
+    "empresas"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Desarrollar un Fondo Público de Inversión en Energías Renovables, inspirado en el Fondo Soberano Noruego",
+   "tituloFrase": "Desarrollar un Fondo Público de Inversión en Energías Renovables, inspirado en el Fondo Soberano Noruego",
+   "texto": "Desarrollar un Fondo Público de Inversión en Energías Renovables, inspirado en el Fondo Soberano Noruego, destinado a financiar proyectos de desarrollo territorial en el medio rural, mejorar la accesibilidad, los servicios públicos y la vivienda, y contribuir a vertebrar el territorio y afrontar el reto demográfico.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 5,
+   "seccion": "5.1",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Oponerse a la minería de arcillas",
+   "tituloFrase": "Oponerse a la minería de arcillas",
+   "texto": "Oponerse a la proliferación de la minería de arcillas, que revienta nuestros montes y colapsa nuestras carreteras, externalizando los beneficios.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 5,
+   "seccion": "5.2",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Planificación general de los centros de datos",
+   "tituloFrase": "Planificación general de los centros de datos",
+   "texto": "Diseñar y publicar, con participación pública, una planificación general de la industria de los centros de datos acorde con las necesidades reales y los límites energéticos, hídricos y ambientales del territorio, evaluando su impacto ambiental, su seguridad de suministro y su compatibilidad con otros desarrollos industriales.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 5,
+   "seccion": "5.2",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Sostenibilidad ambiental obligatoria para los centros de datos",
+   "tituloFrase": "Sostenibilidad ambiental obligatoria para los centros de datos",
+   "texto": "Establecer como requisito vinculante la sostenibilidad ambiental de los centros de datos, tanto nuevos como existentes, exigiendo eficiencia energética, autosuficiencia, refrigeración natural, gestión responsable del agua, reutilización de equipos, certificaciones ecológicas y garantía de no perjuicio a los recursos de la población.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 5,
+   "seccion": "5.2",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Mapa de zonas saturadas por centros de datos y zonas vetadas",
+   "tituloFrase": "Mapa de zonas saturadas por centros de datos y zonas vetadas",
+   "texto": "Elaborar un mapa situacional y zonal que evalúe qué zonas se encuentran hiperpobladas por proyectos de este tipo, tanto instalados como proyectados, y qué zonas se encuentran tensionadas por estas instalaciones, teniendo en cuenta los recursos disponibles de superficie, energía y agua, y delimitando mediante criterios ambientales claros establecidos por expertos y científicos las zonas en las que no se permita la instalación de centros de datos dadas las limitaciones razonables de recursos.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 5,
+   "seccion": "5.2",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Suelo para centros de datos y distancias mínimas a los núcleos urbanos",
+   "tituloFrase": "Suelo para centros de datos y distancias mínimas a los núcleos urbanos",
+   "texto": "Regular la tipificación urbanística del suelo destinado a la implantación de centros de datos y las distancias mínimas entre su ubicación y los núcleos urbanos, zonas residenciales o espacios naturales periurbanos (como la arboleda singular de los Pinares de Venecia, verdadero bosque de los zaragozanos).",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 5,
+   "seccion": "5.2",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Exigimos transparencia y control del consumo energético e hídrico de los centros de datos",
+   "tituloFrase": "Exigimos transparencia y control del consumo energético e hídrico de los centros de datos",
+   "texto": "Exigimos transparencia y control del consumo energético e hídrico de los centros de datos: Instar al Gobierno español a transponer de forma inmediata la Directiva (UE) 2023/1791 y el Reglamento Delegado (UE) 2024/1364, haciendo obligatoria la información pública sobre consumo energético e hídrico de los centros de datos, como condición imprescindible para evaluar su sostenibilidad y su impacto social.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 5,
+   "seccion": "5.2",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Centros de datos como bien inmueble de características especiales (BICE)",
+   "tituloFrase": "Centros de datos como bien inmueble de características especiales (BICE)",
+   "texto": "Proponemos incluir los centros de datos como un nuevo grupo en la categoría catastral de Bienes Inmuebles de Características Especiales (BICE) para incrementar la recaudación municipal del IBI, puesto que la valoración catastral incluye toda la maquinaria e instalaciones. Tras la inclusión de los parques eólicos y solares como BICE, resulta coherente incorporar también a los centros de datos en plena expansión en nuestro país. Al ser competencia estatal, se reducen los incentivos de la competición entre territorios a la baja, mientras se incrementa la recaudación de los ayuntamientos que albergan centros de datos al recibir ingresos proporcionales al valor real de la instalación y no solo al valor del suelo, garantizando así el retorno de beneficios al territorio.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 5,
+   "seccion": "5.3",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Compensar a los municipios y propietarios que conservan el territorio",
+   "tituloFrase": "Compensar a los municipios y propietarios que conservan el territorio",
+   "texto": "Compensar económicamente y mediante incentivos ambientales a los municipios rurales y a los propietarios y gestores del territorio que contribuyan activamente a la conservación de la biodiversidad, la protección de los recursos naturales y el mantenimiento de los servicios ecosistémicos, favoreciendo modelos de gestión y producción ambientalmente sostenibles.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 5,
+   "seccion": "5.3",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Reforzar las garantías científicas y técnicas de los procedimientos de evaluación de impacto ambiental",
+   "tituloFrase": "Reforzar las garantías científicas y técnicas de los procedimientos de evaluación de impacto ambiental",
+   "texto": "Reforzar las garantías científicas y técnicas de los procedimientos de evaluación de impacto ambiental, mediante el fortalecimiento de los equipos técnicos de la Administración autonómica encargados de supervisar y evaluar los estudios presentados por los promotores, garantizando un control técnico independiente realizado por funcionarios y no por personal laboral contratado, para evitar interferencias de los promotores. Garantizar una revisión rigurosa e independiente de sus resultados, con especial atención a la calidad de los datos, las metodologías empleadas, la valoración de los impactos acumulativos y las medidas correctoras propuestas, favoreciendo la colaboración con universidades y organismos públicos de investigación cuando resulte necesario.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 5,
+   "seccion": "5.4",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Rechazar la unión de estaciones de esquí por Canal Roya",
+   "tituloFrase": "Rechazar la unión de estaciones de esquí por Canal Roya",
+   "texto": "Rechazar la unión de estaciones de esquí por Canal Roya, evitar que los fondos europeos para la sostenibilidad turística se destinen a este proyecto insostenible y apostar por un nuevo modelo turístico y de la nieve y apoyar la creación de un Parque Internacional de los Pirineos en colaboración con el Gobierno de Francia.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Huesca",
+    "Francia",
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 5,
+   "seccion": "5.4",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Financiación estatal para limpiar el lindano y la cuenca del Gállego",
+   "tituloFrase": "Financiación estatal para limpiar el lindano y la cuenca del Gállego",
+   "texto": "Garantizar una financiación estatal plurianual estable, suficiente y proporcionada a la magnitud del riesgo generado en su día, que permita la ejecución completa del Plan estratégico de lucha integral contra la contaminación por lindano, continuando con la limpieza y rehabilitación integral de los suelos afectados por los vertidos de lindano e implementando un plan de descontaminación de la cuenca del Gállego.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 5,
+   "seccion": "5.5",
+   "pagina": 20,
+   "subapartado": null,
+   "titulo": "Llevar a cabo el proceso de desmilitarización y desmantelamiento del Campo de Tiro de San Gregorio",
+   "tituloFrase": "Llevar a cabo el proceso de desmilitarización y desmantelamiento del Campo de Tiro de San Gregorio",
+   "texto": "Llevar a cabo el proceso de desmilitarización y desmantelamiento del Campo de Tiro de San Gregorio, especialmente la zona del escarpe donde se ubican los castillos del Castellar, la Atalaya de Candespina, el Castillo de Alfocea, el Castillo de Miranda y el Picote de San Martín, con una auditoría ambiental para conocer el estado del suelo, de la flora y fauna y elaborar un plan de recuperación ambiental o de ordenación de recursos de esa área y destinarlo a Parque Natural, creando el Parque Estepario del Norte de Zaragoza, entendido como reserva esteparia. Igualmente reclamar el desmantelamiento del Polígono de Tiro de Las Bardenas en Navarra, dado que también Aragón sufre el potencial peligro de estas instalaciones.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Zaragoza",
+    "Aragón",
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 6,
+   "seccion": "6.1",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Política hidráulica con unidad de cuenca y contra cualquier trasvase, en especial el del Ebro",
+   "tituloFrase": "Política hidráulica con unidad de cuenca y contra cualquier trasvase, en especial el del Ebro",
+   "texto": "Impulsar una política hidráulica respetuosa con los principios de unidad de cuenca, eficiencia, uso racional, respeto medioambiental, control de la demanda y recuperación de costes, y, en consecuencia, rechazar rotundamente cualquier transferencia de agua entre cuencas y, en especial, el trasvase del Ebro.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 6,
+   "seccion": "6.1",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Embalses, canales y regadíos sostenibles, con restitución territorial",
+   "tituloFrase": "Embalses, canales y regadíos sostenibles, con restitución territorial",
+   "texto": "Apostar por la construcción de embalses, canales y nuevos regadíos sostenibles social, ecológica y económicamente. Adoptar todas las medidas técnicas necesarias para evitar bombeos y gasto energético para su gestión y garantizar la restitución territorial a las personas afectadas.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 6,
+   "seccion": "6.1",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Solicitar al Gobierno Central el descarte definitivo de embalses insostenibles e innecesarios",
+   "tituloFrase": "Solicitar al Gobierno Central el descarte definitivo de embalses insostenibles e innecesarios",
+   "texto": "Solicitar al Gobierno Central el descarte definitivo de embalses insostenibles e innecesarios, que suponen un despilfarro, afecciones sociales y al medio ambiente.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 6,
+   "seccion": "6.1",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Cumplir la Directiva Marco del Agua",
+   "tituloFrase": "Cumplir la Directiva Marco del Agua",
+   "texto": "Cumplir los objetivos de buen estado ecológico de las aguas en los plazos previstos por la Directiva Marco del Agua, de manera que se impidan los trasvases, el deterioro de los ríos, humedales y acuíferos y los usos insostenibles del agua.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 82,
+   "bloque": 6,
+   "seccion": "6.1",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Planes de Restitución Territorial de las obras hidráulicas",
+   "tituloFrase": "Planes de Restitución Territorial de las obras hidráulicas",
+   "texto": "Impulsar la aprobación de Planes de Restitución Territorial de todas las obras hidráulicas de interés general realizadas, así como las que se encuentran en ejecución o pendientes de ejecución desde 1999 con consenso, en coordinación con el Gobierno Central, elaborando un calendario de actuaciones y comprometiendo la financiación de las administraciones, con el acuerdo entre éstas y la representación de los habitantes y territorio afectados; y para los nuevos proyectos, establecer la simultaneidad de las restituciones y la ejecución de las obras.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 83,
+   "bloque": 6,
+   "seccion": "6.1",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Planes de restitución por obras anteriores a 1999 y por el «coste de expectativas»",
+   "tituloFrase": "Planes de restitución por obras anteriores a 1999 y por el «coste de expectativas»",
+   "texto": "Elaborar planes de actuación que recojan las medidas de restitución y desarrollo socioeconómico necesarias a causa tanto de los proyectos hidráulicos ejecutados con anterioridad a la modificación de la Ley de Aguas de 1999, como del “coste de expectativas” y afecciones producidas por los proyectos no ejecutados pero que han estado incluidos en la planificación o programación pública.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 6,
+   "seccion": "6.1",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Plan de Desarrollo Sostenible de Jánovas y reversión de sus bienes",
+   "tituloFrase": "Plan de Desarrollo Sostenible de Jánovas y reversión de sus bienes",
+   "texto": "Considerar prioritario, en el caso de Jánovas, el impulso, planificación, financiación y ejecución del Plan de Desarrollo Sostenible para el ámbito afectado por el Proyecto del Salto de Jánovas, así como de los planes especiales de Jánovas, Lavelilla y Lacort y de restauración del río Ara. Solicitar a la empresa concesionaria la reversión íntegra de los bienes, tanto si estos fueron vendidos como si fueron expropiados, y la fijación del precio para la readquisición de este patrimonio de acuerdo con la tasación realizada por los peritos independientes teniendo en cuenta su valor real en función de su estado actual.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Huesca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 6,
+   "seccion": "6.2",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Motas con compuertas y tratamiento uniforme de las márgenes del Ebro",
+   "tituloFrase": "Motas con compuertas y tratamiento uniforme de las márgenes del Ebro",
+   "texto": "Defender ante las riadas del Ebro y para prevenir sus graves daños (a pesar de ser técnicamente consideradas ordinarias) un tratamiento de las márgenes y un tratamiento uniforme en todos los municipios y tramos del río, mediante motas que incluyan compuertas de inundación/evacuación de aguas.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 6,
+   "seccion": "6.2",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Reparar las infraestructuras agrícolas y ganaderas dañadas por avenidas y danas",
+   "tituloFrase": "Reparar las infraestructuras agrícolas y ganaderas dañadas por avenidas y danas",
+   "texto": "Intervenir, con diligencia, en la reparación de las infraestructuras públicas y privadas de carácter agrícola y ganadero dañadas por las avenidas del Ebro o a consecuencia de las danas producidas en Aragón con motivo de la emergencia climática.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 7,
+   "seccion": "7.1",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Impulsar un gran consenso en torno a un Pacto de Estado por un mundo rural vivo",
+   "tituloFrase": "Impulsar un gran consenso en torno a un Pacto de Estado por un mundo rural vivo",
+   "texto": "Impulsar un gran consenso en torno a un Pacto de Estado por un mundo rural vivo, el reto demográfico y la cohesión territorial, similar al Pacto de Toledo sobre las pensiones y que se desarrollará en el marco de la II Estrategia estatal para la Equidad Territorial y el Reto Demográfico y de un nuevo Plan de acción para el medio rural para la igualdad territorial, elaborado de forma coordinada con las Administraciones autonómicas y locales y las organizaciones sociales concernidas, que implique a los diversos departamentos ministeriales y aporte recursos presupuestarios específicos y continuados, con el objetivo de promover una transición justa en el medio rural, reduciendo el déficit de servicios, promoviendo el acceso a los servicios esenciales en un tiempo máximo de treinta minutos, promoviendo el empleo, el emprendimiento y la diversidad en el mundo rural, apostando por un sector primario sostenible, de calidad y con rendimientos dignos, diversificando la economía hacia los sectores secundario y terciario, fomentando la vivienda para jóvenes y la residencia de los empleados públicos en los pueblos, beneficiándose in situ de la producción de energías renovables, entre otras medidas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "jovenes",
+    "rural",
+    "funcionarios"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Impulsar un gran consenso en torno a un Pacto de Estado por un mundo rural vivo, el reto demográfico y la cohesión territorial, similar al Pacto de Toledo sobre las pensiones y que se desarrollará en el marco de la II Estrategia estatal para la Equidad Territorial y el Reto Demográfico y de un nuevo Plan de acción para el medio rural para la igualdad territorial, elaborado de forma coordinada con las Administraciones autonómicas y locales y las organizaciones sociales concernidas, que implique a los diversos departamentos ministeriales y aporte recursos presupuestarios específicos y continuados, con el objetivo de promover una transición justa en el medio rural, reduciendo el déficit de servicios, promoviendo el acceso a los servicios esenciales en un tiempo máximo de treinta minutos, promoviendo el empleo, el emprendimiento y la diversidad en el mundo rural, apostando por un sector primario sostenible, de calidad y con rendimientos dignos, diversificando la economía hacia los sectores secundario y terciario, fomentando la vivienda para jóvenes y la residencia de los empleados públicos en los pueblos, beneficiándose in situ de la producción de energías renovables, entre otras medidas."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 88,
+   "bloque": 7,
+   "seccion": "7.1",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Implantar de forma inmediata el Mecanismo Rural de Garantía",
+   "tituloFrase": "Implantar de forma inmediata el Mecanismo Rural de Garantía",
+   "texto": "Implantar de forma inmediata el Mecanismo Rural de Garantía, que obligará a evaluar los efectos territoriales y sobre el medio y la sociedad rurales de las políticas públicas, en el marco de la Ley 27/2022 de Institucionalización de la Evaluación de Políticas Públicas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "De inmediato",
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 7,
+   "seccion": "7.1",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Ley del Estatuto Básico de los Municipios de Menor Población",
+   "tituloFrase": "Ley del Estatuto Básico de los Municipios de Menor Población",
+   "texto": "Aprobar en el primer periodo de sesiones de la legislatura el proyecto de Ley del Estatuto Básico de los Municipios de Menor Población para garantizar un marco regulatorio adecuado a las necesidades del medio rural.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "Primer periodo de sesiones",
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 7,
+   "seccion": "7.1",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Fondos europeos directos contra la despoblación",
+   "tituloFrase": "Fondos europeos directos contra la despoblación",
+   "texto": "Instar a los órganos competentes de la Unión Europea la implementación de unos nuevos fondos económicos directos y específicos contra la despoblación con el objetivo de contribuir en las Comunidades Autónomas afectadas al desarrollo de las políticas públicas ante el reto demográfico, contando para su implementación con organismos existentes como los Grupos de Acción Local.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural",
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 7,
+   "seccion": "7.1",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Empleo y servicios que hagan atractiva la vida en la provincia de Teruel",
+   "tituloFrase": "Empleo y servicios que hagan atractiva la vida en la provincia de Teruel",
+   "texto": "Estudiar y promover medidas de apoyo a la generación de empleo y a la creación de las condiciones laborales, sociales y de servicios que hagan atractiva y digna la vida en la provincia de Teruel, teniendo en cuenta las particularidades territoriales, económicas y demográficas de sus municipios y contribuyendo al mantenimiento de la actividad económica y el empleo.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Teruel"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 7,
+   "seccion": "7.1",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Líneas de subvenciones para ayuntamientos para la compra o construcción de vivienda en el medio rural",
+   "tituloFrase": "Líneas de subvenciones para ayuntamientos para la compra o construcción de vivienda en el medio rural",
+   "texto": "Líneas de subvenciones para ayuntamientos para la compra o construcción de vivienda en el medio rural, así como para rehabilitación y alquiler social para jóvenes, nuevos pobladores y trabajadores tanto del sector público como privado, aplicándose en Aragón como programa piloto.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes",
+    "rural"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 7,
+   "seccion": "7.2",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Financiar el Laboratorio de Canfranc y el Observatorio de Javalambre",
+   "tituloFrase": "Financiar el Laboratorio de Canfranc y el Observatorio de Javalambre",
+   "texto": "Impulsar la vertebración del territorio desde la Ciencia a través del fortalecimiento de las dos Infraestructuras Científicas y Técnicas Singulares (ICTS) en las que participa el Estado junto con el Gobierno de Aragón como son el Laboratorio Subterráneo de Canfranc (LSC) y el Observatorio Astrofísico de Javalambre (OAJ) del Centro de Estudios de Física del Cosmos de Aragón (CEFCA), garantizando una financiación adecuada y sostenida en el tiempo",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Huesca",
+    "Teruel",
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 7,
+   "seccion": "7.3",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Reactivar la Ley 45/2007 y los planes de zona",
+   "tituloFrase": "Reactivar la Ley 45/2007 y los planes de zona",
+   "texto": "Exigir el cumplimiento de los compromisos asumidos con relación a los planes de zona aprobados al amparo de la Ley 45/2007, de 13 de diciembre, para el desarrollo sostenible del medio rural, con la reactivación de la Ley y un nuevo proceso de participación territorial, y que tengan un carácter multisectorial, económico y cultural, con el objetivo de alcanzar el equilibrio territorial económico, social y demográfico de Aragón, frenar la pérdida demográfica en todas las comarcas y dotar a las cabeceras de una oferta suficiente de servicios, actividad económica diversificada, comunicaciones y ocio, estableciendo medidas transversales de discriminación positiva en todos los ámbitos, en especial para las personas jóvenes.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "jovenes",
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 7,
+   "seccion": "7.3",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Apostar por el enfoque LEADER y el principio de subsidiariedad de las políticas europeas",
+   "tituloFrase": "Apostar por el enfoque LEADER y el principio de subsidiariedad de las políticas europeas",
+   "texto": "Apostar por el enfoque LEADER y el principio de subsidiariedad de las políticas europeas para reforzar el papel de los Grupos de Acción Local que gestionan ayudas LEADER de desarrollo rural en las comarcas aragonesas, ejemplo de generación de estrategias territoriales de abajo a arriba y toma de decisiones horizontales, apoyadas en representantes del territorio públicos y privados. Defender el papel de la dinamización territorial que juegan los Grupos LEADER, evitando que se conviertan en otra oficina más de ayudas públicas y apuesten por diversificar sus líneas de actuación. Solicitar a las instituciones europeas y al Gobierno de España que se aplique el multifondo a los proyectos LEADER en el periodo financiero 2021-2027",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 96,
+   "bloque": 7,
+   "seccion": "7.4",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Legislar a favor del medio rural, con mecanismos de discriminación positiva",
+   "tituloFrase": "Legislar a favor del medio rural, con mecanismos de discriminación positiva",
+   "texto": "Legislar a favor del medio rural, con mecanismos de discriminación positiva, para frenar el crecimiento desmesurado de las ciudades con el objeto de evitar la lenta pero paulatina destrucción de ecosistemas, los desequilibrios territoriales, el abandono de los pueblos y su impacto medio ambiental, demográfico y cultural en el planeta.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 97,
+   "bloque": 7,
+   "seccion": "7.5",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Nuevo sistema de financiación local, con fondo de compensación del efecto capital",
+   "tituloFrase": "Nuevo sistema de financiación local, con fondo de compensación del efecto capital",
+   "texto": "Impulsar un nuevo sistema de financiación local, destinando un fondo de compensación del efecto capital. Además, es necesario invertir los coeficientes de distribución para favorecer a los municipios menos poblados, que deberán contar además con una financiación mínima estatal y un fondo complementario contra la despoblación, con el objetivo de garantizar su autonomía económica y reducir la dependencia de proyectos e inversiones que puedan comprometer la conservación del medio ambiente y los recursos naturales.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "rural",
+    "discapacidad"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 98,
+   "bloque": 7,
+   "seccion": "7.5",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Detraer 2.000 millones de euros del Fondo de Participación de Tributos del Estado",
+   "tituloFrase": "Detraer 2.000 millones de euros del Fondo de Participación de Tributos del Estado",
+   "texto": "Detraer 2.000 millones de euros del Fondo de Participación de Tributos del Estado que reciben las Diputaciones de régimen común y cabildos insulares para crear un Fondo Municipal contra la Despoblación, con el objetivo de mejorar la financiación de los ayuntamientos de régimen común que no sean capitales de provincia.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Detraer 2.000 millones de euros del Fondo de Participación de Tributos del Estado que reciben las Diputaciones de régimen común y cabildos insulares para crear un Fondo Municipal contra la Despoblación, con el objetivo de mejorar la financiación de los ayuntamientos de régimen común que no sean capitales de provincia."
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 99,
+   "bloque": 7,
+   "seccion": "7.6",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Política forestal de prevención y adaptación al cambio climático",
+   "tituloFrase": "Política forestal de prevención y adaptación al cambio climático",
+   "texto": "Implantar una política forestal orientada a la prevención, el mantenimiento y la adaptación al cambio climático, con planes de gestión sostenible, regulación del aprovechamiento de biomasa residual, estabilidad laboral de los operativos forestales y refuerzo de la protección de los espacios naturales.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 100,
+   "bloque": 7,
+   "seccion": "7.7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Aprobar el Estatuto del agricultor y ganadero profesional",
+   "tituloFrase": "Aprobar el Estatuto del agricultor y ganadero profesional",
+   "texto": "Aprobar el Estatuto del agricultor y ganadero profesional, con reconocimiento jurídico y estadístico y prioridad en todas las políticas públicas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 101,
+   "bloque": 7,
+   "seccion": "7.7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Limitar el acceso a las ayudas públicas de los fondos de inversión",
+   "tituloFrase": "Limitar el acceso a las ayudas públicas de los fondos de inversión",
+   "texto": "Limitar el acceso a las ayudas públicas de los fondos de inversión y del capital sin vínculo territorial, y crear instrumentos que impidan el acaparamiento especulativo de tierra y la movilicen hacia profesionales activos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 102,
+   "bloque": 7,
+   "seccion": "7.7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Valoración del impacto social agrario en los proyectos que afecten al campo",
+   "tituloFrase": "Valoración del impacto social agrario en los proyectos que afecten al campo",
+   "texto": "Exigir una valoración del impacto social agrario, además del impacto ambiental, en la tramitación de proyectos energéticos, tecnológicos, industriales y de otro tipo que afectan a áreas destinadas al sector primario, con el objetivo de proteger el suelo agrícola frente a otros usos cuando existan alternativas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 103,
+   "bloque": 7,
+   "seccion": "7.7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Evitar la uberización del campo",
+   "tituloFrase": "Evitar la uberización del campo",
+   "texto": "Evitar la uberización del campo, favoreciendo que las explotaciones sigan en manos de agricultores profesionales independientes, mediante la exención de tributación de los rendimientos derivados de la venta o arrendamiento de tierras a jóvenes agricultores y agricultores profesionales.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "jovenes",
+    "rural"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 104,
+   "bloque": 7,
+   "seccion": "7.7",
+   "pagina": 27,
+   "subapartado": null,
+   "titulo": "Rechazar el desmantelamiento de la PAC",
+   "tituloFrase": "Rechazar el desmantelamiento de la PAC",
+   "texto": "Rechazar el desmantelamiento de la PAC. Y aplicar la PAC en el campo español en favor de quienes viven de la actividad agraria, priorizando la producción sostenible y el empleo rural; así como facilitando el acceso a la tierra y al agua; y promoviendo circuitos cortos de comercialización y la compra pública alimentaria de proximidad.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 105,
+   "bloque": 7,
+   "seccion": "7.7",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Defendemos la soberanía alimentaria como principio rector de la política agraria y comercial",
+   "tituloFrase": "Defendemos la soberanía alimentaria como principio rector de la política agraria y comercial",
+   "texto": "Defendemos la soberanía alimentaria como principio rector de la política agraria y comercial: el derecho de los pueblos a definir sus propias políticas agrarias y alimentarias, a proteger y regular su producción y sus mercados y a decidir en qué medida quieren ser autosuficientes. La pandemia, las guerras de Ucrania e Irán y las tensiones arancelarias, así como los efectos del cambio climático, han demostrado que un modelo alimentario dependiente de importaciones y de cadenas logísticas globalizadas es vulnerable. Por eso pedimos que se refuercen los fondos de la PAC y los seguros agrarios para atender los efectos excepcionales tanto de los conflictos internacionales como de las consecuencias de la emergencia climática.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 106,
+   "bloque": 8,
+   "seccion": "8.1",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Financiación y plantillas suficientes para los servicios sociales",
+   "tituloFrase": "Financiación y plantillas suficientes para los servicios sociales",
+   "texto": "Asegurar financiación estable y plantillas suficientes para los servicios sociales de comarcas y municipios. Las dotaciones profesionales deben tener en cuenta la población atendida, la dispersión territorial, el envejecimiento y las necesidades de cada zona.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 107,
+   "bloque": 8,
+   "seccion": "8.1",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Garantizar una atención integral, pública y coordinada para las personas con ELA",
+   "tituloFrase": "Garantizar una atención integral, pública y coordinada para las personas con ELA",
+   "texto": "Garantizar una atención integral, pública y coordinada para las personas con ELA, COVID persistente y otras enfermedades de alta complejidad.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 108,
+   "bloque": 8,
+   "seccion": "8.1",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Reforzar la atención psicológica y psiquiátrica pública",
+   "tituloFrase": "Reforzar la atención psicológica y psiquiátrica pública",
+   "texto": "Reforzar la atención psicológica y psiquiátrica pública para toda la ciudadanía, así como la prevención y el acompañamiento emocional en centros educativos, universidades y espacios juveniles.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 109,
+   "bloque": 8,
+   "seccion": "8.1",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Revalorizar la función y la carrera docente",
+   "tituloFrase": "Revalorizar la función y la carrera docente",
+   "texto": "Desarrollar un programa para revalorizar y fortalecer la función y carrera docente (complementos económicos en puestos de difícil desempeño o cobertura; complementos económicos a la formación más allá de sexenios, pedagogía de la profesión a la sociedad...).",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 110,
+   "bloque": 8,
+   "seccion": "8.1",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Adaptar los centros educativos al calor",
+   "tituloFrase": "Adaptar los centros educativos al calor",
+   "texto": "Exigir financiación estatal plurianual para adaptar los centros educativos públicos al calor, coordinada con el plan aragonés «Aulas que respiran» y destinada a medidas como aislamiento, sombra, ventilación y climatización eficiente.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 111,
+   "bloque": 8,
+   "seccion": "8.2",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Empleo digno",
+   "tituloFrase": "Empleo digno",
+   "texto": "Empleo digno: regular el ejercicio de las profesiones deportivas, establecer los derechos y obligaciones de sus profesionales y determinar los requisitos de cualificación y las actividades reservadas que correspondan y garantizar derechos laborales y cualificación.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 112,
+   "bloque": 8,
+   "seccion": "8.2",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Acceso al deporte para todas las rentas",
+   "tituloFrase": "Acceso al deporte para todas las rentas",
+   "texto": "Acceso al deporte para todas las rentas. Impulsar un programa estatal de ayudas directas para facilitar el acceso a la práctica deportiva habitual de las personas y familias con menores recursos económicos, con especial atención a la infancia, las personas con discapacidad y los colectivos en situación de vulnerabilidad",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "discapacidad",
+    "familias",
+    "infancia"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 113,
+   "bloque": 8,
+   "seccion": "8.2",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Favorecer el acceso al mecenazgo a los clubes deportivos de base sin ánimo de lucro",
+   "tituloFrase": "Favorecer el acceso al mecenazgo a los clubes deportivos de base sin ánimo de lucro",
+   "texto": "Favorecer el acceso al mecenazgo a los clubes deportivos de base sin ánimo de lucro.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 114,
+   "bloque": 8,
+   "seccion": "8.2",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Instalaciones públicas y cohesión territorial",
+   "tituloFrase": "Instalaciones públicas y cohesión territorial",
+   "texto": "Instalaciones públicas y cohesión territorial: financiación estatal para mejorar instalaciones deportivas, priorizando municipios pequeños y zonas despobladas.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 115,
+   "bloque": 8,
+   "seccion": "8.3",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Retomar y completar la tramitación de Ley Orgánica de medidas en materia de violencia vicaria",
+   "tituloFrase": "Retomar y completar la tramitación de Ley Orgánica de medidas en materia de violencia vicaria",
+   "texto": "Retomar y completar la tramitación de Ley Orgánica de medidas en materia de violencia vicaria, incorporando las reformas penales, civiles y procesales necesarias para garantizar la protección de las mujeres y sus hijos e hijas, respetando el Derecho civil foral de Aragón.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 116,
+   "bloque": 8,
+   "seccion": "8.3",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Reconocer todas las formas de acreditación de la violencia de género",
+   "tituloFrase": "Reconocer todas las formas de acreditación de la violencia de género",
+   "texto": "Garantizar que las administraciones estatales reconozcan todas las formas legales de acreditación de la violencia de género, sin exigir denuncia judicial cuando la ley no la establece como requisito.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 117,
+   "bloque": 8,
+   "seccion": "8.3",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Establecer mecanismos de reclamación y control frente a las actuaciones institucionales",
+   "tituloFrase": "Establecer mecanismos de reclamación y control frente a las actuaciones institucionales",
+   "texto": "Establecer mecanismos de reclamación y control frente a las actuaciones institucionales que revictimicen a las mujeres, con formación especializada y evaluación de los servicios policiales y judiciales estatales.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 118,
+   "bloque": 8,
+   "seccion": "8.3",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Avanzar hacia una sociedad abolicionista de la prostitución a través de medidas normativas",
+   "tituloFrase": "Avanzar hacia una sociedad abolicionista de la prostitución a través de medidas normativas",
+   "texto": "Avanzar hacia una sociedad abolicionista de la prostitución a través de medidas normativas, educativas y sociales que permitan desarrollar los pilares de la sexualidad feminista y acaben con la demanda de la prostitución y el negocio de los proxenetas.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 119,
+   "bloque": 8,
+   "seccion": "8.3",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Justicia especializada y de proximidad",
+   "tituloFrase": "Justicia especializada y de proximidad",
+   "texto": "Justicia especializada y de proximidad. Revisar la centralización de las Secciones de Violencia sobre la Mujer, garantizando que la especialización no suponga mayores dificultades de acceso a la justicia. Examinar especialmente la situación de Tarazona, Ejea de los Caballeros y La Almunia de Doña Godina.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 120,
+   "bloque": 8,
+   "seccion": "8.3",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Aumentar las plazas judiciales y fiscales especializadas en violencia machista",
+   "tituloFrase": "Aumentar las plazas judiciales y fiscales especializadas en violencia machista",
+   "texto": "Aumentar las plazas judiciales y fiscales especializadas en violencia machista, con la correspondiente dotación presupuestaria.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 121,
+   "bloque": 8,
+   "seccion": "8.3",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Financiar y especializar el turno de oficio",
+   "tituloFrase": "Financiar y especializar el turno de oficio",
+   "texto": "Mejorar la financiación y especialización del turno de oficio y garantizar la continuidad de la defensa de las mujeres víctimas de violencia machista.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [
+    "mujeres",
+    "victimas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 122,
+   "bloque": 8,
+   "seccion": "8.4",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Igualdad en los convenios colectivos",
+   "tituloFrase": "Igualdad en los convenios colectivos",
+   "texto": "Igualdad en los convenios colectivos. Reformar el artículo 90 del Estatuto de los Trabajadores para reforzar la revisión de los convenios colectivos y corregir las discriminaciones salariales, profesionales y laborales por razón de sexo, dotando de medios especializados a la autoridad laboral estatal.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 123,
+   "bloque": 8,
+   "seccion": "8.4",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Presupuestos con perspectiva de género",
+   "tituloFrase": "Presupuestos con perspectiva de género",
+   "texto": "Presupuestos con perspectiva de género. Mejorar los informes de impacto de género de los Presupuestos Generales del Estado, incorporando datos de ejecución, resultados y cumplimiento de objetivos.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 124,
+   "bloque": 8,
+   "seccion": "8.4",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Estadísticas de igualdad",
+   "tituloFrase": "Estadísticas de igualdad",
+   "texto": "Estadísticas de igualdad. Ampliar las estadísticas estatales desagregadas por sexo y territorio sobre empleo, salarios, pensiones, cuidados y violencias machistas, incorporando información provincial cuando sea posible.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 125,
+   "bloque": 8,
+   "seccion": "8.4",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Seguimiento parlamentario",
+   "tituloFrase": "Seguimiento parlamentario",
+   "texto": "Seguimiento parlamentario. Establecer una evaluación anual ante el Congreso de los Diputados sobre el cumplimiento de las políticas estatales de igualdad, su financiación y los resultados obtenidos.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 126,
+   "bloque": 8,
+   "seccion": "8.5",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Establecer mecanismos de financiación estatal estables y plurianuales para las políticas LGTBIQ+",
+   "tituloFrase": "Establecer mecanismos de financiación estatal estables y plurianuales para las políticas LGTBIQ+",
+   "texto": "Establecer mecanismos de financiación estatal estables y plurianuales para las políticas LGTBIQ+, a través de entidades sociales y LGTBIQ+, de los proyectos de igualdad y los servicios de atención directa, incorporando criterios de equidad territorial que tengan en cuenta la dispersión poblacional de Aragón y las dificultades de las entidades de menor tamaño. Garantizar que los recursos lleguen también a las comarcas y municipios rurales.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 127,
+   "bloque": 8,
+   "seccion": "8.5",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Información y acompañamiento LGTBIQ+ de proximidad, con atención al medio rural",
+   "tituloFrase": "Información y acompañamiento LGTBIQ+ de proximidad, con atención al medio rural",
+   "texto": "Impulsar, en coordinación con el Gobierno de Aragón, las entidades locales y el tejido asociativo, programas de información, orientación y acompañamiento especializado mediante recursos de proximidad, atención itinerante y telemática. Prestar especial atención al medio rural aragonés, combatiendo el aislamiento, la discriminación y el sexilio, y favoreciendo que las personas LGTBIQ+ puedan desarrollar sus proyectos de vida en sus territorios.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 128,
+   "bloque": 8,
+   "seccion": "8.5",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Mantener y mejorar los recursos contra la LGTBIfobia y por la atención integral",
+   "tituloFrase": "Mantener y mejorar los recursos contra la LGTBIfobia y por la atención integral",
+   "texto": "Garantizar la continuidad y mejora de los recursos existentes en materia de prevención de la LGTBIfobia y los delitos e incidentes de odio, así como de atención integral a sus víctimas; igualdad laboral y planes LGTBIQ+ en las empresas; atención sanitaria integral; prevención del VIH y otras ITS; protección de las personas trans e intersexuales y recuperación de la memoria democrática LGTBIQ+. Reforzar, asimismo, los recursos humanos y presupuestarios de los órganos estatales responsables de impulsar y supervisar estas políticas.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "victimas",
+    "empresas"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 129,
+   "bloque": 8,
+   "seccion": "8.5",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Revisar la Estrategia estatal para la igualdad de trato LGTBIQ+",
+   "tituloFrase": "Revisar la Estrategia estatal para la igualdad de trato LGTBIQ+",
+   "texto": "Revisar y fortalecer la Estrategia estatal para la igualdad de trato y no discriminación de las personas LGTBIQ+. Evaluar su aplicación y actualizar sus prioridades para garantizar objetivos concretos, compromisos presupuestarios e indicadores públicos de cumplimiento. Incorporar una perspectiva territorial que permita identificar las desigualdades entre comunidades autónomas y, especialmente, las dificultades de acceso a derechos y servicios en el medio rural aragonés.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "rural",
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 130,
+   "bloque": 8,
+   "seccion": "8.6",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Reforzar la educación para la ciudadanía global y la política de la paz desde políticas educativas",
+   "tituloFrase": "Reforzar la educación para la ciudadanía global y la política de la paz desde políticas educativas",
+   "texto": "Reforzar la educación para la ciudadanía global y la política de la paz desde políticas educativas, de participación social y de comunicación en línea con el trabajo que las organizaciones de nuestra tierra llevan años realizando y que nos hacen una sociedad comprometida con los retos globales, las desigualdades y sus causas estructurales, y promotoras de los derechos humanos, la democracia, la paz y de futuros de esperanza.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 131,
+   "bloque": 8,
+   "seccion": "8.6",
+   "pagina": 33,
+   "subapartado": null,
+   "titulo": "Acción humanitaria centrada en las personas y conforme al Derecho Internacional Humanitario",
+   "tituloFrase": "Acción humanitaria centrada en las personas y conforme al Derecho Internacional Humanitario",
+   "texto": "Defender una acción humanitaria centrada en las personas y respetuosa con el Derecho Internacional Humanitario que responda a las necesidades y proporcione protección a quienes más sufren el impacto de las crisis humanitarias y conflictos armados, respondiendo a nuestra visión internacionalista.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 132,
+   "bloque": 9,
+   "seccion": "9.1",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Situar a la juventud en el centro de las políticas públicas",
+   "tituloFrase": "Situar a la juventud en el centro de las políticas públicas",
+   "texto": "Situar a la juventud en el centro de las políticas públicas, garantizando oportunidades, derechos y herramientas para desarrollar un proyecto de vida digno en Aragón.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 133,
+   "bloque": 9,
+   "seccion": "9.1",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Una política integral de juventud",
+   "tituloFrase": "Una política integral de juventud",
+   "texto": "Desarrollar una política integral de juventud que responda a las necesidades y realidades de las nuevas generaciones, garantizando su participación efectiva en las decisiones políticas y sociales.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 134,
+   "bloque": 9,
+   "seccion": "9.1",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Emancipación, empleo digno, formación y vivienda para la juventud",
+   "tituloFrase": "Emancipación, empleo digno, formación y vivienda para la juventud",
+   "texto": "Impulsar medidas que favorezcan la emancipación, el acceso al empleo digno, la formación, la vivienda y la igualdad de oportunidades, prestando especial atención a las diferencias entre el medio urbano y rural.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 135,
+   "bloque": 9,
+   "seccion": "9.1",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Reforzar los recursos destinados a las asociaciones y organizaciones juveniles",
+   "tituloFrase": "Reforzar los recursos destinados a las asociaciones y organizaciones juveniles",
+   "texto": "Reforzar los recursos destinados a las asociaciones y organizaciones juveniles, fomentar el asociacionismo y crear espacios de encuentro, participación y organización colectiva.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 136,
+   "bloque": 9,
+   "seccion": "9.1",
+   "pagina": 35,
+   "subapartado": null,
+   "titulo": "Asegurar la protección y continuidad de los apoyos a las personas jóvenes migrantes",
+   "tituloFrase": "Asegurar la protección y continuidad de los apoyos a las personas jóvenes migrantes",
+   "texto": "Asegurar la protección y continuidad de los apoyos a las personas jóvenes migrantes que han pasado por el sistema de protección.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "jovenes",
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 137,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Proteger el aragonés y las lenguas no cooficiales, y financiar la Academia Aragonesa de la Lengua",
+   "tituloFrase": "Proteger el aragonés y las lenguas no cooficiales, y financiar la Academia Aragonesa de la Lengua",
+   "texto": "Profundizar por parte del Gobierno estatal en el reconocimiento y protección de las lenguas no cooficiales protegidas en los Estatutos de Autonomía, como es el caso del aragonés, para dar cumplimiento a la Carta Europea de las Lenguas Regionales o Minoritarias. En este sentido, proponemos mantener las líneas de ayuda específicas para proyectos culturales en las lenguas de Aragón, aprobar la especialidad para el profesorado en lenguas no oficiales, así como reconocer y financiar por parte del Ministerio de Ciencia a la Academia Aragonesa de la Lengua, única academia oficial lingüística que no recibe subvención actualmente.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 138,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Adoptar las medidas necesarias para la recuperación del patrimonio emigrado o expoliado",
+   "tituloFrase": "Adoptar las medidas necesarias para la recuperación del patrimonio emigrado o expoliado",
+   "texto": "Adoptar las medidas necesarias para la recuperación del patrimonio emigrado o expoliado, como los bienes aragoneses que aún permanecen en el Museo Nacional de Arte de Cataluña, los procedentes del Monasterio de Sijena, la documentación aragonesa existente en el Archivo General de la Guerra Civil en Salamanca, en la Biblioteca Nacional, colecciones particulares, el Museo Arqueológico Nacional y otros; y confeccionar el Censo del Patrimonio Aragonés Emigrado y de la Estrategia Aragonesa de Recuperación del Patrimonio en el Exterior.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Zaragoza",
+    "Aragón",
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 139,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Ceder a Aragón los Arcos de la Aljafería",
+   "tituloFrase": "Ceder a Aragón los Arcos de la Aljafería",
+   "texto": "Demandar a la Administración General del Estado y al Gobierno de Aragón a que aprueben la cesión en pleno derecho de los denominados Arcos de la Aljafería actualmente en situación de préstamo por parte del Museo Arqueológico, así como otros elementos del patrimonio aragonés que se encuentran en el citado centro.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 140,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Un edificio para el Archivo Nacional de Aragón",
+   "tituloFrase": "Un edificio para el Archivo Nacional de Aragón",
+   "texto": "Reclamar la construcción de un edificio adecuado a las necesidades técnicas y espaciales de almacenamiento, conservación y accesibilidad para la ubicación del Archivo Nacional de Aragón.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 141,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Sede filial del Museo Cajal en Huesca",
+   "tituloFrase": "Sede filial del Museo Cajal en Huesca",
+   "texto": "Exigir al Ministerio de Ciencia que se establezca en la ciudad de Huesca una sede filial del Museo Cajal, dadas las innegables raíces altoaragonesas del Premio Nobel y en coherencia con el criterio de descentralización de los nuevos centros y equipamientos de titularidad estatal.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Huesca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 142,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Capilla de Santa Rosa y ampliación del Archivo Histórico de Huesca",
+   "tituloFrase": "Capilla de Santa Rosa y ampliación del Archivo Histórico de Huesca",
+   "texto": "Demandar la rehabilitación de la Capilla de Santa Rosa para la ampliación del Archivo Histórico Provincial de Huesca, para alojar y exponer el legado de Joaquín Costa, así como la ampliación del Museo de Zaragoza, la restauración de las pinturas de Claudio Coello de la iglesia de la Mantería,...",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Huesca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 143,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Reconocer los títulos de la Escuela de Violería de Zaragoza",
+   "tituloFrase": "Reconocer los títulos de la Escuela de Violería de Zaragoza",
+   "texto": "Reconocer oficialmente por el Ministerio de Educación los títulos impartidos en la Escuela de Violería de Zaragoza.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 144,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 37,
+   "subapartado": null,
+   "titulo": "Colaborar en el Bicentenario de Goya, en 2028",
+   "tituloFrase": "Colaborar en el Bicentenario de Goya, en 2028",
+   "texto": "Impulsar la colaboración de todas las administraciones con la Comisión Nacional para la conmemoración del Bicentenario del fallecimiento de Francisco de Goya, de cara a 2028, reconociendo el papel fundamental de Zaragoza, Fuendetodos y todas las localidades aragonesas con presencia de sus obras.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Zaragoza",
+    "Aragón"
+   ],
+   "cifras": [],
+   "plazo": "2028",
+   "deroga": null
+  },
+  {
+   "n": 145,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 38,
+   "subapartado": null,
+   "titulo": "Promover las candidaturas al Patrimonio Mundial de la UNESCO de la Jota aragonesa",
+   "tituloFrase": "Promover las candidaturas al Patrimonio Mundial de la UNESCO de la Jota aragonesa",
+   "texto": "Promover las candidaturas al Patrimonio Mundial de la UNESCO de la Jota aragonesa, del castillo de Loarre y de las Lonjas de la Corona de Aragón (Zaragoza, Barcelona y Palma, junto a la de Valencia).",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Zaragoza",
+    "Huesca",
+    "Aragón",
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 146,
+   "bloque": 10,
+   "seccion": "10.1",
+   "pagina": 38,
+   "subapartado": null,
+   "titulo": "Bono cultural de 600 € durante tres años",
+   "tituloFrase": "Bono cultural de 600 € durante tres años",
+   "texto": "Ampliar el Bono cultural a 600 € y en temporalidad a 3 años (a los 18, 19 y 20 años), con el doble objetivo de afianzar a los y las jóvenes como nuevos consumidores culturales y, por otra parte, seguir apoyando a la industria cultural.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "jovenes",
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Ampliar el Bono cultural a 600 € y en temporalidad a 3 años (a los 18, 19 y 20 años), con el doble objetivo de afianzar a los y las jóvenes como nuevos consumidores culturales y, por otra parte, seguir apoyando a la industria cultural."
+   ],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }
