@@ -2,26 +2,959 @@
  "id": "upn",
  "partido": "Unión del Pueblo Navarro",
  "siglas": "UPN",
+ "comunidad": "Navarra",
  "color": "#0B55A3",
  "colorClaro": "#91b2d6",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Por España, por Navarra, por fin",
+ "subtitulo": "36 compromisos en 12 bloques: España, el Fuero, sanidad, vivienda, inversiones y empleo",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "observaciones": [
+  "Los compromisos se publican en la web de la coalición UPN-PP (upn-pp.es), en la sección «01 Compromisos», con el lema «Por España, por Navarra, por fin». No hay PDF ni programa extenso: la web solo da la fecha de su última modificación (16 de noviembre de 2026).",
+  "Cada viñeta de los 12 bloques es una medida (36). Las viñetas no tienen título: el título corto es editorial y el texto es el de la web, literal. Los nombres de los bloques son los epígrafes de la web.",
+  "No hay plazos de aplicación (el «48 horas» de los okupas o los «6 meses» de los títulos son cifras de la medida, no fechas) ni derogaciones explícitas: la «supresión de la Transitoria Cuarta» es la de una disposición de la Ley Orgánica de Reintegración y Amejoramiento del Régimen Foral, no una ley que se derogue."
+ ],
+ "tipoDocumento": "web",
+ "origenMedidas": "web",
+ "pdf": "https://upn-pp.es/",
+ "fuentePdf": "https://upn-pp.es/",
+ "fechaFuente": "2026-11-19",
+ "unidadMedida": "compromiso",
+ "unidadMedidas": "compromisos",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Por España, por Navarra, por fin",
+  "texto": "UPN y PP unen fuerzas para las elecciones generales del 29N. Los compromisos se agrupan en doce bloques, de «España necesita un cambio» a «Pueblos con vida»."
  },
- "cifras": [],
+ "cifras": [
+  {
+   "valor": "20.000",
+   "unidad": "viviendas protegidas",
+   "texto": "Menos trámites para desbloquear las 20.000 viviendas protegidas que esperan en Navarra.",
+   "contexto": "20.000 viviendas protegidas",
+   "medida": 28
+  },
+  {
+   "valor": "48 h",
+   "unidad": "plazo de desalojo",
+   "texto": "Okupas fuera en 48 horas.",
+   "contexto": "48 horas",
+   "medida": 29
+  },
+  {
+   "valor": "6 meses",
+   "unidad": "homologación de títulos",
+   "texto": "Contratación en origen y títulos homologados en 6 meses.",
+   "contexto": "6 meses",
+   "medida": 32
+  },
+  {
+   "valor": "2 años",
+   "unidad": "cuota cero",
+   "texto": "Autónomos: cuota cero los dos primeros años, sin IVA hasta 85.000€ de facturación y mayor cobertura social.",
+   "contexto": "cuota cero los dos primeros años",
+   "medida": 33
+  },
+  {
+   "valor": "85.000 €",
+   "unidad": "facturación sin IVA",
+   "texto": "Autónomos: cuota cero los dos primeros años, sin IVA hasta 85.000€ de facturación y mayor cobertura social.",
+   "contexto": "sin IVA hasta 85.000€ de facturación",
+   "medida": 33
+  }
+ ],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Navarra"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "España necesita un cambio",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 2,
+   "titulo": "Navarra decide su futuro",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 3,
+   "titulo": "Navarra nunca será moneda de cambio",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 4,
+   "titulo": "Menos espera y mejor atención",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 5,
+   "titulo": "Formar para un futuro mejor",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 6,
+   "titulo": "Vivir con tranquilidad",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 7,
+   "titulo": "Que tu dinero llegue más lejos",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 8,
+   "titulo": "Las inversiones que Navarra necesita",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 9,
+   "titulo": "Una vivienda que puedas pagar",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 10,
+   "titulo": "Más oportunidades y mejores empleos",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 11,
+   "titulo": "Llegar con orden, trabajar con futuro",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  },
+  {
+   "id": 12,
+   "titulo": "Pueblos con vida",
+   "lema": "",
+   "cita": "",
+   "intro": ""
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1.1",
+   "bloque": 1,
+   "titulo": "España necesita un cambio",
+   "tituloFrase": "España necesita un cambio",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "2.1",
+   "bloque": 2,
+   "titulo": "Navarra decide su futuro",
+   "tituloFrase": "Navarra decide su futuro",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "3.1",
+   "bloque": 3,
+   "titulo": "Navarra nunca será moneda de cambio",
+   "tituloFrase": "Navarra nunca será moneda de cambio",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "4.1",
+   "bloque": 4,
+   "titulo": "Menos espera y mejor atención",
+   "tituloFrase": "Menos espera y mejor atención",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "5.1",
+   "bloque": 5,
+   "titulo": "Formar para un futuro mejor",
+   "tituloFrase": "Formar para un futuro mejor",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "6.1",
+   "bloque": 6,
+   "titulo": "Vivir con tranquilidad",
+   "tituloFrase": "Vivir con tranquilidad",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "7.1",
+   "bloque": 7,
+   "titulo": "Que tu dinero llegue más lejos",
+   "tituloFrase": "Que tu dinero llegue más lejos",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "8.1",
+   "bloque": 8,
+   "titulo": "Las inversiones que Navarra necesita",
+   "tituloFrase": "Las inversiones que Navarra necesita",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "9.1",
+   "bloque": 9,
+   "titulo": "Una vivienda que puedas pagar",
+   "tituloFrase": "Una vivienda que puedas pagar",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "10.1",
+   "bloque": 10,
+   "titulo": "Más oportunidades y mejores empleos",
+   "tituloFrase": "Más oportunidades y mejores empleos",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "11.1",
+   "bloque": 11,
+   "titulo": "Llegar con orden, trabajar con futuro",
+   "tituloFrase": "Llegar con orden, trabajar con futuro",
+   "intro": "",
+   "subapartados": []
+  },
+  {
+   "id": "12.1",
+   "bloque": 12,
+   "titulo": "Pueblos con vida",
+   "tituloFrase": "Pueblos con vida",
+   "intro": "",
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1.1",
+   "subapartado": null,
+   "titulo": "Respeto a la Constitución y a las instituciones",
+   "tituloFrase": "Respeto a la Constitución y a las instituciones",
+   "texto": "Recuperar el respeto a la Constitución y a las instituciones.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1.1",
+   "subapartado": null,
+   "titulo": "Separación de poderes",
+   "tituloFrase": "Separación de poderes",
+   "texto": "Garantizar la separación de poderes.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1.1",
+   "subapartado": null,
+   "titulo": "Más papel para las Cortes Generales",
+   "tituloFrase": "Más papel para las Cortes Generales",
+   "texto": "Reforzar el papel de las Cortes Generales.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1.1",
+   "subapartado": null,
+   "titulo": "Tolerancia cero con la corrupción",
+   "tituloFrase": "Tolerancia cero con la corrupción",
+   "texto": "Tolerancia cero con la corrupción.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 5,
+   "bloque": 2,
+   "seccion": "2.1",
+   "subapartado": null,
+   "titulo": "Navarra, Comunidad Foral",
+   "tituloFrase": "Navarra, Comunidad Foral",
+   "texto": "Navarra es y va a seguir siendo una Comunidad Foral.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 6,
+   "bloque": 2,
+   "seccion": "2.1",
+   "subapartado": null,
+   "titulo": "Defensa del Fuero y del Convenio Económico",
+   "tituloFrase": "Defensa del Fuero y del Convenio Económico",
+   "texto": "Defensa del Fuero y del Convenio Económico.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 7,
+   "bloque": 2,
+   "seccion": "2.1",
+   "subapartado": null,
+   "titulo": "Suprimir la Transitoria Cuarta",
+   "tituloFrase": "Suprimir la Transitoria Cuarta",
+   "texto": "Supresión de la Transitoria Cuarta, que abre la puerta a anexionar Navarra con el País Vasco.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 8,
+   "bloque": 3,
+   "seccion": "3.1",
+   "subapartado": null,
+   "titulo": "Solo acuerdos dignos",
+   "tituloFrase": "Solo acuerdos dignos",
+   "texto": "Solo aceptamos acuerdos dignos, con quien respeta la democracia y las instituciones.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 9,
+   "bloque": 3,
+   "seccion": "3.1",
+   "subapartado": null,
+   "titulo": "Memoria, dignidad, justicia y verdad para las víctimas",
+   "tituloFrase": "Memoria, dignidad, justicia y verdad para las víctimas",
+   "texto": "Memoria, dignidad, justicia y verdad para las víctimas del terrorismo.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 10,
+   "bloque": 4,
+   "seccion": "4.1",
+   "subapartado": null,
+   "titulo": "Una sanidad pública de referencia",
+   "tituloFrase": "Una sanidad pública de referencia",
+   "texto": "Una sanidad pública que vuelva a ser referente.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 11,
+   "bloque": 4,
+   "seccion": "4.1",
+   "subapartado": null,
+   "titulo": "Menos listas de espera",
+   "tituloFrase": "Menos listas de espera",
+   "texto": "Menos listas de espera para diagnosticar antes y tratar mejor.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 12,
+   "bloque": 4,
+   "seccion": "4.1",
+   "subapartado": null,
+   "titulo": "Más prevención",
+   "tituloFrase": "Más prevención",
+   "texto": "Más prevención y mejores resultados.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 13,
+   "bloque": 4,
+   "seccion": "4.1",
+   "subapartado": null,
+   "titulo": "Más plazas MIR",
+   "tituloFrase": "Más plazas MIR",
+   "texto": "Más plazas MIR.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 14,
+   "bloque": 4,
+   "seccion": "4.1",
+   "subapartado": null,
+   "titulo": "Plazos más cortos en dependencia",
+   "tituloFrase": "Plazos más cortos en dependencia",
+   "texto": "En dependencia, plazos más cortos.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 15,
+   "bloque": 4,
+   "seccion": "4.1",
+   "subapartado": null,
+   "titulo": "Ayudas sin duplicidades ni abusos",
+   "tituloFrase": "Ayudas sin duplicidades ni abusos",
+   "texto": "Ayudas sin duplicidades ni abusos.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 16,
+   "bloque": 5,
+   "seccion": "5.1",
+   "subapartado": null,
+   "titulo": "Educación de calidad y rendimiento escolar",
+   "tituloFrase": "Educación de calidad y rendimiento escolar",
+   "texto": "Educación de calidad orientada a la mejora del rendimiento escolar.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 17,
+   "bloque": 5,
+   "seccion": "5.1",
+   "subapartado": null,
+   "titulo": "FP dual y becas garantizadas",
+   "tituloFrase": "FP dual y becas garantizadas",
+   "texto": "FP dual conectada con las empresas y un sistema de becas garantizado para quien las necesite.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 18,
+   "bloque": 6,
+   "seccion": "6.1",
+   "subapartado": null,
+   "titulo": "Más medios y coordinación entre policías",
+   "tituloFrase": "Más medios y coordinación entre policías",
+   "texto": "Más medios y mejor coordinación entre todas las policías.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 19,
+   "bloque": 6,
+   "seccion": "6.1",
+   "subapartado": null,
+   "titulo": "Calles seguras en cada barrio y pueblo",
+   "tituloFrase": "Calles seguras en cada barrio y pueblo",
+   "texto": "Calles seguras en cada barrio y pueblo.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 20,
+   "bloque": 7,
+   "seccion": "7.1",
+   "subapartado": null,
+   "titulo": "Alivio fiscal",
+   "tituloFrase": "Alivio fiscal",
+   "texto": "Un alivio fiscal que genere más actividad, que ayude a las personas a tener más poder adquisitivo y a las empresas a ser más competitivas.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 21,
+   "bloque": 7,
+   "seccion": "7.1",
+   "subapartado": null,
+   "titulo": "Impuestos sin inflación y pensiones que mantengan el poder adquisitivo",
+   "tituloFrase": "Impuestos sin inflación y pensiones que mantengan el poder adquisitivo",
+   "texto": "Que la inflación no te suba los impuestos. Pensiones que mantengan tu poder adquisitivo.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 22,
+   "bloque": 8,
+   "seccion": "8.1",
+   "subapartado": null,
+   "titulo": "Calendario y financiación de las grandes obras",
+   "tituloFrase": "Calendario y financiación de las grandes obras",
+   "texto": "Calendario y financiación para la segunda fase del Canal de Navarra, el recrecimiento de Yesa, el tren de alta velocidad y la autovía A-15.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 23,
+   "bloque": 8,
+   "seccion": "8.1",
+   "subapartado": null,
+   "titulo": "Red eléctrica para la industria",
+   "tituloFrase": "Red eléctrica para la industria",
+   "texto": "Red eléctrica para la industria.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 24,
+   "bloque": 8,
+   "seccion": "8.1",
+   "subapartado": null,
+   "titulo": "Mejores conexiones aéreas",
+   "tituloFrase": "Mejores conexiones aéreas",
+   "texto": "Mejores conexiones aéreas.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 25,
+   "bloque": 8,
+   "seccion": "8.1",
+   "subapartado": null,
+   "titulo": "Internet y cobertura en todos los pueblos",
+   "tituloFrase": "Internet y cobertura en todos los pueblos",
+   "texto": "Internet y cobertura en todos los pueblos.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 26,
+   "bloque": 9,
+   "seccion": "9.1",
+   "subapartado": null,
+   "titulo": "Más oferta para bajar los precios",
+   "tituloFrase": "Más oferta para bajar los precios",
+   "texto": "Más oferta para bajar los precios.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 27,
+   "bloque": 9,
+   "seccion": "9.1",
+   "subapartado": null,
+   "titulo": "Suelo público para vivienda asequible",
+   "tituloFrase": "Suelo público para vivienda asequible",
+   "texto": "Suelo público para vivienda asequible.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 28,
+   "bloque": 9,
+   "seccion": "9.1",
+   "subapartado": null,
+   "titulo": "Desbloquear las 20.000 viviendas protegidas",
+   "tituloFrase": "Desbloquear las 20.000 viviendas protegidas",
+   "texto": "Menos trámites para desbloquear las 20.000 viviendas protegidas que esperan en Navarra.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Navarra"
+   ],
+   "cifras": [
+    "Menos trámites para desbloquear las 20.000 viviendas protegidas que esperan en Navarra."
+   ],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 29,
+   "bloque": 9,
+   "seccion": "9.1",
+   "subapartado": null,
+   "titulo": "Okupas fuera en 48 horas",
+   "tituloFrase": "Okupas fuera en 48 horas",
+   "texto": "Okupas fuera en 48 horas.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Okupas fuera en 48 horas."
+   ],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 30,
+   "bloque": 10,
+   "seccion": "10.1",
+   "subapartado": null,
+   "titulo": "Refuerzo del tejido empresarial y la industria",
+   "tituloFrase": "Refuerzo del tejido empresarial y la industria",
+   "texto": "Refuerzo del tejido empresarial, la industria y los servicios, con un ecosistema innovador.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 31,
+   "bloque": 10,
+   "seccion": "10.1",
+   "subapartado": null,
+   "titulo": "Salarios dignos y concertación social",
+   "tituloFrase": "Salarios dignos y concertación social",
+   "texto": "Salarios dignos y respeto a la concertación social.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 32,
+   "bloque": 10,
+   "seccion": "10.1",
+   "subapartado": null,
+   "titulo": "Contratación en origen y títulos homologados en 6 meses",
+   "tituloFrase": "Contratación en origen y títulos homologados en 6 meses",
+   "texto": "Contratación en origen y títulos homologados en 6 meses.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "Contratación en origen y títulos homologados en 6 meses."
+   ],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 33,
+   "bloque": 10,
+   "seccion": "10.1",
+   "subapartado": null,
+   "titulo": "Ayudas a los autónomos",
+   "tituloFrase": "Ayudas a los autónomos",
+   "texto": "Autónomos: cuota cero los dos primeros años, sin IVA hasta 85.000€ de facturación y mayor cobertura social.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Autónomos: cuota cero los dos primeros años, sin IVA hasta 85.000€ de facturación y mayor cobertura social."
+   ],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 34,
+   "bloque": 11,
+   "seccion": "11.1",
+   "subapartado": null,
+   "titulo": "Inmigración legal y ordenada",
+   "tituloFrase": "Inmigración legal y ordenada",
+   "texto": "Inmigración legal, ordenada, con derechos y obligaciones.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 35,
+   "bloque": 12,
+   "seccion": "12.1",
+   "subapartado": null,
+   "titulo": "Una PAC para agricultores y ganaderos profesionales",
+   "tituloFrase": "Una PAC para agricultores y ganaderos profesionales",
+   "texto": "Una PAC para agricultores y ganaderos profesionales, con relevo generacional.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  },
+  {
+   "n": 36,
+   "bloque": 12,
+   "seccion": "12.1",
+   "subapartado": null,
+   "titulo": "Servicios y actividad económica en los pueblos",
+   "tituloFrase": "Servicios y actividad económica en los pueblos",
+   "texto": "Servicios y actividad económica en todos nuestros pueblos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "https://upn-pp.es/"
+  }
+ ]
 }

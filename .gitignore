@@ -33,3 +33,4 @@ Desktop.ini
 
 # Local Wrangler state (wrangler dev)
 .wrangler/
+stories/

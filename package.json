@@ -45,6 +45,7 @@
     "data:comuns": "python scripts/extract_comuns.py public/2026/generales/programas/comuns-programa-29n-2026.pdf src/data/2026/generales/programas/comuns.json",
     "data:nex": "python scripts/extract_nex.py public/2026/generales/programas/nex-programa-generales-29n-2026.pdf src/data/2026/generales/programas/nex.json",
     "data:junts": "python scripts/extract_junts.py public/2026/generales/programas/junts-programa-electoral-29n-2026.pdf src/data/2026/generales/programas/jxcat.json",
+    "data:upn": "python scripts/extract_upn.py src/data/2026/generales/programas/upn.json",
     "data:cha-fa": "python scripts/extract_cha_fa.py public/2026/generales/programas/cha-fa-agenda-aragonesa-2026.pdf src/data/2026/generales/programas/cha-fa.json",
     "data:candidaturas": "python scripts/extract_candidaturas.py"
   },

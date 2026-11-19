@@ -487,6 +487,38 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [41, 46, 47, 48],
     },
   ],
+  upn: [
+    {
+      title: 'Cinco compromisos tratan del estatus de Navarra',
+      text:
+        'Los bloques «Navarra decide su futuro» y «Navarra nunca será moneda de cambio» suman cinco de los 36 compromisos (el 14 %) y no piden nada nuevo: mantener Navarra como Comunidad Foral, defender el Fuero y el Convenio Económico, suprimir la Transitoria Cuarta, que según UPN abre la puerta a anexionar Navarra con el País Vasco, y aceptar solo acuerdos con quien respeta la democracia y las instituciones.',
+      measureNumbers: [5, 6, 7, 8],
+    },
+    {
+      title: 'El bloque más largo es el de sanidad y dependencia: 6 de 36',
+      text:
+        '«Menos espera y mejor atención» reúne seis compromisos (el 17 %), por delante de cualquier otro bloque, que tienen cuatro como máximo. Cuatro son de sanidad (una sanidad pública de referencia, menos listas de espera, más prevención y más plazas MIR) y dos de dependencia: plazos más cortos y ayudas sin duplicidades ni abusos. Ninguno dice cuántas plazas MIR ni cuántos días de espera.',
+      measureNumbers: [10, 11, 13, 14, 15],
+    },
+    {
+      title: 'Vivienda: más oferta, suelo público y okupas fuera en 48 horas',
+      text:
+        'Los cuatro compromisos de vivienda piden más oferta para bajar los precios, suelo público para vivienda asequible, menos trámites para desbloquear las 20.000 viviendas protegidas que esperan en Navarra y el desalojo de okupas en 48 horas. Ninguno propone limitar el precio del alquiler.',
+      measureNumbers: [26, 27, 28, 29],
+    },
+    {
+      title: 'Las obras que Navarra necesita, con calendario y financiación',
+      text:
+        'El bloque de inversiones pide un calendario y una financiación para cuatro obras: la segunda fase del Canal de Navarra, el recrecimiento de Yesa, el tren de alta velocidad y la autovía A-15. Los otros tres compromisos del bloque son la red eléctrica para la industria, mejores conexiones aéreas e internet y cobertura en todos los pueblos.',
+      measureNumbers: [22, 23, 24, 25],
+    },
+    {
+      title: 'Pocos números: 5 cifras en 4 de 36 compromisos',
+      text:
+        'Solo cuatro compromisos llevan una cifra (el 11 %) y ninguno un plazo de aplicación. Las cifras son las 20.000 viviendas protegidas, las 48 horas para el desalojo de okupas, los 6 meses para homologar títulos y, para los autónomos, la cuota cero los dos primeros años y la exención de IVA hasta 85.000 euros de facturación. El alivio fiscal y las pensiones se prometen sin un tipo ni un coste.',
+      measureNumbers: [20, 21, 28, 29, 32, 33],
+    },
+  ],
   'cha-fa': [
     {
       title: 'La movilidad es el bloque más largo: 34 de 146 propuestas',
