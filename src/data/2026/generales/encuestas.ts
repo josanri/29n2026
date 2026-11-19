@@ -5,7 +5,7 @@
  * publicación original y los porcentajes que da. Un partido que la encuesta no publica va como `null`.
  * Para añadir una encuestadora: una entrada en `pollsters` con su página oficial.
  *
- * Origen de las cifras (revisión del 17 de noviembre de 2026):
+ * Origen de las cifras (revisión del 19 de noviembre de 2026):
  * - `checked: true`: la cifra se ha leído en la página original enlazada.
  * - `checked: false`: la cifra no se ha leído en la página original enlazada: viene de la tabla de Mapa Electoral
  *   (agregador) o de otra fuente que la recoge (electografica, Demócrata…). El enlace es la publicación original.
@@ -118,6 +118,10 @@ export const polls: Poll[] = [
   // 16 y 17 nov: FA suma Frente Amplio (3,7) y las otras coaliciones del bloque (1,7): 5,4 %. Sin el informe original: cifras de Electografica y Demócrata (checked: false).
   // 16 nov: horquilla del PP con UPN-PP (125-136); la muestra (2.500) y el campo (10-15 nov) los da una sola fuente.
   // 17 nov: SALF y muestra (2.000) de Electografica; FA y otras coaliciones sin escaños sumados (se publican por separado: FA 5-6, otras 3-5).
+  // 18 nov (6.º tracking, campo 13-17 nov): FA suma Frente Amplio (3,5) y las otras coaliciones (1,7): 5,2 %. Cifras de Electografica (SALF y muestra incluidos); el informe de El País (…/informe_tracking_dia06.pdf) está bloqueado y no se ha leído, por eso el enlace es el de Electografica. Horquillas con UPN-PP incluido: PP 128-139 (la tabla da 126-137 para el PP solo y 2 para UPN-PP); PSOE 118-127 y Vox 51-60 de la tabla (el texto da centrales 131, 122 y 55). Escaños de territoriales de la etiqueta del gráfico (ERC 10, Junts 4, Bildu 7, PNV 3, BNG 2, CC 1, Adelante 3). FA (5; tabla 4-6) y otras coaliciones (3-5) sin sumar.
+  // 19 nov (7.º tracking): FA suma Frente Amplio (3,7) y las otras coaliciones (1,7): 5,4 %. Cifras de Demócrata, sin enlace al informe, muestra ni campo; no da SALF. PP incluye los 2 de UPN-PP. FA 5 (5-6) y otras coaliciones (4: Compromís-FV 3, Ara Més 1, UPC 0) sin sumar. Territoriales del desglose de «Otros» (28). Única fuente: Demócrata.
+  { pollster: '40db', date: '2026-11-19', checked: false, url: 'https://www.democrata.es/encuestas/elecciones-generales/tracking-encuesta-29n-hoy-40db-19-noviembre-2026/', values: vFa(32.4, 30.4, 17.2, 5.4, 1.2, null), seats: { pp: [128, 140], psoe: [116, 125], vox: [53, 61], podemos: [0, 1], erc: 9, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
+  { pollster: '40db', date: '2026-11-18', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-40db-261118.html', values: vFa(32.2, 30.7, 17.0, 5.2, 1.2, 1.7), sample: 2000, seats: { pp: [128, 139], psoe: [118, 127], vox: [51, 60], podemos: [0, 1], erc: 10, junts: 4, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
   { pollster: '40db', date: '2026-11-17', checked: false, url: 'https://www.democrata.es/encuestas/elecciones-generales/elecciones-generales-tracking-encuesta-29n-hoy-40db-17-noviembre-2026/', values: vFa(31.8, 30.6, 17.5, 5.4, 1.1, 1.6), sample: 2000, seats: { pp: [126, 137], psoe: [118, 126], vox: [55, 62], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
   { pollster: '40db', date: '2026-11-16', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-40db-261116.html', values: vFa(31.5, 30.3, 18.0, 5.4, 1.1, 1.7), sample: 2500, seats: { pp: [125, 136], psoe: [118, 124], vox: [57, 64], podemos: [0, 1], erc: 10, junts: 3, bildu: 7, pnv: 3, bng: 2, cc: 1, adelante: 3 } },
   // 15 nov: FA suma Frente Amplio (3,7) y las otras coaliciones del bloque (1,7): 5,4 %. El informe no da escaños de FA.
