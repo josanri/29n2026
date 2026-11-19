@@ -6,6 +6,12 @@
       "name": "Development server",
       "request": "launch",
       "type": "node-terminal"
+    },
+    {
+      "name": "Editor de debates",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "python scripts/editor_debate.py"
     }
   ]
 }

@@ -1,0 +1,58 @@
+{
+  "slug": "lasexta-13-noviembre-2026",
+  "title": "Debate de laSexta del 13 de noviembre",
+  "date": "2026-11-13",
+  "channel": "laSexta",
+  "url": "https://www.lasexta.com/elecciones/generales/vea-integro-debate-electoral-lasexta-cuerpo-psoe-bravo-bustinduy-frente-amplio-figaredo-vox_202611136af78ff9d3bddc0868b0f3c3.html",
+  "speakers": [
+    {
+      "id": "moderadora",
+      "name": "Ana Pastor",
+      "role": "Moderadora",
+      "partyId": null
+    },
+    {
+      "id": "cuerpo",
+      "name": "Carlos Cuerpo",
+      "role": "PSOE",
+      "partyId": "psoe"
+    },
+    {
+      "id": "bravo",
+      "name": "Juan Bravo",
+      "role": "PP",
+      "partyId": "pp"
+    },
+    {
+      "id": "figaredo",
+      "name": "José María Figaredo",
+      "role": "Vox",
+      "partyId": "vox"
+    },
+    {
+      "id": "bustinduy",
+      "name": "Pablo Bustinduy",
+      "role": "Frente Amplio",
+      "partyId": "fa"
+    },
+    {
+      "id": "sin-asignar",
+      "name": "Sin asignar",
+      "role": "",
+      "partyId": null
+    }
+  ],
+  "diarization": {
+    "SPEAKER_01": "moderadora",
+    "SPEAKER_03": "cuerpo",
+    "SPEAKER_05": "bravo",
+    "SPEAKER_04": "figaredo",
+    "SPEAKER_02": "bustinduy",
+    "SPEAKER_00": "sin-asignar"
+  },
+  "overrides": {
+    "50.238": "cuerpo",
+    "1850.358": "figaredo"
+  },
+  "overridesNote": "«Buenas noches.» (50,2 s) es la respuesta de Carlos Cuerpo a su presentación. «Señor Cuerpo, no insultes a los españoles» (1850,4 s) es de Figaredo: responde a «el análisis de dibujos animados que ha realizado el señor Figaredo»."
+}
