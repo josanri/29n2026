@@ -12,7 +12,7 @@ Common…) no entra: primero se añade a `pollsters` con su página oficial, y s
 
 ## 1. Qué hay y qué falta
 
-1. Lee `polls` y apunta, por encuestadora, la fecha de la última línea. Solo interesa lo publicado **después**.
+1. Lee `polls` y apunta, por encuestadora, la fecha de la última línea y el número de entrega si lo hay (p. ej. «8.º tracking»). Solo interesa lo publicado **después**. No des por hecho que no hay nada nuevo: hay que buscar (sección 2) y dejar constancia de la búsqueda.
 2. Mira la fecha de hoy y el ritmo de cada una. En campaña (desde el 13 de noviembre) publican a diario o casi:
    - **40dB.** (El País y SER): tracking diario, PDF `https://ep00.epimg.net/infografias/encuestas40db/2026/11-tracking-electoral/Informe_tracking_diaNN.pdf`.
    - **Sigma Dos** (El Mundo): tracking diario.
@@ -22,8 +22,27 @@ Common…) no entra: primero se añade a `pollsters` con su página oficial, y s
 
 ## 2. Dónde buscar
 
-`WebSearch` en modo `standard` primero; `extended` si no sale lo de hoy. Una búsqueda por encuestadora, con la fecha:
-«SocioMétrica El Español sondeo 15 noviembre 2026», «40dB tracking 14 noviembre 2026»…
+`WebSearch` en modo `standard` primero; `extended` si no sale la entrega de hoy o de ayer de una encuestadora con publicación diaria.
+
+Orden de búsqueda:
+
+1. **Listados primero.** Las tablas de agregadores y de Demócrata («Todas las encuestas», «Media a <fecha>») dicen qué
+   ha salido, pero no son fuente de cifras: una media de agregador nunca es una línea. Las cifras se toman de la publicación
+   o de las fuentes de la tabla de abajo.
+2. **Una búsqueda por encuestadora y fecha, desde el día siguiente a su última línea hasta hoy** (como mínimo hoy y ayer):
+   «40dB tracking <fecha> 2026», «Sigma Dos El Mundo <fecha> 2026». Las encuestas mensuales (GAD3, CIS) pueden tener huecos
+   de semanas; no se descarta una entrega por no caer en esos dos días.
+   Los trackings diarios salen a horas distintas (p. ej. 18:20): prueba también con «hoy». Si buscas antes de la hora de salida,
+   que no salga la entrega de hoy no significa que no la haya: dilo en el cierre.
+3. **Busca por número de entrega** cuando se conozca la serie: «noveno tracking 40dB», «8.º tracking Sigma Dos». Las fuentes
+   no usan la misma numeración: Demócrata puede llamar «noveno» a lo que la serie del archivo cuenta como octavo. La entrega se
+   identifica por su fecha de publicación, no por el número; si la numeración no coincide, anótalo en el comentario sobre la línea.
+4. **No deduzcas cifras.** Si la fuente no da PP, PSOE o VOX, la encuesta no se añade (hacen falta como mínimo esos tres).
+   Si no da FA, Podemos o SALF, va `null`; si no da un autonómico o una fila de escaños, se omite (sección 3). Nunca se calcula
+   un partido restando a un total (p. ej. PP a partir de «PP + Vox» menos Vox). Las únicas sumas permitidas son las de la
+   sección 3 (FA con sus socios, PP con UPN-PP), anotadas en el comentario.
+5. **Constancia de la búsqueda**: apunta qué has buscado por encuestadora y con qué resultado, también si no hay nada nuevo;
+   va en el resumen de cierre (sección 6).
 
 Las fuentes que han funcionado, de más a menos fiable:
 
@@ -36,6 +55,14 @@ Las fuentes que han funcionado, de más a menos fiable:
 
 `WebFetch` rechaza algunos sitios (`SITE_BLOCKED`, `client_error`): no se rodea con `curl` ni espejos; se prueba otra
 fuente. Las cifras de un titular sin tabla no sirven: hace falta PP, PSOE y VOX como mínimo.
+
+Al usar `WebFetch` para leer una página de tabla, pide las cifras **literales** (partido, porcentaje, escaños y horquilla),
+copiadas tal como aparecen. El resumen puede perder desgloses (p. ej. los territoriales de «Otros»): una cifra que no aparece
+en lo que devuelve WebFetch no se añade; esos partidos se omiten de `{ otros }` y de `seats`, y se anota en el comentario.
+
+Cuando el enlace original (El Mundo, El País, El Español…) no abre, las cifras y el `url` salen de la mejor fuente que sí abre
+(orden de la tabla), con `checked: false`. El comentario sobre la línea dice que la publicación original no se pudo leer, y el
+cierre lo cuenta como no verificado. En ese caso no se escribe «leído en la página original».
 
 ## 3. Qué cifra tomar
 
