@@ -32,6 +32,18 @@ html::-webkit-scrollbar-button {
   border: var(--border-thin) solid var(--color-ink);
 }
 
+/* Touch screens: the scroll is done with the finger, so the bars are a thin guide that does not take a 16px
+   column from menus and panels. */
+@media (pointer: coarse) {
+  html::-webkit-scrollbar,
+  *::-webkit-scrollbar { width: 5px; height: 5px; }
+  html::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-track { background: transparent; border-left: 0; }
+  html::-webkit-scrollbar-thumb,
+  *::-webkit-scrollbar-thumb { border: 0; }
+  html::-webkit-scrollbar-button { display: none; }
+}
+
 /* Firefox: the standard style applies only where ::-webkit-scrollbar is not supported */
 @supports not selector(::-webkit-scrollbar) {
   html, * {

@@ -328,6 +328,7 @@ const ASIDE_WORDS = 15;
           {moderator && <span><i class="key key--mod" /> Corte de la moderación</span>}
           <span><i class="key key--bar" /> Cortes en {bin / 60} min</span>
           {moderator && <span><i class="key key--bar-mod trama--medium" /> de ellos, de la moderación</span>}
+          {breaks.length > 0 && <span><i class="key key--break trama--light" /> Pausa publicitaria</span>}
         </div>
 
         <div class="rhythm__row rhythm__row--bins">
@@ -639,7 +640,7 @@ const ASIDE_WORDS = 15;
           <p class="reader__count" id="debate-count" aria-live="polite">
             {number(debate.interventions.length)} de {number(debate.interventions.length)} intervenciones
           </p>
-          <label class="field">
+          <label class="field field--search">
             <span class="field__label">Buscar en el texto</span>
             <input id="debate-search" class="field__input" type="search" placeholder="Por ejemplo: alquiler" autocomplete="off" />
           </label>
@@ -788,7 +789,19 @@ const ASIDE_WORDS = 15;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // On a narrow screen the filters start closed, so the transcript is near the top.
-  if (window.matchMedia('(max-width: 899px)').matches) filtersEl.open = false;
+  const narrow = window.matchMedia('(max-width: 899px)');
+  const sideEl = filtersEl.closest('.reader__side') as HTMLElement;
+  if (narrow.matches) filtersEl.open = false;
+  // Open on a narrow screen, the panel leaves the sticky bar and takes its place above the transcript: bring it into
+  // view, so the filters appear where the reader is looking and not somewhere above.
+  const syncSide = () => sideEl.classList.toggle('is-open', filtersEl.open);
+  syncSide();
+  filtersEl.addEventListener('toggle', () => {
+    syncSide();
+    if (narrow.matches && filtersEl.open && sideEl.getBoundingClientRect().top < 0) {
+      sideEl.scrollIntoView({ block: 'start', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    }
+  });
 
   type Kind = '' | 'any' | 'interrupcion' | 'moderacion' | 'golden';
   type State = {
@@ -1347,6 +1360,12 @@ const ASIDE_WORDS = 15;
   .key--mod { background: var(--color-paper); }
   .key--bar { background: var(--color-ink); }
   .key--bar-mod { color: var(--color-ink); background-color: var(--color-paper); }
+  .key--break { color: var(--color-ink-muted); background-color: var(--color-paper); border-style: dotted; }
+  /* The moderation share of a bar and its key are small: a fine trama reads as a tone there, where the 7px cell
+     of the medium trama shows one clipped dot. */
+  .key--bar-mod,
+  .bins__mod,
+  .sides__bar--mod { background-image: radial-gradient(currentColor 0.9px, transparent 1.3px); background-size: 4px 4px; }
 
   .rhythm__row { display: grid; grid-template-columns: var(--label) 1fr; align-items: stretch; }
   .rhythm__label {
@@ -1456,6 +1475,8 @@ const ASIDE_WORDS = 15;
     .rhythm__label { font-size: 0.8125rem; gap: 5px; padding-right: 6px; }
     .bins { height: 72px; }
     .bins__peak { display: none; }
+    /* A break is a few pixels wide on a phone: the word «Pausa» would cover the bars around it. The legend names it. */
+    .bins__break span { display: none; }
     .axis__tick:nth-child(even):not(.axis__tick--end),
     .axis__tick--end { display: none; }
     .matrix__note { display: none; }
@@ -1597,6 +1618,8 @@ const ASIDE_WORDS = 15;
   /* The sticky panels stay under the site header: one row of 72px below 1180px, and taller above. */
   .transcript-section { --sticky-top: 108px; scroll-margin-top: 96px; }
   @media (max-width: 1179px) { .transcript-section { --sticky-top: 84px; } }
+  /* Phone: the header is one short row (63px with its border), so the bar sits right under it, without a strip of text above. */
+  @media (max-width: 560px) { .transcript-section { --sticky-top: 62px; } }
   .reader { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: var(--space-6); align-items: start; }
   .minimap { display: none; }
   @media (min-width: 1280px) {
@@ -1644,11 +1667,31 @@ const ASIDE_WORDS = 15;
   }
   .reader__count { margin: 0; font: 900 1.75rem / 1 var(--font-display); text-transform: uppercase; }
   .reader__note { margin: 0; font-size: var(--text-xs); color: var(--color-ink-muted); line-height: 1.45; }
+  /* Narrow screen: the panel goes on top of the transcript. Closed, it is a short sticky bar (count, search and the
+     «Filtros» button) that never covers more than a few lines. Open, it stops being sticky and pushes the transcript
+     down, so the filters never sit over the text; the script brings it into view when it opens. */
   @media (max-width: 899px) {
     .reader { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
-    .reader__side { position: sticky; top: var(--sticky-top); z-index: var(--z-raised); max-height: 70vh; padding: var(--space-3); }
-    .reader__count { font-size: 1.375rem; }
+    .reader__side {
+      top: var(--sticky-top);
+      z-index: var(--z-raised);
+      max-height: none;
+      overflow: visible;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+      border-width: var(--border-fine) var(--border-fine) var(--border-thick);
+    }
+    .reader__side.is-open { position: relative; top: auto; }
+    .reader__count { font-size: 1.125rem; }
     .reader__note { display: none; }
+    .field--search .field__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .field--search .field__input { min-height: 40px; }
+    .filters { padding-top: 0; }
+    .filters summary { min-height: 40px; justify-content: space-between; }
+    .filters summary::after { content: '+'; font-size: 1.25rem; line-height: 1; }
+    .filters[open] summary::after { content: '−'; }
+    .filters summary::-webkit-details-marker { display: none; }
+    .filters summary { list-style: none; }
   }
 
   .field { display: grid; gap: 4px; }
