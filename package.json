@@ -21,6 +21,7 @@
     "data:cc": "python scripts/extract_cc.py public/2026/generales/programas/cc-defiende-canarias-2026.pdf src/data/2026/generales/programas/cc.json",
     "data:erc": "python scripts/extract_erc.py public/2026/generales/programas/erc-programa-electoral-2026.pdf src/data/2026/generales/programas/erc.json",
     "data:salf": "python scripts/extract_salf.py public/2026/generales/programas/salf-contrato-electoral-29n.pdf src/data/2026/generales/programas/salf.json",
+    "data:drago-canarias": "python scripts/extract_drago_canarias.py public/2026/generales/programas/drago-la-esperanza-2026.pdf src/data/2026/generales/programas/drago-canarias.json",
     "data:pfac": "python scripts/extract_pfac.py public/2026/generales/programas/feministas-al-congreso-2026.pdf src/data/2026/generales/programas/pfac.json",
     "data:mundo-mas-justo": "python scripts/extract_mundo_mas_justo.py public/2026/generales/programas/mundo-mas-justo-29n-2026.pdf src/data/2026/generales/programas/mundo-mas-justo.json",
     "data:tercera-edad": "python scripts/extract_tercera_edad.py public/2026/generales/programas/en-accion-3e-2026.pdf src/data/2026/generales/programas/tercera-edad.json",
