@@ -31,13 +31,6 @@
    "medida": 4
   },
   {
-   "valor": "0 %",
-   "unidad": "tipo del Impuesto sobre Sociedades",
-   "texto": "tipo cero solo para la vivienda protegida",
-   "contexto": "que ese tipo cero valga solo para la vivienda en alquiler protegido permanente",
-   "medida": 7
-  },
-  {
    "valor": "50 euros",
    "unidad": "al mes",
    "texto": "cuota de autónomos con rendimientos de una a dos veces el salario mínimo",
@@ -50,6 +43,20 @@
    "texto": "jornada de las kellys",
    "contexto": "hasta las 35 horas semanales",
    "medida": 10
+  },
+  {
+   "valor": "un año",
+   "unidad": "de cotización pagada por el Estado",
+   "texto": "cotización de la cuidadora tras el fallecimiento",
+   "contexto": "durante un año el Estado le siga pagando",
+   "medida": 17
+  },
+  {
+   "valor": "cuatro o cinco años",
+   "unidad": "de financiación estable",
+   "texto": "financiación de las actuaciones estables",
+   "contexto": "financiación para cuatro o cinco años",
+   "medida": 22
   },
   {
    "valor": "5 %",
@@ -115,6 +122,13 @@
    "medida": 53
   },
   {
+   "valor": "una al mes",
+   "unidad": "preguntas orales garantizadas",
+   "texto": "cupo garantizado para el grupo propio",
+   "contexto": "con un mínimo garantizado de una al mes",
+   "medida": 55
+  },
+  {
    "valor": "1",
    "unidad": "escaño mínimo por provincia",
    "texto": "mínimo de escaños por provincia",
@@ -148,6 +162,11 @@
    "plazo": "inmediato",
    "texto": "exigimos su cierre inmediato",
    "medida": 43
+  },
+  {
+   "plazo": "inmediato",
+   "texto": "que se apruebe ya",
+   "medida": 31
   },
   {
    "plazo": "90 días",
@@ -372,7 +391,6 @@
    ],
    "palancas": [
     "gasto",
-    "organizacion",
     "plan"
    ],
    "territorios": [
@@ -449,9 +467,7 @@
     "impuestos"
    ],
    "territorios": [],
-   "cifras": [
-    "que ese tipo cero valga solo para la vivienda en alquiler protegido permanente"
-   ],
+   "cifras": [],
    "plazo": null,
    "deroga": null
   },
@@ -685,7 +701,9 @@
     "impuestos"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "durante un año el Estado le siga pagando"
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -779,8 +797,7 @@
     "jovenes"
    ],
    "palancas": [
-    "ley",
-    "organizacion"
+    "ley"
    ],
    "territorios": [
     "Las Palmas de Gran Canaria",
@@ -808,7 +825,9 @@
     "gasto"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "financiación para cuatro o cinco años"
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -892,9 +911,7 @@
    "oculta": false,
    "categoria": "empleo",
    "colectivos": [],
-   "palancas": [
-    "plan"
-   ],
+   "palancas": [],
    "territorios": [],
    "cifras": [],
    "plazo": null,
@@ -1016,7 +1033,7 @@
    "palancas": [],
    "territorios": [],
    "cifras": [],
-   "plazo": null,
+   "plazo": "inmediato",
    "deroga": null
   },
   {
@@ -1033,7 +1050,6 @@
    "colectivos": [],
    "palancas": [
     "ley",
-    "gasto",
     "plan"
    ],
    "territorios": [
@@ -1056,9 +1072,7 @@
    "categoria": "infraestructuras",
    "colectivos": [],
    "palancas": [
-    "ley",
-    "gasto",
-    "organizacion"
+    "ley"
    ],
    "territorios": [
     "Canarias"
@@ -1297,9 +1311,7 @@
    "palancas": [],
    "territorios": [
     "Gran Canaria",
-    "Tenerife",
-    "Barranco Seco",
-    "Hoya Fría"
+    "Tenerife"
    ],
    "cifras": [],
    "plazo": "inmediato",
@@ -1451,7 +1463,6 @@
    ],
    "palancas": [
     "ley",
-    "gasto",
     "plan"
    ],
    "territorios": [
@@ -1591,7 +1602,9 @@
     "ley"
    ],
    "territorios": [],
-   "cifras": [],
+   "cifras": [
+    "con un mínimo garantizado de una al mes"
+   ],
    "plazo": null,
    "deroga": null
   },
@@ -1743,8 +1756,7 @@
    "categoria": "vivienda",
    "colectivos": [],
    "palancas": [
-    "impuestos",
-    "gasto"
+    "impuestos"
    ],
    "territorios": [
     "Canarias"
@@ -1924,7 +1936,9 @@
    "oculta": false,
    "categoria": "identidad",
    "colectivos": [],
-   "palancas": [],
+   "palancas": [
+    "ley"
+   ],
    "territorios": [],
    "cifras": [],
    "plazo": null,

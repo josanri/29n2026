@@ -9,7 +9,7 @@ Estructura del PDF (tipografía observada con PyMuPDF):
   - Número de medida (25,5 pt, negrita) + título (12,8 pt, negrita) + texto (11,1 pt).
   - Recuadros «El dato» / «Por qué desde el Congreso» (10,1 pt): se descartan.
   - Cabeceras y pies (9,6 pt; 22 pt; 38 pt «29N»): se descartan.
-La tabla de la medida 9 (9,7 pt) se transcribe aparte, tal como aparece en la página 9.
+La tabla de la medida 9 (cabecera de 9,7 pt y filas de 9,6 pt) se transcribe aparte, tal como aparece en la página 9.
 """
 import json
 import re
@@ -58,9 +58,10 @@ COLECTIVOS = {
 # (lo comprueba el script). No entran las cifras que describen la situación actual.
 CIFRAS = [
     (4, '222,6 millones', 'euros', 'duplicar la aportación estatal a la vivienda pública en alquiler', 'con otros 222,6 millones dedicados íntegramente a comprar y rehabilitar'),
-    (7, '0 %', 'tipo del Impuesto sobre Sociedades', 'tipo cero solo para la vivienda protegida', 'que ese tipo cero valga solo para la vivienda en alquiler protegido permanente'),
     (9, '50 euros', 'al mes', 'cuota de autónomos con rendimientos de una a dos veces el salario mínimo', 'pagarían 50 euros al mes'),
     (10, '35 horas', 'semanales', 'jornada de las kellys', 'hasta las 35 horas semanales'),
+    (17, 'un año', 'de cotización pagada por el Estado', 'cotización de la cuidadora tras el fallecimiento', 'durante un año el Estado le siga pagando'),
+    (22, 'cuatro o cinco años', 'de financiación estable', 'financiación de las actuaciones estables', 'financiación para cuatro o cinco años'),
     (13, '5 %', 'de representación sindical', 'bajar el listón de representatividad sindical', 'Proponemos bajarlo al 5 % y 500'),
     (19, '130 euros', 'más en la beca', 'subida de las becas por insularidad', 'cobre 130 euros más por lo que cuesta vivir en las islas'),
     (21, '25 %', 'del Consejo de Gobierno', 'peso del estudiantado en la universidad', 'subir ese mínimo al 25 %'),
@@ -70,6 +71,7 @@ CIFRAS = [
     (47, '24 semanas', 'de permisos retribuidos', 'permisos retribuidos de conciliación', 'ampliar los permisos retribuidos de conciliación a 24 semanas'),
     (48, '25 personas', 'trabajadoras, umbral del protocolo', 'umbral del protocolo contra el acoso', 'rebajar de 50 a 25 personas trabajadoras'),
     (53, '400 escaños', 'en el Congreso', 'ampliación del Congreso', 'ampliar el Congreso a 400 escaños'),
+    (55, 'una al mes', 'preguntas orales garantizadas', 'cupo garantizado para el grupo propio', 'con un mínimo garantizado de una al mes'),
     (53, '1', 'escaño mínimo por provincia', 'mínimo de escaños por provincia', 'bajar de 2 a 1 el mínimo por provincia'),
     (58, '15 días', 'para contestar, prorrogables 7', 'plazo de respuesta a las preguntas escritas', 'tenga 15 días, prorrogables 7'),
     (60, 'la mitad', 'de los puestos nuevos', 'reparto de puestos para desempleadas en Canarias', 'al menos la mitad de los puestos nuevos'),
@@ -79,6 +81,7 @@ CIFRAS = [
 # Plazos: solo cuándo se aplica la medida, en orden de inmediatez.
 PLAZOS = [
     (43, 'inmediato', 'exigimos su cierre inmediato'),
+    (31, 'inmediato', 'que se apruebe ya'),
     (25, '90 días', 'que en 90 días localice, parcela a parcela, dónde sigue sin haber conexión'),
     (65, 'esta legislatura', 'un calendario público para completarlos en esta legislatura'),
 ]
@@ -89,16 +92,16 @@ DEROGA = {49: 'Pacto Europeo de Migración y Asilo'}
 
 # Palancas por palabras clave (aproximación, ver la nota de método).
 PALANCAS = [
-    ('ley', r'\bley\b|reforma|reglamento|derog|estatuto'),
+    ('ley', r'\bley\b|legislativ|reforma|reglamento|derog|estatuto'),
     ('impuestos', r'impuesto|\btributar\b|(?-i:\bIBI\b)|IRPF|cotizaci|\bcuota\b|bonificad|exención|tipo reducido'),
-    ('gasto', r'financi|presupuest|millones|fondos|dinero|euros'),
-    ('organizacion', r'traspaso|Canarias decida|decidir|cabildo|ayuntamiento|administración'),
-    ('plan', r'\bplan\b|convenio|\bpacto\b(?! Europeo)|programa|auditor|protocolo|calendario'),
+    ('gasto', r'financi|presupuest|millones|fondos|euros'),
+    ('organizacion', r'traspaso|Canarias decida|decidir|cabildo|ayuntamiento'),
+    ('plan', r'\bplan\b|convenio(?! colectivo)|\bpacto\b(?! Europeo)|programa|auditor|protocolo|calendario'),
 ]
 
 TERRITORIOS = ['El Hierro', 'La Palma', 'La Gomera', 'Lanzarote', 'Fuerteventura', 'Gran Canaria',
                'Las Palmas de Gran Canaria', 'La Laguna', 'Tenerife', 'Santa Cruz de Tenerife', 'Canarias', 'Marruecos', 'Sáhara Occidental',
-               'Ceuta', 'Melilla', 'Barranco Seco', 'Hoya Fría', 'La Restinga', 'Mar de las Calmas']
+               'Ceuta', 'Melilla', 'La Restinga', 'Mar de las Calmas']
 
 TABLA_MEDIDA_9 = [
     'Lo que ganas al año (neto) | Lo que pagas hoy al mes | Lo que pagarías al mes | Lo que te ahorras al año',
