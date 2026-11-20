@@ -2,26 +2,1933 @@
  "id": "drago-canarias",
  "partido": "Partido Drago Canarias",
  "siglas": "D.R.G",
- "color": "#b5651d",
- "colorClaro": "#deba99",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "comunidad": "Canarias",
+ "observaciones": [
+  "Programa tomado del PDF publicado en la web oficial del partido (dragocanarias.com).",
+  "Medidas numeradas del 1 al 70 en cuatro ejes; el PDF no salta ningún número."
+ ],
+ "color": "#000000",
+ "colorClaro": "#ffffff",
+ "programa": "La esperanza vence al miedo",
+ "subtitulo": "70 propuestas en cuatro ejes para las elecciones generales",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "pdf": "/programas/drago-la-esperanza-2026.pdf",
+ "fuentePdf": "https://www.dragocanarias.com/wp-content/uploads/2026/11/Drago-Canarias-Programa-electoral-29N.pdf",
+ "paginas": 32,
+ "fechaPdf": "2026-11-15",
+ "unidadMedida": "propuesta",
+ "unidadMedidas": "propuestas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "La esperanza vence al miedo",
+  "texto": "Hay quien quiere que Canarias tenga miedo: a no llegar a fin de mes, a tener que irse de su isla, a quien llega por mar. Nosotras venimos a otra cosa. Este programa reúne 70 propuestas concretas para que vivir en Canarias deje de ser una carrera de obstáculos: una casa que se pueda pagar, un trabajo que dé para vivir, servicios públicos cerca y un archipiélago que decida más sobre su futuro.\n\nNos presentamos al Congreso como partido de obediencia canaria, sin nadie en Madrid que nos diga qué votar. Cada propuesta dice qué queremos cambiar, cómo y quién tiene que hacerlo. Porque la esperanza, cuando tiene un plan detrás, vence al miedo."
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
+ "cifras": [
+  {
+   "valor": "222,6 millones",
+   "unidad": "euros",
+   "texto": "duplicar la aportación estatal a la vivienda pública en alquiler",
+   "contexto": "con otros 222,6 millones dedicados íntegramente a comprar y rehabilitar",
+   "medida": 4
+  },
+  {
+   "valor": "0 %",
+   "unidad": "tipo del Impuesto sobre Sociedades",
+   "texto": "tipo cero solo para la vivienda protegida",
+   "contexto": "que ese tipo cero valga solo para la vivienda en alquiler protegido permanente",
+   "medida": 7
+  },
+  {
+   "valor": "50 euros",
+   "unidad": "al mes",
+   "texto": "cuota de autónomos con rendimientos de una a dos veces el salario mínimo",
+   "contexto": "pagarían 50 euros al mes",
+   "medida": 9
+  },
+  {
+   "valor": "35 horas",
+   "unidad": "semanales",
+   "texto": "jornada de las kellys",
+   "contexto": "hasta las 35 horas semanales",
+   "medida": 10
+  },
+  {
+   "valor": "5 %",
+   "unidad": "de representación sindical",
+   "texto": "bajar el listón de representatividad sindical",
+   "contexto": "Proponemos bajarlo al 5 % y 500",
+   "medida": 13
+  },
+  {
+   "valor": "130 euros",
+   "unidad": "más en la beca",
+   "texto": "subida de las becas por insularidad",
+   "contexto": "cobre 130 euros más por lo que cuesta vivir en las islas",
+   "medida": 19
+  },
+  {
+   "valor": "25 %",
+   "unidad": "del Consejo de Gobierno",
+   "texto": "peso del estudiantado en la universidad",
+   "contexto": "subir ese mínimo al 25 %",
+   "medida": 21
+  },
+  {
+   "valor": "90 días",
+   "unidad": "para localizar zonas sin conexión",
+   "texto": "plan estatal de localización de zonas sin internet",
+   "contexto": "que en 90 días localice",
+   "medida": 25
+  },
+  {
+   "valor": "6,5 millones",
+   "unidad": "euros al año",
+   "texto": "presupuesto de Salvamento Marítimo",
+   "contexto": "subir el presupuesto de Salvamento Marítimo en unos 6,5 millones al año",
+   "medida": 44
+  },
+  {
+   "valor": "25 personas",
+   "unidad": "trabajadoras, umbral del plan de igualdad",
+   "texto": "umbral del plan de igualdad",
+   "contexto": "rebajar de 50 a 25 personas trabajadoras",
+   "medida": 47
+  },
+  {
+   "valor": "24 semanas",
+   "unidad": "de permisos retribuidos",
+   "texto": "permisos retribuidos de conciliación",
+   "contexto": "ampliar los permisos retribuidos de conciliación a 24 semanas",
+   "medida": 47
+  },
+  {
+   "valor": "25 personas",
+   "unidad": "trabajadoras, umbral del protocolo",
+   "texto": "umbral del protocolo contra el acoso",
+   "contexto": "rebajar de 50 a 25 personas trabajadoras",
+   "medida": 48
+  },
+  {
+   "valor": "400 escaños",
+   "unidad": "en el Congreso",
+   "texto": "ampliación del Congreso",
+   "contexto": "ampliar el Congreso a 400 escaños",
+   "medida": 53
+  },
+  {
+   "valor": "1",
+   "unidad": "escaño mínimo por provincia",
+   "texto": "mínimo de escaños por provincia",
+   "contexto": "bajar de 2 a 1 el mínimo por provincia",
+   "medida": 53
+  },
+  {
+   "valor": "15 días",
+   "unidad": "para contestar, prorrogables 7",
+   "texto": "plazo de respuesta a las preguntas escritas",
+   "contexto": "tenga 15 días, prorrogables 7",
+   "medida": 58
+  },
+  {
+   "valor": "la mitad",
+   "unidad": "de los puestos nuevos",
+   "texto": "reparto de puestos para desempleadas en Canarias",
+   "contexto": "al menos la mitad de los puestos nuevos",
+   "medida": 60
+  },
+  {
+   "valor": "veinte años",
+   "unidad": "de compromiso mínimo",
+   "texto": "beneficio fiscal de la vivienda asequible",
+   "contexto": "un compromiso mínimo de veinte años",
+   "medida": 62
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "inmediato",
+   "texto": "exigimos su cierre inmediato",
+   "medida": 43
+  },
+  {
+   "plazo": "90 días",
+   "texto": "que en 90 días localice, parcela a parcela, dónde sigue sin haber conexión",
+   "medida": 25
+  },
+  {
+   "plazo": "esta legislatura",
+   "texto": "un calendario público para completarlos en esta legislatura",
+   "medida": 65
+  }
+ ],
+ "ordenPlazos": [
+  "inmediato",
+  "90 días",
+  "esta legislatura"
+ ],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Canarias"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Vivir en Canarias",
+   "lema": "",
+   "cita": "",
+   "intro": "Vivir en Canarias debería ser sencillo: una casa, un trabajo que dé para vivir y una escuela y un centro de salud cerca. Hoy no lo es para mucha gente. Hay quien trabaja en el turismo y no puede pagar un piso en la isla donde nació, y quien tiene que irse a otra isla para estudiar. En este eje está lo que exigiremos al Estado para que quedarse en Canarias no sea un sacrificio.",
+   "pagina": 6
+  },
+  {
+   "id": 2,
+   "titulo": "Islas conectadas y sostenibles",
+   "lema": "",
+   "cita": "",
+   "intro": "Ser un país archipelágico significa depender del mar y del aire para casi todo: para movernos entre islas, para volver a casa y para traer lo que no producimos. También significa vivir en un territorio frágil, con poca agua, poco suelo y mucha presión. En este eje está lo que pedimos para que las islas estén bien conectadas y sigamos pudiendo vivir en ellas.",
+   "pagina": 14
+  },
+  {
+   "id": 3,
+   "titulo": "Derechos y democracia",
+   "lema": "",
+   "cita": "",
+   "intro": "Canarias es frontera sur de la Unión Europea y, a la vez, un territorio con poco peso en las instituciones del Estado. Por las islas pasa una de las rutas migratorias más peligrosas del mundo, y en el Congreso el voto canario vale menos que el de otros territorios. En este eje está lo que pedimos para que se respeten los derechos de todas las personas y para que Canarias cuente lo que le corresponde.",
+   "pagina": 20
+  },
+  {
+   "id": 4,
+   "titulo": "Soberanía",
+   "lema": "",
+   "cita": "",
+   "intro": "Canarias tiene un Estatuto, un régimen económico y fiscal propio y un reconocimiento europeo como región ultraperiférica. Sobre el papel, herramientas no faltan. Lo que falta es que se cumplan y que sirvan a la gente que vive aquí, no solo a quien hace negocio con las islas. En este eje está lo que pedimos para decidir más desde Canarias y para que lo que ya tenemos realmente funcione.",
+   "pagina": 27
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Vivienda y población",
+   "tituloFrase": "Vivienda y población",
+   "intro": "Alquilar un piso en solitario cuesta en Canarias más que el sueldo entero de una persona joven, y ni una de cada seis consigue independizarse. Comprar tampoco es una salida: el precio de la vivienda libre subió un 11 % en un solo año. Emanciparse depende cada vez más de tener una familia que pueda echar una mano, y quien no la tiene se queda atrás.\n\nSin una casa estable no hay proyecto de vida. Faltan viviendas para muchas personas en Canarias, y buena parte de las que hay acaba en el alquiler vacacional o como inversión, mientras quien trabaja en las islas se queda fuera.\n\nQueremos que el lugar que llamamos hogar valga más que la rentabilidad. Eso pasa por más alquiler público con lo que ya está construido, por que las ventajas fiscales se ganen ofreciendo alquiler asequible y por bajar la presión turística sobre cada isla. Así vivir en Canarias será compatible con tener una casa y con preservar el territorio para las próximas generaciones.",
+   "pagina": 6,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 1,
+   "titulo": "Empleo, salarios y coste de vida",
+   "tituloFrase": "Empleo, salarios y coste de vida",
+   "intro": "Canarias bate un récord de turistas tras otro y, al mismo tiempo, paga el segundo salario medio más bajo del Estado. Casi una de cada tres personas en Canarias vive en riesgo de pobreza o exclusión. Con la turistificación de la economía ha crecido el empleo precario y desgastante, sobre todo en la hostelería y entre las camareras de piso, mientras los sueldos se quedan atrás frente al coste de la vida.\n\nPara que las condiciones laborales se cumplan hace falta una Inspección de Trabajo con medios y decidida desde Canarias, que actúe con la eficacia y el respeto que merecen las personas trabajadoras. Y hacen falta sindicatos canarios con voz propia en la negociación.\n\nTampoco olvidamos a las casi 150.000 personas que trabajan por cuenta propia en las islas. Para ellas queremos un sistema de cotización justo y adecuado a la realidad canaria. Y para todas, un empleo que saque a las familias de la precariedad en lugar de empujarlas a ella.",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 1,
+   "titulo": "Servicios públicos y derechos sociales",
+   "tituloFrase": "Servicios públicos y derechos sociales",
+   "intro": "En Canarias, conseguir una cita en la Seguridad Social o estudiar una FP puede obligar a cambiar de isla. Defendemos unos servicios públicos y unos derechos sociales cercanos, suficientes y de calidad en todo el archipiélago. Que vivir en una isla no capitalina, tener menos recursos o necesitar cuidados no determine nuestras oportunidades educativas, de desarrollo personal e independencia, ni nuestra salud.\n\nHoy no siempre es así. La sanidad pública canaria es ya una de las más privatizadas del Estado. Las entidades que atienden la exclusión empiezan sus proyectos sin saber si recibirán el dinero. Y una cuidadora que dejó su trabajo para cuidar se queda sin ingresos a final del mismo mes en que fallece la persona a la que cuidaba. Muchas de esas cosas dependen de leyes y de dinero del Estado, y ahí es donde queremos actuar.\n\nPorque defender Canarias es defender el derecho a la salud, a una pensión digna, el de quienes necesitan cuidados y el de quienes cuidan, a formarse y a construir un futuro digno en todas nuestras islas.",
+   "pagina": 10,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 2,
+   "titulo": "Conectividad y transporte",
+   "tituloFrase": "Conectividad y transporte",
+   "intro": "Canarias tiene su propia realidad geográfica: está a más de 1.700 kilómetros de la metrópoli y es un territorio fragmentado, archipelágico. Aquí coger un avión o un barco es a menudo la única forma de ir a trabajar, de estudiar o de ver a la familia. Por nuestros aeropuertos pasaron en 2025 casi 55 millones de pasajeros, y los billetes se han encarecido con la subida del petróleo.\n\nLo sufren sobre todo quienes no tienen descuento de residente. A los canarios y canarias que viven fuera, volver a su tierra, con su gente, les obliga a elegir entre gastar grandes sumas de dinero o quedarse lejos. Y dentro de las islas, una conexión a internet lenta o inexistente aísla tanto como un mal horario de barcos.\n\nEl mar también da trabajo: la economía azul sostiene más de 21.000 empleos en Canarias. Queremos que quienes trabajan en el mar tengan salarios y condiciones dignas, y que moverse sea asequible y sostenible (de verdad).",
+   "pagina": 14,
+   "subapartados": []
+  },
+  {
+   "id": "5",
+   "bloque": 2,
+   "titulo": "Energía, agua, sector primario y medio ambiente",
+   "tituloFrase": "Energía, agua, sector primario y medio ambiente",
+   "intro": "De cada diez kilovatios hora que se producen en Canarias, casi ocho salen todavía de quemar combustibles importados. Dependemos del exterior para la energía, para buena parte de lo que comemos y, en muchas islas, para algo tan básico como el agua, que sale de desaladoras que también consumen energía. Mientras, el campo se abandona, perdemos biodiversidad y nuestros ecosistemas se deterioran.\n\nAvanzar hacia la soberanía alimentaria y energética exige fortalecer el sector primario y garantizar condiciones dignas a quienes trabajan en él, recuperar las tierras abandonadas e impulsar un modelo energético más descentralizado y democrático, en el que ningún hogar vulnerable se quede sin luz.\n\nCanarias alberga una biodiversidad excepcional, con especies que no existen en ningún otro lugar del mundo. Protegerla exige gestionar mejor el agua, generar menos residuos y cuidar los espacios naturales y marinos y a los animales que los habitan, con las comunidades locales decidiendo sobre su territorio. Queremos garantizar el derecho de quienes habitamos las islas a permanecer en nuestra tierra y a que nuestras hijas e hijos también lo puedan hacer.",
+   "pagina": 16,
+   "subapartados": []
+  },
+  {
+   "id": "6",
+   "bloque": 3,
+   "titulo": "Migraciones, igualdad y derechos humanos",
+   "tituloFrase": "Migraciones, igualdad y derechos humanos",
+   "intro": "En los cinco primeros meses de 2026, 635 personas perdieron la vida intentando llegar a Canarias por mar. La ruta migratoria canaria es la más mortífera, y convierte la frontera atlántica con el territorio continental africano en un cementerio para las personas que se ven forzadas a migrar por esta vía.\n\nDesde Drago Canarias promovemos una política migratoria que asegure la existencia de vías legales y seguras para migrar, realmente accesibles para todas las personas que las necesitan, y que facilite el acceso a la protección internacional y al asilo como ejes fundamentales de la gestión migratoria, respetando el derecho internacional y los derechos humanos. La existencia de vías legales y seguras es la única garantía para que nadie más pierda la vida por ejercer el derecho a migrar y para evitar la explotación, los abusos, la violencia, la trata y el tráfico de personas.\n\nSer territorio de frontera exige al Estado y a la Unión Europea recursos, coordinación y responsabilidad compartida en la gestión, y hoy fallan en varios frentes. El reparto de la acogida de menores que llegan sin familia sigue sin cumplirse, conseguir una cita de extranjería es casi imposible y los centros de acogida necesitan recursos y una supervisión que no tienen y que es básica para atender con dignidad a las personas migrantes.\n\nLos derechos humanos, la igualdad y la dignidad de las personas son el punto de partida de nuestra acción política. Eso incluye reforzar la lucha contra la violencia machista en todas las islas, entendiendo cómo opera en todo el territorio, avanzar en la igualdad real de las mujeres y en los derechos de las personas, y saldar la deuda con el pueblo saharaui. Queremos una gestión pública transparente, que proteja a las personas más vulnerables y que haga cumplir los derechos humanos en Canarias y en el resto del Estado.",
+   "pagina": 20,
+   "subapartados": []
+  },
+  {
+   "id": "7",
+   "bloque": 3,
+   "titulo": "Calidad democrática e instituciones",
+   "tituloFrase": "Calidad democrática e instituciones",
+   "intro": "Canarias elige menos escaños de los que le corresponden por población: en Santa Cruz de Tenerife, un escaño necesita más del triple de habitantes que en las provincias menos pobladas. Y el sistema castiga a los partidos de obediencia canaria, que en 2023 sacaron un solo escaño con casi uno de cada seis votos en las islas.\n\nQuien llega al Congreso tampoco lo tiene fácil. Sin grupo propio, la representación de los partidos canarios acaba en el Grupo Mixto, con poco tiempo para hablar, frente a un Gobierno que deja cientos de preguntas sin contestar. Las leyes del Estado se aprueban sin medir su efecto en un territorio fragmentado y lejos de la metrópoli, y en el Parlamento Europeo ningún partido de obediencia canaria tiene escaño. Queremos que el voto canario valga lo mismo que cualquier otro, que Canarias tenga voz propia en el Congreso y en la Unión Europea y que el Gobierno rinda cuentas.\n\nLa calidad democrática también es memoria. Medio siglo después de la muerte del dictador, uno de los mayores monumentos franquistas de España sigue en pie en Santa Cruz de Tenerife, aunque el Estado ya ha ordenado retirarlo. Pedimos algo tan sencillo como que se cumpla la ley.",
+   "pagina": 24,
+   "subapartados": []
+  },
+  {
+   "id": "8",
+   "bloque": 4,
+   "titulo": "REF, fiscalidad y financiación",
+   "tituloFrase": "REF, fiscalidad y financiación",
+   "intro": "El Régimen Económico y Fiscal nació para compensar la lejanía, la insularidad y nuestra condición de región ultraperiférica. Con los años, ha acabado alimentando un crecimiento turístico que se come al resto de sectores, sin la diversificación que prometía. Hoy el turismo supone más de un tercio de lo que producimos y casi cuatro de cada diez empleos.\n\nMás turismo no ha traído más bienestar. En el año 2000, la riqueza por habitante de Canarias rozaba la media estatal; en 2024 se había quedado en el 79 %. Nos alejamos del resto del Estado mientras crecen la población y la presión sobre unos servicios públicos que también atienden a turistas y residentes temporales.\n\nLa financiación autonómica tampoco recoge esa realidad: no cuenta a toda la gente que usa los servicios ni lo que cuesta prestarlos en ocho islas, lejos de todo, donde cada euro rinde menos. Queremos que quien se beneficia del REF devuelva algo a las islas, en empleo de calidad y en vivienda asequible, y que la financiación pague lo que de verdad cuesta vivir en un archipiélago.",
+   "pagina": 27,
+   "subapartados": []
+  },
+  {
+   "id": "9",
+   "bloque": 4,
+   "titulo": "Soberanía, identidad y Canarias en el mundo",
+   "tituloFrase": "Soberanía, identidad y Canarias en el mundo",
+   "intro": "Canarias es un archipiélago africano, situado en el Atlántico frente a la costa noroccidental del continente, y casi todo lo que nos afecta se decide lejos. El Estado sigue debiéndonos competencias que el Estatuto nos reconoce desde 2018. Las aguas que rodean las islas se negocian con Marruecos sin que Canarias esté en la mesa, y desde fuera se nos dice cómo cuidar nuestro litoral, hasta el punto de derribar poblados de pescadores como Cho Vito.\n\nFrente a ese centralismo, defendemos más soberanía. Queremos que Canarias pueda decidir sobre su mar, su costa y sus alianzas, y que la Constitución reconozca de una vez lo que somos: una realidad nacional con un hecho diferencial propio. Y queremos que mire de frente al continente africano, al que pertenecemos, con voz propia en sus instituciones y lazos estrechos con los pueblos vecinos.\n\nSomos un pueblo con identidad propia y eso también se cuida: con terreros dignos para la lucha canaria y con selecciones canarias que puedan salir a jugar. Queremos cuidar de lo nuestro como lo hacían quienes vinieron antes y dejar a las próximas generaciones un archipiélago en paz y con prosperidad.",
+   "pagina": 28,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Una Ley de Residencia para vivir con dignidad dentro de los límites de cada isla",
+   "tituloFrase": "Una Ley de Residencia para vivir con dignidad dentro de los límites de cada isla",
+   "texto": "Canarias es un territorio limitado y frágil, que no soporta un crecimiento de población sin freno a costa de expulsar a su propia gente. Impulsaremos en el Congreso una Ley de Residencia para que Canarias, al amparo de los artículos 100 y 101 del Estatuto de Autonomía, pueda regular el acceso a la residencia y los requisitos de empadronamiento efectivo según la capacidad de carga demográfica, habitacional, hídrica y de servicios públicos de cada una de las islas que componen nuestro país. La ley partirá de criterios científicos y de objetivos de sostenibilidad territorial y arraigo, y respetará la igualdad de todas las personas residentes en Canarias y el derecho de tránsito de las personas migrantes que, desde nuestro continente africano, buscan un futuro mejor en Europa. Al mismo tiempo, presentaremos iniciativas para que el Estado negocie en Bruselas, conforme al artículo 349 del Tratado de Funcionamiento de la Unión Europea, las excepciones necesarias a la libre circulación y establecimiento por emergencia habitacional y ambiental. El modelo actual es inviable para Canarias, en lo ambiental y en lo social.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Que la vivienda en Canarias sea para vivir",
+   "tituloFrase": "Que la vivienda en Canarias sea para vivir",
+   "texto": "Las casas, para quien vive en ellas. Exigiremos que España negocie en Bruselas un régimen propio para Canarias, como región ultraperiférica y según prevé el Estatuto de Autonomía, que permita limitar la compra de vivienda por quienes no residen en las islas, sea cual sea su nacionalidad. Para quienes compran desde fuera de la Unión Europea, impulsaremos además una reforma de la ley estatal de inversiones extranjeras que someta esas compras a requisitos y control en Canarias, por la emergencia habitacional. El Gobierno tendrá que aportar en Bruselas los datos que lo justifican, negociar junto al Gobierno de Canarias e informar al Congreso cada seis meses.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Turismo dentro de los límites de cada isla",
+   "tituloFrase": "Turismo dentro de los límites de cada isla",
+   "texto": "Queremos un convenio entre el Estado y Canarias para el decrecimiento turístico, con financiación plurianual en los Presupuestos Generales del Estado, que reduzca la presión turística, urbanística y sobre los recursos de las islas. Las actuaciones empezarán con la firma, con medidas ya justificadas, y se irán ajustando con estudios públicos de capacidad de carga de cada isla, elaborados por las universidades canarias y el Instituto Canario de Estadística.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "El doble de dinero estatal para vivienda pública en alquiler",
+   "tituloFrase": "El doble de dinero estatal para vivienda pública en alquiler",
+   "texto": "Pediremos que el Estado duplique lo que aporta a Canarias en el Plan Estatal de Vivienda 2026-2030, con otros 222,6 millones dedicados íntegramente a comprar y rehabilitar viviendas ya construidas para el parque público de alquiler. Cada isla tendrá sus objetivos y un calendario de entrega, y cada administración sabrá qué pone y quién gestiona y mantiene las viviendas.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias",
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "con otros 222,6 millones dedicados íntegramente a comprar y rehabilitar"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Pisos de la Sareb y suelo de Defensa para alquiler público",
+   "tituloFrase": "Pisos de la Sareb y suelo de Defensa para alquiler público",
+   "texto": "Pediremos que las viviendas de la Sareb, el llamado banco malo, que estén en Canarias y en condiciones de uso pasen al parque público de alquiler, y que el suelo y los edificios de Defensa que ya no hagan falta se destinen a vivienda pública. Primero irá lo que ya está construido o se puede rehabilitar. Se respetará a las familias que ya viven en esas viviendas, y cada traspaso tendrá su financiación y un responsable de gestión y mantenimiento.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Más IBI a la vivienda turística, si el ayuntamiento lo decide",
+   "tituloFrase": "Más IBI a la vivienda turística, si el ayuntamiento lo decide",
+   "texto": "La ley solo permite a los ayuntamientos aplicar un recargo en el IBI a las viviendas turísticas si el municipio está declarado zona tensionada, y en Canarias no hay ninguno. Proponemos que cualquier ayuntamiento pueda aplicarlo por ordenanza, más alto para quien tenga más viviendas turísticas. Cada municipio decidirá si lo aplica, y lo recaudado se quedará en el municipio.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Suprimir el régimen fiscal especial de las SOCIMI",
+   "tituloFrase": "Suprimir el régimen fiscal especial de las SOCIMI",
+   "texto": "Las SOCIMI, sociedades de inversión que alquilan viviendas, pagan un 0 % en el Impuesto sobre Sociedades aunque alquilen a precio de mercado. Proponemos que ese tipo cero valga solo para la vivienda en alquiler protegido permanente, y que el resto de sus beneficios tribute como en cualquier empresa.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "que ese tipo cero valga solo para la vivienda en alquiler protegido permanente"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Un Marco Canario de Relaciones Laborales para decidir aquí nuestro trabajo y nuestros salarios",
+   "tituloFrase": "Un Marco Canario de Relaciones Laborales para decidir aquí nuestro trabajo y nuestros salarios",
+   "texto": "Canarias arrastra un déficit salarial histórico, registra el segundo salario medio más bajo del Estado y soporta una economía sumergida del 17,9 % de su PIB, mientras las reglas de nuestro mercado laboral se deciden en Madrid y quedan condicionadas por negociaciones estatales a la baja. Frente a un modelo centralizado que perpetúa la precariedad, defenderemos en el Congreso el reconocimiento y la transferencia de un Marco Canario de Relaciones Laborales que dote a las instituciones y a la clase trabajadora de Canarias de capacidad real para negociar y fijar sus propias condiciones de trabajo. Este marco propio articulará la competencia para establecer un salario mínimo acorde al coste de la vida en el archipiélago, la igualdad de condiciones del sindicalismo canario en la negociación colectiva, la actualización democrática del derecho de huelga y el traspaso efectivo de la Inspección de Trabajo. Asimismo, garantizará capacidades, recursos y financiación estatal suficientes para consolidar los organismos laborales propios de Canarias.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Cuota cero para los autónomos que ganan menos del salario mínimo",
+   "tituloFrase": "Cuota cero para los autónomos que ganan menos del salario mínimo",
+   "texto": "Si no llegas al salario mínimo, no pagas cuota. Proponemos que los autónomos con actividad en Canarias no paguen cuota a la Seguridad Social mientras sus rendimientos netos estén por debajo del salario mínimo. Si ganan entre una y dos veces el salario mínimo, pagarían 50 euros al mes, y la cuota subiría poco a poco hasta llegar a 2,5 veces. El Estado cubrirá la diferencia, de modo que conserven íntegros su pensión, sus bajas y su paro. Hoy la cuota cero canaria es una subvención que se cobra después de pagar, con fondos limitados, y casi solo llega a quien empieza.\n\nLo que ganas al año (neto) | Lo que pagas hoy al mes | Lo que pagarías al mes | Lo que te ahorras al año\n\nMenos de 17.094 € | Desde 205,88 € | 0 € | Entre 2.471 y 3.632 €\n\nDe 17.094 a 34.188 € | Desde 302,65 € | 50 € | Entre 3.032 y 4.835 €\n\nDe 34.188 a 42.735 € | Desde 452,94 € | De 50 € a la cuota normal, poco a poco | De 4.835 € a 0, según lo que ganes\n\nMás de 42.735 € | Cuota normal | Sin cambios | Nada",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "pagarían 50 euros al mes"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Una ley para las kellys",
+   "tituloFrase": "Una ley para las kellys",
+   "texto": "Las kellys sostienen el turismo con la espalda. En Canarias, la hostelería es la actividad con más enfermedades profesionales. Llevaremos al Congreso una ley de protección de las camareras de piso, como la que ya existe para el sector del mar, con coeficientes reductores para adelantar su jubilación y una reducción progresiva de su jornada hasta las 35 horas semanales. Defenderemos también cambiar el Estatuto de los Trabajadores para que las kellys sean contratadas como lo que son, actividad principal, con las mismas condiciones que la plantilla del hotel, y la ley de prevención de riesgos laborales para que se evalúe y se prevenga el desgaste físico de su trabajo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "hasta las 35 horas semanales"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Que la Inspección de Trabajo dependa de Canarias",
+   "tituloFrase": "Que la Inspección de Trabajo dependa de Canarias",
+   "texto": "El Estatuto de Autonomía ya da a Canarias la competencia ejecutiva sobre la inspección de trabajo. Cataluña y el País Vasco recibieron ese traspaso hace más de una década, y Canarias sigue esperando. Exigiremos el traspaso con su personal y su financiación, para que sea Canarias quien decida sus campañas de inspección según los problemas de su mercado laboral, como la temporalidad, los salarios bajos o la siniestralidad.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Dos refuerzos al año de la Inspección de Trabajo, fijados por ley",
+   "tituloFrase": "Dos refuerzos al año de la Inspección de Trabajo, fijados por ley",
+   "texto": "Canarias es la comunidad con más empleo en alojamiento turístico de toda España. Aun así, entre 2018 y 2024 el Estado solo reforzó aquí la Inspección de Trabajo con personal inspector de otras provincias a través de convenios temporales, que dependían del Gobierno de turno. Queremos que una ley lo haga fijo, con un refuerzo en la temporada alta de verano y otro en la de invierno, todos los años.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Representatividad sindical en Canarias",
+   "tituloFrase": "Representatividad sindical en Canarias",
+   "texto": "Para ser sindicato más representativo en una comunidad autónoma hace falta tener el 15 % de la representación sindical y al menos 1.500 representantes, un listón que solo superan algunos sindicatos del País Vasco y de Galicia. Proponemos bajarlo al 5 % y 500 representantes, para que los sindicatos de ámbito canario participen en igualdad de condiciones en la negociación colectiva y en las instituciones laborales de las islas.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "Proponemos bajarlo al 5 % y 500"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Que la sanidad pública la gestione lo público",
+   "tituloFrase": "Que la sanidad pública la gestione lo público",
+   "texto": "La Ley 15/1997 abrió la puerta a gestionar la sanidad pública a través de empresas privadas. Según las asociaciones en defensa de la sanidad pública, Canarias es ya la cuarta comunidad con más privatización sanitaria, con un 26 %, frente al 18 % de 2014. Proponemos sustituir esa ley por otra que haga de la gestión pública directa la regla y de la privada una excepción justificada. Ningún concierto ni concesión podrá renovarse sin una evaluación pública que demuestre que la gestión privada sale mejor en coste y en calidad.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Estudiar sin hacer la maleta",
+   "tituloFrase": "Estudiar sin hacer la maleta",
+   "texto": "En las islas no capitalinas, mantener estudios de FP y universitarios cuesta más por la insularidad y por los grupos pequeños, y mucha gente joven tiene que irse para poder estudiar. Queremos un fondo estatal, acordado con el Gobierno de Canarias y las universidades, que pague la apertura y el mantenimiento de esos estudios: profesorado, talleres y laboratorios, desplazamientos y alojamiento cuando hagan falta, y prácticas con empresas y entidades de cada isla. Será Canarias quien decida qué estudios se abren.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes",
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Atención presencial en las oficinas del Estado de cada isla",
+   "tituloFrase": "Atención presencial en las oficinas del Estado de cada isla",
+   "texto": "En la oficina del INSS de Santa Cruz de La Palma solían estar cubiertos seis de los ocho puestos previstos, y en 2026 el Tribunal Superior de Justicia de Canarias condenó a la Seguridad Social por la sobrecarga que eso causó a una funcionaria. Proponemos revisar las plantillas de las oficinas estatales en las islas, sobre todo las del INSS, la Tesorería de la Seguridad Social y el SEPE, para garantizar en cada isla atención presencial con cita en un plazo razonable. En Canarias, cuando una oficina no tiene citas, la alternativa es coger un barco o un avión.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "La Palma"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Un año de respaldo para la cuidadora cuando fallece la persona cuidada",
+   "tituloFrase": "Un año de respaldo para la cuidadora cuando fallece la persona cuidada",
+   "texto": "Cuando fallece la persona dependiente, la prestación por cuidados en el entorno familiar solo se cobra hasta el último día de ese mes. La cuidadora, que muchas veces dejó su trabajo para cuidar, se queda de un día para otro sin ingresos y sin cotizar. Proponemos que durante un año el Estado le siga pagando la cotización a la Seguridad Social y una prestación de transición, mientras se incorpora a las políticas de empleo, en las que la ley ya le da prioridad. Cuidar es el acto más humano que hay: cuidemos entre todas a quienes lo hacen.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "familias",
+    "mayores"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Pensiones dignas que reconozcan lo que cuesta vivir en Canarias",
+   "tituloFrase": "Pensiones dignas que reconozcan lo que cuesta vivir en Canarias",
+   "texto": "En Canarias, miles de pensionistas, sobre todo mujeres que trabajaron en los cuidados, el campo o la hostelería sin poder cotizar lo suficiente, cobran prestaciones insuficientes mientras pagan el sobrecoste de vivir en un territorio insular. Proponemos blindar en la Constitución la revalorización anual de todas las pensiones conforme al IPC real y elevar las pensiones mínimas y no contributivas por encima del umbral de la pobreza. Pediremos además un complemento de insularidad, financiado por el Estado, para las pensiones contributivas más bajas y las no contributivas en Canarias, que compense el mayor coste de la cesta de la compra y de la vida en las islas.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Becas que reconozcan lo que cuesta estudiar en Canarias",
+   "tituloFrase": "Becas que reconozcan lo que cuesta estudiar en Canarias",
+   "texto": "Las ayudas por insularidad de las becas del Ministerio no subieron este curso. Queremos que suban cada año con el IPC y que quien estudie en una universidad canaria cobre 130 euros más por lo que cuesta vivir en las islas, aunque no tenga que cambiar de isla.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "cobre 130 euros más por lo que cuesta vivir en las islas"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Una partida estatal para mejorar los centros educativos de las islas",
+   "tituloFrase": "Una partida estatal para mejorar los centros educativos de las islas",
+   "texto": "Queremos un programa de cooperación territorial entre el Estado y Canarias, con una partida finalista en los Presupuestos Generales del Estado, para mejorar la infraestructura educativa del archipiélago: rehabilitar y ampliar centros, adaptarlos al calor y hacerlos accesibles. El dinero se repartirá con criterios públicos de necesidad por isla, con especial atención a las islas no capitalinas, y será Canarias quien decida en qué centros se invierte.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Más voz para el estudiantado universitario",
+   "tituloFrase": "Más voz para el estudiantado universitario",
+   "texto": "La ley universitaria solo garantiza al estudiantado el 10 % del Consejo de Gobierno y un único representante en el Consejo Social. Proponemos subir ese mínimo al 25 % para el estudiantado y al 15 % para el personal técnico, de gestión y de administración y servicios, y dar al estudiantado tres representantes en el Consejo Social. El cambio llegaría directamente a la Universidad de La Laguna y a la de Las Palmas de Gran Canaria.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [
+    "Las Palmas de Gran Canaria",
+    "La Laguna"
+   ],
+   "cifras": [
+    "subir ese mínimo al 25 %"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Financiación estable para las entidades sociales",
+   "tituloFrase": "Financiación estable para las entidades sociales",
+   "texto": "Las entidades que atienden la exclusión social suelen conocer la resolución de sus ayudas estatales meses después de empezar los proyectos. Proponemos que las actuaciones estables tengan financiación para cuatro o cinco años, que las ayudas se resuelvan al menos tres meses antes de empezar y que haya anticipos y pagos previsibles, para que las entidades puedan mantener a sus equipos con contratos estables y sin cortar la atención.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Un parque marítimo donde hoy está el Arsenal",
+   "tituloFrase": "Un parque marítimo donde hoy está el Arsenal",
+   "texto": "La Base Naval de Las Palmas de Gran Canaria ocupa suelo público en pleno frente marítimo, entre Las Alcaravaneras y Santa Catalina, y corta la conexión de la ciudad con el mar. Pediremos que Defensa traslade al Puerto de La Luz las funciones imprescindibles y ceda gratis el recinto al Ayuntamiento, para hacer allí un parque marítimo con equipamientos públicos, sin hoteles ni usos comerciales.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Las Palmas de Gran Canaria"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 2,
+   "seccion": "4",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Canarios con alas",
+   "tituloFrase": "Canarios con alas",
+   "texto": "Volver a casa a ver a tu familia no puede ser un lujo. Exigiremos que el Gobierno justifique ante la Comisión Europea obligaciones de servicio público, con precios máximos, en las rutas aéreas entre Canarias y el resto del Estado en las épocas de más demanda. La Comisión Nacional de los Mercados y la Competencia tendrá que vigilar que el descuento de residente no acabe convertido en tarifas más altas. Y los canarios y canarias que viven fuera por estudios o trabajo conservarán el descuento en un número limitado de viajes al año.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 2,
+   "seccion": "4",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Internet rápido en todas las casas de Canarias",
+   "tituloFrase": "Internet rápido en todas las casas de Canarias",
+   "texto": "En 2025, el 6,3 % de las viviendas canarias no tenía acceso a una conexión fija de al menos 100 megas. En El Hierro solo llegaba al 68,1 % de las casas, así que casi una de cada tres se quedaba fuera; en La Palma llegaba al 83,7 %. Queremos un plan estatal para Canarias que en 90 días localice, parcela a parcela, dónde sigue sin haber conexión ni previsión de que llegue, y que después financie el despliegue en esas zonas con ayudas a los operadores, como ya se hizo con el programa UNICO-Banda Ancha. El plan comprobará también que el servicio se puede contratar.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "El Hierro",
+    "La Palma"
+   ],
+   "cifras": [
+    "que en 90 días localice"
+   ],
+   "plazo": "90 días",
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 2,
+   "seccion": "4",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Las mismas condiciones para todas las tripulaciones que conectan las islas",
+   "tituloFrase": "Las mismas condiciones para todas las tripulaciones que conectan las islas",
+   "texto": "A los barcos con bandera de otro país europeo que hacen líneas regulares entre las islas o con la Península solo se les exige pagar a sus tripulaciones el salario mínimo español. Proponemos que tengan que aplicar el convenio colectivo español del sector, como condición para obtener y mantener la autorización o el contrato de las líneas de servicio público.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 2,
+   "seccion": "4",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Un registro de buques que deje empleo y salarios en Canarias",
+   "tituloFrase": "Un registro de buques que deje empleo y salarios en Canarias",
+   "texto": "El Registro Especial de Buques de Canarias permite a las navieras ahorrarse el 90 % del Impuesto sobre Sociedades por la actividad de esos barcos y el 90 % de lo que pagan a la Seguridad Social por sus tripulaciones. Queremos que esas ventajas obliguen a mantener el buque en el registro un tiempo mínimo, y que la naviera devuelva la parte proporcional si lo saca antes. También proponemos ampliar la exención del IRPF de las tripulaciones, hoy del 50 % de su salario, para que cobren más en neto.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Derecho a los suministros básicos para toda la ciudadanía canaria",
+   "tituloFrase": "Derecho a los suministros básicos para toda la ciudadanía canaria",
+   "texto": "Hoy la prohibición de cortar la luz, el agua y el gas a los hogares vulnerables depende de decretos-ley que se renuevan cada año. En 2026 dejó de estar en vigor durante semanas, y vuelve a caducar el 31 de diciembre. Proponemos fijarla por ley y de forma permanente. También queremos que el bono social se conceda de oficio, sin tener que pedirlo, a quienes ya acreditan su vulnerabilidad ante el Estado, como quienes cobran el Ingreso Mínimo Vital. En Canarias el problema no es solo el frío, sino también el calor: el bono social térmico tiene que tenerlo en cuenta para que dejemos de recibir la cuantía más baja.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Ni tierras raras ni minería crítica sin el sí de cada isla",
+   "tituloFrase": "Ni tierras raras ni minería crítica sin el sí de cada isla",
+   "texto": "Proponemos cambiar la Ley de Minas, que es de 1973. En Canarias no podrá concederse ningún permiso de investigación ni de explotación de tierras raras u otras materias primas críticas sin un referéndum vinculante en la isla afectada y un informe favorable del Cabildo. Mientras esa reforma no esté en vigor, una ley suspenderá la tramitación de nuevos permisos de este tipo en el archipiélago. Defensa, además, tendrá que informar al Congreso de todas las prospecciones autorizadas en el Campo de Maniobras y Tiro de Pájara.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Que El Hierro decida sobre el Mar de las Calmas",
+   "tituloFrase": "Que El Hierro decida sobre el Mar de las Calmas",
+   "texto": "Exigiremos que la declaración del Parque Nacional Marino del Mar de las Calmas se someta a un referéndum vinculante en El Hierro, de modo que la ley solo entre en vigor si la población herreña la aprueba. Durante su tramitación propondremos reservar expresamente la pesca artesanal de La Restinga, dar un puesto en el Patronato del parque al Cabildo, a los ayuntamientos y a la Cofradía de La Restinga, y exigir un informe del Cabildo antes de aprobar o cambiar el plan de uso y gestión.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "El Hierro",
+    "La Restinga",
+    "Mar de las Calmas"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Energía en los tejados y en manos de la gente",
+   "tituloFrase": "Energía en los tejados y en manos de la gente",
+   "texto": "El Real Decreto de comunidades energéticas sigue pendiente. Pediremos que se apruebe ya, con una reserva de capacidad de la red eléctrica en cada punto de conexión para los proyectos vecinales. Proponemos también adaptar la normativa de autoconsumo para dar prioridad a los tejados, con un trámite simplificado.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Reinvertir en renovables lo que se ahorre en electricidad fósil",
+   "tituloFrase": "Reinvertir en renovables lo que se ahorre en electricidad fósil",
+   "texto": "El Estado compensa cada año el sobrecoste de producir electricidad en Canarias, que depende sobre todo de centrales que queman combustibles importados. A medida que entren renovables y baje esa compensación, queremos que el dinero ahorrado se reinvierta por ley en almacenamiento y energías renovables en las islas, en lugar de volver a la caja común. El Estado y Canarias acordarán además un plan de reservas estratégicas de combustible y alimentos, para que el archipiélago aguante si se cortan las rutas de suministro.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Agua depurada: reutilizar antes de verter",
+   "tituloFrase": "Agua depurada: reutilizar antes de verter",
+   "texto": "Cuando se incorpore a la ley española la nueva directiva europea de aguas residuales, queremos que en las islas y en las zonas con escasez de agua no se pueda autorizar ni renovar ningún vertido de agua depurada al mar sin una evaluación pública previa de cómo reutilizarla. Si la administración descarta reutilizarla, tendrá que justificarlo por escrito. En Canarias buena parte del agua sale de desaladoras, así que reutilizarla ahorra energía y dinero.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Plazas para residentes en los espacios naturales saturados",
+   "tituloFrase": "Plazas para residentes en los espacios naturales saturados",
+   "texto": "Los parques nacionales y otros espacios naturales sufren saturación de visitantes. Queremos reformar la ley estatal de parques nacionales para limitar el acceso según la capacidad de carga de cada espacio, con un registro común de visitantes, y reservar una parte de las plazas a la población residente en Canarias y a los usos tradicionales, educativos y de voluntariado.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "POSEI y REA: saber a quién llega la ayuda",
+   "tituloFrase": "POSEI y REA: saber a quién llega la ayuda",
+   "texto": "El POSEI es el programa europeo que sostiene la agricultura y la ganadería canarias, e incluye el REA, que abarata los alimentos importados. En 2026, el Tribunal de Cuentas Europeo encontró que no hay un método común para comprobar que esas ayudas bajen los precios, y que en Canarias se dejó sin revisar un caso con un margen del 56 %. Proponemos una auditoría independiente y pública que responda a tres preguntas: cuánto de la ayuda llega de verdad a los precios, a quién beneficia y cómo afecta a las pequeñas explotaciones. Cualquier cambio posterior deberá garantizar el abastecimiento sin encarecer la compra.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Que los barcos dejen de matar cetáceos",
+   "tituloFrase": "Que los barcos dejen de matar cetáceos",
+   "texto": "Entre 1999 y 2022 se documentaron en Canarias 81 cetáceos con indicios de haber chocado con barcos, 47 de ellos cachalotes, y los límites de velocidad para evitarlo siguen siendo voluntarios. Proponemos medidas obligatorias en las zonas de más riesgo, sobre todo en los canales entre islas, como límites de velocidad y cambios de ruta con base científica, protocolos ante avistamientos y un sistema compartido de detección y alerta temprana. Se acordarán con el Gobierno de Canarias y las navieras.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Reconocer el trabajo de las mujeres en el campo",
+   "tituloFrase": "Reconocer el trabajo de las mujeres en el campo",
+   "texto": "Muchas mujeres trabajan en explotaciones agrarias familiares sin sueldo propio, sin cotizar y sin derechos. En 2025, solo 11 explotaciones canarias de titularidad compartida podían optar a las ayudas del Ministerio. Queremos que sea más fácil acreditar ese trabajo y cobrar la compensación económica que la ley ya prevé, que se amplíe la cotización bonificada a la Seguridad Social y que desaparezcan los límites de edad que dejan fuera a las agricultoras mayores.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "mujeres",
+    "rural"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Contratos seguros para volver a cultivar las fincas abandonadas",
+   "tituloFrase": "Contratos seguros para volver a cultivar las fincas abandonadas",
+   "texto": "Casi dos de cada tres hectáreas agrícolas de Canarias están sin cultivar. Proponemos un contrato específico en la Ley de Arrendamientos Rústicos para recuperar fincas abandonadas, con seguridad para las dos partes. Quien arriende tendrá derecho a que le compensen las mejoras autorizadas que no haya podido amortizar, y la propiedad, a un inventario del estado de la finca al empezar y a recuperarla en las condiciones pactadas al terminar.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Menos basura en los grandes hoteles y comercios",
+   "tituloFrase": "Menos basura en los grandes hoteles y comercios",
+   "texto": "En 2023, Canarias generó casi 573 kilos de residuos municipales por habitante, un 23 % más que la media estatal, y esa cifra incluye los que produce la actividad turística. Proponemos cambiar la ley estatal de residuos para obligar a los grandes establecimientos turísticos y comerciales a medir sus residuos y a cumplir planes de reducción con objetivos mínimos verificables, con prioridad para la reutilización y para eliminar los desechables evitables. Quien no cumpla será sancionado.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Que la compra pública de alimentos llegue al campo canario",
+   "tituloFrase": "Que la compra pública de alimentos llegue al campo canario",
+   "texto": "Desde noviembre de 2027, los hospitales, las residencias y los comedores públicos tendrán que comprar alimentos frescos, de temporada, ecológicos y de circuito corto, como ya se exige en los comedores escolares. Para que esa compra llegue de verdad al campo canario, pediremos una línea de financiación estatal que ayude a las pequeñas explotaciones y cooperativas de las islas a prepararse para abastecer a los centros públicos: transporte entre islas, almacenamiento y las certificaciones que piden los contratos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural",
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Derecho a tránsito",
+   "tituloFrase": "Derecho a tránsito",
+   "texto": "A finales de octubre de 2026, Canarias acogía a 2.622 menores migrantes, más del triple de sus 783 plazas ordinarias. La ley ya obliga a repartir esa acogida entre comunidades autónomas, pero los traslados se retrasan o se recurren. Exigiremos que se cumplan las asignaciones acordadas, con plazas identificadas en cada comunidad, responsables y calendario, y mirando siempre por el interés de cada menor. Pediremos también que el reparto obligatorio no tenga fecha de caducidad y que el Gobierno rinda cuentas de su cumplimiento en el Congreso.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes",
+    "infancia"
+   ],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Pedir asilo sin jugarse la vida en el mar",
+   "tituloFrase": "Pedir asilo sin jugarse la vida en el mar",
+   "texto": "Es urgente mejorar y ampliar los recursos y las entidades que asisten a las personas solicitantes de asilo y protección internacional en el archipiélago. Se deben implementar los recursos destinados a la acogida humanitaria de emergencia que garanticen el acceso de las personas solicitantes a los trámites de asilo y protección internacional. Asimismo, es urgente y necesario ampliar los recursos de atención jurídica, psicosocial, sanitaria y de acogida, asegurando suficientes plazas alojativas en programas especializados e itinerarios de atención individualizada para las personas solicitantes de asilo y protección internacional, con el máximo respeto a su dignidad y a su proyecto migratorio, y facilitando las reunificaciones familiares y los traslados al territorio continental.\n\nAsimismo, solicitamos que funcione el sistema de asilo en los países de origen, con las máximas garantías para pedir protección internacional en las embajadas y consulados, con un órgano responsable y un plazo de respuesta, empezando por los países de origen cercanos a la ruta atlántica.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Cerrar los CIE de Barranco Seco y Hoya Fría",
+   "tituloFrase": "Cerrar los CIE de Barranco Seco y Hoya Fría",
+   "texto": "Pediremos el cierre de los Centros de Internamiento de Extranjeros de Barranco Seco, en Gran Canaria, y de Hoya Fría, en Tenerife. La existencia de estas dependencias en Canarias es incompatible con un sistema de acogida digno para las personas migrantes, y podrían utilizarse como una pieza estable del nuevo sistema de retorno en frontera. Un archipiélago que acoge a miles de personas en una emergencia humanitaria no debe consolidar centros de detención, sino una red de acogida. Por todo ello, exigimos su cierre inmediato y rechazamos el uso de estas instalaciones como centros de retención de personas migrantes.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Gran Canaria",
+    "Tenerife",
+    "Barranco Seco",
+    "Hoya Fría"
+   ],
+   "cifras": [],
+   "plazo": "inmediato",
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Más medios para Salvamento Marítimo en Canarias",
+   "tituloFrase": "Más medios para Salvamento Marítimo en Canarias",
+   "texto": "La ruta atlántica hacia Canarias es una de las rutas migratorias más mortíferas del mundo, y es Salvamento Marítimo quien rescata a las personas que se ven forzadas a migrar por esta vía. Se deben reforzar los mecanismos de búsqueda de supervivientes, asegurando el desembarco seguro y el acceso a la protección. Además, debe garantizarse que las medidas para combatir el tráfico ilícito de migrantes no den lugar a la criminalización de quienes actúan en cumplimiento del imperativo humanitario y jurídico de salvar vidas en el mar.\n\nPediremos subir el presupuesto de Salvamento Marítimo en unos 6,5 millones al año para aumentar sus recursos materiales y humanos, y que ese refuerzo, junto con más embarcaciones y medios aéreos, vaya en primer lugar a Canarias.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "subir el presupuesto de Salvamento Marítimo en unos 6,5 millones al año"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 22,
+   "subapartado": null,
+   "titulo": "Una deuda con el pueblo saharaui",
+   "tituloFrase": "Una deuda con el pueblo saharaui",
+   "texto": "Por justicia histórica, en defensa de la soberanía de todos los pueblos y en apoyo de los movimientos anticoloniales, defenderemos la celebración de un referéndum que permita al pueblo saharaui decidir sobre su futuro como pueblo y el de su territorio, apoyando las resoluciones de la ONU que instan a celebrar un referéndum de autodeterminación en el Sáhara Occidental. Cualquier cambio de posición sobre el futuro del Sáhara deberá pasar por las Cortes y el Gobierno de Canarias.\n\nIgualmente, no reconoceremos, ni apoyaremos, ni cooperaremos con ninguna situación derivada de la ocupación ilegal del Sáhara Occidental por Marruecos, ni con ninguna forma de consolidarla, ni con las aspiraciones expansionistas del régimen marroquí, que amenazan la soberanía del Sáhara Occidental y de su vecindad. En este marco, rechazamos las delimitaciones marítimas que traten las aguas saharauis o canarias como marroquíes, porque afectan gravemente a la soberanía y a los recursos naturales del territorio, e impulsaremos iniciativas contra el blanqueamiento de la ocupación del Sáhara Occidental, como la turistificación de la costa saharaui, utilizada como herramienta de consolidación del régimen colonial marroquí a través del extractivismo.\n\nAdemás, debe garantizarse la sostenibilidad de una asistencia humanitaria adecuada y digna a la población refugiada saharaui. El Estado español y los organismos internacionales deben intensificar las vías de ayuda en el territorio y velar por la seguridad de la población saharaui y de las personas presas o perseguidas por el régimen marroquí por su activismo en defensa de los derechos del pueblo saharaui. Finalmente, proponemos retomar la proposición de ley de concesión de la nacionalidad española a las y los saharauis nacidos bajo la administración española, e incluir el Sáhara en la Ley de Memoria Democrática.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [
+    "Marruecos",
+    "Sáhara Occidental"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Más fondos contra la violencia machista y ejecución finalista, también en las islas no capitalinas",
+   "tituloFrase": "Más fondos contra la violencia machista y ejecución finalista, también en las islas no capitalinas",
+   "texto": "En el segundo trimestre de 2026, los juzgados de Canarias registraron 23,7 víctimas de violencia de género por cada 10.000 mujeres, frente a 20 en el conjunto de España. Proponemos que los fondos del Pacto de Estado contra la Violencia de Género que reciben las comunidades se actualicen cada año, como mínimo con el IPC, y que el reparto dé más peso a la insularidad, para reforzar la atención en las islas no capitalinas, que tienen menos recursos. Ese dinero tendrá que usarse de forma finalista y efectiva, para frenar el aumento de la violencia machista en Canarias y en el resto del Estado.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "mujeres",
+    "victimas"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Igualdad real de las mujeres en el trabajo y en los derechos, en todas las islas",
+   "tituloFrase": "Igualdad real de las mujeres en el trabajo y en los derechos, en todas las islas",
+   "texto": "En Canarias, la desigualdad tiene rostro de mujer y código postal. Los sectores más feminizados, como la hostelería, el comercio o los cuidados, concentran los salarios más bajos y la mayor parcialidad, y vivir en una isla no capitalina obliga muchas veces a coger un barco o un avión para ejercer derechos básicos. Proponemos reformar la ley de igualdad y el Estatuto de los Trabajadores para rebajar de 50 a 25 personas trabajadoras la obligación de tener plan de igualdad y auditoría salarial, adaptando la ley al tamaño de las empresas canarias, y para ampliar los permisos retribuidos de conciliación a 24 semanas. También queremos que, si no existe alternativa pública, las empresas con 100 o más personas en plantilla ofrezcan un espacio de cuidado infantil o una compensación económica equivalente.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "rebajar de 50 a 25 personas trabajadoras",
+    "ampliar los permisos retribuidos de conciliación a 24 semanas"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Vivir sin miedo y con derechos en todas las islas",
+   "tituloFrase": "Vivir sin miedo y con derechos en todas las islas",
+   "texto": "En Canarias, muchas personas siguen sufriendo discriminación o agresiones por su orientación sexual o expresión de género, y algunas tienen que marcharse de su isla por ello. Proponemos reforzar la legislación estatal contra los delitos de odio, también en el Código Penal. Pediremos además que los fondos estatales de igualdad tengan en cuenta la insularidad, para garantizar atención psicosocial, asesoramiento jurídico y salud sexual en todas las islas, sin tener que coger un barco o un avión para recibirla. Y en el trabajo, proponemos rebajar de 50 a 25 personas trabajadoras la obligación de las empresas de contar con un protocolo frente al acoso y la discriminación de las personas LGTBI, adaptando la ley al tamaño real de las empresas canarias.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "rebajar de 50 a 25 personas trabajadoras"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Que el dinero europeo de migración llegue a Canarias",
+   "tituloFrase": "Que el dinero europeo de migración llegue a Canarias",
+   "texto": "La aprobación e implementación del Pacto Europeo de Migración y Asilo responde a la estrategia de la Unión Europea y de España para frenar los flujos migratorios en la ruta atlántica, y transforma el archipiélago en un espacio de control y contención. Los cambios legislativos y de gestión que plantea suponen un claro retroceso en los derechos de las personas migrantes y en el respeto a los derechos humanos. Mecanismos como la externalización del control migratorio en terceros países, mediante acuerdos con los países africanos de salida para vigilar, frenar las salidas de embarcaciones y gestionar devoluciones, son claramente contrarios a unas políticas justas y dignas con la vida y al respeto a la legislación internacional. Desde Canarias nos negamos a ser cómplices de las políticas necrocidas de la Unión Europea y del Gobierno de España: reclamamos la derogación de este pacto, que convierte el archipiélago en una cárcel a cielo abierto para las personas migrantes, y solicitamos los recursos necesarios para que se atienda a las personas con dignidad en territorio fronterizo.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Pacto Europeo de Migración y Asilo"
+  },
+  {
+   "n": 50,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "Control de Frontex en Canarias",
+   "tituloFrase": "Control de Frontex en Canarias",
+   "texto": "La salvaguarda de los derechos humanos de las personas migrantes que llegan a nuestro territorio es un deber fundamental. En este marco, rechazamos las prácticas de externalización y militarización de las fronteras llevadas a cabo por la Unión Europea, entre ellas la ampliación de recursos, personal, facultades y mandatos de Frontex. Dado que hay pruebas de la participación de esta agencia en prácticas contrarias a la legislación europea de migración y asilo, como devoluciones en caliente y faltas graves en la protección de la vida en el mar en la ruta mediterránea, rechazamos frontalmente su intervención en Canarias.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 3,
+   "seccion": "6",
+   "pagina": 24,
+   "subapartado": null,
+   "titulo": "Citas de extranjería sin esperas imposibles",
+   "tituloFrase": "Citas de extranjería sin esperas imposibles",
+   "texto": "El Defensor del Pueblo ha advertido de que la falta de citas de extranjería impide presentar solicitudes y de que los retrasos afectan a la situación administrativa y a la inserción sociolaboral de las personas migrantes. Queremos un plan estatal con más personal y más citas en las oficinas que atienden a Canarias, con atención presencial y ayuda para los trámites digitales, y que se publique el tiempo de espera de cada oficina y de cada trámite.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Un pueblo, un país, una circunscripción",
+   "tituloFrase": "Un pueblo, un país, una circunscripción",
+   "texto": "Canarias es un solo pueblo, pero desde 1927 está partida en dos provincias, y esa división también nos debilita en el Congreso. En 2023, los partidos de obediencia canaria sumaron el 15,8 % de los votos en las islas y sacaron un solo escaño de 15, porque se presentan en dos circunscripciones pequeñas, donde la fórmula electoral castiga a los partidos medianos. Defendemos que el archipiélago sea una sola provincia, mediante la ley orgánica que exige la Constitución. Canarias votaría al Congreso como una sola circunscripción, se unificarían órganos hoy duplicados, como las juntas electorales, y los recursos se seguirían repartiendo por islas.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Que el voto canario valga lo mismo",
+   "tituloFrase": "Que el voto canario valga lo mismo",
+   "texto": "Canarias tiene el 4,58 % de la población de España y elige solo el 4,29 % de los escaños. En Santa Cruz de Tenerife hay uno por cada 154.000 habitantes; en las provincias menos pobladas, uno por cada 45.000. Y la fórmula D’Hondt castiga a los partidos medianos, como los de obediencia canaria. Proponemos ampliar el Congreso a 400 escaños, el máximo que permite la Constitución, bajar de 2 a 1 el mínimo por provincia y cambiar D’Hondt por Sainte-Laguë, que es más proporcional. Con los votos de 2023, Canarias habría elegido 18 escaños en lugar de 15, y los partidos de obediencia canaria habrían sacado 4 en lugar de 1.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Santa Cruz de Tenerife"
+   ],
+   "cifras": [
+    "ampliar el Congreso a 400 escaños",
+    "bajar de 2 a 1 el mínimo por provincia"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Fuera los símbolos franquistas, empezando por el Monumento a Franco",
+   "tituloFrase": "Fuera los símbolos franquistas, empezando por el Monumento a Franco",
+   "texto": "En junio de 2026, el Estado incluyó el Monumento a Franco de Santa Cruz de Tenerife en el catálogo de símbolos contrarios a la memoria democrática y ordenó al Ayuntamiento retirarlo antes de febrero de 2027. El Ayuntamiento lo ha recurrido, y la ley no deja claro quién debe hacerla cumplir cuando una administración se resiste. Llevaremos al Congreso una reforma de la Ley de Memoria Democrática para que, si una administración no retira en plazo un símbolo catalogado, lo retire el Gobierno del Estado, y para que ninguna protección patrimonial posterior al catálogo pueda impedirlo. Si al acabar ese plazo sigue en pie, será el primer caso.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [
+    "Santa Cruz de Tenerife"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Voz propia para cada partido del Grupo Mixto",
+   "tituloFrase": "Voz propia para cada partido del Grupo Mixto",
+   "texto": "Para tener grupo propio hacen falta 15 escaños, o 5 si se superan ciertos porcentajes de voto, así que los partidos de obediencia canaria que llegan al Congreso acaban siempre en el Grupo Mixto, compartiendo turnos y preguntas con partidos muy distintos. Proponemos reformar el Reglamento para que cada formación del Mixto que haya obtenido escaño con candidatura propia tenga derechos propios: un cupo de preguntas orales, con un mínimo garantizado de una al mes, turno propio en el Pleno y firma propia para presentar iniciativas. No recibirá subvención de grupo.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Una circunscripción canaria en las elecciones europeas",
+   "tituloFrase": "Una circunscripción canaria en las elecciones europeas",
+   "texto": "Ningún partido de obediencia canaria tiene hoy escaño en el Parlamento Europeo, porque España vota allí como una sola circunscripción. Queremos que Canarias sea circunscripción propia, como lo son las islas en Italia, con escaños que reconozcan que está fuera del continente europeo.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Que cada ley del Estado mida su impacto en Canarias",
+   "tituloFrase": "Que cada ley del Estado mida su impacto en Canarias",
+   "texto": "El Estatuto de Autonomía prevé que las normas del Estado se adapten a la condición ultraperiférica de Canarias, pero nada obliga a estudiar su efecto en las islas antes de aprobarlas. Proponemos que toda norma estatal incluya un análisis de su impacto en Canarias y que, si ese impacto es distinto que en el resto del Estado, justifique qué adaptaciones incluye o por qué no las incluye. El Gobierno de Canarias emitirá además un informe preceptivo durante su tramitación.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Que el Gobierno conteste al Congreso",
+   "tituloFrase": "Que el Gobierno conteste al Congreso",
+   "texto": "En abril de 2026 había 726 preguntas escritas de diputadas y diputados que el Gobierno no había contestado dentro de plazo. Proponemos reformar el Reglamento del Congreso para que el Gobierno tenga 15 días, prorrogables 7, para dar la información que se le pide, y para que la Mesa le haga un requerimiento en 3 días si no la da. Las preguntas escritas sin respuesta pasarán automáticamente a ser orales en comisión, y se publicará, ministerio por ministerio, la lista de lo que no se ha contestado.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "tenga 15 días, prorrogables 7"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 3,
+   "seccion": "7",
+   "pagina": 26,
+   "subapartado": null,
+   "titulo": "Evaluar el dinero público antes y después de gastarlo",
+   "tituloFrase": "Evaluar el dinero público antes y después de gastarlo",
+   "texto": "Llevaremos al Congreso una reforma de la ley de evaluación para que todo programa de gasto, subvención o beneficio fiscal del Estado por encima de cierto importe nazca con su evaluación prevista y presupuestada, según los métodos de la Agencia Estatal de Evaluación de Políticas Públicas. Después, la AIReF, que no depende del Gobierno, evaluará cada cierto tiempo los grandes programas estatales para Canarias, empezando por los incentivos del REF y las ayudas al transporte. Todo se publicará, y el ministerio tendrá que aplicar cada recomendación o explicar por qué no. La Agencia Tributaria publicará cada año los incentivos del REF por isla y por sector.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 4,
+   "seccion": "8",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Una ZEC que deje empleo de calidad en las islas",
+   "tituloFrase": "Una ZEC que deje empleo de calidad en las islas",
+   "texto": "Pagar menos impuestos tiene que ganarse creando empleo en las islas. La Zona Especial Canaria permite tributar al 4 % en el Impuesto sobre Sociedades, pero solo admite empresas nuevas hasta el 31 de diciembre de 2026. Exigiremos que el Gobierno negocie con la Comisión Europea su continuidad, con condiciones nuevas. Empadronar a personal traído de fuera ya no bastará: al menos la mitad de los puestos nuevos serán para personas inscritas como desempleadas en Canarias desde hace dos meses o más. El tipo reducido dependerá también de la estabilidad y del salario de esos empleos, y el Consorcio de la ZEC lo auditará y publicará los resultados cada año por isla y por sector.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "al menos la mitad de los puestos nuevos"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 4,
+   "seccion": "8",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Una financiación que cuente a toda la gente que usa nuestros servicios",
+   "tituloFrase": "Una financiación que cuente a toda la gente que usa nuestros servicios",
+   "texto": "El nuevo modelo de financiación autonómica se aprobó en septiembre de 2026 en el Consejo de Política Fiscal y Financiera, pero no llegó al Congreso antes de las elecciones y tendrá que tramitarse en la próxima legislatura. Exigiremos que esa ley cuente a quienes usan la sanidad y otros servicios públicos sin estar en el padrón, como turistas y residentes temporales, medidos con estadísticas oficiales. También tendrá que pesar más lo que cuesta prestar servicios en un territorio ultraperiférico y repartido en islas. Los recursos del Régimen Económico y Fiscal (REF) deberán seguir fuera de ese cálculo.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 4,
+   "seccion": "8",
+   "pagina": 28,
+   "subapartado": null,
+   "titulo": "Beneficio fiscal solo para la vivienda asequible",
+   "tituloFrase": "Beneficio fiscal solo para la vivienda asequible",
+   "texto": "Hoy una empresa puede pagar menos impuestos si reinvierte sus beneficios en comprar o construir vivienda de alquiler en Canarias, aunque después la alquile a precio de mercado. Queremos que ese beneficio solo se aplique a vivienda protegida, con alquiler limitado y un compromiso mínimo de veinte años, sin que cueste más dinero público.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "un compromiso mínimo de veinte años"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Aguas canarias",
+   "tituloFrase": "Aguas canarias",
+   "texto": "Nuestro mar no se negocia sin Canarias. Defendemos que el derecho internacional reconozca a nuestro país como archipiélago, con aguas unidas por líneas que rodeen todas las islas, aunque hoy la Convención del Mar solo da ese régimen a los Estados formados por islas. Mientras tanto, proponemos una ley que garantice al Gobierno de Canarias un puesto en las delegaciones que negocien con Marruecos la delimitación de las aguas y del espacio aéreo. Y exigiremos que España se oponga a cualquier prospección de gas, petróleo o minerales en las aguas en disputa frente a Canarias, como las del monte submarino Tropic.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Marruecos"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Que Canarias decida sobre su litoral",
+   "tituloFrase": "Que Canarias decida sobre su litoral",
+   "texto": "Canarias recibió en 2022 la gestión de su litoral, pero muchas decisiones siguen dependiendo de un informe previo del Estado. Exigiremos el traspaso completo de costas y una reforma de la Ley de Costas para que los poblados de pescadores protegidos como patrimonio cultural no puedan derribarse. Que no se repita lo de Cho Vito.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Completar los traspasos pendientes con su dinero",
+   "tituloFrase": "Completar los traspasos pendientes con su dinero",
+   "texto": "Ocho años después de aprobarse el Estatuto de Autonomía de 2018, el Estado sigue sin traspasar a Canarias competencias que le corresponden. Proponemos un calendario público para completarlos en esta legislatura, y que cada uno se financie con la regla que ya fija el Estatuto: medios por habitante no inferiores a la media del Estado, más lo que cuesta la insularidad.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": "esta legislatura",
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 29,
+   "subapartado": null,
+   "titulo": "Que la Constitución reconozca la realidad nacional canaria",
+   "tituloFrase": "Que la Constitución reconozca la realidad nacional canaria",
+   "texto": "Proponemos una reforma de la Constitución que reconozca la realidad nacional canaria y nuestro hecho diferencial ante el Estado, lo que en la Unión Europea y en la legislación canaria y estatal se conoce como ultraperiferia. Canarias tiene su propio centro: no es la periferia de nadie.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Ninguna cesión del control aéreo sin pasar por las Cortes",
+   "tituloFrase": "Ninguna cesión del control aéreo sin pasar por las Cortes",
+   "texto": "El espacio aéreo del Sáhara Occidental se controla hoy desde Canarias, y no hay información pública de lo que se habla con Marruecos sobre ello. Ningún acuerdo que ceda ese control a otro Estado podrá firmarse sin autorización previa de las Cortes y audiencia motivada del Gobierno de Canarias.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Marruecos",
+    "Sáhara Occidental"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Una delegación canaria ante la Unión Africana",
+   "tituloFrase": "Una delegación canaria ante la Unión Africana",
+   "texto": "Nuestro país está en África, y lo que pasa en los países vecinos nos afecta directamente. España ya es observadora permanente ante la Unión Africana a través de su embajada en Adís Abeba. Proponemos que esa representación incorpore de forma permanente una delegación del Gobierno de Canarias, para que el archipiélago participe en la relación con la organización y en la cooperación con África Occidental.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Instalaciones deportivas y terreros dignos en cada isla",
+   "tituloFrase": "Instalaciones deportivas y terreros dignos en cada isla",
+   "texto": "El censo de instalaciones deportivas de Canarias todavía se basa en datos de 2005, que se están actualizando. Queremos un programa plurianual del Consejo Superior de Deportes, cofinanciado con el Gobierno de Canarias, los cabildos y los ayuntamientos y con una convocatoria específica para Canarias, que rehabilite las instalaciones deportivas públicas. Tendrá una línea propia para los terreros de lucha canaria, nuestro deporte autóctono, y dará prioridad a las instalaciones con problemas de seguridad, accesibilidad o deterioro, con dinero para cubiertas, vestuarios, iluminación, pavimentos y eficiencia energética.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 4,
+   "seccion": "9",
+   "pagina": 30,
+   "subapartado": null,
+   "titulo": "Que las selecciones canarias representen a nuestro país",
+   "tituloFrase": "Que las selecciones canarias representen a nuestro país",
+   "texto": "Queremos ver jugar a las selecciones canarias con regularidad en el concierto estatal y en el internacional, en disciplinas como el fútbol masculino y femenino y en otros deportes. Presentaremos iniciativas legislativas en el Congreso para lograr su reconocimiento.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }
