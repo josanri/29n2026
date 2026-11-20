@@ -5,14 +5,14 @@
  * publicación original y los porcentajes que da. Un partido que la encuesta no publica va como `null`.
  * Para añadir una encuestadora: una entrada en `pollsters` con su página oficial.
  *
- * Origen de las cifras (revisión del 19 de noviembre de 2026):
+ * Origen de las cifras (revisión del 20 de noviembre de 2026):
  * - `checked: true`: la cifra se ha leído en la página original enlazada.
  * - `checked: false`: la cifra no se ha leído en la página original enlazada: viene de la tabla de Mapa Electoral
  *   (agregador) o de otra fuente que la recoge (electografica, Demócrata…). El enlace es la publicación original.
  * Sumar se convierte en Frente Amplio el 16 de octubre de 2026 (registro en la Junta Electoral Central). Una encuesta
  * publicada antes de esa fecha da «Sumar»; una publicada después, «Frente Amplio»: quien añade la línea elige `v()` (antes del 16-X) o `vFa()` (desde esa fecha).
  * La cifra es la suma que publica cada encuestadora para la coalición y sus socios.
- * Escaños y muestra: de la tabla de Mapa Electoral, salvo los leídos en la página original (Sigma Dos 9 nov,
+ * Escaños y muestra: de la tabla de Mapa Electoral o de la fuente que indica el comentario de cada línea, salvo los leídos en la página original (Sigma Dos 9 nov,
  * SocioMétrica 8 y 15 nov, 40dB. 15 nov y GAD3). En «Frente Amplio» se usa la suma del agregador, igual que en el porcentaje.
  */
 
@@ -135,6 +135,12 @@ export const polls: Poll[] = [
   { pollster: '40db', date: '2026-07-06', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/07-barometro/2026_07_informe_voto.pdf', values: v(32.0, 28.0, 17.2, 5.8, 3.1, 2.1), sample: 2000 },
   { pollster: '40db', date: '2026-06-08', checked: false, url: 'https://ep00.epimg.net/infografias/encuestas40db/2026/06-barometro-y-Papa/2026_06_barometro_voto.pdf', values: v(32.4, 27.7, 17.4, 6.2, 2.3, 2.1), sample: 2000 },
   // Sigma Dos (no publica SALF)
+  // 20 nov: sin enlace propio de El Mundo; cifras de Electografica (8.º tracking). Sin muestra ni autonómicos publicados en el extracto consultado.
+  { pollster: 'sigmados', date: '2026-11-20', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-sigmados-261120.html', values: vFa(31.2, 27.6, 18.9, 7.1, 0.8, null), seats: { pp: [125, 131], psoe: [111, 117], vox: [57, 62], fa: [11, 14], podemos: 0 } },
+  // 19 nov: el enlace es la publicación de El Mundo, pero no se ha podido leer; cifras del agregador Mapa Electoral. Podemos sin dato de voto.
+  { pollster: 'sigmados', date: '2026-11-19', checked: false, url: 'https://www.elmundo.es/elecciones/elecciones-generales/2026/11/19/6aff2a9afc6c83886c8b459b.html', values: vFa(31.0, 27.1, 19.4, 8.9, null, null), seats: { pp: [125, 131], psoe: [110, 116], vox: [59, 64], fa: [11, 14], podemos: 0 } },
+  // 18 nov: sin enlace propio de El Mundo; cifras de Electografica y Mapa Electoral (muestra 4.511). Adelante Andalucía de Mapa Electoral. Podemos sin escaños publicados.
+  { pollster: 'sigmados', date: '2026-11-18', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-sigmados-261118.html', values: vFa(30.7, 26.7, 19.7, 8.7, 0.8, null, { adelante: 1.7 }), sample: 4511, seats: { pp: [123, 129], psoe: [108, 114], vox: [62, 67], fa: [10, 14], adelante: [3, 5] } },
   // 16 nov: sin enlace propio de El Mundo; cifras de Electografica (horquillas, muestra) y Demócrata (FA 6,7 % y 14 escaños). FA 6,7 y 14 escaños (central de Demócrata); la fuente no detalla si incluye Front Valencià y UPCan, se asume por la serie (7,2 el 15 nov, 13-16 escaños). Horquillas de una sola fuente. Sin muestra (el tracking es acumulado y no se ha podido confirmar) ni autonómicos.
   { pollster: 'sigmados', date: '2026-11-16', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-sigmados-261116.html', values: vFa(30.8, 26.1, 19.8, 6.7, 1.4, null), seats: { pp: [123, 129], psoe: [107, 113], vox: [63, 68], fa: 14, podemos: 0 } },
   // 15 nov: FA suma Frente Amplio (5,6), Front Valencià (1,1) y UPCan (0,5): 7,2 % y 13-16 escaños.
