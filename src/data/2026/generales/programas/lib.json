@@ -2,26 +2,1462 @@
  "id": "lib",
  "partido": "Liberación Canaria",
  "siglas": "LIB",
+ "comunidad": "Canarias",
+ "observaciones": [
+  "Liberación Canaria no publica un programa electoral único con medidas numeradas. Publica seis documentos en su web: cinco estudios breves (De RUP a PTU, Regulación de la residencia, Estatuto de Plena Autonomía Interna, Control de puertos y aeropuertos, Hacienda canaria tributaria independiente) y la «Política Nacional Canaria de Vivienda» (292 páginas).",
+  "Cada medida es una propuesta que el texto formula, con su texto literal. Los estudios son ensayos: sus propuestas están dentro de la argumentación, y el título corto de cada una es editorial. Del documento de vivienda se toman los once ejes del capítulo 19, los cuatro horizontes del plan de aplicación (capítulo 20), los indicadores de seguimiento (capítulo 21) y tres pasajes de los informes que el texto presenta como propuesta: la misión del 10 % de parque público, las diez líneas de la política integral y la hoja de ruta de 0 a 36 meses.",
+  "Los cinco estudios llevan fecha de creación del 6 de enero de 2026, y los de puertos y de residencia citan como fuente el «Ensayo sobre la descolonización de un canario» (edición de 2021). El documento de vivienda es la edición ampliada del 18 de noviembre de 2026 y avisa de que sus propuestas son «para revisión institucional»: no los presenta como reformas aprobadas del programa. Ninguno de los seis menciona las elecciones del 29 de noviembre.",
+  "Los plazos son los que el texto da a cada propuesta. El eje 1 dice «inmediata», pero el plan de aplicación sitúa las primeras zonas tensionadas en los dos primeros años; a los cien días solo hay identificación de ámbitos. Los horizontes de la hoja de ruta de 0 a 36 meses son «propuestos» y, según el propio documento, no son plazos legales.",
+  "El documento de vivienda reproduce además análisis, datos y anexos (zonas tensionadas, alquiler justo, suelo e inversión) que no son medidas y no se cuentan."
+ ],
  "color": "#033E65",
  "colorClaro": "#D9F0D3",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Seis documentos programáticos",
+ "subtitulo": "Vivienda, residencia, relación con la UE, autogobierno y hacienda propia para Canarias",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "pdf": "/programas/lib-rup-a-ptu-2026.pdf",
+ "fuentePdf": "https://www.liberacioncanaria.org",
+ "paginas": 371,
+ "fechaPdf": "2026-11-18",
+ "documentos": [
+  {
+   "titulo": "De RUP a PTU: cambiar la relación con la Unión Europea",
+   "pdf": "/programas/lib-rup-a-ptu-2026.pdf",
+   "nombreDescarga": "programa-lib-rup-a-ptu-2026.pdf",
+   "paginas": 33
+  },
+  {
+   "titulo": "Regulación de la residencia en Canarias y acceso al mercado laboral",
+   "pdf": "/programas/lib-regulacion-residencia-2026.pdf",
+   "nombreDescarga": "programa-lib-regulacion-residencia-2026.pdf",
+   "paginas": 11
+  },
+  {
+   "titulo": "Estatuto de Plena Autonomía Interna (PAI)",
+   "pdf": "/programas/lib-estatuto-pai-2026.pdf",
+   "nombreDescarga": "programa-lib-estatuto-pai-2026.pdf",
+   "paginas": 17
+  },
+  {
+   "titulo": "Control por el Gobierno de Canarias de todos los puertos y aeropuertos",
+   "pdf": "/programas/lib-puertos-aeropuertos-2026.pdf",
+   "nombreDescarga": "programa-lib-puertos-aeropuertos-2026.pdf",
+   "paginas": 7
+  },
+  {
+   "titulo": "Hacienda canaria tributaria independiente",
+   "pdf": "/programas/lib-hacienda-canaria-2026.pdf",
+   "nombreDescarga": "programa-lib-hacienda-canaria-2026.pdf",
+   "paginas": 11
+  },
+  {
+   "titulo": "Política Nacional Canaria de Vivienda",
+   "pdf": "/programas/lib-vivienda-2026.pdf",
+   "nombreDescarga": "programa-lib-vivienda-2026.pdf",
+   "paginas": 292
+  }
+ ],
+ "unidadMedida": "propuesta",
+ "unidadMedidas": "propuestas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Política Nacional Canaria de Vivienda: resumen ejecutivo",
+  "texto": "La vivienda constituye una cuestión estratégica de país. La finalidad de esta edición es garantizar la coherencia entre la política nacional de vivienda y el instrumento estatal de las zonas de mercado residencial tensionado (ZMRT), sin eliminar ninguna de las líneas de análisis del documento original."
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
+ "cifras": [
+  {
+   "valor": "5",
+   "unidad": "viviendas",
+   "texto": "Umbral de gran tenedor",
+   "contexto": "reducir a cinco viviendas el umbral de gran tenedor",
+   "medida": 32
+  },
+  {
+   "valor": "25",
+   "unidad": "años de arraigo",
+   "texto": "Arraigo con máxima valoración en la vivienda protegida",
+   "contexto": "máxima valoración a partir de veinticinco años",
+   "medida": 33
+  },
+  {
+   "valor": "10",
+   "unidad": "% del parque",
+   "texto": "Parque público o asequible permanente en Canarias",
+   "contexto": "permanente de al menos el 10 % en Canarias",
+   "medida": 48
+  },
+  {
+   "valor": "20",
+   "unidad": "% en municipios tensionados",
+   "texto": "Aproximación en los municipios tensionados",
+   "contexto": "una aproximación al 20 % en los municipios tensionados",
+   "medida": 48
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "Inmediata",
+   "texto": "Declaración de zonas tensionadas",
+   "medida": 32
+  },
+  {
+   "plazo": "100 días",
+   "texto": "Auditoría, mapas, inventarios de suelo y primeras unidades y comisiones",
+   "medida": 43
+  },
+  {
+   "plazo": "0 a 36 meses",
+   "texto": "Horizontes de 0–6, 6–18 y 18–36 meses desde la declaración",
+   "medida": 50
+  },
+  {
+   "plazo": "2 años",
+   "texto": "Nueva Ley Canaria de Vivienda y Soberanía Residencial, Ley de Arraigo y primeras zonas tensionadas",
+   "medida": 44
+  },
+  {
+   "plazo": "3 a 8 años",
+   "texto": "Aumento del parque público, reforma fiscal del REF y negociación con la UE",
+   "medida": 45
+  },
+  {
+   "plazo": "8 a 15 años",
+   "texto": "Parque público consolidado y entrada en vigor del nuevo marco bilateral y del estatuto PTU",
+   "medida": 46
+  },
+  {
+   "plazo": "15 años",
+   "texto": "Programa de quince años para alcanzar un parque público y asequible suficiente",
+   "medida": 33
+  },
+  {
+   "plazo": "15 años",
+   "texto": "Misión de quince años para el parque público o asequible permanente",
+   "medida": 48
+  }
+ ],
+ "ordenPlazos": [
+  "Inmediata",
+  "100 días",
+  "0 a 36 meses",
+  "2 años",
+  "3 a 8 años",
+  "8 a 15 años",
+  "15 años"
+ ],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Canarias"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "De RUP a PTU: cambiar la relación con la Unión Europea",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 1
+  },
+  {
+   "id": 2,
+   "titulo": "Regulación de la residencia en Canarias y acceso al mercado laboral",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 1
+  },
+  {
+   "id": 3,
+   "titulo": "Estatuto de Plena Autonomía Interna (PAI)",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 1
+  },
+  {
+   "id": 4,
+   "titulo": "Control por el Gobierno de Canarias de todos los puertos y aeropuertos",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 1
+  },
+  {
+   "id": 5,
+   "titulo": "Hacienda canaria tributaria independiente",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 1
+  },
+  {
+   "id": 6,
+   "titulo": "Política Nacional Canaria de Vivienda",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 1
+  }
+ ],
+ "secciones": [
+  {
+   "id": "rup-ptu",
+   "bloque": 1,
+   "titulo": "De RUP a PTU: cambiar la relación con la Unión Europea",
+   "tituloFrase": "De RUP a PTU: cambiar la relación con la Unión Europea",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "residencia",
+   "bloque": 2,
+   "titulo": "Regulación de la residencia en Canarias y acceso al mercado laboral",
+   "tituloFrase": "Regulación de la residencia en Canarias y acceso al mercado laboral",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "pai",
+   "bloque": 3,
+   "titulo": "Estatuto de Plena Autonomía Interna (PAI)",
+   "tituloFrase": "Estatuto de Plena Autonomía Interna (PAI)",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "puertos",
+   "bloque": 4,
+   "titulo": "Control por el Gobierno de Canarias de todos los puertos y aeropuertos",
+   "tituloFrase": "Control por el Gobierno de Canarias de todos los puertos y aeropuertos",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "hacienda",
+   "bloque": 5,
+   "titulo": "Hacienda canaria tributaria independiente",
+   "tituloFrase": "Hacienda canaria tributaria independiente",
+   "intro": "",
+   "pagina": 1,
+   "subapartados": []
+  },
+  {
+   "id": "ejes",
+   "bloque": 6,
+   "titulo": "Los once ejes de la propuesta política",
+   "tituloFrase": "Los once ejes de la propuesta política",
+   "intro": "",
+   "pagina": 104,
+   "subapartados": []
+  },
+  {
+   "id": "plan",
+   "bloque": 6,
+   "titulo": "Plan de aplicación e indicadores",
+   "tituloFrase": "Plan de aplicación e indicadores",
+   "intro": "",
+   "pagina": 109,
+   "subapartados": []
+  },
+  {
+   "id": "informes",
+   "bloque": 6,
+   "titulo": "Informes sectoriales: parque público, líneas de actuación y hoja de ruta",
+   "tituloFrase": "Informes sectoriales: parque público, líneas de actuación y hoja de ruta",
+   "intro": "",
+   "pagina": 173,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "rup-ptu",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "El Parlamento de Canarias debe provocar el cambio legal; si no, alternativas más contundentes",
+   "tituloFrase": "El Parlamento de Canarias debe provocar el cambio legal; si no, alternativas más contundentes",
+   "texto": "Corresponde al pueblo canario, a través de su Parlamento, provocar el cambio legal que debe acometer el Estado para nuestra adecuación en la UE, y caso de no admitirse plantear alternativas más contundentes.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-rup-a-ptu-2026.pdf"
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "rup-ptu",
+   "pagina": 31,
+   "subapartado": null,
+   "titulo": "Cambiar la relación con la UE y volver a los Puertos Francos",
+   "tituloFrase": "Cambiar la relación con la UE y volver a los Puertos Francos",
+   "texto": "El marco jurídico de las RUP no nos soluciona nada, y realmente es parte importante del problema, por lo que la relación con la UE tiene que ser otra, o pasar a PTU o salir de la UE, y en cualquier caso acompañado de una clara vuelta a los Puertos Francos con complementos como una hacienda pública propia, comercio exterior y control de extranjería.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-rup-a-ptu-2026.pdf"
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "rup-ptu",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Salir de las RUP y pasar a estatus PTU o abandonar la UE",
+   "tituloFrase": "Salir de las RUP y pasar a estatus PTU o abandonar la UE",
+   "texto": "En Liberación Canaria lo tenemos claro, salir de las RUP y pasar a estatus PTU o abandonar la UE. La libertad siempre da dignidad y oportunidades.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-rup-a-ptu-2026.pdf"
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "rup-ptu",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Más libertad de importación sin perder la exportación preferencial a la UE",
+   "tituloFrase": "Más libertad de importación sin perder la exportación preferencial a la UE",
+   "texto": "1º) Sin perder la capacidad de exportación preferencial hacia la UE ganaríamos más libertad de movimiento en la importación y por tanto abrimos posibilidades en mercados fuera de la UE. Y es que los PTU no forman parte del territorio aduanero de la Unión y están parcialmente fuera del mercado interior con un régimen especial de asociación.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-rup-a-ptu-2026.pdf"
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "rup-ptu",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Regular el establecimiento de personas para evitar la superpoblación",
+   "tituloFrase": "Regular el establecimiento de personas para evitar la superpoblación",
+   "texto": "2º) Negociaríamos la regulación del establecimiento de personas tratando de evitar la superpoblación que padecemos, evitando la presión sobre el territorio y nuestra calidad de vida -preocupaciones de la UE claramente establecidas en la Decisión regulatoria-.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-rup-a-ptu-2026.pdf"
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "rup-ptu",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Regular el acceso al mercado laboral según las necesidades de los canarios",
+   "tituloFrase": "Regular el acceso al mercado laboral según las necesidades de los canarios",
+   "texto": "3º) Igualmente, podremos regular el acceso al mercado laboral de Canarias en función de las necesidades de los canarios canarias.\n\nAsí lo expresa el artículo 52.4 de la Decisión regulatoria … Las autoridades de un PTU, a fin de promover o apoyar el empleo local, podrán adoptar normativas de ayuda a sus personas físicas y sus actividades locales.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-rup-a-ptu-2026.pdf"
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "rup-ptu",
+   "pagina": 32,
+   "subapartado": null,
+   "titulo": "Mantener la ciudadanía europea y los espacios culturales, de juventud y educativos",
+   "tituloFrase": "Mantener la ciudadanía europea y los espacios culturales, de juventud y educativos",
+   "texto": "De resto, seguiríamos teniendo la ciudadanía europea en la Unión.\n\nE igualmente, se mantienen la interrelación de espacios culturales, de juventud y educativos.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-rup-a-ptu-2026.pdf"
+  },
+  {
+   "n": 8,
+   "bloque": 2,
+   "seccion": "residencia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Control de extranjería desde Canarias",
+   "tituloFrase": "Control de extranjería desde Canarias",
+   "texto": "Como elemento más sencillo, empezamos tratando el asunto del tratamiento de control de extranjería en términos generales, esto es, fuera del marco de nacionales de la Unión Europea, aquí poco hay que inventar, y ciertamente no habría que aplicar más que la ley de extranjería española, con las matizaciones que nos pudieran interesar, entre las cuales estaría la posición española para concesión de nacionalidad, donde con seguridad restringiríamos más.\n\nEl mundo pone reglas, sin ir más lejos la UE, y la propia España, pues bien, nosotros debemos controlar esa situación según nuestras propias acuciantes necesidades. Esta es una cuestión del artículo 149.1.2ª CE (competencia estatal en nacionalidad, inmigración, emigración, extranjería y derecho de asilo), por lo que el camino es siempre el mismo, el 150.2 del mismo texto, partiendo que a nosotros solo nos interesa la inmigración y extranjería.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "España",
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-regulacion-residencia-2026.pdf"
+  },
+  {
+   "n": 9,
+   "bloque": 2,
+   "seccion": "residencia",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Pasar a PTU, o «canarexit», para regular la residencia de ciudadanos de la UE",
+   "tituloFrase": "Pasar a PTU, o «canarexit», para regular la residencia de ciudadanos de la UE",
+   "texto": "Para ello se nos abren dos posibilidades, la primera, más agresiva y que no es en este momento la propuesta inicial, y que irónicamente llamamos canarexit, sería la salida de la UE, entendiendo que sería la panacea en términos de desarrollo económico sin traba alguna en un mundo sin corsé de reglas de club, un club donde no manejamos absolutamente nada, ni siquiera tenemos representantes directos en el Parlamento Europeo (pues nuestros teóricos representantes dentro de una lista de partido cerrada que controlan en Madrid no es tener representantes), cuestión ésta que merece un debate y reflexión aparte. Dicho planteamiento simplificaría sobresalientemente todas las posiciones político-económicas que sostenemos, con total resultado positivo a los intereses de Canarias.\n\nLa segunda, la propuesta que se hace, tiene que ver con otro tema propuesto por Liberación, y es salir de las RUP y convertirnos en un PTU -País y Territorio de Ultramar-, regulados en la cuarta parte del TFUE -cuestión más desarrollada en tal propuesta-.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-regulacion-residencia-2026.pdf"
+  },
+  {
+   "n": 10,
+   "bloque": 2,
+   "seccion": "residencia",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "En el PTU, controlar la residencia y el acceso al mercado laboral sin perder la ciudadanía europea",
+   "tituloFrase": "En el PTU, controlar la residencia y el acceso al mercado laboral sin perder la ciudadanía europea",
+   "texto": "En definitiva, en el PTU, sí podemos controlar la residencia y el acceso al mercado laboral canario sin perder la ciudadanía europea o participar de su espacio cultural y educativo.\n\nResulta claro que estamos en la lista de las RUP y no en la lista de los PTU, precisamente, tenemos que cambiar de lista.\n\nAhora, lo que hay que hacer es política. Será el pueblo canario quien tiene que llevar al Parlamento Nacional Canario una mayoría política que sustente con firmeza la solicitud de convertirnos en PTU, y plantear a la UE una negociación que resuelva nuestros problemas y por tanto, que generara excepciones de aplicación de sus principios por nuestra realidad excepcional.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-regulacion-residencia-2026.pdf"
+  },
+  {
+   "n": 11,
+   "bloque": 2,
+   "seccion": "residencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Principio de Preferencia Natural: los canarios en Canarias",
+   "tituloFrase": "Principio de Preferencia Natural: los canarios en Canarias",
+   "texto": "Los riojanos deben tener preferencia en La Rioja, y los canarios en Canarias, es a lo que llamamos Principio de Preferencia Natural.\n\nHay que asumir el principio preferencial natural de los riojanos en su hábitat natural como el de cualquier otro ciudadano con respecto a su entorno natural, étnico y sociológico. No tenemos que estar en igualdad con el mundo, porque si no, pasa lo que ya sucede, los canarios salen y el mundo entra, ¿se conoce algún otro lugar en España dónde esté pasando esto?, ¿en el mundo?",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "España",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-regulacion-residencia-2026.pdf"
+  },
+  {
+   "n": 12,
+   "bloque": 2,
+   "seccion": "residencia",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Condición de canario por tres generaciones, como en Rapa Nui",
+   "tituloFrase": "Condición de canario por tres generaciones, como en Rapa Nui",
+   "texto": "Expresamos un ejemplo curioso y de cierto parangón, la Isla de Pascua, Rapa Nui en su idioma. Se incorporó en 1888 a la soberanía chilena.\n\nEl artículo 126, bis de la Constitución chilena vigente, hace un reconocimiento específico en disposiciones especiales sobre su legislación.\n\nEn definitiva plantea unas excepciones al artículo 19.7º el cual viene a garantizar la libertad personal de residir y permanecer en cualquier lugar del resto de Chile, libertades que no llegarían en igual manera a Rapa Nuí.\n\nAsí, la cuestión de la residencia se ha desarrollado en la siguiente forma:\n\n<< (…)Esta norma determina que “toda persona, chilena o extranjera, que ingrese a Isla de Pascua, podrá permanecer en el territorio especial por un período máximo de treinta días” (Ley N° 21.070, Artículo 5, inc. 1°), a excepción de las personas que se encuentren habilitadas por la misma norma…>> Mediante esta ley se dispone también que se determinará la Capacidad de Carga Demográfica de Isla de Pascua, en períodos de latencia y saturación mediante Decreto Supremo, y se elaborará un instrumento de gestión basado en una fórmula de cálculo definida en un estudio de gestión de la capacidad de carga demográfica.\n\nSobre el particular de la calidad de indígena, entre otras argumentaciones, la establecen en tres generaciones, un criterio que bien serviría para la cualidad de nacional de un territorio en España, terminando con esa ridícula barbaridad de que es canario cualquier español que viene hoy a Canarias y está empadronado la semana que viene, dado que la condición política de canarios en la actualidad va en función de la vecindad administrativa.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "España",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-regulacion-residencia-2026.pdf"
+  },
+  {
+   "n": 13,
+   "bloque": 3,
+   "seccion": "pai",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Controlar el mar archipiélago, la ZEE y los fondos marinos",
+   "tituloFrase": "Controlar el mar archipiélago, la ZEE y los fondos marinos",
+   "texto": "Objetivo: El objetivo de la PAI es amplio, por una parte, un mecanismo que nos permitiría controlar, en su acepción más amplia posible, nuestros espacio marítimos (delimitación y decisión sobre sus recursos pesqueros, naturales y económicos como hidrocarburos y mineros), mientras que por otro, adoptar un estatus político con mayor autonomía que la establecida en el artículo 151 de la CE, incluyendo relaciones internacionales en el ámbito de la CONVEMAR.\n\nMar archipelágico, control de la ZEE y fondos marinos -plataforma continental-\n\nUna parte importante de nuestras posibilidades económicas es nuestro mar, el que nos rodea.\n\nLa idea central es el reconocimiento internacional del Mar, tanto las aguas archipelágicas, como los demás espacios marítimos con las consecuencias jurídicas que de ello se deriva. Las aguas archipelágicas serían las que nuestro Estatuto político actual llama aguas canarias, artículo 4, y que viene a englobar las aguas que están dentro del contorno perimetral que siga la configuración general del Archipiélago.\n\nImportante es señalar, que dicho artículo por primera vez declare que Canarias son sus islas y su mar. España no quiso reconocer esto hasta 2018.\n\nAntes de seguir, conviene dejar dos pensamientos claros sobre la exigencia de que Canarias asuma la soberanía sobre su mar y riquezas, tales son:\n\n1º.- Se trata de una materia jurídica compleja, que llevaría mucho material escrito para su comprensión y dominio -como casi todo el derecho internacional-, no obstante, se intenta de forma muy resumida explicar lo que sucede, el interés que se debe tener en ello y la vía jurídica que se propone para acceder al control de todos nuestros espacios marítimos, incluidas las Aguas archipelágicas, vía que no es un invento, es legalidad.\n\n2º.- Se trata de un posicionamiento de sumo interés (político, jurídico y económico) para Canarias, y que choca con intereses de España; por tanto, estamos ante un conflicto político, y la política se hace negociando, dialogando, pero para una posición fuerte de negociación hacen falta muchos diputados en el Parlamento de Canarias, y para eso hacen falta votos, que solo llegarán implicando al pueblo en la materia.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "España",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-estatuto-pai-2026.pdf"
+  },
+  {
+   "n": 14,
+   "bloque": 3,
+   "seccion": "pai",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Desarrollar las competencias del Estatuto con proyección en el mar",
+   "tituloFrase": "Desarrollar las competencias del Estatuto con proyección en el mar",
+   "texto": "Esas competencias estatutarias serían:\n\n1. Ordenación y gestión del litoral (artículo 157 EAC)\n\n2. Transporte marítimo (artículo 160 EAC)\n\n3. Puertos (artículo 161 EAC)\n\n4. Pesca y actividades marítimas y ordenación del sector pesquero (artículo 131 EAC)\n\n5. Patrimonio cultural submarino (artículo 137 EAC)\n\n6. Deportes náuticos u submarinos (artículo 138 EAC)\n\n7. Medio ambiente (artículo 153 EAC)\n\n8. Espacios naturales protegidos (artículo 154 EAC)\n\n9. Minas (artículo 163 EAC)\n\n10. Energía e hidrocarburos (art. 163 EAC)",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-estatuto-pai-2026.pdf"
+  },
+  {
+   "n": 15,
+   "bloque": 3,
+   "seccion": "pai",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Exigir al Estado, por el artículo 150.2, las facultades para explotar el mar",
+   "tituloFrase": "Exigir al Estado, por el artículo 150.2, las facultades para explotar el mar",
+   "texto": "Entre las materias que Canarias debe exigir del Estado estarían, además de la férrea negativa a traspasar cuestiones ya contenidas en el Estatuto, las siguientes, que requieren de enorme voluntad política para cederlas:\n\nLas reservadas por el artículo 149 CE al Estado, las indicadas:\n\n13ª. Concretar facultades sobre bases de planificación general en economía para explotar nuestros recursos marinos.\n\n25ª. Concretar facultades sobre régimen minero en recursos marítimos.\n\n19ª. Pesca marítima.\n\n20ª. Marina mercante.\n\nY obviamente, por lo que seguidamente se dirá, reivindicar la PAI ante UN, resulta necesaria la facultad de relaciones internacionales (art. 149.1.3ª CE), circunscritas exclusivamente a la materia de ser sujeto de derecho internacional ante la autoridad Marítima Internacional.\n\nLa vía jurídica de traspaso de competencias de esta índole ya la tiene abierta la CE, tal es el artículo 150.2 de la CE -mecanismo de transferencia de materias de titularidad estatal-, que reiteramos, requieren de la voluntad política del Estado, y esa voluntad solo se doblega por poder político, esto es, con capacidad de decisión canaria en determinados foros. Es decir, con representación política, no solo en el Parlamento de Canarias, si no en las Cortes Generales.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-estatuto-pai-2026.pdf"
+  },
+  {
+   "n": 16,
+   "bloque": 3,
+   "seccion": "pai",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Reconocer la libertad de modificar la posición política de Canarias",
+   "tituloFrase": "Reconocer la libertad de modificar la posición política de Canarias",
+   "texto": "La cuestión sobre Libertad de modificación sería el gran caballo de batalla, pues todo lo demás como se dirá ya tiene poca enjundia. Esta libertad viene a ser lo que los vascos llevan tiempo pidiendo, tener reconocido el derecho de autodeterminación.\n\nEn esta cuestión habría que forzar el artículo 150.2 CE, la voluntad política de España también tiene que aparecer.\n\nNo obstante, dos detalles sobre la cuestión, el tener un derecho es tener una facultad, no implica que la ejerzas, pero además, un derecho así se regula a través de una mayoría cualificada del Parlamento de Canarias y un referéndum de ratificación del pueblo, en definitiva, mecanismos de seguridad para no trivializar la cuestión. Hoy por hoy no está Canarias en ese pensamiento por lo que el Estado no debería agobiarse con esto. Como segundo detalle, de máxima importancia, estamos en generalidades, y la flexibilidad aquí para negociar con la ONU es importante.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "España",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-estatuto-pai-2026.pdf"
+  },
+  {
+   "n": 17,
+   "bloque": 3,
+   "seccion": "pai",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Canarias ya está en situación jurídica de PAI",
+   "tituloFrase": "Canarias ya está en situación jurídica de PAI",
+   "texto": "En consecuencia, con la salvedad de lo expresado sobre el derecho a modificar nuestra posición política en el Estado que consideramos negociable con la ONU y las cuestiones de transferencia reseñada, que son perfectamente asumibles desde la actual Constitución, resultaría que estamos en una situación jurídica de PAI.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-estatuto-pai-2026.pdf"
+  },
+  {
+   "n": 18,
+   "bloque": 3,
+   "seccion": "pai",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Acceder a las riquezas del mar sin ser Estado, con las transferencias necesarias",
+   "tituloFrase": "Acceder a las riquezas del mar sin ser Estado, con las transferencias necesarias",
+   "texto": "Llegados aquí conviene recapitular sobre lo visto.\n\nLa idea del estatuto PAI es acceder a nuestras riquezas sin ser Estado. Obviamente la redacción del Estatuto vigente ayuda, pero deberá acompañarse de las necesarias transferencias vinculadas a la realidad pretendida para rellenar las lagunas existentes.\n\nY finalmente, no olvidemos que la filosofía para los territorios no autónomos como los llama la ONU es su progreso económico, social y cultural, es una constante la preocupación en los textos por esta cuestión, por tanto, a poco que acreditemos unos mínimos para los que también resultan flexibles en su apreciación, lo lógico es que nos permitan el estatuto PAI.\n\nLo que queda, como se dijo, es hacer política, concienciar al pueblo canario, conseguir votos, negociar con España.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-estatuto-pai-2026.pdf"
+  },
+  {
+   "n": 19,
+   "bloque": 4,
+   "seccion": "puertos",
+   "pagina": 1,
+   "subapartado": null,
+   "titulo": "Asumir el control de los puertos y aeropuertos de interés general",
+   "tituloFrase": "Asumir el control de los puertos y aeropuertos de interés general",
+   "texto": "Como otro complemento del sistema económico proponemos asumir el control de los puertos y aeropuertos de Canarias considerados de interés general que se reserva el Estado.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-puertos-aeropuertos-2026.pdf"
+  },
+  {
+   "n": 20,
+   "bloque": 4,
+   "seccion": "puertos",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Pedir el control por la vía del artículo 150.2 de la Constitución",
+   "tituloFrase": "Pedir el control por la vía del artículo 150.2 de la Constitución",
+   "texto": "La pretensión política estaría dentro del marco normativo actual, así, a través del artículo 150.2 CE resultaría viable el control de los aeropuertos y puertos de interés general en terminología del artículo 149.1.20a de la CE.\n\nDe hecho, esta cuestión era una competencia canaria de ejecución en el Estatuto de 1996, artículo 33.13 <<Puertos y aeropuertos con calificación de interés general, cuando el Estado no se reserve su gestión directa>> y con similar tenor aparece en el artículo 161.1 del nuevo Estatuto de 2018, por tanto, vacía de contenido para nuestras pretensiones. La eterna falta de dignidad política de Canarias.\n\n<<1. Corresponde a la Comunidad Autónoma de Canarias la competencia exclusiva sobre puertos, aeropuertos, helipuertos y demás infraestructuras de transporte que no tengan la calificación de interés general por el Estado y la competencia de ejecución sobre puertos y aeropuertos con calificación de interés general, cuando el Estado no se reserve su gestión directa>>.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-puertos-aeropuertos-2026.pdf"
+  },
+  {
+   "n": 21,
+   "bloque": 4,
+   "seccion": "puertos",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Quinta libertad del aire y centro operativo (HUB) tricontinental",
+   "tituloFrase": "Quinta libertad del aire y centro operativo (HUB) tricontinental",
+   "texto": "Sobre la cuestión de la navegación aérea conviene incidir en el detalle de la quinta libertad de las nueve libertades del aire, que vienen a ser un conjunto de derechos sobre la navegación aérea internacional.\n\nLa primera sería el simple sobrevuelo sobre un tercer país sin aterrizar, la segunda trata sobre aterrizaje por razones técnicas -por ejemplo repostar- en un Estado intermedio entre origen y destino.\n\nLa tercera y cuarta viene a ser el derecho a desembarcar pasajeros, correo y carga tomados en el territorio del país cuya nacionalidad posee la aeronave. La cuarta, al revés, derecho a tomar pasajeros, correo y carga destinados al territorio del país cuya nacionalidad posee la aeronave.\n\nY la quinta, sería tomar y desembarcar pasajeros, correo y carga con destino o procedente de terceros estados, en definitiva, con destino al territorio de cualquier Estado y desembarcar los procedentes de cualquiera de ellos.\n\nEsta última es algo que interesa a las aerolíneas internacionales, y desde luego a Canarias le iba de maravilla como territorio intermedio, no en vano estamos en el centro de muchas rutas.\n\nLa Convención de Chicago consagra las dos primeras, libertades técnicas, las otras tres, libertades comerciales, no tiene una total ratificación mundial y según los países son aceptadas o no, especialmente pensadas para la navegación aérea no regular, pues el tráfico regular lleva autorización especial.\n\nCon esta quinta libertad se abre el paso a las demás, lo que significaría poder convertir a Canarias en un HUB tricontinental (HUB: Centro operativo desde el que se proyectan tráficos a destinos periféricos. En nuestro caso, USA, Sudamérica, Europa y África Occidental).\n\nEl único inconveniente que podemos apreciar sería la protección de nuestro tráfico regular interno de pasajeros, para el que presumimos que con las autorizaciones especiales valdría.\n\nEsto supondría que las aerolíneas internacionales vendrían a implantarse con base empresarial en Canarias, o sea, dinero, trabajo, y comunicaciones internacionales para los canarios además para el propio turismo.\n\nClaro que si Canarias tiene algo así, ¿a quién le quitamos parte del pastel?, sí, a Madrid. ¿Por qué para ir casi a cualquier sitio tenemos que pasar por Madrid?, esto es algo que Barcelona ya cuestionaba hace tiempo. Siempre lo mismo, el saqueo imperial de la filosofía radial, ahora también bastante discutida con el AVE, donde se alzan voces para que las líneas no tengan que pisar Madrid, ¡hay más mundo!, sin lugar a dudas, sin la filosofía radial en todos los órdenes Madrid languidecería y en poco tiempo.\n\nEn conclusión, tener un instrumento así y combinarlo obviamente con el control de la gestión aeroportuaria ya hablado, es de un gigantesco potencial que no aprovechamos por una realidad invasora y depredadora.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-puertos-aeropuertos-2026.pdf"
+  },
+  {
+   "n": 22,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Un «Cupo Canario» por los servicios que el Estado mantiene",
+   "tituloFrase": "Un «Cupo Canario» por los servicios que el Estado mantiene",
+   "texto": "Si Canarias adoptara un modelo de cupo, la ecuación financiera cambiaría radicalmente la posición negociadora del archipiélago.\n\n– La Ecuación del Cupo: Cupo = Gastos del Estado en Competencias No Transferidas * Coeficiente de Imputación - Ajustes.\n\n– El Factor de Insularidad: A diferencia del País Vasco, cuyo coeficiente de imputación se basa en la renta (aprox. 6,24%), Canarias podría argumentar un coeficiente ajustado por su población y PIB, pero fundamentalmente modulado por los costes de insularidad reconocidos en el artículo 138 de la Constitución.\n\n– Saldo Financiero: Diversos estudios y propuestas políticas (como las de Liberación Canaria o Nueva Canarias) sugieren que, dado el volumen del PIB canario (superior a 47.000 millones de euros) y la recaudación total generada, el pago de un cupo justo por los servicios estatales (Defensa, Justicia, AA.EE.) dejaría un margen fiscal superior al que actualmente se recibe vía transferencias. Esto se debe a que el sistema de financiación autonómica actual tiende a la nivelación hacia la media, mientras que un sistema foral permite retener la prima de recaudación derivada de sectores potentes como el turismo internacional.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "País Vasco",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 23,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Blindar el REF con una agencia propia que aplique sus incentivos",
+   "tituloFrase": "Blindar el REF con una agencia propia que aplique sus incentivos",
+   "texto": "El Régimen Económico y Fiscal (REF) es la herramienta más potente de desarrollo económico de Canarias, pero su eficacia se ve constantemente mermada por la inseguridad jurídica.\n\n– El Problema Actual: La AEAT, organismo estatal con una cultura organizacional enfocada en la maximización recaudatoria y la homogeneidad nacional, tiende a interpretar de manera restrictiva los incentivos fiscales canarios (RIC, ZEC, deducciones por producciones audiovisuales). Esto genera una alta litigiosidad y desincentiva la inversión extranjera, que percibe riesgo fiscal.\n\n– La Solución de la Agencia Propia: Una Agencia Tributaria Canaria independiente asumiría la competencia de inspección y gestión de estos incentivos. Al estar incardinada en la administración autonómica, la agencia aplicaría criterios interpretativos alineados con el espíritu de la norma (el desarrollo económico de las islas) y no solo con el afán recaudatorio. Esto proporcionaría una seguridad jurídica crítica para atraer capitales y consolidar la ZEC como plataforma de negocios internacional.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 24,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Ventanilla única fiscal y compensación de deudas y créditos",
+   "tituloFrase": "Ventanilla única fiscal y compensación de deudas y créditos",
+   "texto": "La situación actual obliga a los contribuyentes canarios a una duplicidad burocrática ineficiente: deben relacionarse con la ATC para el IGIC y Sucesiones, y con la AEAT para el IRPF y Sociedades.\n\n– Simplificación: La creación de una agencia única independiente implementaría el principio de \"ventanilla única fiscal\". Ciudadanos y empresas gestionarían todas sus obligaciones tributarias ante un solo organismo, simplificando trámites, unificando el calendario fiscal y reduciendo los costes de cumplimiento indirectos para las PYMES y autónomos.\n\n– Gestión Integral de Deudas y Créditos: Actualmente, una empresa puede tener derecho a una devolución de IGIC por parte de la ATC y tener una deuda de IRPF con la AEAT. La falta de compensación automática entre administraciones genera tensiones de tesorería a las empresas. Una agencia única permitiría la compensación de oficio de deudas y créditos tributarios de diferente naturaleza, inyectando liquidez al sector privado.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "empresas",
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 25,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Cruzar todos los datos fiscales para combatir el fraude",
+   "tituloFrase": "Cruzar todos los datos fiscales para combatir el fraude",
+   "texto": "El control fragmentado de la información tributaria es un obstáculo para la lucha contra el fraude en una economía de servicios como la canaria.\n\n– Visión Holística del Contribuyente: Una agencia independiente tendría acceso a la totalidad de los datos fiscales: importaciones (AIEM), consumo (IGIC), beneficios empresariales (Sociedades) y rentas personales (IRPF).\n\n– Trazabilidad: El cruce de datos entre la imposición indirecta a la importación (controlada en aduanas, punto fuerte de Canarias por su geografía) y la imposición directa permitiría detectar bolsas de fraude con una precisión inalcanzable para la AEAT, que a menudo carece de la granularidad de datos del tráfico local de mercancías. Esto se traduciría en una mayor recaudación efectiva sin necesidad de subir tipos impositivos, aflorando economía sumergida.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 26,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Capacidad normativa sobre el IRPF y el Impuesto sobre Sociedades",
+   "tituloFrase": "Capacidad normativa sobre el IRPF y el Impuesto sobre Sociedades",
+   "texto": "El modelo de agencia independiente lleva aparejada la capacidad normativa sobre los tributos. Esto dotaría a Canarias de herramientas de política económica de primer orden:\n\n– Adaptación del IRPF al Coste de Vida: Canarias soporta una cesta de la compra y costes de vivienda elevados. Con capacidad normativa plena sobre el IRPF (no solo el tramo autonómico), el Gobierno de Canarias podría ajustar los mínimos personales y familiares o los tramos de la tarifa para reflejar el coste real de la vida en las islas, aumentando la renta disponible de las familias de rentas medias y bajas.\n\n– Impulso a la Vivienda: Se podrían diseñar incentivos fiscales potentes en el IRPF y Sociedades para poner vivienda vacía en el mercado del alquiler, utilizando la RIC para la construcción de vivienda social, algo que actualmente requiere modificaciones legislativas estatales complejas.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 27,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Empezar por el consorcio y delegar el IRPF y Sociedades en la agencia canaria",
+   "tituloFrase": "Empezar por el consorcio y delegar el IRPF y Sociedades en la agencia canaria",
+   "texto": "La reforma del Estatuto de Autonomía de Canarias (Ley Orgánica 1/2018) supuso un salto cualitativo. Su artículo 166 y la Disposición Adicional Segunda crean formalmente la Agencia Tributaria Canaria y le atribuyen la gestión de los tributos propios y los derivados del REF.\n\n– Potencial Expansivo: El estatuto deja la puerta abierta a la asunción de mayores competencias mediante delegación o transferencia (artículo 150.2 de la Constitución). Jurídicamente, es viable que el Estado delegue la gestión integral del IRPF y Sociedades a la ATC, tal como ya hace con el Impuesto de Patrimonio o Sucesiones.\n\n– El Consorcio como Paso Intermedio: El Estatuto prevé la creación de un consorcio con participación paritaria de la AEAT y la ATC. Una estrategia gradualista podría comenzar por este consorcio, pero con una dirección operativa cedida a la parte canaria, evolucionando hacia la agencia única independiente a medida que se demuestre la solvencia técnica.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 28,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Incluir en el cupo una aportación al Fondo de Compensación Interterritorial",
+   "tituloFrase": "Incluir en el cupo una aportación al Fondo de Compensación Interterritorial",
+   "texto": "Uno de los argumentos en contra de los regímenes forales es la supuesta insolidaridad. Sin embargo, el artículo 138 de la Constitución, que garantiza la solidaridad, también ordena atender \"en particular a las circunstancias del hecho insular\".\n\nUn modelo de independencia fiscal para Canarias no implica insolidaridad. El cálculo del \"Cupo Canario\" podría incluir explícitamente una aportación al Fondo de Compensación Interterritorial (algo que el cupo vasco hace de manera indirecta y discutida). De esta forma, Canarias tendría soberanía recaudatoria y de gestión, pero mantendría su compromiso con la cohesión nacional, desactivando las críticas políticas desde el resto del Estado.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 29,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Fondo de Estabilización Fiscal con el excedente turístico",
+   "tituloFrase": "Fondo de Estabilización Fiscal con el excedente turístico",
+   "texto": "El principal riesgo económico de la independencia fiscal es la exposición a ciclos económicos adversos (ej. una caída drástica del turismo).\n\n– Mitigación: Creación de un Fondo de Estabilización Fiscal. Aprovechando los años de superávit (como el actual), Canarias debería dotar un fondo de reserva soberano para cubrir caídas de recaudación en años de crisis, similar a los fondos soberanos de recursos naturales en otros territorios, pero financiado con el excedente turístico.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 30,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Traspasar los sistemas informáticos y el personal de la AEAT",
+   "tituloFrase": "Traspasar los sistemas informáticos y el personal de la AEAT",
+   "texto": "La AEAT dispone de sistemas informáticos (Zújar, etc.) de vanguardia mundial. La ATC es una administración más modesta.\n\n– Estrategia: La transición requeriría un acuerdo de cesión de tecnología y bases de datos. No es necesario reinventar la rueda; el traspaso de competencias debe incluir el traspaso de los aplicativos informáticos y la integración del personal de la AEAT en Canarias dentro de la nueva ATC, garantizando sus condiciones laborales y aprovechando su know-how.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 31,
+   "bloque": 5,
+   "seccion": "hacienda",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Agencia Tributaria Canaria independiente e integral",
+   "tituloFrase": "Agencia Tributaria Canaria independiente e integral",
+   "texto": "El análisis detallado de los factores históricos, económicos, jurídicos y operativos conduce a una conclusión clara: la creación de una Agencia Tributaria Canaria independiente, inspirada en los modelos forales pero adaptada a la singularidad RUP, es una evolución necesaria y beneficiosa para el archipiélago.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-hacienda-canaria-2026.pdf"
+  },
+  {
+   "n": 32,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 104,
+   "subapartado": null,
+   "titulo": "Declaración inmediata de zonas tensionadas",
+   "tituloFrase": "Declaración inmediata de zonas tensionadas",
+   "texto": "El Gobierno de Canarias elaborará estudios preliminares de todos los municipios y barrios con indicios de presión, prestará asistencia técnica y exigirá calendarios municipales. En las declaraciones se propondrá reducir a cinco viviendas el umbral de gran tenedor cuando la Ley estatal lo permita y resulte justificado.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "En las declaraciones se propondrá reducir a cinco viviendas el umbral de gran tenedor cuando la Ley estatal lo permita y resulte justificado."
+   ],
+   "plazo": "Inmediata",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 33,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 105,
+   "subapartado": null,
+   "titulo": "Misión Canaria de Vivienda Pública",
+   "tituloFrase": "Misión Canaria de Vivienda Pública",
+   "texto": "Programa de quince años para alcanzar un parque público y asequible suficiente, con objetivos anuales por isla y municipio.\n\nEl suelo público y las nuevas viviendas públicas no se venderán.\n\nToda promoción sostenida con suelo, financiación o ventajas públicas quedará sometida a protección permanente y a una baremación de necesidad y arraigo con máxima valoración a partir de veinticinco años.\n\nLa Vecindad Civil Canaria otorgará, una vez reconocida legalmente, derecho preferente en condiciones equivalentes de necesidad, con reglas adaptadas para juventud, retorno, profesionales esenciales y emergencias.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Toda promoción sostenida con suelo, financiación o ventajas públicas quedará sometida a protección permanente y a una baremación de necesidad y arraigo con máxima valoración a partir de veinticinco años."
+   ],
+   "plazo": "15 años",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 34,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 105,
+   "subapartado": null,
+   "titulo": "Construir dentro de la ciudad existente",
+   "tituloFrase": "Construir dentro de la ciudad existente",
+   "texto": "Inventario de solares, edificios inacabados, inmuebles públicos, oficinas y locales transformables.\n\nPrioridad a rehabilitación, regeneración, densificación selectiva y vivienda industrializada.\n\nToda expansión sobre nuevo suelo deberá justificarse frente a las alternativas existentes y ser compatible con la capacidad territorial del ámbito.\n\nLas nuevas promociones públicas, protegidas y asequibles incorporarán estándares de eficiencia energética e hídrica, adaptación climática, accesibilidad, infraestructura de recarga y dotación de aparcamiento ajustada a la realidad territorial y de movilidad de cada ámbito.\n\nSe pondrá en marcha un Programa Canario de Reutilización y Reconversión de Edificaciones y Complejos Turísticos para incorporar al parque residencial o dotacional, cuando resulte jurídica, técnica y territorialmente adecuado, inmuebles que hayan perdido competitividad o funcionalidad turística, priorizando vivienda habitual y asequible, alojamiento para colectivos con necesidad acreditada y usos educativos, asistenciales o de formación.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 35,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 106,
+   "subapartado": null,
+   "titulo": "Protección de la juventud canaria",
+   "tituloFrase": "Protección de la juventud canaria",
+   "texto": "Garantía de emancipación, reserva de vivienda asequible, alquiler vinculado a ingresos, cooperativas juveniles y vivienda para estudiantes y trabajadores desplazados entre islas.\n\nEl arraigo juvenil se valorará en proporción a la edad y computará residencia durante la minoría de edad, escolarización y ausencias temporales por formación o empleo.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 36,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 106,
+   "subapartado": null,
+   "titulo": "Regulación del uso turístico",
+   "tituloFrase": "Regulación del uso turístico",
+   "texto": "Crecimiento neto cero en zonas tensionadas, límites por barrio, revisión periódica, inspección efectiva y retirada rápida de la oferta ilegal.\n\nLa evolución de la capacidad turística alojativa deberá relacionarse con la capacidad residencial, territorial y de servicios.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 37,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 106,
+   "subapartado": null,
+   "titulo": "Mercado libre con responsabilidad",
+   "tituloFrase": "Mercado libre con responsabilidad",
+   "texto": "Seguridad para pequeños propietarios que alquilen a precios asequibles y mayores obligaciones para grandes tenedores, fondos y sociedades.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 38,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 106,
+   "subapartado": null,
+   "titulo": "Fiscalidad residencial",
+   "tituloFrase": "Fiscalidad residencial",
+   "texto": "Bonificaciones para primera vivienda y alquiler estable.\n\nMayor tributación sobre operaciones especulativas, segundas viviendas, desocupación injustificada y compras masivas.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 39,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 106,
+   "subapartado": null,
+   "titulo": "Sistema Canario de Capacidad Territorial y Residencial",
+   "tituloFrase": "Sistema Canario de Capacidad Territorial y Residencial",
+   "texto": "Creación de un sistema permanente de información, planificación y evaluación que integre vivienda, población, hogares, turismo, empleo, suelo, agua, energía, saneamiento, movilidad, servicios públicos, infraestructuras y presión ambiental.\n\nEl Sistema elaborará un Balance Anual de Capacidad de Carga Territorial y Residencial, con información diferenciada por isla, municipio y áreas de especial presión. El Balance se convertirá en referencia obligatoria para:\n\n– planificación de vivienda;\n\n– planeamiento territorial y urbanístico;\n\n– crecimiento turístico;\n\n– grandes proyectos económicos;\n\n– infraestructuras;\n\n– políticas demográficas;\n\n– planificación del agua y la energía;\n\n– evaluación de necesidades sanitarias y educativas;\n\n– futura regulación de residencia.\n\nTodo gran proyecto económico o turístico deberá incorporar una evaluación de impacto residencial y territorial.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 40,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 107,
+   "subapartado": null,
+   "titulo": "Nuevo pacto de autogobierno real con España",
+   "tituloFrase": "Nuevo pacto de autogobierno real con España",
+   "texto": "Construcción de una mayoría política y social canaria que respalde un nuevo pacto con el Estado.\n\nReforma del Estatuto de Autonomía, Ley Orgánica de Singularidad Demográfica, Territorial y Residencial, modificación del Código Civil para reconocer la Vecindad Civil Canaria, reforma del REF, transferencias y delegaciones de facultades estatales y creación de una Comisión Bilateral permanente.\n\nLa finalidad será dotar a Canarias de herramientas jurídicas, fiscales, financieras y administrativas para ejercer verdadera capacidad de decisión.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "España",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 41,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 108,
+   "subapartado": null,
+   "titulo": "Asociación especial con la Unión Europea",
+   "tituloFrase": "Asociación especial con la Unión Europea",
+   "texto": "Apertura de una negociación conjunta entre Canarias, España y la Unión Europea para establecer un marco de asociación especial como País y Territorio de Ultramar, PTU, o un estatuto equivalente.\n\nEl nuevo encaje no exigirá por sí mismo una reforma de la Constitución española y deberá preservar ciudadanía, movilidad, derechos adquiridos, cooperación, programas europeos y suficiencia financiera.\n\nA cambio, Canarias obtendrá capacidad pactada para regular residencia permanente, vivienda, territorio, inversión inmobiliaria y presión demográfica.\n\nNo existe un impedimento jurídico de principio para negociar un marco especial. Una propuesta respaldada democráticamente por Canarias y promovida formalmente por España dispondría de la máxima legitimidad política y de una posición negociadora difícil de ignorar por la Unión Europea.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "España",
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 42,
+   "bloque": 6,
+   "seccion": "ejes",
+   "pagina": 108,
+   "subapartado": null,
+   "titulo": "Adaptación climática, rehabilitación energética y confort de la vivienda",
+   "tituloFrase": "Adaptación climática, rehabilitación energética y confort de la vivienda",
+   "texto": "Aprobar el Estándar Canario de Vivienda Sostenible, Eficiente y Adaptada al Cambio Climático.\n\nEstablecer una zonificación climática y territorial que adapte las soluciones a cada isla, comarca, municipio y microclima.\n\nDar prioridad al diseño bioclimático, la protección solar, la ventilación y el aislamiento antes de incorporar climatización activa.\n\nGeneralizar la energía solar, el autoconsumo y, cuando sea eficiente, el almacenamiento en la vivienda pública, protegida y asequible.\n\nImpulsar comunidades energéticas y autoconsumo colectivo en edificios y barrios. Crear el Programa Canario de Rehabilitación Climática y Energética del Parque Residencial.\n\nPriorizar hogares vulnerables y edificios más expuestos al calor, la humedad, la salinidad, la escasez de agua y la pobreza energética.\n\nFavorecer materiales aislantes, duraderos, reparables, saludables y de baja huella ambiental.\n\nInstalar sistemas de climatización eficientes cuando las medidas pasivas sean insuficientes para garantizar el confort saludable.\n\nEvaluar conjuntamente energía, agua, adaptación climática, mantenimiento y coste durante el ciclo de vida.\n\nVincular las ayudas a mejoras verificables de consumo, factura, confort y emisiones. Reforzar la formación profesional y técnica en rehabilitación, energía solar, aislamiento, ventilación y mantenimiento.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 43,
+   "bloque": 6,
+   "seccion": "plan",
+   "pagina": 109,
+   "subapartado": null,
+   "titulo": "Plan de los primeros cien días",
+   "tituloFrase": "Plan de los primeros cien días",
+   "texto": "1. Auditoría del parque público y de los proyectos en ejecución.\n\n2. Mapa de alquiler, compraventa, vivienda vacacional, contratos temporales, segunda residencia y vivienda vacía.\n\n3. Identificación de ámbitos que cumplen los requisitos de zona tensionada.\n\n4. Inventario de suelo y edificios públicos.\n\n5. Inicio del Inventario Canario Único de Suelo Residencial, incorporando suelo público y privado con aprovechamiento residencial y distinguiendo entre suelo clasificado y suelo realmente ejecutable.\n\n6. Selección de los primeros ámbitos del Programa Canario de Desbloqueo de Suelo Residencial, con identificación de causas, responsables, actuaciones pendientes, costes y calendario.\n\n7. Definición del protocolo de tramitación coordinada para vivienda pública y asequible, con expediente digital, responsables por actuación, hitos y sistema de alertas ante retrasos o bloqueos.\n\n8. Creación de una unidad contra el fraude en alquiler temporal y vivienda turística.\n\n9. Inicio de la negociación para un pacto canario de vivienda con cabildos y municipios.\n\n10. Creación técnica y administrativa del Sistema Canario de Capacidad Territorial y Residencial, mediante una unidad multidisciplinar que integre vivienda, territorio, población, turismo, agua, energía, saneamiento, movilidad, medio ambiente, empleo, sanidad y educación.\n\n11. Elaboración del primer Balance de Capacidad de Carga Territorial y Residencial de Canarias, con diagnóstico inicial por islas y delimitación de los ámbitos metropolitanos, turísticos y residenciales que requieran análisis específico.\n\n12. Definición pública de la metodología del Balance, sus fuentes, indicadores, periodicidad, criterios de territorialización y mecanismos de revisión.\n\n13. Diseño de una escala pública de arraigo residencial, con máxima valoración a partir de veinticinco años, y elaboración de una propuesta técnica de Vecindad Civil Canaria, evitando que el arraigo funcione como exclusión automática y garantizando cupos para situaciones de protección especial.\n\n14. Inicio de un proceso canario de diálogo social e institucional sobre autogobierno, residencia, vivienda y relación con la Unión Europea.\n\n15. Constitución de una comisión técnica multidisciplinar para diseñar el nuevo pacto con el Estado y el marco europeo de asociación especial.\n\n16. Elaboración de una memoria jurídica que identifique las reformas realizables mediante Estatuto, ley orgánica, transferencia, delegación, modificación del Código Civil y reforma del REF, sin presumir la necesidad de reforma constitucional.\n\nAuditoría climática y energética del parque público, con identificación de viviendas expuestas al sobrecalentamiento, la humedad y la pobreza energética.\n\nInicio de la zonificación climática residencial y redacción técnica del Estándar Canario de Vivienda Sostenible, Eficiente y Adaptada al Cambio Climático.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": "100 días",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 44,
+   "bloque": 6,
+   "seccion": "plan",
+   "pagina": 110,
+   "subapartado": null,
+   "titulo": "Plan de los dos primeros años",
+   "tituloFrase": "Plan de los dos primeros años",
+   "texto": "– Aprobación de una nueva Ley Canaria de Vivienda y Soberanía Residencial.\n\n– Reconocimiento legal del Sistema Canario de Capacidad Territorial y Residencial y de la obligación de publicar anualmente su Balance.\n\n– Incorporación del análisis de capacidad de carga a los instrumentos de planificación territorial, residencial y turística.\n\n– Implantación plena del Inventario Canario Único de Suelo Residencial y publicación de fichas territoriales con edificabilidad, viviendas potenciales, servicios, costes y horizonte de ejecución.\n\n– Ejecución del Programa Canario de Desbloqueo de Suelo Residencial mediante convenios, actuaciones de urbanización, coordinación interadministrativa y calendarios verificables.\n\n– Puesta en funcionamiento de una plataforma de seguimiento administrativo y presupuestario de las promociones públicas y asequibles, con trazabilidad de expedientes y publicación periódica de resultados.\n\n– Aprobación de una Ley Canaria de Arraigo Residencial aplicable a toda vivienda sostenida con suelo, fondos o ventajas públicas, como régimen transitorio hasta la plena entrada en vigor de la Vecindad Civil Canaria y del Estatuto Canario de Residencia.\n\n– Declaración de las primeras zonas tensionadas.\n\n– Creación del Fondo Canario de Suelo y Vivienda.\n\n– Puesta en marcha de derechos de superficie y cooperativas.\n\n– Adquisición de promociones y edificios terminados.\n\n– Plan de rehabilitación y cambio de uso.\n\n– Aprobación del Estándar Canario de Vivienda Nueva Sostenible y Preparada para el Futuro para promociones públicas, protegidas y asequibles, con criterios de energía renovable, agua, adaptación climática, accesibilidad, movilidad, recarga eléctrica y aparcamiento territorializado.\n\n– Puesta en marcha del Programa Canario de Reutilización y Reconversión de Edificaciones y Complejos Turísticos, con inventario inicial de activos potencialmente transformables, criterios técnicos y urbanísticos, selección de proyectos piloto y mecanismos de adquisición, convenio o rehabilitación.\n\n– Sistema de garantías para pequeños propietarios.\n\n– Garantía Canaria de Emancipación Residencial.\n\n– Implantación de la evaluación de impacto residencial y territorial para grandes proyectos económicos y turísticos.\n\n– Aprobación por el Parlamento de Canarias de una propuesta de nuevo pacto de autogobierno real.\n\n– Negociación con el Estado de la Ley Orgánica de Singularidad Demográfica, Territorial y Residencial.\n\n– Creación de la Comisión Bilateral Canarias-Estado.\n\n– Aprobación de la propuesta de reforma estatutaria y del Código Civil para reconocer la Vecindad Civil Canaria.\n\n– Elaboración conjunta Canarias-Estado de la propuesta europea de asociación especial.\n\nAprobación y aplicación del Estándar Canario de Vivienda Sostenible, Eficiente y Adaptada al Cambio Climático.\n\nPuesta en marcha del Programa Canario de Rehabilitación Climática y Energética del Parque Residencial.\n\nImplantación prioritaria del autoconsumo colectivo en el parque público y creación de las primeras comunidades energéticas residenciales.\n\nProgramas de formación profesional y técnica en rehabilitación climática, aislamiento, energía solar, ventilación y mantenimiento.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": "2 años",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 45,
+   "bloque": 6,
+   "seccion": "plan",
+   "pagina": 113,
+   "subapartado": null,
+   "titulo": "Plan de tres a ocho años",
+   "tituloFrase": "Plan de tres a ocho años",
+   "texto": "– Aumento sostenido del parque público.\n\n– Regeneración de barrios y mejora de accesibilidad.\n\n– Reducción del déficit de vivienda habitual en áreas turísticas.\n\n– Vinculación de la expansión económica a la producción de alojamiento asequible.\n\n– Consolidación del Balance de Capacidad de Carga como instrumento previo de planificación.\n\n– Adaptación de infraestructuras y servicios a los desequilibrios identificados por el Sistema.\n\n– Reforma fiscal del REF.\n\n– Negociación formal con las instituciones europeas y los Estados miembros.\n\n– Definición del acuerdo financiero, comercial, fiscal, social, territorial y de movilidad.\n\n– Consulta democrática a la población canaria sobre el acuerdo definitivo cuando su alcance político lo aconseje.\n\n– Aprobación y ratificación del nuevo marco mediante los procedimientos estatales y europeos correspondientes.\n\n– Entrada en vigor coordinada de la Vecindad Civil Canaria y de la condición de residencia canaria de larga duración, conectadas con el derecho preferente de acceso a vivienda sostenida con recursos públicos.\n\nRehabilitación climática y energética progresiva del parque público y extensión de las ayudas a comunidades privadas según necesidad social y resultados previstos.\n\nGeneralización del autoconsumo colectivo y consolidación de comunidades energéticas residenciales.\n\nReducción verificada de la pobreza energética y adaptación prioritaria de los barrios y edificios más vulnerables al cambio climático.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "3 a 8 años",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 46,
+   "bloque": 6,
+   "seccion": "plan",
+   "pagina": 114,
+   "subapartado": null,
+   "titulo": "Plan de ocho a quince años",
+   "tituloFrase": "Plan de ocho a quince años",
+   "texto": "– Consolidación de un parque público y asequible no inferior al objetivo establecido.\n\n– Reequilibrio territorial y reducción de la expulsión residencial.\n\n– Entrada en vigor del nuevo marco jurídico bilateral con España y del estatuto europeo de asociación especial como PTU, con garantías financieras, comerciales, sociales, de ciudadanía, movilidad, cooperación y participación canaria determinante.\n\n– Capacidad canaria efectiva para ordenar vivienda, territorio, residencia e inversión inmobiliaria.\n\n– Utilización efectiva de la capacidad de carga territorial como referencia estructural para la planificación demográfica, residencial, económica y turística del país.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": "8 a 15 años",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 47,
+   "bloque": 6,
+   "seccion": "plan",
+   "pagina": 115,
+   "subapartado": null,
+   "titulo": "Indicadores públicos de seguimiento",
+   "tituloFrase": "Indicadores públicos de seguimiento",
+   "texto": "La política deberá evaluarse mediante indicadores públicos, actualizados y territorializados.\n\nLos indicadores residenciales básicos serán:\n\n– porcentaje de hogares que destinan más del 30 % de sus ingresos a vivienda y suministros;\n\n– precio mediano de alquiler y compra por metro cuadrado;\n\n– número de hogares formados cada año;\n\n– viviendas terminadas y destinadas efectivamente a residencia habitual;\n\n– parque público y asequible disponible;\n\n– tiempo medio de espera para una vivienda pública;\n\n– distribución de adjudicaciones por tramos de arraigo, incluida la franja de veinticinco años o más;\n\n– personas titulares de Vecindad Civil Canaria o residencia canaria de larga duración;\n\n– número de excepciones sociales motivadas;\n\n– número de jóvenes emancipados;\n\n– viviendas vacacionales y temporales por barrio;\n\n– segundas residencias;\n\n– viviendas vacías movilizadas;\n\n– grandes tenedores y concentración de propiedad;\n\n– suelo público disponible;\n\n– duración media de licencias y obras;\n\n– viviendas iniciadas por año, isla, municipio y régimen de promoción;\n\n– viviendas rehabilitadas y efectivamente reincorporadas al uso residencial habitual;\n\n– superficie de suelo residencial desbloqueada y número de viviendas potenciales asociadas;\n\n– porcentaje de inversión presupuestada efectivamente ejecutada en cada programa de vivienda;\n\n– coste previsto, coste de adjudicación y coste final por vivienda entregada, con identificación de desviaciones;\n\n– tiempo medio total desde la incorporación de una actuación al programa hasta la entrega o puesta a disposición de la vivienda;\n\n– número de desahucios y soluciones habitacionales ofrecidas.\n\nconsumo final de energía por vivienda y metro cuadrado;\n\nporcentaje de viviendas con autoconsumo individual o colectivo;\n\npotencia fotovoltaica residencial instalada y porcentaje de energía autoconsumida; número de comunidades energéticas residenciales activas;\n\nviviendas rehabilitadas energética y climáticamente y reducción real del consumo tras la intervención;\n\nhogares en situación de pobreza energética;\n\ntemperatura interior registrada durante episodios de calor en una muestra representativa y respetuosa con la protección de datos;\n\nporcentaje de viviendas con aislamiento adecuado y protección solar exterior; porcentaje de viviendas con sistemas eficientes de climatización cuando sean necesarios;\n\nreducción media de la factura energética y del consumo de agua;\n\nemisiones de gases de efecto invernadero evitadas;\n\nporcentaje de materiales reciclados, reciclables, saludables o de baja huella ambiental empleados en promociones públicas;\n\ncoste de mantenimiento previsto y real durante el ciclo de vida de las promociones públicas.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 48,
+   "bloque": 6,
+   "seccion": "informes",
+   "pagina": 173,
+   "subapartado": null,
+   "titulo": "Parque público o asequible permanente: al menos el 10 % (20 % en municipios tensionados)",
+   "tituloFrase": "Parque público o asequible permanente: al menos el 10 % (20 % en municipios tensionados)",
+   "texto": "Defendemos una misión de quince años con un parque público o asequible permanente de al menos el 10 % en Canarias y una aproximación al 20 % en los municipios tensionados. Antes de fijar metas anuales definitivas, se establecerá el denominador de vivienda principal y el inventario de las unidades realmente protegidas, con reglas de cómputo homogéneas.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "Defendemos una misión de quince años con un parque público o asequible permanente de al menos el 10 % en Canarias y una aproximación al 20 % en los municipios tensionados.",
+    "Defendemos una misión de quince años con un parque público o asequible permanente de al menos el 10 % en Canarias y una aproximación al 20 % en los municipios tensionados."
+   ],
+   "plazo": "15 años",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 49,
+   "bloque": 6,
+   "seccion": "informes",
+   "pagina": 192,
+   "subapartado": null,
+   "titulo": "Las diez líneas de la política integral de vivienda del informe sectorial",
+   "tituloFrase": "Las diez líneas de la política integral de vivienda del informe sectorial",
+   "texto": "Desde Liberación Canaria proponemos una estrategia con responsabilidades y financiación verificables. Las medidas siguientes constituyen una propuesta política, no un catálogo de facultades vigentes derivadas de la zona tensionada.\n\nEje Actuación propuesta\n\n1. Demografía y territorio Planes insulares de capacidad de carga y previsión de hogares e infraestructuras.\n\n2. Marco jurídico singular Negociar con el Estado y la UE instrumentos para gestionar residencia y presión inmobiliaria, estudiando reformas legales y garantías.\n\n3. Demanda y concentración Evaluar límites proporcionados a determinadas adquisiciones no habituales y controlar concentración y usos especulativos.\n\n4. Parque público Ampliación mediante construcción selectiva, compra, rehabilitación y alquiler permanente; protección frente a privatización.\n\n5. Vivienda vacía Censo operativo, diagnóstico de habitabilidad, incentivos y garantías de incorporación al alquiler.\n\n6. Turismo y usos Moratoria y ordenación del crecimiento alojativo; preservar el uso residencial conforme al marco jurídico.\n\n7. Seguridad jurídica Seguros de impago, mediación y garantías para pequeños propietarios y arrendatarios.\n\n8. Economía y empleo Diversificación, productividad, mejora de salarios y estabilidad laboral.\n\n9. Transparencia Observatorio público de vivienda con datos por municipio e isla.\n\n10. Control de ejecución Presupuesto, plazos, responsables y evaluación pública anual.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  },
+  {
+   "n": 50,
+   "bloque": 6,
+   "seccion": "informes",
+   "pagina": 194,
+   "subapartado": null,
+   "titulo": "Hoja de ruta de 0 a 36 meses contra la cronificación de la zona tensionada",
+   "tituloFrase": "Hoja de ruta de 0 a 36 meses contra la cronificación de la zona tensionada",
+   "texto": "Proponemos que, antes del inicio de la declaración, se publique una línea base de indicadores y se establezcan metas cuantificadas, responsables y recursos. La prórroga debe sustentarse en resultados y en la persistencia de las condiciones legales, además de las actuaciones realizadas.\n\nHorizonte propuesto Actuaciones prioritarias 0–6 meses Diagnóstico, inventario de vivienda vacía y pública, presupuesto, garantías de alquiler y publicación de indicadores.\n\n6–18 meses Movilización y rehabilitación, ampliación de alquiler asequible, inspección de usos y mediación.\n\n18–36 meses Evaluar evolución de precios y oferta; ejecutar inversiones de parque público y revisar planificación territorial.\n\nAntes de cada prórroga Justificar actuaciones, analizar resultados y corregir medidas insuficientes.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "0 a 36 meses",
+   "deroga": null,
+   "fuente": "/programas/lib-vivienda-2026.pdf"
+  }
+ ]
 }

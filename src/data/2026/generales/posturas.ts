@@ -48,6 +48,7 @@ export const stances: Stance[] = [
   { topic: 'inmigracion', party: 'alhora', side: 'matiz', measures: [19, 22], note: 'Gestionar la inmigración desde la independencia y catalanizar a los adultos con un plan de 1.000 millones, sin hablar de regularizar.' },
   { topic: 'inmigracion', party: 'podemos', side: 'a', measures: [205, 206, 210, 211], note: 'Derogar la Ley de Extranjería, cerrar los CIE y un procedimiento permanente de regularización con reconocimiento del arraigo.' },
   { topic: 'inmigracion', party: 'jxcat', side: 'b', measures: [314, 315, 316, 321], note: 'Prioridad a las vías legales y la contratación en origen, oposición a las «regularizaciones masivas por decreto» y arraigo exigente, con el catalán como requisito.' },
+  { topic: 'inmigracion', party: 'lib', side: 'b', measures: [8, 11, 12], note: 'Control de extranjería desde Canarias, con una posición más restrictiva que la estatal para conceder la nacionalidad, y un «Principio de Preferencia Natural» y una condición de canario por tres generaciones para regular la residencia, también la de ciudadanos de la UE.' },
 
   // Aborto
   { topic: 'aborto', party: 'adelante', side: 'a', measures: [47, 48], note: 'Aborto en centros públicos de todas las provincias y en la Constitución.' },
@@ -89,6 +90,7 @@ export const stances: Stance[] = [
   { topic: 'autodeterminacion', party: 'alhora', side: 'a', measures: [1, 2, 4, 33], note: 'La independencia como objetivo: uso estratégico de las instituciones y confrontación continuada con el Estado.' },
   { topic: 'autodeterminacion', party: 'comuns', side: 'a', measures: [890], note: 'Un cambio del modelo territorial en sentido federal y plurinacional, con el derecho a decidir mediante referéndum.' },
   { topic: 'autodeterminacion', party: 'jxcat', side: 'a', measures: [1, 144, 146], note: 'Garantizar el derecho de Cataluña a la autodeterminación «con todos los medios democráticos» y mantenerlo en la agenda internacional.' },
+  { topic: 'autodeterminacion', party: 'lib', side: 'a', measures: [16, 18], note: 'Reconocer a Canarias la libertad de modificar su posición política, con mayoría cualificada del Parlamento de Canarias y referéndum de ratificación, y un estatuto de plena autonomía interna.' },
 
   // Vivienda: control del alquiler
   { topic: 'vivienda', party: 'adelante', side: 'a', measures: [160, 161, 164], note: 'Alquiler social obligatorio, alquiler al 20 % del salario y zonas tensionadas obligatorias.' },
@@ -122,6 +124,7 @@ export const stances: Stance[] = [
   { topic: 'vivienda', party: 'comuns', side: 'a', measures: [19], note: 'Reforzar los mecanismos de regulación y control de los alquileres.' },
   { topic: 'vivienda', party: 'podemos', side: 'a', measures: [1, 2, 15], note: 'Bajar los alquileres un 40 % por ley, contratos indefinidos por defecto y regular el alquiler de temporada y por habitaciones.' },
   { topic: 'vivienda', party: 'jxcat', side: 'b', measures: [396, 72, 50], note: 'Derogar los artículos de la Ley 12/2023 que contienen los precios y crean zonas tensionadas, porque «reducen la oferta de alquiler», e incentivos fiscales a los propietarios.' },
+  { topic: 'vivienda', party: 'lib', side: 'a', measures: [32, 36, 37], note: 'Declarar de inmediato las zonas tensionadas, bajar a cinco viviendas el umbral de gran tenedor, crecimiento turístico neto cero en ellas y más obligaciones para los grandes tenedores, con seguridad para los pequeños propietarios que alquilen a precios asequibles.' },
 
   // Religión y educación
   { topic: 'religion-educacion', party: 'bng', side: 'a', measures: [167], note: 'La Religión fuera del currículo y renegociar el concordato con la Santa Sede.' },
