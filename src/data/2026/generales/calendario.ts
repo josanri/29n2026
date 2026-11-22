@@ -106,11 +106,12 @@ const events: CalendarEvent[] = [
   {
     id: 'devolucion-voto-correo',
     date: '2026-11-09',
-    endDate: '2026-11-25',
+    endDate: '2026-11-26',
     title: 'Voto por correo: entrega del voto',
     description:
-      'Las personas que votan por correo entregan su voto en una oficina de Correos (LOREG, art. 73.3). Quien está temporalmente fuera (ERTA) tiene hasta el 25 de noviembre para que su papeleta llegue a la Mesa; el envío empieza el 3 de noviembre (art. 74).',
+      'Las personas que votan por correo entregan su voto en una oficina de Correos (LOREG, art. 73.3). El plazo termina el jueves 26 de noviembre a las 14:00, según amplió la Junta Electoral Central. Quien está temporalmente fuera (ERTA) tiene hasta el 25 de noviembre para que su papeleta llegue a la Mesa; el envío empieza el 3 de noviembre (art. 74).',
     source: 'official',
+    basis: 'Acuerdo de la Junta Electoral Central, que amplió el plazo de depósito (nota de prensa de Correos del 20 de noviembre de 2026). Antes terminaba el 25 de noviembre.',
     officialUrl: `${OFFICIAL_SITE}/informacion-general/como-votar/voto-por-correo-desde-espana/`,
   },
   {

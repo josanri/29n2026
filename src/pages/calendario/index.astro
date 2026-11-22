@@ -266,10 +266,12 @@ const months = monthKeys.map((key) => {
     const end = toDayNumber(event.dataset.end!);
     const label = event.querySelector<HTMLElement>('.event__state')!;
     let state = '';
+    // A single day is «Hoy». A range that includes today is «En curso», because it is not only today.
     if (end < today) state = 'Pasado';
-    else if (start <= today) state = 'Hoy';
+    else if (start <= today && start === end) state = 'Hoy';
+    else if (start <= today) state = 'En curso';
     else if (event === firstUpcoming) state = 'Próxima';
-    event.dataset.state = state ? state.toLowerCase() : '';
+    event.dataset.state = state === 'Pasado' ? 'pasado' : state === 'Próxima' ? 'próxima' : state ? 'hoy' : '';
     label.textContent = state;
     label.hidden = !state;
   }
