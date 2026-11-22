@@ -113,6 +113,11 @@ def overlap_seconds(overlaps: list[list[float]], start: float, end: float) -> fl
     return sum(max(0.0, min(end, b) - max(start, a)) for a, b in overlaps)
 
 
+def speaking_seconds(start: float, end: float, breaks: list[list[float]]) -> float:
+    """The length of a turn without the advertising breaks inside it."""
+    return max(0.0, end - start - overlap_seconds(breaks, start, end))
+
+
 def classify(interventions: list[dict], index: int, speakers: dict, overlaps: list) -> str | None:
     """The kind of the change of speaker before intervention `index`: "interrupcion", "moderacion" or None."""
     previous, current = interventions[index - 1], interventions[index]
@@ -234,10 +239,13 @@ def derive(data: dict) -> dict:
             }
         )
 
+    # A turn that runs across an advertising break («se van a la pausa… estamos de vuelta») does not speak during
+    # the break: its time of speech leaves the break out, so the break does not count as time of the moderation.
+    breaks = data.get("breaks") or []
     seconds, words, turns, longest = Counter(), Counter(), Counter(), Counter()
     made, received, moderations_made, moderations_received = Counter(), Counter(), Counter(), Counter()
     for intervention in interventions:
-        length = intervention["end"] - intervention["start"]
+        length = speaking_seconds(intervention["start"], intervention["end"], breaks)
         seconds[intervention["speaker"]] += length
         words[intervention["speaker"]] += word_count(intervention["paragraphs"])
         turns[intervention["speaker"]] += 1

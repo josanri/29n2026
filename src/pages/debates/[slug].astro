@@ -111,6 +111,19 @@ const peakEvents = peakAll;
 // The last tick leaves room for the end label.
 const ticks = Array.from({ length: Math.floor(span / 900) + 1 }, (_, index) => index * 900).filter((seconds) => seconds < span * 0.92);
 const breaks = debate.breaks ?? [];
+// A turn that runs across an advertising break («nos vamos a la pausa… estamos de vuelta») does not speak during it:
+// the lanes draw the turn in pieces around the break, and its length leaves the break out.
+const breakSeconds = (start: number, end: number) =>
+  breaks.reduce((total, [from, to]) => total + Math.max(0, Math.min(end, to) - Math.max(start, from)), 0);
+const speakingSeconds = (start: number, end: number) => Math.max(0, end - start - breakSeconds(start, end));
+const piecesOf = (start: number, end: number) =>
+  [...breaks]
+    .sort((a, b) => a[0] - b[0])
+    .reduce<[number, number][]>(
+      (pieces, [from, to]) =>
+        pieces.flatMap(([a, b]) => (to <= a || from >= b ? [[a, b]] : ([[a, from], [to, b]] as [number, number][]).filter(([x, y]) => y > x))),
+      [[start, end]],
+    );
 const laneRows = [...moderators, ...candidates];
 const turnsOf = (speakerId: string) =>
   debate.interventions.map((intervention, index) => ({ ...intervention, index })).filter((intervention) => intervention.speaker === speakerId);
@@ -154,7 +167,7 @@ const goldenTurns = (debate.golden ?? [])
   .filter((item) => item.index >= 0)
   .map((item, order) => {
     const intervention = debate.interventions[item.index];
-    const seconds = intervention.end - intervention.start;
+    const seconds = speakingSeconds(intervention.start, intervention.end);
     const words = wordsOf(intervention.paragraphs);
     return { ...item, order: order + 1, seconds, words, paragraphs: intervention.paragraphs };
   });
@@ -324,34 +337,37 @@ const ASIDE_WORDS = 15;
 
       <div class="rhythm" role="group" aria-label="Turnos, cortes y temas a lo largo del debate">
         <div class="rhythm__legend" aria-hidden="true">
-          <span><i class="key key--cut" /> Interrupción</span>
+          <span><i class="key key--cut" /><i class="key key--bar" /> Interrupción entre candidatos</span>
           {moderator && <span><i class="key key--mod" /> Corte de la moderación</span>}
-          <span><i class="key key--bar" /> Cortes en {bin / 60} min</span>
-          {moderator && <span><i class="key key--bar-mod trama--medium" /> de ellos, de la moderación</span>}
+          <span class="rhythm__legend-note">La barra suma los cortes de cada {bin / 60} minutos; la marca sitúa cada corte en su turno.</span>
         </div>
 
         <div class="rhythm__row rhythm__row--bins">
-          <span class="rhythm__label">Cortes</span>
+          <span class="rhythm__label rhythm__label--stack">
+            <span>Cortes</span>
+            <small>cada {bin / 60} min</small>
+          </span>
           <div class="rhythm__plot bins">
             {breaks.map(([from, to]) => (
-              <span class="bins__break trama--light" style={`left: ${pct(from)}; width: ${pct(to - from)}`}><span>Pausa</span></span>
+              <span class="bins__break" style={`left: ${pct(from)}; width: ${pct(to - from)}`}><span>Pausa</span></span>
             ))}
             {bins.map((item) => (
               <button
                 type="button"
-                class="bins__col"
-                style={`flex-grow: ${item.end - item.start}`}
+                class:list={['bins__col', { 'is-peak': item.index === peak.index }]}
+                style={`flex-grow: ${item.end - item.start}; --h: ${(item.total / maxBin).toFixed(4)}`}
                 data-bin={item.index}
                 aria-pressed="false"
                 aria-label={`${binLabel(item.index)}: ${plural(item.cuts, 'interrupción', 'interrupciones')}${moderator ? ` y ${plural(item.mods, 'corte', 'cortes')} de la moderación` : ''}. Filtrar por este bloque`}
                 data-tip-title={binLabel(item.index)}
                 data-tip-body={`${plural(item.cuts, 'interrupción', 'interrupciones')}${moderator ? ` · ${plural(item.mods, 'corte', 'cortes')} de la moderación` : ''}`}
               >
-                <span class="bins__stack" style={`height: ${(item.total / maxBin) * 100}%`}>
-                  {item.mods > 0 && <span class="bins__mod trama--medium" style={`flex-grow: ${item.mods}`} />}
+                {item.index === peak.index && <span class="bins__peak" aria-hidden="true">Pico</span>}
+                {item.total > 0 && <span class="bins__value" aria-hidden="true">{item.total}</span>}
+                <span class="bins__stack">
+                  {item.mods > 0 && <span class="bins__mod" style={`flex-grow: ${item.mods}`} />}
                   {item.cuts > 0 && <span class="bins__cut" style={`flex-grow: ${item.cuts}`} />}
                 </span>
-                {item.index === peak.index && <span class="bins__peak">Pico</span>}
               </button>
             ))}
           </div>
@@ -370,17 +386,21 @@ const ASIDE_WORDS = 15;
                 <span class="lane__break trama--light" style={`left: ${pct(from)}; width: ${pct(to - from)}`} aria-hidden="true" />
               ))}
               <svg class="lane__turns" viewBox={`0 0 ${span} 10`} preserveAspectRatio="none" aria-hidden="true">
-                {turnsOf(speaker.id).map((turn) => (
-                  <rect
-                    x={turn.start}
-                    y="3"
-                    width={Math.max(turn.end - turn.start, minWidth)}
-                    height="7"
-                    data-goto={turn.index}
-                    data-tip-title={`${clock(turn.start)} · ${speaker.name} · ${clock(turn.end - turn.start)}`}
-                    data-tip-body={cut(turn.paragraphs.join(' '), 110)}
-                  />
-                ))}
+                {turnsOf(speaker.id).flatMap((turn) => {
+                  const paused = breakSeconds(turn.start, turn.end) > 0;
+                  const title = `${clock(turn.start)} · ${speaker.name} · ${clock(speakingSeconds(turn.start, turn.end))}${paused ? ' (sin la pausa)' : ''}`;
+                  return piecesOf(turn.start, turn.end).map(([from, to]) => (
+                    <rect
+                      x={from}
+                      y="3"
+                      width={Math.max(to - from, minWidth)}
+                      height="7"
+                      data-goto={turn.index}
+                      data-tip-title={title}
+                      data-tip-body={cut(turn.paragraphs.join(' '), 110)}
+                    />
+                  ));
+                })}
               </svg>
               {debate.interruptions.filter((event) => event.by === speaker.id).map((event) => (
                 <a
@@ -755,9 +775,11 @@ const ASIDE_WORDS = 15;
             <div class="minimap__lanes" aria-hidden="true">
               {laneRows.map((speaker) => (
                 <div class="minimap__lane" style={`--party: ${colorOf(speaker.id)}`} title={speaker.name}>
-                  {turnsOf(speaker.id).map((turn) => (
-                    <span style={`top: ${pct(turn.start)}; height: max(1px, ${pct(turn.end - turn.start)})`} />
-                  ))}
+                  {turnsOf(speaker.id).flatMap((turn) =>
+                    piecesOf(turn.start, turn.end).map(([from, to]) => (
+                      <span style={`top: ${pct(from)}; height: max(1px, ${pct(to - from)})`} />
+                    )),
+                  )}
                 </div>
               ))}
             </div>
@@ -1342,6 +1364,7 @@ const ASIDE_WORDS = 15;
   .rhythm { --label: 170px; border: var(--border-thick) solid var(--color-ink); padding: var(--space-4); background: var(--color-paper); }
   .rhythm__legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 var(--space-4); font-size: var(--text-sm); font-weight: 600; }
   .rhythm__legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .rhythm__legend .rhythm__legend-note { flex-basis: 100%; display: block; font-weight: 400; color: var(--color-ink-muted); }
   .key { display: inline-block; width: 12px; height: 12px; border: var(--border-fine) solid var(--color-ink); }
   .key--cut { background: var(--color-highlight); transform: rotate(45deg) scale(0.85); }
   .key--mod { background: var(--color-paper); }
@@ -1375,48 +1398,85 @@ const ASIDE_WORDS = 15;
   .heat-key i:first-child { margin-left: 4px; }
   .heat-key i:last-child { margin-right: 4px; }
 
-  .bins { display: flex; align-items: flex-end; gap: 2px; height: 96px; border-bottom: var(--border-fine) solid var(--color-ink); }
+  /* Bars of cuts per bin. Above each bar, its number; the top band («--head») holds the number and the «Pico» tag,
+     so no label sits on a bar. Interruptions are solid ink; cuts of the moderation are paper with an ink edge, the
+     same look as their mark in the lanes. */
+  .rhythm__row--bins { margin-bottom: 32px; }
+  .rhythm__label--stack { flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 0; padding-bottom: 2px; }
+  .rhythm__label--stack small { font-size: 0.75rem; font-weight: 600; color: var(--color-ink-muted); }
+  .bins { --head: 36px; display: flex; align-items: stretch; gap: 3px; height: 150px; border-bottom: var(--border-fine) solid var(--color-ink); }
   .bins__col {
     all: unset;
     position: relative;
+    z-index: 1;
     flex-basis: 0;
-    height: 100%;
+    min-width: 0;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
     cursor: pointer;
   }
   .bins__col:hover,
-  .bins__col[aria-pressed='true'] { background: var(--color-highlight); }
+  .bins__col[aria-pressed='true'] { background: var(--color-highlight); color: var(--color-on-highlight); }
   .bins__col:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 1px; }
-  .bins__stack { display: flex; flex-direction: column; width: 100%; }
-  .bins__cut { display: block; flex-basis: 0; background: var(--color-ink); }
-  .bins__mod { display: block; flex-basis: 0; color: var(--color-ink); border: var(--border-fine) solid var(--color-ink); border-bottom: 0; }
+  .bins__value {
+    display: block;
+    padding-bottom: 2px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .bins__stack { display: flex; flex-direction: column; gap: 0; height: calc((100% - var(--head)) * var(--h)); }
+  .bins__cut { display: block; flex-basis: 0; min-height: 3px; background: var(--color-ink); }
+  .bins__mod { display: block; flex-basis: 0; min-height: 5px; background: var(--color-paper); border: var(--border-fine) solid var(--color-ink); }
+  .bins__col:hover .bins__cut,
+  .bins__col[aria-pressed='true'] .bins__cut { background: var(--color-on-highlight); }
+  .bins__col:hover .bins__mod,
+  .bins__col[aria-pressed='true'] .bins__mod { background: var(--color-fixed-light); border-color: var(--color-on-highlight); }
   .bins__peak {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    align-self: center;
+    margin-bottom: 2px;
     padding: 0 4px;
     background: var(--color-highlight);
     color: var(--color-on-highlight);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 800;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     line-height: 1.4;
+    white-space: nowrap;
   }
+  .bins__col.is-peak .bins__value { font-weight: 800; }
 
   .rhythm__row--lane { min-height: 34px; border-bottom: var(--border-fine) dotted var(--color-ink-muted); }
   .lane { height: 34px; }
   /* An advertising break: dots behind the lanes, and «Pausa» on the axis. */
   .lane__break { position: absolute; top: 3px; bottom: 0; color: var(--color-ink-muted); opacity: 0.6; }
-  .bins__break { position: absolute; top: 0; bottom: 0; z-index: 1; display: flex; align-items: flex-end; justify-content: center; color: var(--color-ink-muted); pointer-events: none; }
+  /* Under the baseline, a pause is a small bracket that spans its time, with the word under it. The baseline and
+     the bars stay whole: the 5-minute bins do not start or stop with the pause, so a gap in the line or a fill
+     above it looked like a cut in the chart. */
+  .bins__break {
+    position: absolute;
+    top: calc(100% + 4px);
+    height: 6px;
+    border: var(--border-fine) solid var(--color-ink-muted);
+    border-top: 0;
+    pointer-events: none;
+  }
   .bins__break span {
-    margin-bottom: 4px;
-    padding: 0 4px;
-    background: var(--color-paper);
-    color: var(--color-ink);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-ink-muted);
     font-size: 0.75rem;
     font-weight: 700;
+    font-style: italic;
+    line-height: 1.4;
     white-space: nowrap;
   }
   .lane__turns { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -1454,8 +1514,11 @@ const ASIDE_WORDS = 15;
     .rhythm__full { display: none; }
     .rhythm__short { display: inline; overflow: hidden; text-overflow: ellipsis; }
     .rhythm__label { font-size: 0.8125rem; gap: 5px; padding-right: 6px; }
-    .bins { height: 72px; }
+    .bins { --head: 20px; height: 110px; gap: 2px; }
+    /* Too narrow for a number on each bar: only the peak keeps its number, on the yellow tag. */
     .bins__peak { display: none; }
+    .bins__value { display: none; }
+    .bins__col.is-peak .bins__value { display: block; align-self: center; padding: 0 3px; background: var(--color-highlight); color: var(--color-on-highlight); margin-bottom: 2px; }
     .axis__tick:nth-child(even):not(.axis__tick--end),
     .axis__tick--end { display: none; }
     .matrix__note { display: none; }
