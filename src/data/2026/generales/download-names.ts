@@ -11,6 +11,7 @@ export const downloadFileNames: Record<string, string> = {
   ph: 'programa-partido-humanista-2026.pdf',
   fo: 'programa-frente-obrero-recuperar-espana.pdf',
   vox: 'programa-vox-es-sentido-comun-2026.pdf',
+  'drago-canarias': 'programa-drago-canarias-la-esperanza-2026.pdf',
   podemos: 'programa-podemos-paz-casa-y-trabajo-2026.pdf',
   pp: 'programa-pp-reconstruccion-nacional-2026.pdf',
   pacma: 'programa-pacma-generales-29n-2026.pdf',

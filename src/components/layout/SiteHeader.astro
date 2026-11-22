@@ -560,7 +560,8 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
       border: var(--border-thick) solid var(--color-ink);
     }
     .nav-dropdown > summary .nav-dropdown__chevron { margin-left: auto; }
-    .nav-dropdown__panel {
+    .nav-dropdown__panel,
+    .nav-dropdown--tests .nav-dropdown__panel {
       position: static;
       width: auto;
       max-height: none;
@@ -577,6 +578,7 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
       max-height: calc(100dvh - 100px);
       overflow-y: auto;
       overscroll-behavior: contain;
+      scrollbar-width: thin;
       padding: 12px var(--gutter) 16px;
       background: var(--color-paper);
       border-bottom: var(--border-thick) solid var(--color-ink);

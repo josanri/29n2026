@@ -350,4 +350,9 @@ export const stances: Stance[] = [
   { topic: 'servicio-militar', party: 'salf', side: 'b', measures: [17, 18], note: 'Una «mili voluntaria» de seis a doce meses, pagada y con ventajas fiscales.' },
   { topic: 'servicio-militar', party: 'fe-jons', side: 'b', measures: [172], note: 'Servicio militar obligatorio de 18 meses para hombres y mujeres de 18 a 22 años.' },
   { topic: 'servicio-militar', party: 'comuns', side: 'a', measures: [961], note: 'Compromiso de no reintroducir el servicio militar, ni obligatorio ni voluntario.' },
+  // Drago Canarias
+  { topic: 'inmigracion', party: 'drago-canarias', side: 'a', measures: [41, 42, 43, 49], note: 'Cierre de los CIE de Barranco Seco y Hoya Fría, vías legales de asilo y derogación del Pacto Europeo de Migración y Asilo.' },
+  { topic: 'igualdad', party: 'drago-canarias', side: 'a', measures: [46], note: 'Más fondos contra la violencia machista, con reparto que da más peso a las islas no capitalinas.' },
+  { topic: 'memoria', party: 'drago-canarias', side: 'a', measures: [54], note: 'Reforma de la Ley de Memoria Democrática para retirar el Monumento a Franco de Santa Cruz de Tenerife.' },
+  { topic: 'vivienda', party: 'drago-canarias', side: 'matiz', measures: [2, 4, 62], note: 'Más alquiler público y limitar la compra por quienes no residen, pero sin tope al precio del alquiler privado.' },
 ];

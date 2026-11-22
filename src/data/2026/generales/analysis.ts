@@ -1169,4 +1169,36 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [51, 62, 117, 205, 300, 427],
     },
   ],
+  'drago-canarias': [
+    {
+      title: 'Vivir en Canarias concentra un tercio del programa',
+      text:
+        'El eje 1, «Vivir en Canarias», reúne 23 de las 70 propuestas (33 %). Dentro de él, la sección de servicios públicos y derechos sociales es la más grande (10 medidas, de la 14 a la 23), seguida de vivienda (7) y empleo (6): alquiler público con más fondos (4), un marco canario de relaciones laborales (8) y cuota cero para autónomos con ingresos bajos (9).',
+      measureNumbers: [14, 17, 18, 4, 8, 9],
+    },
+    {
+      title: 'Ocho medidas de migración: cerrar centros y rechazar el pacto europeo',
+      text:
+        'Ocho medidas son de inmigración y asilo. Piden cerrar los CIE de Barranco Seco y Hoya Fría (43), más medios para Salvamento Marítimo (44), rechazan el Pacto Europeo de Migración y Asilo (49) y la intervención de Frontex en Canarias (50).',
+      measureNumbers: [43, 44, 49, 50],
+    },
+    {
+      title: 'Pocas cifras y pocos plazos: 17 medidas con cantidad, 4 con fecha',
+      text:
+        'Solo 17 de las 70 medidas comprometen una cifra concreta, como los 222,6 millones adicionales para vivienda pública en alquiler (4) o los 400 escaños del Congreso (53). Solo 4 fijan cuándo se aplica: el cierre inmediato de los CIE (43), que se apruebe ya el decreto de comunidades energéticas (31), 90 días para localizar zonas sin conexión (25) y esta legislatura para completar traspasos (65).',
+      measureNumbers: [4, 25, 31, 43, 65],
+    },
+    {
+      title: 'Cuatro medidas fiscales cambian ventajas y tipos',
+      text:
+        'Cuatro medidas son de impuestos: más IBI a la vivienda turística si el ayuntamiento lo decide (6), suprimir el tipo cero de las SOCIMI salvo para vivienda protegida (7), mantener el buque en el registro para recibir ventajas (27) y condicionar el 4 % de la ZEC a un empleo local y estable (60). La 62 limita el beneficio fiscal a la vivienda asequible con un compromiso de veinte años.',
+      measureNumbers: [6, 7, 27, 60, 62],
+    },
+    {
+      title: 'Solo una derogación explícita: el Pacto Europeo de Migración y Asilo',
+      text:
+        'Solo la medida 49 pide derogar de forma explícita una norma, el Pacto Europeo de Migración y Asilo. El resto pide leyes nuevas o reformas, como la Ley de Residencia (1), la reforma de la Ley de Memoria Democrática (54) o la reforma del Reglamento del Congreso (58).',
+      measureNumbers: [1, 49, 54, 58],
+    },
+  ],
 };
