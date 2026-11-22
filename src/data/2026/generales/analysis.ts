@@ -49,6 +49,44 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [1, 228, 83, 109, 132],
     },
   ],
+  lib: [
+    {
+      title: 'Seis documentos y 50 propuestas, 19 de ellas sobre vivienda',
+      text:
+        'Liberación Canaria no publica un programa único: publica cinco estudios breves y una Política Nacional Canaria de Vivienda de 292 páginas. Los estudios dan 31 propuestas (10 de hacienda, 7 sobre la relación con la UE, 5 sobre residencia, 6 sobre el Estatuto de Plena Autonomía Interna y 3 sobre puertos y aeropuertos). El documento de vivienda aporta 19: once ejes, cuatro horizontes del plan de aplicación, los indicadores de seguimiento y tres pasajes de sus informes. Es una edición «para revisión institucional», fechada el 18 de noviembre de 2026.',
+      measureNumbers: [32, 33, 43, 47, 48],
+    },
+    {
+      title: 'Cambiar de estatus en la UE: de región ultraperiférica a PTU',
+      text:
+        'La propuesta de fondo es salir de la lista de las RUP y entrar en la de los PTU (País y Territorio de Ultramar). El estudio sobre las RUP dice que es «pasar a estatus PTU o abandonar la UE»; el de residencia llama a la salida «canarexit» y dice que no es «en este momento la propuesta inicial». Se mantendría la ciudadanía europea. El documento de vivienda lo plantea como una negociación conjunta entre Canarias, España y la UE que no exigiría reformar la Constitución. La sigla PTU aparece en 8 de las 50 propuestas.',
+      measureNumbers: [3, 7, 9, 41, 46],
+    },
+    {
+      title: 'Regular la residencia y el acceso al empleo',
+      text:
+        'Los estudios proponen controlar la extranjería desde Canarias, «regular el establecimiento de personas» y el acceso al mercado laboral a través del PTU y reconocer un «Principio de Preferencia Natural»: «los canarios en Canarias». Uno de ellos propone medir la condición de canario por tres generaciones, como en Isla de Pascua. El documento de vivienda propone la Vecindad Civil Canaria y una baremación de arraigo con la máxima valoración a partir de veinticinco años.',
+      measureNumbers: [8, 5, 6, 11, 12, 33],
+    },
+    {
+      title: 'El artículo 150.2 como vía para más competencias',
+      text:
+        'Cinco propuestas citan el artículo 150.2 de la Constitución (transferencia o delegación de competencias estatales) como el camino: la extranjería, las materias del mar que Canarias debe exigir al Estado, el reconocimiento de la libertad de modificar la posición política de Canarias, el control de los puertos y aeropuertos de interés general y la gestión de los grandes impuestos. A ello se suma un estatus de plena autonomía interna (PAI) ante Naciones Unidas, para «acceder a nuestras riquezas sin ser Estado».',
+      measureNumbers: [8, 15, 16, 20, 27, 18],
+    },
+    {
+      title: 'Hacienda propia: la mayor propuesta de los estudios',
+      text:
+        'Diez de las 31 propuestas de los estudios son de hacienda. Piden una Agencia Tributaria Canaria independiente e integral, un «Cupo Canario» como el del País Vasco y Navarra con una aportación al Fondo de Compensación Interterritorial, empezar por el consorcio previsto en el Estatuto y un Fondo de Estabilización Fiscal con el excedente turístico. Es la parte más desarrollada: parte del modelo foral y propone una vía gradual, con la delegación de la gestión de los grandes impuestos en la agencia canaria.',
+      measureNumbers: [31, 22, 27, 28, 29],
+    },
+    {
+      title: 'Un plan de cien días a quince años y una meta del 10 %',
+      text:
+        'El plan de aplicación de vivienda tiene cuatro horizontes (cien días, dos años, de tres a ocho y de ocho a quince) y la hoja de ruta del informe sectorial propone otros de 0 a 36 meses. Ocho propuestas tienen plazo. La única meta de parque es la misión de quince años: un parque público o asequible permanente de al menos el 10 % en Canarias y una aproximación al 20 % en los municipios tensionados. Las otras cifras son reducir a cinco viviendas el umbral de gran tenedor y veinticinco años de arraigo con la máxima valoración. Ninguna propuesta deroga una ley.',
+      measureNumbers: [32, 33, 43, 44, 48, 50],
+    },
+  ],
   salf: [
     {
       title: '119 propuestas repartidas en diez compromisos',

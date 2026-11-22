@@ -689,7 +689,7 @@ def crear_programa(pdf):
         'siglas': 'FA',
         'color': COLOR,
         'colorClaro': COLOR_CLARO,
-        'programa': 'Programa electoral 29N',
+        'programa': 'Un programa como una casa',
         'subtitulo': f'{len(medidas)} propuestas en {len(bloques)} bloques: vivienda, derechos sociales, reforma fiscal, '
                      'transición ecológica y democracia avanzada',
         'elecciones': 'Elecciones generales · 29 de noviembre de 2026',

@@ -434,7 +434,7 @@ def crear_programa(pdf):
         'colorClaro': COLOR_CLARO,
         # La portada solo tiene texto en una fuente decorativa sin texto extraíble; el PDF se titula
         # «PE_GENERALES_29N26» (programa electoral, generales, 29N).
-        'programa': 'Programa electoral 29N',
+        'programa': 'Vota por lo que crees',
         'subtitulo': f'{len(medidas)} propuestas en tres compromisos: los animales, el medio ambiente y las personas',
         'elecciones': 'Elecciones generales · 29 de noviembre de 2026',
         'observaciones': [
