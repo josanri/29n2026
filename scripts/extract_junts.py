@@ -606,8 +606,8 @@ def crear_programa(pdf):
         'comunidad': 'Cataluña',
         'color': COLOR,
         'colorClaro': COLOR_CLARO,
-        'programa': 'Programa electoral 29N',
-        'subtitulo': 'Catalunya al centre. L’agenda catalana de Junts per Catalunya',
+        'programa': 'Catalunya al centre',
+        'subtitulo': 'Programa electoral 29N: l’agenda catalana de Junts per Catalunya',
         'elecciones': 'Elecciones generales · 29 de noviembre de 2026',
         'observaciones': [
             'El programa está en catalán. El PDF no numera las propuestas de forma global: cada capítulo tiene '
