@@ -125,7 +125,7 @@ def classify(interventions: list[dict], index: int, speakers: dict, overlaps: li
     resumes = index + 1 < len(interventions) and interventions[index + 1]["speaker"] == previous["speaker"]
 
     early = gap < -EARLY_START
-    overlapped = overlap_seconds(overlaps, current["start"] - OVERLAP_WINDOW, current["start"] + OVERLAP_WINDOW) >= MIN_OVERLAP_SECONDS
+    overlapped = gap <= SHORT_GAP and overlap_seconds(overlaps, current["start"] - OVERLAP_WINDOW, current["start"] + OVERLAP_WINDOW) >= MIN_OVERLAP_SECONDS
     trailing = last.endswith(("...", "…")) and gap <= SHORT_GAP
     interjection = words <= INTERJECTION_WORDS and resumes and gap <= SHORT_GAP and not last.endswith("?")
     if not (early or overlapped or trailing or interjection):
@@ -139,12 +139,13 @@ def classify(interventions: list[dict], index: int, speakers: dict, overlaps: li
         before = interventions[index - 2]
         if before["speaker"] == current["speaker"] and previous.get("cut") and word_count(previous["paragraphs"]) <= INTERJECTION_WORDS:
             return None
-    # The moderator asks or gives the floor by name, and the candidate answers.
+    # The moderator asks or gives the floor by name (or handover cue), and the candidate answers.
     if is_moderator(speakers.get(previous["speaker"])) and gap >= -1.0:
         surname = fold(speakers.get(current["speaker"], {}).get("name", "")).split()[-1:] or [""]
         role = fold(speakers.get(current["speaker"], {}).get("role", ""))
-        tail_text = fold(last)
-        if last.endswith("?") or (surname[0] and surname[0] in tail_text) or (role and re.search(rf"\b{re.escape(role)}\b", tail_text)):
+        turn_text = fold(" ".join(previous["paragraphs"]))
+        handover = re.search(r"\b(prosiga|adelante|su turno|cuando quiera)\b", fold(last))
+        if last.endswith("?") or handover or (surname[0] and surname[0] in turn_text) or (role and re.search(rf"\b{re.escape(role)}\b", turn_text)):
             return None
     return "moderacion" if is_moderator(speakers.get(current["speaker"])) else "interrupcion"
 

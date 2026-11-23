@@ -1,0 +1,188 @@
+{
+  "slug": "rtve-23-noviembre-2026",
+  "title": "Debate a 8 de RTVE del 23 de noviembre",
+  "date": "2026-11-23",
+  "channel": "RTVE",
+  "url": "https://www.rtve.es/play/",
+  "urlLabel": "Fuente: RTVE",
+  "published": true,
+  "speakers": [
+    {
+      "id": "fortes",
+      "name": "Xabier Fortes",
+      "role": "Moderador",
+      "partyId": null
+    },
+    {
+      "id": "munoz",
+      "name": "Ester Muñoz",
+      "role": "PP",
+      "partyId": "pp"
+    },
+    {
+      "id": "lopez",
+      "name": "Patxi López",
+      "role": "PSOE",
+      "partyId": "psoe"
+    },
+    {
+      "id": "millan",
+      "name": "Pepa Millán",
+      "role": "Vox",
+      "partyId": "vox"
+    },
+    {
+      "id": "delgado",
+      "name": "Emilio Delgado",
+      "role": "Frente Amplio",
+      "partyId": "fa"
+    },
+    {
+      "id": "rufian",
+      "name": "Gabriel Rufián",
+      "role": "ERC",
+      "partyId": "erc"
+    },
+    {
+      "id": "nogueras",
+      "name": "Míriam Nogueras",
+      "role": "Junts",
+      "partyId": "jxcat"
+    },
+    {
+      "id": "matute",
+      "name": "Oskar Matute",
+      "role": "EH Bildu",
+      "partyId": "eh-bildu"
+    },
+    {
+      "id": "vaquero",
+      "name": "Maribel Vaquero",
+      "role": "EAJ-PNV",
+      "partyId": "eaj-pnv"
+    },
+    {
+      "id": "sin-asignar",
+      "name": "Sin asignar",
+      "role": "",
+      "partyId": null
+    }
+  ],
+  "diarization": {
+    "SPEAKER_00": "delgado",
+    "SPEAKER_01": "lopez",
+    "SPEAKER_02": "munoz",
+    "SPEAKER_03": "fortes",
+    "SPEAKER_04": "nogueras",
+    "SPEAKER_05": "millan",
+    "SPEAKER_06": "vaquero",
+    "SPEAKER_07": "nogueras",
+    "SPEAKER_08": "munoz",
+    "SPEAKER_09": "matute",
+    "SPEAKER_10": "rufian"
+  },
+  "overrides": {
+    "271.892": "fortes",
+    "569.408": "lopez",
+    "999.546": "fortes",
+    "1382.335": "munoz",
+    "1383.938": "delgado",
+    "1578.383": "millan",
+    "1742.869": "matute",
+    "1807.846": "fortes",
+    "2204.994": "munoz",
+    "2208.098": "munoz",
+    "2210.281": "munoz",
+    "2214.967": "munoz",
+    "2751.815": "rufian",
+    "3434.633": "fortes",
+    "3513.437": "fortes",
+    "3562.548": "fortes",
+    "4100.168": "lopez",
+    "4204.349": "rufian",
+    "4301.024": "munoz",
+    "4303.207": "fortes",
+    "4409.579": "rufian",
+    "4414.227": "rufian",
+    "4415.651": "rufian",
+    "4422.529": "rufian",
+    "4545.975": "munoz",
+    "4548.597": "munoz",
+    "4591.564": "fortes",
+    "4723.782": "fortes",
+    "4729.45": "fortes",
+    "5128.762": "fortes",
+    "5516.485": "vaquero"
+  },
+  "splits": [
+    {
+      "start": 4422.529,
+      "text": "como su amigo Illa.",
+      "speaker": "nogueras"
+    }
+  ],
+  "golden": [
+    { "speaker": "delgado", "start": 5174.7, "end": 5228.1 },
+    { "speaker": "lopez", "start": 5230.6, "end": 5286.9 },
+    { "speaker": "millan", "start": 5288.5, "end": 5347.4 },
+    { "speaker": "matute", "start": 5347.4, "end": 5407.3 },
+    { "speaker": "munoz", "start": 5409.0, "end": 5462.8 },
+    { "speaker": "vaquero", "start": 5463.2, "end": 5519.6 },
+    { "speaker": "nogueras", "start": 5519.7, "end": 5554.6 },
+    { "speaker": "rufian", "start": 5555.4, "end": 5613.1 }
+  ],
+  "textFixes": [
+    ["\\bJoachi López\\b", "Patxi López"],
+    ["\\bPachi\\b", "Patxi"],
+    ["\\bEsther Muñoz\\b", "Ester Muñoz"],
+    ["Hoy toca ser feminista, Esther\\.", "Hoy toca ser feminista, Ester."],
+    ["Gabriel Rufián, RC\\b", "Gabriel Rufián, ERC"],
+    ["\\bMiriam Lugueras\\b", "Míriam Nogueras"],
+    ["\\bOscar Matute\\b", "Oskar Matute"],
+    ["([Ss]eñora) Núñez\\b", "\\1 Nogueras"],
+    ["([Ss]eñora) Raquero\\b", "\\1 Vaquero"],
+    ["\\bSeñor Amillán\\b", "Señora Millán"],
+    ["\\bSeñora Villán\\b", "Señora Millán"],
+    ["\\bSeba Muñoz\\b", "señora Muñoz"],
+    ["\\bSeñor delegado\\b", "Señor Delgado"],
+    ["\\bSeñor Lucián\\b", "Señor Rufián"],
+    ["Habirá señor Batute", "Abrirá el señor Matute"],
+    ["señor Martú, te", "señor Matute"],
+    ["después la señora va a querer\\.", "después la señora Vaquero."],
+    ["Ahora sí, cierre este señor\\.", "Ahora sí, cierre usted, señora Vaquero."],
+    ["Habéis dicho, Javier\\b", "Habéis dicho, Xabier"],
+    ["Capón, buenas noches", "Gabon, buenas noches"],
+    ["Gabón, Gustioy", "Gabon guztioi"],
+    ["Vozcatu Euskadi, vozcatu Euskaldi Gelsalea", "Bozkatu Euskadi, bozkatu Euzko Alderdi Jeltzalea"],
+    ["poniendo tarapas", "poniendo trabas"],
+    ["ser la callo de Trump", "ser lacayo de Trump"],
+    ["\\bRivera Salud\\b", "Ribera Salud"],
+    ["Que hablen de JETA", "Que hablen de ETA"],
+    ["\\bColdo\\b", "Koldo"],
+    ["\\bSantos Zerdán\\b", "Santos Cerdán"],
+    ["Amazon, cuando la gente se ahogaba", "A Mazón, cuando la gente se ahogaba"],
+    ["grabar a las grandes fortunas", "gravar a las grandes fortunas"],
+    ["traspaso integral de rodalías", "traspaso integral de Rodalies"],
+    ["\\bAyaraldea\\b", "Aiaraldea"],
+    ["El transporte de rodillas lo estamos haciendo nosotros\\.", "El traspaso de Rodalies lo estamos haciendo nosotros."],
+    ["Esquerra Republicana de Cataluña contra los mofas\\.", "Esquerra Republicana de Catalunya, contra sus mofas."],
+    ["Si el tren llega o no ahora\\.", "Si el tren llega o no a la hora."],
+    ["el ejemplo de Ormón", "el ejemplo de Ormuz"],
+    ["entonces con la Ría Bildu", "en Euskal Herria Bildu"],
+    ["\\bSolería Bildu\\b", "Euskal Herria Bildu"],
+    ["Euskal Herria a Bildu", "Euskal Herria Bildu"],
+    ["Euskal Herria Bidu", "Euskal Herria Bildu"],
+    ["presidente del Asunto de Galicia", "presidente de la Xunta de Galicia"],
+    ["\\b(señor )?Fijol\\b", "\\1Feijóo"],
+    ["\\b(Feijó|Feijo)\\b", "Feijóo"],
+    ["usted, y fijo, ha dicho", "usted y Feijóo han dicho"],
+    ["estrecho de Olmuz", "estrecho de Ormuz"],
+    ["\\bférretro\\b", "féretro"],
+    ["\\bDiana Morán\\b", "Diana Morant"],
+    ["la euskera, nuestra lengua, que es lengua oficial, y también las elecciones vascas", "el euskera, nuestra lengua, que es lengua oficial, y también las selecciones vascas"],
+    ["lo que consideren infortuno", "lo que consideren oportuno"],
+    ["\\b21 de noviembre\\b", "29 de noviembre"],
+    ["Desde el Prado del Rey, muy buena noche\\.", "Desde Prado del Rey, muy buenas noches."]
+  ],
+  "notes": "Debate a 8 de RTVE (23 de noviembre de 2026, 22:00 h). Modera Xabier Fortes. Audio desde el 3:40 del vídeo de YouTube (inicio del sonido). Bloques: 1) Vivienda y Estado del bienestar, 2) Economía, empleo e infraestructuras, 3) Clima sociopolítico y pactos, más minuto de oro (los 8 portavoces seguidos; Míriam Nogueras con interpretación simultánea del catalán)."
+}
