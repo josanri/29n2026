@@ -1,0 +1,57 @@
+/**
+ * The day each program came on this site (YYYY-MM-DD). The RSS feed (`src/lib/feed.ts`) gives one item per program
+ * with this date. A published program needs one: the build stops without it (`src/lib/program-checks.ts`).
+ * Add the line when the analysis of a new program goes live (see the skill `analizar-programa`).
+ *
+ * The first dates come from the git history: the first commit where the program file has measures (not «vacio»).
+ * The 18 programs of 13 November were in the first version of the site.
+ */
+export const programPublishedOn: Record<string, string> = {
+  adelante: '2026-11-13',
+  autonomos: '2026-11-13',
+  bng: '2026-11-13',
+  cc: '2026-11-13',
+  d21: '2026-11-13',
+  'eaj-pnv': '2026-11-13',
+  erc: '2026-11-13',
+  'escanos-en-blanco': '2026-11-13',
+  fo: '2026-11-13',
+  ie: '2026-11-13',
+  'mundo-mas-justo': '2026-11-13',
+  pfac: '2026-11-13',
+  ph: '2026-11-13',
+  pp: '2026-11-13',
+  salf: '2026-11-13',
+  'soria-ya': '2026-11-13',
+  'tercera-edad': '2026-11-13',
+  vox: '2026-11-13',
+  pacma: '2026-11-14',
+  'compromis-front-valencia': '2026-11-15',
+  convergents: '2026-11-15',
+  'fe-jons': '2026-11-15',
+  'geroa-bai': '2026-11-15',
+  pcte: '2026-11-15',
+  psoe: '2026-11-15',
+  'teruel-existe': '2026-11-15',
+  upc: '2026-11-15',
+  'agenda-valenciana': '2026-11-16',
+  alhora: '2026-11-16',
+  comuns: '2026-11-16',
+  eguzkilore: '2026-11-16',
+  'eh-bildu': '2026-11-16',
+  fa: '2026-11-16',
+  fia: '2026-11-16',
+  ixlg: '2026-11-16',
+  nex: '2026-11-16',
+  podemos: '2026-11-17',
+  alantre: '2026-11-18',
+  jxcat: '2026-11-18',
+  pctc: '2026-11-18',
+  'cha-fa': '2026-11-19',
+  pctg: '2026-11-19',
+  upn: '2026-11-19',
+  'drago-canarias': '2026-11-20',
+  arames: '2026-11-23',
+  'formentera-viva': '2026-11-23',
+  lib: '2026-11-23',
+};

@@ -6,6 +6,9 @@ export const SITE_NAME = 'Electosfera';
 
 export const DEFAULT_DESCRIPTION = `Los programas electorales de las ${election.name.toLowerCase()} del ${election.longDate} (${election.shortName}), medida a medida: categorías, cifras, plazos y diagramas.`;
 
+/** The title of the RSS feed (`src/pages/novedades.xml.ts`): the head of each page and the footer use it too. */
+export const FEED_TITLE = `${SITE_NAME}: programas, encuestas y debates`;
+
 /** Where the reader's theme choice is stored. The key stays the same so saved choices still work. */
 export const THEME_STORAGE_KEY = 'tema';
 

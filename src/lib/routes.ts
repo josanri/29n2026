@@ -27,6 +27,8 @@ export const SEARCH_PARAMS = { query: 'q', parties: 'partidos', categories: 'cat
 /** Prefix of the HTML id of each measure: `m-123`. */
 export const MEASURE_ID_PREFIX = 'm-';
 export const SECTION_ID_PREFIX = 's-';
+/** HTML id of one poll in the table of all the polls: `encuesta-gad3-2026-11-22`. */
+export const pollId = (pollsterId: string, date: string) => `encuesta-${pollsterId}-${date}`;
 export const CANDIDACIES_HEADING_ID = 'candidaturas-titulo';
 
 /**
@@ -79,6 +81,10 @@ export const routes = {
   topicQuiz: () => withBase('/tests/temas/'),
   /** The tracking of the polls. */
   polls: () => withBase('/encuestas/'),
+  /** One poll in the table of all the polls. The page opens the table when the link points into it. */
+  poll: (pollsterId: string, date: string) => withBase(`/encuestas/#${pollId(pollsterId, date)}`),
+  /** The RSS feed: the programs, the polls and the debates, the newest first. */
+  feed: () => withBase('/novedades.xml'),
   /** The list of the debates, or one debate (its transcript, charts and filter) when it has a slug. */
   debate: (slug?: string) => withBase(slug ? `/debates/${slug}/` : '/debates/'),
   /** «Sin siglas»: vote on measures without the party, then see the parties. */

@@ -17,6 +17,7 @@ import { election } from '@eleccion/eleccion';
 import { DEFAULT_SAMPLE, FRENTE_AMPLIO_FROM, pollAggregator, pollParties, polls, pollsters, type Poll, type PollPartyId } from '@eleccion/encuestas';
 import { ABSOLUTE_MAJORITY } from '@eleccion/congreso';
 import { formatLongDate } from '@/lib/format';
+import { pollId } from '@/lib/routes';
 import { renderPollChart, type PollChartData } from '@/lib/poll-chart';
 
 const DAY = 86_400_000;
@@ -330,7 +331,7 @@ const lastUpdate = sorted.at(-1)!.date;
           </thead>
           <tbody>
             {[...sorted].reverse().map((poll) => (
-              <tr>
+              <tr id={pollId(poll.pollster, poll.date)}>
                 <td>{shortDate(poll.date)}</td>
                 <th scope="row">{pollsterById[poll.pollster].name}</th>
                 {tableParties.map((party) => <td class="num">{percent(poll.values[party.id])}</td>)}
@@ -365,6 +366,17 @@ const lastUpdate = sorted.at(-1)!.date;
 
 <script>
   import { renderPollChart, renderYAxis, type Metric, type PollChartData, type Scale } from '@/lib/poll-chart';
+
+  // A link to one poll (from the RSS feed) points into the closed table of all the polls: open it and go to the row.
+  const showLinkedPoll = () => {
+    const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+    const table = target?.closest('details');
+    if (!target || !table) return;
+    table.open = true;
+    target.scrollIntoView();
+  };
+  showLinkedPoll();
+  window.addEventListener('hashchange', showLinkedPoll);
 
   // The chart is drawn again when the reader changes an option or the box changes its width.
   for (const chart of document.querySelectorAll<HTMLElement>('[data-poll-chart]')) {
@@ -606,6 +618,9 @@ const lastUpdate = sorted.at(-1)!.date;
   .poll-table__via { font-size: 0.875rem; }
   .poll-table__seats { display: block; font-size: 0.875rem; font-weight: 700; }
   .all-polls { margin-top: var(--space-5); }
+  /* The poll of a link (from the RSS feed): the row takes the yellow highlight, with its text color. */
+  .all-polls tr:target > * { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .all-polls tr:target a { color: inherit; }
   .all-polls summary {
     display: inline-flex;
     align-items: center;

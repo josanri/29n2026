@@ -12,7 +12,7 @@ import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import Tooltip from '@/components/ui/Tooltip.astro';
 import { partyHighlightStyle, partyScaleStyle, readableTextColor, sphereStyle } from '@/lib/color';
-import { DEFAULT_DESCRIPTION, DEFAULT_SHARE_IMAGE, SITE_NAME, THEME_STORAGE_KEY, X_HANDLE, type ShareImage } from '@/lib/site';
+import { DEFAULT_DESCRIPTION, DEFAULT_SHARE_IMAGE, FEED_TITLE, SITE_NAME, THEME_STORAGE_KEY, X_HANDLE, type ShareImage } from '@/lib/site';
 import { routes } from '@/lib/routes';
 
 interface Props {
@@ -74,6 +74,7 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <link rel="canonical" href={canonicalUrl} />
     {markdown && <link rel="alternate" type="text/markdown" href={markdownHref} />}
     <link rel="sitemap" href={routes.asset('/sitemap-index.xml')} />
+    <link rel="alternate" type="application/rss+xml" title={FEED_TITLE} href={routes.feed()} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content={SITE_NAME} />

@@ -13,6 +13,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { keyFindingsByParty } from '@eleccion/analysis';
 import { downloadFileNames } from '@eleccion/download-names';
+import { programPublishedOn } from '@eleccion/publicaciones';
 import { ELECTION_PUBLIC_DIR } from '../../election.config.mjs';
 import { announcedMeasures, publishedPrograms } from './programs';
 
@@ -30,9 +31,15 @@ export function checkPrograms(): void {
   const warnings: string[] = [];
 
   for (const program of publishedPrograms) {
+    const id = program.id;
+    // The day it came on the site: without it, the program is missing from the RSS feed.
+    const publishedOn = programPublishedOn[id];
+    if (!publishedOn || !ISO_DATE.test(publishedOn)) {
+      errors.push(`${id}: falta su fecha de publicación (AAAA-MM-DD) en publicaciones.ts.`);
+    }
+
     const measures = announcedMeasures(program);
     if (measures.length === 0) continue;
-    const id = program.id;
 
     // Every announced measure has something to show.
     const empty = measures.filter((measure) => !measure.title.trim() && !measure.text.trim()).map((measure) => measure.number);
