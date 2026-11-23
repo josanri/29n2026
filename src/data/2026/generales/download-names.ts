@@ -39,6 +39,8 @@ export const downloadFileNames: Record<string, string> = {
   ixlg: 'programa-ixlg-senado-29n-2026.pdf',
   nex: 'programa-nex-generales-29n-2026.pdf',
   comuns: 'programa-comuns-29n-2026.pdf',
+  'formentera-viva': 'programa-formentera-viva-senado-2026.pdf',
+  arames: 'programa-arames-front-ampli-29n-2026.pdf',
 };
 
 /** File name of the summary PDF of Adelante Andalucía (the 29 main measures). */

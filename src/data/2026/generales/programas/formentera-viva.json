@@ -2,26 +2,797 @@
  "id": "formentera-viva",
  "partido": "Formentera Viva",
  "siglas": "FV",
+ "comunidad": "Illes Balears",
+ "observaciones": [
+  "Programa para el Senado: es la candidatura de la agrupación de electores Formentera Viva al Senado por Formentera. No concurre al Congreso.",
+  "El PDF oficial es bilingüe (catalán y castellano en páginas consecutivas). Este análisis recoge el texto literal de las páginas en castellano.",
+  "Cada uno de los diez ejes incluye tres propuestas concretas bajo «Qué defenderemos» (30 medidas en total), numeradas del 1 al 30 en el orden del documento."
+ ],
  "color": "#1E7DD4",
  "colorClaro": "#D7F7F8",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Una voz propia",
+ "subtitulo": "Programa electoral al Senado de Formentera Viva",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "/programas/formentera-viva-senado-2026.pdf",
+ "fuentePdf": "https://formentera-viva-borrador.cvformentera.chatgpt.site/documents/Formentera_Viva_Programa_Bilingue_2026.pdf",
+ "paginas": 28,
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "Una voz propia para una isla que necesita ser escuchada.",
+  "texto": "Formentera puede elegir, por primera vez, a su propio senador. Esta oportunidad es también una responsabilidad.\n\nNuestra isla no tiene aeropuerto. Dependemos de las conexiones con Ibiza, soportamos sobrecostes para recibir mercancías y, demasiado a menudo, debemos desplazarnos para acceder a servicios esenciales. Estas dificultades afectan a la vivienda, al empleo y a las oportunidades de las familias.\n\nFormentera Viva es una agrupación de electores independiente. No nos presentamos para obedecer consignas de ningún partido estatal ni para oponernos automáticamente a nadie. Queremos escuchar, dialogar y negociar con todos cuando una propuesta sea útil para Formentera.\n\nNo ofrecemos milagros ni prometemos lo que un senador no puede ejecutar. Presentamos diez encargos concretos y una forma de trabajar: preguntar, proponer, negociar, insistir y explicar los resultados."
  },
  "cifras": [],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Illes Balears"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Triple insularidad",
+   "lema": "Que la triple insularidad se note en la vida diaria",
+   "cita": "La insularidad es permanente. Su compensación también debe serlo.",
+   "intro": "Vivir en Formentera implica sobrecostes estructurales. Necesitamos compensaciones estables, no solo ayudas puntuales.\n\nCómo lo haremos desde el Senado: Formularemos preguntas, defenderemos enmiendas en la normativa estatal y buscaremos acuerdos con otros grupos. Daremos continuidad al trabajo impulsado en el Parlament balear, sin confundir ámbitos competenciales.\n\nCómo comprobaremos los avances: Normas, ayudas y recursos que identifiquen expresamente a Formentera.",
+   "pagina": 7
+  },
+  {
+   "id": 2,
+   "titulo": "Vivienda",
+   "lema": "Vivienda para poder vivir todo el año en la isla",
+   "cita": "Queremos una Formentera donde vivir, no solo a la que venir.",
+   "intro": "Una isla no tiene futuro si sus jóvenes, familias y profesionales necesarios no pueden encontrar un hogar.\n\nCómo lo haremos desde el Senado: Pediremos información sobre los fondos estatales destinados a la isla y sus resultados. Impulsaremos la coordinación con el Govern balear y el Consell en vivienda, rehabilitación y promociones públicas.\n\nCómo comprobaremos los avances: Viviendas incorporadas al alquiler habitual y promociones efectivamente entregadas.",
+   "pagina": 9
+  },
+  {
+   "id": 3,
+   "titulo": "Migración y respuesta humanitaria",
+   "lema": "Prevención en origen y una respuesta responsable",
+   "cita": "Responsabilidad es proteger vidas y exigir recursos.",
+   "intro": "Las travesías marítimas ponen vidas en peligro. Hay que prevenirlas, combatir las redes criminales y coordinar una respuesta con recursos suficientes.\n\nCómo lo haremos desde el Senado: Ejerceremos el control parlamentario y promoveremos mejoras en las normas y recursos estatales. La cooperación internacional y las decisiones operativas corresponden a las instituciones competentes.\n\nCómo comprobaremos los avances: Medios, coordinación y recursos públicos efectivamente asignados.",
+   "pagina": 11
+  },
+  {
+   "id": 4,
+   "titulo": "Costas y litoral",
+   "lema": "Una nueva Ley de Costas que proteja y dé seguridad",
+   "cita": "Proteger la costa y dar seguridad jurídica van de la mano.",
+   "intro": "Nuestro litoral es un patrimonio único. La protección ambiental y la seguridad jurídica deben avanzar juntas.\n\nCómo lo haremos desde el Senado: Reclamaremos estudios y un calendario al Gobierno español. Trabajaremos con otros senadores en iniciativas y enmiendas y escucharemos a los afectados y especialistas.\n\nCómo comprobaremos los avances: Iniciativas tramitadas, garantías revisadas y cambios normativos comprobables.",
+   "pagina": 13
+  },
+  {
+   "id": 5,
+   "titulo": "Medio ambiente",
+   "lema": "Proteger aquello que hace única a Formentera",
+   "cita": "Cuidar Formentera es cuidar el futuro de todos.",
+   "intro": "La posidonia, el mar, el agua y la biodiversidad forman parte de nuestra identidad y de nuestro futuro.\n\nCómo lo haremos desde el Senado: Exigiremos proyectos, importes y resultados de las actuaciones estatales en Formentera y promoveremos convenios con el Govern balear y el Consell.\n\nCómo comprobaremos los avances: Inversiones realizadas, calidad del agua y estado de los hábitats.",
+   "pagina": 15
+  },
+  {
+   "id": 6,
+   "titulo": "Servicios públicos",
+   "lema": "Más servicios sin tener que salir de la isla",
+   "cita": "Ser una isla pequeña no debe restarnos derechos.",
+   "intro": "Un trámite o una consulta no deberían exigir todo un día de desplazamientos. Vivir en Formentera no debe significar tener menos oportunidades.\n\nCómo lo haremos desde el Senado: Preguntaremos por personal, horarios, tiempos de espera y medios estatales. En sanidad y educación, cooperaremos con el Govern balear, responsable de los servicios autonómicos.\n\nCómo comprobaremos los avances: Atención efectiva, desplazamientos evitados y tiempos de respuesta.",
+   "pagina": 17
+  },
+  {
+   "id": 7,
+   "titulo": "Seguridad y salvamento",
+   "lema": "Más seguridad y mejor respuesta marítima",
+   "cita": "La seguridad empieza cuando hay alguien que responde.",
+   "intro": "La realidad marítima y estacional de Formentera exige servicios de seguridad y emergencias adaptados a la isla.\n\nCómo lo haremos desde el Senado: Trasladaremos preguntas a los ministerios y organismos estatales y defenderemos medidas de alojamiento que ayuden a estabilizar a los profesionales destinados en Formentera.\n\nCómo comprobaremos los avances: Plantillas cubiertas, equipos disponibles y tiempos de activación.",
+   "pagina": 19
+  },
+  {
+   "id": 8,
+   "titulo": "Conexiones e infraestructuras",
+   "lema": "Conexiones dignas para una isla sin aeropuerto",
+   "cita": "No pedimos privilegios. Pedimos que se tenga en cuenta nuestra realidad.",
+   "intro": "Para trabajar, estudiar, recibir mercancías o acudir al médico dependemos de unas conexiones que otros territorios dan por supuestas.\n\nCómo lo haremos desde el Senado: Exigiremos datos desglosados, revisaremos la regulación estatal y defenderemos enmiendas y acuerdos en la tramitación de recursos y normas.\n\nCómo comprobaremos los avances: Conexiones disponibles, bonificaciones e inversiones verificables.",
+   "pagina": 21
+  },
+  {
+   "id": 9,
+   "titulo": "Economía local",
+   "lema": "Una economía que permita vivir y trabajar aquí",
+   "cita": "Una isla viva necesita personas que puedan construir aquí su futuro.",
+   "intro": "Formentera necesita actividad y oportunidades más allá de la temporada alta, compatibles con su territorio.\n\nCómo lo haremos desde el Senado: Trabajaremos en los debates sobre régimen especial, fiscalidad, transporte, ayudas y normativa laboral, escuchando a los sectores de la isla.\n\nCómo comprobaremos los avances: Ayudas que llegan, costes reales y estabilidad de la actividad y el empleo.",
+   "pagina": 23
+  },
+  {
+   "id": 10,
+   "titulo": "Oficina del senador",
+   "lema": "Un senador que escuche, vuelva y dé explicaciones",
+   "cita": "Defender Formentera también es estar presente y dar la cara.",
+   "intro": "La representación de Formentera no debe quedarse en Madrid. Tiene que estar presente en la isla y ser accesible.\n\nCómo lo haremos desde el Senado: Concretaremos una atención periódica, preferentemente semanal, compatible con la normativa y los recursos del Senado. Será un espacio de escucha, no una oficina ejecutiva.\n\nCómo comprobaremos los avances: Citas atendidas, respuestas e informes públicos del trabajo realizado.",
+   "pagina": 25
+  }
+ ],
+ "secciones": [
+  {
+   "id": "eje-01",
+   "bloque": 1,
+   "titulo": "Que la triple insularidad se note en la vida diaria",
+   "tituloFrase": "Que la triple insularidad se note en la vida diaria",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "eje-02",
+   "bloque": 2,
+   "titulo": "Vivienda para poder vivir todo el año en la isla",
+   "tituloFrase": "Vivienda para poder vivir todo el año en la isla",
+   "intro": "",
+   "pagina": 9,
+   "subapartados": []
+  },
+  {
+   "id": "eje-03",
+   "bloque": 3,
+   "titulo": "Prevención en origen y una respuesta responsable",
+   "tituloFrase": "Prevención en origen y una respuesta responsable",
+   "intro": "",
+   "pagina": 11,
+   "subapartados": []
+  },
+  {
+   "id": "eje-04",
+   "bloque": 4,
+   "titulo": "Una nueva Ley de Costas que proteja y dé seguridad",
+   "tituloFrase": "Una nueva Ley de Costas que proteja y dé seguridad",
+   "intro": "",
+   "pagina": 13,
+   "subapartados": []
+  },
+  {
+   "id": "eje-05",
+   "bloque": 5,
+   "titulo": "Proteger aquello que hace única a Formentera",
+   "tituloFrase": "Proteger aquello que hace única a Formentera",
+   "intro": "",
+   "pagina": 15,
+   "subapartados": []
+  },
+  {
+   "id": "eje-06",
+   "bloque": 6,
+   "titulo": "Más servicios sin tener que salir de la isla",
+   "tituloFrase": "Más servicios sin tener que salir de la isla",
+   "intro": "",
+   "pagina": 17,
+   "subapartados": []
+  },
+  {
+   "id": "eje-07",
+   "bloque": 7,
+   "titulo": "Más seguridad y mejor respuesta marítima",
+   "tituloFrase": "Más seguridad y mejor respuesta marítima",
+   "intro": "",
+   "pagina": 19,
+   "subapartados": []
+  },
+  {
+   "id": "eje-08",
+   "bloque": 8,
+   "titulo": "Conexiones dignas para una isla sin aeropuerto",
+   "tituloFrase": "Conexiones dignas para una isla sin aeropuerto",
+   "intro": "",
+   "pagina": 21,
+   "subapartados": []
+  },
+  {
+   "id": "eje-09",
+   "bloque": 9,
+   "titulo": "Una economía que permita vivir y trabajar aquí",
+   "tituloFrase": "Una economía que permita vivir y trabajar aquí",
+   "intro": "",
+   "pagina": 23,
+   "subapartados": []
+  },
+  {
+   "id": "eje-10",
+   "bloque": 10,
+   "titulo": "Un senador que escuche, vuelva y dé explicaciones",
+   "tituloFrase": "Un senador que escuche, vuelva y dé explicaciones",
+   "intro": "",
+   "pagina": 25,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "eje-01",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reconocimiento estatal",
+   "tituloFrase": "Reconocimiento estatal",
+   "texto": "Defender que el Régimen Especial de las Illes Balears reconozca expresamente la triple insularidad de Formentera.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares",
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "eje-01",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Transporte completo",
+   "tituloFrase": "Transporte completo",
+   "texto": "Reclamar compensaciones que incluyan el trayecto real de mercancías y residuos, incluidos los transbordos por Ibiza.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Ibiza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "eje-01",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Datos y recursos justos",
+   "tituloFrase": "Datos y recursos justos",
+   "texto": "Exigir estudios diferenciados por isla, criterios transparentes e inversiones ajustadas a los costes efectivos.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 2,
+   "seccion": "eje-02",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Más vivienda habitual",
+   "tituloFrase": "Más vivienda habitual",
+   "texto": "Defender incentivos e instrumentos estatales que favorezcan el alquiler estable y el uso residencial todo el año.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 2,
+   "seccion": "eje-02",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Seguridad y normas claras",
+   "tituloFrase": "Seguridad y normas claras",
+   "texto": "Revisar las disposiciones estatales sobre arrendamientos que puedan perjudicar la oferta de alquiler habitual.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 2,
+   "seccion": "eje-02",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Personal de servicios esenciales",
+   "tituloFrase": "Personal de servicios esenciales",
+   "texto": "Reclamar recursos para facilitar el alojamiento de profesionales estatales destinados en Formentera.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 3,
+   "seccion": "eje-03",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Actuar en origen",
+   "tituloFrase": "Actuar en origen",
+   "texto": "Pedir al Gobierno español resultados concretos de la cooperación con Argelia y con las instituciones europeas.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Argelia"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 3,
+   "seccion": "eje-03",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Vigilancia y salvamento",
+   "tituloFrase": "Vigilancia y salvamento",
+   "texto": "Reclamar datos sobre medios estatales y evaluar la necesidad de una operación específica de FRONTEX.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 3,
+   "seccion": "eje-03",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Recursos para los menores",
+   "tituloFrase": "Recursos para los menores",
+   "texto": "Defender financiación suficiente para las administraciones de protección de menores, respetando sus derechos.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 4,
+   "seccion": "eje-04",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Reforma integral",
+   "tituloFrase": "Reforma integral",
+   "texto": "Impulsar una nueva Ley estatal de Costas en lugar de acumular modificaciones parciales.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 4,
+   "seccion": "eje-04",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Derechos y garantías",
+   "tituloFrase": "Derechos y garantías",
+   "texto": "Revisar los procedimientos de deslinde, la participación de los afectados, las concesiones y los regímenes transitorios.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 4,
+   "seccion": "eje-04",
+   "pagina": 13,
+   "subapartado": null,
+   "titulo": "Ciencia y realidad insular",
+   "tituloFrase": "Ciencia y realidad insular",
+   "texto": "Incorporar la dinámica del litoral y el cambio climático dentro de un marco constitucionalmente viable.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 5,
+   "seccion": "eje-05",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Mar y posidonia",
+   "tituloFrase": "Mar y posidonia",
+   "texto": "Reclamar investigación y financiación estatal para proteger los hábitats marinos y estudiar la evolución del litoral.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 5,
+   "seccion": "eje-05",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Agua y residuos",
+   "tituloFrase": "Agua y residuos",
+   "texto": "Controlar las inversiones estatales y defender más apoyo a depuración, saneamiento y transporte de residuos.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 5,
+   "seccion": "eje-05",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Biodiversidad",
+   "tituloFrase": "Biodiversidad",
+   "texto": "Cooperar con las autoridades competentes para frenar las especies invasoras que amenazan a la lagartija pitiusa.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 6,
+   "seccion": "eje-06",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Administración estatal accesible",
+   "tituloFrase": "Administración estatal accesible",
+   "texto": "Reclamar atención efectiva del SEPE, Correos, Justicia y otros organismos estatales.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 6,
+   "seccion": "eje-06",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Menos viajes obligados",
+   "tituloFrase": "Menos viajes obligados",
+   "texto": "Promover una atención telemática útil y alternativas presenciales para quienes las necesiten.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 6,
+   "seccion": "eje-06",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Estudiar y recibir asistencia",
+   "tituloFrase": "Estudiar y recibir asistencia",
+   "texto": "Defender ayudas estatales de movilidad y becas, con coordinación autonómica en sanidad y educación.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 7,
+   "seccion": "eje-07",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Efectivos suficientes",
+   "tituloFrase": "Efectivos suficientes",
+   "texto": "Reclamar plantillas y medios adecuados para Guardia Civil, Tráfico, Servicio Marítimo y SEPRONA.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 7,
+   "seccion": "eje-07",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Salvamento preparado",
+   "tituloFrase": "Salvamento preparado",
+   "texto": "Solicitar información sobre los recursos y los tiempos reales de respuesta de los servicios estatales de salvamento.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 7,
+   "seccion": "eje-07",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Retirada de pateras",
+   "tituloFrase": "Retirada de pateras",
+   "texto": "Exigir un protocolo estable de retirada, custodia y gestión, con responsables y financiación definidos.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 8,
+   "seccion": "eje-08",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Transporte más justo",
+   "tituloFrase": "Transporte más justo",
+   "texto": "Revisar las compensaciones de mercancías y las bonificaciones incorporando el trayecto completo por Ibiza.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "Ibiza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 8,
+   "seccion": "eje-08",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Voz en el puerto de Ibiza",
+   "tituloFrase": "Voz en el puerto de Ibiza",
+   "texto": "Reclamar que la Autoridad Portuaria escuche las necesidades de residentes y servicios esenciales de Formentera.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Formentera",
+    "Ibiza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 8,
+   "seccion": "eje-08",
+   "pagina": 21,
+   "subapartado": null,
+   "titulo": "Infraestructuras fiables",
+   "tituloFrase": "Infraestructuras fiables",
+   "texto": "Controlar las inversiones estatales en puertos, telecomunicaciones y red eléctrica, con calendario e importes por isla.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 9,
+   "seccion": "eje-09",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Negocios y autónomos",
+   "tituloFrase": "Negocios y autónomos",
+   "texto": "Defender mejoras fiscales y ayudas estatales que tengan en cuenta los sobrecostes logísticos.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 9,
+   "seccion": "eje-09",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Sector primario",
+   "tituloFrase": "Sector primario",
+   "texto": "Promover medidas para agricultores, ganaderos y pescadores, incluido el transporte de sus productos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 9,
+   "seccion": "eje-09",
+   "pagina": 23,
+   "subapartado": null,
+   "titulo": "Empleo más estable",
+   "tituloFrase": "Empleo más estable",
+   "texto": "Reclamar datos y políticas estatales que ayuden a reducir los efectos de la estacionalidad.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 10,
+   "seccion": "eje-10",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Atención personal",
+   "tituloFrase": "Atención personal",
+   "texto": "Impulsar un punto de atención en Formentera, con citas concertadas y un calendario público.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 10,
+   "seccion": "eje-10",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Escucha activa",
+   "tituloFrase": "Escucha activa",
+   "texto": "Recoger propuestas de residentes, profesionales, entidades y sectores económicos.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 10,
+   "seccion": "eje-10",
+   "pagina": 25,
+   "subapartado": null,
+   "titulo": "Rendición de cuentas",
+   "tituloFrase": "Rendición de cuentas",
+   "texto": "Explicar preguntas, reuniones, iniciativas y resultados, diferenciando peticiones, acuerdos y ejecuciones.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }

@@ -54,6 +54,8 @@
     "data:junts": "python scripts/extract_junts.py public/2026/generales/programas/junts-programa-electoral-29n-2026.pdf src/data/2026/generales/programas/jxcat.json",
     "data:upn": "python scripts/extract_upn.py src/data/2026/generales/programas/upn.json",
     "data:cha-fa": "python scripts/extract_cha_fa.py public/2026/generales/programas/cha-fa-agenda-aragonesa-2026.pdf src/data/2026/generales/programas/cha-fa.json",
+    "data:formentera-viva": "python scripts/extract_formentera_viva.py public/2026/generales/programas/formentera-viva-senado-2026.pdf src/data/2026/generales/programas/formentera-viva.json",
+    "data:arames": "python scripts/extract_arames.py public/2026/generales/programas/arames-programa-29n-2026.pdf src/data/2026/generales/programas/arames.json",
     "data:candidaturas": "python scripts/extract_candidaturas.py"
   },
   "dependencies": {

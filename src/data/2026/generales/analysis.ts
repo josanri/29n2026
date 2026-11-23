@@ -1201,4 +1201,68 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
       measureNumbers: [1, 49, 54, 58],
     },
   ],
+  'formentera-viva': [
+    {
+      title: 'Diez ejes simétricos con tres propuestas cada uno',
+      text:
+        'El programa bilingüe al Senado (28 páginas) se organiza en diez ejes con el mismo esquema: tres propuestas bajo «Qué defenderemos» (30 medidas en total), una sección de método parlamentario y criterios para comprobar avances. Ningún eje sobresale en volumen porque todos tienen exactamente tres medidas.',
+      measureNumbers: [1, 4, 7, 10, 28],
+    },
+    {
+      title: 'Infraestructuras y triple insularidad en el centro',
+      text:
+        '«Infraestructuras y agua» es la categoría más repetida (5 medidas) y «Unidad y territorio» aporta otras 3. El eje transversal es compensar la condición de isla sin aeropuerto: reconocer la triple insularidad en el REIB (1), incluir los transbordos por Ibiza en el transporte de mercancías y residuos (2 y 22) y tener voz en la Autoridad Portuaria de Ibiza (23).',
+      measureNumbers: [1, 2, 14, 22, 23, 24],
+    },
+    {
+      title: 'Trece medidas piden acción o control sobre el Estado',
+      text:
+        'En 13 de las 30 medidas aparece la palabra «estatal» o «estatales»: se centra en el ámbito competencial del Senado, con peticiones de atención efectiva del SEPE, Correos y Justicia (16), una nueva Ley estatal de Costas (10), medios para Guardia Civil y salvamento (19 y 20) y alojamiento para profesionales estatales destinados en la isla (6).',
+      measureNumbers: [6, 10, 16, 19, 20],
+    },
+    {
+      title: 'Migración: cooperación con Argelia, FRONTEX y recursos para menores',
+      text:
+        'El eje 3 y la medida 21 combinan prevención en origen con atención humanitaria y gestión logística: exigen resultados en la cooperación con Argelia y la UE (7), evaluar una operación de FRONTEX (8), financiar a las administraciones de protección de menores (9) y aprobar un protocolo estable de retirada de pateras (21).',
+      measureNumbers: [7, 8, 9, 21],
+    },
+    {
+      title: 'Sin cifras concretas, sin plazos y sin derogaciones',
+      text:
+        'Ninguna de las 30 medidas fija una cifra comprometida, un calendario cerrado ni la derogación explícita de una ley vigente. El programa subraya que un senador no ejecuta presupuestos y concentra su compromiso medible en abrir una oficina presencial en Formentera y publicar informes de actividad (28, 29 y 30).',
+      measureNumbers: [28, 29, 30],
+    },
+  ],
+  arames: [
+    {
+      title: 'Un programa centrado en Baleares y en cada isla',
+      text:
+        'El documento reúne 160 medidas numeradas en cinco bloques y 24 secciones, escritas en catalán. Treinta y nueve medidas citan expresamente a las Illes Balears y 21 aluden a la insularidad: 10 nombran a Eivissa, 9 a Menorca, 7 a Formentera, 6 a Palma y 3 a Mallorca, con demandas como la OSP Menorca–Barcelona a 35 euros (22) o un juzgado en Formentera (76).',
+      measureNumbers: [1, 22, 69, 76, 87, 116],
+    },
+    {
+      title: 'Vivienda y freno a la masificación turística: el núcleo más duro',
+      text:
+        'Trece medidas de vivienda y las ocho de la sección contra la masificación turística proponen prohibir la compra de vivienda que no sea habitual (23), topar el alquiler al 25 % de la renta neta (25), extinguir pisos turísticos en zonas tensionadas en tres años (29), frenar ampliaciones de aeropuertos (39), prohibir vuelos privados (41) y subir al 21 % el IVA de hoteles y cruceros (42).',
+      measureNumbers: [23, 25, 29, 39, 41, 42],
+    },
+    {
+      title: 'Lengua catalana, memoria e identidad: 17 medidas',
+      text:
+        '«Lengua, cultura y memoria» es la categoría más numerosa (17 medidas). Pide la oficialidad del catalán en la UE (122), una ley de lenguas que exija acreditar catalán en la Administración del Estado en Baleares (123), una hora laboral diaria durante seis meses para aprender catalán (126), inversión estatal proporcional al castellano (127) y retirar vestigios franquistas (138).',
+      measureNumbers: [122, 123, 126, 127, 138, 156],
+    },
+    {
+      title: 'Soberanía, financiación singular y salida de la OTAN',
+      text:
+        'En el bloque institucional y global defiende un sistema de financiación asimilable al concierto económico y la condonación de la deuda (67), el reconocimiento de la plurinacionalidad confederal, la autodeterminación y la república feminista (120), la salida de España de la OTAN (148) y un embargo integral de armas a Israel (149).',
+      measureNumbers: [67, 119, 120, 148, 149, 150],
+    },
+    {
+      title: '23 compromisos cuantificados, 3 plazos y 2 derogaciones explícitas',
+      text:
+        'Veintitrés medidas fijan una cifra concreta —entre ellas 32 horas semanales (10), 200 euros por menor (6), escudo hipotecario de 300 euros (26), 1,7 % del PIB en dependencia para 2030 (78), 1,5 % para universidades (83) y 0,7 % para cooperación (152)—. Solo 3 marcan un plazo explícito (29, 78 y 81) y 2 derogan leyes de forma explícita: la Ley mordaza (135) y la Ley 18/2013 de tauromaquia (156).',
+      measureNumbers: [6, 10, 29, 78, 135, 156],
+    },
+  ],
 };

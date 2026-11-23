@@ -2,26 +2,3979 @@
  "id": "arames",
  "partido": "Aramés-Front Ampli",
  "siglas": "ARAMÉS",
+ "comunidad": "Illes Balears",
+ "observaciones": [
+  "Programa en catalán de Ara Més-Front Ampli, la coalición balear de Més per Mallorca, Més per Menorca, Ara Eivissa y Movimiento Sumar.",
+  "El PDF oficial está maquetado en 9 páginas en pliego doble (equivalentes a 17 páginas impresas) y recoge 160 medidas numeradas sin título propio: el título corto es la primera frase.",
+  "La taxonomía común no tiene categoría específica de protección animal ni de turismo: los derechos de los animales se asignan a la categoría más cercana (tauromaquia a Lengua, cultura y memoria; sanciones a Justicia; IVA veterinario a Impuestos; resto a Campo, mar y mundo rural)."
+ ],
  "color": "#5a96b4",
  "colorClaro": "#cee0e8",
- "programa": "",
- "subtitulo": "Programa vacío",
+ "programa": "Programa electoral 29N",
+ "subtitulo": "Programa electoral d’Ara Més-Front Ampli per a les eleccions generals del 29N",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
+ "pdf": "/programas/arames-programa-29n-2026.pdf",
+ "fuentePdf": "https://media.timtul.com/media/web_mespermallorca/ProgramaElectoral29N_Corregit%20(1)_20261117173133.pdf",
+ "paginas": 9,
+ "fechaPdf": "2026-11-17",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "",
+  "titulo": "Programa electoral 29N",
   "texto": ""
  },
- "cifras": [],
- "plazos": [],
- "ordenPlazos": [],
- "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Illes Balears"
+ "cifras": [
+  {
+   "valor": "60 %",
+   "unidad": "del salari mitjà brut",
+   "texto": "Blindar l’SMI estatal com a mínim al 60 % del salari mitjà brut",
+   "contexto": "arribar o superar, com a mínim, el 60 % del salari mitjà brut",
+   "medida": 1
+  },
+  {
+   "valor": "5 %",
+   "unidad": "sobre la mitjana peninsular",
+   "texto": "Topall als carburants a un màxim del 5 % sobre el preu mitjà peninsular",
+   "contexto": "no superin, en cap cas, el 5 % del preu mitjà de la península",
+   "medida": 3
+  },
+  {
+   "valor": "200 €",
+   "unidad": "per menor",
+   "texto": "Prestació universal de 200 € per cada menor fins als 18 anys",
+   "contexto": "prestació universal de 200 € per cada menor fins els 18 anys",
+   "medida": 6
+  },
+  {
+   "valor": "32 hores",
+   "unidad": "setmanals",
+   "texto": "Jornada laboral màxima de 32 hores setmanals sense reducció salarial",
+   "contexto": "jornada laboral a un màxim de 32 hores setmanals de feina efectiva sense reducció salarial",
+   "medida": 10
+  },
+  {
+   "valor": "12 mesos",
+   "unidad": "de sou i cotització",
+   "texto": "Garantir 12 mesos de sou i cotització als fixos discontinus turístics",
+   "contexto": "garantir 12 mesos de sou i de cotització",
+   "medida": 13
+  },
+  {
+   "valor": "35 euros",
+   "unidad": "tarifa màxima",
+   "texto": "Tarifa màxima de 35 euros per als residents a l’OSP Menorca–Barcelona",
+   "contexto": "regulada per una tarifa màxima de trenta-cinc euros per als residents",
+   "medida": 22
+  },
+  {
+   "valor": "25 %",
+   "unidad": "de la renda neta",
+   "texto": "Limitar el lloguer en zones tensionades al 25 % de la renda neta",
+   "contexto": "limitarà, per llei, el preu del lloguer a zones tensionades en el 25 % de la renda neta",
+   "medida": 25
+  },
+  {
+   "valor": "300 €",
+   "unidad": "al mes",
+   "texto": "Escut hipotecari de fins a 300 € al mes si la hipoteca supera el 40 %",
+   "contexto": "escut hipotecari per protegir, de fins a 300 € al mes, les famílies de classe mitjana en què la hipoteca els suposi més del 40 % dels ingressos nets",
+   "medida": 26
+  },
+  {
+   "valor": "21 %",
+   "unidad": "d’IVA i fins al 150 % d’IBI",
+   "texto": "Pisos turístics al 21 % d’IVA i recàrrec d’IBI fins al 150 %",
+   "contexto": "tributar al 21 % i s’eliminaran les deduccions a l’impost de societats i l’IRPF. Així mateix, tendran un recàrrec a l’IBI de fins al 150 %",
+   "medida": 29
+  },
+  {
+   "valor": "200 % / 1000 %",
+   "unidad": "recàrrec d’ITP",
+   "texto": "Exempció d’ITP al primer habitatge i recàrrec del 200 % al segon i 1000 % del tercer",
+   "contexto": "recàrrec del 200 % del segon habitatge i del 1000 % a partir del tercer",
+   "medida": 30
+  },
+  {
+   "valor": "21 %",
+   "unidad": "d’IVA turístic",
+   "texto": "Tipus general d’IVA del 21 % per als establiments turístics i creuers",
+   "contexto": "establiments turístics tributin el tipus general d'IVA del 21%",
+   "medida": 42
+  },
+  {
+   "valor": "1,7 %",
+   "unidad": "del PIB",
+   "texto": "Elevar la inversió en dependència fins a l’1,7 % del PIB el 2030",
+   "contexto": "elevar la inversió pública del 0,8 % a l'1,7 % del PIB l'any 2030, amb una aportació estatal directa mínima del 50 %",
+   "medida": 78
+  },
+  {
+   "valor": "1,5 %",
+   "unidad": "del PIB",
+   "texto": "Finançament de les universitats públiques fins a l’1,5 % del PIB",
+   "contexto": "finançament de les universitats públiques fins a assolir l’1,5% del PIB",
+   "medida": 83
+  },
+  {
+   "valor": "10",
+   "unidad": "professionals / 100.000 hab.",
+   "texto": "Mínim de 10 professionals de salut mental per 100.000 habitants a cada illa",
+   "contexto": "augment de les ràtios de professionals fins a un mínim de 10 per cada 100.000 habitants",
+   "medida": 89
+  },
+  {
+   "valor": "30 %",
+   "unidad": "copagament màxim",
+   "texto": "Limitar el copagament de dependència al 30 % dels ingressos",
+   "contexto": "limitarà el copagament màxim al 30 % dels ingressos",
+   "medida": 90
+  },
+  {
+   "valor": "40 %",
+   "unidad": "de la renda mitjana",
+   "texto": "Renda garantida de l’IMV equivalent al 40 % de la mitjana d’ingressos",
+   "contexto": "garantir una base de renda equivalent al 40% de la mitjana d'ingressos estatals",
+   "medida": 93
+  },
+  {
+   "valor": "5 %",
+   "unidad": "del pressupost estatal",
+   "texto": "Almenys el 5 % del pressupost no financer per a igualtat i +10 % contra violències masclistes",
+   "contexto": "almanco un 5% del pressupost no financer de l’Estat (superant el 4,4 % actual). En particular, s’incrementarà un 10 % la dotació contra les violències masclistes",
+   "medida": 95
+  },
+  {
+   "valor": "16 anys",
+   "unidad": "edat de vot",
+   "texto": "Sufragi actiu i passiu a partir dels 16 anys",
+   "contexto": "dret al sufragi actiu i passiu a partir dels 16 anys",
+   "medida": 103
+  },
+  {
+   "valor": "1.000 euros",
+   "unidad": "deducció IRPF",
+   "texto": "Deducció d’IRPF de fins a 1.000 euros per a menors de 35 anys en lloguer",
+   "contexto": "deducció de fins a 1.000 euros de l’IRPF per als menors de 35 anys que visquin de lloguer",
+   "medida": 107
+  },
+  {
+   "valor": "16 anys",
+   "unidad": "xarxes socials",
+   "texto": "Prohibir plataformes i xarxes socials a menors de 16 anys sense verificació",
+   "contexto": "plataformes i xarxes socials a menors de 16 anys sense verificació",
+   "medida": 109
+  },
+  {
+   "valor": "1 hora",
+   "unidad": "al dia (6 mesos)",
+   "texto": "Una hora diària de jornada laboral durant sis mesos per aprendre català",
+   "contexto": "durant sis mesos els treballadors puguin dedicar una hora al dia de la seva jornada laboral a aprendre la llengua",
+   "medida": 126
+  },
+  {
+   "valor": "100 %",
+   "unidad": "finançament estatal",
+   "texto": "Acollida digna de migrants i menors finançada al 100 % per l’Estat",
+   "contexto": "acollida digna i finançada al 100 % per l’Estat",
+   "medida": 142
+  },
+  {
+   "valor": "0,7 %",
+   "unidad": "del PIB",
+   "texto": "Destinar el 0,7 % del PIB a cooperació internacional transformadora",
+   "contexto": "destinant-hi el 0,7 % del PIB",
+   "medida": 152
+  }
+ ],
+ "plazos": [
+  {
+   "plazo": "De forma immediata",
+   "texto": "Prohibició de quotes obligatòries en centres sostinguts amb fons públics",
+   "medida": 81
+  },
+  {
+   "plazo": "Màxim 3 anys",
+   "texto": "Extinció progressiva de llicències turístiques i lloguers de temporada fraudulents",
+   "medida": 29
+  },
+  {
+   "plazo": "Any 2030",
+   "texto": "Inversió pública en dependència fins a l’1,7 % del PIB",
+   "medida": 78
+  }
+ ],
+ "ordenPlazos": [
+  "De forma immediata",
+  "Màxim 3 anys",
+  "Any 2030"
+ ],
+ "verbos": [
+  {
+   "verbo": "impulsarem",
+   "n": 35
+  },
+  {
+   "verbo": "garantirem",
+   "n": 27
+  },
+  {
+   "verbo": "aprovarem",
+   "n": 10
+  },
+  {
+   "verbo": "reforçarem",
+   "n": 6
+  },
+  {
+   "verbo": "donarem",
+   "n": 6
+  },
+  {
+   "verbo": "treballarem",
+   "n": 5
+  },
+  {
+   "verbo": "establirem",
+   "n": 5
+  },
+  {
+   "verbo": "prohibirem",
+   "n": 5
+  },
+  {
+   "verbo": "incrementarem",
+   "n": 5
+  },
+  {
+   "verbo": "defensarem",
+   "n": 5
+  },
+  {
+   "verbo": "assegurarem",
+   "n": 5
+  },
+  {
+   "verbo": "blindarem",
+   "n": 4
+  },
+  {
+   "verbo": "reduirem",
+   "n": 4
+  },
+  {
+   "verbo": "eliminarem",
+   "n": 4
+  },
+  {
+   "verbo": "crearem",
+   "n": 4
+  }
+ ],
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "La vida més fàcil",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 2
+  },
+  {
+   "id": 2,
+   "titulo": "Habitatge",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 3,
+   "titulo": "Canvi de model econòmic",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 3
+  },
+  {
+   "id": 4,
+   "titulo": "Igualtat, drets i serveis públics",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 5
+  },
+  {
+   "id": 5,
+   "titulo": "Canvis socials i globals",
+   "lema": "",
+   "cita": "",
+   "intro": "",
+   "pagina": 7
+  }
+ ],
+ "secciones": [
+  {
+   "id": "arribar-a-final-de-mes",
+   "bloque": 1,
+   "titulo": "Arribar a final de mes",
+   "tituloFrase": "Arribar a final de mes",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "treball-de-qualitat",
+   "bloque": 1,
+   "titulo": "Treball de qualitat",
+   "tituloFrase": "Treball de qualitat",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "desplacar-nos",
+   "bloque": 1,
+   "titulo": "Desplaçar-nos",
+   "tituloFrase": "Desplaçar-nos",
+   "intro": "",
+   "pagina": 2,
+   "subapartados": []
+  },
+  {
+   "id": "cases-assequibles-i-per-viure-hi",
+   "bloque": 2,
+   "titulo": "Cases assequibles i per viure-hi",
+   "tituloFrase": "Cases assequibles i per viure-hi",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "acabar-amb-la-massificacio-turistica",
+   "bloque": 3,
+   "titulo": "Acabar amb la massificació turística",
+   "tituloFrase": "Acabar amb la massificació turística",
+   "intro": "",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "diversificacio-economica",
+   "bloque": 3,
+   "titulo": "Diversificació econòmica",
+   "tituloFrase": "Diversificació econòmica",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "agricultura-ramaderia-i-pesca",
+   "bloque": 3,
+   "titulo": "Agricultura, ramaderia i pesca",
+   "tituloFrase": "Agricultura, ramaderia i pesca",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "energia",
+   "bloque": 3,
+   "titulo": "Energia",
+   "tituloFrase": "Energia",
+   "intro": "",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "financament-i-inversions",
+   "bloque": 3,
+   "titulo": "Finançament i inversions",
+   "tituloFrase": "Finançament i inversions",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "serveis-publics-i-nous-drets",
+   "bloque": 4,
+   "titulo": "Serveis públics i nous drets",
+   "tituloFrase": "Serveis públics i nous drets",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "educacio-publica",
+   "bloque": 4,
+   "titulo": "Educació pública",
+   "tituloFrase": "Educació pública",
+   "intro": "",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "sanitat",
+   "bloque": 4,
+   "titulo": "Sanitat",
+   "tituloFrase": "Sanitat",
+   "intro": "",
+   "pagina": 6,
+   "subapartados": []
+  },
+  {
+   "id": "sistema-de-dependencia-i-cures",
+   "bloque": 4,
+   "titulo": "Sistema de Dependència i Cures",
+   "tituloFrase": "Sistema de Dependència i Cures",
+   "intro": "",
+   "pagina": 6,
+   "subapartados": []
+  },
+  {
+   "id": "eradicacio-de-la-pobresa",
+   "bloque": 4,
+   "titulo": "Eradicació de la pobresa",
+   "tituloFrase": "Eradicació de la pobresa",
+   "intro": "",
+   "pagina": 6,
+   "subapartados": []
+  },
+  {
+   "id": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "bloque": 4,
+   "titulo": "Igualtat efectiva: vides lliures de masclisme i LGTBIfòbia",
+   "tituloFrase": "Igualtat efectiva: vides lliures de masclisme i LGTBIfòbia",
+   "intro": "",
+   "pagina": 6,
+   "subapartados": []
+  },
+  {
+   "id": "joventut",
+   "bloque": 4,
+   "titulo": "Joventut",
+   "tituloFrase": "Joventut",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "medi-ambient-i-territori",
+   "bloque": 5,
+   "titulo": "Medi ambient i territori",
+   "tituloFrase": "Medi ambient i territori",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "autogovern",
+   "bloque": 5,
+   "titulo": "Autogovern",
+   "tituloFrase": "Autogovern",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "el-catala-llengua-de-ple-dret",
+   "bloque": 5,
+   "titulo": "El català, llengua de ple dret",
+   "tituloFrase": "El català, llengua de ple dret",
+   "intro": "",
+   "pagina": 7,
+   "subapartados": []
+  },
+  {
+   "id": "cultura",
+   "bloque": 5,
+   "titulo": "Cultura",
+   "tituloFrase": "Cultura",
+   "intro": "",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "en-defensa-de-la-democracia",
+   "bloque": 5,
+   "titulo": "En defensa de la democràcia",
+   "tituloFrase": "En defensa de la democràcia",
+   "intro": "",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "migracions-i-antiracisme",
+   "bloque": 5,
+   "titulo": "Migracions i antiracisme",
+   "tituloFrase": "Migracions i antiracisme",
+   "intro": "",
+   "pagina": 8,
+   "subapartados": []
+  },
+  {
+   "id": "pau-solidaritat-i-europa",
+   "bloque": 5,
+   "titulo": "Pau, solidaritat i Europa",
+   "tituloFrase": "Pau, solidaritat i Europa",
+   "intro": "",
+   "pagina": 9,
+   "subapartados": []
+  },
+  {
+   "id": "drets-dels-animals",
+   "bloque": 5,
+   "titulo": "Drets dels animals",
+   "tituloFrase": "Drets dels animals",
+   "intro": "",
+   "pagina": 9,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "arribar-a-final-de-mes",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Implantarem un Salari Mínim Interprofessional Illenc que permeti compensar les diferències que hi ha entre el cost de vida a les Illes Balears i el de la resta de comunitats autònomes.",
+   "tituloFrase": "Implantarem un Salari Mínim Interprofessional Illenc que permeti compensar les diferències que hi ha entre el cost de vida a les Illes Balears i el de la resta de comunitats autònomes.",
+   "texto": "Implantarem un Salari Mínim Interprofessional Illenc que permeti compensar les diferències que hi ha entre el cost de vida a les Illes Balears i el de la resta de comunitats autònomes. Així mateix, blindarem per llei l’obligació d’incrementar el SMI estatal fins arribar o superar, com a mínim, el 60 % del salari mitjà brut. A més, limitarem legalment els mecanismes de compensació i absorció salarial per evitar que les empreses neutralitzin els increments de l’SMI mitjançant la reducció o supressió de plusos i complements salarials, especialment els vinculats a l'antiguitat, les condicions específiques del lloc de feina, la nocturnitat, la perillositat o la productivitat.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [
+    "arribar o superar, com a mínim, el 60 % del salari mitjà brut"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "arribar-a-final-de-mes",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Aprovarem un complement insular per a les pensions, per compensar el cost de la vida i garantir que els pensionistes de les Illes Balears tenguin una igualtat de poder adquisitiu que els de la península, amb especial atenció a les pensions mínimes i no contributives.",
+   "tituloFrase": "Aprovarem un complement insular per a les pensions, per compensar el cost de la vida i garantir que els pensionistes de les Illes Balears tenguin una igualtat de poder adquisitiu que els de la península, amb especial atenció a les pensions mínimes i no contributives.",
+   "texto": "Aprovarem un complement insular per a les pensions, per compensar el cost de la vida i garantir que els pensionistes de les Illes Balears tenguin una igualtat de poder adquisitiu que els de la península, amb especial atenció a les pensions mínimes i no contributives.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "arribar-a-final-de-mes",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Impulsarem un topall de preu als carburants, de manera que no superin, en cap cas, el 5 % del preu mitjà de la península.",
+   "tituloFrase": "Impulsarem un topall de preu als carburants, de manera que no superin, en cap cas, el 5 % del preu mitjà de la península.",
+   "texto": "Impulsarem un topall de preu als carburants, de manera que no superin, en cap cas, el 5 % del preu mitjà de la península.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "no superin, en cap cas, el 5 % del preu mitjà de la península"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "arribar-a-final-de-mes",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Controlarem el preu de la cistella dels aliments bàsics i, en cas d’acreditar-ne abusos, fixarem preus màxims en la cistella de la compra saludable.",
+   "tituloFrase": "Controlarem el preu de la cistella dels aliments bàsics i, en cas d’acreditar-ne abusos, fixarem preus màxims en la cistella de la compra saludable.",
+   "texto": "Controlarem el preu de la cistella dels aliments bàsics i, en cas d’acreditar-ne abusos, fixarem preus màxims en la cistella de la compra saludable.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "arribar-a-final-de-mes",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Implantarem un IVA propi reduït, que ens iguali a la resta de territoris extrapeninsulars de l’Estat.",
+   "tituloFrase": "Implantarem un IVA propi reduït, que ens iguali a la resta de territoris extrapeninsulars de l’Estat.",
+   "texto": "Implantarem un IVA propi reduït, que ens iguali a la resta de territoris extrapeninsulars de l’Estat. Proposarem l’eliminació de l’IVA en el transport de mercaderies.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 1,
+   "seccion": "arribar-a-final-de-mes",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Aprovarem una prestació universal de 200 € per cada menor fins els 18 anys com a dret del menor, inembargable i desvinculat dels ingressos o situació laboral dels progenitors.",
+   "tituloFrase": "Aprovarem una prestació universal de 200 € per cada menor fins els 18 anys com a dret del menor, inembargable i desvinculat dels ingressos o situació laboral dels progenitors.",
+   "texto": "Aprovarem una prestació universal de 200 € per cada menor fins els 18 anys com a dret del menor, inembargable i desvinculat dels ingressos o situació laboral dels progenitors. Garantirem la gratuïtat total i universal del menjador escolar a Infantil i Primària a la xarxa pública, amb productes frescos, de temporada i de proximitat.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "prestació universal de 200 € per cada menor fins els 18 anys"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "arribar-a-final-de-mes",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Garantirem l’accés als serveis bàsics amb l’assignació automàtica del bo social segons la renda de la llar i l’extensió de tarifes socials a l’aigua i l’internet.",
+   "tituloFrase": "Garantirem l’accés als serveis bàsics amb l’assignació automàtica del bo social segons la renda de la llar i l’extensió de tarifes socials a l’aigua i l’internet.",
+   "texto": "Garantirem l’accés als serveis bàsics amb l’assignació automàtica del bo social segons la renda de la llar i l’extensió de tarifes socials a l’aigua i l’internet. Així mateix, blindarem per llei la prohibició del tall de llum, aigua i gas en llars vulnerables.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Impulsarem la transferència de les competències d’inspecció laboral i en reforçarem la presència a les Illes Balears, per tal de garantir que s’acabin els fraus en els contractes.",
+   "tituloFrase": "Impulsarem la transferència de les competències d’inspecció laboral i en reforçarem la presència a les Illes Balears, per tal de garantir que s’acabin els fraus en els contractes.",
+   "texto": "Impulsarem la transferència de les competències d’inspecció laboral i en reforçarem la presència a les Illes Balears, per tal de garantir que s’acabin els fraus en els contractes.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Garantirem una atenció suficient del servei estatal d’ocupació (SEPE) a totes les illes.",
+   "tituloFrase": "Garantirem una atenció suficient del servei estatal d’ocupació (SEPE) a totes les illes.",
+   "texto": "Garantirem una atenció suficient del servei estatal d’ocupació (SEPE) a totes les illes.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Reduirem la jornada laboral a un màxim de 32 hores setmanals de feina efectiva sense reducció salarial.",
+   "tituloFrase": "Reduirem la jornada laboral a un màxim de 32 hores setmanals de feina efectiva sense reducció salarial.",
+   "texto": "Reduirem la jornada laboral a un màxim de 32 hores setmanals de feina efectiva sense reducció salarial.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "jornada laboral a un màxim de 32 hores setmanals de feina efectiva sense reducció salarial"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Impulsarem mesures per millorar els salaris i el poder adquisitiu de les persones treballadores de les Illes Balears, tenint en compte el cost real de la vida i els sobrecostos de la insularitat.",
+   "tituloFrase": "Impulsarem mesures per millorar els salaris i el poder adquisitiu de les persones treballadores de les Illes Balears, tenint en compte el cost real de la vida i els sobrecostos de la insularitat.",
+   "texto": "Impulsarem mesures per millorar els salaris i el poder adquisitiu de les persones treballadores de les Illes Balears, tenint en compte el cost real de la vida i els sobrecostos de la insularitat.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Reforçarem la negociació col·lectiva i promourem complements salarials territorials que permetin avançar cap a unes condicions laborals dignes.",
+   "tituloFrase": "Reforçarem la negociació col·lectiva i promourem complements salarials territorials que permetin avançar cap a unes condicions laborals dignes.",
+   "texto": "Reforçarem la negociació col·lectiva i promourem complements salarials territorials que permetin avançar cap a unes condicions laborals dignes.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Impulsarem polítiques laborals i incentius per afavorir l'ocupació estable durant tot l'any, reduir la dependència de la temporada turística i facilitar la incorporació de persones treballadores a nous sectors productius vinculats a la indústria, la innovació, les energies renovables, la cultura i el sector primari.",
+   "tituloFrase": "Impulsarem polítiques laborals i incentius per afavorir l'ocupació estable durant tot l'any, reduir la dependència de la temporada turística i facilitar la incorporació de persones treballadores a nous sectors productius vinculats a la indústria, la innovació, les energies renovables, la cultura i el sector primari.",
+   "texto": "Impulsarem polítiques laborals i incentius per afavorir l'ocupació estable durant tot l'any, reduir la dependència de la temporada turística i facilitar la incorporació de persones treballadores a nous sectors productius vinculats a la indústria, la innovació, les energies renovables, la cultura i el sector primari. Pel que fa als fixos discontinus del sector turístic, impulsarem mesures per garantir 12 mesos de sou i de cotització.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas",
+    "rural",
+    "discapacidad"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "garantir 12 mesos de sou i de cotització"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Implantarem la transparència salarial real des de l’oferta de treball per tal de lluitar contra la bretxa salarial.",
+   "tituloFrase": "Implantarem la transparència salarial real des de l’oferta de treball per tal de lluitar contra la bretxa salarial.",
+   "texto": "Implantarem la transparència salarial real des de l’oferta de treball per tal de lluitar contra la bretxa salarial.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Elaborarem un pla de xoc contra la precarietat en els sectors de la neteja, les cures, el comerç, les educadores 0-3, les TCAI i l'hoteleria, amb un increment de la inspecció de treball.",
+   "tituloFrase": "Elaborarem un pla de xoc contra la precarietat en els sectors de la neteja, les cures, el comerç, les educadores 0-3, les TCAI i l'hoteleria, amb un increment de la inspecció de treball.",
+   "texto": "Elaborarem un pla de xoc contra la precarietat en els sectors de la neteja, les cures, el comerç, les educadores 0-3, les TCAI i l'hoteleria, amb un increment de la inspecció de treball. Per tal d’eliminar la precarietat laboral, millorararem les condicions de treball i garantirem el reconeixement social i econòmic de les cures.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 1,
+   "seccion": "treball-de-qualitat",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Aprovarem la jubilació anticipada per a les cambreres de pis (kellys) sense penalització.",
+   "tituloFrase": "Aprovarem la jubilació anticipada per a les cambreres de pis (kellys) sense penalització.",
+   "texto": "Aprovarem la jubilació anticipada per a les cambreres de pis (kellys) sense penalització.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 1,
+   "seccion": "desplacar-nos",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Garantirem el finançament estatal de la gratuïtat en els transport públic de tots els residents, per adaptar-lo a les necessitats i característiques de cada illa i incorporant-ho com a part del Règim Especial",
+   "tituloFrase": "Garantirem el finançament estatal de la gratuïtat en els transport públic de tots els residents, per adaptar-lo a les necessitats i característiques de cada illa i incorporant-ho com a part del Règim Especial",
+   "texto": "Garantirem el finançament estatal de la gratuïtat en els transport públic de tots els residents, per adaptar-lo a les necessitats i característiques de cada illa i incorporant-ho com a part del Règim Especial",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 1,
+   "seccion": "desplacar-nos",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Garantirem una dotació pressupostària dels serveis essencials que ja inclou el Règim Especial de les Illes Balears (REIB) en matèria de mobilitat, amb especial esment a les connexions intrainsulars i al transport públic, per permetre una cohesió territorial efectiva i una mobilitat sostenible.",
+   "tituloFrase": "Garantirem una dotació pressupostària dels serveis essencials que ja inclou el Règim Especial de les Illes Balears (REIB) en matèria de mobilitat, amb especial esment a les connexions intrainsulars i al transport públic, per permetre una cohesió territorial efectiva i una mobilitat sostenible.",
+   "texto": "Garantirem una dotació pressupostària dels serveis essencials que ja inclou el Règim Especial de les Illes Balears (REIB) en matèria de mobilitat, amb especial esment a les connexions intrainsulars i al transport públic, per permetre una cohesió territorial efectiva i una mobilitat sostenible.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 1,
+   "seccion": "desplacar-nos",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Impulsarem un conveni ferroviari per tal d’assegurar el finançament dels trens al Llevant, a Llucmajor i a Alcúdia.",
+   "tituloFrase": "Impulsarem un conveni ferroviari per tal d’assegurar el finançament dels trens al Llevant, a Llucmajor i a Alcúdia.",
+   "texto": "Impulsarem un conveni ferroviari per tal d’assegurar el finançament dels trens al Llevant, a Llucmajor i a Alcúdia.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Mallorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 1,
+   "seccion": "desplacar-nos",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Treballarem perquè el tren de Sóller compleixi les condicions de servei públic, tal com ho estableix la concessió.",
+   "tituloFrase": "Treballarem perquè el tren de Sóller compleixi les condicions de servei públic, tal com ho estableix la concessió.",
+   "texto": "Treballarem perquè el tren de Sóller compleixi les condicions de servei públic, tal com ho estableix la concessió.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Mallorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 1,
+   "seccion": "desplacar-nos",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Establirem un sostre en el preu de les connexions aèries amb la península i lluitarem contra el frau de les companyies aèries amb el descompte de resident.",
+   "tituloFrase": "Establirem un sostre en el preu de les connexions aèries amb la península i lluitarem contra el frau de les companyies aèries amb el descompte de resident.",
+   "texto": "Establirem un sostre en el preu de les connexions aèries amb la península i lluitarem contra el frau de les companyies aèries amb el descompte de resident.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 1,
+   "seccion": "desplacar-nos",
+   "pagina": 2,
+   "subapartado": null,
+   "titulo": "Millorarem la connectivitat aèria durant tot l’any de Menorca i Eivissa amb Mallorca, Madrid, Barcelona i València, amb freqüències adequades, horaris útils i establirem tarifes màximes assequibles per als residents.",
+   "tituloFrase": "Millorarem la connectivitat aèria durant tot l’any de Menorca i Eivissa amb Mallorca, Madrid, Barcelona i València, amb freqüències adequades, horaris útils i establirem tarifes màximes assequibles per als residents.",
+   "texto": "Millorarem la connectivitat aèria durant tot l’any de Menorca i Eivissa amb Mallorca, Madrid, Barcelona i València, amb freqüències adequades, horaris útils i establirem tarifes màximes assequibles per als residents. En aquest sentit, donarem màxima prioritat a l’OSP entre Menorca i Barcelona, que estarà regulada per una tarifa màxima de trenta-cinc euros per als residents. L’acompanyament de menors en les rutes regulades per OSP serà gratuït.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Mallorca",
+    "Menorca",
+    "Ibiza"
+   ],
+   "cifras": [
+    "regulada per una tarifa màxima de trenta-cinc euros per als residents"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Es prohibirà la compra d’habitatges per a finalitats que no siguin l’habitatge habitual i permanent de la persona compradora, així com la prohibició absoluta de la compra de persones jurídiques amb ànim de lucre.",
+   "tituloFrase": "Es prohibirà la compra d’habitatges per a finalitats que no siguin l’habitatge habitual i permanent de la persona compradora, així com la prohibició absoluta de la compra de persones jurídiques amb ànim de lucre.",
+   "texto": "Es prohibirà la compra d’habitatges per a finalitats que no siguin l’habitatge habitual i permanent de la persona compradora, així com la prohibició absoluta de la compra de persones jurídiques amb ànim de lucre. Les cases han de ser per viure-hi, no per fer-ne negoci ni per tenir-les tancades 350 dies en l’any.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "La declaració de Zona de Mercat Residencial Tensionat serà obligatòria i automàtica una vegada un territori compleixi els paràmetres objectius establerts legalment.",
+   "tituloFrase": "La declaració de Zona de Mercat Residencial Tensionat serà obligatòria i automàtica una vegada un territori compleixi els paràmetres objectius establerts legalment.",
+   "texto": "La declaració de Zona de Mercat Residencial Tensionat serà obligatòria i automàtica una vegada un territori compleixi els paràmetres objectius establerts legalment.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Es limitarà, per llei, el preu del lloguer a zones tensionades en el 25 % de la renda neta de les llars de la secció censal, a tot estirar.",
+   "tituloFrase": "Es limitarà, per llei, el preu del lloguer a zones tensionades en el 25 % de la renda neta de les llars de la secció censal, a tot estirar.",
+   "texto": "Es limitarà, per llei, el preu del lloguer a zones tensionades en el 25 % de la renda neta de les llars de la secció censal, a tot estirar. A Palma i als municipis amb massificació turística severa, la reducció serà un 30 % major. Els contractes de lloguer seran indefinits per defecte.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Mallorca"
+   ],
+   "cifras": [
+    "limitarà, per llei, el preu del lloguer a zones tensionades en el 25 % de la renda neta"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Es crearà un escut hipotecari per protegir, de fins a 300 € al mes, les famílies de classe mitjana en què la hipoteca els suposi més del 40 % dels ingressos nets.",
+   "tituloFrase": "Es crearà un escut hipotecari per protegir, de fins a 300 € al mes, les famílies de classe mitjana en què la hipoteca els suposi més del 40 % dels ingressos nets.",
+   "texto": "Es crearà un escut hipotecari per protegir, de fins a 300 € al mes, les famílies de classe mitjana en què la hipoteca els suposi més del 40 % dels ingressos nets.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "escut hipotecari per protegir, de fins a 300 € al mes, les famílies de classe mitjana en què la hipoteca els suposi més del 40 % dels ingressos nets"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Impulsarem la cessió dels habitatges i immobles residencials de titularitat estatal, inclosos els de la SAREB i d’altres organismes públics, a les administracions competents perquè es destinin a habitatge públic de lloguer assequible i permanent, amb especial atenció a les illes amb més dificultats d'accés a l'habitatge.",
+   "tituloFrase": "Impulsarem la cessió dels habitatges i immobles residencials de titularitat estatal, inclosos els de la SAREB i d’altres organismes públics, a les administracions competents perquè es destinin a habitatge públic de lloguer assequible i permanent, amb especial atenció a les illes amb més dificultats d'accés a l'habitatge.",
+   "texto": "Impulsarem la cessió dels habitatges i immobles residencials de titularitat estatal, inclosos els de la SAREB i d’altres organismes públics, a les administracions competents perquè es destinin a habitatge públic de lloguer assequible i permanent, amb especial atenció a les illes amb més dificultats d'accés a l'habitatge.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Executarem un projecte a Son Busquets que compti amb el suport del veïnat i respecti els valors patrimonials existents, amb la garantia que tots els habitatges seran protegits.",
+   "tituloFrase": "Executarem un projecte a Son Busquets que compti amb el suport del veïnat i respecti els valors patrimonials existents, amb la garantia que tots els habitatges seran protegits.",
+   "texto": "Executarem un projecte a Son Busquets que compti amb el suport del veïnat i respecti els valors patrimonials existents, amb la garantia que tots els habitatges seran protegits. A més, les residències militars d’Eivissa i de Sant Antoni de Portmany se cediran per a habitatges i usos socials.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Ibiza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Extingirem progressivament totes les llicències d’habitatge d’ús turístic i lloguers de temporada fraudulents en zones tensionades en un termini màxim de tres anys.",
+   "tituloFrase": "Extingirem progressivament totes les llicències d’habitatge d’ús turístic i lloguers de temporada fraudulents en zones tensionades en un termini màxim de tres anys.",
+   "texto": "Extingirem progressivament totes les llicències d’habitatge d’ús turístic i lloguers de temporada fraudulents en zones tensionades en un termini màxim de tres anys. Mentrestant, els pisos turístics passaran a tributar al 21 % i s’eliminaran les deduccions a l’impost de societats i l’IRPF. Així mateix, tendran un recàrrec a l’IBI de fins al 150 %.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "tributar al 21 % i s’eliminaran les deduccions a l’impost de societats i l’IRPF. Així mateix, tendran un recàrrec a l’IBI de fins al 150 %"
+   ],
+   "plazo": "Màxim 3 anys",
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "S’eximirà de l’Impost sobre Transmissions Patrimonials de la compra del primer habitatge habitual de famílies i individus, tota vegada que s’aplicarà un recàrrec del 200 % del segon habitatge i del 1000 % a partir del tercer.",
+   "tituloFrase": "S’eximirà de l’Impost sobre Transmissions Patrimonials de la compra del primer habitatge habitual de famílies i individus, tota vegada que s’aplicarà un recàrrec del 200 % del segon habitatge i del 1000 % a partir del tercer.",
+   "texto": "S’eximirà de l’Impost sobre Transmissions Patrimonials de la compra del primer habitatge habitual de famílies i individus, tota vegada que s’aplicarà un recàrrec del 200 % del segon habitatge i del 1000 % a partir del tercer.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "recàrrec del 200 % del segon habitatge i del 1000 % a partir del tercer"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Farem de l’IBI un impost progressiu, i permetrem als ajuntaments establir recàrrecs segons el nombre d’immobles en propietat i als habitatges buits i no principals, i així combatre l’acumulació especulativa.",
+   "tituloFrase": "Farem de l’IBI un impost progressiu, i permetrem als ajuntaments establir recàrrecs segons el nombre d’immobles en propietat i als habitatges buits i no principals, i així combatre l’acumulació especulativa.",
+   "texto": "Farem de l’IBI un impost progressiu, i permetrem als ajuntaments establir recàrrecs segons el nombre d’immobles en propietat i als habitatges buits i no principals, i així combatre l’acumulació especulativa. Així mateix, es crearà un impost que desincentivi l’especulació, de forma que s’apliqui únicament sobre els propietaris de 3 o més habitatges que no facin lloguer estable i assequible. S’eliminaran els avantatges fiscals de les SOCIMIS.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 32,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Modificarem la imputació de rendes immobiliàries en l'IRPF per incrementar els trams en la seva escala progressiva i penalitzar fiscalment l'acumulació d'habitatges buits.",
+   "tituloFrase": "Modificarem la imputació de rendes immobiliàries en l'IRPF per incrementar els trams en la seva escala progressiva i penalitzar fiscalment l'acumulació d'habitatges buits.",
+   "texto": "Modificarem la imputació de rendes immobiliàries en l'IRPF per incrementar els trams en la seva escala progressiva i penalitzar fiscalment l'acumulació d'habitatges buits.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 33,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Impulsarem un pla de reforma d’habitatges existents, l’aplicació del dret de tanteig i retracte i l’expropiació dels habitatges permanentment buits.",
+   "tituloFrase": "Impulsarem un pla de reforma d’habitatges existents, l’aplicació del dret de tanteig i retracte i l’expropiació dels habitatges permanentment buits.",
+   "texto": "Impulsarem un pla de reforma d’habitatges existents, l’aplicació del dret de tanteig i retracte i l’expropiació dels habitatges permanentment buits.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Es perseguiran les clàusules abusives en contractes de lloguer, la discriminació en l’accés, amb particular atenció al racisme immobiliari.",
+   "tituloFrase": "Es perseguiran les clàusules abusives en contractes de lloguer, la discriminació en l’accés, amb particular atenció al racisme immobiliari.",
+   "texto": "Es perseguiran les clàusules abusives en contractes de lloguer, la discriminació en l’accés, amb particular atenció al racisme immobiliari. Així mateix, es prohibirà l’assetjament immobiliari i les empreses de desocupació extrajudicial.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Habitatge digne, protecció de víctimes i aturada de desnonaments.",
+   "tituloFrase": "Habitatge digne, protecció de víctimes i aturada de desnonaments.",
+   "texto": "Habitatge digne, protecció de víctimes i aturada de desnonaments.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Garantirem l'accés prioritari a l’habitatge públic i protegit per a dones víctimes de violència masclista.",
+   "tituloFrase": "Garantirem l'accés prioritari a l’habitatge públic i protegit per a dones víctimes de violència masclista.",
+   "texto": "Garantirem l'accés prioritari a l’habitatge públic i protegit per a dones víctimes de violència masclista.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "mujeres",
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 2,
+   "seccion": "cases-assequibles-i-per-viure-hi",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Prohibirem els desnonaments a famílies amb infants o adolescents sense alternativa habitacional adequada.",
+   "tituloFrase": "Prohibirem els desnonaments a famílies amb infants o adolescents sense alternativa habitacional adequada.",
+   "texto": "Prohibirem els desnonaments a famílies amb infants o adolescents sense alternativa habitacional adequada.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias",
+    "infancia"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "L’Estat deixarà de ser un agent que fomenti la massificació turística.",
+   "tituloFrase": "L’Estat deixarà de ser un agent que fomenti la massificació turística.",
+   "texto": "L’Estat deixarà de ser un agent que fomenti la massificació turística. La gestió de ports i aeroports i la política turística estatal es reorientarà per assolir una reducció de la pressió turística a les Illes Balears. Així, la planificació aeroportuària i les inversions d'AENA tendrà en compte la capacitat de càrrega territorial, ambiental i social de cada illa, i es preveu una reducció del sostre de vols i de passatgers. La modernització dels aeroports no podrà justificar, en cap cas, un augment de la capacitat operativa o del nombre de passatgers.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Aturarem les ampliacions dels aeroports, i les infraestructures existents estaran al servei de la connectivitat i dels usos dels residents, inclosos els aparcaments, que comptaran amb tarifes adaptades, com ja existeixen a Canàries.",
+   "tituloFrase": "Aturarem les ampliacions dels aeroports, i les infraestructures existents estaran al servei de la connectivitat i dels usos dels residents, inclosos els aparcaments, que comptaran amb tarifes adaptades, com ja existeixen a Canàries.",
+   "texto": "Aturarem les ampliacions dels aeroports, i les infraestructures existents estaran al servei de la connectivitat i dels usos dels residents, inclosos els aparcaments, que comptaran amb tarifes adaptades, com ja existeixen a Canàries. Es construirà la nova torre de control de l’aeroport de Menorca.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias",
+    "Menorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Aprovarem la Llei de cogestió aeroportuària del Parlament de les Illes Balears, per garantir que els aeroports són infraestructures per la connectivitat i no per la massificació turística.",
+   "tituloFrase": "Aprovarem la Llei de cogestió aeroportuària del Parlament de les Illes Balears, per garantir que els aeroports són infraestructures per la connectivitat i no per la massificació turística.",
+   "texto": "Aprovarem la Llei de cogestió aeroportuària del Parlament de les Illes Balears, per garantir que els aeroports són infraestructures per la connectivitat i no per la massificació turística.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Prohibirem els vols privats als aeroports dels territoris insulars, fonamentada en la necessària reducció d’emissions i les externalitats ambientals que provoca el transport aeri.",
+   "tituloFrase": "Prohibirem els vols privats als aeroports dels territoris insulars, fonamentada en la necessària reducció d’emissions i les externalitats ambientals que provoca el transport aeri.",
+   "texto": "Prohibirem els vols privats als aeroports dels territoris insulars, fonamentada en la necessària reducció d’emissions i les externalitats ambientals que provoca el transport aeri.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Farem que els establiments turístics tributin el tipus general d'IVA del 21%, s’eliminarà la bonificació existent d’allotjaments hotelers, allotjaments turístics amb serveis hotelers, serveis de creuers turístics, paquets de vacances marítimes i serveis recreatius de luxe.",
+   "tituloFrase": "Farem que els establiments turístics tributin el tipus general d'IVA del 21%, s’eliminarà la bonificació existent d’allotjaments hotelers, allotjaments turístics amb serveis hotelers, serveis de creuers turístics, paquets de vacances marítimes i serveis recreatius de luxe.",
+   "texto": "Farem que els establiments turístics tributin el tipus general d'IVA del 21%, s’eliminarà la bonificació existent d’allotjaments hotelers, allotjaments turístics amb serveis hotelers, serveis de creuers turístics, paquets de vacances marítimes i serveis recreatius de luxe. Així mateix, incrementarem notablement els impostos de matriculació de les embarcacions i iots de luxe.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "establiments turístics tributin el tipus general d'IVA del 21%"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Limitarem les arribades de creuers a tots els ports de les Illes Balears de titularitat estatal.",
+   "tituloFrase": "Limitarem les arribades de creuers a tots els ports de les Illes Balears de titularitat estatal.",
+   "texto": "Limitarem les arribades de creuers a tots els ports de les Illes Balears de titularitat estatal.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Revisarem la política de ports de l’Estat per acabar amb l’elitització i la massificació del mar Balear, frenarem la creació de possibles \"Airbnb\" nàutics i garantirem l’accés de la població local a la mar.",
+   "tituloFrase": "Revisarem la política de ports de l’Estat per acabar amb l’elitització i la massificació del mar Balear, frenarem la creació de possibles \"Airbnb\" nàutics i garantirem l’accés de la població local a la mar.",
+   "texto": "Revisarem la política de ports de l’Estat per acabar amb l’elitització i la massificació del mar Balear, frenarem la creació de possibles \"Airbnb\" nàutics i garantirem l’accés de la població local a la mar.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 3,
+   "seccion": "acabar-amb-la-massificacio-turistica",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Garantirem que les institucions insulars disposin dels instruments jurídics necessaris per regular i limitar l'entrada i la circulació de vehicles, d'acord amb la capacitat de càrrega de cada illa, i impulsarem la col·laboració de l'Estat amb les autoritats portuàries per fer efectives aquestes limitacions.",
+   "tituloFrase": "Garantirem que les institucions insulars disposin dels instruments jurídics necessaris per regular i limitar l'entrada i la circulació de vehicles, d'acord amb la capacitat de càrrega de cada illa, i impulsarem la col·laboració de l'Estat amb les autoritats portuàries per fer efectives aquestes limitacions.",
+   "texto": "Garantirem que les institucions insulars disposin dels instruments jurídics necessaris per regular i limitar l'entrada i la circulació de vehicles, d'acord amb la capacitat de càrrega de cada illa, i impulsarem la col·laboració de l'Estat amb les autoritats portuàries per fer efectives aquestes limitacions.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 3,
+   "seccion": "diversificacio-economica",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Incentivarem l’establiment, la creació i el creixement d’empreses en sectors estratègics, com les noves tecnologies, les energies renovables, la cultura, la indústria o el sector agroalimentari per tal de fomentar la diversificació econòmica.",
+   "tituloFrase": "Incentivarem l’establiment, la creació i el creixement d’empreses en sectors estratègics, com les noves tecnologies, les energies renovables, la cultura, la indústria o el sector agroalimentari per tal de fomentar la diversificació econòmica.",
+   "texto": "Incentivarem l’establiment, la creació i el creixement d’empreses en sectors estratègics, com les noves tecnologies, les energies renovables, la cultura, la indústria o el sector agroalimentari per tal de fomentar la diversificació econòmica. Eliminarem del Règim Especial de les Illes Balears les previsions que aprofundeixen en el monocultiu turístic, com els incentius al sector turístic.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 3,
+   "seccion": "diversificacio-economica",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Protegirem el petit comerç mitjançant la regulació i el control dels preus dels lloguers comercials.",
+   "tituloFrase": "Protegirem el petit comerç mitjançant la regulació i el control dels preus dels lloguers comercials.",
+   "texto": "Protegirem el petit comerç mitjançant la regulació i el control dels preus dels lloguers comercials. Així mateix, en garantirem la pervivència amb un suport específic que garanteixi que els centres urbans tenguin comerç tradicional i de proximitat.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 3,
+   "seccion": "diversificacio-economica",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Establirem un Fons de Capital Públic amb finançament estatal a través del qual el sector public cofinançarà i serà copropietari d’empreses, amb la finalitat de fer costat als emprenedors en els sectors estratègics per la diversificació econòmica: noves tecnologies, industrial, cultural i primari.",
+   "tituloFrase": "Establirem un Fons de Capital Públic amb finançament estatal a través del qual el sector public cofinançarà i serà copropietari d’empreses, amb la finalitat de fer costat als emprenedors en els sectors estratègics per la diversificació econòmica: noves tecnologies, industrial, cultural i primari.",
+   "texto": "Establirem un Fons de Capital Públic amb finançament estatal a través del qual el sector public cofinançarà i serà copropietari d’empreses, amb la finalitat de fer costat als emprenedors en els sectors estratègics per la diversificació econòmica: noves tecnologies, industrial, cultural i primari.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas",
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 3,
+   "seccion": "diversificacio-economica",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Crearem un fons d’inversió públic per canalitzar i retribuir l’estalvi de les famílies cap a l’impuls, manteniment i creixement d’empreses de l’economia productiva i diversificada.",
+   "tituloFrase": "Crearem un fons d’inversió públic per canalitzar i retribuir l’estalvi de les famílies cap a l’impuls, manteniment i creixement d’empreses de l’economia productiva i diversificada.",
+   "texto": "Crearem un fons d’inversió públic per canalitzar i retribuir l’estalvi de les famílies cap a l’impuls, manteniment i creixement d’empreses de l’economia productiva i diversificada.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "empresas",
+    "familias"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 3,
+   "seccion": "diversificacio-economica",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Augmentarem els recursos econòmics per desenvolupar polítiques actives d’ocupació com a eix vertebrador del canvi de model econòmic que necessiten les Illes Balears, per estimular la reconversió de treballadors cap a nous nínxols de treball i assegurant-ne la diversificació de l’economia.",
+   "tituloFrase": "Augmentarem els recursos econòmics per desenvolupar polítiques actives d’ocupació com a eix vertebrador del canvi de model econòmic que necessiten les Illes Balears, per estimular la reconversió de treballadors cap a nous nínxols de treball i assegurant-ne la diversificació de l’economia.",
+   "texto": "Augmentarem els recursos econòmics per desenvolupar polítiques actives d’ocupació com a eix vertebrador del canvi de model econòmic que necessiten les Illes Balears, per estimular la reconversió de treballadors cap a nous nínxols de treball i assegurant-ne la diversificació de l’economia.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 3,
+   "seccion": "diversificacio-economica",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Canalitzarem els sobrants de les fonts de finançament controlades per l’Estat per al foment de la diversificació i el canvi de model, a través d’un sistema bilateral i àgil.",
+   "tituloFrase": "Canalitzarem els sobrants de les fonts de finançament controlades per l’Estat per al foment de la diversificació i el canvi de model, a través d’un sistema bilateral i àgil.",
+   "texto": "Canalitzarem els sobrants de les fonts de finançament controlades per l’Estat per al foment de la diversificació i el canvi de model, a través d’un sistema bilateral i àgil.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 3,
+   "seccion": "diversificacio-economica",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Defensarem el corredor mediterrani com a àmbit d’intercanvi econòmic principal i com una infraestructura clau per millorar la competitivitat de la indústria de les Illes Balears i assegurar-ne la connexió amb Europa.",
+   "tituloFrase": "Defensarem el corredor mediterrani com a àmbit d’intercanvi econòmic principal i com una infraestructura clau per millorar la competitivitat de la indústria de les Illes Balears i assegurar-ne la connexió amb Europa.",
+   "texto": "Defensarem el corredor mediterrani com a àmbit d’intercanvi econòmic principal i com una infraestructura clau per millorar la competitivitat de la indústria de les Illes Balears i assegurar-ne la connexió amb Europa.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Assegurarem la sostenibilitat de les pesqueries de les Illes Balears, tot establint reserves de pesca exclusives per als pescadors illencs i una protecció davant els repartiments d’esforços pesquers en atenció als esforços acumulats.",
+   "tituloFrase": "Assegurarem la sostenibilitat de les pesqueries de les Illes Balears, tot establint reserves de pesca exclusives per als pescadors illencs i una protecció davant els repartiments d’esforços pesquers en atenció als esforços acumulats.",
+   "texto": "Assegurarem la sostenibilitat de les pesqueries de les Illes Balears, tot establint reserves de pesca exclusives per als pescadors illencs i una protecció davant els repartiments d’esforços pesquers en atenció als esforços acumulats.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Reclamarem un increment de la quota de pesca de la tonyina per a la flota balear de pesca.",
+   "tituloFrase": "Reclamarem un increment de la quota de pesca de la tonyina per a la flota balear de pesca.",
+   "texto": "Reclamarem un increment de la quota de pesca de la tonyina per a la flota balear de pesca.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Garantirem, per la via del Règim especial de les Illes Balears i de la nova política agraria comuna (PAC), la compensació dels costs de la insularitat per a la pagesia, amb especial atenció a la doble i triple insularitat.",
+   "tituloFrase": "Garantirem, per la via del Règim especial de les Illes Balears i de la nova política agraria comuna (PAC), la compensació dels costs de la insularitat per a la pagesia, amb especial atenció a la doble i triple insularitat.",
+   "texto": "Garantirem, per la via del Règim especial de les Illes Balears i de la nova política agraria comuna (PAC), la compensació dels costs de la insularitat per a la pagesia, amb especial atenció a la doble i triple insularitat.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Assegurarem el suport de la pagesia, la ramaderia i la pesca a l’adaptació als impactes del canvi climàtic.",
+   "tituloFrase": "Assegurarem el suport de la pagesia, la ramaderia i la pesca a l’adaptació als impactes del canvi climàtic.",
+   "texto": "Assegurarem el suport de la pagesia, la ramaderia i la pesca a l’adaptació als impactes del canvi climàtic. En particular treballarem perquè les asseguradores agràries i ramaderes tenguin en compte la realitat insular.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Aplicarem fórmules de contraprestació als pagesos i ramaders pels beneficis ambientals que generen per al conjunt de la societat, com les ajudes de Manteniment del Paisatge o les ajudes a Zones Desfavorides, fins aconseguir una renda adequada que garanteixi la pervivència de les explotacions i la igualtat d’oportunitats respecte del continent.",
+   "tituloFrase": "Aplicarem fórmules de contraprestació als pagesos i ramaders pels beneficis ambientals que generen per al conjunt de la societat, com les ajudes de Manteniment del Paisatge o les ajudes a Zones Desfavorides, fins aconseguir una renda adequada que garanteixi la pervivència de les explotacions i la igualtat d’oportunitats respecte del continent.",
+   "texto": "Aplicarem fórmules de contraprestació als pagesos i ramaders pels beneficis ambientals que generen per al conjunt de la societat, com les ajudes de Manteniment del Paisatge o les ajudes a Zones Desfavorides, fins aconseguir una renda adequada que garanteixi la pervivència de les explotacions i la igualtat d’oportunitats respecte del continent.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Garantirem que el gasoil agrícola i pesquer de les Illes Balears gaudeix del mateix tractament que als altres territoris no peninsulars.",
+   "tituloFrase": "Garantirem que el gasoil agrícola i pesquer de les Illes Balears gaudeix del mateix tractament que als altres territoris no peninsulars.",
+   "texto": "Garantirem que el gasoil agrícola i pesquer de les Illes Balears gaudeix del mateix tractament que als altres territoris no peninsulars.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Impulsarem ajudes per a processos que aportin valor afegit a processos industrials del sector agrícola, ramader i pesquer, amb especial èmfasi al suport de les cooperatives.",
+   "tituloFrase": "Impulsarem ajudes per a processos que aportin valor afegit a processos industrials del sector agrícola, ramader i pesquer, amb especial èmfasi al suport de les cooperatives.",
+   "texto": "Impulsarem ajudes per a processos que aportin valor afegit a processos industrials del sector agrícola, ramader i pesquer, amb especial èmfasi al suport de les cooperatives.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "empresas",
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 3,
+   "seccion": "agricultura-ramaderia-i-pesca",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Garantirem la reversió de Mercapalma a l’Ajuntament de Palma i el suport específic a la distribució de petits productors.",
+   "tituloFrase": "Garantirem la reversió de Mercapalma a l’Ajuntament de Palma i el suport específic a la distribució de petits productors.",
+   "texto": "Garantirem la reversió de Mercapalma a l’Ajuntament de Palma i el suport específic a la distribució de petits productors.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Mallorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 3,
+   "seccion": "energia",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Aprovarem un règim econòmic per a les energies renovables que permeti el desenvolupament d’una transició energètica a les Illes Balears, afavorint particularment el desplegament sobre cobertes i en espais antropitzats, així garantirem el suport específic a la transició energètica en illes.",
+   "tituloFrase": "Aprovarem un règim econòmic per a les energies renovables que permeti el desenvolupament d’una transició energètica a les Illes Balears, afavorint particularment el desplegament sobre cobertes i en espais antropitzats, així garantirem el suport específic a la transició energètica en illes.",
+   "texto": "Aprovarem un règim econòmic per a les energies renovables que permeti el desenvolupament d’una transició energètica a les Illes Balears, afavorint particularment el desplegament sobre cobertes i en espais antropitzats, així garantirem el suport específic a la transició energètica en illes.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 3,
+   "seccion": "energia",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Programarem la reducció progressiva de la crema de combustibles fòssils a les centrals tèrmiques de les Illes Balears, particularment les dels nuclis urbans, com les de Maó i Eivissa, i en fomentarem la hibridació amb emmagatzematge o sistemes d’energies renovables.",
+   "tituloFrase": "Programarem la reducció progressiva de la crema de combustibles fòssils a les centrals tèrmiques de les Illes Balears, particularment les dels nuclis urbans, com les de Maó i Eivissa, i en fomentarem la hibridació amb emmagatzematge o sistemes d’energies renovables.",
+   "texto": "Programarem la reducció progressiva de la crema de combustibles fòssils a les centrals tèrmiques de les Illes Balears, particularment les dels nuclis urbans, com les de Maó i Eivissa, i en fomentarem la hibridació amb emmagatzematge o sistemes d’energies renovables.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares",
+    "Menorca",
+    "Ibiza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 3,
+   "seccion": "energia",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Garantirem que els projectes de generació d'energies renovables s'ajustin a les necessitats energètiques, la capacitat de càrrega i les característiques territorials i ambientals de cada illa, per evitar instal·lacions sobredimensionades.",
+   "tituloFrase": "Garantirem que els projectes de generació d'energies renovables s'ajustin a les necessitats energètiques, la capacitat de càrrega i les característiques territorials i ambientals de cada illa, per evitar instal·lacions sobredimensionades.",
+   "texto": "Garantirem que els projectes de generació d'energies renovables s'ajustin a les necessitats energètiques, la capacitat de càrrega i les característiques territorials i ambientals de cada illa, per evitar instal·lacions sobredimensionades. En particular, defensarem que qualsevol projecte d'energia eòlica marina estigui sotmès a una avaluació rigorosa dels impactes ambientals, paisatgístics, pesquers i socials, amb participació efectiva de les institucions insulars i dels sectors afectats.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 3,
+   "seccion": "energia",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Executarem la segona interconnexió elèctrica entre Mallorca i Menorca, i impulsarem la segona entre Mallorca i Eivissa.",
+   "tituloFrase": "Executarem la segona interconnexió elèctrica entre Mallorca i Menorca, i impulsarem la segona entre Mallorca i Eivissa.",
+   "texto": "Executarem la segona interconnexió elèctrica entre Mallorca i Menorca, i impulsarem la segona entre Mallorca i Eivissa.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Mallorca",
+    "Menorca",
+    "Ibiza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 3,
+   "seccion": "energia",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Impulsarem un model energètic descentralitzat i adaptat a les necessitats de cada illa, i prioritzarem la instal·lació d'energies renovables en cobertes i espais ja transformats, l'autoconsum compartit i les comunitats energètiques.",
+   "tituloFrase": "Impulsarem un model energètic descentralitzat i adaptat a les necessitats de cada illa, i prioritzarem la instal·lació d'energies renovables en cobertes i espais ja transformats, l'autoconsum compartit i les comunitats energètiques.",
+   "texto": "Impulsarem un model energètic descentralitzat i adaptat a les necessitats de cada illa, i prioritzarem la instal·lació d'energies renovables en cobertes i espais ja transformats, l'autoconsum compartit i les comunitats energètiques. Garantirem que els nous projectes energètics respectin els valors paisatgístics i ambientals del territori i evitin instal·lacions sobredimensionades en relació amb les necessitats i la capacitat de cada illa.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 3,
+   "seccion": "energia",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Garantirem que les llars de les Illes Balears no siguin un forn a l’estiu, amb l’impuls del Pla d’adequació i eficiència energètica d’habitatges que permeti l’adequació d’habitatges, amb especial incís als de famílies vulnerables o amb dificultats per assumir-ne la reforma.",
+   "tituloFrase": "Garantirem que les llars de les Illes Balears no siguin un forn a l’estiu, amb l’impuls del Pla d’adequació i eficiència energètica d’habitatges que permeti l’adequació d’habitatges, amb especial incís als de famílies vulnerables o amb dificultats per assumir-ne la reforma.",
+   "texto": "Garantirem que les llars de les Illes Balears no siguin un forn a l’estiu, amb l’impuls del Pla d’adequació i eficiència energètica d’habitatges que permeti l’adequació d’habitatges, amb especial incís als de famílies vulnerables o amb dificultats per assumir-ne la reforma.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 67,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Sense renunciar a un sistema de finançament singular per a les Illes Balears basat en la plena capacitat fiscal i tributària i una relació amb l'Estat assimilable al concert econòmic, impulsarem un nou model de finançament autonòmic que garanteixi el manteniment i la millora de l’estat de benestar, i que tengui en compte el creixement de la població, la insularitat i la pluriinsularitat, el diferencial del cost de la vida i la població flotant, i que n’asseguri el compliment del principi d’ordinalitat.",
+   "tituloFrase": "Sense renunciar a un sistema de finançament singular per a les Illes Balears basat en la plena capacitat fiscal i tributària i una relació amb l'Estat assimilable al concert econòmic, impulsarem un nou model de finançament autonòmic que garanteixi el manteniment i la millora de l’estat de benestar, i que tengui en compte el creixement de la població, la insularitat i la pluriinsularitat, el diferencial del cost de la vida i la població flotant, i que n’asseguri el compliment del principi d’ordinalitat.",
+   "texto": "Sense renunciar a un sistema de finançament singular per a les Illes Balears basat en la plena capacitat fiscal i tributària i una relació amb l'Estat assimilable al concert econòmic, impulsarem un nou model de finançament autonòmic que garanteixi el manteniment i la millora de l’estat de benestar, i que tengui en compte el creixement de la població, la insularitat i la pluriinsularitat, el diferencial del cost de la vida i la població flotant, i que n’asseguri el compliment del principi d’ordinalitat. Així mateix, aprovarem una condonació del deute injustament contret amb l’Estat, basat en un estudi objectiu de la seva relació amb l’infrafinançament històric que han patit les Illes Balears.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Vetlarem pel compliment de tots els aspectes del Règim Econòmic i Fiscal i en negociarem una millora efectiva com a veritable eina de compensació permanent de la insularitat i la pluriinsularitat i no de simple igualació amb les comunitats peninsulars o de desviació d’altres inversions territorialitzades, de manera que s’estableixi una compensació adequada de tots els costos que genera la insularitat i la pluriinsularitat; un suport suficient al transport, tant de mercaderies com de persones; es prevegin els incentius i projectes enfocats cap a la transició energètica, la diversificació econòmica i la sostenibilitat a l'arxipèlag, i contengui les necessàries mesures fiscals compensatòries tant per a la ciutadania com per a les empreses illenques.",
+   "tituloFrase": "Vetlarem pel compliment de tots els aspectes del Règim Econòmic i Fiscal i en negociarem una millora efectiva com a veritable eina de compensació permanent de la insularitat i la pluriinsularitat i no de simple igualació amb les comunitats peninsulars o de desviació d’altres inversions territorialitzades, de manera que s’estableixi una compensació adequada de tots els costos que genera la insularitat i la pluriinsularitat; un suport suficient al transport, tant de mercaderies com de persones; es prevegin els incentius i projectes enfocats cap a la transició energètica, la diversificació econòmica i la sostenibilitat a l'arxipèlag, i contengui les necessàries mesures fiscals compensatòries tant per a la ciutadania com per a les empreses illenques.",
+   "texto": "Vetlarem pel compliment de tots els aspectes del Règim Econòmic i Fiscal i en negociarem una millora efectiva com a veritable eina de compensació permanent de la insularitat i la pluriinsularitat i no de simple igualació amb les comunitats peninsulars o de desviació d’altres inversions territorialitzades, de manera que s’estableixi una compensació adequada de tots els costos que genera la insularitat i la pluriinsularitat; un suport suficient al transport, tant de mercaderies com de persones; es prevegin els incentius i projectes enfocats cap a la transició energètica, la diversificació econòmica i la sostenibilitat a l'arxipèlag, i contengui les necessàries mesures fiscals compensatòries tant per a la ciutadania com per a les empreses illenques. Aquest Règim Especial tendrà caràcter indefinit.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Garantirem que el sistema de finançament autonòmic i el Règim Especial de les Illes Balears tenguin en compte les necessitats específiques de cada illa, i compensin els sobrecosts de la doble i triple insularitat, el cost de la vida i la pressió de la població flotant.",
+   "tituloFrase": "Garantirem que el sistema de finançament autonòmic i el Règim Especial de les Illes Balears tenguin en compte les necessitats específiques de cada illa, i compensin els sobrecosts de la doble i triple insularitat, el cost de la vida i la pressió de la població flotant.",
+   "texto": "Garantirem que el sistema de finançament autonòmic i el Règim Especial de les Illes Balears tenguin en compte les necessitats específiques de cada illa, i compensin els sobrecosts de la doble i triple insularitat, el cost de la vida i la pressió de la població flotant. Impulsarem mecanismes que assegurin una distribució justa dels recursos i de les inversions estatals entre les diferents illes, amb atenció especial als sobrecosts de la doble i triple insularitat, per garantir uns serveis públics de qualitat i les mateixes oportunitats a tota la ciutadania, independentment de l'illa on visqui.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Impulsarem un pla específic d'inversions de l'Estat per garantir la disponibilitat i la qualitat de l'aigua a les Illes Balears.",
+   "tituloFrase": "Impulsarem un pla específic d'inversions de l'Estat per garantir la disponibilitat i la qualitat de l'aigua a les Illes Balears.",
+   "texto": "Impulsarem un pla específic d'inversions de l'Estat per garantir la disponibilitat i la qualitat de l'aigua a les Illes Balears. En prioritzarem la reducció de fuites, la modernització de les xarxes de distribució, la reutilització d'aigües depurades i la protecció dels aqüífers. Aquest pla també haurà de promoure l'estalvi d'aigua i reduir-ne els consums excessius, especialment en les activitats de major demanda hídrica.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Reforçarem l’autonomia local i garantirem un sistema de finançament estable per les entitats locals, amb inclusió d’una major participació dels municipis en els tributs de l’Estat i una millora de les regles financeres que se’ls apliquen.",
+   "tituloFrase": "Reforçarem l’autonomia local i garantirem un sistema de finançament estable per les entitats locals, amb inclusió d’una major participació dels municipis en els tributs de l’Estat i una millora de les regles financeres que se’ls apliquen.",
+   "texto": "Reforçarem l’autonomia local i garantirem un sistema de finançament estable per les entitats locals, amb inclusió d’una major participació dels municipis en els tributs de l’Estat i una millora de les regles financeres que se’ls apliquen.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Incorporarem el fet insular en els criteris de distribució dels fons europeus gestionats per l’Estat.",
+   "tituloFrase": "Incorporarem el fet insular en els criteris de distribució dels fons europeus gestionats per l’Estat.",
+   "texto": "Incorporarem el fet insular en els criteris de distribució dels fons europeus gestionats per l’Estat.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Aprovarem que l’Estat es faci càrrec del plus d’insularitat dels ajuntaments i consells de les Illes Balears, de la mateixa manera que ho fa per als seus treballadors.",
+   "tituloFrase": "Aprovarem que l’Estat es faci càrrec del plus d’insularitat dels ajuntaments i consells de les Illes Balears, de la mateixa manera que ho fa per als seus treballadors.",
+   "texto": "Aprovarem que l’Estat es faci càrrec del plus d’insularitat dels ajuntaments i consells de les Illes Balears, de la mateixa manera que ho fa per als seus treballadors.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 3,
+   "seccion": "financament-i-inversions",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Vetlarem perquè les mesures estatals davant de situacions de crisi sempre tenguin en compte l’especial situació de les Illes, a través d’una taula bilateral pròpia per a cada paquet d’ajudes que s’aprovi.",
+   "tituloFrase": "Vetlarem perquè les mesures estatals davant de situacions de crisi sempre tenguin en compte l’especial situació de les Illes, a través d’una taula bilateral pròpia per a cada paquet d’ajudes que s’aprovi.",
+   "texto": "Vetlarem perquè les mesures estatals davant de situacions de crisi sempre tenguin en compte l’especial situació de les Illes, a través d’una taula bilateral pròpia per a cada paquet d’ajudes que s’aprovi.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 4,
+   "seccion": "serveis-publics-i-nous-drets",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Garantirem la dotació i ocupació de les places de personal funcionari estatal a les Illes Balears actualment vacants, reforçant el complement de residència per compensar el sobrecost de la vida i l’habitatge a les Illes Balears.",
+   "tituloFrase": "Garantirem la dotació i ocupació de les places de personal funcionari estatal a les Illes Balears actualment vacants, reforçant el complement de residència per compensar el sobrecost de la vida i l’habitatge a les Illes Balears.",
+   "texto": "Garantirem la dotació i ocupació de les places de personal funcionari estatal a les Illes Balears actualment vacants, reforçant el complement de residència per compensar el sobrecost de la vida i l’habitatge a les Illes Balears. El complement serà igual per a totes les categories i computarem retroactivament l’antiguitat a l’efecte dels triennis de permanència al territori.",
+   "oculta": false,
+   "categoria": "administracion",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 4,
+   "seccion": "serveis-publics-i-nous-drets",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Millorarem els equipaments dels serveis públics estatals, amb la constitució d’un Jutjat de Primera Instància a Formentera, la construcció dels nous jutjats de Ciutadella i la ciutat de la justícia a Palma, així com el centre de distribució postal de Menorca.",
+   "tituloFrase": "Millorarem els equipaments dels serveis públics estatals, amb la constitució d’un Jutjat de Primera Instància a Formentera, la construcció dels nous jutjats de Ciutadella i la ciutat de la justícia a Palma, així com el centre de distribució postal de Menorca.",
+   "texto": "Millorarem els equipaments dels serveis públics estatals, amb la constitució d’un Jutjat de Primera Instància a Formentera, la construcció dels nous jutjats de Ciutadella i la ciutat de la justícia a Palma, així com el centre de distribució postal de Menorca.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Mallorca",
+    "Menorca",
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 4,
+   "seccion": "serveis-publics-i-nous-drets",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Ampliarem la protecció per dol perinatal i seqüeles: inscripció al Registre Civil de la pèrdua gestacional des de la setmana 8 de gestació, permís per a l'altre progenitor després d'una mort fetal des dels 180 dies i ampliació del permís de maternitat per complicacions físiques després del part, mèdicament acreditades.",
+   "tituloFrase": "Ampliarem la protecció per dol perinatal i seqüeles: inscripció al Registre Civil de la pèrdua gestacional des de la setmana 8 de gestació, permís per a l'altre progenitor després d'una mort fetal des dels 180 dies i ampliació del permís de maternitat per complicacions físiques després del part, mèdicament acreditades.",
+   "texto": "Ampliarem la protecció per dol perinatal i seqüeles: inscripció al Registre Civil de la pèrdua gestacional des de la setmana 8 de gestació, permís per a l'altre progenitor després d'una mort fetal des dels 180 dies i ampliació del permís de maternitat per complicacions físiques després del part, mèdicament acreditades.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 4,
+   "seccion": "serveis-publics-i-nous-drets",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Desplegarem pressupostàriament el Sistema d'Atenció a la Dependència per elevar la inversió pública del 0,8 % a l'1,7 % del PIB l'any 2030, amb una aportació estatal directa mínima del 50 %, amb un coeficient de correcció per insularitat en el finançament de les places i dels serveis.",
+   "tituloFrase": "Desplegarem pressupostàriament el Sistema d'Atenció a la Dependència per elevar la inversió pública del 0,8 % a l'1,7 % del PIB l'any 2030, amb una aportació estatal directa mínima del 50 %, amb un coeficient de correcció per insularitat en el finançament de les places i dels serveis.",
+   "texto": "Desplegarem pressupostàriament el Sistema d'Atenció a la Dependència per elevar la inversió pública del 0,8 % a l'1,7 % del PIB l'any 2030, amb una aportació estatal directa mínima del 50 %, amb un coeficient de correcció per insularitat en el finançament de les places i dels serveis.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "elevar la inversió pública del 0,8 % a l'1,7 % del PIB l'any 2030, amb una aportació estatal directa mínima del 50 %"
+   ],
+   "plazo": "Any 2030",
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 4,
+   "seccion": "educacio-publica",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Revisarem els imports de les transferències en matèria d’educació, per tal de garantir que cobreixen el cost real de la prestació del servei.",
+   "tituloFrase": "Revisarem els imports de les transferències en matèria d’educació, per tal de garantir que cobreixen el cost real de la prestació del servei.",
+   "texto": "Revisarem els imports de les transferències en matèria d’educació, per tal de garantir que cobreixen el cost real de la prestació del servei.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 4,
+   "seccion": "educacio-publica",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Farem que l’Estat es corresponsabilitzi en la universalització de l'educació de 0 a 3 anys, amb un finançament extraordinari a les Comunitats autònomes, amb garantia de places públiques gratuïtes.",
+   "tituloFrase": "Farem que l’Estat es corresponsabilitzi en la universalització de l'educació de 0 a 3 anys, amb un finançament extraordinari a les Comunitats autònomes, amb garantia de places públiques gratuïtes.",
+   "texto": "Farem que l’Estat es corresponsabilitzi en la universalització de l'educació de 0 a 3 anys, amb un finançament extraordinari a les Comunitats autònomes, amb garantia de places públiques gratuïtes. Aquest finançament haurà de tenir en compte el sobrecost de mantenir escoletes públiques a municipis petits i a les illes menors, així com les condicions laborals de les educadores, especialment en els llocs on el cost de la vida és superior a la resta de l’Estat.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 4,
+   "seccion": "educacio-publica",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Impulsarem un procés progressiu d’eliminació del sistema de concerts educatius, amb la integració d'aquests centres privats a la xarxa pública, amb línies de finançament específiques per a les Comunitats Autònomes per convertir-los en centres públics.",
+   "tituloFrase": "Impulsarem un procés progressiu d’eliminació del sistema de concerts educatius, amb la integració d'aquests centres privats a la xarxa pública, amb línies de finançament específiques per a les Comunitats Autònomes per convertir-los en centres públics.",
+   "texto": "Impulsarem un procés progressiu d’eliminació del sistema de concerts educatius, amb la integració d'aquests centres privats a la xarxa pública, amb línies de finançament específiques per a les Comunitats Autònomes per convertir-los en centres públics. Durant el període de transició, es prohibiran de forma immediata les quotes obligatòries als centres sostinguts amb fons públics, amb sancions en cas d'incompliment.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": "De forma immediata",
+   "deroga": null
+  },
+  {
+   "n": 82,
+   "bloque": 4,
+   "seccion": "educacio-publica",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Promourem un complement d'insularitat a les beques estatals d’estudis, residència i de desplaçament per a estudiants universitaris, que atengui el cost real de la vida a les Illes Balears.",
+   "tituloFrase": "Promourem un complement d'insularitat a les beques estatals d’estudis, residència i de desplaçament per a estudiants universitaris, que atengui el cost real de la vida a les Illes Balears.",
+   "texto": "Promourem un complement d'insularitat a les beques estatals d’estudis, residència i de desplaçament per a estudiants universitaris, que atengui el cost real de la vida a les Illes Balears.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 83,
+   "bloque": 4,
+   "seccion": "educacio-publica",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Impulsarem el finançament de les universitats públiques fins a assolir l’1,5% del PIB, prohibirem el finançament públic a universitats privades, i n’endurirem les condicions per crear-ne.",
+   "tituloFrase": "Impulsarem el finançament de les universitats públiques fins a assolir l’1,5% del PIB, prohibirem el finançament públic a universitats privades, i n’endurirem les condicions per crear-ne.",
+   "texto": "Impulsarem el finançament de les universitats públiques fins a assolir l’1,5% del PIB, prohibirem el finançament públic a universitats privades, i n’endurirem les condicions per crear-ne. En particular, crearem un finançament estatal per ampliar l'oferta de graus i màsters de la Universitat de les Illes Balears.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [
+    "finançament de les universitats públiques fins a assolir l’1,5% del PIB"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 4,
+   "seccion": "educacio-publica",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Impulsarem la construcció d’un sistema universitari i de recerca balear a través de la transferència de les competències, les infraestructures i els recursos de la UNED i de les entitats dependents del CSIC, així com de la gestió, convocatòria i resolució de beques d’ajut a l’estudi, tant les universitàries com les no universitàries.",
+   "tituloFrase": "Impulsarem la construcció d’un sistema universitari i de recerca balear a través de la transferència de les competències, les infraestructures i els recursos de la UNED i de les entitats dependents del CSIC, així com de la gestió, convocatòria i resolució de beques d’ajut a l’estudi, tant les universitàries com les no universitàries.",
+   "texto": "Impulsarem la construcció d’un sistema universitari i de recerca balear a través de la transferència de les competències, les infraestructures i els recursos de la UNED i de les entitats dependents del CSIC, així com de la gestió, convocatòria i resolució de beques d’ajut a l’estudi, tant les universitàries com les no universitàries.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 4,
+   "seccion": "sanitat",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Incrementarem el finançament de la sanitat, amb una atenció especial als increments dels complements salarials per insularitat, així com mesures per fidelitzar el personal sanitari a les Illes Balears.",
+   "tituloFrase": "Incrementarem el finançament de la sanitat, amb una atenció especial als increments dels complements salarials per insularitat, així com mesures per fidelitzar el personal sanitari a les Illes Balears.",
+   "texto": "Incrementarem el finançament de la sanitat, amb una atenció especial als increments dels complements salarials per insularitat, així com mesures per fidelitzar el personal sanitari a les Illes Balears.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 4,
+   "seccion": "sanitat",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Recalcularem el Fons de Cohesió Sanitària i el finançament sanitari perquè tenguin en compte la població flotant, amb una compensació específica per als territoris amb molta pressió turística; l'assistència sanitària a turistes internacionals s'haurà de liquidar a les comunitats autònomes de manera ràpida i completa.",
+   "tituloFrase": "Recalcularem el Fons de Cohesió Sanitària i el finançament sanitari perquè tenguin en compte la població flotant, amb una compensació específica per als territoris amb molta pressió turística; l'assistència sanitària a turistes internacionals s'haurà de liquidar a les comunitats autònomes de manera ràpida i completa.",
+   "texto": "Recalcularem el Fons de Cohesió Sanitària i el finançament sanitari perquè tenguin en compte la població flotant, amb una compensació específica per als territoris amb molta pressió turística; l'assistència sanitària a turistes internacionals s'haurà de liquidar a les comunitats autònomes de manera ràpida i completa.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 4,
+   "seccion": "sanitat",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Impulsarem un pla estatal per garantir especialitats bàsiques al Mateu Orfila (Menorca), a Can Misses (Eivissa) i a l'Hospital de Formentera, perquè els pacients no hagin de desplaçar-se a Son Espases.",
+   "tituloFrase": "Impulsarem un pla estatal per garantir especialitats bàsiques al Mateu Orfila (Menorca), a Can Misses (Eivissa) i a l'Hospital de Formentera, perquè els pacients no hagin de desplaçar-se a Son Espases.",
+   "texto": "Impulsarem un pla estatal per garantir especialitats bàsiques al Mateu Orfila (Menorca), a Can Misses (Eivissa) i a l'Hospital de Formentera, perquè els pacients no hagin de desplaçar-se a Son Espases.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Menorca",
+    "Ibiza",
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 88,
+   "bloque": 4,
+   "seccion": "sanitat",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Promourem la transferència de fons a la comunitat autònoma per a un sistema digne de compensació dels desplaçaments i de l'allotjament dels pacients i dels seus acompanyants, tant entre illes com entre les illes i la Península.",
+   "tituloFrase": "Promourem la transferència de fons a la comunitat autònoma per a un sistema digne de compensació dels desplaçaments i de l'allotjament dels pacients i dels seus acompanyants, tant entre illes com entre les illes i la Península.",
+   "texto": "Promourem la transferència de fons a la comunitat autònoma per a un sistema digne de compensació dels desplaçaments i de l'allotjament dels pacients i dels seus acompanyants, tant entre illes com entre les illes i la Península.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 4,
+   "seccion": "sanitat",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Avançarem cap a un marc legislatiu estatal que reconegui la salut mental com un dret universal i garanteixi una atenció pública, integral, comunitària i lliure de discriminacions.",
+   "tituloFrase": "Avançarem cap a un marc legislatiu estatal que reconegui la salut mental com un dret universal i garanteixi una atenció pública, integral, comunitària i lliure de discriminacions.",
+   "texto": "Avançarem cap a un marc legislatiu estatal que reconegui la salut mental com un dret universal i garanteixi una atenció pública, integral, comunitària i lliure de discriminacions. En particular, crearem un fons específic per a la Xarxa de Salut Mental Comunitària i un augment de les ràtios de professionals fins a un mínim de 10 per cada 100.000 habitants; en el cas dels arxipèlags, aquesta ràtio s’ha de garantir a cada illa i tenir en compte la població flotant que suporten.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [
+    "augment de les ràtios de professionals fins a un mínim de 10 per cada 100.000 habitants"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 4,
+   "seccion": "sistema-de-dependencia-i-cures",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Incrementarem la inversió pública en dependència, i garantirem el cofinançament de l’Estat del 50 % de la inversió en dependència.",
+   "tituloFrase": "Incrementarem la inversió pública en dependència, i garantirem el cofinançament de l’Estat del 50 % de la inversió en dependència.",
+   "texto": "Incrementarem la inversió pública en dependència, i garantirem el cofinançament de l’Estat del 50 % de la inversió en dependència. Així, s’elevarà la inversió fins a l'1,7% del PIB i es limitarà el copagament màxim al 30 % dels ingressos, eximint-ne les rendes baixes.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "limitarà el copagament màxim al 30 % dels ingressos"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 4,
+   "seccion": "sistema-de-dependencia-i-cures",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Duplicarem les hores d'ajuda a domicili i el reconeixement legal del dret al relleu per a persones cuidadores.",
+   "tituloFrase": "Duplicarem les hores d'ajuda a domicili i el reconeixement legal del dret al relleu per a persones cuidadores.",
+   "texto": "Duplicarem les hores d'ajuda a domicili i el reconeixement legal del dret al relleu per a persones cuidadores.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 4,
+   "seccion": "eradicacio-de-la-pobresa",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Impulsarem el traspàs de l'Ingrés Mínim Vital a les comunitats autònomes, amb capacitat per adaptar-ne la quantia al cost de la vida de cada territori, especialment en territoris insulars i tensionats com les Illes Balears.",
+   "tituloFrase": "Impulsarem el traspàs de l'Ingrés Mínim Vital a les comunitats autònomes, amb capacitat per adaptar-ne la quantia al cost de la vida de cada territori, especialment en territoris insulars i tensionats com les Illes Balears.",
+   "texto": "Impulsarem el traspàs de l'Ingrés Mínim Vital a les comunitats autònomes, amb capacitat per adaptar-ne la quantia al cost de la vida de cada territori, especialment en territoris insulars i tensionats com les Illes Balears.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 4,
+   "seccion": "eradicacio-de-la-pobresa",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Transformarem l’ingrés mínim vital per tal que sigui concedit d'ofici mitjançant interconnexió automatitzada de dades fiscals i de la Seguretat Social (i eliminar el laberint burocràtic).",
+   "tituloFrase": "Transformarem l’ingrés mínim vital per tal que sigui concedit d'ofici mitjançant interconnexió automatitzada de dades fiscals i de la Seguretat Social (i eliminar el laberint burocràtic).",
+   "texto": "Transformarem l’ingrés mínim vital per tal que sigui concedit d'ofici mitjançant interconnexió automatitzada de dades fiscals i de la Seguretat Social (i eliminar el laberint burocràtic). Així mateix, s’ampliarà als joves de 18 a 30 anys sense exigir requisits desproporcionats d'emancipació prèvia, per garantir una base de renda equivalent al 40% de la mitjana d'ingressos estatals, unit a itineraris d'inclusió.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "garantir una base de renda equivalent al 40% de la mitjana d'ingressos estatals"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 4,
+   "seccion": "eradicacio-de-la-pobresa",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Treballarem per a l’eradicació de la pobresa severa i reformarem l'IMV com a complement salarial.",
+   "tituloFrase": "Treballarem per a l’eradicació de la pobresa severa i reformarem l'IMV com a complement salarial.",
+   "texto": "Treballarem per a l’eradicació de la pobresa severa i reformarem l'IMV com a complement salarial. Incrementarem de forma gradual la renda garantida de l'IMV per assegurar que cap llar visqui per sota del 40% de la renda mitjana, i reformarem la prestació com a complement salarial progressiu, per evitar la pèrdua abrupta de l'ajut en trobar feina.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Augmentarem el pressupost a polítiques d’igualtat, destinant-hi, almanco un 5% del pressupost no financer de l’Estat (superant el 4,4 % actual).",
+   "tituloFrase": "Augmentarem el pressupost a polítiques d’igualtat, destinant-hi, almanco un 5% del pressupost no financer de l’Estat (superant el 4,4 % actual).",
+   "texto": "Augmentarem el pressupost a polítiques d’igualtat, destinant-hi, almanco un 5% del pressupost no financer de l’Estat (superant el 4,4 % actual). En particular, s’incrementarà un 10 % la dotació contra les violències masclistes i blindarem les partides estructurals del Pacte d’Estat contra la Violència de Gènere per assegurar-ne l’estabilitat. Així, el finançament per a l’abordatge de les violències masclistes a les Illes Balears es veurà augmentat.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [
+    "almanco un 5% del pressupost no financer de l’Estat (superant el 4,4 % actual). En particular, s’incrementarà un 10 % la dotació contra les violències masclistes"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 96,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Crearem més Jutjats de Violència sobre la Dona i dotarem les Illes Balears amb els recursos adequats de personal i per crear dos centres de crisi suplementaris, un a Menorca i l’altre a Eivissa i Formentera).",
+   "tituloFrase": "Crearem més Jutjats de Violència sobre la Dona i dotarem les Illes Balears amb els recursos adequats de personal i per crear dos centres de crisi suplementaris, un a Menorca i l’altre a Eivissa i Formentera).",
+   "texto": "Crearem més Jutjats de Violència sobre la Dona i dotarem les Illes Balears amb els recursos adequats de personal i per crear dos centres de crisi suplementaris, un a Menorca i l’altre a Eivissa i Formentera).",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Baleares",
+    "Menorca",
+    "Ibiza",
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 97,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Ampliarem legalment la definició de violència vicària i reforçarem el sistema VioGen incorporant una avaluació del risc específica per a filles i fills de les víctimes.",
+   "tituloFrase": "Ampliarem legalment la definició de violència vicària i reforçarem el sistema VioGen incorporant una avaluació del risc específica per a filles i fills de les víctimes.",
+   "texto": "Ampliarem legalment la definició de violència vicària i reforçarem el sistema VioGen incorporant una avaluació del risc específica per a filles i fills de les víctimes.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 98,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Reformarem la Llei de Llibertat Sexual (Només Sí és Sí), per tal de posar de nou el consentiment lliure i explícit en el centre de la llei com a únic delimitador de l’agressió sexual (i eliminar la distinció anterior amb l’abús) i anul·lar la contrarreforma aprovada pel PSOE i el PP.",
+   "tituloFrase": "Reformarem la Llei de Llibertat Sexual (Només Sí és Sí), per tal de posar de nou el consentiment lliure i explícit en el centre de la llei com a únic delimitador de l’agressió sexual (i eliminar la distinció anterior amb l’abús) i anul·lar la contrarreforma aprovada pel PSOE i el PP.",
+   "texto": "Reformarem la Llei de Llibertat Sexual (Només Sí és Sí), per tal de posar de nou el consentiment lliure i explícit en el centre de la llei com a únic delimitador de l’agressió sexual (i eliminar la distinció anterior amb l’abús) i anul·lar la contrarreforma aprovada pel PSOE i el PP. Així, la violència i la intimidació es consideraran agreujants de la conducta i no requisits del tipus bàsic.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 99,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Promourem el blindatge constitucional de la Llei de salut sexual i reproductiva i de la interrupció voluntària de l’embaràs.",
+   "tituloFrase": "Promourem el blindatge constitucional de la Llei de salut sexual i reproductiva i de la interrupció voluntària de l’embaràs.",
+   "texto": "Promourem el blindatge constitucional de la Llei de salut sexual i reproductiva i de la interrupció voluntària de l’embaràs.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 100,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Lluitarem contra la trata i l’explotació sexual amb la reforma de la Llei d’estrangeria per tal de garantir que el permís de residència, l’atenció i la protecció a les víctimes de trata en situació irregular no depenguin de la seva col·laboració amb les autoritats policials.",
+   "tituloFrase": "Lluitarem contra la trata i l’explotació sexual amb la reforma de la Llei d’estrangeria per tal de garantir que el permís de residència, l’atenció i la protecció a les víctimes de trata en situació irregular no depenguin de la seva col·laboració amb les autoritats policials.",
+   "texto": "Lluitarem contra la trata i l’explotació sexual amb la reforma de la Llei d’estrangeria per tal de garantir que el permís de residència, l’atenció i la protecció a les víctimes de trata en situació irregular no depenguin de la seva col·laboració amb les autoritats policials.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes",
+    "agentes",
+    "victimas"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 101,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Combatrem la violència digital i per intel·ligència artificial: reforma integral del Codi penal, Dret civil i lleis de protecció per sancionar i prevenir les noves formes de violència digital masclista generades per les TIC i la intel·ligència artificial.",
+   "tituloFrase": "Combatrem la violència digital i per intel·ligència artificial: reforma integral del Codi penal, Dret civil i lleis de protecció per sancionar i prevenir les noves formes de violència digital masclista generades per les TIC i la intel·ligència artificial.",
+   "texto": "Combatrem la violència digital i per intel·ligència artificial: reforma integral del Codi penal, Dret civil i lleis de protecció per sancionar i prevenir les noves formes de violència digital masclista generades per les TIC i la intel·ligència artificial.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 102,
+   "bloque": 4,
+   "seccion": "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Impulsarem el desplegament efectiu de la Llei Trans, el reconeixement de les persones no binàries i la protecció enfront de la violència intragènere.",
+   "tituloFrase": "Impulsarem el desplegament efectiu de la Llei Trans, el reconeixement de les persones no binàries i la protecció enfront de la violència intragènere.",
+   "texto": "Impulsarem el desplegament efectiu de la Llei Trans, el reconeixement de les persones no binàries i la protecció enfront de la violència intragènere. Així mateix, dotarem de finançament les comunitats autònomes que tenen llei autonòmica de garantia de les persones transexuals, com les Illes Balears, per tal de facilitar el desplegament de la norma i l’aplicació de les polítiques corresponents.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 103,
+   "bloque": 4,
+   "seccion": "joventut",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Impulsarem una reforma de la Llei electoral que garanteixi el dret al sufragi actiu i passiu a partir dels 16 anys.",
+   "tituloFrase": "Impulsarem una reforma de la Llei electoral que garanteixi el dret al sufragi actiu i passiu a partir dels 16 anys.",
+   "texto": "Impulsarem una reforma de la Llei electoral que garanteixi el dret al sufragi actiu i passiu a partir dels 16 anys.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "dret al sufragi actiu i passiu a partir dels 16 anys"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 104,
+   "bloque": 4,
+   "seccion": "joventut",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reforçarem la formació professional, la formació dual i els programes d'inserció laboral juvenil, adaptant l'oferta formativa a les necessitats de cada illa i als nous sectors productius.",
+   "tituloFrase": "Reforçarem la formació professional, la formació dual i els programes d'inserció laboral juvenil, adaptant l'oferta formativa a les necessitats de cada illa i als nous sectors productius.",
+   "texto": "Reforçarem la formació professional, la formació dual i els programes d'inserció laboral juvenil, adaptant l'oferta formativa a les necessitats de cada illa i als nous sectors productius.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 105,
+   "bloque": 4,
+   "seccion": "joventut",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Impulsarem programes de qualificació i requalificació professional per facilitar l'accés del jovent a feines estables i de qualitat, i afavorir el retorn del talent format fora de les Illes Balears.",
+   "tituloFrase": "Impulsarem programes de qualificació i requalificació professional per facilitar l'accés del jovent a feines estables i de qualitat, i afavorir el retorn del talent format fora de les Illes Balears.",
+   "texto": "Impulsarem programes de qualificació i requalificació professional per facilitar l'accés del jovent a feines estables i de qualitat, i afavorir el retorn del talent format fora de les Illes Balears. En el cas de les pràctiques, garantirem que totes siguin remunerades i que afavoreixin la contractació posterior.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 106,
+   "bloque": 4,
+   "seccion": "joventut",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Fomentarem el retorn del jovent format fora de les Illes Balears, amb programes de retorn específics, particularment en el cas de les illes de Menorca, Eivissa i Formentera.",
+   "tituloFrase": "Fomentarem el retorn del jovent format fora de les Illes Balears, amb programes de retorn específics, particularment en el cas de les illes de Menorca, Eivissa i Formentera.",
+   "texto": "Fomentarem el retorn del jovent format fora de les Illes Balears, amb programes de retorn específics, particularment en el cas de les illes de Menorca, Eivissa i Formentera.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Baleares",
+    "Menorca",
+    "Ibiza",
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 107,
+   "bloque": 4,
+   "seccion": "joventut",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Impulsarem la deducció de fins a 1.000 euros de l’IRPF per als menors de 35 anys que visquin de lloguer.",
+   "tituloFrase": "Impulsarem la deducció de fins a 1.000 euros de l’IRPF per als menors de 35 anys que visquin de lloguer.",
+   "texto": "Impulsarem la deducció de fins a 1.000 euros de l’IRPF per als menors de 35 anys que visquin de lloguer.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "deducció de fins a 1.000 euros de l’IRPF per als menors de 35 anys que visquin de lloguer"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 108,
+   "bloque": 4,
+   "seccion": "joventut",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reforçarem el Pla d’Acció en Salut Mental i els programes de prevenció del suïcidi, en especial vers la gent jove, així com augmentar les places de psicòleg intern resident.",
+   "tituloFrase": "Reforçarem el Pla d’Acció en Salut Mental i els programes de prevenció del suïcidi, en especial vers la gent jove, així com augmentar les places de psicòleg intern resident.",
+   "texto": "Reforçarem el Pla d’Acció en Salut Mental i els programes de prevenció del suïcidi, en especial vers la gent jove, així com augmentar les places de psicòleg intern resident. Així mateix, finançarem la contractació estructural de professionals de salut mental (psicòlegs clínics, educadors i treballadors socials) en escoles, centres comunitaris i barris vulnerables.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "jovenes",
+    "pacientes"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 109,
+   "bloque": 4,
+   "seccion": "joventut",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Prohibirem per llei les plataformes i xarxes socials a menors de 16 anys sense verificació d'edat respectuosa amb la privacitat, i posarem límits automàtics de temps de pantalla als centres educatius.",
+   "tituloFrase": "Prohibirem per llei les plataformes i xarxes socials a menors de 16 anys sense verificació d'edat respectuosa amb la privacitat, i posarem límits automàtics de temps de pantalla als centres educatius.",
+   "texto": "Prohibirem per llei les plataformes i xarxes socials a menors de 16 anys sense verificació d'edat respectuosa amb la privacitat, i posarem límits automàtics de temps de pantalla als centres educatius.",
+   "oculta": false,
+   "categoria": "familia",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [
+    "plataformes i xarxes socials a menors de 16 anys sense verificació"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 110,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Garantirem la vigilància efectiva de la Mar Balear, reduirem els impactes nocius pel medi ambient, i acabarem amb la sensació de descontrol que existeix cada estiu.",
+   "tituloFrase": "Garantirem la vigilància efectiva de la Mar Balear, reduirem els impactes nocius pel medi ambient, i acabarem amb la sensació de descontrol que existeix cada estiu.",
+   "texto": "Garantirem la vigilància efectiva de la Mar Balear, reduirem els impactes nocius pel medi ambient, i acabarem amb la sensació de descontrol que existeix cada estiu.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 111,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Garantirem finançament real i suficient per preservar el medi ambient i els recursos naturals a les Illes Balears, amb una atenció específica a l’adaptació al canvi climàtic, la suficiència hídrica i el cicle de l’aigua i la protecció dels espais naturals protegits.",
+   "tituloFrase": "Garantirem finançament real i suficient per preservar el medi ambient i els recursos naturals a les Illes Balears, amb una atenció específica a l’adaptació al canvi climàtic, la suficiència hídrica i el cicle de l’aigua i la protecció dels espais naturals protegits.",
+   "texto": "Garantirem finançament real i suficient per preservar el medi ambient i els recursos naturals a les Illes Balears, amb una atenció específica a l’adaptació al canvi climàtic, la suficiència hídrica i el cicle de l’aigua i la protecció dels espais naturals protegits.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 112,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Ampliarem els espais marins protegits, ammb la creació de la Reserva Marina de Tramuntana, el Parc Nacional de les muntanyes del canal de Mallorca, la reserva marina a la zona exterior de Tagomago i els illots de Ponent d’Eivissa i Formentera i a la zona de cria de catxalots del nord de Menorca.",
+   "tituloFrase": "Ampliarem els espais marins protegits, ammb la creació de la Reserva Marina de Tramuntana, el Parc Nacional de les muntanyes del canal de Mallorca, la reserva marina a la zona exterior de Tagomago i els illots de Ponent d’Eivissa i Formentera i a la zona de cria de catxalots del nord de Menorca.",
+   "texto": "Ampliarem els espais marins protegits, ammb la creació de la Reserva Marina de Tramuntana, el Parc Nacional de les muntanyes del canal de Mallorca, la reserva marina a la zona exterior de Tagomago i els illots de Ponent d’Eivissa i Formentera i a la zona de cria de catxalots del nord de Menorca.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Mallorca",
+    "Menorca",
+    "Ibiza",
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 113,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Assegurarem la vigilància i la gestió dels espais marins protegits de la mar balear.",
+   "tituloFrase": "Assegurarem la vigilància i la gestió dels espais marins protegits de la mar balear.",
+   "texto": "Assegurarem la vigilància i la gestió dels espais marins protegits de la mar balear.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 114,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Transferirem a la Comunitat Autònoma els terrenys propietat del Ministeri de Defensa d’interès ambiental.",
+   "tituloFrase": "Transferirem a la Comunitat Autònoma els terrenys propietat del Ministeri de Defensa d’interès ambiental.",
+   "texto": "Transferirem a la Comunitat Autònoma els terrenys propietat del Ministeri de Defensa d’interès ambiental.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 115,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Proposarem un Pacte per la Mar entre l’Estat i el Govern de les Illes Balears, per definir les competències en la gestió de l’àmbit marí.",
+   "tituloFrase": "Proposarem un Pacte per la Mar entre l’Estat i el Govern de les Illes Balears, per definir les competències en la gestió de l’àmbit marí.",
+   "texto": "Proposarem un Pacte per la Mar entre l’Estat i el Govern de les Illes Balears, per definir les competències en la gestió de l’àmbit marí. Reclamarem el finançament necessari per invertir en la protecció del medi marí i proposarem que s’hi destini, almenys, tot el que es recapti a través del cànon d’ocupació i aprofitament del domini públic maritimoterrestre.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 116,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Assegurarem el finançament estatal per al trasllat de residus de Formentera a Eivissa, tal com preveu la Llei de residus.",
+   "tituloFrase": "Assegurarem el finançament estatal per al trasllat de residus de Formentera a Eivissa, tal com preveu la Llei de residus.",
+   "texto": "Assegurarem el finançament estatal per al trasllat de residus de Formentera a Eivissa, tal com preveu la Llei de residus.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Ibiza",
+    "Formentera"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 117,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Impulsarem un programa d’adaptació de la costa i del litoral al canvi climàtic, que en garanteixi la preservació a llarg termini, i en garantirem el finançament estatal.",
+   "tituloFrase": "Impulsarem un programa d’adaptació de la costa i del litoral al canvi climàtic, que en garanteixi la preservació a llarg termini, i en garantirem el finançament estatal.",
+   "texto": "Impulsarem un programa d’adaptació de la costa i del litoral al canvi climàtic, que en garanteixi la preservació a llarg termini, i en garantirem el finançament estatal. La gestió del litoral s’encaminarà a la preservació i a evitar agressions al medi terrestre i marítim.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 118,
+   "bloque": 5,
+   "seccion": "medi-ambient-i-territori",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "En el marc de la coherència de polítiques impulsarem el consum responsable des d'una perspectiva de justícia ecosocial, suficiència i respecte als límits planetaris, i promourem la reducció del consum innecessari (decreixement), el comerç just, l'economia social i solidària, les finances ètiques i una compra pública responsable que incorpori criteris socials, laborals i ambientals.",
+   "tituloFrase": "En el marc de la coherència de polítiques impulsarem el consum responsable des d'una perspectiva de justícia ecosocial, suficiència i respecte als límits planetaris, i promourem la reducció del consum innecessari (decreixement), el comerç just, l'economia social i solidària, les finances ètiques i una compra pública responsable que incorpori criteris socials, laborals i ambientals.",
+   "texto": "En el marc de la coherència de polítiques impulsarem el consum responsable des d'una perspectiva de justícia ecosocial, suficiència i respecte als límits planetaris, i promourem la reducció del consum innecessari (decreixement), el comerç just, l'economia social i solidària, les finances ètiques i una compra pública responsable que incorpori criteris socials, laborals i ambientals.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 119,
+   "bloque": 5,
+   "seccion": "autogovern",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reclamarem la transferència de les competències de justícia, execució i gestió penitenciària i d’immigració, avançant en l’autogovern, amb la gestió del repartiment competencial des d’una perspectiva insular i amb vocació d’assumir el màxim sostre competencial.",
+   "tituloFrase": "Reclamarem la transferència de les competències de justícia, execució i gestió penitenciària i d’immigració, avançant en l’autogovern, amb la gestió del repartiment competencial des d’una perspectiva insular i amb vocació d’assumir el màxim sostre competencial.",
+   "texto": "Reclamarem la transferència de les competències de justícia, execució i gestió penitenciària i d’immigració, avançant en l’autogovern, amb la gestió del repartiment competencial des d’una perspectiva insular i amb vocació d’assumir el màxim sostre competencial.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 120,
+   "bloque": 5,
+   "seccion": "autogovern",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Treballarem per al reconeixement de la plurinacionalitat confederal de l’Estat espanyol, el dret a l’autodeterminació dels pobles i la defensa de la república feminista com a forma de govern.",
+   "tituloFrase": "Treballarem per al reconeixement de la plurinacionalitat confederal de l’Estat espanyol, el dret a l’autodeterminació dels pobles i la defensa de la república feminista com a forma de govern.",
+   "texto": "Treballarem per al reconeixement de la plurinacionalitat confederal de l’Estat espanyol, el dret a l’autodeterminació dels pobles i la defensa de la república feminista com a forma de govern.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 121,
+   "bloque": 5,
+   "seccion": "autogovern",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Transferirem les propietats en desús i les residències destinades a usos vacacionals del Ministeri de Defensa a la Comunitat Autònoma per decidir-ne l’ús social que es necessiti.",
+   "tituloFrase": "Transferirem les propietats en desús i les residències destinades a usos vacacionals del Ministeri de Defensa a la Comunitat Autònoma per decidir-ne l’ús social que es necessiti.",
+   "texto": "Transferirem les propietats en desús i les residències destinades a usos vacacionals del Ministeri de Defensa a la Comunitat Autònoma per decidir-ne l’ús social que es necessiti. Així mateix, impulsarem la transferència dels clubs esportius militars d’es Fortí i Torre d’en Pau a l’Institut Municipal d’Esports de Palma i de la Casa del Mar del Port de Sóller a l’Ajuntament de Sóller per part de la Tresoreria de la Seguretat Social.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Mallorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 122,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Promourem l’oficialitat del català a la Unió Europea a través de les iniciatives diplomàtiques, polítiques i institucionals que siguin necessàries.",
+   "tituloFrase": "Promourem l’oficialitat del català a la Unió Europea a través de les iniciatives diplomàtiques, polítiques i institucionals que siguin necessàries.",
+   "texto": "Promourem l’oficialitat del català a la Unió Europea a través de les iniciatives diplomàtiques, polítiques i institucionals que siguin necessàries. El reconeixement del caràcter plurilingüe de l’Estat també ha de tenir el seu reflex en l’àmbit europeu.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 123,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Aprovarem una llei de llengües que reconegui com a llengües oficials totes les llengües de l’Estat espanyol, admetent així la realitat plurilingüe de l’Estat.",
+   "tituloFrase": "Aprovarem una llei de llengües que reconegui com a llengües oficials totes les llengües de l’Estat espanyol, admetent així la realitat plurilingüe de l’Estat.",
+   "texto": "Aprovarem una llei de llengües que reconegui com a llengües oficials totes les llengües de l’Estat espanyol, admetent així la realitat plurilingüe de l’Estat. Aquesta llei permetrà adreçar-se i relacionar-se en català a l'Administració General de l'Estat i ser atès en aquesta llengua, tant presencialment com per via telefònica i telemàtica, i procurarà que tots els treballadors de l’Administració General de l’Estat destinats a les Balears acreditin el coneixement de la llengua catalana, amb un pla específic de capacitació i garantia dels drets lingüístics específicament als àmbits de la Justícia i de les forces i dels cossos de seguretat de l’Estat. Aquesta Llei ha de preveure que els contractes, les concessions, les subvencions i els serveis públics de titularitat o competència estatal incorporin, quan es prestin en territoris amb llengua oficial pròpia, les garanties lingüístiques necessàries per assegurar l'atenció i la informació en català, impedint tota discriminació per l’ús del català en la relació amb l’Estat.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 124,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Reformarem la normativa estatal de protecció dels consumidors per assegurar que els ciutadans puguin rebre en català la informació, els contractes, les factures, les instruccions, els serveis d’atenció al client i els procediments de reclamació dels serveis subjectes a regulació estatal.",
+   "tituloFrase": "Reformarem la normativa estatal de protecció dels consumidors per assegurar que els ciutadans puguin rebre en català la informació, els contractes, les factures, les instruccions, els serveis d’atenció al client i els procediments de reclamació dels serveis subjectes a regulació estatal.",
+   "texto": "Reformarem la normativa estatal de protecció dels consumidors per assegurar que els ciutadans puguin rebre en català la informació, els contractes, les factures, les instruccions, els serveis d’atenció al client i els procediments de reclamació dels serveis subjectes a regulació estatal.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 125,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Ampliarem la possibilitat d’emprar el català, tal com s’ha fet al Congrés, al Senat.",
+   "tituloFrase": "Ampliarem la possibilitat d’emprar el català, tal com s’ha fet al Congrés, al Senat.",
+   "texto": "Ampliarem la possibilitat d’emprar el català, tal com s’ha fet al Congrés, al Senat. A més, farem possible un funcionament plurilingüe dels òrgans constitucionals i de control, com el Tribunal Constitucional, el Consell d'Estat, el Tribunal de Comptes i el Defensor del Poble, entre d'altres.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 126,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Impulsarem un programa d’aprenentatge del català (i les altres llengües oficials) a l’empresa privada, i incentivarem que durant sis mesos els treballadors puguin dedicar una hora al dia de la seva jornada laboral a aprendre la llengua.",
+   "tituloFrase": "Impulsarem un programa d’aprenentatge del català (i les altres llengües oficials) a l’empresa privada, i incentivarem que durant sis mesos els treballadors puguin dedicar una hora al dia de la seva jornada laboral a aprendre la llengua.",
+   "texto": "Impulsarem un programa d’aprenentatge del català (i les altres llengües oficials) a l’empresa privada, i incentivarem que durant sis mesos els treballadors puguin dedicar una hora al dia de la seva jornada laboral a aprendre la llengua.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "durant sis mesos els treballadors puguin dedicar una hora al dia de la seva jornada laboral a aprendre la llengua"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 127,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Blindarem una inversió pressupostària relacionada amb la llengua catalana que, sobre la base del nombre de parlants de cada llengua dins les fronteres de l’Estat, sigui proporcional a la destinada a la llengua castellana i les seves institucions, tot garantint el suport a la producció cultural en llengua catalana.",
+   "tituloFrase": "Blindarem una inversió pressupostària relacionada amb la llengua catalana que, sobre la base del nombre de parlants de cada llengua dins les fronteres de l’Estat, sigui proporcional a la destinada a la llengua castellana i les seves institucions, tot garantint el suport a la producció cultural en llengua catalana.",
+   "texto": "Blindarem una inversió pressupostària relacionada amb la llengua catalana que, sobre la base del nombre de parlants de cada llengua dins les fronteres de l’Estat, sigui proporcional a la destinada a la llengua castellana i les seves institucions, tot garantint el suport a la producció cultural en llengua catalana.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 128,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Farem que Radiotelevisió Espanyola, com a entitat pública i juntament amb agències de propietat estatal com EFE, enforteixin el seu compromís amb la normalització lingüística mitjançant l’ampliació d’hores d’emissió en català en desconnexió a les Illes Balears i amb actituds lingüísticament responsables.",
+   "tituloFrase": "Farem que Radiotelevisió Espanyola, com a entitat pública i juntament amb agències de propietat estatal com EFE, enforteixin el seu compromís amb la normalització lingüística mitjançant l’ampliació d’hores d’emissió en català en desconnexió a les Illes Balears i amb actituds lingüísticament responsables.",
+   "texto": "Farem que Radiotelevisió Espanyola, com a entitat pública i juntament amb agències de propietat estatal com EFE, enforteixin el seu compromís amb la normalització lingüística mitjançant l’ampliació d’hores d’emissió en català en desconnexió a les Illes Balears i amb actituds lingüísticament responsables. A més, farem que el nou canal 2Cat i qualsevol altre canal públic en llengua catalana que depengui de RTVE arribi amb normalitat a les Illes Balears i estigui dissenyat en continguts per abastar tot l'àmbit lingüístic catalanoparlant.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 129,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Eliminarem els obstacles administratius, tècnics o regulatoris que dificultin la recepció recíproca dels mitjans de comunicació audiovisuals públics dels territoris de parla catalana.",
+   "tituloFrase": "Eliminarem els obstacles administratius, tècnics o regulatoris que dificultin la recepció recíproca dels mitjans de comunicació audiovisuals públics dels territoris de parla catalana.",
+   "texto": "Eliminarem els obstacles administratius, tècnics o regulatoris que dificultin la recepció recíproca dels mitjans de comunicació audiovisuals públics dels territoris de parla catalana.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 130,
+   "bloque": 5,
+   "seccion": "el-catala-llengua-de-ple-dret",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Promourem mesures perquè les televisions, les ràdios i les plataformes audiovisuals que operen a l’Estat assegurin una presència suficient i efectiva del català.",
+   "tituloFrase": "Promourem mesures perquè les televisions, les ràdios i les plataformes audiovisuals que operen a l’Estat assegurin una presència suficient i efectiva del català.",
+   "texto": "Promourem mesures perquè les televisions, les ràdios i les plataformes audiovisuals que operen a l’Estat assegurin una presència suficient i efectiva del català. Aquestes mesures han d’incloure especialment els continguts infantils i juvenils, el cinema, les sèries, els documentals i els nous serveis digitals i de streaming.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 131,
+   "bloque": 5,
+   "seccion": "cultura",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Impulsarem un increment de les inversions per protegir el patrimoni cultural de les Illes Balears.",
+   "tituloFrase": "Impulsarem un increment de les inversions per protegir el patrimoni cultural de les Illes Balears.",
+   "texto": "Impulsarem un increment de les inversions per protegir el patrimoni cultural de les Illes Balears. En particular, establirem una línia estable de finançament estatal per a la conservació, la recerca, la gestió i la difusió de Menorca Talaiòtica, reconeguda com a Patrimoni Mundial per la UNESCO, i en garantirem els recursos necessaris per preservar aquest patrimoni i fer-lo accessible a la ciutadania.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Baleares",
+    "Menorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 132,
+   "bloque": 5,
+   "seccion": "cultura",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Garantirem l’obertura en bones condicions del Museu Arqueològic d’Eivissa, amb la dotació dels recursos suficients.",
+   "tituloFrase": "Garantirem l’obertura en bones condicions del Museu Arqueològic d’Eivissa, amb la dotació dels recursos suficients.",
+   "texto": "Garantirem l’obertura en bones condicions del Museu Arqueològic d’Eivissa, amb la dotació dels recursos suficients.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Ibiza"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 133,
+   "bloque": 5,
+   "seccion": "cultura",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Promourem el retorn del patrimoni històric de les Illes Balears dipositat a museus, arxius i col·leccions públics estatals centralitzats, i també del patrimoni d’especialitat rellevància que està en mans privades a fora de les Illes Balears per la inacció multisecular de l’Estat a l’hora de preservar-lo i protegir-lo.",
+   "tituloFrase": "Promourem el retorn del patrimoni històric de les Illes Balears dipositat a museus, arxius i col·leccions públics estatals centralitzats, i també del patrimoni d’especialitat rellevància que està en mans privades a fora de les Illes Balears per la inacció multisecular de l’Estat a l’hora de preservar-lo i protegir-lo.",
+   "texto": "Promourem el retorn del patrimoni històric de les Illes Balears dipositat a museus, arxius i col·leccions públics estatals centralitzats, i també del patrimoni d’especialitat rellevància que està en mans privades a fora de les Illes Balears per la inacció multisecular de l’Estat a l’hora de preservar-lo i protegir-lo.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 134,
+   "bloque": 5,
+   "seccion": "cultura",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Incorporarem el fet insular a totes les polítiques culturals estatals, amb suport específic al català i a la cultura pròpia de les Balears davant la turistificació.",
+   "tituloFrase": "Incorporarem el fet insular a totes les polítiques culturals estatals, amb suport específic al català i a la cultura pròpia de les Balears davant la turistificació.",
+   "texto": "Incorporarem el fet insular a totes les polítiques culturals estatals, amb suport específic al català i a la cultura pròpia de les Balears davant la turistificació.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 135,
+   "bloque": 5,
+   "seccion": "en-defensa-de-la-democracia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Derogarem la Llei mordassa i impulsarem mesures per la democratització real de les estructures de l’Estat: cossos policials i justícia.",
+   "tituloFrase": "Derogarem la Llei mordassa i impulsarem mesures per la democratització real de les estructures de l’Estat: cossos policials i justícia.",
+   "texto": "Derogarem la Llei mordassa i impulsarem mesures per la democratització real de les estructures de l’Estat: cossos policials i justícia.",
+   "oculta": false,
+   "categoria": "seguridad",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Llei mordassa"
+  },
+  {
+   "n": 136,
+   "bloque": 5,
+   "seccion": "en-defensa-de-la-democracia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Elaborarem la Llei d’integritat pública, que tanqui la via d’ocultació del poder econòmic.",
+   "tituloFrase": "Elaborarem la Llei d’integritat pública, que tanqui la via d’ocultació del poder econòmic.",
+   "texto": "Elaborarem la Llei d’integritat pública, que tanqui la via d’ocultació del poder econòmic.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 137,
+   "bloque": 5,
+   "seccion": "en-defensa-de-la-democracia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Revisarem els Acords de 1979 amb la Santa Seu, i també amb els de les altres confessions religioses, amb inclusió de la legislació de privilegi que se’n deriva.",
+   "tituloFrase": "Revisarem els Acords de 1979 amb la Santa Seu, i també amb els de les altres confessions religioses, amb inclusió de la legislació de privilegi que se’n deriva.",
+   "texto": "Revisarem els Acords de 1979 amb la Santa Seu, i també amb els de les altres confessions religioses, amb inclusió de la legislació de privilegi que se’n deriva.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 138,
+   "bloque": 5,
+   "seccion": "en-defensa-de-la-democracia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Acabarem amb tots els vestigis d’enaltiment de la dictadura franquista, com el monòlit feixista de s’Esplanada de Maó o el de la Feixina a Palma.",
+   "tituloFrase": "Acabarem amb tots els vestigis d’enaltiment de la dictadura franquista, com el monòlit feixista de s’Esplanada de Maó o el de la Feixina a Palma.",
+   "texto": "Acabarem amb tots els vestigis d’enaltiment de la dictadura franquista, com el monòlit feixista de s’Esplanada de Maó o el de la Feixina a Palma.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Mallorca",
+    "Menorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 139,
+   "bloque": 5,
+   "seccion": "en-defensa-de-la-democracia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Retornarem els béns requisats per l’Estat durant la guerra civil als hereus, com la casa d’Emili Darder a Palma.",
+   "tituloFrase": "Retornarem els béns requisats per l’Estat durant la guerra civil als hereus, com la casa d’Emili Darder a Palma.",
+   "texto": "Retornarem els béns requisats per l’Estat durant la guerra civil als hereus, com la casa d’Emili Darder a Palma.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Mallorca"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 140,
+   "bloque": 5,
+   "seccion": "en-defensa-de-la-democracia",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Transferirem al Govern de les Illes Balears espais emblemàtics per a la memòria democràtica, com el fortí d’Illetes.",
+   "tituloFrase": "Transferirem al Govern de les Illes Balears espais emblemàtics per a la memòria democràtica, com el fortí d’Illetes.",
+   "texto": "Transferirem al Govern de les Illes Balears espais emblemàtics per a la memòria democràtica, com el fortí d’Illetes.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 141,
+   "bloque": 5,
+   "seccion": "migracions-i-antiracisme",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Aprovarem una Llei integral contra el racisme i un Pacte social i polític contra els discursos d’odi cap a les persones migrants o refugiades.",
+   "tituloFrase": "Aprovarem una Llei integral contra el racisme i un Pacte social i polític contra els discursos d’odi cap a les persones migrants o refugiades.",
+   "texto": "Aprovarem una Llei integral contra el racisme i un Pacte social i polític contra els discursos d’odi cap a les persones migrants o refugiades. Dotarem de finançament les Illes Balears per impulsar un pacte per unes illes antiracistes i inclusives. Fins a la correctament dotada transferència a les Illes Balears en compliment de l'Estatut d'Autonomia, s’incrementaran els recursos econòmics i humans de l’oficina d’estrangeria i s’acabarà amb els sistemes opacs d’atorgament de cites, i establirem un sistema garantista i eficient de gestió dels tràmits.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 142,
+   "bloque": 5,
+   "seccion": "migracions-i-antiracisme",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Exigirem que l’Estat reconegui oficialment la ruta Algèria-Balears d'immigració i aprovi un Pla Estatal per a la Mediterrània Occidental, amb pressupost propi i plurianual, amb participació i cobertura per part de la Unió Europea.",
+   "tituloFrase": "Exigirem que l’Estat reconegui oficialment la ruta Algèria-Balears d'immigració i aprovi un Pla Estatal per a la Mediterrània Occidental, amb pressupost propi i plurianual, amb participació i cobertura per part de la Unió Europea.",
+   "texto": "Exigirem que l’Estat reconegui oficialment la ruta Algèria-Balears d'immigració i aprovi un Pla Estatal per a la Mediterrània Occidental, amb pressupost propi i plurianual, amb participació i cobertura per part de la Unió Europea. Aquest reconeixement ha de tenir com a prioritat la prevenció, la seguretat de les persones i la garantia dels drets humans i de la dignitat humana. Volem més mitjans permanents de Salvament Marítim a les Illes, sistemes de detecció que permetin el rescats a temps i un protocol d’identificació de les víctimes i d’atenció a les famílies. De la mateixa manera cal una acollida digna i finançada al 100 % per l’Estat, també la dels infants i adolescents que arriben sols, amb atenció específica a la situació de Formentera.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "familias",
+    "infancia",
+    "inmigrantes",
+    "victimas"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Unión Europea",
+    "Formentera",
+    "Argelia"
+   ],
+   "cifras": [
+    "acollida digna i finançada al 100 % per l’Estat"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 143,
+   "bloque": 5,
+   "seccion": "migracions-i-antiracisme",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Eliminarem les traves administratives per a l'accés efectiu a drets mitjançant un empadronament flexible, garantia de comptes bancaris i agilització de l'homologació de títols.",
+   "tituloFrase": "Eliminarem les traves administratives per a l'accés efectiu a drets mitjançant un empadronament flexible, garantia de comptes bancaris i agilització de l'homologació de títols.",
+   "texto": "Eliminarem les traves administratives per a l'accés efectiu a drets mitjançant un empadronament flexible, garantia de comptes bancaris i agilització de l'homologació de títols.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 144,
+   "bloque": 5,
+   "seccion": "migracions-i-antiracisme",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Aplicarem el Pacte Europeu de Migració i Asil amb el vessant més garantista.",
+   "tituloFrase": "Aplicarem el Pacte Europeu de Migració i Asil amb el vessant més garantista.",
+   "texto": "Aplicarem el Pacte Europeu de Migració i Asil amb el vessant més garantista. En el cas de la infància, l’interès superior del menor tendrà primacia absoluta. L’edat es determinarà segons estàndards internacionals i se n’avaluarà de forma contínua la vulnerabilitat i assignació de representació legal a la infància no acompanyada des del primer moment. Assegurarem el dret a la reagrupació familiar.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [
+    "infancia",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 145,
+   "bloque": 5,
+   "seccion": "migracions-i-antiracisme",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Suprimirem la llei Beckham, que permet a les persones que arribin a l’Estat des de l’estranger tributar com a no residents durant 6 anys, fins a la meitat en concepte d’IRPF i sense tributar pels rendiments patrimonials a l’estranger.",
+   "tituloFrase": "Suprimirem la llei Beckham, que permet a les persones que arribin a l’Estat des de l’estranger tributar com a no residents durant 6 anys, fins a la meitat en concepte d’IRPF i sense tributar pels rendiments patrimonials a l’estranger.",
+   "texto": "Suprimirem la llei Beckham, que permet a les persones que arribin a l’Estat des de l’estranger tributar com a no residents durant 6 anys, fins a la meitat en concepte d’IRPF i sense tributar pels rendiments patrimonials a l’estranger.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 146,
+   "bloque": 5,
+   "seccion": "migracions-i-antiracisme",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Defensarem el dret de sufragi actiu i passiu de les persones migrants en les eleccions municipals.",
+   "tituloFrase": "Defensarem el dret de sufragi actiu i passiu de les persones migrants en les eleccions municipals.",
+   "texto": "Defensarem el dret de sufragi actiu i passiu de les persones migrants en les eleccions municipals.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 147,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Reorientarem la política exterior cap al Veïnatge Sud i impulsarem una Força Mediterrània d'intervenció climàtica i protecció civil, enfocada en l’extinció d'incendis, rescat a la mar i lluita contra la contaminació.",
+   "tituloFrase": "Reorientarem la política exterior cap al Veïnatge Sud i impulsarem una Força Mediterrània d'intervenció climàtica i protecció civil, enfocada en l’extinció d'incendis, rescat a la mar i lluita contra la contaminació.",
+   "texto": "Reorientarem la política exterior cap al Veïnatge Sud i impulsarem una Força Mediterrània d'intervenció climàtica i protecció civil, enfocada en l’extinció d'incendis, rescat a la mar i lluita contra la contaminació.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 148,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Reduirem la despesa militar i rebutjarem l’objectiu de destinar el 5 % del PIB a despesa militar, i impulsarem una reducció efectiva de les partides destinades a defensa, amb la reorientació d’aquests fons a la consecució de la pau.",
+   "tituloFrase": "Reduirem la despesa militar i rebutjarem l’objectiu de destinar el 5 % del PIB a despesa militar, i impulsarem una reducció efectiva de les partides destinades a defensa, amb la reorientació d’aquests fons a la consecució de la pau.",
+   "texto": "Reduirem la despesa militar i rebutjarem l’objectiu de destinar el 5 % del PIB a despesa militar, i impulsarem una reducció efectiva de les partides destinades a defensa, amb la reorientació d’aquests fons a la consecució de la pau. En aquest sentit, donarem suport i promourem la sortida de l'Estat espanyol de l'OTAN i apostarem per una política autònoma de defensa, coordinada a escala europea i mediterrània. En tot cas, reclamarem que ni els ports i ni el territori de les Illes Balears no estiguin al servei de les operacions de l’Aliança.",
+   "oculta": false,
+   "categoria": "defensa",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España",
+    "Baleares"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 149,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Defensarem fermament la fi del genocidi palestí.",
+   "tituloFrase": "Defensarem fermament la fi del genocidi palestí.",
+   "texto": "Defensarem fermament la fi del genocidi palestí. Així, aprovarem una llei específica d’embargament integral d’armes a Israel, sense cap excepció, i fixarem l’embargament mentre segueixi l’ocupació il·legal o el risc de genocidi. Es tancaran vies de trànsit militar per aeroports, ports, espai aeri i bases militars i es prohibirà la contractació pública o la cooperació militar/tecnològica amb la indústria de defensa israeliana (incloses les transferències indirectes a través de països tercers). En paral·lel, donarem suport a la justícia internacional i a l’acció multilateral per Palestina, donarem suport políticament i financerament a la Cort Penal Internacional i a la Cort Internacional de Justícia en la persecució dels crims de genocidi i lesa humanitat. Impulsarem en l’àmbit europeu la suspensió de l’Acord d’Associació UE - Israel i treballarem perquè la totalitat dels Estats membres reconeguin formalment l’Estat de Palestina.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Unión Europea",
+    "Palestina",
+    "Israel"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 150,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Donarem suport explícit a l’autodeterminació del Sàhara occidental i a un referèndum organitzat per l’ONU.",
+   "tituloFrase": "Donarem suport explícit a l’autodeterminació del Sàhara occidental i a un referèndum organitzat per l’ONU.",
+   "texto": "Donarem suport explícit a l’autodeterminació del Sàhara occidental i a un referèndum organitzat per l’ONU. Retirarem formalment el suport governamental al pla d’autonomia marroquí per reprendre la posició fixada pel dret internacional. Defensarem el dret incondicional a l’autodeterminació del poble sahrauí mitjançant un referèndum lliure supervisat per les Nacions Unides. Així mateix, donarem compliment estricte de les sentències del TJUE sobre el Sàhara Occidental, en particular la prohibició d’aplicar acords comercials, pesquers o de qualsevol índole entre la UE i Marroc al territori del Sàhara Occidental sense el consentiment exprés del seu poble. Votarem en contra d’acords comercials en el Consell de la UE que incloguin el territori sahrauí; l’Estat espanyol aplicarà en les duanes i contractacions la diferenciació territorial entre Marroc i el Sàhara Occidental i defensarà un acord de pesca limitat de forma exclusiva a aigües estrictament marroquines.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "España",
+    "Unión Europea",
+    "Sáhara Occidental"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 151,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Exigirem que el Ministeri d’Afers Exteriors tengui un rol actiu en la resolució de disputes estratègiques (com ara el Sàhara Occidental, Palestina, Colòmbia, Haití, Ucraïna o la regió del Sahel) en un pla global de consecució de la pau, de consolidació del respecte als drets humans i de promoció de la democràcia.",
+   "tituloFrase": "Exigirem que el Ministeri d’Afers Exteriors tengui un rol actiu en la resolució de disputes estratègiques (com ara el Sàhara Occidental, Palestina, Colòmbia, Haití, Ucraïna o la regió del Sahel) en un pla global de consecució de la pau, de consolidació del respecte als drets humans i de promoció de la democràcia.",
+   "texto": "Exigirem que el Ministeri d’Afers Exteriors tengui un rol actiu en la resolució de disputes estratègiques (com ara el Sàhara Occidental, Palestina, Colòmbia, Haití, Ucraïna o la regió del Sahel) en un pla global de consecució de la pau, de consolidació del respecte als drets humans i de promoció de la democràcia.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [
+    "Palestina",
+    "Sáhara Occidental"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 152,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Incrementarem els recursos per a la cooperació internacional transformadora i l’educació per a la transformació social i la ciutadania global, destinant-hi el 0,7 % del PIB.",
+   "tituloFrase": "Incrementarem els recursos per a la cooperació internacional transformadora i l’educació per a la transformació social i la ciutadania global, destinant-hi el 0,7 % del PIB.",
+   "texto": "Incrementarem els recursos per a la cooperació internacional transformadora i l’educació per a la transformació social i la ciutadania global, destinant-hi el 0,7 % del PIB. Aquest sistema de cooperació afavorirà els projectes i polítiques que prioritzin la perspectiva de gènere, antirracista, decolonial, crítica amb el cisheteropatriarcat, antimilitarista i contrària a les dinàmiques extractivistes. La política de cooperació no cercarà en cap cas retorns en forma de beneficis financers o comercials ni es dedicarà a enfortir les polítiques de privatització en els països receptors.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "destinant-hi el 0,7 % del PIB"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 153,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Impulsarem l'Educació per a la Transformació Social i la Ciutadania Global des d'un enfocament feminista, ecosocial i decolonial, amb la promoció del pensament crític, la solidaritat i el compromís amb la justícia global",
+   "tituloFrase": "Impulsarem l'Educació per a la Transformació Social i la Ciutadania Global des d'un enfocament feminista, ecosocial i decolonial, amb la promoció del pensament crític, la solidaritat i el compromís amb la justícia global",
+   "texto": "Impulsarem l'Educació per a la Transformació Social i la Ciutadania Global des d'un enfocament feminista, ecosocial i decolonial, amb la promoció del pensament crític, la solidaritat i el compromís amb la justícia global",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 154,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Prioritzarem una cooperació internacional que reconegui i enforteixi el protagonisme de les ONGD i les organitzacions populars de base, feministes i de dones dels territoris del Sud Global, amb respecte a la seva autonomia i amb la promoció de relacions horitzontals de solidaritat i justícia global.",
+   "tituloFrase": "Prioritzarem una cooperació internacional que reconegui i enforteixi el protagonisme de les ONGD i les organitzacions populars de base, feministes i de dones dels territoris del Sud Global, amb respecte a la seva autonomia i amb la promoció de relacions horitzontals de solidaritat i justícia global.",
+   "texto": "Prioritzarem una cooperació internacional que reconegui i enforteixi el protagonisme de les ONGD i les organitzacions populars de base, feministes i de dones dels territoris del Sud Global, amb respecte a la seva autonomia i amb la promoció de relacions horitzontals de solidaritat i justícia global.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 155,
+   "bloque": 5,
+   "seccion": "pau-solidaritat-i-europa",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Facilitarem el paper de la cooperació descentralitzada com expressió de la voluntat de solidaritat de la nostra societat, i eliminarem les traves de la Llei 27/2013, de racionalització i sostenibilitat de l’Administració locals (LRSAL).",
+   "tituloFrase": "Facilitarem el paper de la cooperació descentralitzada com expressió de la voluntat de solidaritat de la nostra societat, i eliminarem les traves de la Llei 27/2013, de racionalització i sostenibilitat de l’Administració locals (LRSAL).",
+   "texto": "Facilitarem el paper de la cooperació descentralitzada com expressió de la voluntat de solidaritat de la nostra societat, i eliminarem les traves de la Llei 27/2013, de racionalització i sostenibilitat de l’Administració locals (LRSAL).",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 156,
+   "bloque": 5,
+   "seccion": "drets-dels-animals",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Lluitarem per l’eradicació de la tauromàquia.",
+   "tituloFrase": "Lluitarem per l’eradicació de la tauromàquia.",
+   "texto": "Lluitarem per l’eradicació de la tauromàquia. Derogarem la Llei 18/2013, que va declarar la tauromàquia patrimoni cultural. Prohibirem l’entrada de menors a les corregudes de bous. S’eliminaran qualsevol tipus de subvencions a la tauromàquia. S’acabaran la resta d’esdeveniments taurins.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Llei 18/2013 (tauromàquia)"
+  },
+  {
+   "n": 157,
+   "bloque": 5,
+   "seccion": "drets-dels-animals",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Es regularan els delfinaris i els zoològics, i es prohibirà la cria en captivitat, els espectacles amb animals i la interacció d’assistents amb els animals.",
+   "tituloFrase": "Es regularan els delfinaris i els zoològics, i es prohibirà la cria en captivitat, els espectacles amb animals i la interacció d’assistents amb els animals.",
+   "texto": "Es regularan els delfinaris i els zoològics, i es prohibirà la cria en captivitat, els espectacles amb animals i la interacció d’assistents amb els animals. Així mateix, en els circs es prohibiran els espectacles amb animals, sense excepció.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 158,
+   "bloque": 5,
+   "seccion": "drets-dels-animals",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Estendrem la Llei de benestar animal per a tots els animals, i endurirem les sancions per maltractament animal i impulsarem mesures per acabar amb el sacrifici.",
+   "tituloFrase": "Estendrem la Llei de benestar animal per a tots els animals, i endurirem les sancions per maltractament animal i impulsarem mesures per acabar amb el sacrifici.",
+   "texto": "Estendrem la Llei de benestar animal per a tots els animals, i endurirem les sancions per maltractament animal i impulsarem mesures per acabar amb el sacrifici. Es generalitzarà el mètode CER (capturar, esterilitzar, retornar) per a les colònies de moixos estables i controlades.",
+   "oculta": false,
+   "categoria": "justicia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 159,
+   "bloque": 5,
+   "seccion": "drets-dels-animals",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Reduirem l’IVA veterinari.",
+   "tituloFrase": "Reduirem l’IVA veterinari.",
+   "texto": "Reduirem l’IVA veterinari.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 160,
+   "bloque": 5,
+   "seccion": "drets-dels-animals",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Posarem fi al turisme d’explotació animal, acabarem amb les calesses de cavalls i en subvencionarem la transició als carruatges elèctrics.",
+   "tituloFrase": "Posarem fi al turisme d’explotació animal, acabarem amb les calesses de cavalls i en subvencionarem la transició als carruatges elèctrics.",
+   "texto": "Posarem fi al turisme d’explotació animal, acabarem amb les calesses de cavalls i en subvencionarem la transició als carruatges elèctrics.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }

@@ -24,6 +24,10 @@ const categoryCounts = countBy(program.measures, (measure) => measure.categoryId
 const targetGroupCounts = countBy(program.measures, (measure) => measure.targetGroupIds);
 const leverCounts = countBy(program.measures, (measure) => measure.leverIds);
 const territoryCounts = countBy(program.measures, (measure) => measure.territories);
+const hasFiguresFilter = program.measures.some((measure) => measure.figures.length > 0);
+const hasDeadlineFilter = program.measures.some((measure) => Boolean(measure.deadline));
+const hasPendingFilter = program.measures.some((measure) => measure.isPending);
+const hasChecks = hasFiguresFilter || hasDeadlineFilter || hasPendingFilter;
 // The categories of the program, from the biggest. The sphere of the party page opens here as a «rosa» (same
 // `view-transition-name`): a petal, or its row in the list, filters the measures.
 const categoryPetals = categoryCounts.map(([id, count]) => ({
@@ -134,12 +138,20 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
                     </label>
                   )}
 
-                  <fieldset class="checks">
-                    <legend class="field__label">Solo</legend>
-                    <label><input type="checkbox" name={PARAMS.withFigures} value="1" /> con cifras</label>
-                    <label><input type="checkbox" name={PARAMS.withDeadline} value="1" /> con plazo</label>
-                    <label><input type="checkbox" name={PARAMS.pendingOnly} value="1" /> por anunciar</label>
-                  </fieldset>
+                  {hasChecks && (
+                    <fieldset class="checks">
+                      <legend class="field__label">Solo</legend>
+                      {hasFiguresFilter && (
+                        <label><input type="checkbox" name={PARAMS.withFigures} value="1" /> con cifras</label>
+                      )}
+                      {hasDeadlineFilter && (
+                        <label><input type="checkbox" name={PARAMS.withDeadline} value="1" /> con plazo</label>
+                      )}
+                      {hasPendingFilter && (
+                        <label><input type="checkbox" name={PARAMS.pendingOnly} value="1" /> por anunciar</label>
+                      )}
+                    </fieldset>
+                  )}
 
                   <div class="actions">
                     <Button type="reset" size="sm">Limpiar</Button>
