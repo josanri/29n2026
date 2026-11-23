@@ -1,0 +1,706 @@
+{
+ "id": "arames",
+ "idiomaOrigen": "catalán",
+ "estado": "revisada",
+ "fecha": "2026-11-18",
+ "medidas": {
+  "1": {
+   "titulo": "Implantaremos un Salario Mínimo Interprofesional Isleño que permita compensar las diferencias que hay entre el coste de vida en las Illes Balears y el del resto de comunidades autónomas.",
+   "texto": "Implantaremos un Salario Mínimo Interprofesional Isleño que permita compensar las diferencias que hay entre el coste de vida en las Illes Balears y el del resto de comunidades autónomas. Asimismo, blindaremos por ley la obligación de incrementar el SMI estatal hasta alcanzar o superar, como mínimo, el 60 % del salario medio bruto. Además, limitaremos legalmente los mecanismos de compensación y absorción salarial para evitar que las empresas neutralicen los incrementos del SMI mediante la reducción o supresión de pluses y complementos salariales, especialmente los vinculados a la antigüedad, las condiciones específicas del puesto de trabajo, la nocturnidad, la peligrosidad o la productividad."
+  },
+  "2": {
+   "titulo": "Aprobaremos un complemento insular para las pensiones, para compensar el coste de la vida y garantizar que los pensionistas de las Illes Balears tengan el mismo poder adquisitivo que los de la península, con especial atención a las pensiones mínimas y no contributivas.",
+   "texto": "Aprobaremos un complemento insular para las pensiones, para compensar el coste de la vida y garantizar que los pensionistas de las Illes Balears tengan el mismo poder adquisitivo que los de la península, con especial atención a las pensiones mínimas y no contributivas."
+  },
+  "3": {
+   "titulo": "Impulsaremos un tope de precio a los carburantes, de manera que no superen, en ningún caso, el 5 % del precio medio de la península.",
+   "texto": "Impulsaremos un tope de precio a los carburantes, de manera que no superen, en ningún caso, el 5 % del precio medio de la península."
+  },
+  "4": {
+   "titulo": "Controlaremos el precio de la cesta de los alimentos básicos y, en caso de acreditarse abusos, fijaremos precios máximos en la cesta de la compra saludable.",
+   "texto": "Controlaremos el precio de la cesta de los alimentos básicos y, en caso de acreditarse abusos, fijaremos precios máximos en la cesta de la compra saludable."
+  },
+  "5": {
+   "titulo": "Implantaremos un IVA propio reducido, que nos iguale al resto de territorios extrapeninsulares del Estado.",
+   "texto": "Implantaremos un IVA propio reducido, que nos iguale al resto de territorios extrapeninsulares del Estado. Propondremos la eliminación del IVA en el transporte de mercancías."
+  },
+  "6": {
+   "titulo": "Aprobaremos una prestación universal de 200 € por cada menor hasta los 18 años como derecho del menor, inembargable y desvinculado de los ingresos o situación laboral de los progenitores.",
+   "texto": "Aprobaremos una prestación universal de 200 € por cada menor hasta los 18 años como derecho del menor, inembargable y desvinculado de los ingresos o situación laboral de los progenitores. Garantizaremos la gratuidad total y universal del comedor escolar en Infantil y Primaria en la red pública, con productos frescos, de temporada y de proximidad."
+  },
+  "7": {
+   "titulo": "Garantizaremos el acceso a los servicios básicos con la asignación automática del bono social según la renta del hogar y la extensión de tarifas sociales al agua y a internet.",
+   "texto": "Garantizaremos el acceso a los servicios básicos con la asignación automática del bono social según la renta del hogar y la extensión de tarifas sociales al agua y a internet. Asimismo, blindaremos por ley la prohibición del corte de luz, agua y gas en hogares vulnerables."
+  },
+  "8": {
+   "titulo": "Impulsaremos la transferencia de las competencias de inspección laboral y reforzaremos su presencia en las Illes Balears, a fin de garantizar que se acaben los fraudes en los contratos.",
+   "texto": "Impulsaremos la transferencia de las competencias de inspección laboral y reforzaremos su presencia en las Illes Balears, a fin de garantizar que se acaben los fraudes en los contratos."
+  },
+  "9": {
+   "titulo": "Garantizaremos una atención suficiente del servicio estatal de empleo (SEPE) en todas las islas.",
+   "texto": "Garantizaremos una atención suficiente del servicio estatal de empleo (SEPE) en todas las islas."
+  },
+  "10": {
+   "titulo": "Reduciremos la jornada laboral a un máximo de 32 horas semanales de trabajo efectivo sin reducción salarial.",
+   "texto": "Reduciremos la jornada laboral a un máximo de 32 horas semanales de trabajo efectivo sin reducción salarial."
+  },
+  "11": {
+   "titulo": "Impulsaremos medidas para mejorar los salarios y el poder adquisitivo de las personas trabajadoras de las Illes Balears, teniendo en cuenta el coste real de la vida y los sobrecostes de la insularidad.",
+   "texto": "Impulsaremos medidas para mejorar los salarios y el poder adquisitivo de las personas trabajadoras de las Illes Balears, teniendo en cuenta el coste real de la vida y los sobrecostes de la insularidad."
+  },
+  "12": {
+   "titulo": "Reforzaremos la negociación colectiva y promoveremos complementos salariales territoriales que permitan avanzar hacia unas condiciones laborales dignas.",
+   "texto": "Reforzaremos la negociación colectiva y promoveremos complementos salariales territoriales que permitan avanzar hacia unas condiciones laborales dignas."
+  },
+  "13": {
+   "titulo": "Impulsaremos políticas laborales e incentivos para favorecer el empleo estable durante todo el año, reducir la dependencia de la temporada turística y facilitar la incorporación de personas trabajadoras a nuevos sectores productivos vinculados a la industria, la innovación, las energías renovables, la cultura y el sector primario.",
+   "texto": "Impulsaremos políticas laborales e incentivos para favorecer el empleo estable durante todo el año, reducir la dependencia de la temporada turística y facilitar la incorporación de personas trabajadoras a nuevos sectores productivos vinculados a la industria, la innovación, las energías renovables, la cultura y el sector primario. Por lo que respecta a los fijos discontinuos del sector turístico, impulsaremos medidas para garantizar 12 meses de sueldo y de cotización."
+  },
+  "14": {
+   "titulo": "Implantaremos la transparencia salarial real desde la oferta de trabajo a fin de luchar contra la brecha salarial.",
+   "texto": "Implantaremos la transparencia salarial real desde la oferta de trabajo a fin de luchar contra la brecha salarial."
+  },
+  "15": {
+   "titulo": "Elaboraremos un plan de choque contra la precariedad en los sectores de la limpieza, los cuidados, el comercio, las educadoras 0-3, las TCAI y la hotelería, con un incremento de la inspección de trabajo.",
+   "texto": "Elaboraremos un plan de choque contra la precariedad en los sectores de la limpieza, los cuidados, el comercio, las educadoras 0-3, las TCAI y la hotelería, con un incremento de la inspección de trabajo. A fin de eliminar la precariedad laboral, mejoraremos las condiciones de trabajo y garantizaremos el reconocimiento social y económico de los cuidados."
+  },
+  "16": {
+   "titulo": "Aprobaremos la jubilación anticipada para las camareras de piso (kellys) sin penalización.",
+   "texto": "Aprobaremos la jubilación anticipada para las camareras de piso (kellys) sin penalización."
+  },
+  "17": {
+   "titulo": "Garantizaremos la financiación estatal de la gratuidad en el transporte público de todos los residentes, para adaptarlo a las necesidades y características de cada isla e incorporándolo como parte del Régimen Especial",
+   "texto": "Garantizaremos la financiación estatal de la gratuidad en el transporte público de todos los residentes, para adaptarlo a las necesidades y características de cada isla e incorporándolo como parte del Régimen Especial"
+  },
+  "18": {
+   "titulo": "Garantizaremos una dotación presupuestaria de los servicios esenciales que ya incluye el Régimen Especial de las Illes Balears (REIB) en materia de movilidad, con especial mención a las conexiones intrainsulares y al transporte público, para permitir una cohesión territorial efectiva y una movilidad sostenible.",
+   "texto": "Garantizaremos una dotación presupuestaria de los servicios esenciales que ya incluye el Régimen Especial de las Illes Balears (REIB) en materia de movilidad, con especial mención a las conexiones intrainsulares y al transporte público, para permitir una cohesión territorial efectiva y una movilidad sostenible."
+  },
+  "19": {
+   "titulo": "Impulsaremos un convenio ferroviario a fin de asegurar la financiación de los trenes al Llevant, a Llucmajor y a Alcúdia.",
+   "texto": "Impulsaremos un convenio ferroviario a fin de asegurar la financiación de los trenes al Llevant, a Llucmajor y a Alcúdia."
+  },
+  "20": {
+   "titulo": "Trabajaremos para que el tren de Sóller cumpla las condiciones de servicio público, tal como lo establece la concesión.",
+   "texto": "Trabajaremos para que el tren de Sóller cumpla las condiciones de servicio público, tal como lo establece la concesión."
+  },
+  "21": {
+   "titulo": "Estableceremos un techo en el precio de las conexiones aéreas con la península y lucharemos contra el fraude de las compañías aéreas con el descuento de residente.",
+   "texto": "Estableceremos un techo en el precio de las conexiones aéreas con la península y lucharemos contra el fraude de las compañías aéreas con el descuento de residente."
+  },
+  "22": {
+   "titulo": "Mejoraremos la conectividad aérea durante todo el año de Menorca y Eivissa con Mallorca, Madrid, Barcelona y Valencia, con frecuencias adecuadas, horarios útiles y estableceremos tarifas máximas asequibles para los residentes.",
+   "texto": "Mejoraremos la conectividad aérea durante todo el año de Menorca y Eivissa con Mallorca, Madrid, Barcelona y Valencia, con frecuencias adecuadas, horarios útiles y estableceremos tarifas máximas asequibles para los residentes. En este sentido, daremos máxima prioridad a la OSP entre Menorca y Barcelona, que estará regulada por una tarifa máxima de treinta y cinco euros para los residentes. El acompañamiento de menores en las rutas reguladas por OSP será gratuito."
+  },
+  "23": {
+   "titulo": "Se prohibirá la compra de viviendas para finalidades que no sean la vivienda habitual y permanente de la persona compradora, así como la prohibición absoluta de la compra por personas jurídicas con ánimo de lucro.",
+   "texto": "Se prohibirá la compra de viviendas para finalidades que no sean la vivienda habitual y permanente de la persona compradora, así como la prohibición absoluta de la compra por personas jurídicas con ánimo de lucro. Las casas deben ser para vivir en ellas, no para hacer negocio ni para tenerlas cerradas 350 días al año."
+  },
+  "24": {
+   "titulo": "La declaración de Zona de Mercado Residencial Tensionado será obligatoria y automática una vez un territorio cumpla los parámetros objetivos establecidos legalmente.",
+   "texto": "La declaración de Zona de Mercado Residencial Tensionado será obligatoria y automática una vez un territorio cumpla los parámetros objetivos establecidos legalmente."
+  },
+  "25": {
+   "titulo": "Se limitará, por ley, el precio del alquiler en zonas tensionadas en el 25 % de la renta neta de los hogares de la sección censal, como máximo.",
+   "texto": "Se limitará, por ley, el precio del alquiler en zonas tensionadas en el 25 % de la renta neta de los hogares de la sección censal, como máximo. En Palma y en los municipios con masificación turística severa, la reducción será un 30 % mayor. Los contratos de alquiler serán indefinidos por defecto."
+  },
+  "26": {
+   "titulo": "Se creará un escudo hipotecario para proteger, con hasta 300 € al mes, a las familias de clase media a las que la hipoteca les suponga más del 40 % de los ingresos netos.",
+   "texto": "Se creará un escudo hipotecario para proteger, con hasta 300 € al mes, a las familias de clase media a las que la hipoteca les suponga más del 40 % de los ingresos netos."
+  },
+  "27": {
+   "titulo": "Impulsaremos la cesión de las viviendas e inmuebles residenciales de titularidad estatal, incluidos los de la SAREB y de otros organismos públicos, a las administraciones competentes para que se destinen a vivienda pública de alquiler asequible y permanente, con especial atención a las islas con más dificultades de acceso a la vivienda.",
+   "texto": "Impulsaremos la cesión de las viviendas e inmuebles residenciales de titularidad estatal, incluidos los de la SAREB y de otros organismos públicos, a las administraciones competentes para que se destinen a vivienda pública de alquiler asequible y permanente, con especial atención a las islas con más dificultades de acceso a la vivienda."
+  },
+  "28": {
+   "titulo": "Ejecutaremos un proyecto en Son Busquets que cuente con el apoyo del vecindario y respete los valores patrimoniales existentes, con la garantía de que todas las viviendas serán protegidas.",
+   "texto": "Ejecutaremos un proyecto en Son Busquets que cuente con el apoyo del vecindario y respete los valores patrimoniales existentes, con la garantía de que todas las viviendas serán protegidas. Además, las residencias militares de Eivissa y de Sant Antoni de Portmany se cederán para viviendas y usos sociales."
+  },
+  "29": {
+   "titulo": "Extinguiremos progresivamente todas las licencias de vivienda de uso turístico y alquileres de temporada fraudulentos en zonas tensionadas en un plazo máximo de tres años.",
+   "texto": "Extinguiremos progresivamente todas las licencias de vivienda de uso turístico y alquileres de temporada fraudulentos en zonas tensionadas en un plazo máximo de tres años. Mientras tanto, los pisos turísticos pasarán a tributar al 21 % y se eliminarán las deducciones en el impuesto de sociedades y el IRPF. Asimismo, tendrán un recargo en el IBI de hasta el 150 %."
+  },
+  "30": {
+   "titulo": "Se eximirá del Impuesto sobre Transmisiones Patrimoniales la compra de la primera vivienda habitual de familias e individuos, al tiempo que se aplicará un recargo del 200 % a la segunda vivienda y del 1000 % a partir de la tercera.",
+   "texto": "Se eximirá del Impuesto sobre Transmisiones Patrimoniales la compra de la primera vivienda habitual de familias e individuos, al tiempo que se aplicará un recargo del 200 % a la segunda vivienda y del 1000 % a partir de la tercera."
+  },
+  "31": {
+   "titulo": "Haremos del IBI un impuesto progresivo, y permitiremos a los ayuntamientos establecer recargos según el número de inmuebles en propiedad y a las viviendas vacías y no principales, y así combatir la acumulación especulativa.",
+   "texto": "Haremos del IBI un impuesto progresivo, y permitiremos a los ayuntamientos establecer recargos según el número de inmuebles en propiedad y a las viviendas vacías y no principales, y así combatir la acumulación especulativa. Asimismo, se creará un impuesto que desincentive la especulación, de forma que se aplique únicamente sobre los propietarios de 3 o más viviendas que no hagan alquiler estable y asequible. Se eliminarán las ventajas fiscales de las SOCIMIS."
+  },
+  "32": {
+   "titulo": "Modificaremos la imputación de rentas inmobiliarias en el IRPF para incrementar los tramos en su escala progresiva y penalizar fiscalmente la acumulación de viviendas vacías.",
+   "texto": "Modificaremos la imputación de rentas inmobiliarias en el IRPF para incrementar los tramos en su escala progresiva y penalizar fiscalmente la acumulación de viviendas vacías."
+  },
+  "33": {
+   "titulo": "Impulsaremos un plan de reforma de viviendas existentes, la aplicación del derecho de tanteo y retracto y la expropiación de las viviendas permanentemente vacías.",
+   "texto": "Impulsaremos un plan de reforma de viviendas existentes, la aplicación del derecho de tanteo y retracto y la expropiación de las viviendas permanentemente vacías."
+  },
+  "34": {
+   "titulo": "Se perseguirán las cláusulas abusivas en contratos de alquiler, la discriminación en el acceso, con particular atención al racismo inmobiliario.",
+   "texto": "Se perseguirán las cláusulas abusivas en contratos de alquiler, la discriminación en el acceso, con particular atención al racismo inmobiliario. Asimismo, se prohibirá el acoso inmobiliario y las empresas de desocupación extrajudicial."
+  },
+  "35": {
+   "titulo": "Vivienda digna, protección de víctimas y paralización de desahucios.",
+   "texto": "Vivienda digna, protección de víctimas y paralización de desahucios."
+  },
+  "36": {
+   "titulo": "Garantizaremos el acceso prioritario a la vivienda pública y protegida para mujeres víctimas de violencia machista.",
+   "texto": "Garantizaremos el acceso prioritario a la vivienda pública y protegida para mujeres víctimas de violencia machista."
+  },
+  "37": {
+   "titulo": "Prohibiremos los desahucios a familias con niños o adolescentes sin alternativa habitacional adecuada.",
+   "texto": "Prohibiremos los desahucios a familias con niños o adolescentes sin alternativa habitacional adecuada."
+  },
+  "38": {
+   "titulo": "El Estado dejará de ser un agente que fomente la masificación turística.",
+   "texto": "El Estado dejará de ser un agente que fomente la masificación turística. La gestión de puertos y aeropuertos y la política turística estatal se reorientarán para lograr una reducción de la presión turística en las Illes Balears. Así, la planificación aeroportuaria y las inversiones de AENA tendrán en cuenta la capacidad de carga territorial, ambiental y social de cada isla, y se prevé una reducción del techo de vuelos y de pasajeros. La modernización de los aeropuertos no podrá justificar, en ningún caso, un aumento de la capacidad operativa o del número de pasajeros."
+  },
+  "39": {
+   "titulo": "Detendremos las ampliaciones de los aeropuertos, y las infraestructuras existentes estarán al servicio de la conectividad y de los usos de los residentes, incluidos los aparcamientos, que contarán con tarifas adaptadas, como ya existen en Canarias.",
+   "texto": "Detendremos las ampliaciones de los aeropuertos, y las infraestructuras existentes estarán al servicio de la conectividad y de los usos de los residentes, incluidos los aparcamientos, que contarán con tarifas adaptadas, como ya existen en Canarias. Se construirá la nueva torre de control del aeropuerto de Menorca."
+  },
+  "40": {
+   "titulo": "Aprobaremos la Ley de cogestión aeroportuaria del Parlamento de las Illes Balears, para garantizar que los aeropuertos son infraestructuras para la conectividad y no para la masificación turística.",
+   "texto": "Aprobaremos la Ley de cogestión aeroportuaria del Parlamento de las Illes Balears, para garantizar que los aeropuertos son infraestructuras para la conectividad y no para la masificación turística."
+  },
+  "41": {
+   "titulo": "Prohibiremos los vuelos privados en los aeropuertos de los territorios insulares, medida fundamentada en la necesaria reducción de emisiones y las externalidades ambientales que provoca el transporte aéreo.",
+   "texto": "Prohibiremos los vuelos privados en los aeropuertos de los territorios insulares, medida fundamentada en la necesaria reducción de emisiones y las externalidades ambientales que provoca el transporte aéreo."
+  },
+  "42": {
+   "titulo": "Haremos que los establecimientos turísticos tributen el tipo general de IVA del 21%, se eliminará la bonificación existente de alojamientos hoteleros, alojamientos turísticos con servicios hoteleros, servicios de cruceros turísticos, paquetes de vacaciones marítimas y servicios recreativos de lujo.",
+   "texto": "Haremos que los establecimientos turísticos tributen el tipo general de IVA del 21%, se eliminará la bonificación existente de alojamientos hoteleros, alojamientos turísticos con servicios hoteleros, servicios de cruceros turísticos, paquetes de vacaciones marítimas y servicios recreativos de lujo. Asimismo, incrementaremos notablemente los impuestos de matriculación de las embarcaciones y yates de lujo."
+  },
+  "43": {
+   "titulo": "Limitaremos las llegadas de cruceros a todos los puertos de las Illes Balears de titularidad estatal.",
+   "texto": "Limitaremos las llegadas de cruceros a todos los puertos de las Illes Balears de titularidad estatal."
+  },
+  "44": {
+   "titulo": "Revisaremos la política de puertos del Estado para acabar con la elitización y la masificación del mar Balear, frenaremos la creación de posibles \"Airbnb\" náuticos y garantizaremos el acceso de la población local al mar.",
+   "texto": "Revisaremos la política de puertos del Estado para acabar con la elitización y la masificación del mar Balear, frenaremos la creación de posibles \"Airbnb\" náuticos y garantizaremos el acceso de la población local al mar."
+  },
+  "45": {
+   "titulo": "Garantizaremos que las instituciones insulares dispongan de los instrumentos jurídicos necesarios para regular y limitar la entrada y la circulación de vehículos, de acuerdo con la capacidad de carga de cada isla, e impulsaremos la colaboración del Estado con las autoridades portuarias para hacer efectivas estas limitaciones.",
+   "texto": "Garantizaremos que las instituciones insulares dispongan de los instrumentos jurídicos necesarios para regular y limitar la entrada y la circulación de vehículos, de acuerdo con la capacidad de carga de cada isla, e impulsaremos la colaboración del Estado con las autoridades portuarias para hacer efectivas estas limitaciones."
+  },
+  "46": {
+   "titulo": "Incentivaremos el establecimiento, la creación y el crecimiento de empresas en sectores estratégicos, como las nuevas tecnologías, las energías renovables, la cultura, la industria o el sector agroalimentario a fin de fomentar la diversificación económica.",
+   "texto": "Incentivaremos el establecimiento, la creación y el crecimiento de empresas en sectores estratégicos, como las nuevas tecnologías, las energías renovables, la cultura, la industria o el sector agroalimentario a fin de fomentar la diversificación económica. Eliminaremos del Régimen Especial de las Illes Balears las previsiones que profundizan en el monocultivo turístico, como los incentivos al sector turístico."
+  },
+  "47": {
+   "titulo": "Protegeremos el pequeño comercio mediante la regulación y el control de los precios de los alquileres comerciales.",
+   "texto": "Protegeremos el pequeño comercio mediante la regulación y el control de los precios de los alquileres comerciales. Asimismo, garantizaremos su pervivencia con un apoyo específico que garantice que los centros urbanos tengan comercio tradicional y de proximidad."
+  },
+  "48": {
+   "titulo": "Estableceremos un Fondo de Capital Público con financiación estatal a través del cual el sector público cofinanciará y será copropietario de empresas, con la finalidad de apoyar a los emprendedores en los sectores estratégicos para la diversificación económica: nuevas tecnologías, industrial, cultural y primario.",
+   "texto": "Estableceremos un Fondo de Capital Público con financiación estatal a través del cual el sector público cofinanciará y será copropietario de empresas, con la finalidad de apoyar a los emprendedores en los sectores estratégicos para la diversificación económica: nuevas tecnologías, industrial, cultural y primario."
+  },
+  "49": {
+   "titulo": "Crearemos un fondo de inversión público para canalizar y retribuir el ahorro de las familias hacia el impulso, mantenimiento y crecimiento de empresas de la economía productiva y diversificada.",
+   "texto": "Crearemos un fondo de inversión público para canalizar y retribuir el ahorro de las familias hacia el impulso, mantenimiento y crecimiento de empresas de la economía productiva y diversificada."
+  },
+  "50": {
+   "titulo": "Aumentaremos los recursos económicos para desarrollar políticas activas de empleo como eje vertebrador del cambio de modelo económico que necesitan las Illes Balears, para estimular la reconversión de trabajadores hacia nuevos nichos de trabajo y asegurando la diversificación de la economía.",
+   "texto": "Aumentaremos los recursos económicos para desarrollar políticas activas de empleo como eje vertebrador del cambio de modelo económico que necesitan las Illes Balears, para estimular la reconversión de trabajadores hacia nuevos nichos de trabajo y asegurando la diversificación de la economía."
+  },
+  "51": {
+   "titulo": "Canalizaremos los sobrantes de las fuentes de financiación controladas por el Estado para el fomento de la diversificación y el cambio de modelo, a través de un sistema bilateral y ágil.",
+   "texto": "Canalizaremos los sobrantes de las fuentes de financiación controladas por el Estado para el fomento de la diversificación y el cambio de modelo, a través de un sistema bilateral y ágil."
+  },
+  "52": {
+   "titulo": "Defenderemos el corredor mediterráneo como ámbito de intercambio económico principal y como una infraestructura clave para mejorar la competitividad de la industria de las Illes Balears y asegurar su conexión con Europa.",
+   "texto": "Defenderemos el corredor mediterráneo como ámbito de intercambio económico principal y como una infraestructura clave para mejorar la competitividad de la industria de las Illes Balears y asegurar su conexión con Europa."
+  },
+  "53": {
+   "titulo": "Aseguraremos la sostenibilidad de las pesquerías de las Illes Balears, estableciendo reservas de pesca exclusivas para los pescadores isleños y una protección frente a los repartos de esfuerzos pesqueros en atención a los esfuerzos acumulados.",
+   "texto": "Aseguraremos la sostenibilidad de las pesquerías de las Illes Balears, estableciendo reservas de pesca exclusivas para los pescadores isleños y una protección frente a los repartos de esfuerzos pesqueros en atención a los esfuerzos acumulados."
+  },
+  "54": {
+   "titulo": "Reclamaremos un incremento de la cuota de pesca del atún para la flota balear de pesca.",
+   "texto": "Reclamaremos un incremento de la cuota de pesca del atún para la flota balear de pesca."
+  },
+  "55": {
+   "titulo": "Garantizaremos, por la vía del Régimen Especial de las Illes Balears y de la nueva política agraria común (PAC), la compensación de los costes de la insularidad para el campesinado, con especial atención a la doble y triple insularidad.",
+   "texto": "Garantizaremos, por la vía del Régimen Especial de las Illes Balears y de la nueva política agraria común (PAC), la compensación de los costes de la insularidad para el campesinado, con especial atención a la doble y triple insularidad."
+  },
+  "56": {
+   "titulo": "Aseguraremos el apoyo al campesinado, la ganadería y la pesca para la adaptación a los impactos del cambio climático.",
+   "texto": "Aseguraremos el apoyo al campesinado, la ganadería y la pesca para la adaptación a los impactos del cambio climático. En particular trabajaremos para que las aseguradoras agrarias y ganaderas tengan en cuenta la realidad insular."
+  },
+  "57": {
+   "titulo": "Aplicaremos fórmulas de contraprestación a los campesinos y ganaderos por los beneficios ambientales que generan para el conjunto de la sociedad, como las ayudas de Mantenimiento del Paisaje o las ayudas a Zonas Desfavorecidas, hasta conseguir una renta adecuada que garantice la pervivencia de las explotaciones y la igualdad de oportunidades respecto del continente.",
+   "texto": "Aplicaremos fórmulas de contraprestación a los campesinos y ganaderos por los beneficios ambientales que generan para el conjunto de la sociedad, como las ayudas de Mantenimiento del Paisaje o las ayudas a Zonas Desfavorecidas, hasta conseguir una renta adecuada que garantice la pervivencia de las explotaciones y la igualdad de oportunidades respecto del continente."
+  },
+  "58": {
+   "titulo": "Garantizaremos que el gasóleo agrícola y pesquero de las Illes Balears goce del mismo tratamiento que en los otros territorios no peninsulares.",
+   "texto": "Garantizaremos que el gasóleo agrícola y pesquero de las Illes Balears goce del mismo tratamiento que en los otros territorios no peninsulares."
+  },
+  "59": {
+   "titulo": "Impulsaremos ayudas para procesos que aporten valor añadido a procesos industriales del sector agrícola, ganadero y pesquero, con especial énfasis en el apoyo a las cooperativas.",
+   "texto": "Impulsaremos ayudas para procesos que aporten valor añadido a procesos industriales del sector agrícola, ganadero y pesquero, con especial énfasis en el apoyo a las cooperativas."
+  },
+  "60": {
+   "titulo": "Garantizaremos la reversión de Mercapalma al Ayuntamiento de Palma y el apoyo específico a la distribución de pequeños productores.",
+   "texto": "Garantizaremos la reversión de Mercapalma al Ayuntamiento de Palma y el apoyo específico a la distribución de pequeños productores."
+  },
+  "61": {
+   "titulo": "Aprobaremos un régimen económico para las energías renovables que permita el desarrollo de una transición energética en las Illes Balears, favoreciendo particularmente el despliegue sobre cubiertas y en espacios antropizados, así garantizaremos el apoyo específico a la transición energética en islas.",
+   "texto": "Aprobaremos un régimen económico para las energías renovables que permita el desarrollo de una transición energética en las Illes Balears, favoreciendo particularmente el despliegue sobre cubiertas y en espacios antropizados, así garantizaremos el apoyo específico a la transición energética en islas."
+  },
+  "62": {
+   "titulo": "Programaremos la reducción progresiva de la quema de combustibles fósiles en las centrales térmicas de las Illes Balears, particularmente las de los núcleos urbanos, como las de Maó y Eivissa, y fomentaremos su hibridación con almacenamiento o sistemas de energías renovables.",
+   "texto": "Programaremos la reducción progresiva de la quema de combustibles fósiles en las centrales térmicas de las Illes Balears, particularmente las de los núcleos urbanos, como las de Maó y Eivissa, y fomentaremos su hibridación con almacenamiento o sistemas de energías renovables."
+  },
+  "63": {
+   "titulo": "Garantizaremos que los proyectos de generación de energías renovables se ajusten a las necesidades energéticas, la capacidad de carga y las características territoriales y ambientales de cada isla, para evitar instalaciones sobredimensionadas.",
+   "texto": "Garantizaremos que los proyectos de generación de energías renovables se ajusten a las necesidades energéticas, la capacidad de carga y las características territoriales y ambientales de cada isla, para evitar instalaciones sobredimensionadas. En particular, defenderemos que cualquier proyecto de energía eólica marina esté sometido a una evaluación rigurosa de los impactos ambientales, paisajísticos, pesqueros y sociales, con participación efectiva de las instituciones insulares y de los sectores afectados."
+  },
+  "64": {
+   "titulo": "Ejecutaremos la segunda interconexión eléctrica entre Mallorca y Menorca, e impulsaremos la segunda entre Mallorca y Eivissa.",
+   "texto": "Ejecutaremos la segunda interconexión eléctrica entre Mallorca y Menorca, e impulsaremos la segunda entre Mallorca y Eivissa."
+  },
+  "65": {
+   "titulo": "Impulsaremos un modelo energético descentralizado y adaptado a las necesidades de cada isla, y priorizaremos la instalación de energías renovables en cubiertas y espacios ya transformados, el autoconsumo compartido y las comunidades energéticas.",
+   "texto": "Impulsaremos un modelo energético descentralizado y adaptado a las necesidades de cada isla, y priorizaremos la instalación de energías renovables en cubiertas y espacios ya transformados, el autoconsumo compartido y las comunidades energéticas. Garantizaremos que los nuevos proyectos energéticos respeten los valores paisajísticos y ambientales del territorio y eviten instalaciones sobredimensionadas en relación con las necesidades y la capacidad de cada isla."
+  },
+  "66": {
+   "titulo": "Garantizaremos que los hogares de las Illes Balears no sean un horno en verano, con el impulso del Plan de adecuación y eficiencia energética de viviendas que permita la adecuación de viviendas, con especial hincapié en las de familias vulnerables o con dificultades para asumir la reforma.",
+   "texto": "Garantizaremos que los hogares de las Illes Balears no sean un horno en verano, con el impulso del Plan de adecuación y eficiencia energética de viviendas que permita la adecuación de viviendas, con especial hincapié en las de familias vulnerables o con dificultades para asumir la reforma."
+  },
+  "67": {
+   "titulo": "Sin renunciar a un sistema de financiación singular para las Illes Balears basado en la plena capacidad fiscal y tributaria y una relación con el Estado asimilable al concierto económico, impulsaremos un nuevo modelo de financiación autonómica que garantice el mantenimiento y la mejora del estado de bienestar, y que tenga en cuenta el crecimiento de la población, la insularidad y la pluriinsularidad, el diferencial del coste de la vida y la población flotante, y que asegure el cumplimiento del principio de ordinalidad.",
+   "texto": "Sin renunciar a un sistema de financiación singular para las Illes Balears basado en la plena capacidad fiscal y tributaria y una relación con el Estado asimilable al concierto económico, impulsaremos un nuevo modelo de financiación autonómica que garantice el mantenimiento y la mejora del estado de bienestar, y que tenga en cuenta el crecimiento de la población, la insularidad y la pluriinsularidad, el diferencial del coste de la vida y la población flotante, y que asegure el cumplimiento del principio de ordinalidad. Asimismo, aprobaremos una condonación de la deuda injustamente contraída con el Estado, basada en un estudio objetivo de su relación con la infrafinanciación histórica que han sufrido las Illes Balears."
+  },
+  "68": {
+   "titulo": "Velaremos por el cumplimiento de todos los aspectos del Régimen Económico y Fiscal y negociaremos una mejora efectiva como verdadera herramienta de compensación permanente de la insularidad y la pluriinsularidad y no de simple igualación con las comunidades peninsulares o de desviación de otras inversiones territorializadas, de manera que se establezca una compensación adecuada de todos los costes que genera la insularidad y la pluriinsularidad; un apoyo suficiente al transporte, tanto de mercancías como de personas; se prevean los incentivos y proyectos enfocados hacia la transición energética, la diversificación económica y la sostenibilidad en el archipiélago, y contenga las necesarias medidas fiscales compensatorias tanto para la ciudadanía como para las empresas isleñas.",
+   "texto": "Velaremos por el cumplimiento de todos los aspectos del Régimen Económico y Fiscal y negociaremos una mejora efectiva como verdadera herramienta de compensación permanente de la insularidad y la pluriinsularidad y no de simple igualación con las comunidades peninsulares o de desviación de otras inversiones territorializadas, de manera que se establezca una compensación adecuada de todos los costes que genera la insularidad y la pluriinsularidad; un apoyo suficiente al transporte, tanto de mercancías como de personas; se prevean los incentivos y proyectos enfocados hacia la transición energética, la diversificación económica y la sostenibilidad en el archipiélago, y contenga las necesarias medidas fiscales compensatorias tanto para la ciudadanía como para las empresas isleñas. Este Régimen Especial tendrá carácter indefinido."
+  },
+  "69": {
+   "titulo": "Garantizaremos que el sistema de financiación autonómica y el Régimen Especial de las Illes Balears tengan en cuenta las necesidades específicas de cada isla, y compensen los sobrecostes de la doble y triple insularidad, el coste de la vida y la presión de la población flotante.",
+   "texto": "Garantizaremos que el sistema de financiación autonómica y el Régimen Especial de las Illes Balears tengan en cuenta las necesidades específicas de cada isla, y compensen los sobrecostes de la doble y triple insularidad, el coste de la vida y la presión de la población flotante. Impulsaremos mecanismos que aseguren una distribución justa de los recursos y de las inversiones estatales entre las diferentes islas, con atención especial a los sobrecostes de la doble y triple insularidad, para garantizar unos servicios públicos de calidad y las mismas oportunidades a toda la ciudadanía, independientemente de la isla donde viva."
+  },
+  "70": {
+   "titulo": "Impulsaremos un plan específico de inversiones del Estado para garantizar la disponibilidad y la calidad del agua en las Illes Balears.",
+   "texto": "Impulsaremos un plan específico de inversiones del Estado para garantizar la disponibilidad y la calidad del agua en las Illes Balears. Priorizaremos la reducción de fugas, la modernización de las redes de distribución, la reutilización de aguas depuradas y la protección de los acuíferos. Este plan también deberá promover el ahorro de agua y reducir sus consumos excesivos, especialmente en las actividades de mayor demanda hídrica."
+  },
+  "71": {
+   "titulo": "Reforzaremos la autonomía local y garantizaremos un sistema de financiación estable para las entidades locales, con inclusión de una mayor participación de los municipios en los tributos del Estado y una mejora de las reglas financieras que se les aplican.",
+   "texto": "Reforzaremos la autonomía local y garantizaremos un sistema de financiación estable para las entidades locales, con inclusión de una mayor participación de los municipios en los tributos del Estado y una mejora de las reglas financieras que se les aplican."
+  },
+  "72": {
+   "titulo": "Incorporaremos el hecho insular en los criterios de distribución de los fondos europeos gestionados por el Estado.",
+   "texto": "Incorporaremos el hecho insular en los criterios de distribución de los fondos europeos gestionados por el Estado."
+  },
+  "73": {
+   "titulo": "Aprobaremos que el Estado se haga cargo del plus de insularidad de los ayuntamientos y consejos insulares de las Illes Balears, del mismo modo que lo hace para sus trabajadores.",
+   "texto": "Aprobaremos que el Estado se haga cargo del plus de insularidad de los ayuntamientos y consejos insulares de las Illes Balears, del mismo modo que lo hace para sus trabajadores."
+  },
+  "74": {
+   "titulo": "Velaremos por que las medidas estatales ante situaciones de crisis siempre tengan en cuenta la especial situación de las Illes, a través de una mesa bilateral propia para cada paquete de ayudas que se apruebe.",
+   "texto": "Velaremos por que las medidas estatales ante situaciones de crisis siempre tengan en cuenta la especial situación de las Illes, a través de una mesa bilateral propia para cada paquete de ayudas que se apruebe."
+  },
+  "75": {
+   "titulo": "Garantizaremos la dotación y ocupación de las plazas de personal funcionario estatal en las Illes Balears actualmente vacantes, reforzando el complemento de residencia para compensar el sobrecoste de la vida y la vivienda en las Illes Balears.",
+   "texto": "Garantizaremos la dotación y ocupación de las plazas de personal funcionario estatal en las Illes Balears actualmente vacantes, reforzando el complemento de residencia para compensar el sobrecoste de la vida y la vivienda en las Illes Balears. El complemento será igual para todas las categorías y computaremos retroactivamente la antigüedad a efectos de los trienios de permanencia en el territorio."
+  },
+  "76": {
+   "titulo": "Mejoraremos los equipamientos de los servicios públicos estatales, con la constitución de un Juzgado de Primera Instancia en Formentera, la construcción de los nuevos juzgados de Ciutadella y la ciudad de la justicia en Palma, así como el centro de distribución postal de Menorca.",
+   "texto": "Mejoraremos los equipamientos de los servicios públicos estatales, con la constitución de un Juzgado de Primera Instancia en Formentera, la construcción de los nuevos juzgados de Ciutadella y la ciudad de la justicia en Palma, así como el centro de distribución postal de Menorca."
+  },
+  "77": {
+   "titulo": "Ampliaremos la protección por duelo perinatal y secuelas: inscripción en el Registro Civil de la pérdida gestacional desde la semana 8 de gestación, permiso para el otro progenitor después de una muerte fetal desde los 180 días y ampliación del permiso de maternidad por complicaciones físicas después del parto, médicamente acreditadas.",
+   "texto": "Ampliaremos la protección por duelo perinatal y secuelas: inscripción en el Registro Civil de la pérdida gestacional desde la semana 8 de gestación, permiso para el otro progenitor después de una muerte fetal desde los 180 días y ampliación del permiso de maternidad por complicaciones físicas después del parto, médicamente acreditadas."
+  },
+  "78": {
+   "titulo": "Desplegaremos presupuestariamente el Sistema de Atención a la Dependencia para elevar la inversión pública del 0,8 % al 1,7 % del PIB en el año 2030, con una aportación estatal directa mínima del 50 %, con un coeficiente de corrección por insularidad en la financiación de las plazas y de los servicios.",
+   "texto": "Desplegaremos presupuestariamente el Sistema de Atención a la Dependencia para elevar la inversión pública del 0,8 % al 1,7 % del PIB en el año 2030, con una aportación estatal directa mínima del 50 %, con un coeficiente de corrección por insularidad en la financiación de las plazas y de los servicios."
+  },
+  "79": {
+   "titulo": "Revisaremos los importes de las transferencias en materia de educación, con el fin de garantizar que cubren el coste real de la prestación del servicio.",
+   "texto": "Revisaremos los importes de las transferencias en materia de educación, con el fin de garantizar que cubren el coste real de la prestación del servicio."
+  },
+  "80": {
+   "titulo": "Haremos que el Estado se corresponsabilice en la universalización de la educación de 0 a 3 años, con una financiación extraordinaria a las Comunidades autónomas, con garantía de plazas públicas gratuitas.",
+   "texto": "Haremos que el Estado se corresponsabilice en la universalización de la educación de 0 a 3 años, con una financiación extraordinaria a las Comunidades autónomas, con garantía de plazas públicas gratuitas. Esta financiación deberá tener en cuenta el sobrecoste de mantener escuelas infantiles públicas en municipios pequeños y en las islas menores, así como las condiciones laborales de las educadoras, especialmente en los lugares donde el coste de la vida es superior al del resto del Estado."
+  },
+  "81": {
+   "titulo": "Impulsaremos un proceso progresivo de eliminación del sistema de conciertos educativos, con la integración de estos centros privados en la red pública, con líneas de financiación específicas para las Comunidades Autónomas para convertirlos en centros públicos.",
+   "texto": "Impulsaremos un proceso progresivo de eliminación del sistema de conciertos educativos, con la integración de estos centros privados en la red pública, con líneas de financiación específicas para las Comunidades Autónomas para convertirlos en centros públicos. Durante el período de transición, se prohibirán de forma inmediata las cuotas obligatorias en los centros sostenidos con fondos públicos, con sanciones en caso de incumplimiento."
+  },
+  "82": {
+   "titulo": "Promoveremos un complemento de insularidad en las becas estatales de estudios, residencia y desplazamiento para estudiantes universitarios, que atienda al coste real de la vida en las Illes Balears.",
+   "texto": "Promoveremos un complemento de insularidad en las becas estatales de estudios, residencia y desplazamiento para estudiantes universitarios, que atienda al coste real de la vida en las Illes Balears."
+  },
+  "83": {
+   "titulo": "Impulsaremos la financiación de las universidades públicas hasta alcanzar el 1,5% del PIB, prohibiremos la financiación pública a universidades privadas, y endureceremos las condiciones para crearlas.",
+   "texto": "Impulsaremos la financiación de las universidades públicas hasta alcanzar el 1,5% del PIB, prohibiremos la financiación pública a universidades privadas, y endureceremos las condiciones para crearlas. En particular, crearemos una financiación estatal para ampliar la oferta de grados y másteres de la Universidad de las Illes Balears."
+  },
+  "84": {
+   "titulo": "Impulsaremos la construcción de un sistema universitario y de investigación balear a través de la transferencia de las competencias, las infraestructuras y los recursos de la UNED y de las entidades dependientes del CSIC, así como de la gestión, convocatoria y resolución de becas de ayuda al estudio, tanto las universitarias como las no universitarias.",
+   "texto": "Impulsaremos la construcción de un sistema universitario y de investigación balear a través de la transferencia de las competencias, las infraestructuras y los recursos de la UNED y de las entidades dependientes del CSIC, así como de la gestión, convocatoria y resolución de becas de ayuda al estudio, tanto las universitarias como las no universitarias."
+  },
+  "85": {
+   "titulo": "Incrementaremos la financiación de la sanidad, con una atención especial a los incrementos de los complementos salariales por insularidad, así como medidas para fidelizar al personal sanitario en las Illes Balears.",
+   "texto": "Incrementaremos la financiación de la sanidad, con una atención especial a los incrementos de los complementos salariales por insularidad, así como medidas para fidelizar al personal sanitario en las Illes Balears."
+  },
+  "86": {
+   "titulo": "Recalcularemos el Fondo de Cohesión Sanitaria y la financiación sanitaria para que tengan en cuenta la población flotante, con una compensación específica para los territorios con mucha presión turística; la asistencia sanitaria a turistas internacionales deberá liquidarse a las comunidades autónomas de manera rápida y completa.",
+   "texto": "Recalcularemos el Fondo de Cohesión Sanitaria y la financiación sanitaria para que tengan en cuenta la población flotante, con una compensación específica para los territorios con mucha presión turística; la asistencia sanitaria a turistas internacionales deberá liquidarse a las comunidades autónomas de manera rápida y completa."
+  },
+  "87": {
+   "titulo": "Impulsaremos un plan estatal para garantizar especialidades básicas en el Mateu Orfila (Menorca), en Can Misses (Eivissa) y en el Hospital de Formentera, para que los pacientes no tengan que desplazarse a Son Espases.",
+   "texto": "Impulsaremos un plan estatal para garantizar especialidades básicas en el Mateu Orfila (Menorca), en Can Misses (Eivissa) y en el Hospital de Formentera, para que los pacientes no tengan que desplazarse a Son Espases."
+  },
+  "88": {
+   "titulo": "Promoveremos la transferencia de fondos a la comunidad autónoma para un sistema digno de compensación de los desplazamientos y del alojamiento de los pacientes y de sus acompañantes, tanto entre islas como entre las islas y la Península.",
+   "texto": "Promoveremos la transferencia de fondos a la comunidad autónoma para un sistema digno de compensación de los desplazamientos y del alojamiento de los pacientes y de sus acompañantes, tanto entre islas como entre las islas y la Península."
+  },
+  "89": {
+   "titulo": "Avanzaremos hacia un marco legislativo estatal que reconozca la salud mental como un derecho universal y garantice una atención pública, integral, comunitaria y libre de discriminaciones.",
+   "texto": "Avanzaremos hacia un marco legislativo estatal que reconozca la salud mental como un derecho universal y garantice una atención pública, integral, comunitaria y libre de discriminaciones. En particular, crearemos un fondo específico para la Red de Salud Mental Comunitaria y un aumento de las ratios de profesionales hasta un mínimo de 10 por cada 100.000 habitantes; en el caso de los archipiélagos, esta ratio debe garantizarse en cada isla y tener en cuenta la población flotante que soportan."
+  },
+  "90": {
+   "titulo": "Incrementaremos la inversión pública en dependencia, y garantizaremos la cofinanciación del Estado del 50 % de la inversión en dependencia.",
+   "texto": "Incrementaremos la inversión pública en dependencia, y garantizaremos la cofinanciación del Estado del 50 % de la inversión en dependencia. Así, se elevará la inversión hasta el 1,7% del PIB y se limitará el copago máximo al 30 % de los ingresos, eximiendo a las rentas bajas."
+  },
+  "91": {
+   "titulo": "Duplicaremos las horas de ayuda a domicilio y el reconocimiento legal del derecho al relevo para personas cuidadoras.",
+   "texto": "Duplicaremos las horas de ayuda a domicilio y el reconocimiento legal del derecho al relevo para personas cuidadoras."
+  },
+  "92": {
+   "titulo": "Impulsaremos el traspaso del Ingreso Mínimo Vital a las comunidades autónomas, con capacidad para adaptar su cuantía al coste de la vida de cada territorio, especialmente en territorios insulares y tensionados como las Illes Balears.",
+   "texto": "Impulsaremos el traspaso del Ingreso Mínimo Vital a las comunidades autónomas, con capacidad para adaptar su cuantía al coste de la vida de cada territorio, especialmente en territorios insulares y tensionados como las Illes Balears."
+  },
+  "93": {
+   "titulo": "Transformaremos el ingreso mínimo vital para que sea concedido de oficio mediante interconexión automatizada de datos fiscales y de la Seguridad Social (y eliminar el laberinto burocrático).",
+   "texto": "Transformaremos el ingreso mínimo vital para que sea concedido de oficio mediante interconexión automatizada de datos fiscales y de la Seguridad Social (y eliminar el laberinto burocrático). Asimismo, se ampliará a los jóvenes de 18 a 30 años sin exigir requisitos desproporcionados de emancipación previa, para garantizar una base de renta equivalente al 40% de la media de ingresos estatales, unido a itinerarios de inclusión."
+  },
+  "94": {
+   "titulo": "Trabajaremos para la erradicación de la pobreza severa y reformaremos el IMV como complemento salarial.",
+   "texto": "Trabajaremos para la erradicación de la pobreza severa y reformaremos el IMV como complemento salarial. Incrementaremos de forma gradual la renta garantizada del IMV para asegurar que ningún hogar viva por debajo del 40% de la renta media, y reformaremos la prestación como complemento salarial progresivo, para evitar la pérdida abrupta de la ayuda al encontrar trabajo."
+  },
+  "95": {
+   "titulo": "Aumentaremos el presupuesto en políticas de igualdad, destinando, al menos, un 5% del presupuesto no financiero del Estado (superando el 4,4 % actual).",
+   "texto": "Aumentaremos el presupuesto en políticas de igualdad, destinando, al menos, un 5% del presupuesto no financiero del Estado (superando el 4,4 % actual). En particular, se incrementará un 10 % la dotación contra las violencias machistas y blindaremos las partidas estructurales del Pacto de Estado contra la Violencia de Género para asegurar su estabilidad. Así, la financiación para el abordaje de las violencias machistas en las Illes Balears se verá aumentada."
+  },
+  "96": {
+   "titulo": "Crearemos más Juzgados de Violencia sobre la Mujer y dotaremos a las Illes Balears con los recursos adecuados de personal y para crear dos centros de crisis suplementarios, uno en Menorca y el otro en Eivissa y Formentera.",
+   "texto": "Crearemos más Juzgados de Violencia sobre la Mujer y dotaremos a las Illes Balears con los recursos adecuados de personal y para crear dos centros de crisis suplementarios, uno en Menorca y el otro en Eivissa y Formentera."
+  },
+  "97": {
+   "titulo": "Ampliaremos legalmente la definición de violencia vicaria y reforzaremos el sistema VioGen incorporando una evaluación del riesgo específica para hijas e hijos de las víctimas.",
+   "texto": "Ampliaremos legalmente la definición de violencia vicaria y reforzaremos el sistema VioGen incorporando una evaluación del riesgo específica para hijas e hijos de las víctimas."
+  },
+  "98": {
+   "titulo": "Reformaremos la Ley de Libertad Sexual (Solo Sí es Sí), con el fin de poner de nuevo el consentimiento libre y explícito en el centro de la ley como único delimitador de la agresión sexual (y eliminar la distinción anterior con el abuso) y anular la contrarreforma aprobada por el PSOE y el PP.",
+   "texto": "Reformaremos la Ley de Libertad Sexual (Solo Sí es Sí), con el fin de poner de nuevo el consentimiento libre y explícito en el centro de la ley como único delimitador de la agresión sexual (y eliminar la distinción anterior con el abuso) y anular la contrarreforma aprobada por el PSOE y el PP. Así, la violencia y la intimidación se considerarán agravantes de la conducta y no requisitos del tipo básico."
+  },
+  "99": {
+   "titulo": "Promoveremos el blindaje constitucional de la Ley de salud sexual y reproductiva y de la interrupción voluntaria del embarazo.",
+   "texto": "Promoveremos el blindaje constitucional de la Ley de salud sexual y reproductiva y de la interrupción voluntaria del embarazo."
+  },
+  "100": {
+   "titulo": "Lucharemos contra la trata y la explotación sexual con la reforma de la Ley de extranjería con el fin de garantizar que el permiso de residencia, la atención y la protección a las víctimas de trata en situación irregular no dependan de su colaboración con las autoridades policiales.",
+   "texto": "Lucharemos contra la trata y la explotación sexual con la reforma de la Ley de extranjería con el fin de garantizar que el permiso de residencia, la atención y la protección a las víctimas de trata en situación irregular no dependan de su colaboración con las autoridades policiales."
+  },
+  "101": {
+   "titulo": "Combatiremos la violencia digital y por inteligencia artificial: reforma integral del Código penal, Derecho civil y leyes de protección para sancionar y prevenir las nuevas formas de violencia digital machista generadas por las TIC y la inteligencia artificial.",
+   "texto": "Combatiremos la violencia digital y por inteligencia artificial: reforma integral del Código penal, Derecho civil y leyes de protección para sancionar y prevenir las nuevas formas de violencia digital machista generadas por las TIC y la inteligencia artificial."
+  },
+  "102": {
+   "titulo": "Impulsaremos el despliegue efectivo de la Ley Trans, el reconocimiento de las personas no binarias y la protección frente a la violencia intragénero.",
+   "texto": "Impulsaremos el despliegue efectivo de la Ley Trans, el reconocimiento de las personas no binarias y la protección frente a la violencia intragénero. Asimismo, dotaremos de financiación a las comunidades autónomas que tienen ley autonómica de garantía de las personas transexuales, como las Illes Balears, con el fin de facilitar el despliegue de la norma y la aplicación de las políticas correspondientes."
+  },
+  "103": {
+   "titulo": "Impulsaremos una reforma de la Ley electoral que garantice el derecho al sufragio activo y pasivo a partir de los 16 años.",
+   "texto": "Impulsaremos una reforma de la Ley electoral que garantice el derecho al sufragio activo y pasivo a partir de los 16 años."
+  },
+  "104": {
+   "titulo": "Reforzaremos la formación profesional, la formación dual y los programas de inserción laboral juvenil, adaptando la oferta formativa a las necesidades de cada isla y a los nuevos sectores productivos.",
+   "texto": "Reforzaremos la formación profesional, la formación dual y los programas de inserción laboral juvenil, adaptando la oferta formativa a las necesidades de cada isla y a los nuevos sectores productivos."
+  },
+  "105": {
+   "titulo": "Impulsaremos programas de cualificación y recualificación profesional para facilitar el acceso de la juventud a trabajos estables y de calidad, y favorecer el retorno del talento formado fuera de las Illes Balears.",
+   "texto": "Impulsaremos programas de cualificación y recualificación profesional para facilitar el acceso de la juventud a trabajos estables y de calidad, y favorecer el retorno del talento formado fuera de las Illes Balears. En el caso de las prácticas, garantizaremos que todas sean remuneradas y que favorezcan la contratación posterior."
+  },
+  "106": {
+   "titulo": "Fomentaremos el retorno de la juventud formada fuera de las Illes Balears, con programas de retorno específicos, particularmente en el caso de las islas de Menorca, Eivissa y Formentera.",
+   "texto": "Fomentaremos el retorno de la juventud formada fuera de las Illes Balears, con programas de retorno específicos, particularmente en el caso de las islas de Menorca, Eivissa y Formentera."
+  },
+  "107": {
+   "titulo": "Impulsaremos la deducción de hasta 1.000 euros del IRPF para los menores de 35 años que vivan de alquiler.",
+   "texto": "Impulsaremos la deducción de hasta 1.000 euros del IRPF para los menores de 35 años que vivan de alquiler."
+  },
+  "108": {
+   "titulo": "Reforzaremos el Plan de Acción en Salud Mental y los programas de prevención del suicidio, en especial hacia la gente joven, así como aumentar las plazas de psicólogo interno residente.",
+   "texto": "Reforzaremos el Plan de Acción en Salud Mental y los programas de prevención del suicidio, en especial hacia la gente joven, así como aumentar las plazas de psicólogo interno residente. Asimismo, financiaremos la contratación estructural de profesionales de salud mental (psicólogos clínicos, educadores y trabajadores sociales) en escuelas, centros comunitarios y barrios vulnerables."
+  },
+  "109": {
+   "titulo": "Prohibiremos por ley las plataformas y redes sociales a menores de 16 años sin verificación de edad respetuosa con la privacidad, y pondremos límites automáticos de tiempo de pantalla en los centros educativos.",
+   "texto": "Prohibiremos por ley las plataformas y redes sociales a menores de 16 años sin verificación de edad respetuosa con la privacidad, y pondremos límites automáticos de tiempo de pantalla en los centros educativos."
+  },
+  "110": {
+   "titulo": "Garantizaremos la vigilancia efectiva del Mar Balear, reduciremos los impactos nocivos para el medio ambiente, y acabaremos con la sensación de descontrol que existe cada verano.",
+   "texto": "Garantizaremos la vigilancia efectiva del Mar Balear, reduciremos los impactos nocivos para el medio ambiente, y acabaremos con la sensación de descontrol que existe cada verano."
+  },
+  "111": {
+   "titulo": "Garantizaremos financiación real y suficiente para preservar el medio ambiente y los recursos naturales en las Illes Balears, con una atención específica a la adaptación al cambio climático, la suficiencia hídrica y el ciclo del agua y la protección de los espacios naturales protegidos.",
+   "texto": "Garantizaremos financiación real y suficiente para preservar el medio ambiente y los recursos naturales en las Illes Balears, con una atención específica a la adaptación al cambio climático, la suficiencia hídrica y el ciclo del agua y la protección de los espacios naturales protegidos."
+  },
+  "112": {
+   "titulo": "Ampliaremos los espacios marinos protegidos, con la creación de la Reserva Marina de Tramuntana, el Parque Nacional de las montañas del canal de Mallorca, la reserva marina en la zona exterior de Tagomago y los islotes de Ponent de Eivissa y Formentera y en la zona de cría de cachalotes del norte de Menorca.",
+   "texto": "Ampliaremos los espacios marinos protegidos, con la creación de la Reserva Marina de Tramuntana, el Parque Nacional de las montañas del canal de Mallorca, la reserva marina en la zona exterior de Tagomago y los islotes de Ponent de Eivissa y Formentera y en la zona de cría de cachalotes del norte de Menorca."
+  },
+  "113": {
+   "titulo": "Aseguraremos la vigilancia y la gestión de los espacios marinos protegidos del mar balear.",
+   "texto": "Aseguraremos la vigilancia y la gestión de los espacios marinos protegidos del mar balear."
+  },
+  "114": {
+   "titulo": "Transferiremos a la Comunidad Autónoma los terrenos propiedad del Ministerio de Defensa de interés ambiental.",
+   "texto": "Transferiremos a la Comunidad Autónoma los terrenos propiedad del Ministerio de Defensa de interés ambiental."
+  },
+  "115": {
+   "titulo": "Propondremos un Pacto por el Mar entre el Estado y el Gobierno de las Illes Balears, para definir las competencias en la gestión del ámbito marino.",
+   "texto": "Propondremos un Pacto por el Mar entre el Estado y el Gobierno de las Illes Balears, para definir las competencias en la gestión del ámbito marino. Reclamaremos la financiación necesaria para invertir en la protección del medio marino y propondremos que se destine a ello, al menos, todo lo que se recaude a través del canon de ocupación y aprovechamiento del dominio público marítimo-terrestre."
+  },
+  "116": {
+   "titulo": "Aseguraremos la financiación estatal para el traslado de residuos de Formentera a Eivissa, tal como prevé la Ley de residuos.",
+   "texto": "Aseguraremos la financiación estatal para el traslado de residuos de Formentera a Eivissa, tal como prevé la Ley de residuos."
+  },
+  "117": {
+   "titulo": "Impulsaremos un programa de adaptación de la costa y del litoral al cambio climático, que garantice su preservación a largo plazo, y garantizaremos su financiación estatal.",
+   "texto": "Impulsaremos un programa de adaptación de la costa y del litoral al cambio climático, que garantice su preservación a largo plazo, y garantizaremos su financiación estatal. La gestión del litoral se encaminará a la preservación y a evitar agresiones al medio terrestre y marítimo."
+  },
+  "118": {
+   "titulo": "En el marco de la coherencia de políticas impulsaremos el consumo responsable desde una perspectiva de justicia ecosocial, suficiencia y respeto a los límites planetarios, y promoveremos la reducción del consumo innecesario (decrecimiento), el comercio justo, la economía social y solidaria, las finanzas éticas y una compra pública responsable que incorpore criterios sociales, laborales y ambientales.",
+   "texto": "En el marco de la coherencia de políticas impulsaremos el consumo responsable desde una perspectiva de justicia ecosocial, suficiencia y respeto a los límites planetarios, y promoveremos la reducción del consumo innecesario (decrecimiento), el comercio justo, la economía social y solidaria, las finanzas éticas y una compra pública responsable que incorpore criterios sociales, laborales y ambientales."
+  },
+  "119": {
+   "titulo": "Reclamaremos la transferencia de las competencias de justicia, ejecución y gestión penitenciaria y de inmigración, avanzando en el autogobierno, con la gestión del reparto competencial desde una perspectiva insular y con vocación de asumir el máximo techo competencial.",
+   "texto": "Reclamaremos la transferencia de las competencias de justicia, ejecución y gestión penitenciaria y de inmigración, avanzando en el autogobierno, con la gestión del reparto competencial desde una perspectiva insular y con vocación de asumir el máximo techo competencial."
+  },
+  "120": {
+   "titulo": "Trabajaremos para el reconocimiento de la plurinacionalidad confederal del Estado español, el derecho a la autodeterminación de los pueblos y la defensa de la república feminista como forma de gobierno.",
+   "texto": "Trabajaremos para el reconocimiento de la plurinacionalidad confederal del Estado español, el derecho a la autodeterminación de los pueblos y la defensa de la república feminista como forma de gobierno."
+  },
+  "121": {
+   "titulo": "Transferiremos las propiedades en desuso y las residencias destinadas a usos vacacionales del Ministerio de Defensa a la Comunidad Autónoma para decidir el uso social que se necesite.",
+   "texto": "Transferiremos las propiedades en desuso y las residencias destinadas a usos vacacionales del Ministerio de Defensa a la Comunidad Autónoma para decidir el uso social que se necesite. Asimismo, impulsaremos la transferencia de los clubes deportivos militares de es Fortí y Torre d'en Pau al Instituto Municipal de Deportes de Palma y de la Casa del Mar del Port de Sóller al Ayuntamiento de Sóller por parte de la Tesorería de la Seguridad Social."
+  },
+  "122": {
+   "titulo": "Promoveremos la oficialidad del catalán en la Unión Europea a través de las iniciativas diplomáticas, políticas e institucionales que sean necesarias.",
+   "texto": "Promoveremos la oficialidad del catalán en la Unión Europea a través de las iniciativas diplomáticas, políticas e institucionales que sean necesarias. El reconocimiento del carácter plurilingüe del Estado también debe tener su reflejo en el ámbito europeo."
+  },
+  "123": {
+   "titulo": "Aprobaremos una ley de lenguas que reconozca como lenguas oficiales todas las lenguas del Estado español, admitiendo así la realidad plurilingüe del Estado.",
+   "texto": "Aprobaremos una ley de lenguas que reconozca como lenguas oficiales todas las lenguas del Estado español, admitiendo así la realidad plurilingüe del Estado. Esta ley permitirá dirigirse y relacionarse en catalán con la Administración General del Estado y ser atendido en esta lengua, tanto presencialmente como por vía telefónica y telemática, y procurará que todos los trabajadores de la Administración General del Estado destinados en Baleares acrediten el conocimiento de la lengua catalana, con un plan específico de capacitación y garantía de los derechos lingüísticos específicamente en los ámbitos de la Justicia y de las fuerzas y de los cuerpos de seguridad del Estado. Esta Ley debe prever que los contratos, las concesiones, las subvenciones y los servicios públicos de titularidad o competencia estatal incorporen, cuando se presten en territorios con lengua oficial propia, las garantías lingüísticas necesarias para asegurar la atención y la información en catalán, impidiendo toda discriminación por el uso del catalán en la relación con el Estado."
+  },
+  "124": {
+   "titulo": "Reformaremos la normativa estatal de protección de los consumidores para asegurar que los ciudadanos puedan recibir en catalán la información, los contratos, las facturas, las instrucciones, los servicios de atención al cliente y los procedimientos de reclamación de los servicios sujetos a regulación estatal.",
+   "texto": "Reformaremos la normativa estatal de protección de los consumidores para asegurar que los ciudadanos puedan recibir en catalán la información, los contratos, las facturas, las instrucciones, los servicios de atención al cliente y los procedimientos de reclamación de los servicios sujetos a regulación estatal."
+  },
+  "125": {
+   "titulo": "Ampliaremos la posibilidad de emplear el catalán, tal como se ha hecho en el Congreso, en el Senado.",
+   "texto": "Ampliaremos la posibilidad de emplear el catalán, tal como se ha hecho en el Congreso, en el Senado. Además, haremos posible un funcionamiento plurilingüe de los órganos constitucionales y de control, como el Tribunal Constitucional, el Consejo de Estado, el Tribunal de Cuentas y el Defensor del Pueblo, entre otros."
+  },
+  "126": {
+   "titulo": "Impulsaremos un programa de aprendizaje del catalán (y las otras lenguas oficiales) en la empresa privada, e incentivaremos que durante seis meses los trabajadores puedan dedicar una hora al día de su jornada laboral a aprender la lengua.",
+   "texto": "Impulsaremos un programa de aprendizaje del catalán (y las otras lenguas oficiales) en la empresa privada, e incentivaremos que durante seis meses los trabajadores puedan dedicar una hora al día de su jornada laboral a aprender la lengua."
+  },
+  "127": {
+   "titulo": "Blindaremos una inversión presupuestaria relacionada con la lengua catalana que, sobre la base del número de hablantes de cada lengua dentro de las fronteras del Estado, sea proporcional a la destinada a la lengua castellana y sus instituciones, garantizando el apoyo a la producción cultural en lengua catalana.",
+   "texto": "Blindaremos una inversión presupuestaria relacionada con la lengua catalana que, sobre la base del número de hablantes de cada lengua dentro de las fronteras del Estado, sea proporcional a la destinada a la lengua castellana y sus instituciones, garantizando el apoyo a la producción cultural en lengua catalana."
+  },
+  "128": {
+   "titulo": "Haremos que Radiotelevisión Española, como entidad pública y junto con agencias de propiedad estatal como EFE, fortalezcan su compromiso con la normalización lingüística mediante la ampliación de horas de emisión en catalán en desconexión en las Illes Balears y con actitudes lingüísticamente responsables.",
+   "texto": "Haremos que Radiotelevisión Española, como entidad pública y junto con agencias de propiedad estatal como EFE, fortalezcan su compromiso con la normalización lingüística mediante la ampliación de horas de emisión en catalán en desconexión en las Illes Balears y con actitudes lingüísticamente responsables. Además, haremos que el nuevo canal 2Cat y cualquier otro canal público en lengua catalana que dependa de RTVE llegue con normalidad a las Illes Balears y esté diseñado en contenidos para abarcar todo el ámbito lingüístico catalanohablante."
+  },
+  "129": {
+   "titulo": "Eliminaremos los obstáculos administrativos, técnicos o regulatorios que dificulten la recepción recíproca de los medios de comunicación audiovisuales públicos de los territorios de habla catalana.",
+   "texto": "Eliminaremos los obstáculos administrativos, técnicos o regulatorios que dificulten la recepción recíproca de los medios de comunicación audiovisuales públicos de los territorios de habla catalana."
+  },
+  "130": {
+   "titulo": "Promoveremos medidas para que las televisiones, las radios y las plataformas audiovisuales que operan en el Estado aseguren una presencia suficiente y efectiva del catalán.",
+   "texto": "Promoveremos medidas para que las televisiones, las radios y las plataformas audiovisuales que operan en el Estado aseguren una presencia suficiente y efectiva del catalán. Estas medidas deben incluir especialmente los contenidos infantiles y juveniles, el cine, las series, los documentales y los nuevos servicios digitales y de streaming."
+  },
+  "131": {
+   "titulo": "Impulsaremos un incremento de las inversiones para proteger el patrimonio cultural de las Illes Balears.",
+   "texto": "Impulsaremos un incremento de las inversiones para proteger el patrimonio cultural de las Illes Balears. En particular, estableceremos una línea estable de financiación estatal para la conservación, la investigación, la gestión y la difusión de Menorca Talaiòtica, reconocida como Patrimonio Mundial por la UNESCO, y garantizaremos los recursos necesarios para preservar este patrimonio y hacerlo accesible a la ciudadanía."
+  },
+  "132": {
+   "titulo": "Garantizaremos la apertura en buenas condiciones del Museo Arqueológico de Eivissa, con la dotación de los recursos suficientes.",
+   "texto": "Garantizaremos la apertura en buenas condiciones del Museo Arqueológico de Eivissa, con la dotación de los recursos suficientes."
+  },
+  "133": {
+   "titulo": "Promoveremos el retorno del patrimonio histórico de las Illes Balears depositado en museos, archivos y colecciones públicos estatales centralizados, y también del patrimonio de especial relevancia que está en manos privadas fuera de las Illes Balears por la inacción multisecular del Estado a la hora de preservarlo y protegerlo.",
+   "texto": "Promoveremos el retorno del patrimonio histórico de las Illes Balears depositado en museos, archivos y colecciones públicos estatales centralizados, y también del patrimonio de especial relevancia que está en manos privadas fuera de las Illes Balears por la inacción multisecular del Estado a la hora de preservarlo y protegerlo."
+  },
+  "134": {
+   "titulo": "Incorporaremos el hecho insular a todas las políticas culturales estatales, con apoyo específico al catalán y a la cultura propia de Baleares ante la turistificación.",
+   "texto": "Incorporaremos el hecho insular a todas las políticas culturales estatales, con apoyo específico al catalán y a la cultura propia de Baleares ante la turistificación."
+  },
+  "135": {
+   "titulo": "Derogaremos la Ley mordaza e impulsaremos medidas para la democratización real de las estructuras del Estado: cuerpos policiales y justicia.",
+   "texto": "Derogaremos la Ley mordaza e impulsaremos medidas para la democratización real de las estructuras del Estado: cuerpos policiales y justicia."
+  },
+  "136": {
+   "titulo": "Elaboraremos la Ley de integridad pública, que cierre la vía de ocultación del poder económico.",
+   "texto": "Elaboraremos la Ley de integridad pública, que cierre la vía de ocultación del poder económico."
+  },
+  "137": {
+   "titulo": "Revisaremos los Acuerdos de 1979 con la Santa Sede, y también los de las otras confesiones religiosas, con inclusión de la legislación de privilegio que de ellos se deriva.",
+   "texto": "Revisaremos los Acuerdos de 1979 con la Santa Sede, y también los de las otras confesiones religiosas, con inclusión de la legislación de privilegio que de ellos se deriva."
+  },
+  "138": {
+   "titulo": "Acabaremos con todos los vestigios de enaltecimiento de la dictadura franquista, como el monolito fascista de s'Esplanada de Maó o el de la Feixina en Palma.",
+   "texto": "Acabaremos con todos los vestigios de enaltecimiento de la dictadura franquista, como el monolito fascista de s'Esplanada de Maó o el de la Feixina en Palma."
+  },
+  "139": {
+   "titulo": "Devolveremos los bienes requisados por el Estado durante la guerra civil a los herederos, como la casa de Emili Darder en Palma.",
+   "texto": "Devolveremos los bienes requisados por el Estado durante la guerra civil a los herederos, como la casa de Emili Darder en Palma."
+  },
+  "140": {
+   "titulo": "Transferiremos al Gobierno de las Illes Balears espacios emblemáticos para la memoria democrática, como el fortí d'Illetes.",
+   "texto": "Transferiremos al Gobierno de las Illes Balears espacios emblemáticos para la memoria democrática, como el fortí d'Illetes."
+  },
+  "141": {
+   "titulo": "Aprobaremos una Ley integral contra el racismo y un Pacto social y político contra los discursos de odio hacia las personas migrantes o refugiadas.",
+   "texto": "Aprobaremos una Ley integral contra el racismo y un Pacto social y político contra los discursos de odio hacia las personas migrantes o refugiadas. Dotaremos de financiación a las Illes Balears para impulsar un pacto por unas islas antirracistas e inclusivas. Hasta la transferencia correctamente dotada a las Illes Balears en cumplimiento del Estatuto de Autonomía, se incrementarán los recursos económicos y humanos de la oficina de extranjería y se acabará con los sistemas opacos de otorgamiento de citas, y estableceremos un sistema garantista y eficiente de gestión de los trámites."
+  },
+  "142": {
+   "titulo": "Exigiremos que el Estado reconozca oficialmente la ruta Argelia-Baleares de inmigración y apruebe un Plan Estatal para el Mediterráneo Occidental, con presupuesto propio y plurianual, con participación y cobertura por parte de la Unión Europea.",
+   "texto": "Exigiremos que el Estado reconozca oficialmente la ruta Argelia-Baleares de inmigración y apruebe un Plan Estatal para el Mediterráneo Occidental, con presupuesto propio y plurianual, con participación y cobertura por parte de la Unión Europea. Este reconocimiento debe tener como prioridad la prevención, la seguridad de las personas y la garantía de los derechos humanos y de la dignidad humana. Queremos más medios permanentes de Salvamento Marítimo en las Islas, sistemas de detección que permitan los rescates a tiempo y un protocolo de identificación de las víctimas y de atención a las familias. De la misma manera es necesaria una acogida digna y financiada al 100 % por el Estado, también la de los niños y adolescentes que llegan solos, con atención específica a la situación de Formentera."
+  },
+  "143": {
+   "titulo": "Eliminaremos las trabas administrativas para el acceso efectivo a derechos mediante un empadronamiento flexible, garantía de cuentas bancarias y agilización de la homologación de títulos.",
+   "texto": "Eliminaremos las trabas administrativas para el acceso efectivo a derechos mediante un empadronamiento flexible, garantía de cuentas bancarias y agilización de la homologación de títulos."
+  },
+  "144": {
+   "titulo": "Aplicaremos el Pacto Europeo de Migración y Asilo con la vertiente más garantista.",
+   "texto": "Aplicaremos el Pacto Europeo de Migración y Asilo con la vertiente más garantista. En el caso de la infancia, el interés superior del menor tendrá primacía absoluta. La edad se determinará según estándares internacionales y se evaluará de forma continua su vulnerabilidad y asignación de representación legal a la infancia no acompañada desde el primer momento. Aseguraremos el derecho a la reagrupación familiar."
+  },
+  "145": {
+   "titulo": "Suprimiremos la ley Beckham, que permite a las personas que lleguen al Estado desde el extranjero tributar como no residentes durante 6 años, hasta la mitad en concepto de IRPF y sin tributar por los rendimientos patrimoniales en el extranjero.",
+   "texto": "Suprimiremos la ley Beckham, que permite a las personas que lleguen al Estado desde el extranjero tributar como no residentes durante 6 años, hasta la mitad en concepto de IRPF y sin tributar por los rendimientos patrimoniales en el extranjero."
+  },
+  "146": {
+   "titulo": "Defenderemos el derecho de sufragio activo y pasivo de las personas migrantes en las elecciones municipales.",
+   "texto": "Defenderemos el derecho de sufragio activo y pasivo de las personas migrantes en las elecciones municipales."
+  },
+  "147": {
+   "titulo": "Reorientaremos la política exterior hacia la Vecindad Sur e impulsaremos una Fuerza Mediterránea de intervención climática y protección civil, enfocada en la extinción de incendios, rescate en el mar y lucha contra la contaminación.",
+   "texto": "Reorientaremos la política exterior hacia la Vecindad Sur e impulsaremos una Fuerza Mediterránea de intervención climática y protección civil, enfocada en la extinción de incendios, rescate en el mar y lucha contra la contaminación."
+  },
+  "148": {
+   "titulo": "Reduciremos el gasto militar y rechazaremos el objetivo de destinar el 5 % del PIB a gasto militar, e impulsaremos una reducción efectiva de las partidas destinadas a defensa, con la reorientación de estos fondos a la consecución de la paz.",
+   "texto": "Reduciremos el gasto militar y rechazaremos el objetivo de destinar el 5 % del PIB a gasto militar, e impulsaremos una reducción efectiva de las partidas destinadas a defensa, con la reorientación de estos fondos a la consecución de la paz. En este sentido, apoyaremos y promoveremos la salida del Estado español de la OTAN y apostaremos por una política autónoma de defensa, coordinada a escala europea y mediterránea. En todo caso, reclamaremos que ni los puertos ni el territorio de las Illes Balears estén al servicio de las operaciones de la Alianza."
+  },
+  "149": {
+   "titulo": "Defenderemos firmemente el fin del genocidio palestino.",
+   "texto": "Defenderemos firmemente el fin del genocidio palestino. Así, aprobaremos una ley específica de embargo integral de armas a Israel, sin ninguna excepción, y fijaremos el embargo mientras siga la ocupación ilegal o el riesgo de genocidio. Se cerrarán vías de tránsito militar por aeropuertos, puertos, espacio aéreo y bases militares y se prohibirá la contratación pública o la cooperación militar/tecnológica con la industria de defensa israelí (incluidas las transferencias indirectas a través de países terceros). En paralelo, apoyaremos a la justicia internacional y a la acción multilateral por Palestina, apoyaremos política y financieramente a la Corte Penal Internacional y a la Corte Internacional de Justicia en la persecución de los crímenes de genocidio y lesa humanidad. Impulsaremos en el ámbito europeo la suspensión del Acuerdo de Asociación UE - Israel y trabajaremos para que la totalidad de los Estados miembros reconozcan formalmente al Estado de Palestina."
+  },
+  "150": {
+   "titulo": "Daremos apoyo explícito a la autodeterminación del Sáhara occidental y a un referéndum organizado por la ONU.",
+   "texto": "Daremos apoyo explícito a la autodeterminación del Sáhara occidental y a un referéndum organizado por la ONU. Retiraremos formalmente el apoyo gubernamental al plan de autonomía marroquí para retomar la posición fijada por el derecho internacional. Defenderemos el derecho incondicional a la autodeterminación del pueblo saharaui mediante un referéndum libre supervisado por las Naciones Unidas. Asimismo, daremos cumplimiento estricto a las sentencias del TJUE sobre el Sáhara Occidental, en particular la prohibición de aplicar acuerdos comerciales, pesqueros o de cualquier índole entre la UE y Marruecos al territorio del Sáhara Occidental sin el consentimiento expreso de su pueblo. Votaremos en contra de acuerdos comerciales en el Consejo de la UE que incluyan el territorio saharaui; el Estado español aplicará en las aduanas y contrataciones la diferenciación territorial entre Marruecos y el Sáhara Occidental y defenderá un acuerdo de pesca limitado de forma exclusiva a aguas estrictamente marroquíes."
+  },
+  "151": {
+   "titulo": "Exigiremos que el Ministerio de Asuntos Exteriores tenga un rol activo en la resolución de disputas estratégicas (como el Sáhara Occidental, Palestina, Colombia, Haití, Ucrania o la región del Sahel) en un plan global de consecución de la paz, de consolidación del respeto a los derechos humanos y de promoción de la democracia.",
+   "texto": "Exigiremos que el Ministerio de Asuntos Exteriores tenga un rol activo en la resolución de disputas estratégicas (como el Sáhara Occidental, Palestina, Colombia, Haití, Ucrania o la región del Sahel) en un plan global de consecución de la paz, de consolidación del respeto a los derechos humanos y de promoción de la democracia."
+  },
+  "152": {
+   "titulo": "Incrementaremos los recursos para la cooperación internacional transformadora y la educación para la transformación social y la ciudadanía global, destinando el 0,7 % del PIB.",
+   "texto": "Incrementaremos los recursos para la cooperación internacional transformadora y la educación para la transformación social y la ciudadanía global, destinando el 0,7 % del PIB. Este sistema de cooperación favorecerá los proyectos y políticas que prioricen la perspectiva de género, antirracista, decolonial, crítica con el cisheteropatriarcado, antimilitarista y contraria a las dinámicas extractivistas. La política de cooperación no buscará en ningún caso retornos en forma de beneficios financieros o comerciales ni se dedicará a fortalecer las políticas de privatización en los países receptores."
+  },
+  "153": {
+   "titulo": "Impulsaremos la Educación para la Transformación Social y la Ciudadanía Global desde un enfoque feminista, ecosocial y decolonial, con la promoción del pensamiento crítico, la solidaridad y el compromiso con la justicia global",
+   "texto": "Impulsaremos la Educación para la Transformación Social y la Ciudadanía Global desde un enfoque feminista, ecosocial y decolonial, con la promoción del pensamiento crítico, la solidaridad y el compromiso con la justicia global"
+  },
+  "154": {
+   "titulo": "Priorizaremos una cooperación internacional que reconozca y fortalezca el protagonismo de las ONGD y las organizaciones populares de base, feministas y de mujeres de los territorios del Sur Global, con respeto a su autonomía y con la promoción de relaciones horizontales de solidaridad y justicia global.",
+   "texto": "Priorizaremos una cooperación internacional que reconozca y fortalezca el protagonismo de las ONGD y las organizaciones populares de base, feministas y de mujeres de los territorios del Sur Global, con respeto a su autonomía y con la promoción de relaciones horizontales de solidaridad y justicia global."
+  },
+  "155": {
+   "titulo": "Facilitaremos el papel de la cooperación descentralizada como expresión de la voluntad de solidaridad de nuestra sociedad, y eliminaremos las trabas de la Ley 27/2013, de racionalización y sostenibilidad de la Administración Local (LRSAL).",
+   "texto": "Facilitaremos el papel de la cooperación descentralizada como expresión de la voluntad de solidaridad de nuestra sociedad, y eliminaremos las trabas de la Ley 27/2013, de racionalización y sostenibilidad de la Administración Local (LRSAL)."
+  },
+  "156": {
+   "titulo": "Lucharemos por la erradicación de la tauromaquia.",
+   "texto": "Lucharemos por la erradicación de la tauromaquia. Derogaremos la Ley 18/2013, que declaró la tauromaquia patrimonio cultural. Prohibiremos la entrada de menores a las corridas de toros. Se eliminará cualquier tipo de subvenciones a la tauromaquia. Se acabará el resto de eventos taurinos."
+  },
+  "157": {
+   "titulo": "Se regularán los delfinarios y los zoológicos, y se prohibirá la cría en cautividad, los espectáculos con animales y la interacción de asistentes con los animales.",
+   "texto": "Se regularán los delfinarios y los zoológicos, y se prohibirá la cría en cautividad, los espectáculos con animales y la interacción de asistentes con los animales. Asimismo, en los circos se prohibirán los espectáculos con animales, sin excepción."
+  },
+  "158": {
+   "titulo": "Extenderemos la Ley de bienestar animal para todos los animales, y endureceremos las sanciones por maltrato animal e impulsaremos medidas para acabar con el sacrificio.",
+   "texto": "Extenderemos la Ley de bienestar animal para todos los animales, y endureceremos las sanciones por maltrato animal e impulsaremos medidas para acabar con el sacrificio. Se generalizará el método CER (capturar, esterilizar, retornar) para las colonias de gatos estables y controladas."
+  },
+  "159": {
+   "titulo": "Reduciremos el IVA veterinario.",
+   "texto": "Reduciremos el IVA veterinario."
+  },
+  "160": {
+   "titulo": "Pondremos fin al turismo de explotación animal, acabaremos con las calesas de caballos y subvencionaremos su transición a los carruajes eléctricos.",
+   "texto": "Pondremos fin al turismo de explotación animal, acabaremos con las calesas de caballos y subvencionaremos su transición a los carruajes eléctricos."
+  }
+ },
+ "bloques": {
+  "1": "La vida más fácil",
+  "2": "Vivienda",
+  "3": "Cambio de modelo económico",
+  "4": "Igualdad, derechos y servicios públicos",
+  "5": "Cambios sociales y globales"
+ },
+ "secciones": {
+  "arribar-a-final-de-mes": "Llegar a fin de mes",
+  "treball-de-qualitat": "Trabajo de calidad",
+  "desplacar-nos": "Desplazarnos",
+  "cases-assequibles-i-per-viure-hi": "Casas asequibles y para vivir en ellas",
+  "acabar-amb-la-massificacio-turistica": "Acabar con la masificación turística",
+  "diversificacio-economica": "Diversificación económica",
+  "agricultura-ramaderia-i-pesca": "Agricultura, ganadería y pesca",
+  "energia": "Energía",
+  "financament-i-inversions": "Financiación e inversiones",
+  "serveis-publics-i-nous-drets": "Servicios públicos y nuevos derechos",
+  "educacio-publica": "Educación pública",
+  "sanitat": "Sanidad",
+  "sistema-de-dependencia-i-cures": "Sistema de Dependencia y Cuidados",
+  "eradicacio-de-la-pobresa": "Erradicación de la pobreza",
+  "igualtat-efectiva-vides-lliures-de-masclisme-i-lgtbifobia": "Igualdad efectiva: vidas libres de machismo y LGTBIfobia",
+  "joventut": "Juventud",
+  "medi-ambient-i-territori": "Medio ambiente y territorio",
+  "autogovern": "Autogobierno",
+  "el-catala-llengua-de-ple-dret": "El catalán, lengua de pleno derecho",
+  "cultura": "Cultura",
+  "en-defensa-de-la-democracia": "En defensa de la democracia",
+  "migracions-i-antiracisme": "Migraciones y antirracismo",
+  "pau-solidaritat-i-europa": "Paz, solidaridad y Europa",
+  "drets-dels-animals": "Derechos de los animales"
+ },
+ "citas": {
+  "arribar o superar, com a mínim, el 60 % del salari mitjà brut": "alcanzar o superar, como mínimo, el 60 % del salario medio bruto",
+  "no superin, en cap cas, el 5 % del preu mitjà de la península": "no superen, en ningún caso, el 5 % del precio medio de la península",
+  "prestació universal de 200 € per cada menor fins els 18 anys": "prestación universal de 200 € por cada menor hasta los 18 años",
+  "jornada laboral a un màxim de 32 hores setmanals de feina efectiva sense reducció salarial": "jornada laboral a un máximo de 32 horas semanales de trabajo efectivo sin reducción salarial",
+  "garantir 12 mesos de sou i de cotització": "garantizar 12 meses de sueldo y de cotización",
+  "regulada per una tarifa màxima de trenta-cinc euros per als residents": "regulada por una tarifa máxima de treinta y cinco euros para los residentes",
+  "limitarà, per llei, el preu del lloguer a zones tensionades en el 25 % de la renda neta": "limitará, por ley, el precio del alquiler en zonas tensionadas al 25 % de la renta neta",
+  "escut hipotecari per protegir, de fins a 300 € al mes, les famílies de classe mitjana en què la hipoteca els suposi més del 40 % dels ingressos nets": "escudo hipotecario para proteger, con hasta 300 € al mes, a las familias de clase media a las que la hipoteca les suponga más del 40 % de los ingresos netos",
+  "tributar al 21 % i s’eliminaran les deduccions a l’impost de societats i l’IRPF. Així mateix, tendran un recàrrec a l’IBI de fins al 150 %": "tributar al 21 % y se eliminarán las deducciones en el impuesto de sociedades y el IRPF. Asimismo, tendrán un recargo en el IBI de hasta el 150 %",
+  "recàrrec del 200 % del segon habitatge i del 1000 % a partir del tercer": "recargo del 200 % a la segunda vivienda y del 1000 % a partir de la tercera",
+  "establiments turístics tributin el tipus general d'IVA del 21%": "establecimientos turísticos tributen al tipo general de IVA del 21%",
+  "elevar la inversió pública del 0,8 % a l'1,7 % del PIB l'any 2030, amb una aportació estatal directa mínima del 50 %": "elevar la inversión pública del 0,8 % al 1,7 % del PIB en el año 2030, con una aportación estatal directa mínima del 50 %",
+  "finançament de les universitats públiques fins a assolir l’1,5% del PIB": "financiación de las universidades públicas hasta alcanzar el 1,5% del PIB",
+  "augment de les ràtios de professionals fins a un mínim de 10 per cada 100.000 habitants": "aumento de las ratios de profesionales hasta un mínimo de 10 por cada 100.000 habitantes",
+  "limitarà el copagament màxim al 30 % dels ingressos": "limitará el copago máximo al 30 % de los ingresos",
+  "garantir una base de renda equivalent al 40% de la mitjana d'ingressos estatals": "garantizar una base de renta equivalente al 40% de la media de ingresos estatales",
+  "almanco un 5% del pressupost no financer de l’Estat (superant el 4,4 % actual). En particular, s’incrementarà un 10 % la dotació contra les violències masclistes": "al menos un 5% del presupuesto no financiero del Estado (superando el 4,4 % actual). En particular, se incrementará un 10 % la dotación contra las violencias machistas",
+  "dret al sufragi actiu i passiu a partir dels 16 anys": "derecho al sufragio activo y pasivo a partir de los 16 años",
+  "deducció de fins a 1.000 euros de l’IRPF per als menors de 35 anys que visquin de lloguer": "deducción de hasta 1.000 euros del IRPF para los menores de 35 años que vivan de alquiler",
+  "plataformes i xarxes socials a menors de 16 anys sense verificació": "plataformas y redes sociales a menores de 16 años sin verificación",
+  "durant sis mesos els treballadors puguin dedicar una hora al dia de la seva jornada laboral a aprendre la llengua": "durante seis meses los trabajadores puedan dedicar una hora al día de su jornada laboral a aprender la lengua",
+  "acollida digna i finançada al 100 % per l’Estat": "acogida digna y financiada al 100 % por el Estado",
+  "destinant-hi el 0,7 % del PIB": "destinando el 0,7 % del PIB"
+ }
+}

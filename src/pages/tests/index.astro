@@ -3,9 +3,10 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Tag from '@/components/ui/Tag.astro';
 import { siteTests } from '@/lib/tests';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 ---
 
-<BaseLayout title="Tests" description="Tests para leer los programas electorales sin prejuicios y comparar la postura de cada partido.">
+<BaseLayout title="Tests" description="Tests para leer los programas electorales sin prejuicios y comparar la postura de cada partido." image={SECTION_SHARE_IMAGES.tests}>
   <section class="page-hero">
     <div class="container">
       <Tag variant="ink">Tests</Tag>

@@ -6,7 +6,7 @@ import { jointListMembers } from '@/lib/relations';
 import { SITE_NAME } from '@/lib/site';
 import Wordmark from './Wordmark.astro';
 import { siteTests } from '@/lib/tests';
-import type { Debate } from '@/lib/debate';
+import { debates } from '@/lib/debates';
 
 const path = Astro.url.pathname;
 const isCurrent = (program: Program) => path.startsWith(routes.party(program.id));
@@ -84,13 +84,9 @@ const searchLinks = links.filter((link) => link.href === routes.search());
 const testsCurrent = path.startsWith(routes.tests());
 
 // The «Debates» menu: each debate with its date and who took part, newest first. A draft shows only on the dev server.
-const debateFiles = import.meta.glob<Debate>('@eleccion/debates/*.json', { eager: true, import: 'default' });
 const debateDay = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', timeZone: 'UTC' });
-const siteDebates = Object.values(debateFiles)
-  .filter((debate) => debate.published !== false || import.meta.env.DEV)
-  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
-  .map((debate) => {
+const siteDebates = debates.map((debate) => {
     const names = debate.speakers
       .filter((speaker) => speaker.words > 0 && speaker.partyId)
       .map((speaker) => speaker.name.split(' ').slice(-1)[0]);
@@ -348,12 +344,24 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
     stroke-width: 2.5;
     stroke-linecap: square;
   }
-  /* Every item of the nav has its icon: it helps to find a section at a glance. Between 1180 and 1379px the row is
-     full: only the search keeps its magnifier there. The phone menu (under 1180px) shows them all. */
-  @media (min-width: 1180px) and (max-width: 1379px) {
-    .nav { column-gap: 12px; }
+  /* Every item of the nav has its icon: it helps to find a section at a glance. Below 1580px the row is
+     tight, so only the search keeps its magnifier; between 1180 and 1339px the type and logo tighten too
+     so the theme toggle never wraps onto a second row. The phone menu (under 1180px) shows all icons. */
+  @media (min-width: 1180px) {
+    .nav > a,
+    .nav-dropdown > summary { white-space: nowrap; }
+  }
+  @media (min-width: 1180px) and (max-width: 1579px) {
+    .nav { column-gap: 14px; }
     .nav > a:not(.nav__link--search) .nav__icon,
     .nav-dropdown > summary .nav__icon { display: none; }
+  }
+  @media (min-width: 1180px) and (max-width: 1339px) {
+    .logo :global(.wordmark) { font-size: 2.125rem; }
+    .nav { column-gap: 10px; }
+    .nav > a,
+    .nav-dropdown > summary { font-size: 0.9375rem; }
+    .nav-dropdown__chevron { margin-left: 5px; }
   }
   .nav a[aria-current='page'],
   .nav-dropdown > summary[aria-current='page'] {

@@ -124,7 +124,7 @@ export default defineConfig({
         !(page.endsWith('/sin-siglas/') && !page.endsWith('/tests/sin-siglas/')),
       // (la ruta base se añade sola a las URL del sitemap)
       changefreq: 'weekly',
-      lastmod: new Date(),
+      // No `lastmod`: the build date changes on every build, and search engines ignore a date that is always new.
       // el análisis de cada programa y la portada pesan más que las páginas de detalle
       serialize(item) {
         // la ruta sin la ruta base, para que «/» siga siendo la portada en GitHub Pages

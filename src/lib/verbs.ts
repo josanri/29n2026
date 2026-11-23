@@ -33,7 +33,7 @@ const NOT_VERBS = new Set([
   'multidisciplinar', 'cardiopulmonar', 'alzheimer', 'estándar', 'queer', 'solar', 'máster', 'taller', 'azar',
   'pesar', 'mayor', 'menor', 'sector', 'valor', 'exterior', 'interior', 'superior', 'anterior', 'posterior',
   'similar', 'singular', 'titular', 'auxiliar', 'pilar', 'mar', 'polar', 'circular', 'celular', 'vascular',
-  'ejemplar', 'nivel', 'sónar', 'mater',
+  'ejemplar', 'nivel', 'sónar', 'mater', 'insular', 'balear',
   // Names of places and acronyms.
   'gibraltar', 'guadalquivir', 'trafalgar', 'feder', 'feader', 'edar', 'villar', 'olivar', 'vejer', 'sanlúcar',
   'níjar', 'almodóvar', 'aguilar', 'andújar', 'abejar',

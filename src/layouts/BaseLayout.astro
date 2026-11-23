@@ -12,7 +12,7 @@ import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import Tooltip from '@/components/ui/Tooltip.astro';
 import { partyHighlightStyle, partyScaleStyle, readableTextColor, sphereStyle } from '@/lib/color';
-import { DEFAULT_DESCRIPTION, DEFAULT_SHARE_IMAGE, SITE_NAME, THEME_STORAGE_KEY, X_HANDLE, type ShareImage } from '@/lib/site';
+import { DEFAULT_DESCRIPTION, DEFAULT_SHARE_IMAGE, FEED_TITLE, SITE_NAME, THEME_STORAGE_KEY, X_HANDLE, type ShareImage } from '@/lib/site';
 import { routes } from '@/lib/routes';
 
 interface Props {
@@ -70,10 +70,11 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <link rel="preload" href={displayFontUrl} as="font" type="font/woff2" crossorigin />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'max-image-preview:large'} />
     <link rel="canonical" href={canonicalUrl} />
     {markdown && <link rel="alternate" type="text/markdown" href={markdownHref} />}
     <link rel="sitemap" href={routes.asset('/sitemap-index.xml')} />
+    <link rel="alternate" type="application/rss+xml" title={FEED_TITLE} href={routes.feed()} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content={SITE_NAME} />
@@ -83,7 +84,7 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta property="og:image" content={imageUrl} />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:height" content="675" />
     <meta property="og:image:alt" content={image.alt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={X_HANDLE} />

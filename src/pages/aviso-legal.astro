@@ -1,0 +1,172 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Panel from '@/components/ui/Panel.astro';
+import { routes } from '@/lib/routes';
+import { SITE_NAME, SOCIAL_ACCOUNTS, THEME_STORAGE_KEY } from '@/lib/site';
+
+// Local storage keys that the browser saves on the device of the reader. None leaves the browser.
+const storageKeys = [
+  {
+    key: THEME_STORAGE_KEY,
+    purpose: 'Recuerda si has elegido el tema claro o el tema oscuro.',
+  },
+  {
+    key: 'electosfera-lang',
+    purpose: 'Recuerda si prefieres leer los programas en otra lengua cooficial en su idioma original o en castellano.',
+  },
+  {
+    key: 'simulador-imagen',
+    purpose: 'Recuerda el tipo de archivo, el formato y el tema de la última imagen generada en el simulador.',
+  },
+  {
+    key: 'temas-que-dividen',
+    purpose:
+      'Guarda tus respuestas del test «Temas que dividen» para que no las pierdas al volver. Nunca salen de tu navegador y puedes borrarlas en cualquier momento con el botón «Empezar de nuevo» del test o borrando los datos del sitio en tu navegador.',
+  },
+];
+---
+
+<BaseLayout
+  title="Aviso legal"
+  description={`Naturaleza del proyecto, fuentes de los datos, propiedad intelectual, privacidad y almacenamiento en el navegador de ${SITE_NAME}.`}
+>
+  <section class="intro">
+    <div class="container">
+      <h1 class="headline">Aviso legal</h1>
+      <p class="intro__lede">
+        {SITE_NAME} es un proyecto informativo e independiente, sin ánimo de lucro ni actividad comercial. Esta página explica
+        el origen de los datos, sus límites y qué guarda tu navegador.
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="stack">
+      <Panel title="Naturaleza e independencia">
+        <p>
+          {SITE_NAME} es una web informativa e independiente dedicada a la lectura y el análisis de programas electorales,
+          encuestas, debates y calendario electoral.
+        </p>
+        <p>
+          No está vinculada a ningún partido político, coalición, candidatura, empresa encuestadora, Administración electoral ni
+          organismo público. No es una fuente oficial ni ofrece asesoramiento de voto: antes de citar un dato o tomar una
+          decisión, consulta siempre el documento oficial.
+        </p>
+        <p>
+          El proyecto no tiene publicidad, enlaces de afiliación, patrocinios ni servicios de pago.
+        </p>
+      </Panel>
+
+      <Panel title="Fuentes y propiedad intelectual">
+        <ul>
+          <li>
+            <strong>Programas electorales:</strong> el texto de cada medida procede del documento oficial publicado por cada
+            formación, enlazado en su ficha. Los derechos sobre cada programa pertenecen al partido que lo publica.
+          </li>
+          <li>
+            <strong>Datos oficiales:</strong> las candidaturas proclamadas proceden del Boletín Oficial del Estado (BOE), la
+            información práctica del Ministerio del Interior y los límites provinciales del mapa del Ministerio de Transportes y
+            Movilidad Sostenible.
+          </li>
+          <li>
+            <strong>Encuestas y debates:</strong> las estimaciones de voto enlazan a la publicación original de cada encuestadora
+            o medio. Las transcripciones y el recuento de interrupciones de los debates son un análisis editorial a partir de la
+            emisión pública.
+          </li>
+          <li>
+            <strong>Clasificación y traducciones:</strong> las categorías, los colectivos, las palancas, las claves editoriales y
+            las posturas por tema son elaboración propia de esta web. En los programas en otra lengua cooficial, la traducción
+            opcional al castellano se genera con modelos de inteligencia artificial, no es oficial ni sustituye al texto original.
+            Puede haber errores de extracción, transcripción o clasificación.
+          </li>
+          <li>
+            <strong>Código de la web:</strong> el código fuente de la aplicación se distribuye bajo licencia MIT. Esa licencia
+            cubre únicamente el código y no se extiende a los programas, mapas ni contenidos de terceros.
+          </li>
+        </ul>
+      </Panel>
+
+      <Panel title="Cookies y almacenamiento en el navegador">
+        <p>
+          Esta web <strong>no instala cookies propias</strong> de seguimiento, análisis ni publicidad, y no incrusta contenido ni
+          rastreadores de terceros. Las tipografías se sirven desde este mismo dominio.
+        </p>
+        <p>
+          Para recordar tus preferencias y el estado de las herramientas, el navegador guarda únicamente cuatro claves técnicas en
+          el almacenamiento local (<code>localStorage</code>), que <strong>nunca se envían a ningún servidor</strong>:
+        </p>
+        <dl class="storage">
+          {storageKeys.map((item) => (
+            <>
+              <dt><code>{item.key}</code></dt>
+              <dd>{item.purpose}</dd>
+            </>
+          ))}
+        </dl>
+        <p>
+          Al utilizar exclusivamente almacenamiento técnico y de preferencias solicitadas por el usuario (art. 22.2 de la
+          LSSI-CE), esta web no muestra un aviso emergente de cookies.
+        </p>
+      </Panel>
+
+      <Panel title="Privacidad e infraestructura">
+        <p>
+          Esta web no tiene cuentas de usuario, registros, comentarios ni formularios que envíen datos personales a un servidor.
+          El buscador, el simulador y los tests se ejecutan íntegramente en tu navegador.
+        </p>
+        <p>
+          El sitio se aloja y distribuye a través de <strong>Cloudflare</strong>, que trata metadatos técnicos de la conexión
+          (como la dirección IP) para servir las páginas y proteger el servicio frente a ataques o tráfico automatizado. Con ese
+          fin técnico de seguridad, Cloudflare puede establecer cookies estrictamente necesarias (por ejemplo,
+          <code>__cf_bm</code> o <code>cf_clearance</code>).
+        </p>
+        <p>
+          Si está activado <strong>Cloudflare Web Analytics</strong>, la medición agregada de visitas y rendimiento se realiza sin
+          cookies, sin almacenamiento en el navegador y sin perfiles individuales.
+        </p>
+        <p>
+          Los enlaces a sitios externos (partidos políticos, BOE, Ministerio del Interior, encuestadoras, Google Calendar o redes
+          sociales) llevan a dominios ajenos que se rigen por sus propias políticas de privacidad y de cookies.
+        </p>
+      </Panel>
+
+      <Panel title="Correcciones y contacto">
+        <p>
+          Si encuentras un error en una medida, una traducción, una cifra o un enlace, o si eres titular de un documento y deseas
+          solicitar una corrección o retirada, puedes escribirnos en las cuentas oficiales del proyecto:
+        </p>
+        <ul>
+          {SOCIAL_ACCOUNTS.map((account) => (
+            <li>
+              <a href={account.url} rel="me noopener" target="_blank">
+                {account.network}: {account.handle}
+                <span class="sr-only"> (se abre en otra pestaña)</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p>
+          Para consultar las medidas de lectura y contraste de la web, ve a{' '}
+          <a href={routes.accessibility()}>Accesibilidad</a>.
+        </p>
+      </Panel>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .intro { padding: var(--space-7) 0 var(--space-6); }
+  .intro h1 { font-size: clamp(3.5rem, 14cqi, 8.5rem); }
+  .intro__lede { max-width: 62ch; font-size: var(--text-lg); margin-top: var(--space-3); }
+  .stack { display: grid; gap: var(--space-5); max-width: 78ch; }
+  p:last-child, ul:last-child, .storage:last-child { margin-bottom: 0; }
+  li + li { margin-top: var(--space-2); }
+  ul { padding-left: 1.2em; margin: 0 0 var(--space-3); }
+  .storage { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-4); margin: 0 0 var(--space-3); }
+  .storage dt { font-weight: 700; }
+  .storage dd { margin: 0; }
+  @media (max-width: 560px) {
+    .storage { grid-template-columns: 1fr; gap: 0; }
+    .storage dd { margin-bottom: var(--space-3); }
+  }
+</style>

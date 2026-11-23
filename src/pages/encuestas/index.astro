@@ -10,17 +10,21 @@
  */
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import Panel from '@/components/ui/Panel.astro';
 import Tag from '@/components/ui/Tag.astro';
 import { election } from '@eleccion/eleccion';
 import { DEFAULT_SAMPLE, FRENTE_AMPLIO_FROM, pollAggregator, pollParties, polls, pollsters, type Poll, type PollPartyId } from '@eleccion/encuestas';
 import { ABSOLUTE_MAJORITY } from '@eleccion/congreso';
 import { formatLongDate } from '@/lib/format';
+import { pollIds } from '@/lib/routes';
 import { renderPollChart, type PollChartData } from '@/lib/poll-chart';
 
 const DAY = 86_400_000;
 const time = (date: string) => new Date(`${date}T12:00:00Z`).getTime();
 const sorted = [...polls].sort((a, b) => time(a.date) - time(b.date));
+// The id of each row, the same as the link of the poll in the RSS feed (`-2` for a second poll of a day).
+const pollAnchors = pollIds(polls);
 const pollsterById = Object.fromEntries(pollsters.map((pollster) => [pollster.id, pollster]));
 const percent = (value: number | null | undefined) => (value == null ? '–' : value.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
 const shortDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'UTC' });
@@ -29,6 +33,8 @@ const shortDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateSt
 const electionDate = '2026-11-29';
 const start = time('2026-06-01');
 const end = time(electionDate);
+// Five days before election day (art. 69.8 of the LOREG): from 00:00 of the 24th until the vote.
+const banStart = new Date(`${electionDate}T00:00:00Z`).getTime() - 5 * DAY;
 
 /**
  * Two views of the same polls:
@@ -97,6 +103,8 @@ const formatValue = (metric: Metric, estimate: Estimate) =>
       ? String(Math.round(estimate.mid))
       : `${Math.round(estimate.lo)}–${Math.round(estimate.hi)}`;
 const isShown = (party: (typeof pollParties)[number]) => party.shown !== false;
+const mainParties = pollParties.filter((party) => isShown(party));
+const regionalParties = pollParties.filter((party) => !isShown(party));
 
 const filters = [{ id: 'all', label: 'Todas' }, ...pollsters.map((pollster) => ({ id: pollster.id, label: pollster.name }))];
 // The data of the chart, for the build and for the script. The values have two decimals: the page stays light.
@@ -106,6 +114,7 @@ const chartData: PollChartData = {
   start,
   end,
   election: end,
+  banStart,
   lastDate: time(sorted.at(-1)!.date),
   majority: ABSOLUTE_MAJORITY,
   parties: pollParties.map((party) => ({ id: party.id, acronym: party.acronym, label: party.short ?? party.acronym, color: party.color })),
@@ -165,6 +174,7 @@ const lastUpdate = sorted.at(-1)!.date;
 <BaseLayout
   title="Encuestas"
   description={`Seguimiento de las encuestas de las ${election.name.toLowerCase()} del ${election.longDate}: CIS, 40dB., Sigma Dos, SocioMétrica y GAD3, con su evolución y sus fuentes.`}
+  image={SECTION_SHARE_IMAGES.polls}
 >
   <section class="page-hero">
     <div class="container">
@@ -188,23 +198,18 @@ const lastUpdate = sorted.at(-1)!.date;
       </p>
     </SectionHeading>
 
-    <Panel>
-      <div class="poll-filters" role="group" aria-label="Encuestadora">
-        {filters.map((filter, index) => (
-          <button type="button" data-filter={filter.id} aria-pressed={index === 0 ? 'true' : 'false'}>{filter.label}</button>
-        ))}
-      </div>
-      <!-- The legend shows or hides each party. The regional parties start hidden. -->
-      <ul class="poll-legend" aria-label="Partidos: pulsa uno para mostrarlo u ocultarlo">
-        {pollParties.map((party) => (
-          <li>
-            <button type="button" data-party-toggle={party.id} aria-pressed={isShown(party) ? 'true' : 'false'}>
-              <span class="poll-legend__swatch" style={`background:${party.color}`} aria-hidden="true"></span>{party.acronym}
-            </button>
-          </li>
-        ))}
-      </ul>
+    <Panel class="poll-panel">
       <div class="poll-view">
+        <label class="poll-select">
+          <span>Encuestadora</span>
+          <!-- autocomplete="off": a browser that restores the choice on reload would show a pollster the chart does not. -->
+          <select data-filter-select autocomplete="off">
+            <option value="all">Todas ({pollsters.length})</option>
+            {pollsters.map((pollster) => (
+              <option value={pollster.id}>{pollster.name} ({pollster.media})</option>
+            ))}
+          </select>
+        </label>
         {hasSeats && (
           <div class="poll-metric" role="group" aria-label="Medida">
             <button type="button" data-metric="pct" aria-pressed="true">Porcentaje de voto</button>
@@ -217,11 +222,40 @@ const lastUpdate = sorted.at(-1)!.date;
         </div>
         <label class="poll-zoom">
           <span>Ancho</span>
-          <input type="range" min="1" max="4" step="0.25" value="1" data-zoom aria-valuetext="100 %" />
+          <input type="range" min="1" max="4" step="0.25" value="1" data-zoom aria-valuetext="100 %" autocomplete="off" />
           <output data-zoom-value>100 %</output>
         </label>
       </div>
-      <p class="poll-chart__hint" data-zoom-hint hidden aria-hidden="true">Desliza la gráfica para ver todas las fechas →</p>
+      <!-- The legend shows or hides each party. The regional parties start folded and hidden. -->
+      <div class="poll-parties">
+        <ul class="poll-legend" aria-label="Partidos de ámbito estatal: pulsa uno para mostrarlo u ocultarlo">
+          {mainParties.map((party) => (
+            <li>
+              <button type="button" data-party-toggle={party.id} aria-pressed="true">
+                <span class="poll-legend__swatch" style={`background:${party.color}`} aria-hidden="true"></span>{party.acronym}
+              </button>
+            </li>
+          ))}
+        </ul>
+        {regionalParties.length > 0 && (
+          <details class="poll-regional">
+            <summary>
+              <span class="poll-regional__plus" aria-hidden="true"></span>
+              Partidos autonómicos <span class="poll-regional__count" data-regional-count>({regionalParties.length})</span>
+            </summary>
+            <ul class="poll-legend poll-legend--regional" aria-label="Partidos de ámbito autonómico: pulsa uno para mostrarlo u ocultarlo">
+              {regionalParties.map((party) => (
+                <li>
+                  <button type="button" data-party-toggle={party.id} data-regional-party aria-pressed="false">
+                    <span class="poll-legend__swatch" style={`background:${party.color}`} aria-hidden="true"></span>{party.acronym}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+      </div>
+      <p class="poll-chart__hint" data-zoom-hint hidden aria-hidden="true">← Desliza para ver todas las fechas</p>
       <div class="poll-frame">
         <div class="poll-chart" data-poll-chart data-filter="all" data-chart-data={JSON.stringify(chartData)} tabindex="0" role="region" aria-label="Gráfica de la evolución de las encuestas" set:html={firstChart}></div>
         <!-- The values of the vertical axis, fixed at the left while the chart scrolls. -->
@@ -235,11 +269,15 @@ const lastUpdate = sorted.at(-1)!.date;
         El halo de cada línea es el margen de error al 95 %: con {DEFAULT_SAMPLE.toLocaleString('es-ES')} entrevistas, un partido con
         el 30 % puede estar entre el 27,2 % y el 32,8 %.
         {knownSamples < polls.length && ` Cuando la publicación no da la muestra (${polls.length - knownSamples} de ${polls.length} encuestas), se supone una de ${DEFAULT_SAMPLE.toLocaleString('es-ES')} entrevistas: ese margen es orientativo.`}
-        {' '}«Frente Amplio» (antes Sumar) es la suma que publica cada encuestadora para Frente Amplio y sus socios, Compromís incluido. Sigma Dos no publica a SALF por separado. Los partidos de ámbito autonómico empiezan ocultos: pulsa su nombre en la leyenda para verlos. Sus cifras salen de la tabla de encuestas de Wikipedia en inglés, y 40dB. solo publica sus escaños.
+        {' '}«Frente Amplio» (antes Sumar) es la suma que publica cada encuestadora para Frente Amplio y sus socios, Compromís incluido. Sigma Dos no publica a SALF por separado. Los partidos de ámbito autonómico empiezan ocultos: abre «Partidos autonómicos» y pulsa su nombre para verlos. Sus cifras salen de la tabla de encuestas de Wikipedia en inglés, y 40dB. solo publica sus escaños.
       </p>
       <p class="poll-note" data-note="seats" hidden>
         Escaños que publica cada encuestadora. El halo es su horquilla (por ejemplo, de 130 a 136) y la línea va por el centro.
         La línea discontinua marca la mayoría absoluta de {ABSOLUTE_MAJORITY} escaños.
+      </p>
+      <p class="poll-note poll-note--ban">
+        <span class="poll-note__swatch" aria-hidden="true"></span>
+        <span>La franja con trama (del 24 al 28 de noviembre) marca los cinco días previos a la votación sin publicación de encuestas (art. 69.8 de la LOREG).</span>
       </p>
     </Panel>
 
@@ -296,7 +334,7 @@ const lastUpdate = sorted.at(-1)!.date;
           </thead>
           <tbody>
             {[...sorted].reverse().map((poll) => (
-              <tr>
+              <tr id={pollAnchors.get(poll)}>
                 <td>{shortDate(poll.date)}</td>
                 <th scope="row">{pollsterById[poll.pollster].name}</th>
                 {tableParties.map((party) => <td class="num">{percent(poll.values[party.id])}</td>)}
@@ -331,6 +369,26 @@ const lastUpdate = sorted.at(-1)!.date;
 
 <script>
   import { renderPollChart, renderYAxis, type Metric, type PollChartData, type Scale } from '@/lib/poll-chart';
+
+  // A link to one poll (from the RSS feed) points into the closed table of all the polls: open it and go to the row.
+  // A bad escape in the hash (`#%`) must not stop the chart below: the raw hash is used instead.
+  const hashId = () => {
+    const raw = location.hash.slice(1);
+    try {
+      return decodeURIComponent(raw);
+    } catch {
+      return raw;
+    }
+  };
+  const showLinkedPoll = () => {
+    const target = location.hash ? document.getElementById(hashId()) : null;
+    const table = target?.closest('details');
+    if (!target || !table) return;
+    table.open = true;
+    target.scrollIntoView();
+  };
+  showLinkedPoll();
+  window.addEventListener('hashchange', showLinkedPoll);
 
   // The chart is drawn again when the reader changes an option or the box changes its width.
   for (const chart of document.querySelectorAll<HTMLElement>('[data-poll-chart]')) {
@@ -373,8 +431,15 @@ const lastUpdate = sorted.at(-1)!.date;
       draw();
     }).observe(chart);
 
-    // The pollster, the measure and the scale: groups of buttons, one pressed in each group.
-    const group = (attribute: 'filter' | 'metric' | 'scale') => {
+    // The pollster selector (native select with the site's base-select styling).
+    const filterSelect = document.querySelector<HTMLSelectElement>('[data-filter-select]');
+    filterSelect?.addEventListener('change', () => {
+      state.filter = filterSelect.value;
+      draw();
+    });
+
+    // The measure and the scale: groups of buttons, one pressed in each group.
+    const group = (attribute: 'metric' | 'scale') => {
       const buttons = [...document.querySelectorAll<HTMLButtonElement>(`button[data-${attribute}]`)];
       for (const button of buttons) {
         button.addEventListener('click', () => {
@@ -384,9 +449,16 @@ const lastUpdate = sorted.at(-1)!.date;
         });
       }
     };
-    group('filter');
     group('metric');
     group('scale');
+
+    const regionalCount = document.querySelector<HTMLElement>('[data-regional-count]');
+    const regionalButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-regional-party]')];
+    const updateRegionalCount = () => {
+      if (!regionalCount) return;
+      const active = regionalButtons.filter((button) => button.getAttribute('aria-pressed') === 'true').length;
+      regionalCount.textContent = active > 0 ? `(${active}/${regionalButtons.length})` : `(${regionalButtons.length})`;
+    };
 
     for (const toggle of document.querySelectorAll<HTMLButtonElement>('[data-party-toggle]')) {
       toggle.addEventListener('click', () => {
@@ -394,6 +466,7 @@ const lastUpdate = sorted.at(-1)!.date;
         toggle.setAttribute('aria-pressed', String(shown));
         if (shown) hidden.delete(toggle.dataset.partyToggle!);
         else hidden.add(toggle.dataset.partyToggle!);
+        updateRegionalCount();
         draw();
       });
     }
@@ -414,22 +487,25 @@ const lastUpdate = sorted.at(-1)!.date;
   .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; margin: 0; }
   .page-hero__notice { margin: var(--space-3) 0 0; max-width: 60ch; padding: var(--space-2) var(--space-3); border: var(--border-thick) solid var(--color-ink); font-weight: 700; }
 
-  .poll-filters { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: var(--space-3); }
-  .poll-filters button {
+  .poll-select { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; }
+  .poll-select select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     min-height: 44px;
-    margin: 0 -3px -3px 0;
-    padding: 0 16px;
+    padding: 0 12px;
     border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
     background: var(--color-paper);
     color: var(--color-ink);
     font: 700 1rem var(--font-body);
     cursor: pointer;
   }
-  .poll-filters button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .poll-filters button[aria-pressed='true'] { position: relative; background: var(--color-ink); color: var(--color-paper); }
+  .poll-select select::picker-icon { margin-left: auto; }
 
-  .poll-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; margin: var(--space-3) 0; padding: 0; font-weight: 700; }
-  .poll-legend { gap: 6px; }
+  .poll-parties { display: grid; gap: 8px; margin-bottom: var(--space-3); }
+  .poll-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; font-weight: 700; }
   .poll-legend button {
     display: inline-flex;
     align-items: center;
@@ -443,28 +519,53 @@ const lastUpdate = sorted.at(-1)!.date;
     cursor: pointer;
   }
   .poll-legend button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  /* A hidden party: the swatch becomes an empty square and the name is struck through. */
-  .poll-legend button[aria-pressed='false'] { text-decoration: line-through; text-decoration-thickness: 2px; }
-  .poll-legend button[aria-pressed='false'] .poll-legend__swatch { background: transparent !important; }
+  /* A hidden party: dashed border and empty swatch, keeping full ink contrast on the label. */
+  .poll-legend button[aria-pressed='false'] { border-style: dashed; }
+  .poll-legend button[aria-pressed='false'] .poll-legend__swatch { background: transparent !important; border-style: dashed; }
   .poll-legend__swatch { width: 14px; height: 14px; border: var(--border-fine) solid var(--color-ink); }
+
+  .poll-regional summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 38px;
+    padding: 0 12px;
+    border: var(--border-fine) dashed var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    list-style: none;
+    cursor: pointer;
+  }
+  .poll-regional summary::-webkit-details-marker { display: none; }
+  .poll-regional summary:hover { background: var(--color-highlight); color: var(--color-on-highlight); border-style: solid; }
+  .poll-regional[open] summary { margin-bottom: 8px; background: var(--color-ink); color: var(--color-paper); border-style: solid; }
+  .poll-regional__plus::before { content: '+'; display: inline-block; width: 1ch; text-align: center; }
+  .poll-regional[open] .poll-regional__plus::before { content: '−'; }
+  .poll-regional__count { font-variant-numeric: tabular-nums; }
 
   /* The chart fills the width of its box. A zoom makes it wider and the box scrolls sideways. The script draws the
      SVG (innerHTML), so its parts take global rules inside `.poll-chart`. */
-  .poll-chart { overflow-x: auto; overscroll-behavior-x: contain; }
+  .poll-chart { overflow-x: auto; overscroll-behavior-x: contain; padding-bottom: 4px; }
   .poll-frame { position: relative; }
-  .poll-axis { position: absolute; top: 0; left: 0; background: var(--color-paper); pointer-events: none; }
+  .poll-axis { position: absolute; top: 0; left: -2px; padding-left: 2px; background: var(--color-paper); pointer-events: none; }
   .poll-axis[hidden] { display: none; }
+  .poll-axis :global(svg) { display: block; }
   .poll-axis :global(text) { fill: var(--color-ink); font: 600 12px var(--font-body); }
   /* In the logarithmic scale the margin of a small party is very tall: its halo is fainter, so the lines stay clear. */
   .poll-chart :global(.poll-chart__svg--log .poll-chart__band) { fill-opacity: 0.06; }
   .poll-chart :global(svg) { display: block; max-width: none; overflow: visible; }
-  .poll-chart__hint { margin: 0 0 var(--space-2); font-weight: 700; }
+  .poll-chart__hint { margin: 0 0 var(--space-2); font-size: 0.9375rem; font-weight: 700; }
   .poll-chart__hint[hidden] { display: none; }
+  .poll-chart :global(.poll-chart__grid) { pointer-events: none; }
   .poll-chart :global(.poll-chart__grid line) { stroke: var(--color-ink); stroke-opacity: 0.18; stroke-width: 1; }
   .poll-chart :global(.poll-chart__grid .poll-chart__day) { stroke-opacity: 0.08; }
+  .poll-chart :global(.poll-chart__grid .poll-chart__ban-edge) { stroke-opacity: 0.28; }
   .poll-chart :global(.poll-chart__grid text) { fill: var(--color-ink); font: 600 12px var(--font-body); }
   .poll-chart :global(.poll-chart__grid .poll-chart__election) { stroke-opacity: 1; stroke-dasharray: 4 4; stroke-width: 1.5; }
   .poll-chart :global(.poll-chart__election-label) { font-weight: 800; }
+  .poll-chart :global(.poll-chart__ban-dot) { fill: var(--color-ink); fill-opacity: 0.45; }
+  .poll-chart :global(.poll-chart__ban) { fill: url(#poll-chart-ban-trama); cursor: help; }
   .poll-chart :global(.poll-chart__line) { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
   /* A thin, faint edge: it separates the lines that cross and keeps the light colors visible on the paper. */
   .poll-chart :global(.poll-chart__casing) { fill: none; stroke: var(--color-ink); stroke-opacity: 0.35; stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; }
@@ -498,6 +599,25 @@ const lastUpdate = sorted.at(-1)!.date;
   .poll-chart[data-filter='all'] :global(.poll-chart__dots circle) { opacity: 0.45; }
   .poll-chart :global(.poll-chart__dots circle:hover) { opacity: 1; stroke-width: 2; }
   .poll-note { margin: var(--space-3) 0 0; font-size: 0.9375rem; }
+  .poll-note--ban { display: flex; align-items: flex-start; gap: 8px; }
+  .poll-note__swatch {
+    flex: none;
+    width: 14px;
+    height: 14px;
+    margin-top: 4px;
+    border: var(--border-fine) solid var(--color-ink);
+    background-image: var(--trama-light);
+    background-size: var(--trama-size);
+  }
+  @media (max-width: 640px) {
+    .container :global(.panel.poll-panel) { padding: 14px 12px; }
+    .poll-view { gap: 10px 14px; }
+    .poll-select { width: 100%; }
+    .poll-select select { flex: 1; min-width: 0; }
+    .poll-legend button { min-height: 36px; padding: 0 10px; gap: 6px; font-size: 0.875rem; }
+    .poll-regional summary { min-height: 36px; padding: 0 10px; font-size: 0.875rem; }
+    .poll-chart :global(.poll-chart__label) { font-size: 12px; }
+  }
 
   .table-wrap { overflow-x: auto; border: var(--border-thick) solid var(--color-ink); }
   .poll-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
@@ -510,6 +630,9 @@ const lastUpdate = sorted.at(-1)!.date;
   .poll-table__via { font-size: 0.875rem; }
   .poll-table__seats { display: block; font-size: 0.875rem; font-weight: 700; }
   .all-polls { margin-top: var(--space-5); }
+  /* The poll of a link (from the RSS feed): the row takes the yellow highlight, with its text color. */
+  .all-polls tr:target > * { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .all-polls tr:target a { color: inherit; }
   .all-polls summary {
     display: inline-flex;
     align-items: center;

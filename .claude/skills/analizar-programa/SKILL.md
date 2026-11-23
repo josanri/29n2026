@@ -151,6 +151,9 @@ Usa los `id` de `src/data/taxonomia.json`. No inventes ninguno.
      una postura sobre la ley trans, y luchar contra el fraude fiscal no es subir impuestos a las rentas altas.
 5. **README**: añade el PDF, el script y el JSON a la lista de «Datos», el comando `npm run data:<id>` y la ruta a la
    tabla de «Páginas».
+6. **Fecha de publicación**: añade `<id>: 'AAAA-MM-DD'` en `src/data/<e>/publicaciones.ts`, con el día en que el
+   análisis se publica en la web (no la fecha del PDF). El feed RSS (`/novedades.xml`) anuncia el programa ese día.
+   Sin la fecha, la compilación se para. Un programa que ya estaba («vacío») y ahora se publica también la necesita.
 
 ## 4b. Cada sección de la ficha, para todos los partidos
 

@@ -30,7 +30,7 @@ const { positions, seatRadius } = hemicyclePositions();
 
 <style>
   .hemicycle { display: block; width: 100%; height: auto; overflow: visible; }
-  .hemicycle circle {
+  .hemicycle :global(circle) {
     fill: var(--color-paper);
     stroke: var(--color-ink);
     stroke-width: 1;
@@ -38,6 +38,6 @@ const { positions, seatRadius } = hemicyclePositions();
     transition: fill var(--duration-fast);
   }
   @media (prefers-reduced-motion: reduce) {
-    .hemicycle circle { transition: none; }
+    .hemicycle :global(circle) { transition: none; }
   }
 </style>

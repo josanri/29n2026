@@ -82,7 +82,7 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
             style={`--stripe-color: ${blockColor(item.id).color}`}
           >
             <span class="block-nav__stripe" aria-hidden="true"></span>
-            <span>{padNumber(item.id)}</span> {item.title}
+            <span class="block-nav__label">{padNumber(item.id)} {item.title}</span>
           </a>
         ))
       }
@@ -238,9 +238,13 @@ const byCategory = countBy(blockMeasures, (measure) => measure.categoryId).map((
     padding: 0 12px 0 0;
     line-height: 1.2;
   }
-  .block-nav a > span:last-child { align-self: center; }
+  .block-nav__label {
+    align-self: center;
+    padding-block: var(--space-2);
+  }
   .block-nav__stripe {
     width: 14px;
+    flex-shrink: 0;
     color: var(--color-ink);
     background-color: var(--stripe-color);
     border-right: var(--border-thick) solid var(--color-ink);

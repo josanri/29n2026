@@ -13,6 +13,7 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { keyFindingsByParty } from '@eleccion/analysis';
 import { downloadFileNames } from '@eleccion/download-names';
+import { programPublishedOn } from '@eleccion/publicaciones';
 import { ELECTION_PUBLIC_DIR } from '../../election.config.mjs';
 import { announcedMeasures, publishedPrograms } from './programs';
 
@@ -30,9 +31,15 @@ export function checkPrograms(): void {
   const warnings: string[] = [];
 
   for (const program of publishedPrograms) {
+    const id = program.id;
+    // The day it came on the site: without it, the program is missing from the RSS feed.
+    const publishedOn = programPublishedOn[id];
+    if (!publishedOn || !ISO_DATE.test(publishedOn)) {
+      errors.push(`${id}: falta su fecha de publicación (AAAA-MM-DD) en publicaciones.ts.`);
+    }
+
     const measures = announcedMeasures(program);
     if (measures.length === 0) continue;
-    const id = program.id;
 
     // Every announced measure has something to show.
     const empty = measures.filter((measure) => !measure.title.trim() && !measure.text.trim()).map((measure) => measure.number);
@@ -68,6 +75,17 @@ export function checkPrograms(): void {
     if (program.measures.length >= 10) {
       if (!program.measures.some((measure) => measure.targetGroupIds.length)) warnings.push(`${id}: ninguna medida tiene colectivos.`);
       if (!program.measures.some((measure) => measure.leverIds.length)) warnings.push(`${id}: ninguna medida tiene palancas.`);
+    }
+    const measuresWithFigures = measures.filter((measure) => measure.figures.length > 0).length;
+    if (measuresWithFigures > 0 && program.figures.length === 0) {
+      warnings.push(`${id}: ${measuresWithFigures} medidas tienen cifras pero falta «cifras»/«cifrasPrograma» en la cabecera.`);
+    }
+    if (program.figures.length > 0 && measuresWithFigures === 0) {
+      warnings.push(`${id}: la cabecera tiene ${program.figures.length} cifras pero ninguna medida lleva cifras.`);
+    }
+    const measuresWithDigits = measures.filter((measure) => /\d/.test(`${measure.title} ${measure.text}`)).length;
+    if (measuresWithFigures === 0 && measuresWithDigits >= 15) {
+      warnings.push(`${id}: 0 cifras extraídas, pero ${measuresWithDigits} medidas contienen dígitos (revisar extractor o revisiones.json).`);
     }
     if (!keyFindingsByParty[id]?.length) warnings.push(`${id}: sin «Las claves» en analysis.ts; la ficha usa la versión automática.`);
   }

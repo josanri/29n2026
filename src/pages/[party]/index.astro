@@ -17,7 +17,7 @@ import { getProgram, programs } from '@/lib/programs';
 import { categoryById, leverById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
 import { deadlineKind, deadlineKindLabel, deadlineKindOrder } from '@/lib/deadlines';
-import { allOf, capitalize, formatLongDate, measureNoun, percentOf, splitParagraphs } from '@/lib/format';
+import { allOf, capitalize, formatLongDate, isMasculineUnit, measureNoun, percentOf, programBandSentence, splitParagraphs } from '@/lib/format';
 import { readableTextColor } from '@/lib/color';
 import { methodNote } from '@/lib/method-note';
 import { routes, withBase } from '@/lib/routes';
@@ -119,8 +119,8 @@ const hasFigures = program.figures.length > 0;
 const hasMoreData = repealingMeasures.length > 0 || pendingMeasures.length > 0 || verbs.verbs.length > 0;
 const documentLabel = isWebProgram ? 'Programa oficial' : isLocalDocument ? 'Descargar programa completo' : 'PDF original';
 
-// Masculine units ("compromiso") take "uno": «cada uno con su texto original».
-const eachOne = singular.endsWith('o') ? 'cada uno' : 'cada una';
+// Masculine units ("compromiso", "eje") take "uno": «cada uno con su texto original».
+const eachOne = isMasculineUnit(singular) ? 'cada uno' : 'cada una';
 const documentDate = program.documentDate ? formatLongDate(program.documentDate) : null;
 const heroSentence = [
   isWebProgram
@@ -135,19 +135,18 @@ const heroSentence = [
 
 // The band: the program in one sentence, from the counts of its own data.
 const biggestBlock = Math.max(0, ...program.blocks.map((block) => program.measures.filter((measure) => measure.blockId === block.id).length));
-const countParts = [
-  `${withFigures} ${withFigures === 1 ? 'tiene' : 'tienen'} una cifra`,
-  `${withDeadline} ${withDeadline === 1 ? 'tiene' : 'tienen'} un plazo`,
-  repealingMeasures.length > 0 ? `${repealingMeasures.length} ${repealingMeasures.length === 1 ? 'deroga' : 'derogan'} una ley` : null,
-].filter(Boolean) as string[];
-const bandSentence = [
-  `De ${allOf(program, total)}, ${countParts.slice(0, -1).join(', ')} y ${countParts.at(-1)}.`,
-  `Se reparten en ${program.blocks.length} ${program.blocks.length === 1 ? 'bloque' : 'bloques'} y ${program.sections.length} ${program.sections.length === 1 ? 'sección' : 'secciones'}.`,
-  `El bloque más largo tiene ${biggestBlock} ${biggestBlock === 1 ? singular : plural}.`,
-  pendingMeasures.length > 0 ? `Quedan ${pendingMeasures.length} por anunciar durante la campaña.` : null,
-]
-  .filter(Boolean)
-  .join(' ');
+const bandSentence = programBandSentence({
+  measureUnit: singular,
+  measureUnitPlural: plural,
+  total,
+  withFigures,
+  withDeadline,
+  withRepeals: repealingMeasures.length,
+  blockCount: program.blocks.length,
+  sectionCount: program.sections.length,
+  biggestBlock,
+  pendingCount: pendingMeasures.length,
+});
 // The title scales with its longest word, so that no word breaks in the middle.
 const longestWord = Math.max(1, ...program.programName.split(/\s+/).map((word) => word.length));
 const FIRST_FIGURES = 12;

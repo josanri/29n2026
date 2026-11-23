@@ -21,6 +21,8 @@ export interface PollChartData {
   start: number;
   end: number;
   election: number;
+  /** Start of the legal period without published polls (milliseconds, 5 days before the vote). */
+  banStart?: number;
   /** The date of the last poll: a line that stops 14 days before it has no label at the right. */
   lastDate: number;
   majority: number;
@@ -50,9 +52,14 @@ export interface PollChartOptions {
 }
 
 const DAY = 86_400_000;
-const MIN_WIDTH = 680;
-const M = { top: 16, right: 104, bottom: 34, left: 48 };
+const COMPACT_WIDTH = 600;
+const MIN_WIDTH_DESKTOP = 760;
+const MIN_WIDTH_COMPACT = 1160;
 const LABEL_GAP = 13;
+
+const isCompact = (width: number) => width < COMPACT_WIDTH;
+const margins = (width: number) =>
+  isCompact(width) ? { top: 22, right: 96, bottom: 34, left: 42 } : { top: 22, right: 104, bottom: 34, left: 48 };
 
 const one = (value: number) => value.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 export const formatValue = (metric: Metric, [mid, lo, hi]: Value) =>
@@ -77,8 +84,10 @@ const axes = {
 
 /** The size of the drawing for a box of `width` pixels. The height follows the box, not the zoom. */
 export const chartSize = (width: number, zoom: number) => {
-  const base = Math.max(MIN_WIDTH, Math.round(width));
-  return { W: Math.round(base * zoom), H: Math.round(Math.min(460, Math.max(340, base * 0.42))) };
+  const compact = isCompact(width);
+  const base = Math.max(compact ? MIN_WIDTH_COMPACT : MIN_WIDTH_DESKTOP, Math.round(width));
+  const H = compact ? 380 : Math.round(Math.min(460, Math.max(360, base * 0.42)));
+  return { W: Math.round(base * zoom), H };
 };
 
 /** The marks of the time axis: every week, every half month or every month, the first one that has room. */
@@ -109,7 +118,7 @@ const timeTicks = (start: number, end: number, pxPerDay: number) => {
 const r = (value: number) => Math.round(value * 10) / 10;
 
 /** The vertical position of a value, for a chart of height H. */
-const yScale = (metric: Metric, scale: Scale, H: number) => {
+const yScale = (metric: Metric, scale: Scale, H: number, M: ReturnType<typeof margins>) => {
   const axis = axes[metric];
   const bottom = H - M.bottom;
   return scale === 'log'
@@ -124,10 +133,12 @@ const yScale = (metric: Metric, scale: Scale, H: number) => {
  */
 export const renderYAxis = (options: PollChartOptions) => {
   const { H } = chartSize(options.width, options.zoom);
+  const M = margins(options.width);
+  const tickGap = isCompact(options.width) ? 6 : 8;
   const axis = axes[options.metric];
-  const y = yScale(options.metric, options.scale, H);
+  const y = yScale(options.metric, options.scale, H, M);
   const ticks = axis[options.scale]
-    .map((value) => `<text x="${M.left - 8}" y="${r(y(value))}" text-anchor="end" dominant-baseline="middle">${axis.tick(value)}</text>`)
+    .map((value) => `<text x="${M.left - tickGap}" y="${r(y(value))}" text-anchor="end" dominant-baseline="middle">${axis.tick(value)}</text>`)
     .join('');
   return `<svg viewBox="0 0 ${M.left} ${H}" width="${M.left}" height="${H}" aria-hidden="true"><g class="poll-chart__grid">${ticks}</g></svg>`;
 };
@@ -135,11 +146,16 @@ const escape = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;
 
 export const renderPollChart = (data: PollChartData, options: PollChartOptions) => {
   const { metric, scale, filter, hidden } = options;
+  const compact = isCompact(options.width);
+  const M = margins(options.width);
+  const tickGap = compact ? 6 : 8;
+  const labelOffset = compact ? 8 : 10;
+  const dotRadius = compact ? 3.6 : 4.5;
   const { W, H } = chartSize(options.width, options.zoom);
   const axis = axes[metric];
   const plotBottom = H - M.bottom;
   const x = (t: number) => M.left + ((t - data.start) / (data.end - data.start)) * (W - M.left - M.right);
-  const y = yScale(metric, scale, H);
+  const y = yScale(metric, scale, H, M);
   const view = data.metrics[metric];
   const serie = view.series.find((item) => item.id === filter) ?? view.series[0];
   const party = (index: number) => data.parties[index];
@@ -153,12 +169,26 @@ export const renderPollChart = (data: PollChartData, options: PollChartOptions) 
       : `Escaños estimados por partido, con la horquilla de cada encuestadora y la mayoría absoluta de ${data.majority}.`,
   )}">`);
 
+  // The legal blackout period (5 days before election day): a dot trama behind the grid, lines and dots.
+  const ex = r(x(data.election));
+  const hasBan = data.banStart != null && data.banStart < data.election;
+  const bx = hasBan ? r(x(data.banStart!)) : ex;
+  if (hasBan) {
+    out.push(
+      '<defs><pattern id="poll-chart-ban-trama" width="7" height="7" patternUnits="userSpaceOnUse"><circle class="poll-chart__ban-dot" cx="3.5" cy="3.5" r="1.2"/></pattern></defs>',
+    );
+    const banTitle = tooltip('Sin publicación de encuestas', 'Del 24 al 28 de noviembre', 'Cinco días antes de la votación (art. 69.8 de la LOREG)');
+    out.push(
+      `<rect class="poll-chart__ban" x="${bx}" y="${M.top}" width="${r(ex - bx)}" height="${r(plotBottom - M.top)}" data-tooltip="${escape(banTitle)}"/>`,
+    );
+  }
+
   // The grid: the values, the dates, the day of the election and, for the seats, the absolute majority.
   out.push('<g class="poll-chart__grid" aria-hidden="true">');
   for (const value of axis[scale]) {
     const ty = r(y(value));
     out.push(`<line x1="${M.left}" x2="${W - M.right}" y1="${ty}" y2="${ty}"/>`);
-    out.push(`<text x="${M.left - 8}" y="${ty}" text-anchor="end" dominant-baseline="middle">${axis.tick(value)}</text>`);
+    out.push(`<text x="${M.left - tickGap}" y="${ty}" text-anchor="end" dominant-baseline="middle">${axis.tick(value)}</text>`);
   }
   const ticks = timeTicks(data.start, data.election, (W - M.left - M.right) / ((data.end - data.start) / DAY));
   for (const tick of ticks) {
@@ -166,9 +196,11 @@ export const renderPollChart = (data: PollChartData, options: PollChartOptions) 
     out.push(`<line class="poll-chart__day" x1="${tx}" x2="${tx}" y1="${M.top}" y2="${plotBottom}"/>`);
     out.push(`<text x="${tx}" y="${plotBottom + 20}" text-anchor="middle">${tick.label}</text>`);
   }
-  const ex = r(x(data.election));
+  if (hasBan) {
+    out.push(`<line class="poll-chart__ban-edge" x1="${bx}" x2="${bx}" y1="${M.top}" y2="${plotBottom}"/>`);
+  }
   out.push(`<line class="poll-chart__election" x1="${ex}" x2="${ex}" y1="${M.top}" y2="${plotBottom}"/>`);
-  out.push(`<text class="poll-chart__election-label" x="${ex - 6}" y="${M.top + 10}" text-anchor="end">29N</text>`);
+  out.push(`<text class="poll-chart__election-label" x="${ex}" y="${M.top - 6}" text-anchor="middle">29N</text>`);
   if (metric === 'seats') {
     const my = r(y(data.majority));
     out.push(`<line class="poll-chart__majority" x1="${M.left}" x2="${ex}" y1="${my}" y2="${my}"/>`);
@@ -200,7 +232,7 @@ export const renderPollChart = (data: PollChartData, options: PollChartOptions) 
   for (let i = labels.length - 1; i >= 0; i--) labels[i].y = Math.min(labels[i].y, i === labels.length - 1 ? H - 8 : labels[i + 1].y - LABEL_GAP);
   for (const label of labels) {
     out.push(
-      `<text class="poll-chart__label" x="${W - M.right + 10}" y="${r(label.y)}" dominant-baseline="middle"><tspan class="poll-chart__label-name">${escape(label.party.label)}</tspan> ${label.text}</text>`,
+      `<text class="poll-chart__label" x="${W - M.right + labelOffset}" y="${r(label.y)}" dominant-baseline="middle"><tspan class="poll-chart__label-name">${escape(label.party.label)}</tspan> ${label.text}</text>`,
     );
   }
 
@@ -215,7 +247,7 @@ export const renderPollChart = (data: PollChartData, options: PollChartOptions) 
         ? `${item.acronym}: ${one(value[0])} % (±${one(value[2] - value[0])})`
         : `${item.acronym}: ${formatValue('seats', value as Value)} escaños`;
     out.push(
-      `<circle cx="${r(x(poll.t))}" cy="${r(y(value[0]))}" r="4.5" style="fill:${item.color}" data-tooltip="${escape(tooltip(title, poll.source, poll.date))}"/>`,
+      `<circle cx="${r(x(poll.t))}" cy="${r(y(value[0]))}" r="${dotRadius}" style="fill:${item.color}" data-tooltip="${escape(tooltip(title, poll.source, poll.date))}"/>`,
     );
   }
   out.push('</g></svg>');

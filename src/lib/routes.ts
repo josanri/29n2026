@@ -27,6 +27,22 @@ export const SEARCH_PARAMS = { query: 'q', parties: 'partidos', categories: 'cat
 /** Prefix of the HTML id of each measure: `m-123`. */
 export const MEASURE_ID_PREFIX = 'm-';
 export const SECTION_ID_PREFIX = 's-';
+/**
+ * The HTML id of each poll in the table of all the polls: `encuesta-gad3-2026-11-22`. Two polls of the same
+ * pollster on the same day (two reports of a daily tracking) must not share an id: the second one, in the order
+ * of the list, takes `-2`, the third `-3`. The page and the RSS feed take the ids from here, so they stay the same.
+ */
+export const pollIds = <T extends { pollster: string; date: string }>(polls: readonly T[]): Map<T, string> => {
+  const seen = new Map<string, number>();
+  return new Map(
+    polls.map((poll) => {
+      const base = `encuesta-${poll.pollster}-${poll.date}`;
+      const count = (seen.get(base) ?? 0) + 1;
+      seen.set(base, count);
+      return [poll, count === 1 ? base : `${base}-${count}`];
+    }),
+  );
+};
 export const CANDIDACIES_HEADING_ID = 'candidaturas-titulo';
 
 /**
@@ -72,13 +88,17 @@ export const routes = {
   calendarIcs: (eventId?: string) => withBase(eventId ? `/calendario/${eventId}.ics` : '/calendario.ics'),
   /** Practical information to vote: documents, mail vote, leave from work and dates. */
   info: () => withBase('/info/'),
-  simulator: () => withBase('/simulador/'),
+  simulator: (chamber?: 'congreso' | 'senado') => withBase(chamber === 'senado' ? '/simulador/?camara=senado' : '/simulador/'),
   /** The page that lists the tests. */
   tests: () => withBase('/tests/'),
   /** «Temas que dividen»: the reader takes a side on each polarizing topic and compares the parties. */
   topicQuiz: () => withBase('/tests/temas/'),
   /** The tracking of the polls. */
   polls: () => withBase('/encuestas/'),
+  /** One poll in the table of all the polls. The page opens the table when the link points into it. */
+  poll: (pollId: string) => withBase(`/encuestas/#${pollId}`),
+  /** The RSS feed: the programs, the polls and the debates, the newest first. */
+  feed: () => withBase('/novedades.xml'),
   /** The list of the debates, or one debate (its transcript, charts and filter) when it has a slug. */
   debate: (slug?: string) => withBase(slug ? `/debates/${slug}/` : '/debates/'),
   /** «Sin siglas»: vote on measures without the party, then see the parties. */
@@ -86,6 +106,7 @@ export const routes = {
   /** JSON file with the measures of one party for «Sin siglas». The page loads the parties of one province. */
   partyQuizData: (partyId: string) => withBase(`/tests/sin-siglas/datos/${partyId}.json`),
   accessibility: () => withBase('/accesibilidad/'),
+  legal: () => withBase('/aviso-legal/'),
   designSystem: () => withBase('/design-system/'),
   /** A file of the `public/` folder, for example `/datos-electorales/candidaturas.json`. */
   asset: (path: string) => withBase(path),

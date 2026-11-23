@@ -4,12 +4,13 @@
  * The icons of the platforms are filled marks; the icons of the actions are 2 px lines.
  */
 interface Props {
-  name: 'copy' | 'share' | 'download' | 'mail' | 'whatsapp' | 'telegram' | 'x' | 'facebook' | 'linkedin';
+  name: 'copy' | 'clipboard' | 'share' | 'download' | 'mail' | 'whatsapp' | 'telegram' | 'x' | 'facebook' | 'linkedin';
 }
 
 const { name } = Astro.props;
 
 const lines: Record<string, string[]> = {
+  // A link of a chain: the link of the page (copy it or share it).
   copy: ['M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1', 'M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1'],
   share: [
     'M18 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z',
@@ -19,6 +20,8 @@ const lines: Record<string, string[]> = {
     'M8.6 13.5l6.8 4',
   ],
   download: ['M12 3v12', 'M7 10l5 5l5-5', 'M4 20h16'],
+  // A clipboard: copy the image, not the link.
+  clipboard: ['M9 3h6v4H9z', 'M9 5H5v16h14V5h-4'],
   mail: ['M3 5h18v14H3z', 'M3 7l9 6l9-6'],
   // A speech bubble with a handset.
   whatsapp: [
