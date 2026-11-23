@@ -9,6 +9,7 @@ import Panel from '@/components/ui/Panel.astro';
 import Tag from '@/components/ui/Tag.astro';
 import { debates } from '@/lib/debates';
 import { routes } from '@/lib/routes';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 
 const dayOf = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -21,7 +22,7 @@ const clock = (seconds: number) => {
 };
 ---
 
-<BaseLayout title="Debates" description="Transcripciones de los debates electorales, con cada interrupción marcada y el tiempo de palabra de cada candidato.">
+<BaseLayout title="Debates" description="Transcripciones de los debates electorales, con cada interrupción marcada y el tiempo de palabra de cada candidato." image={SECTION_SHARE_IMAGES.debates}>
   <section class="page-hero">
     <div class="container">
       <Tag variant="ink">Transcripciones</Tag>

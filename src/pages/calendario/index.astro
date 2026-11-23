@@ -8,6 +8,7 @@ import { calendarEvents, ELECTION_DATE } from '@eleccion/calendario';
 import { election, electionLabel } from '@eleccion/eleccion';
 import { googleCalendarUrl } from '@/lib/ics';
 import { routes } from '@/lib/routes';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import { capitalize, padNumber } from '@/lib/format';
 import { tooltip } from '@/lib/tooltip';
 
@@ -92,6 +93,7 @@ const months = monthKeys.map((key) => {
 <BaseLayout
   title="Calendario electoral"
   description={`Las fechas clave de las ${election.name.toLowerCase()} del ${election.longDate}, con la opción de añadirlas a tu calendario.`}
+  image={SECTION_SHARE_IMAGES.calendar}
 >
   <section class="page-hero">
     <div class="container">

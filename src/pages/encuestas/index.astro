@@ -10,6 +10,7 @@
  */
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import Panel from '@/components/ui/Panel.astro';
 import Tag from '@/components/ui/Tag.astro';
 import { election } from '@eleccion/eleccion';
@@ -170,6 +171,7 @@ const lastUpdate = sorted.at(-1)!.date;
 <BaseLayout
   title="Encuestas"
   description={`Seguimiento de las encuestas de las ${election.name.toLowerCase()} del ${election.longDate}: CIS, 40dB., Sigma Dos, SocioMétrica y GAD3, con su evolución y sus fuentes.`}
+  image={SECTION_SHARE_IMAGES.polls}
 >
   <section class="page-hero">
     <div class="container">

@@ -16,12 +16,40 @@ export const SOCIAL_ACCOUNTS = [
 ] as const;
 export const X_HANDLE = SOCIAL_ACCOUNTS[0].handle;
 
-/** A link preview: a 1200 × 630 PNG, its path under the base of the site and its text. The site's comes from `scripts/og_images.py`; those of a party or a measure, from the Worker (`worker/og/card.ts`). */
+/** A link preview: a 1200 × 675 PNG (16:9 for Google Discover and social cards), its path under the base of the site and its text. The site and section cards come from `scripts/og_sections.ts` (`npm run og:secciones`); those of a party or a measure, from the Worker (`worker/og/card.ts`). */
 export interface ShareImage {
   path: string;
   alt: string;
 }
 export const DEFAULT_SHARE_IMAGE: ShareImage = {
   path: '/og/portada.png',
-  alt: 'Electosfera: los programas electorales del 29N, medida a medida.',
+  alt: 'Electosfera: el 29N en datos, punto por punto — programas, encuestas, debates, simulador de escaños y tests electorales.',
 };
+
+/** Dedicated link previews for the main sections of the site (`scripts/og_sections.ts`). */
+export const SECTION_SHARE_IMAGES = {
+  simulator: {
+    path: '/og/simulador.png',
+    alt: 'Simulador de Congreso y Senado del 29N en Electosfera: reparte los 350 escaños del Congreso o los 266 del Senado y prueba pactos y mayorías.',
+  },
+  polls: {
+    path: '/og/encuestas.png',
+    alt: 'Encuestas del 29N en Electosfera: seguimiento de la estimación de voto y evolución con enlace a cada fuente.',
+  },
+  debates: {
+    path: '/og/debates.png',
+    alt: 'Debates del 29N en Electosfera: transcripción íntegra, reparto de tiempos, interrupciones y temas.',
+  },
+  categories: {
+    path: '/og/categorias.png',
+    alt: 'Categorías del 29N en Electosfera: las medidas de todos los programas agrupadas en 21 temas comunes.',
+  },
+  tests: {
+    path: '/og/tests.png',
+    alt: 'Tests electorales del 29N en Electosfera: Sin siglas y Temas que dividen para comparar tu postura con los programas.',
+  },
+  calendar: {
+    path: '/og/calendario.png',
+    alt: 'Calendario electoral del 29N en Electosfera: fechas clave de voto por correo, campaña y jornada electoral.',
+  },
+} as const satisfies Record<string, ShareImage>;

@@ -9,6 +9,7 @@ import { announcedMeasures, programs, publishedPrograms } from '@/lib/programs';
 import { categories } from '@/lib/taxonomy';
 import { formatNumber, measureNoun, normalizeForSearch } from '@/lib/format';
 import { routes } from '@/lib/routes';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import { tooltip } from '@/lib/tooltip';
 
 // Only parties with a program: the others have no measures to compare.
@@ -58,6 +59,7 @@ const categoryPetals = sphereCategories.map((category) => ({
 <BaseLayout
   title="Categorías"
   description="Las medidas de todos los programas agrupadas por categoría temática, con una tabla que compara el peso de cada tema en cada programa."
+  image={SECTION_SHARE_IMAGES.categories}
 >
   <section class="page-hero">
     <div class="container hero-rose">

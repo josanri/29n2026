@@ -10,6 +10,7 @@
  */
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Tag from '@/components/ui/Tag.astro';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import Button from '@/components/ui/Button.astro';
 import { activeTopics, topics } from '@/data/temas';
 import { stances } from '@eleccion/posturas';
@@ -74,6 +75,7 @@ const partyData = JSON.stringify(
 <BaseLayout
   title="Temas que dividen"
   description="Elige tu postura en los temas más polarizantes (inmigración, aborto, monarquía, vivienda, memoria…) y compara qué dicen los programas de cada partido, con la medida en la que se apoyan."
+  image={SECTION_SHARE_IMAGES.tests}
 >
   <section class="page-hero">
     <div class="container">

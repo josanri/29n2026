@@ -16,6 +16,7 @@ import {
 } from '@eleccion/senado';
 import { programs } from '@/lib/programs';
 import { routes } from '@/lib/routes';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import { IMAGE_FORMATS } from '@/lib/simulator-image';
 
 // The networks of the share buttons. The script gives each link its address (see `shareUrls` in the script).
@@ -46,6 +47,7 @@ const chamberData = {
 <BaseLayout
   title="Simulador de Congreso, Senado y pactos"
   description="Reparte los 350 escaños del Congreso o los 266 del Senado, crea tus propios partidos, prueba pactos y mayorías y comparte el resultado."
+  image={SECTION_SHARE_IMAGES.simulator}
 >
   <section class="page-hero">
     <div class="container">

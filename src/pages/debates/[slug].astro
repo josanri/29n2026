@@ -11,6 +11,7 @@ import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
 import type { DebateSpeaker } from '@/lib/debate';
 import { debates } from '@/lib/debates';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import { pollParties } from '@eleccion/encuestas';
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 
@@ -181,7 +182,7 @@ const flow = (paragraphs: string[]) => {
 const ASIDE_WORDS = 15;
 ---
 
-<BaseLayout title={`${debate.title}: transcripción e interrupciones`} description={metaDescription} noindex={debate.published === false}>
+<BaseLayout title={`${debate.title}: transcripción e interrupciones`} description={metaDescription} noindex={debate.published === false} image={SECTION_SHARE_IMAGES.debates}>
   <section class="page-hero">
     <div class="container">
       <Tag variant="ink">Debate</Tag>

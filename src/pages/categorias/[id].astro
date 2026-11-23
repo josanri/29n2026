@@ -11,6 +11,7 @@ import { categories, categoryById, targetGroupById } from '@/lib/taxonomy';
 import { countBy } from '@/lib/collections';
 import { compareText, measureNoun } from '@/lib/format';
 import { routes } from '@/lib/routes';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 
 export function getStaticPaths() {
   return categories.map((category) => ({ params: { id: category.id } }));
@@ -37,6 +38,7 @@ const nextCategory = categories[(categories.findIndex((item) => item.id === cate
 <BaseLayout
   title={category.name}
   description={`Medidas sobre ${category.name.toLowerCase()} en los programas electorales del ${election.shortName}.`}
+  image={SECTION_SHARE_IMAGES.categories}
 >
   <section class="page-hero">
     <div class="container page-hero__grid">
