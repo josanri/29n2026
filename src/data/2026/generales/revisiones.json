@@ -3263,6 +3263,134 @@
     "Invertir 1.000 milions d'euros",
     "formar 100.000 persones l'any"
    ]
-  }
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "1.000 M€",
+    "unidad": "en catalanización de adultos",
+    "texto": "Plan remunerado de enseñanza de lengua y cultura catalanas para adultos",
+    "contexto": "Invertir 1.000 milions d'euros en un pla d'ensenyament de llengua i cultura catalanes remunerat",
+    "medida": 22
+   },
+   {
+    "valor": "100.000",
+    "unidad": "personas al año",
+    "texto": "Objetivo anual de formación de adultos en lengua y cultura catalanas",
+    "contexto": "amb l'objectiu de formar 100.000 persones l'any",
+    "medida": 22
+   },
+   {
+    "valor": "5.000",
+    "unidad": "nuevos profesores",
+    "texto": "Formación de docentes de lengua y cultura catalanas",
+    "contexto": "Formar 5.000 nous professors de llengua i cultura catalanes",
+    "medida": 7
+   },
+   {
+    "valor": "10 %",
+    "unidad": "del presupuesto municipal",
+    "texto": "Dotación por defecto de las concejalías municipales de política lingüística",
+    "contexto": "destinant el 10% del pressupost municipal per defecte",
+    "medida": 9
+   },
+   {
+    "valor": "60 %",
+    "unidad": "de inmersión escolar",
+    "texto": "Salto mínimo de inmersión previsto con la doble red 100 % en catalán",
+    "contexto": "passaríem del 17% actual a com a mínim un 60% de manera immediata",
+    "medida": 21
+   }
+  ]
+ },
+ "eguzkilore": {
+  "cifras": {
+   "6": [
+    "de 0 a 3 años la Administración garantice y sufrague la excedencia voluntaria y/o reducción de jornada del 100 % de los honorarios"
+   ],
+   "8": [
+    "Infantil: 5 peques por educador/a en 1º ciclo, 9 en 2º ciclo, 12 en Primaria y 15 en Segundaria."
+   ],
+   "18": [
+    "Hasta los 18 años, posibilidad de reducir la jornada laboral de una/o de los progenitores/as hasta un 50 %."
+   ],
+   "19": [
+    "hasta los 14 años en enfermedades leves y hasta los 18 años en las graves"
+   ],
+   "25": [
+    "llegar al 15% del gasto total en salud."
+   ],
+   "31": [
+    "reduzca, en Administraciones de su competencia y en la privada, a 30 horas a la semana."
+   ],
+   "32": [
+    "Jubilación digna desde los 60 años."
+   ],
+   "49": [
+    "los gobiernos construirán más del doble de VPO que actualmente.",
+    "con al menos tres meses de antelación"
+   ],
+   "62": [
+    "El 5% de las/os censadas/os tiene la posibilidad de preguntar a la ciudadanía",
+    "Si la consulta obtiene más del 50% de los votantes a favor"
+   ]
+  },
+  "cifrasPrograma": [
+   {
+    "valor": "100 %",
+    "unidad": "de los honorarios",
+    "texto": "Excedencia o reducción de jornada sufragada de 0 a 3 años",
+    "contexto": "Que de 0 a 3 años la Administración garantice y sufrague la excedencia voluntaria y/o reducción de jornada del 100 % de los honorarios",
+    "medida": 6
+   },
+   {
+    "valor": "5 / 9 / 12 / 15",
+    "unidad": "alumnos por aula",
+    "texto": "Ratios por educador en Infantil (1.º y 2.º ciclo), Primaria y Secundaria",
+    "contexto": "Infantil: 5 peques por educador/a en 1º ciclo, 9 en 2º ciclo, 12 en Primaria y 15 en Segundaria.",
+    "medida": 8
+   },
+   {
+    "valor": "50 %",
+    "unidad": "de reducción de jornada",
+    "texto": "Reducción laboral para progenitores hasta los 18 años de los hijos",
+    "contexto": "Hasta los 18 años, posibilidad de reducir la jornada laboral de una/o de los progenitores/as hasta un 50 %.",
+    "medida": 18
+   },
+   {
+    "valor": "15 %",
+    "unidad": "del gasto sanitario",
+    "texto": "Recursos de sanidad destinados a salud mental",
+    "contexto": "Aumento en Sanidad de los recursos en salud mental para llegar al 15% del gasto total en salud.",
+    "medida": 25
+   },
+   {
+    "valor": "30 horas",
+    "unidad": "a la semana",
+    "texto": "Reducción de la jornada laboral en el sector público y el privado",
+    "contexto": "Solicitar al Gobierno de España que reduzca, en Administraciones de su competencia y en la privada, a 30 horas a la semana.",
+    "medida": 31
+   },
+   {
+    "valor": "60 años",
+    "unidad": "edad de jubilación",
+    "texto": "Jubilación digna a partir de los 60 años",
+    "contexto": "Jubilación digna desde los 60 años.",
+    "medida": 32
+   },
+   {
+    "valor": "Más del doble",
+    "unidad": "de VPO",
+    "texto": "Construcción pública de vivienda protegida",
+    "contexto": "los gobiernos construirán más del doble de VPO que actualmente.",
+    "medida": 49
+   },
+   {
+    "valor": "5 %",
+    "unidad": "del censo",
+    "texto": "Umbral ciudadano para convocar consultas vinculantes (aprobadas con más del 50 %)",
+    "contexto": "El 5% de las/os censadas/os tiene la posibilidad de preguntar a la ciudadanía",
+    "medida": 62
+   }
+  ]
  }
 }

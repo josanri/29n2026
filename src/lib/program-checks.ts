@@ -69,6 +69,17 @@ export function checkPrograms(): void {
       if (!program.measures.some((measure) => measure.targetGroupIds.length)) warnings.push(`${id}: ninguna medida tiene colectivos.`);
       if (!program.measures.some((measure) => measure.leverIds.length)) warnings.push(`${id}: ninguna medida tiene palancas.`);
     }
+    const measuresWithFigures = measures.filter((measure) => measure.figures.length > 0).length;
+    if (measuresWithFigures > 0 && program.figures.length === 0) {
+      warnings.push(`${id}: ${measuresWithFigures} medidas tienen cifras pero falta «cifras»/«cifrasPrograma» en la cabecera.`);
+    }
+    if (program.figures.length > 0 && measuresWithFigures === 0) {
+      warnings.push(`${id}: la cabecera tiene ${program.figures.length} cifras pero ninguna medida lleva cifras.`);
+    }
+    const measuresWithDigits = measures.filter((measure) => /\d/.test(`${measure.title} ${measure.text}`)).length;
+    if (measuresWithFigures === 0 && measuresWithDigits >= 15) {
+      warnings.push(`${id}: 0 cifras extraídas, pero ${measuresWithDigits} medidas contienen dígitos (revisar extractor o revisiones.json).`);
+    }
     if (!keyFindingsByParty[id]?.length) warnings.push(`${id}: sin «Las claves» en analysis.ts; la ficha usa la versión automática.`);
   }
 
