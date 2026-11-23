@@ -72,7 +72,7 @@ export const routes = {
   calendarIcs: (eventId?: string) => withBase(eventId ? `/calendario/${eventId}.ics` : '/calendario.ics'),
   /** Practical information to vote: documents, mail vote, leave from work and dates. */
   info: () => withBase('/info/'),
-  simulator: () => withBase('/simulador/'),
+  simulator: (chamber?: 'congreso' | 'senado') => withBase(chamber === 'senado' ? '/simulador/?camara=senado' : '/simulador/'),
   /** The page that lists the tests. */
   tests: () => withBase('/tests/'),
   /** «Temas que dividen»: the reader takes a side on each polarizing topic and compares the parties. */

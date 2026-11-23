@@ -7,8 +7,16 @@ import Panel from '@/components/ui/Panel.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
 import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, congressGroups } from '@eleccion/congreso';
+import {
+  SENATE_ABSOLUTE_MAJORITY,
+  SENATE_AUTONOMOUS_SEATS,
+  SENATE_ELECTED_SEATS,
+  SENATE_SEATS,
+  senateGroups,
+} from '@eleccion/senado';
 import { programs } from '@/lib/programs';
 import { routes } from '@/lib/routes';
+import { IMAGE_FORMATS } from '@/lib/simulator-image';
 
 // The networks of the share buttons. The script gives each link its address (see `shareUrls` in the script).
 const networks = [
@@ -23,29 +31,42 @@ const networks = [
 // The groups go to the script as data: the script builds the rows, so a reader can add parties of their own.
 const programIds = new Set(programs.map((program) => program.id));
 const hrefOf = (programId?: string) => (programId && programIds.has(programId) ? routes.party(programId) : undefined);
-const groupData = congressGroups.map((group) => ({
-  ...group,
-  href: hrefOf(group.programId),
-  next: group.next ? { ...group.next, href: hrefOf(group.next.programId) } : undefined,
-}));
+const withLinks = <T extends { programId?: string; next?: { programId?: string } }>(groups: T[]) =>
+  groups.map((group) => ({
+    ...group,
+    href: hrefOf(group.programId),
+    next: group.next ? { ...group.next, href: hrefOf(group.next.programId) } : undefined,
+  }));
+const chamberData = {
+  congreso: withLinks(congressGroups),
+  senado: withLinks(senateGroups),
+};
 ---
 
 <BaseLayout
-  title="Simulador de Congreso y pactos"
-  description="Reparte los 350 escaños del Congreso, crea tus propios partidos, prueba qué pactos logran una investidura y comparte el resultado."
+  title="Simulador de Congreso, Senado y pactos"
+  description="Reparte los 350 escaños del Congreso o los 266 del Senado, crea tus propios partidos, prueba pactos y mayorías y comparte el resultado."
 >
   <section class="page-hero">
     <div class="container">
       <Tag variant="ink">Herramienta, no encuesta</Tag>
-      <h1 class="headline">Congreso y pactos</h1>
-      <p class="page-hero__lede">
+      <h1 class="headline" id="sim-title">Congreso y pactos</h1>
+      <p class="page-hero__lede" id="sim-lede">
         Reparte los {CONGRESS_SEATS} escaños como quieras, crea partidos nuevos y comprueba qué pactos logran investir a un presidente.
         Los escaños de partida son los del Congreso actual. Los números no son una previsión.
       </p>
+      <div class="chambers" role="group" aria-label="Cámara">
+        <button type="button" data-chamber="congreso" aria-pressed="true">
+          Congreso <small>{CONGRESS_SEATS} escaños</small>
+        </button>
+        <button type="button" data-chamber="senado" aria-pressed="false">
+          Senado <small>{SENATE_SEATS} escaños</small>
+        </button>
+      </div>
     </div>
   </section>
 
-  <div class="container sim" id="sim" data-groups={JSON.stringify(groupData)}>
+  <div class="container sim" id="sim" data-chambers={JSON.stringify(chamberData)}>
     <SectionHeading title="Reparte los escaños">
       <p>Cambia el número de escaños de cada partido o crea uno propio. El hemiciclo se actualiza al momento.</p>
     </SectionHeading>
@@ -54,13 +75,18 @@ const groupData = congressGroups.map((group) => ({
       <Panel class="sim-chart">
         <Hemicycle id="hemi-seats" label="Hemiciclo del Congreso con el reparto de escaños">
           <text class="hemicycle__total" id="seats-total" x="200" y="172" text-anchor="middle">{CONGRESS_SEATS}</text>
-          <text class="hemicycle__caption" x="200" y="192" text-anchor="middle">de {CONGRESS_SEATS} escaños</text>
+          <text class="hemicycle__caption" id="seats-caption" x="200" y="192" text-anchor="middle">de {CONGRESS_SEATS} escaños</text>
         </Hemicycle>
         <p class="status" id="seats-status" aria-live="polite"></p>
+        <!-- The main way to share: next to the result, in the yellow of the site. The dialog opens on the seats. -->
+        <Button class="export-open export-open--main" data-export-open="seats" aria-haspopup="dialog">
+          <ShareIcon name="share" /><span id="export-open-seats-label">Compartir este Congreso…</span>
+        </Button>
         <p class="hint">Arrastra los escaños de un partido sobre los de otro para intercambiar sus posiciones. También puedes usar el asa de la lista.</p>
         <p class="sr-only" id="order-status" role="status"></p>
         <div class="sim-actions">
           <Button size="sm" id="preset-now">Congreso actual</Button>
+          <Button size="sm" id="preset-autonomous" hidden>Solo autonómicos ({SENATE_AUTONOMOUS_SEATS})</Button>
           <Button size="sm" id="preset-2023">Resultados de 2023</Button>
           <Button size="sm" id="preset-zero">Todo a cero</Button>
           <Button size="sm" id="create-missing" hidden>Crear partido con los que faltan</Button>
@@ -112,15 +138,15 @@ const groupData = congressGroups.map((group) => ({
       </div>
     </div>
 
-    <SectionHeading title="Prueba una investidura">
-      <p>
+    <SectionHeading title="Prueba una investidura" headingId="vote-heading">
+      <p id="vote-lead">
         Elige un candidato y decide el voto de cada partido. Con {ABSOLUTE_MAJORITY} votos a favor se inviste en la primera votación.
         Si no, a las 48 horas basta con más votos a favor que en contra.
       </p>
     </SectionHeading>
 
     <div class="pact-toolbar box">
-      <label for="candidate">Candidato a la investidura</label>
+      <label for="candidate" id="candidate-label">Candidato a la investidura</label>
       <select id="candidate"></select>
       <p id="candidate-note">El partido del candidato vota «Sí».</p>
     </div>
@@ -148,7 +174,7 @@ const groupData = congressGroups.map((group) => ({
           <Hemicycle id="hemi-votes" label="Hemiciclo del Congreso con el sentido del voto de cada escaño"></Hemicycle>
           <p class="board__head">
             <span>Votos emitidos <b id="tally-total">0</b></span>
-            <span>Mayoría absoluta <b>{ABSOLUTE_MAJORITY}</b></span>
+            <span>Mayoría absoluta <b id="board-majority">{ABSOLUTE_MAJORITY}</b></span>
           </p>
           <ul class="board__tally" aria-label="Recuento">
             <li class="board__row board__row--yes"><span>Sí</span><b id="legend-yes">–</b></li>
@@ -160,13 +186,17 @@ const groupData = congressGroups.map((group) => ({
             <span class="vote-bar__part vote-bar__part--abstain" data-part="abstain"></span>
             <span class="vote-bar__part vote-bar__part--no" data-part="no"></span>
             <span class="vote-bar__part vote-bar__part--rest" id="vote-rest" aria-hidden="true"></span>
-            <span class="vote-bar__marker" id="vote-marker" aria-hidden="true"><i>{ABSOLUTE_MAJORITY}</i></span>
+            <span class="vote-bar__marker" id="vote-marker" aria-hidden="true"><i id="vote-marker-value">{ABSOLUTE_MAJORITY}</i></span>
           </div>
         </div>
         <div class="verdict box" id="verdict" aria-live="polite">
           <h3 id="verdict-title"></h3>
           <p id="verdict-text"></p>
         </div>
+        <!-- Only with a candidate: the dialog opens on the vote. -->
+        <Button class="export-open export-open--vote" id="export-open-vote" data-export-open="vote" aria-haspopup="dialog" hidden>
+          <ShareIcon name="share" /><span id="export-open-vote-label">Compartir esta investidura…</span>
+        </Button>
       </Panel>
     </div>
 
@@ -176,9 +206,9 @@ const groupData = congressGroups.map((group) => ({
     <Panel class="share">
       <p class="share__preview" id="share-preview"></p>
       <div class="share__actions">
-        <Button variant="ink" id="share-copy"><ShareIcon name="copy" />Copiar enlace</Button>
-        <Button id="share-native" hidden><ShareIcon name="share" />Compartir…</Button>
-        <Button id="share-image"><ShareIcon name="download" />Descargar imagen (PNG)</Button>
+        <Button variant="ink" id="share-copy"><ShareIcon name="clipboard" />Copiar enlace</Button>
+        <Button id="share-native" hidden><ShareIcon name="copy" />Compartir enlace…</Button>
+        <Button id="share-image" data-export-open="last" aria-haspopup="dialog"><ShareIcon name="share" /><span data-export-label="Compartir imagen…">Compartir imagen o vídeo…</span></Button>
       </div>
       <h3 class="share__subtitle">Compartir en</h3>
       <ul class="share__networks">
@@ -196,11 +226,89 @@ const groupData = congressGroups.map((group) => ({
       <p class="share__status" id="share-status" role="status"></p>
     </Panel>
 
-    <p class="sim-note">
+    <!-- The image to share: a native dialog with a live preview. Escape closes it and the focus returns to the button. -->
+    <dialog class="export" id="export-dialog" aria-labelledby="export-title">
+      <div class="export__head">
+        <h2 class="export__title" id="export-title" data-export-label="Compartir como imagen">Compartir como imagen o vídeo</h2>
+        <button class="export__close" type="button" aria-label="Cerrar" data-export-close>×</button>
+      </div>
+      <div class="export__body">
+        <figure class="export__preview">
+          <canvas id="export-canvas" role="img" aria-label="Vista previa de la imagen"></canvas>
+          <figcaption id="export-size"></figcaption>
+        </figure>
+        <form class="export__options" id="export-form">
+          <!-- The script turns off a kind of file that this browser can not make, and says why. -->
+          <fieldset class="choice">
+            <legend>Archivo</legend>
+            <div class="choice__grid choice__grid--3">
+              <label><input type="radio" name="file" value="png" checked /><span>Imagen<small>PNG, fija</small></span></label>
+              <label><input type="radio" name="file" value="video" /><span>Vídeo<small id="export-video-detail">MP4, 8 s</small></span></label>
+              <label><input type="radio" name="file" value="gif" /><span>GIF<small>Animado, se repite</small></span></label>
+            </div>
+            <p class="choice__note" id="export-file-note" hidden></p>
+          </fieldset>
+          <fieldset class="choice">
+            <legend>Contenido</legend>
+            <div class="choice__grid">
+              <label><input type="radio" name="content" value="seats" checked /><span>Escaños<small>Los partidos y sus colores</small></span></label>
+              <label><input type="radio" name="content" value="vote" /><span><span id="export-vote-label">Investidura</span><small>Sí, no y abstención</small></span></label>
+            </div>
+            <p class="choice__note" id="export-vote-note">Para la investidura, elige antes un candidato.</p>
+          </fieldset>
+          <fieldset class="choice">
+            <legend>Tamaño</legend>
+            <div class="choice__grid">
+              {
+                Object.entries(IMAGE_FORMATS).map(([id, format], index) => (
+                  <label>
+                    <input type="radio" name="format" value={id} checked={index === 0} />
+                    <span>
+                      {format.label}
+                      <small>{format.width} × {format.height}</small>
+                      <small>{format.use}</small>
+                    </span>
+                  </label>
+                ))
+              }
+            </div>
+          </fieldset>
+          <fieldset class="choice">
+            <legend>Fondo</legend>
+            <div class="choice__grid">
+              <label><input type="radio" name="theme" value="light" checked /><span>Blanco</span></label>
+              <label><input type="radio" name="theme" value="dark" /><span>Negro</span></label>
+            </div>
+          </fieldset>
+          <label class="export__field">
+            Título
+            <input name="title" type="text" maxlength="40" autocomplete="off" value="Mi Congreso" />
+          </label>
+        </form>
+      </div>
+      <div class="export__actions">
+        <Button variant="ink" id="export-download"><ShareIcon name="download" /><span id="export-download-label">Descargar imagen</span></Button>
+        <Button id="export-share" hidden><ShareIcon name="share" /><span id="export-share-label">Compartir imagen</span></Button>
+        <Button id="export-copy" hidden><ShareIcon name="clipboard" />Copiar imagen</Button>
+      </div>
+      <p class="export__status" id="export-status" role="status"></p>
+    </dialog>
+
+    <p class="sim-note" id="sim-note-congreso">
       Los escaños actuales son los del Congreso de la XV legislatura, que se disolvió el 6 de octubre de 2026 (fuente: la ficha de la
       legislatura en Wikipedia, que no da fecha de esas cifras). Los de 2023 son los resultados oficiales por candidatura: el PSOE
       incluye al PSC y Sumar a sus coaliciones. Sumar se presenta el 29N como Frente Amplio (FA): con «Congreso actual» y «Resultados de 2023» se llama Sumar, y con «Todo a cero», que empieza el Congreso del 29N, Frente Amplio, cada uno con su color. En la lista, «Convertir en Frente Amplio» cambia el nombre y el color sin cambiar los escaños, y «Convertir en Sumar» lo deshace. El orden del hemiciclo y los colores son aproximados. El simulador aplica el artículo 99
       de la Constitución y no tiene en cuenta cómo se reparten los escaños por provincia.
+    </p>
+    <p class="sim-note" id="sim-note-senado" hidden>
+      El Senado de la XV legislatura tiene {SENATE_SEATS} escaños: {SENATE_ELECTED_SEATS} elegidos en las urnas por provincia e isla y{' '}
+      {SENATE_AUTONOMOUS_SEATS} por designación autonómica (art. 69.5 de la Constitución), que no se renuevan el 29N. «Senado actual»
+      muestra la suma de ambos por partido de procedencia (en la Cámara los grupos parlamentarios se prestan senadores para alcanzar el mínimo).
+      «Solo autonómicos ({SENATE_AUTONOMOUS_SEATS})» conserva esos escaños para repartir los {SENATE_ELECTED_SEATS} electos del 29N, y
+      «Electos de 2023 ({SENATE_ELECTED_SEATS})» muestra los resultados oficiales del 23J (PSOE incluye al PSC; ERC y EH Bildu concurrieron como
+      Izquierdas por la Independencia; «Otros» es Eivissa i Formentera al Senat). El Senado no inviste al presidente del Gobierno: la mayoría
+      absoluta ({SENATE_ABSOLUTE_MAJORITY}) permite vetar leyes (art. 90) o aplicar el artículo 155, y la mayoría simple basta para enmiendas y
+      mociones. El orden del hemiciclo y los colores son aproximados.
     </p>
   </div>
 
@@ -250,945 +358,36 @@ const groupData = congressGroups.map((group) => ({
 </BaseLayout>
 
 <script>
-  import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, type CongressGroup } from '@eleccion/congreso';
-  import { election } from '@eleccion/eleccion';
-  import { SITE_NAME } from '@/lib/site';
-  import { investiture, minimalCoalitions, type Vote } from '@/lib/simulator';
-  import { tooltip } from '@/lib/tooltip';
-
-  type Group = {
-    id: string;
-    acronym: string;
-    name: string;
-    color: string;
-    seats: number;
-    href?: string;
-    custom: boolean;
-    seatsNow: number;
-    seats2023: number;
-    /** The other name of the same group (Sumar ↔ Frente Amplio). The button of its row swaps the two names. */
-    alt?: { acronym: string; name: string; color: string; href?: string };
-    /** True when the group uses its name of the new election (Frente Amplio). */
-    renamed?: boolean;
-  };
-
-  const root = document.querySelector<HTMLElement>('#sim')!;
-  const baseData: (CongressGroup & { href?: string })[] = JSON.parse(root.dataset.groups!);
-  const baseGroups = (): Group[] =>
-    baseData.map(({ next, ...group }) => ({ ...group, alt: next, seats: group.seatsNow, custom: false }));
-  // The group takes its other name and color; its seats, its votes and its place stay.
-  const swapName = (group: Group): Group => {
-    if (!group.alt) return group;
-    const { acronym, name, color, href } = group;
-    return { ...group, ...group.alt, href: group.alt.href, alt: { acronym, name, color, href }, renamed: !group.renamed };
-  };
-
-  // The lights of the voting board (see `.sim` in the styles).
-  const VOTE_COLORS: Record<Vote, string> = { yes: 'var(--led-yes)', abstain: 'var(--led-abstain)', no: 'var(--led-no)' };
-  const VOTE_LABELS: Record<Vote, string> = { yes: 'Sí', abstain: 'Abstención', no: 'No' };
-  const VOTE_CODES: Record<Vote, string> = { yes: 'y', abstain: 'a', no: 'n' };
-  const MAX_CUSTOM = 8;
-
-  // ---- State ----
-  let groups: Group[] = baseGroups();
-  const votes: Record<string, Vote> = {};
-  // No candidate by default: the reader picks one ('' = none). A shared link can bring one (`c`).
-  let candidate = '';
-  let nextCustomId = 1;
-  // The order of the list of seats: the order of the hemicycle, the alphabet, or the seats (most first).
-  type SortMode = 'hemicycle' | 'alpha' | 'seats';
-  let sortMode: SortMode = 'hemicycle';
-
-  // ---- Elements ----
-  const $ = <T extends Element>(selector: string) => document.querySelector<T>(selector)!;
-  const hemiSeats = $<SVGSVGElement>('#hemi-seats');
-  const hemiVotes = $<SVGSVGElement>('#hemi-votes');
-  const seatsTotal = $<SVGTextElement>('#seats-total');
-  const status = $<HTMLElement>('#seats-status');
-  const createMissing = $<HTMLButtonElement>('#create-missing');
-  const seatList = $<HTMLElement>('#seat-list');
-  const voteList = $<HTMLElement>('#vote-list');
-  const select = $<HTMLSelectElement>('#candidate');
-  const bar = $<HTMLElement>('#vote-bar');
-  const marker = $<HTMLElement>('#vote-marker');
-  const verdictBox = $<HTMLElement>('#verdict');
-  const verdictTitle = $<HTMLElement>('#verdict-title');
-  const verdictText = $<HTMLElement>('#verdict-text');
-  const coalitionsLead = $<HTMLElement>('#coalitions-lead');
-  const coalitionsList = $<HTMLElement>('#coalitions');
-  const seatTemplate = $<HTMLTemplateElement>('#seat-row-template');
-  const voteTemplate = $<HTMLTemplateElement>('#vote-row-template');
-  const partyDetails = $<HTMLDetailsElement>('#party-details');
-  const partyForm = $<HTMLFormElement>('#party-form');
-  const partyError = $<HTMLElement>('#party-error');
-  const partySeats = partyForm.elements.namedItem('seats') as HTMLInputElement;
-  const partyAcronym = partyForm.elements.namedItem('acronym') as HTMLInputElement;
-  const partyColor = partyForm.elements.namedItem('color') as HTMLInputElement;
-
-  // A new party gets a random color. Of 24 random hues it takes the one that is farthest from the colors in use,
-  // so the new party does not look like another one.
-  const hueOf = (hex: string) => {
-    const [red, green, blue] = [1, 3, 5].map((index) => parseInt(hex.slice(index, index + 2), 16) / 255);
-    const max = Math.max(red, green, blue);
-    const delta = max - Math.min(red, green, blue);
-    if (delta === 0) return 0;
-    const hue = max === red ? ((green - blue) / delta) % 6 : max === green ? (blue - red) / delta + 2 : (red - green) / delta + 4;
-    return (hue * 60 + 360) % 360;
-  };
-  const hslToHex = (hue: number, saturation: number, lightness: number) => {
-    const a = saturation * Math.min(lightness, 1 - lightness);
-    const channel = (n: number) => {
-      const k = (n + hue / 30) % 12;
-      return Math.round(255 * (lightness - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)))).toString(16).padStart(2, '0');
-    };
-    return `#${channel(0)}${channel(8)}${channel(4)}`;
-  };
-  const randomPartyColor = () => {
-    const used = groups.map((group) => hueOf(group.color));
-    let best = Math.random() * 360;
-    let bestDistance = -1;
-    for (let attempt = 0; attempt < 24; attempt += 1) {
-      const hue = Math.random() * 360;
-      const distance = Math.min(...used.map((other) => Math.min(Math.abs(hue - other), 360 - Math.abs(hue - other))), 180);
-      if (distance > bestDistance) {
-        best = hue;
-        bestDistance = distance;
-      }
-    }
-    return hslToHex(best, 0.72, 0.5);
-  };
-
-  const circlesOf = (svg: SVGSVGElement) => [...svg.querySelectorAll<SVGCircleElement>('circle')];
-  const seatCircles = circlesOf(hemiSeats);
-  const voteCircles = circlesOf(hemiVotes);
-
-  const plural = (count: number, one: string, many: string) => `${count} ${count === 1 ? one : many}`;
-  const clampSeats = (value: number) => Math.min(CONGRESS_SEATS, Math.max(0, Number.isFinite(value) ? Math.trunc(value) : 0));
-  const byId = (id: string) => groups.find((group) => group.id === id) as Group;
-  const seatsMap = () => Object.fromEntries(groups.map((group) => [group.id, group.seats]));
-  const total = () => groups.reduce((sum, group) => sum + group.seats, 0);
-  const voteOf = (id: string): Vote => (id === candidate ? 'yes' : (votes[id] ?? 'no'));
-  const colorVar = (id: string) => `var(--g-${id})`;
-  const setColor = (group: Group) => root.style.setProperty(`--g-${group.id}`, group.color);
-
-  // A group takes a slice of the hemicycle, from the left. The seats that no group takes stay empty.
-  const paint = (circles: SVGCircleElement[], slices: { count: number; color: string; title: string; line: string }[]) => {
-    let index = 0;
-    for (const slice of slices) {
-      for (let taken = 0; taken < slice.count && index < circles.length; taken += 1, index += 1) {
-        circles[index].style.fill = slice.color;
-        circles[index].setAttribute('data-tooltip', tooltip(slice.title, slice.line));
-      }
-    }
-    for (; index < circles.length; index += 1) {
-      circles[index].style.fill = '';
-      circles[index].removeAttribute('data-tooltip');
-    }
-  };
-
-  // ---- Rows (built from the templates, one pair for each group) ----
-  const seatRows = new Map<string, HTMLElement>();
-  const voteRows = new Map<string, HTMLElement>();
-
-  const createRows = (group: Group) => {
-    setColor(group);
-
-    const seatRow = (seatTemplate.content.firstElementChild as HTMLElement).cloneNode(true) as HTMLElement;
-    seatRow.dataset.group = group.id;
-    seatRow.style.setProperty('--group', colorVar(group.id));
-    const label = seatRow.querySelector<HTMLLabelElement>('.seat-row__label')!;
-    const input = seatRow.querySelector<HTMLInputElement>('input')!;
-    input.id = `seats-${group.id}`;
-    label.htmlFor = input.id;
-    const title = document.createElement('b');
-    title.textContent = group.acronym;
-    if (group.href) {
-      const link = document.createElement('a');
-      link.href = group.href;
-      link.append(title);
-      label.append(link);
-    } else {
-      label.append(title);
-    }
-    seatRow.querySelector<HTMLElement>('.seat-row__full')!.textContent = group.name;
-    const handle = seatRow.querySelector<HTMLButtonElement>('.seat-row__handle')!;
-    handle.setAttribute('aria-label', `Mover ${group.acronym} en el hemiciclo. Con las flechas, cambia de sitio con el partido de al lado.`);
-    handle.addEventListener('pointerdown', (event) => startRowDrag(event, group, handle));
-    handle.addEventListener('keydown', (event) => {
-      const step = event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? -1 : event.key === 'ArrowDown' || event.key === 'ArrowRight' ? 1 : 0;
-      if (!step) return;
-      event.preventDefault();
-      const index = groups.findIndex((item) => item.id === group.id);
-      const neighbor = groups[index + step];
-      if (!neighbor) return;
-      swapGroups(group.id, neighbor.id);
-      handle.focus();
-    });
-    const remove = seatRow.querySelector<HTMLButtonElement>('.seat-row__remove')!;
-    remove.hidden = !group.custom;
-    remove.setAttribute('aria-label', `Quitar el partido ${group.acronym}`);
-    seatRow.querySelector('[data-step="-1"]')!.setAttribute('aria-label', `Quitar un escaño a ${group.acronym}`);
-    seatRow.querySelector('[data-step="1"]')!.setAttribute('aria-label', `Añadir un escaño a ${group.acronym}`);
-
-    input.addEventListener('input', () => {
-      group.seats = clampSeats(input.valueAsNumber);
-      renderAll();
-    });
-    input.addEventListener('blur', () => {
-      input.value = String(group.seats);
-    });
-    for (const button of seatRow.querySelectorAll<HTMLButtonElement>('[data-step]')) {
-      button.addEventListener('click', () => {
-        group.seats = clampSeats(group.seats + Number(button.dataset.step));
-        renderAll();
-      });
-    }
-    const rename = seatRow.querySelector<HTMLButtonElement>('.seat-row__rename')!;
-    if (group.alt) {
-      rename.hidden = false;
-      rename.textContent = `Convertir en ${group.alt.name.replace(/\s*\(.*\)$/, '')}`;
-      rename.setAttribute('aria-label', `Convertir ${group.acronym} en ${group.alt.acronym}, con los mismos escaños`);
-      rename.addEventListener('click', () => {
-        rebuild(groups.map((item) => (item.id === group.id ? swapName(item) : item)));
-        renderAll();
-        seatRows.get(group.id)?.querySelector<HTMLButtonElement>('.seat-row__rename')?.focus();
-      });
-    }
-    remove.addEventListener('click', () => {
-      groups = groups.filter((item) => item.id !== group.id);
-      delete votes[group.id];
-      seatRows.get(group.id)?.remove();
-      voteRows.get(group.id)?.remove();
-      seatRows.delete(group.id);
-      voteRows.delete(group.id);
-      renderAll();
-    });
-
-    const voteRow = (voteTemplate.content.firstElementChild as HTMLElement).cloneNode(true) as HTMLElement;
-    voteRow.dataset.voteGroup = group.id;
-    voteRow.style.setProperty('--group', colorVar(group.id));
-    voteRow.querySelector('b')!.textContent = group.acronym;
-    const radios = [...voteRow.querySelectorAll<HTMLInputElement>('input[type="radio"]')];
-    const labels = [...voteRow.querySelectorAll<HTMLLabelElement>('label')];
-    radios.forEach((radio, index) => {
-      radio.name = `vote-${group.id}`;
-      radio.id = `vote-${group.id}-${radio.value}`;
-      labels[index].htmlFor = radio.id;
-      radio.addEventListener('change', () => {
-        if (radio.checked) votes[group.id] = radio.value as Vote;
-        renderAll();
-      });
-    });
-
-    seatRows.set(group.id, seatRow);
-    voteRows.set(group.id, voteRow);
-  };
-
-  // The list of seats follows the sort mode. The list of votes and the hemicycle keep the order of the hemicycle.
-  const byName = (a: Group, b: Group) => a.acronym.localeCompare(b.acronym, 'es', { sensitivity: 'base' });
-  const sortedGroups = () =>
-    sortMode === 'alpha' ? [...groups].sort(byName) : sortMode === 'seats' ? [...groups].sort((a, b) => b.seats - a.seats || byName(a, b)) : groups;
-  const placeSeatRows = () => {
-    for (const group of sortedGroups()) seatList.append(seatRows.get(group.id)!);
-  };
-  const placeRows = () => {
-    placeSeatRows();
-    for (const group of groups) voteList.append(voteRows.get(group.id)!);
-  };
-
-  const sortButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-sort]')];
-  const renderSort = () => {
-    for (const button of sortButtons) button.setAttribute('aria-pressed', String(button.dataset.sort === sortMode));
-    // The handles move the groups in the hemicycle: they only make sense in the order of the hemicycle.
-    seatList.dataset.sort = sortMode;
-  };
-  for (const button of sortButtons) {
-    button.addEventListener('click', () => {
-      sortMode = button.dataset.sort as SortMode;
-      renderSort();
-      placeSeatRows();
-      writeUrl();
-    });
-  }
-  // ---- Move: swap the position of two groups in the hemicycle ----
-  const orderStatus = $<HTMLElement>('#order-status');
-  const swapGroups = (firstId: string, secondId: string) => {
-    const first = groups.findIndex((group) => group.id === firstId);
-    const second = groups.findIndex((group) => group.id === secondId);
-    if (first < 0 || second < 0 || first === second) return;
-    [groups[first], groups[second]] = [groups[second], groups[first]];
-    placeRows();
-    renderAll();
-    orderStatus.textContent = `${byId(firstId).acronym} pasa a la posición ${groups.findIndex((group) => group.id === firstId) + 1} y ${byId(secondId).acronym} a la ${groups.findIndex((group) => group.id === secondId) + 1} de ${groups.length}.`;
-  };
-
-  // Drag a row by its handle onto another row. The pointer is captured by the handle, so it works with mouse, pen and touch.
-  const startRowDrag = (event: PointerEvent, group: Group, handle: HTMLElement) => {
-    if (event.pointerType === 'mouse' && event.button !== 0) return;
-    event.preventDefault();
-    handle.setPointerCapture(event.pointerId);
-    const row = seatRows.get(group.id)!;
-    row.classList.add('is-dragging');
-    let target: string | null = null;
-    const setTarget = (id: string | null) => {
-      if (id === target) return;
-      if (target) seatRows.get(target)?.classList.remove('is-drop');
-      target = id;
-      if (target) seatRows.get(target)?.classList.add('is-drop');
-    };
-    const move = (moveEvent: PointerEvent) => {
-      const scroller = seatList.parentElement!;
-      const box = scroller.getBoundingClientRect();
-      const EDGE = 40;
-      if (moveEvent.clientY < box.top + EDGE) scroller.scrollTop -= 14;
-      else if (moveEvent.clientY > box.bottom - EDGE) scroller.scrollTop += 14;
-      const over = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY)?.closest<HTMLElement>('.seat-row');
-      setTarget(over?.dataset.group && over.dataset.group !== group.id ? over.dataset.group : null);
-    };
-    const end = (endEvent: PointerEvent) => {
-      handle.removeEventListener('pointermove', move);
-      handle.removeEventListener('pointerup', end);
-      handle.removeEventListener('pointercancel', end);
-      row.classList.remove('is-dragging');
-      const dropped = endEvent.type === 'pointerup' ? target : null;
-      setTarget(null);
-      if (dropped) swapGroups(group.id, dropped);
-    };
-    handle.addEventListener('pointermove', move);
-    handle.addEventListener('pointerup', end);
-    handle.addEventListener('pointercancel', end);
-  };
-
-  // Drag the seats of a group, in the hemicycle, onto the seats of another group.
-  const ownerOfSeat = (index: number) => {
-    let end = 0;
-    for (const group of groups) {
-      end += group.seats;
-      if (index < end) return group.id;
-    }
-    return undefined;
-  };
-  const markSeats = (id: string | undefined, kind: 'source' | 'target' | null) => {
-    if (!id) return;
-    seatCircles.forEach((circle, index) => {
-      if (ownerOfSeat(index) !== id) return;
-      if (kind) circle.dataset.drag = kind;
-      else delete circle.dataset.drag;
-    });
-  };
-  hemiSeats.addEventListener('pointerdown', (event) => {
-    const circle = (event.target as Element).closest<SVGCircleElement>('circle');
-    if (!circle || (event.pointerType === 'mouse' && event.button !== 0)) return;
-    const sourceId = ownerOfSeat(Number(circle.dataset.seat));
-    if (!sourceId) return;
-    event.preventDefault();
-    hemiSeats.setPointerCapture(event.pointerId);
-    hemiSeats.classList.add('is-dragging');
-    markSeats(sourceId, 'source');
-    let targetId: string | undefined;
-    const move = (moveEvent: PointerEvent) => {
-      const over = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY)?.closest<SVGCircleElement>('#hemi-seats circle');
-      const id = over ? ownerOfSeat(Number(over.dataset.seat)) : undefined;
-      const next = id && id !== sourceId ? id : undefined;
-      if (next === targetId) return;
-      markSeats(targetId, null);
-      targetId = next;
-      markSeats(targetId, 'target');
-    };
-    const end = (endEvent: PointerEvent) => {
-      hemiSeats.removeEventListener('pointermove', move);
-      hemiSeats.removeEventListener('pointerup', end);
-      hemiSeats.removeEventListener('pointercancel', end);
-      hemiSeats.classList.remove('is-dragging');
-      markSeats(sourceId, null);
-      markSeats(targetId, null);
-      if (endEvent.type === 'pointerup' && targetId) swapGroups(sourceId, targetId);
-    };
-    hemiSeats.addEventListener('pointermove', move);
-    hemiSeats.addEventListener('pointerup', end);
-    hemiSeats.addEventListener('pointercancel', end);
-  });
-
-  // Sorting by seats must not move a row while the reader changes its number: the list sorts again when the focus leaves it.
-  seatList.addEventListener('focusout', (event) => {
-    if (sortMode === 'seats' && !seatList.contains(event.relatedTarget as Node | null)) placeSeatRows();
-  });
-
-  // ---- Congress ----
-  const renderSeats = () => {
-    const sum = total();
-    for (const group of groups) {
-      const input = seatRows.get(group.id)!.querySelector<HTMLInputElement>('input')!;
-      const value = String(group.seats);
-      if (input.value !== value && document.activeElement !== input) input.value = value;
-    }
-    paint(
-      seatCircles,
-      groups.map((group) => ({ count: group.seats, color: colorVar(group.id), title: group.acronym, line: plural(group.seats, 'escaño', 'escaños') })),
-    );
-    seatsTotal.textContent = String(sum);
-    hemiSeats.setAttribute(
-      'aria-label',
-      `Hemiciclo con ${sum} escaños: ${groups.filter((group) => group.seats > 0).map((group) => `${group.acronym} ${group.seats}`).join(', ')}`,
-    );
-    const difference = CONGRESS_SEATS - sum;
-    status.textContent =
-      difference === 0
-        ? `Los ${CONGRESS_SEATS} escaños están repartidos.`
-        : difference > 0
-          ? `Faltan ${plural(difference, 'escaño', 'escaños')} por repartir.`
-          : `Sobran ${plural(-difference, 'escaño', 'escaños')}: el Congreso tiene ${CONGRESS_SEATS}.`;
-    status.dataset.state = difference === 0 ? 'ok' : 'warning';
-    createMissing.hidden = difference <= 0;
-  };
-
-  // ---- Pacts ----
-  // A candidate whose party has no seats (or no longer exists) goes back to no candidate.
-  const ensureCandidate = () => {
-    if (candidate && (byId(candidate)?.seats ?? 0) === 0) candidate = '';
-  };
-
-  const renderSelect = () => {
-    const placeholder = document.createElement('option');
-    placeholder.value = '';
-    placeholder.textContent = 'Elige un candidato';
-    placeholder.selected = !candidate;
-    select.replaceChildren(
-      placeholder,
-      ...groups
-        .filter((group) => group.seats > 0)
-        .map((group) => {
-          const option = document.createElement('option');
-          option.value = group.id;
-          option.textContent = `${group.acronym} (${group.seats})`;
-          option.selected = group.id === candidate;
-          return option;
-        }),
-    );
-  };
-
-  const renderVoteRows = () => {
-    for (const group of groups) {
-      const row = voteRows.get(group.id)!;
-      const isCandidate = group.id === candidate;
-      row.hidden = group.seats === 0;
-      row.dataset.candidate = String(isCandidate);
-      // Without a candidate there is nothing to vote: the votes wait.
-      row.querySelector('fieldset')!.disabled = !candidate;
-      row.querySelector<HTMLElement>('.vote-row__seats')!.textContent = plural(group.seats, 'escaño', 'escaños');
-      const vote = voteOf(group.id);
-      for (const radio of row.querySelectorAll<HTMLInputElement>('input[type="radio"]')) {
-        radio.checked = radio.value === vote;
-        radio.disabled = isCandidate;
-      }
-    }
-  };
-
-  let lastShare = { text: '', yesNames: [] as string[] };
-
-  const renderResult = () => {
-    $<HTMLElement>('#tally-total').textContent = String(total());
-    // The mark of the absolute majority stays in its place, also without a candidate.
-    marker.style.left = `${Math.min(100, (ABSOLUTE_MAJORITY / Math.max(total(), CONGRESS_SEATS)) * 100)}%`;
-    if (!candidate) {
-      // The board is off until there is a candidate.
-      paint(
-        voteCircles,
-        groups.map((group) => ({ count: group.seats, color: '', title: group.acronym, line: plural(group.seats, 'escaño', 'escaños') })),
-      );
-      for (const part of bar.querySelectorAll<HTMLElement>('[data-part]')) {
-        part.hidden = true;
-        $<HTMLElement>(`#legend-${part.dataset.part}`).textContent = '–';
-      }
-      $<HTMLElement>('#vote-rest').style.flexGrow = '1';
-      $<HTMLElement>('#vote-rest').hidden = false;
-      bar.setAttribute('aria-label', 'Sin votación: falta elegir un candidato.');
-      verdictTitle.textContent = 'Elige un candidato';
-      verdictText.textContent = 'Elige arriba el candidato a la investidura. Después, decide el voto de cada partido.';
-      verdictBox.dataset.outcome = 'none';
-      lastShare = { yesNames: [], text: 'Reparte los escaños del Congreso y prueba qué pactos logran una investidura.' };
-      renderCoalitions();
-      return;
-    }
-    const result = investiture(seatsMap(), candidate, votes);
-    paint(
-      voteCircles,
-      groups.map((group) => ({
-        count: group.seats,
-        color: VOTE_COLORS[voteOf(group.id)],
-        title: `${group.acronym}: ${VOTE_LABELS[voteOf(group.id)]}`,
-        line: plural(group.seats, 'escaño', 'escaños'),
-      })),
-    );
-
-    for (const part of bar.querySelectorAll<HTMLElement>('[data-part]')) {
-      const kind = part.dataset.part as Vote;
-      part.style.flexGrow = String(result[kind]);
-      part.hidden = result[kind] === 0;
-      // The number goes inside the part only if it fits. The legend always has the name and the number.
-      part.textContent = String(result[kind]);
-      if (part.scrollWidth > part.clientWidth) part.textContent = '';
-      $<HTMLElement>(`#legend-${kind}`).textContent = String(result[kind]);
-    }
-    // The bar always stands for the whole Congress: the seats not given to any group stay empty at the end.
-    const rest = Math.max(0, CONGRESS_SEATS - total());
-    const restPart = $<HTMLElement>('#vote-rest');
-    restPart.style.flexGrow = String(rest);
-    // With every seat given, the empty part must not take any width.
-    restPart.hidden = rest === 0;
-    bar.setAttribute('aria-label', `Sí ${result.yes}, abstención ${result.abstain}, no ${result.no}. La mayoría absoluta es ${ABSOLUTE_MAJORITY}.`);
-
-    const missing = ABSOLUTE_MAJORITY - result.yes;
-    if (result.outcome === 'first') {
-      verdictTitle.textContent = 'Se inviste en la primera votación';
-      verdictText.textContent = `${result.yes} votos a favor: supera la mayoría absoluta de ${ABSOLUTE_MAJORITY}.`;
-    } else if (result.outcome === 'second') {
-      verdictTitle.textContent = 'Se inviste en la segunda votación';
-      verdictText.textContent = `En la primera faltan ${plural(missing, 'voto', 'votos')} para ${ABSOLUTE_MAJORITY}. A las 48 horas basta con más votos a favor que en contra: ${result.yes} sí frente a ${result.no} no.`;
-    } else {
-      verdictTitle.textContent = 'No se logra la investidura';
-      verdictText.textContent = `${result.yes} sí, ${result.no} no y ${plural(result.abstain, 'abstención', 'abstenciones')}. No llega a ${ABSOLUTE_MAJORITY} y no supera a los votos en contra. Si pasan dos meses desde la primera votación sin investir a nadie, se disuelven las Cortes.`;
-    }
-    if (total() !== CONGRESS_SEATS) verdictText.textContent += ` Atención: has repartido ${total()} escaños y el Congreso tiene ${CONGRESS_SEATS}.`;
-    verdictBox.dataset.outcome = result.outcome;
-
-    // The sentence of the message is complete by itself. The call to action goes after it, before the link.
-    const yesNames = groups.filter((group) => group.seats > 0 && voteOf(group.id) === 'yes').map((group) => group.acronym);
-    lastShare = {
-      yesNames,
-      text: `${verdictTitle.textContent}: ${yesNames.join(' + ')} ${yesNames.length === 1 ? 'suma' : 'suman'} ${plural(result.yes, 'voto', 'votos')} (${result.no} en contra y ${plural(result.abstain, 'abstención', 'abstenciones')}).`,
-    };
-    renderCoalitions();
-  };
-
-  const renderCoalitions = () => {
-    coalitionsList.replaceChildren();
-    if (!candidate) {
-      coalitionsLead.textContent = `Elige un candidato para ver qué pactos suman ${ABSOLUTE_MAJORITY}.`;
-      return;
-    }
-    const found = minimalCoalitions(seatsMap(), candidate);
-    const name = byId(candidate).acronym;
-    if (found.length === 0) {
-      coalitionsLead.textContent = `Con estos escaños, ningún pacto de ${name} suma ${ABSOLUTE_MAJORITY}. Queda la segunda votación: más sí que no.`;
-      return;
-    }
-    if (found[0].partners.length === 0) {
-      coalitionsLead.textContent = `${name} tiene mayoría absoluta en solitario.`;
-      return;
-    }
-    coalitionsLead.textContent =
-      'Son sumas, no previsiones: no miran si los partidos aceptarían pactar. Salen las combinaciones más cortas, sin ningún partido que sobre. Pulsa una para aplicarla.';
-    const yesIds = new Set(groups.filter((group) => group.seats > 0 && voteOf(group.id) === 'yes').map((group) => group.id));
-    for (const coalition of found) {
-      const members = [candidate, ...coalition.partners];
-      const item = document.createElement('li');
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'coalition';
-      button.setAttribute('aria-pressed', String(members.length === yesIds.size && members.every((id) => yesIds.has(id))));
-      button.setAttribute('aria-label', `Aplicar el pacto ${members.map((id) => byId(id).acronym).join(', ')}: ${coalition.seats} escaños`);
-
-      const parties = document.createElement('span');
-      parties.className = 'coalition__parties';
-      members.forEach((id, index) => {
-        if (index > 0) {
-          const plus = document.createElement('span');
-          plus.className = 'coalition__plus';
-          plus.textContent = '+';
-          plus.setAttribute('aria-hidden', 'true');
-          parties.append(plus);
-        }
-        const party = document.createElement('span');
-        party.className = 'coalition__party';
-        const swatch = document.createElement('span');
-        swatch.className = 'coalition__swatch';
-        swatch.style.background = colorVar(id);
-        swatch.setAttribute('aria-hidden', 'true');
-        party.append(swatch, byId(id).acronym);
-        parties.append(party);
-      });
-
-      const sum = document.createElement('span');
-      sum.className = 'coalition__sum';
-      const strong = document.createElement('strong');
-      strong.textContent = String(coalition.seats);
-      const margin = document.createElement('small');
-      margin.textContent = `+${coalition.seats - ABSOLUTE_MAJORITY} sobre ${ABSOLUTE_MAJORITY}`;
-      sum.append(strong, margin);
-
-      button.append(parties, sum);
-      button.addEventListener('click', () => {
-        for (const group of groups) if (group.id !== candidate) votes[group.id] = coalition.partners.includes(group.id) ? 'yes' : 'no';
-        renderAll();
-      });
-      item.append(button);
-      coalitionsList.append(item);
-    }
-  };
-
-  // ---- Link of the state: it keeps the order, the seats, the custom parties and the votes ----
-  const CUSTOM_ID = /^x\d+$/;
-  const HEX = /^[0-9a-f]{6}$/i;
-  const writeUrl = () => {
-    const url = new URL(location.href);
-    url.searchParams.set('e', groups.map((group) => `${group.id}-${group.seats}`).join(','));
-    url.searchParams.set('v', groups.map((group) => VOTE_CODES[voteOf(group.id)]).join(''));
-    if (candidate) url.searchParams.set('c', candidate);
-    else url.searchParams.delete('c');
-    if (sortMode === 'hemicycle') url.searchParams.delete('o');
-    else url.searchParams.set('o', sortMode);
-    const renamed = groups.filter((group) => group.renamed).map((group) => group.id);
-    if (renamed.length) url.searchParams.set('r', renamed.join(','));
-    else url.searchParams.delete('r');
-    const customs = groups.filter((group) => group.custom);
-    if (customs.length) {
-      url.searchParams.set('x', customs.map((group) => `${group.id}~${encodeURIComponent(group.acronym)}~${group.color.slice(1)}`).join('|'));
-    } else {
-      url.searchParams.delete('x');
-    }
-    history.replaceState(null, '', url);
-    updateShareLinks(url.href);
-  };
-
-  const readUrl = () => {
-    const params = new URLSearchParams(location.search);
-    for (const entry of (params.get('x') ?? '').split('|').slice(0, MAX_CUSTOM)) {
-      const [id, acronym, hex] = entry.split('~');
-      if (!CUSTOM_ID.test(id ?? '') || !acronym || !HEX.test(hex ?? '')) continue;
-      groups.push({ id, acronym: decodeURIComponent(acronym).slice(0, 12), name: 'Partido creado por ti', color: `#${hex}`, seats: 0, custom: true, seatsNow: 0, seats2023: 0 });
-      nextCustomId = Math.max(nextCustomId, Number(id.slice(1)) + 1);
-    }
-    const renamed = (params.get('r') ?? '').split(',');
-    groups = groups.map((group) => (group.alt && renamed.includes(group.id) ? swapName(group) : group));
-    const entries = (params.get('e') ?? '').split(',').map((entry) => entry.split('-'));
-    const valid = entries.every(([id, seats]) => byId(id) && /^\d+$/.test(seats ?? '') && Number(seats) <= CONGRESS_SEATS);
-    if (params.get('e') && valid) {
-      const ordered = entries.map(([id, seats]) => Object.assign(byId(id), { seats: Number(seats) }));
-      const rest = groups.filter((group) => !ordered.includes(group)).map((group) => Object.assign(group, { seats: 0 }));
-      const codes = params.get('v') ?? '';
-      const byCode = Object.fromEntries(Object.entries(VOTE_CODES).map(([vote, code]) => [code, vote as Vote]));
-      ordered.forEach((group, index) => {
-        if (byCode[codes[index]]) votes[group.id] = byCode[codes[index]];
-      });
-      groups = [...ordered, ...rest];
-    }
-    const order = params.get('o');
-    if (order === 'alpha' || order === 'seats') sortMode = order;
-    const requested = params.get('c');
-    if (requested && byId(requested)) candidate = requested;
-  };
-
-  // ---- Sharing ----
-  const shareStatus = $<HTMLElement>('#share-status');
-  const sharePreview = $<HTMLElement>('#share-preview');
-  const nativeButton = $<HTMLButtonElement>('#share-native');
-  const networkLinks = [...document.querySelectorAll<HTMLAnchorElement>('[data-network]')];
-  const CALL_TO_ACTION = `Prueba otros pactos en el simulador de ${SITE_NAME}:`;
-  const TITLE = `Congreso y pactos (${SITE_NAME})`;
-  /** The address that each network gives to a shared page. The text and the link are encoded. */
-  const shareUrls: Record<string, (text: string, href: string) => string> = {
-    whatsapp: (text, href) => `https://wa.me/?text=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION} ${href}`)}`,
-    telegram: (text, href) => `https://t.me/share/url?url=${encodeURIComponent(href)}&text=${encodeURIComponent(`${text}\n${CALL_TO_ACTION}`)}`,
-    x: (text, href) => `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${text} ${CALL_TO_ACTION}`)}&url=${encodeURIComponent(href)}`,
-    facebook: (_text, href) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(href)}`,
-    linkedin: (_text, href) => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(href)}`,
-    email: (text, href) => `mailto:?subject=${encodeURIComponent(TITLE)}&body=${encodeURIComponent(`${text}\n\n${CALL_TO_ACTION}\n${href}`)}`,
-  };
-  let statusTimer = 0;
-  const say = (message: string) => {
-    shareStatus.textContent = message;
-    clearTimeout(statusTimer);
-    statusTimer = window.setTimeout(() => (shareStatus.textContent = ''), 4000);
-  };
-  const updateShareLinks = (href: string) => {
-    for (const link of networkLinks) link.href = shareUrls[link.dataset.network!](lastShare.text, href);
-    sharePreview.textContent = lastShare.text;
-  };
-
-  const copyText = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      return true;
-    } catch {
-      // Without the clipboard API (an old browser, or a page without HTTPS), select a text field and copy it.
-      const field = document.createElement('textarea');
-      field.value = text;
-      field.style.position = 'fixed';
-      field.style.opacity = '0';
-      document.body.append(field);
-      field.select();
-      const copied = document.execCommand('copy');
-      field.remove();
-      return copied;
-    }
-  };
-
-  $('#share-copy').addEventListener('click', async () => {
-    say((await copyText(location.href)) ? 'Enlace copiado.' : 'No se pudo copiar. Copia la dirección de la barra del navegador.');
-  });
-  if (typeof navigator.share === 'function') {
-    nativeButton.hidden = false;
-    nativeButton.addEventListener('click', async () => {
-      try {
-        await navigator.share({ title: TITLE, text: `${lastShare.text}\n${CALL_TO_ACTION}`, url: location.href });
-      } catch {
-        /* The reader closed the share sheet. */
-      }
-    });
-  }
-
-  // The image: a picture of the result, to post anywhere. It is drawn with the colors of the current theme.
-  const resolveColor = (value: string) => {
-    const probe = document.createElement('span');
-    probe.style.color = value;
-    root.append(probe);
-    const resolved = getComputedStyle(probe).color;
-    probe.remove();
-    return resolved;
-  };
-  const wrapText = (ctx: CanvasRenderingContext2D, text: string, x: number, y: number, maxWidth: number, lineHeight: number) => {
-    let line = '';
-    for (const word of text.split(' ')) {
-      const attempt = line ? `${line} ${word}` : word;
-      if (ctx.measureText(attempt).width > maxWidth && line) {
-        ctx.fillText(line, x, y);
-        line = word;
-        y += lineHeight;
-      } else {
-        line = attempt;
-      }
-    }
-    ctx.fillText(line, x, y);
-    return y + lineHeight;
-  };
-
-  const drawImage = async () => {
-    await document.fonts.ready;
-    const width = 1200;
-    const height = 675;
-    const canvas = document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext('2d')!;
-    const ink = resolveColor('var(--color-ink)');
-    const paper = resolveColor('var(--color-paper)');
-    const muted = resolveColor('var(--color-ink-muted)');
-    const result = investiture(seatsMap(), candidate, votes);
-
-    ctx.fillStyle = paper;
-    ctx.fillRect(0, 0, width, height);
-    ctx.strokeStyle = ink;
-    ctx.lineWidth = 10;
-    ctx.strokeRect(5, 5, width - 10, height - 10);
-
-    ctx.fillStyle = ink;
-    ctx.textBaseline = 'alphabetic';
-    ctx.font = '900 60px "Big Shoulders Display", Impact, sans-serif';
-    ctx.fillText('CONGRESO Y PACTOS', 48, 88);
-    ctx.fillStyle = muted;
-    ctx.font = '700 20px "Archivo", Arial, sans-serif';
-    ctx.fillText(`${election.name} del ${election.shortName}. Candidato: ${candidate ? byId(candidate).acronym : 'sin elegir'}`, 48, 122);
-
-    // The hemicycle of the votes, scaled from the 400 × 210 of the page.
-    const scale = 1.85;
-    const left = 48;
-    // The seats go from y = 3 to y = 205 in the 210 units of the hemicycle: with this top they start below the subtitle.
-    // The block of the seats is 388 px high: it is centered between the subtitle and the footer.
-    const top = 184;
-    ctx.lineWidth = 1.4;
-    for (const circle of voteCircles) {
-      const x = left + Number(circle.getAttribute('cx')) * scale;
-      const y = top + Number(circle.getAttribute('cy')) * scale;
-      ctx.beginPath();
-      ctx.arc(x, y, Number(circle.getAttribute('r')) * scale, 0, Math.PI * 2);
-      ctx.fillStyle = getComputedStyle(circle).fill;
-      ctx.fill();
-      ctx.strokeStyle = ink;
-      ctx.stroke();
-    }
-    // The middle of the hemicycle only has the majority: the votes go to the board at the right.
-    ctx.fillStyle = muted;
-    ctx.textAlign = 'center';
-    ctx.font = '700 18px "Archivo", Arial, sans-serif';
-    ctx.fillText('Mayoría absoluta', left + 200 * scale, top + 170 * scale);
-    ctx.fillStyle = ink;
-    ctx.font = '900 54px "Big Shoulders Display", Impact, sans-serif';
-    ctx.fillText(String(ABSOLUTE_MAJORITY), left + 200 * scale, top + 198 * scale);
-    ctx.textAlign = 'left';
-
-    // The parties that vote yes, under the hemicycle, in one or two lines.
-    const yes = lastShare.yesNames.join(' + ');
-    if (yes) {
-      ctx.fillStyle = muted;
-      ctx.font = '600 18px "Archivo", Arial, sans-serif';
-      wrapText(ctx, `Votan sí: ${yes}`, left, top + 214 * scale, 400 * scale, 24);
-    }
-
-    // The right column: the verdict, and under it the vote board of the Congress, with one row per line,
-    // the label at the left and the number at the right, as the screen of the chamber shows a vote.
-    const columnX = 830;
-    const columnWidth = width - 48 - columnX;
-    const rows: [string, number, string | null][] = [
-      ['A favor', result.yes, VOTE_COLORS.yes],
-      ['En contra', result.no, VOTE_COLORS.no],
-      ['Abstenciones', result.abstain, VOTE_COLORS.abstain],
-      ['Votos emitidos', result.yes + result.no + result.abstain, null],
-    ];
-    const rowHeight = 54;
-    const padding = 16;
-    const boardHeight = rows.length * rowHeight + padding * 2;
-    const boardTop = height - 72 - boardHeight;
-
-    ctx.fillStyle = ink;
-    ctx.font = '900 40px "Big Shoulders Display", Impact, sans-serif';
-    // The verdict takes the space above the board. The line height is 1.15 times the font size.
-    wrapText(ctx, verdictTitle.textContent ?? '', columnX, 176, columnWidth, 46);
-
-    ctx.fillStyle = ink;
-    ctx.fillRect(columnX, boardTop, columnWidth, boardHeight);
-    rows.forEach(([label, count, color], index) => {
-      const rowTop = boardTop + padding + index * rowHeight;
-      const baseline = rowTop + rowHeight - 14;
-      if (index === rows.length - 1) {
-        // A rule over the total.
-        ctx.fillStyle = paper;
-        ctx.fillRect(columnX + padding, rowTop + 2, columnWidth - padding * 2, 2);
-      }
-      if (color) {
-        ctx.fillStyle = resolveColor(color);
-        ctx.fillRect(columnX + padding, baseline - 20, 18, 18);
-        ctx.strokeStyle = paper;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(columnX + padding, baseline - 20, 18, 18);
-      }
-      ctx.fillStyle = paper;
-      ctx.font = '700 20px "Archivo", Arial, sans-serif';
-      ctx.fillText(label.toUpperCase(), columnX + padding + 30, baseline - 2);
-      ctx.textAlign = 'right';
-      ctx.font = '900 48px "Big Shoulders Display", Impact, sans-serif';
-      ctx.fillText(String(count), columnX + columnWidth - padding, baseline + 4);
-      ctx.textAlign = 'left';
-    });
-
-    ctx.fillStyle = ink;
-    ctx.font = '700 20px "Archivo", Arial, sans-serif';
-    ctx.fillText(`${SITE_NAME}: simulador de Congreso y pactos`, 48, height - 36);
-    return new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'));
-  };
-
-  $('#share-image').addEventListener('click', async () => {
-    const blob = await drawImage();
-    if (!blob) return say('No se pudo crear la imagen.');
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'congreso-y-pactos-29n.png';
-    link.click();
-    setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-    say('Imagen descargada.');
-  });
-
-  // ---- Presets and new parties ----
-  const rebuild = (next: Group[]) => {
-    groups = next;
-    seatRows.clear();
-    voteRows.clear();
-    seatList.replaceChildren();
-    voteList.replaceChildren();
-    for (const group of groups) createRows(group);
-    placeRows();
-  };
-
-  $('#preset-now').addEventListener('click', () => {
-    rebuild(baseGroups());
-    renderAll();
-  });
-  $('#preset-2023').addEventListener('click', () => {
-    rebuild(baseGroups().map((group) => ({ ...group, seats: group.seats2023 })));
-    renderAll();
-  });
-  // «Todo a cero» starts the Congress of the new election: a group that changes its name (Sumar → Frente Amplio)
-  // takes the new name and color. The presets of the old Congress keep the old ones.
-  $('#preset-zero').addEventListener('click', () => {
-    rebuild(
-      groups.map((group) => ({ ...(group.alt && !group.renamed ? swapName(group) : group), seats: 0 })),
-    );
-    renderAll();
-  });
-  createMissing.addEventListener('click', () => {
-    partySeats.value = String(Math.max(0, CONGRESS_SEATS - total()));
-    partyDetails.open = true;
-    partyAcronym.focus();
-  });
-
-  partyForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(partyForm);
-    const acronym = String(data.get('acronym') ?? '').trim().replace(/[~|]/g, '');
-    const fail = (message: string) => {
-      partyError.textContent = message;
-    };
-    if (!acronym) return fail('Escribe las siglas del partido.');
-    if (groups.some((group) => group.acronym.toLowerCase() === acronym.toLowerCase())) return fail('Ya hay un partido con esas siglas.');
-    if (groups.filter((group) => group.custom).length >= MAX_CUSTOM) return fail(`Puedes crear hasta ${MAX_CUSTOM} partidos.`);
-    partyError.textContent = '';
-
-    const group: Group = {
-      id: `x${nextCustomId++}`,
-      acronym: acronym.slice(0, 12),
-      name: 'Partido creado por ti',
-      color: String(data.get('color') ?? '#7a5af8'),
-      seats: clampSeats(Number(data.get('seats'))),
-      custom: true,
-      seatsNow: 0,
-      seats2023: 0,
-    };
-    const position = String(data.get('position'));
-    const index = position === 'left' ? 0 : position === 'center' ? Math.floor(groups.length / 2) : groups.length;
-    groups.splice(index, 0, group);
-    createRows(group);
-    placeRows();
-    partyForm.reset();
-    partyColor.value = randomPartyColor();
-    partyDetails.open = false;
-    renderAll();
-    say(`Partido ${group.acronym} creado.`);
-  });
-  partyDetails.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape' || !partyDetails.open) return;
-    partyDetails.open = false;
-    partyDetails.querySelector('summary')!.focus();
-  });
-  partyForm.addEventListener('input', () => {
-    partyError.textContent = '';
-  });
-
-  select.addEventListener('change', () => {
-    candidate = select.value;
-    renderAll();
-  });
-
-  const renderAll = () => {
-    ensureCandidate();
-    renderSeats();
-    renderSelect();
-    renderVoteRows();
-    renderResult();
-    writeUrl();
-  };
-
-  // The link can add parties and change the order: read it first, then build the rows from the final list.
-  readUrl();
-  renderSort();
-  rebuild(groups);
-  partyColor.value = randomPartyColor();
-  renderAll();
+  import '@/scripts/simulator';
 </script>
 
 <style>
   .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
   .page-hero h1 { font-size: clamp(3.25rem, 12cqi, 8.5rem); margin: var(--space-4) 0; }
   .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
+  /* Chamber switcher: the same square, thick-bordered toggle used in CandidacyMap. */
+  .chambers { display: inline-flex; flex-wrap: wrap; margin-top: var(--space-5); }
+  .chambers button {
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    min-height: 48px;
+    padding: 8px 20px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1.0625rem var(--font-body);
+    cursor: pointer;
+  }
+  .chambers button + button { margin-left: calc(-1 * var(--border-thick)); }
+  .chambers button small { font: 600 var(--text-xs) var(--font-body); color: var(--color-ink-muted); }
+  .chambers button[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .chambers button[aria-pressed='true'] small { color: inherit; }
+  .chambers button:not([aria-pressed='true']):hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .chambers button:not([aria-pressed='true']):hover small { color: inherit; }
+  .chambers button:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; position: relative; z-index: 1; }
+  .sim-note[hidden] { display: none; }
 
   .sim-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-5); align-items: start; }
   /* The first row: the hemicycle panel sets the height, and the panel of the seats has the same height. */
@@ -1222,6 +421,13 @@ const groupData = congressGroups.map((group) => ({
   .status[data-state='warning'] { background: var(--color-highlight); color: var(--color-on-highlight); padding: var(--space-2) var(--space-3); }
   .sim-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
   .sim-actions :global([hidden]), .share__actions :global([hidden]) { display: none; }
+  /* The buttons that open the dialog of the image, next to each result. The main one is yellow, the highlight of the
+     site: black on yellow 13:1 in both themes; on hover, paper on ink (21:1). */
+  .sim :global(.export-open) { width: 100%; margin: 0 0 var(--space-3); }
+  .sim :global(.export-open[hidden]) { display: none; }
+  .sim :global(.export-open--main) { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .sim :global(.export-open--main:hover) { background: var(--color-ink); color: var(--color-paper); }
+  .sim :global(.export-open--vote) { margin: var(--space-4) 0 0; }
 
   .sort { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); margin-bottom: var(--space-3); }
   .sort__label { font: 700 var(--text-xs) var(--font-body); }
@@ -1482,6 +688,98 @@ const groupData = congressGroups.map((group) => ({
   .share__networks { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
   .sim-note { margin: var(--space-6) 0 var(--space-8); max-width: 80ch; font-size: var(--text-sm); color: var(--color-ink-muted); }
 
+  /* The dialog of the image: the preview at the left, the options at the right (one column on a phone). */
+  .export {
+    box-sizing: border-box;
+    width: min(100% - 32px, 1080px);
+    max-height: calc(100dvh - 32px);
+    padding: var(--space-4);
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  .export::backdrop { background: rgb(0 0 0 / 60%); }
+  .export__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-4); }
+  .export__title { margin: 0; font-size: 2rem; line-height: 1; }
+  .export__close {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .export__close:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .export__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 320px); gap: var(--space-5); align-items: start; }
+  /* The image sits on a dot pattern, so its own edge is clear on both backgrounds. */
+  .export__preview {
+    display: grid;
+    place-items: center;
+    gap: var(--space-2);
+    margin: 0;
+    padding: var(--space-4);
+    border: var(--border-thin) solid var(--color-ink);
+    background-image: var(--trama-light);
+    background-size: var(--trama-size);
+    color: var(--color-ink-muted);
+  }
+  /* A canvas keeps its proportions when both limits apply: the whole image is always visible. */
+  .export__preview canvas { display: block; width: auto; height: auto; max-width: 100%; max-height: min(62vh, 620px); }
+  .export__preview figcaption { padding: 2px var(--space-2); background: var(--color-paper); color: var(--color-ink); font: 700 var(--text-xs) var(--font-body); }
+  .export__options { display: grid; gap: var(--space-4); }
+  .choice { margin: 0; padding: 0; border: 0; min-width: 0; }
+  .choice legend { padding: 0; margin-bottom: var(--space-2); font: 700 var(--text-xs) var(--font-body); }
+  .choice__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+  .choice__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .choice label { position: relative; display: flex; }
+  .choice input { position: absolute; opacity: 0; pointer-events: none; }
+  .choice span {
+    display: grid;
+    align-content: center;
+    gap: 2px;
+    width: 100%;
+    min-height: 48px;
+    box-sizing: border-box;
+    padding: var(--space-2) var(--space-3);
+    border: var(--border-thin) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 var(--text-sm) var(--font-body);
+    cursor: pointer;
+  }
+  .choice small { font: 600 var(--text-2xs) var(--font-body); color: var(--color-ink-muted); }
+  .choice input:not(:checked):not(:disabled) + span:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .choice input:not(:checked):not(:disabled) + span:hover small { color: inherit; }
+  .choice input:checked + span { background: var(--color-ink); color: var(--color-paper); }
+  .choice input:checked + span small { color: inherit; }
+  .choice input:focus-visible + span { outline: 3px solid var(--color-highlight); outline-offset: 2px; box-shadow: 0 0 0 2px var(--color-ink); }
+  .choice input:disabled + span { color: var(--color-ink-muted); border-style: dashed; cursor: not-allowed; }
+  .choice__note { margin: var(--space-2) 0 0; font-size: var(--text-xs); color: var(--color-ink-muted); }
+  .choice__note[hidden] { display: none; }
+  .export__field { display: grid; gap: 6px; font: 700 var(--text-xs) var(--font-body); }
+  .export__field input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 12px;
+    border: var(--border-thin) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 600 1rem var(--font-body);
+  }
+  .export__field input:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 2px; }
+  .export__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); padding-top: var(--space-4); border-top: var(--border-thick) solid var(--color-ink); }
+  .export__actions :global([hidden]) { display: none; }
+  .export__status { min-height: 1.4em; margin: var(--space-3) 0 0; font: 700 var(--text-sm) var(--font-body); }
+
   @media (max-width: 900px) {
     .sim-grid, .sim-grid--pacts { grid-template-columns: minmax(0, 1fr); }
     .seats-col { min-height: 0; }
@@ -1492,14 +790,22 @@ const groupData = congressGroups.map((group) => ({
     /* The panel has no fixed height here: the list takes the height of its content, up to the maximum. */
     .vote-scroll { flex: 0 1 auto; min-height: 0; max-height: min(560px, 70vh); }
     .coalitions-box .coalitions { overflow: visible; }
+    .export__body { grid-template-columns: minmax(0, 1fr); }
+    .export__preview canvas { max-height: 46vh; }
   }
   @media (max-width: 560px) {
+    .chambers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .chambers button { flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 14px; }
     /* Share: the three actions fill the width, and the networks are icons in one row. */
     .share__actions { display: grid; grid-template-columns: minmax(0, 1fr); }
     .share__actions :global(.button) { justify-content: center; }
     .share__networks { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-2); }
     .share__networks :global(.share__network) { width: 100%; box-sizing: border-box; justify-content: center; padding: 10px 0; min-height: 44px; }
     .share__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .export { width: calc(100% - 16px); max-height: calc(100dvh - 16px); padding: var(--space-3); }
+    .export__preview { padding: var(--space-2); }
+    .export__actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .export__actions :global(.button) { justify-content: center; }
   }
   @media (max-width: 480px) {
     /* The stepper stays in the same row as the name: one row for each party. */
