@@ -87,6 +87,13 @@ export const pollsters: Pollster[] = [
   { id: 'sigmados', name: 'Sigma Dos', media: 'El Mundo', url: 'https://www.sigmados.com' },
   { id: 'sociometrica', name: 'SocioMétrica', media: 'El Español', url: 'https://www.elespanol.com/elecciones/generales/' },
   { id: 'gad3', name: 'GAD3', media: 'ABC', url: 'https://www.gad3.com' },
+  // Otras encuestadoras (desde el 23 de noviembre de 2026): la página del medio que publica sus encuestas.
+  { id: 'imop', name: 'IMOP', media: 'El Confidencial', url: 'https://www.elconfidencial.com' },
+  { id: 'gesop', name: 'GESOP', media: 'El Periódico (Prensa Ibérica)', url: 'https://www.elperiodico.com/es/' },
+  { id: 'ipsos', name: 'Ipsos', media: 'La Vanguardia', url: 'https://www.lavanguardia.com' },
+  { id: 'ncreport', name: 'NC Report', media: 'La Razón', url: 'https://www.larazon.es' },
+  { id: 'targetpoint', name: 'Target Point', media: 'El Debate', url: 'https://www.eldebate.com' },
+  { id: 'hamalgama', name: 'Hamalgama Métrica', media: 'Vozpópuli', url: 'https://www.vozpopuli.com' },
 ];
 
 /** El agregador del que salen las cifras sin revisar en la fuente. */
@@ -184,4 +191,24 @@ export const polls: Poll[] = [
   { pollster: 'gad3', date: '2026-11-09', checked: false, url: 'https://www.gad3.com/barometro-abc-i-estimacion-de-voto-nacional-noviembre-2026/', values: vFa(31.9, 25.9, 18.6, 7.5, 1.4, 1.3, { erc: 2.7, junts: 1.4, bildu: 1.5, pnv: 0.9, bng: 0.9, cc: 0.4, adelante: 1.6 }), sample: 1502, seats: { pp: 136, psoe: 103, vox: 63, fa: 12, erc: 12, junts: 5, bildu: 8, pnv: 4, bng: 2, cc: 1, adelante: 3 } },
   { pollster: 'gad3', date: '2026-10-12', checked: false, url: 'https://www.gad3.com/barometro-abc-estimacion-de-voto-nacional-octubre-2026/', values: v(31.4, 26.4, 18.2, 7.4, 2.3, 1.8, { erc: 2.6, junts: 1.5, bildu: 1.5, pnv: 1.0, bng: 0.9, cc: 0.4, upn: 0.1, adelante: 1.0 }), sample: 1077, seats: { pp: 133, psoe: 107, vox: 65, sumar: 10, erc: 10, junts: 5, bildu: 8, pnv: 6, bng: 2, cc: 1, upn: 0, adelante: 1 } },
   { pollster: 'gad3', date: '2026-09-07', checked: false, url: 'https://www.gad3.com/barometro-abc-estimacion-de-voto-nacional-septiembre-2026/', values: v(31.1, 26.1, 19.2, 7.0, 3.1, 1.5, { erc: 2.3, junts: 1.2, bildu: 1.5, pnv: 0.9, bng: 0.9, cc: 0.3, upn: 0.2, adelante: 1.0 }), sample: 1010, seats: { pp: 133, psoe: 105, vox: 69, sumar: 9, erc: 10, junts: 4, bildu: 7, pnv: 6, bng: 2, cc: 1, upn: 1, adelante: 1 } },
+  // IMOP
+  // 23 nov (5.ª oleada para El Confidencial): sin abrir El Confidencial; cifras de Demócrata, con escaños y Vox (18,3 %) confirmados por ESdiario. PP con UPN (una sola cifra). Solo publica el voto de PP, PSOE y Vox: FA, Podemos y SALF van null. FA en escaños suma Frente Amplio (9) y Compromís (2): 11. Sin campo, muestra ni horquillas.
+  { pollster: 'imop', date: '2026-11-23', checked: false, url: 'https://www.democrata.es/encuestas/elecciones-generales/imop-pp-vox-195-escanos-29n/', values: vFa(31.7, 27.4, 18.3, null, null, null), seats: { pp: 131, psoe: 110, vox: 64, fa: 11, erc: 12, junts: 4, bildu: 7, pnv: 4, bng: 3, cc: 1, adelante: 3 } },
+  // GESOP
+  // 23 nov (para Prensa Ibérica, campo 18-21 nov, telefónica, 905 entrevistas): sin abrir El Periódico; cifras de la ficha de Electografica. PP con UPN-PP (32,9 %; horquilla con el escaño de UPN-PP). FA suma FA + Front Valencià + UPCan (6,7 %, 7-10 escaños). Las filas de ERC y Podemos de la ficha salen mezcladas al leerla: Podemos va null y ERC se omite. El Liberal da centrales (133, 113, 60, FA 9) que caen dentro de las horquillas. Demócrata publica otra GESOP (PP 31,2, PSOE 27,2, Vox 18,8; 130, 110, 65) que cita un artículo de El Periódico del 22 nov: no se ha podido confirmar que sea otra entrega y no se añade.
+  { pollster: 'gesop', date: '2026-11-23', checked: false, url: 'https://www.electografica.com/2026/11/encuesta-gesop-261123.html', values: vFa(32.9, 29.0, 17.5, 6.7, null, 1.3, { junts: 1.1 }), sample: 905, seats: { pp: [131, 136], psoe: [110, 116], vox: [56, 63], fa: [7, 10], junts: [3, 5], bildu: 6, pnv: 5, bng: 1, cc: 1 } },
+  // Ipsos
+  // 22 nov (para La Vanguardia): sin abrir La Vanguardia; cifras de Demócrata. PP con UPN (30,3 %, 127 escaños). El mismo voto (30,3, 29,8, 17,9) sale sin atribuir en la tabla de la crónica de Europa Press del 23 nov (Infobae), con FA 4,8 y Podemos 1,1; al no estar atribuido, FA y Podemos van null. FA en escaños suma Frente Amplio (6) y Compromís (3): 9, igual que El Liberal. Sin campo ni muestra.
+  { pollster: 'ipsos', date: '2026-11-22', checked: false, url: 'https://www.democrata.es/encuestas/elecciones-generales/encuesta-elecciones-generales-psoe-gana-ocho-escanos-se-queda-medio-punto-pp-segun-ipsos/', values: vFa(30.3, 29.8, 17.9, null, null, null), seats: { pp: 127, psoe: 119, vox: 63, fa: 9, erc: 11, junts: 5, bildu: 7, pnv: 3, bng: 1, cc: 1, adelante: 4 } },
+  // NC Report
+  // 23 nov: sin abrir La Razón; cifras de la crónica de Europa Press (Infobae, El Periódico de Ceuta); horquillas confirmadas por ESdiario y centrales de El Liberal (132, 110, 65, FA 9) dentro de ellas. No consta si el PP incluye UPN ni si FA incluye socios. Sin Podemos, SALF, campo ni muestra.
+  { pollster: 'ncreport', date: '2026-11-23', checked: false, url: 'https://www.infobae.com/espana/agencias/2026/11/23/los-ultimos-sondeos-afianzan-al-pp-como-primera-fuerza-y-apuntan-a-una-mayoria-con-vox/', values: vFa(31.9, 27.2, 19.0, 5.6, null, null), seats: { pp: [130, 133], psoe: [108, 111], vox: [64, 66], fa: [8, 9] } },
+  // 9 nov (campo 2-5 nov): sin abrir La Razón; cifras de Demócrata (única fuente). PP sin UPN: NC Report publica UPN aparte (0,4 %, 2 escaños). Sin SALF ni muestra.
+  { pollster: 'ncreport', date: '2026-11-09', checked: false, url: 'https://www.democrata.es/encuestas/elecciones-generales/nc-report-9-noviembre-2026-pp-retrocede-psoe-100-escanos-vox/', values: vFa(32.6, 25.6, 19.3, 6.9, 2.4, null, { erc: 2.0, junts: 1.8, bildu: 1.4, pnv: 0.9, bng: 0.8, cc: 0.4, upn: 0.4, adelante: 1.2 }), seats: { pp: [136, 138], psoe: [99, 101], vox: [67, 69], fa: [9, 10], podemos: [0, 1], erc: [7, 8], junts: [8, 9], bildu: [6, 7], pnv: [4, 5], bng: 2, cc: 1, upn: 2, adelante: [2, 3] } },
+  // Target Point
+  // 16 nov (campo 12 nov, 1.013 entrevistas CAWI): sin abrir El Debate; cifras de Demócrata (versión inglesa, única fuente). No consta si FA incluye socios ni si el PP incluye UPN. Sin SALF. Escaños de Vox y FA puntuales («66», «unos 11»).
+  { pollster: 'targetpoint', date: '2026-11-16', checked: false, url: 'https://www.democrata.es/en/center-of-surveys-and-electoral-polls/general-elections/general-elections-survey-the-psoe-closes-the-gap-but-the-pp-and-vox-would-maintain-an-absolute-majority-according-to-target-point/', values: vFa(30.6, 27.0, 18.7, 7.3, 1.6, null), sample: 1013, seats: { pp: [125, 129], psoe: [110, 114], vox: 66, fa: 11, podemos: [0, 1], erc: [13, 14], junts: [3, 4], pnv: 3, bng: [1, 2], adelante: [3, 4] } },
+  // Hamalgama Métrica
+  // 2 nov (campo 22-28 oct, 1.000 entrevistas CATI): leído en Vozpópuli. PP sin UPN (UPN aparte, 2 escaños). Solo publica en texto el voto de PP, PSOE, Vox y FA (5,4 %; no consta si incluye socios): Podemos y SALF van null. Escaños del texto (suman 350). La entrega del 23 nov (PP 132, PSOE 98, Vox 80 según El Liberal) no tiene porcentajes verificados y no se añade.
+  { pollster: 'hamalgama', date: '2026-11-02', checked: true, url: 'https://www.vozpopuli.com/espana/politica/pp-y-vox-suman-ya-un-techo-historico-de-127-millones-de-votos-y-lograrian-205-escanos.html', values: vFa(32.0, 26.4, 19.9, 5.4, null, null), sample: 1000, seats: { pp: 135, psoe: 106, vox: 70, fa: 7, podemos: 1, salf: 0, erc: 7, junts: 7, bildu: 7, pnv: 4, bng: 2, upn: 2, adelante: 2 } },
 ];
