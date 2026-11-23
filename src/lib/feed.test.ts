@@ -115,4 +115,18 @@ describe('feedItems', () => {
   it('stops on a poll of an unknown pollster', () => {
     expect(() => feedItems({ programs: [], polls: [{ ...poll('2026-11-01'), pollster: 'x' }], pollsters, parties, debates: [] }, site)).toThrow(/x/);
   });
+
+  it('never repeats a link when a pollster publishes twice on one day', () => {
+    const twice = feedItems({ programs: [], polls: [poll('2026-11-19'), poll('2026-11-19')], pollsters, parties, debates: [] }, site);
+    expect(twice.map((item) => item.link)).toEqual([
+      'https://example.org/encuestas/#encuesta-gad3-2026-11-19',
+      'https://example.org/encuestas/#encuesta-gad3-2026-11-19-2',
+    ]);
+  });
+
+  it('leaves out «Con …» for a debate with no candidates yet', () => {
+    const noParty = { ...debate('b', '2026-11-20'), speakers: debate('b').speakers.map((speaker) => ({ ...speaker, partyId: null })) };
+    const [item] = feedItems({ programs: [], polls: [], pollsters, parties, debates: [noParty] }, site);
+    expect(item.description).toBe('RTVE, 20 de noviembre de 2026. La transcripción completa, el tiempo de palabra de cada candidato y cada interrupción.');
+  });
 });

@@ -17,12 +17,14 @@ import { election } from '@eleccion/eleccion';
 import { DEFAULT_SAMPLE, FRENTE_AMPLIO_FROM, pollAggregator, pollParties, polls, pollsters, type Poll, type PollPartyId } from '@eleccion/encuestas';
 import { ABSOLUTE_MAJORITY } from '@eleccion/congreso';
 import { formatLongDate } from '@/lib/format';
-import { pollId } from '@/lib/routes';
+import { pollIds } from '@/lib/routes';
 import { renderPollChart, type PollChartData } from '@/lib/poll-chart';
 
 const DAY = 86_400_000;
 const time = (date: string) => new Date(`${date}T12:00:00Z`).getTime();
 const sorted = [...polls].sort((a, b) => time(a.date) - time(b.date));
+// The id of each row, the same as the link of the poll in the RSS feed (`-2` for a second poll of a day).
+const pollAnchors = pollIds(polls);
 const pollsterById = Object.fromEntries(pollsters.map((pollster) => [pollster.id, pollster]));
 const percent = (value: number | null | undefined) => (value == null ? '–' : value.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
 const shortDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'UTC' });
@@ -200,7 +202,8 @@ const lastUpdate = sorted.at(-1)!.date;
       <div class="poll-view">
         <label class="poll-select">
           <span>Encuestadora</span>
-          <select data-filter-select>
+          <!-- autocomplete="off": a browser that restores the choice on reload would show a pollster the chart does not. -->
+          <select data-filter-select autocomplete="off">
             <option value="all">Todas ({pollsters.length})</option>
             {pollsters.map((pollster) => (
               <option value={pollster.id}>{pollster.name} ({pollster.media})</option>
@@ -219,7 +222,7 @@ const lastUpdate = sorted.at(-1)!.date;
         </div>
         <label class="poll-zoom">
           <span>Ancho</span>
-          <input type="range" min="1" max="4" step="0.25" value="1" data-zoom aria-valuetext="100 %" />
+          <input type="range" min="1" max="4" step="0.25" value="1" data-zoom aria-valuetext="100 %" autocomplete="off" />
           <output data-zoom-value>100 %</output>
         </label>
       </div>
@@ -331,7 +334,7 @@ const lastUpdate = sorted.at(-1)!.date;
           </thead>
           <tbody>
             {[...sorted].reverse().map((poll) => (
-              <tr id={pollId(poll.pollster, poll.date)}>
+              <tr id={pollAnchors.get(poll)}>
                 <td>{shortDate(poll.date)}</td>
                 <th scope="row">{pollsterById[poll.pollster].name}</th>
                 {tableParties.map((party) => <td class="num">{percent(poll.values[party.id])}</td>)}
@@ -368,8 +371,17 @@ const lastUpdate = sorted.at(-1)!.date;
   import { renderPollChart, renderYAxis, type Metric, type PollChartData, type Scale } from '@/lib/poll-chart';
 
   // A link to one poll (from the RSS feed) points into the closed table of all the polls: open it and go to the row.
+  // A bad escape in the hash (`#%`) must not stop the chart below: the raw hash is used instead.
+  const hashId = () => {
+    const raw = location.hash.slice(1);
+    try {
+      return decodeURIComponent(raw);
+    } catch {
+      return raw;
+    }
+  };
   const showLinkedPoll = () => {
-    const target = location.hash ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+    const target = location.hash ? document.getElementById(hashId()) : null;
     const table = target?.closest('details');
     if (!target || !table) return;
     table.open = true;

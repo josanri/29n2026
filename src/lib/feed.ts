@@ -6,7 +6,7 @@
 import type { RSSFeedItem } from '@astrojs/rss';
 import type { Debate } from './debate';
 import { formatLongDate } from './format';
-import { routes } from './routes';
+import { pollIds, routes } from './routes';
 
 /** The part of a poll that the feed reads (the type of `@eleccion/encuestas`, without the election-specific ids). */
 export interface FeedPoll {
@@ -45,7 +45,14 @@ const rankedParties = (poll: FeedPoll, parties: FeedParty[]) =>
     })
     .sort((a, b) => b.value - a.value);
 
-export const pollItem = (poll: FeedPoll, pollster: FeedPollster, parties: FeedParty[], site: URL): RSSFeedItem => {
+/** `anchor`: the id of the row of the poll, from `pollIds()` over all the polls (it can carry a `-2`). */
+export const pollItem = (
+  poll: FeedPoll,
+  pollster: FeedPollster,
+  parties: FeedParty[],
+  site: URL,
+  anchor = pollIds([poll]).get(poll)!,
+): RSSFeedItem => {
   const ranked = rankedParties(poll, parties);
   const top = ranked
     .slice(0, 3)
@@ -60,7 +67,7 @@ export const pollItem = (poll: FeedPoll, pollster: FeedPollster, parties: FeedPa
     .join('');
   return {
     title: `Encuesta ${pollster.name}: ${top}`,
-    link: new URL(routes.poll(poll.pollster, poll.date), site).href,
+    link: new URL(routes.poll(anchor), site).href,
     pubDate: dayToDate(poll.date),
     categories: ['Encuestas'],
     description: `Estimación de voto de ${pollster.name} (${pollster.media}), publicada el ${day}: ${top}. ${source}`,
@@ -107,7 +114,8 @@ const listText = (items: string[]) => (items.length > 1 ? `${items.slice(0, -1).
 export const debateItem = (debate: Debate, site: URL): RSSFeedItem => {
   const who = listText(candidatesOf(debate).map((speaker) => `${speaker.name} (${speaker.role})`));
   const when = [debate.channel, debate.date && formatLongDate(debate.date)].filter(Boolean).join(', ');
-  const description = `${when ? `${when}. ` : ''}Con ${who}. La transcripción completa, el tiempo de palabra de cada candidato y cada interrupción.`;
+  // A debate file whose speakers have no party yet has no candidates: the «Con …» part goes out.
+  const description = `${when ? `${when}. ` : ''}${who ? `Con ${who}. ` : ''}La transcripción completa, el tiempo de palabra de cada candidato y cada interrupción.`;
   return {
     title: debate.title,
     link: new URL(routes.debate(debate.slug), site).href,
@@ -124,12 +132,14 @@ export const feedItems = (
   site: URL,
 ): RSSFeedItem[] => {
   const pollsterById = new Map(data.pollsters.map((pollster) => [pollster.id, pollster]));
+  // The same ids as the rows of /encuestas/: a guid of the feed is never repeated.
+  const anchors = pollIds(data.polls);
   const programs = data.programs.map((program) => ({ date: program.publishedOn, order: 0, item: programItem(program, site) }));
   const debates = data.debates.filter((debate) => debate.date).map((debate) => ({ date: debate.date!, order: 1, item: debateItem(debate, site) }));
   const polls = data.polls.map((poll) => {
     const pollster = pollsterById.get(poll.pollster);
     if (!pollster) throw new Error(`Unknown pollster in a poll: ${poll.pollster}`);
-    return { date: poll.date, order: 2, item: pollItem(poll, pollster, data.parties, site) };
+    return { date: poll.date, order: 2, item: pollItem(poll, pollster, data.parties, site, anchors.get(poll)) };
   });
   return [...programs, ...debates, ...polls]
     .sort((a, b) => b.date.localeCompare(a.date) || a.order - b.order)
