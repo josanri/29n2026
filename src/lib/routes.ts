@@ -86,6 +86,7 @@ export const routes = {
   /** JSON file with the measures of one party for «Sin siglas». The page loads the parties of one province. */
   partyQuizData: (partyId: string) => withBase(`/tests/sin-siglas/datos/${partyId}.json`),
   accessibility: () => withBase('/accesibilidad/'),
+  legal: () => withBase('/aviso-legal/'),
   designSystem: () => withBase('/design-system/'),
   /** A file of the `public/` folder, for example `/datos-electorales/candidaturas.json`. */
   asset: (path: string) => withBase(path),
