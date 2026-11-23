@@ -6,7 +6,7 @@ import { jointListMembers } from '@/lib/relations';
 import { SITE_NAME } from '@/lib/site';
 import Wordmark from './Wordmark.astro';
 import { siteTests } from '@/lib/tests';
-import type { Debate } from '@/lib/debate';
+import { debates } from '@/lib/debates';
 
 const path = Astro.url.pathname;
 const isCurrent = (program: Program) => path.startsWith(routes.party(program.id));
@@ -84,13 +84,9 @@ const searchLinks = links.filter((link) => link.href === routes.search());
 const testsCurrent = path.startsWith(routes.tests());
 
 // The «Debates» menu: each debate with its date and who took part, newest first. A draft shows only on the dev server.
-const debateFiles = import.meta.glob<Debate>('@eleccion/debates/*.json', { eager: true, import: 'default' });
 const debateDay = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', timeZone: 'UTC' });
-const siteDebates = Object.values(debateFiles)
-  .filter((debate) => debate.published !== false || import.meta.env.DEV)
-  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
-  .map((debate) => {
+const siteDebates = debates.map((debate) => {
     const names = debate.speakers
       .filter((speaker) => speaker.words > 0 && speaker.partyId)
       .map((speaker) => speaker.name.split(' ').slice(-1)[0]);

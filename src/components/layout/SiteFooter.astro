@@ -2,11 +2,12 @@
 import { election } from '@eleccion/eleccion';
 import { routes } from '@/lib/routes';
 import { SOCIAL_ACCOUNTS } from '@/lib/site';
-import xIcon from '@/assets/icons/x.svg?raw';
-import instagramIcon from '@/assets/icons/instagram.svg?raw';
+import XIcon from '@/assets/icons/x.svg';
+import InstagramIcon from '@/assets/icons/instagram.svg';
 
 // The official marks of each network (see `src/assets/icons/README.md`), drawn in the color of the text.
-const icons: Record<(typeof SOCIAL_ACCOUNTS)[number]['id'], string> = { x: xIcon, instagram: instagramIcon };
+// Astro imports each SVG file as a component and puts the SVG inline.
+const icons = { x: XIcon, instagram: InstagramIcon } satisfies Record<(typeof SOCIAL_ACCOUNTS)[number]['id'], unknown>;
 import Wordmark from './Wordmark.astro';
 ---
 
@@ -29,14 +30,17 @@ import Wordmark from './Wordmark.astro';
     </p>
     <ul class="site-footer__meta">
       <li><a href={routes.accessibility()}>Accesibilidad</a></li>
-      {SOCIAL_ACCOUNTS.map((account) => (
-        <li>
-          <a class="site-footer__social" href={account.url} rel="me noopener" target="_blank">
-            <span class="site-footer__icon" set:html={icons[account.id]} />
-            <span class="sr-only">{account.network}: </span>{account.handle}<span class="sr-only"> (se abre en otra pestaña)</span>
-          </a>
-        </li>
-      ))}
+      {SOCIAL_ACCOUNTS.map((account) => {
+        const NetworkIcon = icons[account.id];
+        return (
+          <li>
+            <a class="site-footer__social" href={account.url} rel="me noopener" target="_blank">
+              <span class="site-footer__icon"><NetworkIcon /></span>
+              <span class="sr-only">{account.network}: </span>{account.handle}<span class="sr-only"> (se abre en otra pestaña)</span>
+            </a>
+          </li>
+        );
+      })}
     </ul>
   </div>
 </footer>

@@ -14,6 +14,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "test": "vitest run",
     "og:atlas": "python scripts/og_atlas.py",
     "og:preview": "node scripts/og_card_bench.ts --all --out .cache/og-tarjetas",
     "data:pp": "python scripts/extract_pp.py public/2026/generales/programas/pp-reconstruccion-nacional.pdf .cache/2026/generales/pp_raw.json && python scripts/enrich_pp.py .cache/2026/generales/pp_raw.json src/data/2026/generales/programas/pp.json",
@@ -59,11 +60,13 @@
     "data:candidaturas": "python scripts/extract_candidaturas.py"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@fontsource-variable/archivo": "^5.3.0",
     "@fontsource/big-shoulders-display": "^5.3.0",
     "astro": "^7.4.10",
     "fuse.js": "^7.5.0",
+    "gifenc": "^1.0.3",
     "turndown": "7.2.5",
     "turndown-plugin-gfm": "1.0.2"
   },
@@ -71,6 +74,7 @@
     "@astrojs/check": "^0.9.12",
     "@types/turndown": "^5.0.6",
     "typescript": "^6.0.3",
+    "vitest": "^4.1.12",
     "wrangler": "^4.161.0"
   }
 }

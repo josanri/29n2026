@@ -7,15 +7,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Panel from '@/components/ui/Panel.astro';
 import Tag from '@/components/ui/Tag.astro';
-import type { Debate } from '@/lib/debate';
+import { debates } from '@/lib/debates';
 import { routes } from '@/lib/routes';
 
-const debateFiles = import.meta.glob<Debate>('@eleccion/debates/*.json', { eager: true, import: 'default' });
-// The newest debate first. A debate with no date goes last.
-const debates = Object.values(debateFiles)
-  // A draft shows only on the dev server.
-  .filter((debate) => debate.published !== false || import.meta.env.DEV)
-  .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
 const dayOf = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
