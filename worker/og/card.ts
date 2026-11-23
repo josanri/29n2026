@@ -627,9 +627,13 @@ export function drawSquareCard(atlas: Atlas, acronym: string, line: string, quot
     y += lineStep;
   }
 
-  const lineFont = atlas.font('archivo-800-46');
-  const [fitted = ''] = wrap(lineFont, line, 400, 1);
-  drawText(canvas, lineFont, fitted, SQUARE_PAD, baseline(lineFont, y + 18, 52), ACCENT);
+  const lineMaxW = 395;
+  const lineFont =
+    (['archivo-800-46', 'archivo-700-36', 'archivo-800-30'] as const)
+      .map((name) => atlas.font(name))
+      .find((f) => measure(f, line) <= lineMaxW) ?? atlas.font('archivo-800-30');
+  const [fitted = ''] = wrap(lineFont, line, lineMaxW, 1);
+  drawText(canvas, lineFont, fitted, SQUARE_PAD, baseline(lineFont, y + 18, Math.round(lineFont.size * 1.13)), ACCENT);
 
   drawBrandPill(canvas, atlas.font('archivo-800-26'), 'electosfera.es', SQUARE_PAD, SQUARE - 86);
   return canvas.rows;

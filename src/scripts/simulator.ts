@@ -23,6 +23,13 @@ import {
   type ImageInput,
   type ImageTheme,
 } from '@/lib/simulator-image';
+import {
+  VIDEO_FPS,
+  hasWebCodecsApi,
+  pickMediaRecorderType,
+  pickWebCodecsConfig,
+  videoBitrateFor,
+} from '@/lib/simulator-video-config';
 import { tooltip } from '@/lib/tooltip';
 
 type ChamberId = 'congreso' | 'senado';
@@ -983,17 +990,13 @@ const titleInput = exportForm.elements.namedItem('title') as HTMLInputElement;
 
 // ---- The kinds of file. PNG always; the video and the GIF only where this browser can make them ----
 type FileKind = 'png' | 'video' | 'gif';
-// The video: MP4 with H.264 first, because WhatsApp and Instagram need it. Without H.264, WebM. A plain «video/mp4»
-// comes last (Safari): Chromium without H.264 accepts it too, but it puts VP9 inside, and the networks reject that file.
-const videoType = [
-  'video/mp4;codecs=avc1.640028',
-  'video/mp4;codecs=avc1.42E01E',
-  'video/mp4;codecs=avc1',
-  'video/webm;codecs=vp9',
-  'video/webm',
-  'video/mp4',
-].find((type) => typeof MediaRecorder === 'function' && MediaRecorder.isTypeSupported(type));
-const videoExtension = videoType?.startsWith('video/mp4') ? 'mp4' : 'webm';
+// The video: offline H.264 MP4 via WebCodecs + mp4-muxer first (sharp, compact, standard faststart MP4).
+// Without WebCodecs H.264, fall back to MediaRecorder (MP4 H.264 first, then WebM).
+const mediaRecorderType = pickMediaRecorderType();
+const mediaRecorderCan = !!mediaRecorderType && typeof exportCanvas.captureStream === 'function';
+const mediaRecorderExtension = mediaRecorderType?.startsWith('video/mp4') ? 'mp4' : 'webm';
+const mediaRecorderMime = mediaRecorderType?.split(';')[0] ?? 'video/mp4';
+let webCodecsMp4 = hasWebCodecsApi();
 // The GIF is encoded in JavaScript: it needs only to read the pixels of a canvas.
 const canReadPixels = (() => {
   try {
@@ -1005,26 +1008,50 @@ const canReadPixels = (() => {
 const FILES: Record<FileKind, { extension: string; type: string; noun: string; can: boolean; why: string }> = {
   png: { extension: 'png', type: 'image/png', noun: 'imagen', can: true, why: '' },
   video: {
-    extension: videoExtension,
-    type: videoType?.split(';')[0] ?? 'video/mp4',
+    extension: webCodecsMp4 ? 'mp4' : mediaRecorderExtension,
+    type: webCodecsMp4 ? 'video/mp4' : mediaRecorderMime,
     noun: 'vídeo',
-    can: !!videoType && typeof exportCanvas.captureStream === 'function',
-    why: 'Este navegador no puede grabar vídeo.',
+    can: webCodecsMp4 || mediaRecorderCan,
+    why: 'Este navegador no puede crear vídeo.',
   },
   gif: { extension: 'gif', type: 'image/gif', noun: 'GIF', can: canReadPixels, why: 'Este navegador no puede crear el GIF.' },
 };
 const fileInputs = [...exportForm.querySelectorAll<HTMLInputElement>('input[name="file"]')];
-for (const input of fileInputs) input.disabled = !FILES[input.value as FileKind].can;
-$<HTMLElement>('#export-video-detail').textContent = FILES.video.can
-  ? `${videoExtension.toUpperCase()}, ${Math.round(IMAGE_ANIMATION_SECONDS)} s`
-  : 'No disponible';
 const fileNote = $<HTMLElement>('#export-file-note');
-const unsupported = Object.values(FILES).filter((file) => !file.can);
-fileNote.hidden = unsupported.length === 0;
-fileNote.textContent = unsupported.map((file) => file.why).join(' ');
-if (!FILES.video.can) {
-  // Without video, the dialog makes images (a GIF is an image too). `data-export-label` has the name without video.
-  for (const label of document.querySelectorAll<HTMLElement>('[data-export-label]')) label.textContent = label.dataset.exportLabel!;
+const syncFileAvailability = () => {
+  for (const input of fileInputs) {
+    const can = FILES[input.value as FileKind].can;
+    input.disabled = !can;
+    if (!can && input.checked) {
+      input.checked = false;
+      fileInputs.find((item) => item.value === 'png')!.checked = true;
+    }
+  }
+  $<HTMLElement>('#export-video-detail').textContent = FILES.video.can
+    ? `${FILES.video.extension.toUpperCase()}, ${Math.round(IMAGE_ANIMATION_SECONDS)} s`
+    : 'No disponible';
+  const unsupported = Object.values(FILES).filter((file) => !file.can);
+  fileNote.hidden = unsupported.length === 0;
+  fileNote.textContent = unsupported.map((file) => file.why).join(' ');
+  if (!FILES.video.can) {
+    // Without video, the dialog makes images (a GIF is an image too). `data-export-label` has the name without video.
+    for (const label of document.querySelectorAll<HTMLElement>('[data-export-label]')) label.textContent = label.dataset.exportLabel!;
+  }
+};
+syncFileAvailability();
+if (webCodecsMp4) {
+  void pickWebCodecsConfig(IMAGE_FORMATS.wide.width, IMAGE_FORMATS.wide.height).then((config) => {
+    if (config) return;
+    webCodecsMp4 = false;
+    FILES.video.extension = mediaRecorderExtension;
+    FILES.video.type = mediaRecorderMime;
+    FILES.video.can = mediaRecorderCan;
+    syncFileAvailability();
+    if (exportDialog.open) {
+      renderExport();
+      renderActions();
+    }
+  });
 }
 // The kind of file, the size and the background of the last image are kept in this browser.
 // Without storage, the defaults stay. A kind of file that this browser can not make is not restored.
@@ -1090,7 +1117,7 @@ const renderExport = () => {
     exportSize.textContent =
       file === 'gif'
         ? `GIF de ${Math.round(format.width * GIF_SCALE)} × ${Math.round(format.height * GIF_SCALE)} píxeles`
-        : `${file === 'video' ? `Vídeo ${videoExtension.toUpperCase()}` : 'Imagen PNG'} de ${format.width} × ${format.height} píxeles`;
+        : `${file === 'video' ? `Vídeo ${FILES.video.extension.toUpperCase()}` : 'Imagen PNG'} de ${format.width} × ${format.height} píxeles`;
     exportCanvas.setAttribute(
       'aria-label',
       input.content === 'vote'
@@ -1131,10 +1158,10 @@ const exportBlob = async () => {
   await drawn;
   return new Promise<Blob | null>((resolve) => exportCanvas.toBlob(resolve, 'image/png'));
 };
-const exportFileName = () => {
+const exportFileName = (extension?: string) => {
   const { content, format, file } = exportOptions();
   const { filePrefix, fileVoteSlug } = cfg();
-  return `${filePrefix}-${election.shortName.toLowerCase()}-${content === 'vote' ? fileVoteSlug : 'escanos'}-${format}.${FILES[file].extension}`;
+  return `${filePrefix}-${election.shortName.toLowerCase()}-${content === 'vote' ? fileVoteSlug : 'escanos'}-${format}.${extension ?? FILES[file].extension}`;
 };
 const saveFile = (blob: Blob, name: string) => {
   const link = document.createElement('a');
@@ -1160,7 +1187,7 @@ const renderActions = () => {
   const { file } = exportOptions();
   const fresh = made?.key === optionsKey() ? made.file : null;
   $<HTMLElement>('#export-download-label').textContent =
-    file === 'png' ? 'Descargar imagen' : file === 'video' ? `Crear vídeo (${videoExtension.toUpperCase()})` : 'Crear GIF';
+    file === 'png' ? 'Descargar imagen' : file === 'video' ? `Crear vídeo (${FILES.video.extension.toUpperCase()})` : 'Crear GIF';
   $<HTMLElement>('#export-share-label').textContent = `Compartir ${FILES[file].noun}`;
   exportShare.hidden = !canShareType(file) || (file !== 'png' && !fresh);
   exportCopy.hidden = !(canCopy && file === 'png');
@@ -1210,35 +1237,71 @@ exportDialog.addEventListener('close', () => {
   if (busy) cancelled = true;
 });
 
-// The video: the browser records the canvas while it plays the animation, in real time.
-const recordVideo = async (input: ImageInput) => {
+// Backup video recorder: real-time canvas capture when WebCodecs H.264 is not available.
+const recordVideoFallback = async (input: ImageInput) => {
+  if (!mediaRecorderCan || !mediaRecorderType) return null;
+  const { width, height } = IMAGE_FORMATS[input.format];
   // The first frame sets the size of the canvas before the stream starts.
   drawSimulatorImage(exportCanvas, input, 0);
-  const stream = exportCanvas.captureStream(30);
-  const recorder = new MediaRecorder(stream, { mimeType: videoType, videoBitsPerSecond: 8_000_000 });
+  const stream = exportCanvas.captureStream(VIDEO_FPS);
+  const recorder = new MediaRecorder(stream, {
+    mimeType: mediaRecorderType,
+    videoBitsPerSecond: videoBitrateFor(width, height),
+  });
   const chunks: Blob[] = [];
   recorder.addEventListener('dataavailable', (event) => {
     if (event.data.size) chunks.push(event.data);
   });
   const stopped = new Promise((resolve) => recorder.addEventListener('stop', resolve));
-  recorder.start(250);
-  const start = performance.now();
-  await new Promise<void>((resolve) => {
-    const tick = () => {
-      const seconds = (performance.now() - start) / 1000;
-      if (cancelled || seconds >= IMAGE_ANIMATION_SECONDS) return resolve();
-      drawSimulatorImage(exportCanvas, input, seconds);
-      exportStatus.textContent = `Grabando el vídeo: faltan ${Math.ceil(IMAGE_ANIMATION_SECONDS - seconds)} s. Deja esta pestaña abierta.`;
+  try {
+    // No timeslice: avoids forcing 250 ms fragmented chunks when the browser can write one clean file.
+    recorder.start();
+    const start = performance.now();
+    await new Promise<void>((resolve) => {
+      const tick = () => {
+        const seconds = (performance.now() - start) / 1000;
+        if (cancelled || seconds >= IMAGE_ANIMATION_SECONDS) return resolve();
+        drawSimulatorImage(exportCanvas, input, seconds);
+        exportStatus.textContent = `Grabando el vídeo: faltan ${Math.ceil(IMAGE_ANIMATION_SECONDS - seconds)} s. Deja esta pestaña abierta.`;
+        requestAnimationFrame(tick);
+      };
       requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  });
-  // The last frame is the final image.
-  drawSimulatorImage(exportCanvas, input);
-  recorder.stop();
-  await stopped;
-  for (const track of stream.getTracks()) track.stop();
-  return chunks.length ? new Blob(chunks, { type: FILES.video.type }) : null;
+    });
+    if (!cancelled) {
+      // Draw the final image and give the stream one frame to capture it before stopping.
+      drawSimulatorImage(exportCanvas, input);
+      const videoTrack = stream.getVideoTracks()[0] as (MediaStreamTrack & { requestFrame?: () => void }) | undefined;
+      videoTrack?.requestFrame?.();
+      await new Promise((resolve) => setTimeout(resolve, Math.ceil(1000 / VIDEO_FPS)));
+    }
+    if (recorder.state !== 'inactive') {
+      recorder.stop();
+      await stopped;
+    }
+  } finally {
+    for (const track of stream.getTracks()) track.stop();
+  }
+  return chunks.length ? new Blob(chunks, { type: mediaRecorderMime }) : null;
+};
+
+// The video: offline H.264 MP4 via WebCodecs + mp4-muxer first, with MediaRecorder as backup.
+const makeVideo = async (input: ImageInput) => {
+  if (webCodecsMp4) {
+    try {
+      const { makeSimulatorVideo } = await import('@/lib/simulator-video');
+      const blob = await makeSimulatorVideo(
+        exportCanvas,
+        input,
+        (share) => (exportStatus.textContent = `Creando el vídeo: ${Math.round(share * 100)} %.`),
+        () => cancelled,
+      );
+      if (blob || cancelled) return blob;
+    } catch (error) {
+      console.error(error);
+      if (cancelled) return null;
+    }
+  }
+  return recordVideoFallback(input);
 };
 
 // The GIF: its module loads only now. It draws the frames one by one, so it does not need real time.
@@ -1264,13 +1327,13 @@ $('#export-download').addEventListener('click', async () => {
   await loadImageFonts();
   // Read the options before the controls turn off: a form does not give the values of controls that are off.
   const key = optionsKey();
-  const name = exportFileName();
+  const baseName = exportFileName();
   const input = imageInput();
   cancelled = false;
   setBusy(true);
   let blob: Blob | null = null;
   try {
-    blob = await (file === 'video' ? recordVideo : makeGif)(input);
+    blob = await (file === 'video' ? makeVideo : makeGif)(input);
   } catch (error) {
     console.error(error);
     blob = null;
@@ -1282,8 +1345,11 @@ $('#export-download').addEventListener('click', async () => {
     return;
   }
   if (!blob) return exportSay(`No se pudo crear el ${FILES[file].noun}.`);
-  made = { key, file: new File([blob], name, { type: FILES[file].type }) };
-  saveFile(blob, name);
+  const actualType = blob.type || FILES[file].type;
+  const actualName =
+    file === 'video' ? baseName.replace(/\.[^.]+$/, `.${actualType.startsWith('video/mp4') ? 'mp4' : 'webm'}`) : baseName;
+  made = { key, file: new File([blob], actualName, { type: actualType }) };
+  saveFile(blob, actualName);
   renderActions();
   exportSay(`${file === 'video' ? 'Vídeo' : 'GIF'} descargado.${exportShare.hidden ? '' : ' También puedes compartirlo.'}`);
 });

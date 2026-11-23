@@ -186,9 +186,16 @@ def main():
                     hoja.evaluate(f'window.pintar({min(1, i / (total * 0.8))})')
                     hoja.screenshot(path=str(Path(tmp) / f'f{i:04d}.png'))
                 destino = SALIDA / f'{slug}-reel.mp4'
-                subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-framerate', str(FPS), '-i', str(Path(tmp) / 'f%04d.png'),
-                                '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-pix_fmt', 'yuv420p',
-                                '-movflags', '+faststart', str(destino)], check=True)
+                subprocess.run([
+                    'ffmpeg', '-y', '-loglevel', 'error',
+                    '-framerate', str(FPS), '-i', str(Path(tmp) / 'f%04d.png'),
+                    '-vf', 'scale=out_color_matrix=bt709:out_range=tv',
+                    '-c:v', 'libx264', '-preset', 'slow', '-crf', '18',
+                    '-profile:v', 'main', '-level:v', '4.0', '-g', str(FPS * 2),
+                    '-r', str(FPS), '-pix_fmt', 'yuv420p',
+                    '-color_primaries', 'bt709', '-color_trc', 'bt709', '-colorspace', 'bt709', '-color_range', 'tv',
+                    '-movflags', '+faststart', str(destino),
+                ], check=True)
             hoja.close()
             print(destino.relative_to(RAIZ))
         navegador.close()

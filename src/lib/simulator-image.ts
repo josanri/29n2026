@@ -13,7 +13,7 @@ export type ImageContent = 'seats' | 'vote';
 export type ImageTheme = 'light' | 'dark';
 
 export const IMAGE_FORMATS: Record<ImageFormat, { width: number; height: number; label: string; use: string }> = {
-  wide: { width: 1200, height: 675, label: 'Horizontal', use: 'X, WhatsApp y webs' },
+  wide: { width: 1280, height: 720, label: 'Horizontal', use: 'X, WhatsApp y webs' },
   square: { width: 1080, height: 1080, label: 'Cuadrada', use: 'Instagram y Facebook' },
   portrait: { width: 1080, height: 1350, label: 'Vertical', use: 'Publicación de Instagram' },
   story: { width: 1080, height: 1920, label: 'Historia', use: 'Historias y estados' },
@@ -146,6 +146,13 @@ const animationPlan = (input: ImageInput, totalSeats: number) => {
   return { seatStart, partyStart, fillEnd: time + POP };
 };
 
+let cachedPlan: { key: string; plan: ReturnType<typeof animationPlan> } | null = null;
+const animationPlanFor = (input: ImageInput, totalSeats: number) => {
+  const key = `${totalSeats}|${input.content}|${input.parties.map((party) => `${party.seats}:${party.vote}:${party.acronym}`).join(',')}`;
+  if (cachedPlan?.key !== key) cachedPlan = { key, plan: animationPlan(input, totalSeats) };
+  return cachedPlan.plan;
+};
+
 /**
  * Draws the image. Without `time`, it draws the final image. With `time` (seconds from the start of the video),
  * it draws that frame of the animation.
@@ -164,7 +171,7 @@ export const drawSimulatorImage = (canvas: HTMLCanvasElement, input: ImageInput,
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.globalAlpha = 1;
   ctx.setLineDash([]);
-  const plan = animationPlan(input, totalSeats);
+  const plan = animationPlanFor(input, totalSeats);
   const started = (index: number) => Number.isFinite(plan.seatStart[index]) && plan.seatStart[index] <= time;
   /** 0 during the fill, then up to 1: the result in the middle and the verdict fade in. */
   const resultAlpha = clamp01((time - plan.fillEnd) / FADE);
