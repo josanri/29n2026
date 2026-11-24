@@ -5,17 +5,19 @@ import type { HTMLAttributes } from 'astro/types';
 interface Props extends HTMLAttributes<'div'> {
   title?: string;
   lead?: string;
+  as?: 'h2' | 'h3';
 }
 
-const { title, lead, class: className, ...attrs } = Astro.props;
+const { title, lead, as = 'h3', class: className, ...attrs } = Astro.props;
+const Heading = as;
 ---
 
 <div class:list={['box', 'panel', className]} {...attrs}>
   {title && (
-    <h3 class:list={['panel__title', { 'panel__title--icon': Astro.slots.has('icon') }]}>
+    <Heading class:list={['panel__title', { 'panel__title--icon': Astro.slots.has('icon') }]}>
       {Astro.slots.has('icon') && <span class="panel__icon"><slot name="icon" /></span>}
       <span>{title}</span>
-    </h3>
+    </Heading>
   )}
   {lead && <p class="panel__lead">{lead}</p>}
   <slot />

@@ -27,7 +27,10 @@ const relations = relationsOf(program);
               {relation.partners.map((partner, index) => (
                 <>
                   {index > 0 && ', '}
-                  <a href={routes.party(partner.id)}>{partner.acronym}</a>
+                  <a href={routes.party(partner.id)}>
+                    {partner.acronym}
+                    {partner.partyName !== partner.acronym && <span class="sr-only"> ({partner.partyName})</span>}
+                  </a>
                 </>
               ))}
             </p>

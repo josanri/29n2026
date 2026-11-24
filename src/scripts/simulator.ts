@@ -31,6 +31,8 @@ import {
   videoBitrateFor,
 } from '@/lib/simulator-video-config';
 import { tooltip } from '@/lib/tooltip';
+import { normalizeForSearch } from '@/lib/format';
+import { modelContext, registerTools } from '@/lib/webmcp/context';
 
 type ChamberId = 'congreso' | 'senado';
 
@@ -46,13 +48,14 @@ type Group = {
   name: string;
   color: string;
   seats: number;
+  programId?: string;
   href?: string;
   custom: boolean;
   seatsNow: number;
   seats2023: number;
   seatsAutonomous: number;
   /** The other name of the same group (Sumar ↔ Frente Amplio). The button of its row swaps the two names. */
-  alt?: { acronym: string; name: string; color: string; href?: string };
+  alt?: { acronym: string; name: string; color: string; programId?: string; href?: string };
   /** True when the group uses its name of the new election (Frente Amplio). */
   renamed?: boolean;
 };
@@ -72,7 +75,9 @@ interface ChamberConfig {
   shareSeatsLabel: string;
   shareVoteLabel: string;
   presetNowLabel: string;
+  presetNowDetail: string;
   preset2023Label: string;
+  preset2023Detail: string;
   hasAutonomousPreset: boolean;
   voteHeading: string;
   voteLead: string;
@@ -101,16 +106,18 @@ const CHAMBERS: Record<ChamberId, ChamberConfig> = {
     hemicycleRows: HEMICYCLE.rows,
     pageTitle: 'Simulador de Congreso y pactos',
     heroTitle: 'Congreso y pactos',
-    heroLede: `Reparte los ${CONGRESS_SEATS} escaños como quieras, crea partidos nuevos y comprueba qué pactos logran investir a un presidente. Los escaños de partida son los del Congreso actual. Los números no son una previsión.`,
+    heroLede: `Reparte los ${CONGRESS_SEATS} escaños, crea partidos y prueba qué pactos investirían a un presidente. Empiezas con el Congreso actual.`,
     noun: 'Congreso',
     articleNoun: 'el Congreso',
     shareSeatsLabel: 'Compartir este Congreso…',
     shareVoteLabel: 'Compartir esta investidura…',
     presetNowLabel: 'Congreso actual',
+    presetNowDetail: 'XV legislatura, disuelta el 6 de octubre',
     preset2023Label: 'Resultados de 2023',
+    preset2023Detail: 'Elecciones del 23 de julio de 2023',
     hasAutonomousPreset: false,
     voteHeading: 'Prueba una investidura',
-    voteLead: `Elige un candidato y decide el voto de cada partido. Con ${ABSOLUTE_MAJORITY} votos a favor se inviste en la primera votación. Si no, a las 48 horas basta con más votos a favor que en contra.`,
+    voteLead: `Elige un candidato y el voto de cada partido. Necesita ${ABSOLUTE_MAJORITY} síes o, en la segunda votación, más síes que noes.`,
     candidateLabel: 'Candidato a la investidura',
     candidatePlaceholder: 'Elige un candidato',
     candidateNote: 'El partido del candidato vota «Sí».',
@@ -134,16 +141,18 @@ const CHAMBERS: Record<ChamberId, ChamberConfig> = {
     hemicycleRows: SENATE_HEMICYCLE_ROWS,
     pageTitle: 'Simulador de Senado y mayorías',
     heroTitle: 'Senado y mayorías',
-    heroLede: `Reparte los ${SENATE_SEATS} escaños del Senado (${SENATE_ELECTED_SEATS} electos y ${SENATE_AUTONOMOUS_SEATS} de designación autonómica), crea partidos nuevos y prueba qué pactos logran la mayoría absoluta de ${SENATE_ABSOLUTE_MAJORITY}. Los números no son una previsión.`,
+    heroLede: `Reparte los ${SENATE_SEATS} escaños del Senado (${SENATE_ELECTED_SEATS} electos y ${SENATE_AUTONOMOUS_SEATS} autonómicos), crea partidos y prueba qué pactos suman la mayoría absoluta de ${SENATE_ABSOLUTE_MAJORITY}.`,
     noun: 'Senado',
     articleNoun: 'el Senado',
     shareSeatsLabel: 'Compartir este Senado…',
     shareVoteLabel: 'Compartir esta votación…',
     presetNowLabel: 'Senado actual',
+    presetNowDetail: 'Electos y autonómicos de la XV legislatura',
     preset2023Label: `Electos de 2023 (${SENATE_ELECTED_SEATS})`,
+    preset2023Detail: 'Resultados del 23J, sin los autonómicos',
     hasAutonomousPreset: true,
     voteHeading: 'Prueba una votación',
-    voteLead: `El Senado no inviste al presidente del Gobierno, pero sus mayorías deciden vetos a leyes (art. 90), el artículo 155, enmiendas y mociones. Elige un partido impulsor y decide el voto de cada grupo: ${SENATE_ABSOLUTE_MAJORITY} escaños dan la mayoría absoluta.`,
+    voteLead: `El Senado no inviste al presidente, pero con ${SENATE_ABSOLUTE_MAJORITY} escaños veta leyes y aplica el artículo 155. Elige un partido impulsor y el voto de cada grupo.`,
     candidateLabel: 'Partido que impulsa la votación',
     candidatePlaceholder: 'Elige un partido',
     candidateNote: 'El partido elegido vota «Sí».',
@@ -178,8 +187,15 @@ const baseGroupsFor = (id: ChamberId): Group[] =>
 // The group takes its other name and color; its seats, its votes and its place stay.
 const swapName = (group: Group): Group => {
   if (!group.alt) return group;
-  const { acronym, name, color, href } = group;
-  return { ...group, ...group.alt, href: group.alt.href, alt: { acronym, name, color, href }, renamed: !group.renamed };
+  const { acronym, name, color, programId, href } = group;
+  return {
+    ...group,
+    ...group.alt,
+    programId: group.alt.programId,
+    href: group.alt.href,
+    alt: { acronym, name, color, programId, href },
+    renamed: !group.renamed,
+  };
 };
 
 // The lights of the voting board (see `.sim` in the styles).
@@ -228,6 +244,7 @@ const exportOpenSeatsLabel = $<HTMLElement>('#export-open-seats-label');
 const presetNow = $<HTMLButtonElement>('#preset-now');
 const presetAutonomous = $<HTMLButtonElement>('#preset-autonomous');
 const preset2023 = $<HTMLButtonElement>('#preset-2023');
+const presetZero = $<HTMLButtonElement>('#preset-zero');
 const createMissing = $<HTMLButtonElement>('#create-missing');
 const seatList = $<HTMLElement>('#seat-list');
 const voteList = $<HTMLElement>('#vote-list');
@@ -373,7 +390,10 @@ const createRows = (group: Group) => {
   } else {
     label.append(title);
   }
-  seatRow.querySelector<HTMLElement>('.seat-row__full')!.textContent = group.name;
+  const fullName = seatRow.querySelector<HTMLElement>('.seat-row__full')!;
+  fullName.textContent = group.name;
+  fullName.title = group.name; // on a phone the name is cut to one line
+
   const handle = seatRow.querySelector<HTMLButtonElement>('.seat-row__handle')!;
   handle.setAttribute('aria-label', `Mover ${group.acronym} en el hemiciclo. Con las flechas, cambia de sitio con el partido de al lado.`);
   handle.addEventListener('pointerdown', (event) => startRowDrag(event, group, handle));
@@ -410,8 +430,10 @@ const createRows = (group: Group) => {
   const rename = seatRow.querySelector<HTMLButtonElement>('.seat-row__rename')!;
   if (group.alt) {
     rename.hidden = false;
-    rename.textContent = `Convertir en ${group.alt.name.replace(/\s*\(.*\)$/, '')}`;
-    rename.setAttribute('aria-label', `Convertir ${group.acronym} en ${group.alt.acronym}, con los mismos escaños`);
+    // The button shows only the other name; its accessible name says what it does.
+    const altLabel = group.alt.name.replace(/\s*\(.*\)$/, '');
+    rename.textContent = altLabel;
+    rename.setAttribute('aria-label', `${altLabel}: convertir ${group.acronym} en ${group.alt.acronym}, con los mismos escaños`);
     rename.addEventListener('click', () => {
       rebuild(state().groups.map((item) => (item.id === group.id ? swapName(item) : item)));
       renderAll();
@@ -545,8 +567,25 @@ const markSeats = (id: string | undefined, kind: 'source' | 'target' | null) => 
     else delete circle.dataset.drag;
   });
 };
+// The seat at a point of the screen: the nearest seat, if the point is at most two radii from its center.
+// So a point in the gap between two seats counts as a point on them; the middle and the outside give no seat.
+const seatAt = (clientX: number, clientY: number) => {
+  const matrix = hemiSeats.getScreenCTM();
+  if (!matrix || seatCircles.length === 0) return undefined;
+  const point = new DOMPoint(clientX, clientY).matrixTransform(matrix.inverse());
+  let nearest = seatCircles[0];
+  let nearestDistance = Infinity;
+  for (const circle of seatCircles) {
+    const distance = Math.hypot(circle.cx.baseVal.value - point.x, circle.cy.baseVal.value - point.y);
+    if (distance < nearestDistance) {
+      nearest = circle;
+      nearestDistance = distance;
+    }
+  }
+  return nearestDistance <= nearest.r.baseVal.value * 2 ? nearest : undefined;
+};
 hemiSeats.addEventListener('pointerdown', (event) => {
-  const circle = (event.target as Element).closest<SVGCircleElement>('circle');
+  const circle = (event.target as Element).closest<SVGCircleElement>('circle') ?? seatAt(event.clientX, event.clientY);
   if (!circle || (event.pointerType === 'mouse' && event.button !== 0)) return;
   const sourceId = ownerOfSeat(Number(circle.dataset.seat));
   if (!sourceId) return;
@@ -556,7 +595,7 @@ hemiSeats.addEventListener('pointerdown', (event) => {
   markSeats(sourceId, 'source');
   let targetId: string | undefined;
   const move = (moveEvent: PointerEvent) => {
-    const over = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY)?.closest<SVGCircleElement>('#hemi-seats circle');
+    const over = seatAt(moveEvent.clientX, moveEvent.clientY);
     const id = over ? ownerOfSeat(Number(over.dataset.seat)) : undefined;
     const next = id && id !== sourceId ? id : undefined;
     if (next === targetId) return;
@@ -647,6 +686,8 @@ const renderVoteRows = () => {
     const isCandidate = group.id === current;
     row.hidden = group.seats === 0;
     row.dataset.candidate = String(isCandidate);
+    // The tag of the card of the candidate (phones): «Candidato» in the Congress, «Impulsor» in the Senate.
+    row.querySelector('legend')!.dataset.tag = activeChamber === 'congreso' ? 'Candidato' : 'Impulsor';
     // Without a candidate/sponsor there is nothing to vote: the votes wait.
     row.querySelector('fieldset')!.disabled = !current;
     row.querySelector<HTMLElement>('.vote-row__seats')!.textContent = plural(group.seats, 'escaño', 'escaños');
@@ -1082,9 +1123,14 @@ const exportOptions = () => {
   };
 };
 
-const imageInput = (): ImageInput => {
-  const { file: _file, ...options } = exportOptions();
+// `content` draws other content than the one of the dialog (the preview of the share sheet).
+const imageInput = (content?: ImageContent): ImageInput => {
+  const { file: _file, ...chosen } = exportOptions();
   const chamber = cfg();
+  // A default title follows the content; a title that the reader wrote stays.
+  const options = content
+    ? { ...chosen, content, title: ALL_DEFAULT_TITLES.has(chosen.title.trim()) ? chamber.defaultTitles[content] : chosen.title }
+    : chosen;
   const { groups, candidate, votes } = state();
   const isVote = options.content === 'vote';
   return {
@@ -1383,6 +1429,136 @@ exportCopy.addEventListener('click', async () => {
   }
 });
 
+// ---- The steps (phones and tablets): «Escaños» and «Investidura». The third step, «Comparte», opens the share sheet ----
+type Step = 'seats' | 'vote';
+const stepsNav = $<HTMLElement>('.steps');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const setStep = (step: Step, scroll = false) => {
+  root.dataset.step = step;
+  for (const button of stepsNav.querySelectorAll<HTMLButtonElement>('[data-step-go]')) {
+    if (button.dataset.stepGo === step) button.setAttribute('aria-current', 'step');
+    else button.removeAttribute('aria-current');
+  }
+  renderBar();
+  // From the bar at the bottom, the new step starts at the top of the screen.
+  if (scroll) stepsNav.scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+};
+for (const button of document.querySelectorAll<HTMLButtonElement>('[data-step-go]')) {
+  button.addEventListener('click', () => setStep(button.dataset.stepGo as Step, !!button.closest('.sim-bar')));
+}
+
+// ---- The bar of the steps: the seats in step 1; the verdict and a small bar of the votes in step 2 ----
+const simBar = $<HTMLElement>('#sim-bar');
+const barSeats = $<HTMLElement>('#bar-seats');
+const barSeatsStatus = $<HTMLElement>('#bar-seats-status');
+const barVerdict = $<HTMLElement>('#bar-verdict');
+const barTally = $<HTMLElement>('#bar-tally');
+const barMarker = $<HTMLElement>('#bar-marker');
+const meterParts = [...document.querySelectorAll<HTMLElement>('[data-meter]')];
+const renderBar = () => {
+  const { totalSeats, majority } = cfg();
+  const { candidate, votes } = state();
+  const sum = total();
+  const difference = totalSeats - sum;
+  barSeats.textContent = `${sum} / ${totalSeats}`;
+  barSeatsStatus.textContent = difference === 0 ? 'Todos repartidos' : difference > 0 ? `Faltan ${difference}` : `Sobran ${-difference}`;
+  barSeatsStatus.dataset.state = difference === 0 ? 'ok' : 'warning';
+  barVerdict.textContent = verdictTitle.textContent;
+  const result = candidate ? investiture(seatsMap(), candidate, votes, majority) : null;
+  barTally.textContent = result
+    ? `Sí ${result.yes} · No ${result.no} · Abst. ${result.abstain}`
+    : `Mayoría absoluta: ${majority}`;
+  // In the step of the vote, without a candidate there is no vote to share or to draw: the bar waits.
+  const waiting = root.dataset.step === 'vote' && !candidate;
+  simBar.dataset.waiting = String(waiting);
+  for (const button of simBar.querySelectorAll<HTMLButtonElement>('.sim-bar__share, .sim-bar__next--vote')) button.disabled = waiting;
+  const base = Math.max(sum, totalSeats);
+  for (const part of meterParts) part.style.width = result ? `${(result[part.dataset.meter as Vote] / base) * 100}%` : '0%';
+  barMarker.style.left = `${Math.min(100, (majority / base) * 100)}%`;
+};
+
+// ---- The quick share sheet of the bar. It shares the seats only (without the votes) or the vote ----
+const sheet = $<HTMLDialogElement>('#share-sheet');
+const sheetWhat = $<HTMLElement>('#sheet-what');
+const sheetWhatSeats = $<HTMLElement>('#sheet-what-seats');
+const sheetWhatVote = $<HTMLElement>('#sheet-what-vote');
+const sheetCanvas = $<HTMLCanvasElement>('#sheet-canvas');
+const sheetUrl = $<HTMLElement>('#sheet-url');
+const sheetCopyLabel = $<HTMLElement>('#sheet-copy-label');
+const sheetStatus = $<HTMLElement>('#sheet-status');
+const sheetVideo = $<HTMLElement>('#sheet-video');
+const sheetPromoTitle = $<HTMLElement>('#sheet-promo-title');
+const sheetNetworks = [...sheet.querySelectorAll<HTMLAnchorElement>('[data-sheet-network]')];
+let sheetContent: ImageContent = 'seats';
+
+// The message of the seats: the biggest groups first.
+const seatsShareText = () => {
+  const groups = state().groups.filter((group) => group.seats > 0).sort((a, b) => b.seats - a.seats);
+  const shown = groups.slice(0, 4).map((group) => `${group.acronym} ${group.seats}`).join(', ');
+  const rest = groups.length - 4;
+  return `Mi reparto del ${cfg().noun}: ${shown}${rest > 0 ? ` y ${plural(rest, 'partido más', 'partidos más')}` : ''}.`;
+};
+// Only the seats: the link leaves out the votes and the candidate, so it opens without the investiture.
+const sheetHref = () => {
+  if (sheetContent === 'vote') return location.href;
+  const url = new URL(location.href);
+  url.searchParams.delete('v');
+  url.searchParams.delete('c');
+  return url.href;
+};
+const renderSheet = () => {
+  const { candidate } = state();
+  if (!candidate) sheetContent = 'seats';
+  sheetWhat.hidden = !candidate;
+  for (const button of sheetWhat.querySelectorAll<HTMLButtonElement>('[data-share-what]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.shareWhat === sheetContent));
+  }
+  const href = sheetHref();
+  const text = sheetContent === 'vote' ? lastShare.text : seatsShareText();
+  sheetUrl.textContent = href.replace(/^https?:\/\/(www\.)?/, '');
+  for (const link of sheetNetworks) link.href = shareUrls[link.dataset.sheetNetwork!](text, href);
+  // The preview is the real image (the first frame of a video or a GIF), at its full size: the screen makes it smaller.
+  const content = sheetContent;
+  void loadImageFonts().then(() => {
+    if (sheet.open && content === sheetContent) drawSimulatorImage(sheetCanvas, imageInput(content));
+  });
+  sheetVideo.hidden = !FILES.video.can;
+  sheetPromoTitle.textContent = FILES.video.can ? 'Crea una imagen o un vídeo' : 'Crea una imagen';
+};
+const openSheet = () => {
+  sheetContent = state().candidate && root.dataset.step === 'vote' ? 'vote' : 'seats';
+  sheetCopyLabel.textContent = 'Copiar';
+  sheetStatus.textContent = '';
+  renderSheet();
+  sheet.showModal();
+};
+for (const opener of document.querySelectorAll<HTMLButtonElement>('[data-sheet-open]')) opener.addEventListener('click', openSheet);
+for (const button of sheetWhat.querySelectorAll<HTMLButtonElement>('[data-share-what]')) {
+  button.addEventListener('click', () => {
+    sheetContent = button.dataset.shareWhat === 'vote' ? 'vote' : 'seats';
+    sheetCopyLabel.textContent = 'Copiar';
+    renderSheet();
+  });
+}
+sheet.querySelector('[data-sheet-close]')!.addEventListener('click', () => sheet.close());
+sheet.addEventListener('click', (event) => {
+  if (event.target === sheet) sheet.close();
+});
+$('#sheet-copy').addEventListener('click', async () => {
+  const copied = await copyText(sheetHref());
+  sheetCopyLabel.textContent = copied ? 'Copiado' : 'Copiar';
+  sheetStatus.textContent = copied ? 'Enlace copiado.' : 'No se pudo copiar. Copia la dirección de la barra del navegador.';
+});
+// The image or the video: the dialog opens on the same content, with that kind of file.
+for (const button of sheet.querySelectorAll<HTMLButtonElement>('[data-sheet-file]')) {
+  button.addEventListener('click', () => {
+    const input = fileInputs.find((item) => item.value === button.dataset.sheetFile);
+    if (input && !input.disabled) input.checked = true;
+    sheet.close();
+    openExport(sheetContent);
+  });
+}
+
 // ---- Chamber switching ----
 const applyChamberChrome = () => {
   const chamber = cfg();
@@ -1393,9 +1569,14 @@ const applyChamberChrome = () => {
 
   seatsCaption.textContent = `de ${chamber.totalSeats} escaños`;
   exportOpenSeatsLabel.textContent = chamber.shareSeatsLabel;
-  presetNow.textContent = chamber.presetNowLabel;
+  setPresetText(presetNow, chamber.presetNowLabel, chamber.presetNowDetail);
   presetAutonomous.hidden = !chamber.hasAutonomousPreset;
-  preset2023.textContent = chamber.preset2023Label;
+  setPresetText(preset2023, chamber.preset2023Label, chamber.preset2023Detail);
+  setPresetText(presetZero, 'Todo a cero', `Reparte los ${chamber.totalSeats} desde el principio`);
+  sheetWhatSeats.textContent = chamber.noun;
+  sheetWhatVote.textContent = chamber.voteOptionLabel;
+  // The step of the vote and the button of the bar: «Investidura» in the Congress, «Votación» in the Senate.
+  for (const label of document.querySelectorAll<HTMLElement>('[data-vote-step-label]')) label.textContent = chamber.voteOptionLabel;
   partySeats.max = String(chamber.totalSeats);
 
   voteHeading.textContent = chamber.voteHeading;
@@ -1464,12 +1645,61 @@ preset2023.addEventListener('click', () => {
 });
 // «Todo a cero» starts the chamber of the new election: a group that changes its name (Sumar → Frente Amplio)
 // takes the new name and color. The presets of the old chamber keep the old ones.
-$('#preset-zero').addEventListener('click', () => {
+presetZero.addEventListener('click', () => {
   rebuild(
     state().groups.map((group) => ({ ...(group.alt && !group.renamed ? swapName(group) : group), seats: 0 })),
   );
   renderAll();
 });
+// ---- The menu of the presets («Partir de»): it shows where the seats come from ----
+type PresetId = 'now' | 'autonomous' | '2023' | 'zero';
+const PRESET_SEATS: Record<PresetId, (group: Group) => number> = {
+  now: (group) => group.seatsNow,
+  autonomous: (group) => group.seatsAutonomous,
+  '2023': (group) => group.seats2023,
+  zero: () => 0,
+};
+const start = $<HTMLElement>('#start');
+const startToggle = $<HTMLButtonElement>('#start-toggle');
+const startMenu = $<HTMLElement>('#start-menu');
+const startCurrent = $<HTMLElement>('#start-current');
+const presetButtons = [...startMenu.querySelectorAll<HTMLButtonElement>('[data-preset]')];
+function setPresetText(button: HTMLButtonElement, label: string, detail: string) {
+  button.querySelector('[data-preset-label]')!.textContent = label;
+  button.querySelector('[data-preset-detail]')!.textContent = detail;
+}
+// The preset of the seats that the chamber shows now: each group has the seats of the preset. A change by hand
+// gives no preset («Tu reparto»). The custom parties have 0 seats in every preset.
+const currentPreset = () =>
+  (Object.keys(PRESET_SEATS) as PresetId[]).find(
+    (id) => (id !== 'autonomous' || cfg().hasAutonomousPreset) && state().groups.every((group) => group.seats === PRESET_SEATS[id](group)),
+  );
+const renderStart = () => {
+  const button = presetButtons.find((item) => item.dataset.preset === currentPreset());
+  startCurrent.textContent = button?.querySelector('[data-preset-label]')!.textContent ?? 'Tu reparto';
+  for (const item of presetButtons) item.setAttribute('aria-pressed', String(item === button));
+};
+const setStartOpen = (open: boolean) => {
+  startMenu.hidden = !open;
+  startToggle.setAttribute('aria-expanded', String(open));
+};
+startToggle.addEventListener('click', () => setStartOpen(startMenu.hidden !== false));
+// A click outside the menu or Escape closes it. A choice closes it too, and the focus goes back to its button.
+document.addEventListener('click', (event) => {
+  if (!startMenu.hidden && !start.contains(event.target as Node)) setStartOpen(false);
+});
+start.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape' || startMenu.hidden) return;
+  setStartOpen(false);
+  startToggle.focus();
+});
+for (const item of presetButtons) {
+  item.addEventListener('click', () => {
+    setStartOpen(false);
+    startToggle.focus();
+  });
+}
+
 createMissing.addEventListener('click', () => {
   partySeats.value = String(Math.max(0, cfg().totalSeats - total()));
   partyDetails.open = true;
@@ -1532,6 +1762,8 @@ const renderAll = () => {
   renderSelect();
   renderVoteRows();
   renderResult();
+  renderStart();
+  renderBar();
   writeUrl();
 };
 
@@ -1542,3 +1774,223 @@ renderSort();
 rebuild(state().groups);
 partyColor.value = randomPartyColor();
 renderAll();
+// A link with a candidate opens on the step of the vote.
+if (state().candidate) setStep('vote');
+
+// WebMCP: the AI agent of the browser can configure seats, votes and candidate on this page,
+// update the hemicycle and URL live, and read back the investiture / majority outcome.
+if (modelContext()) {
+  const VOTE_INPUT_MAP: Record<string, Vote> = {
+    si: 'yes',
+    no: 'no',
+    abstencion: 'abstain',
+  };
+  const VOTE_OUTPUT_MAP: Record<Vote, 'si' | 'no' | 'abstencion'> = {
+    yes: 'si',
+    no: 'no',
+    abstain: 'abstencion',
+  };
+
+  /** Finds a group in the active chamber by id, acronym, name, programId or its alternate name (Sumar ↔ FA). */
+  const resolveGroup = (key: string): { group: Group; matchedAlt: boolean } => {
+    const wanted = normalizeForSearch(key);
+    for (const group of state().groups) {
+      const primary = [group.id, group.acronym, group.name, group.programId ?? ''].some(
+        (value) => value && normalizeForSearch(value) === wanted,
+      );
+      if (primary) return { group, matchedAlt: false };
+      if (group.alt) {
+        const alt = [group.alt.acronym, group.alt.name, group.alt.programId ?? ''].some(
+          (value) => value && normalizeForSearch(value) === wanted,
+        );
+        if (alt) return { group, matchedAlt: true };
+      }
+    }
+    const available = state()
+      .groups.map((group) => `${group.id} (${group.acronym})`)
+      .join(', ');
+    throw new Error(`No hay ningún grupo «${key}» en ${cfg().articleNoun}. Grupos disponibles: ${available}.`);
+  };
+
+  registerTools([
+    {
+      name: 'simular_investidura',
+      title: 'Simular escaños e investidura',
+      description:
+        'Configura el simulador de esta página (Congreso o Senado): carga un reparto inicial, asigna escaños por partido, elige un candidato o partido impulsor y define el voto de cada grupo («si», «no» o «abstencion»). Actualiza la pantalla y la URL compartible, y devuelve el resultado de la votación y los pactos mínimos que suman mayoría absoluta.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          camara: {
+            type: 'string',
+            enum: ['congreso', 'senado'],
+            description: 'Cámara a simular. Si se omite, mantiene la cámara activa.',
+          },
+          partirDe: {
+            type: 'string',
+            enum: ['actual', '2023', 'autonomicos', 'cero'],
+            description: 'Reparto inicial antes de aplicar «escanos». «autonomicos» solo vale en el Senado.',
+          },
+          escanos: {
+            type: 'object',
+            additionalProperties: { type: 'integer', minimum: 0 },
+            description: 'Escaños por partido (id o siglas, por ejemplo {"pp": 132, "psoe": 115, "vox": 62, "fa": 11}). Solo modifica los partidos indicados.',
+          },
+          candidato: {
+            type: 'string',
+            description: 'Id o siglas del partido del candidato (Congreso) o impulsor (Senado). Cadena vacía: quita el candidato.',
+          },
+          votos: {
+            type: 'object',
+            additionalProperties: { type: 'string', enum: ['si', 'no', 'abstencion'] },
+            description: 'Sentido del voto por partido («si», «no» o «abstencion»). El candidato siempre vota «si»; los omitidos votan «no».',
+          },
+        },
+      },
+      annotations: { readOnlyHint: false },
+      execute(input) {
+        if (input.camara !== undefined) {
+          const nextChamber = String(input.camara) as ChamberId;
+          if (nextChamber !== 'congreso' && nextChamber !== 'senado') {
+            throw new Error(`Cámara no válida: «${String(input.camara)}». Usa «congreso» o «senado».`);
+          }
+          if (nextChamber !== activeChamber) {
+            activeChamber = nextChamber;
+            made = null;
+            partyDetails.open = false;
+            partyError.textContent = '';
+            applyChamberChrome();
+            renderSort();
+            rebuild(state().groups);
+            partyColor.value = randomPartyColor();
+          }
+        }
+
+        if (input.partirDe !== undefined) {
+          const preset = String(input.partirDe);
+          if (preset === 'autonomicos' && !cfg().hasAutonomousPreset) {
+            throw new Error('El reparto inicial «autonomicos» solo existe en el Senado. Indica «camara: "senado"» o usa «actual», «2023» o «cero».');
+          }
+          if (preset === 'actual') {
+            rebuild(baseGroupsFor(activeChamber));
+          } else if (preset === '2023') {
+            rebuild(baseGroupsFor(activeChamber).map((group) => ({ ...group, seats: group.seats2023 })));
+          } else if (preset === 'autonomicos') {
+            rebuild(
+              baseGroupsFor(activeChamber).map((group) => ({
+                ...(group.alt && !group.renamed ? swapName(group) : group),
+                seats: group.seatsAutonomous,
+              })),
+            );
+          } else if (preset === 'cero') {
+            rebuild(
+              state().groups.map((group) => ({ ...(group.alt && !group.renamed ? swapName(group) : group), seats: 0 })),
+            );
+          } else {
+            throw new Error(`Reparto inicial no válido: «${preset}». Usa «actual», «2023», «autonomicos» o «cero».`);
+          }
+          state().votes = {};
+          state().candidate = '';
+        }
+
+        const swapIfNeeded = (key: string): Group => {
+          const { group, matchedAlt } = resolveGroup(key);
+          if (matchedAlt) {
+            rebuild(state().groups.map((item) => (item.id === group.id ? swapName(item) : item)));
+            return byId(group.id);
+          }
+          return group;
+        };
+
+        if (input.escanos && typeof input.escanos === 'object' && !Array.isArray(input.escanos)) {
+          for (const [key, rawSeats] of Object.entries(input.escanos as Record<string, unknown>)) {
+            const value = Number(rawSeats);
+            if (!Number.isFinite(value) || value < 0) {
+              throw new Error(`Número de escaños no válido para «${key}»: ${String(rawSeats)}.`);
+            }
+            const group = swapIfNeeded(key);
+            group.seats = clampSeats(value);
+          }
+        }
+
+        if (input.candidato !== undefined) {
+          const rawCandidate = String(input.candidato).trim();
+          if (!rawCandidate) {
+            state().candidate = '';
+          } else {
+            const candidateGroup = swapIfNeeded(rawCandidate);
+            if (candidateGroup.seats <= 0) {
+              throw new Error(`${candidateGroup.acronym} tiene 0 escaños y no puede ser candidato. Asígnale escaños en «escanos».`);
+            }
+            state().candidate = candidateGroup.id;
+          }
+        }
+
+        if (input.votos && typeof input.votos === 'object' && !Array.isArray(input.votos)) {
+          state().votes = {};
+          for (const [key, rawVote] of Object.entries(input.votos as Record<string, unknown>)) {
+            const mapped = VOTE_INPUT_MAP[normalizeForSearch(String(rawVote))];
+            if (!mapped) {
+              throw new Error(`Voto no válido para «${key}»: «${String(rawVote)}». Usa «si», «no» o «abstencion».`);
+            }
+            const group = swapIfNeeded(key);
+            state().votes[group.id] = mapped;
+          }
+        }
+
+        renderAll();
+        if (state().candidate) setStep('vote');
+
+        const chamber = cfg();
+        const allocated = total();
+        const diff = allocated - chamber.totalSeats;
+        const candidateId = state().candidate;
+        const candidateGroup = candidateId ? byId(candidateId) : null;
+        const result = candidateId ? investiture(seatsMap(), candidateId, state().votes, chamber.majority) : null;
+        const coalitions = candidateId
+          ? minimalCoalitions(seatsMap(), candidateId, chamber.majority, 8).map(({ partners, seats }) => ({
+              socios: [candidateId, ...partners].map((id) => byId(id).acronym),
+              escanos: seats,
+            }))
+          : [];
+
+        const warning =
+          diff !== 0
+            ? ` Hay ${diff > 0 ? `${diff} escaños de más` : `${Math.abs(diff)} escaños sin repartir`} respecto a los ${chamber.totalSeats} de ${chamber.articleNoun}.`
+            : '';
+
+        return {
+          camara: activeChamber,
+          escanosTotales: chamber.totalSeats,
+          escanosRepartidos: allocated,
+          diferenciaEscanos: diff,
+          mayoriaAbsoluta: chamber.majority,
+          candidato: candidateGroup ? { id: candidateGroup.id, siglas: candidateGroup.acronym } : null,
+          reparto: state()
+            .groups.filter((group) => group.seats > 0)
+            .map((group) => ({
+              id: group.id,
+              siglas: group.acronym,
+              escanos: group.seats,
+              voto: candidateId ? VOTE_OUTPUT_MAP[voteOf(group.id)] : null,
+            })),
+          resultado: result
+            ? {
+                si: result.yes,
+                no: result.no,
+                abstencion: result.abstain,
+                primeraVotacion: result.firstVote,
+                segundaVotacion: result.secondVote,
+                desenlace: result.outcome,
+                veredicto: verdictTitle.textContent,
+                detalle: verdictText.textContent,
+              }
+            : null,
+          pactosMinimos: coalitions,
+          url: location.href,
+          aviso: `Herramienta de cálculo de pactos, no una encuesta ni una previsión política.${warning}`,
+        };
+      },
+    },
+  ]);
+}

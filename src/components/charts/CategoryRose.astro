@@ -78,7 +78,7 @@ const parts = petals.map((petal, index) => {
             data-code={part.code}
             data-share={`${part.percent} %`}
             data-count={`${part.count} ${unit}`}
-            aria-label={`${part.name}: ${part.count} ${unit} (${part.percent} %)`}
+            aria-label={`${part.code} ${part.percent} % — ${part.name}: ${part.count} ${unit}`}
           >
             <path class="rose__hit" d={part.track}></path>
             <path class="rose__petal" d={part.d}></path>

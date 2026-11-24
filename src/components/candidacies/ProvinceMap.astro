@@ -42,12 +42,18 @@ const { provinces, canaryIslands, cityInset } = geography;
         <path class="province-map__hit-area" d={province.path} style={`stroke-width:${MAP_HIT_MARGIN * 2}`} />
       )}
       <path d={province.path} />
-      {province.marker && (
-        <text class="province-map__label" x={province.marker.x} y={province.marker.labelY} text-anchor="middle" aria-hidden="true">
-          {province.name}
-        </text>
-      )}
     </a>
+  ))}
+  {provinces.filter((province) => province.marker).map((province) => (
+    <text
+      class="province-map__label province-map__label--city"
+      x={province.marker!.x}
+      y={province.marker!.labelY}
+      text-anchor="middle"
+      aria-hidden="true"
+    >
+      {province.name}
+    </text>
   ))}
   <path class="province-map__selection" aria-hidden="true" />
   <path class="province-map__focus-back" aria-hidden="true" />
@@ -90,7 +96,7 @@ const { provinces, canaryIslands, cityInset } = geography;
     fill: var(--color-ink-muted);
     font: 700 1.1875rem var(--font-body);
   }
-  .province-map__province.is-city .province-map__label { fill: var(--color-ink); }
+  .province-map__label--city { fill: var(--color-ink); pointer-events: none; }
   .province-map__frame {
     fill: none;
     stroke: var(--color-ink);

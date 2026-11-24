@@ -81,6 +81,14 @@ export const routes = {
   agentParties: () => withBase('/agentes/partidos.json'),
   /** Data for the AI agents of the browser (WebMCP): one program, with the full text of each measure. */
   agentProgram: (partyId: string) => withBase(`/agentes/${partyId}.json`),
+  /** Data for the AI agents of the browser (WebMCP): poll averages and individual polls. */
+  agentPolls: () => withBase('/agentes/encuestas.json'),
+  /** Data for the AI agents of the browser (WebMCP): index and statistics of every published debate. */
+  agentDebates: () => withBase('/agentes/debates.json'),
+  /** Data for the AI agents of the browser (WebMCP): interventions and interruptions of one debate. */
+  agentDebate: (slug: string) => withBase(`/agentes/debates/${slug}.json`),
+  /** Data for the AI agents of the browser (WebMCP): key dates and deadlines of the election. */
+  agentCalendar: () => withBase('/agentes/calendario.json'),
   categories: () => withBase('/categorias/'),
   category: (categoryId: string) => withBase(`/categorias/${categoryId}/`),
   calendar: () => withBase('/calendario/'),

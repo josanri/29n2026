@@ -55,8 +55,11 @@ export function homeMarkdown(site: URL | undefined): string {
     '',
     '## Datos para agentes',
     '',
-    `- Lista de partidos, categorías y temas que dividen, en JSON: ${absolute(routes.agentParties(), site)}`,
+    `- Lista de partidos, provincias, categorías y temas que dividen, en JSON: ${absolute(routes.agentParties(), site)}`,
     `- Un programa completo, en JSON: ${absolute(routes.agentProgram('<partido>'), site)}`,
+    `- Encuestas y media móvil, en JSON: ${absolute(routes.agentPolls(), site)}`,
+    `- Debates (índice y estadísticas), en JSON: ${absolute(routes.agentDebates(), site)}`,
+    `- Calendario electoral, en JSON: ${absolute(routes.agentCalendar(), site)}`,
     '',
   ];
   return lines.join('\n');

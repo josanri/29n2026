@@ -114,16 +114,19 @@ const networks = [
           <fieldset class="start-form__categories">
             <legend>Categorías <span class="start-form__optional">(opcional)</span></legend>
             <p class="start-form__hint" id="categories-hint">Sin elegir ninguna, salen medidas de todas.</p>
-            <div class="cat-chips">
-              {
-                categories.map((category) => (
-                  <label class="cat-chip">
-                    <input type="checkbox" name="category" value={category.name} />
-                    <span>{category.name}</span>
-                  </label>
-                ))
-              }
-            </div>
+            <details class="cat-details">
+              <summary>Elegir categorías <span class="cat-details__count" id="categories-count"></span></summary>
+              <div class="cat-chips">
+                {
+                  categories.map((category) => (
+                    <label class="cat-chip">
+                      <input type="checkbox" name="category" value={category.name} />
+                      <span>{category.name}</span>
+                    </label>
+                  ))
+                }
+              </div>
+            </details>
           </fieldset>
           <!-- The parties of the province. The reader can leave some out. -->
           <fieldset class="preview" id="preview" hidden>
@@ -483,6 +486,11 @@ const networks = [
     stepQuiz.scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
     card.focus({ preventScroll: true });
   };
+  // The summary of the categories shows how many the reader picked.
+  $('.cat-details').addEventListener('change', () => {
+    const picked = document.querySelectorAll('input[name="category"]:checked').length;
+    $('#categories-count').textContent = picked ? `${picked} elegidas` : '';
+  });
   $('#start-form').addEventListener('submit', (event) => {
     event.preventDefault();
     startRound();
@@ -855,6 +863,34 @@ const networks = [
   .game .cat-chip:has(input:checked) { background: var(--color-ink); color: var(--color-paper); }
   .game .cat-chip:has(input:checked) span::before { content: '✓ '; }
   .game .cat-chip:has(input:focus-visible) { outline: 3px solid var(--color-ink); outline-offset: 2px; }
+  /* On a phone: the sizes fill one row of four equal cells, and the categories fill two equal columns. */
+  @media (max-width: 40rem) {
+    .game .start-form__field { flex: 1 1 100%; }
+    .game .start-form__sizes { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2); }
+    .game .start-form__sizes legend { grid-column: 1 / -1; float: none; margin: 0; }
+    .game .start-form__sizes label { display: block; }
+    .game .start-form__sizes span { min-width: 0; padding: 0; }
+    .game .cat-chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+    .game .cat-chip { min-height: 38px; padding: 4px 8px; font-size: 0.8125rem; line-height: 1.15; overflow-wrap: anywhere; }
+    .game .cat-chip:has(input:checked) span::before { content: '✓'; margin-right: 4px; }
+  }
+  .game .cat-details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 12px;
+    border: var(--border-thin) solid var(--color-ink);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+    list-style: none;
+  }
+  .game .cat-details > summary::-webkit-details-marker { display: none; }
+  .game .cat-details > summary::after { content: '+'; font-size: 1.5rem; line-height: 1; }
+  .game .cat-details[open] > summary::after { content: '−'; }
+  .game .cat-details > summary:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 2px; }
+  .game .cat-details__count { margin-left: auto; margin-right: var(--space-2); font-weight: 500; }
+  .game .cat-details .cat-chips { margin-top: var(--space-2); }
   .game .party-option { display: inline-flex; align-items: stretch; min-height: 44px; cursor: pointer; }
   .game .party-option input { width: 20px; height: 20px; margin: auto var(--space-2); accent-color: var(--color-ink); }
   .game .party-option .party-tag { padding-inline: 10px; }

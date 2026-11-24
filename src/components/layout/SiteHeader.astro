@@ -3,7 +3,6 @@ import { publishedFirst, type Program } from '@/lib/programs';
 import { nationalPrograms, regionalPrograms, regionalRegions, regionalProgramsIn } from '@/lib/presence';
 import { routes } from '@/lib/routes';
 import { jointListMembers } from '@/lib/relations';
-import { SITE_NAME } from '@/lib/site';
 import Wordmark from './Wordmark.astro';
 import { siteTests } from '@/lib/tests';
 import { debates } from '@/lib/debates';
@@ -105,8 +104,8 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
 <header class="site-header">
   <!-- data-nosnippet: the menu (party names, «Sin programa») is never the text of a search result. -->
   <div class="container site-header__row" data-nosnippet>
-    <a class="logo" href={routes.home()} aria-label={`${SITE_NAME}, inicio`}>
-      <Wordmark />
+    <a class="logo" href={routes.home()}>
+      <Wordmark /><span class="sr-only">, inicio</span>
     </a>
     <nav class="nav" id="site-nav" aria-label="Principal">
       {menus.map((menu) => (

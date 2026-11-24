@@ -14,15 +14,26 @@ import { SECTION_SHARE_IMAGES } from '@/lib/site';
 import Panel from '@/components/ui/Panel.astro';
 import Tag from '@/components/ui/Tag.astro';
 import { election } from '@eleccion/eleccion';
-import { DEFAULT_SAMPLE, FRENTE_AMPLIO_FROM, pollAggregator, pollParties, polls, pollsters, type Poll, type PollPartyId } from '@eleccion/encuestas';
+import { DEFAULT_SAMPLE, FRENTE_AMPLIO_FROM, pollAggregator, pollParties, polls, pollsters } from '@eleccion/encuestas';
 import { ABSOLUTE_MAJORITY } from '@eleccion/congreso';
 import { formatLongDate } from '@/lib/format';
 import { pollIds } from '@/lib/routes';
+import {
+  DAY_MS,
+  POLL_ELECTION_DATE,
+  averageOn,
+  estimateOf,
+  pollDates,
+  pollTime,
+  sortedPolls,
+  type PollEstimate as Estimate,
+  type PollMetric as Metric,
+} from '@/lib/polls';
 import { renderPollChart, type PollChartData } from '@/lib/poll-chart';
 
-const DAY = 86_400_000;
-const time = (date: string) => new Date(`${date}T12:00:00Z`).getTime();
-const sorted = [...polls].sort((a, b) => time(a.date) - time(b.date));
+const DAY = DAY_MS;
+const time = pollTime;
+const sorted = sortedPolls;
 // The id of each row, the same as the link of the poll in the RSS feed (`-2` for a second poll of a day).
 const pollAnchors = pollIds(polls);
 const pollsterById = Object.fromEntries(pollsters.map((pollster) => [pollster.id, pollster]));
@@ -30,50 +41,12 @@ const percent = (value: number | null | undefined) => (value == null ? '–' : v
 const shortDate = (date: string) => new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'UTC' });
 
 // The election day closes the axis: the reader sees how much time is left.
-const electionDate = '2026-11-29';
+const electionDate = POLL_ELECTION_DATE;
 const start = time('2026-06-01');
 const end = time(electionDate);
 // Five days before election day (art. 69.8 of the LOREG): from 00:00 of the 24th until the vote.
 const banStart = new Date(`${electionDate}T00:00:00Z`).getTime() - 5 * DAY;
-
-/**
- * Two views of the same polls:
- * - `pct`: the vote share. The halo is the margin of error at 95 % (±1,96·√(p·(1−p)/n)) of a poll of that sample.
- * - `seats`: the seats. The halo is the range (horquilla) that the pollster publishes.
- */
-type Metric = 'pct' | 'seats';
-type Estimate = { mid: number; lo: number; hi: number };
-const marginOfError = (share: number, sample: number) => 196 * Math.sqrt(((share / 100) * (1 - share / 100)) / sample);
-const estimateOf = (poll: Poll, party: PollPartyId, metric: Metric): Estimate | null => {
-  if (metric === 'pct') {
-    const value = poll.values[party] ?? null;
-    if (value === null) return null;
-    const margin = marginOfError(value, poll.sample ?? DEFAULT_SAMPLE);
-    return { mid: value, lo: Math.max(0, value - margin), hi: value + margin };
-  }
-  const seats = poll.seats?.[party];
-  if (seats == null) return null;
-  const [lo, hi] = Array.isArray(seats) ? seats : [seats, seats];
-  return { mid: (lo + hi) / 2, lo, hi };
-};
-
-// The average of «Todas»: on each date with a poll, the last poll of each pollster in the 21 days before.
-// Its halo is the average of the halos of those polls.
-const WINDOW = 21 * DAY;
-const averageOn = (date: string, party: PollPartyId, metric: Metric): Estimate | null => {
-  const latest = new Map<string, Estimate>();
-  for (const poll of sorted) {
-    const age = time(date) - time(poll.date);
-    const estimate = estimateOf(poll, party, metric);
-    if (age < 0 || age > WINDOW || !estimate) continue;
-    latest.set(poll.pollster, estimate);
-  }
-  const list = [...latest.values()];
-  if (!list.length) return null;
-  const mean = (key: keyof Estimate) => list.reduce((sum, item) => sum + item[key], 0) / list.length;
-  return { mid: mean('mid'), lo: mean('lo'), hi: mean('hi') };
-};
-const dates = [...new Set(sorted.map((poll) => poll.date))];
+const dates = pollDates;
 
 type Line = { party: (typeof pollParties)[number]; points: [string, Estimate][] };
 const linesFor = (filter: string, metric: Metric): Line[] =>
@@ -265,20 +238,27 @@ const lastUpdate = sorted.at(-1)!.date;
         En la escala logarítmica, cada línea de la cuadrícula es el doble o algo más que la de abajo: los partidos pequeños se
         separan y se leen mejor. Un valor por debajo del 0,1 % (o de 1 escaño) se dibuja sobre esa línea.
       </p>
-      <p class="poll-note" data-note="pct">
-        El halo de cada línea es el margen de error al 95 %: con {DEFAULT_SAMPLE.toLocaleString('es-ES')} entrevistas, un partido con
-        el 30 % puede estar entre el 27,2 % y el 32,8 %.
-        {knownSamples < polls.length && ` Cuando la publicación no da la muestra (${polls.length - knownSamples} de ${polls.length} encuestas), se supone una de ${DEFAULT_SAMPLE.toLocaleString('es-ES')} entrevistas: ese margen es orientativo.`}
-        {' '}«Frente Amplio» (antes Sumar) es la suma que publica cada encuestadora para Frente Amplio y sus socios, Compromís incluido. Sigma Dos no publica a SALF por separado. Los partidos de ámbito autonómico empiezan ocultos: abre «Partidos autonómicos» y pulsa su nombre para verlos. Sus cifras salen de la tabla de encuestas de Wikipedia en inglés, y 40dB. solo publica sus escaños.
-      </p>
+      <p class="poll-note" data-note="pct">El halo de cada línea es el margen de error al 95 %.</p>
       <p class="poll-note" data-note="seats" hidden>
         Escaños que publica cada encuestadora. El halo es su horquilla (por ejemplo, de 130 a 136) y la línea va por el centro.
         La línea discontinua marca la mayoría absoluta de {ABSOLUTE_MAJORITY} escaños.
       </p>
       <p class="poll-note poll-note--ban">
         <span class="poll-note__swatch" aria-hidden="true"></span>
-        <span>La franja con trama (del 24 al 28 de noviembre) marca los cinco días previos a la votación sin publicación de encuestas (art. 69.8 de la LOREG).</span>
+        <span>La franja con trama (24-28 de noviembre): no se publican encuestas (art. 69.8 de la LOREG).</span>
       </p>
+      <details class="poll-more">
+        <summary>Más sobre los datos</summary>
+        <ul>
+          <li>
+            Margen de error: con {DEFAULT_SAMPLE.toLocaleString('es-ES')} entrevistas, un partido con el 30 % puede estar entre el 27,2 % y el 32,8 %.
+            {knownSamples < polls.length && ` Si la publicación no da la muestra (${polls.length - knownSamples} de ${polls.length} encuestas), se supone una de ${DEFAULT_SAMPLE.toLocaleString('es-ES')}: ese margen es orientativo.`}
+          </li>
+          <li>«Frente Amplio» (antes Sumar) suma Frente Amplio y sus socios, Compromís incluido.</li>
+          <li>Sigma Dos no publica a SALF por separado.</li>
+          <li>Los partidos autonómicos empiezan ocultos. Sus cifras salen de la tabla de encuestas de Wikipedia en inglés; 40dB. solo publica sus escaños.</li>
+        </ul>
+      </details>
     </Panel>
 
     <SectionHeading title="La última de cada una">
@@ -600,6 +580,18 @@ const lastUpdate = sorted.at(-1)!.date;
   .poll-chart :global(.poll-chart__dots circle:hover) { opacity: 1; stroke-width: 2; }
   .poll-note { margin: var(--space-3) 0 0; font-size: 0.9375rem; }
   .poll-note--ban { display: flex; align-items: flex-start; gap: 8px; }
+  .poll-more { margin-top: var(--space-2); font-size: 0.9375rem; }
+  .poll-more summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .poll-more ul { margin: 0; padding-left: 1.2em; }
+  .poll-more li + li { margin-top: 4px; }
   .poll-note__swatch {
     flex: none;
     width: 14px;

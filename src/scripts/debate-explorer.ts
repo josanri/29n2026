@@ -97,14 +97,26 @@ const matchesPair = (turn: HTMLElement) => {
   return (turn.dataset.speaker === by && turn.dataset.of === of) || (turn.dataset.speaker === of && turn.dataset.cutby === by);
 };
 
+/** The arrow of the icon `arrow-right` (see Icon.astro), made here because the chips are made in the script. */
+const arrowIcon = () => {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 20 20');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('focusable', 'false');
+  svg.setAttribute('class', 'chip__arrow');
+  svg.innerHTML = '<path d="M2.5 10h13.5"/><path d="m10.5 4.5 5.5 5.5-5.5 5.5"/>';
+  return svg;
+};
+
 const renderChips = () => {
   chipsEl.replaceChildren();
-  const add = (label: string, key: string) => {
+  /** `parts` is the text of the chip, when it is not only `label`: `label` stays the name for a screen reader. */
+  const add = (label: string, key: string, parts: (string | Node)[] = [label]) => {
     const chip = document.createElement('button');
     chip.type = 'button';
     chip.className = 'chip';
     chip.dataset.clear = key;
-    chip.textContent = `${label} ×`;
+    chip.append(...parts, ' ×');
     chip.setAttribute('aria-label', `Quitar el filtro ${label}`);
     chipsEl.append(chip);
   };
@@ -112,7 +124,7 @@ const renderChips = () => {
   if (state.kind) add(kindLabels[state.kind], 'kind');
   if (state.pair) {
     const [by, of] = state.pair.split('|');
-    add(`${nameOf(by)} → ${nameOf(of)}`, 'pair');
+    add(`${nameOf(by)} a ${nameOf(of)}`, 'pair', [`${nameOf(by)} `, arrowIcon(), ` ${nameOf(of)}`]);
   }
   if (state.speaker) add(nameOf(state.speaker), 'speaker');
   if (state.topic) add(topicName(state.topic), 'topic');

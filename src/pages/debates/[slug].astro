@@ -9,6 +9,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
+import Icon from '@/components/ui/Icon.astro';
 import type { DebateSpeaker } from '@/lib/debate';
 import { debates } from '@/lib/debates';
 import { programs } from '@/lib/programs';
@@ -486,8 +487,8 @@ const ASIDE_WORDS = 15;
         <ul class="sides" aria-label="Interrupciones por orador">
           <li class="sides__head" aria-hidden="true">
             <span />
-            <span class="sides__dir sides__dir--left">← Le interrumpen</span>
-            <span class="sides__dir">Interrumpe →</span>
+            <span class="sides__dir sides__dir--left"><Icon name="arrow-left" inline /> Le interrumpen</span>
+            <span class="sides__dir">Interrumpe <Icon name="arrow-right" inline /></span>
           </li>
           {sideRows.map((row) => (
             <li style={`--party: ${colorOf(row.speaker.id)}`}>
@@ -527,7 +528,7 @@ const ASIDE_WORDS = 15;
             <caption class="sr-only">Número de cortes de cada hablante (filas) a cada hablante (columnas)</caption>
             <thead>
               <tr>
-                <th scope="col"><span class="sr-only">Quién corta</span><span aria-hidden="true">Corta ↓ · a →</span></th>
+                <th scope="col"><span class="sr-only">Quién corta</span><span aria-hidden="true">Corta <Icon name="arrow-down" inline /> · a <Icon name="arrow-right" inline /></span></th>
                 {people.map((col) => (
                   <th scope="col" style={`--party: ${colorOf(col.id)}`}>
                     <span class="matrix__col"><span class="rhythm__swatch" aria-hidden="true" />{surnameOf(col.id)}</span>
@@ -1352,6 +1353,18 @@ const ASIDE_WORDS = 15;
     color: var(--color-on-highlight);
     font: 700 0.875rem var(--font-body);
     cursor: pointer;
+  }
+  /* The arrow between two names, drawn like the icons of the site (Icon.astro). */
+  :global(.chip__arrow) {
+    flex: none;
+    width: 1em;
+    height: 1em;
+    margin: 0 0.25em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
   }
   :global(.chip:hover),
   :global(.chip:focus-visible) { background: var(--color-ink); color: var(--color-paper); outline: none; }

@@ -4,7 +4,21 @@
  * The icons of the platforms are filled marks; the icons of the actions are 2 px lines.
  */
 interface Props {
-  name: 'copy' | 'clipboard' | 'share' | 'download' | 'mail' | 'whatsapp' | 'telegram' | 'x' | 'facebook' | 'linkedin';
+  name:
+    | 'copy'
+    | 'clipboard'
+    | 'share'
+    | 'download'
+    | 'mail'
+    | 'image'
+    | 'video'
+    | 'loop'
+    | 'chevron'
+    | 'whatsapp'
+    | 'telegram'
+    | 'x'
+    | 'facebook'
+    | 'linkedin';
 }
 
 const { name } = Astro.props;
@@ -23,6 +37,12 @@ const lines: Record<string, string[]> = {
   // A clipboard: copy the image, not the link.
   clipboard: ['M9 3h6v4H9z', 'M9 5H5v16h14V5h-4'],
   mail: ['M3 5h18v14H3z', 'M3 7l9 6l9-6'],
+  // The kinds of file of the image dialog: a picture, a film camera and a loop (the GIF repeats).
+  image: ['M3 4h18v16H3z', 'M3 16l5-5l4 4l3-3l6 6', 'M16 7a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3z'],
+  video: ['M2 6h14v12H2z', 'M16 10l6-3.5v11L16 14'],
+  loop: ['M4 12a8 8 0 0 1 14-5.3', 'M18 3v4h-4', 'M20 12a8 8 0 0 1-14 5.3', 'M6 21v-4h4'],
+  // The arrow of a menu that opens down.
+  chevron: ['M6 9l6 6l6-6'],
   // A speech bubble with a handset.
   whatsapp: [
     'M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z',

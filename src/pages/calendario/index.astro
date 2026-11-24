@@ -103,6 +103,21 @@ const months = monthKeys.map((key) => {
         De la convocatoria a la constitución de las Cortes. Añade cada fecha a tu calendario o descarga todas a la vez.
       </p>
       <p class="countdown" id="countdown" data-election={ELECTION_DATE} aria-live="polite"></p>
+      <script is:inline>
+        (function () {
+          const el = document.getElementById('countdown');
+          if (!el) return;
+          const [y, m, d] = (el.dataset.election || '').split('-').map(Number);
+          const now = new Date();
+          const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000;
+          const days = Date.UTC(y, m - 1, d) / 86400000 - today;
+          el.textContent =
+            days > 1 ? `Faltan ${days} días para las elecciones.` :
+            days === 1 ? 'Las elecciones son mañana.' :
+            days === 0 ? 'Hoy es el día de las elecciones.' :
+            'Las elecciones ya se celebraron.';
+        })();
+      </script>
       <div class="page-hero__actions">
         <Button variant="ink" href={routes.calendarIcs()} download="elecciones-29n-2026.ics">Añadir todo a mi calendario (.ics)</Button>
       </div>
@@ -399,7 +414,7 @@ const months = monthKeys.map((key) => {
   .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 44px 0; }
   .page-hero h1 { font-size: clamp(3.25rem, 12cqi, 8.5rem); margin: var(--space-4) 0; }
   .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
-  .countdown { margin: var(--space-4) 0; font: 700 1.25rem var(--font-body); }
+  .countdown { margin: var(--space-4) 0; min-height: 1.5em; font: 700 1.25rem / 1.5 var(--font-body); }
   .page-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
   /* The button that shows or hides the past months, or the past dates. */

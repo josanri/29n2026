@@ -332,7 +332,7 @@ for (const figure of program.figures) {
                 );
                 return (
                   <>
-                    <p class="figures-hint" aria-hidden="true">Desliza para ver más cifras →</p>
+                    <p class="figures-hint" aria-hidden="true">Desliza para ver más cifras <Icon name="arrow-right" inline /></p>
                     <div class="figures" tabindex="0" role="region" aria-label="Cifras del programa: desliza para ver más">{shown.map((figure) => card(figure))}</div>
                     {hidden.length > 0 && (
                       <details class="figures-more">

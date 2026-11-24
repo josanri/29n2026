@@ -73,7 +73,7 @@ const siteSections = [
 
   <div class="container">
     <div class="stack">
-      <Panel title="Lo esencial">
+      <Panel as="h2" title="Lo esencial">
         <Fragment slot="icon"><Icon name="info" size={24} /></Fragment>
         <dl class="facts">
           {keyFacts.map((fact) => (
@@ -89,21 +89,21 @@ const siteSections = [
 
       <!-- The summary panels: two text columns on a wide screen, so the page does not leave half of its width empty. -->
       <div class="columns">
-      <Panel title="Votar en persona">
+      <Panel as="h2" title="Votar en persona">
         <Fragment slot="icon"><Icon name="voter" size={24} /></Fragment>
-        <h4>Dónde</h4>
+        <h3>Dónde</h3>
         <ul>
           <li>La Oficina del Censo Electoral envía la tarjeta censal. Indica tu sección y tu Mesa, y avisa de los cambios.</li>
           <li><strong>Busca tu Mesa:</strong> en el <a href={INE_MESAS} rel="noopener" target="_blank">buscador del INE<span class="sr-only"> (se abre en otra pestaña)</span></a> eliges la provincia, el municipio y la inicial de tu primer apellido, y te dice tu local, tu sección y tu Mesa. No necesitas certificado digital. También puedes preguntar en tu ayuntamiento o en la Delegación Provincial de la Oficina del Censo Electoral.</li>
           <li>Solo puedes votar en la Mesa que te corresponde. Los interventores votan en la Mesa donde están acreditados, si está en su circunscripción.</li>
           <li>Si no estás en la lista, solo puedes votar con una sentencia judicial que reconozca tu derecho o con un certificado censal específico de la Delegación Provincial de la Oficina del Censo Electoral.</li>
         </ul>
-        <h4>Con qué documento</h4>
+        <h3>Con qué documento</h3>
         <ul>
           {identification.map((item) => <li set:html={item} />)}
         </ul>
         <p class="more">Más detalles en la <a href={link('/informacion-general/como-votar/voto-presencial')} rel="noopener" target="_blank">página oficial del voto presencial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
-        <h4>Cómo es el voto</h4>
+        <h3>Cómo es el voto</h3>
         <ul>
           <li>Dices tu nombre y apellidos a la Presidencia. Los vocales y los interventores comprueban tu identidad y el censo.</li>
           <li>Entregas el sobre cerrado a la Presidencia. Dice tu nombre en voz alta, añade «Vota» y te devuelve el sobre para que lo metas en la urna.</li>
@@ -111,7 +111,7 @@ const siteSections = [
           <li>Solo los miembros de la Mesa pueden explicarte cómo votar, si se lo pides.</li>
           <li>La votación termina a las 20:00. Quien está dentro del local a esa hora puede votar.</li>
         </ul>
-        <h4>El día de la votación</h4>
+        <h3>El día de la votación</h3>
         <ul>
           <li>La Mesa se constituye a las 8:00. La Presidencia es la única autoridad para mantener el orden dentro del local.</li>
           <li>No se permite propaganda de ningún tipo en el local ni cerca de él. Las siglas que llevan interventores y apoderados para identificarse no son propaganda.</li>
@@ -120,7 +120,7 @@ const siteSections = [
         </ul>
       </Panel>
 
-      <Panel title="Voto válido, en blanco y nulo">
+      <Panel as="h2" title="Voto válido, en blanco y nulo">
         <Fragment slot="icon"><Icon name="envelope" size={24} /></Fragment>
         <ul class="votes">
           <li class="votes__kind"><span class="votes__tile"><Icon name="vote-valid" size={24} /></span><span><strong>Válido:</strong> un voto a una candidatura o un voto en blanco.</span></li>
@@ -136,7 +136,7 @@ const siteSections = [
         </ul>
       </Panel>
 
-      <Panel title="Voto por correo desde España">
+      <Panel as="h2" title="Voto por correo desde España">
         <Fragment slot="icon"><Icon name="mail" size={24} /></Fragment>
         <ul>
           <li>Puedes pedirlo del 6 de octubre al 19 de noviembre. <a href={link('/informacion-general/como-votar/voto-por-correo-desde-espana/')} rel="noopener" target="_blank">Página oficial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</li>
@@ -153,9 +153,9 @@ const siteSections = [
         </ul>
       </Panel>
 
-      <Panel title="Votar desde el extranjero">
+      <Panel as="h2" title="Votar desde el extranjero">
         <Fragment slot="icon"><Icon name="globe" size={24} /></Fragment>
-        <h4>Residentes permanentes (CERA)</h4>
+        <h3>Residentes permanentes (CERA)</h3>
         <ul>
           <li>Reciben el material por correo certificado del 24 de octubre al 1 de noviembre. Las papeletas oficiales llegan hasta el 11 de noviembre, o hasta el 14 si se recurre alguna candidatura.</li>
           <li>Pueden descargar el juego completo de papeletas del 2 al 7 de noviembre. Solo se puede descargar el juego completo, para proteger el secreto del voto.</li>
@@ -164,13 +164,13 @@ const siteSections = [
           <li>Quien está de forma temporal en España puede pedir el voto por correo, como los residentes, hasta el 19 de noviembre. Lo envía a la Junta Electoral Provincial hasta el 25 de noviembre. No puede votar en una Mesa.</li>
           <li>La página oficial del CERA muestra una medida cautelar del Tribunal Supremo (<a href={JEC} rel="noopener" target="_blank">acuerdo 270/2026 de la JEC<span class="sr-only"> (se abre en otra pestaña)</span></a>). Consulta la web oficial para saber qué cambia.</li>
         </ul>
-        <h4>Residentes temporales (ERTA)</h4>
+        <h3>Residentes temporales (ERTA)</h3>
         <ul>
           <li>La solicitud terminó el 31 de octubre. Se entrega en persona en el consulado o en la embajada.</li>
           <li>La Oficina del Censo Electoral envía el material hasta el 17 de noviembre.</li>
           <li>El elector devuelve el sobre por correo certificado hasta el 25 de noviembre. El matasellos debe mostrar que se respetó el plazo.</li>
         </ul>
-        <h4>Otros procedimientos</h4>
+        <h3>Otros procedimientos</h3>
         <ul>
           <li><strong>Tripulaciones de barcos:</strong> piden el certificado a la Oficina del Censo Electoral por radiotelegrafía, correo electrónico, fax u otro medio, y envían el voto desde un puerto.</li>
           <li><strong>Fuerzas Armadas en misiones en el exterior:</strong> el mando de la unidad envía la lista al Ministerio de Defensa. El Ministerio entrega los votos a Correos antes del tercer día previo a la votación.</li>
@@ -179,7 +179,7 @@ const siteSections = [
         <p class="more">Las fechas están en el <a href={routes.calendar()}>calendario</a>. Más detalles en la <a href={link('/informacion-general/resuelva-sus-dudas/las-cortes-generales')} rel="noopener" target="_blank">página oficial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
       </Panel>
 
-      <Panel title="Si te toca una Mesa">
+      <Panel as="h2" title="Si te toca una Mesa">
         <Fragment slot="icon"><Icon name="mesa" size={24} /></Fragment>
         <ul>
           <li>Formar parte de una Mesa es obligatorio. Hay un presidente, dos vocales y dos suplentes para cada uno.</li>
@@ -196,7 +196,7 @@ const siteSections = [
         <p class="more">Para más detalle, lee el <a href={link('/informacion-mesas/manual-de-instrucciones-mesas/')} rel="noopener" target="_blank">manual de instrucciones<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
       </Panel>
 
-      <Panel title="Escrutinio y resultados">
+      <Panel as="h2" title="Escrutinio y resultados">
         <Fragment slot="icon"><Icon name="count" size={24} /></Fragment>
         <ul>
           <li>Al terminar la votación, la Presidencia saca los sobres uno a uno, lee en voz alta la candidatura y enseña la papeleta. Se cuenta primero el Congreso y después el Senado.</li>
@@ -207,7 +207,7 @@ const siteSections = [
         </ul>
       </Panel>
 
-      <Panel title="Cómo se reparten los escaños">
+      <Panel as="h2" title="Cómo se reparten los escaños">
         <Fragment slot="icon"><Icon name="hemicycle" size={24} /></Fragment>
         <ul>
           <li><strong>Congreso:</strong> 350 diputados. Cada provincia tiene dos como mínimo, Ceuta y Melilla tienen uno cada una, y los otros 248 se reparten según la población. Las listas son cerradas y bloqueadas: eliges un partido, no personas.</li>
@@ -220,7 +220,7 @@ const siteSections = [
         </ul>
       </Panel>
 
-      <Panel title="Permiso para votar">
+      <Panel as="h2" title="Permiso para votar">
         <Fragment slot="icon"><Icon name="clock" size={24} /></Fragment>
         <ul>
           <li>Quien trabaja el 29 de noviembre puede disponer de hasta cuatro horas retribuidas para votar. Con jornada reducida, el permiso se reduce en proporción.</li>
@@ -228,7 +228,7 @@ const siteSections = [
         </ul>
       </Panel>
 
-      <Panel title="Accesibilidad del voto">
+      <Panel as="h2" title="Accesibilidad del voto">
         <Fragment slot="icon"><Icon name="access" size={24} /></Fragment>
         <ul>
           <li>Todas las personas pueden votar, se comuniquen como se comuniquen y con el apoyo que necesiten (<a href={`${LOREG}#a3`} rel="noopener" target="_blank">art. 3.2 LOREG<span class="sr-only"> (se abre en otra pestaña)</span></a>).</li>
@@ -244,13 +244,13 @@ const siteSections = [
         <p class="more">Lee la <a href={link('/accesibilidad/guia-sobre-accesibilidad')} rel="noopener" target="_blank">guía oficial<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
       </Panel>
 
-      <Panel title="Fechas del proceso">
+      <Panel as="h2" title="Fechas del proceso">
         <Fragment slot="icon"><Icon name="calendar" size={24} /></Fragment>
         <p>Las fechas del proceso (consulta del censo, voto por correo, campaña, votación y escrutinio) están en el <a href={routes.calendar()}>calendario</a> de esta web, con un enlace a la página oficial de cada una y la opción de añadirlas a tu agenda.</p>
       </Panel>
       </div>
 
-      <Panel title="Más en la web oficial" lead="Estos apartados no están resumidos aquí. Cada enlace lleva a la web del Ministerio del Interior.">
+      <Panel as="h2" title="Más en la web oficial" lead="Estos apartados no están resumidos aquí. Cada enlace lleva a la web del Ministerio del Interior.">
         <Fragment slot="icon"><Icon name="external" size={24} /></Fragment>
         <ul class="sections">
           {siteSections.map((section) => (
@@ -259,7 +259,7 @@ const siteSections = [
         </ul>
       </Panel>
 
-      <Panel title="Fuente">
+      <Panel as="h2" title="Fuente">
         <Fragment slot="icon"><Icon name="summary" size={24} /></Fragment>
         <p>Resumen de <a href={SOURCE_URL} rel="noopener" target="_blank">29neleccionesgenerales.es<span class="sr-only"> (se abre en otra pestaña)</span></a> (Ministerio del Interior), consultado el 17 de noviembre de 2026. Esta web es informativa e independiente y no es una fuente oficial: antes de actuar, comprueba los plazos y los requisitos en la web oficial.</p>
         <p>Contacto oficial: <a href={`mailto:${OFFICIAL_EMAIL}`}>{OFFICIAL_EMAIL}</a> · <a href={INFOELECTORAL} rel="noopener" target="_blank">infoelectoral.interior.gob.es<span class="sr-only"> (se abre en otra pestaña)</span></a> · teléfono 060.</p>
@@ -283,8 +283,8 @@ const siteSections = [
   /* The links to the official site: short items in two columns. */
   .sections { columns: 2 26rem; column-gap: var(--space-6); }
   .sections li { break-inside: avoid; margin: 0 0 var(--space-2); }
-  h4 { font-size: 1.125rem; margin: var(--space-4) 0 var(--space-2); }
-  h4:first-child { margin-top: 0; }
+  h3 { font-size: 1.125rem; margin: var(--space-4) 0 var(--space-2); }
+  h3:first-child { margin-top: 0; }
   .facts { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-2) var(--space-4); margin: 0; }
   .facts dt { font-weight: 700; }
   .facts dd { margin: 0; }

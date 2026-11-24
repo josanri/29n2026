@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Panel from '@/components/ui/Panel.astro';
 import SectionHeading from '@/components/ui/SectionHeading.astro';
 import Tag from '@/components/ui/Tag.astro';
+import Icon from '@/components/ui/Icon.astro';
 import CategoryRose from '@/components/charts/CategoryRose.astro';
 import { sphereCategories, sphereTotal } from '@/lib/sphere';
 import { announcedMeasures, programs, publishedPrograms } from '@/lib/programs';
@@ -137,7 +138,7 @@ const categoryPetals = sphereCategories.map((category) => ({
         <p class="heat-filters__summary" id="heat-summary" aria-live="polite"></p>
       </div>
       <p class="heat-empty" id="heat-empty" hidden>Ninguna categoría o partido coincide con los filtros.</p>
-      <p class="swipe-hint" aria-hidden="true">Desliza la tabla para ver todos los partidos →</p>
+      <p class="swipe-hint" aria-hidden="true">Desliza la tabla para ver todos los partidos <Icon name="arrow-right" inline /></p>
       <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: peso de cada categoría en cada programa">
         <table class="heatmap" style={`--cols:${comparable.length}`}>
           <caption class="sr-only">
@@ -226,7 +227,7 @@ const categoryPetals = sphereCategories.map((category) => ({
                 ))}
               </ol>
               <a class="heatlist__all" href={routes.category(category.id)}>
-                Ver las {formatNumber(total)} medidas de {category.name.toLowerCase()} →
+                Ver las {formatNumber(total)} medidas de {category.name.toLowerCase()} <Icon name="arrow-right" inline />
               </a>
             </details>
           );
@@ -595,7 +596,7 @@ const categoryPetals = sphereCategories.map((category) => ({
     .heat-filters__summary { margin: 0; text-align: right; }
   }
 
-  .table-wrap { overflow-x: auto; }
+  .table-wrap { overflow-x: auto; content-visibility: auto; contain-intrinsic-size: auto 900px; }
   .table-wrap:focus-visible { outline-offset: 2px; }
   /* Fixed layout: the category column has one width and the party columns share the rest in equal parts. */
   .heatmap {
@@ -752,7 +753,7 @@ const categoryPetals = sphereCategories.map((category) => ({
 
   @media (max-width: 700px) {
     .table-wrap, .swipe-hint { display: none; }
-    .heatlist { display: block; }
+    .heatlist { display: block; content-visibility: auto; contain-intrinsic-size: auto 900px; }
     /* The list already has each category, its text and its link: the second section would say the same. */
     .read-section { display: none; }
   }
