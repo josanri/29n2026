@@ -4,6 +4,9 @@ import { election } from '@eleccion/eleccion';
 /** The brand. It does not carry the election, so the site can host other elections. */
 export const SITE_NAME = 'Electosfera';
 
+/** Other names of the brand, for the structured data (`src/lib/structured-data.ts`). */
+export const SITE_ALTERNATE_NAMES = ['electosfera.es'];
+
 export const DEFAULT_DESCRIPTION = `Los programas electorales de las ${election.name.toLowerCase()} del ${election.longDate} (${election.shortName}), medida a medida: categorías, cifras, plazos y diagramas.`;
 
 /** The title of the RSS feed (`src/pages/novedades.xml.ts`): the head of each page and the footer use it too. */

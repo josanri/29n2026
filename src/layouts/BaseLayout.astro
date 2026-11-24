@@ -14,6 +14,7 @@ import Tooltip from '@/components/ui/Tooltip.astro';
 import { partyHighlightStyle, partyScaleStyle, readableTextColor, sphereStyle } from '@/lib/color';
 import { DEFAULT_DESCRIPTION, DEFAULT_SHARE_IMAGE, FEED_TITLE, SITE_NAME, THEME_STORAGE_KEY, X_HANDLE, type ShareImage } from '@/lib/site';
 import { routes } from '@/lib/routes';
+import { jsonLdText } from '@/lib/structured-data';
 
 interface Props {
   title: string;
@@ -27,13 +28,15 @@ interface Props {
   image?: ShareImage;
   /** `false` for a page with no Markdown version (the hidden design system). The others have one: `src/lib/markdown/`. */
   markdown?: boolean;
+  /** Structured data (JSON-LD) of the page, for search engines: `src/lib/structured-data.ts`. */
+  structuredData?: Record<string, unknown>;
 }
 
-const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false, image = DEFAULT_SHARE_IMAGE, markdown = true } = Astro.props;
+const { title, description = DEFAULT_DESCRIPTION, accent, accentLight, noindex = false, image = DEFAULT_SHARE_IMAGE, markdown = true, structuredData } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 // The Markdown version is the file `index.md` next to the page (see `src/lib/markdown/shared.ts`).
 const markdownHref = `${Astro.url.pathname.replace(/\/$/, '')}/index.md`;
-const fullTitle = `${title} | ${SITE_NAME}`;
+const fullTitle = title.startsWith(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 // A link preview needs the full URL of its picture.
 const imageUrl = new URL(routes.asset(image.path), Astro.site).href;
 
@@ -70,7 +73,7 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <link rel="preload" href={displayFontUrl} as="font" type="font/woff2" crossorigin />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'max-image-preview:large'} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'max-image-preview:large'} />
     <link rel="canonical" href={canonicalUrl} />
     {markdown && <link rel="alternate" type="text/markdown" href={markdownHref} />}
     <link rel="sitemap" href={routes.asset('/sitemap-index.xml')} />
@@ -92,6 +95,7 @@ const faviconHref = accent && accentLight ? `data:image/svg+xml,${encodeURICompo
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
     <meta name="twitter:image:alt" content={image.alt} />
+    {structuredData && <script is:inline type="application/ld+json" set:html={jsonLdText(structuredData)} />}
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <!-- The ICO and the PNG are for search engines and old browsers (they need a file of their own, in a multiple of

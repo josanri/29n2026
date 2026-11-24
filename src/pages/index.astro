@@ -19,7 +19,9 @@ import { partySearchText } from '@/lib/party-search';
 import { sphereCategories } from '@/lib/sphere';
 import { compareText, formatNumber } from '@/lib/format';
 import { routes } from '@/lib/routes';
+import { SITE_NAME } from '@/lib/site';
 import { tools } from '@/lib/tools';
+import { siteStructuredData } from '@/lib/structured-data';
 
 const nationalSorted = publishedFirst(nationalPrograms);
 
@@ -41,7 +43,10 @@ const examplesJson = JSON.stringify(examplesByProvince);
 const searchTopics = ['Vivienda', 'IRPF', 'Pensiones', 'Sanidad', 'Alquiler', 'Educación', 'Impuestos', 'Energía'];
 ---
 
-<BaseLayout title="Los programas, medida a medida">
+<BaseLayout
+  title={`${SITE_NAME}: programas electorales del ${election.shortName}, medida a medida`}
+  structuredData={siteStructuredData(Astro.site!)}
+>
   <Hero examplesJson={examplesJson} topics={searchTopics} />
 
   <!-- The election in one sentence, built from the counts of the data. -->

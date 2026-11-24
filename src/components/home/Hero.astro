@@ -5,7 +5,7 @@
  * there, the same sphere (same `view-transition-name`) turns into the pie chart of the categories, and each
  * slice goes to the page of its category.
  */
-import { electionLabel } from '@eleccion/eleccion';
+import { election, electionLabel } from '@eleccion/eleccion';
 import { formatNumber } from '@/lib/format';
 import { routes, SEARCH_PARAMS } from '@/lib/routes';
 import { sphereCategories, sphereTotal } from '@/lib/sphere';
@@ -33,7 +33,7 @@ const total = formatNumber(sphereTotal);
         <span>punto</span>
         <span>por punto</span>
       </h1>
-      <p class="hero__lede">Cada punto de la esfera es una de las {total} medidas que publican los partidos que se presentan a las elecciones del 29 de noviembre.</p>
+      <p class="hero__lede">En Electosfera, cada punto de la esfera es una de las {total} medidas que publican los partidos que se presentan a las {election.name.toLowerCase()} del {election.longDate}.</p>
     </div>
 
     <div class="hero__sphere-wrap">

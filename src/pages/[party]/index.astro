@@ -26,7 +26,8 @@ import Bilingual from '@/components/ui/Bilingual.astro';
 import LanguageToggle from '@/components/party/LanguageToggle.astro';
 import { translatedPhraseTitle, translatedQuote, translationInfo } from '@/lib/translations';
 import { programVerbs } from '@/lib/verbs';
-import { partyPageDescription, partyPageTitle, partyShareImage } from '@/lib/seo';
+import { partyLabel, partyPageDescription, partyPageTitle, partyShareImage } from '@/lib/seo';
+import { breadcrumbStructuredData } from '@/lib/structured-data';
 import { checkPrograms } from '@/lib/program-checks';
 import { keyFindingsByParty, type KeyFinding } from '@eleccion/analysis';
 import { downloadFileNames, summaryDownloadFileName } from '@eleccion/download-names';
@@ -170,6 +171,10 @@ for (const figure of program.figures) {
   accent={program.color}
   accentLight={program.lightColor}
   image={partyShareImage(program)}
+  structuredData={breadcrumbStructuredData(Astro.site!, [
+    { name: 'Inicio', path: routes.home() },
+    { name: partyLabel(program) },
+  ])}
 >
   {
     !program.hasProgram ? (

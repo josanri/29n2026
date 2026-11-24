@@ -12,6 +12,7 @@ import { allOf, capitalize, padNumber, percentOf } from '@/lib/format';
 import { blockColor } from '@/lib/blocks';
 import { measuresPageDescription, partyLabel, partyShareImage } from '@/lib/seo';
 import { MEASURE_FILTER_PARAMS as PARAMS, routes } from '@/lib/routes';
+import { breadcrumbStructuredData } from '@/lib/structured-data';
 
 export function getStaticPaths() {
   return programs.map((program) => ({ params: { party: program.id } }));
@@ -46,6 +47,11 @@ const categoryPetals = categoryCounts.map(([id, count]) => ({
   accent={program.color}
   accentLight={program.lightColor}
   image={partyShareImage(program)}
+  structuredData={breadcrumbStructuredData(Astro.site!, [
+    { name: 'Inicio', path: routes.home() },
+    { name: partyLabel(program), path: routes.party(program.id) },
+    { name: capitalize(plural) },
+  ])}
 >
   {
     !program.hasProgram ? (
