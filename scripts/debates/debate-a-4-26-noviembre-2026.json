@@ -1,0 +1,700 @@
+{
+  "slug": "debate-a-4-26-noviembre-2026",
+  "title": "Debate a 4 del 26 de noviembre",
+  "date": "2026-11-26",
+  "channel": "Academia de la Televisión",
+  "url": "https://www.youtube.com/watch?v=xIvYoOMNnvI",
+  "urlLabel": "Fuente: YouTube",
+  "published": true,
+  "speakers": [
+    {
+      "id": "casado",
+      "name": "María Casado",
+      "role": "Moderadora",
+      "partyId": null
+    },
+    {
+      "id": "sanchez",
+      "name": "Pedro Sánchez",
+      "role": "PSOE",
+      "partyId": "psoe"
+    },
+    {
+      "id": "feijoo",
+      "name": "Alberto Núñez Feijóo",
+      "role": "PP",
+      "partyId": "pp"
+    },
+    {
+      "id": "colau",
+      "name": "Ada Colau",
+      "role": "Frente Amplio",
+      "partyId": "fa"
+    },
+    {
+      "id": "abascal",
+      "name": "Santiago Abascal",
+      "role": "Vox",
+      "partyId": "vox"
+    },
+    {
+      "id": "sin-asignar",
+      "name": "Sin asignar",
+      "role": "",
+      "partyId": null
+    }
+  ],
+  "diarization": {
+    "SPEAKER_00": "colau",
+    "SPEAKER_01": "sanchez",
+    "SPEAKER_02": "abascal",
+    "SPEAKER_03": "feijoo",
+    "SPEAKER_04": "casado",
+    "(sin etiqueta)": "casado"
+  },
+  "overrides": {
+    "87.278": "abascal",
+    "90.624": "sanchez",
+    "94.171": "feijoo",
+    "97.317": "colau",
+    "176.974": "casado",
+    "853.628": "feijoo",
+    "1104.946": "colau",
+    "1326.324": "sanchez",
+    "1328.006": "feijoo",
+    "1329.288": "feijoo",
+    "1335.676": "feijoo",
+    "1590.552": "abascal",
+    "1645.650": "casado",
+    "1668.300": "feijoo",
+    "1743.022": "casado",
+    "2366.203": "colau",
+    "2504.533": "sanchez",
+    "2594.734": "abascal",
+    "2635.796": "abascal",
+    "2639.601": "abascal",
+    "2653.097": "sanchez",
+    "2656.601": "sanchez",
+    "2699.299": "abascal",
+    "3439.707": "feijoo",
+    "3443.814": "feijoo",
+    "3870.759": "feijoo",
+    "3927.125": "colau",
+    "3988.236": "sanchez",
+    "4029.351": "abascal",
+    "4314.785": "sanchez",
+    "4318.251": "sanchez",
+    "4321.556": "sanchez",
+    "4323.259": "sanchez",
+    "4328.992": "sanchez",
+    "4329.773": "sanchez",
+    "4348.881": "casado",
+    "4417.670": "casado",
+    "5041.598": "feijoo",
+    "5076.648": "feijoo",
+    "5078.030": "feijoo",
+    "5108.195": "sanchez",
+    "5112.761": "sanchez",
+    "5134.789": "feijoo",
+    "5149.495": "sanchez",
+    "5152.219": "sanchez",
+    "5164.621": "feijoo",
+    "5335.069": "casado",
+    "5494.265": "colau",
+    "5581.342": "casado",
+    "5592.899": "feijoo",
+    "5593.701": "casado",
+    "6614.238": "sanchez",
+    "6619.810": "sanchez",
+    "6699.963": "feijoo",
+    "6700.885": "feijoo",
+    "6725.031": "feijoo",
+    "6735.502": "sanchez",
+    "6740.166": "sanchez",
+    "6741.567": "sanchez",
+    "6749.834": "feijoo",
+    "6764.147": "feijoo",
+    "6768.835": "feijoo",
+    "6770.639": "feijoo",
+    "6773.403": "sanchez",
+    "6788.469": "sanchez",
+    "6897.252": "casado",
+    "6913.712": "abascal",
+    "6914.634": "abascal",
+    "7229.468": "abascal",
+    "7229.849": "casado",
+    "7297.545": "casado"
+  },
+  "splits": [
+    {
+      "start": 553.042,
+      "text": "Sí, se ha esperado el tiempo.",
+      "speaker": "colau"
+    },
+    {
+      "start": 556.607,
+      "text": "Hay que respetar las reglas, ¿verdad?",
+      "speaker": "abascal"
+    },
+    {
+      "start": 1277.761,
+      "text": "ocho años de gobierno progresista.",
+      "speaker": "feijoo"
+    },
+    {
+      "start": 2660.086,
+      "text": "¿Es verdad o es mentira?",
+      "speaker": "sanchez"
+    },
+    {
+      "start": 5594.543,
+      "text": "Señor, señor...",
+      "speaker": "casado"
+    },
+    {
+      "start": 6718.458,
+      "text": "O sea, que pueden venir inmigrantes que no respeten a las mujeres ni al colectivo LGTBI.",
+      "speaker": "feijoo"
+    },
+    {
+      "start": 7025.002,
+      "text": "Le toca cerrar bloque y le queda...",
+      "speaker": "casado"
+    }
+  ],
+  "golden": [
+    {
+      "speaker": "sanchez",
+      "start": 7120.9,
+      "end": 7168.5
+    },
+    {
+      "speaker": "abascal",
+      "start": 7171.1,
+      "end": 7229.8
+    },
+    {
+      "speaker": "colau",
+      "start": 7231.8,
+      "end": 7297.5
+    },
+    {
+      "speaker": "feijoo",
+      "start": 7298.4,
+      "end": 7359.6
+    }
+  ],
+  "textFixes": [
+    [
+      "\\bNúñez (Fij[oó]|Fei?j[oó]|Fej[oó])\\b",
+      "Núñez Feijóo"
+    ],
+    [
+      "\\b([Ss]eñor) (Fij[oó]|Fejo|Fejó|Feijo|Feijó|Fuego|Rijo|Foucault|Fejóo)\\b",
+      "\\1 Feijóo"
+    ],
+    [
+      "\\b(Feijo|Feijó|Fejó|Fejo)\\b",
+      "Feijóo"
+    ],
+    [
+      "\\bvicepresidente cuerpo\\b",
+      "vicepresidente Cuerpo"
+    ],
+    [
+      "\\btrimpos\\b",
+      "tiempos"
+    ],
+    [
+      "\\bColdo\\b",
+      "Koldo"
+    ],
+    [
+      "\\bZerdán\\b",
+      "Cerdán"
+    ],
+    [
+      "\\bJessica Orgías\\b",
+      "Jéssica, orgías"
+    ],
+    [
+      "\\bhuela general\\b",
+      "huelga general"
+    ],
+    [
+      "presidente del asunto de Galicia",
+      "presidente de la Xunta de Galicia"
+    ],
+    [
+      "Porque tú estuvo usted ocho años",
+      "Porque usted estuvo ocho años"
+    ],
+    [
+      "¿Has hableado a los españoles",
+      "¿Ha hablado usted a los españoles"
+    ],
+    [
+      "no me digo usted",
+      "no me diga usted"
+    ],
+    [
+      "su socia Bascal",
+      "su socio Abascal"
+    ],
+    [
+      "\\bIAC 42\\b",
+      "Yak-42"
+    ],
+    [
+      "\\bdescarregamientos\\b",
+      "descarrilamientos"
+    ],
+    [
+      "\\bRafa Latorra\\b",
+      "Rafa Latorre"
+    ],
+    [
+      "cero elecciones del partido",
+      "cero lecciones del partido"
+    ],
+    [
+      "está proveyendo a mi familia",
+      "está profiriendo contra mi familia"
+    ],
+    [
+      "\\bÓscar Puentes\\b",
+      "Óscar Puente"
+    ],
+    [
+      "\\bMilley\\b",
+      "Milei"
+    ],
+    [
+      "se va a vernear a la maretta",
+      "se va a veranear a La Mareta"
+    ],
+    [
+      "\\bMarrocos\\b",
+      "Marruecos"
+    ],
+    [
+      "Centro Nacional de Investigación",
+      "Centro Nacional de Inteligencia"
+    ],
+    [
+      "dictadura y que jamás y Hezbollah",
+      "dictadura y Hamás y Hezbolá"
+    ],
+    [
+      "en Cayo Cozuna",
+      "en cayuco"
+    ],
+    [
+      "candidato de Manuel",
+      "candidato de manual"
+    ],
+    [
+      "\\bque galicia\\b",
+      "qué Galicia"
+    ],
+    [
+      "^que he hecho yo en galicia que pasa que los gallegos son tontos y me votaban cree usted que esto que los gallegos tenía mala sanidad me seguían votando por favor señor sánchez un poco de respeto$",
+      "¿Qué he hecho yo en Galicia? ¿Qué pasa, que los gallegos son tontos y me votaban? ¿Cree usted que los gallegos tenían mala sanidad y me seguían votando? Por favor, señor Sánchez, un poco de respeto."
+    ],
+    [
+      "^le recuerdo que el cierre al bloque el señor feijóo le quedan 25 segundos$",
+      "Le recuerdo que el cierre del bloque es del señor Feijóo: le quedan 25 segundos."
+    ],
+    [
+      "^yo soy el presidente del partido popular$",
+      "Yo soy el presidente del Partido Popular."
+    ],
+    [
+      "\\b(Ada Collau|Ada Kolau|Ada Colao)\\b",
+      "Ada Colau"
+    ],
+    [
+      "\\b([Ss]eñora) (Collau|Kolau|Colao)\\b",
+      "\\1 Colau"
+    ],
+    [
+      "\\b(Avascal|Abascál|Abasca)\\b",
+      "Abascal"
+    ],
+    [
+      "\\b([Ss])eñora (Abascal|Bascal|Bascar|Vázquez)\\b",
+      "\\1eñor Abascal"
+    ],
+    [
+      "\\b([Ss])eñor Colau\\b",
+      "\\1eñora Colau"
+    ],
+    [
+      "\\b([Ss])eñora (Colajo|Clau|Polo)\\b",
+      "\\1eñora Colau"
+    ],
+    [
+      "\\b(Fijao|Fijoy|Feijoya)\\b",
+      "Feijóo"
+    ],
+    [
+      "\\bFijo (y Abascal|juntos)\\b",
+      "Feijóo \\1"
+    ],
+    [
+      "\\bMileya\\b",
+      "Milei"
+    ],
+    [
+      "\\ba Jamás\\?",
+      "a Hamás?"
+    ],
+    [
+      "\\b([Ss]eñor) (Arfeijo|Rejo)\\b",
+      "\\1 Feijóo"
+    ],
+    [
+      "\\b([Ss]eñora?) (Acolau|Acolao|Colón)\\b",
+      "señora Colau"
+    ],
+    [
+      "\\bni al señora Colau\\b",
+      "ni a la señora Colau"
+    ],
+    [
+      "\\bo señora Colau\\b",
+      "a la señora Colau"
+    ],
+    [
+      "\\bAbacolau\\b",
+      "Ada Colau"
+    ],
+    [
+      "\\bseñora Ayusa\\b",
+      "señora Ayuso"
+    ],
+    [
+      "\\bPablo Hernández de Cosco\\b",
+      "Pablo Hernández de Cos"
+    ],
+    [
+      "\\bYolanda Díez\\b",
+      "Yolanda Díaz"
+    ],
+    [
+      "\\bministro Bustindí\\b",
+      "ministro Bustinduy"
+    ],
+    [
+      "\\bJuan Moreno\\b",
+      "Juanma Moreno"
+    ],
+    [
+      "\\bAllí hubo divisiones\\b",
+      "Allí hubo dimisiones"
+    ],
+    [
+      "\\bseñores del IDEX\\b",
+      "señores del IBEX"
+    ],
+    [
+      "\\ben un peyote\\b",
+      "en un Peugeot"
+    ],
+    [
+      "\\bescarcelar\\b",
+      "excarcelar"
+    ],
+    [
+      "\\bme ha expectado\\b",
+      "me ha espetado"
+    ],
+    [
+      "\\bque es una pajita\\b",
+      "que es una paguita"
+    ],
+    [
+      "\\bmercado de la libertad\\b",
+      "mercado del alquiler"
+    ],
+    [
+      "\\bpor ese bien de buena educación\\b",
+      "presumiendo de buena educación"
+    ],
+    [
+      "\\b¿Qué puede ser llamativo que se queje\\b",
+      "No deja de ser llamativo que se queje"
+    ],
+    [
+      "\\bSí, se ha esperado el tiempo\\.",
+      "Sí, he respetado el tiempo."
+    ],
+    [
+      "\\bNo manipulen, no\\.",
+      "No manipulo, no."
+    ],
+    [
+      "\\bSi no han visto todos los telespectadores\\.",
+      "Si lo han visto todos los telespectadores."
+    ],
+    [
+      "\\bLa ley del CSI\\b",
+      "La ley del sí es sí"
+    ],
+    [
+      "\\baccidente ferroviario de Oda\\b",
+      "accidente ferroviario de Urda"
+    ],
+    [
+      "\\bla Herminia Plus Ultra\\b",
+      "la aerolínea Plus Ultra"
+    ],
+    [
+      "\\ben La Habana\\b",
+      "en la DANA"
+    ],
+    [
+      "\\blas víctimas de la Adana\\b",
+      "las víctimas de la DANA"
+    ],
+    [
+      "\\bAdamud\\b",
+      "Adamuz"
+    ],
+    [
+      "\\bAdamus\\b",
+      "Adamuz"
+    ],
+    [
+      "\\bla Administración Internacional\\b",
+      "Amnistía Internacional"
+    ],
+    [
+      "\\bla EGAE\\b",
+      "la IGAE"
+    ],
+    [
+      "\\ben el FIS\\b",
+      "en el CIS"
+    ],
+    [
+      "\\bal Dama\\b",
+      "a Aldama"
+    ],
+    [
+      "\\ba DIF y a Renfe\\b",
+      "a Adif y a Renfe"
+    ],
+    [
+      "\\bveníamos a divertir aquí\\b",
+      "veníamos a debatir aquí"
+    ],
+    [
+      "\\bpresume de elecciones de economía\\b",
+      "presume de lecciones de economía"
+    ],
+    [
+      "\\bdando elecciones\\b",
+      "dando lecciones"
+    ],
+    [
+      "\\bDando elecciones\\b",
+      "Dando lecciones"
+    ],
+    [
+      "\\bexige garrapatas\\b",
+      "les diga garrapatas"
+    ],
+    [
+      "\\bmuchos vuelos sobre migración\\b",
+      "muchos bulos sobre migración"
+    ],
+    [
+      "\\bes una moral es\\b",
+      "es un amoral es"
+    ],
+    [
+      "\\bpor 3D\\b",
+      "por tres"
+    ],
+    [
+      "\\ba las máficas\\b",
+      "a las mafias"
+    ],
+    [
+      "\\brefuerzos de frontes\\b",
+      "refuerzos de Frontex"
+    ],
+    [
+      "\\bcon todos los honorarios\\b",
+      "con todos los honores"
+    ],
+    [
+      "\\bSacarán las regularizaciones masivas\\.",
+      "Se acabarán las regularizaciones masivas."
+    ],
+    [
+      "\\bEntienda que no quiere hablar usted\\b",
+      "Entiendo que no quiere hablar usted"
+    ],
+    [
+      "^La quiero utilizar\\.$",
+      "Lo quiero utilizar."
+    ],
+    [
+      "\\bBueno, gracias, señor\\.$",
+      "Bueno, gracias, señora."
+    ],
+    [
+      "\\b¿Por qué no condena a usted\\?$",
+      "¿Por qué no la condena usted?"
+    ],
+    [
+      "\\bSi llega a hacer lo que usted me manda\\b",
+      "Si llego a hacer lo que usted me manda"
+    ],
+    [
+      "\\bviolencia de género en el señor Abascal\\b",
+      "violencia de género el señor Abascal"
+    ],
+    [
+      "\\ben ganar ese momento de abrir\\b",
+      "en Canarias. Es momento de abrir"
+    ],
+    [
+      "\\bes un récord de nada más y nada menos\\b",
+      "es un recorte de nada más y nada menos"
+    ],
+    [
+      "\\bEl 10, el 1,52\\b",
+      "El diésel, 1,52"
+    ],
+    [
+      "\\bLuna Rosa\\b",
+      "Luna Rossa"
+    ],
+    [
+      "\\blos impuestos ustedes no han subido\\b",
+      "los impuestos ustedes los han subido"
+    ],
+    [
+      "\\blos españoles nos van a dejar engañar\\b",
+      "los españoles no se van a dejar engañar"
+    ],
+    [
+      "\\bOcho años llevo usted gobernando como este señor\\b",
+      "Ocho años lleva usted gobernando con este señor"
+    ],
+    [
+      "\\bpara la señor Abascal\\b",
+      "para el señor Abascal"
+    ],
+    [
+      "\\bde la señor Abascal\\b",
+      "del señor Abascal"
+    ],
+    [
+      "\\bcerra bloques\\b",
+      "cierra bloque"
+    ],
+    [
+      "\\bcerra usted el bloque\\b",
+      "cierra usted el bloque"
+    ],
+    [
+      "\\besparcer\\b",
+      "esparcir"
+    ],
+    [
+      "\\bfaragosos\\b",
+      "farragosos"
+    ],
+    [
+      "\\btenganlo\\b",
+      "ténganlo"
+    ],
+    [
+      "\\bdecretos de Maricarmen\\b",
+      "decretos de Mari Carmen"
+    ],
+    [
+      "\\bdecretos Maricarmen\\b",
+      "decretos Mari Carmen"
+    ],
+    [
+      "\\bTele 5\\b",
+      "Telecinco"
+    ],
+    [
+      "\\bdebate A4\\b",
+      "debate a cuatro"
+    ],
+    [
+      "\\ba Milei, Paraguay\\b",
+      "a Milei, a Paraguay"
+    ],
+    [
+      "\\b¿Se acabó su tiempo, señora Colau\\?$",
+      "Se acabó su tiempo, señora Colau."
+    ],
+    [
+      "\\bPero es mentira que usted está cobrando el bono social térmico\\.$",
+      "¿Pero es mentira que usted está cobrando el bono social térmico?"
+    ],
+    [
+      "\\bCambia de registro un poco\\.",
+      "Cambie de registro un poco."
+    ],
+    [
+      "\\bque lo llegan en su programa electoral\\b",
+      "que lo llevan en su programa electoral"
+    ],
+    [
+      "\\blo llegan en su programa electoral\\b",
+      "lo llevan en su programa electoral"
+    ],
+    [
+      "\\ba los maestras y maestras\\b",
+      "a los maestros y maestras"
+    ],
+    [
+      "\\blo hubieran contado, es recibir la respuesta\\b",
+      "le hubiera encantado recibir la respuesta"
+    ],
+    [
+      "\\blos que llevan justito a fin de mes\\b",
+      "los que llegan justito a fin de mes"
+    ],
+    [
+      "\\bel Hierro\\b",
+      "El Hierro"
+    ],
+    [
+      "\\bel hierro\\b",
+      "El Hierro"
+    ],
+    [
+      "\\bal hierro\\b",
+      "a El Hierro"
+    ],
+    [
+      "\\bbroncano en la revuelta\\b",
+      "Broncano en La Revuelta"
+    ],
+    [
+      "\\b(Fijó|Fijo)\\b",
+      "Feijóo"
+    ]
+  ],
+  "notes": "Debate a 4 de la Academia de la Televisión, 22:00 en La 1, Antena 3, Cuatro, Telecinco, laSexta, La Séptima y Canal 24 horas. Moderación: María Casado. Cinco bloques: vivienda; economía y fiscalidad; política social y servicios públicos; corrupción y regeneración democrática; migración y política exterior.",
+  "skip": [
+    [
+      3053.6,
+      3256.8
+    ],
+    [
+      5708.2,
+      5911.1
+    ]
+  ]
+}

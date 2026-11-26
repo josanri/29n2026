@@ -194,17 +194,26 @@ def derive(data: dict) -> dict:
         if not kind:
             continue
         previous, current = interventions[index - 1], interventions[index]
+        target = previous
+        if kind == "moderacion" and index >= 2:
+            prev2 = interventions[index - 2]
+            if prev2["speaker"] != previous["speaker"] and not is_moderator(speaker_by_id.get(prev2["speaker"])):
+                mod_text = fold(" ".join(current["paragraphs"]))
+                prev_surname = (fold(speaker_by_id.get(previous["speaker"], {}).get("name", "")).split() or [""])[-1]
+                prev2_surname = (fold(speaker_by_id.get(prev2["speaker"], {}).get("name", "")).split() or [""])[-1]
+                if prev2_surname and prev2_surname in mod_text and (not prev_surname or prev_surname not in mod_text):
+                    target = prev2
         current["cut"] = True
         current["kind"] = kind
-        previous["cutOff"] = True
+        target["cutOff"] = True
         interruptions.append(
             {
                 "start": current["start"],
                 "kind": kind,
                 "by": current["speaker"],
-                "of": previous["speaker"],
+                "of": target["speaker"],
                 "text": preview(" ".join(current["paragraphs"])),
-                "before": tail(previous["paragraphs"][-1]),
+                "before": tail(target["paragraphs"][-1]),
                 "intervention": index,
                 "topics": current["topics"],
             }
