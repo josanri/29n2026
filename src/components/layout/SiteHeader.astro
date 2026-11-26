@@ -16,7 +16,7 @@ const menus = [
     id: 'national',
     label: 'Estatales',
     // A building with columns, like the Congress: the parties of the whole country.
-    icon: '<path d="M2 6 8 2.5 14 6"/><path d="M2.5 6.5h11M4.5 7.5v5M8 7.5v5M11.5 7.5v5M1.5 13.5h13"/>',
+    icon: '<path d="M2 6 8 2.5 14 6z"/><path d="M4.5 8.5v4.5M8 8.5v4.5M11.5 8.5v4.5M2 13.5h12"/>',
     isCurrent: nationalPrograms.some(isCurrent),
     groups: [
       { title: 'Con programa analizado', parties: nationalSorted.filter((party) => party.hasProgram) },
@@ -28,7 +28,7 @@ const menus = [
     id: 'regional',
     label: 'Autonómicos',
     // A map pin: the parties of one territory.
-    icon: '<path d="M8 15s5-4.6 5-8.5a5 5 0 0 0-10 0C3 10.4 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.8"/>',
+    icon: '<path d="M8 14.5s4.8-4.2 4.8-8a4.8 4.8 0 0 0-9.6 0c0 3.8 4.8 8 4.8 8z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/>',
     isCurrent: regionalPrograms.some(isCurrent),
     groups: regionalRegions.map((region) => ({
       title: region,
@@ -42,31 +42,36 @@ const links = [
   {
     href: routes.categories(),
     label: 'Categorías',
-    icon: '<rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/>',
+    icon: '<rect x="2" y="2" width="12" height="12"/><path d="M8 2v12M2 8h12"/>',
   },
   {
     href: routes.polls(),
     label: 'Encuestas',
     // A line that goes up and down over an axis.
-    icon: '<path d="M1.5 1.5v13h13"/><path d="m4 10 3-4 3 2 4-5"/>',
+    icon: '<path d="M2 2v12h12"/><path d="m5 9.5 2.5-3.5 2.5 2 3.5-4.5"/>',
   },
   {
     href: routes.calendar(),
     label: 'Calendario',
-    icon: '<rect x="2" y="3" width="12" height="11"/><path d="M2 7h12M5 1v4M11 1v4"/>',
+    icon: '<rect x="2" y="3.5" width="12" height="10.5"/><path d="M2 7h12M5.5 1.5v2M10.5 1.5v2"/><rect x="8.8" y="9.3" width="2.7" height="2.7" fill="currentColor" stroke="none"/>',
   },
   {
     href: routes.info(),
     label: 'Info',
-    // A circle with an «i»: a short dot and a longer stem, both with square ends like the other icons.
-    icon: '<circle cx="8" cy="8" r="6.5"/><path d="M8 4.6v.9M8 7.4v4"/>',
+    // A circle with an «i»: a solid square dot and a stem, matching the site icons.
+    icon: '<circle cx="8" cy="8" r="6"/><rect x="6.9" y="4.3" width="2.2" height="2.2" fill="currentColor" stroke="none"/><path d="M8 8.2v3.5"/>',
+  },
+  {
+    href: routes.results(),
+    label: 'Resultados',
+    // A ballot box with a ballot that goes in, with a check mark on it: the count of the votes. Not a chart, so
+    // it does not look like the line of «Encuestas».
+    icon: '<path d="M4.5 8V2h7v6"/><path d="m6.3 5 1.4 1.4L10 4"/><path d="M1.5 8h13v6.5h-13z"/><path d="M6 11h4"/>',
   },
   {
     href: routes.simulator(),
     label: 'Simulador',
-    // The last link of the row: on the phone, with an odd number of links, it takes the whole row.
-    className: 'nav__link--wide',
-    icon: '<path d="M1 13a7 7 0 0 1 14 0M4.5 13a3.5 3.5 0 0 1 7 0M1 13h14"/>',
+    icon: '<path d="M2 12.5a6 6 0 0 1 12 0"/><circle cx="5.2" cy="11.5" r="1.25" fill="currentColor" stroke="none"/><circle cx="8" cy="9.2" r="1.25" fill="currentColor" stroke="none"/><circle cx="10.8" cy="11.5" r="1.25" fill="currentColor" stroke="none"/>',
   },
   {
     href: routes.search(),
@@ -98,7 +103,7 @@ const siteDebates = debates.map((debate) => {
   });
 const debatesCurrent = path.startsWith(routes.debate());
 // Two speech bubbles that face each other: the tail of the front one points left, the tail of the back one points right.
-const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h4v6h-2V14L10 11.5H7.5V8.5"/>';
+const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V12h-1.5v2L10 12H7"/>';
 ---
 
 <header class="site-header">
@@ -171,7 +176,7 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
       <details class="nav-dropdown nav-dropdown--tests">
         <summary aria-current={testsCurrent ? 'page' : undefined}>
           <!-- A box with a check mark: a test. -->
-          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2" width="12" height="12"></rect><path d="m5 8.2 2.2 2.2L11.2 6"></path></svg>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2H2v12h12V8.5"></path><path d="m5.5 7.8 2.5 2.5L14 3.5"></path></svg>
           Tests
           <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
             <path d="m1 1 5 5 5-5"></path>
@@ -198,7 +203,10 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
       ))}
       <!-- The visible label shows only in the phone menu. The accessible name contains it. -->
       <button class="theme-toggle" type="button" aria-label="Cambiar tema claro u oscuro" title="Tema claro / oscuro">
-        <span class="theme-toggle__icon" aria-hidden="true"></span>
+        <svg class="nav__icon theme-toggle__icon" viewBox="0 0 16 16" aria-hidden="true">
+          <rect x="2" y="2" width="12" height="12"></rect>
+          <rect x="8" y="2" width="6" height="12" fill="currentColor" stroke="none"></rect>
+        </svg>
         <span class="theme-toggle__label">Cambiar tema</span>
       </button>
     </nav>
@@ -340,22 +348,23 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
     margin-right: 6px;
     fill: none;
     stroke: currentColor;
-    stroke-width: 2.5;
+    stroke-width: 2;
     stroke-linecap: square;
+    stroke-linejoin: miter;
   }
-  /* Every item of the nav has its icon: it helps to find a section at a glance. Below 1580px the row is
-     tight, so only the search keeps its magnifier; between 1180 and 1339px the type and logo tighten too
-     so the theme toggle never wraps onto a second row. The phone menu (under 1180px) shows all icons. */
-  @media (min-width: 1180px) {
+  /* Every item of the nav has its icon: it helps to find a section at a glance. Below 1700px the row is
+     tight, so only the search keeps its magnifier; between 1260 and 1439px the type and logo tighten too
+     so the theme toggle never wraps onto a second row. The phone menu (under 1260px) shows all icons. */
+  @media (min-width: 1260px) {
     .nav > a,
     .nav-dropdown > summary { white-space: nowrap; }
   }
-  @media (min-width: 1180px) and (max-width: 1579px) {
+  @media (min-width: 1260px) and (max-width: 1699px) {
     .nav { column-gap: 14px; }
     .nav > a:not(.nav__link--search) .nav__icon,
     .nav-dropdown > summary .nav__icon { display: none; }
   }
-  @media (min-width: 1180px) and (max-width: 1339px) {
+  @media (min-width: 1260px) and (max-width: 1439px) {
     .logo :global(.wordmark) { font-size: 2.125rem; }
     .nav { column-gap: 10px; }
     .nav > a,
@@ -510,13 +519,13 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
   .nav .nav-dropdown__panel a.is-unpublished { font-style: italic; }
   .nav .nav-dropdown__panel a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
 
-  /* Compact header: below 1180px the nav does not fit on one line next to the logo. The header keeps
+  /* Compact header: below 1260px the nav does not fit on one line next to the logo. The header keeps
      one row (logo and menu button) and a fixed height, so the sticky filter bars of the pages stay
      under it. The nav opens as a sheet over the page, under the header:
      - the party menus take a full row each and open in place;
      - the sections fill a grid of two columns, or four from 720px.
      Without JavaScript (no `js` class), the nav stays open in the header and the menu button stays hidden. */
-  @media (max-width: 1179px) {
+  @media (max-width: 1259px) {
     .site-header__row { flex-wrap: wrap; }
     :global(.js) .menu-toggle { display: inline-flex; }
 
@@ -541,18 +550,11 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
     .nav > .theme-toggle {
       grid-column: 1 / -1;
       width: 100%;
-      gap: 7px;
       background: var(--color-paper);
       justify-content: flex-start;
       padding: 0 12px;
     }
-    .theme-toggle__icon {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      border: var(--border-thick) solid var(--color-ink);
-      background: linear-gradient(90deg, var(--color-paper) 50%, var(--color-ink) 50%);
-    }
+    .theme-toggle__icon { display: inline; }
     .theme-toggle__label { display: inline; font-weight: 700; font-size: 1.0625rem; }
     .nav-dropdown { grid-column: 1 / -1; }
     /* The search goes first, across the full width. The party menus follow, then the sections, then the theme. */
@@ -594,14 +596,14 @@ const debateIcon = '<path d="M1.5 1.5h8v6H6L3.5 10V7.5h-2z"/><path d="M10.5 5.5h
   }
 
   /* Folding phone or tablet: the sections in one row. */
-  @media (min-width: 720px) and (max-width: 1179px) {
-    /* Five links in one row: each takes one column, and the icons go away while the row is narrow. */
-    .nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  @media (min-width: 720px) and (max-width: 1259px) {
+    /* Six links in one row: each takes one column, and the icons go away while the row is narrow. */
+    .nav { grid-template-columns: repeat(6, minmax(0, 1fr)); }
     .nav > a.nav__link--wide { grid-column: auto; }
     .nav > a:not(.nav__link--search) { padding: 0 8px; }
     .nav > a:not(.nav__link--search) .nav__icon { display: none; }
   }
-  @media (min-width: 900px) and (max-width: 1179px) {
+  @media (min-width: 900px) and (max-width: 1259px) {
     .nav > a:not(.nav__link--search) { padding: 0 12px; }
     .nav > a:not(.nav__link--search) .nav__icon { display: inline; }
   }

@@ -1,6 +1,6 @@
 ---
 /**
- * The hemicycle of the Congress: one circle for each of the 350 seats, from the left to the right.
+ * A hemicycle: one circle for each seat (the 350 of the Congress by default), from the left to the right.
  * The page script gives each circle its color and its tooltip (`data-seat` is the index of the seat).
  * Color is never the only sign: the legend and the tooltip name the group of each seat.
  */
@@ -10,10 +10,14 @@ interface Props {
   /** Accessible name of the figure. The script updates it with the numbers. */
   label: string;
   id?: string;
+  /** Number of seats: the 350 of the Congress when it is not given (the 208 elected senators on /resultados/). */
+  seats?: number;
+  /** Rows of seats: fewer seats need fewer rows to keep the same gaps. */
+  rows?: number;
 }
 
-const { label, id } = Astro.props;
-const { positions, seatRadius } = hemicyclePositions();
+const { label, id, seats, rows } = Astro.props;
+const { positions, seatRadius } = hemicyclePositions(seats, rows);
 ---
 
 <svg

@@ -121,10 +121,46 @@ scripts/                      solo código: extracción y análisis de los PDF
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
+| `/resultados/` | Resultados del Congreso y del Senado: escrutado, participación, hemiciclo, tabla por partido, mapa del más votado y reparto de cada provincia (`?provincia=28`). Con una provincia abierta, el mapa y la tabla de sus municipios (`?municipio=29067`). Hasta que se publiquen los datos, «Próximamente» con la cuenta atrás y el enlace a la web oficial (29neleccionesgenerales.es): no cubrimos el recuento al minuto (ver «Resultados de la noche electoral») |
 | `/encuestas/` | Seguimiento de la estimación de voto (CIS, 40dB., Sigma Dos, SocioMétrica y GAD3), con gráfica de evolución y enlace a cada publicación |
 | `/tests/` | Lista de los tests: «Sin siglas» (`/tests/sin-siglas/`) y «Temas que dividen» (`/tests/temas/`) |
 | `/tests/temas/` | Test y comparador de los temas más polarizantes: la postura del lector frente a la de cada programa, con la medida que la prueba |
 | `/agentes/partidos.json`, `/agentes/<partido>.json` | Datos para las herramientas WebMCP (ver «Herramientas para agentes») |
+
+### Resultados de la noche electoral
+
+La página `/resultados/` lee archivos JSON con el formato normalizado `electosfera-resultados/1` (descrito en `src/lib/results.ts`):
+
+- `espana.json`: una entrada por circunscripción, con escrutado, censo escrutado, votantes, nulos, blancos y los votos (y, si la fuente los da, los escaños) de cada candidatura. El total de España es la suma de las provincias. Si una candidatura no trae escaños, la página los calcula con D'Hondt y el umbral del 3 % (LOREG, art. 163).
+- `municipios-<provincia>.json`: los municipios de una provincia, con su código INE de cinco cifras. La página lo lee solo cuando el lector abre esa provincia.
+- `senado.json` (formato `electosfera-senado/1`, opcional): una entrada por cada una de las 59 circunscripciones del Senado (`senateConstituencies` en `resultados.ts`: 47 provincias con 4 senadores, Ceuta y Melilla con 2 y 10 islas o agrupaciones de islas), con los votos de cada candidato. Si la fuente no marca los electos, la página da los escaños a los candidatos más votados (LOREG, art. 166). La página muestra los 208 senadores elegidos por partido, con la diferencia con 2023, y los candidatos de la provincia abierta (o de cada isla).
+
+El mapa de municipios sale de `public/<elección>/mapas/municipios/<provincia>.json`, que dibuja `python scripts/municipal_maps.py` (límites del IGN, paquete es-atlas 0.6.0). Los terrenos compartidos entre municipios (códigos 53xxx) van en la provincia con la que comparten más límite, sin votantes.
+
+Los datos son archivos estáticos: el script de importación los escribe en `public/<elección>/resultados/datos/<archivo>.json` y una compilación los publica en `<BASE_PATH>/resultados/datos/`. Mientras no existen, la página recibe un 404 y sigue con «Próximamente».
+
+Estados, en `src/data/<elección>/resultados.ts`:
+
+| `status` | La página muestra |
+|---|---|
+| `proximamente` | Antes de `opensAt`, «Próximamente» con la cuenta atrás y el enlace a la web oficial. Desde `opensAt` (20:00 del día de la votación), lee los datos cada `refreshSeconds` segundos y los muestra en cuanto existen |
+| `provisional` | Los datos, desde el primer momento, cada `refreshSeconds` segundos |
+| `definitivo` | Los datos del escrutinio general, una sola vez |
+
+Ensayo (antes del domingo): `npm run resultados:importar -- --ensayo 40` y `npm run dev`. Abre `http://localhost:4321/resultados/?ensayo&provincia=29` (con la ruta de la elección si `BASE_PATH` la tiene). Sin `?ensayo`, la página no muestra nunca los datos de un ensayo. **Borra después `public/<elección>/resultados/datos/`**: un ensayo no se publica.
+
+Cuando se publiquen los resultados aquí:
+
+1. Consigue las direcciones de los datos del Ministerio del Interior o de un medio que los redistribuya: las circunscripciones y los municipios.
+2. Ejecuta:
+   ```sh
+   npm run resultados:importar -- --fuente <url> --municipios <url con {provincia}> --senado <url>
+   ```
+   Si la fuente de los municipios es un solo archivo, quita `{provincia}`. El script muestra cada vez los escaños de cada partido en el Congreso y, con `--senado`, los senadores. Con `--cada 60`, el script lee la fuente cada 60 segundos y escribe solo los archivos que cambian (útil con `npm run dev`). Con `--definitivo`, marca los datos como escrutinio general.
+3. Si el script dice que no encuentra un campo, añade su nombre a `FIELD_ALIASES` en `src/lib/results.ts` y ejecuta `npm test`. Si una candidatura sale como `x-…`, añade sus siglas a `aliases` en `resultados.ts`. Si una circunscripción del Senado no aparece, añade el nombre que usa la fuente a `aliases` de esa isla en `senateConstituencies`.
+4. Revisa la página con `npm run dev`, haz commit de `public/<elección>/resultados/datos/` y publica la web. Las páginas abiertas muestran los datos en el minuto siguiente al despliegue.
+
+La página ya no muestra la simulación, pero `simulateNight` y `simulateMunicipalities` (`src/lib/results.ts`, con sus tests) y el ensayo del script (`--ensayo`) siguen disponibles para volver a ponerla. La simulación no es una previsión: parte de la media de encuestas, reparte el voto por provincias en proporción a sus escaños, da a cada partido autonómico su voto solo en su territorio y añade un error al azar por provincia. Los municipios tienen un tamaño al azar (la capital, mayor) y sus votos suman los de su provincia.
 
 ### Herramientas para agentes (WebMCP)
 

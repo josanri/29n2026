@@ -97,6 +97,8 @@ export const routes = {
   /** Practical information to vote: documents, mail vote, leave from work and dates. */
   info: () => withBase('/info/'),
   simulator: (chamber?: 'congreso' | 'senado') => withBase(chamber === 'senado' ? '/simulador/?camara=senado' : '/simulador/'),
+  /** The results of the Congress (provisional and general count). Until they are published, a countdown and a link to the official site. */
+  results: (provinceCode?: string) => withBase(provinceCode ? `/resultados/?provincia=${provinceCode}` : '/resultados/'),
   /** The page that lists the tests. */
   tests: () => withBase('/tests/'),
   /** «Temas que dividen»: the reader takes a side on each polarizing topic and compares the parties. */

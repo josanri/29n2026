@@ -1221,9 +1221,9 @@ const ASIDE_WORDS = 15;
   .peak__filter[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
 
   /* ---- Transcript: the filters at the side (on top on a narrow screen), the text in a reading column ---- */
-  /* The sticky panels stay under the site header: one row of 72px below 1180px, and taller above. */
+  /* The sticky panels stay under the site header: one row of 72px below 1260px, and taller above. */
   .transcript-section { --sticky-top: 108px; scroll-margin-top: 96px; }
-  @media (max-width: 1179px) { .transcript-section { --sticky-top: 84px; } }
+  @media (max-width: 1259px) { .transcript-section { --sticky-top: 84px; } }
   /* Phone: the header is one short row (63px with its border), so the bar sits right under it, without a strip of text above. */
   @media (max-width: 560px) { .transcript-section { --sticky-top: 62px; } }
   .reader { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: var(--space-6); align-items: start; }

@@ -1,0 +1,1172 @@
+---
+/**
+ * Resultados del Congreso y del Senado: los datos de `resultsConfig.feedUrl` y `resultsConfig.senateFeedUrl`
+ * (resultados provisionales o escrutinio general). El Senado es opcional: sin su archivo, su parte dice que no hay datos.
+ * La página no cubre el recuento al minuto: hasta que haya datos, «Próximamente» con la cuenta atrás y el enlace a la
+ * web oficial (`resultsConfig.source`). Con datos, `render` dibuja el hemiciclo, la tabla por partido, el mapa del
+ * partido más votado en cada provincia y la tabla de una provincia. El formato y los cálculos están en `src/lib/results.ts`.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hemicycle from '@/components/simulator/Hemicycle.astro';
+import ProvinceMap from '@/components/candidacies/ProvinceMap.astro';
+import Button from '@/components/ui/Button.astro';
+import Panel from '@/components/ui/Panel.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { ABSOLUTE_MAJORITY, CONGRESS_SEATS } from '@eleccion/congreso';
+import { election } from '@eleccion/eleccion';
+import { constituencySeats, OTHER_PARTY_COLOR, resultsConfig, resultsParties, senateConstituencies } from '@eleccion/resultados';
+import { SENATE_ABSOLUTE_MAJORITY, SENATE_AUTONOMOUS_SEATS, SENATE_ELECTED_SEATS, SENATE_SEATS } from '@eleccion/senado';
+import { geography } from '@/lib/geography';
+import { programs } from '@/lib/programs';
+import { routes, withBase } from '@/lib/routes';
+
+const programIds = new Set(programs.map((program) => program.id));
+const names = Object.fromEntries(geography.provinces.map((province) => [province.code, province.name]));
+const provinceList = Object.keys(constituencySeats)
+  .sort((a, b) => names[a].localeCompare(names[b], 'es'))
+  .map((code) => ({ code, name: names[code], seats: constituencySeats[code] }));
+
+const pageData = {
+  status: resultsConfig.status,
+  opensAt: resultsConfig.opensAt,
+  feedUrl: withBase(resultsConfig.feedUrl),
+  municipalFeedUrl: withBase(resultsConfig.municipalFeedUrl),
+  municipalMapUrl: withBase(resultsConfig.municipalMapUrl),
+  senateFeedUrl: withBase(resultsConfig.senateFeedUrl),
+  refreshSeconds: resultsConfig.refreshSeconds,
+  majority: ABSOLUTE_MAJORITY,
+  seatsByCode: constituencySeats,
+  senateSeats: SENATE_ELECTED_SEATS,
+  // The constituencies of the Senate of each province: the province, or its islands.
+  senateByProvince: Object.fromEntries(
+    Object.keys(constituencySeats).map((code) => [
+      code,
+      senateConstituencies.filter((constituency) => constituency.province === code).map((constituency) => constituency.code),
+    ]),
+  ),
+  names,
+  otherColor: OTHER_PARTY_COLOR,
+  parties: resultsParties.map((party) => ({
+    id: party.id,
+    acronym: party.acronym,
+    name: party.name,
+    color: party.color,
+    seats2023: party.seats2023,
+    senateSeats2023: party.senateSeats2023 ?? 0,
+    aliases: party.aliases,
+    href: party.programId && programIds.has(party.programId) ? routes.party(party.programId) : undefined,
+  })),
+};
+
+const formatDay = (date: string) =>
+  new Date(date).toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+const isComingSoon = resultsConfig.status === 'proximamente';
+---
+
+<BaseLayout
+  title="Resultados de las elecciones generales"
+  description={`Resultados del Congreso y del Senado del ${election.shortName}: escaños, senadores, votos y participación por partido y provincia. Hasta que se publiquen aquí, el recuento está en la web oficial.`}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Tag variant="ink">Congreso · {CONGRESS_SEATS} escaños · Senado · {SENATE_ELECTED_SEATS} senadores</Tag>
+      <h1 class="headline">Resultados</h1>
+      <p class="page-hero__lede">
+        Escaños, senadores, votos y participación de cada partido, en España, en cada provincia y en cada municipio. Los datos de la noche son los
+        provisionales del {resultsConfig.source.name}; los oficiales salen del escrutinio general.
+      </p>
+      <p class="status">
+        Estado actual: <b id="live-label">{isComingSoon ? 'Próximamente' : resultsConfig.status === 'definitivo' ? 'Escrutinio general' : 'Datos provisionales'}</b>
+      </p>
+    </div>
+  </section>
+
+  <div class="container results" id="results" data-results={JSON.stringify(pageData)}>
+    <!-- «Próximamente»: until the results are published on this page. The count of the night is on the official site. -->
+    <section class="soon box" id="soon" aria-labelledby="soon-title" hidden={!isComingSoon}>
+      <p class="soon__kicker">Estado actual</p>
+      <h2 id="soon-title" class="soon__title">Próximamente</h2>
+      <p class="soon__lede" id="soon-lede">
+        Los colegios cierran el <b>{formatDay(resultsConfig.opensAt)}</b> (en Canarias, a las 20:00 hora canaria).
+        Aquí no seguimos el recuento al minuto: la noche electoral, los resultados provisionales están en la web oficial del
+        {resultsConfig.source.name}. Los publicaremos en esta página más tarde.
+      </p>
+      <dl class="countdown" id="countdown" aria-label="Tiempo hasta el cierre de los colegios">
+        <div><dt>días</dt><dd data-unit="days">–</dd></div>
+        <div><dt>horas</dt><dd data-unit="hours">–</dd></div>
+        <div><dt>minutos</dt><dd data-unit="minutes">–</dd></div>
+      </dl>
+      <p class="soon__after" id="soon-after" hidden>Los colegios ya han cerrado. Sigue el recuento en la web oficial: los resultados llegan a esta página más tarde.</p>
+      <div class="soon__actions">
+        <Button variant="ink" href={resultsConfig.source.url} rel="noopener">Resultados en 29neleccionesgenerales.es</Button>
+        <Button href={routes.calendar()}>Calendario electoral</Button>
+      </div>
+    </section>
+
+    <!-- The results. The script fills every part. -->
+    <div class="board" id="board" hidden>
+      <p class="live-error" id="live-error" role="status" hidden></p>
+
+      <div class="summary" id="summary" aria-live="polite">
+        <div class="summary__item">
+          <span class="summary__value" data-summary="counted">–</span>
+          <span class="summary__label">escrutado</span>
+          <span class="progress" aria-hidden="true"><span data-summary="counted-bar"></span></span>
+        </div>
+        <div class="summary__item"><span class="summary__value" data-summary="turnout">–</span><span class="summary__label">participación</span></div>
+        <div class="summary__item"><span class="summary__value" data-summary="abstention">–</span><span class="summary__label">abstención</span></div>
+        <div class="summary__item"><span class="summary__value" data-summary="blank">–</span><span class="summary__label">en blanco</span></div>
+        <div class="summary__item"><span class="summary__value" data-summary="null">–</span><span class="summary__label">nulos</span></div>
+      </div>
+      <p class="updated" id="updated" hidden></p>
+
+      <div class="grid grid--congress">
+        <Panel class="hemi-panel" title="Congreso" lead={`Mayoría absoluta: ${ABSOLUTE_MAJORITY} escaños. Con el recuento a medias, los escaños salen de los votos ya contados.`}>
+          <Hemicycle id="hemi" label="Hemiciclo del Congreso con los escaños de cada partido">
+            <text class="hemi__total" id="hemi-total" x="200" y="172" text-anchor="middle">–</text>
+            <text class="hemi__caption" id="hemi-caption" x="200" y="192" text-anchor="middle">escaños del primero</text>
+          </Hemicycle>
+          <p class="majority" id="majority"></p>
+        </Panel>
+
+        <Panel class="table-panel" title="Por partido">
+          <div class="table-wrap">
+            <table class="parties" id="parties-national">
+              <caption class="sr-only">Escaños y votos de cada partido en España</caption>
+              <thead>
+                <tr><th scope="col">Partido</th><th scope="col" class="num">Escaños</th><th scope="col" class="num">Dif.<br />2023</th><th scope="col" class="num votes">Votos</th><th class="bar-cell" aria-hidden="true"></th><th scope="col" class="num">%</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <button type="button" class="more" id="national-more" aria-expanded="false" aria-controls="parties-national" hidden></button>
+        </Panel>
+      </div>
+
+      <!-- The Senate: the 208 elected senators. The 58 senators of the regional parliaments do not change on the night. -->
+      <section class="senate" id="senate" aria-labelledby="senate-title">
+        <h2 class="explore__title" id="senate-title">Senado</h2>
+        <p class="senate__status" id="senate-status" role="status">Todavía no hay datos del Senado.</p>
+        <div class="grid grid--congress" id="senate-board" hidden>
+          <Panel
+            class="hemi-panel"
+            title={`${SENATE_ELECTED_SEATS} senadores elegidos`}
+            lead={`El Senado tiene ${SENATE_SEATS} escaños: los parlamentos autonómicos designan otros ${SENATE_AUTONOMOUS_SEATS}, que no cambian esta noche. Mayoría absoluta de la cámara: ${SENATE_ABSOLUTE_MAJORITY}.`}
+          >
+            <Hemicycle id="senate-hemi" seats={SENATE_ELECTED_SEATS} rows={8} label="Hemiciclo de los senadores elegidos de cada partido">
+              <text class="hemi__total" id="senate-hemi-total" x="200" y="172" text-anchor="middle">–</text>
+              <text class="hemi__caption" id="senate-hemi-caption" x="200" y="192" text-anchor="middle">senadores del primero</text>
+            </Hemicycle>
+            <p class="majority" id="senate-majority"></p>
+          </Panel>
+
+          <Panel class="table-panel" title="Por partido">
+            <div class="table-wrap">
+              <table class="parties" id="senate-national">
+                <caption class="sr-only">Senadores elegidos de cada partido en España</caption>
+                <thead>
+                  <tr><th scope="col">Partido</th><th scope="col" class="num">Senadores</th><th scope="col" class="num">Dif.<br />2023</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <p class="note">
+              Cada votante marca hasta 3 candidatos (2 en Gran Canaria, Mallorca, Tenerife, Ceuta y Melilla; 1 en las demás islas). Los
+              escaños son de los candidatos más votados de cada provincia o isla. Con el recuento a medias, salen de los votos ya contados.
+            </p>
+          </Panel>
+        </div>
+      </section>
+
+      <!-- One map for the drill-down: Spain, then the municipalities of the province. The button and breadcrumb go back. -->
+      <section class="explore" id="explore" aria-labelledby="explore-title">
+        <div class="explore__head">
+          <h2 class="explore__title" id="explore-title">Por territorio</h2>
+          <Button size="sm" id="explore-back" class="explore__back" hidden>← Volver a España</Button>
+          <nav aria-label="Territorio que ves"><ol class="crumbs" id="crumbs"></ol></nav>
+        </div>
+        <div class="grid grid--map">
+          <Panel class="map-panel">
+            <p class="map-status" id="map-status"></p>
+            <div id="spain-map">
+              <ProvinceMap
+                id="results-map"
+                label="Mapa del partido más votado en cada provincia"
+                linkLabel={(name) => `Resultados de ${name}`}
+                href={(code) => `?provincia=${code}#explore-title`}
+              />
+            </div>
+            <div id="towns-map" hidden>
+              <svg class="town-map" id="town-map" role="group" aria-label="Mapa de los municipios"></svg>
+            </div>
+            <p class="town-map__status" id="town-map-status" role="status"></p>
+            <ul class="map-legend" id="map-legend" aria-label="Leyenda del mapa"></ul>
+            <p class="map-hint" id="map-hint">Pulsa una provincia para ver sus municipios.</p>
+          </Panel>
+
+          <Panel class="table-panel">
+            <div class="pickers">
+              <label class="area-select" for="area-select">
+                <span>Provincia</span>
+                <select id="area-select">
+                  <option value="">Toda España</option>
+                  {provinceList.map((province) => (
+                    <option value={province.code}>{province.name} ({province.seats} {province.seats === 1 ? 'escaño' : 'escaños'})</option>
+                  ))}
+                </select>
+              </label>
+              <label class="area-select" for="town-select">
+                <span>Municipio</span>
+                <select id="town-select" disabled><option value="">Elige antes una provincia</option></select>
+              </label>
+            </div>
+            <h3 class="area-title" id="area-title">Toda España</h3>
+            <p class="area-summary" id="area-summary"></p>
+            <!-- At the level of Spain: each province, its most-voted party and its count. The name opens the province. -->
+            <div class="table-wrap table-wrap--scroll" id="provinces-wrap" hidden>
+              <table class="parties" id="provinces-table">
+                <caption class="sr-only">Partido más votado y escrutado de cada provincia</caption>
+                <thead>
+                  <tr><th scope="col">Provincia</th><th scope="col">Más votado</th><th scope="col" class="num">Escrutado</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="table-wrap">
+              <table class="parties" id="parties-area" hidden>
+                <caption class="sr-only" id="parties-area-caption">Escaños y votos de cada partido en la provincia</caption>
+                <thead>
+                  <tr><th scope="col">Partido</th><th scope="col" class="num">Escaños</th><th scope="col" class="num votes">Votos</th><th class="bar-cell" aria-hidden="true"></th><th scope="col" class="num">%</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+              <table class="parties" id="parties-town" hidden>
+                <caption class="sr-only" id="parties-town-caption">Votos de cada partido en el municipio</caption>
+                <thead>
+                  <tr><th scope="col">Partido</th><th scope="col" class="num votes">Votos</th><th class="bar-cell" aria-hidden="true"></th><th scope="col" class="num">%</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <p class="note" id="note-province" hidden>Una lista necesita el 3 % de los votos válidos de la provincia (con los votos en blanco) para tener escaño. Los escaños se reparten con la regla D'Hondt.</p>
+            <p class="note" id="note-town" hidden>Un municipio no elige diputados: los escaños se reparten en toda la provincia.</p>
+            <!-- The Senate of the province: its candidates, or the candidates of each island. -->
+            <div class="area-senate" id="area-senate" hidden></div>
+          </Panel>
+        </div>
+      </section>
+    </div>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">De dónde salen los datos</h2>
+      <ul>
+        <li>
+          <b>Noche electoral:</b> resultados provisionales del <a href={resultsConfig.source.url} rel="noopener" target="_blank">{resultsConfig.source.name}<span class="sr-only"> (se abre en otra pestaña)</span></a>,
+          a partir de las actas de las mesas. Son orientativos.
+        </li>
+        <li><b>Resultados oficiales:</b> los del escrutinio general de las Juntas Electorales Provinciales, del 4 al 7 de diciembre, que publica el BOE.</li>
+        <li><b>Mapas:</b> límites municipales del Instituto Geográfico Nacional (paquete es-atlas).</li>
+      </ul>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  import { setupProvinceMap } from '@/lib/province-map';
+  import { tooltip } from '@/lib/tooltip';
+  import {
+    nationalTotal,
+    senateTotal,
+    share,
+    sortCandidates,
+    sortParties,
+    turnout,
+    withElected,
+    withSeats,
+    type AreaResult,
+    type PartyResult,
+    type ResultsFeed,
+    type SenateFeed,
+  } from '@/lib/results';
+
+  type PageParty = {
+    id: string;
+    acronym: string;
+    name: string;
+    color: string;
+    seats2023: number;
+    senateSeats2023: number;
+    aliases: string[];
+    href?: string;
+  };
+  type PageData = {
+    status: 'proximamente' | 'provisional' | 'definitivo';
+    opensAt: string;
+    feedUrl: string;
+    municipalFeedUrl: string;
+    municipalMapUrl: string;
+    senateFeedUrl: string;
+    refreshSeconds: number;
+    majority: number;
+    seatsByCode: Record<string, number>;
+    senateSeats: number;
+    senateByProvince: Record<string, string[]>;
+    names: Record<string, string>;
+    otherColor: string;
+    parties: PageParty[];
+  };
+
+  const root = document.getElementById('results')!;
+  const data = JSON.parse(root.dataset.results!) as PageData;
+  const byId = new Map(data.parties.map((party) => [party.id, party]));
+  const order = new Map(data.parties.map((party, index) => [party.id, index]));
+  const colorOf = (id: string) => byId.get(id)?.color ?? data.otherColor;
+
+  const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
+  const integer = (value: number) => value.toLocaleString('es-ES');
+  const percent = (value: number) => `${value.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %`;
+  const escapeHtml = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  // ---------- State ----------
+  let liveFeed: ResultsFeed | null = null;
+  let senateFeed: SenateFeed | null = null;
+  const params = new URLSearchParams(location.search);
+  // `?ensayo`: the page also shows live files marked as a simulation (the rehearsal of `--ensayo` in the import script).
+  const rehearsal = params.has('ensayo');
+  let selected = params.get('provincia') ?? '';
+  if (!(selected in data.seatsByCode)) selected = '';
+  let selectedTown = params.get('municipio') ?? '';
+  if (selectedTown.slice(0, 2) !== selected) selectedTown = '';
+
+  type TownMap = { ancho: number; alto: number; municipios: { codigo: string; nombre: string; d: string; compartido?: boolean }[] };
+  const townMaps = new Map<string, TownMap>();
+  const liveTowns = new Map<string, ResultsFeed>();
+  const loading = new Set<string>();
+  const forProvince = (url: string, code: string) => url.replace('{provincia}', code);
+
+  // ---------- Drawing ----------
+  const hemi = $<SVGSVGElement>('#hemi');
+  const seatCircles = [...hemi.querySelectorAll<SVGCircleElement>('circle[data-seat]')];
+  const mapApi = setupProvinceMap($<SVGSVGElement>('#results-map'), (code) => selectArea(code));
+
+  /** A party cell: a swatch in the party color (the name is always written: color is never the only sign). */
+  const partyCell = (party: PartyResult) => {
+    const ref = byId.get(party.id);
+    const label = escapeHtml(party.acronym);
+    const name = ref?.href ? `<a href="${ref.href}">${label}</a>` : label;
+    return `<th scope="row"><span class="swatch" style="background:${colorOf(party.id)}" aria-hidden="true"></span>${name}</th>`;
+  };
+  const diff = (now: number, before: number) => {
+    const value = now - before;
+    if (value === 0) return '<span class="diff">=</span>';
+    return `<span class="diff">${value > 0 ? '+' : '−'}${Math.abs(value)}<span class="sr-only">${value > 0 ? ' más' : ' menos'}</span></span>`;
+  };
+  /** The share bar has its own column, so the percent stays on the line of the other numbers. The party color has
+   *  an ink edge: a light color such as CC still reads on paper. */
+  const barCell = (value: number, max: number, id: string) =>
+    `<td class="bar-cell" aria-hidden="true"><span class="share-bar"><span style="width:${max ? (100 * value) / max : 0}%;background:${colorOf(id)}"></span></span></td>`;
+  const pctCell = (value: number, votes: number) => `<td class="num pct">${percent(value)}<span class="pct__votes">${integer(votes)} votos</span></td>`;
+  const byVotes = (a: PartyResult, b: PartyResult) => b.votes - a.votes;
+
+  // The national table folds the parties with no seat: they stay one click away.
+  let showAllNational = false;
+  const nationalMore = $<HTMLButtonElement>('#national-more');
+  nationalMore.addEventListener('click', () => {
+    showAllNational = !showAllNational;
+    render();
+  });
+
+  const rowsFor = (area: AreaResult, national: boolean) => {
+    const parties = sortParties(area.parties).filter((party) => party.votes > 0 || (party.seats ?? 0) > 0);
+    const max = Math.max(...parties.map((party) => share(party.votes, area)), 1);
+    const row = (party: PartyResult) => {
+      const value = share(party.votes, area);
+      return [
+        '<tr>',
+        partyCell(party),
+        `<td class="num seats">${party.seats ?? 0}</td>`,
+        national ? `<td class="num">${diff(party.seats ?? 0, byId.get(party.id)?.seats2023 ?? 0)}</td>` : '',
+        `<td class="num votes">${integer(party.votes)}</td>`,
+        barCell(value, max, party.id),
+        pctCell(value, party.votes),
+        '</tr>',
+      ].join('');
+    };
+    if (!national) return parties.map(row).join('');
+    const seated = parties.filter((party) => (party.seats ?? 0) > 0);
+    const rest = parties.length - seated.length;
+    // Before the first seat (0 % counted) there is nothing to fold.
+    const folded = seated.length > 0 && rest > 0;
+    nationalMore.hidden = !folded;
+    nationalMore.setAttribute('aria-expanded', String(showAllNational));
+    nationalMore.textContent = showAllNational ? 'Ocultar los partidos sin escaño' : `Ver ${rest === 1 ? 'el partido' : `los ${rest} partidos`} sin escaño`;
+    return (folded && !showAllNational ? seated : parties).map(row).join('');
+  };
+
+  const townRows = (area: AreaResult) => {
+    const parties = area.parties.filter((party) => party.votes > 0).sort(byVotes);
+    const max = Math.max(...parties.map((party) => share(party.votes, area)), 1);
+    return parties
+      .map((party) => {
+        const value = share(party.votes, area);
+        return `<tr>${partyCell(party)}<td class="num votes">${integer(party.votes)}</td>${barCell(value, max, party.id)}${pctCell(value, party.votes)}</tr>`;
+      })
+      .join('');
+  };
+
+  const drawSummary = (area: AreaResult, updatedAt: string, kind: ResultsFeed['kind']) => {
+    const set = (key: string, text: string) => {
+      const element = document.querySelector<HTMLElement>(`[data-summary="${key}"]`);
+      if (element) element.textContent = text;
+    };
+    set('counted', percent(area.counted));
+    $<HTMLElement>('[data-summary="counted-bar"]').style.width = `${area.counted}%`;
+    const turnoutValue = turnout(area);
+    set('turnout', area.voters ? percent(turnoutValue) : '–');
+    set('abstention', area.voters ? percent(100 - turnoutValue) : '–');
+    set('blank', area.voters ? percent((100 * area.blank) / (area.voters - area.null || 1)) : '–');
+    set('null', area.voters ? percent((100 * area.null) / area.voters) : '–');
+    // A rehearsal file (`?ensayo`) is not real data: it gets no «updated» line.
+    const updated = $('#updated');
+    updated.hidden = kind === 'simulacion';
+    const time = new Date(updatedAt).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+    updated.textContent = `${kind === 'definitivo' ? 'Escrutinio general' : 'Datos provisionales'} · actualizado a las ${time} (hora peninsular).`;
+  };
+
+  const drawHemicycle = (total: AreaResult) => {
+    // Left to right in the order of the hemicycle; parties not in the list go at the end.
+    const parties = total.parties
+      .filter((party) => (party.seats ?? 0) > 0)
+      .sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999));
+    let index = 0;
+    for (const party of parties) {
+      const tip = tooltip(party.acronym, `${party.seats} ${party.seats === 1 ? 'escaño' : 'escaños'}`, percent(share(party.votes, total)));
+      for (let seat = 0; seat < (party.seats ?? 0); seat += 1) {
+        const circle = seatCircles[index++];
+        if (!circle) break;
+        circle.style.fill = colorOf(party.id);
+        circle.dataset.tooltip = tip;
+      }
+    }
+    for (; index < seatCircles.length; index += 1) {
+      seatCircles[index].style.fill = '';
+      seatCircles[index].dataset.tooltip = tooltip('Sin asignar', 'Faltan votos por contar');
+    }
+    const first = sortParties(total.parties)[0];
+    const assigned = total.parties.reduce((sum, party) => sum + (party.seats ?? 0), 0);
+    $('#hemi-total').textContent = first && assigned ? String(first.seats) : '–';
+    $('#hemi-caption').textContent = first && assigned ? `escaños de ${first.acronym}` : 'sin datos';
+    hemi.setAttribute(
+      'aria-label',
+      assigned
+        ? `Hemiciclo del Congreso: ${parties.map((party) => `${party.acronym} ${party.seats}`).join(', ')}`
+        : 'Hemiciclo del Congreso, todavía sin escaños',
+    );
+    const majority = $('#majority');
+    if (!assigned) majority.textContent = 'Todavía no hay votos contados.';
+    else if ((first.seats ?? 0) >= data.majority) majority.textContent = `${first.acronym} tiene mayoría absoluta.`;
+    else majority.textContent = `Nadie llega solo a la mayoría absoluta: a ${first.acronym} le faltan ${data.majority - (first.seats ?? 0)} escaños.`;
+  };
+
+  // ---------- Senate ----------
+  const senateHemi = $<SVGSVGElement>('#senate-hemi');
+  const senateCircles = [...senateHemi.querySelectorAll<SVGCircleElement>('circle[data-seat]')];
+  const seatWord = (count: number) => `${count} ${count === 1 ? 'senador' : 'senadores'}`;
+
+  /** The Senate of Spain: the hemicycle of the 208 elected seats and the table of the senators of each party. */
+  const drawSenate = () => {
+    const board = $('#senate-board');
+    const status = $('#senate-status');
+    board.hidden = !senateFeed;
+    if (!senateFeed) {
+      status.textContent = 'Todavía no hay datos del Senado.';
+      return;
+    }
+    const total = senateTotal(senateFeed.areas);
+    status.textContent = `Escrutado ${percent(total.counted)} · ${total.assigned} de ${total.seats} senadores asignados.`;
+    const parties = total.parties
+      .filter((party) => (party.seats ?? 0) > 0)
+      .sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999));
+    let index = 0;
+    for (const party of parties) {
+      const tip = tooltip(party.acronym, seatWord(party.seats ?? 0));
+      for (let seat = 0; seat < (party.seats ?? 0); seat += 1) {
+        const circle = senateCircles[index++];
+        if (!circle) break;
+        circle.style.fill = colorOf(party.id);
+        circle.dataset.tooltip = tip;
+      }
+    }
+    for (; index < senateCircles.length; index += 1) {
+      senateCircles[index].style.fill = '';
+      senateCircles[index].dataset.tooltip = tooltip('Sin asignar', 'Faltan votos por contar');
+    }
+    const first = total.parties[0];
+    const hasSeats = Boolean(first && total.assigned);
+    $('#senate-hemi-total').textContent = hasSeats ? String(first.seats) : '–';
+    $('#senate-hemi-caption').textContent = hasSeats ? `senadores de ${first.acronym}` : 'sin datos';
+    senateHemi.setAttribute(
+      'aria-label',
+      hasSeats
+        ? `Senadores elegidos: ${parties.map((party) => `${party.acronym} ${party.seats}`).join(', ')}`
+        : 'Senadores elegidos, todavía sin asignar',
+    );
+    $('#senate-majority').textContent = hasSeats
+      ? `${first.acronym} tiene ${seatWord(first.seats ?? 0)} de los ${total.seats} elegidos.`
+      : 'Todavía no hay votos contados.';
+    // The parties that won a senator in 2023 stay in the table with 0, so the reader sees what they lost.
+    const shown = new Map(total.parties.filter((party) => (party.seats ?? 0) > 0).map((party) => [party.id, party]));
+    for (const ref of data.parties) {
+      if (ref.senateSeats2023 > 0 && !shown.has(ref.id)) shown.set(ref.id, { id: ref.id, acronym: ref.acronym, votes: 0, seats: 0 });
+    }
+    $<HTMLTableElement>('#senate-national').tBodies[0].innerHTML = sortParties([...shown.values()])
+      .map((party) => `<tr>${partyCell(party)}<td class="num seats">${party.seats ?? 0}</td><td class="num">${diff(party.seats ?? 0, byId.get(party.id)?.senateSeats2023 ?? 0)}</td></tr>`)
+      .join('');
+  };
+
+  /** The Senate of the selected province: one table of candidates for the province, or for each of its islands. */
+  const drawAreaSenate = () => {
+    const box = $('#area-senate');
+    const codes = selected && !selectedTown ? data.senateByProvince[selected] ?? [] : [];
+    const areas = senateFeed ? codes.map((code) => senateFeed!.areas.find((area) => area.code === code)).filter((area) => area !== undefined) : [];
+    box.hidden = !selected || Boolean(selectedTown);
+    if (box.hidden) return;
+    if (!areas.length) {
+      box.innerHTML = '<h4 class="area-senate__title">Senado</h4><p class="note">Todavía no hay datos del Senado de esta provincia.</p>';
+      return;
+    }
+    box.innerHTML = areas
+      .map((raw) => {
+        const area = withElected(raw);
+        const title = areas.length > 1 || area.code !== selected ? `Senado · ${escapeHtml(area.name)}` : 'Senado';
+        const rows = sortCandidates(area.candidates)
+          .filter((candidate) => candidate.votes > 0 || candidate.elected)
+          .map(
+            (candidate) =>
+              `<tr${candidate.elected ? ' class="is-elected"' : ''}><th scope="row">${escapeHtml(candidate.name)}</th>` +
+              `<td><span class="swatch" style="background:${colorOf(candidate.partyId)}" aria-hidden="true"></span>${escapeHtml(candidate.acronym)}</td>` +
+              `<td class="num votes">${integer(candidate.votes)}</td>` +
+              `<td class="elected">${candidate.elected ? '<span class="elected__mark">Electo</span>' : '<span class="sr-only">No electo</span>'}</td></tr>`,
+          )
+          .join('');
+        return (
+          `<h4 class="area-senate__title">${title} · ${seatWord(area.seats)}</h4>` +
+          `<p class="area-summary">Escrutado ${percent(area.counted)}</p>` +
+          `<div class="table-wrap"><table class="parties"><caption class="sr-only">Candidatos al Senado en ${escapeHtml(area.name)}</caption>` +
+          `<thead><tr><th scope="col">Candidato</th><th scope="col">Partido</th><th scope="col" class="num votes">Votos</th><th scope="col"><span class="sr-only">Resultado</span></th></tr></thead>` +
+          `<tbody>${rows}</tbody></table></div>`
+        );
+      })
+      .join('');
+  };
+
+  /** The parties that win somewhere, in the order of the hemicycle, with the number of places they win. */
+  type Wins = Map<string, { party: PartyResult; count: number }>;
+  const addWin = (wins: Wins, party: PartyResult) => {
+    const entry = wins.get(party.id) ?? { party, count: 0 };
+    entry.count += 1;
+    wins.set(party.id, entry);
+  };
+  const legendHtml = (wins: Wins) =>
+    [...wins.values()]
+      .sort((a, b) => (order.get(a.party.id) ?? 999) - (order.get(b.party.id) ?? 999))
+      .map(({ party }) => `<li><span class="swatch" style="background:${colorOf(party.id)}" aria-hidden="true"></span>${escapeHtml(party.acronym)}</li>`)
+      .join('') || '<li>Sin datos todavía</li>';
+
+  /** Colors the map of Spain and returns the provinces that each party wins. */
+  const drawMap = (areas: AreaResult[]): Wins => {
+    const wins: Wins = new Map();
+    for (const area of areas) {
+      const link = document.querySelector<SVGAElement>(`#results-map a[data-province="${area.code}"]`);
+      const path = link?.querySelector<SVGPathElement>('path:not(.province-map__hit-area)');
+      if (!link || !path) continue;
+      const winner = [...area.parties].sort(byVotes)[0];
+      const hasVotes = winner && winner.votes > 0;
+      path.style.fill = hasVotes ? colorOf(winner.id) : '';
+      if (hasVotes) addWin(wins, winner);
+      const seats = withSeats(area).parties.filter((party) => (party.seats ?? 0) > 0);
+      link.dataset.tooltip = tooltip(
+        area.name,
+        hasVotes ? `Más votado: ${winner.acronym} (${percent(share(winner.votes, area))})` : 'Sin datos',
+        `Escrutado: ${percent(area.counted)}`,
+        ...(seats.length ? [seats.map((party) => `${party.acronym} ${party.seats}`).join(' · ')] : []),
+      );
+      link.setAttribute('aria-label', `${area.name}: ${hasVotes ? `más votado ${winner.acronym}` : 'sin datos'}`);
+    }
+    return wins;
+  };
+
+  // ---------- Municipalities ----------
+  const townSvg = $<SVGSVGElement>('#town-map');
+  const townSelect = $<HTMLSelectElement>('#town-select');
+  const townStatus = $('#town-map-status');
+  let drawnMap = '';
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+
+  /** Loads a JSON file, one request at a time for each key; `render` runs again when it arrives. */
+  const loadJson = async (key: string, url: string, store: (value: unknown) => void) => {
+    if (loading.has(key)) return;
+    loading.add(key);
+    try {
+      const response = await fetch(url, { cache: key.startsWith('live-') ? 'no-store' : 'default' });
+      if (response.ok) store(await response.json());
+    } catch {
+      // No file yet, or no network: the panel says that there are no data, and the next refresh tries again.
+    } finally {
+      loading.delete(key);
+      render();
+    }
+  };
+
+  /** Builds the SVG of the municipalities of a province, once for each province. */
+  const buildTownMap = (code: string, map: TownMap) => {
+    if (drawnMap === code) return;
+    drawnMap = code;
+    townSvg.setAttribute('viewBox', `0 0 ${map.ancho} ${map.alto}`);
+    townSvg.replaceChildren();
+    for (const town of map.municipios) {
+      const path = document.createElementNS(SVG_NS, 'path');
+      path.setAttribute('d', town.d);
+      path.dataset.town = town.codigo;
+      if (town.compartido) path.classList.add('is-shared');
+      townSvg.append(path);
+    }
+    // The outline of the selected municipality: ink under yellow, so it reads on paper and on any party color.
+    for (const name of ['town-map__selection-back', 'town-map__selection']) {
+      const selection = document.createElementNS(SVG_NS, 'path');
+      selection.classList.add(name);
+      townSvg.append(selection);
+    }
+    const towns = map.municipios.filter((town) => !town.compartido).sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+    townSelect.replaceChildren(new Option(`Toda la provincia (${towns.length} municipios)`, ''), ...towns.map((town) => new Option(town.nombre, town.codigo)));
+    townSelect.disabled = false;
+    townSvg.setAttribute('aria-label', `Mapa de los ${towns.length} municipios de ${data.names[code]}. La lista «Municipio» tiene los mismos municipios.`);
+  };
+
+  /** The map of the municipalities of the selected province: loads its files, colors it and returns its results. */
+  const drawTowns = (): { towns?: ResultsFeed; map?: TownMap; wins: Wins } => {
+    const wins: Wins = new Map();
+    const map = townMaps.get(selected);
+    if (!map) {
+      townStatus.textContent = 'Cargando el mapa…';
+      const code = selected;
+      void loadJson(`map-${code}`, forProvince(data.municipalMapUrl, code), (value) => townMaps.set(code, value as TownMap));
+      return { wins };
+    }
+    buildTownMap(selected, map);
+    const towns = liveTowns.get(selected);
+    if (!towns) {
+      const code = selected;
+      void loadJson(`live-${code}`, forProvince(data.municipalFeedUrl, code), (value) => {
+        const townFeed = value as ResultsFeed;
+        if (townFeed.format === 'electosfera-resultados/1' && (townFeed.kind !== 'simulacion' || rehearsal)) liveTowns.set(code, townFeed);
+      });
+    }
+    townStatus.textContent = towns ? '' : 'Todavía no hay datos por municipio de esta provincia.';
+
+    const byCode = new Map((towns?.areas ?? []).map((area) => [area.code, area]));
+    const townByCode = new Map(map.municipios.map((town) => [town.codigo, town]));
+    for (const path of townSvg.querySelectorAll<SVGPathElement>('path[data-town]')) {
+      const town = townByCode.get(path.dataset.town!)!;
+      if (town.compartido) {
+        path.dataset.tooltip = tooltip(town.nombre, 'Terreno compartido entre municipios: no tiene votantes');
+        continue;
+      }
+      const area = byCode.get(town.codigo);
+      const winner = area ? [...area.parties].sort(byVotes)[0] : undefined;
+      if (area && winner && winner.votes > 0) {
+        path.style.fill = colorOf(winner.id);
+        addWin(wins, winner);
+        path.dataset.tooltip = tooltip(town.nombre, `Más votado: ${winner.acronym} (${percent(share(winner.votes, area))})`, `Escrutado: ${percent(area.counted)}`);
+      } else {
+        path.style.fill = '';
+        path.dataset.tooltip = tooltip(town.nombre, 'Sin datos todavía');
+      }
+    }
+    const chosen = townByCode.get(selectedTown);
+    for (const selection of townSvg.querySelectorAll<SVGPathElement>('.town-map__selection, .town-map__selection-back')) {
+      if (chosen) selection.setAttribute('d', chosen.d);
+      else selection.removeAttribute('d');
+    }
+    townSelect.value = chosen ? selectedTown : '';
+    return { towns, map, wins };
+  };
+
+  /** «Por territorio»: one map that goes from Spain to the municipalities, a return button, a breadcrumb back, and the table of the place. */
+  const backButton = $<HTMLButtonElement>('#explore-back');
+  const drawExplorer = (feed: ResultsFeed, spainWins: Wins) => {
+    const provinceTable = $<HTMLTableElement>('#parties-area');
+    const townTable = $<HTMLTableElement>('#parties-town');
+    const title = $('#area-title');
+    const summary = $('#area-summary');
+    $('#spain-map').hidden = Boolean(selected);
+    $('#towns-map').hidden = !selected;
+    backButton.hidden = !selected;
+    if (selected) {
+      backButton.textContent = selectedTown ? `← Volver a ${data.names[selected]}` : '← Volver a España';
+    }
+    const crumbs: { label: string; go?: string }[] = [{ label: 'España', go: 'spain' }];
+
+    const place = (area: AreaResult) =>
+      `Escrutado ${percent(area.counted)} · participación ${area.voters ? percent(turnout(area)) : '–'}`;
+
+    if (!selected) {
+      townSelect.replaceChildren(new Option('Elige antes una provincia', ''));
+      townSelect.disabled = true;
+      townStatus.textContent = '';
+      drawnMap = '';
+      $('#map-legend').innerHTML = legendHtml(spainWins);
+      $('#map-hint').textContent = 'Pulsa una provincia para ver sus municipios y sus escaños.';
+      title.textContent = 'Toda España';
+      const wins = [...spainWins.values()].sort((a, b) => b.count - a.count);
+      summary.textContent = wins.length
+        ? `Provincias donde es el más votado: ${wins.map((entry) => `${entry.party.acronym} ${entry.count}`).join(' · ')}`
+        : 'Todavía no hay votos contados.';
+      $('#provinces-wrap').hidden = false;
+      $<HTMLTableElement>('#provinces-table').tBodies[0].innerHTML = [...feed.areas]
+        .sort((a, b) => a.name.localeCompare(b.name, 'es'))
+        .map((area) => {
+          const winner = [...area.parties].sort(byVotes)[0];
+          const party = winner && winner.votes > 0
+            ? `<span class="swatch" style="background:${colorOf(winner.id)}" aria-hidden="true"></span>${escapeHtml(winner.acronym)}`
+            : 'Sin datos';
+          return `<tr><th scope="row"><button type="button" class="row-link" data-province="${area.code}">${escapeHtml(area.name)}</button></th><td>${party}</td><td class="num">${percent(area.counted)}</td></tr>`;
+        })
+        .join('');
+      provinceTable.hidden = true;
+      townTable.hidden = true;
+      $('#note-province').hidden = true;
+      $('#note-town').hidden = true;
+    } else {
+      $('#provinces-wrap').hidden = true;
+      const province = feed.areas.find((area) => area.code === selected);
+      const { towns, map, wins } = drawTowns();
+      $('#map-legend').innerHTML = legendHtml(wins);
+      crumbs.push({ label: data.names[selected], go: selectedTown ? 'province' : undefined });
+      const townArea = towns?.areas.find((area) => area.code === selectedTown);
+      const townName = map?.municipios.find((town) => town.codigo === selectedTown)?.nombre;
+      if (selectedTown && townName) crumbs.push({ label: townName });
+      $('#map-hint').textContent = 'Pulsa un municipio para ver sus votos.';
+
+      if (selectedTown && townName) {
+        title.textContent = townName;
+        summary.textContent = townArea ? place(townArea) : 'Todavía no hay datos de este municipio.';
+        provinceTable.hidden = true;
+        townTable.hidden = !townArea;
+        if (townArea) {
+          $('#parties-town-caption').textContent = `Votos de cada partido en ${townName}`;
+          townTable.tBodies[0].innerHTML = townRows(townArea);
+        }
+        $('#note-province').hidden = true;
+        $('#note-town').hidden = false;
+      } else {
+        const seats = data.seatsByCode[selected];
+        title.textContent = `${data.names[selected]} · ${seats} ${seats === 1 ? 'escaño' : 'escaños'}`;
+        summary.textContent = province ? place(province) : 'Todavía no hay datos de esta provincia.';
+        townTable.hidden = true;
+        provinceTable.hidden = !province;
+        if (province) {
+          $('#parties-area-caption').textContent = `Escaños y votos de cada partido en ${province.name}`;
+          provinceTable.tBodies[0].innerHTML = rowsFor(withSeats(province), false);
+        }
+        $('#note-province').hidden = false;
+        $('#note-town').hidden = true;
+      }
+    }
+
+    $('#crumbs').innerHTML = crumbs
+      .map((crumb, index) =>
+        index === crumbs.length - 1
+          ? `<li aria-current="location"><span>${escapeHtml(crumb.label)}</span></li>`
+          : `<li><button type="button" data-go="${crumb.go}">${escapeHtml(crumb.label)}</button></li>`,
+      )
+      .join('');
+  };
+
+  const selectTown = (code: string) => {
+    selectedTown = code.slice(0, 2) === selected ? code : '';
+    const url = new URL(location.href);
+    if (selectedTown) url.searchParams.set('municipio', selectedTown);
+    else url.searchParams.delete('municipio');
+    history.replaceState(null, '', url);
+    render();
+  };
+  townSvg.addEventListener('click', (event) => {
+    const path = (event.target as Element).closest<SVGPathElement>('path[data-town]');
+    if (path && !path.classList.contains('is-shared')) selectTown(path.dataset.town!);
+  });
+  townSelect.addEventListener('change', () => selectTown(townSelect.value));
+  $('#provinces-table').addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('button[data-province]');
+    if (button) selectArea(button.dataset.province!);
+  });
+  backButton.addEventListener('click', () => {
+    if (selectedTown) selectTown('');
+    else selectArea('');
+  });
+  $('#crumbs').addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('button[data-go]');
+    if (!button) return;
+    if (button.dataset.go === 'spain') selectArea('');
+    else selectTown('');
+  });
+
+  const render = () => {
+    const feed = liveFeed;
+    $('#soon').hidden = Boolean(feed);
+    $('#board').hidden = !feed;
+    if (!feed) return;
+    const total = nationalTotal(feed.areas);
+    drawSummary(total, feed.updatedAt, feed.kind);
+    drawHemicycle(total);
+    $<HTMLTableElement>('#parties-national').tBodies[0].innerHTML = rowsFor(total, true);
+    drawExplorer(feed, drawMap(feed.areas));
+    drawSenate();
+    drawAreaSenate();
+  };
+
+  const selectArea = (code: string) => {
+    selected = code in data.seatsByCode ? code : '';
+    if (selectedTown.slice(0, 2) !== selected) selectedTown = '';
+    $<HTMLSelectElement>('#area-select').value = selected;
+    mapApi.select(selected);
+    const url = new URL(location.href);
+    if (selected) url.searchParams.set('provincia', selected);
+    else url.searchParams.delete('provincia');
+    if (!selectedTown) url.searchParams.delete('municipio');
+    history.replaceState(null, '', url);
+    render();
+  };
+  $<HTMLSelectElement>('#area-select').addEventListener('change', (event) => selectArea((event.target as HTMLSelectElement).value));
+
+  // ---------- Live data ----------
+  // From the closing time the page looks for the data by itself: when a deploy publishes the files, an open page shows them.
+  const liveError = $('#live-error');
+  const liveActive = () => rehearsal || data.status !== 'proximamente' || Date.now() >= Date.parse(data.opensAt);
+  /** The file of the Senate is optional: with no file (404) or a wrong one, the Senate part says that there are no data. */
+  const loadSenate = async () => {
+    try {
+      const response = await fetch(data.senateFeedUrl, { cache: 'no-store' });
+      if (!response.ok) return;
+      const feed = (await response.json()) as SenateFeed;
+      if (feed.format !== 'electosfera-senado/1' || !Array.isArray(feed.areas)) return;
+      if (feed.kind === 'simulacion' && !rehearsal) return;
+      senateFeed = feed;
+    } catch {
+      // No network: the next refresh tries again.
+    }
+  };
+  const loadLive = async () => {
+    if (!liveActive()) return;
+    await loadSenate();
+    try {
+      const response = await fetch(data.feedUrl, { cache: 'no-store' });
+      if (response.status === 404) return; // No file yet: «Próximamente» stays.
+      if (!response.ok) throw new Error(String(response.status));
+      const feed = (await response.json()) as ResultsFeed;
+      if (feed.format !== 'electosfera-resultados/1' || !Array.isArray(feed.areas)) throw new Error('formato');
+      // A rehearsal file is never shown as real data.
+      if (feed.kind === 'simulacion' && !rehearsal) return;
+      liveFeed = feed;
+      // The municipalities of the open province are read again with the new data.
+      liveTowns.clear();
+      liveError.hidden = true;
+      $('#live-label').textContent = { provisional: 'Datos provisionales', definitivo: 'Escrutinio general', simulacion: 'Ensayo' }[feed.kind];
+      render();
+    } catch {
+      liveError.hidden = false;
+      liveError.textContent = `No se han podido leer los datos. La página lo intenta otra vez en ${data.refreshSeconds} segundos.`;
+    }
+  };
+  if (data.status !== 'definitivo') setInterval(loadLive, data.refreshSeconds * 1000);
+
+  // ---------- Countdown ----------
+  const countdown = $('#countdown');
+  const tick = () => {
+    const left = new Date(data.opensAt).getTime() - Date.now();
+    if (left <= 0) {
+      // The polls are closed: the box says that the count is in progress, and the lede in the future tense goes away.
+      countdown.hidden = true;
+      $('#soon-lede').hidden = true;
+      $('#soon-after').hidden = false;
+      $('#soon-title').textContent = 'Recuento en curso';
+      // With data, `loadLive` writes the kind of data in the label instead.
+      if (!liveFeed) $('#live-label').textContent = 'Recuento en curso';
+      return false;
+    }
+    const minutes = Math.floor(left / 60_000);
+    const values = { days: Math.floor(minutes / 1440), hours: Math.floor((minutes % 1440) / 60), minutes: minutes % 60 };
+    for (const [unit, value] of Object.entries(values)) countdown.querySelector(`[data-unit="${unit}"]`)!.textContent = String(value);
+    return true;
+  };
+  if (tick()) {
+    const timer = setInterval(() => {
+      if (!tick()) clearInterval(timer);
+    }, 30_000);
+  }
+
+  if (selected) mapApi.select(selected);
+  $<HTMLSelectElement>('#area-select').value = selected;
+  render();
+  void loadLive();
+</script>
+
+<style>
+  .page-hero { border-bottom: var(--border-thick) solid var(--color-ink); padding: 32px 0; }
+  .page-hero h1 { font-size: clamp(3.25rem, 12cqi, 8.5rem); margin: var(--space-4) 0; }
+  .page-hero__lede { font-size: 1.1875rem; font-weight: 600; max-width: 60ch; }
+
+  .status { margin: var(--space-4) 0 0; font-weight: 600; }
+
+  .results { padding-top: var(--space-6); padding-bottom: var(--space-8); }
+
+  /* «Próximamente» */
+  .soon { padding: clamp(20px, 4vw, 40px); }
+  .soon__kicker { margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  /* The line height leaves room for the accent of «PRÓXIMAMENTE» under the kicker. */
+  .soon__title { margin: var(--space-3) 0 var(--space-4); font-size: clamp(3rem, 11vw, 7rem); line-height: 1; overflow-wrap: anywhere; }
+  .soon__lede { max-width: 62ch; font-size: 1.125rem; }
+  .countdown { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0; }
+  .countdown div {
+    display: grid;
+    min-width: 110px;
+    padding: 12px 16px;
+    border: var(--border-thick) solid var(--color-ink);
+  }
+  .countdown dd { order: -1; margin: 0; font: 900 3.5rem / 1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .countdown dt { font-weight: 700; }
+  .soon__after { font-weight: 700; }
+  .soon__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+  .live-error { padding: 12px 16px; border: var(--border-thick) solid var(--color-ink); font-weight: 700; }
+
+  /* The headline numbers: five tiles of the same size. The count has its bar at the foot of its tile. */
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    border: var(--border-thick) solid var(--color-ink);
+  }
+  .summary__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px;
+    border-right: var(--border-fine) solid var(--color-ink);
+  }
+  .summary__item:last-child { border-right: 0; }
+  .summary__value { font: 900 clamp(2rem, 3.4vw, 2.75rem) / 1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .summary__label { font-weight: 600; }
+  .progress { display: block; height: 8px; margin-top: auto; border: var(--border-fine) solid var(--color-ink); }
+  .progress span { display: block; height: 100%; width: 0; background: var(--color-ink); transition: width var(--duration-fast); }
+  .updated { margin: var(--space-2) 0 0; font-size: 0.9375rem; }
+  @media (max-width: 720px) {
+    .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .summary__item { border-right: 0; border-bottom: var(--border-fine) solid var(--color-ink); }
+    .summary__item:first-child { grid-column: 1 / -1; }
+    .summary__item:nth-child(even) { border-right: var(--border-fine) solid var(--color-ink); }
+    .summary__item:nth-last-child(-n + 2) { border-bottom: 0; }
+  }
+
+  .grid { display: grid; gap: var(--space-5); grid-template-columns: minmax(0, 1fr); }
+  .grid--congress { margin-top: var(--space-5); }
+  .grid--congress :global(.hemi-panel) { display: flex; flex-direction: column; }
+  .grid--congress :global(.hemicycle) { margin: auto 0; }
+  @media (min-width: 960px) {
+    .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
+  }
+
+  .hemi__total { font: 900 44px var(--font-display); fill: var(--color-ink); }
+  .hemi__caption { font: 600 12px var(--font-body); fill: var(--color-ink); }
+  .majority { margin: var(--space-3) 0 0; font-weight: 700; }
+
+  /* The tables of results. The script writes the rows, so the rules of the cells are global inside the table. */
+  .table-wrap { overflow-x: auto; }
+  /* The list of the 52 provinces scrolls inside the panel, about as tall as the map beside it. */
+  .table-wrap--scroll { max-height: 440px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .table-wrap--scroll thead :global(th) { position: sticky; top: 0; z-index: 1; background: var(--color-paper); }
+  .parties :global(.row-link) {
+    min-height: 32px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--color-ink);
+    font: inherit;
+    font-weight: 700;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .parties :global(.row-link:hover) { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .parties { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .parties :global(th), .parties :global(td) { padding: 9px 6px; border-bottom: var(--border-fine) solid var(--color-ink); text-align: left; vertical-align: middle; }
+  .parties thead :global(th) { border-bottom-width: var(--border-thick); font-size: 0.875rem; vertical-align: bottom; }
+  .parties :global(.num) { text-align: right; white-space: nowrap; }
+  .parties tbody :global(th) { font-weight: 700; white-space: nowrap; }
+  /* The acronym is a link to the program: a fine underline, so it does not compete with the swatch. */
+  .parties tbody :global(th a) { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .parties :global(.seats) { font: 900 1.5rem / 1 var(--font-display); }
+  .parties :global(.pct) { min-width: 72px; }
+  .parties :global(.pct__votes) { display: none; }
+  .parties :global(.bar-cell) { width: 28%; padding-right: 0; }
+  .parties :global(.share-bar) { display: block; height: 10px; }
+  .parties :global(.share-bar span) { display: block; height: 100%; min-width: 2px; outline: 1px solid var(--color-ink); outline-offset: -1px; }
+  .parties :global(.swatch), .map-legend :global(.swatch) {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    vertical-align: -2px;
+    border: 1px solid var(--color-ink);
+  }
+  /* On a phone the votes go under the percent, in the same cell, so the table fits without a sideways scroll. */
+  @media (max-width: 480px) {
+    .results :global(.table-panel) { padding: 14px 10px; }
+    .parties :global(th), .parties :global(td) { padding: 8px 3px; }
+    .parties thead :global(th) { font-size: 0.8125rem; }
+    .parties :global(.swatch) { margin-right: 6px; }
+    .parties :global(.votes) { display: none; }
+    .parties :global(.bar-cell) { width: 18%; }
+    .parties :global(.pct__votes) { display: block; font-size: 0.8125rem; }
+  }
+  /* «Ver los partidos sin escaño»: a full-width row under the table. */
+  .more {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin-top: var(--space-2);
+    padding: 8px 6px;
+    border: 0;
+    background: none;
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .more:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+  /* «Por territorio»: the heading, the breadcrumb, one map and the table of the place. */
+  .explore { margin-top: var(--space-8); }
+  .explore__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-4); }
+  .explore :global(.explore__back[hidden]) { display: none; }
+  .explore__title { margin: 0; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1; }
+  .crumbs { display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; list-style: none; font-size: 1.1875rem; }
+  .crumbs :global(li) { display: flex; align-items: center; }
+  .crumbs :global(li + li)::before { content: '›'; margin: 0 8px; font-weight: 700; }
+  .crumbs :global(button) {
+    min-height: 44px;
+    padding: 0 4px;
+    border: 0;
+    background: none;
+    color: var(--color-ink);
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .crumbs :global(button:hover) { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .crumbs :global([aria-current]) { font-weight: 700; padding: 0 4px; }
+
+  .map-panel :global(.province-map) { margin-top: 0; }
+  .map-hint { margin: var(--space-2) 0 0; font-size: 0.9375rem; }
+
+  /* The map of the municipalities. The script draws the paths, so the rules are global inside the SVG. */
+  .town-map { display: block; width: 100%; height: auto; max-height: 70vh; }
+  .town-map :global(path) {
+    fill: var(--color-paper);
+    stroke: var(--color-ink);
+    stroke-width: 0.5;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    cursor: pointer;
+  }
+  .town-map :global(path:hover) { stroke-width: 2; }
+  /* Shared land has no voters: paper with a dashed border, never a party color. */
+  .town-map :global(path.is-shared) { fill: var(--color-paper); stroke-dasharray: 2 2; cursor: default; }
+  .town-map :global(.town-map__selection),
+  .town-map :global(.town-map__selection-back) { fill: none; pointer-events: none; cursor: default; }
+  .town-map :global(.town-map__selection-back) { stroke: var(--color-ink); stroke-width: 7; }
+  .town-map :global(.town-map__selection) { stroke: var(--color-highlight); stroke-width: 3.5; }
+  .town-map__status:empty { display: none; }
+  .town-map__status { margin: var(--space-2) 0 0; font-weight: 600; }
+  .map-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: var(--space-3) 0 0; padding: 0; list-style: none; font-weight: 700; }
+
+  .pickers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+  @media (max-width: 480px) { .pickers { grid-template-columns: minmax(0, 1fr); } }
+  .area-select { display: grid; gap: 4px; font-weight: 700; }
+  .area-select select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 44px;
+    width: 100%;
+    padding: 0 12px;
+    border: var(--border-thick) solid var(--color-ink);
+    border-radius: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: inherit;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .area-select select::picker-icon { margin-left: auto; }
+  .area-select select:disabled { border-style: dashed; cursor: not-allowed; }
+  .area-title { margin: var(--space-5) 0 var(--space-1); font-size: 2rem; line-height: 1; }
+
+  /* The Senate: the same panels as the Congress, under it. */
+  .senate { margin-top: var(--space-8); }
+  .senate__status { margin: var(--space-2) 0 var(--space-4); font-weight: 600; }
+  .senate .grid--congress { margin-top: 0; }
+  /* The candidates of the Senate of the province. The script writes them, so the rules are global inside the box. */
+  .area-senate { margin-top: var(--space-6); padding-top: var(--space-4); border-top: var(--border-thick) solid var(--color-ink); }
+  .area-senate :global(.area-senate__title) { margin: var(--space-4) 0 var(--space-1); font-size: 1.5rem; line-height: 1.1; }
+  .area-senate :global(.area-senate__title:first-child) { margin-top: 0; }
+  /* The scoped rules of `.parties` do not reach a table that the script writes: the same rules, global in the box. */
+  .area-senate :global(table) { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .area-senate :global(th),
+  .area-senate :global(td) { padding: 9px 6px; border-bottom: var(--border-fine) solid var(--color-ink); text-align: left; vertical-align: middle; }
+  .area-senate :global(thead th) { border-bottom-width: var(--border-thick); font-size: 0.875rem; vertical-align: bottom; }
+  .area-senate :global(.num) { text-align: right; white-space: nowrap; }
+  .area-senate :global(td) { white-space: nowrap; }
+  .area-senate :global(.swatch) {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    vertical-align: -2px;
+    border: 1px solid var(--color-ink);
+  }
+  .area-senate :global(tbody th) { white-space: normal; font-weight: 400; }
+  .area-senate :global(.table-wrap) { overflow-x: auto; }
+  @media (max-width: 480px) {
+    .area-senate :global(th),
+    .area-senate :global(td) { padding: 8px 3px; font-size: 0.875rem; }
+    .area-senate :global(.swatch) { margin-right: 4px; }
+    .area-senate :global(.elected__mark) { padding: 2px 5px; }
+  }
+  .area-senate :global(tr.is-elected th) { font-weight: 700; }
+  /* «Electo»: ink on paper inverted, the same in both themes; the word, not the color, carries the meaning. */
+  .area-senate :global(.elected) { text-align: right; white-space: nowrap; }
+  .area-senate :global(.elected__mark) {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+  .area-summary { margin: 0 0 var(--space-3); font-weight: 600; }
+  .note { margin-top: var(--space-3); font-size: 0.9375rem; }
+
+  .about { margin-top: var(--space-8); max-width: 72ch; }
+  .about h2 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: var(--space-3); }
+  .about li { margin-bottom: var(--space-2); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress span { transition: none; }
+  }
+</style>
