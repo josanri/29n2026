@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import markdownPages from './integrations/markdown-pages.mjs';
 import { ELECTION_DATA_DIR, ELECTION_PUBLIC_DIR, SHARED_PUBLIC_DIR } from './election.config.mjs';
+import { parseMeasureData, renderMeasureHtml, renderMeasureMarkdown } from './worker/measure.ts';
 
 // URL pública del sitio. Se usa en el sitemap, en robots.txt y en las URL canónicas.
 // En producción: SITE_URL=https://electosfera.es npm run build (ver «Dominio propio» en el README)
@@ -96,6 +97,67 @@ const nestedOutput = {
   },
 };
 
+const MEASURE_MD_ROUTE = /^(.*)\/([a-z0-9-]+)\/medidas\/(\d+)\/index\.md$/;
+const MEASURE_PAGE_ROUTE = /^(.*)\/([a-z0-9-]+)\/medidas\/(\d+)(\/?)$/;
+
+/**
+ * Serves `/<party>/medidas/<n>/` and `/<party>/medidas/<n>/index.md` during `astro dev`,
+ * mirroring the Cloudflare Worker (`worker/index.ts`) so local development works identically.
+ * @type {import('astro').AstroIntegration}
+ */
+const measurePagesDev = {
+  name: 'measure-pages-dev',
+  hooks: {
+    'astro:server:setup': ({ server }) => {
+      server.middlewares.use(async (req, res, next) => {
+        if ((req.method !== 'GET' && req.method !== 'HEAD') || !req.url) return next();
+        const host = req.headers.host || 'localhost:4321';
+        const origin = `http://${host}`;
+        const url = new URL(req.url, origin);
+
+        const mdMatch = MEASURE_MD_ROUTE.exec(url.pathname);
+        if (mdMatch) {
+          const [, base, party, number] = mdMatch;
+          const dataRes = await fetch(`${origin}${base}/datos/medidas/${party}.json`);
+          if (!dataRes.ok) return next();
+          const parsed = parseMeasureData(await dataRes.text(), number);
+          if (!parsed) return next();
+          const markdown = renderMeasureMarkdown(parsed.header, parsed.row, origin, base);
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/markdown; charset=utf-8');
+          res.end(req.method === 'HEAD' ? undefined : markdown);
+          return;
+        }
+
+        const pageMatch = MEASURE_PAGE_ROUTE.exec(url.pathname);
+        if (pageMatch) {
+          const [, base, party, number, slash] = pageMatch;
+          if (!slash) {
+            res.statusCode = 301;
+            res.setHeader('Location', `${url.pathname}/${url.search}`);
+            res.end();
+            return;
+          }
+          const [dataRes, templateRes] = await Promise.all([
+            fetch(`${origin}${base}/datos/medidas/${party}.json`),
+            fetch(`${origin}${base}/datos/medidas/${party}/`),
+          ]);
+          if (!dataRes.ok || !templateRes.ok) return next();
+          const parsed = parseMeasureData(await dataRes.text(), number);
+          if (!parsed) return next();
+          const html = renderMeasureHtml(await templateRes.text(), parsed.header, parsed.row, origin, base);
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'text/html; charset=utf-8');
+          res.end(req.method === 'HEAD' ? undefined : html);
+          return;
+        }
+
+        return next();
+      });
+    },
+  },
+};
+
 export default defineConfig({
   site: SITE_URL,
   base: BASE_PATH,
@@ -110,6 +172,7 @@ export default defineConfig({
   integrations: [
     // Primero la carpeta común: nested-output mueve después su «_headers» a la raíz.
     sharedPublic,
+    measurePagesDev,
     ...(NESTED_OUTPUT ? [nestedOutput] : []),
     // Markdown for the AI agents: the pages that are not built from data (see `src/lib/markdown/shared.ts`).
     markdownPages(),
@@ -119,6 +182,7 @@ export default defineConfig({
       filter: (page) =>
         !page.endsWith('/buscar/') &&
         !page.includes('/design-system') &&
+        !page.includes('/datos/medidas/') &&
         // la página de una medida existe para compartirla: duplica el texto de /medidas/ y no se indexa
         !/\/medidas\/\d+\/$/.test(page) &&
         !(page.endsWith('/sin-siglas/') && !page.endsWith('/tests/sin-siglas/')),

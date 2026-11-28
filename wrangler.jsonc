@@ -1,7 +1,8 @@
 {
   "name": "29n2026",
   "compatibility_date": "2026-11-12",
-  // Draws the link previews (/og/tarjetas/…). It runs only when no static file matches the address.
+  // Draws link previews (/og/tarjetas/…) and renders per-measure pages (/<party>/medidas/<n>/ and index.md).
+  // It runs only when no static file matches the address.
   "main": "worker/index.ts",
   "assets": {
     "directory": "./dist",

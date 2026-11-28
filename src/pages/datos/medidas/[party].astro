@@ -1,0 +1,58 @@
+---
+/**
+ * Per-party HTML shell for the Worker (`worker/measure.ts`) that renders `/<party>/medidas/<n>/` on request.
+ * Building one template per party through Astro keeps the exact party theme, favicon, navigation, fonts, hashed CSS
+ * and scoped `data-astro-cid-*` styles in sync with the rest of the site while emitting ~45 files instead of ~9,300.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import MeasureCard from '@/components/measures/MeasureCard.astro';
+import Button from '@/components/ui/Button.astro';
+import { announcedMeasures, publishedPrograms, type Program } from '@/lib/programs';
+import { routes } from '@/lib/routes';
+
+export function getStaticPaths() {
+  return publishedPrograms
+    .filter((program) => announcedMeasures(program).length > 0)
+    .map((program) => ({ params: { party: program.id }, props: { program } }));
+}
+
+const { program } = Astro.props as { program: Program };
+const sampleMeasure = announcedMeasures(program)[0];
+---
+
+<BaseLayout
+  title="__MEASURE_TITLE__"
+  description="__MEASURE_DESCRIPTION__"
+  accent={program.color}
+  accentLight={program.lightColor}
+  image={{ path: '/__MEASURE_IMAGE_PATH__', alt: '__MEASURE_IMAGE_ALT__' }}
+  noindex
+  markdown={false}
+>
+  <section class="measure-page">
+    <div class="container">
+      <p class="breadcrumb">
+        <a href={routes.party(program.id)}>{program.acronym}: {program.programName}</a> /
+        <a href={routes.measures(program.id)}>{program.measureUnitPlural}</a> / {sampleMeasure.number}
+      </p>
+      <h1 class="headline">{sampleMeasure.phraseTitle}</h1>
+      <div class="measure-page__card">
+        <MeasureCard measure={sampleMeasure} program={program} open showShare={false} />
+      </div>
+      <p class="measure-page__more">
+        <Button href={routes.measure(program.id, sampleMeasure.number)}>
+          {`Ver entre las ${program.measureUnitPlural} de ${program.acronym}`}
+        </Button>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .measure-page { padding: 36px 0 56px; }
+  .breadcrumb { font-size: 1rem; font-weight: 700; margin: 0; }
+  .measure-page h1 { font-size: clamp(2.25rem, 7vw, 5rem); margin: var(--space-3) 0 var(--space-5); }
+  .measure-page h1.is-long { font-size: clamp(1.75rem, 5vw, 3.25rem); }
+  .measure-page h1.is-longer { font-size: clamp(1.375rem, 3.5vw, 2.25rem); }
+  .measure-page__more { margin: var(--space-5) 0 0; }
+</style>
