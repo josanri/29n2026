@@ -177,10 +177,31 @@ Ensayo con una copia local de la API (`scripts/results_rehearsal_api.ts`):
 4. Con `npm run dev`, abre `/resultados/?ensayo`. Sin `?ensayo`, la página no muestra nunca los datos de un ensayo, y no hace falta cambiar `status`.
 5. **Borra `public/2026/generales/resultados/datos/`** al terminar. Si quedan datos de un ensayo, la captura real lo avisa y empieza una evolución nueva.
 
-Pasos para el domingo 29N:
+##### Cómo llegan los datos a la web
 
-1. Asegúrate de que no quedan archivos de ensayo en `public/2026/generales/resultados/datos/`.
-2. Antes de las 20:00 (o en cualquier momento de la noche), arranca el polling en una terminal:
+- El script escribe en tu ordenador, en `public/2026/generales/resultados/datos/`. Nada de esa carpeta llega a electosfera.es por sí solo.
+- Cloudflare compila la web desde git. Los datos se publican solo con **commit + push a `main`**; el push arranca una compilación (unos 2-3 minutos).
+- La página publicada vuelve a leer los archivos cada 60 segundos (`refreshSeconds`). Por eso, cada push con datos nuevos aparece a los lectores sin recargar.
+- Con `status: 'proximamente'` (el valor actual), la página empieza a leer los datos a las 20:00 (`opensAt`). **No hace falta cambiar `status` para la noche.**
+- Los datos de un ensayo (`kind: 'simulacion'`) nunca se muestran sin `?ensayo`. Aun así, no los subas: la carpeta debe estar vacía antes de la captura real.
+
+##### Pasos para el domingo 29N
+
+Antes de las 20:00:
+
+1. Actualiza el repositorio (`git pull`) y comprueba que `npm run build` termina sin errores.
+2. Borra la carpeta de datos del ensayo, si existe. No está en git: solo existe en tu ordenador.
+   ```sh
+   rm -rf public/2026/generales/resultados/datos
+   ```
+3. Comprueba la conexión con la API sin escribir nada:
+   ```sh
+   npm run resultados:oficial -- --forzar --una-vez --dry-run
+   ```
+
+Desde las 20:00 (o antes: el script espera mientras `isOpen` es `false`):
+
+4. En una terminal, arranca la captura y déjala abierta toda la noche:
    ```sh
    npm run resultados:oficial -- --raw .cache/29n-raw
    ```
@@ -192,9 +213,28 @@ Pasos para el domingo 29N:
    - `--forzar`: descarga aunque `isOpen` sea `false` (útil para comprobar conectividad).
    - `--una-vez` / `--dry-run`: ejecuta un solo ciclo / no escribe en `public/`.
    - `--definitivo`: fuerza la lectura de la fuente `def` en lugar de `pro`.
-3. Revisa en local con `npm run dev` en `/resultados/` que se ven los resultados finales y el panel **«Cómo fue el recuento»**. Si alguna candidatura sale como `x-…`, añade sus siglas a `aliases` en `src/data/2026/generales/resultados.ts`.
-4. Cuando quieras publicarlo (la misma noche o más tarde), cambia `status` en `src/data/2026/generales/resultados.ts` a `'provisional'` (o `'definitivo'` tras el escrutinio general), haz commit de `public/2026/generales/resultados/datos/` y despliega la web.
-5. Antes de cada despliegue, ejecuta `npm run og:secciones`: `og/resultados.png` (la vista previa de los enlaces a `/resultados/`) pasa a mostrar el hemiciclo y el escrutado de ese momento. Sin datos, muestra la tarjeta de la noche; los datos de un ensayo no entran nunca (con `--ensayo`, la tarjeta del ensayo va a `.cache/og/resultados-ensayo.png`). Las redes guardan la imagen un tiempo: un enlace ya compartido puede tardar en cambiar.
+5. En otra terminal, con `npm run dev`, abre `/resultados/` y comprueba los datos. Si una candidatura sale como `x-…`, añade sus siglas a `aliases` en `src/data/2026/generales/resultados.ts` (la próxima vuelta del script ya la agrupa).
+
+Para publicar (repítelo cada 10-15 minutos mientras dura el recuento; la captura sigue en marcha):
+
+6. Actualiza la imagen de los enlaces: `og/resultados.png` pasa a mostrar el hemiciclo y el escrutado de ese momento.
+   ```sh
+   npm run og:secciones
+   ```
+7. Sube los datos y la imagen. El push arranca la compilación de Cloudflare.
+   ```sh
+   git add public/2026/generales/resultados/datos public/2026/generales/og/resultados.png
+   git commit -m "data: resultados del 29N, <hora>"
+   git push
+   ```
+8. Unos 3 minutos después, abre `https://electosfera.es/2026/generales/resultados/` y comprueba el escrutado.
+
+Al terminar el recuento:
+
+9. Para la captura (Ctrl+C) y haz un último ciclo de publicación (pasos 6-8). `evolucion.json` e `historico/` guardan toda la noche para el panel **«Cómo fue el recuento»**.
+10. Tras el escrutinio general (días después), captura con `--definitivo --una-vez`, cambia `status` a `'definitivo'` en `src/data/2026/generales/resultados.ts` y publica.
+
+Si el script se para o el ordenador se reinicia, vuelve a lanzar el paso 4: sigue la evolución donde la dejó. Las redes guardan la imagen de los enlaces un tiempo: un enlace ya compartido puede tardar en cambiar.
 
 #### Importador genérico (fuente alternativa)
 

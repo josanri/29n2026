@@ -11,6 +11,7 @@ import {
   normalizeMunicipalFeed,
   normalizeSenateFeed,
   partyIdOf,
+  senateCut,
   senateTotal,
   senateVotesPerVoter,
   simulateMunicipalities,
@@ -258,6 +259,16 @@ describe('the Senate', () => {
     const marked = area([['a1', 'a', 100], ['b1', 'b', 10]], 1);
     marked.candidates[1].elected = true;
     expect(withElected(marked).candidates.map((candidate) => candidate.elected)).toEqual([undefined, true]);
+  });
+
+  it('finds the cut: the last elected, the first out and the votes between them', () => {
+    const cut = senateCut(area([['a1', 'a', 100], ['a2', 'a', 98], ['a3', 'a', 97], ['b1', 'b', 99], ['b2', 'b', 90], ['c1', 'c', 0]]));
+    expect(cut).toMatchObject({ lastIn: { name: 'a3' }, firstOut: { name: 'b2' }, margin: 7 });
+  });
+
+  it('has no cut before the first votes or when nobody stays out', () => {
+    expect(senateCut(area([['a1', 'a', 0], ['b1', 'b', 0]]))).toBeNull();
+    expect(senateCut(area([['a1', 'a', 10], ['b1', 'b', 5]]))).toBeNull();
   });
 
   it('adds up the senators of each party', () => {

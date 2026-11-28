@@ -459,6 +459,19 @@ export const withElected = (area: SenateArea): SenateArea => {
   return { ...area, candidates: area.candidates.map((candidate, index) => ({ ...candidate, elected: elected.has(index) })) };
 };
 
+/**
+ * The cut of a Senate constituency, its version of D'Hondt: the elected candidate with the fewest votes, the
+ * candidate with the most votes who stays out, and the votes between them (`margin`). `null` when nobody is elected
+ * yet or nobody stays out.
+ */
+export const senateCut = (area: SenateArea): { lastIn: CandidateResult; firstOut: CandidateResult; margin: number } | null => {
+  const candidates = withElected(area).candidates;
+  const elected = candidates.filter((candidate) => candidate.elected).sort((a, b) => a.votes - b.votes);
+  const out = candidates.filter((candidate) => !candidate.elected && candidate.votes > 0).sort((a, b) => b.votes - a.votes);
+  if (!elected.length || !out.length) return null;
+  return { lastIn: elected[0], firstOut: out[0], margin: elected[0].votes - out[0].votes };
+};
+
 /** The elected candidates first, then by votes. */
 export const sortCandidates = (candidates: CandidateResult[]) =>
   [...candidates].sort((a, b) => Number(Boolean(b.elected)) - Number(Boolean(a.elected)) || b.votes - a.votes);

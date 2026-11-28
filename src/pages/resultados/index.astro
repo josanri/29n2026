@@ -12,6 +12,7 @@ import ProvinceMap from '@/components/candidacies/ProvinceMap.astro';
 import Button from '@/components/ui/Button.astro';
 import Panel from '@/components/ui/Panel.astro';
 import Tag from '@/components/ui/Tag.astro';
+import Icon from '@/components/ui/Icon.astro';
 import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, congressGroups } from '@eleccion/congreso';
 import { ELECTION_DATE, ELECTION_DAY_SCHEDULE } from '@eleccion/calendario';
 import { election } from '@eleccion/eleccion';
@@ -181,19 +182,34 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
       </div>
       <p class="updated" id="updated" hidden></p>
 
-      <div class="grid grid--congress">
+      <!-- The seats of one chamber at a time: the Congress, or the 209 elected senators. Its own switch; `?camara=senado` opens both switches on the Senate. -->
+      <section class="seats" id="seats" aria-labelledby="seats-title">
+      <div class="explore__head">
+        <h2 class="explore__title" id="seats-title">Escaños</h2>
+        <div class="chamber-switch" role="group" aria-label="Cámara que ves en el hemiciclo y en la tabla de partidos" data-switch="seats">
+          <button type="button" class="chamber-switch__btn" data-chamber="congreso" aria-pressed="true">Congreso</button>
+          <button type="button" class="chamber-switch__btn" data-chamber="senado" aria-pressed="false">Senado</button>
+        </div>
+      </div>
+      <div class="grid grid--congress" id="congress-board">
         <Panel class="hemi-panel" title="Congreso" lead={`Mayoría absoluta: ${ABSOLUTE_MAJORITY} escaños. Con el recuento a medias, los escaños salen de los votos ya contados.`}>
           <Hemicycle id="hemi" label="Hemiciclo del Congreso con los escaños de cada partido">
             <text class="hemi__total" id="hemi-total" x="200" y="172" text-anchor="middle">–</text>
             <text class="hemi__caption" id="hemi-caption" x="200" y="192" text-anchor="middle">escaños del primero</text>
           </Hemicycle>
           <p class="majority" id="majority"></p>
-          <a class="pact-link" id="pact-link" href={routes.simulator()} hidden>Abre el pactómetro con estos escaños →</a>
+          <a class="pact-link" id="pact-link" href={routes.simulator()} hidden>
+            <span class="pact-link__text">
+              <span class="pact-link__kicker">¿Quién suma {ABSOLUTE_MAJORITY}?</span>
+              Abre el pactómetro con estos escaños
+            </span>
+            <span class="pact-link__arrow"><Icon name="arrow-right" size={26} /></span>
+          </a>
         </Panel>
 
         <Panel class="table-panel" title="Por partido">
-          <!-- With all the parties open, the list scrolls inside the panel (the parties with seats stay at the top). -->
-          <div class="table-wrap" id="parties-national-wrap">
+          <!-- Every party, in a box that scrolls (the parties with seats stay at the top; the heading row stays in view). -->
+          <div class="table-wrap table-wrap--scroll" id="parties-national-wrap">
             <table class="parties" id="parties-national">
               <caption class="sr-only">Escaños y votos de cada partido en España</caption>
               <thead>
@@ -202,13 +218,11 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
               <tbody></tbody>
             </table>
           </div>
-          <button type="button" class="more" id="national-more" aria-expanded="false" aria-controls="parties-national" hidden></button>
         </Panel>
       </div>
 
       <!-- The Senate: the 209 elected senators. The 58 senators of the regional parliaments do not change on the night. -->
-      <section class="senate" id="senate" aria-labelledby="senate-title">
-        <h2 class="explore__title" id="senate-title">Senado</h2>
+      <div class="senate" id="senate" hidden>
         <p class="senate__status" id="senate-status" role="status">Todavía no hay datos del Senado.</p>
         <div class="grid grid--congress" id="senate-board" hidden>
           <Panel
@@ -224,7 +238,7 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
           </Panel>
 
           <Panel class="table-panel" title="Por partido">
-            <div class="table-wrap">
+            <div class="table-wrap table-wrap--scroll">
               <table class="parties" id="senate-national">
                 <caption class="sr-only">Senadores elegidos de cada partido en España</caption>
                 <thead>
@@ -239,17 +253,18 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
             </p>
           </Panel>
         </div>
+      </div>
       </section>
 
       <!-- One map for the drill-down: Spain, then the municipalities of the province. The button and breadcrumb go back. -->
       <section class="explore" id="explore" aria-labelledby="explore-title">
         <div class="explore__head">
           <h2 class="explore__title" id="explore-title">Por territorio</h2>
-          <div class="chamber-switch" role="group" aria-label="Cámara que ves en el mapa y en la tabla">
+          <div class="chamber-switch" role="group" aria-label="Cámara que ves en el mapa y en la tabla" data-switch="territory">
             <button type="button" class="chamber-switch__btn" data-chamber="congreso" aria-pressed="true">Congreso</button>
             <button type="button" class="chamber-switch__btn" data-chamber="senado" aria-pressed="false">Senado</button>
           </div>
-          <Button size="sm" id="explore-back" class="explore__back" hidden>← Volver a España</Button>
+          <Button size="sm" id="explore-back" class="explore__back" hidden><Icon name="arrow-left" inline /> <span id="explore-back-label">Volver a España</span></Button>
           <nav aria-label="Territorio que ves"><ol class="crumbs" id="crumbs"></ol></nav>
         </div>
         <div class="grid grid--map">
@@ -269,6 +284,35 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
             <p class="town-map__status" id="town-map-status" role="status"></p>
             <ul class="map-legend" id="map-legend" aria-label="Leyenda del mapa"></ul>
             <p class="map-hint" id="map-hint">Pulsa una provincia para ver sus municipios.</p>
+            <!-- Under the map, where the panel has room: the seats closest to a change, for the chamber that is on. -->
+            <!-- At the level of Spain: the last seats that are closest to a change. The name opens the province. -->
+            <section class="dhondt" id="close-seats" aria-labelledby="close-seats-title" hidden>
+              <h4 class="dhondt__title" id="close-seats-title">Escaños en el aire</h4>
+              <p class="dhondt__lead">Las provincias donde el último escaño está más cerca de cambiar de partido, y los votos que le faltan a la lista que se lo puede quitar.</p>
+              <div class="table-wrap">
+                <table class="parties" id="close-seats-table">
+                  <caption class="sr-only">Provincias con el último escaño más ajustado</caption>
+                  <thead>
+                    <tr><th scope="col">Provincia</th><th scope="col">Último escaño</th><th scope="col">Se lo puede quitar</th><th scope="col" class="num">Le faltan</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </section>
+            <!-- The Senate at the level of Spain, its «Escaños en el aire»: the constituencies whose last senator is closest to the first candidate out. -->
+            <section class="dhondt" id="senate-close" aria-labelledby="senate-close-title" hidden>
+              <h4 class="dhondt__title" id="senate-close-title">Senadores en el aire</h4>
+              <p class="dhondt__lead">En el Senado no hay D'Hondt: entran los candidatos más votados, sea cual sea su partido. Estas son las circunscripciones donde el último senador saca menos ventaja al primer candidato que se queda fuera.</p>
+              <div class="table-wrap">
+                <table class="parties" id="senate-close-table">
+                  <caption class="sr-only">Circunscripciones del Senado con el último escaño más ajustado</caption>
+                  <thead>
+                    <tr><th scope="col">Circunscripción</th><th scope="col">Último electo</th><th scope="col">Primero fuera</th><th scope="col" class="num">Ventaja</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </section>
           </Panel>
 
           <Panel class="table-panel">
@@ -289,20 +333,6 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
             </div>
             <h3 class="area-title" id="area-title">Toda España</h3>
             <p class="area-summary" id="area-summary"></p>
-            <!-- At the level of Spain: the last seats that are closest to a change. The name opens the province. -->
-            <section class="dhondt" id="close-seats" aria-labelledby="close-seats-title" hidden>
-              <h4 class="dhondt__title" id="close-seats-title">Escaños en el aire</h4>
-              <p class="dhondt__lead">Las provincias donde el último escaño está más cerca de cambiar de partido, y los votos que le faltan a la lista que se lo puede quitar.</p>
-              <div class="table-wrap">
-                <table class="parties" id="close-seats-table">
-                  <caption class="sr-only">Provincias con el último escaño más ajustado</caption>
-                  <thead>
-                    <tr><th scope="col">Provincia</th><th scope="col">Último escaño</th><th scope="col">Se lo puede quitar</th><th scope="col" class="num">Le faltan</th></tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-            </section>
             <!-- The Senate at the level of Spain: the elected senators of each province (or of its islands). -->
             <div class="table-wrap table-wrap--scroll" id="senate-provinces-wrap" hidden>
               <table class="parties" id="senate-provinces-table">
@@ -349,7 +379,7 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
               <ul class="map-legend" id="dhondt-legend" aria-label="Partidos del reparto"></ul>
               <p class="dhondt__summary" id="dhondt-summary" aria-live="polite"></p>
               <details class="dhondt__details">
-                <summary>Ver la tabla de cocientes</summary>
+                <summary><span class="dhondt__details-text">Ver la tabla de cocientes</span><span class="disclosure-icon" aria-hidden="true"></span></summary>
                 <div class="table-wrap">
                   <table class="parties dhondt__table" id="dhondt-table">
                     <caption class="sr-only" id="dhondt-table-caption">Cocientes de cada partido</caption>
@@ -393,6 +423,8 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
     sortCandidates,
     sortParties,
     turnout,
+    senateCut,
+    senateVotesPerVoter,
     withElected,
     withSeats,
     type AreaResult,
@@ -401,6 +433,8 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
     type PartyResult,
     type ResultsFeed,
     type SenateFeed,
+    type SenateArea,
+    type CandidateResult,
   } from '@/lib/results';
 
   type PageParty = {
@@ -481,6 +515,8 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   let selectedTown = params.get('municipio') ?? '';
   /** The chamber of «Por territorio»: the Congress (votes, seats, D'Hondt) or the Senate (senators, candidates). */
   let chamber: 'congreso' | 'senado' = params.get('camara') === 'senado' ? 'senado' : 'congreso';
+  /** The chamber of «Escaños»: its own switch. `?camara=senado` opens both switches on the Senate. */
+  let seatsChamber: 'congreso' | 'senado' = chamber;
   if (selectedTown.slice(0, 2) !== selected) selectedTown = '';
 
   type TownMap = { ancho: number; alto: number; municipios: { codigo: string; nombre: string; d: string; compartido?: boolean }[] };
@@ -513,14 +549,6 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   const pctCell = (value: number, votes: number) => `<td class="num pct">${percent(value)}<span class="pct__votes">${integer(votes)} votos</span></td>`;
   const byVotes = (a: PartyResult, b: PartyResult) => b.votes - a.votes;
 
-  // The national table folds the parties with no seat: they stay one click away.
-  let showAllNational = false;
-  const nationalMore = $<HTMLButtonElement>('#national-more');
-  nationalMore.addEventListener('click', () => {
-    showAllNational = !showAllNational;
-    render();
-  });
-
   const rowsFor = (area: AreaResult, national: boolean) => {
     const parties = sortParties(area.parties).filter((party) => party.votes > 0 || (party.seats ?? 0) > 0);
     const max = Math.max(...parties.map((party) => share(party.votes, area)), 1);
@@ -537,16 +565,7 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
         '</tr>',
       ].join('');
     };
-    if (!national) return parties.map(row).join('');
-    const seated = parties.filter((party) => (party.seats ?? 0) > 0);
-    const rest = parties.length - seated.length;
-    // Before the first seat (0 % counted) there is nothing to fold.
-    const folded = seated.length > 0 && rest > 0;
-    nationalMore.hidden = !folded;
-    $('#parties-national-wrap').classList.toggle('table-wrap--scroll', folded && showAllNational);
-    nationalMore.setAttribute('aria-expanded', String(showAllNational));
-    nationalMore.textContent = showAllNational ? 'Ocultar los partidos sin escaño' : `Ver ${rest === 1 ? 'el partido' : `los ${rest} partidos`} sin escaño`;
-    return (folded && !showAllNational ? seated : parties).map(row).join('');
+    return parties.map(row).join('');
   };
 
   const townRows = (area: AreaResult) => {
@@ -713,6 +732,9 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   };
 
   /** The Senate of the selected province: one table of candidates for the province, or for each of its islands. */
+  const candidateCell = (candidate: CandidateResult) =>
+    `<span class="swatch" style="background:${colorOf(candidate.partyId)}" aria-hidden="true"></span>${escapeHtml(candidate.acronym)}`;
+
   const drawAreaSenate = (activeSenate: SenateFeed | null) => {
     const box = $('#area-senate');
     const codes = selected ? data.senateByProvince[selected] ?? [] : [];
@@ -727,20 +749,31 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
       .map((raw) => {
         const area = withElected(raw);
         const title = areas.length > 1 || area.code !== selected ? `Senado · ${escapeHtml(area.name)}` : 'Senado';
-        const rows = sortCandidates(area.candidates)
-          .filter((candidate) => candidate.votes > 0 || candidate.elected)
+        const cut = senateCut(area);
+        const listed = sortCandidates(area.candidates).filter((candidate) => candidate.votes > 0 || candidate.elected);
+        // The cut line goes after the last elected candidate, as the line of D'Hondt in the Congress.
+        const cutRow = cut
+          ? `<tr class="cut-row"><td colspan="4">Corte: el último electo saca ${integer(cut.margin)} ${cut.margin === 1 ? 'voto' : 'votos'} al primero que se queda fuera</td></tr>`
+          : '';
+        const rows = listed
           .map(
-            (candidate) =>
+            (candidate, index) =>
               `<tr${candidate.elected ? ' class="is-elected"' : ''}><th scope="row">${escapeHtml(candidate.name)}</th>` +
-              `<td><span class="swatch" style="background:${colorOf(candidate.partyId)}" aria-hidden="true"></span>${escapeHtml(candidate.acronym)}</td>` +
+              `<td>${candidateCell(candidate)}</td>` +
               `<td class="num votes">${integer(candidate.votes)}</td>` +
-              `<td class="elected">${candidate.elected ? '<span class="elected__mark">Electo</span>' : '<span class="sr-only">No electo</span>'}</td></tr>`,
+              `<td class="elected">${candidate.elected ? '<span class="elected__mark">Electo</span>' : '<span class="sr-only">No electo</span>'}</td></tr>` +
+              (candidate.elected && !listed[index + 1]?.elected ? cutRow : ''),
           )
           .join('');
+        const rule = `Cada votante marca hasta ${senateVotesPerVoter(area.seats)} ${senateVotesPerVoter(area.seats) === 1 ? 'candidato' : 'candidatos'}. Entran ${area.seats === 1 ? 'el más votado' : `los ${area.seats} más votados`}, sea cual sea su partido: no hay D'Hondt.`;
+        const closest = cut
+          ? ` ${escapeHtml(cut.lastIn.name)} (${escapeHtml(cut.lastIn.acronym)}) entra con ${integer(cut.margin)} ${cut.margin === 1 ? 'voto' : 'votos'} más que ${escapeHtml(cut.firstOut.name)} (${escapeHtml(cut.firstOut.acronym)}).`
+          : '';
         return (
           `<h4 class="area-senate__title">${title} · ${seatWord(area.seats)}</h4>` +
           `<p class="area-summary">Escrutado ${percent(area.counted)}</p>` +
-          `<div class="table-wrap"><table class="parties"><caption class="sr-only">Candidatos al Senado en ${escapeHtml(area.name)}</caption>` +
+          `<p class="dhondt__lead">${rule}${closest}</p>` +
+          `<div class="table-wrap table-wrap--scroll"><table class="parties"><caption class="sr-only">Candidatos al Senado en ${escapeHtml(area.name)}</caption>` +
           `<thead><tr><th scope="col">Candidato</th><th scope="col">Partido</th><th scope="col" class="num votes">Votos</th><th scope="col"><span class="sr-only">Resultado</span></th></tr></thead>` +
           `<tbody>${rows}</tbody></table></div>`
         );
@@ -1037,7 +1070,7 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
     $('#towns-map').hidden = !selected;
     backButton.hidden = !selected;
     if (selected) {
-      backButton.textContent = selectedTown ? `← Volver a ${data.names[selected]}` : '← Volver a España';
+      $('#explore-back-label').textContent = selectedTown ? `Volver a ${data.names[selected]}` : 'Volver a España';
     }
     const crumbs: { label: string; go?: string }[] = [{ label: 'España', go: 'spain' }];
 
@@ -1136,6 +1169,10 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   });
   townSelect.addEventListener('change', () => selectTown(townSelect.value));
   $('#senate-provinces-table').addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('button[data-province]');
+    if (button) selectArea(button.dataset.province!);
+  });
+  $('#senate-close-table').addEventListener('click', (event) => {
     const button = (event.target as Element).closest<HTMLButtonElement>('button[data-province]');
     if (button) selectArea(button.dataset.province!);
   });
@@ -1388,13 +1425,43 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
       .map((party) => `${party.acronym} ${party.seats}`)
       .join(' · ');
 
+  /** Spain: the constituencies whose last senator has the smallest lead over the first candidate out, closest first. */
+  const drawSenateClose = (activeSenate: SenateFeed | null) => {
+    const rows = (activeSenate?.areas ?? [])
+      .filter((area) => area.counted > 0)
+      .map((area) => ({ area, cut: senateCut(area) }))
+      .filter((entry): entry is { area: SenateArea; cut: NonNullable<ReturnType<typeof senateCut>> } => entry.cut !== null)
+      .sort((a, b) => a.cut.margin - b.cut.margin)
+      .slice(0, 8);
+    $('#senate-close').hidden = rows.length === 0;
+    $<HTMLTableElement>('#senate-close-table').tBodies[0].innerHTML = rows
+      .map(
+        ({ area, cut }) =>
+          `<tr><th scope="row"><button type="button" class="row-link" data-province="${area.province}">${escapeHtml(area.name)}</button></th>` +
+          `<td>${candidateCell(cut.lastIn)}</td><td>${candidateCell(cut.firstOut)}</td><td class="num">${integer(cut.margin)}</td></tr>`,
+      )
+      .join('');
+  };
+
   /** «Por territorio» with the Senate: it changes what `drawExplorer` drew for the Congress. */
-  const applyChamber = (activeSenate: SenateFeed | null) => {
-    for (const button of document.querySelectorAll<HTMLButtonElement>('.chamber-switch__btn')) {
-      button.setAttribute('aria-pressed', String(button.dataset.chamber === chamber));
+  const pressSwitch = (group: 'seats' | 'territory', value: 'congreso' | 'senado') => {
+    for (const button of document.querySelectorAll<HTMLButtonElement>(`[data-switch="${group}"] .chamber-switch__btn`)) {
+      button.setAttribute('aria-pressed', String(button.dataset.chamber === value));
     }
+  };
+
+  /** «Escaños»: the Congress block or the Senate block, never both. */
+  const applySeatsChamber = () => {
+    pressSwitch('seats', seatsChamber);
+    $('#congress-board').hidden = seatsChamber !== 'congreso';
+    $('#senate').hidden = seatsChamber !== 'senado';
+  };
+
+  const applyChamber = (activeSenate: SenateFeed | null) => {
+    pressSwitch('territory', chamber);
     const senate = chamber === 'senado';
     $('#senate-provinces-wrap').hidden = !senate || Boolean(selected);
+    $('#senate-close').hidden = !senate || Boolean(selected);
     $('#note-senate-town').hidden = !senate || !selectedTown;
     if (!senate) return;
     for (const id of ['#parties-area', '#parties-town', '#note-province', '#note-town', '#dhondt', '#close-seats', '#provinces-wrap']) {
@@ -1437,6 +1504,7 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
       );
     }
     $<HTMLTableElement>('#senate-provinces-table').tBodies[0].innerHTML = rows.join('');
+    drawSenateClose(activeSenate);
     $('#map-legend').innerHTML = legendHtml(wins);
     $('#map-hint').textContent = 'Pulsa una provincia para ver sus candidatos al Senado.';
     const ranking = [...wins.values()].sort((a, b) => b.count - a.count);
@@ -1446,11 +1514,14 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
       : 'Todavía no hay senadores asignados.';
   };
 
-  for (const button of document.querySelectorAll<HTMLButtonElement>('.chamber-switch__btn')) {
+  // Each switch changes only its own section. The address keeps the last choice, so a shared link opens on it.
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-switch] .chamber-switch__btn')) {
     button.addEventListener('click', () => {
-      chamber = button.dataset.chamber === 'senado' ? 'senado' : 'congreso';
+      const value = button.dataset.chamber === 'senado' ? 'senado' : 'congreso';
+      if (button.closest<HTMLElement>('[data-switch]')?.dataset.switch === 'seats') seatsChamber = value;
+      else chamber = value;
       const url = new URL(location.href);
-      if (chamber === 'senado') url.searchParams.set('camara', 'senado');
+      if (value === 'senado') url.searchParams.set('camara', 'senado');
       else url.searchParams.delete('camara');
       history.replaceState(null, '', url);
       render();
@@ -1478,6 +1549,7 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
     drawSenate(activeSenate, snap);
     drawAreaSenate(activeSenate);
     applyChamber(activeSenate);
+    applySeatsChamber();
   };
 
   const selectArea = (code: string) => {
@@ -1734,30 +1806,70 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   .grid--congress :global(.hemicycle) { margin: auto 0; }
   @media (min-width: 960px) {
     .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
+    /* Two panels side by side: the list that scrolls takes the height that the other panel gives (the hemicycle, the
+       map), with no empty space under it. `contain: size` keeps its rows out of the height of the row of the grid. */
+    .grid :global(.table-panel) { display: flex; flex-direction: column; }
+    .seats .table-wrap--scroll,
+    .grid--map .table-wrap--scroll { flex: 1 1 0; min-height: 320px; max-height: none; contain: size; }
   }
 
   .hemi__total { font: 900 44px var(--font-display); fill: var(--color-ink); }
   .hemi__caption { font: 600 12px var(--font-body); fill: var(--color-ink); }
   .majority { margin: var(--space-3) 0 0; font-weight: 700; }
+  /* The way out to the simulator: a full-width yellow band (black text on yellow in both themes), a hard shadow and
+     the arrow in a black square. On hover the band turns ink and the arrow moves forward. */
   .pact-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    margin-top: var(--space-3);
-    padding: 0 var(--space-4);
-    border: 2px solid var(--color-ink);
-    color: var(--color-ink);
-    font-weight: 700;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-top: var(--space-4);
+    border: var(--border-thick) solid var(--color-fixed-dark);
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    box-shadow: 6px 6px 0 var(--color-ink);
     text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
   }
   .pact-link[hidden] { display: none; }
-  .pact-link:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .pact-link:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
+  .pact-link__text {
+    display: grid;
+    gap: 2px;
+    padding: 12px var(--space-4);
+    font: 800 1.1875rem/1.2 var(--font-body);
+  }
+  .pact-link__kicker {
+    font: 900 0.8125rem var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .pact-link__arrow {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    background: var(--color-fixed-dark);
+    color: var(--color-highlight);
+  }
+  .pact-link__arrow :global(.icon) { stroke-width: 2.6; transition: transform 0.12s ease; }
+  .pact-link:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--color-ink); }
+  .pact-link:hover .pact-link__arrow :global(.icon) { transform: translateX(4px); }
+  .pact-link:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--color-ink); }
+  .pact-link:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    .pact-link,
+    .pact-link__arrow :global(.icon) { transition: none; }
+  }
 
   /* The tables of results. The script writes the rows, so the rules of the cells are global inside the table. */
   .table-wrap { overflow-x: auto; }
   /* The list of the 52 provinces scrolls inside the panel, about as tall as the map beside it. */
-  .table-wrap--scroll { max-height: 440px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  /* The bar is the one of the site (`styles/base.css`: ink thumb, paper track with an ink line). Chromium ignores
+     those rules when `scrollbar-width` or `scrollbar-color` is set, so only Firefox gets the standard properties. */
+  .table-wrap--scroll { max-height: 440px; overflow-y: auto; overscroll-behavior: contain; }
+  @supports not selector(::-webkit-scrollbar) {
+    .table-wrap--scroll { scrollbar-color: var(--color-ink) var(--color-paper); }
+  }
   .table-wrap--scroll thead :global(th) { position: sticky; top: 0; z-index: 1; background: var(--color-paper); }
   .parties :global(.row-link) {
     min-height: 32px;
@@ -1795,6 +1907,14 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
     vertical-align: -2px;
     border: 1px solid var(--color-ink);
   }
+  /* A narrow box (a half-width panel, with the bar of its scroll): the votes go under the percent, as on a phone, so
+     the table fits without a sideways scroll. */
+  .table-wrap { container-type: inline-size; }
+  @container (max-width: 520px) {
+    .parties :global(.votes) { display: none; }
+    .parties :global(.bar-cell) { width: 18%; }
+    .parties :global(.pct__votes) { display: block; font-size: 0.8125rem; }
+  }
   /* On a phone the votes go under the percent, in the same cell, so the table fits without a sideways scroll. */
   @media (max-width: 480px) {
     .results :global(.table-panel) { padding: 14px 10px; }
@@ -1805,23 +1925,6 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
     .parties :global(.bar-cell) { width: 18%; }
     .parties :global(.pct__votes) { display: block; font-size: 0.8125rem; }
   }
-  /* «Ver los partidos sin escaño»: a full-width row under the table. */
-  .more {
-    display: block;
-    width: 100%;
-    min-height: 44px;
-    margin-top: var(--space-2);
-    padding: 8px 6px;
-    border: 0;
-    background: none;
-    color: var(--color-ink);
-    font: 700 0.9375rem var(--font-body);
-    text-align: left;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    cursor: pointer;
-  }
-  .more:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
 
   /* «Por territorio»: the heading, the breadcrumb, one map and the table of the place. */
   .explore { margin-top: var(--space-8); }
@@ -1916,9 +2019,13 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   .area-title { margin: var(--space-5) 0 var(--space-1); font-size: 2rem; line-height: 1; }
 
   /* The Senate: the same panels as the Congress, under it. */
-  .senate { margin-top: var(--space-8); }
-  .senate__status { margin: var(--space-2) 0 var(--space-4); font-weight: 600; }
-  .senate .grid--congress { margin-top: 0; }
+  /* «Escaños»: the heading with its switch, then the block of the chamber that is on. */
+  .seats { margin-top: var(--space-8); }
+  .seats .grid--congress { margin-top: 0; }
+  /* `.grid` sets `display: grid`, which beats the `hidden` attribute: without this, the switch hid nothing. */
+  .seats .grid[hidden],
+  .senate[hidden] { display: none; }
+  .senate__status { margin: 0 0 var(--space-4); font-weight: 600; }
   /* The candidates of the Senate of the province. The script writes them, so the rules are global inside the box. */
   .area-senate { margin-top: var(--space-6); padding-top: var(--space-4); border-top: var(--border-thick) solid var(--color-ink); }
   .area-senate :global(.area-senate__title) { margin: var(--space-4) 0 var(--space-1); font-size: 1.5rem; line-height: 1.1; }
@@ -1940,6 +2047,23 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   }
   .area-senate :global(tbody th) { white-space: normal; font-weight: 400; }
   .area-senate :global(.table-wrap) { overflow-x: auto; }
+  /* The script writes this block, so the rules of the page need `:global` here: the same box with a scroll, the same
+     lead and a cut row in the place of the line of D'Hondt. */
+  .area-senate :global(.table-wrap--scroll) { max-height: 440px; overflow-y: auto; overscroll-behavior: contain; }
+  @supports not selector(::-webkit-scrollbar) {
+    .area-senate :global(.table-wrap--scroll) { scrollbar-color: var(--color-ink) var(--color-paper); }
+  }
+  .area-senate :global(.table-wrap--scroll thead th) { position: sticky; top: 0; z-index: 1; background: var(--color-paper); }
+  .area-senate :global(.dhondt__lead) { margin: 0 0 var(--space-3); font-size: 0.9375rem; max-width: 62ch; }
+  .area-senate :global(tr.cut-row td) {
+    padding: 6px;
+    border-top: var(--border-thick) solid var(--color-ink);
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    font-size: 0.875rem;
+    font-weight: 700;
+    white-space: normal;
+  }
   @media (max-width: 480px) {
     .area-senate :global(th),
     .area-senate :global(td) { padding: 8px 3px; font-size: 0.875rem; }
@@ -1973,7 +2097,50 @@ const senateMajority = Math.floor(senateSeats / 2) + 1;
   .dhondt__chart :global(.dh__hatch-bg) { fill: var(--color-paper); }
   .dhondt__summary { margin: var(--space-3) 0 0; font-weight: 600; max-width: 62ch; }
   .dhondt__details { margin-top: var(--space-3); }
-  .dhondt__details summary { cursor: pointer; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  /* The «+» box of the lists of candidates (`CandidacyMap.astro`): a plus that turns into a minus, ink when open. */
+  .dhondt__details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-height: 44px;
+    list-style: none;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .dhondt__details summary::-webkit-details-marker { display: none; }
+  .dhondt__details summary:hover .dhondt__details-text { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+  .dhondt__details summary:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
+  .disclosure-icon {
+    flex: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    transition: background-color 0.2s, transform var(--duration-slow) var(--easing-out);
+  }
+  .disclosure-icon::before,
+  .disclosure-icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: var(--color-ink);
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s, transform var(--duration-slow) var(--easing-out);
+  }
+  .disclosure-icon::before { width: 10px; height: 3px; }
+  .disclosure-icon::after { width: 3px; height: 10px; }
+  .dhondt__details[open] .disclosure-icon { background: var(--color-ink); transform: rotate(180deg); }
+  .dhondt__details[open] .disclosure-icon::before,
+  .dhondt__details[open] .disclosure-icon::after { background: var(--color-paper); }
+  .dhondt__details[open] .disclosure-icon::after { transform: translate(-50%, -50%) scaleY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .disclosure-icon,
+    .disclosure-icon::before,
+    .disclosure-icon::after { transition: none; }
+  }
   .dhondt__table :global(td.is-seat b) { font-weight: 800; }
   .dhondt__table :global(.dh__seat) {
     display: inline-block; min-width: 1.6em; padding: 0 3px; border-radius: 3px;
