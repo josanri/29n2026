@@ -40,6 +40,8 @@ export interface ImageInput {
   result?: InvestitureResult;
   verdict?: string;
   voteColors: Record<Vote, string>;
+  /** The vote only: the seats keep the color of their party (grouped by vote), not the color of the vote. */
+  partyColors?: boolean;
   brand: string;
   /** The address of the simulator, without «https://». */
   address: string;
@@ -302,7 +304,7 @@ export const drawSimulatorImage = (canvas: HTMLCanvasElement, input: ImageInput,
     // The seats: each party takes a slice, from the left. A seat that no party takes stays empty.
     const fills: string[] = [];
     for (const party of input.parties) {
-      const color = input.content === 'vote' ? input.voteColors[party.vote] : party.color;
+      const color = input.content === 'vote' && !input.partyColors ? input.voteColors[party.vote] : party.color;
       for (let seat = 0; seat < party.seats; seat += 1) fills.push(color);
     }
     ctx.strokeStyle = theme.ink;
@@ -467,28 +469,55 @@ export const drawSimulatorImage = (canvas: HTMLCanvasElement, input: ImageInput,
     ctx.globalAlpha = 1;
   };
 
-  // ---- Legend of the vote: the verdict, then Sí, No and Abstención with their parties ----
-  const voteBlocks = (['yes', 'no', 'abstain'] as Vote[]).map((vote) => {
-    const members = input.parties.map((party, index) => ({ ...party, index })).filter((party) => party.seats > 0 && party.vote === vote);
-    return {
-      vote,
-      count: input.result?.[vote] ?? 0,
-      names: members.map((party) => party.acronym),
-      // In the video, a block appears with its first party. A block with no party appears when the fill ends.
-      start: Math.min(plan.fillEnd - POP, ...members.map((party) => plan.partyStart[party.index])),
-      members,
-    };
-  });
+  // ---- Legend of the vote: the verdict, then Sí, No and (if anybody abstains) Abstención with their parties ----
+  type Member = ImageParty & { index: number };
+  const voteBlocks = (['yes', 'no', 'abstain'] as Vote[])
+    .map((vote) => {
+      const members: Member[] = input.parties.map((party, index) => ({ ...party, index })).filter((party) => party.seats > 0 && party.vote === vote);
+      return {
+        vote,
+        count: input.result?.[vote] ?? 0,
+        // In the video, a block appears with its first party. A block with no party appears when the fill ends.
+        start: Math.min(plan.fillEnd - POP, ...members.map((party) => plan.partyStart[party.index])),
+        members,
+      };
+    })
+    // An abstention with no seat says nothing: the legend keeps Sí and No only.
+    .filter((block) => block.vote !== 'abstain' || block.count > 0 || block.members.length > 0);
+  /** The parties of a vote as chips (a circle of its color and the acronym), in lines of `width`. */
+  const chipSize = (k: number) => ({ dot: 15 * u * k, gap: 7 * u * k, space: 16 * u * k });
+  const chipWidth = (party: Member, k: number) => {
+    const { dot, gap, space } = chipSize(k);
+    return dot + gap + ctx.measureText(party.acronym).width + space;
+  };
+  const chipLines = (members: Member[], width: number, k: number, maxLines: number) => {
+    const lines: Member[][] = [[]];
+    let used = 0;
+    for (const party of members) {
+      const w = chipWidth(party, k);
+      if (used + w > width && lines[lines.length - 1].length) {
+        if (lines.length === maxLines) return { lines, rest: members.length - lines.flat().length };
+        lines.push([]);
+        used = 0;
+      }
+      lines[lines.length - 1].push(party);
+      used += w;
+    }
+    return { lines, rest: 0 };
+  };
   const voteLayout = (width: number, k: number) => {
-    const columns = side ? 1 : 3;
+    const columns = side ? 1 : voteBlocks.length;
     const colW = (width - columnGap * (columns - 1)) / columns;
     const headH = 62 * u * k;
-    const lineH = 27 * u * k;
+    const lineH = 30 * u * k;
     font(900, 40 * u * k, DISPLAY);
     const verdictLines = wrap(input.verdict ?? '', width, 2);
     const verdictH = verdictLines.length * 42 * u * k + 18 * u * k;
     font(600, 20 * u * k);
-    const blocks = voteBlocks.map((block) => ({ ...block, lines: wrap(block.names.join(' + ') || '—', colW, side ? 2 : 4) }));
+    const blocks = voteBlocks.map((block) => {
+      const chips = chipLines(block.members, colW, k, side ? 2 : 4);
+      return { ...block, chips, lines: chips.lines.length ? chips.lines : [[]] };
+    });
     const blockH = (lines: number) => headH + lines * lineH + 20 * u * k;
     const blocksH = side
       ? blocks.reduce((sum, block) => sum + blockH(block.lines.length), 0)
@@ -513,13 +542,16 @@ export const drawSimulatorImage = (canvas: HTMLCanvasElement, input: ImageInput,
       ctx.globalAlpha = appear;
       const x = (side ? box.x : box.x + index * (layout.colW + columnGap)) + (1 - appear) * 24 * u;
       const top = side ? blockTop : y;
-      const swatch = 20 * u * k;
+      // A circle, like the seats of the hemicycle and the legend of the seats.
+      const swatch = 22 * u * k;
       const middle = top + layout.headH / 2;
+      ctx.beginPath();
+      ctx.arc(x + swatch / 2, middle, swatch / 2, 0, Math.PI * 2);
       ctx.fillStyle = input.voteColors[block.vote];
-      ctx.fillRect(x, middle - swatch / 2, swatch, swatch);
+      ctx.fill();
       ctx.strokeStyle = theme.ink;
       ctx.lineWidth = Math.max(1, 2 * u);
-      ctx.strokeRect(x, middle - swatch / 2, swatch, swatch);
+      ctx.stroke();
       ctx.fillStyle = theme.ink;
       ctx.textAlign = 'right';
       font(900, 54 * u * k, DISPLAY);
@@ -536,9 +568,35 @@ export const drawSimulatorImage = (canvas: HTMLCanvasElement, input: ImageInput,
       ctx.fillText(clip(name, nameW), nameX, middle + 8 * u * k);
       spacing(0);
       ctx.fillRect(x, top + layout.headH - 2 * u, layout.colW, 2 * u);
-      ctx.fillStyle = theme.muted;
+      // The parties of this vote, each with the circle of its color. «—» if none; «+N» if they do not fit.
       font(600, 20 * u * k);
-      block.lines.forEach((line, lineIndex) => ctx.fillText(line, x, top + layout.headH + (lineIndex + 0.8) * layout.lineH));
+      const { dot, gap, space } = chipSize(k);
+      block.lines.forEach((line, lineIndex) => {
+        const baseline = top + layout.headH + (lineIndex + 0.8) * layout.lineH;
+        const center = baseline - 7 * u * k;
+        let chipX = x;
+        if (!line.length) {
+          ctx.fillStyle = theme.muted;
+          ctx.fillText('—', chipX, baseline);
+          return;
+        }
+        for (const party of line) {
+          ctx.beginPath();
+          ctx.arc(chipX + dot / 2, center, dot / 2, 0, Math.PI * 2);
+          ctx.fillStyle = party.color;
+          ctx.fill();
+          ctx.strokeStyle = theme.ink;
+          ctx.lineWidth = Math.max(1, 1.5 * u);
+          ctx.stroke();
+          ctx.fillStyle = theme.ink;
+          ctx.fillText(party.acronym, chipX + dot + gap, baseline);
+          chipX += chipWidth(party, k);
+        }
+        if (lineIndex === block.lines.length - 1 && block.chips.rest > 0) {
+          ctx.fillStyle = theme.muted;
+          ctx.fillText(`+${block.chips.rest}`, chipX, baseline);
+        }
+      });
     });
     ctx.globalAlpha = 1;
   };

@@ -285,9 +285,11 @@ const chamberData = {
           </fieldset>
           <fieldset class="choice">
             <legend>Contenido</legend>
-            <div class="choice__grid">
+            <div class="choice__grid choice__grid--3">
               <label><input type="radio" name="content" value="seats" checked /><span>Escaños<small>Los partidos y sus colores</small></span></label>
               <label><input type="radio" name="content" value="vote" /><span><span id="export-vote-label">Investidura</span><small>Sí, no y abstención</small></span></label>
+              <!-- The same vote, but each seat keeps the color of its party (grouped by vote). -->
+              <label><input type="radio" name="content" value="vote-parties" /><span><span id="export-vote-parties-label">Investidura por partidos</span><small>El voto, con el color de cada partido</small></span></label>
             </div>
             <p class="choice__note" id="export-vote-note">Para la investidura, elige antes un candidato.</p>
           </fieldset>

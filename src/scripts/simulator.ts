@@ -1025,6 +1025,10 @@ const exportShare = $<HTMLButtonElement>('#export-share');
 const exportCopy = $<HTMLButtonElement>('#export-copy');
 const voteOption = exportForm.querySelector<HTMLInputElement>('input[name="content"][value="vote"]')!;
 const seatsOption = exportForm.querySelector<HTMLInputElement>('input[name="content"][value="seats"]')!;
+// The vote with the colors of the parties: the same content (`vote`), drawn with `partyColors`.
+const votePartiesOption = exportForm.querySelector<HTMLInputElement>('input[name="content"][value="vote-parties"]')!;
+const exportVotePartiesLabel = $<HTMLElement>('#export-vote-parties-label');
+const voteChecked = () => voteOption.checked || votePartiesOption.checked;
 const exportVoteLabel = $<HTMLElement>('#export-vote-label');
 const voteNote = $<HTMLElement>('#export-vote-note');
 const titleInput = exportForm.elements.namedItem('title') as HTMLInputElement;
@@ -1116,7 +1120,8 @@ const exportOptions = () => {
   const { candidate } = state();
   return {
     file: (fileInputs.find((input) => input.checked && !input.disabled)?.value ?? 'png') as FileKind,
-    content: (data.get('content') === 'vote' && candidate ? 'vote' : 'seats') as ImageContent,
+    content: (String(data.get('content')).startsWith('vote') && candidate ? 'vote' : 'seats') as ImageContent,
+    partyColors: data.get('content') === 'vote-parties',
     format: String(data.get('format')) as ImageFormat,
     theme: (data.get('theme') === 'dark' ? 'dark' : 'light') as ImageTheme,
     title: String(data.get('title') ?? ''),
@@ -1182,7 +1187,7 @@ const syncDefaultTitle = (content: ImageContent) => {
 
 exportForm.addEventListener('input', (event) => {
   const target = event.target as HTMLInputElement;
-  if (target.name === 'content') syncDefaultTitle(target.value as ImageContent);
+  if (target.name === 'content') syncDefaultTitle(target.value.startsWith('vote') ? 'vote' : 'seats');
   renderExport();
   if (target.name !== 'file' && target.name !== 'format' && target.name !== 'theme') return;
   const { file, format, theme } = exportOptions();
@@ -1243,7 +1248,7 @@ const setBusy = (value: boolean) => {
   const { candidate } = state();
   for (const control of exportDialog.querySelectorAll<HTMLInputElement | HTMLButtonElement>('input, .export__actions button')) {
     // A kind of file that the browser can not make, and the vote without a candidate, stay off.
-    const off = (control.name === 'file' && !FILES[(control as HTMLInputElement).value as FileKind].can) || (control === voteOption && !candidate);
+    const off = (control.name === 'file' && !FILES[(control as HTMLInputElement).value as FileKind].can) || ((control === voteOption || control === votePartiesOption) && !candidate);
     control.disabled = value || off;
   }
 };
@@ -1255,13 +1260,16 @@ const openExport = (content?: ImageContent) => {
   const { candidate } = state();
   // Without a candidate/sponsor there is no vote to draw: the image shows the seats.
   voteOption.disabled = !candidate;
+  votePartiesOption.disabled = !candidate;
   voteNote.hidden = !!candidate;
-  const wanted = !candidate ? (voteOption.checked ? 'seats' : undefined) : content;
+  const wanted = !candidate ? (voteChecked() ? 'seats' : undefined) : content;
   if (wanted) {
-    (wanted === 'vote' ? voteOption : seatsOption).checked = true;
+    // On the vote, a reader who chose the colors of the parties keeps them.
+    if (wanted === 'seats') seatsOption.checked = true;
+    else if (!voteChecked()) voteOption.checked = true;
     syncDefaultTitle(wanted);
   } else {
-    syncDefaultTitle(voteOption.checked && candidate ? 'vote' : 'seats');
+    syncDefaultTitle(voteChecked() && candidate ? 'vote' : 'seats');
   }
   exportStatus.textContent = '';
   renderActions();
@@ -1589,12 +1597,13 @@ const applyChamberChrome = () => {
   bar.setAttribute('aria-label', chamber.voteBarLabel);
   exportOpenVoteLabel.textContent = chamber.shareVoteLabel;
   exportVoteLabel.textContent = chamber.voteOptionLabel;
+  exportVotePartiesLabel.textContent = `${chamber.voteOptionLabel} por partidos`;
   voteNote.textContent = chamber.voteOptionNote;
 
   noteCongreso.hidden = activeChamber !== 'congreso';
   noteSenado.hidden = activeChamber !== 'senado';
 
-  syncDefaultTitle(voteOption.checked && state().candidate ? 'vote' : 'seats');
+  syncDefaultTitle(voteChecked() && state().candidate ? 'vote' : 'seats');
   syncHemicycles();
 };
 
