@@ -166,11 +166,11 @@ CIFRAS_PROGRAMA = [
 
 # Plazos explícitos de aplicación (solo cuándo se aplica la medida).
 PLAZOS_MEDIDA = [
-    (81, 'De forma immediata', 'Prohibició de quotes obligatòries en centres sostinguts amb fons públics'),
-    (29, 'Màxim 3 anys', 'Extinció progressiva de llicències turístiques i lloguers de temporada fraudulents'),
-    (78, 'Any 2030', 'Inversió pública en dependència fins a l’1,7 % del PIB'),
+    (81, 'De inmediato', 'Prohibición de cuotas obligatorias en centros sostenidos con fondos públicos'),
+    (29, '3 años', 'Extinción progresiva de licencias turísticas y alquileres de temporada fraudulentos'),
+    (78, '2030', 'Inversión pública en dependencia hasta el 1,7 % del PIB'),
 ]
-ORDEN_PLAZOS = ['De forma immediata', 'Màxim 3 anys', 'Any 2030']
+ORDEN_PLAZOS = ['De inmediato', '3 años', '2030']
 
 TERRITORIOS_EXTRA = {
     **TERRITORIOS,

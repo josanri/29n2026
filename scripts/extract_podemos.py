@@ -25,10 +25,10 @@ import fitz
 
 PAGINAS = 141
 TOTAL_MEDIDAS = 442
-# Official copy from the party's own site (podemos.info). Its text matches the copy that Demócrata hosts (see OBSERVACIONES).
+# Official copy from the party's own site (podemos.info).
 FUENTE_PDF = 'https://podemos.info/wp-content/uploads/2026/11/29N-programa-Podemos.-Paz-casa-y-trabajo.pdf'
 OBSERVACIONES = [
-    'El PDF procede de la web oficial de Podemos (podemos.info). Su texto es igual que el de la copia que aloja el diario Demócrata.',
+    'El PDF procede de la web oficial de Podemos (podemos.info).',
     'La taxonomía común no tiene categoría de protección animal: las medidas 394 a 405 van a la más cercana (legislación a Justicia, ganadería y fauna a Campo, mar y mundo rural, tauromaquia y espectáculos a Lengua, cultura y memoria, y ciencia sin animales a Productividad e innovación).',
     'Las medidas 10 a 14 y la 393 solo dicen «Ver en apartado…» y remiten al bloque «Los precios tienen que bajar»: por su título repiten las medidas 54, 56, 57 y 58, 55, 53 y 43. Se cuentan como medidas porque el PDF las numera.',
 ]

@@ -188,25 +188,25 @@
  ],
  "plazos": [
   {
-   "plazo": "De forma immediata",
-   "texto": "Prohibició de quotes obligatòries en centres sostinguts amb fons públics",
+   "plazo": "De inmediato",
+   "texto": "Prohibición de cuotas obligatorias en centros sostenidos con fondos públicos",
    "medida": 81
   },
   {
-   "plazo": "Màxim 3 anys",
-   "texto": "Extinció progressiva de llicències turístiques i lloguers de temporada fraudulents",
+   "plazo": "3 años",
+   "texto": "Extinción progresiva de licencias turísticas y alquileres de temporada fraudulentos",
    "medida": 29
   },
   {
-   "plazo": "Any 2030",
-   "texto": "Inversió pública en dependència fins a l’1,7 % del PIB",
+   "plazo": "2030",
+   "texto": "Inversión pública en dependencia hasta el 1,7 % del PIB",
    "medida": 78
   }
  ],
  "ordenPlazos": [
-  "De forma immediata",
-  "Màxim 3 anys",
-  "Any 2030"
+  "De inmediato",
+  "3 años",
+  "2030"
  ],
  "verbos": [
   {
@@ -1133,7 +1133,7 @@
    "cifras": [
     "tributar al 21 % i s’eliminaran les deduccions a l’impost de societats i l’IRPF. Així mateix, tendran un recàrrec a l’IBI de fins al 150 %"
    ],
-   "plazo": "Màxim 3 anys",
+   "plazo": "3 años",
    "deroga": null
   },
   {
@@ -2176,7 +2176,7 @@
    "cifras": [
     "elevar la inversió pública del 0,8 % a l'1,7 % del PIB l'any 2030, amb una aportació estatal directa mínima del 50 %"
    ],
-   "plazo": "Any 2030",
+   "plazo": "2030",
    "deroga": null
   },
   {
@@ -2238,7 +2238,7 @@
    ],
    "territorios": [],
    "cifras": [],
-   "plazo": "De forma immediata",
+   "plazo": "De inmediato",
    "deroga": null
   },
   {

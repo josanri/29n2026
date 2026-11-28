@@ -369,8 +369,7 @@ def crear_programa(pdf):
         'subtitulo': f'{len(medidas)} ejes de lucha en {len(bloques)} bloques para construir una oposición obrera',
         'elecciones': 'Elecciones generales · 29 de noviembre de 2026',
         'observaciones': [
-            'El programa se publica como web (oposicionobrera.pcte.es). El PDF es la versión impresa de esa web, '
-            'facilitada a la redacción; no tiene fecha.',
+            'El programa se publica como web (oposicionobrera.pcte.es).',
             'El PCTE presenta el texto como «programa de lucha» y no como programa electoral: «Estas no son una '
             'serie de medidas para aplicar desde las instituciones».',
             'Cada ficha de «Ejes de lucha» es una medida, con su título. Las fichas no están numeradas en el '

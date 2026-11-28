@@ -8,6 +8,8 @@ import { compareText, measureNoun } from '@/lib/format';
 import { unique } from '@/lib/collections';
 import { routes } from '@/lib/routes';
 import { deadlineKind, deadlineKindLabel, deadlineKindOrder, deadlineRank } from '@/lib/deadlines';
+import { translatedPhraseTitle, translatedQuote } from '@/lib/translations';
+import Bilingual from '@/components/ui/Bilingual.astro';
 
 interface Props {
   program: Program;
@@ -15,12 +17,24 @@ interface Props {
 
 const { program } = Astro.props;
 
-const entries: DeadlineEntry[] =
+// Each entry also carries its Spanish text when the program has a translation (the language toggle swaps them).
+// A summary that is the short title of its measure takes the translated short title.
+const translatedEntry = (entry: DeadlineEntry) => {
+  const measure = program.measures.find((candidate) => candidate.number === entry.measureNumber);
+  const isPhraseTitle = measure?.phraseTitle === entry.text;
+  return translatedQuote(program.id, entry.text) ?? (isPhraseTitle ? translatedPhraseTitle(program.id, entry.measureNumber) : null);
+};
+const entries: (DeadlineEntry & { textEs: string | null })[] =
   program.deadlines.length > 0
-    ? program.deadlines
+    ? program.deadlines.map((entry) => ({ ...entry, textEs: translatedEntry(entry) }))
     : program.measures.flatMap((measure) =>
         measure.deadline
-          ? [{ deadline: measure.deadline, text: measure.phraseTitle, measureNumber: measure.number }]
+          ? [{
+              deadline: measure.deadline,
+              text: measure.phraseTitle,
+              textEs: translatedPhraseTitle(program.id, measure.number),
+              measureNumber: measure.number,
+            }]
           : [],
       );
 
@@ -58,9 +72,9 @@ const groups = deadlineKindOrder
             <ul class="timeline__entries">
               {milestone.entries.map((entry) => (
                 <li>
-                  <span class="timeline__text">{entry.text}</span>
+                  <span class="timeline__text"><Bilingual orig={entry.text} es={entry.textEs} /></span>
                   <a href={routes.measure(program.id, entry.measureNumber)}>
-                    Medida {entry.measureNumber}<span class="sr-only">: {entry.text}</span>
+                    Medida {entry.measureNumber}<span class="sr-only">: <Bilingual orig={entry.text} es={entry.textEs} /></span>
                   </a>
                 </li>
               ))}
