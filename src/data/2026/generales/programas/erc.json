@@ -9,16 +9,14 @@
  "subtitulo": "Programa electoral d’Esquerra Republicana per a les eleccions al Congrés 2026",
  "elecciones": "Eleccions al Congrés · 29 de novembre de 2026",
  "pdf": "/programas/erc-programa-electoral-2026.pdf",
- "fuentePdf": "https://www.esquerra.cat/rufian-apella-votant-socialista-decebut/",
+ "fuentePdf": "https://esquerrarepublicana.cat/documents/e2026-programa.pdf",
  "paginas": 48,
- "fechaPdf": "2026-11-05",
+ "fechaPdf": "2026-11-17",
  "presentacion": {
   "titulo": "Pel país. Per la gent. Pel futur.",
   "texto": "PREÀMBUL Som en un d’aquells moments en què la història ens posa a prova com a poble. L’amenaça d’un govern del PP i de Vox posa en risc moltes de les conquestes col·lectives que tant ens ha costat aconseguir. Ens hi juguem la llengua, l’escola catalana, els drets de les dones, els drets dels treballadors, la sanitat pública i les nostres institucions. Ens hi juguem el país que som i el país que volem ser. Però també ens hi juguem una altra cosa: el dret a viure dignament. Perquè la gent està patint. Els salaris no abasten per fer front a l’encariment de la vida, accedir a un habitatge digne s’ha convertit en una quimera i els serveis públics, al límit del col·lapse, no donen les respostes que la ciutadania necessita. I, davant d’aquesta realitat, el govern de Pedro Sánchez no ha estat a l’altura. No ha fet prou per garantir que arribar a final de mes deixi de ser una preocupació, per frenar l’especulació amb l’habitatge o per assegurar que els trens funcionin. Ni tampoc ha estat capaç de posar fi a la corrupció que continua esquitxant les institucions de l’Estat. Aquestes eleccions van de tot això. Però, sobretot, van de tu. De la teva vida, dels teus drets, de les teves oportunitats i del futur que volem construir col·lectivament. Perquè no n’hi ha prou amb resistir davant les amenaces: cal avançar, conquerir nous drets i garantir-nos un bon futur compartit. Des d’Esquerra Republicana tenim clar què cal fer i assumim el compromís de treballar per aconseguir-ho. Aquest programa electoral recull el nostre projecte i les nostres propostes, articulades al voltant de tres grans prioritats: defensar el país, defensar la gent i defensar els serveis públics. Ens hi deixarem la pell per aturar l’extrema dreta, defensar els teus drets i millorar la teva vida."
  },
- "observaciones": [
-  "El PDF adjunto salta de la propuesta 167 a la 198 y de la 250 a la 252. No incluye el texto de las propuestas 168–197 ni la 251; por eso el análisis contiene las 227 propuestas numeradas que sí aparecen, sin completar las 31 ausentes."
- ],
+ "observaciones": [],
  "cifras": [
   {
    "valor": "6 %",
@@ -1087,7 +1085,7 @@
    "subapartado": null,
    "titulo": "Reforçar el pluralisme territorial i la governança dels mitjans de comunicació.",
    "tituloFrase": "Reforçar el pluralisme territorial i la governança dels mitjans de comunicació",
-   "texto": "Ampliar les competències de les autoritats reguladores autonòmiques com el Consell Audiovisual de Catalunya (CAC) i el Consell Audiovisual de la Comunitat Valenciana (CACV), perquè puguin exercir les funcions de la Comissió Nacional dels Mercats i la Competència (CNMC) mitjançant acords formals, i garantir la participació dels organismes reguladors autonòmics en la representació de l’Estat al Comitè Europeu dels Serveis de Mitjans de Comunicació (Media Board). Reconèixer les radiotelevisions públiques com a serveis públics essencials o d’infraestructures crítiques als efectes de les telecomunicacions a les radiotelevisions públiques, pel seu paper fonamental en el funcionament social i econòmic del país.",
+   "texto": "Ampliar les competències de les autoritats reguladores autonòmiques com el Consell Audiovisual de Catalunya (CAC) i el Consell Audiovisual de la Comunitat Valenciana (CACV), perquè puguin exercir les funcions de la Comissió Nacional dels Mercats i la Competència (CNMC) mitjançant acords formals, i garantir la participació dels organismes reguladors autonòmics en la representació de l’Estat al Comitè Europeu dels Serveis de Mitjans de Comunicació (Media Board). Les radiotelevisions públiques tindran la consideració de servei públic o d’infraestructures crítiques als efectes dels serveis de telecomunicacions, perquè proporcionen serveis essencials per al funcionament social i econòmic del país.",
    "oculta": false,
    "categoria": "identidad",
    "colectivos": [],
@@ -4008,7 +4006,7 @@
    "deroga": null
   },
   {
-   "n": 198,
+   "n": 168,
    "bloque": 2,
    "seccion": "B.I",
    "pagina": 34,
@@ -4033,7 +4031,7 @@
    "deroga": null
   },
   {
-   "n": 199,
+   "n": 169,
    "bloque": 2,
    "seccion": "B.I",
    "pagina": 34,
@@ -4051,7 +4049,7 @@
    "deroga": null
   },
   {
-   "n": 200,
+   "n": 170,
    "bloque": 2,
    "seccion": "B.I",
    "pagina": 34,
@@ -4071,7 +4069,7 @@
    "deroga": null
   },
   {
-   "n": 201,
+   "n": 171,
    "bloque": 2,
    "seccion": "B.I",
    "pagina": 35,
@@ -4092,7 +4090,7 @@
    "deroga": null
   },
   {
-   "n": 202,
+   "n": 172,
    "bloque": 2,
    "seccion": "B.I",
    "pagina": 35,
@@ -4112,7 +4110,7 @@
    "deroga": null
   },
   {
-   "n": 203,
+   "n": 173,
    "bloque": 2,
    "seccion": "B.I",
    "pagina": 35,
@@ -4134,7 +4132,7 @@
    "deroga": null
   },
   {
-   "n": 204,
+   "n": 174,
    "bloque": 2,
    "seccion": "B.I",
    "pagina": 35,
@@ -4154,7 +4152,7 @@
    "deroga": null
   },
   {
-   "n": 205,
+   "n": 175,
    "bloque": 2,
    "seccion": "B.J",
    "pagina": 36,
@@ -4176,7 +4174,7 @@
    "deroga": null
   },
   {
-   "n": 206,
+   "n": 176,
    "bloque": 2,
    "seccion": "B.J",
    "pagina": 36,
@@ -4199,7 +4197,7 @@
    "deroga": null
   },
   {
-   "n": 207,
+   "n": 177,
    "bloque": 2,
    "seccion": "B.J",
    "pagina": 36,
@@ -4219,7 +4217,7 @@
    "deroga": null
   },
   {
-   "n": 208,
+   "n": 178,
    "bloque": 2,
    "seccion": "B.J",
    "pagina": 36,
@@ -4237,7 +4235,7 @@
    "deroga": null
   },
   {
-   "n": 209,
+   "n": 179,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4260,7 +4258,7 @@
    "deroga": null
   },
   {
-   "n": 210,
+   "n": 180,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4280,7 +4278,7 @@
    "deroga": null
   },
   {
-   "n": 211,
+   "n": 181,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4300,7 +4298,7 @@
    "deroga": null
   },
   {
-   "n": 212,
+   "n": 182,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4325,7 +4323,7 @@
    "deroga": null
   },
   {
-   "n": 213,
+   "n": 183,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4345,7 +4343,7 @@
    "deroga": null
   },
   {
-   "n": 214,
+   "n": 184,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4367,7 +4365,7 @@
    "deroga": null
   },
   {
-   "n": 215,
+   "n": 185,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4389,7 +4387,7 @@
    "deroga": null
   },
   {
-   "n": 216,
+   "n": 186,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 38,
@@ -4412,7 +4410,7 @@
    "deroga": null
   },
   {
-   "n": 217,
+   "n": 187,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 39,
@@ -4430,7 +4428,7 @@
    "deroga": null
   },
   {
-   "n": 218,
+   "n": 188,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 39,
@@ -4450,7 +4448,7 @@
    "deroga": null
   },
   {
-   "n": 219,
+   "n": 189,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 39,
@@ -4468,7 +4466,7 @@
    "deroga": null
   },
   {
-   "n": 220,
+   "n": 190,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 39,
@@ -4486,7 +4484,7 @@
    "deroga": null
   },
   {
-   "n": 221,
+   "n": 191,
    "bloque": 3,
    "seccion": "C.A",
    "pagina": 39,
@@ -4504,7 +4502,7 @@
    "deroga": null
   },
   {
-   "n": 222,
+   "n": 192,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4528,7 +4526,7 @@
    "deroga": null
   },
   {
-   "n": 223,
+   "n": 193,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4546,7 +4544,7 @@
    "deroga": null
   },
   {
-   "n": 224,
+   "n": 194,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4568,7 +4566,7 @@
    "deroga": null
   },
   {
-   "n": 225,
+   "n": 195,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4591,7 +4589,7 @@
    "deroga": null
   },
   {
-   "n": 226,
+   "n": 196,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4609,7 +4607,7 @@
    "deroga": null
   },
   {
-   "n": 227,
+   "n": 197,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4627,7 +4625,7 @@
    "deroga": null
   },
   {
-   "n": 228,
+   "n": 198,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4647,7 +4645,7 @@
    "deroga": null
   },
   {
-   "n": 229,
+   "n": 199,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4667,7 +4665,7 @@
    "deroga": null
   },
   {
-   "n": 230,
+   "n": 200,
    "bloque": 3,
    "seccion": "C.B",
    "pagina": 40,
@@ -4685,7 +4683,7 @@
    "deroga": null
   },
   {
-   "n": 231,
+   "n": 201,
    "bloque": 3,
    "seccion": "C.C",
    "pagina": 41,
@@ -4711,7 +4709,7 @@
    "deroga": null
   },
   {
-   "n": 232,
+   "n": 202,
    "bloque": 3,
    "seccion": "C.C",
    "pagina": 41,
@@ -4729,7 +4727,7 @@
    "deroga": null
   },
   {
-   "n": 233,
+   "n": 203,
    "bloque": 3,
    "seccion": "C.D",
    "pagina": 41,
@@ -4747,7 +4745,7 @@
    "deroga": null
   },
   {
-   "n": 234,
+   "n": 204,
    "bloque": 3,
    "seccion": "C.D",
    "pagina": 41,
@@ -4771,7 +4769,7 @@
    "deroga": null
   },
   {
-   "n": 235,
+   "n": 205,
    "bloque": 3,
    "seccion": "C.D",
    "pagina": 42,
@@ -4796,7 +4794,7 @@
    "deroga": null
   },
   {
-   "n": 236,
+   "n": 206,
    "bloque": 3,
    "seccion": "C.D",
    "pagina": 42,
@@ -4818,7 +4816,7 @@
    "deroga": null
   },
   {
-   "n": 237,
+   "n": 207,
    "bloque": 3,
    "seccion": "C.D",
    "pagina": 42,
@@ -4840,7 +4838,7 @@
    "deroga": null
   },
   {
-   "n": 238,
+   "n": 208,
    "bloque": 3,
    "seccion": "C.D",
    "pagina": 42,
@@ -4862,7 +4860,7 @@
    "deroga": null
   },
   {
-   "n": 239,
+   "n": 209,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 42,
@@ -4884,7 +4882,7 @@
    "deroga": null
   },
   {
-   "n": 240,
+   "n": 210,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 42,
@@ -4906,7 +4904,7 @@
    "deroga": null
   },
   {
-   "n": 241,
+   "n": 211,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 43,
@@ -4928,7 +4926,7 @@
    "deroga": null
   },
   {
-   "n": 242,
+   "n": 212,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 43,
@@ -4953,7 +4951,7 @@
    "deroga": null
   },
   {
-   "n": 243,
+   "n": 213,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 43,
@@ -4971,7 +4969,7 @@
    "deroga": null
   },
   {
-   "n": 244,
+   "n": 214,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 43,
@@ -4993,7 +4991,7 @@
    "deroga": null
   },
   {
-   "n": 245,
+   "n": 215,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 43,
@@ -5015,7 +5013,7 @@
    "deroga": null
   },
   {
-   "n": 246,
+   "n": 216,
    "bloque": 3,
    "seccion": "C.E",
    "pagina": 43,
@@ -5035,7 +5033,7 @@
    "deroga": null
   },
   {
-   "n": 247,
+   "n": 217,
    "bloque": 3,
    "seccion": "C.F",
    "pagina": 44,
@@ -5057,7 +5055,7 @@
    "deroga": null
   },
   {
-   "n": 248,
+   "n": 218,
    "bloque": 3,
    "seccion": "C.F",
    "pagina": 44,
@@ -5082,7 +5080,7 @@
    "deroga": null
   },
   {
-   "n": 249,
+   "n": 219,
    "bloque": 3,
    "seccion": "C.F",
    "pagina": 44,
@@ -5104,7 +5102,7 @@
    "deroga": null
   },
   {
-   "n": 250,
+   "n": 220,
    "bloque": 3,
    "seccion": "C.F",
    "pagina": 44,
@@ -5124,7 +5122,7 @@
    "deroga": null
   },
   {
-   "n": 252,
+   "n": 221,
    "bloque": 3,
    "seccion": "C.G",
    "pagina": 45,
@@ -5149,7 +5147,7 @@
    "deroga": null
   },
   {
-   "n": 253,
+   "n": 222,
    "bloque": 3,
    "seccion": "C.G",
    "pagina": 45,
@@ -5169,7 +5167,7 @@
    "deroga": null
   },
   {
-   "n": 254,
+   "n": 223,
    "bloque": 3,
    "seccion": "C.G",
    "pagina": 45,
@@ -5189,7 +5187,7 @@
    "deroga": null
   },
   {
-   "n": 255,
+   "n": 224,
    "bloque": 3,
    "seccion": "C.G",
    "pagina": 45,
@@ -5214,7 +5212,7 @@
    "deroga": null
   },
   {
-   "n": 256,
+   "n": 225,
    "bloque": 3,
    "seccion": "C.G",
    "pagina": 45,
@@ -5238,7 +5236,7 @@
    "deroga": null
   },
   {
-   "n": 257,
+   "n": 226,
    "bloque": 3,
    "seccion": "C.G",
    "pagina": 45,
@@ -5258,7 +5256,7 @@
    "deroga": null
   },
   {
-   "n": 258,
+   "n": 227,
    "bloque": 3,
    "seccion": "C.G",
    "pagina": 46,

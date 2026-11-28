@@ -847,14 +847,6 @@
    }
   ]
  },
- "autonomos": {
-  "categorias": {
-   "4": "empleo"
-  },
-  "deroga": {},
-  "cifras": {},
-  "cifrasPrograma": []
- },
  "bng": {
   "categorias": {
    "8": "energia",
@@ -1502,8 +1494,8 @@
    "149": "infraestructuras",
    "150": "infraestructuras",
    "152": "infraestructuras",
-   "242": "justicia",
-   "246": "emergencias"
+   "212": "justicia",
+   "216": "emergencias"
   },
   "deroga": {
    "2": "Llei Orgànica 4/2015 (protecció de la seguretat ciutadana)",
@@ -1511,7 +1503,7 @@
    "13": "article 145 de la Constitució espanyola",
    "84": "llei Beckham",
    "103": "reformes laborals de 2010 i 2012",
-   "249": "Llei de Racionalització i Sostenibilitat de l'Administració Local"
+   "219": "Llei de Racionalització i Sostenibilitat de l'Administració Local"
   },
   "cifras": {
    "19": [
@@ -1582,23 +1574,23 @@
    "153": [
     "reducció d’emissions de CO2 d’almenys el 65 % el 2030 i del 95 % el 2040, respecte a 1990"
    ],
-   "225": [
+   "195": [
     "inclosos els 1.400 milions d’euros addicionals anunciats pel Ministeri de Transports"
    ],
-   "231": [
+   "201": [
     "suplement de crèdit de 2.018 MEUR per al 2026, 7.200 MEUR per al 2027",
     "vetllar pel compliment estricte del finançament del 50 % de l’Administració General de l’Estat"
    ],
-   "242": [
+   "212": [
     "incorporar 180 places entre 2026 i 2027"
    ],
-   "247": [
+   "217": [
     "fins a un límit del 50 % dels ingressos corrents"
    ],
-   "248": [
+   "218": [
     "rebaixant el llindar poblacional actual de 20.000 a 10.000 habitants"
    ],
-   "252": [
+   "221": [
     "incrementar plurianualment la inversió estatal en universitats en un 0,07 % del PIB per assolir una despesa pública de l’1 % del PIB el 2030",
     "incrementar progressivament la inversió pública fins a assolir l’1,5 % del PIB el 2030, amb un augment de la inversió estatal equivalent al 0,14 % del PIB"
    ]
@@ -1707,7 +1699,7 @@
     "unidad": "del PIB en investigación",
     "texto": "Inversión pública en I+D hasta el 1,5 % del PIB en 2030",
     "contexto": "incrementar progressivament la inversió pública fins a assolir l’1,5 % del PIB el 2030",
-    "medida": 252
+    "medida": 221
    }
   ]
  },

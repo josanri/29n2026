@@ -9,8 +9,7 @@ import fitz
 
 
 EXPECTED_PAGES = 48
-EXPECTED_MEASURES = set(range(1, 168)) | set(range(198, 251)) | set(range(252, 259))
-OMITTED_MEASURES = list(range(168, 198)) + [251]
+EXPECTED_MEASURES = set(range(1, 228))
 
 BLOQUES = {
     'A': ('Defensar el país', 'DEFENSAR EL PAÍS'),
@@ -96,8 +95,8 @@ NOT_DEADLINE_RE = re.compile(
 )
 
 # Deadlines read in the proposal when the first year is not the right one: the 180 judges of
-# proposal 242 are incorporated «entre 2026 i 2027», so the deadline is the end of the range.
-DEADLINE_OVERRIDE = {242: '2027'}
+# proposal 212 are incorporated «entre 2026 i 2027», so the deadline is the end of the range.
+DEADLINE_OVERRIDE = {212: '2027'}
 
 
 def find_deadline(text):
@@ -358,16 +357,14 @@ def build_program(document, blocks_raw, sections_raw, raw_measures):
         'subtitulo': 'Programa electoral d’Esquerra Republicana per a les eleccions al Congrés 2026',
         'elecciones': 'Eleccions al Congrés · 29 de novembre de 2026',
         'pdf': '/programas/erc-programa-electoral-2026.pdf',
-        'fuentePdf': 'https://www.esquerra.cat/rufian-apella-votant-socialista-decebut/',
+        'fuentePdf': 'https://esquerrarepublicana.cat/documents/e2026-programa.pdf',
         'paginas': len(document),
-        'fechaPdf': '2026-11-05',
+        'fechaPdf': '2026-11-17',
         'presentacion': {
             'titulo': 'Pel país. Per la gent. Pel futur.',
             'texto': preamble,
         },
-        'observaciones': [
-            'El PDF adjunto salta de la propuesta 167 a la 198 y de la 250 a la 252. No incluye el texto de las propuestas 168–197 ni la 251; por eso el análisis contiene las 227 propuestas numeradas que sí aparecen, sin completar las 31 ausentes.',
-        ],
+        'observaciones': [],
         'cifras': cifras,
         'plazos': [],
         'ordenPlazos': [],
@@ -388,7 +385,6 @@ def main():
         'blocks', len(program['bloques']),
         'sections', len(program['secciones']),
         'available proposals', len(program['medidas']),
-        'numbering gaps', len(OMITTED_MEASURES),
     )
     print('categories', Counter(measure['categoria'] for measure in program['medidas']).most_common())
 

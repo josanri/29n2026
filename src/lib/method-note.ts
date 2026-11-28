@@ -12,6 +12,10 @@ export function methodNote(program: Program): string {
       return `El PDF oficial completo tiene ${program.pageCount} páginas y distingue 29 medidas principales de 637 propuestas por áreas y 82 propuestas territoriales. Este análisis recoge las 719 propuestas numeradas de las fichas oficiales consultadas el ${program.sourceDate}; no cuenta aparte las 29 medidas-resumen. La categoría principal, los colectivos y las palancas son una clasificación editorial.`;
     }
     const consulted = program.sourceDate ? `, consultadas el ${program.sourceDate}` : '';
+    if (program.id === 'autonomos') {
+      const consultedOn = program.sourceDate ? `, consultada el ${program.sourceDate}` : '';
+      return `El programa se transcribe de la infografía oficial «10 desafíos y soluciones para las elecciones generales 2026» (partidoautonomos.es)${consultedOn}, sin PDF descargable. Cada medida conserva el enunciado literal y la nota de viabilidad de la infografía. La categoría principal, los colectivos y las palancas son una clasificación editorial.`;
+    }
     return `El programa se publica en fichas web oficiales${consulted}. Se conservan sus títulos y resúmenes. La categoría principal, los colectivos y las palancas son una clasificación editorial.`;
   }
   // Podemos: numbered measures; the PDF is the party's own copy on podemos.info.
@@ -67,9 +71,13 @@ export function methodNote(program: Program): string {
   if (program.id === 'geroa-bai') {
     return `El texto se extrae del PDF oficial (${pdfFacts(program)}), unas bases políticas en prosa con cinco capítulos y sin medidas numeradas. Cada compromiso es aquí una de las exigencias o defensas que el texto enumera (los cuatro «exige» del capítulo 2, el Convenio Económico, los asuntos pendientes y la lista «combatir a la ultraderecha es…»), numerado del 1 al ${program.measures.length} en el orden del documento. El texto de cada compromiso es literal; su título corto es editorial. El primer capítulo no tiene compromisos. La categoría principal es una asignación editorial, y los colectivos, las palancas y los territorios se detectan con palabras clave. El número de página enlaza con el PDF original.`;
   }
-  // UPC: a short manifesto; each numbered axis is one proposal and its own block.
+  // UPC: full electoral program (5 blocks, 16 axes, bulleted and prose proposals).
   if (program.id === 'upc') {
-    return `El texto se extrae del PDF oficial (${pdfFacts(program)}), un manifiesto electoral con 16 ejes numerados; el PDF no tiene fecha de creación y la fecha es la de su última modificación. Cada eje es aquí una propuesta y un bloque, con su título y su texto completos. La categoría principal es una asignación editorial, y los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
+    return `El texto se extrae del PDF oficial del programa electoral (${pdfFacts(program)}), estructurado en cinco bloques y 16 ejes que desarrollan el manifiesto previo. Cada viñeta o párrafo con propuesta concreta es aquí una propuesta numerada del 1 al ${program.measures.length} en el orden del documento; su primera frase (o el rótulo antes de dos puntos) hace de título corto. La categoría principal es una asignación editorial, y los colectivos, las palancas y los territorios se detectan con palabras clave, por eso son una aproximación. El número de página enlaza con el PDF original.`;
+  }
+  // PSC: Catalan manifesto in prose; each commitment is a literal passage from the PDF.
+  if (program.id === 'psc') {
+    return `El texto se extrae del PDF oficial del manifiesto electoral del PSC, en catalán (${pdfFacts(program)}), redactado en prosa sin medidas numeradas; el propio documento remite al final al programa estatal del PSOE para el 29N. Cada compromiso es aquí un pasaje literal del manifiesto, numerado del 1 al ${program.measures.length} en el orden del documento, con un título corto editorial. La categoría principal es una asignación editorial, y los colectivos, las palancas y los territorios se detectan con palabras clave. El número de página enlaza con el PDF original.`;
   }
   // Democracia 21: several PDFs with different layouts; each measure is a hand-written summary.
   if (program.id === 'd21') {

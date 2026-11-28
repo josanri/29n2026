@@ -35,7 +35,7 @@ import fitz
 
 ID = 'eh-bildu'
 PDF_PUBLICO = '/programas/eh-bildu-garantia-y-derechos-2026.pdf'
-FUENTE = 'https://www.naiz.eus/media/asset_publics/resources/001/388/034/original/posibleegin-programa-cas.pdf'
+FUENTE = 'https://ehbildu.eus/media/dokumentuak/posibleegin-programa-cas.pdf'
 FECHA_PDF = '2026-11-16'  # creationDate de los metadatos
 PAGINAS = 30
 PAGINA_PRESENTACION = 4

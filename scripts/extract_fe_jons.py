@@ -35,7 +35,7 @@ ID = 'fe-jons'
 PDF_PUBLICO = '/programas/fe-jons-programa-electoral-2026.pdf'
 # El partido no ha publicado el PDF en su web (falange.es) al incorporarlo: es el documento que facilitó la
 # redacción, compartido en Google Drive. Ver `observaciones`.
-FUENTE = 'https://drive.google.com/file/d/1qHW4vdzaqDvjj5zHJq6tCOpgGhKWDorb/view'
+FUENTE = 'https://falange.es/wp-content/uploads/2026/11/FEDELASJONS_ProgramaElectoral_29NGenerales2026.pdf'
 FECHA_PDF = '2026-11-13'  # modDate de los metadatos: el documento no escribe la fecha
 COLOR = '#DA141C'
 COLOR_CLARO = '#EE9599'

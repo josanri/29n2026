@@ -2,26 +2,472 @@
  "id": "psc",
  "partido": "Partit dels Socialistes de Catalunya",
  "siglas": "PSC",
+ "comunidad": "Cataluña",
  "color": "#E10819",
  "colorClaro": "#FDE7E8",
- "programa": "",
- "subtitulo": "Programa vacío",
- "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "vacio": true,
- "pdf": "",
- "paginas": 0,
- "unidadMedida": "medida",
- "unidadMedidas": "medidas",
+ "programa": "La força de Catalunya",
+ "subtitulo": "Manifest del Partit dels Socialistes de Catalunya per a les Eleccions Generals 29N 2026",
+ "elecciones": "Eleccions generals · 29 de novembre de 2026",
+ "pdf": "/programas/psc-la-forca-de-catalunya-2026.pdf",
+ "fuentePdf": "https://www.socialistes.cat/wp-content/uploads/2026/11/Manifest-Generals-2026_DEF.pdf",
+ "paginas": 8,
+ "fechaPdf": "2026-11-16",
+ "observaciones": [
+  "El PSC publica un manifest electoral propi en català (8 pàgines) i remet al final al programa estatal del PSOE per al 29N.",
+  "El document està escrit en prosa sense mesures numerades: cada compromís és un passatge literal del manifest amb un títol curt editorial."
+ ],
+ "unidadMedida": "compromiso",
+ "unidadMedidas": "compromisos",
  "presentacion": {
-  "titulo": "",
-  "texto": ""
+  "titulo": "La força de Catalunya",
+  "texto": "El 29 de novembre ens trobem en una cruïlla històrica, a Catalunya, a Espanya, a Europa i al món. Hi ha dos camins i una sola data. La dreta i l’extrema dreta només tenen una opció per imposar-se: convèncer-nos que ens quedem a casa. La nostra resposta ha de ser anar a votar, mobilitzar-nos i guanyar. Catalunya serà decisiva, com sempre ho ha estat, en aquestes eleccions, i necessitem el màxim suport per continuar garantint un govern de progrés a Espanya. El president Pedro Sánchez ha encapçalat un govern progressista per a una Espanya plural durant aquests darrers anys. Un govern que ens ha fet avançar en convivència, prosperitat, drets i oportunitats. Davant seu s’alcen una dreta i una extrema dreta que van agafats de la mà i que no ofereixen cap alternativa, sinó sacrificis i retallades; un camí que només concep una Espanya uniforme i que es plega als interessos dels poders econòmics, mediàtics i polítics més conservadors. Allà on governen, vulneren drets conquerits després de dècades de lluites socials i de l’esforç de generacions que no s’han resignat, i posen en risc polítiques que han millorat la vida de milions de persones. El que està en risc és la convivència, el respecte a la diversitat, la igualtat entre dones i homes, els drets i les oportunitats, i la capacitat de construir projectes col·lectius des del diàleg i el respecte. També està en risc una manera d’entendre la política: la que posa les institucions al servei de la ciutadania, la que escolta, la que acorda i la que transforma la realitat per millorar la vida de la gent. L’extrema dreta i la dreta ja governen institucions autonòmiques i no podem permetre que també governin a Espanya. No ens podem permetre ni la resignació ni la indiferència. La força de la gent ho impedirà."
  },
- "cifras": [],
+ "cifras": [
+  {
+   "valor": "37,5 hores",
+   "unidad": "setmanals",
+   "texto": "Reducció de la jornada laboral a 37,5 hores sense pèrdua de sou",
+   "contexto": "reduir la jornada laboral a 37,5 hores sense pèrdua de sou",
+   "medida": 2
+  },
+  {
+   "valor": "4.686 M€",
+   "unidad": "addicionals l’any",
+   "texto": "Recursos addicionals del nou model de finançament per a Catalunya",
+   "contexto": "4.686 milions d’euros addicionals l’any",
+   "medida": 5
+  },
+  {
+   "valor": "1.700 €",
+   "unidad": "per habitant",
+   "texto": "Increment estimat per habitant del nou model de finançament",
+   "contexto": "uns 1.700 euros més per habitant",
+   "medida": 5
+  }
+ ],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
- "bloques": [],
- "secciones": [],
- "medidas": [],
- "comunidad": "Cataluña"
+ "bloques": [
+  {
+   "id": 1,
+   "titulo": "Quatre compromisos per a la majoria social",
+   "tituloMayus": "QUATRE COMPROMISOS PER A LA MAJORIA SOCIAL",
+   "lema": "Drets que es puguin exercir",
+   "cita": "",
+   "intro": "Quatre compromisos prioritaris per a la pròxima legislatura: habitatge, salaris i pensions, sanitat i cures, i finançament just.",
+   "pagina": 3
+  },
+  {
+   "id": 2,
+   "titulo": "Defensar Catalunya: més autogovern i més benestar",
+   "tituloMayus": "DEFENSAR CATALUNYA: MÉS AUTOGOVERN I MÉS BENESTAR",
+   "lema": "El catalanisme que suma",
+   "cita": "",
+   "intro": "Federalisme, reforma constitucional, traspàs de Rodalies, ampliació de l’aeroport del Prat, condonació del FLA i llengües oficials.",
+   "pagina": 4
+  },
+  {
+   "id": 3,
+   "titulo": "Drets, llibertats i pau",
+   "tituloMayus": "DRETS, LLIBERTATS I PAU",
+   "lema": "La convivència també és un dret",
+   "cita": "",
+   "intro": "Igualtat, protecció contra la violència masclista, drets LGBTI, llibertats digitals i política exterior multilateral.",
+   "pagina": 5
+  },
+  {
+   "id": 4,
+   "titulo": "Enfortir allò que és públic",
+   "tituloMayus": "ENFORTIR ALLÒ QUE ÉS PÚBLIC",
+   "lema": "Educació, pensions i fiscalitat justa",
+   "cita": "",
+   "intro": "Defensa dels serveis públics, del sistema públic de pensions i d’una fiscalitat justa i progressiva.",
+   "pagina": 6
+  }
+ ],
+ "secciones": [
+  {
+   "id": "1",
+   "bloque": 1,
+   "titulo": "Quatre compromisos per a la majoria social",
+   "tituloFrase": "Quatre compromisos per a la majoria social",
+   "intro": "Quatre compromisos prioritaris per a la pròxima legislatura: habitatge, salaris i pensions, sanitat i cures, i finançament just.",
+   "pagina": 3,
+   "subapartados": []
+  },
+  {
+   "id": "2",
+   "bloque": 2,
+   "titulo": "Defensar Catalunya: més autogovern i més benestar",
+   "tituloFrase": "Defensar Catalunya: més autogovern i més benestar",
+   "intro": "Federalisme, reforma constitucional, traspàs de Rodalies, ampliació de l’aeroport del Prat, condonació del FLA i llengües oficials.",
+   "pagina": 4,
+   "subapartados": []
+  },
+  {
+   "id": "3",
+   "bloque": 3,
+   "titulo": "Drets, llibertats i pau",
+   "tituloFrase": "Drets, llibertats i pau",
+   "intro": "Igualtat, protecció contra la violència masclista, drets LGBTI, llibertats digitals i política exterior multilateral.",
+   "pagina": 5,
+   "subapartados": []
+  },
+  {
+   "id": "4",
+   "bloque": 4,
+   "titulo": "Enfortir allò que és públic",
+   "tituloFrase": "Enfortir allò que és públic",
+   "intro": "Defensa dels serveis públics, del sistema públic de pensions i d’una fiscalitat justa i progressiva.",
+   "pagina": 6,
+   "subapartados": []
+  }
+ ],
+ "medidas": [
+  {
+   "n": 1,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Protegir els llogaters, construir habitatge públic i regular les zones tensionades",
+   "tituloFrase": "Protegir els llogaters, construir habitatge públic i regular les zones tensionades",
+   "texto": "Volem protegir els llogaters i les llogateres, prorrogant els contractes i frenant els increments abusius. Volem construir habitatge públic de lloguer assequible a gran escala, mobilitzant sòl i patrimoni públics, i ajudar les persones que volen comprar un pis per viure-hi, sobretot els joves que comencen. També defensarem la regulació de les zones tensionades i combatrem els especuladors.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Pujar el salari mínim, reduir la jornada a 37,5 hores i revalorar les pensions amb l’IPC",
+   "tituloFrase": "Pujar el salari mínim, reduir la jornada a 37,5 hores i revalorar les pensions amb l’IPC",
+   "texto": "Per això volem continuar apujant el salari mínim perquè no es quedi enrere respecte del salari mitjà, reduir la jornada laboral a 37,5 hores sense pèrdua de sou i garantir que les pensions es revalorin d’acord amb l’IPC.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "mayores"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "reduir la jornada laboral a 37,5 hores sense pèrdua de sou"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Combatre la precarietat juvenil i ampliar la formació professional",
+   "tituloFrase": "Combatre la precarietat juvenil i ampliar la formació professional",
+   "texto": "Volem combatre la precarietat i la temporalitat, que pesen sobretot sobre els joves: contractes que s’encadenen, sous que no arriben a final de mes i projectes de vida que s’ajornen. També volem que els joves puguin formar-se bé, ampliant l’oferta de formació professional i facilitant que puguin continuar aprenent al llarg de tota la vida laboral.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Reforçar l’atenció primària, la salut mental i l’atenció a la dependència",
+   "tituloFrase": "Reforçar l’atenció primària, la salut mental i l’atenció a la dependència",
+   "texto": "Reforçarem l’atenció primària, reduirem les esperes sanitàries i atendrem millor la salut mental, també la dels joves. Millorarem l’atenció a la dependència i les cures perquè les persones puguin viure amb dignitat i autonomia, i perquè aquesta responsabilitat no recaigui sobre les famílies i, sobretot, sobre les dones.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "familias",
+    "jovenes",
+    "discapacidad",
+    "mujeres",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Impulsar un finançament singular que respecti el principi d’ordinalitat",
+   "tituloFrase": "Impulsar un finançament singular que respecti el principi d’ordinalitat",
+   "texto": "El nou model de finançament que s’ha impulsat des de Catalunya suposaria 4.686 milions d’euros addicionals l’any, uns 1.700 euros més per habitant. Són recursos per a la sanitat, l’educació, les cures i la protecció social. Volem un finançament singular que respecti el principi d’ordinalitat, amb una solidaritat transparent i sense enfrontar territoris. Catalunya ha de disposar dels recursos necessaris per atendre la seva ciutadania i exercir plenament el seu autogovern.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [
+    "4.686 milions d’euros addicionals l’any",
+    "uns 1.700 euros més per habitant"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 6,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Defensar una reforma constitucional d’orientació social i federal",
+   "tituloFrase": "Defensar una reforma constitucional d’orientació social i federal",
+   "texto": "Volem una Espanya que reconegui la seva diversitat, on les decisions es comparteixin i Catalunya hi participi amb veu pròpia. Per a nosaltres, el federalisme vol dir que l’Estat és més fort quan les comunitats autònomes i els ajuntaments poden respondre a la ciutadania; que cooperar serveix per garantir drets comuns i gestionar els serveis a prop de la gent, i que l’autogovern requereix competències i recursos, però també responsabilitat per exercir-lo. Defensem una reforma constitucional que consolidi aquesta orientació social i federal.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Cataluña",
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Culminar el traspàs de Rodalies amb empresa mixta i més inversió",
+   "tituloFrase": "Culminar el traspàs de Rodalies amb empresa mixta i més inversió",
+   "texto": "Volem culminar el traspàs de Rodalies perquè el servei sigui fiable, segur i de qualitat per a tothom qui hi viatja. El nou model, amb més capacitat de decisió de la Generalitat, un nou contracte programa i una empresa mixta, s’ha de traduir en més inversió, trens renovats, millor manteniment i una gestió més propera.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 8,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Fer realitat l’ampliació pactada de l’aeroport del Prat",
+   "tituloFrase": "Fer realitat l’ampliació pactada de l’aeroport del Prat",
+   "texto": "I volem fer realitat l’ampliació de l’aeroport del Prat, pactada entre la Generalitat, l’Estat i Aena, com una infraestructura clau per connectar Catalunya amb el món i generar ocupació de qualitat, tot fent-la compatible amb la protecció dels espais naturals.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Cataluña"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 9,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Condonar el deute del FLA i garantir l’execució de les inversions compromeses",
+   "tituloFrase": "Condonar el deute del FLA i garantir l’execució de les inversions compromeses",
+   "texto": "Volem també la condonació del deute autonòmic vinculat al FLA i que les inversions compromeses es planifiquin, s’executin i tinguin un seguiment públic.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 2,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Defensar les llengües oficials a l’Estat i el reconeixement del català a Europa",
+   "tituloFrase": "Defensar les llengües oficials a l’Estat i el reconeixement del català a Europa",
+   "texto": "Defensarem l’ús de les llengües oficials de les comunitats autònomes en l’activitat ordinària dels poders públics i continuarem treballant pel reconeixement del català, l’euskera i el gallec davant les institucions europees. Volem que la ciutadania es pugui adreçar a l’Administració en la seva llengua materna.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 11,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Blindar el dret de les dones a decidir, la igualtat salarial i la protecció contra la violència masclista",
+   "tituloFrase": "Blindar el dret de les dones a decidir, la igualtat salarial i la protecció contra la violència masclista",
+   "texto": "Ens comprometem a blindar el dret de les dones a decidir sobre el seu cos i a avançar cap a la igualtat salarial, amb mesures de transparència i control a les empreses. Reforçarem la protecció i la reparació de les víctimes de la violència masclista, amb serveis estables i ben dotats a tot el territori.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "empresas",
+    "mujeres",
+    "victimas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Defensar els drets LGBTI i perseguir els delictes d’odi i el racisme",
+   "tituloFrase": "Defensar els drets LGBTI i perseguir els delictes d’odi i el racisme",
+   "texto": "Defensarem els drets de les persones LGBTI i perseguirem els delictes d’odi, perquè ningú hagi de tenir por d’anar agafats de la mà pel carrer, i plantarem cara als discursos que fan servir la por, el racisme i l’odi com a eina política.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Protegir les llibertats civils i regular democràticament les plataformes digitals",
+   "tituloFrase": "Protegir les llibertats civils i regular democràticament les plataformes digitals",
+   "texto": "Defensarem la llibertat d’expressió, la privacitat, la independència dels mitjans i la igualtat davant la llei. Ni la riquesa ni el control de les plataformes digitals han de pesar més que el vot de la ciutadania. Davant la concentració del poder econòmic i tecnològic calen regles democràtiques, transparència i institucions fortes.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 3,
+   "seccion": "3",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Política exterior multilateral amb suport a Ucraïna i a la població palestina",
+   "tituloFrase": "Política exterior multilateral amb suport a Ucraïna i a la població palestina",
+   "texto": "Volem una política exterior coherent, basada en el multilateralisme i no en la llei del més fort. Donem suport a Ucraïna davant l’agressió russa i a la població palestina davant el genocidi a Gaza, perquè ens guia el mateix principi: respectar la legalitat internacional i els drets humans. Volem una Europa que protegeixi la població civil, sostingui l’ajuda humanitària i treballi per una pau justa i duradora.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Enfortir l’educació pública i blindar el sistema públic de pensions",
+   "tituloFrase": "Enfortir l’educació pública i blindar el sistema públic de pensions",
+   "texto": "L’educació pública, des de l’escola fins a la universitat i la formació professional, és el que permet que un jove arribi on vulgui, vingui d’on vingui. Hem revalorat i enfortit el sistema públic de pensions, i ho continuarem fent, garantint-ne el poder adquisitiu i la sostenibilitat. Les pensions són un dret i el resultat de tota una vida de feina. No poden convertir-se en un negoci privat ni quedar a mercè dels interessos financers.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes",
+    "mayores"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 4,
+   "seccion": "4",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Defensar una fiscalitat justa i rebutjar regals fiscals per als més rics",
+   "tituloFrase": "Defensar una fiscalitat justa i rebutjar regals fiscals per als més rics",
+   "texto": "També defensem una fiscalitat justa. No podem acceptar que es faci creure a la ciutadania que la culpa de les seves dificultats és de qui acaba d’arribar, mentre es proposen regals fiscals per als més rics. És una manera d’enfrontar persones que comparteixen els mateixos problemes i d’amagar on són les desigualtats de veritat. Volem que ningú quedi enrere i que el progrés arribi a tothom, perquè una societat és millor quan les oportunitats no depenen del compte corrent de cadascú, sinó dels drets que compartim.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  }
+ ]
 }

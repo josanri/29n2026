@@ -371,7 +371,7 @@ def extraer(pdf):
         'subtitulo': SUBTITULO,
         'elecciones': 'Elecciones generales · 29 de noviembre de 2026',
         'pdf': '/programas/nex-programa-generales-29n-2026.pdf',
-        'fuentePdf': 'https://www.nuevoext.es/#/programa',
+        'fuentePdf': 'https://www.nuevoext.es/descargas/Programa-Electoral-Generales-29N.pdf',
         'paginas': PAGINAS,
         'fechaPdf': '2026-11-16',
         'unidadMedida': 'medida',

@@ -6,30 +6,106 @@
  "color": "#1F9995",
  "colorClaro": "#D7F3F2",
  "programa": "Una sola papeleta. Todo un pueblo",
- "subtitulo": "Manifiesto electoral de Unidad del Pueblo Canario: 16 ejes para las elecciones generales del 29N",
+ "subtitulo": "Programa electoral de Unidad del Pueblo Canario: 5 bloques y 16 ejes para las elecciones generales del 29N",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
- "pdf": "/programas/upc-manifiesto-29n-2026.pdf",
- "fuentePdf": "https://www.unidadpueblocanario.org/documentos/manifiesto-upc.pdf",
- "paginas": 6,
- "fechaPdf": "2026-10-30",
+ "pdf": "/programas/upc-programa-electoral-29n-2026.pdf",
+ "fuentePdf": "https://www.unidadpueblocanario.org/programa-20261120/programa-electoral-upc.pdf",
+ "paginas": 19,
+ "fechaPdf": "2026-11-16",
  "observaciones": [
-  "Es el manifiesto electoral de la coalición, no un programa extenso: 16 ejes, cada uno con uno o dos párrafos. Cada eje es aquí una propuesta.",
-  "El PDF no tiene fecha de creación; la fecha es la de su última modificación (30 de octubre de 2026). La prensa lo publicó el 4 de noviembre de 2026.",
+  "Programa electoral completo publicado por Unidad del Pueblo Canario el 20 de noviembre de 2026 (metadatos del PDF: 16 de noviembre de 2026), que sustituye al manifiesto previo de 6 páginas y 16 ejes.",
   "Unidad del Pueblo Canario reúne a Nueva Canarias-Bloque Canarista, Podemos, Izquierda Unida Canaria, Movimiento Sumar y Partido Verde Canarias."
  ],
- "unidadMedida": "eje",
- "unidadMedidas": "ejes",
+ "unidadMedida": "propuesta",
+ "unidadMedidas": "propuestas",
  "presentacion": {
   "titulo": "Una sola papeleta. Todo un pueblo",
-  "texto": "Unidad del Pueblo Canario (UPC) surge del compromiso de las fuerzas de la izquierda canaria, progresista, democrática y plural, uniendo a la izquierda nacionalista, soberanista, federal y confederal en una alternativa política para defender los intereses de Canarias y de su ciudadanía.\n\nFrente a la dispersión, damos un paso al frente para ofrecer una sola papeleta que garantice una voz canaria propia y fuerte en las Cortes Generales, que represente a quienes viven de su trabajo, a quienes tienen dificultades para acceder a una vivienda, a nuestra juventud, a las personas mayores y a quienes sostienen cada día nuestra tierra.\n\nEn un contexto de avance de la ultraderecha y de amenazas a los derechos sociales, laborales, feministas y democráticos conquistados, reivindicamos la unidad de las fuerzas progresistas, el respeto a la diversidad y la defensa de una Canarias con capacidad para decidir su futuro."
+  "texto": "2\n\nUnidad del Pueblo Canario (UPC) surge del compromiso de las fuerzas de la izquierda canaria, progresista, democrática y plural, uniendo a formaciones nacionalistas, soberanistas, federales y confederales en una alternativa política para defender los intereses de Canarias y de su ciudadanía.\n\nFrente a la dispersión, damos un paso al frente para ofrecer una sola papeleta que garantice una voz canaria propia y fuerte en las Cortes Generales, que represente a quienes viven de su trabajo, a quienes tienen dificultades para acceder a una vivienda, a nuestra juventud, a las personas mayores y a quienes sostienen cada día nuestra tierra.\n\nEn un contexto de avance de la ultraderecha y de amenazas a los derechos sociales, laborales, feministas y democráticos conquistados, reivindicamos la unidad de las fuerzas progresistas, el respeto a la diversidad y la defensa de una Canarias con capacidad para decidir su futuro.\n\nAspiramos a que Canarias disponga de una representación política fuerte y determinante en las instituciones del Estado. Capaz de defender el autogobierno, una financiación justa, el Régimen Económico y Fiscal de Canarias y nuestra condición RUP, los servicios públicos, la vivienda, el territorio y el medio natural, el feminismo, la conectividad, el empleo y la mejora de las condiciones de vida, así como la paz y la solidaridad. Rechazando con firmeza tanto el centralismo estatal como el caciquismo y los privilegios de minorías locales."
  },
  "cifras": [
   {
-   "valor": "0,7 %",
-   "unidad": "de los Presupuestos Generales del Estado",
-   "texto": "Consignación mínima para cooperación y solidaridad internacional",
-   "contexto": "mínimo, del 0,7% de los Presupuestos Generales del Estado",
+   "valor": "9 %",
+   "unidad": "del parque residencial",
+   "texto": "Parque de vivienda pública mínimo en línea con la UE",
+   "contexto": "9% del parque residencial",
+   "medida": 9
+  },
+  {
+   "valor": "100.000 €",
+   "unidad": "al 0 %",
+   "texto": "Hipoteca al 0 % para primera vivienda sin límite de edad",
+   "contexto": "hipoteca al 0 % hasta 100.000 euros",
    "medida": 15
+  },
+  {
+   "valor": "1.800 €",
+   "unidad": "en 12 pagas",
+   "texto": "Incremento progresivo del SMI hasta 1.800 euros",
+   "contexto": "hasta los 1.800 €, por doce mensualidades",
+   "medida": 36
+  },
+  {
+   "valor": "34 horas",
+   "unidad": "semanales",
+   "texto": "Jornada de 37,5 horas avanzando hacia las 34 horas semanales",
+   "contexto": "jornada de 37,5 horas semanales y avanzar de forma decidida hacia la jornada laboral de 34 horas semanales",
+   "medida": 37
+  },
+  {
+   "valor": "16 años",
+   "unidad": "edad de voto",
+   "texto": "Ampliación del derecho de voto a los 16 años",
+   "contexto": "voto a los 16 años",
+   "medida": 44
+  },
+  {
+   "valor": "75 %",
+   "unidad": "de descuento",
+   "texto": "Bonificación del 75 % al transporte de residentes canarios",
+   "contexto": "reducción del 75% en los precios de los billetes aéreos y marítimos",
+   "medida": 52
+  },
+  {
+   "valor": "100 %",
+   "unidad": "de bonificación",
+   "texto": "Bonificación del 100 % al transporte de mercancías",
+   "contexto": "bonificación del 100% al transporte marítimo y aéreo de mercancías",
+   "medida": 53
+  },
+  {
+   "valor": "30 M€",
+   "unidad": "al menos",
+   "texto": "Dotación mínima del programa contra la pobreza en Canarias",
+   "contexto": "Dotación al menos de 30 millones de euros",
+   "medida": 56
+  },
+  {
+   "valor": "300 €",
+   "unidad": "deducción IRPF",
+   "texto": "Deducción temporal por inflación para rentas inferiores a 20.000 euros",
+   "contexto": "deducción de la cuota íntegra de 300 euros para rentas inferiores a 20.000 euros",
+   "medida": 80
+  },
+  {
+   "valor": "85.000 €",
+   "unidad": "de facturación anual",
+   "texto": "Umbral de exención del IGIC para autónomos",
+   "contexto": "Ampliar hasta los 85.000 euros de facturación anual el umbral de exención del IGIC",
+   "medida": 82
+  },
+  {
+   "valor": "88 €/mes",
+   "unidad": "tarifa plana",
+   "texto": "Tarifa plana para autónomos con menores rendimientos",
+   "contexto": "tarifa plana de 88 euros mensuales para los autónomos",
+   "medida": 84
+  },
+  {
+   "valor": "0,7 %",
+   "unidad": "de los PGE",
+   "texto": "Consignación mínima para cooperación internacional",
+   "contexto": "como mínimo del 0,7%, de los Presupuestos Generales del Estado",
+   "medida": 143
   }
  ],
  "plazos": [],
@@ -38,292 +114,216 @@
  "bloques": [
   {
    "id": 1,
-   "titulo": "Autogobierno, soberanía popular y derecho a decidir",
-   "tituloMayus": "AUTOGOBIERNO, SOBERANÍA POPULAR Y DERECHO A DECIDIR",
-   "lema": "",
+   "titulo": "Vida digna, derechos sociales y empleo",
+   "tituloMayus": "VIDA DIGNA, DERECHOS SOCIALES Y EMPLEO",
+   "lema": "Vivienda, servicios públicos, empleo y juventud",
    "cita": "",
    "intro": "",
    "pagina": 2
   },
   {
    "id": 2,
-   "titulo": "Sistema de Financiación Autonómica",
-   "tituloMayus": "SISTEMA DE FINANCIACIÓN AUTONÓMICA",
-   "lema": "",
+   "titulo": "Economía, financiación, justicia fiscal y modelo productivo de Canarias",
+   "tituloMayus": "ECONOMÍA, FINANCIACIÓN, JUSTICIA FISCAL Y MODELO PRODUCTIVO DE CANARIAS",
+   "lema": "Financiación, REF, fiscalidad y sostenibilidad",
    "cita": "",
    "intro": "",
-   "pagina": 2
+   "pagina": 8
   },
   {
    "id": 3,
-   "titulo": "Presupuestos Generales del Estado",
-   "tituloMayus": "PRESUPUESTOS GENERALES DEL ESTADO",
-   "lema": "",
+   "titulo": "Autogobierno, identidad y derechos colectivos",
+   "tituloMayus": "AUTOGOBIERNO, IDENTIDAD Y DERECHOS COLECTIVOS",
+   "lema": "Autogobierno, cultura canaria y frontera sur",
    "cita": "",
    "intro": "",
-   "pagina": 3
+   "pagina": 15
   },
   {
    "id": 4,
-   "titulo": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
-   "tituloMayus": "NUEVO MARCO FINANCIERO PLURIANUAL 2028-2034 DE LA UNIÓN EUROPEA",
-   "lema": "",
+   "titulo": "Igualdad y democracia participativa",
+   "tituloMayus": "IGUALDAD Y DEMOCRACIA PARTICIPATIVA",
+   "lema": "Feminismo, igualdad y regeneración democrática",
    "cita": "",
    "intro": "",
-   "pagina": 3
+   "pagina": 17
   },
   {
    "id": 5,
-   "titulo": "La vivienda es un derecho y no un negocio",
-   "tituloMayus": "LA VIVIENDA ES UN DERECHO Y NO UN NEGOCIO",
-   "lema": "",
+   "titulo": "Solidaridad internacional, cooperación y paz",
+   "tituloMayus": "SOLIDARIDAD INTERNACIONAL, COOPERACIÓN Y PAZ",
+   "lema": "Cooperación y derechos humanos",
    "cita": "",
    "intro": "",
-   "pagina": 3
-  },
-  {
-   "id": 6,
-   "titulo": "Servicios públicos y pensiones",
-   "tituloMayus": "SERVICIOS PÚBLICOS Y PENSIONES",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 3
-  },
-  {
-   "id": 7,
-   "titulo": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
-   "tituloMayus": "SOSTENIBILIDAD TERRITORIAL, LÍMITES AL CRECIMIENTO TURÍSTICO Y SOBERANÍA ENERGÉTICA",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 3
-  },
-  {
-   "id": 8,
-   "titulo": "Nuevo Pacto Económico para Canarias",
-   "tituloMayus": "NUEVO PACTO ECONÓMICO PARA CANARIAS",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 4
-  },
-  {
-   "id": 9,
-   "titulo": "Propuestas de reforma fiscal a nivel estatal",
-   "tituloMayus": "PROPUESTAS DE REFORMA FISCAL A NIVEL ESTATAL",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 4
-  },
-  {
-   "id": 10,
-   "titulo": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
-   "tituloMayus": "AUMENTO DEL SALARIO MÍNIMO Y AVANCES EN LA LEGISLACIÓN LABORAL A FAVOR DE LOS DERECHOS DE LOS TRABAJADORES",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 4
-  },
-  {
-   "id": 11,
-   "titulo": "Canarias feminista e igualitaria",
-   "tituloMayus": "CANARIAS FEMINISTA E IGUALITARIA",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 4
-  },
-  {
-   "id": 12,
-   "titulo": "Canarias, frontera Sur",
-   "tituloMayus": "CANARIAS, FRONTERA SUR",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 4
-  },
-  {
-   "id": 13,
-   "titulo": "Cultura, identidad y patrimonio canario",
-   "tituloMayus": "CULTURA, IDENTIDAD Y PATRIMONIO CANARIO",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 5
-  },
-  {
-   "id": 14,
-   "titulo": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
-   "tituloMayus": "DEMOCRACIA PARTICIPATIVA, TRANSPARENCIA PÚBLICA Y LUCHA CONTRA EL TRANSFUGUISMO POLÍTICO",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 5
-  },
-  {
-   "id": 15,
-   "titulo": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
-   "tituloMayus": "SOLIDARIDAD INTERNACIONAL, COOPERACIÓN ENTRE PUEBLOS Y BÚSQUEDA DE LA PAZ",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 5
-  },
-  {
-   "id": 16,
-   "titulo": "Juventud, emancipación y justicia intergeneracional",
-   "tituloMayus": "JUVENTUD, EMANCIPACIÓN Y JUSTICIA INTERGENERACIONAL",
-   "lema": "",
-   "cita": "",
-   "intro": "",
-   "pagina": 5
+   "pagina": 19
   }
  ],
  "secciones": [
   {
    "id": "1",
    "bloque": 1,
-   "titulo": "Autogobierno, soberanía popular y derecho a decidir",
-   "tituloFrase": "Autogobierno, soberanía popular y derecho a decidir",
-   "intro": "",
+   "titulo": "La vivienda es un derecho y no un negocio",
+   "tituloFrase": "La vivienda es un derecho y no un negocio",
+   "intro": "Defendemos que el acceso a una vivienda digna y asequible sea un derecho efectivo y no un privilegio. Por tanto, defendemos:",
    "pagina": 2,
    "subapartados": []
   },
   {
    "id": "2",
-   "bloque": 2,
-   "titulo": "Sistema de Financiación Autonómica",
-   "tituloFrase": "Sistema de Financiación Autonómica",
-   "intro": "",
-   "pagina": 2,
+   "bloque": 1,
+   "titulo": "Servicios públicos y pensiones",
+   "tituloFrase": "Servicios públicos y pensiones",
+   "intro": "Defendemos una sanidad, educación y unos servicios sociales públicos, universales y de calidad, con financiación suficiente y gestión prioritariamente directa, avanzando en la reversión de privatizaciones y externalizaciones.",
+   "pagina": 5,
    "subapartados": []
   },
   {
    "id": "3",
-   "bloque": 3,
-   "titulo": "Presupuestos Generales del Estado",
-   "tituloFrase": "Presupuestos Generales del Estado",
-   "intro": "",
-   "pagina": 3,
+   "bloque": 1,
+   "titulo": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
+   "tituloFrase": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
+   "intro": "Defenderemos en las Cortes Generales la recuperación del papel del sector público y del autogobierno como motor de cohesión social, fortaleciendo el empleo digno, la negociación colectiva, el salario justo y la protección frente a la precariedad laboral. Mejora efectiva de las condiciones de trabajo y de vida.\n\nUPC combatirá los abusos laborales y promoverá la igualdad de oportunidades, la conciliación y la corresponsabilidad en los cuidados.\n\nDefendiendo entre otras actuaciones:",
+   "pagina": 6,
    "subapartados": []
   },
   {
    "id": "4",
-   "bloque": 4,
-   "titulo": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
-   "tituloFrase": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "bloque": 1,
+   "titulo": "Juventud, emancipación y justicia intergeneracional",
+   "tituloFrase": "Juventud, emancipación y justicia intergeneracional",
    "intro": "",
-   "pagina": 3,
+   "pagina": 7,
    "subapartados": []
   },
   {
    "id": "5",
-   "bloque": 5,
-   "titulo": "La vivienda es un derecho y no un negocio",
-   "tituloFrase": "La vivienda es un derecho y no un negocio",
-   "intro": "",
-   "pagina": 3,
+   "bloque": 2,
+   "titulo": "Sistema de Financiación Autonómica",
+   "tituloFrase": "Sistema de Financiación Autonómica",
+   "intro": "Exigimos una financiación autonómica suficiente y justa que respete los recursos del Régimen Económico y Fiscal (REF), garantice la solidaridad y que compense la insularidad y la lejanía, garantice la conectividad, el transporte público, el apoyo al sector primario y los servicios esenciales, y contribuya a reducir las desigualdades entre islas y personas.\n\nCanarias obtiene el 75% de la totalidad de los ingresos para financiar sus presupuestos autonómicos del SFA. Por tanto, ante su anunciada reforma defendemos:",
+   "pagina": 8,
    "subapartados": []
   },
   {
    "id": "6",
-   "bloque": 6,
-   "titulo": "Servicios públicos y pensiones",
-   "tituloFrase": "Servicios públicos y pensiones",
-   "intro": "",
-   "pagina": 3,
+   "bloque": 2,
+   "titulo": "Presupuestos Generales del Estado",
+   "tituloFrase": "Presupuestos Generales del Estado",
+   "intro": "Reclamamos que los Presupuestos Generales del Estado cumplan con Canarias y financien adecuadamente nuestro REF. Exigiendo:",
+   "pagina": 8,
    "subapartados": []
   },
   {
    "id": "7",
-   "bloque": 7,
-   "titulo": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
-   "tituloFrase": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
-   "intro": "",
-   "pagina": 3,
+   "bloque": 2,
+   "titulo": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "tituloFrase": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
+   "intro": "Defendemos que la Unión Europea mantenga un tratamiento específico para Canarias como Región Ultraperiférica. Exigimos:",
+   "pagina": 9,
    "subapartados": []
   },
   {
    "id": "8",
-   "bloque": 8,
+   "bloque": 2,
    "titulo": "Nuevo Pacto Económico para Canarias",
    "tituloFrase": "Nuevo Pacto Económico para Canarias",
    "intro": "",
-   "pagina": 4,
-   "subapartados": []
+   "pagina": 10,
+   "subapartados": [
+    {
+     "titulo": "Pesca artesanal y gestión sostenible del medio marino",
+     "intro": ""
+    },
+    {
+     "titulo": "Agricultura y ganadería",
+     "intro": ""
+    }
+   ]
   },
   {
    "id": "9",
-   "bloque": 9,
+   "bloque": 2,
    "titulo": "Propuestas de reforma fiscal a nivel estatal",
    "tituloFrase": "Propuestas de reforma fiscal a nivel estatal",
    "intro": "",
-   "pagina": 4,
-   "subapartados": []
+   "pagina": 11,
+   "subapartados": [
+    {
+     "titulo": "Autónomos, pymes y pequeño comercio de Canarias",
+     "intro": "Defenderemos un modelo económico que proteja a los trabajadores autónomos, las pequeñas y medianas empresas y el comercio de proximidad, reconociendo las dificultades derivadas de la ultraperiferia, la insularidad y la doble insularidad."
+    }
+   ]
   },
   {
    "id": "10",
-   "bloque": 10,
-   "titulo": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
-   "tituloFrase": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
-   "intro": "",
-   "pagina": 4,
-   "subapartados": []
+   "bloque": 2,
+   "titulo": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
+   "tituloFrase": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
+   "intro": "Defenderemos en los foros estatales y europeos una planificación del crecimiento acorde con la capacidad real de las Islas.\n\nEl crecimiento del sector turístico debe ser modulado desde las administraciones públicas para que esté al servicio de nuestra gente y no ser un elemento que genera malestar por sus efectos negativos sobre la vivienda, nuestros recursos naturales, el medioambiente, el tráfico o la convivencia. Para ello es imprescindible poner límites, mediante una moratoria, al crecimiento de nuevas camas e instalaciones turísticas, porque es el desarrollismo turístico el principal responsable del crecimiento demográfico que padecen las Islas. Reorientar el modelo turístico para reducir la presión sobre el territorio y asegurar una actividad compatible con la sostenibilidad ambiental, la vivienda y el bienestar de la",
+   "pagina": 13,
+   "subapartados": [
+    {
+     "titulo": "Costas, agua y restauración ecológica",
+     "intro": ""
+    },
+    {
+     "titulo": "Biodiversidad y espacios naturales de Canarias",
+     "intro": ""
+    }
+   ]
   },
   {
    "id": "11",
-   "bloque": 11,
-   "titulo": "Canarias feminista e igualitaria",
-   "tituloFrase": "Canarias feminista e igualitaria",
+   "bloque": 3,
+   "titulo": "Autogobierno, soberanía popular y derecho a decidir",
+   "tituloFrase": "Autogobierno, soberanía popular y derecho a decidir",
    "intro": "",
-   "pagina": 4,
+   "pagina": 15,
    "subapartados": []
   },
   {
    "id": "12",
-   "bloque": 12,
-   "titulo": "Canarias, frontera Sur",
-   "tituloFrase": "Canarias, frontera Sur",
+   "bloque": 3,
+   "titulo": "Cultura, identidad y patrimonio canario",
+   "tituloFrase": "Cultura, identidad y patrimonio canario",
    "intro": "",
-   "pagina": 4,
+   "pagina": 16,
    "subapartados": []
   },
   {
    "id": "13",
-   "bloque": 13,
-   "titulo": "Cultura, identidad y patrimonio canario",
-   "tituloFrase": "Cultura, identidad y patrimonio canario",
+   "bloque": 3,
+   "titulo": "Canarias, frontera Sur",
+   "tituloFrase": "Canarias, frontera Sur",
    "intro": "",
-   "pagina": 5,
+   "pagina": 16,
    "subapartados": []
   },
   {
    "id": "14",
-   "bloque": 14,
-   "titulo": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
-   "tituloFrase": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
-   "intro": "",
-   "pagina": 5,
+   "bloque": 4,
+   "titulo": "Canarias feminista e igualitaria",
+   "tituloFrase": "Canarias feminista e igualitaria",
+   "intro": "Desde Unidad del Pueblo Canario se incorporarán de forma transversal las políticas para la igualdad real de las mujeres y las personas LGTBIQ+ desde una perspectiva feminista interseccional para alcanzar mayores cuotas de igualdad y respeto a la diversidad y que las oportunidades y los proyectos de vida no estén condicionados por el sexo, la orientación sexual, la identidad o expresión de género, el origen, la raza, la discapacidad o la situación económica.\n\nLa lucha contra las violencias machistas, la brecha salarial y cualquier forma de discriminación social debe dotarse con recursos públicos suficientes y partir desde la prevención, con medidas para promover cambios sociales en todas las edades y esferas sociales, y atender y acompañar de forma integral a las víctimas.\n\nLa coalición defenderá la igualdad efectiva en el empleo, la participación política y social, el acceso a los servicios públicos y el ejercicio de los derechos.\n\nEl sistema público de cuidados se entenderá como un servicio fundamental desde la perspectiva de la corresponsabilidad, y atenderá las necesidades de todas las personas dependientes y sus familias, sean mayores, menores o personas con discapacidad. Unidad del Pueblo Canario exige al Estado el mantenimiento e incremento de las políticas de igualdad. Defendemos una Canarias feminista e igualitaria. Planteando:",
+   "pagina": 17,
    "subapartados": []
   },
   {
    "id": "15",
-   "bloque": 15,
-   "titulo": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
-   "tituloFrase": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
+   "bloque": 4,
+   "titulo": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
+   "tituloFrase": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
    "intro": "",
-   "pagina": 5,
+   "pagina": 18,
    "subapartados": []
   },
   {
    "id": "16",
-   "bloque": 16,
-   "titulo": "Juventud, emancipación y justicia intergeneracional",
-   "tituloFrase": "Juventud, emancipación y justicia intergeneracional",
+   "bloque": 5,
+   "titulo": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
+   "tituloFrase": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
    "intro": "",
-   "pagina": 5,
+   "pagina": 19,
    "subapartados": []
   }
  ],
@@ -334,112 +334,12 @@
    "seccion": "1",
    "pagina": 2,
    "subapartado": null,
-   "titulo": "Autogobierno, soberanía popular y derecho a decidir",
-   "tituloFrase": "Autogobierno, soberanía popular y derecho a decidir",
-   "texto": "Defendemos el reconocimiento de Canarias como sujeto político, el fortalecimiento de su autogobierno y el pleno desarrollo de las competencias reconocidas en nuestro Estatuto de Autonomía. Reclamamos una financiación justa, la participación adecuada en los presupuestos estatales y europeos y el reconocimiento efectivo de nuestra condición de región ultraperiférica, respetando las singularidades del Archipiélago.\n\nIgualmente, defendemos el establecimiento de la mediana con Marruecos, el reconocimiento de nuestras aguas, así como de los fondos marinos del archipiélago, y su espacio aéreo.",
-   "oculta": false,
-   "categoria": "territorio",
-   "colectivos": [],
-   "palancas": [
-    "ley",
-    "gasto"
-   ],
-   "territorios": [
-    "Canarias",
-    "Unión Europea",
-    "Marruecos"
-   ],
-   "cifras": [],
-   "plazo": null,
-   "deroga": null
-  },
-  {
-   "n": 2,
-   "bloque": 2,
-   "seccion": "2",
-   "pagina": 2,
-   "subapartado": null,
-   "titulo": "Sistema de Financiación Autonómica",
-   "tituloFrase": "Sistema de Financiación Autonómica",
-   "texto": "Exigimos una financiación autonómica suficiente y justa que respete los recursos del Régimen Económico y Fiscal (REF), garantice la solidaridad y que compense la insularidad y la lejanía, garantice la conectividad, el transporte público, el apoyo al sector primario y los servicios esenciales, y contribuya a reducir las desigualdades entre islas y personas.",
-   "oculta": false,
-   "categoria": "territorio",
-   "colectivos": [
-    "rural"
-   ],
-   "palancas": [
-    "impuestos",
-    "gasto"
-   ],
-   "territorios": [],
-   "cifras": [],
-   "plazo": null,
-   "deroga": null
-  },
-  {
-   "n": 3,
-   "bloque": 3,
-   "seccion": "3",
-   "pagina": 3,
-   "subapartado": null,
-   "titulo": "Presupuestos Generales del Estado",
-   "tituloFrase": "Presupuestos Generales del Estado",
-   "texto": "Reclamamos que los Presupuestos Generales del Estado cumplan con Canarias y financien adecuadamente nuestro REF. Exigimos compensaciones por los sobrecostes energéticos, las bonificaciones al transporte de pasajeros y mercancías, el transporte público, las políticas de empleo, la lucha contra la pobreza, el agua, el sector primario y una inversión territorializada justa.",
-   "oculta": false,
-   "categoria": "administracion",
-   "colectivos": [
-    "rural"
-   ],
-   "palancas": [
-    "impuestos",
-    "gasto"
-   ],
-   "territorios": [
-    "Canarias"
-   ],
-   "cifras": [],
-   "plazo": null,
-   "deroga": null
-  },
-  {
-   "n": 4,
-   "bloque": 4,
-   "seccion": "4",
-   "pagina": 3,
-   "subapartado": null,
-   "titulo": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
-   "tituloFrase": "Nuevo Marco Financiero Plurianual 2028-2034 de la Unión Europea",
-   "texto": "Defendemos que la Unión Europea mantenga un tratamiento específico para Canarias como Región Ultraperiférica. Exigimos garantizar y actualizar los fondos del POSEI, apoyar al sector agrario, pesquero y acuícola, preservar la financiación regionalizada del FEDER y el FSE+ y atender la realidad migratoria de las Islas.",
-   "oculta": false,
-   "categoria": "exterior",
-   "colectivos": [
-    "rural",
-    "inmigrantes"
-   ],
-   "palancas": [
-    "gasto"
-   ],
-   "territorios": [
-    "Canarias",
-    "Unión Europea"
-   ],
-   "cifras": [],
-   "plazo": null,
-   "deroga": null
-  },
-  {
-   "n": 5,
-   "bloque": 5,
-   "seccion": "5",
-   "pagina": 3,
-   "subapartado": null,
-   "titulo": "La vivienda es un derecho y no un negocio",
-   "tituloFrase": "La vivienda es un derecho y no un negocio",
-   "texto": "Defendemos que el acceso a una vivienda digna y asequible sea un derecho efectivo y no un privilegio. Exigimos ampliar el parque público de vivienda con protección permanente, regular los precios del alquiler en zonas tensionadas, la intervención del mercado, limitar los efectos de la vivienda vacacional y de la especulación inmobiliaria y favorecer la emancipación juvenil, evitando que las familias sean expulsadas de sus hogares.",
+   "titulo": "Declaración de la vivienda como derecho fundamental, blindando este derecho en la Constitución y garantizando el derecho…",
+   "tituloFrase": "Declaración de la vivienda como derecho fundamental, blindando este derecho en la Constitución y garantizando el derecho…",
+   "texto": "Declaración de la vivienda como derecho fundamental, blindando este derecho en la Constitución y garantizando el derecho subjetivo a una vivienda digna, adecuada, accesible y asequible para todas las personas. Este reconocimiento supone que el acceso a una vivienda dejará de depender exclusivamente de las posibilidades económicas de cada familia y pasará a constituir una obligación efectiva de los poderes públicos, como reconoce el artículo 47 de la Constitución.",
    "oculta": false,
    "categoria": "vivienda",
    "colectivos": [
-    "jovenes",
     "familias"
    ],
    "palancas": [
@@ -451,22 +351,75 @@
    "deroga": null
   },
   {
-   "n": 6,
-   "bloque": 6,
-   "seccion": "6",
+   "n": 2,
+   "bloque": 1,
+   "seccion": "1",
    "pagina": 3,
    "subapartado": null,
-   "titulo": "Servicios públicos y pensiones",
-   "tituloFrase": "Servicios públicos y pensiones",
-   "texto": "Defendemos una sanidad, educación y unos servicios sociales públicos, universales y de calidad, con financiación suficiente y gestión prioritariamente directa, avanzando en la reversión de privatizaciones y externalizaciones.\n\nExigimos fortalecer la atención primaria, la salud mental, la educación pública de 0 a 3 años y un sistema público de cuidados y atención a la dependencia. Defendemos igualmente unas pensiones públicas dignas, garantizadas y revalorizadas conforme al coste de la vida.",
+   "titulo": "3",
+   "tituloFrase": "3",
+   "texto": "3",
    "oculta": false,
-   "categoria": "social",
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 3,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "La intervención del Estado en el mercado de la vivienda para avanzar en la solución de uno de los mayores problemas…",
+   "tituloFrase": "La intervención del Estado en el mercado de la vivienda para avanzar en la solución de uno de los mayores problemas…",
+   "texto": "La intervención del Estado en el mercado de la vivienda para avanzar en la solución de uno de los mayores problemas sociales, que afecta gravemente a la vida de la gente y que no admite demoras en la búsqueda de soluciones efectivas y justas. Entre ellas, la expropiación de viviendas a los fondos buitres, el control de precios de venta y alquiler, y la protección a las personas inquilinas con medidas como:",
+   "oculta": false,
+   "categoria": "vivienda",
    "colectivos": [
-    "mayores",
-    "infancia",
-    "discapacidad",
-    "pacientes"
+    "mayores"
    ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 4,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "La intervención del mercado del alquiler para impedir las subidas abusivas mediante el control de precios, y garantizando…",
+   "tituloFrase": "La intervención del mercado del alquiler para impedir las subidas abusivas mediante el control de precios, y garantizando…",
+   "texto": "La intervención del mercado del alquiler para impedir las subidas abusivas mediante el control de precios, y garantizando un alquiler estable y seguro para personas inquilinas y pequeñas propietarias mediante la renovación automática de los contratos de alquiler de vivienda habitual tras finalizar su periodo inicial (por periodos de 5 o 7 años según el propietario sea persona física o jurídica).",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 5,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Crear un gran parque de alquiler público a precios asequibles mediante la cesión obligatoria de las viviendas vacías de…",
+   "tituloFrase": "Crear un gran parque de alquiler público a precios asequibles mediante la cesión obligatoria de las viviendas vacías de…",
+   "texto": "Crear un gran parque de alquiler público a precios asequibles mediante la cesión obligatoria de las viviendas vacías de los grandes tenedores de vivienda, para impedir el acaparamiento y la especulación con viviendas vacías. Aumentaremos la inversión pública en vivienda hasta equipararla a la media europea. Paralizaremos y revertiremos la privatización de viviendas públicas y la venta de suelo público.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
    "palancas": [
     "gasto",
     "organizacion"
@@ -477,69 +430,57 @@
    "deroga": null
   },
   {
-   "n": 7,
-   "bloque": 7,
-   "seccion": "7",
+   "n": 6,
+   "bloque": 1,
+   "seccion": "1",
    "pagina": 3,
    "subapartado": null,
-   "titulo": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
-   "tituloFrase": "Sostenibilidad territorial, límites al crecimiento turístico y soberanía Energética",
-   "texto": "Defendemos una planificación del crecimiento acorde con la capacidad real de las Islas y límites efectivos al crecimiento turístico para proteger la vivienda, el territorio, nuestros recursos naturales y el medioambiente y la convivencia. Apostamos por las energías renovables, la generación distribuida, la soberanía energética, la gestión responsable, sostenible y circular de residuos y vertidos y la gestión pública de los recursos estratégicos.",
+   "titulo": "Impulsaremos nuevas figuras de cesión de uso de vivienda a la Administración, a cambio de una garantía suficiente de…",
+   "tituloFrase": "Impulsaremos nuevas figuras de cesión de uso de vivienda a la Administración, a cambio de una garantía suficiente de…",
+   "texto": "Impulsaremos nuevas figuras de cesión de uso de vivienda a la Administración, a cambio de una garantía suficiente de cobro y conservación de la vivienda, junto con formas alternativas de tenencia. La juventud tendrá un acceso prioritario a este parque de viviendas.",
    "oculta": false,
-   "categoria": "energia",
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 7,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Se acompañará desde la administración con fondos y cesión de terrenos públicos, las cooperativas de vivienda en cesión de…",
+   "tituloFrase": "Se acompañará desde la administración con fondos y cesión de terrenos públicos, las cooperativas de vivienda en cesión de…",
+   "texto": "Se acompañará desde la administración con fondos y cesión de terrenos públicos, las cooperativas de vivienda en cesión de uso y otras fórmulas cooperativas habitacionales.",
+   "oculta": false,
+   "categoria": "vivienda",
    "colectivos": [],
    "palancas": [
-    "organizacion",
-    "plan"
+    "gasto"
    ],
-   "territorios": [
-    "Canarias"
-   ],
+   "territorios": [],
    "cifras": [],
    "plazo": null,
    "deroga": null
   },
   {
    "n": 8,
-   "bloque": 8,
-   "seccion": "8",
-   "pagina": 4,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
    "subapartado": null,
-   "titulo": "Nuevo Pacto Económico para Canarias",
-   "tituloFrase": "Nuevo Pacto Económico para Canarias",
-   "texto": "Apostamos por diversificar la economía y reducir la dependencia del turismo, impulsando el sector primario, la economía azul, las energías limpias, la investigación, la tecnología y la cultura canaria. Reclamamos que la riqueza turística revierta en la mayoría social, con mejores salarios, empleo de calidad y una fiscalidad justa. Defendemos un REF orientado a la sostenibilidad, la innovación y la cohesión social. Planificando y modulando el modelo turístico, con una moratoria de nuevas instalaciones y camas. Apostando por la calidad frente a la cantidad y el incremento del gasto en destino. Implantando una tasa turística para los no residentes. Con mayor formación y cualificación, mejores condiciones laborales y más elevados salarios.",
+   "titulo": "Para alentar la puesta en mercado de las viviendas vacías, estableceremos incentivos fiscales y ofreceremos seguridad…",
+   "tituloFrase": "Para alentar la puesta en mercado de las viviendas vacías, estableceremos incentivos fiscales y ofreceremos seguridad…",
+   "texto": "Para alentar la puesta en mercado de las viviendas vacías, estableceremos incentivos fiscales y ofreceremos seguridad jurídica a los pequeños propietarios que saquen sus viviendas al mercado del alquiler; y con garantías para los inquilinos.",
    "oculta": false,
-   "categoria": "empleo",
-   "colectivos": [
-    "rural",
-    "discapacidad"
-   ],
-   "palancas": [
-    "impuestos",
-    "plan"
-   ],
-   "territorios": [
-    "Canarias"
-   ],
-   "cifras": [],
-   "plazo": null,
-   "deroga": null
-  },
-  {
-   "n": 9,
-   "bloque": 9,
-   "seccion": "9",
-   "pagina": 4,
-   "subapartado": null,
-   "titulo": "Propuestas de reforma fiscal a nivel estatal",
-   "tituloFrase": "Propuestas de reforma fiscal a nivel estatal",
-   "texto": "Defendemos una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital. Proponemos reforzar la tributación de las grandes fortunas y los sectores bancario y energético, mejorar las deducciones por alquiler de vivienda para las rentas medias y bajas y adoptar medidas fiscales frente a la inflación, protegiendo el poder adquisitivo de las familias trabajadoras.",
-   "oculta": false,
-   "categoria": "fiscalidad",
-   "colectivos": [
-    "familias",
-    "empresas"
-   ],
+   "categoria": "vivienda",
+   "colectivos": [],
    "palancas": [
     "impuestos"
    ],
@@ -549,18 +490,44 @@
    "deroga": null
   },
   {
-   "n": 10,
-   "bloque": 10,
-   "seccion": "10",
-   "pagina": 4,
+   "n": 9,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
    "subapartado": null,
-   "titulo": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
-   "tituloFrase": "Aumento del salario mínimo y avances en la legislación laboral a favor de los derechos de los trabajadores",
-   "texto": "Defenderemos salarios dignos, garantías en el cobro de las horas extras, empleo de calidad, negociación colectiva y mejores condiciones laborales. Combatiremos la precariedad y los abusos, impulsando la igualdad de oportunidades, la conciliación y la corresponsabilidad en los cuidados. Rechazamos que se elimine el papel del Estado en la actualización del salario mínimo interprofesional.",
+   "titulo": "Obligatoriedad de las CCAA y de las administraciones locales a tener una política de Vivienda pública orientada a la…",
+   "tituloFrase": "Obligatoriedad de las CCAA y de las administraciones locales a tener una política de Vivienda pública orientada a la…",
+   "texto": "Obligatoriedad de las CCAA y de las administraciones locales a tener una política de Vivienda pública orientada a la promoción, movilización de la vivienda vacía y la cesión de suelo público para dotarnos así de un parque de vivienda pública que alcance al menos el 9% del parque residencial (hoy apenas llega al 2% en las Islas), en la línea de la UE. Se debe prestar especial atención a los jóvenes, mayores y otros colectivos vulnerables.",
    "oculta": false,
-   "categoria": "empleo",
+   "categoria": "vivienda",
    "colectivos": [
-    "familias"
+    "jovenes",
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [
+    "9% del parque residencial"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 10,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 3,
+   "subapartado": null,
+   "titulo": "Prohibición de las prácticas de desokupación extrajudicial e ilegalización de las empresas que las ejercen",
+   "tituloFrase": "Prohibición de las prácticas de desokupación extrajudicial e ilegalización de las empresas que las ejercen",
+   "texto": "Prohibición de las prácticas de desokupación extrajudicial e ilegalización de las empresas que las ejercen.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "empresas"
    ],
    "palancas": [
     "ley"
@@ -572,17 +539,2168 @@
   },
   {
    "n": 11,
-   "bloque": 11,
-   "seccion": "11",
+   "bloque": 1,
+   "seccion": "1",
    "pagina": 4,
    "subapartado": null,
-   "titulo": "Canarias feminista e igualitaria",
-   "tituloFrase": "Canarias feminista e igualitaria",
-   "texto": "Defendemos una Canarias feminista e igualitaria, comprometida con la erradicación de las violencias machistas, la igualdad salarial y la garantía de los derechos sexuales y reproductivos. Apostamos por un sistema público de cuidados que avance en la corresponsabilidad y combata la desigualdad estructural. Reivindicamos los derechos de las personas LGTBIQA+, especialmente de las personas trans, y el rechazo a cualquier forma de discriminación, odio o exclusión.",
+   "titulo": "4",
+   "tituloFrase": "4",
+   "texto": "4",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 12,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Recuperación de las viviendas de Sareb y de aquellas entidades financieras que fueron rescatadas con dinero público para…",
+   "tituloFrase": "Recuperación de las viviendas de Sareb y de aquellas entidades financieras que fueron rescatadas con dinero público para…",
+   "texto": "Recuperación de las viviendas de Sareb y de aquellas entidades financieras que fueron rescatadas con dinero público para destinarlas a uso social. Acabaremos también con las SOCIMI, por tratarse de mecanismos de elusión fiscal y de especulación con un bien tan importante como la vivienda.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 13,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Servicio público y gratuito de información a inquilinas e inquilinos, con medidas de prevención y acompañamiento ante…",
+   "tituloFrase": "Servicio público y gratuito de información a inquilinas e inquilinos, con medidas de prevención y acompañamiento ante…",
+   "texto": "Servicio público y gratuito de información a inquilinas e inquilinos, con medidas de prevención y acompañamiento ante desahucios. En este marco, las autoridades públicas responsables de la primera acogida habitacional deben dotarse de un número significativo de viviendas para dar respuesta a esta necesidad. En ningún caso se podrá realizar el desalojo o desahucio de personas y sus familias en situación de vulnerabilidad, sin que la Administración competente garantice un realojo en condiciones dignas, ya sea en casos de impago de alquileres o por ocupación en precario motivada por la falta de vivienda asequible.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 14,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Participación de Sindicatos de inquilinas, o de entidades como Derecho al Techo y otras organizaciones sociales, en el…",
+   "tituloFrase": "Participación de Sindicatos de inquilinas, o de entidades como Derecho al Techo y otras organizaciones sociales, en el…",
+   "texto": "Participación de Sindicatos de inquilinas, o de entidades como Derecho al Techo y otras organizaciones sociales, en el diseño, planificación y seguimiento de las políticas de vivienda estatales.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 15,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Facilitar ayudas a la compra de primera vivienda —incluida la propuesta de hipoteca al 0 % hasta 100.000 euros, sin…",
+   "tituloFrase": "Facilitar ayudas a la compra de primera vivienda —incluida la propuesta de hipoteca al 0 % hasta 100.000 euros, sin…",
+   "texto": "Facilitar ayudas a la compra de primera vivienda —incluida la propuesta de hipoteca al 0 % hasta 100.000 euros, sin límite de edad— y a la rehabilitación.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "hipoteca al 0 % hasta 100.000 euros"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 16,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Crear registros de demandantes, financiación estable, instrumentos administrativos ágiles y un acuerdo social por el…",
+   "tituloFrase": "Crear registros de demandantes, financiación estable, instrumentos administrativos ágiles y un acuerdo social por el…",
+   "texto": "Crear registros de demandantes, financiación estable, instrumentos administrativos ágiles y un acuerdo social por el derecho a la vivienda.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 17,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Analizar experiencias de otros países como Reino Unido, Austria, Alemania o Suecia, entre otros",
+   "tituloFrase": "Analizar experiencias de otros países como Reino Unido, Austria, Alemania o Suecia, entre otros",
+   "texto": "Analizar experiencias de otros países como Reino Unido, Austria, Alemania o Suecia, entre otros.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 18,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Impulso a políticas públicas de regulación del mercado especulativo, como la regulación y ordenación de la vivienda…",
+   "tituloFrase": "Impulso a políticas públicas de regulación del mercado especulativo, como la regulación y ordenación de la vivienda…",
+   "texto": "Impulso a políticas públicas de regulación del mercado especulativo, como la regulación y ordenación de la vivienda vacacional en zonas residenciales y la limitación de compra de viviendas por extranjeros no residentes;",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "inmigrantes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 19,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Políticas de vivienda que respondan a las necesidades de quienes residen, trabajan y desarrollan su vida en Canarias,…",
+   "tituloFrase": "Políticas de vivienda que respondan a las necesidades de quienes residen, trabajan y desarrollan su vida en Canarias,…",
+   "texto": "Políticas de vivienda que respondan a las necesidades de quienes residen, trabajan y desarrollan su vida en Canarias, evitando desplazamientos forzados de la población y facilitando la emancipación de las personas jóvenes.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 20,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 4,
+   "subapartado": null,
+   "titulo": "Posibilitar el acceso en condiciones dignas y con costes razonables",
+   "tituloFrase": "Posibilitar el acceso en condiciones dignas y con costes razonables",
+   "texto": "Posibilitar el acceso en condiciones dignas y con costes razonables. Impidiendo que el pago del alquiler sea, como lo es hoy, un factor de empobrecimiento. Evitando que personas vulnerables sean desahuciadas de sus viviendas y queden sin una alternativa habitacional. Actuando contundentemente ante la especulación.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 21,
+   "bloque": 1,
+   "seccion": "1",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "5",
+   "tituloFrase": "5",
+   "texto": "5",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 22,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Consolidaremos un sistema universal, público y suficiente de cuidados de larga duración para las personas dependientes…",
+   "tituloFrase": "Consolidaremos un sistema universal, público y suficiente de cuidados de larga duración para las personas dependientes…",
+   "texto": "Consolidaremos un sistema universal, público y suficiente de cuidados de larga duración para las personas dependientes que garantice la autonomía funcional de estas personas sin que el peso recaiga en los cuidados informales de otros miembros de la familia, que son casi siempre mujeres.",
    "oculta": false,
    "categoria": "social",
    "colectivos": [
+    "familias",
     "mujeres"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 23,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Afrontar el problema de la soledad no deseada y, en particular, la de las personas mayores implementando para ello un…",
+   "tituloFrase": "Afrontar el problema de la soledad no deseada y, en particular, la de las personas mayores implementando para ello un…",
+   "texto": "Afrontar el problema de la soledad no deseada y, en particular, la de las personas mayores implementando para ello un programa de acompañamiento remunerado por parte de jóvenes, de sensibilización sobre el problema y de mejora de unos servicios sociales cercanos y bien dotados para atender esta necesidad emergente, prevenirla o mitigar sus consecuencias.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes",
+    "mayores"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 24,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Desarrollar un verdadero sistema de atención temprana, dada su importancia para la eficacia de las intervenciones sobre…",
+   "tituloFrase": "Desarrollar un verdadero sistema de atención temprana, dada su importancia para la eficacia de las intervenciones sobre…",
+   "texto": "Desarrollar un verdadero sistema de atención temprana, dada su importancia para la eficacia de las intervenciones sobre niños y niñas con alteraciones, trastornos del desarrollo o en riesgo de padecerlos y para su bienestar presente y futuro. Por lo tanto, se reconocerá un derecho subjetivo a la atención temprana integral, universal, gratuita y pública y se armonizarán las distintas regulaciones para hacerlo efectivo con independencia del lugar de residencia y del servicio responsable.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "infancia"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 25,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Exigimos fortalecer una educación pública, universal y gratuita de la educación pública de 0 a 3 años, reducir las ratios…",
+   "tituloFrase": "Exigimos fortalecer una educación pública, universal y gratuita de la educación pública de 0 a 3 años, reducir las ratios…",
+   "texto": "Exigimos fortalecer una educación pública, universal y gratuita de la educación pública de 0 a 3 años, reducir las ratios en colegios e institutos, reforzar las Universidades públicas controlando la calidad y proliferación de Universidades privadas, la atención a la diversidad y un sistema público de cuidados y atención a la dependencia.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "discapacidad"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 26,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Garantizar la totalidad de los recursos y apoyos que demandan las familias del alumnado con necesidades específicas de…",
+   "tituloFrase": "Garantizar la totalidad de los recursos y apoyos que demandan las familias del alumnado con necesidades específicas de…",
+   "texto": "Garantizar la totalidad de los recursos y apoyos que demandan las familias del alumnado con necesidades específicas de apoyo educativo (NEAE). Defendiendo una inclusión educativa real y efectiva en todos los centros, con independencia de la isla, el municipio o las características de cada instalación educativa. Rechazando cualquier intento de segregación de este alumnado.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "familias",
+    "infancia"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 27,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 5,
+   "subapartado": null,
+   "titulo": "Plan Estatal de infraestructuras educativas dedicado a la adaptación de los centros escolares al cambio climático",
+   "tituloFrase": "Plan Estatal de infraestructuras educativas dedicado a la adaptación de los centros escolares al cambio climático",
+   "texto": "Plan Estatal de infraestructuras educativas dedicado a la adaptación de los centros escolares al cambio climático. que incluya intervenciones sobre la envolvente de los edificios, los espacios interiores, la ventilación y la iluminación, además del cumplimiento de las normas de eficiencia energética y el uso de energías renovables.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 28,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "6",
+   "tituloFrase": "6",
+   "texto": "6",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 29,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Fortalecer una sanidad pública universal, preventiva y basada en la evidencia, ampliando los servicios de atención…",
+   "tituloFrase": "Fortalecer una sanidad pública universal, preventiva y basada en la evidencia, ampliando los servicios de atención…",
+   "texto": "Fortalecer una sanidad pública universal, preventiva y basada en la evidencia, ampliando los servicios de atención primaria y la investigación en salud.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 30,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Incorporar profesionales de nutrición a los servicios básicos de atención primaria; aprobar una Ley para la Diabetes;…",
+   "tituloFrase": "Incorporar profesionales de nutrición a los servicios básicos de atención primaria; aprobar una Ley para la Diabetes;…",
+   "texto": "Incorporar profesionales de nutrición a los servicios básicos de atención primaria; aprobar una Ley para la Diabetes; impulsar la I+D+i y la prevención, y cumplir íntegramente el Plan Estratégico de Salud y Medio Ambiente (PESMA 2022-2026).",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 31,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Derogar la Ley 15/1997 para evitar la privatización de los servicios sanitarios",
+   "tituloFrase": "Derogar la Ley 15/1997 para evitar la privatización de los servicios sanitarios",
+   "texto": "Derogar la Ley 15/1997 para evitar la privatización de los servicios sanitarios. Con más dinero para la atención primaria que permita reducir las listas de espera, una farmacéutica pública con topes a los medicamentos, y que la sanidad pública cubra los servicios en salud dental, visual y auditiva, así como en fisioterapia y salud sexual y reproductiva de la mujer.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "mujeres",
+    "pacientes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Ley 15/1997"
+  },
+  {
+   "n": 32,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Frente a los intentos privatizadores de la derecha y la ultraderecha, defendemos igualmente unas pensiones públicas…",
+   "tituloFrase": "Frente a los intentos privatizadores de la derecha y la ultraderecha, defendemos igualmente unas pensiones públicas…",
+   "texto": "Frente a los intentos privatizadores de la derecha y la ultraderecha, defendemos igualmente unas pensiones públicas dignas, garantizadas y revalorizadas conforme al coste de la vida. Estableceremos la actualización por ley de las pensiones al IPC de manera inmediata, derogando el factor de sostenibilidad, y buscaremos blindar esta garantía constitucionalizándola de forma expresa. A su vez, se incrementarán las pensiones mínimas y las no contributivas, que principalmente reciben mujeres. Subiremos también las pensiones de viudedad y elevaremos las pensiones mínimas, con lo que avanzaremos en un calendario de mejora hacia los objetivos de la Carta Social Europea.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mayores",
+    "mujeres"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Factor de sostenibilidad de las pensiones"
+  },
+  {
+   "n": 33,
+   "bloque": 1,
+   "seccion": "2",
+   "pagina": 6,
+   "subapartado": null,
+   "titulo": "Agilizaremos el reconocimiento de la posibilidad de jubilarse antes de los 65 años sin penalización para trabajadores y…",
+   "tituloFrase": "Agilizaremos el reconocimiento de la posibilidad de jubilarse antes de los 65 años sin penalización para trabajadores y…",
+   "texto": "Agilizaremos el reconocimiento de la posibilidad de jubilarse antes de los 65 años sin penalización para trabajadores y trabajadoras en sectores especialmente duros y precarios, como camareras y camareros de piso, extinción de incendios, ayuda a domicilio, buceo, trabajo en astilleros y en la estiba, trabajos industriales penosos y de transporte en carretera, entre otros.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 34,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "7",
+   "tituloFrase": "7",
+   "texto": "7",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 35,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Nos oponemos a que el Gobierno estatal elimine su papel (como pretende la derecha) en los imprescindibles incrementos del…",
+   "tituloFrase": "Nos oponemos a que el Gobierno estatal elimine su papel (como pretende la derecha) en los imprescindibles incrementos del…",
+   "texto": "Nos oponemos a que el Gobierno estatal elimine su papel (como pretende la derecha) en los imprescindibles incrementos del salario mínimo interprofesional (SMI), medida con que PP y Vox intenta dejar su modificación en manos empresariales y, por tanto, condenarlo a su congelación.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 36,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Mejora de los salarios",
+   "tituloFrase": "Mejora de los salarios",
+   "texto": "Mejora de los salarios: incremento progresivo del salario mínimo interprofesional hasta los 1.800 €, por doce mensualidades, y actualización de los salarios mediante la negociación colectiva.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "hasta los 1.800 €, por doce mensualidades"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 37,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Reducción de la jornada laboral",
+   "tituloFrase": "Reducción de la jornada laboral",
+   "texto": "Reducción de la jornada laboral: regular la jornada de 37,5 horas semanales y avanzar de forma decidida hacia la jornada laboral de 34 horas semanales; además de la reorganización de los tiempos de trabajo, ocio y cuidados; protegeremos el tiempo de desconexión del trabajo; permitiremos flexibilizar los horarios y aprovechar las posibilidades del teletrabajo; estableceremos planes de respiro familiar para personas que cuidan y se protegerá a estas personas profesionales con la ratificación del Convenio 189 de la Organización Internacional del Trabajo (OIT) y su entrada de pleno derecho en el Régimen General de la Seguridad Social, lo que implicaría igualar en derechos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "jornada de 37,5 horas semanales y avanzar de forma decidida hacia la jornada laboral de 34 horas semanales"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 38,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Control de las horas extraordinarias",
+   "tituloFrase": "Control de las horas extraordinarias",
+   "texto": "Control de las horas extraordinarias: garantizar su pago o compensación mediante descansos, reforzando el registro de jornada y la Inspección de Trabajo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 39,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Lucha contra la precariedad laboral",
+   "tituloFrase": "Lucha contra la precariedad laboral",
+   "texto": "Lucha contra la precariedad laboral: combatir los abusos en la contratación, la temporalidad injustificada y los incumplimientos de los convenios colectivos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 40,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Mejora de las condiciones laborales en Canarias",
+   "tituloFrase": "Mejora de las condiciones laborales en Canarias",
+   "texto": "Mejora de las condiciones laborales en Canarias: especial atención a los sectores turístico, hostelero, comercial y de servicios, reforzando la prevención de riesgos laborales y el control de las cargas de trabajo.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 41,
+   "bloque": 1,
+   "seccion": "3",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Igualdad y conciliación laboral",
+   "tituloFrase": "Igualdad y conciliación laboral",
+   "texto": "Igualdad y conciliación laboral: combatir la brecha salarial de género, la discriminación en el empleo y las dificultades para conciliar la vida laboral, personal y familiar.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "familias"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 42,
+   "bloque": 1,
+   "seccion": "4",
+   "pagina": 7,
+   "subapartado": null,
+   "titulo": "Defendemos el derecho de la juventud canaria a construir su futuro en las islas, con vivienda asequible, empleo digno,…",
+   "tituloFrase": "Defendemos el derecho de la juventud canaria a construir su futuro en las islas, con vivienda asequible, empleo digno,…",
+   "texto": "Defendemos el derecho de la juventud canaria a construir su futuro en las islas, con vivienda asequible, empleo digno, educación pública y acceso a la salud mental.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "jovenes",
+    "pacientes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 43,
+   "bloque": 1,
+   "seccion": "4",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "8",
+   "tituloFrase": "8",
+   "texto": "8",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 44,
+   "bloque": 1,
+   "seccion": "4",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Apostamos por ampliar la participación democrática, incluido el voto a los 16 años, y por incorporar la justicia…",
+   "tituloFrase": "Apostamos por ampliar la participación democrática, incluido el voto a los 16 años, y por incorporar la justicia…",
+   "texto": "Apostamos por ampliar la participación democrática, incluido el voto a los 16 años, y por incorporar la justicia intergeneracional a las políticas públicas, garantizando que las decisiones de hoy no comprometan los derechos y oportunidades de las generaciones futuras.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "voto a los 16 años"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 45,
+   "bloque": 1,
+   "seccion": "4",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Planteamos un Pacto de Estado, que incluya la elaboración de programas específicos destinados a la emancipación de los…",
+   "tituloFrase": "Planteamos un Pacto de Estado, que incluya la elaboración de programas específicos destinados a la emancipación de los…",
+   "texto": "Planteamos un Pacto de Estado, que incluya la elaboración de programas específicos destinados a la emancipación de los jóvenes (vivienda, trabajo, estudios, etc.), haciendo partícipe a la propia juventud en todo ese proceso.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 46,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Que no se cuestione la adicionalidad de los recursos tributarios del REF, respetando lo establecido en el artículo 166…",
+   "tituloFrase": "Que no se cuestione la adicionalidad de los recursos tributarios del REF, respetando lo establecido en el artículo 166…",
+   "texto": "Que no se cuestione la adicionalidad de los recursos tributarios del REF, respetando lo establecido en el artículo 166 del Estatuto de Autonomía, considerando que estos recursos no se integrarán ni computaran en el Sistema de Financiación Autonómico.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 47,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Que el sistema cuente con los recursos adicionales suficientes y respete como mínimo el grado de nivelación o solidaridad…",
+   "tituloFrase": "Que el sistema cuente con los recursos adicionales suficientes y respete como mínimo el grado de nivelación o solidaridad…",
+   "texto": "Que el sistema cuente con los recursos adicionales suficientes y respete como mínimo el grado de nivelación o solidaridad del Sistema de Financiación actual.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 48,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Que Canarias no pierda participación en la variable insularidad en la denominada población ajustada (criterio usado para…",
+   "tituloFrase": "Que Canarias no pierda participación en la variable insularidad en la denominada población ajustada (criterio usado para…",
+   "texto": "Que Canarias no pierda participación en la variable insularidad en la denominada población ajustada (criterio usado para el reparto de los recursos), dado que el factor geográfico de la “ultraperificidad” supone una diferencia sustancial en cómo se prestan los servicios públicos frente a las otras comunidades autónomas",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 49,
+   "bloque": 2,
+   "seccion": "5",
+   "pagina": 8,
+   "subapartado": null,
+   "titulo": "Que el sistema incluya como nuevas variables al definir la población ajustada el nivel de pobreza o de renta puesto que…",
+   "tituloFrase": "Que el sistema incluya como nuevas variables al definir la población ajustada el nivel de pobreza o de renta puesto que…",
+   "texto": "Que el sistema incluya como nuevas variables al definir la población ajustada el nivel de pobreza o de renta puesto que los niveles de renta y de pobreza tienen una clara incidencia en la demanda de los servicios públicos fundamentales.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 50,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "9",
+   "tituloFrase": "9",
+   "texto": "9",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 51,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Compensación del sobrecoste de producción del sistema eléctrico canario, igualando el precio que se cobra en el resto del…",
+   "tituloFrase": "Compensación del sobrecoste de producción del sistema eléctrico canario, igualando el precio que se cobra en el resto del…",
+   "texto": "Compensación del sobrecoste de producción del sistema eléctrico canario, igualando el precio que se cobra en el resto del Estado.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 52,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Partida de crédito ampliable para financiar la reducción del 75% en los precios de los billetes aéreos y marítimos…",
+   "tituloFrase": "Partida de crédito ampliable para financiar la reducción del 75% en los precios de los billetes aéreos y marítimos…",
+   "texto": "Partida de crédito ampliable para financiar la reducción del 75% en los precios de los billetes aéreos y marítimos interinsulares y con el resto del Estado para los residentes canarios.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [
+    "reducción del 75% en los precios de los billetes aéreos y marítimos"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 53,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Partida de crédito ampliable para la bonificación del 100% al transporte marítimo y aéreo de mercancías agrícolas e…",
+   "tituloFrase": "Partida de crédito ampliable para la bonificación del 100% al transporte marítimo y aéreo de mercancías agrícolas e…",
+   "texto": "Partida de crédito ampliable para la bonificación del 100% al transporte marítimo y aéreo de mercancías agrícolas e industriales, con la imprescindible actualización de los costes tipo en función de los precios reales que cobran las navieras.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [
+    "bonificación del 100% al transporte marítimo y aéreo de mercancías"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 54,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Dotación para mantener la gratuidad del transporte regular de viajeros, que financia nuestras guaguas",
+   "tituloFrase": "Dotación para mantener la gratuidad del transporte regular de viajeros, que financia nuestras guaguas",
+   "texto": "Dotación para mantener la gratuidad del transporte regular de viajeros, que financia nuestras guaguas.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 55,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Financiación de las políticas específicas para fomentar la creación de empleo en Canarias que regulan los artículos 21,…",
+   "tituloFrase": "Financiación de las políticas específicas para fomentar la creación de empleo en Canarias que regulan los artículos 21,…",
+   "texto": "Financiación de las políticas específicas para fomentar la creación de empleo en Canarias que regulan los artículos 21, 23 y 24 bis de la Ley 19/1994, con una dotación suficiente del Plan Integral de Empleo para Canarias (PIEC)",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 56,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Dotación al menos de 30 millones de euros, como en la actualidad del programa de medidas para luchar contra la pobreza…",
+   "tituloFrase": "Dotación al menos de 30 millones de euros, como en la actualidad del programa de medidas para luchar contra la pobreza…",
+   "texto": "Dotación al menos de 30 millones de euros, como en la actualidad del programa de medidas para luchar contra la pobreza regulado en el artículo 21 bis de ley 19/1994.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [
+    "Dotación al menos de 30 millones de euros"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 57,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Créditos suficientes para abaratar el precio de las aguas de abasto y aguas de riego agrícola, como recoge el artículo…",
+   "tituloFrase": "Créditos suficientes para abaratar el precio de las aguas de abasto y aguas de riego agrícola, como recoge el artículo…",
+   "texto": "Créditos suficientes para abaratar el precio de las aguas de abasto y aguas de riego agrícola, como recoge el artículo 14bis de ley 19/1994.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 58,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Mantenimiento de la financiación por el Estado del cien por cien del POSEI adicional agropecuario y actualización de su…",
+   "tituloFrase": "Mantenimiento de la financiación por el Estado del cien por cien del POSEI adicional agropecuario y actualización de su…",
+   "texto": "Mantenimiento de la financiación por el Estado del cien por cien del POSEI adicional agropecuario y actualización de su ficha financiera, según recoge el artículo 24.2 de la Ley 19/1994.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 59,
+   "bloque": 2,
+   "seccion": "6",
+   "pagina": 9,
+   "subapartado": null,
+   "titulo": "Situar a Canarias, al menos, en la media de las comunidades en la inversión territorializada tal como establecen los…",
+   "tituloFrase": "Situar a Canarias, al menos, en la media de las comunidades en la inversión territorializada tal como establecen los…",
+   "texto": "Situar a Canarias, al menos, en la media de las comunidades en la inversión territorializada tal como establecen los artículos 95 y 96 de la Ley 20/1991 del REF.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 60,
+   "bloque": 2,
+   "seccion": "7",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "10",
+   "tituloFrase": "10",
+   "texto": "10",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 61,
+   "bloque": 2,
+   "seccion": "7",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Garantizar la continuidad del Programa POSEI como instrumento autónomo de Política Agraria Común (PAC) en las RUP, con…",
+   "tituloFrase": "Garantizar la continuidad del Programa POSEI como instrumento autónomo de Política Agraria Común (PAC) en las RUP, con…",
+   "texto": "Garantizar la continuidad del Programa POSEI como instrumento autónomo de Política Agraria Común (PAC) en las RUP, con una ficha financiera definida y actualizada respecto al importe actualmente vigente, y amparado en un Reglamento europeo específico, en el que figuren todas las excepciones y medidas complementarias que acompañan la aplicación de la PAC en Canarias, al margen de los Planes de Colaboración nacionales y regionales. También hay que defender el mantenimiento y actualización de la dotación adicional del programa de compensación de sobrecostes del sector pesquero y acuícola de Canarias.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "rural",
+    "autonomos"
+   ],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 62,
+   "bloque": 2,
+   "seccion": "7",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Que el Gobierno de España defienda en la política de cohesión para las RUP el mantenimiento de una gestión…",
+   "tituloFrase": "Que el Gobierno de España defienda en la política de cohesión para las RUP el mantenimiento de una gestión…",
+   "texto": "Que el Gobierno de España defienda en la política de cohesión para las RUP el mantenimiento de una gestión descentralizada y regionalizada de los fondos estructurales y de inversión como el FEDER y el FSE+, así como la preservación en estos Fondos de dotaciones financieras específicas y claramente identificables para las RUP.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 63,
+   "bloque": 2,
+   "seccion": "7",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Asimismo, el Gobierno estatal debe plantear ante la UE la necesidad de una mayor atención a la realidad migratoria de…",
+   "tituloFrase": "Asimismo, el Gobierno estatal debe plantear ante la UE la necesidad de una mayor atención a la realidad migratoria de…",
+   "texto": "Asimismo, el Gobierno estatal debe plantear ante la UE la necesidad de una mayor atención a la realidad migratoria de Canarias en su doble realidad insular y ultraperiférica, permitiendo la regionalización de los fondos europeos que permitan una gestión directa de los flujos migratorios, en concreto para la acogida de las y los menores extranjeros no acompañados, atendiendo a la situación de Canarias como frontera sur de la Unión Europea",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [
+    "infancia",
+    "inmigrantes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 64,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Apostamos por diversificar la economía y reducir la dependencia del turismo, impulsando el sector primario, la economía…",
+   "tituloFrase": "Apostamos por diversificar la economía y reducir la dependencia del turismo, impulsando el sector primario, la economía…",
+   "texto": "Apostamos por diversificar la economía y reducir la dependencia del turismo, impulsando el sector primario, la economía azul, las energías limpias, la investigación, la tecnología y la cultura canaria. Reclamamos que la riqueza turística revierta en la mayoría social, con mejores salarios, empleo de calidad y una fiscalidad justa. Apostando por retener el talento canario, que hoy se ve obligado a desarrollar sus conocimientos en otros lugares del Estado y del mundo.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [
+    "rural",
+    "discapacidad"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 65,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Defendemos un REF orientado a la sostenibilidad, la innovación y la cohesión social",
+   "tituloFrase": "Defendemos un REF orientado a la sostenibilidad, la innovación y la cohesión social",
+   "texto": "Defendemos un REF orientado a la sostenibilidad, la innovación y la cohesión social. Planificando y modulando el modelo turístico, con una moratoria de nuevas instalaciones y camas. Apostando por la calidad frente la cantidad y el incremento del gasto en destino. Implantando una tasa turística para los no residentes. Con mayor formación y cualificación, mejores condiciones laborales y más elevados salarios.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 66,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Derogación de la materialización de la RIC en vivienda libre destinada al alquiler sin limitación de renta, que es un uso…",
+   "tituloFrase": "Derogación de la materialización de la RIC en vivienda libre destinada al alquiler sin limitación de renta, que es un uso…",
+   "texto": "Derogación de la materialización de la RIC en vivienda libre destinada al alquiler sin limitación de renta, que es un uso especulativo de la RIC.",
+   "oculta": false,
+   "categoria": "vivienda",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": "Materialización de la RIC en vivienda libre de alquiler sin límite de renta"
+  },
+  {
+   "n": 67,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 10,
+   "subapartado": null,
+   "titulo": "Defensa de un REF que reconozca nuestro diferencial fiscal y garantice las ayudas al transporte de pasajeros (75%)…",
+   "tituloFrase": "Defensa de un REF que reconozca nuestro diferencial fiscal y garantice las ayudas al transporte de pasajeros (75%)…",
+   "texto": "Defensa de un REF que reconozca nuestro diferencial fiscal y garantice las ayudas al transporte de pasajeros (75%) interinsular, y con otras comunidades del Estado, y mercancías (100%); y al sistema energético, para que Canarias tenga un precio de la electricidad igual al del resto del Estado.",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [
+    "impuestos",
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 68,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "11",
+   "tituloFrase": "11",
+   "texto": "11",
+   "oculta": false,
+   "categoria": "innovacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 69,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 11,
+   "subapartado": 0,
+   "titulo": "Proteger los recursos pesqueros y fortalecer la pesca artesanal canaria mediante cogestión, vigilancia y control…",
+   "tituloFrase": "Proteger los recursos pesqueros y fortalecer la pesca artesanal canaria mediante cogestión, vigilancia y control…",
+   "texto": "Proteger los recursos pesqueros y fortalecer la pesca artesanal canaria mediante cogestión, vigilancia y control efectivos, seguimiento científico, geolocalización de embarcaciones y una red ampliada de reservas marinas de interés pesquero.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 70,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 11,
+   "subapartado": 0,
+   "titulo": "Combatir el furtivismo y la pesca ilegal y recuperar los recursos costeros; establecer programas anuales o plurianuales…",
+   "tituloFrase": "Combatir el furtivismo y la pesca ilegal y recuperar los recursos costeros; establecer programas anuales o plurianuales…",
+   "texto": "Combatir el furtivismo y la pesca ilegal y recuperar los recursos costeros; establecer programas anuales o plurianuales de observación y seguimiento de las pesquerías, investigación científica aplicada y planes específicos de gestión pesquera para todas las ZEC marinas de la Red Natura 2000, con participación de los organismos científicos y universidades públicas canarias.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 71,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 11,
+   "subapartado": 0,
+   "titulo": "Asignar un servicio permanente de vigilancia pesquera específico para cada isla y reserva marina de interés pesquero,…",
+   "tituloFrase": "Asignar un servicio permanente de vigilancia pesquera específico para cada isla y reserva marina de interés pesquero,…",
+   "texto": "Asignar un servicio permanente de vigilancia pesquera específico para cada isla y reserva marina de interés pesquero, dotado con al menos una embarcación tripulada y dos inspectores de pesca, además de los equipos electrónicos y herramientas tecnológicas necesarios.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 72,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 11,
+   "subapartado": 0,
+   "titulo": "Ampliar la red de reservas marinas de interés pesquero y sus beneficios para la pesca artesanal canaria, estableciendo al…",
+   "tituloFrase": "Ampliar la red de reservas marinas de interés pesquero y sus beneficios para la pesca artesanal canaria, estableciendo al…",
+   "texto": "Ampliar la red de reservas marinas de interés pesquero y sus beneficios para la pesca artesanal canaria, estableciendo al menos una reserva por isla y priorizando La Gomera, Tenerife y Fuerteventura, donde existen estudios previos y propuestas de especialistas de las universidades canarias.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 73,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 11,
+   "subapartado": 1,
+   "titulo": "Proteger el suelo agrario y recuperar terrenos para reforzar la producción agrícola y ganadera",
+   "tituloFrase": "Proteger el suelo agrario y recuperar terrenos para reforzar la producción agrícola y ganadera",
+   "texto": "Proteger el suelo agrario y recuperar terrenos para reforzar la producción agrícola y ganadera.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 74,
+   "bloque": 2,
+   "seccion": "8",
+   "pagina": 11,
+   "subapartado": 1,
+   "titulo": "Aumentar la reserva de suelo rústico y rehabilitar terrenos para usos agrícolas y ganaderos",
+   "tituloFrase": "Aumentar la reserva de suelo rústico y rehabilitar terrenos para usos agrícolas y ganaderos",
+   "texto": "Aumentar la reserva de suelo rústico y rehabilitar terrenos para usos agrícolas y ganaderos.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [
+    "rural"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 75,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Impulso de una profunda reforma del sistema fiscal español, para mejorar su progresividad y cerrar la brecha de ingresos…",
+   "tituloFrase": "Impulso de una profunda reforma del sistema fiscal español, para mejorar su progresividad y cerrar la brecha de ingresos…",
+   "texto": "Impulso de una profunda reforma del sistema fiscal español, para mejorar su progresividad y cerrar la brecha de ingresos sobre el PIB respecto a la media europea. La reforma estará orientada a que contribuyan más quienes hoy se esfuerzan menos (grandes empresas, patrimonios y rentas del capital, principalmente) y quienes incumplen con sus obligaciones tributarias.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 76,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 11,
+   "subapartado": null,
+   "titulo": "Aumento de la progresividad en el tramo estatal del impuesto sobre la renta de las personas físicas (IRPF), ampliando el…",
+   "tituloFrase": "Aumento de la progresividad en el tramo estatal del impuesto sobre la renta de las personas físicas (IRPF), ampliando el…",
+   "texto": "Aumento de la progresividad en el tramo estatal del impuesto sobre la renta de las personas físicas (IRPF), ampliando el número de tramos a partir de 120.000 euros y aplicando tipos marginales crecientes.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 77,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "12",
+   "tituloFrase": "12",
+   "texto": "12",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 78,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Mantenimiento de los impuestos extraordinarios sobre la banca y reintroducir el impuesto extraordinario a las empresas…",
+   "tituloFrase": "Mantenimiento de los impuestos extraordinarios sobre la banca y reintroducir el impuesto extraordinario a las empresas…",
+   "texto": "Mantenimiento de los impuestos extraordinarios sobre la banca y reintroducir el impuesto extraordinario a las empresas energéticas. El Gobierno del Estado ha desplegado cuantiosas medidas para compensar la pérdida del poder adquisitivo de las familias trabajadoras derivada de la subida de los precios y de las hipotecas. Es justo que quienes, por el contrario, se han beneficiado de la subida de los precios y de los tipos de interés contribuyan a sufragarlas.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas",
+    "familias"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 79,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Mantenimiento de un impuesto a las grandes fortunas de forma permanente, reforzando además su progresividad, que evite…",
+   "tituloFrase": "Mantenimiento de un impuesto a las grandes fortunas de forma permanente, reforzando además su progresividad, que evite…",
+   "texto": "Mantenimiento de un impuesto a las grandes fortunas de forma permanente, reforzando además su progresividad, que evite que las CCAA gobernadas por PP, VOX, CC y otras fuerzas de derechas eliminen el impuesto de patrimonio de competencia autonómica, como han hecho con el impuesto de Sucesiones y Donaciones Incremento de la deducción por gastos de vivienda (tanto alquileres como cuotas de hipotecas) para rentas medias y bajas en el tramo estatal del IRPF.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 80,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Deducción específica y temporal por alza de precios en el tramo estatal del IRPF para rentas inferiores a 40.000 euros en…",
+   "tituloFrase": "Deducción específica y temporal por alza de precios en el tramo estatal del IRPF para rentas inferiores a 40.000 euros en…",
+   "texto": "Deducción específica y temporal por alza de precios en el tramo estatal del IRPF para rentas inferiores a 40.000 euros en situaciones de alta inflación como las que se vive estos últimos meses de 2026 y se prevé para 2027. En concreto, proponemos una deducción de la cuota íntegra de 300 euros para rentas inferiores a 20.000 euros; 225 para rentas entre 20.000 y 30.000 y 175 euros entre 30.000 a 40.000 euros. Esta medida ya la implementó el Gobierno de progreso canario durante la legislatura 2019-2023, para los años 2022 y 2023, cuando el proceso inflacionario fue muy alto en las Islas y las retiró el actual gobierno de Coalición Canaria y el Partido Popular.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "deducción de la cuota íntegra de 300 euros para rentas inferiores a 20.000 euros"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 81,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 12,
+   "subapartado": null,
+   "titulo": "Deflactación progresiva de la tarifa del IRPF hasta rentas de 65.000 euros para incorporar el efecto de la inflación",
+   "tituloFrase": "Deflactación progresiva de la tarifa del IRPF hasta rentas de 65.000 euros para incorporar el efecto de la inflación",
+   "texto": "Deflactación progresiva de la tarifa del IRPF hasta rentas de 65.000 euros para incorporar el efecto de la inflación. Defendemos una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital. Proponemos reforzar la tributación de las grandes fortunas y los sectores bancario y energético, mejorar las deducciones por alquiler de vivienda para las rentas medias y bajas y adoptar medidas fiscales frente a la inflación, protegiendo el poder adquisitivo de las familias trabajadoras.",
+   "oculta": false,
+   "categoria": "fiscalidad",
+   "colectivos": [
+    "empresas",
+    "familias"
+   ],
+   "palancas": [
+    "ley",
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 82,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 12,
+   "subapartado": 0,
+   "titulo": "Ampliar hasta los 85.000 euros de facturación anual el umbral de exención del IGIC para los trabajadores autónomos,…",
+   "tituloFrase": "Ampliar hasta los 85.000 euros de facturación anual el umbral de exención del IGIC para los trabajadores autónomos,…",
+   "texto": "Ampliar hasta los 85.000 euros de facturación anual el umbral de exención del IGIC para los trabajadores autónomos, simplificando sus obligaciones tributarias, en coordinación con el Gobierno de Canarias y en el marco del REF.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [
+    "Ampliar hasta los 85.000 euros de facturación anual el umbral de exención del IGIC"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 83,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 13,
+   "subapartado": 0,
+   "titulo": "13",
+   "tituloFrase": "13",
+   "texto": "13",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 84,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 13,
+   "subapartado": 0,
+   "titulo": "Establecer una tarifa plana de 88 euros mensuales para los autónomos con menores rendimientos económicos, vinculada a sus…",
+   "tituloFrase": "Establecer una tarifa plana de 88 euros mensuales para los autónomos con menores rendimientos económicos, vinculada a sus…",
+   "texto": "Establecer una tarifa plana de 88 euros mensuales para los autónomos con menores rendimientos económicos, vinculada a sus ingresos reales y no a su antigüedad.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "infancia",
+    "autonomos"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [
+    "tarifa plana de 88 euros mensuales para los autónomos"
+   ],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 85,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 13,
+   "subapartado": 0,
+   "titulo": "Reformar la legislación de arrendamientos urbanos para proteger al pequeño comercio frente a la especulación…",
+   "tituloFrase": "Reformar la legislación de arrendamientos urbanos para proteger al pequeño comercio frente a la especulación…",
+   "texto": "Reformar la legislación de arrendamientos urbanos para proteger al pequeño comercio frente a la especulación inmobiliaria, estableciendo contratos de un mínimo de cinco años, límites a las subidas de los alquileres y mecanismos de indemnización.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 86,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 13,
+   "subapartado": 0,
+   "titulo": "Reducir la burocracia mediante una ventanilla única administrativa, la agilización de las ayudas públicas y el…",
+   "tituloFrase": "Reducir la burocracia mediante una ventanilla única administrativa, la agilización de las ayudas públicas y el…",
+   "texto": "Reducir la burocracia mediante una ventanilla única administrativa, la agilización de las ayudas públicas y el acompañamiento en los procesos de digitalización.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 87,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 13,
+   "subapartado": 0,
+   "titulo": "Compensar los sobrecostes derivados de la insularidad y la doble insularidad, reforzando las ayudas al transporte de…",
+   "tituloFrase": "Compensar los sobrecostes derivados de la insularidad y la doble insularidad, reforzando las ayudas al transporte de…",
+   "texto": "Compensar los sobrecostes derivados de la insularidad y la doble insularidad, reforzando las ayudas al transporte de mercancías y simplificando los trámites aduaneros.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 88,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 13,
+   "subapartado": 0,
+   "titulo": "Democratizar el acceso a los incentivos fiscales del REF, facilitando que los autónomos, las microempresas y las pymes…",
+   "tituloFrase": "Democratizar el acceso a los incentivos fiscales del REF, facilitando que los autónomos, las microempresas y las pymes…",
+   "texto": "Democratizar el acceso a los incentivos fiscales del REF, facilitando que los autónomos, las microempresas y las pymes puedan beneficiarse de estos instrumentos.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "autonomos"
+   ],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 89,
+   "bloque": 2,
+   "seccion": "9",
+   "pagina": 13,
+   "subapartado": 0,
+   "titulo": "Proteger el comercio de proximidad frente a la concentración empresarial, la especulación inmobiliaria y la presión del…",
+   "tituloFrase": "Proteger el comercio de proximidad frente a la concentración empresarial, la especulación inmobiliaria y la presión del…",
+   "texto": "Proteger el comercio de proximidad frente a la concentración empresarial, la especulación inmobiliaria y la presión del desarrollismo turístico.",
+   "oculta": false,
+   "categoria": "empleo",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 90,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "14",
+   "tituloFrase": "14",
+   "texto": "14",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 91,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "población residente, situando los intereses de la ciudadanía por encima de los intereses de los grandes operadores turísticos",
+   "tituloFrase": "población residente, situando los intereses de la ciudadanía por encima de los intereses de los grandes operadores turísticos",
+   "texto": "población residente, situando los intereses de la ciudadanía por encima de los intereses de los grandes operadores turísticos.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 92,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Evitar la pérdida de territorio por nuevas infraestructuras hoteleras y orientar las instalaciones energéticas hacia…",
+   "tituloFrase": "Evitar la pérdida de territorio por nuevas infraestructuras hoteleras y orientar las instalaciones energéticas hacia…",
+   "texto": "Evitar la pérdida de territorio por nuevas infraestructuras hoteleras y orientar las instalaciones energéticas hacia soluciones menos invasiva.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 93,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Defender el derecho de los propietarios de viviendas situadas en complejos turísticos a residir y disfrutar de sus…",
+   "tituloFrase": "Defender el derecho de los propietarios de viviendas situadas en complejos turísticos a residir y disfrutar de sus…",
+   "texto": "Defender el derecho de los propietarios de viviendas situadas en complejos turísticos a residir y disfrutar de sus propios inmuebles, evitando que se vean forzados a ceder su explotación a empresas turísticas o sean sancionados por su uso residencial.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 94,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Impulsar, desde las competencias del Estado y en coordinación con las administraciones canarias, la revisión del…",
+   "tituloFrase": "Impulsar, desde las competencias del Estado y en coordinación con las administraciones canarias, la revisión del…",
+   "texto": "Impulsar, desde las competencias del Estado y en coordinación con las administraciones canarias, la revisión del principio de unidad de explotación turística, garantizando la seguridad jurídica, la libertad contractual, la libre competencia y la protección de los pequeños propietarios frente a posibles prácticas abusivas.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 95,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Promover el reconocimiento de los usos residenciales consolidados y la paralización de los procedimientos sancionadores…",
+   "tituloFrase": "Promover el reconocimiento de los usos residenciales consolidados y la paralización de los procedimientos sancionadores…",
+   "texto": "Promover el reconocimiento de los usos residenciales consolidados y la paralización de los procedimientos sancionadores vinculados a estos, evitando que, en plena emergencia habitacional, se prive a la población residente del uso de sus propias viviendas. Apostamos por las energías renovables, la generación distribuida, la soberanía energética, la gestión responsable, sostenible y circular de residuos y vertidos y la gestión pública de los recursos estratégicos.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 96,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Se creará una Empresa pública de Energía, que desempeñará un rol activo en la instalación de energías renovables,…",
+   "tituloFrase": "Se creará una Empresa pública de Energía, que desempeñará un rol activo en la instalación de energías renovables,…",
+   "texto": "Se creará una Empresa pública de Energía, que desempeñará un rol activo en la instalación de energías renovables, empujará hacia la transformación del mercado, también se ocupará de implementar una factura de la luz más baja y de garantizar que nadie sufra pobreza energética. Al mismo tiempo, trabajará de forma coordinada con las empresas públicas municipales que se han creado o que se puedan crear para la comercialización y la gestión de su propia energía.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "empresas"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 97,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Con mayor compromiso e inversión pública para alcanzar esos objetivos, avanzando hacia la obligación de que toda nueva…",
+   "tituloFrase": "Con mayor compromiso e inversión pública para alcanzar esos objetivos, avanzando hacia la obligación de que toda nueva…",
+   "texto": "Con mayor compromiso e inversión pública para alcanzar esos objetivos, avanzando hacia la obligación de que toda nueva construcción lleve añadida la obligación de ser autosuficiente energéticamente.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 98,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Transición energética y adaptación climática Acelerar la transición energética y preparar los municipios frente a los…",
+   "tituloFrase": "Transición energética y adaptación climática Acelerar la transición energética y preparar los municipios frente a los…",
+   "texto": "Transición energética y adaptación climática Acelerar la transición energética y preparar los municipios frente a los efectos del cambio climático, priorizando soluciones distribuidas, de bajo impacto y con protección de la población vulnerable.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 99,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Desarrollar un plan de techumbres fotovoltaicas en pueblos y ciudades, un plan estratégico de energías renovables y una…",
+   "tituloFrase": "Desarrollar un plan de techumbres fotovoltaicas en pueblos y ciudades, un plan estratégico de energías renovables y una…",
+   "texto": "Desarrollar un plan de techumbres fotovoltaicas en pueblos y ciudades, un plan estratégico de energías renovables y una implantación territorial que minimice la ocupación y el impacto ambiental.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 100,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 14,
+   "subapartado": null,
+   "titulo": "Crear refugios climáticos accesibles ante episodios de frío y calor extremos, con atención especial a personas mayores y…",
+   "tituloFrase": "Crear refugios climáticos accesibles ante episodios de frío y calor extremos, con atención especial a personas mayores y…",
+   "texto": "Crear refugios climáticos accesibles ante episodios de frío y calor extremos, con atención especial a personas mayores y menores.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [
+    "infancia",
+    "mayores"
+   ],
+   "palancas": [
+    "organizacion"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 101,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "15",
+   "tituloFrase": "15",
+   "texto": "15",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 102,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 15,
+   "subapartado": 0,
+   "titulo": "Mejorar la protección y recuperación de los ecosistemas terrestres y marinos, así como las infraestructuras de…",
+   "tituloFrase": "Mejorar la protección y recuperación de los ecosistemas terrestres y marinos, así como las infraestructuras de…",
+   "texto": "Mejorar la protección y recuperación de los ecosistemas terrestres y marinos, así como las infraestructuras de saneamiento y depuración.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 103,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 15,
+   "subapartado": 0,
+   "titulo": "Desarrollar un plan estatal de costas, emisarios submarinos y depuradoras; recuperar barrancos, senderos y valles, y…",
+   "tituloFrase": "Desarrollar un plan estatal de costas, emisarios submarinos y depuradoras; recuperar barrancos, senderos y valles, y…",
+   "texto": "Desarrollar un plan estatal de costas, emisarios submarinos y depuradoras; recuperar barrancos, senderos y valles, y reforzar la protección de los mares.",
+   "oculta": false,
+   "categoria": "energia",
+   "colectivos": [],
+   "palancas": [
+    "plan"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 104,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 15,
+   "subapartado": 1,
+   "titulo": "Reforzar la protección de la biodiversidad canaria mediante legislación específica, gestión activa de espacios protegidos…",
+   "tituloFrase": "Reforzar la protección de la biodiversidad canaria mediante legislación específica, gestión activa de espacios protegidos…",
+   "texto": "Reforzar la protección de la biodiversidad canaria mediante legislación específica, gestión activa de espacios protegidos y medidas.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 105,
+   "bloque": 2,
+   "seccion": "10",
+   "pagina": 15,
+   "subapartado": 1,
+   "titulo": "Aprobar la Ley de Biodiversidad y Recursos Biológicos de Canarias; dotar de planes de gestión específicos a las áreas…",
+   "tituloFrase": "Aprobar la Ley de Biodiversidad y Recursos Biológicos de Canarias; dotar de planes de gestión específicos a las áreas…",
+   "texto": "Aprobar la Ley de Biodiversidad y Recursos Biológicos de Canarias; dotar de planes de gestión específicos a las áreas protegidas de la Red Natura 2000 y establecer protección general para tiburones y rayas en aguas canarias.",
+   "oculta": false,
+   "categoria": "rural",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "plan"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 106,
+   "bloque": 3,
+   "seccion": "11",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Defendemos el reconocimiento de Canarias como sujeto político, el fortalecimiento de su autogobierno y el pleno…",
+   "tituloFrase": "Defendemos el reconocimiento de Canarias como sujeto político, el fortalecimiento de su autogobierno y el pleno…",
+   "texto": "Defendemos el reconocimiento de Canarias como sujeto político, el fortalecimiento de su autogobierno y el pleno desarrollo de las competencias reconocidas en nuestro Estatuto de Autonomía. Reclamamos una financiación justa, la participación adecuada en los presupuestos estatales y europeos y el reconocimiento efectivo de nuestra condición de región ultraperiférica, respetando las singularidades del Archipiélago.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 107,
+   "bloque": 3,
+   "seccion": "11",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Igualmente, defendemos el establecimiento de la mediana con Marruecos, el reconocimiento de nuestras aguas, así como de…",
+   "tituloFrase": "Igualmente, defendemos el establecimiento de la mediana con Marruecos, el reconocimiento de nuestras aguas, así como de…",
+   "texto": "Igualmente, defendemos el establecimiento de la mediana con Marruecos, el reconocimiento de nuestras aguas, así como de los fondos marinos del archipiélago, y su espacio aéreo. Y la participación de Canarias en las negociaciones con terceros estados en temas que nos afecten.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 108,
+   "bloque": 3,
+   "seccion": "11",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Realizaremos una reclamación permanente de la participación justa de Canarias en los Presupuestos Generales del Estado y…",
+   "tituloFrase": "Realizaremos una reclamación permanente de la participación justa de Canarias en los Presupuestos Generales del Estado y…",
+   "texto": "Realizaremos una reclamación permanente de la participación justa de Canarias en los Presupuestos Generales del Estado y en los Presupuestos de la Unión Europea (en lo inmediato, el Marco Financiero Plurianual (MFP) 2028-2034).",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [
+    "Unión Europea",
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 109,
+   "bloque": 3,
+   "seccion": "11",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Consideramos que Canarias debe desarrollar al máximo las competencias contempladas en su Estatuto, que deben ser…",
+   "tituloFrase": "Consideramos que Canarias debe desarrollar al máximo las competencias contempladas en su Estatuto, que deben ser…",
+   "texto": "Consideramos que Canarias debe desarrollar al máximo las competencias contempladas en su Estatuto, que deben ser correctamente financiadas por el Estado y gestionadas sobre la base del interés general en las Islas. En concreto, exigimos la cogestión canaria de nuestros aeropuertos, como ya sucede desde hace décadas con los puertos, así como rechazamos la privatización de las torres de control de varios aeropuertos de las Islas.",
+   "oculta": false,
+   "categoria": "infraestructuras",
+   "colectivos": [],
+   "palancas": [
+    "ley",
+    "gasto",
+    "organizacion"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 110,
+   "bloque": 3,
+   "seccion": "11",
+   "pagina": 15,
+   "subapartado": null,
+   "titulo": "Las distintas políticas y leyes estatales en todos los ámbitos deben considerar las condiciones específicas de Canarias",
+   "tituloFrase": "Las distintas políticas y leyes estatales en todos los ámbitos deben considerar las condiciones específicas de Canarias",
+   "texto": "Las distintas políticas y leyes estatales en todos los ámbitos deben considerar las condiciones específicas de Canarias.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 111,
+   "bloque": 3,
+   "seccion": "11",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "16",
+   "tituloFrase": "16",
+   "texto": "16",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 112,
+   "bloque": 3,
+   "seccion": "11",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "La coalición comparte la defensa de la soberanía popular, del derecho a decidir democráticamente y del derecho universal…",
+   "tituloFrase": "La coalición comparte la defensa de la soberanía popular, del derecho a decidir democráticamente y del derecho universal…",
+   "texto": "La coalición comparte la defensa de la soberanía popular, del derecho a decidir democráticamente y del derecho universal de los pueblos a la autodeterminación.",
+   "oculta": false,
+   "categoria": "territorio",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 113,
+   "bloque": 3,
+   "seccion": "12",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Defendemos la identidad nacional canaria, nuestra historia, el habla, las tradiciones y el patrimonio histórico, natural…",
+   "tituloFrase": "Defendemos la identidad nacional canaria, nuestra historia, el habla, las tradiciones y el patrimonio histórico, natural…",
+   "texto": "Defendemos la identidad nacional canaria, nuestra historia, el habla, las tradiciones y el patrimonio histórico, natural y cultural, entendidas como elementos de cohesión y emancipación colectiva.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "jovenes"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 114,
+   "bloque": 3,
+   "seccion": "12",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Apostamos por proteger el patrimonio material e inmaterial, apoyar la creación artística y las industrias culturales…",
+   "tituloFrase": "Apostamos por proteger el patrimonio material e inmaterial, apoyar la creación artística y las industrias culturales…",
+   "texto": "Apostamos por proteger el patrimonio material e inmaterial, apoyar la creación artística y las industrias culturales canarias y fomentar el intercambio con otros pueblos.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [
+    "empresas"
    ],
    "palancas": [
     "organizacion"
@@ -595,14 +2713,90 @@
    "deroga": null
   },
   {
-   "n": 12,
-   "bloque": 12,
+   "n": 115,
+   "bloque": 3,
    "seccion": "12",
-   "pagina": 4,
+   "pagina": 16,
    "subapartado": null,
-   "titulo": "Canarias, frontera Sur",
-   "tituloFrase": "Canarias, frontera Sur",
-   "texto": "Defendemos una política migratoria basada en los derechos humanos, las vías legales y seguras, la acogida digna y la corresponsabilidad entre territorios. Exigimos una protección específica de la infancia y adolescencia migrante no acompañada, garantizando sus derechos y una\n\ndistribución solidaria de las responsabilidades de acogida. Rechazamos la externalización de fronteras, el racismo y la xenofobia, y apostamos por una Canarias diversa, solidaria y comprometida con la dignidad humana.",
+   "titulo": "Planteamos fomentar el acceso a la cultura y la producción cultural en general, así como la necesidad de regular y…",
+   "tituloFrase": "Planteamos fomentar el acceso a la cultura y la producción cultural en general, así como la necesidad de regular y…",
+   "texto": "Planteamos fomentar el acceso a la cultura y la producción cultural en general, así como la necesidad de regular y limitar el impacto de la inteligencia artificial (IA) sobre la producción cultural “humana”.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 116,
+   "bloque": 3,
+   "seccion": "12",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Apostar por el sector cultural, del cine, del diseño y del video juego aprovechando las exenciones fiscales y la Zona…",
+   "tituloFrase": "Apostar por el sector cultural, del cine, del diseño y del video juego aprovechando las exenciones fiscales y la Zona…",
+   "texto": "Apostar por el sector cultural, del cine, del diseño y del video juego aprovechando las exenciones fiscales y la Zona Especial canaria, vinculadas directamente a la contratación de trabajo local.",
+   "oculta": false,
+   "categoria": "identidad",
+   "colectivos": [],
+   "palancas": [
+    "impuestos"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 117,
+   "bloque": 3,
+   "seccion": "13",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Nuestra situación geográfica nos seguirá convirtiendo en parte importante de las rutas migratorias desde el continente…",
+   "tituloFrase": "Nuestra situación geográfica nos seguirá convirtiendo en parte importante de las rutas migratorias desde el continente…",
+   "texto": "Nuestra situación geográfica nos seguirá convirtiendo en parte importante de las rutas migratorias desde el continente africano.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 118,
+   "bloque": 3,
+   "seccion": "13",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Defendemos una política migratoria basada en los derechos humanos, las vías legales y seguras, la acogida digna y la…",
+   "tituloFrase": "Defendemos una política migratoria basada en los derechos humanos, las vías legales y seguras, la acogida digna y la…",
+   "texto": "Defendemos una política migratoria basada en los derechos humanos, las vías legales y seguras, la acogida digna y la corresponsabilidad entre territorios.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 119,
+   "bloque": 3,
+   "seccion": "13",
+   "pagina": 16,
+   "subapartado": null,
+   "titulo": "Exigimos una protección específica de la infancia y adolescencia migrante no acompañada, garantizando sus derechos y una…",
+   "tituloFrase": "Exigimos una protección específica de la infancia y adolescencia migrante no acompañada, garantizando sus derechos y una…",
+   "texto": "Exigimos una protección específica de la infancia y adolescencia migrante no acompañada, garantizando sus derechos y una distribución solidaria de las responsabilidades de acogida.",
    "oculta": false,
    "categoria": "inmigracion",
    "colectivos": [
@@ -610,27 +2804,23 @@
     "inmigrantes"
    ],
    "palancas": [],
-   "territorios": [
-    "Canarias"
-   ],
+   "territorios": [],
    "cifras": [],
    "plazo": null,
    "deroga": null
   },
   {
-   "n": 13,
-   "bloque": 13,
+   "n": 120,
+   "bloque": 3,
    "seccion": "13",
-   "pagina": 5,
+   "pagina": 16,
    "subapartado": null,
-   "titulo": "Cultura, identidad y patrimonio canario",
-   "tituloFrase": "Cultura, identidad y patrimonio canario",
-   "texto": "Defendemos la identidad nacional canaria, nuestra historia, el habla, las tradiciones y el patrimonio histórico, natural y cultural. Apostamos por proteger el patrimonio material e inmaterial, apoyar la creación artística y las industrias culturales canarias y fomentar el intercambio con otros pueblos.",
+   "titulo": "Rechazamos la externalización de fronteras, el racismo y la xenofobia, y apostamos por una Canarias diversa, solidaria y…",
+   "tituloFrase": "Rechazamos la externalización de fronteras, el racismo y la xenofobia, y apostamos por una Canarias diversa, solidaria y…",
+   "texto": "Rechazamos la externalización de fronteras, el racismo y la xenofobia, y apostamos por una Canarias diversa, solidaria y comprometida con la dignidad humana.",
    "oculta": false,
-   "categoria": "identidad",
-   "colectivos": [
-    "empresas"
-   ],
+   "categoria": "inmigracion",
+   "colectivos": [],
    "palancas": [],
    "territorios": [
     "Canarias"
@@ -640,14 +2830,302 @@
    "deroga": null
   },
   {
-   "n": 14,
-   "bloque": 14,
-   "seccion": "14",
-   "pagina": 5,
+   "n": 121,
+   "bloque": 3,
+   "seccion": "13",
+   "pagina": 16,
    "subapartado": null,
-   "titulo": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
-   "tituloFrase": "Democracia participativa, transparencia pública y lucha contra el transfuguismo político",
-   "texto": "Proponemos profundizar en una democracia más participativa, transparente y cercana, que garantice la implicación ciudadana en las decisiones políticas. Reclamamos mecanismos de participación directa, rendición de cuentas, limitación de privilegios y medidas firmes contra la corrupción y el transfuguismo político, que deterioran la confianza en las instituciones.",
+   "titulo": "Reforzar los medios humanos, técnicos y aéreos destinados permanentemente al archipiélago, con la posibilidad de unidades…",
+   "tituloFrase": "Reforzar los medios humanos, técnicos y aéreos destinados permanentemente al archipiélago, con la posibilidad de unidades…",
+   "texto": "Reforzar los medios humanos, técnicos y aéreos destinados permanentemente al archipiélago, con la posibilidad de unidades de despliegue rápido ante repuntes migratorios.",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 122,
+   "bloque": 3,
+   "seccion": "13",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "17",
+   "tituloFrase": "17",
+   "texto": "17",
+   "oculta": false,
+   "categoria": "inmigracion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 123,
+   "bloque": 3,
+   "seccion": "13",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Estudiar la implantación de medios permanentes en las islas no capitalinas, atendiendo a la doble insularidad y…",
+   "tituloFrase": "Estudiar la implantación de medios permanentes en las islas no capitalinas, atendiendo a la doble insularidad y…",
+   "texto": "Estudiar la implantación de medios permanentes en las islas no capitalinas, atendiendo a la doble insularidad y garantizando una respuesta rápida y eficaz ante catástrofes migratorias, naturales y emergencias climáticas en todas las islas.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 124,
+   "bloque": 3,
+   "seccion": "13",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Reforzar la coordinación con los servicios civiles de emergencias, protección civil, extinción de incendios, Salvamento…",
+   "tituloFrase": "Reforzar la coordinación con los servicios civiles de emergencias, protección civil, extinción de incendios, Salvamento…",
+   "texto": "Reforzar la coordinación con los servicios civiles de emergencias, protección civil, extinción de incendios, Salvamento Marítimo, sistemas de vigilancia volcánica y recursos policiales y militares.",
+   "oculta": false,
+   "categoria": "emergencias",
+   "colectivos": [
+    "agentes"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 125,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Erradicación de las violencias machistas",
+   "tituloFrase": "Erradicación de las violencias machistas",
+   "texto": "Erradicación de las violencias machistas: reforzar la prevención, la protección y la atención integral a las víctimas de violencia de género, garantizando recursos públicos suficientes.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "mujeres",
+    "victimas"
+   ],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 126,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 17,
+   "subapartado": null,
+   "titulo": "Educación en igualdad desde las aulas",
+   "tituloFrase": "Educación en igualdad desde las aulas",
+   "texto": "Educación en igualdad desde las aulas: impulsar una educación basada en la igualdad, el respeto y la eliminación de los estereotipos de género desde las primeras etapas educativas.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 127,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "18",
+   "tituloFrase": "18",
+   "texto": "18",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 128,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Formación continua del profesorado",
+   "tituloFrase": "Formación continua del profesorado",
+   "texto": "Formación continua del profesorado: garantizar la actualización y formación de los docentes en perspectiva de género, coeducación, diversidad y prevención de las violencias machistas.",
+   "oculta": false,
+   "categoria": "educacion",
+   "colectivos": [
+    "funcionarios"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 129,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Igualdad real de oportunidades",
+   "tituloFrase": "Igualdad real de oportunidades",
+   "texto": "Igualdad real de oportunidades: combatir los estereotipos de género que condicionan las decisiones educativas, profesionales y personales, fomentando una sociedad libre de discriminación.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 130,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Sistema público de cuidados y corresponsabilidad",
+   "tituloFrase": "Sistema público de cuidados y corresponsabilidad",
+   "texto": "Sistema público de cuidados y corresponsabilidad: fortalecer los servicios públicos de atención a la infancia, mayores y personas dependientes, promoviendo un reparto equitativo de las responsabilidades familiares.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [
+    "infancia",
+    "mayores"
+   ],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 131,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Derechos sexuales y reproductivos",
+   "tituloFrase": "Derechos sexuales y reproductivos",
+   "texto": "Derechos sexuales y reproductivos: garantizar el acceso a la educación afectivosexual, la atención sanitaria y los derechos sexuales y reproductivos. Estudiar la posibilidad de blindar el derecho al aborto en la Constitución, como ha hecho Francia.",
+   "oculta": false,
+   "categoria": "sanidad",
+   "colectivos": [
+    "pacientes"
+   ],
+   "palancas": [
+    "ley"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 132,
+   "bloque": 4,
+   "seccion": "14",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Defensa de los derechos LGTBIQA+",
+   "tituloFrase": "Defensa de los derechos LGTBIQA+",
+   "texto": "Defensa de los derechos LGTBIQA+: garantizar la igualdad de derechos y la protección frente a la discriminación, con especial atención a las personas trans y a los colectivos más vulnerables.",
+   "oculta": false,
+   "categoria": "social",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 133,
+   "bloque": 4,
+   "seccion": "15",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Desde las Cortes Generales hay que seguir profundizando en la mejora de la democracia",
+   "tituloFrase": "Desde las Cortes Generales hay que seguir profundizando en la mejora de la democracia",
+   "texto": "Desde las Cortes Generales hay que seguir profundizando en la mejora de la democracia. Haciéndola más participativa y transparente. Y adoptando medidas que prevengan y castiguen la corrupción y el transfuguismo, que tanto daño hacen a la política, las instituciones y la credibilidad de la democracia.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 134,
+   "bloque": 4,
+   "seccion": "15",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Acercando la política a la ciudadanía mediante mecanismos de participación directa, rendición de cuentas, limitación de…",
+   "tituloFrase": "Acercando la política a la ciudadanía mediante mecanismos de participación directa, rendición de cuentas, limitación de…",
+   "texto": "Acercando la política a la ciudadanía mediante mecanismos de participación directa, rendición de cuentas, limitación de privilegios políticos y lucha firme contra la corrupción.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 135,
+   "bloque": 4,
+   "seccion": "15",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Combatiendo todas las formas de transfuguismo que se generan en las instituciones públicas y que deben ser consideradas…",
+   "tituloFrase": "Combatiendo todas las formas de transfuguismo que se generan en las instituciones públicas y que deben ser consideradas…",
+   "texto": "Combatiendo todas las formas de transfuguismo que se generan en las instituciones públicas y que deben ser consideradas como actos de corrupción política que degradan la democracia y contribuyen a la desafección ciudadana.",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 136,
+   "bloque": 4,
+   "seccion": "15",
+   "pagina": 18,
+   "subapartado": null,
+   "titulo": "Crear un observatorio de vigilancia de las fake news, los monopolios y los lobbies de comunicación",
+   "tituloFrase": "Crear un observatorio de vigilancia de las fake news, los monopolios y los lobbies de comunicación",
+   "texto": "Crear un observatorio de vigilancia de las fake news, los monopolios y los lobbies de comunicación. Y reforzar la democracia participativa a través de votaciones (revocación",
    "oculta": false,
    "categoria": "democracia",
    "colectivos": [],
@@ -660,54 +3138,138 @@
    "deroga": null
   },
   {
-   "n": 15,
-   "bloque": 15,
+   "n": 137,
+   "bloque": 4,
    "seccion": "15",
-   "pagina": 5,
+   "pagina": 19,
    "subapartado": null,
-   "titulo": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
-   "tituloFrase": "Solidaridad internacional, cooperación entre pueblos y búsqueda de la paz",
-   "texto": "Defendemos Canarias como territorio de paz, de cooperación y solidaridad internacional. Apostamos por relaciones justas con África, América Latina y Europa, basadas en los derechos humanos, el antirracismo y la justicia global. Expresamos nuestra solidaridad con los pueblos palestino y saharaui en su lucha por la autodeterminación y la independencia, y defendemos una Canarias acogedora, contraria a la xenofobia y comprometida con la dignidad de todas las personas.\n\nIgualmente impulsaremos una consignación, mínimo, del 0,7% de los Presupuestos Generales del Estado destinado a proyectos de cooperación y solidaridad internacional.",
+   "titulo": "19",
+   "tituloFrase": "19",
+   "texto": "19",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 138,
+   "bloque": 4,
+   "seccion": "15",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "de cargos públicos, presupuestos participativos, referéndums, asambleas ciudadanas vinculantes)",
+   "tituloFrase": "de cargos públicos, presupuestos participativos, referéndums, asambleas ciudadanas vinculantes)",
+   "texto": "de cargos públicos, presupuestos participativos, referéndums, asambleas ciudadanas vinculantes).",
+   "oculta": false,
+   "categoria": "democracia",
+   "colectivos": [],
+   "palancas": [
+    "gasto"
+   ],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 139,
+   "bloque": 5,
+   "seccion": "16",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Desde la Unidad del Pueblo Canario defendemos a Canarias como territorio de paz, cooperación y solidaridad entre pueblos,…",
+   "tituloFrase": "Desde la Unidad del Pueblo Canario defendemos a Canarias como territorio de paz, cooperación y solidaridad entre pueblos,…",
+   "texto": "Desde la Unidad del Pueblo Canario defendemos a Canarias como territorio de paz, cooperación y solidaridad entre pueblos, promoviendo relaciones justas con África, América Latina y Europa desde principios de derechos humanos, antirracismo y justicia global.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 140,
+   "bloque": 5,
+   "seccion": "16",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Damos nuestro firme apoyo a las causas de los pueblos que defienden el derecho a la autodeterminación y el respeto a su…",
+   "tituloFrase": "Damos nuestro firme apoyo a las causas de los pueblos que defienden el derecho a la autodeterminación y el respeto a su…",
+   "texto": "Damos nuestro firme apoyo a las causas de los pueblos que defienden el derecho a la autodeterminación y el respeto a su soberanía.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 141,
+   "bloque": 5,
+   "seccion": "16",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Y mostramos nuestra máxima solidaridad con las causas del Pueblo Palestino denunciando el genocidio israelí y la…",
+   "tituloFrase": "Y mostramos nuestra máxima solidaridad con las causas del Pueblo Palestino denunciando el genocidio israelí y la…",
+   "texto": "Y mostramos nuestra máxima solidaridad con las causas del Pueblo Palestino denunciando el genocidio israelí y la complicidad internacional en este- y el Pueblo Saharaui en sus luchas por la autodeterminación e independencia.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 142,
+   "bloque": 5,
+   "seccion": "16",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Así como nuestro pleno compromiso con una Canarias acogedora, que rechaza la xenofobia y defiende la dignidad y los…",
+   "tituloFrase": "Así como nuestro pleno compromiso con una Canarias acogedora, que rechaza la xenofobia y defiende la dignidad y los…",
+   "texto": "Así como nuestro pleno compromiso con una Canarias acogedora, que rechaza la xenofobia y defiende la dignidad y los derechos de todas las personas.",
+   "oculta": false,
+   "categoria": "exterior",
+   "colectivos": [],
+   "palancas": [],
+   "territorios": [
+    "Canarias"
+   ],
+   "cifras": [],
+   "plazo": null,
+   "deroga": null
+  },
+  {
+   "n": 143,
+   "bloque": 5,
+   "seccion": "16",
+   "pagina": 19,
+   "subapartado": null,
+   "titulo": "Igualmente, impulsaremos una consignación, como mínimo del 0,7%, de los Presupuestos Generales del Estado, destinada a…",
+   "tituloFrase": "Igualmente, impulsaremos una consignación, como mínimo del 0,7%, de los Presupuestos Generales del Estado, destinada a…",
+   "texto": "Igualmente, impulsaremos una consignación, como mínimo del 0,7%, de los Presupuestos Generales del Estado, destinada a proyectos de cooperación y solidaridad internacional.",
    "oculta": false,
    "categoria": "exterior",
    "colectivos": [],
    "palancas": [
     "gasto"
    ],
-   "territorios": [
-    "Canarias",
-    "Unión Europea",
-    "África",
-    "América Latina",
-    "Palestina",
-    "Sáhara Occidental"
-   ],
+   "territorios": [],
    "cifras": [
-    "Igualmente impulsaremos una consignación, mínimo, del 0,7% de los Presupuestos Generales del Estado destinado a proyectos de cooperación y solidaridad internacional."
+    "como mínimo del 0,7%, de los Presupuestos Generales del Estado"
    ],
-   "plazo": null,
-   "deroga": null
-  },
-  {
-   "n": 16,
-   "bloque": 16,
-   "seccion": "16",
-   "pagina": 5,
-   "subapartado": null,
-   "titulo": "Juventud, emancipación y justicia intergeneracional",
-   "tituloFrase": "Juventud, emancipación y justicia intergeneracional",
-   "texto": "Defendemos el derecho de la juventud canaria a construir su futuro en las islas, con vivienda asequible, empleo digno, educación pública y acceso a la salud mental. Apostamos por ampliar la participación democrática, incluido el voto a los 16 años, y por incorporar la justicia intergeneracional a las políticas públicas, garantizando que las decisiones de hoy no comprometan los derechos y oportunidades de las generaciones futuras.",
-   "oculta": false,
-   "categoria": "social",
-   "colectivos": [
-    "jovenes",
-    "pacientes"
-   ],
-   "palancas": [],
-   "territorios": [
-    "Canarias"
-   ],
-   "cifras": [],
    "plazo": null,
    "deroga": null
   }

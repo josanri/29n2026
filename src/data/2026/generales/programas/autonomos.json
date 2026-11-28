@@ -4,56 +4,116 @@
  "siglas": "AUTÓNOMOS",
  "color": "#00C19F",
  "colorClaro": "#00C19F",
- "programa": "Decálogo de propuestas para autónomos",
- "subtitulo": "10 propuestas de la web oficial",
+ "programa": "Pagas y callas, ¡ahora decide!",
+ "subtitulo": "10 desafíos y soluciones para las elecciones generales 2026",
  "elecciones": "Elecciones generales · 29 de noviembre de 2026",
  "observaciones": [
-  "La página oficial publica un decálogo general y no lo identifica como programa electoral del 29N. Las imágenes asociadas a sus propuestas están fechadas en octubre de 2021."
+  "Las diez medidas se han transcrito de la infografía oficial «10 desafíos y soluciones para las elecciones generales 2026» (https://www.partidoautonomos.es/), que sustituye al decálogo general de 2021 recogido anteriormente.",
+  "Cada medida incluye el enunciado de la propuesta y el apartado «Viabilidad» tal como figuran en la infografía. No hay documento PDF descargable con texto completo."
  ],
  "tipoDocumento": "web",
  "origenMedidas": "web",
- "pdf": "https://www.partidoautonomos.es/decalogo-de-propuestas/",
+ "pdf": "https://www.partidoautonomos.es/",
+ "fuentePdf": "https://www.partidoautonomos.es/",
+ "fechaFuente": "2026-11-28",
  "unidadMedida": "medida",
  "unidadMedidas": "medidas",
  "presentacion": {
-  "titulo": "Derechos y oportunidades para el trabajo autónomo",
-  "texto": "La web oficial reúne diez propuestas generales sobre protección social, fiscalidad, reducción de burocracia, formación y emprendimiento, gestión pública y justicia. No las presenta como un programa específico para las elecciones del 29N."
+  "titulo": "10 desafíos y soluciones para las elecciones generales 2026",
+  "texto": "Infografía del Partido Autónomos para las elecciones generales de 2026 bajo el lema «Pagas y callas, ¡ahora decide!». Reúne diez medidas sobre cotizaciones, fiscalidad del IVA y gastos deducibles, protección social, simplificación administrativa, contratación del primer empleado y recorte del gasto político, cada una acompañada de una nota sobre su viabilidad."
  },
- "cifras": [],
+ "cifras": [
+  {
+   "valor": "85.000 €",
+   "unidad": "euros",
+   "texto": "IVA franquiciado hasta 85.000 €",
+   "contexto": "IVA franquiciado hasta 85.000 €",
+   "medida": 2
+  },
+  {
+   "valor": "24 horas",
+   "unidad": "horas",
+   "texto": "Licencia exprés en 24 horas",
+   "contexto": "Licencia exprés en 24 horas",
+   "medida": 3
+  },
+  {
+   "valor": "100%",
+   "unidad": "%",
+   "texto": "Cuota bonificada al 100% desde el primer día de baja médica",
+   "contexto": "cuota bonificada al 100% desde el primer día de baja médica",
+   "medida": 4
+  },
+  {
+   "valor": "15 días",
+   "unidad": "días",
+   "texto": "Plazo de 15 días para subsanar fallos formales ante Hacienda sin sanción",
+   "contexto": "Plazo de 15 días para subsanar fallos formales de buena fe ante Hacienda sin sanción",
+   "medida": 5
+  },
+  {
+   "valor": "50%",
+   "unidad": "%",
+   "texto": "Recorte del 50% a los asesores y cargos de confianza",
+   "contexto": "Tijera del 50% a los asesores",
+   "medida": 6
+  },
+  {
+   "valor": "600 millones",
+   "unidad": "euros",
+   "texto": "Ahorro estimado de más de 600 millones de euros para incentivos a pymes",
+   "contexto": "Genera un ahorro de más de 600 millones de euros para incentivos a pymes",
+   "medida": 6
+  },
+  {
+   "valor": "1 año",
+   "unidad": "primer año",
+   "texto": "Bonificación total de cotizaciones el primer año para el primer trabajador asalariado",
+   "contexto": "Bonificación total de cotizaciones el primer año para el primer trabajador asalariado",
+   "medida": 9
+  },
+  {
+   "valor": "100%",
+   "unidad": "%",
+   "texto": "Reconocimiento del 100% de gastos afectos al negocio",
+   "contexto": "Reconocimiento del 100% de gastos afectos al negocio",
+   "medida": 10
+  }
+ ],
  "plazos": [],
  "ordenPlazos": [],
  "verbos": [],
  "bloques": [
   {
    "id": 1,
-   "titulo": "Decálogo de propuestas",
-   "lema": "Derechos y oportunidades para los autónomos",
+   "titulo": "10 desafíos y soluciones",
+   "lema": "Pagas y callas, ¡ahora decide!",
    "cita": "",
-   "intro": "Diez propuestas temáticas transcritas de la página oficial del Partido Autónomos."
+   "intro": "Diez medidas para las elecciones generales de 2026 transcritas de la infografía oficial del Partido Autónomos."
   }
  ],
  "secciones": [
-  {"id":"1.1","bloque":1,"titulo":"Derechos sociales de los autónomos","tituloFrase":"Derechos sociales","intro":"Protección social equiparable a la de las personas trabajadoras por cuenta ajena.","subapartados":[]},
-  {"id":"1.2","bloque":1,"titulo":"Fiscalidad justa","tituloFrase":"Fiscalidad justa","intro":"Un marco tributario que tenga en cuenta los ingresos, los gastos deducibles y las deudas públicas.","subapartados":[]},
-  {"id":"1.3","bloque":1,"titulo":"Reducción de la burocracia","tituloFrase":"Menos burocracia","intro":"Simplificar los trámites para iniciar y gestionar actividades por cuenta propia.","subapartados":[]},
-  {"id":"1.4","bloque":1,"titulo":"Acceso a formación","tituloFrase":"Acceso a formación","intro":"Acceso de las personas autónomas a formación bonificada y actualización profesional.","subapartados":[]},
-  {"id":"1.5","bloque":1,"titulo":"Impulso a la iniciativa privada","tituloFrase":"Iniciativa privada","intro":"Impulsar la iniciativa ciudadana en la economía, la cultura, el deporte y la solidaridad.","subapartados":[]},
-  {"id":"1.6","bloque":1,"titulo":"Poner en valor la figura del empresario","tituloFrase":"Poner en valor a empresarios y autónomos","intro":"Reconocimiento social de quienes emprenden y generan actividad económica.","subapartados":[]},
-  {"id":"1.7","bloque":1,"titulo":"Fomento del emprendimiento","tituloFrase":"Fomento del emprendimiento","intro":"Facilitar la puesta en marcha de iniciativas de autoempleo y negocio.","subapartados":[]},
-  {"id":"1.8","bloque":1,"titulo":"Despolitización","tituloFrase":"Despolitización","intro":"Gestión profesional de las administraciones y entidades públicas.","subapartados":[]},
-  {"id":"1.9","bloque":1,"titulo":"Eliminación del despilfarro","tituloFrase":"Eliminar el despilfarro","intro":"Eficiencia en el gasto público y evaluación del desempeño de la función pública.","subapartados":[]},
-  {"id":"1.10","bloque":1,"titulo":"Justicia ágil e independiente","tituloFrase":"Justicia ágil e independiente","intro":"Independencia judicial y medios para una justicia más ágil y eficaz.","subapartados":[]}
+  {"id":"1.1","bloque":1,"titulo":"Cuota cero automática bajo el SMI","tituloFrase":"Cuota cero bajo el SMI","intro":"Exención total de la cuota de autónomos si los ingresos no superan el SMI.","subapartados":[]},
+  {"id":"1.2","bloque":1,"titulo":"IVA franquiciado hasta 85.000 €","tituloFrase":"IVA franquiciado hasta 85.000 €","intro":"Exención de declarar IVA para pequeños autónomos e IVA de caja obligatorio.","subapartados":[]},
+  {"id":"1.3","bloque":1,"titulo":"Licencia exprés en 24 horas","tituloFrase":"Licencia exprés en 24 horas","intro":"Apertura inmediata mediante declaración responsable con inspecciones posteriores.","subapartados":[]},
+  {"id":"1.4","bloque":1,"titulo":"Paro automático y baja digna","tituloFrase":"Paro automático y baja digna","intro":"Desempleo equiparado y cuota bonificada al 100% desde el primer día de baja médica.","subapartados":[]},
+  {"id":"1.5","bloque":1,"titulo":"Derecho al error tributario","tituloFrase":"Derecho al error tributario","intro":"Plazo de 15 días para subsanar fallos formales de buena fe ante Hacienda sin sanción.","subapartados":[]},
+  {"id":"1.6","bloque":1,"titulo":"Tijera del 50% a los asesores","tituloFrase":"Tijera del 50% a los asesores","intro":"Reducción drástica de cargos de confianza y personal eventual en las administraciones.","subapartados":[]},
+  {"id":"1.7","bloque":1,"titulo":"Presupuesto base cero","tituloFrase":"Presupuesto base cero","intro":"Obligación de justificar cada partida desde cero para auditar el gasto superfluo.","subapartados":[]},
+  {"id":"1.8","bloque":1,"titulo":"Dato único digital","tituloFrase":"Dato único digital","intro":"Prohibición de exigir documentos que la Administración ya posea por ley.","subapartados":[]},
+  {"id":"1.9","bloque":1,"titulo":"Bono primer empleado","tituloFrase":"Bono primer empleado","intro":"Bonificación total de cotizaciones el primer año para el primer trabajador asalariado.","subapartados":[]},
+  {"id":"1.10","bloque":1,"titulo":"Deducción plena de gastos","tituloFrase":"Deducción plena de gastos","intro":"Reconocimiento del 100% de gastos afectos al negocio con facturas oficiales.","subapartados":[]}
  ],
  "medidas": [
-  {"n":1,"bloque":1,"seccion":"1.1","subapartado":null,"titulo":"Derechos sociales de los autónomos","tituloFrase":"Derechos sociales de los autónomos","texto":"Parece que nuestros gobernantes se han olvidado de la letra “T” del RETA, ya que no es justo que tengamos menos derechos que los trabajadores por cuenta ajena (bajas médicas, desempleo, jubilación…). La inmensa mayoría somos simples autoempleados o dueños de pequeños negocios, trabajamos más horas y más duro que cualquier empleado, y generamos valor para la sociedad. Debemos estar protegidos, como mínimo, como cualquier empleado.","oculta":false,"categoria":"social","colectivos":["autonomos"],"palancas":["ley","gasto"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":2,"bloque":1,"seccion":"1.2","subapartado":null,"titulo":"Fiscalidad justa","tituloFrase":"Fiscalidad justa","texto":"Soportamos excesivas cargas fiscales, y algunas incluso independientemente de nuestros ingresos; no es lógico tener que pagar el RETA cuando los beneficios ni siquiera dan para tener una renta mínima equivalente a la de un empleado; no es lógica la excesiva limitación de gastos fiscalmente deducibles; no se puede permitir que en la “Ley de Segunda Oportunidad” no se perdonen las deudas con Hacienda o Seguridad Social. Sabemos que hemos de pagar impuestos, pero necesitamos un marco fiscal que sea justo.","oculta":false,"categoria":"fiscalidad","colectivos":["autonomos"],"palancas":["impuestos","ley"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":3,"bloque":1,"seccion":"1.3","subapartado":null,"titulo":"Reducción de la burocracia","tituloFrase":"Reducción de la burocracia","texto":"Tanto para montar un nuevo negocio como para la gestión de los mismos, siempre se ha mirado con desconfianza al Autónomo, imponiendo muchos trámites burocráticos que no favorecen el Emprendimiento ni el desarrollo de negocios. Queremos adoptar el tratamiento de otros países donde se confía en la buena fe del Autónomo y basta una declaración jurada para poder iniciar una actividad empresarial o profesional… que posteriormente será revisada por la Administración.","oculta":false,"categoria":"administracion","colectivos":["autonomos","empresas"],"palancas":["ley","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":4,"bloque":1,"seccion":"1.4","subapartado":null,"titulo":"Acceso a formación","tituloFrase":"Acceso a formación","texto":"De la misma forma que los empleados pueden acceder gratuitamente a una formación bonificada que les permite ampliar conocimientos o actualizarlos, los Autónomos también deberían tener acceso a ella de forma gratuita para potenciar la competitividad de sus negocios.","oculta":false,"categoria":"educacion","colectivos":["autonomos","empresas"],"palancas":["gasto"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":5,"bloque":1,"seccion":"1.5","subapartado":null,"titulo":"Impulso a la iniciativa privada","tituloFrase":"Impulso a la iniciativa privada","texto":"El protagonismo de la sociedad debe estar en manos de los ciudadanos y no de las instituciones. Es por ello que se debe impulsar la Iniciativa Privada, tanto de tipo mercantil, como en otros ámbitos, como la cultura, el deporte, la solidaridad…","oculta":false,"categoria":"empleo","colectivos":["empresas"],"palancas":[],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":6,"bloque":1,"seccion":"1.6","subapartado":null,"titulo":"Poner en valor la figura del empresario","tituloFrase":"Poner en valor la figura del empresario","texto":"Desde las aulas se debe poner en valor la figura de quienes han aportado valor desde el ámbito empresarial, de la misma forma que se hace con los artistas, científicos o políticos. Creemos que la sociedad debe tener un concepto positivo del Autónomo, del Emprendedor y del Empresario.","oculta":false,"categoria":"empleo","colectivos":["autonomos","empresas"],"palancas":[],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":7,"bloque":1,"seccion":"1.7","subapartado":null,"titulo":"Fomento del emprendimiento","tituloFrase":"Fomento del emprendimiento","texto":"Quien decide autoemplearse está renunciando a un sueldo por cuenta ajena, invierte sus ahorros, se endeuda con financiación externa, ha de abrirse hueco entre la competencia, debe esforzarse por captar clientes y mantenerlos, dedica miles de horas y de esfuerzo… Desde la Administración se les debería poner una alfombra de plata para facilitarles todo lo posible la puesta en marcha de sus iniciativas, que ya bastantes obstáculos hay en el camino.","oculta":false,"categoria":"empleo","colectivos":["autonomos","empresas"],"palancas":["gasto","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":8,"bloque":1,"seccion":"1.8","subapartado":null,"titulo":"Despolitización","tituloFrase":"Despolitización","texto":"La Administración y las entidades públicas deberían estar gestionadas por profesionales, que apliquen criterios profesionales totalmente alejados de influencias ideológicas.","oculta":false,"categoria":"administracion","colectivos":["funcionarios"],"palancas":["organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":9,"bloque":1,"seccion":"1.9","subapartado":null,"titulo":"Eliminación del despilfarro","tituloFrase":"Eliminación del despilfarro","texto":"El dinero público es de todos y por ello debería gestionarse con eficiencia, eliminando gastos superfluos y priorizando aquellas inversiones que mayor valor aporten al desarrollo socioeconómico; así mismo, se debe evaluar el desempeño de los trabajadores de la función pública, de modo que se evite y se castigue la ineficiencia, a la vez que se premie la excelencia.","oculta":false,"categoria":"administracion","colectivos":["funcionarios"],"palancas":["gasto","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"},
-  {"n":10,"bloque":1,"seccion":"1.10","subapartado":null,"titulo":"Justicia ágil e independiente","tituloFrase":"Justicia ágil e independiente","texto":"Se debe preservar la independencia del Poder Judicial, a la vez que se faciliten los medios necesarios para que la Administración de Justicia sea más ágil y eficaz. Así mismo, en muchas ocasiones parece que la Justicia beneficia a los infractores y delincuentes en lugar de proteger a la gente de bien, que en muchas ocasiones se ve desamparada con el actual Sistema Jurídico y Judicial.","oculta":false,"categoria":"justicia","colectivos":[],"palancas":["gasto","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/decalogo-de-propuestas/"}
+  {"n":1,"bloque":1,"seccion":"1.1","subapartado":null,"titulo":"Cuota cero automática bajo el SMI","tituloFrase":"Cuota cero automática bajo el SMI","texto":"Exención total de la cuota de autónomos si los ingresos no superan el SMI.\n\nViabilidad: Evita el cierre de pequeños negocios y se compensa con el retorno del IVA y del consumo.","oculta":false,"categoria":"empleo","colectivos":["autonomos"],"palancas":["impuestos","ley"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":2,"bloque":1,"seccion":"1.2","subapartado":null,"titulo":"IVA franquiciado hasta 85.000 €","tituloFrase":"IVA franquiciado hasta 85.000 €","texto":"Los pequeños autónomos quedan exentos de declarar IVA, y el IVA de caja es obligatorio.\n\nViabilidad: Estimula la actividad económica y ya se aplica con éxito en el resto de la Unión Europea.","oculta":false,"categoria":"fiscalidad","colectivos":["autonomos"],"palancas":["impuestos","ley"],"territorios":["Unión Europea"],"cifras":["IVA franquiciado hasta 85.000 €"],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":3,"bloque":1,"seccion":"1.3","subapartado":null,"titulo":"Licencia exprés en 24 horas","tituloFrase":"Licencia exprés en 24 horas","texto":"Apertura inmediata mediante declaración responsable, eliminando esperas.\n\nViabilidad: Traslada el control a inspecciones posteriores sin coste para los ayuntamientos.","oculta":false,"categoria":"administracion","colectivos":["autonomos","empresas"],"palancas":["ley","organizacion"],"territorios":[],"cifras":["Licencia exprés en 24 horas"],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":4,"bloque":1,"seccion":"1.4","subapartado":null,"titulo":"Paro automático y baja digna","tituloFrase":"Paro automático y baja digna","texto":"Desempleo equiparado y cuota bonificada al 100% desde el primer día de baja médica.\n\nViabilidad: Se financia con el superávit de las mutuas y la cotización obligatoria.","oculta":false,"categoria":"social","colectivos":["autonomos"],"palancas":["impuestos","gasto","ley"],"territorios":[],"cifras":["cuota bonificada al 100% desde el primer día de baja médica"],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":5,"bloque":1,"seccion":"1.5","subapartado":null,"titulo":"Derecho al error tributario","tituloFrase":"Derecho al error tributario","texto":"Plazo de 15 días para subsanar fallos formales de buena fe ante Hacienda sin sanción.\n\nViabilidad: Reduce la litigiosidad y la saturación de los tribunales administrativos.","oculta":false,"categoria":"fiscalidad","colectivos":["autonomos","empresas"],"palancas":["ley","organizacion"],"territorios":[],"cifras":["Plazo de 15 días para subsanar fallos formales de buena fe ante Hacienda sin sanción"],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":6,"bloque":1,"seccion":"1.6","subapartado":null,"titulo":"Tijera del 50% a los asesores","tituloFrase":"Tijera del 50% a los asesores","texto":"Reducción drástica de cargos de confianza y personal eventual en las administraciones.\n\nViabilidad: Genera un ahorro de más de 600 millones de euros para incentivos a pymes.","oculta":false,"categoria":"administracion","colectivos":["autonomos","funcionarios"],"palancas":["gasto","organizacion"],"territorios":[],"cifras":["Tijera del 50% a los asesores","Genera un ahorro de más de 600 millones de euros para incentivos a pymes"],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":7,"bloque":1,"seccion":"1.7","subapartado":null,"titulo":"Presupuesto base cero","tituloFrase":"Presupuesto base cero","texto":"Obligación de justificar cada partida desde cero para auditar el gasto superfluo.\n\nViabilidad: Aplicable mediante control financiero estándar sin recortar servicios esenciales.","oculta":false,"categoria":"administracion","colectivos":[],"palancas":["gasto","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":8,"bloque":1,"seccion":"1.8","subapartado":null,"titulo":"Dato único digital","tituloFrase":"Dato único digital","texto":"Prohibido exigir documentos que la Administración ya posea por ley.\n\nViabilidad: Se apoya en la tecnología y la interconexión ya existente en el sector público.","oculta":false,"categoria":"administracion","colectivos":[],"palancas":["ley","organizacion"],"territorios":[],"cifras":[],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":9,"bloque":1,"seccion":"1.9","subapartado":null,"titulo":"Bono primer empleado","tituloFrase":"Bono primer empleado","texto":"Bonificación total de cotizaciones el primer año para el primer trabajador asalariado.\n\nViabilidad: Ahorra subsidios de desempleo y genera nuevos cotizantes e ingresos por IRPF.","oculta":false,"categoria":"empleo","colectivos":["autonomos","empresas"],"palancas":["impuestos","gasto"],"territorios":[],"cifras":["Bonificación total de cotizaciones el primer año para el primer trabajador asalariado"],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"},
+  {"n":10,"bloque":1,"seccion":"1.10","subapartado":null,"titulo":"Deducción plena de gastos","tituloFrase":"Deducción plena de gastos","texto":"Reconocimiento del 100% de gastos afectos al negocio (vehículos, suministros, etc.).\n\nViabilidad: Aporta seguridad jurídica y reduce el fraude al exigir facturas oficiales.","oculta":false,"categoria":"fiscalidad","colectivos":["autonomos","empresas"],"palancas":["impuestos","ley"],"territorios":[],"cifras":["Reconocimiento del 100% de gastos afectos al negocio"],"plazo":null,"deroga":null,"fuente":"https://www.partidoautonomos.es/"}
  ]
 }

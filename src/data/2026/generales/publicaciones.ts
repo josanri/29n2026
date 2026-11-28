@@ -54,4 +54,5 @@ export const programPublishedOn: Record<string, string> = {
   arames: '2026-11-23',
   'formentera-viva': '2026-11-23',
   lib: '2026-11-23',
+  psc: '2026-11-28',
 };

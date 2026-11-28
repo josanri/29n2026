@@ -193,7 +193,7 @@ src/data/2026/generales/programas/bng.json          resultado que consume la web
 public/2026/generales/programas/cc-defiende-canarias-2026.pdf PDF de la coalición Primero Canarias–Coalición Canaria (23 páginas, 9 de noviembre de 2026)
 scripts/extract_cc.py                extracción y análisis de las 100 medidas del programa
 src/data/2026/generales/programas/cc.json           resultado que consume la web
-public/2026/generales/programas/erc-programa-electoral-2026.pdf PDF aportado del programa de ERC (48 páginas)
+public/2026/generales/programas/erc-programa-electoral-2026.pdf PDF oficial del programa de ERC (48 páginas, 17 de noviembre de 2026; fuente oficial: https://esquerrarepublicana.cat/documents/e2026-programa.pdf)
 scripts/extract_erc.py               extracción de ERC; clasifica las propuestas en la taxonomía común
 src/data/2026/generales/programas/erc.json          resultado que consume la web
 public/2026/generales/programas/salf-contrato-electoral-29n.pdf PDF oficial simplificado de SALF (40 páginas)
@@ -212,7 +212,7 @@ src/data/2026/generales/programas/mundo-mas-justo.json resultado que consume la 
 public/2026/generales/programas/feministas-al-congreso-2026.pdf PDF oficial de Feministas al Congreso (2 páginas)
 scripts/extract_pfac.py               extracción de las 14 propuestas numeradas
 src/data/2026/generales/programas/pfac.json          resultado que consume la web; color tomado del degradado de la web oficial
-src/data/2026/generales/programas/autonomos.json     [decálogo oficial](https://www.partidoautonomos.es/decalogo-de-propuestas/) de 10 propuestas; la ficha advierte que no se identifica como programa del 29N
+src/data/2026/generales/programas/autonomos.json     10 desafíos y soluciones para las elecciones generales 2026, transcritos de la infografía oficial de [partidoautonomos.es](https://www.partidoautonomos.es/)
 public/2026/generales/programas/en-accion-3e-2026.pdf PDF oficial de En Acción 3e (6 páginas)
 scripts/extract_tercera_edad.py      extracción de 63 medidas en 13 áreas
 src/data/2026/generales/programas/tercera-edad.json resultado que consume la web; el documento no se identifica expresamente como programa del 29N
@@ -267,9 +267,12 @@ src/data/2026/generales/programas/compromis-front-valencia.json resultado que co
 public/2026/generales/programas/geroa-bai-bases-politicas-29n-2026.pdf «Bases políticas» de Geroa Bai (14 páginas, publicado el 12 de noviembre de 2026; los metadatos dicen 13 de noviembre), sin optimizar: pesa 0,2 MB
 scripts/extract_geroa_bai.py         17 compromisos en 5 capítulos, transcritos del texto en prosa y comprobados literalmente contra el PDF
 src/data/2026/generales/programas/geroa-bai.json    resultado que consume la web; el texto de cada compromiso es literal y su título corto, editorial
-public/2026/generales/programas/upc-manifiesto-29n-2026.pdf manifiesto electoral de Unidad del Pueblo Canario (6 páginas; sin fecha de creación, modificado el 30 de octubre de 2026), optimizado: 0,2 MB frente a los 3,4 MB del original
-scripts/extract_upc.py               extracción de los 16 ejes numerados: cada eje es una propuesta y un bloque
+public/2026/generales/programas/upc-programa-electoral-29n-2026.pdf programa electoral completo de Unidad del Pueblo Canario (19 páginas, 16 de noviembre de 2026; publicado el 20 de noviembre); sin optimizar: pesa 0,6 MB
+scripts/extract_upc.py               extracción de las 143 propuestas en 5 bloques y 16 ejes
 src/data/2026/generales/programas/upc.json          resultado que consume la web
+public/2026/generales/programas/psc-la-forca-de-catalunya-2026.pdf manifiesto electoral del PSC «La força de Catalunya» (8 páginas, en catalán, 16 de noviembre de 2026), optimizado: 1,0 MB frente a los 3,0 MB del original
+scripts/extract_psc.py               16 compromisos en 4 bloques, transcritos del texto en prosa y comprobados literalmente contra el PDF
+src/data/2026/generales/programas/psc.json          resultado que consume la web
 public/2026/generales/programas/d21-*.pdf            los cinco PDF de «Soluciones» de Democracia 21, tal como los publica mi.democracia21.es y sin optimizar (España Limpia 13 págs., Vivienda 9, Educación 8, Sanidad 6 y Potencia energética 4): pesan entre 0,2 y 0,5 MB; el de España Limpia es el del 11 de noviembre de 2026, con el mismo texto que la copia anterior
 scripts/build_d21.py                 las 95 medidas de D21, escritas a mano como resumen de su PDF (los cinco PDF no comparten maqueta) y con un enlace a su documento
 public/2026/generales/programas/lib-*.pdf            los seis PDF de Liberación Canaria, tal como los publica su web y sin optimizar (De RUP a PTU 33 págs., Regulación de la residencia 11, Estatuto PAI 17, Puertos y aeropuertos 7, Hacienda canaria 11 y Política Nacional Canaria de Vivienda 292): pesan entre 0,2 y 1,6 MB

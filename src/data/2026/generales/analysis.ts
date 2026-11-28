@@ -233,22 +233,28 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
   ],
   autonomos: [
     {
-      title: 'El decálogo se centra en condiciones para el trabajo autónomo',
+      title: 'Cuatro medidas se concentran en Administración y gasto',
       text:
-        'Derechos sociales, fiscalidad, burocracia y formación forman el núcleo de las propuestas dirigidas a autónomos y pequeños negocios.',
-      measureNumbers: [1, 2, 3, 4],
+        'Cuatro de las diez propuestas (40 %) apuntan al funcionamiento y el gasto de las administraciones: licencia exprés en 24 horas mediante declaración responsable, recorte del 50 % a los asesores con un ahorro estimado de más de 600 millones de euros, presupuesto base cero y prohibición de exigir documentos que la Administración ya posea.',
+      measureNumbers: [3, 6, 7, 8],
     },
     {
-      title: 'Emprendimiento e iniciativa privada',
+      title: 'Alivio fiscal y de cotizaciones para autónomos y pymes',
       text:
-        'El partido propone impulsar la iniciativa privada, mejorar la valoración social de empresarios y autónomos y facilitar la puesta en marcha de negocios.',
-      measureNumbers: [5, 6, 7],
+        'Cinco propuestas actúan sobre impuestos, cuotas o la relación con Hacienda: cuota cero automática bajo el SMI, IVA franquiciado hasta 85.000 euros con IVA de caja obligatorio, derecho al error tributario con 15 días sin sanción, bonificación total de cotizaciones el primer año para el primer empleado y deducción del 100 % de los gastos afectos al negocio.',
+      measureNumbers: [1, 2, 5, 9, 10],
     },
     {
-      title: 'Administración y justicia',
+      title: 'Protección social equiparada desde el primer día de baja',
       text:
-        'Las últimas propuestas piden una gestión pública profesional, reducir el gasto considerado superfluo y contar con una justicia independiente y ágil.',
-      measureNumbers: [8, 9, 10],
+        'En Seguridad Social, el programa combina la exención de cuota cuando los ingresos no superan el SMI con un paro automático equiparado, cuota bonificada al 100 % desde el primer día de baja médica y el bono de cotizaciones para contratar al primer asalariado.',
+      measureNumbers: [1, 4, 9],
+    },
+    {
+      title: 'Siete medidas fijan cifras concretas, pero ninguna fija plazos de ejecución',
+      text:
+        'Siete de las diez propuestas cuantifican umbrales, porcentajes o ahorros —entre ellos 85.000 euros de franquicia de IVA, 24 horas para abrir un negocio, 15 días para subsanar fallos formales y más de 600 millones de euros de ahorro en asesores—, pero ninguna establece calendario de implantación ni cita leyes a derogar.',
+      measureNumbers: [2, 3, 4, 5, 6, 9, 10],
     },
   ],
   'escanos-en-blanco': [
@@ -807,34 +813,54 @@ export const keyFindingsByParty: Record<string, KeyFinding[]> = {
   ],
   upc: [
     {
-      title: 'Un manifiesto de 16 ejes',
+      title: '143 propuestas en cinco bloques, con la vivienda al frente',
       text:
-        'El documento es un manifiesto de cuatro páginas de texto, no un programa extenso: 16 ejes de uno o dos párrafos, cada uno contado aquí como una propuesta. Solo un eje lleva una cifra, consignar al menos el 0,7 % de los Presupuestos Generales del Estado a la cooperación internacional, y ninguno fija una fecha.',
-      measureNumbers: [15, 1, 16],
+        'El programa completo (19 páginas) desarrolla los 16 ejes en 143 propuestas. Vivienda encabeza el peso por categoría con 22 propuestas (15 %): incluye declarar la vivienda derecho fundamental en la Constitución, controlar precios del alquiler, expropiar pisos a fondos buitre, alcanzar un 9 % de parque público y ofrecer hipotecas al 0 % hasta 100.000 euros.',
+      measureNumbers: [1, 3, 4, 9, 15],
     },
     {
-      title: 'Canarias, sujeto político',
+      title: 'Empleo, jornada hacia las 34 horas y pensiones blindadas',
       text:
-        'Los cuatro primeros ejes tratan del lugar de Canarias en el Estado y en la UE: su reconocimiento como sujeto político y el pleno desarrollo del Estatuto, la mediana con Marruecos y el reconocimiento de sus aguas, fondos marinos y espacio aéreo, una financiación que respete el REF y compense la insularidad, unos Presupuestos que «cumplan con Canarias» y el trato de región ultraperiférica en el próximo marco financiero europeo.',
-      measureNumbers: [1, 2, 3, 4],
+        'Empleo y emprendimiento suma 17 propuestas: plantea subir el SMI progresivamente hasta 1.800 euros en 12 pagas, reducir la jornada a 37,5 horas avanzando hacia las 34 horas semanales, elevar a 85.000 euros la exención del IGIC para autónomos y fijar una tarifa plana de 88 euros para los de menores rendimientos.',
+      measureNumbers: [36, 37, 82, 84],
     },
     {
-      title: 'Vivienda y límites al turismo',
+      title: 'Canarias: financiación, REF, límites al turismo y autogobierno',
       text:
-        'El manifiesto pide regular los precios del alquiler en zonas tensionadas, ampliar el parque público de vivienda con protección permanente e intervenir el mercado. Lo une al modelo turístico: límites efectivos al crecimiento turístico, una moratoria de nuevas instalaciones y camas y una tasa turística para los no residentes.',
-      measureNumbers: [5, 7, 8],
+        'Reclama preservar la adicionalidad del REF en el Sistema de Financiación Autonómica, blindar el descuento del 75 % a residentes y del 100 % a mercancías, una moratoria turística con tasa a no residentes, una empresa pública de energía y el reconocimiento de Canarias como sujeto político con derecho a decidir.',
+      measureNumbers: [52, 53, 66, 96, 112],
     },
     {
-      title: 'Más impuestos a las grandes fortunas',
+      title: 'Reforma fiscal progresiva y tres derogaciones explícitas',
       text:
-        'Propone una reforma fiscal progresiva para que contribuyan más las grandes empresas, los grandes patrimonios y las rentas del capital, más tributación a la banca y las energéticas, y mejores deducciones por alquiler para las rentas medias y bajas. En lo laboral, rechaza que el Estado deje de actualizar el salario mínimo.',
-      measureNumbers: [9, 10],
+        'Propone ampliar los tramos del IRPF desde 120.000 euros, mantener de forma permanente el impuesto a las grandes fortunas y los gravámenes a banca y energéticas, y aplicar deducciones temporales por inflación de hasta 300 euros. Además, pide derogar la Ley 15/1997 sanitaria, el factor de sostenibilidad de las pensiones y el uso de la RIC en vivienda libre sin límite de renta.',
+      measureNumbers: [31, 32, 66, 79, 80],
+    },
+  ],
+  psc: [
+    {
+      title: 'Un manifiesto propio de 16 compromisos que remite al programa del PSOE',
+      text:
+        'El PSC publica un manifiesto electoral propio en catalán (8 páginas) centrado en la agenda catalana y social, y remite al final al programa estatal del PSOE para el 29N. Sus compromisos se concentran en autogobierno y territorio (3), derechos sociales (3) e infraestructuras (2).',
+      measureNumbers: [5, 6, 7, 11],
     },
     {
-      title: 'Derechos, migración y paz',
+      title: 'Financiación singular: 4.686 millones adicionales y ordinalidad',
       text:
-        'El manifiesto defiende los derechos sexuales y reproductivos y los de las personas LGTBIQA+, «especialmente de las personas trans», una política migratoria con vías legales y seguras y sin externalización de fronteras, el voto a los 16 años y la solidaridad con los pueblos palestino y saharaui «en su lucha por la autodeterminación y la independencia».',
-      measureNumbers: [11, 12, 16, 15],
+        'El manifiesto cifra en 4.686 millones de euros anuales adicionales (unos 1.700 euros más por habitant) el nuevo modelo de financiación singular impulsado desde Catalunya, respetando el principio de ordinalidad, junto a la condonación de la deuda del FLA y una reforma constitucional de orientación federal.',
+      measureNumbers: [5, 6, 9],
+    },
+    {
+      title: 'Rodalies, aeropuerto del Prat y lenguas oficiales en Europa',
+      text:
+        'En infraestructuras y lengua, se compromete a culminar el traspaso de Rodalies mediante una empresa mixta, ejecutar la ampliación pactada del aeropuerto del Prat compatible con los espacios naturales y defender el uso ordinario de las lenguas oficiales en el Estado y su reconocimiento en la UE.',
+      measureNumbers: [7, 8, 10],
+    },
+    {
+      title: 'Vivienda regulada, jornada de 37,5 horas y defensa de derechos',
+      text:
+        'En el eje social, propone prorrogar contratos de alquiler y regular las zones tensionades, reducir la jornada laboral a 37,5 horas sin pérdida salarial, revalorizar las pensiones con el IPC, blindar el derecho de las mujeres a decidir sobre su cuerpo y rechazar rebajas fiscales a las rentas altas.',
+      measureNumbers: [1, 2, 11, 16],
     },
   ],
   d21: [
