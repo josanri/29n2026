@@ -31,6 +31,8 @@ export interface PartyResult {
   name?: string;
   votes: number;
   seats?: number;
+  /** The color that the source gives to a list outside the catalog (`#rrggbb`). The page prefers the site's own color. */
+  color?: string;
 }
 
 export interface AreaResult {
@@ -101,6 +103,70 @@ export const withSeats = (area: AreaResult): AreaResult => {
   return { ...area, parties: area.parties.map((party) => ({ ...party, seats: seats[party.id] ?? 0 })) };
 };
 
+/** One quotient of the D'Hondt table: the votes of a list divided by `divisor`. `seat` is its seat (1, 2…) if it wins one. */
+export interface DhondtQuotient {
+  id: string;
+  divisor: number;
+  quotient: number;
+  seat?: number;
+}
+
+/** The list that is closest to the last seat of a constituency, and the votes that it needs to take it. */
+export interface DhondtChallenger {
+  id: string;
+  votesNeeded: number;
+}
+
+export interface DhondtBreakdown {
+  /** The winning quotients in seat order, then the next `extra` quotients that do not win. */
+  quotients: DhondtQuotient[];
+  /** The votes that a list needs to pass the 3 % threshold. */
+  threshold: number;
+  /** The quotient of the last seat. */
+  last?: DhondtQuotient;
+  /** The other list that needs the fewest votes to take the last seat (with the threshold if it is under it). */
+  challenger?: DhondtChallenger;
+}
+
+/**
+ * How D'Hondt gives the seats of a constituency: the quotients in order, the last seat and its closest challenger.
+ * The seats are the same as `dhondt`. A list takes the last seat when its next quotient passes the quotient of the
+ * last seat: `votesNeeded` is the smallest number of new votes for that, and never less than the threshold.
+ * It counts only the new votes of the challenger; the other lists keep their votes.
+ */
+export const dhondtBreakdown = (area: AreaResult, extra = 3): DhondtBreakdown => {
+  const valid = validVotes(area);
+  const threshold = THRESHOLD * valid;
+  const lists = area.parties.filter((party) => party.votes > 0);
+  const eligible = lists.filter((party) => party.votes >= threshold);
+  const order = new Map(eligible.map((party, index) => [party.id, index]));
+  const all: DhondtQuotient[] = [];
+  for (const party of eligible) {
+    for (let divisor = 1; divisor <= area.seats + 1; divisor += 1) all.push({ id: party.id, divisor, quotient: party.votes / divisor });
+  }
+  const votesOf = new Map(lists.map((party) => [party.id, party.votes]));
+  // The same order as `dhondt`: the larger quotient; in a tie, the list with more votes, then the first list.
+  all.sort(
+    (a, b) =>
+      b.quotient - a.quotient || (votesOf.get(b.id) ?? 0) - (votesOf.get(a.id) ?? 0) || order.get(a.id)! - order.get(b.id)! || a.divisor - b.divisor,
+  );
+  const winners = all.slice(0, area.seats).map((item, index) => ({ ...item, seat: index + 1 }));
+  const quotients = [...winners, ...all.slice(area.seats, area.seats + extra)];
+  const last = winners.at(-1);
+  if (!last) return { quotients, threshold };
+
+  const seatsOf = new Map<string, number>();
+  for (const item of winners) seatsOf.set(item.id, (seatsOf.get(item.id) ?? 0) + 1);
+  let challenger: DhondtChallenger | undefined;
+  for (const party of lists) {
+    if (party.id === last.id) continue;
+    const target = Math.max(Math.floor(last.quotient * ((seatsOf.get(party.id) ?? 0) + 1)) + 1, Math.ceil(threshold));
+    const votesNeeded = Math.max(1, target - party.votes);
+    if (!challenger || votesNeeded < challenger.votesNeeded) challenger = { id: party.id, votesNeeded };
+  }
+  return { quotients, threshold, last, challenger };
+};
+
 /** The total of Spain: the sum of the constituencies. `counted` is weighted by the seats of each one. */
 export const nationalTotal = (areas: AreaResult[]): AreaResult => {
   const parties = new Map<string, PartyResult>();
@@ -111,7 +177,7 @@ export const nationalTotal = (areas: AreaResult[]): AreaResult => {
     for (const key of Object.keys(sum) as (keyof typeof sum)[]) sum[key] += area[key];
     seatWeight += area.counted * area.seats;
     for (const party of area.parties) {
-      const total = parties.get(party.id) ?? { id: party.id, acronym: party.acronym, name: party.name, votes: 0, seats: 0 };
+      const total = parties.get(party.id) ?? { id: party.id, acronym: party.acronym, name: party.name, votes: 0, seats: 0, ...(party.color ? { color: party.color } : {}) };
       total.votes += party.votes;
       total.seats = (total.seats ?? 0) + (party.seats ?? 0);
       parties.set(party.id, total);
@@ -344,6 +410,8 @@ export interface CandidateResult {
   votes: number;
   /** The source says if the candidate is elected. Without it, `withElected` gives the seats by votes. */
   elected?: boolean;
+  /** The color that the source gives to a list outside the catalog (`#rrggbb`). */
+  color?: string;
 }
 
 export interface SenateArea extends Omit<AreaResult, 'parties'> {
@@ -716,7 +784,7 @@ export const simulateMunicipalities = (
   return {
     format: RESULTS_FORMAT,
     kind: 'simulacion',
-    updatedAt: new Date().toISOString(),
+    updatedAt: province.counted ? new Date().toISOString() : new Date().toISOString(),
     province: province.code,
     areas: draws.map((draw, index) => ({
       code: draw.town.code,
@@ -729,5 +797,116 @@ export const simulateMunicipalities = (
       blank: blank[index],
       parties: province.parties.map((party) => ({ id: party.id, acronym: party.acronym, name: party.name, votes: partyVotes[party.id][index] })),
     })),
+  };
+};
+
+// ---------- Evolution (count history) ----------
+
+export const EVOLUTION_FORMAT = 'electosfera-evolucion/1';
+
+export interface EvolutionPartyPoint {
+  id: string;
+  acronym: string;
+  votes: number;
+  seats: number;
+}
+
+export interface EvolutionSnapshot {
+  /** ISO timestamp of the snapshot. */
+  at: string;
+  /** Weighted national % counted (0-100). */
+  counted: number;
+  /** National turnout % (0-100). */
+  turnout: number;
+  /** National Congress totals at this moment. */
+  congress: {
+    census: number;
+    voters: number;
+    null: number;
+    blank: number;
+    parties: EvolutionPartyPoint[];
+  };
+  /** Optional national Senate totals at this moment. */
+  senate?: {
+    counted: number;
+    assigned: number;
+    parties: EvolutionPartyPoint[];
+  };
+  /** Optional relative folder under `resultados/datos/` containing full `espana.json` / `senado.json`. */
+  snapshot?: string;
+}
+
+export interface EvolutionFeed {
+  format: typeof EVOLUTION_FORMAT;
+  kind: ResultsKind;
+  updatedAt: string;
+  snapshots: EvolutionSnapshot[];
+}
+
+/** Creates one compact evolution snapshot from a Congress feed and an optional Senate feed. */
+export const createEvolutionSnapshot = (
+  congress: ResultsFeed,
+  senate?: SenateFeed,
+  options?: { at?: string; snapshot?: string },
+): EvolutionSnapshot => {
+  const total = nationalTotal(congress.areas);
+  const senateSummary = senate ? senateTotal(senate.areas) : undefined;
+  return {
+    at: options?.at ?? congress.updatedAt,
+    counted: Math.round(total.counted * 100) / 100,
+    turnout: Math.round(turnout(total) * 100) / 100,
+    congress: {
+      census: total.census,
+      voters: total.voters,
+      null: total.null,
+      blank: total.blank,
+      parties: total.parties
+        .filter((party) => party.votes > 0 || (party.seats ?? 0) > 0)
+        .map((party) => ({
+          id: party.id,
+          acronym: party.acronym,
+          votes: party.votes,
+          seats: party.seats ?? 0,
+        })),
+    },
+    ...(senateSummary
+      ? {
+          senate: {
+            counted: Math.round(senateSummary.counted * 100) / 100,
+            assigned: senateSummary.assigned,
+            parties: senateSummary.parties
+              .filter((party) => (party.seats ?? 0) > 0 || party.votes > 0)
+              .map((party) => ({
+                id: party.id,
+                acronym: party.acronym,
+                votes: party.votes,
+                seats: party.seats ?? 0,
+              })),
+          },
+        }
+      : {}),
+    ...(options?.snapshot ? { snapshot: options.snapshot } : {}),
+  };
+};
+
+/** Appends a snapshot to an evolution feed, skipping duplicates with the same Congress and Senate numbers. */
+export const appendEvolutionSnapshot = (
+  current: EvolutionFeed | null | undefined,
+  snapshot: EvolutionSnapshot,
+  kind: ResultsKind,
+): { feed: EvolutionFeed; appended: boolean } => {
+  const snapshots = current?.format === EVOLUTION_FORMAT && Array.isArray(current.snapshots) ? [...current.snapshots] : [];
+  const last = snapshots[snapshots.length - 1];
+  const signature = (item: EvolutionSnapshot) => JSON.stringify({ c: item.congress, s: item.senate, p: item.counted });
+  if (last && signature(last) === signature(snapshot)) {
+    return {
+      feed: { format: EVOLUTION_FORMAT, kind, updatedAt: current?.updatedAt ?? snapshot.at, snapshots },
+      appended: false,
+    };
+  }
+  snapshots.push(snapshot);
+  return {
+    feed: { format: EVOLUTION_FORMAT, kind, updatedAt: snapshot.at, snapshots },
+    appended: true,
   };
 };

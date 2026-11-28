@@ -1,7 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { constituencySeats, resultsParties, senateConstituencies } from '@eleccion/resultados';
+import { constituencySeats, resultsParties, senateConstituencies, senateElectedSeats } from '@eleccion/resultados';
 import {
+  appendEvolutionSnapshot,
+  createEvolutionSnapshot,
   dhondt,
+  dhondtBreakdown,
+  EVOLUTION_FORMAT,
   nationalTotal,
   normalizeFeed,
   normalizeMunicipalFeed,
@@ -16,6 +20,59 @@ import {
   withSeats,
   type SenateArea,
 } from './results';
+
+describe('dhondtBreakdown', () => {
+  // 3 seats; valid votes 200 (195 of lists + 5 blank), threshold 6: D (5 votes) is out.
+  const area = {
+    code: '42',
+    name: 'Soria',
+    seats: 3,
+    counted: 100,
+    census: 0,
+    voters: 0,
+    null: 0,
+    blank: 5,
+    parties: [
+      { id: 'a', acronym: 'A', votes: 100 },
+      { id: 'b', acronym: 'B', votes: 60 },
+      { id: 'c', acronym: 'C', votes: 30 },
+      { id: 'd', acronym: 'D', votes: 5 },
+    ],
+  };
+
+  it('lists the winning quotients in seat order and then the next ones', () => {
+    const result = dhondtBreakdown(area);
+    expect(result.threshold).toBe(6);
+    expect(result.quotients.map((item) => [item.id, item.divisor, item.seat])).toEqual([
+      ['a', 1, 1],
+      ['b', 1, 2],
+      ['a', 2, 3],
+      ['a', 3, undefined],
+      ['b', 2, undefined],
+      ['c', 1, undefined],
+    ]);
+    expect(result.last).toMatchObject({ id: 'a', divisor: 2, quotient: 50 });
+  });
+
+  it('gives the same seats as dhondt', () => {
+    const result = dhondtBreakdown(area);
+    const seats: Record<string, number> = { a: 0, b: 0, c: 0, d: 0 };
+    for (const item of result.quotients) if (item.seat) seats[item.id] += 1;
+    expect(seats).toEqual(dhondt({ a: 100, b: 60, c: 30, d: 5 }, 3, 200));
+  });
+
+  it('finds the list that needs the fewest votes to take the last seat', () => {
+    // B needs 101 (2 × 50 + 1): 41 more. C needs 51: 21 more. D needs 51 too: 46 more.
+    expect(dhondtBreakdown(area).challenger).toEqual({ id: 'c', votesNeeded: 21 });
+  });
+
+  it('has no last seat while there are no votes', () => {
+    const empty = dhondtBreakdown({ ...area, blank: 0, parties: area.parties.map((party) => ({ ...party, votes: 0 })) });
+    expect(empty.quotients).toEqual([]);
+    expect(empty.last).toBeUndefined();
+    expect(empty.challenger).toBeUndefined();
+  });
+});
 
 describe('dhondt', () => {
   it('shares out the seats of the textbook example', () => {
@@ -181,9 +238,10 @@ describe('the Senate', () => {
     candidates: candidates.map(([name, partyId, votes]) => ({ name, partyId, acronym: partyId.toUpperCase(), votes })),
   });
 
-  it('has 59 constituencies and 208 elected seats', () => {
-    expect(senateConstituencies).toHaveLength(59);
-    expect(senateConstituencies.reduce((sum, constituency) => sum + constituency.seats, 0)).toBe(208);
+  it('has 60 constituencies and 209 elected seats (Ibiza and Formentera apart since 29N)', () => {
+    expect(senateConstituencies).toHaveLength(60);
+    expect(senateConstituencies.reduce((sum, constituency) => sum + constituency.seats, 0)).toBe(209);
+    expect(senateElectedSeats).toBe(209);
     expect(senateConstituencies.some((constituency) => ['07', '35', '38'].includes(constituency.code))).toBe(false);
   });
 
@@ -214,22 +272,47 @@ describe('the Senate', () => {
       {
         ambitos: [
           { codigo: '28', nombre: 'Madrid', porcentajeEscrutado: '10,5', candidatos: [{ nombre: 'Ana', siglas: 'PP', votos: '1.000' }] },
-          { codigo: '9999', nombre: 'Eivissa-Formentera', candidatos: [{ nombre: 'Juan', siglas: 'PSOE', votos: 10, electo: 'S' }] },
+          { codigo: '9999', nombre: 'Eivissa', candidatos: [{ nombre: 'Juan', siglas: 'PSOE', votos: 10, electo: 'S' }] },
           { codigo: '35', nombre: 'Las Palmas', candidatos: [] },
         ],
       },
       { catalog: resultsParties, constituencies: senateConstituencies },
     );
-    expect(feed.areas.map((item) => item.code)).toEqual(['28', 'ibiza-formentera']);
+    expect(feed.areas.map((item) => item.code)).toEqual(['28', 'ibiza']);
     expect(feed.areas[0].counted).toBe(10.5);
     expect(feed.areas[0].candidates[0]).toEqual({ name: 'Ana', partyId: 'pp', acronym: 'PP', votes: 1000 });
     expect(feed.areas[1].candidates[0].elected).toBe(true);
   });
 
-  it('simulates the 208 senators from a simulated night of the Congress', () => {
+  it('simulates the 209 senators from a simulated night of the Congress', () => {
     const congress = simulateNight({ shares: { pp: 33, psoe: 28, vox: 16, fa: 7 }, catalog: resultsParties, seatsByCode: constituencySeats, names: {}, progress: 100 });
     const total = senateTotal(simulateSenate(congress, senateConstituencies).areas);
-    expect(total.seats).toBe(208);
-    expect(total.assigned).toBe(208);
+    expect(total.seats).toBe(209);
+    expect(total.assigned).toBe(209);
+  });
+});
+
+describe('count evolution history', () => {
+  it('builds compact snapshots and deduplicates identical consecutive states', () => {
+    const shares = { pp: 33, psoe: 28, vox: 16, fa: 7 };
+    const step1 = simulateNight({ shares, catalog: resultsParties, seatsByCode: constituencySeats, names: {}, progress: 25, seed: 29 });
+    const step2 = simulateNight({ shares, catalog: resultsParties, seatsByCode: constituencySeats, names: {}, progress: 80, seed: 29 });
+    const snap1 = createEvolutionSnapshot(step1, simulateSenate(step1, senateConstituencies, 29), { at: '2026-11-29T20:30:00.000Z', snapshot: 'historico/01' });
+    const snap1Dup = createEvolutionSnapshot(step1, simulateSenate(step1, senateConstituencies, 29), { at: '2026-11-29T20:31:00.000Z', snapshot: 'historico/02' });
+    const snap2 = createEvolutionSnapshot(step2, simulateSenate(step2, senateConstituencies, 29), { at: '2026-11-29T21:15:00.000Z', snapshot: 'historico/03' });
+
+    const first = appendEvolutionSnapshot(null, snap1, 'provisional');
+    expect(first.appended).toBe(true);
+    expect(first.feed.format).toBe(EVOLUTION_FORMAT);
+
+    const dup = appendEvolutionSnapshot(first.feed, snap1Dup, 'provisional');
+    expect(dup.appended).toBe(false);
+    expect(dup.feed.snapshots).toHaveLength(1);
+
+    const second = appendEvolutionSnapshot(dup.feed, snap2, 'provisional');
+    expect(second.appended).toBe(true);
+    expect(second.feed.snapshots).toHaveLength(2);
+    expect(second.feed.snapshots[1].counted).toBeGreaterThan(second.feed.snapshots[0].counted);
+    expect(second.feed.snapshots[1].senate?.assigned).toBe(209);
   });
 });

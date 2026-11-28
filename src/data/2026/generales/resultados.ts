@@ -13,7 +13,7 @@
  * `public/<elección>/resultados/datos/`: son archivos estáticos, que se publican con una compilación. Ver el README.
  */
 // With the extension: `scripts/results_import.ts` loads this file with plain Node.
-import { OFFICIAL_SITE } from './calendario.ts';
+import { OFFICIAL_RESULTS_SITE } from './calendario.ts';
 
 export type ResultsStatus = 'proximamente' | 'provisional' | 'definitivo';
 
@@ -23,15 +23,17 @@ export const resultsConfig = {
   opensAt: '2026-11-29T20:00:00+01:00',
   /** Resultados por circunscripción, en la ruta de la elección. */
   feedUrl: '/resultados/datos/espana.json',
-  /** Resultados del Senado: los candidatos de las 59 circunscripciones (`senateConstituencies`). */
+  /** Resultados del Senado: los candidatos de las 60 circunscripciones (`senateConstituencies`). */
   senateFeedUrl: '/resultados/datos/senado.json',
   /** Resultados por municipio de una provincia: `{provincia}` es su código INE de dos cifras. */
   municipalFeedUrl: '/resultados/datos/municipios-{provincia}.json',
+  /** Evolución del recuento (instantáneas tomadas durante la noche electoral). */
+  evolutionFeedUrl: '/resultados/datos/evolucion.json',
   /** Mapa de los municipios de una provincia (`scripts/municipal_maps.py`). */
   municipalMapUrl: '/mapas/municipios/{provincia}.json',
   /** Cada cuántos segundos la página vuelve a leer los datos en la noche electoral. */
   refreshSeconds: 60,
-  source: { name: 'Ministerio del Interior', url: OFFICIAL_SITE },
+  source: { name: 'Ministerio del Interior', url: OFFICIAL_RESULTS_SITE },
 } as const;
 
 /**
@@ -48,8 +50,9 @@ export const constituencySeats: Record<string, number> = {
 };
 
 /**
- * Circunscripciones del Senado (LOREG, art. 165): 208 senadores elegidos. Cada provincia peninsular elige 4; Ceuta y
- * Melilla, 2; en Baleares y Canarias cada isla o agrupación de islas es una circunscripción. `share` es la parte del
+ * Circunscripciones del Senado (LOREG, art. 165): 209 senadores elegidos. Cada provincia peninsular elige 4; Ceuta y
+ * Melilla, 2; en Baleares y Canarias cada isla o agrupación de islas es una circunscripción. Desde el 29N, Eivissa y
+ * Formentera eligen un senador cada una (en 2023, uno entre las dos): así lo publica la API oficial de difusión. `share` es la parte del
  * censo de su provincia que vota en la isla (aproximada, solo para el ensayo del script de importación).
  */
 export interface SenateConstituency {
@@ -67,7 +70,8 @@ export interface SenateConstituency {
 const ISLANDS: SenateConstituency[] = [
   { code: 'mallorca', name: 'Mallorca', province: '07', seats: 3, share: 0.77 },
   { code: 'menorca', name: 'Menorca', province: '07', seats: 1, share: 0.085 },
-  { code: 'ibiza-formentera', name: 'Ibiza-Formentera', province: '07', seats: 1, share: 0.145, aliases: ['Eivissa-Formentera', 'Ibiza y Formentera', 'Eivissa i Formentera', 'Ibiza'] },
+  { code: 'ibiza', name: 'Ibiza', province: '07', seats: 1, share: 0.135, aliases: ['Eivissa'] },
+  { code: 'formentera', name: 'Formentera', province: '07', seats: 1, share: 0.01 },
   { code: 'gran-canaria', name: 'Gran Canaria', province: '35', seats: 3, share: 0.76 },
   { code: 'lanzarote', name: 'Lanzarote', province: '35', seats: 1, share: 0.14, aliases: ['Lanzarote-La Graciosa'] },
   { code: 'fuerteventura', name: 'Fuerteventura', province: '35', seats: 1, share: 0.1 },
@@ -79,8 +83,8 @@ const ISLANDS: SenateConstituency[] = [
 const ISLAND_PROVINCES = new Set(ISLANDS.map((island) => island.province));
 
 /**
- * Las 59 circunscripciones del Senado: las 47 provincias con 4 senadores, Ceuta y Melilla con 2 y las 10 islas o
- * agrupaciones de islas. La suma es 208. El nombre de una provincia sale de `provincias.json` en la página.
+ * Las 60 circunscripciones del Senado: las 47 provincias con 4 senadores, Ceuta y Melilla con 2 y las 11 islas o
+ * agrupaciones de islas. La suma es 209 (`senateElectedSeats`). El nombre de una provincia sale de `provincias.json` en la página.
  */
 export const senateConstituencies: SenateConstituency[] = [
   ...Object.keys(constituencySeats)
@@ -88,6 +92,9 @@ export const senateConstituencies: SenateConstituency[] = [
     .map((code) => ({ code, name: code, province: code, seats: code === '51' || code === '52' ? 2 : 4 })),
   ...ISLANDS,
 ];
+
+/** Los senadores que se eligen el 29N: 209. */
+export const senateElectedSeats = senateConstituencies.reduce((sum, constituency) => sum + constituency.seats, 0);
 
 export interface ResultsParty {
   id: string;
@@ -97,7 +104,7 @@ export interface ResultsParty {
   color: string;
   /** Escaños de 2023 de la candidatura (Frente Amplio: los de Sumar). */
   seats2023: number;
-  /** Senadores elegidos en 2023 (de 208; `senado.ts` tiene los designados por los parlamentos autonómicos). */
+  /** Senadores elegidos en 2023 (de 208; `senado.ts` tiene los designados por los parlamentos autonómicos). El 29N se eligen 209. */
   senateSeats2023?: number;
   /** Siglas con que el Ministerio puede publicar la candidatura (con federaciones y coaliciones). */
   aliases: string[];
@@ -113,20 +120,20 @@ const ANDALUSIA = ['04', '11', '14', '18', '21', '23', '29', '41'];
 
 /** Las candidaturas con grupo o representación probable. El orden es el del hemiciclo, de izquierda a derecha. */
 export const resultsParties: ResultsParty[] = [
-  { id: 'fa', acronym: 'FA', name: 'Frente Amplio', color: '#f03c00', seats2023: 31, aliases: ['FA', 'FRENTE AMPLIO', 'SUMAR'], programId: 'fa' },
-  { id: 'podemos', acronym: 'Podemos', name: 'Podemos', color: '#6b2d8f', seats2023: 0, aliases: ['PODEMOS'], programId: 'podemos' },
+  { id: 'fa', acronym: 'FA', name: 'Frente Amplio', color: '#f03c00', seats2023: 31, aliases: ['FA', 'FRENTE AMPLIO', 'SUMAR', 'COMUNS-FRONT AMPLI', 'C-DEM', 'FRENTE AMPLIO-FRONTE AMPLA', 'FRENTE AMPLIO - FRONTE AMPLA', 'FRENTE AMPLIO-FRONTE ZABALA', 'CHA-IU-MS-FRENTE AMPLIO', 'ARAMÉS-EU-MS'], programId: 'fa' },
+  { id: 'podemos', acronym: 'Podemos', name: 'Podemos', color: '#6b2d8f', seats2023: 0, aliases: ['PODEMOS', 'PAZ,CASA Y TRABAJO'], programId: 'podemos' },
   { id: 'adelante', acronym: 'AA', name: 'Adelante Andalucía', color: '#00a35a', seats2023: 0, aliases: ['ADELANTE', 'ADELANTE ANDALUCIA'], territory: ANDALUSIA, programId: 'adelante' },
-  { id: 'psoe', acronym: 'PSOE', name: 'Partido Socialista Obrero Español', color: '#e30613', seats2023: 121, senateSeats2023: 72, aliases: ['PSOE', 'PSC-PSOE', 'PSC', 'PSDEG-PSOE', 'PSE-EE (PSOE)', 'PSE-EE', 'PSN-PSOE'], programId: 'psoe' },
-  { id: 'erc', acronym: 'ERC', name: 'Esquerra Republicana de Catalunya', color: '#ffa51f', seats2023: 7, senateSeats2023: 3, aliases: ['ERC'], territory: CATALONIA, programId: 'erc' },
-  { id: 'bildu', acronym: 'EH Bildu', name: 'Euskal Herria Bildu', color: '#00c1a2', seats2023: 6, senateSeats2023: 4, aliases: ['EH BILDU', 'BILDU'], territory: [...BASQUE, '31'], programId: 'eh-bildu' },
-  { id: 'bng', acronym: 'BNG', name: 'Bloque Nacionalista Galego', color: '#5bb5e6', seats2023: 1, aliases: ['BNG'], territory: GALICIA, programId: 'bng' },
+  { id: 'psoe', acronym: 'PSOE', name: 'Partido Socialista Obrero Español', color: '#e30613', seats2023: 121, senateSeats2023: 72, aliases: ['PSOE', 'PSC-PSOE', 'PSC', 'PSDEG-PSOE', 'PSE-EE (PSOE)', 'PSE-EE', 'PSN-PSOE', 'PSIB-PSOE', 'SENADO DE PROGRESO', 'SDP (PSOE, IU, MS, MM, COMPROMIS, CHA, BATZARRE)', 'PSIB-PSOE-MÉS PER MALLORCA-SUMAR-EUIB', 'PSOE-MÉS PER MENORCA-EM-EU-PODEMOS', 'PSOE-SUMAR-EUIB-ARA EIVISSA-PODEM', 'PSOE-GXF-M.SUMAR'], programId: 'psoe' },
+  { id: 'erc', acronym: 'ERC', name: 'Esquerra Republicana de Catalunya', color: '#ffa51f', seats2023: 7, senateSeats2023: 3, aliases: ['ERC', 'ERC-EH BILDU'], territory: CATALONIA, programId: 'erc' },
+  { id: 'bildu', acronym: 'EH Bildu', name: 'Euskal Herria Bildu', color: '#00c1a2', seats2023: 6, senateSeats2023: 4, aliases: ['EH BILDU', 'BILDU', 'EH BILDU-ERC'], territory: [...BASQUE, '31'], programId: 'eh-bildu' },
+  { id: 'bng', acronym: 'BNG', name: 'Bloque Nacionalista Galego', color: '#5bb5e6', seats2023: 1, aliases: ['BNG', 'B.N.G.'], territory: GALICIA, programId: 'bng' },
   { id: 'junts', acronym: 'Junts', name: 'Junts per Catalunya', color: '#00a99d', seats2023: 7, senateSeats2023: 1, aliases: ['JUNTS', 'JXCAT', 'JUNTS-JXCAT'], territory: CATALONIA, programId: 'jxcat' },
   { id: 'pnv', acronym: 'EAJ-PNV', name: 'Partido Nacionalista Vasco', color: '#2e8b57', seats2023: 5, senateSeats2023: 4, aliases: ['EAJ-PNV', 'PNV'], territory: BASQUE, programId: 'eaj-pnv' },
-  { id: 'cc', acronym: 'CC', name: 'Coalición Canaria', color: '#f4d03f', seats2023: 1, aliases: ['CC', 'CCA', 'CC-NC'], territory: ['35', '38'], programId: 'cc' },
-  { id: 'upn', acronym: 'UPN', name: 'Unión del Pueblo Navarro', color: '#1b4a8a', seats2023: 1, senateSeats2023: 1, aliases: ['UPN'], territory: ['31'], programId: 'upn' },
+  { id: 'cc', acronym: 'CC', name: 'Coalición Canaria', color: '#f4d03f', seats2023: 1, aliases: ['CC', 'CCA', 'CC-NC', 'CCA-1ºCAN', '1ºCAN-CCA', '1.ºCAN-CCA'], territory: ['35', '38'], programId: 'cc' },
+  { id: 'upn', acronym: 'UPN', name: 'Unión del Pueblo Navarro', color: '#1b4a8a', seats2023: 1, senateSeats2023: 1, aliases: ['UPN', 'UPN-PP', 'PP-UPN'], territory: ['31'], programId: 'upn' },
   { id: 'asg', acronym: 'ASG', name: 'Agrupación Socialista Gomera', color: '#d21a1a', seats2023: 0, senateSeats2023: 1, aliases: ['ASG'], territory: ['38'] },
-  { id: 'ahi', acronym: 'AHI', name: 'Agrupación Herreña Independiente', color: '#009c4c', seats2023: 0, senateSeats2023: 1, aliases: ['AHI'], territory: ['38'] },
-  { id: 'pp', acronym: 'PP', name: 'Partido Popular', color: '#1d84ce', seats2023: 137, senateSeats2023: 120, aliases: ['PP', 'PP-UPN'], programId: 'pp' },
+  { id: 'ahi', acronym: 'AHI', name: 'Agrupación Herreña Independiente', color: '#009c4c', seats2023: 0, senateSeats2023: 1, aliases: ['AHI', 'A.H.I.'], territory: ['38'] },
+  { id: 'pp', acronym: 'PP', name: 'Partido Popular', color: '#1d84ce', seats2023: 137, senateSeats2023: 120, aliases: ['PP'], programId: 'pp' },
   { id: 'vox', acronym: 'VOX', name: 'Vox', color: '#63be21', seats2023: 33, aliases: ['VOX'], programId: 'vox' },
   { id: 'salf', acronym: 'SALF', name: 'Se Acabó La Fiesta', color: '#7d7468', seats2023: 0, aliases: ['SALF', 'SE ACABO LA FIESTA'], programId: 'salf' },
 ];

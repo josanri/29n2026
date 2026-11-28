@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { election } from '@eleccion/eleccion';
+import ElectionBanner from '@/components/home/ElectionBanner.astro';
 import Hero from '@/components/home/Hero.astro';
 import ProgramCard from '@/components/party/ProgramCard.astro';
 import CandidacyMap from '@/components/candidacies/CandidacyMap.astro';
@@ -47,6 +48,7 @@ const searchTopics = ['Vivienda', 'IRPF', 'Pensiones', 'Sanidad', 'Alquiler', 'E
   title={`${SITE_NAME}: programas electorales del ${election.shortName}, medida a medida`}
   structuredData={siteStructuredData(Astro.site!)}
 >
+  <ElectionBanner />
   <Hero examplesJson={examplesJson} topics={searchTopics} />
 
   <!-- The election in one sentence, built from the counts of the data. -->

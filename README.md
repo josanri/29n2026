@@ -114,14 +114,14 @@ scripts/                      solo código: extracción y análisis de los PDF
 
 | Ruta | Contenido |
 |---|---|
-| `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas |
+| `/` | Portada, mapa seleccionable de provincias y candidaturas al Congreso y Senado, y lista de programas. Del 28 de noviembre a fin de año, un aviso de la elección enlaza con `/resultados/` (`ElectionBanner.astro`: el texto cambia el día antes, el día de la votación, la noche y los días del escrutinio) |
 | `/pp/`, `/bng/`, `/cc/`, `/erc/`, `/salf/`, `/pfac/`, `/autonomos/`, `/ie/`, `/adelante/`, `/mundo-mas-justo/`, `/eaj-pnv/`, `/tercera-edad/`, `/vox/`, `/pacma/`, `/fa/`, `/cha-fa/`, `/upn/`, `/eh-bildu/`, `/fe-jons/`, `/pcte/`, `/pctc/`, `/pctg/`, `/convergents/`, `/psoe/`, `/teruel-existe/`, `/compromis-front-valencia/`, `/geroa-bai/`, `/upc/`, `/d21/`, `/lib/`, `/ixlg/`, `/nex/`, `/eguzkilore/`, `/fia/`, `/alhora/`, `/agenda-valenciana/`, `/comuns/`, `/podemos/`, `/jxcat/`, `/drago-canarias/`, `/formentera-viva/`, `/arames/` | Análisis: estructura, categorías, colectivos, palancas y medidas |
 | `/pp/medidas/`, `/bng/medidas/`, `/cc/medidas/`, `/erc/medidas/`, `/salf/medidas/`, `/pfac/medidas/`, `/autonomos/medidas/`, `/ie/medidas/`, `/adelante/medidas/`, `/mundo-mas-justo/medidas/`, `/eaj-pnv/medidas/`, `/tercera-edad/medidas/`, `/vox/medidas/`, `/pacma/medidas/`, `/fa/medidas/`, `/cha-fa/medidas/`, `/upn/medidas/`, `/eh-bildu/medidas/`, `/fe-jons/medidas/`, `/pcte/medidas/`, `/pctc/medidas/`, `/pctg/medidas/`, `/convergents/medidas/`, `/psoe/medidas/`, `/teruel-existe/medidas/`, `/compromis-front-valencia/medidas/`, `/geroa-bai/medidas/`, `/upc/medidas/`, `/d21/medidas/`, `/lib/medidas/`, `/ixlg/medidas/`, `/nex/medidas/`, `/eguzkilore/medidas/`, `/fia/medidas/`, `/alhora/medidas/`, `/agenda-valenciana/medidas/`, `/comuns/medidas/`, `/podemos/medidas/`, `/jxcat/medidas/`, `/drago-canarias/medidas/`, `/formentera-viva/medidas/`, `/arames/medidas/` | Explorador con filtros (admite `?cat=`, `?col=`, `?pal=`, `?bloque=`, `?q=` y `#m-123`) |
 | `/pp/bloque/1/` … `/4/`, `/bng/bloque/1/` … `/11/`, `/cc/bloque/1/` … `/10/`, `/erc/bloque/1/` … `/3/`, `/salf/bloque/1/` … `/10/`, `/pfac/bloque/1/`, `/autonomos/bloque/1/`, `/ie/bloque/1/` … `/15/`, `/adelante/bloque/1/` … `/12/`, `/mundo-mas-justo/bloque/1/` … `/32/`, `/eaj-pnv/bloque/1/` … `/5/`, `/tercera-edad/bloque/1/` … `/13/`, `/vox/bloque/1/` … `/13/`, `/pacma/bloque/1/` … `/3/`, `/fa/bloque/1/` … `/18/`, `/cha-fa/bloque/1/` … `/10/`, `/upn/bloque/1/` … `/12/`, `/eh-bildu/bloque/1/` … `/3/`, `/fe-jons/bloque/1/` … `/6/`, `/pcte/bloque/1/` … `/11/`, `/pctc/bloque/1/` … `/11/`, `/pctg/bloque/1/` … `/11/`, `/convergents/bloque/1/` … `/10/`, `/psoe/bloque/1/` … `/8/`, `/teruel-existe/bloque/1/` … `/12/`, `/compromis-front-valencia/bloque/1/` … `/7/`, `/geroa-bai/bloque/1/` … `/5/`, `/upc/bloque/1/` … `/16/`, `/d21/bloque/1/` … `/2/`, `/lib/bloque/1/` … `/6/`, `/ixlg/bloque/1/` … `/4/`, `/nex/bloque/1/` … `/11/`, `/eguzkilore/bloque/1/`, `/fia/bloque/1/` … `/2/`, `/alhora/bloque/1/` … `/6/`, `/agenda-valenciana/bloque/1/` … `/6/`, `/comuns/bloque/1/` … `/6/`, `/podemos/bloque/1/` … `/6/`, `/jxcat/bloque/1/` … `/3/`, `/drago-canarias/bloque/1/` … `/4/`, `/formentera-viva/bloque/1/` … `/10/`, `/arames/bloque/1/` … `/5/` | Lectura completa por bloque |
 | `/categorias/` | Taxonomía común, comparable entre partidos |
 | `/calendario/` | Fechas clave del 29N, con enlace a Google Calendar y archivos `.ics` (`/calendario.ics` y `/calendario/<id>.ics`) |
 | `/simulador/` | Simulador de Congreso (350 escaños, hemiciclo) y de pactos de investidura (art. 99 de la Constitución); el estado va en la URL (`?e=`, `?c=`, `?v=`) |
-| `/resultados/` | Resultados del Congreso y del Senado: escrutado, participación, hemiciclo, tabla por partido, mapa del más votado y reparto de cada provincia (`?provincia=28`). Con una provincia abierta, el mapa y la tabla de sus municipios (`?municipio=29067`). Hasta que se publiquen los datos, «Próximamente» con la cuenta atrás y el enlace a la web oficial (29neleccionesgenerales.es): no cubrimos el recuento al minuto (ver «Resultados de la noche electoral») |
+| `/resultados/` | Resultados del Congreso y del Senado: escrutado, participación, hemiciclo, tabla por partido, mapa del más votado, «Escaños en el aire» (las provincias donde el último escaño está más cerca de cambiar) y reparto de cada provincia (`?provincia=28`), con el gráfico de cocientes D'Hondt, el último escaño, los votos que le faltan a la lista más cercana y la tabla de cocientes (`dhondtBreakdown` en `src/lib/results.ts`). Un interruptor Congreso/Senado cambia el mapa y la tabla del territorio (`?camara=senado`). «Abre el pactómetro con estos escaños» lleva a `/simulador/` con los escaños del momento que se ve. Una candidatura fuera de `resultsParties` toma el color de su ficha en `programas/` y, si no tiene ficha, el color oficial de la API. Con una provincia abierta, el mapa y la tabla de sus municipios (`?municipio=29067`). Hasta que se publiquen los datos, «Próximamente» con la cuenta atrás y el enlace a la web oficial (29neleccionesgenerales.es): no cubrimos el recuento al minuto (ver «Resultados de la noche electoral») |
 | `/encuestas/` | Seguimiento de la estimación de voto (CIS, 40dB., Sigma Dos, SocioMétrica y GAD3), con gráfica de evolución y enlace a cada publicación |
 | `/tests/` | Lista de los tests: «Sin siglas» (`/tests/sin-siglas/`) y «Temas que dividen» (`/tests/temas/`) |
 | `/tests/temas/` | Test y comparador de los temas más polarizantes: la postura del lector frente a la de cada programa, con la medida que la prueba |
@@ -133,11 +133,12 @@ La página `/resultados/` lee archivos JSON con el formato normalizado `electosf
 
 - `espana.json`: una entrada por circunscripción, con escrutado, censo escrutado, votantes, nulos, blancos y los votos (y, si la fuente los da, los escaños) de cada candidatura. El total de España es la suma de las provincias. Si una candidatura no trae escaños, la página los calcula con D'Hondt y el umbral del 3 % (LOREG, art. 163).
 - `municipios-<provincia>.json`: los municipios de una provincia, con su código INE de cinco cifras. La página lo lee solo cuando el lector abre esa provincia.
-- `senado.json` (formato `electosfera-senado/1`, opcional): una entrada por cada una de las 59 circunscripciones del Senado (`senateConstituencies` en `resultados.ts`: 47 provincias con 4 senadores, Ceuta y Melilla con 2 y 10 islas o agrupaciones de islas), con los votos de cada candidato. Si la fuente no marca los electos, la página da los escaños a los candidatos más votados (LOREG, art. 166). La página muestra los 208 senadores elegidos por partido, con la diferencia con 2023, y los candidatos de la provincia abierta (o de cada isla).
+- `senado.json` (formato `electosfera-senado/1`, opcional): una entrada por cada una de las 60 circunscripciones del Senado (`senateConstituencies` en `resultados.ts`: 47 provincias con 4 senadores, Ceuta y Melilla con 2 y 11 islas o agrupaciones de islas; desde el 29N, Eivissa y Formentera eligen un senador cada una), con los votos de cada candidato. Si la fuente no marca los electos, la página da los escaños a los candidatos más votados (LOREG, art. 166). La página muestra los 209 senadores elegidos por partido, con la diferencia con 2023, y los candidatos de la provincia abierta (o de cada isla).
+- `evolucion.json` (formato `electosfera-evolucion/1`, opcional) e `historico/<marca>/`: serie cronológica de instantáneas tomadas durante el recuento, con totales nacionales de Congreso y Senado y referencia a los archivos completos (`espana.json` y `senado.json`) de cada momento. Cuando tiene 2 o más instantáneas, `/resultados/` muestra el panel interactivo **«Cómo fue el recuento»** (reproducción paso a paso, deslizador temporal, gráfica SVG de escaños y actualización del mapa y las tablas para cada instante).
 
 El mapa de municipios sale de `public/<elección>/mapas/municipios/<provincia>.json`, que dibuja `python scripts/municipal_maps.py` (límites del IGN, paquete es-atlas 0.6.0). Los terrenos compartidos entre municipios (códigos 53xxx) van en la provincia con la que comparten más límite, sin votantes.
 
-Los datos son archivos estáticos: el script de importación los escribe en `public/<elección>/resultados/datos/<archivo>.json` y una compilación los publica en `<BASE_PATH>/resultados/datos/`. Mientras no existen, la página recibe un 404 y sigue con «Próximamente».
+Los datos son archivos estáticos: los scripts escriben en `public/<elección>/resultados/datos/` y una compilación los publica en `<BASE_PATH>/resultados/datos/`. Mientras no existen, la página recibe un 404 y sigue con «Próximamente».
 
 Estados, en `src/data/<elección>/resultados.ts`:
 
@@ -147,18 +148,64 @@ Estados, en `src/data/<elección>/resultados.ts`:
 | `provisional` | Los datos, desde el primer momento, cada `refreshSeconds` segundos |
 | `definitivo` | Los datos del escrutinio general, una sola vez |
 
-Ensayo (antes del domingo): `npm run resultados:importar -- --ensayo 40` y `npm run dev`. Abre `http://localhost:4321/resultados/?ensayo&provincia=29` (con la ruta de la elección si `BASE_PATH` la tiene). Sin `?ensayo`, la página no muestra nunca los datos de un ensayo. **Borra después `public/<elección>/resultados/datos/`**: un ensayo no se publica.
+Ensayo (antes del domingo): `npm run resultados:importar -- --ensayo 100` y `npm run dev`. Abre `http://localhost:4321/resultados/?ensayo&provincia=29` (con la ruta de la elección si `BASE_PATH` la tiene). El ensayo genera también una evolución de 8 pasos (`evolucion.json` e `historico/ensayo-01`…`08`) para probar el reproductor. Sin `?ensayo`, la página no muestra nunca los datos de un ensayo. **Borra después `public/<elección>/resultados/datos/`** antes de empezar la captura real: un ensayo no se publica.
 
-Cuando se publiquen los resultados aquí:
+#### Guía para el 29N: captura desde la API oficial y evolución del recuento
 
-1. Consigue las direcciones de los datos del Ministerio del Interior o de un medio que los redistribuya: las circunscripciones y los municipios.
-2. Ejecuta:
+El script `scripts/results_official.ts` (adaptador en `src/lib/results_official.ts`) consulta directamente la API oficial de difusión (`https://resultados.29neleccionesgenerales.es/backend-difu/`):
+
+- **Configuración y ritmo de polling**: consulta `GET /backend-difu/web/getConfig` cada `polling.interval_MS` (por defecto 30 s). Mientras `isOpen` es `false`, espera sin escribir datos.
+- **Catálogos en caché**: descarga `getNomenclator` y `getPartidosColorAgrup` una vez y solo los recarga si cambian `versionNomenclator` o `versionPartidosColor`.
+- **Congreso, municipios y Senado**: en cada actualización descarga las 52 provincias del Congreso (`/getScopeData/{scopeId}/1/2/1/1/90`, que incluye sus municipios en la misma respuesta) y las 60 circunscripciones del Senado (`/getScopeData/{scopeId}/2/3/1/0`; Eivissa `073` y Formentera `074` son dos circunscripciones, con un senador cada una).
+- **Partidos**: cada código de partido pasa a una candidatura de `resultsParties` por sus siglas (`aliases`). Si las siglas no están, el script usa la agrupación oficial (`agrupacion` en `getPartidosColorAgrup`; por ejemplo, la 13 reúne todas las listas del Frente Amplio) y después el nombre. Un partido que no está en `resultsParties` toma las siglas de su agrupación, para que sus listas (`F.I.A.` y `FIA`) sumen en una sola fila.
+- **Histórico resistente a reinicios**: cada vez que cambian los datos, guarda una copia en `historico/<marca>/` (`espana.json` y `senado.json`) y añade una instantánea deduplicada a `evolucion.json`. Si el script se detiene o se reinicia a mitad de la noche, carga el `evolucion.json` existente y continúa añadiendo pasos sin perder nada.
+
+Ensayo con una copia local de la API (`scripts/results_rehearsal_api.ts`):
+
+1. Graba una vez las respuestas reales (112 consultas, unos 95 MB, en `.cache/29n-api-grabacion/`, fuera de git):
+   ```sh
+   npm run resultados:simulacro:grabar
+   ```
+2. En una terminal, arranca la copia local. Cada consulta a `getConfig` avanza un paso del recuento, de 0 % a 100 %; los votos de cada lista son sus votos de 2023, que da la propia API (`partidosEnfrentamiento`). No es una previsión.
+   ```sh
+   npm run resultados:simulacro:api -- --pasos 12
+   ```
+3. En otra terminal, captura con `--ensayo`, que marca los archivos como ensayo (`kind: 'simulacion'`):
+   ```sh
+   npm run resultados:oficial -- --base http://localhost:8787 --ensayo --cada 5
+   ```
+4. Con `npm run dev`, abre `/resultados/?ensayo`. Sin `?ensayo`, la página no muestra nunca los datos de un ensayo, y no hace falta cambiar `status`.
+5. **Borra `public/2026/generales/resultados/datos/`** al terminar. Si quedan datos de un ensayo, la captura real lo avisa y empieza una evolución nueva.
+
+Pasos para el domingo 29N:
+
+1. Asegúrate de que no quedan archivos de ensayo en `public/2026/generales/resultados/datos/`.
+2. Antes de las 20:00 (o en cualquier momento de la noche), arranca el polling en una terminal:
+   ```sh
+   npm run resultados:oficial -- --raw .cache/29n-raw
+   ```
+   Opciones útiles:
+   - `--cada <segundos>`: fuerza el intervalo entre consultas en lugar de `polling.interval_MS`.
+   - `--raw <carpeta>`: guarda también las respuestas crudas de la API (por ejemplo en `.cache/29n-raw`, que está fuera de git).
+   - `--historico-municipios`: guarda además `municipios-<provincia>.json` dentro de cada carpeta de `historico/<marca>/` (ocupa bastante más espacio).
+   - `--sin-senado` / `--sin-municipios`: omite Senado o municipios si quieres reducir peticiones.
+   - `--forzar`: descarga aunque `isOpen` sea `false` (útil para comprobar conectividad).
+   - `--una-vez` / `--dry-run`: ejecuta un solo ciclo / no escribe en `public/`.
+   - `--definitivo`: fuerza la lectura de la fuente `def` en lugar de `pro`.
+3. Revisa en local con `npm run dev` en `/resultados/` que se ven los resultados finales y el panel **«Cómo fue el recuento»**. Si alguna candidatura sale como `x-…`, añade sus siglas a `aliases` en `src/data/2026/generales/resultados.ts`.
+4. Cuando quieras publicarlo (la misma noche o más tarde), cambia `status` en `src/data/2026/generales/resultados.ts` a `'provisional'` (o `'definitivo'` tras el escrutinio general), haz commit de `public/2026/generales/resultados/datos/` y despliega la web.
+5. Antes de cada despliegue, ejecuta `npm run og:secciones`: `og/resultados.png` (la vista previa de los enlaces a `/resultados/`) pasa a mostrar el hemiciclo y el escrutado de ese momento. Sin datos, muestra la tarjeta de la noche; los datos de un ensayo no entran nunca (con `--ensayo`, la tarjeta del ensayo va a `.cache/og/resultados-ensayo.png`). Las redes guardan la imagen un tiempo: un enlace ya compartido puede tardar en cambiar.
+
+#### Importador genérico (fuente alternativa)
+
+Si prefieres importar un JSON de otra fuente o un archivo local:
+
+1. Ejecuta:
    ```sh
    npm run resultados:importar -- --fuente <url> --municipios <url con {provincia}> --senado <url>
    ```
-   Si la fuente de los municipios es un solo archivo, quita `{provincia}`. El script muestra cada vez los escaños de cada partido en el Congreso y, con `--senado`, los senadores. Con `--cada 60`, el script lee la fuente cada 60 segundos y escribe solo los archivos que cambian (útil con `npm run dev`). Con `--definitivo`, marca los datos como escrutinio general.
-3. Si el script dice que no encuentra un campo, añade su nombre a `FIELD_ALIASES` en `src/lib/results.ts` y ejecuta `npm test`. Si una candidatura sale como `x-…`, añade sus siglas a `aliases` en `resultados.ts`. Si una circunscripción del Senado no aparece, añade el nombre que usa la fuente a `aliases` de esa isla en `senateConstituencies`.
-4. Revisa la página con `npm run dev`, haz commit de `public/<elección>/resultados/datos/` y publica la web. Las páginas abiertas muestran los datos en el minuto siguiente al despliegue.
+   Si la fuente de los municipios es un solo archivo, quita `{provincia}`. Con `--cada 60`, repite cada 60 segundos y escribe solo los archivos que cambian. Con `--definitivo`, marca los datos como escrutinio general.
+2. Si el script dice que no encuentra un campo, añade su nombre a `FIELD_ALIASES` en `src/lib/results.ts` y ejecuta `npm test`. Si una circunscripción del Senado no aparece, añade el nombre que usa la fuente a `aliases` de esa isla en `senateConstituencies`.
 
 La página ya no muestra la simulación, pero `simulateNight` y `simulateMunicipalities` (`src/lib/results.ts`, con sus tests) y el ensayo del script (`--ensayo`) siguen disponibles para volver a ponerla. La simulación no es una previsión: parte de la media de encuestas, reparte el voto por provincias en proporción a sus escaños, da a cada partido autonómico su voto solo en su territorio y añade un error al azar por provincia. Los municipios tienen un tamaño al azar (la capital, mayor) y sus votos suman los de su provincia.
 

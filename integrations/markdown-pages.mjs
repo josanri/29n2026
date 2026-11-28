@@ -55,6 +55,12 @@ const yaml = (value) => JSON.stringify(value);
 function makeConverter(site) {
   const converter = new TurndownService({ headingStyle: 'atx', bulletListMarker: '-', codeBlockStyle: 'fenced', emDelimiter: '*' });
   converter.use(gfm);
+  // A table with no rows (a script fills it in the browser) says nothing, and the GFM table rule fails on it:
+  // it reads the first row. A rule added later is tried first, so this one runs before the GFM one.
+  converter.addRule('empty-table', {
+    filter: (node) => node.nodeName === 'TABLE' && /** @type {HTMLTableElement} */ (node).rows.length === 0,
+    replacement: () => '',
+  });
   // What an agent cannot read or use: pictures, scripts, controls, dialogs and what the page hides.
   converter.remove(/** @type {any} */ (['script', 'style', 'svg', 'canvas', 'iframe', 'noscript', 'template', 'dialog', 'button', 'input', 'select', 'textarea', 'img']));
   converter.remove((node) => node.hasAttribute('hidden') || node.getAttribute('aria-hidden') === 'true');

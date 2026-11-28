@@ -8,21 +8,29 @@
  *   public/<election>/og/categorias.png
  *   public/<election>/og/tests.png
  *   public/<election>/og/calendario.png
+ *   public/<election>/og/resultados.png
+ *
+ * `resultados.png` shows the results when `public/<election>/resultados/datos/espana.json` has real data: the
+ * hemicycle of the Congress, the count and the first parties. Without data, it shows the card of the night (from
+ * 20:00). A rehearsal file (`kind: 'simulacion'`) never goes into it; with `--ensayo`, the card of the rehearsal goes
+ * to `.cache/og/resultados-ensayo.png` to look at it. On the night, run this script before each deploy.
  *
  * Uses the same pre-rasterized glyph atlas (`worker/og/atlas.bin`) and indexed PNG encoder (`worker/og/png.ts`)
  * as the Cloudflare Worker, so it needs no browser or external dependencies and runs in under one second.
  *
  * Use: npm run og:secciones
- *      node scripts/og_sections.ts [election]   (default «2026/generales»)
+ *      node scripts/og_sections.ts [election] [--ensayo]   (default «2026/generales»)
  */
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { loadAtlas, type Atlas, type Font, type Glyph } from '../worker/og/atlas.ts';
 import { encodePng } from '../worker/og/png.ts';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
-const ELECTION = process.argv[2] || process.env.ELECTION || '2026/generales';
+const ARGS = process.argv.slice(2);
+const ELECTION = ARGS.find((arg) => !arg.startsWith('--')) || process.env.ELECTION || '2026/generales';
+const REHEARSAL = ARGS.includes('--ensayo');
 const DATA_DIR = join(ROOT, 'src', 'data', ELECTION);
 const OUT_DIR = join(ROOT, 'public', ELECTION, 'og');
 mkdirSync(OUT_DIR, { recursive: true });
@@ -364,10 +372,11 @@ function readLiveCounts() {
 
 const live = readLiveCounts();
 
-function save(c: Canvas, filename: string) {
+function save(c: Canvas, filename: string, dir = OUT_DIR) {
   const png = encodePng(c.width, c.height, c.rows, c.pal.finish());
-  writeFileSync(join(OUT_DIR, filename), png);
-  return { file: `public/${ELECTION}/og/${filename}`, KB: (png.length / 1024).toFixed(1) };
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, filename), png);
+  return { file: join(dir, filename).slice(ROOT.length).replace(/\\/g, '/'), KB: (png.length / 1024).toFixed(1) };
 }
 
 // ── 0. PORTADA ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -760,7 +769,114 @@ function renderCalendario() {
   return save(c, 'calendario.png');
 }
 
+// ── RESULTADOS ──────────────────────────────────────────────────────────────────────────────────────────────────
+
+/** The colors of the parties: the catalog of the results, then the party files of the site, then the feed. */
+const resultsData = await import(pathToFileURL(join(DATA_DIR, 'resultados.ts')).href);
+const { nationalTotal } = await import(pathToFileURL(join(ROOT, 'src', 'lib', 'results.ts')).href);
+const colorKey = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/[^A-Z0-9+]/g, '');
+const fileColors = new Map<string, string>();
+for (const file of readdirSync(join(DATA_DIR, 'programas')).filter((name) => name.endsWith('.json'))) {
+  const raw = JSON.parse(readFileSync(join(DATA_DIR, 'programas', file), 'utf8'));
+  for (const text of [raw.siglas, raw.partido, file.replace(/\.json$/, '')]) {
+    if (text && raw.color && !fileColors.has(colorKey(text))) fileColors.set(colorKey(text), raw.color);
+  }
+}
+
+interface ResultsParty { id: string; acronym: string; name?: string; seats?: number; votes: number; color?: string }
+
+function renderResultados() {
+  const feedPath = join(ROOT, 'public', ELECTION, 'resultados', 'datos', 'espana.json');
+  const feed = existsSync(feedPath) ? JSON.parse(readFileSync(feedPath, 'utf8')) : null;
+  const usable = feed && Array.isArray(feed.areas) && (feed.kind !== 'simulacion' || REHEARSAL);
+  const total = usable ? nationalTotal(feed.areas) : null;
+  const catalog: { id: string; color: string }[] = resultsData.resultsParties;
+  const order = new Map(catalog.map((party, index) => [party.id, index]));
+  const parties: ResultsParty[] = total ? total.parties.filter((party: ResultsParty) => (party.seats ?? 0) > 0) : [];
+  const live = parties.length > 0;
+  const colorOf = (party: ResultsParty) =>
+    catalog.find((item) => item.id === party.id)?.color ??
+    [party.acronym, party.name, party.id.replace(/^x-/, '')].map((text) => (text ? fileColors.get(colorKey(text)) : undefined)).find(Boolean) ??
+    party.color ??
+    resultsData.OTHER_PARTY_COLOR;
+  const bySeats = [...parties].sort((a, b) => (b.seats ?? 0) - (a.seats ?? 0) || b.votes - a.votes);
+  const first = bySeats[0];
+  const counted = total ? total.counted.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) : '0';
+  const definitive = feed?.kind === 'definitivo';
+
+  const c = createCanvas();
+  drawLeftColumn(
+    c,
+    live
+      ? {
+          kicker: REHEARSAL && feed.kind === 'simulacion' ? 'ENSAYO · 29N' : 'RESULTADOS · 29N',
+          line1: 'RESULTADOS',
+          line2: definitive ? 'OFICIALES' : 'PROVISIONALES',
+          subtitle: `Congreso con el ${counted} % escrutado. Mayoría absoluta: 176 escaños.`,
+          stats: bySeats.slice(0, 4).map((party) => [String(party.seats), party.acronym.slice(0, 10)] as [string, string]),
+          footerRight: definitive ? 'Escrutinio general' : 'Ministerio del Interior',
+        }
+      : {
+          kicker: '29N · 20:00',
+          line1: 'RESULTADOS',
+          line2: 'DEL 29N',
+          subtitle: 'Congreso y Senado, provincia a provincia y municipio a municipio.',
+          stats: [['350', 'escaños'], ['209', 'senadores']],
+          footerRight: 'Ministerio del Interior',
+        },
+  );
+
+  // The hemicycle of the Congress: the parties from left to right, as on the page. The palette has room for eight
+  // party colors; the rest of the parties share the gray of «otros». The hollow is wider than on the card of the
+  // simulator, so that the number fits inside; the label goes under the hemicycle.
+  const cx = 936, cy = 430, innerR = 122, outerR = 236, rows = 10;
+  const step = (outerR - innerR) / (rows - 1);
+  const radii = Array.from({ length: rows }, (_, r) => innerR + r * step);
+  const radiiSum = radii.reduce((a, b) => a + b, 0);
+  const perRow = radii.map((r) => Math.round((350 * r) / radiiSum));
+  perRow[rows - 1] += 350 - perRow.reduce((a, b) => a + b, 0);
+  const seats: { x: number; y: number; angle: number; radius: number }[] = [];
+  radii.forEach((radius, rIdx) => {
+    const count = perRow[rIdx];
+    for (let i = 0; i < count; i++) {
+      const angle = Math.PI * (1 - (count === 1 ? 0.5 : i / (count - 1)));
+      seats.push({ x: cx + radius * Math.cos(angle), y: cy - radius * Math.sin(angle), angle, radius });
+    }
+  });
+  seats.sort((a, b) => b.angle - a.angle || a.radius - b.radius);
+  const seatR = step * 0.4;
+  const emptyRamp = c.pal.ramp(BLACK, '#5c5c5c');
+  const otherRamp = c.pal.ramp(BLACK, resultsData.OTHER_PARTY_COLOR);
+  const own = new Set(bySeats.slice(0, 8).map((party) => party.id));
+  const ordered = [...parties].sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999));
+  let index = 0;
+  for (const party of ordered) {
+    const ramp = own.has(party.id) ? c.pal.ramp(BLACK, colorOf(party)) : otherRamp;
+    for (let k = 0; k < (party.seats ?? 0) && index < seats.length; k++, index++) fillCircle(c, seats[index].x, seats[index].y, seatR, ramp);
+  }
+  for (; index < seats.length; index++) fillCircle(c, seats[index].x, seats[index].y, seatR, emptyRamp);
+
+  const whiteRamp = c.pal.ramp(BLACK, WHITE);
+  const yellowRamp = c.pal.ramp(BLACK, YELLOW);
+  drawText(c, atlas.font('bsd-900-84'), live ? String(first.seats) : '350', cx, baseline(atlas.font('bsd-900-84'), cy - 82, 72), whiteRamp, 0, 'center');
+  fillRect(c, cx - outerR, cy + 24, outerR * 2, 3, c.pal.solid(SUBTLE));
+  drawText(c, atlas.font('archivo-800-26'), live ? `ESCAÑOS DE ${first.acronym.toUpperCase()}`.slice(0, 28) : 'ESCAÑOS DEL CONGRESO', cx, baseline(atlas.font('archivo-800-26'), cy + 40, 32), yellowRamp, 0, 'center');
+  drawText(
+    c,
+    atlas.font('archivo-500-26'),
+    live ? `${counted} % escrutado` : 'Desde las 20:00 del 29N',
+    cx,
+    baseline(atlas.font('archivo-500-26'), cy + 78, 32),
+    c.pal.ramp(BLACK, MUTED),
+    0,
+    'center',
+  );
+
+  return REHEARSAL ? save(c, 'resultados-ensayo.png', join(ROOT, '.cache', 'og')) : save(c, 'resultados.png');
+}
+
 const results = [
+  renderResultados(),
   renderPortada(),
   renderSimulador(),
   renderEncuestas(),

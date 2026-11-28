@@ -26,6 +26,8 @@ import { mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
+  appendEvolutionSnapshot,
+  createEvolutionSnapshot,
   nationalTotal,
   normalizeFeed,
   normalizeMunicipalFeed,
@@ -34,6 +36,7 @@ import {
   simulateMunicipalities,
   simulateNight,
   simulateSenate,
+  type EvolutionFeed,
   type ResultsFeed,
   type SenateFeed,
 } from '../src/lib/results.ts';
@@ -78,13 +81,34 @@ const build = async (): Promise<Map<string, ResultsFeed | SenateFeed>> => {
   const files = new Map<string, ResultsFeed | SenateFeed>();
   if (rehearsal !== undefined) {
     const shares = { pp: 32, psoe: 28, vox: 17, fa: 7, podemos: 2, salf: 1.8, erc: 2, junts: 1.4, bildu: 1.4, pnv: 1, bng: 0.9, cc: 0.4, upn: 0.3 };
-    const national = simulateNight({ shares, catalog: resultsParties, seatsByCode: constituencySeats, names, progress: Number(rehearsal), seed: 2026 });
+    const targetProgress = Math.max(0, Math.min(100, Number(rehearsal)));
+    const national = simulateNight({ shares, catalog: resultsParties, seatsByCode: constituencySeats, names, progress: targetProgress, seed: 2026 });
     files.set('espana', national);
     files.set('senado', simulateSenate(national, senateConstituencies, 2026));
     for (const area of national.areas) {
       const map = JSON.parse(readFileSync(join(root, 'public', election, 'mapas', 'municipios', `${area.code}.json`), 'utf8'));
       const towns = map.municipios.map((town: { codigo: string; nombre: string; compartido?: boolean }) => ({ code: town.codigo, name: town.nombre, shared: town.compartido }));
       files.set(`municipios-${area.code}`, simulateMunicipalities(area, towns, 2026));
+    }
+    // Also generate a realistic multi-step evolution sequence so `/resultados/?ensayo` can preview the replay UI.
+    const milestones = [5, 15, 30, 50, 70, 85, 95, 100].filter((step) => step < targetProgress);
+    milestones.push(targetProgress);
+    let evolution: EvolutionFeed | null = null;
+    const baseMs = Date.parse('2026-11-29T20:15:00+01:00');
+    milestones.forEach((step, index) => {
+      const at = new Date(baseMs + index * 15 * 60_000).toISOString();
+      const stepCongress = { ...simulateNight({ shares, catalog: resultsParties, seatsByCode: constituencySeats, names, progress: step, seed: 2026 }), updatedAt: at };
+      const stepSenate = { ...simulateSenate(stepCongress, senateConstituencies, 2026), updatedAt: at };
+      const rel = `historico/ensayo-${String(index + 1).padStart(2, '0')}`;
+      mkdirSync(join(outDir, rel), { recursive: true });
+      writeFileSync(join(outDir, rel, 'espana.json'), JSON.stringify(stepCongress));
+      writeFileSync(join(outDir, rel, 'senado.json'), JSON.stringify(stepSenate));
+      const snap = createEvolutionSnapshot(stepCongress, stepSenate, { at, snapshot: rel });
+      evolution = appendEvolutionSnapshot(evolution, snap, 'simulacion').feed;
+    });
+    if (evolution) {
+      mkdirSync(outDir, { recursive: true });
+      writeFileSync(join(outDir, 'evolucion.json'), JSON.stringify(evolution));
     }
     return files;
   }

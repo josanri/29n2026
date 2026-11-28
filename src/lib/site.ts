@@ -54,6 +54,10 @@ export const SECTION_SHARE_IMAGES = {
     path: '/og/tests.png',
     alt: 'Tests electorales del 29N en Electosfera: Sin siglas y Temas que dividen para comparar tu postura con los programas.',
   },
+  results: {
+    path: '/og/resultados.png',
+    alt: 'Resultados del 29N en Electosfera: el hemiciclo del Congreso, los escaños de cada partido y el escrutado, con el Senado provincia a provincia.',
+  },
   calendar: {
     path: '/og/calendario.png',
     alt: 'Calendario electoral del 29N en Electosfera: fechas clave de voto por correo, campaña y jornada electoral.',

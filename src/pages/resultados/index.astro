@@ -12,15 +12,29 @@ import ProvinceMap from '@/components/candidacies/ProvinceMap.astro';
 import Button from '@/components/ui/Button.astro';
 import Panel from '@/components/ui/Panel.astro';
 import Tag from '@/components/ui/Tag.astro';
-import { ABSOLUTE_MAJORITY, CONGRESS_SEATS } from '@eleccion/congreso';
+import { ABSOLUTE_MAJORITY, CONGRESS_SEATS, congressGroups } from '@eleccion/congreso';
+import { ELECTION_DATE, ELECTION_DAY_SCHEDULE } from '@eleccion/calendario';
 import { election } from '@eleccion/eleccion';
-import { constituencySeats, OTHER_PARTY_COLOR, resultsConfig, resultsParties, senateConstituencies } from '@eleccion/resultados';
-import { SENATE_ABSOLUTE_MAJORITY, SENATE_AUTONOMOUS_SEATS, SENATE_ELECTED_SEATS, SENATE_SEATS } from '@eleccion/senado';
+import { constituencySeats, OTHER_PARTY_COLOR, resultsConfig, resultsParties, senateConstituencies, senateElectedSeats } from '@eleccion/resultados';
+import { SENATE_AUTONOMOUS_SEATS } from '@eleccion/senado';
 import { geography } from '@/lib/geography';
 import { programs } from '@/lib/programs';
 import { routes, withBase } from '@/lib/routes';
+import { SECTION_SHARE_IMAGES } from '@/lib/site';
 
 const programIds = new Set(programs.map((program) => program.id));
+/** The key that matches a party of the results with its file: no accents, no spaces, no dots («D.R.G» = «DRG»). */
+const colorKey = (text: string) =>
+  text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z0-9+]/g, '');
+// The color of each party file (`programas/*.json`), also of the parties with no program: a list outside
+// `resultsParties` takes it by its acronym, its name or its id. The first file wins a shared key.
+const programColors: Record<string, string> = {};
+for (const program of programs) {
+  for (const text of [program.acronym, program.partyName, program.id]) {
+    const key = text ? colorKey(text) : '';
+    if (key && !programColors[key]) programColors[key] = program.color;
+  }
+}
 const names = Object.fromEntries(geography.provinces.map((province) => [province.code, province.name]));
 const provinceList = Object.keys(constituencySeats)
   .sort((a, b) => names[a].localeCompare(names[b], 'es'))
@@ -33,10 +47,11 @@ const pageData = {
   municipalFeedUrl: withBase(resultsConfig.municipalFeedUrl),
   municipalMapUrl: withBase(resultsConfig.municipalMapUrl),
   senateFeedUrl: withBase(resultsConfig.senateFeedUrl),
+  evolutionFeedUrl: withBase(resultsConfig.evolutionFeedUrl),
   refreshSeconds: resultsConfig.refreshSeconds,
   majority: ABSOLUTE_MAJORITY,
   seatsByCode: constituencySeats,
-  senateSeats: SENATE_ELECTED_SEATS,
+  senateSeats: senateElectedSeats,
   // The constituencies of the Senate of each province: the province, or its islands.
   senateByProvince: Object.fromEntries(
     Object.keys(constituencySeats).map((code) => [
@@ -46,6 +61,9 @@ const pageData = {
   ),
   names,
   otherColor: OTHER_PARTY_COLOR,
+  programColors,
+  simulatorUrl: routes.simulator(),
+  simulatorGroups: congressGroups.map((group) => group.id),
   parties: resultsParties.map((party) => ({
     id: party.id,
     acronym: party.acronym,
@@ -61,15 +79,19 @@ const pageData = {
 const formatDay = (date: string) =>
   new Date(date).toLocaleString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
 const isComingSoon = resultsConfig.status === 'proximamente';
+// The chamber after 29N: the 209 elected senators and the designated ones, which do not change tonight.
+const senateSeats = senateElectedSeats + SENATE_AUTONOMOUS_SEATS;
+const senateMajority = Math.floor(senateSeats / 2) + 1;
 ---
 
 <BaseLayout
   title="Resultados de las elecciones generales"
+  image={SECTION_SHARE_IMAGES.results}
   description={`Resultados del Congreso y del Senado del ${election.shortName}: escaños, senadores, votos y participación por partido y provincia. Hasta que se publiquen aquí, el recuento está en la web oficial.`}
 >
   <section class="page-hero">
     <div class="container">
-      <Tag variant="ink">Congreso · {CONGRESS_SEATS} escaños · Senado · {SENATE_ELECTED_SEATS} senadores</Tag>
+      <Tag variant="ink">Congreso · {CONGRESS_SEATS} escaños · Senado · {senateElectedSeats} senadores</Tag>
       <h1 class="headline">Resultados</h1>
       <p class="page-hero__lede">
         Escaños, senadores, votos y participación de cada partido, en España, en cada provincia y en cada municipio. Los datos de la noche son los
@@ -88,7 +110,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
       <h2 id="soon-title" class="soon__title">Próximamente</h2>
       <p class="soon__lede" id="soon-lede">
         Los colegios cierran el <b>{formatDay(resultsConfig.opensAt)}</b> (en Canarias, a las 20:00 hora canaria).
-        Aquí no seguimos el recuento al minuto: la noche electoral, los resultados provisionales están en la web oficial del
+        Aquí no seguimos el recuento al minuto: la noche electoral, los resultados provisionales están en la web oficial del{' '}
         {resultsConfig.source.name}. Los publicaremos en esta página más tarde.
       </p>
       <dl class="countdown" id="countdown" aria-label="Tiempo hasta el cierre de los colegios">
@@ -96,9 +118,24 @@ const isComingSoon = resultsConfig.status === 'proximamente';
         <div><dt>horas</dt><dd data-unit="hours">–</dd></div>
         <div><dt>minutos</dt><dd data-unit="minutes">–</dd></div>
       </dl>
+      <div class="schedule">
+        <h3 class="schedule__title">Horario de la jornada electoral</h3>
+        <ol class="schedule__list">
+          {ELECTION_DAY_SCHEDULE.map((item) => (
+            <li>
+              <time datetime={`${ELECTION_DATE}T${item.time}`}>{item.time} h</time>
+              <span>{item.label}</span>
+            </li>
+          ))}
+        </ol>
+        <p class="schedule__note">
+          Hora peninsular. La participación y los resultados provisionales se publican en{' '}
+          <a href={resultsConfig.source.url} rel="noopener" target="_blank">resultados.29neleccionesgenerales.es<span class="sr-only"> (se abre en otra pestaña)</span></a>.
+        </p>
+      </div>
       <p class="soon__after" id="soon-after" hidden>Los colegios ya han cerrado. Sigue el recuento en la web oficial: los resultados llegan a esta página más tarde.</p>
       <div class="soon__actions">
-        <Button variant="ink" href={resultsConfig.source.url} rel="noopener">Resultados en 29neleccionesgenerales.es</Button>
+        <Button variant="ink" href={resultsConfig.source.url} rel="noopener">Resultados en la web oficial</Button>
         <Button href={routes.calendar()}>Calendario electoral</Button>
       </div>
     </section>
@@ -106,6 +143,30 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     <!-- The results. The script fills every part. -->
     <div class="board" id="board" hidden>
       <p class="live-error" id="live-error" role="status" hidden></p>
+
+      <!-- Count evolution replay: shown automatically when `evolucion.json` has 2 or more snapshots. -->
+      <section class="evolution box" id="evolution" aria-labelledby="evolution-title" hidden>
+        <div class="evolution__head">
+          <div>
+            <h2 class="evolution__title" id="evolution-title">Cómo fue el recuento</h2>
+            <p class="evolution__status" id="evo-status" aria-live="polite"></p>
+          </div>
+          <button type="button" class="evolution__btn evolution__btn--latest" id="evo-latest" hidden>Volver al resultado final</button>
+        </div>
+        <div class="evolution__controls">
+          <button type="button" class="evolution__btn" id="evo-play" aria-label="Reproducir la evolución del recuento">▶ Reproducir</button>
+          <button type="button" class="evolution__btn evolution__btn--step" id="evo-prev" aria-label="Instantánea anterior">‹</button>
+          <label class="evolution__range-wrap">
+            <span class="sr-only">Momento del recuento</span>
+            <input type="range" id="evo-slider" min="0" max="0" step="1" value="0" />
+          </label>
+          <button type="button" class="evolution__btn evolution__btn--step" id="evo-next" aria-label="Instantánea siguiente">›</button>
+        </div>
+        <div class="evolution__chart-wrap">
+          <svg class="evolution__chart" id="evo-chart" viewBox="0 0 640 190" role="img" aria-label="Evolución de escaños en el Congreso durante el recuento"></svg>
+        </div>
+        <ul class="evolution__legend" id="evo-legend" aria-label="Escaños en el momento seleccionado"></ul>
+      </section>
 
       <div class="summary" id="summary" aria-live="polite">
         <div class="summary__item">
@@ -127,10 +188,12 @@ const isComingSoon = resultsConfig.status === 'proximamente';
             <text class="hemi__caption" id="hemi-caption" x="200" y="192" text-anchor="middle">escaños del primero</text>
           </Hemicycle>
           <p class="majority" id="majority"></p>
+          <a class="pact-link" id="pact-link" href={routes.simulator()} hidden>Abre el pactómetro con estos escaños →</a>
         </Panel>
 
         <Panel class="table-panel" title="Por partido">
-          <div class="table-wrap">
+          <!-- With all the parties open, the list scrolls inside the panel (the parties with seats stay at the top). -->
+          <div class="table-wrap" id="parties-national-wrap">
             <table class="parties" id="parties-national">
               <caption class="sr-only">Escaños y votos de cada partido en España</caption>
               <thead>
@@ -143,17 +206,17 @@ const isComingSoon = resultsConfig.status === 'proximamente';
         </Panel>
       </div>
 
-      <!-- The Senate: the 208 elected senators. The 58 senators of the regional parliaments do not change on the night. -->
+      <!-- The Senate: the 209 elected senators. The 58 senators of the regional parliaments do not change on the night. -->
       <section class="senate" id="senate" aria-labelledby="senate-title">
         <h2 class="explore__title" id="senate-title">Senado</h2>
         <p class="senate__status" id="senate-status" role="status">Todavía no hay datos del Senado.</p>
         <div class="grid grid--congress" id="senate-board" hidden>
           <Panel
             class="hemi-panel"
-            title={`${SENATE_ELECTED_SEATS} senadores elegidos`}
-            lead={`El Senado tiene ${SENATE_SEATS} escaños: los parlamentos autonómicos designan otros ${SENATE_AUTONOMOUS_SEATS}, que no cambian esta noche. Mayoría absoluta de la cámara: ${SENATE_ABSOLUTE_MAJORITY}.`}
+            title={`${senateElectedSeats} senadores elegidos`}
+            lead={`El Senado tendrá ${senateSeats} escaños: los parlamentos autonómicos designan otros ${SENATE_AUTONOMOUS_SEATS}, que no cambian esta noche. Mayoría absoluta de la cámara: ${senateMajority}.`}
           >
-            <Hemicycle id="senate-hemi" seats={SENATE_ELECTED_SEATS} rows={8} label="Hemiciclo de los senadores elegidos de cada partido">
+            <Hemicycle id="senate-hemi" seats={senateElectedSeats} rows={8} label="Hemiciclo de los senadores elegidos de cada partido">
               <text class="hemi__total" id="senate-hemi-total" x="200" y="172" text-anchor="middle">–</text>
               <text class="hemi__caption" id="senate-hemi-caption" x="200" y="192" text-anchor="middle">senadores del primero</text>
             </Hemicycle>
@@ -182,6 +245,10 @@ const isComingSoon = resultsConfig.status === 'proximamente';
       <section class="explore" id="explore" aria-labelledby="explore-title">
         <div class="explore__head">
           <h2 class="explore__title" id="explore-title">Por territorio</h2>
+          <div class="chamber-switch" role="group" aria-label="Cámara que ves en el mapa y en la tabla">
+            <button type="button" class="chamber-switch__btn" data-chamber="congreso" aria-pressed="true">Congreso</button>
+            <button type="button" class="chamber-switch__btn" data-chamber="senado" aria-pressed="false">Senado</button>
+          </div>
           <Button size="sm" id="explore-back" class="explore__back" hidden>← Volver a España</Button>
           <nav aria-label="Territorio que ves"><ol class="crumbs" id="crumbs"></ol></nav>
         </div>
@@ -222,6 +289,31 @@ const isComingSoon = resultsConfig.status === 'proximamente';
             </div>
             <h3 class="area-title" id="area-title">Toda España</h3>
             <p class="area-summary" id="area-summary"></p>
+            <!-- At the level of Spain: the last seats that are closest to a change. The name opens the province. -->
+            <section class="dhondt" id="close-seats" aria-labelledby="close-seats-title" hidden>
+              <h4 class="dhondt__title" id="close-seats-title">Escaños en el aire</h4>
+              <p class="dhondt__lead">Las provincias donde el último escaño está más cerca de cambiar de partido, y los votos que le faltan a la lista que se lo puede quitar.</p>
+              <div class="table-wrap">
+                <table class="parties" id="close-seats-table">
+                  <caption class="sr-only">Provincias con el último escaño más ajustado</caption>
+                  <thead>
+                    <tr><th scope="col">Provincia</th><th scope="col">Último escaño</th><th scope="col">Se lo puede quitar</th><th scope="col" class="num">Le faltan</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </section>
+            <!-- The Senate at the level of Spain: the elected senators of each province (or of its islands). -->
+            <div class="table-wrap table-wrap--scroll" id="senate-provinces-wrap" hidden>
+              <table class="parties" id="senate-provinces-table">
+                <caption class="sr-only">Senadores elegidos de cada partido en cada provincia</caption>
+                <thead>
+                  <tr><th scope="col">Provincia</th><th scope="col">Senadores</th><th scope="col" class="num">Escrutado</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <p class="note" id="note-senate-town" hidden>El Senado no tiene resultados por municipio: estos son los de la provincia. El mapa de municipios es del voto al Congreso.</p>
             <!-- At the level of Spain: each province, its most-voted party and its count. The name opens the province. -->
             <div class="table-wrap table-wrap--scroll" id="provinces-wrap" hidden>
               <table class="parties" id="provinces-table">
@@ -249,6 +341,24 @@ const isComingSoon = resultsConfig.status === 'proximamente';
               </table>
             </div>
             <p class="note" id="note-province" hidden>Una lista necesita el 3 % de los votos válidos de la provincia (con los votos en blanco) para tener escaño. Los escaños se reparten con la regla D'Hondt.</p>
+            <!-- The province: how D'Hondt gives its seats, quotient by quotient. -->
+            <section class="dhondt" id="dhondt" aria-labelledby="dhondt-title" hidden>
+              <h4 class="dhondt__title" id="dhondt-title">Cómo se reparten los escaños</h4>
+              <p class="dhondt__lead" id="dhondt-lead"></p>
+              <svg class="dhondt__chart" id="dhondt-chart" viewBox="0 0 640 210" role="img" aria-labelledby="dhondt-summary"></svg>
+              <ul class="map-legend" id="dhondt-legend" aria-label="Partidos del reparto"></ul>
+              <p class="dhondt__summary" id="dhondt-summary" aria-live="polite"></p>
+              <details class="dhondt__details">
+                <summary>Ver la tabla de cocientes</summary>
+                <div class="table-wrap">
+                  <table class="parties dhondt__table" id="dhondt-table">
+                    <caption class="sr-only" id="dhondt-table-caption">Cocientes de cada partido</caption>
+                    <thead></thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </details>
+            </section>
             <p class="note" id="note-town" hidden>Un municipio no elige diputados: los escaños se reparten en toda la provincia.</p>
             <!-- The Senate of the province: its candidates, or the candidates of each island. -->
             <div class="area-senate" id="area-senate" hidden></div>
@@ -275,6 +385,8 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   import { setupProvinceMap } from '@/lib/province-map';
   import { tooltip } from '@/lib/tooltip';
   import {
+    dhondtBreakdown,
+    EVOLUTION_FORMAT,
     nationalTotal,
     senateTotal,
     share,
@@ -284,6 +396,8 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     withElected,
     withSeats,
     type AreaResult,
+    type EvolutionFeed,
+    type EvolutionSnapshot,
     type PartyResult,
     type ResultsFeed,
     type SenateFeed,
@@ -306,6 +420,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     municipalFeedUrl: string;
     municipalMapUrl: string;
     senateFeedUrl: string;
+    evolutionFeedUrl: string;
     refreshSeconds: number;
     majority: number;
     seatsByCode: Record<string, number>;
@@ -313,6 +428,11 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     senateByProvince: Record<string, string[]>;
     names: Record<string, string>;
     otherColor: string;
+    /** The color of each party file of the site, by `colorKey` of its acronym, name or id. */
+    programColors: Record<string, string>;
+    /** The simulator of pacts, and the ids of its groups of the Congress. */
+    simulatorUrl: string;
+    simulatorGroups: string[];
     parties: PageParty[];
   };
 
@@ -320,7 +440,23 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   const data = JSON.parse(root.dataset.results!) as PageData;
   const byId = new Map(data.parties.map((party) => [party.id, party]));
   const order = new Map(data.parties.map((party, index) => [party.id, index]));
-  const colorOf = (id: string) => byId.get(id)?.color ?? data.otherColor;
+  // A list outside the catalog: the color of its party file on this site, else the color that the source gives it.
+  const colorKey = (text: string) =>
+    text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z0-9+]/g, '');
+  const learnedColors = new Map<string, string>();
+  const learnColor = (id: string, acronym: string, name?: string, color?: string) => {
+    if (byId.has(id) || learnedColors.has(id)) return;
+    const own = [acronym, name, id.replace(/^x-/, '')].map((text) => (text ? data.programColors[colorKey(text)] : undefined)).find(Boolean);
+    const found = own ?? (color && /^#[0-9a-f]{6}$/i.test(color) ? color : undefined);
+    if (found) learnedColors.set(id, found);
+  };
+  const learnFeedColors = (feed: ResultsFeed) => {
+    for (const area of feed.areas) for (const party of area.parties) learnColor(party.id, party.acronym, party.name, party.color);
+  };
+  const learnSenateColors = (feed: SenateFeed) => {
+    for (const area of feed.areas) for (const candidate of area.candidates) learnColor(candidate.partyId, candidate.acronym, undefined, candidate.color);
+  };
+  const colorOf = (id: string) => byId.get(id)?.color ?? learnedColors.get(id) ?? data.otherColor;
 
   const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
   const integer = (value: number) => value.toLocaleString('es-ES');
@@ -330,12 +466,21 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   // ---------- State ----------
   let liveFeed: ResultsFeed | null = null;
   let senateFeed: SenateFeed | null = null;
+  let evolutionFeed: EvolutionFeed | null = null;
+  /** `null` means latest/live; a number selects a specific snapshot index in `evolutionFeed.snapshots`. */
+  let replayIndex: number | null = null;
+  let playTimer: ReturnType<typeof setInterval> | null = null;
+  const historyCongress = new Map<string, ResultsFeed>();
+  const historySenate = new Map<string, SenateFeed>();
+  const dataBaseUrl = data.evolutionFeedUrl.replace(/\/[^/]+$/, '');
   const params = new URLSearchParams(location.search);
   // `?ensayo`: the page also shows live files marked as a simulation (the rehearsal of `--ensayo` in the import script).
   const rehearsal = params.has('ensayo');
   let selected = params.get('provincia') ?? '';
   if (!(selected in data.seatsByCode)) selected = '';
   let selectedTown = params.get('municipio') ?? '';
+  /** The chamber of «Por territorio»: the Congress (votes, seats, D'Hondt) or the Senate (senators, candidates). */
+  let chamber: 'congreso' | 'senado' = params.get('camara') === 'senado' ? 'senado' : 'congreso';
   if (selectedTown.slice(0, 2) !== selected) selectedTown = '';
 
   type TownMap = { ancho: number; alto: number; municipios: { codigo: string; nombre: string; d: string; compartido?: boolean }[] };
@@ -398,6 +543,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     // Before the first seat (0 % counted) there is nothing to fold.
     const folded = seated.length > 0 && rest > 0;
     nationalMore.hidden = !folded;
+    $('#parties-national-wrap').classList.toggle('table-wrap--scroll', folded && showAllNational);
     nationalMore.setAttribute('aria-expanded', String(showAllNational));
     nationalMore.textContent = showAllNational ? 'Ocultar los partidos sin escaño' : `Ver ${rest === 1 ? 'el partido' : `los ${rest} partidos`} sin escaño`;
     return (folded && !showAllNational ? seated : parties).map(row).join('');
@@ -462,10 +608,48 @@ const isComingSoon = resultsConfig.status === 'proximamente';
         ? `Hemiciclo del Congreso: ${parties.map((party) => `${party.acronym} ${party.seats}`).join(', ')}`
         : 'Hemiciclo del Congreso, todavía sin escaños',
     );
+    drawPactLink(total, assigned);
     const majority = $('#majority');
     if (!assigned) majority.textContent = 'Todavía no hay votos contados.';
     else if ((first.seats ?? 0) >= data.majority) majority.textContent = `${first.acronym} tiene mayoría absoluta.`;
     else majority.textContent = `Nadie llega solo a la mayoría absoluta: a ${first.acronym} le faltan ${data.majority - (first.seats ?? 0)} escaños.`;
+  };
+
+  // ---------- Pactómetro ----------
+  /** The group of the simulator of each list: Frente Amplio is the group `sumar` with its new name. */
+  const SIMULATOR_GROUP: Record<string, string> = { fa: 'sumar', 'x-compromis-eupv-podem-erpv': 'compromis' };
+  const MAX_CUSTOM_GROUPS = 8;
+  /**
+   * The simulator of pacts with the seats of the moment (`?e=` seats, `?r=` the new name of Frente Amplio, `?x=` a
+   * group for each other list with seats, with its color). After 8 such lists, the rest go to «Otros».
+   */
+  const drawPactLink = (total: AreaResult, assigned: number) => {
+    const link = $<HTMLAnchorElement>('#pact-link');
+    link.hidden = !assigned;
+    if (!assigned) return;
+    const known = new Set(data.simulatorGroups);
+    const seats = new Map<string, number>();
+    const customs: string[] = [];
+    for (const party of sortParties(total.parties)) {
+      if (!party.seats) continue;
+      let group = SIMULATOR_GROUP[party.id] ?? (known.has(party.id) && party.id !== 'otros' ? party.id : '');
+      if (!group && customs.length < MAX_CUSTOM_GROUPS) {
+        group = `x${customs.length + 1}`;
+        const acronym = party.acronym.slice(0, 12);
+        customs.push(`${group}~${encodeURIComponent(acronym)}~${colorOf(party.id).slice(1)}`);
+      }
+      if (!group) group = 'otros';
+      seats.set(group, (seats.get(group) ?? 0) + party.seats);
+    }
+    const url = new URL(data.simulatorUrl, location.href);
+    // The order of `?e=` is the order of the hemicycle: the groups of the simulator from left to right, then the new
+    // lists, then «Otros».
+    const rank = (group: string) => (group === 'otros' ? 1e6 : group.startsWith('x') ? 1e5 + Number(group.slice(1)) : data.simulatorGroups.indexOf(group));
+    const ordered = [...seats].sort(([a], [b]) => rank(a) - rank(b));
+    url.searchParams.set('e', ordered.map(([group, count]) => `${group}-${count}`).join(','));
+    if (seats.has('sumar')) url.searchParams.set('r', 'sumar');
+    if (customs.length) url.searchParams.set('x', customs.join('|'));
+    link.href = url.pathname + url.search;
   };
 
   // ---------- Senate ----------
@@ -473,16 +657,20 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   const senateCircles = [...senateHemi.querySelectorAll<SVGCircleElement>('circle[data-seat]')];
   const seatWord = (count: number) => `${count} ${count === 1 ? 'senador' : 'senadores'}`;
 
-  /** The Senate of Spain: the hemicycle of the 208 elected seats and the table of the senators of each party. */
-  const drawSenate = () => {
+  /** The Senate of Spain: the hemicycle of the 209 elected seats and the table of the senators of each party. */
+  const drawSenate = (activeSenate: SenateFeed | null, snapshot: EvolutionSnapshot | null) => {
     const board = $('#senate-board');
     const status = $('#senate-status');
-    board.hidden = !senateFeed;
-    if (!senateFeed) {
+    const total = activeSenate
+      ? senateTotal(activeSenate.areas)
+      : snapshot?.senate
+        ? { seats: data.senateSeats, assigned: snapshot.senate.assigned, counted: snapshot.senate.counted, parties: sortParties(snapshot.senate.parties) }
+        : null;
+    board.hidden = !total;
+    if (!total) {
       status.textContent = 'Todavía no hay datos del Senado.';
       return;
     }
-    const total = senateTotal(senateFeed.areas);
     status.textContent = `Escrutado ${percent(total.counted)} · ${total.assigned} de ${total.seats} senadores asignados.`;
     const parties = total.parties
       .filter((party) => (party.seats ?? 0) > 0)
@@ -525,11 +713,11 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   };
 
   /** The Senate of the selected province: one table of candidates for the province, or for each of its islands. */
-  const drawAreaSenate = () => {
+  const drawAreaSenate = (activeSenate: SenateFeed | null) => {
     const box = $('#area-senate');
-    const codes = selected && !selectedTown ? data.senateByProvince[selected] ?? [] : [];
-    const areas = senateFeed ? codes.map((code) => senateFeed!.areas.find((area) => area.code === code)).filter((area) => area !== undefined) : [];
-    box.hidden = !selected || Boolean(selectedTown);
+    const codes = selected ? data.senateByProvince[selected] ?? [] : [];
+    const areas = activeSenate ? codes.map((code) => activeSenate.areas.find((area) => area.code === code)).filter((area) => area !== undefined) : [];
+    box.hidden = !selected || chamber !== 'senado';
     if (box.hidden) return;
     if (!areas.length) {
       box.innerHTML = '<h4 class="area-senate__title">Senado</h4><p class="note">Todavía no hay datos del Senado de esta provincia.</p>';
@@ -659,7 +847,10 @@ const isComingSoon = resultsConfig.status === 'proximamente';
       const code = selected;
       void loadJson(`live-${code}`, forProvince(data.municipalFeedUrl, code), (value) => {
         const townFeed = value as ResultsFeed;
-        if (townFeed.format === 'electosfera-resultados/1' && (townFeed.kind !== 'simulacion' || rehearsal)) liveTowns.set(code, townFeed);
+        if (townFeed.format === 'electosfera-resultados/1' && (townFeed.kind !== 'simulacion' || rehearsal)) {
+          learnFeedColors(townFeed);
+          liveTowns.set(code, townFeed);
+        }
       });
     }
     townStatus.textContent = towns ? '' : 'Todavía no hay datos por municipio de esta provincia.';
@@ -694,6 +885,149 @@ const isComingSoon = resultsConfig.status === 'proximamente';
 
   /** «Por territorio»: one map that goes from Spain to the municipalities, a return button, a breadcrumb back, and the table of the place. */
   const backButton = $<HTMLButtonElement>('#explore-back');
+  // ---------- D'Hondt ----------
+  const ordinalSeat = (seat: number) => `${seat}.º`;
+  const voteWord = (votes: number) => `${integer(votes)} ${votes === 1 ? 'voto' : 'votos'}`;
+
+  /** The province: a bar for each winning quotient, in seat order, and for the next ones; a line at the last seat. */
+  const drawDhondt = (area: AreaResult | undefined) => {
+    const box = $('#dhondt');
+    const breakdown = area ? dhondtBreakdown(area) : undefined;
+    if (!area || !breakdown?.last) {
+      box.hidden = true;
+      return;
+    }
+    box.hidden = false;
+    const acronymOf = new Map(area.parties.map((party) => [party.id, party.acronym]));
+    const name = (id: string) => acronymOf.get(id) ?? id;
+    const { quotients, last, challenger } = breakdown;
+    const seats = area.seats;
+    // In a large province the first quotients are so high that the last seats are tiny bars: the chart then shows
+    // the last LAST_SEATS seats and the next quotients, where the seats are decided. The table has all of them.
+    const LAST_SEATS = 12;
+    const start = quotients.length > 16 ? Math.max(0, seats - LAST_SEATS) : 0;
+    const shown = quotients.slice(start);
+    $('#dhondt-lead').textContent =
+      `Cada barra es un cociente: los votos de una lista divididos entre 1, 2, 3… Los ${seats} cocientes más altos ganan ${seats === 1 ? 'el escaño' : 'los escaños'}; las barras rayadas son los siguientes, que se quedan sin escaño.` +
+      (start > 0 ? ` Para ver dónde se decide el reparto, el gráfico muestra los escaños del ${ordinalSeat(start + 1)} al ${ordinalSeat(seats)} y los cocientes siguientes; la tabla tiene todos.` : '');
+
+    const W = 640;
+    const H = 210;
+    const pad = { top: 22, right: 8, bottom: 24, left: 58 };
+    const plotW = W - pad.left - pad.right;
+    const plotH = H - pad.top - pad.bottom;
+    const max = shown[0].quotient;
+    const slot = plotW / shown.length;
+    const gap = Math.min(4, slot * 0.25);
+    const barW = Math.max(2, slot - gap);
+    const yOf = (value: number) => pad.top + plotH - (value / max) * plotH;
+    const parts: string[] = [];
+    // A quotient with no seat: a hatch of its party color. Every bar has an outline in the ink, so it is visible in
+    // both themes whatever the party color (the yellow of CC on white, the purple of Podemos on black).
+    const hatch = (id: string) => `dh-hatch-${id.replace(/[^a-z0-9-]/gi, '')}`;
+    const hatched = [...new Set(shown.filter((item) => !item.seat).map((item) => item.id))];
+    parts.push(
+      `<defs>${hatched
+        .map(
+          (id) =>
+            `<pattern id="${hatch(id)}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect class="dh__hatch-bg" width="6" height="6" /><rect width="2.5" height="6" fill="${colorOf(id)}" /></pattern>`,
+        )
+        .join('')}</defs>`,
+    );
+    for (let tick = 0; tick <= 2; tick += 1) {
+      const value = (max * tick) / 2;
+      const y = yOf(value);
+      parts.push(`<line class="dh__grid" x1="${pad.left}" y1="${y}" x2="${W - pad.right}" y2="${y}" />`);
+      parts.push(`<text class="dh__axis" x="${pad.left - 6}" y="${y + 4}" text-anchor="end">${integer(Math.round(value))}</text>`);
+    }
+    shown.forEach((item, index) => {
+      const x = pad.left + index * slot + gap / 2;
+      const y = yOf(item.quotient);
+      const height = Math.max(1, pad.top + plotH - y);
+      const color = colorOf(item.id);
+      const radius = Math.min(4, barW / 2).toFixed(1);
+      const tip = escapeHtml(
+        tooltip(
+          `${name(item.id)} ÷ ${item.divisor}`,
+          `${integer(Math.round(item.quotient))} votos`,
+          item.seat ? `Gana el ${ordinalSeat(item.seat)} escaño de ${seats}` : 'Sin escaño',
+        ),
+      );
+      parts.push(
+        item.seat
+          ? `<rect class="dh__bar" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${height.toFixed(1)}" rx="${radius}" fill="${color}" data-tooltip="${tip}" />`
+          : `<rect class="dh__bar dh__bar--out" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${height.toFixed(1)}" rx="${radius}" fill="url(#${hatch(item.id)})" data-tooltip="${tip}" />`,
+      );
+      const label = item.seat ? String(item.seat) : '';
+      if (label) parts.push(`<text class="dh__axis" x="${(x + barW / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${label}</text>`);
+    });
+    // The last seat: a quotient must pass this line to win a seat.
+    const lastY = yOf(last.quotient);
+    const cutX = pad.left + (seats - start) * slot;
+    parts.push(`<line class="dh__last" x1="${pad.left}" y1="${lastY}" x2="${W - pad.right}" y2="${lastY}" />`);
+    parts.push(`<line class="dh__cut" x1="${cutX}" y1="${pad.top - 14}" x2="${cutX}" y2="${pad.top + plotH}" />`);
+    parts.push(`<text class="dh__note" x="${cutX - 4}" y="${pad.top - 8}" text-anchor="end">Último escaño</text>`);
+    $<SVGSVGElement>('#dhondt-chart').innerHTML = parts.join('');
+
+    const ids = [...new Set(shown.map((item) => item.id))];
+    $('#dhondt-legend').innerHTML = ids
+      .map((id) => `<li><span class="swatch" style="background:${colorOf(id)}" aria-hidden="true"></span>${escapeHtml(name(id))}</li>`)
+      .join('');
+
+    const lastVotes = area.parties.find((party) => party.id === last.id)?.votes ?? 0;
+    let text = `El último escaño (el ${ordinalSeat(seats)}) es de ${name(last.id)}: ${integer(lastVotes)} votos ÷ ${last.divisor} = ${integer(Math.round(last.quotient))}.`;
+    if (challenger) {
+      const votes = area.parties.find((party) => party.id === challenger.id)?.votes ?? 0;
+      const underThreshold = votes < breakdown.threshold;
+      text += ` La lista más cerca de quitárselo es ${name(challenger.id)}: le ${challenger.votesNeeded === 1 ? 'falta' : 'faltan'} ${voteWord(challenger.votesNeeded)}${underThreshold ? ', y con ellos pasaría del 3 %' : ''}.`;
+    }
+    if (area.counted < 100) text += ' Con el recuento a medias, el reparto puede cambiar.';
+    $('#dhondt-summary').textContent = text;
+
+    // The full table: a row for each list over the threshold, a column for each divisor up to one past the largest winner.
+    const seatOf = new Map(quotients.filter((item) => item.seat).map((item) => [`${item.id}:${item.divisor}`, item.seat!]));
+    const won = new Map<string, number>();
+    for (const item of quotients) if (item.seat) won.set(item.id, (won.get(item.id) ?? 0) + 1);
+    const lists = area.parties.filter((party) => party.votes > 0 && party.votes >= breakdown.threshold).sort(byVotes);
+    const columns = Math.min(seats + 1, Math.max(...lists.map((party) => won.get(party.id) ?? 0)) + 1);
+    const table = $<HTMLTableElement>('#dhondt-table');
+    $('#dhondt-table-caption').textContent = `Cocientes de cada partido en ${area.name}: los que ganan escaño, en negrita y con su número`;
+    table.tHead!.innerHTML = `<tr><th scope="col">Partido</th>${Array.from({ length: columns }, (_, index) => `<th scope="col" class="num">÷ ${index + 1}</th>`).join('')}</tr>`;
+    table.tBodies[0].innerHTML = lists
+      .map((party) => {
+        const cells = Array.from({ length: columns }, (_, index) => {
+          const seat = seatOf.get(`${party.id}:${index + 1}`);
+          const value = integer(Math.round(party.votes / (index + 1)));
+          return seat
+            ? `<td class="num is-seat"><b>${value}</b> <span class="dh__seat"><span class="sr-only">escaño </span>${seat}</span></td>`
+            : `<td class="num">${value}</td>`;
+        }).join('');
+        return `<tr><th scope="row"><span class="swatch" style="background:${colorOf(party.id)}" aria-hidden="true"></span>${escapeHtml(party.acronym)}</th>${cells}</tr>`;
+      })
+      .join('');
+  };
+
+  /** Spain: the provinces whose last seat needs the fewest votes to change, closest first. */
+  const drawCloseSeats = (feed: ResultsFeed) => {
+    const rows = feed.areas
+      .filter((area) => area.counted > 0)
+      .map((area) => ({ area, breakdown: dhondtBreakdown(area) }))
+      .filter(({ breakdown }) => breakdown.last && breakdown.challenger)
+      .sort((a, b) => a.breakdown.challenger!.votesNeeded - b.breakdown.challenger!.votesNeeded)
+      .slice(0, 8);
+    $('#close-seats').hidden = rows.length === 0;
+    const cell = (area: AreaResult, id: string) => {
+      const acronym = area.parties.find((party) => party.id === id)?.acronym ?? id;
+      return `<span class="swatch" style="background:${colorOf(id)}" aria-hidden="true"></span>${escapeHtml(acronym)}`;
+    };
+    $<HTMLTableElement>('#close-seats-table').tBodies[0].innerHTML = rows
+      .map(
+        ({ area, breakdown }) =>
+          `<tr><th scope="row"><button type="button" class="row-link" data-province="${area.code}">${escapeHtml(area.name)}</button></th><td>${cell(area, breakdown.last!.id)}</td><td>${cell(area, breakdown.challenger!.id)}</td><td class="num">${integer(breakdown.challenger!.votesNeeded)}</td></tr>`,
+      )
+      .join('');
+  };
+
   const drawExplorer = (feed: ResultsFeed, spainWins: Wins) => {
     const provinceTable = $<HTMLTableElement>('#parties-area');
     const townTable = $<HTMLTableElement>('#parties-town');
@@ -737,8 +1071,11 @@ const isComingSoon = resultsConfig.status === 'proximamente';
       townTable.hidden = true;
       $('#note-province').hidden = true;
       $('#note-town').hidden = true;
+      drawCloseSeats(feed);
+      drawDhondt(undefined);
     } else {
       $('#provinces-wrap').hidden = true;
+      $('#close-seats').hidden = true;
       const province = feed.areas.find((area) => area.code === selected);
       const { towns, map, wins } = drawTowns();
       $('#map-legend').innerHTML = legendHtml(wins);
@@ -759,6 +1096,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
         }
         $('#note-province').hidden = true;
         $('#note-town').hidden = false;
+        drawDhondt(undefined);
       } else {
         const seats = data.seatsByCode[selected];
         title.textContent = `${data.names[selected]} · ${seats} ${seats === 1 ? 'escaño' : 'escaños'}`;
@@ -769,6 +1107,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
           $('#parties-area-caption').textContent = `Escaños y votos de cada partido en ${province.name}`;
           provinceTable.tBodies[0].innerHTML = rowsFor(withSeats(province), false);
         }
+        drawDhondt(province);
         $('#note-province').hidden = false;
         $('#note-town').hidden = true;
       }
@@ -796,6 +1135,14 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     if (path && !path.classList.contains('is-shared')) selectTown(path.dataset.town!);
   });
   townSelect.addEventListener('change', () => selectTown(townSelect.value));
+  $('#senate-provinces-table').addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('button[data-province]');
+    if (button) selectArea(button.dataset.province!);
+  });
+  $('#close-seats-table').addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>('button[data-province]');
+    if (button) selectArea(button.dataset.province!);
+  });
   $('#provinces-table').addEventListener('click', (event) => {
     const button = (event.target as Element).closest<HTMLButtonElement>('button[data-province]');
     if (button) selectArea(button.dataset.province!);
@@ -811,18 +1158,326 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     else selectTown('');
   });
 
+  // ---------- Evolution replay ----------
+  const evoSection = $('#evolution');
+  const evoSlider = $<HTMLInputElement>('#evo-slider');
+  const evoPlay = $<HTMLButtonElement>('#evo-play');
+  const evoPrev = $<HTMLButtonElement>('#evo-prev');
+  const evoNext = $<HTMLButtonElement>('#evo-next');
+  const evoLatest = $<HTMLButtonElement>('#evo-latest');
+  const evoStatus = $('#evo-status');
+  const evoChart = $<SVGSVGElement>('#evo-chart');
+  const evoLegend = $('#evo-legend');
+
+  const formatTime = (iso: string) =>
+    new Date(iso).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+
+  const stopPlay = () => {
+    if (playTimer !== null) {
+      clearInterval(playTimer);
+      playTimer = null;
+    }
+    evoPlay.textContent = '▶ Reproducir';
+    evoPlay.setAttribute('aria-label', 'Reproducir la evolución del recuento');
+  };
+
+  const ensureSnapshotFeeds = (snap: EvolutionSnapshot) => {
+    if (!snap.snapshot) return;
+    const rel = snap.snapshot;
+    if (!historyCongress.has(rel)) {
+      void loadJson(`hist-c-${rel}`, `${dataBaseUrl}/${rel}/espana.json`, (value) => {
+        const parsed = value as ResultsFeed;
+        if (parsed.format === 'electosfera-resultados/1' && Array.isArray(parsed.areas)) historyCongress.set(rel, parsed);
+      });
+    }
+    if (!historySenate.has(rel)) {
+      void loadJson(`hist-s-${rel}`, `${dataBaseUrl}/${rel}/senado.json`, (value) => {
+        const parsed = value as SenateFeed;
+        if (parsed.format === 'electosfera-senado/1' && Array.isArray(parsed.areas)) historySenate.set(rel, parsed);
+      });
+    }
+  };
+
+  const setReplayIndex = (index: number | null) => {
+    const snapshots = evolutionFeed?.snapshots ?? [];
+    if (index === null || snapshots.length === 0 || index >= snapshots.length - 1) {
+      replayIndex = null;
+    } else {
+      replayIndex = Math.max(0, Math.min(snapshots.length - 1, index));
+      ensureSnapshotFeeds(snapshots[replayIndex]);
+    }
+    render();
+  };
+
+  evoSlider.addEventListener('input', () => {
+    stopPlay();
+    setReplayIndex(Number(evoSlider.value));
+  });
+  evoPrev.addEventListener('click', () => {
+    stopPlay();
+    const snapshots = evolutionFeed?.snapshots ?? [];
+    const current = replayIndex ?? snapshots.length - 1;
+    setReplayIndex(Math.max(0, current - 1));
+  });
+  evoNext.addEventListener('click', () => {
+    stopPlay();
+    const snapshots = evolutionFeed?.snapshots ?? [];
+    const current = replayIndex ?? snapshots.length - 1;
+    setReplayIndex(current + 1);
+  });
+  evoLatest.addEventListener('click', () => {
+    stopPlay();
+    setReplayIndex(null);
+  });
+  evoPlay.addEventListener('click', () => {
+    const snapshots = evolutionFeed?.snapshots ?? [];
+    if (snapshots.length < 2) return;
+    if (playTimer !== null) {
+      stopPlay();
+      return;
+    }
+    if (replayIndex === null || replayIndex >= snapshots.length - 1) {
+      setReplayIndex(0);
+    }
+    evoPlay.textContent = '⏸ Pausar';
+    evoPlay.setAttribute('aria-label', 'Pausar la reproducción del recuento');
+    playTimer = setInterval(() => {
+      const list = evolutionFeed?.snapshots ?? [];
+      const current = replayIndex ?? list.length - 1;
+      if (current >= list.length - 1) {
+        stopPlay();
+        setReplayIndex(null);
+        return;
+      }
+      setReplayIndex(current + 1);
+    }, 900);
+  });
+
+  const drawEvolution = () => {
+    const snapshots = evolutionFeed?.snapshots ?? [];
+    evoSection.hidden = snapshots.length < 2;
+    if (snapshots.length < 2) return;
+
+    const currentIndex = replayIndex ?? snapshots.length - 1;
+    const isReplaying = replayIndex !== null && replayIndex < snapshots.length - 1;
+    const current = snapshots[currentIndex];
+
+    evoSlider.max = String(snapshots.length - 1);
+    evoSlider.value = String(currentIndex);
+    evoPrev.disabled = currentIndex <= 0;
+    evoNext.disabled = currentIndex >= snapshots.length - 1;
+    evoLatest.hidden = !isReplaying;
+
+    evoStatus.textContent = `${formatTime(current.at)} · ${percent(current.counted)} escrutado · paso ${currentIndex + 1} de ${snapshots.length}${isReplaying ? ' (momento anterior)' : ' (último dato)'}`;
+
+    // Pick parties that won at least 1 seat at any point, ordered by final/max seats (top 8 for chart clarity).
+    const maxByParty = new Map<string, { id: string; acronym: string; maxSeats: number }>();
+    for (const snap of snapshots) {
+      for (const p of snap.congress.parties) {
+        if (p.seats <= 0) continue;
+        const prev = maxByParty.get(p.id);
+        if (!prev || p.seats > prev.maxSeats) maxByParty.set(p.id, { id: p.id, acronym: p.acronym, maxSeats: p.seats });
+      }
+    }
+    const series = [...maxByParty.values()].sort((a, b) => b.maxSeats - a.maxSeats).slice(0, 8);
+    const maxY = Math.max(20, Math.ceil(Math.max(...series.map((s) => s.maxSeats), 10) / 25) * 25);
+
+    const W = 640;
+    const H = 190;
+    const pad = { top: 14, right: 16, bottom: 26, left: 38 };
+    const plotW = W - pad.left - pad.right;
+    const plotH = H - pad.top - pad.bottom;
+    const xOf = (idx: number) => pad.left + (snapshots.length > 1 ? (idx / (snapshots.length - 1)) * plotW : 0);
+    const yOf = (seats: number) => pad.top + plotH - (seats / maxY) * plotH;
+
+    const parts: string[] = [];
+    // Horizontal grid lines
+    const ticks = 4;
+    for (let i = 0; i <= ticks; i += 1) {
+      const value = Math.round((maxY * i) / ticks);
+      const y = yOf(value);
+      parts.push(`<line class="evo__grid" x1="${pad.left}" y1="${y}" x2="${W - pad.right}" y2="${y}" />`);
+      parts.push(`<text class="evo__axis" x="${pad.left - 6}" y="${y + 4}" text-anchor="end">${value}</text>`);
+    }
+    // Majority reference line if within visible range
+    if (data.majority <= maxY) {
+      const ym = yOf(data.majority);
+      parts.push(`<line class="evo__majority" x1="${pad.left}" y1="${ym}" x2="${W - pad.right}" y2="${ym}" />`);
+    }
+    // X-axis labels (first, middle, last)
+    const labelIndices = [...new Set([0, Math.floor((snapshots.length - 1) / 2), snapshots.length - 1])];
+    for (const idx of labelIndices) {
+      const snap = snapshots[idx];
+      const anchor = idx === 0 ? 'start' : idx === snapshots.length - 1 ? 'end' : 'middle';
+      parts.push(
+        `<text class="evo__axis" x="${xOf(idx)}" y="${H - 6}" text-anchor="${anchor}">${formatTime(snap.at)} (${Math.round(snap.counted)}%)</text>`,
+      );
+    }
+    // Party polylines
+    for (const party of series) {
+      const points = snapshots
+        .map((snap, idx) => {
+          const seats = snap.congress.parties.find((p) => p.id === party.id)?.seats ?? 0;
+          return `${xOf(idx).toFixed(1)},${yOf(seats).toFixed(1)}`;
+        })
+        .join(' ');
+      parts.push(`<polyline class="evo__line" fill="none" stroke="${colorOf(party.id)}" points="${points}" />`);
+    }
+    // Current moment cursor + dots
+    const cx = xOf(currentIndex);
+    parts.push(`<line class="evo__cursor" x1="${cx}" y1="${pad.top}" x2="${cx}" y2="${H - pad.bottom}" />`);
+    for (const party of series) {
+      const seats = current.congress.parties.find((p) => p.id === party.id)?.seats ?? 0;
+      parts.push(`<circle class="evo__dot" cx="${cx}" cy="${yOf(seats)}" r="4" fill="${colorOf(party.id)}" />`);
+    }
+    // Invisible clickable hit columns for each snapshot
+    const colW = plotW / Math.max(1, snapshots.length - 1);
+    for (let idx = 0; idx < snapshots.length; idx += 1) {
+      const x = Math.max(pad.left, xOf(idx) - colW / 2);
+      const w = Math.min(W - pad.right - x, colW);
+      parts.push(`<rect class="evo__hit" x="${x}" y="${pad.top}" width="${Math.max(8, w)}" height="${plotH}" data-snap="${idx}" />`);
+    }
+    evoChart.innerHTML = parts.join('');
+
+    evoLegend.innerHTML = series
+      .map((party) => {
+        const seats = current.congress.parties.find((p) => p.id === party.id)?.seats ?? 0;
+        return `<li><span class="swatch" style="background:${colorOf(party.id)}" aria-hidden="true"></span><b>${escapeHtml(party.acronym)}</b> ${seats}</li>`;
+      })
+      .join('');
+  };
+
+  evoChart.addEventListener('click', (event) => {
+    const rect = (event.target as Element).closest<SVGRectElement>('rect[data-snap]');
+    if (!rect) return;
+    stopPlay();
+    setReplayIndex(Number(rect.dataset.snap));
+  });
+
+  const snapshotToNationalArea = (snap: EvolutionSnapshot): AreaResult => ({
+    code: 'ES',
+    name: 'España',
+    seats: Object.values(data.seatsByCode).reduce((sum, s) => sum + s, 0),
+    counted: snap.counted,
+    census: snap.congress.census,
+    voters: snap.congress.voters,
+    null: snap.congress.null,
+    blank: snap.congress.blank,
+    parties: snap.congress.parties.map((party) => ({
+      id: party.id,
+      acronym: party.acronym,
+      name: byId.get(party.id)?.name,
+      votes: party.votes,
+      seats: party.seats,
+    })),
+  });
+
+  /** The senators of a province: the sum of its constituency (or of its islands). */
+  const provinceSenate = (activeSenate: SenateFeed | null, code: string) => {
+    const areas = (data.senateByProvince[code] ?? [])
+      .map((item) => activeSenate?.areas.find((area) => area.code === item))
+      .filter((area) => area !== undefined);
+    if (!areas.length) return undefined;
+    const total = senateTotal(areas);
+    const parties = [...total.parties].sort((a, b) => (b.seats ?? 0) - (a.seats ?? 0) || b.votes - a.votes);
+    return { ...total, parties };
+  };
+  const senatorsText = (parties: PartyResult[]) =>
+    parties
+      .filter((party) => (party.seats ?? 0) > 0)
+      .map((party) => `${party.acronym} ${party.seats}`)
+      .join(' · ');
+
+  /** «Por territorio» with the Senate: it changes what `drawExplorer` drew for the Congress. */
+  const applyChamber = (activeSenate: SenateFeed | null) => {
+    for (const button of document.querySelectorAll<HTMLButtonElement>('.chamber-switch__btn')) {
+      button.setAttribute('aria-pressed', String(button.dataset.chamber === chamber));
+    }
+    const senate = chamber === 'senado';
+    $('#senate-provinces-wrap').hidden = !senate || Boolean(selected);
+    $('#note-senate-town').hidden = !senate || !selectedTown;
+    if (!senate) return;
+    for (const id of ['#parties-area', '#parties-town', '#note-province', '#note-town', '#dhondt', '#close-seats', '#provinces-wrap']) {
+      $(id).hidden = true;
+    }
+    if (selected) {
+      const total = provinceSenate(activeSenate, selected);
+      const seats = (data.senateByProvince[selected] ?? []).reduce((sum, code) => sum + (activeSenate?.areas.find((area) => area.code === code)?.seats ?? 0), 0);
+      if (!selectedTown) $('#area-title').textContent = `${data.names[selected]} · Senado${seats ? ` · ${seatWord(seats)}` : ''}`;
+      $('#area-summary').textContent = total ? `Escrutado ${percent(total.counted)} · ${senatorsText(total.parties) || 'sin senadores todavía'}` : 'Todavía no hay datos del Senado de esta provincia.';
+      return;
+    }
+    // Spain: each province gets the color of the party with the most senators there (with the same senators, the
+    // most voted). The tooltips and the legend change with it.
+    const wins: Wins = new Map();
+    const rows: string[] = [];
+    for (const code of Object.keys(data.seatsByCode).sort((a, b) => data.names[a].localeCompare(data.names[b], 'es'))) {
+      const total = provinceSenate(activeSenate, code);
+      const winner = total?.parties.find((party) => (party.seats ?? 0) > 0);
+      const link = document.querySelector<SVGAElement>(`#results-map a[data-province="${code}"]`);
+      const path = link?.querySelector<SVGPathElement>('path:not(.province-map__hit-area)');
+      if (path) path.style.fill = winner ? colorOf(winner.id) : '';
+      if (winner) addWin(wins, winner);
+      if (link) {
+        link.dataset.tooltip = tooltip(
+          data.names[code],
+          winner ? `Senado: ${senatorsText(total!.parties)}` : 'Senado: sin datos',
+          `Escrutado: ${percent(total?.counted ?? 0)}`,
+        );
+        link.setAttribute('aria-label', `${data.names[code]}: ${winner ? `Senado, ${senatorsText(total!.parties)}` : 'sin datos del Senado'}`);
+      }
+      const senators = total
+        ? total.parties
+            .filter((party) => (party.seats ?? 0) > 0)
+            .map((party) => `<span class="swatch" style="background:${colorOf(party.id)}" aria-hidden="true"></span>${escapeHtml(party.acronym)} ${party.seats}`)
+            .join(' · ') || 'Sin senadores todavía'
+        : 'Sin datos';
+      rows.push(
+        `<tr><th scope="row"><button type="button" class="row-link" data-province="${code}">${escapeHtml(data.names[code])}</button></th><td>${senators}</td><td class="num">${percent(total?.counted ?? 0)}</td></tr>`,
+      );
+    }
+    $<HTMLTableElement>('#senate-provinces-table').tBodies[0].innerHTML = rows.join('');
+    $('#map-legend').innerHTML = legendHtml(wins);
+    $('#map-hint').textContent = 'Pulsa una provincia para ver sus candidatos al Senado.';
+    const ranking = [...wins.values()].sort((a, b) => b.count - a.count);
+    $('#area-title').textContent = 'Toda España · Senado';
+    $('#area-summary').textContent = ranking.length
+      ? `Provincias donde tiene más senadores: ${ranking.map((entry) => `${entry.party.acronym} ${entry.count}`).join(' · ')}`
+      : 'Todavía no hay senadores asignados.';
+  };
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>('.chamber-switch__btn')) {
+    button.addEventListener('click', () => {
+      chamber = button.dataset.chamber === 'senado' ? 'senado' : 'congreso';
+      const url = new URL(location.href);
+      if (chamber === 'senado') url.searchParams.set('camara', 'senado');
+      else url.searchParams.delete('camara');
+      history.replaceState(null, '', url);
+      render();
+    });
+  }
+
   const render = () => {
-    const feed = liveFeed;
-    $('#soon').hidden = Boolean(feed);
-    $('#board').hidden = !feed;
-    if (!feed) return;
-    const total = nationalTotal(feed.areas);
-    drawSummary(total, feed.updatedAt, feed.kind);
+    const snapshots = evolutionFeed?.snapshots ?? [];
+    const snap = replayIndex !== null ? snapshots[replayIndex] ?? null : null;
+    const activeCongress = snap?.snapshot ? (historyCongress.get(snap.snapshot) ?? liveFeed) : liveFeed;
+    const activeSenate = snap?.snapshot ? (historySenate.get(snap.snapshot) ?? senateFeed) : senateFeed;
+    const hasBoard = Boolean(activeCongress || snap);
+    $('#soon').hidden = hasBoard;
+    $('#board').hidden = !hasBoard;
+    if (!hasBoard) return;
+
+    drawEvolution();
+    const total = snap ? snapshotToNationalArea(snap) : nationalTotal(activeCongress!.areas);
+    const updatedAt = snap ? snap.at : activeCongress!.updatedAt;
+    const kind = snap ? (evolutionFeed?.kind ?? activeCongress?.kind ?? 'provisional') : activeCongress!.kind;
+    drawSummary(total, updatedAt, kind);
     drawHemicycle(total);
     $<HTMLTableElement>('#parties-national').tBodies[0].innerHTML = rowsFor(total, true);
-    drawExplorer(feed, drawMap(feed.areas));
-    drawSenate();
-    drawAreaSenate();
+    if (activeCongress) drawExplorer(activeCongress, drawMap(activeCongress.areas));
+    drawSenate(activeSenate, snap);
+    drawAreaSenate(activeSenate);
+    applyChamber(activeSenate);
   };
 
   const selectArea = (code: string) => {
@@ -851,14 +1506,28 @@ const isComingSoon = resultsConfig.status === 'proximamente';
       const feed = (await response.json()) as SenateFeed;
       if (feed.format !== 'electosfera-senado/1' || !Array.isArray(feed.areas)) return;
       if (feed.kind === 'simulacion' && !rehearsal) return;
+      learnSenateColors(feed);
       senateFeed = feed;
     } catch {
       // No network: the next refresh tries again.
     }
   };
+  const loadEvolution = async () => {
+    try {
+      const response = await fetch(data.evolutionFeedUrl, { cache: 'no-store' });
+      if (!response.ok) return;
+      const feed = (await response.json()) as EvolutionFeed;
+      if (feed.format !== EVOLUTION_FORMAT || !Array.isArray(feed.snapshots)) return;
+      if (feed.kind === 'simulacion' && !rehearsal) return;
+      // A moment with nothing counted (the polls just closed) has no seats: the chart starts at the first counted votes.
+      evolutionFeed = { ...feed, snapshots: feed.snapshots.filter((snapshot) => snapshot.counted > 0) };
+    } catch {
+      // Optional file: the page works normally without count history.
+    }
+  };
   const loadLive = async () => {
     if (!liveActive()) return;
-    await loadSenate();
+    await Promise.all([loadSenate(), loadEvolution()]);
     try {
       const response = await fetch(data.feedUrl, { cache: 'no-store' });
       if (response.status === 404) return; // No file yet: «Próximamente» stays.
@@ -867,6 +1536,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
       if (feed.format !== 'electosfera-resultados/1' || !Array.isArray(feed.areas)) throw new Error('formato');
       // A rehearsal file is never shown as real data.
       if (feed.kind === 'simulacion' && !rehearsal) return;
+      learnFeedColors(feed);
       liveFeed = feed;
       // The municipalities of the open province are read again with the new data.
       liveTowns.clear();
@@ -882,6 +1552,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
 
   // ---------- Countdown ----------
   const countdown = $('#countdown');
+  const UNIT_LABELS = { days: ['día', 'días'], hours: ['hora', 'horas'], minutes: ['minuto', 'minutos'] } as const;
   const tick = () => {
     const left = new Date(data.opensAt).getTime() - Date.now();
     if (left <= 0) {
@@ -896,7 +1567,13 @@ const isComingSoon = resultsConfig.status === 'proximamente';
     }
     const minutes = Math.floor(left / 60_000);
     const values = { days: Math.floor(minutes / 1440), hours: Math.floor((minutes % 1440) / 60), minutes: minutes % 60 };
-    for (const [unit, value] of Object.entries(values)) countdown.querySelector(`[data-unit="${unit}"]`)!.textContent = String(value);
+    for (const [unit, value] of Object.entries(values)) {
+      const number = countdown.querySelector<HTMLElement>(`[data-unit="${unit}"]`)!;
+      number.textContent = String(value);
+      // «1 día», «2 días»: the label agrees with the number.
+      const [one, many] = UNIT_LABELS[unit as keyof typeof UNIT_LABELS];
+      number.previousElementSibling!.textContent = value === 1 ? one : many;
+    }
     return true;
   };
   if (tick()) {
@@ -926,19 +1603,103 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   /* The line height leaves room for the accent of «PRÓXIMAMENTE» under the kicker. */
   .soon__title { margin: var(--space-3) 0 var(--space-4); font-size: clamp(3rem, 11vw, 7rem); line-height: 1; overflow-wrap: anywhere; }
   .soon__lede { max-width: 62ch; font-size: 1.125rem; }
-  .countdown { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0; }
+  /* Three boxes of the same width, always in one row. */
+  .countdown { display: grid; grid-template-columns: repeat(3, minmax(0, 130px)); gap: var(--space-3); margin: var(--space-5) 0; }
   .countdown div {
     display: grid;
-    min-width: 110px;
+    min-width: 0;
     padding: 12px 16px;
     border: var(--border-thick) solid var(--color-ink);
   }
-  .countdown dd { order: -1; margin: 0; font: 900 3.5rem / 1 var(--font-display); font-variant-numeric: tabular-nums; }
-  .countdown dt { font-weight: 700; }
+  .countdown dd { order: -1; margin: 0; font: 900 clamp(2.5rem, 12vw, 3.5rem) / 1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .countdown dt { font-weight: 700; font-size: clamp(0.8125rem, 3.6vw, 1rem); }
+  @media (max-width: 400px) { .countdown div { padding: 10px 12px; } }
   .soon__after { font-weight: 700; }
+  .schedule { margin: 0 0 var(--space-5); }
+  .schedule__title { margin: 0 0 var(--space-3); font-size: 1.25rem; }
+  /* The day as a time line: one line with a mark at each hour, not a box for each step. Across on a wide screen,
+     down on a phone. */
+  .schedule__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--space-3);
+    border-top: var(--border-thick) solid var(--color-ink);
+  }
+  .schedule__list li { position: relative; display: grid; align-content: start; gap: var(--space-1); padding-top: 16px; }
+  .schedule__list li::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    background: var(--color-ink);
+  }
+  .schedule__list li:last-child::before { background: var(--color-highlight); outline: var(--border-thick) solid var(--color-ink); outline-offset: -3px; }
+  .schedule__list time { font: 900 1.75rem / 1 var(--font-display); font-variant-numeric: tabular-nums; }
+  @media (max-width: 720px) {
+    .schedule__list { grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 0; border-left: var(--border-thick) solid var(--color-ink); }
+    .schedule__list li { grid-template-columns: 4.75rem minmax(0, 1fr); align-items: baseline; gap: var(--space-3); padding: 8px 0 8px 18px; }
+    .schedule__list li::before { top: 15px; left: -8px; }
+    .schedule__list time { font-size: 1.5rem; }
+  }
+  .schedule__note { margin: var(--space-3) 0 0; max-width: 62ch; }
+  /* The address of the official site is one long word: on a narrow screen it may break. */
+  .schedule__note a { overflow-wrap: anywhere; }
   .soon__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
   .live-error { padding: 12px 16px; border: var(--border-thick) solid var(--color-ink); font-weight: 700; }
+
+  /* Count evolution replay */
+  .evolution { margin-bottom: var(--space-5); padding: 18px 20px; }
+  .evolution__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2) var(--space-4); }
+  .evolution__title { margin: 0; font-size: clamp(1.5rem, 3.5vw, 2.25rem); line-height: 1; }
+  .evolution__status { margin: var(--space-1) 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .evolution__controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: var(--space-3); }
+  .evolution__range-wrap { flex: 1 1 180px; display: flex; align-items: center; }
+  .evolution__range-wrap input[type='range'] { width: 100%; accent-color: var(--color-ink); cursor: pointer; }
+  .evolution__btn {
+    min-height: 40px;
+    padding: 6px 14px;
+    border: var(--border-thick) solid var(--color-ink);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    cursor: pointer;
+  }
+  .evolution__btn:hover:not(:disabled) { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .evolution__btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .evolution__btn--step { min-width: 40px; padding: 6px 10px; font-size: 1.125rem; line-height: 1; }
+  .evolution__btn--latest { background: var(--color-ink); color: var(--color-paper); }
+  .evolution__chart-wrap { margin-top: var(--space-3); }
+  .evolution__chart { display: block; width: 100%; height: auto; max-height: 220px; }
+  .evolution__chart :global(.evo__grid) { stroke: var(--color-ink); stroke-opacity: 0.18; stroke-width: 1; }
+  .evolution__chart :global(.evo__majority) { stroke: var(--color-ink); stroke-opacity: 0.5; stroke-width: 1.5; stroke-dasharray: 4 4; }
+  .evolution__chart :global(.evo__axis) { fill: var(--color-ink); font: 600 11px var(--font-body); font-variant-numeric: tabular-nums; }
+  .evolution__chart :global(.evo__line) { stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .evolution__chart :global(.evo__cursor) { stroke: var(--color-ink); stroke-width: 1.5; }
+  .evolution__chart :global(.evo__dot) { stroke: var(--color-paper); stroke-width: 1.5; }
+  .evolution__chart :global(.evo__hit) { fill: transparent; cursor: pointer; }
+  .evolution__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+    font-variant-numeric: tabular-nums;
+  }
+  .evolution__legend :global(.swatch) {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    vertical-align: -1px;
+    border: 1px solid var(--color-ink);
+  }
 
   /* The headline numbers: five tiles of the same size. The count has its bar at the foot of its tile. */
   .summary {
@@ -978,6 +1739,20 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   .hemi__total { font: 900 44px var(--font-display); fill: var(--color-ink); }
   .hemi__caption { font: 600 12px var(--font-body); fill: var(--color-ink); }
   .majority { margin: var(--space-3) 0 0; font-weight: 700; }
+  .pact-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: var(--space-3);
+    padding: 0 var(--space-4);
+    border: 2px solid var(--color-ink);
+    color: var(--color-ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .pact-link[hidden] { display: none; }
+  .pact-link:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .pact-link:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
 
   /* The tables of results. The script writes the rows, so the rules of the cells are global inside the table. */
   .table-wrap { overflow-x: auto; }
@@ -1009,7 +1784,7 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   .parties :global(.seats) { font: 900 1.5rem / 1 var(--font-display); }
   .parties :global(.pct) { min-width: 72px; }
   .parties :global(.pct__votes) { display: none; }
-  .parties :global(.bar-cell) { width: 28%; padding-right: 0; }
+  .parties :global(.bar-cell) { width: 28%; max-width: 280px; padding-right: 0; }
   .parties :global(.share-bar) { display: block; height: 10px; }
   .parties :global(.share-bar span) { display: block; height: 100%; min-width: 2px; outline: 1px solid var(--color-ink); outline-offset: -1px; }
   .parties :global(.swatch), .map-legend :global(.swatch) {
@@ -1053,6 +1828,21 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   .explore__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-4); }
   .explore :global(.explore__back[hidden]) { display: none; }
   .explore__title { margin: 0; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1; }
+  /* Congreso | Senado: two buttons in one frame; the pressed one is ink on paper reversed. */
+  .chamber-switch { display: inline-flex; border: 2px solid var(--color-ink); }
+  .chamber-switch__btn {
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    border: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font: 700 1rem var(--font-body);
+    cursor: pointer;
+  }
+  .chamber-switch__btn + .chamber-switch__btn { border-left: 2px solid var(--color-ink); }
+  .chamber-switch__btn[aria-pressed='true'] { background: var(--color-ink); color: var(--color-paper); }
+  .chamber-switch__btn:not([aria-pressed='true']):hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .chamber-switch__btn:focus-visible { outline: 3px solid var(--color-highlight); outline-offset: 2px; }
   .crumbs { display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; list-style: none; font-size: 1.1875rem; }
   .crumbs :global(li) { display: flex; align-items: center; }
   .crumbs :global(li + li)::before { content: '›'; margin: 0 8px; font-weight: 700; }
@@ -1071,10 +1861,18 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   .crumbs :global([aria-current]) { font-weight: 700; padding: 0 4px; }
 
   .map-panel :global(.province-map) { margin-top: 0; }
+  /* On a wide screen the page has no maximum width: the map and the text of «Por territorio» get one, so the map
+     does not fill the screen and the tables, the chart and the notes keep the size of the rest of the page. */
+  @media (min-width: 1400px) {
+    .grid--map { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+    .map-panel :global(.province-map),
+    .town-map { max-width: 760px; margin-inline: auto; }
+    .grid--map :global(.table-panel) > :global(*) { max-width: 1000px; }
+  }
   .map-hint { margin: var(--space-2) 0 0; font-size: 0.9375rem; }
 
   /* The map of the municipalities. The script draws the paths, so the rules are global inside the SVG. */
-  .town-map { display: block; width: 100%; height: auto; max-height: 70vh; }
+  .town-map { display: block; width: 100%; height: auto; max-height: min(70vh, 760px); }
   .town-map :global(path) {
     fill: var(--color-paper);
     stroke: var(--color-ink);
@@ -1161,6 +1959,26 @@ const isComingSoon = resultsConfig.status === 'proximamente';
   }
   .area-summary { margin: 0 0 var(--space-3); font-weight: 600; }
   .note { margin-top: var(--space-3); font-size: 0.9375rem; }
+  .dhondt { margin-top: var(--space-5); padding-top: var(--space-4); border-top: 2px solid var(--color-ink); }
+  #close-seats { margin: 0 0 var(--space-5); padding-top: 0; border-top: 0; }
+  .dhondt__title { margin: 0 0 var(--space-2); font-size: 1.125rem; }
+  .dhondt__lead { margin: 0 0 var(--space-3); font-size: 0.9375rem; max-width: 62ch; }
+  .dhondt__chart { display: block; width: 100%; max-width: 760px; height: auto; }
+  .dhondt__chart :global(.dh__grid) { stroke: var(--color-ink); stroke-opacity: 0.18; stroke-width: 1; }
+  .dhondt__chart :global(.dh__axis) { fill: var(--color-ink); font: 600 11px var(--font-body); font-variant-numeric: tabular-nums; }
+  .dhondt__chart :global(.dh__note) { fill: var(--color-ink); font: 700 11px var(--font-body); }
+  .dhondt__chart :global(.dh__last) { stroke: var(--color-ink); stroke-width: 1.5; stroke-dasharray: 4 4; }
+  .dhondt__chart :global(.dh__cut) { stroke: var(--color-ink); stroke-width: 1.5; }
+  .dhondt__chart :global(.dh__bar) { stroke: var(--color-ink); stroke-width: 1; }
+  .dhondt__chart :global(.dh__hatch-bg) { fill: var(--color-paper); }
+  .dhondt__summary { margin: var(--space-3) 0 0; font-weight: 600; max-width: 62ch; }
+  .dhondt__details { margin-top: var(--space-3); }
+  .dhondt__details summary { cursor: pointer; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .dhondt__table :global(td.is-seat b) { font-weight: 800; }
+  .dhondt__table :global(.dh__seat) {
+    display: inline-block; min-width: 1.6em; padding: 0 3px; border-radius: 3px;
+    background: var(--color-ink); color: var(--color-paper); font-size: 0.75rem; font-weight: 700; text-align: center;
+  }
 
   .about { margin-top: var(--space-8); max-width: 72ch; }
   .about h2 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: var(--space-3); }

@@ -326,6 +326,7 @@ export function calendarData(site: URL | undefined) {
       fecha: event.date,
       fechaFin: event.endDate ?? null,
       horario: event.time ? `${event.time.from}–${event.time.to}` : null,
+      horarioDelDia: event.schedule?.map((item) => ({ hora: item.time, titulo: item.label, url: item.url ?? null })) ?? null,
       titulo: event.title,
       descripcion: event.description,
       origen: event.source === 'official' ? 'oficial' : 'derivado',

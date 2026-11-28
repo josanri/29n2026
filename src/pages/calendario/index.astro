@@ -222,6 +222,20 @@ const months = monthKeys.map((key) => {
               </p>
               <h3>{event.title}</h3>
               <p>{event.description}</p>
+              {event.schedule && (
+                <ol class="event__schedule" aria-label={`Horario: ${event.title.toLowerCase()}`}>
+                  {event.schedule.map((item) => (
+                    <li>
+                      <time datetime={`${event.date}T${item.time}`}>{item.time}</time>{' '}
+                      {item.url ? (
+                        <a href={item.url} rel="noopener" target="_blank">{item.label}<span class="sr-only"> (se abre en otra pestaña)</span></a>
+                      ) : (
+                        item.label
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              )}
               {event.basis && <p class="event__basis">{event.basis}</p>}
               {event.documentPath && (
                 <p class="event__basis">
@@ -537,6 +551,11 @@ const months = monthKeys.map((key) => {
   .event__meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font: 700 1rem var(--font-body); }
   .event__meta :global([hidden]) { display: none; }
   .event__basis { font-size: 1rem; }
+  .event__schedule { list-style: none; margin: var(--space-3) 0; padding: 0; display: grid; gap: var(--space-1); }
+  .event__schedule li { display: flex; gap: var(--space-3); align-items: baseline; }
+  .event__schedule time { min-width: 3.5em; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .event[data-state='pasado'] .event__schedule,
+  .event[data-state='pasado'] .event__schedule :global(a) { color: var(--color-ink-subtle); }
   .event__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
   .after { margin: 0 0 var(--space-3); padding-left: var(--space-5); display: grid; gap: var(--space-2); }
 

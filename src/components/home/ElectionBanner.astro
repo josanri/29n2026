@@ -1,0 +1,134 @@
+---
+/**
+ * The banner of the election on the home page: the day before, the day of the vote, the night and the days of the
+ * count, each with its text and a link to /resultados/. The page is static, so a small script picks the text from
+ * the clock of the reader; the HTML has the banner hidden, and without JavaScript it stays hidden.
+ */
+import { ELECTION_DATE } from '@eleccion/calendario';
+import { resultsConfig } from '@eleccion/resultados';
+import { routes } from '@/lib/routes';
+
+const states = {
+  // The day before the vote, from 00:00 (Madrid).
+  eve: {
+    kicker: 'Mañana, 29N',
+    text: 'Elecciones generales: los resultados del Congreso y del Senado, aquí desde las 20:00 (hora peninsular).',
+    link: 'Ver la página de resultados',
+  },
+  // The day of the vote, until the polls close.
+  day: {
+    kicker: 'Hoy se vota',
+    text: 'Los colegios cierran a las 20:00, hora peninsular; en Canarias, una hora después. Los resultados, aquí.',
+    link: 'Ver la página de resultados',
+  },
+  // From the closing time, for a day and a half.
+  night: {
+    kicker: 'Noche electoral',
+    text: 'Resultados del Congreso y del Senado: escaños, votos y el reparto de cada provincia.',
+    link: 'Ver los resultados',
+  },
+  // Until the end of the general count.
+  count: {
+    kicker: 'Resultados provisionales del 29N',
+    text: 'El escrutinio general de las Juntas Electorales termina el 7 de diciembre.',
+    link: 'Ver los resultados',
+  },
+  // After the general count, until the end of the year.
+  after: {
+    kicker: 'Resultados del 29N',
+    text: 'Congreso y Senado, provincia a provincia.',
+    link: 'Ver los resultados',
+  },
+};
+---
+
+<aside
+  class="election-banner"
+  id="election-banner"
+  aria-label="Elecciones del 29N"
+  data-opens-at={resultsConfig.opensAt}
+  data-election-date={ELECTION_DATE}
+  data-states={JSON.stringify(states)}
+  hidden
+>
+  <div class="container election-banner__inner">
+    <p class="election-banner__text">
+      <span class="election-banner__kicker" id="election-banner-kicker"></span>
+      <span id="election-banner-body"></span>
+    </p>
+    <a class="election-banner__link" id="election-banner-link" href={routes.results()}></a>
+  </div>
+</aside>
+
+<script>
+  type BannerState = { kicker: string; text: string; link: string };
+  const banner = document.getElementById('election-banner');
+  if (banner) {
+    const opensAt = Date.parse(banner.dataset.opensAt ?? '');
+    // The day of the vote starts at 00:00 in Madrid (UTC+1 in November).
+    const dayStart = Date.parse(`${banner.dataset.electionDate}T00:00:00+01:00`);
+    const DAY = 24 * 60 * 60 * 1000;
+    const countEnd = Date.parse('2026-12-08T00:00:00+01:00');
+    const hideAt = Date.parse('2027-01-01T00:00:00+01:00');
+    const now = Date.now();
+    const key =
+      now < dayStart - DAY ? null
+      : now < dayStart ? 'eve'
+      : now < opensAt ? 'day'
+      : now < opensAt + 1.5 * DAY ? 'night'
+      : now < countEnd ? 'count'
+      : now < hideAt ? 'after'
+      : null;
+    const states = JSON.parse(banner.dataset.states ?? '{}') as Record<string, BannerState>;
+    const state = key ? states[key] : undefined;
+    if (state) {
+      document.getElementById('election-banner-kicker')!.textContent = state.kicker;
+      document.getElementById('election-banner-body')!.textContent = state.text;
+      document.getElementById('election-banner-link')!.textContent = `${state.link} →`;
+      banner.hidden = false;
+    }
+  }
+</script>
+
+<style>
+  /* Ink band with the highlight for the action: the same pair as the rest of the site, in both themes. */
+  .election-banner {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border-bottom: var(--border-thick) solid var(--color-highlight);
+  }
+  .election-banner[hidden] { display: none; }
+  .election-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+  }
+  /* The badge and the sentence side by side: a second line of the sentence starts under the sentence. */
+  .election-banner__text { display: flex; flex: 1 1 32rem; align-items: baseline; gap: var(--space-2); margin: 0; font-size: 1.0625rem; }
+  .election-banner__kicker {
+    flex: none;
+    padding: 2px 8px;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .election-banner__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 var(--space-4);
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .election-banner__link:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .election-banner__link:focus-visible { outline: 3px solid var(--color-paper); outline-offset: 2px; }
+</style>

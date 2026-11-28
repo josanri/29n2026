@@ -14,6 +14,8 @@ export interface CalendarEvent {
   endDate?: string;
   /** Local times (Spain, winter time) for an event with hours. Without it, the event lasts the whole day. */
   time?: { from: string; to: string };
+  /** The hours of the events inside the day (for example, the night of the election), in order. */
+  schedule?: ScheduleItem[];
   title: string;
   description: string;
   source: 'official' | 'derived';
@@ -25,8 +27,27 @@ export interface CalendarEvent {
   officialUrl?: string;
 }
 
+export interface ScheduleItem {
+  /** Local time (Spain, winter time), `HH:MM`. */
+  time: string;
+  label: string;
+  /** Page where the reader can follow this step. */
+  url?: string;
+}
+
 /** Official site of the Ministry of the Interior for this election. */
 export const OFFICIAL_SITE = 'https://29neleccionesgenerales.es';
+/** Official site of the provisional results (Ministry of the Interior). It opens on the day of the election. */
+export const OFFICIAL_RESULTS_SITE = 'https://resultados.29neleccionesgenerales.es/';
+
+/** The day of the election, as the official results site publishes it (Spain, peninsular time). */
+export const ELECTION_DAY_SCHEDULE: ScheduleItem[] = [
+  { time: '08:00', label: 'Constitución de las Mesas' },
+  { time: '14:00', label: 'Primer avance de participación' },
+  { time: '18:00', label: 'Segundo avance de participación' },
+  { time: '20:00', label: 'Cierre de los colegios e inicio del escrutinio' },
+  { time: '21:00', label: 'Resultados provisionales', url: OFFICIAL_RESULTS_SITE },
+];
 export const OFFICIAL_EMAIL = 'infoelectoral@interior.es';
 
 export const ELECTION_DATE = '2026-11-29';
@@ -131,6 +152,7 @@ const events: CalendarEvent[] = [
     source: 'derived',
     basis: 'Fecha de la convocatoria. Horario: LOREG, art. 85.',
     officialUrl: `${OFFICIAL_SITE}/informacion-general/como-votar/voto-presencial`,
+    schedule: ELECTION_DAY_SCHEDULE,
   },
   {
     id: 'escrutinio-general',
