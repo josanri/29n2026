@@ -3,107 +3,114 @@ import { publishedFirst, type Program } from '@/lib/programs';
 import { nationalPrograms, regionalPrograms, regionalRegions, regionalProgramsIn } from '@/lib/presence';
 import { routes } from '@/lib/routes';
 import { jointListMembers } from '@/lib/relations';
+import { categories } from '@/lib/taxonomy';
 import Wordmark from './Wordmark.astro';
 import { siteTests } from '@/lib/tests';
 import { debates } from '@/lib/debates';
 
 const path = Astro.url.pathname;
 const isCurrent = (program: Program) => path.startsWith(routes.party(program.id));
+const plural = (count: number, one: string, many: string) => `${count} ${count === 1 ? one : many}`;
+const slug = (text: string) =>
+  text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+// ---- «Programas»: the national parties, the regional parties by region, and the link to the categories ----
 const nationalSorted = publishedFirst(nationalPrograms);
-const menus = [
-  {
-    id: 'national',
-    label: 'Estatales',
-    // A building with columns, like the Congress: the parties of the whole country.
-    icon: '<path d="M2 6 8 2.5 14 6z"/><path d="M4.5 8.5v4.5M8 8.5v4.5M11.5 8.5v4.5M2 13.5h12"/>',
-    isCurrent: nationalPrograms.some(isCurrent),
-    groups: [
-      { title: 'Con programa analizado', parties: nationalSorted.filter((party) => party.hasProgram) },
-      { title: 'Listas conjuntas, sin programa propio', parties: nationalSorted.filter((party) => !party.hasProgram && jointListMembers(party)) },
-      { title: 'Sin programa publicado', parties: nationalSorted.filter((party) => !party.hasProgram && !jointListMembers(party)) },
-    ],
-  },
-  {
-    id: 'regional',
-    label: 'Autonómicos',
-    // A map pin: the parties of one territory.
-    icon: '<path d="M8 14.5s4.8-4.2 4.8-8a4.8 4.8 0 0 0-9.6 0c0 3.8 4.8 8 4.8 8z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/>',
-    isCurrent: regionalPrograms.some(isCurrent),
-    groups: regionalRegions.map((region) => ({
-      title: region,
-      parties: publishedFirst(regionalProgramsIn(region)),
-    })),
-  },
-];
+const nationalGroups = [
+  { title: 'Con programa analizado', parties: nationalSorted.filter((party) => party.hasProgram) },
+  { title: 'Listas conjuntas, sin programa propio', parties: nationalSorted.filter((party) => !party.hasProgram && jointListMembers(party)) },
+  { title: 'Sin programa publicado', parties: nationalSorted.filter((party) => !party.hasProgram && !jointListMembers(party)) },
+].filter((group) => group.parties.length > 0);
+const regions = regionalRegions.map((region) => {
+  const parties = publishedFirst(regionalProgramsIn(region));
+  const withProgram = parties.filter((party) => party.hasProgram).length;
+  return {
+    id: slug(region),
+    name: region,
+    parties,
+    summary: `${plural(parties.length, 'partido', 'partidos')} · ${withProgram} con programa analizado`,
+  };
+});
+// The region that the panel shows first: the region of the party of this page, else the first region.
+const activeRegion = (regions.find((region) => region.parties.some(isCurrent)) ?? regions[0])?.id;
+const programsCurrent =
+  nationalPrograms.some(isCurrent) || regionalPrograms.some(isCurrent) || path.startsWith(routes.categories());
 
-// Plain links of the nav. Each icon is the inner markup of a 16×16 stroke SVG.
-const links = [
-  {
-    href: routes.categories(),
-    label: 'Categorías',
-    icon: '<rect x="2" y="2" width="12" height="12"/><path d="M8 2v12M2 8h12"/>',
-  },
+// ---- «Previsiones»: the polls and the simulator, the two ways to look ahead at the result ----
+const toolLinks = [
   {
     href: routes.polls(),
     label: 'Encuestas',
+    text: 'Sondeos y su evolución',
     // A line that goes up and down over an axis.
     icon: '<path d="M2 2v12h12"/><path d="m5 9.5 2.5-3.5 2.5 2 3.5-4.5"/>',
   },
   {
+    href: routes.simulator(),
+    label: 'Simulador',
+    text: 'Reparte los escaños con tus porcentajes',
+    icon: '<path d="M2 12.5a6 6 0 0 1 12 0"/><circle cx="5.2" cy="11.5" r="1.25" fill="currentColor" stroke="none"/><circle cx="8" cy="9.2" r="1.25" fill="currentColor" stroke="none"/><circle cx="10.8" cy="11.5" r="1.25" fill="currentColor" stroke="none"/>',
+  },
+];
+
+// ---- «Guía»: the dates and how to vote ----
+const guideLinks = [
+  {
     href: routes.calendar(),
     label: 'Calendario',
+    text: 'Fechas clave y horario',
     icon: '<rect x="2" y="3.5" width="12" height="10.5"/><path d="M2 7h12M5.5 1.5v2M10.5 1.5v2"/><rect x="8.8" y="9.3" width="2.7" height="2.7" fill="currentColor" stroke="none"/>',
   },
   {
     href: routes.info(),
     label: 'Info',
+    text: 'Cómo votar y el escrutinio',
     // A circle with an «i»: a solid square dot and a stem, matching the site icons.
     icon: '<circle cx="8" cy="8" r="6"/><rect x="6.9" y="4.3" width="2.2" height="2.2" fill="currentColor" stroke="none"/><path d="M8 8.2v3.5"/>',
   },
-  {
-    href: routes.results(),
-    label: 'Resultados',
-    // A ballot box with a ballot that goes in, with a check mark on it: the count of the votes. Not a chart, so
-    // it does not look like the line of «Encuestas».
-    icon: '<path d="M4.5 8V2h7v6"/><path d="m6.3 5 1.4 1.4L10 4"/><path d="M1.5 8h13v6.5h-13z"/><path d="M6 11h4"/>',
-  },
-  {
-    href: routes.simulator(),
-    label: 'Simulador',
-    icon: '<path d="M2 12.5a6 6 0 0 1 12 0"/><circle cx="5.2" cy="11.5" r="1.25" fill="currentColor" stroke="none"/><circle cx="8" cy="9.2" r="1.25" fill="currentColor" stroke="none"/><circle cx="10.8" cy="11.5" r="1.25" fill="currentColor" stroke="none"/>',
-  },
-  {
-    href: routes.search(),
-    label: 'Buscar',
-    // In the compact menu the search takes the first row, with a hint of what it finds.
-    hint: 'partidos y medidas',
-    className: 'nav__link--search',
-    icon: '<circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 4.5 4.5"/>',
-  },
 ];
-// The «Tests» menu goes between the sections and the search. It opens a short list of the tests.
-const sectionLinks = links.filter((link) => link.href !== routes.search());
-const searchLinks = links.filter((link) => link.href === routes.search());
-const testsCurrent = path.startsWith(routes.tests());
+const toolsCurrent = toolLinks.some((link) => path.startsWith(link.href));
+const guideCurrent = guideLinks.some((link) => path.startsWith(link.href));
 
-// The «Debates» menu: each debate with its date and who took part, newest first. A draft shows only on the dev server.
+// ---- «Debates y tests»: each debate with its date and who took part, newest first, and the tests ----
+// A draft debate shows only on the dev server.
 const debateDay = (date: string) =>
   new Date(`${date}T12:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', timeZone: 'UTC' });
 const siteDebates = debates.map((debate) => {
-    const names = debate.speakers
-      .filter((speaker) => speaker.words > 0 && speaker.partyId)
-      .map((speaker) => speaker.name.split(' ').slice(-1)[0]);
-    const who = names.length > 1 ? `${names.slice(0, -1).join(', ')} y ${names[names.length - 1]}` : names.join('');
-    return {
-      href: routes.debate(debate.slug),
-      name: debate.title,
-      text: [debate.date && debateDay(debate.date), debate.channel, who].filter(Boolean).join(' · '),
-    };
-  });
-const debatesCurrent = path.startsWith(routes.debate());
-// Two speech bubbles that face each other: the tail of the front one points left, the tail of the back one points right.
-const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V12h-1.5v2L10 12H7"/>';
+  const names = debate.speakers
+    .filter((speaker) => speaker.words > 0 && speaker.partyId)
+    .map((speaker) => speaker.name.split(' ').slice(-1)[0]);
+  const who = names.length > 1 ? `${names.slice(0, -1).join(', ')} y ${names[names.length - 1]}` : names.join('');
+  return {
+    href: routes.debate(debate.slug),
+    name: debate.title,
+    text: [debate.date && debateDay(debate.date), debate.channel, who].filter(Boolean).join(' · '),
+  };
+});
+const mixCurrent = path.startsWith(routes.debate()) || path.startsWith(routes.tests());
+
+// Icons: the inner markup of a 16×16 stroke SVG.
+const icons = {
+  // A page with lines: a program.
+  programs: '<path d="M3 1.5h7l3 3v10H3z"/><path d="M10 1.5v3h3M5.5 8h5M5.5 11h5"/>',
+  // A building with columns, like the Congress: the parties of the whole country.
+  national: '<path d="M2 6 8 2.5 14 6z"/><path d="M4.5 8.5v4.5M8 8.5v4.5M11.5 8.5v4.5M2 13.5h12"/>',
+  // A map pin: the parties of one territory.
+  regional: '<path d="M8 14.5s4.8-4.2 4.8-8a4.8 4.8 0 0 0-9.6 0c0 3.8 4.8 8 4.8 8z"/><circle cx="8" cy="6.5" r="1.6" fill="currentColor" stroke="none"/>',
+  categories: '<rect x="2" y="2" width="12" height="12"/><path d="M8 2v12M2 8h12"/>',
+  // A ballot box with a ballot that goes in, with a check mark on it: the count of the votes.
+  results: '<path d="M4.5 8V2h7v6"/><path d="m6.3 5 1.4 1.4L10 4"/><path d="M1.5 8h13v6.5h-13z"/><path d="M6 11h4"/>',
+  // A circle with an «i»: the guide.
+  guide: '<circle cx="8" cy="8" r="6"/><rect x="6.9" y="4.3" width="2.2" height="2.2" fill="currentColor" stroke="none"/><path d="M8 8.2v3.5"/>',
+  // Two speech bubbles that face each other.
+  debates: '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V12h-1.5v2L10 12H7"/>',
+  // A box with a check mark: a test.
+  tests: '<path d="M10 2H2v12h12V8.5"/><path d="m5.5 7.8 2.5 2.5L14 3.5"/>',
+  search: '<circle cx="6.5" cy="6.5" r="4.5"/><path d="m10 10 4.5 4.5"/>',
+};
+const chevronDown = '<path d="m1 1 5 5 5-5"></path>';
+const chevronRight = '<path d="m1.5 1.5 5.5 5.5-5.5 5.5"></path>';
+const chevronLeft = '<path d="M7.5 1.5 2 7l5.5 5.5"></path>';
 ---
 
 <header class="site-header">
@@ -112,22 +119,48 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
     <a class="logo" href={routes.home()}>
       <Wordmark /><span class="sr-only">, inicio</span>
     </a>
-    <nav class="nav" id="site-nav" aria-label="Principal">
-      {menus.map((menu) => (
-        <details class:list={['nav-dropdown', `nav-dropdown--${menu.id}`]}>
-          <summary aria-current={menu.isCurrent ? 'page' : undefined}>
-            <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={menu.icon} />
-            {menu.label}
-            <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
-              <path d="m1 1 5 5 5-5"></path>
-            </svg>
-          </summary>
-          <div class="nav-dropdown__panel">
-            <div class="nav-dropdown__groups">
-              {menu.groups.filter((group) => group.parties.length > 0).map((group) => (
-                <section>
-                  <h2>{group.title}</h2>
-                  <div class="nav-dropdown__list">
+    <!-- `data-screen`: on a phone the menu shows one screen at a time (the script changes it). -->
+    <nav class="nav" id="site-nav" aria-label="Principal" data-screen="root">
+      <details class="nav-dropdown nav-dropdown--programs">
+        <summary aria-current={programsCurrent ? 'page' : undefined}>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.programs} />
+          Programas
+          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true" set:html={chevronDown} />
+        </summary>
+        <div class="nav-dropdown__panel">
+          <p class="nav-section__title" aria-hidden="true">Programas</p>
+          <div class="programs">
+            <!-- Phone: the three ways into the programs. Each party list opens as its own screen. -->
+            <div class="nav-rows programs__openers">
+              <button class="nav-row" type="button" data-screen-target="national" aria-controls="nav-national">
+                <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.national} />
+                <span class="nav-row__label">Estatales</span>
+                <span class="nav-row__count">{plural(nationalPrograms.length, 'partido', 'partidos')}</span>
+                <svg class="nav-row__go" viewBox="0 0 9 14" aria-hidden="true" set:html={chevronRight} />
+              </button>
+              <button class="nav-row" type="button" data-screen-target="regional" aria-controls="nav-regional">
+                <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.regional} />
+                <span class="nav-row__label">Autonómicos</span>
+                <span class="nav-row__count">{plural(regions.length, 'comunidad', 'comunidades')}</span>
+                <svg class="nav-row__go" viewBox="0 0 9 14" aria-hidden="true" set:html={chevronRight} />
+              </button>
+              <a class="nav-row" href={routes.categories()} aria-current={path.startsWith(routes.categories()) ? 'page' : undefined}>
+                <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.categories} />
+                <span class="nav-row__label">Por tema</span>
+                <span class="nav-row__count">{plural(categories.length, 'categoría', 'categorías')}</span>
+                <svg class="nav-row__go" viewBox="0 0 9 14" aria-hidden="true" set:html={chevronRight} />
+              </a>
+            </div>
+
+            <section class="programs__col programs__national" id="nav-national" aria-labelledby="nav-national-title">
+              <button class="nav-back" type="button" data-screen-target="root">
+                <svg viewBox="0 0 9 14" aria-hidden="true" set:html={chevronLeft} />Menú
+              </button>
+              <h2 id="nav-national-title">Estatales</h2>
+              {nationalGroups.map((group) => (
+                <>
+                  <h3>{group.title}</h3>
+                  <div class="party-list party-list--two">
                     {group.parties.map((party) => (
                       <a
                         href={routes.party(party.id)}
@@ -137,79 +170,178 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
                       >
                         <b>{party.acronym}</b>
                         <span>{party.partyName}</span>
-                        {!party.hasProgram && menu.id === 'regional' && <small>{jointListMembers(party) ? 'Lista conjunta' : 'Sin programa'}</small>}
+                      </a>
+                    ))}
+                  </div>
+                </>
+              ))}
+            </section>
+
+            <section class="programs__col programs__regions" id="nav-regional" aria-labelledby="nav-regional-title">
+              <button class="nav-back" type="button" data-screen-target="root">
+                <svg viewBox="0 0 9 14" aria-hidden="true" set:html={chevronLeft} />Menú
+              </button>
+              <h2 id="nav-regional-title">Autonómicos</h2>
+              <h3>Por comunidad</h3>
+              <div class="region-list">
+                {regions.map((region) => (
+                  <button
+                    class:list={['region-button', { 'is-active': region.id === activeRegion }]}
+                    type="button"
+                    data-region={region.id}
+                    aria-controls={`nav-region-${region.id}`}
+                    aria-expanded={region.id === activeRegion ? 'true' : 'false'}
+                  >
+                    <span class="region-button__name">{region.name}</span>
+                    <span class="region-button__count">{region.parties.length}</span>
+                    <svg viewBox="0 0 9 14" aria-hidden="true" set:html={chevronRight} />
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            <div class="programs__col programs__region">
+              <button class="nav-back" type="button" data-screen-target="regional">
+                <svg viewBox="0 0 9 14" aria-hidden="true" set:html={chevronLeft} />Autonómicos
+              </button>
+              {regions.map((region) => (
+                <section
+                  class:list={['region-panel', { 'is-active': region.id === activeRegion }]}
+                  id={`nav-region-${region.id}`}
+                  data-region={region.id}
+                  aria-labelledby={`nav-region-${region.id}-title`}
+                >
+                  <h2 id={`nav-region-${region.id}-title`}>{region.name}</h2>
+                  <h3>{region.summary}</h3>
+                  <div class="party-list">
+                    {region.parties.map((party) => (
+                      <a
+                        href={routes.party(party.id)}
+                        class:list={{ 'is-unpublished': !party.hasProgram }}
+                        aria-current={isCurrent(party) ? 'page' : undefined}
+                        style={`--party-color:${party.color}`}
+                      >
+                        <b>{party.acronym}</b>
+                        <span>{party.partyName}</span>
+                        {!party.hasProgram && <small>{jointListMembers(party) ? 'Lista conjunta' : 'Sin programa'}</small>}
                       </a>
                     ))}
                   </div>
                 </section>
               ))}
             </div>
-          </div>
-        </details>
-      ))}
-      {sectionLinks.map((link) => (
-        <a href={link.href} class={link.className} aria-current={path.startsWith(link.href) ? 'page' : undefined}>
-          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={link.icon} />
-          {link.label}
-        </a>
-      ))}
-      <details class="nav-dropdown nav-dropdown--tests nav-dropdown--debates">
-        <summary aria-current={debatesCurrent ? 'page' : undefined}>
-          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={debateIcon} />
-          Debates
-          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
-            <path d="m1 1 5 5 5-5"></path>
-          </svg>
-        </summary>
-        <div class="nav-dropdown__panel">
-          <div class="nav-tests">
-            {siteDebates.map((debate) => (
-              <a href={debate.href} aria-current={path.startsWith(debate.href) ? 'page' : undefined}>
-                <b>{debate.name}</b>
-                <span>{debate.text}</span>
-              </a>
-            ))}
-            <a class="nav-tests__all" href={routes.debate()}>Todos los debates</a>
+
+            <a class="programs__topics" href={routes.categories()} aria-current={path.startsWith(routes.categories()) ? 'page' : undefined}>
+              <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.categories} />
+              <b>Por tema</b>
+              <span>Compara lo que dicen los programas en {categories.length} categorías.</span>
+            </a>
           </div>
         </div>
       </details>
-      <details class="nav-dropdown nav-dropdown--tests">
-        <summary aria-current={testsCurrent ? 'page' : undefined}>
-          <!-- A box with a check mark: a test. -->
-          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2H2v12h12V8.5"></path><path d="m5.5 7.8 2.5 2.5L14 3.5"></path></svg>
-          Tests
-          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true">
-            <path d="m1 1 5 5 5-5"></path>
-          </svg>
+
+      <a class="nav__link nav__results" href={routes.results()} aria-current={path.startsWith(routes.results()) ? 'page' : undefined}>
+        <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.results} />
+        <span class="nav__results-label">Resultados</span>
+        <span class="nav__results-text">Escaños del Congreso y del Senado</span>
+      </a>
+
+      <!-- On a wide screen a menu like «Guía»; on a phone, two tiles under the results. -->
+      <details class="nav-dropdown nav-dropdown--tools">
+        <summary aria-current={toolsCurrent ? 'page' : undefined}>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={toolLinks[0].icon} />
+          Previsiones
+          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true" set:html={chevronDown} />
         </summary>
         <div class="nav-dropdown__panel">
-          <div class="nav-tests">
-            {siteTests.map((test) => (
-              <a href={test.href} aria-current={path.startsWith(test.href) ? 'page' : undefined}>
-                <b>{test.name}</b>
-                <span>{test.text}</span>
+          <p class="nav-section__title" aria-hidden="true">Previsiones</p>
+          <div class="guide guide--tiles">
+            {toolLinks.map((link) => (
+              <a href={link.href} aria-current={path.startsWith(link.href) ? 'page' : undefined}>
+                <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={link.icon} />
+                <b>{link.label}</b>
+                <span>{link.text}</span>
               </a>
             ))}
-            <a class="nav-tests__all" href={routes.tests()}>Todos los tests</a>
           </div>
         </div>
       </details>
-      {searchLinks.map((link) => (
-        <a href={link.href} class={link.className} aria-current={path.startsWith(link.href) ? 'page' : undefined}>
-          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={link.icon} />
-          {link.label}
-          {link.hint && <span class="nav__hint">{link.hint}</span>}
-        </a>
-      ))}
-      <!-- The visible label shows only in the phone menu. The accessible name contains it. -->
-      <button class="theme-toggle" type="button" aria-label="Cambiar tema claro u oscuro" title="Tema claro / oscuro">
-        <svg class="nav__icon theme-toggle__icon" viewBox="0 0 16 16" aria-hidden="true">
-          <rect x="2" y="2" width="12" height="12"></rect>
-          <rect x="8" y="2" width="6" height="12" fill="currentColor" stroke="none"></rect>
-        </svg>
-        <span class="theme-toggle__label">Cambiar tema</span>
-      </button>
+
+      <details class="nav-dropdown nav-dropdown--mix">
+        <summary aria-current={mixCurrent ? 'page' : undefined}>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.debates} />
+          Debates y tests
+          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true" set:html={chevronDown} />
+        </summary>
+        <div class="nav-dropdown__panel">
+          <p class="nav-section__title" aria-hidden="true">Debates y tests</p>
+          <div class="mix nav-rows">
+            <section>
+              <a class="nav-row mix__title" href={routes.debate()} aria-current={path === routes.debate() ? 'page' : undefined}>
+                <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.debates} />
+                <span class="nav-row__label">Debates</span>
+                <span class="nav-row__count">{plural(siteDebates.length, 'debate', 'debates')}</span>
+                <svg class="nav-row__go" viewBox="0 0 9 14" aria-hidden="true" set:html={chevronRight} />
+              </a>
+              <div class="nav-tests">
+                {siteDebates.map((debate) => (
+                  <a href={debate.href} aria-current={path.startsWith(debate.href) ? 'page' : undefined}>
+                    <b>{debate.name}</b>
+                    <span>{debate.text}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+            <section>
+              <a class="nav-row mix__title" href={routes.tests()} aria-current={path === routes.tests() ? 'page' : undefined}>
+                <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.tests} />
+                <span class="nav-row__label">Tests</span>
+                <span class="nav-row__count">{plural(siteTests.length, 'test', 'tests')}</span>
+                <svg class="nav-row__go" viewBox="0 0 9 14" aria-hidden="true" set:html={chevronRight} />
+              </a>
+              <div class="nav-tests">
+                {siteTests.map((test) => (
+                  <a href={test.href} aria-current={path.startsWith(test.href) ? 'page' : undefined}>
+                    <b>{test.name}</b>
+                    <span>{test.text}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </details>
+
+      <details class="nav-dropdown nav-dropdown--guide">
+        <summary aria-current={guideCurrent ? 'page' : undefined}>
+          <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.guide} />
+          Guía
+          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" aria-hidden="true" set:html={chevronDown} />
+        </summary>
+        <div class="nav-dropdown__panel">
+          <p class="nav-section__title" aria-hidden="true">Guía</p>
+          <div class="guide nav-rows">
+            {guideLinks.map((link) => (
+              <a href={link.href} aria-current={path.startsWith(link.href) ? 'page' : undefined}>
+                <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={link.icon} />
+                <b>{link.label}</b>
+                <span>{link.text}</span>
+                <svg class="nav-row__go" viewBox="0 0 9 14" aria-hidden="true" set:html={chevronRight} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </details>
+
+      <a href={routes.search()} class="nav__link nav__link--search" aria-current={path.startsWith(routes.search()) ? 'page' : undefined}>
+        <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true" set:html={icons.search} />
+        Buscar
+        <span class="nav__hint">partidos y medidas</span>
+      </a>
     </nav>
+    <!-- The theme is a setting of every page, not a section: it stays in the header row, also on a phone with the
+         menu closed. -->
+    <button class="theme-toggle" type="button" aria-label="Cambiar tema claro u oscuro" title="Tema claro / oscuro"></button>
     <!-- Only on a phone: it opens and closes the nav. -->
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <svg class="nav__icon" viewBox="0 0 16 16" aria-hidden="true">
@@ -224,10 +356,16 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
 <script>
   import { THEME_STORAGE_KEY } from '@/lib/site';
 
-  // Party menus: only one open at a time. They close on an outside click or on Escape.
-  const dropdowns = [...document.querySelectorAll<HTMLDetailsElement>('.nav-dropdown')];
-  // On a wide screen the panel opens under its own button: it starts at the left edge of the button and moves left
-  // only as far as it must to stay on the screen. (The panel is placed against the header row, see the CSS.)
+  const header = document.querySelector<HTMLElement>('.site-header')!;
+  const nav = header.querySelector<HTMLElement>('#site-nav')!;
+  const menuToggle = header.querySelector<HTMLButtonElement>('.menu-toggle')!;
+  const dropdowns = [...nav.querySelectorAll<HTMLDetailsElement>('.nav-dropdown')];
+  // Below this width the nav is a sheet: every menu shows as a section, and the party lists open as screens.
+  const compactQuery = matchMedia('(max-width: 1259px)');
+  const isCompact = () => compactQuery.matches;
+
+  // ---- Wide screen: one menu open at a time, under its own button ----
+  // The panel starts at the left edge of its button and moves left only as far as it must to stay on the screen.
   const placePanel = (dropdown: HTMLDetailsElement) => {
     const panel = dropdown.querySelector<HTMLElement>('.nav-dropdown__panel');
     if (!panel || getComputedStyle(panel).position !== 'absolute') return;
@@ -242,42 +380,124 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
   };
   for (const dropdown of dropdowns) {
     dropdown.addEventListener('toggle', () => {
-      if (!dropdown.open) return;
+      if (isCompact() || !dropdown.open) return;
       for (const other of dropdowns) if (other !== dropdown) other.open = false;
       placePanel(dropdown);
     });
   }
   addEventListener('resize', () => {
+    if (isCompact()) return;
     for (const dropdown of dropdowns) if (dropdown.open) placePanel(dropdown);
   });
+
+  // ---- The regions of «Programas»: a button shows the parties of its region ----
+  const regionButtons = [...nav.querySelectorAll<HTMLButtonElement>('.region-button')];
+  const regionPanels = [...nav.querySelectorAll<HTMLElement>('.region-panel')];
+  const showRegion = (id: string) => {
+    for (const button of regionButtons) {
+      const active = button.dataset.region === id;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-expanded', String(active));
+    }
+    for (const panel of regionPanels) panel.classList.toggle('is-active', panel.dataset.region === id);
+  };
+
+  // ---- Phone: the screens of the sheet ----
+  // `root` is the menu; `national` and `regional` are the party lists; `region` is the parties of one region.
+  // Without `focusTarget` the focus goes to the back button of the new screen; with `null` it does not move.
+  const setScreen = (screen: string, focusTarget?: HTMLElement | null) => {
+    nav.dataset.screen = screen;
+    nav.scrollTop = 0;
+    const selector = screenFocus[screen];
+    const target = focusTarget !== undefined ? focusTarget : selector ? nav.querySelector<HTMLElement>(selector) : null;
+    target?.focus();
+  };
+  // Where the focus goes when a screen opens: its back button.
+  const screenFocus: Record<string, string> = {
+    national: '.programs__national .nav-back',
+    regional: '.programs__regions .nav-back',
+    region: '.programs__region .nav-back',
+  };
+  nav.addEventListener('click', (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-screen-target]');
+    if (button) {
+      const from = nav.dataset.screen;
+      const to = button.dataset.screenTarget!;
+      // Going back puts the focus on the button that opened the screen.
+      const opener =
+        to === 'root' ? nav.querySelector<HTMLElement>(`.programs__openers [data-screen-target="${from}"]`)
+        : to === 'regional' ? nav.querySelector<HTMLElement>('.region-button.is-active')
+        : null;
+      setScreen(to, opener);
+      return;
+    }
+    const region = (event.target as HTMLElement).closest<HTMLButtonElement>('.region-button');
+    if (region) {
+      showRegion(region.dataset.region!);
+      if (isCompact()) setScreen('region');
+    }
+  });
+  // On a wide screen the parties of a region show when the pointer or the focus reaches its button.
+  for (const button of regionButtons) {
+    const preview = () => {
+      if (!isCompact()) showRegion(button.dataset.region!);
+    };
+    button.addEventListener('pointerenter', preview);
+    button.addEventListener('focus', preview);
+  }
+
+  // In the sheet every menu is open (the CSS hides its button). On a wide screen they all start closed.
+  const syncMode = () => {
+    for (const dropdown of dropdowns) dropdown.open = isCompact();
+    setScreen('root', null);
+    if (!isCompact()) setMenuOpen(false);
+  };
+
   // Phone menu: the button opens and closes the nav. The CSS shows the button only on a narrow screen.
-  const header = document.querySelector<HTMLElement>('.site-header')!;
-  const menuToggle = header.querySelector<HTMLButtonElement>('.menu-toggle')!;
   const setMenuOpen = (open: boolean) => {
     header.classList.toggle('is-menu-open', open);
     menuToggle.setAttribute('aria-expanded', String(open));
-    if (!open) for (const dropdown of dropdowns) dropdown.open = false;
+    if (!open) {
+      nav.dataset.screen = 'root';
+      if (!isCompact()) for (const dropdown of dropdowns) dropdown.open = false;
+    }
   };
   menuToggle.addEventListener('click', () => setMenuOpen(!header.classList.contains('is-menu-open')));
+  compactQuery.addEventListener('change', syncMode);
+  for (const dropdown of dropdowns) dropdown.open = isCompact();
 
   document.addEventListener('click', (event) => {
-    for (const dropdown of dropdowns) {
-      if (dropdown.open && !dropdown.contains(event.target as Node)) dropdown.open = false;
+    if (!isCompact()) {
+      for (const dropdown of dropdowns) {
+        if (dropdown.open && !dropdown.contains(event.target as Node)) dropdown.open = false;
+      }
     }
     if (header.classList.contains('is-menu-open') && !header.contains(event.target as Node)) setMenuOpen(false);
   });
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    // Escape first closes an open party menu, and then the phone menu.
+    if (isCompact()) {
+      // Escape goes back one screen, and closes the menu from the first screen.
+      const screen = nav.dataset.screen;
+      if (screen === 'region') {
+        setScreen('regional', nav.querySelector<HTMLElement>('.region-button.is-active'));
+        return;
+      }
+      if (screen && screen !== 'root') {
+        setScreen('root', nav.querySelector<HTMLElement>(`.programs__openers [data-screen-target="${screen}"]`));
+        return;
+      }
+      if (header.classList.contains('is-menu-open')) {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
+      return;
+    }
+    // Escape closes an open menu and puts the focus back on its button.
     const openDropdown = dropdowns.find((dropdown) => dropdown.open);
     if (openDropdown) {
       openDropdown.open = false;
       openDropdown.querySelector('summary')?.focus();
-      return;
-    }
-    if (header.classList.contains('is-menu-open')) {
-      setMenuOpen(false);
-      menuToggle.focus();
     }
   });
 
@@ -324,19 +544,20 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
   .nav {
     display: flex;
     align-items: center;
-    gap: 4px 20px;
+    gap: 4px 24px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
 
-  /* The links of the nav are plain bold text, 44px tall. The current page is underlined. */
-  .nav a,
+  /* The items of the nav are plain bold text, 44px tall. The current section is underlined. */
+  .nav__link,
   .nav-dropdown > summary {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
     font-weight: 700;
     font-size: 1.0625rem;
+    white-space: nowrap;
     text-decoration: none;
     background: transparent;
     color: var(--color-ink);
@@ -352,26 +573,7 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
     stroke-linecap: square;
     stroke-linejoin: miter;
   }
-  /* Every item of the nav has its icon: it helps to find a section at a glance. Below 1700px the row is
-     tight, so only the search keeps its magnifier; between 1260 and 1439px the type and logo tighten too
-     so the theme toggle never wraps onto a second row. The phone menu (under 1260px) shows all icons. */
-  @media (min-width: 1260px) {
-    .nav > a,
-    .nav-dropdown > summary { white-space: nowrap; }
-  }
-  @media (min-width: 1260px) and (max-width: 1699px) {
-    .nav { column-gap: 14px; }
-    .nav > a:not(.nav__link--search) .nav__icon,
-    .nav-dropdown > summary .nav__icon { display: none; }
-  }
-  @media (min-width: 1260px) and (max-width: 1439px) {
-    .logo :global(.wordmark) { font-size: 2.125rem; }
-    .nav { column-gap: 10px; }
-    .nav > a,
-    .nav-dropdown > summary { font-size: 0.9375rem; }
-    .nav-dropdown__chevron { margin-left: 5px; }
-  }
-  .nav a[aria-current='page'],
+  .nav__link[aria-current='page'],
   .nav-dropdown > summary[aria-current='page'] {
     text-decoration: underline;
     text-decoration-thickness: 3px;
@@ -390,14 +592,15 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
     stroke-linecap: square;
   }
   .nav-dropdown[open] .nav-dropdown__chevron { transform: rotate(180deg); }
-  /* Hover and open: the yellow marker with black text. The links need their own rule: `.nav a` is scoped
-     and so more specific than the base `a:hover`. */
+  /* Hover and open: the yellow marker with black text. */
   .nav-dropdown[open] > summary,
   .nav-dropdown > summary:hover,
-  .nav a:hover {
+  .nav__link:hover {
     background: var(--color-highlight);
     color: var(--color-on-highlight);
   }
+  .nav__results-text,
+  .nav__hint { display: none; }
 
   /* The theme button: a 44px square split in paper and ink, like the two themes. */
   .theme-toggle {
@@ -414,9 +617,8 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
     font: inherit;
     cursor: pointer;
   }
+  .theme-toggle { flex: none; margin-left: 18px; }
   .theme-toggle:hover { outline: 3px solid var(--color-highlight); outline-offset: -3px; }
-  .theme-toggle__icon { display: none; }
-  .theme-toggle__label { display: none; }
 
   .menu-toggle {
     display: none;
@@ -433,49 +635,35 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
   }
   .menu-toggle .nav__icon { display: none; }
   .menu-toggle:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
-  .nav__hint { display: none; }
 
+  /* ---- The panels (wide screen) ---- */
   .nav-dropdown__panel {
     position: absolute;
     z-index: var(--z-dropdown);
     top: calc(100% + 4px);
     right: var(--gutter);
-    display: grid;
-    gap: 20px;
-    width: min(820px, calc(100vw - 2 * var(--gutter)));
-    max-height: min(75vh, 640px);
+    width: min(440px, calc(100vw - 2 * var(--gutter)));
+    /* All the height under the header (its bottom is at about 80px): the long lists of «Programas» fit on a normal
+       screen, and on a low one the panel scrolls inside itself, not the page. */
+    max-height: calc(100dvh - 96px);
     overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
     padding: 18px;
     border: var(--border-thick) solid var(--color-ink);
     background: var(--color-paper);
   }
-  .nav-dropdown__groups { display: grid; gap: 20px; }
-  /* The tests: a short panel, one row per test with its name and what it does. */
-  .nav-dropdown--tests .nav-dropdown__panel { width: min(440px, calc(100vw - 2 * var(--gutter))); }
-  .nav-tests { display: grid; }
-  .nav .nav-dropdown__panel .nav-tests a {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 4px;
-    min-height: 44px;
-    padding: 10px 6px;
-    border-top: var(--border-fine) solid var(--color-ink);
-    font-size: 0.9375rem;
-    font-weight: 400;
-  }
-  .nav-tests b { font: 900 1.5rem / 1 var(--font-display); text-transform: uppercase; }
-  .nav .nav-tests a.nav-tests__all { font-weight: 700; border-top-width: var(--border-thick); }
-  .nav .nav-tests a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
-  /* Text columns: a long region (Canarias) leaves no gaps in the others. The columns sit in
-     a wrapper with no maximum height, so the panel scrolls vertically and never sideways. */
-  .nav-dropdown--regional .nav-dropdown__groups {
+  /* A fade at the bottom says that the list goes on. It sticks to the bottom edge while the panel scrolls; at the
+     end it lies over the padding of the last column. */
+  .nav-dropdown--programs .nav-dropdown__panel::after {
+    content: '';
+    position: sticky;
+    bottom: 0;
     display: block;
-    columns: 3 220px;
-    column-gap: 20px;
-  }
-  .nav-dropdown--regional .nav-dropdown__groups section {
-    break-inside: avoid;
-    padding-bottom: 20px;
+    height: 28px;
+    margin-top: -28px;
+    background: linear-gradient(to bottom, transparent, var(--color-paper));
+    pointer-events: none;
   }
   .nav-dropdown__panel h2 {
     margin: 0 0 var(--space-2);
@@ -483,48 +671,177 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
     border-bottom: var(--border-thick) solid var(--color-ink);
     font-size: 1.5rem;
   }
-  .nav-dropdown__list { display: grid; gap: 0; }
-  .nav-dropdown--national .nav-dropdown__list {
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
-    column-gap: 20px;
+  .nav-dropdown__panel h3 {
+    margin: var(--space-3) 0 var(--space-1);
+    font: 700 0.8125rem var(--font-body);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
-  .nav .nav-dropdown__panel a {
+  /* Only in the phone sheet: the name of each section, the openers of the party lists and the back buttons. */
+  .nav-section__title,
+  .programs__openers,
+  .nav-back { display: none; }
+
+  /* «Programas»: the national parties, the regions and the parties of one region, side by side. */
+  .nav-dropdown--programs .nav-dropdown__panel { width: min(1180px, calc(100vw - 2 * var(--gutter))); padding: 0; }
+  .programs { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr) minmax(0, 1fr); }
+  .programs__col { min-width: 0; padding: 18px; }
+  .programs__national,
+  .programs__regions { border-right: var(--border-thick) solid var(--color-ink); }
+  .programs__national > h3:first-of-type { margin-top: 0; }
+  .region-list { display: grid; }
+  .region-button {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(0, 1fr) auto 8px;
+    align-items: center;
+    column-gap: 10px;
+    min-height: 40px;
+    padding: 0 8px;
+    border: 0;
+    border-top: var(--border-fine) solid var(--color-ink);
+    background: transparent;
+    color: var(--color-ink);
+    font: 700 0.9375rem var(--font-body);
+    text-align: left;
+    cursor: pointer;
+  }
+  .region-button__count { font-weight: 400; }
+  .region-button svg { width: 8px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.5; visibility: hidden; }
+  .region-button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .region-button.is-active { background: var(--color-ink); color: var(--color-paper); }
+  .region-button.is-active svg { visibility: visible; }
+  /* With JavaScript only the active region shows. Without it, every region shows, one under the other. */
+  :global(.js) .region-panel:not(.is-active) { display: none; }
+  .region-panel + .region-panel { margin-top: var(--space-5); }
+  /* «Por tema» goes first, across the panel: the party lists are long and the panel scrolls. */
+  .programs__topics {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    min-height: 52px;
+    padding: 8px 18px;
+    border-bottom: var(--border-thick) solid var(--color-ink);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .programs__topics .nav__icon { margin: 0; }
+  .programs__topics b { font-size: 1.0625rem; }
+  .programs__topics:hover,
+  .programs__topics[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+  /* A party: the acronym with a fine underline in the party color, and the name. The name goes to the next line
+     when the two do not fit side by side, so a word never breaks into a column of letters. */
+  .party-list { display: grid; }
+  .party-list--two { grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); column-gap: 16px; }
+  .party-list a {
+    display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 2px 8px;
-    width: 100%;
-    min-height: 44px;
-    padding: 7px 4px;
+    min-height: 40px;
+    padding: 6px 4px;
     border-top: var(--border-fine) solid var(--color-ink);
-    font-size: 0.9375rem;
-    font-weight: 400;
-    text-align: left;
+    color: var(--color-ink);
+    font-size: 0.875rem;
+    text-decoration: none;
   }
-  /* The acronym has a fine underline in the party color, so the parties are easy to tell apart. */
-  .nav-dropdown__panel a b {
+  .party-list a b {
     font-family: var(--font-display);
     font-size: 1.375rem;
     line-height: 1;
     font-weight: 900;
+    white-space: nowrap;
     text-decoration: underline;
     text-decoration-color: var(--party-color);
     text-decoration-thickness: 3px;
     text-underline-offset: 3px;
     text-decoration-skip-ink: none;
   }
-  .nav-dropdown__panel a span { overflow-wrap: anywhere; }
-  .nav-dropdown__panel a small { grid-column: 1 / -1; font-size: 0.8125rem; }
+  .party-list a span { min-width: 0; overflow-wrap: break-word; }
+  .party-list a small { flex-basis: 100%; font-size: 0.8125rem; }
   /* No program: quieter. The text keeps its full contrast. */
-  .nav .nav-dropdown__panel a.is-unpublished { font-style: italic; }
-  .nav .nav-dropdown__panel a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .party-list a.is-unpublished { font-style: italic; }
+  .party-list a:hover,
+  .party-list a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
 
-  /* Compact header: below 1260px the nav does not fit on one line next to the logo. The header keeps
-     one row (logo and menu button) and a fixed height, so the sticky filter bars of the pages stay
-     under it. The nav opens as a sheet over the page, under the header:
-     - the party menus take a full row each and open in place;
-     - the sections fill a grid of two columns, or four from 720px.
-     Without JavaScript (no `js` class), the nav stays open in the header and the menu button stays hidden. */
+  /* «Guía»: one row per page, with its icon, its name and what it has. */
+  .guide { display: grid; }
+  .guide .nav-row__go { display: none; }
+  .guide a {
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr);
+    gap: 4px 8px;
+    padding: 10px 6px;
+    border-top: var(--border-fine) solid var(--color-ink);
+    color: var(--color-ink);
+    font-size: 0.9375rem;
+    text-decoration: none;
+  }
+  .guide a:first-child { border-top: 0; }
+  .guide a .nav__icon { grid-row: 1 / 3; margin: 4px 0 0; }
+  .guide a b { font: 900 1.5rem / 1 var(--font-display); text-transform: uppercase; }
+  .guide a:hover,
+  .guide a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+  /* «Debates y tests»: two columns, each with the link to its page and the list. */
+  .nav-dropdown--mix .nav-dropdown__panel { width: min(760px, calc(100vw - 2 * var(--gutter))); }
+  .mix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .mix section { min-width: 0; }
+
+  /* A row that opens a list or a page: icon, name, how many, and an arrow. */
+  .nav-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 6px;
+    border: 0;
+    border-bottom: var(--border-fine) solid var(--color-ink);
+    background: transparent;
+    color: var(--color-ink);
+    font: 700 1.0625rem var(--font-body);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .nav-row .nav__icon { margin: 0; }
+  .nav-row__label { flex: 1 0 auto; }
+  .nav-row__count { font-weight: 400; font-size: 0.9375rem; white-space: nowrap; }
+  .nav-row__go { flex: none; width: 8px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+  .nav-row:hover,
+  .nav-row[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
+  .mix__title { border-bottom-width: var(--border-thick); }
+
+  .nav-tests { display: grid; }
+  .nav-tests a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    min-height: 44px;
+    padding: 10px 6px;
+    border-top: var(--border-fine) solid var(--color-ink);
+    color: var(--color-ink);
+    font-size: 0.9375rem;
+    text-decoration: none;
+  }
+  .nav-tests a:first-child { border-top: 0; }
+  .nav-tests b { font: 900 1.375rem / 1.05 var(--font-display); text-transform: uppercase; }
+  .nav-tests a:hover,
+  .nav-tests a[aria-current='page'] { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+  @media (min-width: 1260px) and (max-width: 1439px) {
+    .logo :global(.wordmark) { font-size: 2.125rem; }
+    .nav { column-gap: 18px; }
+  }
+
+  /* ---- Compact header: below 1260px the nav is a sheet over the page, under the header ----
+     The header keeps one row (logo and menu button) and a fixed height, so the sticky filter bars of the pages stay
+     under it. In the sheet the menus are sections, one under the other, and the party lists open as screens.
+     Without JavaScript (no `js` class) the nav stays open in the header, each menu with its own button. */
   @media (max-width: 1259px) {
     .site-header__row { flex-wrap: wrap; }
     :global(.js) .menu-toggle { display: inline-flex; }
@@ -532,51 +849,152 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
     .nav {
       order: 1;
       flex-basis: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 6px;
-      padding: 4px 0 12px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap; /* a short screen must scroll the sheet, never start a second column */
+      justify-content: flex-start; /* from the top: with `flex-end` the overflow goes above, where no scroll reaches */
+      align-items: stretch;
+      gap: 22px;
+      padding: 4px 0 16px;
     }
-    .nav > a, .nav > .theme-toggle { height: 48px; }
-    .nav > a {
-      justify-content: flex-start;
-      padding: 0 12px;
-      border: var(--border-thick) solid var(--color-ink);
-      white-space: nowrap;
-    }
-    .nav > a .nav__icon { display: inline; }
-    .nav > a.nav__link--wide { grid-column: 1 / -1; }
-    /* The theme button is a setting, not a page: it takes the last row on its own. */
-    .nav > .theme-toggle {
-      grid-column: 1 / -1;
-      width: 100%;
-      background: var(--color-paper);
-      justify-content: flex-start;
-      padding: 0 12px;
-    }
-    .theme-toggle__icon { display: inline; }
-    .theme-toggle__label { display: inline; font-weight: 700; font-size: 1.0625rem; }
-    .nav-dropdown { grid-column: 1 / -1; }
-    /* The search goes first, across the full width. The party menus follow, then the sections, then the theme. */
-    .nav > .nav__link--search { order: -1; grid-column: 1 / -1; margin-bottom: 6px; }
-    .nav__hint { display: inline; margin-left: 6px; font-weight: 400; font-size: 0.9375rem; }
-    /* The icon and the label at the left, like the other rows; the arrow at the right. */
+    /* Each item keeps its height: the sheet scrolls instead of squeezing them. */
+    .nav > * { flex-shrink: 0; }
     .nav-dropdown > summary {
       width: 100%;
       min-height: 48px;
-      justify-content: flex-start;
       padding: 0 12px;
       border: var(--border-thick) solid var(--color-ink);
     }
     .nav-dropdown > summary .nav-dropdown__chevron { margin-left: auto; }
     .nav-dropdown__panel,
-    .nav-dropdown--tests .nav-dropdown__panel {
+    .nav-dropdown--programs .nav-dropdown__panel,
+    .nav-dropdown--mix .nav-dropdown__panel {
       position: static;
       width: auto;
       max-height: none;
-      margin-top: 6px;
-      padding: 12px;
+      overflow: visible;
+      padding: 0;
+      border: 0;
+      background: transparent;
     }
+    :global(.js) .nav-dropdown > summary { display: none; }
+    :global(.js) .nav-section__title {
+      display: block;
+      margin: 0 0 var(--space-2);
+      font: 900 1.5rem / 1 var(--font-display);
+      text-transform: uppercase;
+    }
+    .nav-rows { border-top: var(--border-thick) solid var(--color-ink); }
+
+    /* Search first, across the full width, with a hint of what it finds. */
+    .nav > .nav__link--search {
+      order: -2;
+      min-height: 52px;
+      padding: 0 14px;
+      border: var(--border-thick) solid var(--color-ink);
+    }
+    .nav__hint { display: inline; margin-left: 6px; font-weight: 400; font-size: 0.9375rem; }
+
+    /* Results: a block in ink, the first thing under the search. */
+    .nav > .nav__results {
+      order: -1;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 4px 10px;
+      padding: 14px 16px;
+      background: var(--color-ink);
+      color: var(--color-paper);
+      text-decoration: none;
+    }
+    .nav__results .nav__icon { width: 20px; height: 20px; margin: 0; }
+    .nav__results-label { font: 900 2.25rem / 1 var(--font-display); text-transform: uppercase; }
+    .nav__results-text { display: block; grid-column: 2; font-weight: 400; font-size: 0.9375rem; white-space: normal; }
+    .nav > .nav__results:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+    /* The current page: a yellow edge instead of the underline of the other items. */
+    .nav > .nav__results[aria-current='page'] { text-decoration: none; box-shadow: inset 6px 0 0 var(--color-highlight); }
+
+    /* Programs: three rows in the menu; each party list fills the sheet as its own screen. */
+    .programs { display: block; }
+    .programs__col { padding: 0; border: 0; }
+    .programs__national, .programs__regions { border-right: 0; }
+    :global(.js) .programs__openers { display: block; }
+    :global(.js) .programs__col,
+    :global(.js) .programs__topics { display: none; }
+    .programs__topics { padding: 8px 6px; border-top: var(--border-fine) solid var(--color-ink); }
+    .party-list--two { grid-template-columns: minmax(0, 1fr); }
+    .party-list a { min-height: 48px; padding: 8px 4px; font-size: 0.9375rem; }
+    .region-button { min-height: 52px; font-size: 1.0625rem; }
+    .region-button svg { visibility: visible; }
+    .region-button.is-active { background: transparent; color: var(--color-ink); }
+    .region-button:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+
+    .nav-back {
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      margin: 0 0 var(--space-3);
+      padding: 0 8px 0 4px;
+      border: 0;
+      background: transparent;
+      color: var(--color-ink);
+      font: 700 1.0625rem var(--font-body);
+      cursor: pointer;
+    }
+    .nav-back svg { width: 8px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+    .nav-back:hover { background: var(--color-highlight); color: var(--color-on-highlight); }
+    .programs__col h2 { font-size: 2.25rem; }
+
+    /* A screen of the sheet shows only its own list. */
+    :global(.js) .nav:not([data-screen='root']) > :not(.nav-dropdown--programs) { display: none; }
+    :global(.js) .nav:not([data-screen='root']) .nav-section__title,
+    :global(.js) .nav:not([data-screen='root']) .programs__openers { display: none; }
+    :global(.js) .nav[data-screen='national'] .programs__national,
+    :global(.js) .nav[data-screen='regional'] .programs__regions,
+    :global(.js) .nav[data-screen='region'] .programs__region { display: block; }
+    :global(.js) .nav:not([data-screen='root']) .nav-back { display: inline-flex; }
+    :global(.js) .nav[data-screen='region'] .region-panel h3 { margin-top: var(--space-1); }
+
+    /* Previsiones: right under the results, as two tiles side by side, each with what it does. */
+    .nav-dropdown--tools { order: -1; }
+
+    /* Guide: one row per page, like the other sections. */
+    .guide a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 6px;
+      border-top: 0;
+      border-bottom: var(--border-fine) solid var(--color-ink);
+    }
+    .guide a .nav__icon { margin: 0; }
+    .guide a b { flex: 1; min-width: 0; font: 700 1.0625rem var(--font-body); text-transform: none; }
+    .guide a span { font-size: 0.9375rem; text-align: right; }
+    .guide .nav-row__go { display: block; }
+    .guide--tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    /* `:first-child` too: the rows of «Guía» take away the top border of the first row, a tile keeps all four. */
+    .guide--tiles a,
+    .guide--tiles a:first-child {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 4px;
+      min-width: 0;
+      padding: 12px;
+      border: var(--border-thick) solid var(--color-ink);
+    }
+    .guide--tiles a .nav__icon { width: 20px; height: 20px; margin: 0 0 6px; }
+    .guide--tiles a b { flex: none; font: 900 1.625rem / 1 var(--font-display); text-transform: uppercase; }
+    .guide--tiles a span { font-size: 0.875rem; text-align: left; }
+
+    /* Debates and tests: one row each, to its page. */
+    .mix { display: block; }
+    .nav-tests { display: none; }
+    .mix__title { border-bottom-width: var(--border-fine); }
+
+    /* The theme button sits next to the menu button. */
+    .theme-toggle { margin-left: 0; margin-right: 4px; }
 
     /* The sheet: it starts under the border of the header and scrolls if it is taller than the screen. */
     :global(.js) .nav {
@@ -588,24 +1006,16 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
       overflow-y: auto;
       overscroll-behavior: contain;
       scrollbar-width: thin;
-      padding: 12px var(--gutter) 16px;
+      padding: 16px var(--gutter) 20px;
       background: var(--color-paper);
       border-bottom: var(--border-thick) solid var(--color-ink);
     }
     :global(.js) .site-header:not(.is-menu-open) .nav { display: none; }
   }
 
-  /* Folding phone or tablet: the sections in one row. */
+  /* Tablet: the national parties in two columns. */
   @media (min-width: 720px) and (max-width: 1259px) {
-    /* Six links in one row: each takes one column, and the icons go away while the row is narrow. */
-    .nav { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    .nav > a.nav__link--wide { grid-column: auto; }
-    .nav > a:not(.nav__link--search) { padding: 0 8px; }
-    .nav > a:not(.nav__link--search) .nav__icon { display: none; }
-  }
-  @media (min-width: 900px) and (max-width: 1259px) {
-    .nav > a:not(.nav__link--search) { padding: 0 12px; }
-    .nav > a:not(.nav__link--search) .nav__icon { display: inline; }
+    .party-list--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
   /* Phone: a smaller logo. */
@@ -613,10 +1023,19 @@ const debateIcon = '<path d="M2 2h8.5v5.5H5.5L3 9.5v-2H2z"/><path d="M12 6.5h2V1
     .site-header__row { min-height: 0; padding-top: 8px; padding-bottom: 8px; }
     .logo { min-height: 44px; }
     .logo :global(.wordmark) { font-size: 2rem; }
-    .nav-dropdown--regional .nav-dropdown__groups { columns: 1; }
   }
   @media (max-width: 374px) {
     .logo { padding-right: 0; }
     .logo :global(.wordmark) { font-size: 1.75rem; }
+    /* The logo, the theme and the menu button in one row. */
+    .site-header__row { gap: 4px; }
+    .menu-toggle { padding: 0 10px; }
+    .theme-toggle { width: 40px; height: 40px; margin-right: 2px; }
+    .guide a span { display: none; }
+    .nav-row { gap: 8px; }
+    .nav-row__count { font-size: 0.8125rem; }
+    .guide--tiles a { padding: 10px; }
+    .guide--tiles a b { font-size: 1.3125rem; }
+    .guide--tiles a span { display: block; }
   }
 </style>
